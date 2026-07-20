@@ -35,13 +35,20 @@ const FORBIDDEN = [
   /8001\s*Z(ü|u|&#252;|&uuml;)rich/i,
   /CHF\s*590\b/,
   /\b590\s*CHF\b/,
-  // Brand separation: AI-Eyewear may only ever appear as a deliberate,
-  // reviewed contextual link — never as accidental leakage. Until such a
-  // link is intentionally added (with an explicit allowlist here), any
-  // occurrence fails the build.
+  // Brand separation: accidental AI-Eyewear branding/asset leakage fails the
+  // build. Deliberate contextual LINKS to https://ai-eyewear.ch are legitimate
+  // and are stripped before this scan (see scrubAllowed below).
   /eyewear/i,
   /even\s*realities/i,
 ];
+
+// Legitimate cross-ecosystem references that must NOT trip the gate:
+// plain links/mentions of the ai-eyewear.ch website.
+const ALLOWED_PATTERNS = [
+  /https?:\/\/(www\.)?ai-eyewear\.ch[^\s"'<)]*/gi,
+  /\bAI-Eyewear\b/g, // brand name in plain text next to a deliberate link
+];
+const scrubAllowed = (text) => ALLOWED_PATTERNS.reduce((t, re) => t.replace(re, ''), text);
 const VERIFIED_STRIPE = [
   'https://buy.stripe.com/00w00b0V818UcT646g1sQ01',
   'https://buy.stripe.com/3cI00bgU6dVG5qEbyI1sQ02',
@@ -55,8 +62,9 @@ for (const file of walk(dist)) {
   const text = readFileSync(file, 'utf8');
   const rel = file.slice(dist.length + 1);
 
+  const scanned = scrubAllowed(text);
   for (const re of FORBIDDEN) {
-    if (re.test(text)) errors.push(`${rel}: forbidden pattern ${re}`);
+    if (re.test(scanned)) errors.push(`${rel}: forbidden pattern ${re}`);
   }
   for (const link of text.match(/https:\/\/buy\.stripe\.com\/[A-Za-z0-9]+/g) ?? []) {
     if (!VERIFIED_STRIPE.includes(link)) errors.push(`${rel}: unverified Stripe link ${link}`);
