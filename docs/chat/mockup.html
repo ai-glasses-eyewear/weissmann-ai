@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chat with Weissmann — Mockup</title>
+<style>
+  :root{
+    --paper:#fff; --paper-soft:#f7f7f5; --ink:#111; --ink-soft:#3d3d3b; --ink-mute:#5f5f5f;
+    --line:#e5e5e2; --btn:#111; --radius:12px;
+    --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{font-family:var(--font);background:var(--paper-soft);color:var(--ink-soft);min-height:100vh}
+
+  /* faux page behind the chat */
+  .faux{padding:48px;max-width:900px}
+  .faux h1{color:var(--ink);font-size:40px;letter-spacing:-0.02em;line-height:1.1;max-width:18ch}
+  .faux p{margin-top:16px;max-width:48ch;color:var(--ink-mute)}
+  .faux .bar{height:10px;background:#e9e9e6;border-radius:6px;margin-top:14px}
+  .faux .bar.w1{width:70%}.faux .bar.w2{width:55%}.faux .bar.w3{width:63%}
+
+  /* launcher */
+  .launcher{
+    position:fixed;right:24px;bottom:24px;display:flex;align-items:center;gap:10px;
+    background:var(--btn);color:#fff;border:none;border-radius:999px;padding:12px 18px;
+    font-weight:600;font-size:15px;box-shadow:0 8px 28px rgb(17 17 17/.18);cursor:pointer
+  }
+  .launcher svg{display:block}
+
+  /* chat panel */
+  .chat{
+    position:fixed;right:24px;bottom:24px;width:390px;max-height:calc(100vh - 48px);
+    display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);
+    border-radius:16px;box-shadow:0 2px 8px rgb(17 17 17/.06),0 24px 64px rgb(17 17 17/.14);overflow:hidden
+  }
+  .chat__head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+  .chat__logo{width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
+  .chat__title{font-weight:600;color:var(--ink);font-size:15px;line-height:1.2}
+  .chat__badge{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-top:3px}
+  .chat__actions{margin-left:auto;display:flex;gap:6px}
+  .chat__actions button{width:28px;height:28px;border:1px solid var(--line);background:#fff;border-radius:8px;color:var(--ink-mute);cursor:pointer;font-size:13px}
+  .chat__lang{font-size:12px;color:var(--ink-mute);border:1px solid var(--line);border-radius:8px;padding:4px 8px;background:#fff}
+
+  .chat__body{padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;background:var(--paper)}
+  .msg{max-width:85%;padding:10px 13px;border-radius:12px;font-size:14px;line-height:1.55}
+  .msg--bot{background:var(--paper-soft);border:1px solid var(--line);color:var(--ink-soft);border-top-left-radius:4px}
+  .msg--user{background:var(--ink);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
+  .msg--bot strong{color:var(--ink)}
+  .msg small{display:block;margin-top:6px;color:var(--ink-mute);font-size:12px}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font-size:13px;font-weight:500;color:var(--ink);cursor:pointer}
+  .chip:hover{border-color:var(--ink)}
+
+  .handover{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff}
+  .handover p{font-size:13px;color:var(--ink-mute)}
+  .handover .summary{margin-top:8px;font-size:13px;background:var(--paper-soft);border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:var(--ink-soft)}
+  .handover .row{display:flex;gap:8px;margin-top:10px}
+  .btn{flex:1;border-radius:10px;padding:9px 12px;font-size:13.5px;font-weight:600;cursor:pointer;text-align:center}
+  .btn--wa{background:var(--btn);color:#fff;border:1px solid var(--btn)}
+  .btn--ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+
+  .chat__input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:#fff}
+  .chat__input input{flex:1;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;color:var(--ink)}
+  .chat__input button{width:42px;border:none;border-radius:10px;background:var(--btn);color:#fff;font-size:16px;cursor:pointer}
+  .chat__foot{padding:8px 14px 12px;font-size:11px;color:var(--ink-mute);text-align:center;background:#fff}
+
+  /* mobile: full-sheet */
+  @media (max-width:520px){
+    .faux{display:none}
+    .chat{right:0;bottom:0;left:0;top:0;width:auto;max-height:none;border-radius:0;border:none}
+  }
+</style>
+</head>
+<body>
+  <div class="faux">
+    <p style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#c51a2e">Praktische KI für Unternehmen</p>
+    <h1>Wir bauen das System, mit dem Ihr Unternehmen wächst.</h1>
+    <p>Websites, Sichtbarkeit, Werbung, KI-Agenten und Automatisierung — als ein integriertes Wachstumssystem.</p>
+    <div class="bar w1"></div><div class="bar w2"></div><div class="bar w3"></div>
+  </div>
+
+  <!-- collapsed launcher (shown when chat closed) -->
+  <button class="launcher" style="display:none">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3.5C2 2.7 2.7 2 3.5 2h9c.8 0 1.5.7 1.5 1.5v6c0 .8-.7 1.5-1.5 1.5H6l-3 3v-3h-.5C1.7 11 1 10.3 1 9.5v-6Z" fill="#fff"/></svg>
+    Mit Weissmann chatten
+  </button>
+
+  <!-- open chat panel -->
+  <section class="chat" aria-label="Mit Weissmann chatten">
+    <header class="chat__head">
+      <div class="chat__logo">W</div>
+      <div>
+        <div class="chat__title">Mit Weissmann chatten</div>
+        <span class="chat__badge">Digitaler Assistent</span>
+      </div>
+      <div class="chat__actions">
+        <select class="chat__lang" aria-label="Sprache"><option>DE</option><option>EN</option><option>IT</option><option>FR</option></select>
+        <button aria-label="Minimieren">—</button>
+        <button aria-label="Schliessen">✕</button>
+      </div>
+    </header>
+
+    <div class="chat__body">
+      <div class="msg msg--bot">
+        Grüezi! Ich bin der <strong>digitale Assistent von Weissmann AI</strong>. Ich helfe Ihnen mit Antworten zu Leistungen, Preisen und Ablauf – direkt aus unseren Website-Inhalten.
+        <small>Automatischer Assistent (keine KI-Beratung). Für verbindliche Auskünfte kontaktieren Sie bitte unser Team.</small>
+      </div>
+
+      <div class="chips">
+        <button class="chip">💬 KI-Telefonassistent</button>
+        <button class="chip">🌐 Website-Pakete</button>
+        <button class="chip">📈 SEO &amp; GEO</button>
+        <button class="chip">💰 Preise</button>
+      </div>
+
+      <div class="msg msg--user">Was kostet der KI-Telefonassistent?</div>
+
+      <div class="msg msg--bot">
+        Es gibt drei Pakete: <strong>Starter CHF 350/Monat</strong> (1500 Minuten, 1 Sprache),
+        <strong>Premium CHF 990/Monat</strong> (3500 Minuten, 2 Sprachen) und
+        <strong>Enterprise auf Anfrage</strong>. Starter und Premium laufen als 12-Monatsvertrag ohne Setup-Gebühr. Preise exkl. MwSt.
+      </div>
+
+      <div class="handover">
+        <p><strong style="color:var(--ink)">Mit einem Menschen auf WhatsApp sprechen?</strong><br>
+        Ich fasse unser Gespräch zusammen — Sie prüfen die Nachricht, bevor sie geöffnet wird. Das Gespräch wird ausserhalb der Website fortgesetzt.</p>
+        <div class="summary">„Ich interessiere mich für den KI-Telefonassistenten. Meine Frage: Preise und Vertragslaufzeit."</div>
+        <div class="row">
+          <button class="btn btn--wa">Auf WhatsApp fortsetzen</button>
+          <button class="btn btn--ghost">Weiter im Chat</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat__input">
+      <input type="text" placeholder="Ihre Frage …" aria-label="Ihre Frage">
+      <button aria-label="Senden">↑</button>
+    </div>
+    <div class="chat__foot">Digitaler Assistent · kein Ersatz für persönliche Beratung · <u>Datenschutz</u></div>
+  </section>
+</body>
+</html>
