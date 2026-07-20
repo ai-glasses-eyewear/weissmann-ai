@@ -1,0 +1,83 @@
+---
+/**
+ * Site-wide layout: head (SEO/hreflang/OG/verification), analytics with
+ * Consent Mode v2, header, footer, skip link.
+ *
+ * Props:
+ *  - locale: current page locale
+ *  - path: locale-independent path starting with '/' (e.g. '/preise/').
+ *    Used to build canonical + reciprocal hreflang for all four locales.
+ *  - title / description: localized meta
+ *  - availableLocales: locales this page actually exists in (defaults to all).
+ *  - schema: optional array of JSON-LD objects rendered as one @graph.
+ */
+import { SITE, LOCALES, HTML_LANG, localeUrl, type Locale } from '../data/site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ConsentAnalytics from '../components/ConsentAnalytics.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
+import '../styles/global.css';
+
+interface Props {
+  locale: Locale;
+  path: string;
+  title: string;
+  description: string;
+  availableLocales?: Locale[];
+  schema?: object[];
+  noindex?: boolean;
+}
+
+const { locale, path, title, description, availableLocales = [...LOCALES], schema = [], noindex = false } = Astro.props;
+
+const canonical = localeUrl(locale, path);
+const ogImage = `${SITE.domain}/og-default.png`;
+
+const graph = schema.length
+  ? JSON.stringify({ '@context': 'https://schema.org', '@graph': schema })
+  : null;
+---
+
+<!doctype html>
+<html lang={HTML_LANG[locale]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical} />
+    {availableLocales.map((l) => (
+      <link rel="alternate" hreflang={l === 'de' ? 'de-CH' : l} href={localeUrl(l, path)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={localeUrl('de', path)} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="google-site-verification" content={SITE.tracking.googleSiteVerification} />
+    <meta name="msvalidate.01" content={SITE.tracking.bingVerification} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    {graph && <script type="application/ld+json" set:html={graph} />}
+    <ConsentAnalytics />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{locale === 'de' ? 'Zum Inhalt springen' : locale === 'fr' ? 'Aller au contenu' : locale === 'it' ? 'Vai al contenuto' : 'Skip to content'}</a>
+    <Header locale={locale} path={path} availableLocales={availableLocales} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    <ConsentBanner locale={locale} />
+  </body>
+</html>

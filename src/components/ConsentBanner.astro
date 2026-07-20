@@ -1,0 +1,70 @@
+---
+/**
+ * Consent banner — shows only when no stored choice exists.
+ * Accept → analytics_storage granted (Consent Mode v2 update).
+ * Decline → stays denied; banner never nags again.
+ */
+import { t } from '../i18n/ui';
+import type { Locale } from '../data/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+
+<div class="consent-banner" id="consent-banner" hidden role="dialog" aria-labelledby="consent-title" aria-describedby="consent-text">
+  <div class="consent-banner__inner">
+    <p id="consent-title"><strong>{t(locale, 'consent.title')}</strong></p>
+    <p id="consent-text">{t(locale, 'consent.text')}</p>
+    <div class="consent-banner__actions">
+      <button class="btn btn--primary" id="consent-accept">{t(locale, 'consent.accept')}</button>
+      <button class="btn btn--secondary" id="consent-decline">{t(locale, 'consent.decline')}</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .consent-banner {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 90;
+    padding: var(--space-3);
+  }
+  .consent-banner__inner {
+    max-width: 34rem;
+    margin-inline: auto;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: var(--space-4);
+    font-size: var(--fs-300);
+  }
+  .consent-banner__actions {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+    flex-wrap: wrap;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var banner = document.getElementById('consent-banner');
+    if (!banner) return;
+    var stored = null;
+    try { stored = localStorage.getItem('wm-consent'); } catch (e) {}
+    if (stored === 'granted' || stored === 'denied') return;
+    banner.hidden = false;
+
+    function choose(value) {
+      try { localStorage.setItem('wm-consent', value); } catch (e) {}
+      if (value === 'granted' && typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+      banner.hidden = true;
+    }
+    document.getElementById('consent-accept').addEventListener('click', function () { choose('granted'); });
+    document.getElementById('consent-decline').addEventListener('click', function () { choose('denied'); });
+  })();
+</script>

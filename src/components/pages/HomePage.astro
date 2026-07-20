@@ -1,0 +1,400 @@
+---
+/**
+ * Homepage for all four locales. Copy lives here once; locale page files are
+ * thin wrappers. German is the benchmark version.
+ */
+import Layout from '../../layouts/Layout.astro';
+import MethodTimeline from '../MethodTimeline.astro';
+import MissedCallsCalculator from '../MissedCallsCalculator.astro';
+import Faq from '../Faq.astro';
+import PricingCard from '../PricingCard.astro';
+import { localePrefix, type Locale } from '../../data/site';
+import { t } from '../../i18n/ui';
+import { getPackage } from '../../data/pricing';
+import { organization, webSite, webPage, faqPage } from '../../data/schema';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const p = localePrefix(locale);
+
+const C: Record<Locale, any> = {
+  de: {
+    metaTitle: 'Weissmann AI | Praktische KI für Schweizer Unternehmen – Telefonassistent, Websites, SEO & Automatisierung',
+    metaDesc:
+      'Weissmann AI hilft Unternehmen in der Schweiz, mehr Kunden zu gewinnen: KI-Telefonassistenten, konversionsstarke Websites, SEO, GEO und Automatisierung – aus einer Hand.',
+    heroEyebrow: 'Praktische KI für Unternehmen',
+    heroTitle: 'Mehr Kunden. Jede Anfrage beantwortet. Abläufe automatisiert.',
+    heroText:
+      'Wir helfen Unternehmen, mehr Kunden zu gewinnen, jede Anfrage zu beantworten, Abläufe zu automatisieren und mit praktischer KI zu wachsen – vom KI-Telefonassistenten über Ihre Website bis zu SEO, GEO und Google Ads.',
+    heroPrimary: 'Kostenlose Beratung buchen',
+    heroSecondary: 'Demo anhören',
+    demoTitle: 'Einmal hören. Sofort verstehen.',
+    demoText: 'So klingt ein Weissmann KI-Telefonassistent im Einsatz – natürlich, mehrsprachig und rund um die Uhr erreichbar.',
+    ecosystemEyebrow: 'Ein System, kein Flickwerk',
+    ecosystemTitle: 'Alle Bausteine für digitales Wachstum – aufeinander abgestimmt',
+    ecosystemText:
+      'Einzelne Tools lösen selten das eigentliche Problem. Wir verbinden Website, Sichtbarkeit, KI-Agenten und Automatisierung zu einem System, das Kunden gewinnt und Umsatz messbar macht.',
+    services: [
+      { title: 'KI-Telefonassistent', text: 'Nimmt jeden Anruf entgegen, bucht Termine und beantwortet Fragen – 24/7, in vier Sprachen.', href: '/ki-telefonassistent/' },
+      { title: 'AI-Websites', text: 'Konversionsstarke, schnelle Websites mit technischem SEO- und GEO-Fundament.', href: '/leistungen/ai-websites/' },
+      { title: 'SEO', text: 'Technische und inhaltliche Grundlagen für starke organische Sichtbarkeit in der Schweiz.', href: '/preise/' },
+      { title: 'GEO – KI-Suche', text: 'Sichtbarkeitspotenzial in ChatGPT, Gemini, Perplexity und Google AI Overviews aufbauen.', href: '/preise/' },
+      { title: 'Google Ads', text: 'Kampagnen mit sauberem Conversion-Tracking – damit Werbebudget messbar arbeitet.', href: '/preise/' },
+      { title: 'Automatisierung', text: 'CRM-, E-Mail- und WhatsApp-Workflows, die Follow-ups und Routinearbeit übernehmen.', href: '/kontakt/' },
+    ],
+    methodEyebrow: 'Die Weissmann AI Methode',
+    methodTitle: 'Systematisch von der Idee zur messbaren Wirkung',
+    methodText: 'Sieben Schritte, die aus praktischer KI ein verlässliches Geschäftsergebnis machen – transparent und persönlich begleitet.',
+    calcEyebrow: 'Rechnen statt raten',
+    pricingEyebrow: 'Transparente Preise',
+    pricingTitle: 'Klar definierte Pakete, keine versteckten Kosten',
+    pricingText: 'Vom KI-Telefonassistenten bis zur kompletten Website: faire Festpreise und klar definierter Umfang.',
+    trustTitle: 'Warum Weissmann AI?',
+    trust: [
+      { title: 'Persönlich vor Ort', text: 'Einrichtung direkt bei Ihnen im Unternehmen – kein anonymes SaaS-Portal.' },
+      { title: 'Schweizer Fokus', text: 'Mehrsprachig (DE/EN/FR/IT) und auf Schweizer KMU zugeschnitten.' },
+      { title: 'Messbar statt Buzzword', text: 'Jede Massnahme hat ein Ziel: mehr Anrufe, mehr Leads, mehr Buchungen.' },
+      { title: 'Ehrliche Grenzen', text: 'Wir versprechen keine Wunder – wir bauen Grundlagen, die nachweislich wirken.' },
+    ],
+    faqTitle: 'Häufige Fragen',
+    faq: [
+      { q: 'Was macht Weissmann AI genau?', a: 'Wir implementieren praktische KI für Unternehmen: KI-Telefonassistenten, konversionsstarke Websites, SEO- und GEO-Sichtbarkeit, Google Ads und Automatisierung – als aufeinander abgestimmtes System statt isolierter Tools.' },
+      { q: 'Für welche Unternehmen eignet sich das?', a: 'Für Restaurants, Praxen, Salons, Immobilien-, Versicherungs- und Handelsunternehmen sowie KMU, die Anfragen verlieren, deren Website nicht konvertiert oder die Routinearbeit automatisieren möchten.' },
+      { q: 'Klingt der KI-Telefonassistent wie ein Roboter?', a: 'Nein. Wir setzen auf natürliche Stimmen ohne Roboterpausen – auf Wunsch inklusive Voice-Cloning. Viele Anrufende merken nicht, dass sie mit einer KI sprechen.' },
+      { q: 'In welchen Sprachen funktioniert das?', a: 'Deutsch, Englisch, Französisch und Italienisch – je nach Paket eine oder mehrere Sprachen.' },
+      { q: 'Was passiert bei komplexen Anliegen?', a: 'Der Assistent leitet auf Wunsch jederzeit an Ihr Team weiter (z. B. per Taste 0). Sie behalten die Kontrolle.' },
+      { q: 'Wie schnell kann ich starten?', a: 'Nach dem Erstgespräch und der Analyse ist der Start typischerweise innerhalb weniger Tage möglich – inklusive Live-Test im Echtbetrieb.' },
+      { q: 'Garantiert ihr Google-Rankings oder KI-Zitierungen?', a: 'Nein – seriös kann das niemand. Wir bauen die technischen, inhaltlichen und Autoritäts-Grundlagen, um um starke Sichtbarkeit zu konkurrieren, und messen die Ergebnisse transparent.' },
+    ],
+    finalTitle: 'Bereit für praktische KI in Ihrem Unternehmen?',
+    finalText: 'Buchen Sie ein unverbindliches Erstgespräch. Wir zeigen Ihnen konkret, wo KI in Ihrem Unternehmen wirkt – und wo (noch) nicht.',
+  },
+
+  en: {
+    metaTitle: 'Weissmann AI | Practical AI for Swiss Businesses – Phone Agents, Websites, SEO & Automation',
+    metaDesc:
+      'Weissmann AI helps businesses in Switzerland win more customers: AI phone agents, conversion-focused websites, SEO, GEO and automation — from one partner.',
+    heroEyebrow: 'Practical AI for businesses',
+    heroTitle: 'More customers. Every enquiry answered. Operations automated.',
+    heroText:
+      'We help businesses attract customers, answer every enquiry, automate repetitive work and grow through practical artificial intelligence — from AI phone agents to your website, SEO, GEO and Google Ads.',
+    heroPrimary: 'Book a free consultation',
+    heroSecondary: 'Listen to the demo',
+    demoTitle: 'Hear it once. Understand immediately.',
+    demoText: 'This is what a Weissmann AI phone agent sounds like in action — natural, multilingual and available around the clock.',
+    ecosystemEyebrow: 'One system, not patchwork',
+    ecosystemTitle: 'Every building block for digital growth — working together',
+    ecosystemText:
+      'Isolated tools rarely solve the real problem. We connect website, visibility, AI agents and automation into one system that wins customers and makes revenue measurable.',
+    services: [
+      { title: 'AI Phone Agent', text: 'Answers every call, books appointments and handles questions — 24/7, in four languages.', href: '/ki-telefonassistent/' },
+      { title: 'AI Websites', text: 'Conversion-focused, fast websites with a technical SEO and GEO foundation.', href: '/leistungen/ai-websites/' },
+      { title: 'SEO', text: 'Technical and content foundations for strong organic visibility in Switzerland.', href: '/preise/' },
+      { title: 'GEO – AI Search', text: 'Build visibility potential in ChatGPT, Gemini, Perplexity and Google AI Overviews.', href: '/preise/' },
+      { title: 'Google Ads', text: 'Campaigns with clean conversion tracking — so ad budget works measurably.', href: '/preise/' },
+      { title: 'Automation', text: 'CRM, email and WhatsApp workflows that take over follow-ups and routine work.', href: '/kontakt/' },
+    ],
+    methodEyebrow: 'The Weissmann AI Method',
+    methodTitle: 'Systematically from idea to measurable impact',
+    methodText: 'Seven steps that turn practical AI into a reliable business result — transparent and personally guided.',
+    calcEyebrow: 'Calculate, don’t guess',
+    pricingEyebrow: 'Transparent pricing',
+    pricingTitle: 'Clearly defined packages, no hidden costs',
+    pricingText: 'From the AI phone agent to a complete website: fair fixed prices and clearly defined scope.',
+    trustTitle: 'Why Weissmann AI?',
+    trust: [
+      { title: 'Personal, on-site', text: 'Setup directly at your business — not an anonymous SaaS portal.' },
+      { title: 'Swiss focus', text: 'Multilingual (DE/EN/FR/IT) and built for Swiss SMEs.' },
+      { title: 'Measurable, not buzzwords', text: 'Every measure has a goal: more calls, more leads, more bookings.' },
+      { title: 'Honest limits', text: 'We don’t promise miracles — we build foundations that demonstrably work.' },
+    ],
+    faqTitle: 'Frequently asked questions',
+    faq: [
+      { q: 'What exactly does Weissmann AI do?', a: 'We implement practical AI for businesses: AI phone agents, conversion-focused websites, SEO and GEO visibility, Google Ads and automation — as one coordinated system instead of isolated tools.' },
+      { q: 'Which businesses is this for?', a: 'Restaurants, medical practices, salons, real-estate, insurance and retail companies, and SMEs that lose enquiries, have a website that doesn’t convert, or want to automate routine work.' },
+      { q: 'Does the AI phone agent sound like a robot?', a: 'No. We use natural voices without robotic pauses — including voice cloning on request. Many callers don’t notice they are talking to an AI.' },
+      { q: 'Which languages are supported?', a: 'German, English, French and Italian — one or more languages depending on the package.' },
+      { q: 'What happens with complex requests?', a: 'The agent transfers to your team at any time (for example by pressing 0). You stay in control.' },
+      { q: 'How fast can I start?', a: 'After the initial consultation and analysis, a start is typically possible within a few days — including live testing in real operation.' },
+      { q: 'Do you guarantee Google rankings or AI citations?', a: 'No — nobody can, honestly. We build the technical, content and authority foundations required to compete for strong visibility, and we measure results transparently.' },
+    ],
+    finalTitle: 'Ready for practical AI in your business?',
+    finalText: 'Book a no-obligation consultation. We’ll show you concretely where AI works in your business — and where it doesn’t (yet).',
+  },
+
+  it: {
+    metaTitle: 'Weissmann AI | AI pratica per le aziende svizzere – Assistente telefonico, siti web, SEO e automazione',
+    metaDesc:
+      'Weissmann AI aiuta le aziende in Svizzera a conquistare più clienti: assistenti telefonici AI, siti web orientati alla conversione, SEO, GEO e automazione — da un unico partner.',
+    heroEyebrow: 'AI pratica per le aziende',
+    heroTitle: 'Più clienti. Ogni richiesta gestita. Processi automatizzati.',
+    heroText:
+      'Aiutiamo le aziende ad attirare clienti, rispondere a ogni richiesta, automatizzare il lavoro ripetitivo e crescere con l’intelligenza artificiale pratica — dall’assistente telefonico AI al vostro sito web, SEO, GEO e Google Ads.',
+    heroPrimary: 'Prenota una consulenza gratuita',
+    heroSecondary: 'Ascolta la demo',
+    demoTitle: 'Ascoltatelo una volta. Capirete subito.',
+    demoText: 'Così suona un assistente telefonico Weissmann AI in azione — naturale, multilingue e disponibile 24 ore su 24.',
+    ecosystemEyebrow: 'Un sistema, non un mosaico',
+    ecosystemTitle: 'Tutti i componenti per la crescita digitale — coordinati tra loro',
+    ecosystemText:
+      'Gli strumenti isolati raramente risolvono il problema reale. Colleghiamo sito web, visibilità, agenti AI e automazione in un unico sistema che conquista clienti e rende misurabile il fatturato.',
+    services: [
+      { title: 'Assistente telefonico AI', text: 'Risponde a ogni chiamata, prenota appuntamenti e gestisce le domande — 24/7, in quattro lingue.', href: '/ki-telefonassistent/' },
+      { title: 'Siti web AI', text: 'Siti veloci e orientati alla conversione, con fondamenta tecniche SEO e GEO.', href: '/leistungen/ai-websites/' },
+      { title: 'SEO', text: 'Basi tecniche e di contenuto per una forte visibilità organica in Svizzera.', href: '/preise/' },
+      { title: 'GEO – Ricerca AI', text: 'Costruire il potenziale di visibilità in ChatGPT, Gemini, Perplexity e Google AI Overviews.', href: '/preise/' },
+      { title: 'Google Ads', text: 'Campagne con tracciamento pulito delle conversioni — perché il budget lavori in modo misurabile.', href: '/preise/' },
+      { title: 'Automazione', text: 'Workflow CRM, e-mail e WhatsApp che gestiscono follow-up e lavoro di routine.', href: '/kontakt/' },
+    ],
+    methodEyebrow: 'Il Metodo Weissmann AI',
+    methodTitle: 'Sistematicamente dall’idea all’impatto misurabile',
+    methodText: 'Sette passaggi che trasformano l’AI pratica in un risultato aziendale affidabile — con trasparenza e accompagnamento personale.',
+    calcEyebrow: 'Calcolare invece di indovinare',
+    pricingEyebrow: 'Prezzi trasparenti',
+    pricingTitle: 'Pacchetti chiaramente definiti, nessun costo nascosto',
+    pricingText: 'Dall’assistente telefonico AI al sito web completo: prezzi fissi equi e perimetro chiaramente definito.',
+    trustTitle: 'Perché Weissmann AI?',
+    trust: [
+      { title: 'Di persona, in azienda', text: 'Configurazione direttamente presso la vostra azienda — non un portale SaaS anonimo.' },
+      { title: 'Focus svizzero', text: 'Multilingue (DE/EN/FR/IT) e costruito per le PMI svizzere.' },
+      { title: 'Misurabile, non slogan', text: 'Ogni misura ha un obiettivo: più chiamate, più lead, più prenotazioni.' },
+      { title: 'Limiti onesti', text: 'Non promettiamo miracoli — costruiamo fondamenta che funzionano in modo dimostrabile.' },
+    ],
+    faqTitle: 'Domande frequenti',
+    faq: [
+      { q: 'Che cosa fa esattamente Weissmann AI?', a: 'Implementiamo AI pratica per le aziende: assistenti telefonici AI, siti web orientati alla conversione, visibilità SEO e GEO, Google Ads e automazione — come sistema coordinato invece di strumenti isolati.' },
+      { q: 'Per quali aziende è adatto?', a: 'Ristoranti, studi medici, saloni, immobiliari, assicurazioni, commercio e PMI che perdono richieste, hanno un sito che non converte o vogliono automatizzare il lavoro di routine.' },
+      { q: 'L’assistente telefonico AI sembra un robot?', a: 'No. Utilizziamo voci naturali senza pause robotiche — su richiesta anche con voice cloning. Molti chiamanti non si accorgono di parlare con un’AI.' },
+      { q: 'In quali lingue funziona?', a: 'Tedesco, inglese, francese e italiano — una o più lingue a seconda del pacchetto.' },
+      { q: 'Cosa succede con le richieste complesse?', a: 'L’assistente trasferisce in qualsiasi momento al vostro team (ad esempio premendo 0). Il controllo resta a voi.' },
+      { q: 'Quanto velocemente posso iniziare?', a: 'Dopo il primo colloquio e l’analisi, la partenza è tipicamente possibile entro pochi giorni — incluso il test dal vivo in condizioni reali.' },
+      { q: 'Garantite posizionamenti su Google o citazioni AI?', a: 'No — nessuno può farlo seriamente. Costruiamo le fondamenta tecniche, di contenuto e di autorevolezza per competere per una forte visibilità, e misuriamo i risultati in modo trasparente.' },
+    ],
+    finalTitle: 'Pronti per l’AI pratica nella vostra azienda?',
+    finalText: 'Prenotate un primo colloquio senza impegno. Vi mostriamo concretamente dove l’AI funziona nella vostra azienda — e dove (ancora) no.',
+  },
+
+  fr: {
+    metaTitle: 'Weissmann AI | IA pratique pour les entreprises suisses – Agent téléphonique, sites web, SEO et automatisation',
+    metaDesc:
+      'Weissmann AI aide les entreprises en Suisse à gagner plus de clients : agents téléphoniques IA, sites web axés conversion, SEO, GEO et automatisation — avec un seul partenaire.',
+    heroEyebrow: 'IA pratique pour les entreprises',
+    heroTitle: 'Plus de clients. Chaque demande traitée. Des processus automatisés.',
+    heroText:
+      'Nous aidons les entreprises à attirer des clients, répondre à chaque demande, automatiser les tâches répétitives et croître grâce à l’intelligence artificielle pratique — de l’agent téléphonique IA à votre site web, SEO, GEO et Google Ads.',
+    heroPrimary: 'Réserver une consultation gratuite',
+    heroSecondary: 'Écouter la démo',
+    demoTitle: 'Écoutez une fois. Comprenez immédiatement.',
+    demoText: 'Voici comment sonne un agent téléphonique Weissmann AI en action — naturel, multilingue et disponible 24h/24.',
+    ecosystemEyebrow: 'Un système, pas du bricolage',
+    ecosystemTitle: 'Tous les éléments de la croissance digitale — parfaitement coordonnés',
+    ecosystemText:
+      'Les outils isolés résolvent rarement le vrai problème. Nous connectons site web, visibilité, agents IA et automatisation en un système qui gagne des clients et rend le chiffre d’affaires mesurable.',
+    services: [
+      { title: 'Agent téléphonique IA', text: 'Répond à chaque appel, réserve des rendez-vous et traite les questions — 24/7, en quatre langues.', href: '/ki-telefonassistent/' },
+      { title: 'Sites web IA', text: 'Des sites rapides et axés conversion, avec des fondations techniques SEO et GEO.', href: '/leistungen/ai-websites/' },
+      { title: 'SEO', text: 'Des fondations techniques et éditoriales pour une forte visibilité organique en Suisse.', href: '/preise/' },
+      { title: 'GEO – Recherche IA', text: 'Construire un potentiel de visibilité dans ChatGPT, Gemini, Perplexity et Google AI Overviews.', href: '/preise/' },
+      { title: 'Google Ads', text: 'Des campagnes avec un suivi des conversions rigoureux — pour que le budget publicitaire travaille de façon mesurable.', href: '/preise/' },
+      { title: 'Automatisation', text: 'Des workflows CRM, e-mail et WhatsApp qui prennent en charge les relances et le travail routinier.', href: '/kontakt/' },
+    ],
+    methodEyebrow: 'La Méthode Weissmann AI',
+    methodTitle: 'De l’idée à l’impact mesurable, avec méthode',
+    methodText: 'Sept étapes qui transforment l’IA pratique en résultat commercial fiable — avec transparence et accompagnement personnel.',
+    calcEyebrow: 'Calculer plutôt que deviner',
+    pricingEyebrow: 'Tarifs transparents',
+    pricingTitle: 'Des forfaits clairement définis, sans coûts cachés',
+    pricingText: 'De l’agent téléphonique IA au site web complet : des prix fixes équitables et un périmètre clairement défini.',
+    trustTitle: 'Pourquoi Weissmann AI ?',
+    trust: [
+      { title: 'Personnel, sur place', text: 'Mise en place directement dans votre entreprise — pas un portail SaaS anonyme.' },
+      { title: 'Focus suisse', text: 'Multilingue (DE/EN/FR/IT) et conçu pour les PME suisses.' },
+      { title: 'Mesurable, pas des slogans', text: 'Chaque mesure a un objectif : plus d’appels, plus de leads, plus de réservations.' },
+      { title: 'Des limites honnêtes', text: 'Nous ne promettons pas de miracles — nous construisons des fondations qui fonctionnent de façon démontrable.' },
+    ],
+    faqTitle: 'Questions fréquentes',
+    faq: [
+      { q: 'Que fait exactement Weissmann AI ?', a: 'Nous implémentons l’IA pratique pour les entreprises : agents téléphoniques IA, sites web axés conversion, visibilité SEO et GEO, Google Ads et automatisation — comme un système coordonné plutôt que des outils isolés.' },
+      { q: 'À quelles entreprises cela s’adresse-t-il ?', a: 'Restaurants, cabinets médicaux, salons, immobilier, assurances, commerce et PME qui perdent des demandes, dont le site ne convertit pas, ou qui veulent automatiser le travail routinier.' },
+      { q: 'L’agent téléphonique IA sonne-t-il comme un robot ?', a: 'Non. Nous utilisons des voix naturelles sans pauses robotiques — y compris le clonage vocal sur demande. Beaucoup d’appelants ne remarquent pas qu’ils parlent à une IA.' },
+      { q: 'Quelles langues sont prises en charge ?', a: 'Allemand, anglais, français et italien — une ou plusieurs langues selon le forfait.' },
+      { q: 'Que se passe-t-il pour les demandes complexes ?', a: 'L’agent transfère à tout moment vers votre équipe (par exemple en appuyant sur 0). Vous gardez le contrôle.' },
+      { q: 'En combien de temps puis-je démarrer ?', a: 'Après le premier entretien et l’analyse, un démarrage est généralement possible en quelques jours — test en conditions réelles inclus.' },
+      { q: 'Garantissez-vous des classements Google ou des citations IA ?', a: 'Non — personne ne le peut sérieusement. Nous construisons les fondations techniques, éditoriales et d’autorité nécessaires pour viser une forte visibilité, et nous mesurons les résultats en toute transparence.' },
+    ],
+    finalTitle: 'Prêt pour l’IA pratique dans votre entreprise ?',
+    finalText: 'Réservez un premier entretien sans engagement. Nous vous montrons concrètement où l’IA fonctionne dans votre entreprise — et où elle ne fonctionne pas (encore).',
+  },
+};
+
+const c = C[locale];
+const videoSrc = locale === 'de' ? '/videos/weissmann-demo-de.mp4' : '/videos/weissmann-demo-en.mp4';
+
+const schema = [
+  organization(locale),
+  webSite(locale),
+  webPage(locale, '/', c.metaTitle, c.metaDesc),
+  faqPage(c.faq),
+];
+
+const phoneStarter = getPackage('phone-starter');
+const phonePremium = getPackage('phone-premium');
+const websiteStarter = getPackage('website-starter');
+---
+
+<Layout locale={locale} path="/" title={c.metaTitle} description={c.metaDesc} schema={schema}>
+  <!-- Hero -->
+  <section class="section hero">
+    <div class="container">
+      <span class="eyebrow">{c.heroEyebrow}</span>
+      <h1>{c.heroTitle}</h1>
+      <p class="hero__text">{c.heroText}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href={`${p}/kontakt/`} data-track="book_consultation">{c.heroPrimary}</a>
+        <a class="btn btn--secondary" href="#demo" data-track="demo_play">{c.heroSecondary}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo -->
+  <section class="section section--alt" id="demo">
+    <div class="container">
+      <div class="section-head">
+        <h2>{c.demoTitle}</h2>
+        <p>{c.demoText}</p>
+      </div>
+      <video controls preload="metadata" class="demo-video" data-demo-video>
+        <source src={videoSrc} type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  <!-- Service ecosystem -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">{c.ecosystemEyebrow}</span>
+        <h2>{c.ecosystemTitle}</h2>
+        <p>{c.ecosystemText}</p>
+      </div>
+      <div class="grid grid--3">
+        {c.services.map((s: any) => (
+          <a class="card service-card" href={`${p}${s.href}`} data-track="service_view">
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+            <span class="service-card__more">{t(locale, 'cta.learnMore')} →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Method -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">{c.methodEyebrow}</span>
+        <h2>{c.methodTitle}</h2>
+        <p>{c.methodText}</p>
+      </div>
+      <MethodTimeline locale={locale} />
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">{c.calcEyebrow}</span>
+      <MissedCallsCalculator locale={locale} />
+    </div>
+  </section>
+
+  <!-- Pricing preview -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">{c.pricingEyebrow}</span>
+        <h2>{c.pricingTitle}</h2>
+        <p>{c.pricingText}</p>
+      </div>
+      <div class="grid grid--3">
+        <PricingCard pkg={phoneStarter} locale={locale} />
+        <PricingCard pkg={phonePremium} locale={locale} highlight />
+        <PricingCard pkg={websiteStarter} locale={locale} />
+      </div>
+      <p class="center mt-4">
+        <a class="btn btn--ghost" href={`${p}/preise/`} data-track="pricing_view">{t(locale, 'cta.allPricing')} →</a>
+      </p>
+      <p class="center muted">{t(locale, 'price.vatNote')}</p>
+    </div>
+  </section>
+
+  <!-- Trust -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>{c.trustTitle}</h2></div>
+      <div class="grid grid--4">
+        {c.trust.map((item: any) => (
+          <div class="card">
+            <h3>{item.title}</h3>
+            <p class="mt-3">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt">
+    <div class="container">
+      <Faq title={c.faqTitle} items={c.faq} />
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section">
+    <div class="container center">
+      <h2>{c.finalTitle}</h2>
+      <p class="mt-3 hero__text" style="margin-inline:auto;">{c.finalText}</p>
+      <div class="hero__actions" style="justify-content:center;">
+        <a class="btn btn--primary" href={`${p}/kontakt/`} data-track="book_consultation">{c.heroPrimary}</a>
+        <a class="btn btn--secondary" href={`tel:+41783459788`} data-track="phone_click">{t(locale, 'cta.call')}</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero { padding-block: var(--space-7) var(--space-6); }
+  .hero h1 { max-width: 46rem; }
+  .hero__text { max-width: 40rem; margin-top: var(--space-4); font-size: var(--fs-500); }
+  .hero__actions { display: flex; gap: var(--space-3); margin-top: var(--space-5); flex-wrap: wrap; }
+  .demo-video {
+    width: 100%;
+    max-width: 52rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    background: var(--ink);
+  }
+  .service-card { color: inherit; display: flex; flex-direction: column; }
+  .service-card:hover { text-decoration: none; border-color: var(--accent); }
+  .service-card p { margin-top: var(--space-2); font-size: var(--fs-300); }
+  .service-card__more { margin-top: auto; padding-top: var(--space-3); color: var(--accent); font-weight: 600; font-size: var(--fs-300); }
+</style>
+
+<script is:inline>
+  // demo_play / demo_complete tracking on the hero video
+  (function () {
+    var v = document.querySelector('[data-demo-video]');
+    if (!v) return;
+    var played = false;
+    v.addEventListener('play', function () {
+      if (played) return;
+      played = true;
+      if (window.wmEvent) window.wmEvent('demo_play', { demo: 'homepage_video' });
+    });
+    v.addEventListener('ended', function () {
+      if (window.wmEvent) window.wmEvent('demo_complete', { demo: 'homepage_video' });
+    });
+  })();
+</script>

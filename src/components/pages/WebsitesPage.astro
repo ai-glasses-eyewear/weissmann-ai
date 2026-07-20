@@ -1,0 +1,206 @@
+---
+/**
+ * AI Websites service page — the three website packages from the central
+ * pricing config, plus scope transparency (what's included/excluded).
+ */
+import Layout from '../../layouts/Layout.astro';
+import PricingCard from '../PricingCard.astro';
+import Faq from '../Faq.astro';
+import { localePrefix, type Locale } from '../../data/site';
+import { t } from '../../i18n/ui';
+import { getPackage } from '../../data/pricing';
+import { organization, webPage, breadcrumbs, faqPage, serviceWithOffer } from '../../data/schema';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const p = localePrefix(locale);
+const PATH = '/leistungen/ai-websites/';
+
+const C: Record<Locale, any> = {
+  de: {
+    metaTitle: 'AI-Websites: konversionsstarke Websites mit SEO- & GEO-Fundament | Weissmann AI',
+    metaDesc:
+      'Professionelle Websites für Schweizer Unternehmen: Premium-Design, technisches SEO, GEO-Vorbereitung, GA4 und Netlify-Hosting. Faire Festpreise ab CHF 2’490.',
+    h1: 'Websites, die Kunden gewinnen – nicht nur gut aussehen',
+    intro:
+      'Eine Website ist kein Prospekt, sondern Ihr wichtigster Verkäufer. Wir bauen schnelle, konversionsstarke Websites mit sauberem technischem Fundament: SEO, GEO-Vorbereitung für KI-Suchmaschinen, Analytics und Sicherheit – von Anfang an mitgedacht.',
+    pillarsTitle: 'Was jede Weissmann-Website mitbringt',
+    pillars: [
+      { title: 'Konversionsarchitektur', text: 'Klare Nutzerführung, überzeugende Handlungsaufforderungen und Formulare, die ausgefüllt werden.' },
+      { title: 'Technisches SEO-Fundament', text: 'Semantisches HTML, saubere Metadaten, strukturierte Daten, Sitemap und schnelle Ladezeiten.' },
+      { title: 'GEO-Vorbereitung', text: 'Klare Definitionen, Entitäten-Konsistenz und KI-Crawler-Zugänglichkeit – damit Ihre Inhalte auch für KI-Antwortmaschinen lesbar sind.' },
+      { title: 'Messbarkeit', text: 'Google Analytics 4 und Search Console korrekt eingerichtet – inklusive Conversion-Tracking.' },
+      { title: 'Performance & Sicherheit', text: 'Statisch generiert, optimierte Bilder, Security-Header, Hosting auf Netlify.' },
+      { title: 'Mehrsprachig erweiterbar', text: 'Architektur, die mit Ihren Sprachen und Inhalten mitwächst – ohne Neubau.' },
+    ],
+    pricingTitle: 'Website-Pakete',
+    faqTitle: 'Häufige Fragen zu unseren Websites',
+    faq: [
+      { q: 'Wie schnell ist meine Website fertig?', a: 'Je nach Paket und Zulieferung Ihrer Inhalte: eine Starter-Website typischerweise in wenigen Wochen, grössere Projekte nach vereinbartem Zeitplan. Den konkreten Termin definieren wir vor Projektstart.' },
+      { q: 'Was brauche ich von meiner Seite?', a: 'Ihre Inhalte (Texte, Bilder, Logo) oder die Freigabe, diese gemeinsam zu erarbeiten, einen Ansprechpartner für Rückfragen und zeitnahe Feedbacks in den definierten Korrekturrunden.' },
+      { q: 'Sind Texte und Fotos inklusive?', a: 'Im Starter-Paket nicht – wir arbeiten mit Ihren Inhalten und beraten Sie dazu. Texterstellung und Bildbeschaffung können als Zusatzleistung vereinbart werden.' },
+      { q: 'Was kostet das Hosting?', a: 'Das Hosting läuft über Netlify; für typische Unternehmens-Websites fallen keine oder nur geringe laufende Hosting-Kosten an. Details klären wir transparent vor dem Start.' },
+      { q: 'Garantiert ihr Platz 1 bei Google?', a: 'Nein – das kann seriös niemand. Wir bauen die technischen und inhaltlichen Grundlagen, um um starke Sichtbarkeit zu konkurrieren.' },
+      { q: 'Kann die Website später mehrsprachig werden?', a: 'Ja. Die Architektur ist von Anfang an darauf ausgelegt, weitere Sprachen ohne Neubau zu ergänzen.' },
+    ],
+    ctaTitle: 'Lassen Sie Ihre aktuelle Website kostenlos einschätzen',
+    ctaText: 'Wir sagen Ihnen ehrlich, was gut ist, was fehlt und was sich messbar lohnen würde.',
+  },
+  en: {
+    metaTitle: 'AI Websites: conversion-focused websites with an SEO & GEO foundation | Weissmann AI',
+    metaDesc:
+      'Professional websites for Swiss businesses: premium design, technical SEO, GEO preparation, GA4 and Netlify hosting. Fair fixed prices from CHF 2,490.',
+    h1: 'Websites that win customers — not just look good',
+    intro:
+      'A website is not a brochure — it is your most important salesperson. We build fast, conversion-focused websites with a clean technical foundation: SEO, GEO preparation for AI search engines, analytics and security — designed in from the start.',
+    pillarsTitle: 'What every Weissmann website includes',
+    pillars: [
+      { title: 'Conversion architecture', text: 'Clear user journeys, convincing calls to action and forms that actually get filled in.' },
+      { title: 'Technical SEO foundation', text: 'Semantic HTML, clean metadata, structured data, sitemap and fast load times.' },
+      { title: 'GEO preparation', text: 'Clear definitions, entity consistency and AI-crawler accessibility — so your content is readable for AI answer engines too.' },
+      { title: 'Measurability', text: 'Google Analytics 4 and Search Console set up correctly — including conversion tracking.' },
+      { title: 'Performance & security', text: 'Statically generated, optimized images, security headers, hosting on Netlify.' },
+      { title: 'Multilingual-ready', text: 'An architecture that grows with your languages and content — without a rebuild.' },
+    ],
+    pricingTitle: 'Website packages',
+    faqTitle: 'Frequently asked questions about our websites',
+    faq: [
+      { q: 'How fast will my website be ready?', a: 'Depending on the package and how quickly you supply content: a Starter website typically within a few weeks, larger projects on an agreed schedule. We define the concrete date before the project starts.' },
+      { q: 'What do I need to provide?', a: 'Your content (texts, images, logo) or approval to develop it together, a contact person for questions, and timely feedback within the defined revision rounds.' },
+      { q: 'Are copywriting and photos included?', a: 'Not in the Starter package — we work with your content and advise you on it. Copywriting and image sourcing can be agreed as an additional service.' },
+      { q: 'What does hosting cost?', a: 'Hosting runs on Netlify; for typical business websites there are no or only minimal ongoing hosting costs. We clarify the details transparently before starting.' },
+      { q: 'Do you guarantee #1 on Google?', a: 'No — nobody honestly can. We build the technical and content foundations required to compete for strong visibility.' },
+      { q: 'Can the website become multilingual later?', a: 'Yes. The architecture is designed from the start to add further languages without a rebuild.' },
+    ],
+    ctaTitle: 'Get a free, honest assessment of your current website',
+    ctaText: 'We’ll tell you honestly what works, what’s missing and what would measurably pay off.',
+  },
+  it: {
+    metaTitle: 'Siti web AI: siti orientati alla conversione con fondamenta SEO e GEO | Weissmann AI',
+    metaDesc:
+      'Siti web professionali per aziende svizzere: design premium, SEO tecnico, preparazione GEO, GA4 e hosting Netlify. Prezzi fissi equi da CHF 2’490.',
+    h1: 'Siti web che conquistano clienti — non solo belli da vedere',
+    intro:
+      'Un sito web non è un dépliant: è il vostro venditore più importante. Costruiamo siti veloci e orientati alla conversione con fondamenta tecniche pulite: SEO, preparazione GEO per i motori di ricerca AI, analytics e sicurezza — pensati fin dall’inizio.',
+    pillarsTitle: 'Cosa include ogni sito Weissmann',
+    pillars: [
+      { title: 'Architettura di conversione', text: 'Percorsi utente chiari, call to action convincenti e moduli che vengono davvero compilati.' },
+      { title: 'Fondamenta SEO tecniche', text: 'HTML semantico, metadati puliti, dati strutturati, sitemap e tempi di caricamento rapidi.' },
+      { title: 'Preparazione GEO', text: 'Definizioni chiare, coerenza delle entità e accessibilità per i crawler AI.' },
+      { title: 'Misurabilità', text: 'Google Analytics 4 e Search Console configurati correttamente — incluso il tracciamento delle conversioni.' },
+      { title: 'Prestazioni e sicurezza', text: 'Generazione statica, immagini ottimizzate, header di sicurezza, hosting su Netlify.' },
+      { title: 'Predisposto per il multilingue', text: 'Un’architettura che cresce con le vostre lingue e i vostri contenuti — senza rifare tutto.' },
+    ],
+    pricingTitle: 'Pacchetti sito web',
+    faqTitle: 'Domande frequenti sui nostri siti web',
+    faq: [
+      { q: 'Quanto velocemente sarà pronto il mio sito?', a: 'A seconda del pacchetto e della consegna dei contenuti: un sito Starter tipicamente in poche settimane, progetti più grandi secondo il calendario concordato.' },
+      { q: 'Cosa devo fornire?', a: 'I vostri contenuti (testi, immagini, logo) o l’accordo per svilupparli insieme, un referente per le domande e feedback puntuali nei cicli di revisione definiti.' },
+      { q: 'Testi e foto sono inclusi?', a: 'Nel pacchetto Starter no — lavoriamo con i vostri contenuti e vi consigliamo. Copywriting e ricerca immagini possono essere concordati come servizio aggiuntivo.' },
+      { q: 'Quanto costa l’hosting?', a: 'L’hosting è su Netlify; per i tipici siti aziendali i costi correnti sono nulli o minimi. Chiarifichiamo i dettagli in modo trasparente prima di iniziare.' },
+      { q: 'Garantite il primo posto su Google?', a: 'No — nessuno può farlo seriamente. Costruiamo le fondamenta tecniche e di contenuto per competere per una forte visibilità.' },
+      { q: 'Il sito potrà diventare multilingue in futuro?', a: 'Sì. L’architettura è progettata fin dall’inizio per aggiungere altre lingue senza rifare il sito.' },
+    ],
+    ctaTitle: 'Fate valutare gratuitamente il vostro sito attuale',
+    ctaText: 'Vi diciamo onestamente cosa funziona, cosa manca e cosa varrebbe la pena migliorare in modo misurabile.',
+  },
+  fr: {
+    metaTitle: 'Sites web IA : sites axés conversion avec fondations SEO et GEO | Weissmann AI',
+    metaDesc:
+      'Sites web professionnels pour entreprises suisses : design premium, SEO technique, préparation GEO, GA4 et hébergement Netlify. Prix fixes équitables dès CHF 2’490.',
+    h1: 'Des sites web qui gagnent des clients — pas seulement esthétiques',
+    intro:
+      'Un site web n’est pas une brochure : c’est votre meilleur commercial. Nous construisons des sites rapides et axés conversion avec des fondations techniques propres : SEO, préparation GEO pour les moteurs de recherche IA, analytics et sécurité — pensés dès le départ.',
+    pillarsTitle: 'Ce que chaque site Weissmann inclut',
+    pillars: [
+      { title: 'Architecture de conversion', text: 'Des parcours clairs, des appels à l’action convaincants et des formulaires réellement remplis.' },
+      { title: 'Fondations SEO techniques', text: 'HTML sémantique, métadonnées propres, données structurées, sitemap et chargement rapide.' },
+      { title: 'Préparation GEO', text: 'Définitions claires, cohérence des entités et accessibilité aux crawlers IA.' },
+      { title: 'Mesurabilité', text: 'Google Analytics 4 et Search Console correctement configurés — suivi des conversions inclus.' },
+      { title: 'Performance et sécurité', text: 'Génération statique, images optimisées, en-têtes de sécurité, hébergement sur Netlify.' },
+      { title: 'Prêt pour le multilingue', text: 'Une architecture qui évolue avec vos langues et contenus — sans tout reconstruire.' },
+    ],
+    pricingTitle: 'Forfaits site web',
+    faqTitle: 'Questions fréquentes sur nos sites web',
+    faq: [
+      { q: 'En combien de temps mon site sera-t-il prêt ?', a: 'Selon le forfait et la livraison de vos contenus : un site Starter généralement en quelques semaines, les projets plus grands selon un calendrier convenu.' },
+      { q: 'Que dois-je fournir ?', a: 'Vos contenus (textes, images, logo) ou l’accord pour les développer ensemble, un interlocuteur pour les questions et des retours rapides dans les cycles de révision définis.' },
+      { q: 'La rédaction et les photos sont-elles incluses ?', a: 'Pas dans le forfait Starter — nous travaillons avec vos contenus et vous conseillons. La rédaction et la recherche d’images peuvent être convenues en supplément.' },
+      { q: 'Combien coûte l’hébergement ?', a: 'L’hébergement fonctionne sur Netlify ; pour les sites d’entreprise typiques, les coûts courants sont nuls ou minimes. Nous clarifions les détails avant de commencer.' },
+      { q: 'Garantissez-vous la première place sur Google ?', a: 'Non — personne ne le peut sérieusement. Nous construisons les fondations techniques et éditoriales pour viser une forte visibilité.' },
+      { q: 'Le site pourra-t-il devenir multilingue plus tard ?', a: 'Oui. L’architecture est conçue dès le départ pour ajouter d’autres langues sans reconstruction.' },
+    ],
+    ctaTitle: 'Faites évaluer gratuitement votre site actuel',
+    ctaText: 'Nous vous disons honnêtement ce qui fonctionne, ce qui manque et ce qui serait mesurablement rentable.',
+  },
+};
+const c = C[locale];
+
+const starter = getPackage('website-starter');
+const business = getPackage('website-business');
+const complex = getPackage('website-complex');
+
+const schema = [
+  organization(locale),
+  webPage(locale, PATH, c.metaTitle, c.metaDesc),
+  breadcrumbs(locale, [
+    { name: t(locale, 'breadcrumb.home'), path: '/' },
+    { name: c.h1, path: PATH },
+  ]),
+  serviceWithOffer(locale, starter, PATH),
+  serviceWithOffer(locale, business, PATH),
+  faqPage(c.faq),
+];
+---
+
+<Layout locale={locale} path={PATH} title={c.metaTitle} description={c.metaDesc} schema={schema}>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">AI Websites</span>
+      <h1 style="max-width:44rem;">{c.h1}</h1>
+      <p class="prose mt-4" style="font-size:var(--fs-500);">{c.intro}</p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head"><h2>{c.pillarsTitle}</h2></div>
+      <div class="grid grid--3">
+        {c.pillars.map((f: any) => (
+          <div class="card">
+            <h3>{f.title}</h3>
+            <p class="mt-3" style="font-size:var(--fs-300);">{f.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-head"><h2>{c.pricingTitle}</h2></div>
+      <div class="grid grid--3">
+        <PricingCard pkg={starter} locale={locale} />
+        <PricingCard pkg={business} locale={locale} highlight />
+        <PricingCard pkg={complex} locale={locale} />
+      </div>
+      <p class="center muted mt-4">{t(locale, 'price.vatNote')}</p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <Faq title={c.faqTitle} items={c.faq} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container center">
+      <h2>{c.ctaTitle}</h2>
+      <p class="mt-3" style="max-width:36rem;margin-inline:auto;">{c.ctaText}</p>
+      <div class="mt-4">
+        <a class="btn btn--primary" href={`${p}/kontakt/`} data-track="request_audit">{t(locale, 'cta.contact')}</a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,92 @@
+---
+/**
+ * The Weissmann AI Method — proprietary 7-stage implementation framework.
+ * (Not claimed as patented/trademarked.)
+ */
+import type { Locale } from '../data/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+
+const STAGES: Record<Locale, { name: string; text: string }[]> = {
+  de: [
+    { name: 'Entdecken', text: 'Wir verstehen Ihr Unternehmen, Ihre Kunden und Ihre grössten Engpässe.' },
+    { name: 'Analysieren', text: 'Wir identifizieren, wo KI, Website, SEO oder Automatisierung messbar wirkt.' },
+    { name: 'Planen', text: 'Wir definieren Lösung, Umfang, Zeitplan und messbare Ziele.' },
+    { name: 'Umsetzen', text: 'Wir bauen und konfigurieren – persönlich begleitet, ohne Umwege.' },
+    { name: 'Einführen', text: 'Live-Test im Echtbetrieb, Schulung Ihres Teams, sauberer Start.' },
+    { name: 'Messen', text: 'Klare Kennzahlen statt Bauchgefühl: Anrufe, Leads, Conversions, Umsatz.' },
+    { name: 'Optimieren', text: 'Wir verbessern kontinuierlich, was nachweislich Wirkung zeigt.' },
+  ],
+  en: [
+    { name: 'Discover', text: 'We understand your business, your customers and your biggest bottlenecks.' },
+    { name: 'Analyse', text: 'We identify where AI, website, SEO or automation delivers measurable impact.' },
+    { name: 'Design', text: 'We define the solution, scope, timeline and measurable goals.' },
+    { name: 'Build', text: 'We build and configure — personally guided, no detours.' },
+    { name: 'Deploy', text: 'Live testing in real operation, team training, a clean start.' },
+    { name: 'Measure', text: 'Clear metrics instead of gut feeling: calls, leads, conversions, revenue.' },
+    { name: 'Optimize', text: 'We continuously improve what demonstrably works.' },
+  ],
+  it: [
+    { name: 'Scoprire', text: 'Comprendiamo la vostra azienda, i vostri clienti e i vostri colli di bottiglia.' },
+    { name: 'Analizzare', text: 'Identifichiamo dove AI, sito web, SEO o automazione producono un impatto misurabile.' },
+    { name: 'Progettare', text: 'Definiamo soluzione, perimetro, tempistiche e obiettivi misurabili.' },
+    { name: 'Realizzare', text: 'Costruiamo e configuriamo — con accompagnamento personale, senza deviazioni.' },
+    { name: 'Attivare', text: 'Test dal vivo in condizioni reali, formazione del team, partenza pulita.' },
+    { name: 'Misurare', text: 'Metriche chiare invece di sensazioni: chiamate, lead, conversioni, fatturato.' },
+    { name: 'Ottimizzare', text: 'Miglioriamo continuamente ciò che dimostra di funzionare.' },
+  ],
+  fr: [
+    { name: 'Découvrir', text: 'Nous comprenons votre entreprise, vos clients et vos principaux goulots d’étranglement.' },
+    { name: 'Analyser', text: 'Nous identifions où l’IA, le site web, le SEO ou l’automatisation produit un impact mesurable.' },
+    { name: 'Concevoir', text: 'Nous définissons la solution, le périmètre, le calendrier et des objectifs mesurables.' },
+    { name: 'Construire', text: 'Nous construisons et configurons — avec un accompagnement personnel, sans détours.' },
+    { name: 'Déployer', text: 'Test en conditions réelles, formation de votre équipe, démarrage propre.' },
+    { name: 'Mesurer', text: 'Des indicateurs clairs plutôt que l’intuition : appels, leads, conversions, chiffre d’affaires.' },
+    { name: 'Optimiser', text: 'Nous améliorons en continu ce qui fait ses preuves.' },
+  ],
+};
+const stages = STAGES[locale];
+---
+
+<ol class="method">
+  {stages.map((s, i) => (
+    <li class="method__stage">
+      <span class="method__num" aria-hidden="true">{i + 1}</span>
+      <div>
+        <h3>{s.name}</h3>
+        <p>{s.text}</p>
+      </div>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .method {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-4);
+  }
+  @media (min-width: 760px) {
+    .method { grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+  }
+  .method__stage {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+  .method__num {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .method__stage h3 { font-size: var(--fs-500); }
+  .method__stage p { font-size: var(--fs-300); margin-top: 0.3rem; }
+</style>

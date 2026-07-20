@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  locale="de"
+  path="/404/"
+  title="Seite nicht gefunden | Weissmann AI"
+  description="Diese Seite existiert nicht (mehr). Hier finden Sie den richtigen Weg."
+  noindex
+  availableLocales={['de']}
+>
+  <section class="section">
+    <div class="container" style="max-width:44rem;">
+      <span class="eyebrow">404</span>
+      <h1>Diese Seite gibt es nicht (mehr).</h1>
+      <p class="mt-4" style="font-size:var(--fs-500);">
+        Kein Problem – hier sind die wichtigsten Wege / here are the most useful places:
+      </p>
+      <ul class="checklist mt-3">
+        <li><a href="/">Startseite (Deutsch)</a></li>
+        <li><a href="/en/">Home (English)</a></li>
+        <li><a href="/it/">Pagina iniziale (Italiano)</a></li>
+        <li><a href="/fr/">Accueil (Français)</a></li>
+        <li><a href="/ki-telefonassistent/">KI-Telefonassistent</a></li>
+        <li><a href="/preise/">Preise</a></li>
+        <li><a href="/kontakt/">Kontakt</a></li>
+      </ul>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,89 @@
+/**
+ * Pre-build validation of the central pricing config.
+ *
+ * Fails the build on:
+ *  - forbidden stale prices (CHF 590 for the phone Starter)
+ *  - changed/unknown Stripe links (only the two verified links may appear)
+ *  - malformed Stripe URLs
+ *  - stripe CTA without a link / consult CTA with an unused link
+ *  - missing locale coverage in any localized field
+ *  - non-CHF currency
+ *
+ * The source file is TypeScript; rather than compiling it here we parse the
+ * values we need with targeted checks against the raw source plus a compiled
+ * import via Astro's own toolchain at build time. Raw-source checks are
+ * deliberately dumb and strict: they catch drift a type system cannot.
+ */
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const read = (p) => readFileSync(join(root, p), 'utf8');
+
+const errors = [];
+
+// Strip comments before scanning — the forbidden-token rules target actual
+// data values, not the documentation that warns about those tokens.
+const stripComments = (s) => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
+
+const pricingSrc = stripComments(read('src/data/pricing.ts'));
+const siteSrc = stripComments(read('src/data/site.ts'));
+const allSrc = pricingSrc + '\n' + siteSrc;
+
+// 1. Verified Stripe links — exactly these, nowhere else, never altered.
+const VERIFIED_LINKS = [
+  'https://buy.stripe.com/00w00b0V818UcT646g1sQ01', // Phone Starter CHF 350/mo
+  'https://buy.stripe.com/3cI00bgU6dVG5qEbyI1sQ02', // Phone Premium CHF 990/mo
+];
+const foundLinks = pricingSrc.match(/https:\/\/buy\.stripe\.com\/[A-Za-z0-9]+/g) ?? [];
+for (const link of foundLinks) {
+  if (!VERIFIED_LINKS.includes(link)) {
+    errors.push(`Unverified Stripe link in pricing.ts: ${link}`);
+  }
+}
+for (const link of VERIFIED_LINKS) {
+  if (!foundLinks.includes(link)) {
+    errors.push(`Verified Stripe link missing from pricing.ts: ${link}`);
+  }
+}
+
+// 2. Forbidden stale price: 590 must never appear as a price anywhere.
+if (/\b590\b/.test(allSrc)) {
+  errors.push('Stale price "590" found in config — Starter is CHF 350.');
+}
+
+// 3. Forbidden legacy address tokens and unrelated-entity names.
+const FORBIDDEN = ['Culmannstr', '8006 Z', 'Podomedics', 'CHE-324.165.596'];
+for (const token of FORBIDDEN) {
+  if (allSrc.includes(token)) {
+    errors.push(`Forbidden token "${token}" found in config sources.`);
+  }
+}
+
+// 4. Canonical address present in site.ts.
+if (!siteSrc.includes('Technoparkstrasse 6') || !siteSrc.includes("postalCode: '8005'")) {
+  errors.push('Canonical address (Technoparkstrasse 6, 8005 Zürich) missing from site.ts.');
+}
+
+// 5. Structural checks: every package block needs all four locales in
+//    localized fields, a CHF currency, and a coherent CTA/link pairing.
+const packageBlocks = pricingSrc.split(/\n  \{\n    id: '/).slice(1);
+for (const block of packageBlocks) {
+  const id = block.slice(0, block.indexOf("'"));
+  for (const loc of ['de:', 'en:', 'it:', 'fr:']) {
+    if (!block.includes(loc)) errors.push(`Package "${id}": missing locale ${loc.replace(':', '')}`);
+  }
+  if (!block.includes("currency: 'CHF'")) errors.push(`Package "${id}": currency must be CHF.`);
+  const hasLink = /stripeLink:\s*'https/.test(block);
+  const isStripeCta = /ctaType:\s*'stripe'/.test(block);
+  if (isStripeCta && !hasLink) errors.push(`Package "${id}": ctaType 'stripe' but no stripeLink.`);
+  if (!isStripeCta && hasLink) errors.push(`Package "${id}": has a stripeLink but ctaType is not 'stripe'.`);
+}
+
+if (errors.length) {
+  console.error('✖ Pricing validation failed:');
+  for (const e of errors) console.error('  - ' + e);
+  process.exit(1);
+}
+console.log(`✓ Pricing validation passed (${packageBlocks.length} packages, ${foundLinks.length} verified Stripe links).`);

@@ -1,0 +1,13 @@
+# Weissmann AI — Netlify configuration
+# Production context deploys only after explicit approval (DNS cutover from
+# the legacy Webflow site is a separate, gated step).
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# Security headers are defined in public/_headers so they ship with the
+# static output; redirects live in public/_redirects for the same reason.

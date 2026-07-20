@@ -1,0 +1,176 @@
+---
+/**
+ * Pricing page — every package, rendered from the central config, grouped by
+ * category. One-time vs monthly clearly labeled; VAT note; consultation CTA
+ * for everything without a verified Stripe link.
+ */
+import Layout from '../../layouts/Layout.astro';
+import PricingCard from '../PricingCard.astro';
+import Faq from '../Faq.astro';
+import { localePrefix, type Locale } from '../../data/site';
+import { t } from '../../i18n/ui';
+import { PACKAGES } from '../../data/pricing';
+import { organization, webPage, breadcrumbs, faqPage, allPackageServices } from '../../data/schema';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const p = localePrefix(locale);
+const PATH = '/preise/';
+
+const C: Record<Locale, any> = {
+  de: {
+    metaTitle: 'Preise | Weissmann AI – KI-Telefonassistent, Websites, SEO, GEO & Google Ads',
+    metaDesc:
+      'Transparente Preise von Weissmann AI: KI-Telefonassistent ab CHF 350/Monat, Websites ab CHF 2’490, SEO ab CHF 890/Monat, GEO ab CHF 990/Monat, Google Ads ab CHF 690/Monat.',
+    h1: 'Klare Preise. Klarer Umfang. Keine Überraschungen.',
+    intro:
+      'Jedes Paket hat einen definierten Umfang, transparente Grenzen und ein klares Ziel. Was nicht passt, besprechen wir ehrlich – bevor Sie etwas kaufen.',
+    groups: {
+      'phone-agent': 'KI-Telefonassistent',
+      website: 'Websites',
+      seo: 'SEO',
+      geo: 'GEO – Sichtbarkeit in der KI-Suche',
+      ads: 'Google Ads',
+    },
+    faqTitle: 'Häufige Fragen zu Preisen und Verträgen',
+    faq: [
+      { q: 'Sind die Preise inklusive Mehrwertsteuer?', a: 'Alle Preise verstehen sich exklusive Mehrwertsteuer.' },
+      { q: 'Gibt es versteckte Kosten?', a: 'Nein. Jedes Paket definiert Umfang und Ausschlüsse transparent. Drittanbieter-Kosten (z. B. Werbebudget bei Google Ads) sind klar gekennzeichnet und werden direkt von Ihnen bezahlt.' },
+      { q: 'Wie funktioniert die Bezahlung?', a: 'Die KI-Telefonassistent-Pakete Starter und Premium können direkt online per Stripe abgeschlossen werden. Für alle anderen Pakete starten wir mit einem kurzen Beratungsgespräch, damit der Umfang wirklich passt.' },
+      { q: 'Welche Vertragslaufzeiten gelten?', a: 'KI-Telefonassistent Starter und Premium: 12 Monate. Bei den monatlichen Marketing-Paketen besprechen wir die empfohlene Mindestlaufzeit transparent im Erstgespräch.' },
+      { q: 'Was, wenn mein Projekt nicht in ein Paket passt?', a: 'Dann erstellen wir eine individuelle Offerte auf Basis einer Umfangsanalyse – zum Beispiel für grössere Websites ab CHF 9’900.' },
+    ],
+    ctaTitle: 'Unsicher, welches Paket passt?',
+    ctaText: 'In einem kurzen Gespräch finden wir gemeinsam heraus, was für Ihr Unternehmen wirklich Wirkung zeigt.',
+  },
+  en: {
+    metaTitle: 'Pricing | Weissmann AI – AI Phone Agent, Websites, SEO, GEO & Google Ads',
+    metaDesc:
+      'Transparent pricing from Weissmann AI: AI phone agent from CHF 350/month, websites from CHF 2,490, SEO from CHF 890/month, GEO from CHF 990/month, Google Ads from CHF 690/month.',
+    h1: 'Clear prices. Clear scope. No surprises.',
+    intro:
+      'Every package has a defined scope, transparent limits and a clear goal. If something doesn’t fit, we tell you honestly — before you buy anything.',
+    groups: {
+      'phone-agent': 'AI Phone Agent',
+      website: 'Websites',
+      seo: 'SEO',
+      geo: 'GEO – AI search visibility',
+      ads: 'Google Ads',
+    },
+    faqTitle: 'Frequently asked questions about pricing and contracts',
+    faq: [
+      { q: 'Do prices include VAT?', a: 'All prices are exclusive of VAT.' },
+      { q: 'Are there hidden costs?', a: 'No. Every package defines scope and exclusions transparently. Third-party costs (such as ad budget for Google Ads) are clearly labeled and paid directly by you.' },
+      { q: 'How does payment work?', a: 'The AI Phone Agent Starter and Premium packages can be subscribed to directly online via Stripe. For all other packages we start with a short consultation so the scope truly fits.' },
+      { q: 'What contract terms apply?', a: 'AI Phone Agent Starter and Premium: 12 months. For the monthly marketing packages we discuss the recommended minimum term transparently in the initial consultation.' },
+      { q: 'What if my project doesn’t fit a package?', a: 'Then we create a custom proposal based on a scope analysis — for example for larger websites from CHF 9,900.' },
+    ],
+    ctaTitle: 'Not sure which package fits?',
+    ctaText: 'In a short conversation we’ll find out together what will really make a difference for your business.',
+  },
+  it: {
+    metaTitle: 'Prezzi | Weissmann AI – Assistente telefonico AI, siti web, SEO, GEO e Google Ads',
+    metaDesc:
+      'Prezzi trasparenti di Weissmann AI: assistente telefonico AI da CHF 350/mese, siti web da CHF 2’490, SEO da CHF 890/mese, GEO da CHF 990/mese, Google Ads da CHF 690/mese.',
+    h1: 'Prezzi chiari. Perimetro chiaro. Nessuna sorpresa.',
+    intro:
+      'Ogni pacchetto ha un perimetro definito, limiti trasparenti e un obiettivo chiaro. Se qualcosa non è adatto, ve lo diciamo onestamente — prima che acquistiate.',
+    groups: {
+      'phone-agent': 'Assistente telefonico AI',
+      website: 'Siti web',
+      seo: 'SEO',
+      geo: 'GEO – Visibilità nella ricerca AI',
+      ads: 'Google Ads',
+    },
+    faqTitle: 'Domande frequenti su prezzi e contratti',
+    faq: [
+      { q: 'I prezzi includono l’IVA?', a: 'Tutti i prezzi si intendono IVA esclusa.' },
+      { q: 'Ci sono costi nascosti?', a: 'No. Ogni pacchetto definisce perimetro ed esclusioni in modo trasparente. I costi di terzi (come il budget pubblicitario per Google Ads) sono chiaramente indicati e pagati direttamente da voi.' },
+      { q: 'Come funziona il pagamento?', a: 'I pacchetti Starter e Premium dell’assistente telefonico possono essere sottoscritti direttamente online via Stripe. Per tutti gli altri iniziamo con una breve consulenza, perché il perimetro sia davvero adatto.' },
+      { q: 'Quali durate contrattuali si applicano?', a: 'Assistente telefonico Starter e Premium: 12 mesi. Per i pacchetti marketing mensili discutiamo la durata minima raccomandata in modo trasparente nel primo colloquio.' },
+      { q: 'E se il mio progetto non rientra in un pacchetto?', a: 'Allora creiamo un’offerta personalizzata basata su un’analisi del perimetro — ad esempio per siti più grandi da CHF 9’900.' },
+    ],
+    ctaTitle: 'Non sapete quale pacchetto fa per voi?',
+    ctaText: 'In una breve conversazione scopriamo insieme cosa avrà davvero effetto per la vostra azienda.',
+  },
+  fr: {
+    metaTitle: 'Tarifs | Weissmann AI – Agent téléphonique IA, sites web, SEO, GEO et Google Ads',
+    metaDesc:
+      'Tarifs transparents de Weissmann AI : agent téléphonique IA dès CHF 350/mois, sites web dès CHF 2’490, SEO dès CHF 890/mois, GEO dès CHF 990/mois, Google Ads dès CHF 690/mois.',
+    h1: 'Des prix clairs. Un périmètre clair. Pas de surprises.',
+    intro:
+      'Chaque forfait a un périmètre défini, des limites transparentes et un objectif clair. Si quelque chose ne convient pas, nous vous le disons honnêtement — avant tout achat.',
+    groups: {
+      'phone-agent': 'Agent téléphonique IA',
+      website: 'Sites web',
+      seo: 'SEO',
+      geo: 'GEO – Visibilité dans la recherche IA',
+      ads: 'Google Ads',
+    },
+    faqTitle: 'Questions fréquentes sur les tarifs et contrats',
+    faq: [
+      { q: 'Les prix incluent-ils la TVA ?', a: 'Tous les prix s’entendent hors TVA.' },
+      { q: 'Y a-t-il des coûts cachés ?', a: 'Non. Chaque forfait définit le périmètre et les exclusions de façon transparente. Les coûts tiers (comme le budget publicitaire Google Ads) sont clairement indiqués et payés directement par vous.' },
+      { q: 'Comment fonctionne le paiement ?', a: 'Les forfaits Starter et Premium de l’agent téléphonique peuvent être souscrits directement en ligne via Stripe. Pour tous les autres, nous commençons par une courte consultation afin que le périmètre convienne vraiment.' },
+      { q: 'Quelles durées contractuelles s’appliquent ?', a: 'Agent téléphonique Starter et Premium : 12 mois. Pour les forfaits marketing mensuels, nous discutons de la durée minimale recommandée en toute transparence lors du premier entretien.' },
+      { q: 'Et si mon projet ne rentre dans aucun forfait ?', a: 'Nous créons alors une offre sur mesure basée sur une analyse du périmètre — par exemple pour les sites plus grands dès CHF 9’900.' },
+    ],
+    ctaTitle: 'Pas sûr du forfait qui convient ?',
+    ctaText: 'Lors d’un court entretien, nous déterminons ensemble ce qui aura un réel impact pour votre entreprise.',
+  },
+};
+const c = C[locale];
+
+const order: Array<keyof typeof c.groups> = ['phone-agent', 'website', 'seo', 'geo', 'ads'];
+
+const schema = [
+  organization(locale),
+  webPage(locale, PATH, c.metaTitle, c.metaDesc),
+  breadcrumbs(locale, [
+    { name: t(locale, 'breadcrumb.home'), path: '/' },
+    { name: t(locale, 'nav.pricing'), path: PATH },
+  ]),
+  allPackageServices(locale, PATH),
+  faqPage(c.faq),
+];
+---
+
+<Layout locale={locale} path={PATH} title={c.metaTitle} description={c.metaDesc} schema={schema}>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">{t(locale, 'nav.pricing')}</span>
+      <h1 style="max-width:40rem;">{c.h1}</h1>
+      <p class="prose mt-4" style="font-size:var(--fs-500);">{c.intro}</p>
+      <p class="muted mt-3">{t(locale, 'price.vatNote')}</p>
+    </div>
+  </section>
+
+  {order.map((cat, i) => (
+    <section class={`section ${i % 2 === 0 ? 'section--alt' : ''}`}>
+      <div class="container">
+        <div class="section-head"><h2>{c.groups[cat]}</h2></div>
+        <div class="grid grid--3">
+          {PACKAGES.filter((pkg) => pkg.category === cat).map((pkg) => (
+            <PricingCard pkg={pkg} locale={locale} highlight={pkg.id === 'phone-premium' || pkg.id === 'website-business'} />
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="section">
+    <div class="container">
+      <Faq title={c.faqTitle} items={c.faq} />
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container center">
+      <h2>{c.ctaTitle}</h2>
+      <p class="mt-3" style="max-width:36rem;margin-inline:auto;">{c.ctaText}</p>
+      <div class="mt-4">
+        <a class="btn btn--primary" href={`${p}/kontakt/`} data-track="book_consultation">{t(locale, 'cta.consultation')}</a>
+      </div>
+    </div>
+  </section>
+</Layout>

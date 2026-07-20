@@ -1,0 +1,217 @@
+---
+/**
+ * Contact page — Netlify Forms (honeypot spam protection), service selector,
+ * GA4 form_start/form_submit tracking, direct rails (phone/email/WhatsApp).
+ */
+import Layout from '../../layouts/Layout.astro';
+import { SITE, localePrefix, type Locale } from '../../data/site';
+import { t } from '../../i18n/ui';
+import { organization, webPage, breadcrumbs } from '../../data/schema';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const p = localePrefix(locale);
+const PATH = '/kontakt/';
+
+const C: Record<Locale, any> = {
+  de: {
+    metaTitle: 'Kontakt | Weissmann AI – Beratung für praktische KI in Zürich',
+    metaDesc:
+      'Kontaktieren Sie Weissmann AI in Zürich: kostenlose Erstberatung zu KI-Telefonassistenten, Websites, SEO, GEO und Automatisierung. Telefon, E-Mail oder WhatsApp.',
+    h1: 'Sprechen wir über Ihr Unternehmen',
+    intro:
+      'Erzählen Sie uns kurz, wo Sie stehen und was Sie erreichen möchten. Wir melden uns innerhalb eines Arbeitstags – ehrlich, konkret und ohne Verkaufsdruck.',
+    directTitle: 'Direkter Draht',
+    services: [
+      'KI-Telefonassistent',
+      'Website',
+      'SEO',
+      'GEO / KI-Suche',
+      'Google Ads',
+      'Automatisierung',
+      'KI-Beratung',
+      'Anderes',
+    ],
+    langs: ['Deutsch', 'English', 'Français', 'Italiano'],
+  },
+  en: {
+    metaTitle: 'Contact | Weissmann AI – Practical AI consulting in Zurich',
+    metaDesc:
+      'Contact Weissmann AI in Zurich: free initial consultation on AI phone agents, websites, SEO, GEO and automation. Phone, email or WhatsApp.',
+    h1: 'Let’s talk about your business',
+    intro:
+      'Tell us briefly where you stand and what you want to achieve. We’ll get back to you within one business day — honest, concrete and without sales pressure.',
+    directTitle: 'Direct line',
+    services: [
+      'AI Phone Agent',
+      'Website',
+      'SEO',
+      'GEO / AI search',
+      'Google Ads',
+      'Automation',
+      'AI Consulting',
+      'Other',
+    ],
+    langs: ['Deutsch', 'English', 'Français', 'Italiano'],
+  },
+  it: {
+    metaTitle: 'Contatto | Weissmann AI – Consulenza di AI pratica a Zurigo',
+    metaDesc:
+      'Contattate Weissmann AI a Zurigo: prima consulenza gratuita su assistenti telefonici AI, siti web, SEO, GEO e automazione. Telefono, e-mail o WhatsApp.',
+    h1: 'Parliamo della vostra azienda',
+    intro:
+      'Raccontateci brevemente a che punto siete e cosa volete raggiungere. Vi rispondiamo entro un giorno lavorativo — con onestà, concretezza e senza pressione commerciale.',
+    directTitle: 'Linea diretta',
+    services: [
+      'Assistente telefonico AI',
+      'Sito web',
+      'SEO',
+      'GEO / ricerca AI',
+      'Google Ads',
+      'Automazione',
+      'Consulenza AI',
+      'Altro',
+    ],
+    langs: ['Deutsch', 'English', 'Français', 'Italiano'],
+  },
+  fr: {
+    metaTitle: 'Contact | Weissmann AI – Conseil en IA pratique à Zurich',
+    metaDesc:
+      'Contactez Weissmann AI à Zurich : première consultation gratuite sur les agents téléphoniques IA, sites web, SEO, GEO et automatisation. Téléphone, e-mail ou WhatsApp.',
+    h1: 'Parlons de votre entreprise',
+    intro:
+      'Dites-nous brièvement où vous en êtes et ce que vous voulez atteindre. Nous vous répondons sous un jour ouvrable — honnêtement, concrètement et sans pression commerciale.',
+    directTitle: 'Ligne directe',
+    services: [
+      'Agent téléphonique IA',
+      'Site web',
+      'SEO',
+      'GEO / recherche IA',
+      'Google Ads',
+      'Automatisation',
+      'Conseil IA',
+      'Autre',
+    ],
+    langs: ['Deutsch', 'English', 'Français', 'Italiano'],
+  },
+};
+const c = C[locale];
+
+const schema = [
+  organization(locale),
+  webPage(locale, PATH, c.metaTitle, c.metaDesc),
+  breadcrumbs(locale, [
+    { name: t(locale, 'breadcrumb.home'), path: '/' },
+    { name: t(locale, 'nav.contact'), path: PATH },
+  ]),
+];
+---
+
+<Layout locale={locale} path={PATH} title={c.metaTitle} description={c.metaDesc} schema={schema}>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">{t(locale, 'nav.contact')}</span>
+      <h1 style="max-width:40rem;">{c.h1}</h1>
+      <p class="prose mt-4" style="font-size:var(--fs-500);">{c.intro}</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="grid grid--2" style="align-items:start;">
+        <form
+          class="card card--raised"
+          name="kontakt"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action={`${p}/danke/`}
+          data-contact-form
+        >
+          <input type="hidden" name="form-name" value="kontakt" />
+          <input type="hidden" name="locale" value={locale} />
+          <p hidden aria-hidden="true">
+            <label>Bot field<input name="bot-field" /></label>
+          </p>
+
+          <div class="field">
+            <label for="cf-name">{t(locale, 'form.name')} *</label>
+            <input id="cf-name" name="name" type="text" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="cf-email">{t(locale, 'form.email')} *</label>
+            <input id="cf-email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="cf-company">{t(locale, 'form.company')} *</label>
+            <input id="cf-company" name="company" type="text" required autocomplete="organization" />
+          </div>
+          <div class="field">
+            <label for="cf-phone">{t(locale, 'form.phone')}</label>
+            <input id="cf-phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+          <div class="field">
+            <label for="cf-service">{t(locale, 'form.service')} *</label>
+            <select id="cf-service" name="service" required>
+              <option value="" disabled selected>{t(locale, 'form.select')}</option>
+              {c.services.map((s: string) => <option value={s}>{s}</option>)}
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-website">{t(locale, 'form.website')}</label>
+            <input id="cf-website" name="website" type="url" placeholder="https://" />
+          </div>
+          <div class="field">
+            <label for="cf-language">{t(locale, 'form.language')}</label>
+            <select id="cf-language" name="preferred_language">
+              {c.langs.map((l: string) => <option value={l}>{l}</option>)}
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-message">{t(locale, 'form.challenge')}</label>
+            <textarea id="cf-message" name="message" rows="5" maxlength="5000"></textarea>
+          </div>
+          <div class="field field--consent">
+            <input id="cf-consent" name="consent" type="checkbox" required />
+            <label for="cf-consent">{t(locale, 'form.consent')}</label>
+          </div>
+          <button class="btn btn--primary" type="submit">{t(locale, 'form.submit')}</button>
+        </form>
+
+        <div>
+          <div class="card">
+            <h2 style="font-size:var(--fs-600);">{c.directTitle}</h2>
+            <ul class="checklist">
+              <li><a href={`tel:${SITE.phone}`} data-track="phone_click">{SITE.phoneDisplay}</a></li>
+              <li><a href={`mailto:${SITE.email}`} data-track="email_click">{SITE.email}</a></li>
+              <li><a href={SITE.whatsapp} rel="noopener" target="_blank" data-track="whatsapp_click">WhatsApp</a></li>
+            </ul>
+            <address class="mt-4" style="font-style:normal;color:var(--ink-soft);">
+              <strong>Weissmann AI</strong><br />
+              {SITE.address.street}<br />
+              {SITE.address.postalCode} {SITE.address.city}<br />
+              {SITE.address.country[locale]}
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  (function () {
+    var form = document.querySelector('[data-contact-form]');
+    if (!form) return;
+    var started = false;
+    form.addEventListener('input', function () {
+      if (started) return;
+      started = true;
+      if (window.wmEvent) window.wmEvent('form_start', { form: 'kontakt' });
+    });
+    form.addEventListener('submit', function () {
+      if (window.wmEvent) window.wmEvent('form_submit', { form: 'kontakt' });
+      if (window.wmEvent) window.wmEvent('generate_lead', { form: 'kontakt' });
+    });
+  })();
+</script>

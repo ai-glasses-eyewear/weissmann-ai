@@ -1,0 +1,205 @@
+---
+/**
+ * Legal pages (Impressum / Datenschutz / AGB).
+ *
+ * - Canonical NAP from SITE config (Technoparkstrasse 6, 8005 Zürich).
+ * - Legal form / UID are NOT confirmed → a clearly visible placeholder is
+ *   rendered instead of invented data.
+ * - Every page carries a "pending professional legal review" notice; pages
+ *   are noindex until the business confirms final texts.
+ */
+import Layout from '../../layouts/Layout.astro';
+import { SITE, localePrefix, type Locale } from '../../data/site';
+import { t } from '../../i18n/ui';
+
+type Kind = 'impressum' | 'datenschutz' | 'agb';
+interface Props { locale: Locale; kind: Kind }
+const { locale, kind } = Astro.props;
+const p = localePrefix(locale);
+const PATH = `/${kind}/`;
+
+const REVIEW_NOTICE: Record<Locale, string> = {
+  de: 'Hinweis: Dieser Text ist ein strukturierter Entwurf und wird derzeit rechtlich geprüft. Massgeblich ist die finale, freigegebene Fassung.',
+  en: 'Note: This text is a structured draft currently undergoing professional legal review. The final approved version is authoritative.',
+  it: 'Nota: questo testo è una bozza strutturata attualmente in fase di revisione legale professionale. Fa fede la versione finale approvata.',
+  fr: 'Remarque : ce texte est un projet structuré en cours de révision juridique professionnelle. La version finale approuvée fait foi.',
+};
+
+const ENTITY_PENDING: Record<Locale, string> = {
+  de: 'Rechtsform und Handelsregister-Angaben: werden nach rechtlicher Bestätigung ergänzt.',
+  en: 'Legal form and commercial-register details: to be added after legal confirmation.',
+  it: 'Forma giuridica e dati del registro di commercio: da aggiungere dopo la conferma legale.',
+  fr: 'Forme juridique et informations du registre du commerce : à compléter après confirmation juridique.',
+};
+
+const TITLES: Record<Kind, Record<Locale, { title: string; desc: string; h1: string }>> = {
+  impressum: {
+    de: { title: 'Impressum | Weissmann AI', desc: 'Impressum von Weissmann AI, Technoparkstrasse 6, 8005 Zürich.', h1: 'Impressum' },
+    en: { title: 'Legal notice | Weissmann AI', desc: 'Legal notice of Weissmann AI, Technoparkstrasse 6, 8005 Zurich.', h1: 'Legal notice' },
+    it: { title: 'Impressum | Weissmann AI', desc: 'Impressum di Weissmann AI, Technoparkstrasse 6, 8005 Zurigo.', h1: 'Impressum' },
+    fr: { title: 'Mentions légales | Weissmann AI', desc: 'Mentions légales de Weissmann AI, Technoparkstrasse 6, 8005 Zurich.', h1: 'Mentions légales' },
+  },
+  datenschutz: {
+    de: { title: 'Datenschutzerklärung | Weissmann AI', desc: 'Datenschutzerklärung von Weissmann AI: welche Daten wir verarbeiten, wofür und mit welchen Dienstleistern.', h1: 'Datenschutzerklärung' },
+    en: { title: 'Privacy policy | Weissmann AI', desc: 'Privacy policy of Weissmann AI: which data we process, for what purpose and with which providers.', h1: 'Privacy policy' },
+    it: { title: 'Informativa sulla privacy | Weissmann AI', desc: 'Informativa sulla privacy di Weissmann AI: quali dati trattiamo, per quali scopi e con quali fornitori.', h1: 'Informativa sulla privacy' },
+    fr: { title: 'Déclaration de confidentialité | Weissmann AI', desc: 'Déclaration de confidentialité de Weissmann AI : quelles données nous traitons, pourquoi et avec quels prestataires.', h1: 'Déclaration de confidentialité' },
+  },
+  agb: {
+    de: { title: 'Allgemeine Geschäftsbedingungen | Weissmann AI', desc: 'AGB von Weissmann AI für KI-Telefonassistenten, Websites und digitale Dienstleistungen.', h1: 'Allgemeine Geschäftsbedingungen (AGB)' },
+    en: { title: 'Terms & Conditions | Weissmann AI', desc: 'Terms and conditions of Weissmann AI for AI phone agents, websites and digital services.', h1: 'Terms & Conditions' },
+    it: { title: 'Condizioni generali | Weissmann AI', desc: 'Condizioni generali di Weissmann AI per assistenti telefonici AI, siti web e servizi digitali.', h1: 'Condizioni generali (CG)' },
+    fr: { title: 'Conditions générales | Weissmann AI', desc: 'Conditions générales de Weissmann AI pour agents téléphoniques IA, sites web et services numériques.', h1: 'Conditions générales (CG)' },
+  },
+};
+
+const meta = TITLES[kind][locale];
+---
+
+<Layout locale={locale} path={PATH} title={meta.title} description={meta.desc} noindex>
+  <section class="section">
+    <div class="container prose">
+      <h1>{meta.h1}</h1>
+      <p class="card mt-4" style="background:var(--accent-soft);border-color:var(--accent);font-size:var(--fs-300);">
+        {REVIEW_NOTICE[locale]}
+      </p>
+
+      {kind === 'impressum' && (
+        <>
+          <h2>{locale === 'de' ? 'Verantwortlich für diese Website' : locale === 'en' ? 'Responsible for this website' : locale === 'it' ? 'Responsabile di questo sito' : 'Responsable de ce site'}</h2>
+          <p>
+            <strong>Weissmann AI</strong><br />
+            {SITE.address.street}<br />
+            {SITE.address.postalCode} {SITE.address.city}<br />
+            {SITE.address.country[locale]}
+          </p>
+          <p>
+            {locale === 'de' ? 'Telefon' : locale === 'fr' ? 'Téléphone' : locale === 'it' ? 'Telefono' : 'Phone'}: <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a><br />
+            E-Mail: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          </p>
+          <p>
+            {locale === 'de' ? 'Vertretungsberechtigte Person' : locale === 'en' ? 'Authorized representative' : locale === 'it' ? 'Persona autorizzata a rappresentare' : 'Personne autorisée à représenter'}: Giovanna Carpi
+          </p>
+          <p class="muted">{ENTITY_PENDING[locale]}</p>
+        </>
+      )}
+
+      {kind === 'datenschutz' && (
+        <>
+          <h2>{locale === 'de' ? 'Verantwortliche Stelle' : locale === 'en' ? 'Controller' : locale === 'it' ? 'Titolare del trattamento' : 'Responsable du traitement'}</h2>
+          <p>
+            Weissmann AI, {SITE.address.street}, {SITE.address.postalCode} {SITE.address.city}, {SITE.address.country[locale]} ·{' '}
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          </p>
+
+          <h2>{locale === 'de' ? 'Welche Daten wir verarbeiten' : locale === 'en' ? 'Which data we process' : locale === 'it' ? 'Quali dati trattiamo' : 'Quelles données nous traitons'}</h2>
+          <ul>
+            <li>
+              {locale === 'de'
+                ? 'Kontaktformular (Netlify Forms): Name, E-Mail, Firma, Telefonnummer und Ihre Nachricht – zur Bearbeitung Ihrer Anfrage.'
+                : locale === 'en'
+                ? 'Contact form (Netlify Forms): name, email, company, phone number and your message — to process your enquiry.'
+                : locale === 'it'
+                ? 'Modulo di contatto (Netlify Forms): nome, e-mail, azienda, telefono e il vostro messaggio — per elaborare la vostra richiesta.'
+                : 'Formulaire de contact (Netlify Forms) : nom, e-mail, entreprise, téléphone et votre message — pour traiter votre demande.'}
+            </li>
+            <li>
+              {locale === 'de'
+                ? 'Webanalyse (Google Analytics 4): anonymisierte Nutzungsstatistiken. Die Messung startet erst nach Ihrer ausdrücklichen Einwilligung über den Consent-Banner (Google Consent Mode v2); ohne Einwilligung werden keine Analyse-Cookies gesetzt.'
+                : locale === 'en'
+                ? 'Web analytics (Google Analytics 4): anonymized usage statistics. Measurement only starts after your explicit consent via the consent banner (Google Consent Mode v2); without consent, no analytics cookies are set.'
+                : locale === 'it'
+                ? 'Analisi web (Google Analytics 4): statistiche d’uso anonimizzate. La misurazione inizia solo dopo il vostro consenso esplicito tramite il banner (Google Consent Mode v2); senza consenso non vengono impostati cookie di analisi.'
+                : 'Analyse web (Google Analytics 4) : statistiques d’utilisation anonymisées. La mesure ne démarre qu’après votre consentement explicite via la bannière (Google Consent Mode v2) ; sans consentement, aucun cookie d’analyse n’est déposé.'}
+            </li>
+            <li>
+              {locale === 'de'
+                ? 'Zahlungsabwicklung (Stripe): Bei Online-Abschlüssen werden Zahlungsdaten direkt durch Stripe verarbeitet; wir erhalten keine vollständigen Kartendaten.'
+                : locale === 'en'
+                ? 'Payment processing (Stripe): for online subscriptions, payment data is processed directly by Stripe; we never receive full card details.'
+                : locale === 'it'
+                ? 'Pagamenti (Stripe): per le sottoscrizioni online, i dati di pagamento sono trattati direttamente da Stripe; non riceviamo mai i dati completi della carta.'
+                : 'Paiements (Stripe) : pour les souscriptions en ligne, les données de paiement sont traitées directement par Stripe ; nous ne recevons jamais les données complètes de carte.'}
+            </li>
+            <li>
+              {locale === 'de'
+                ? 'Hosting (Netlify): Beim Aufruf der Website fallen technische Zugriffsdaten (z. B. IP-Adresse) in Server-Logs an.'
+                : locale === 'en'
+                ? 'Hosting (Netlify): when you visit the website, technical access data (e.g. IP address) is recorded in server logs.'
+                : locale === 'it'
+                ? 'Hosting (Netlify): visitando il sito, dati tecnici di accesso (ad es. indirizzo IP) vengono registrati nei log del server.'
+                : 'Hébergement (Netlify) : lors de la visite du site, des données techniques d’accès (p. ex. adresse IP) sont enregistrées dans les journaux du serveur.'}
+            </li>
+          </ul>
+
+          <h2>{locale === 'de' ? 'Ihre Rechte' : locale === 'en' ? 'Your rights' : locale === 'it' ? 'I vostri diritti' : 'Vos droits'}</h2>
+          <p>
+            {locale === 'de'
+              ? 'Sie haben nach DSG und – soweit anwendbar – DSGVO das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Personendaten. Wenden Sie sich dazu an die oben genannte Adresse.'
+              : locale === 'en'
+              ? 'Under the Swiss FADP and — where applicable — the GDPR, you have the right to access, rectify, delete and restrict the processing of your personal data. Please contact the address above.'
+              : locale === 'it'
+              ? 'Ai sensi della LPD svizzera e — ove applicabile — del GDPR, avete diritto di accesso, rettifica, cancellazione e limitazione del trattamento dei vostri dati personali. Contattate l’indirizzo sopra indicato.'
+              : 'En vertu de la LPD suisse et — le cas échéant — du RGPD, vous disposez de droits d’accès, de rectification, de suppression et de limitation du traitement de vos données personnelles. Contactez l’adresse ci-dessus.'}
+          </p>
+        </>
+      )}
+
+      {kind === 'agb' && (
+        <>
+          <h2>{locale === 'de' ? 'Geltungsbereich' : locale === 'en' ? 'Scope' : locale === 'it' ? 'Ambito di applicazione' : 'Champ d’application'}</h2>
+          <p>
+            {locale === 'de'
+              ? 'Diese AGB gelten für alle Dienstleistungen von Weissmann AI: KI-Telefonassistenten, Websites, SEO-, GEO- und Google-Ads-Programme sowie Automatisierungs- und Beratungsleistungen.'
+              : locale === 'en'
+              ? 'These terms apply to all services of Weissmann AI: AI phone agents, websites, SEO, GEO and Google Ads programs, and automation and consulting services.'
+              : locale === 'it'
+              ? 'Le presenti condizioni si applicano a tutti i servizi di Weissmann AI: assistenti telefonici AI, siti web, programmi SEO, GEO e Google Ads, nonché servizi di automazione e consulenza.'
+              : 'Les présentes conditions s’appliquent à tous les services de Weissmann AI : agents téléphoniques IA, sites web, programmes SEO, GEO et Google Ads, ainsi que services d’automatisation et de conseil.'}
+          </p>
+          <h2>{locale === 'de' ? 'Preise und Vertragslaufzeiten' : locale === 'en' ? 'Prices and contract terms' : locale === 'it' ? 'Prezzi e durata contrattuale' : 'Prix et durées contractuelles'}</h2>
+          <ul>
+            <li>
+              {locale === 'de'
+                ? 'Alle Preise verstehen sich in Schweizer Franken, exklusive Mehrwertsteuer.'
+                : locale === 'en'
+                ? 'All prices are in Swiss francs, exclusive of VAT.'
+                : locale === 'it'
+                ? 'Tutti i prezzi si intendono in franchi svizzeri, IVA esclusa.'
+                : 'Tous les prix s’entendent en francs suisses, hors TVA.'}
+            </li>
+            <li>
+              {locale === 'de'
+                ? 'KI-Telefonassistent Starter und Premium: Mindestlaufzeit 12 Monate, keine Setup-Gebühr.'
+                : locale === 'en'
+                ? 'AI Phone Agent Starter and Premium: minimum term 12 months, no setup fee.'
+                : locale === 'it'
+                ? 'Assistente telefonico Starter e Premium: durata minima 12 mesi, nessun costo di attivazione.'
+                : 'Agent téléphonique Starter et Premium : durée minimale de 12 mois, sans frais d’installation.'}
+            </li>
+            <li>
+              {locale === 'de'
+                ? 'Website-Projekte: Umfang, Korrekturrunden und Ausschlüsse gemäss Paketbeschreibung und schriftlicher Auftragsbestätigung.'
+                : locale === 'en'
+                ? 'Website projects: scope, revision rounds and exclusions per package description and written order confirmation.'
+                : locale === 'it'
+                ? 'Progetti di siti web: perimetro, cicli di revisione ed esclusioni secondo la descrizione del pacchetto e la conferma d’ordine scritta.'
+                : 'Projets de sites web : périmètre, cycles de révision et exclusions selon la description du forfait et la confirmation de commande écrite.'}
+            </li>
+          </ul>
+          <h2>{locale === 'de' ? 'Anwendbares Recht' : locale === 'en' ? 'Governing law' : locale === 'it' ? 'Diritto applicabile' : 'Droit applicable'}</h2>
+          <p>
+            {locale === 'de'
+              ? 'Es gilt Schweizer Recht. Gerichtsstand ist der Sitz von Weissmann AI.'
+              : locale === 'en'
+              ? 'Swiss law applies. The place of jurisdiction is the registered seat of Weissmann AI.'
+              : locale === 'it'
+              ? 'Si applica il diritto svizzero. Il foro competente è la sede di Weissmann AI.'
+              : 'Le droit suisse s’applique. Le for juridique est le siège de Weissmann AI.'}
+          </p>
+          <p class="muted">{ENTITY_PENDING[locale]}</p>
+        </>
+      )}
+    </div>
+  </section>
+</Layout>

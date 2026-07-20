@@ -1,0 +1,164 @@
+---
+/**
+ * Site header: logo, primary nav, language switcher, demo CTA.
+ * Mobile: CSS-only disclosure via <details>, no JS dependency.
+ */
+import { LOCALES, localePrefix, type Locale } from '../data/site';
+import { t } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  path: string;
+  availableLocales?: Locale[];
+}
+const { locale, path, availableLocales = [...LOCALES] } = Astro.props;
+const p = localePrefix(locale);
+
+const nav = [
+  { key: 'nav.solutions', href: `${p}/ki-telefonassistent/` },
+  { key: 'nav.pricing', href: `${p}/preise/` },
+  { key: 'nav.about', href: `${p}/ueber-uns/` },
+  { key: 'nav.contact', href: `${p}/kontakt/` },
+];
+
+const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'FR' };
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href={`${p}/`} aria-label="Weissmann AI">
+      <span class="site-header__logo" aria-hidden="true">W</span>
+      <span>Weissmann <strong>AI</strong></span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Hauptnavigation">
+      {nav.map((item) => (
+        <a href={item.href} aria-current={path === item.href.replace(p, '') ? 'page' : undefined}>
+          {t(locale, item.key)}
+        </a>
+      ))}
+    </nav>
+
+    <div class="site-header__actions">
+      <nav class="lang-switch" aria-label={t(locale, 'lang.switch')}>
+        {LOCALES.map((l) => {
+          const target = availableLocales.includes(l) ? `${localePrefix(l)}${path}` : `${localePrefix(l)}/`;
+          return l === locale
+            ? <span aria-current="true">{langLabel[l]}</span>
+            : <a href={target} hreflang={l}>{langLabel[l]}</a>;
+        })}
+      </nav>
+      <a class="btn btn--primary site-header__cta" href={`${p}/kontakt/`} data-track="request_demo">
+        {t(locale, 'nav.cta')}
+      </a>
+    </div>
+
+    <details class="site-header__mobile">
+      <summary aria-label={t(locale, 'nav.menu')}>
+        <span class="site-header__burger" aria-hidden="true"></span>
+      </summary>
+      <div class="site-header__mobile-panel">
+        {nav.map((item) => (
+          <a href={item.href}>{t(locale, item.key)}</a>
+        ))}
+        <a class="btn btn--primary" href={`${p}/kontakt/`} data-track="request_demo">{t(locale, 'nav.cta')}</a>
+        <div class="lang-switch lang-switch--mobile">
+          {LOCALES.map((l) =>
+            l === locale
+              ? <span aria-current="true">{langLabel[l]}</span>
+              : <a href={availableLocales.includes(l) ? `${localePrefix(l)}${path}` : `${localePrefix(l)}/`} hreflang={l}>{langLabel[l]}</a>
+          )}
+        </div>
+      </div>
+    </details>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgb(255 255 255 / 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    min-height: 4.25rem;
+  }
+  .site-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--ink);
+    font-size: var(--fs-500);
+    text-decoration: none;
+  }
+  .site-header__brand:hover { text-decoration: none; }
+  .site-header__logo {
+    display: grid;
+    place-items: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 8px;
+    background: var(--ink);
+    color: #fff;
+    font-weight: 700;
+  }
+  .site-header__nav {
+    display: none;
+    gap: var(--space-4);
+    margin-inline: auto;
+  }
+  .site-header__nav a { color: var(--ink-soft); font-weight: 500; }
+  .site-header__nav a:hover { color: var(--ink); text-decoration: none; }
+  .site-header__nav a[aria-current='page'] { color: var(--accent); }
+  .site-header__actions { display: none; align-items: center; gap: var(--space-3); margin-left: auto; }
+  .lang-switch { display: flex; gap: 0.5rem; font-size: var(--fs-300); }
+  .lang-switch a { color: var(--ink-mute); }
+  .lang-switch span[aria-current] { color: var(--ink); font-weight: 700; }
+
+  .site-header__mobile { margin-left: auto; }
+  .site-header__mobile summary {
+    list-style: none;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+  }
+  .site-header__mobile summary::-webkit-details-marker { display: none; }
+  .site-header__burger,
+  .site-header__burger::before,
+  .site-header__burger::after {
+    display: block;
+    width: 1.15rem;
+    height: 2px;
+    background: var(--ink);
+    position: relative;
+  }
+  .site-header__burger::before, .site-header__burger::after { content: ""; position: absolute; }
+  .site-header__burger::before { top: -6px; }
+  .site-header__burger::after { top: 6px; }
+  .site-header__mobile-panel {
+    position: absolute;
+    left: 0; right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+  .site-header__mobile-panel a { color: var(--ink); font-weight: 600; }
+
+  @media (min-width: 920px) {
+    .site-header__nav, .site-header__actions { display: flex; }
+    .site-header__mobile { display: none; }
+  }
+</style>

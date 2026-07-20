@@ -1,0 +1,60 @@
+# ============================================================
+# Weissmann AI — URL migration map (Webflow -> new architecture)
+# Dispositions per plan: Rebuild (301 to new slug), Consolidate
+# (301 to nearest relevant page), Remove (410).
+# Never redirect unrelated removed pages to the homepage.
+# ============================================================
+
+# --- Rebuilt pages with renamed slugs (301) ---
+/funktionen                                   /ki-telefonassistent/            301!
+/en/funktionen                                /en/ki-telefonassistent/         301!
+/uber-uns                                     /ueber-uns/                      301!
+/en/uber-uns                                  /en/ueber-uns/                   301!
+/allgemeine-geschaftsbedingungen-agb          /agb/                            301!
+/en/allgemeine-geschaftsbedingungen-agb       /en/agb/                         301!
+
+# --- Industry pages (consolidated into the phone-agent page until the
+#     dedicated industry pages ship in Phase 3; the -kl- typo slugs die here) ---
+/ki-telefonassistent-kl-fur-restaurants        /ki-telefonassistent/           301!
+/en/ki-telefonassistent-kl-fur-restaurants     /en/ki-telefonassistent/        301!
+/ki-telefonassistent-kl-fur-coiffeure-beauty   /ki-telefonassistent/           301!
+/en/ki-telefonassistent-kl-fur-coiffeure-beauty /en/ki-telefonassistent/       301!
+/ki-telefonassistent-fur-retail-stores         /ki-telefonassistent/           301!
+/en/ki-telefonassistent-fur-retail-stores      /en/ki-telefonassistent/        301!
+/ki-telefonassistent-fur-versicherungen        /ki-telefonassistent/           301!
+/en/ki-telefonassistent-fur-versicherungen     /en/ki-telefonassistent/        301!
+/ki-telefonassistent-fur-medizin-gesundheitswesen     /ki-telefonassistent/    301!
+/en/ki-telefonassistent-fur-medizin-gesundheitswesen  /en/ki-telefonassistent/ 301!
+/ai-telefonassistent-restaurant-schweiz        /ki-telefonassistent/           301!
+/en/ai-telefonassistent-restaurant-schweiz     /en/ki-telefonassistent/        301!
+/vergleich-ai-telefonassistent                 /ki-telefonassistent/           301!
+/en/vergleich-ai-telefonassistent              /en/ki-telefonassistent/        301!
+
+# --- Pricing plan detail pages -> consolidated pricing page (301) ---
+/preise-plan/starter-plan                      /preise/                        301!
+/preise-plan/premium-plan                      /preise/                        301!
+/preise-plan/enterprise-plan                   /preise/                        301!
+/en/preise-plan/starter-plan                   /en/preise/                     301!
+/en/preise-plan/premium-plan                   /en/preise/                     301!
+/en/preise-plan/enterprise-plan                /en/preise/                     301!
+
+# --- Dormant Webflow-template commerce pages: removed for good (410) ---
+/checkout                                      /404.html                       410!
+/en/checkout                                   /404.html                       410!
+/paypal-checkout                               /404.html                       410!
+/en/paypal-checkout                            /404.html                       410!
+/order-confirmation                            /404.html                       410!
+/en/order-confirmation                         /404.html                       410!
+/category/starter                              /404.html                       410!
+/category/professional                         /404.html                       410!
+/category/premium                              /404.html                       410!
+
+# --- IndexNow key: HTML page replaced by the standard plain-text key file ---
+/indexnow-key                                  /x8jL0gGbhLu81B0L7pPg7afOBQ0CijOk.txt  301!
+/en/indexnow-key                               /x8jL0gGbhLu81B0L7pPg7afOBQ0CijOk.txt  301!
+
+# --- Footer blog links were 404 on the old site; route to the future
+#     knowledge hub location once it ships (Phase 4). Until then: about page
+#     carries the closest context (positioning/method). ---
+/blog                                          /ueber-uns/                     302
+/en/blog                                       /en/ueber-uns/                  302

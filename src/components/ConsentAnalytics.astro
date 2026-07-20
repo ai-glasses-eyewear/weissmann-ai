@@ -1,0 +1,59 @@
+---
+/**
+ * GA4 with Google Consent Mode v2.
+ *
+ * - Consent defaults to DENIED for analytics/ads storage before any tag loads.
+ * - gtag.js loads immediately but sends no identifying data until the visitor
+ *   accepts via the consent banner (cookieless pings only, per Consent Mode).
+ * - The choice is stored in localStorage ('wm-consent': 'granted'|'denied')
+ *   and re-applied on every page view. The banner only renders when no choice
+ *   has been made yet.
+ * - GA4 property G-3L30SCGWGT is the preserved existing property and is
+ *   loaded exactly once, here and nowhere else.
+ */
+import { SITE } from '../data/site';
+const GA = SITE.tracking.ga4;
+---
+
+<script is:inline define:vars={{ GA }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+  });
+
+  var stored = null;
+  try { stored = localStorage.getItem('wm-consent'); } catch (e) {}
+  if (stored === 'granted') {
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+  }
+
+  gtag('js', new Date());
+  gtag('config', GA, { anonymize_ip: true });
+
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA;
+  document.head.appendChild(s);
+
+  // Shared event helper used by CTA components.
+  window.wmEvent = function (name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  };
+
+  // Delegated tracking for annotated links (works for all locales/pages).
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[data-track]') : null;
+    if (!a) return;
+    window.wmEvent(a.getAttribute('data-track'), {
+      link_url: a.getAttribute('href') || '',
+      page_path: location.pathname,
+      transport_type: 'beacon',
+    });
+  });
+</script>

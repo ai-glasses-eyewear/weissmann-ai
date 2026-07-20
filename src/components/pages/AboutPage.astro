@@ -1,0 +1,180 @@
+---
+/**
+ * About page — mission, method, team. Only verified facts: founded in Zürich,
+ * real founders, real links. No invented awards, client counts or credentials.
+ */
+import Layout from '../../layouts/Layout.astro';
+import MethodTimeline from '../MethodTimeline.astro';
+import { SITE, localePrefix, type Locale } from '../../data/site';
+import { t } from '../../i18n/ui';
+import { organization, webPage, breadcrumbs } from '../../data/schema';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const p = localePrefix(locale);
+const PATH = '/ueber-uns/';
+
+const C: Record<Locale, any> = {
+  de: {
+    metaTitle: 'Über uns | Weissmann AI – Praktische KI aus Zürich',
+    metaDesc:
+      'Weissmann AI wurde in Zürich gegründet und hilft Unternehmen, mit praktischer KI zu wachsen: persönlich begleitet, ehrlich beraten, messbar umgesetzt.',
+    h1: 'Praktische KI. Persönlich umgesetzt.',
+    mission:
+      'Weissmann AI wurde in Zürich gegründet – aus der Überzeugung, dass künstliche Intelligenz für Unternehmen kein Buzzword sein darf, sondern messbare Ergebnisse liefern muss. Wir verkaufen keine isolierten Tools: Wir implementieren Systeme, die Kunden gewinnen, Anfragen beantworten und Abläufe automatisieren – und wir bleiben persönlich an Ihrer Seite, bis es nachweislich funktioniert.',
+    philosophyTitle: 'Woran wir glauben',
+    philosophy: [
+      { title: 'Nutzen vor Technologie', text: 'Wir beginnen beim Geschäftsproblem, nicht beim Tool. Was keinen messbaren Nutzen bringt, empfehlen wir nicht.' },
+      { title: 'Ehrlichkeit vor Hype', text: 'Wir sagen auch, was KI (noch) nicht kann – und garantieren nichts, was niemand garantieren kann.' },
+      { title: 'Begleitung statt Selbstbedienung', text: 'Einrichtung vor Ort, Live-Tests im Echtbetrieb, laufende Betreuung – kein anonymes Portal.' },
+      { title: 'Schweizer Massstab', text: 'Mehrsprachig (DE/EN/FR/IT), präzise und mit Fokus auf Schweizer KMU.' },
+    ],
+    methodTitle: 'Die Weissmann AI Methode',
+    teamTitle: 'Die Menschen dahinter',
+    team: [
+      { name: 'Giovanna Carpi', role: 'Gründerin & CEO', text: 'Verantwortet Strategie, Implementierung und die Qualität jedes Projekts.', linkedin: 'https://www.linkedin.com/in/giovanna-carpi-85a520155/' },
+      { name: 'Nicola Mössner', role: 'Mitgründer, Strategie & Öffentlichkeitsarbeit', text: 'Verantwortet Partnerschaften, Kommunikation und Marktaufbau.' },
+    ],
+    ctaTitle: 'Lernen Sie uns kennen',
+    ctaText: 'Ein kurzes Gespräch sagt mehr als jede Website. Wir freuen uns auf Ihre Herausforderung.',
+  },
+  en: {
+    metaTitle: 'About us | Weissmann AI – Practical AI from Zurich',
+    metaDesc:
+      'Weissmann AI was founded in Zurich and helps businesses grow through practical AI: personally guided, honestly advised, measurably implemented.',
+    h1: 'Practical AI. Personally implemented.',
+    mission:
+      'Weissmann AI was founded in Zurich — out of the conviction that artificial intelligence for businesses must not be a buzzword, but deliver measurable results. We don’t sell isolated tools: we implement systems that win customers, answer enquiries and automate operations — and we stay personally at your side until it demonstrably works.',
+    philosophyTitle: 'What we believe in',
+    philosophy: [
+      { title: 'Value before technology', text: 'We start with the business problem, not the tool. What doesn’t bring measurable value, we don’t recommend.' },
+      { title: 'Honesty before hype', text: 'We also tell you what AI can’t do (yet) — and guarantee nothing that nobody can guarantee.' },
+      { title: 'Guidance, not self-service', text: 'On-site setup, live testing in real operation, ongoing support — not an anonymous portal.' },
+      { title: 'Swiss standards', text: 'Multilingual (DE/EN/FR/IT), precise, focused on Swiss SMEs.' },
+    ],
+    methodTitle: 'The Weissmann AI Method',
+    teamTitle: 'The people behind it',
+    team: [
+      { name: 'Giovanna Carpi', role: 'Founder & CEO', text: 'Responsible for strategy, implementation and the quality of every project.', linkedin: 'https://www.linkedin.com/in/giovanna-carpi-85a520155/' },
+      { name: 'Nicola Mössner', role: 'Co-founder, Strategy & Public Relations', text: 'Responsible for partnerships, communication and market development.' },
+    ],
+    ctaTitle: 'Get to know us',
+    ctaText: 'A short conversation says more than any website. We look forward to your challenge.',
+  },
+  it: {
+    metaTitle: 'Chi siamo | Weissmann AI – AI pratica da Zurigo',
+    metaDesc:
+      'Weissmann AI è stata fondata a Zurigo e aiuta le aziende a crescere con l’AI pratica: accompagnamento personale, consulenza onesta, implementazione misurabile.',
+    h1: 'AI pratica. Implementata personalmente.',
+    mission:
+      'Weissmann AI è stata fondata a Zurigo — con la convinzione che l’intelligenza artificiale per le aziende non debba essere uno slogan, ma produrre risultati misurabili. Non vendiamo strumenti isolati: implementiamo sistemi che conquistano clienti, rispondono alle richieste e automatizzano i processi — e restiamo personalmente al vostro fianco finché funziona in modo dimostrabile.',
+    philosophyTitle: 'In cosa crediamo',
+    philosophy: [
+      { title: 'Valore prima della tecnologia', text: 'Partiamo dal problema aziendale, non dallo strumento. Ciò che non porta valore misurabile, non lo raccomandiamo.' },
+      { title: 'Onestà prima dell’hype', text: 'Vi diciamo anche cosa l’AI non può (ancora) fare — e non garantiamo nulla che nessuno possa garantire.' },
+      { title: 'Accompagnamento, non self-service', text: 'Configurazione in loco, test dal vivo, assistenza continua — non un portale anonimo.' },
+      { title: 'Standard svizzeri', text: 'Multilingue (DE/EN/FR/IT), precisi e concentrati sulle PMI svizzere.' },
+    ],
+    methodTitle: 'Il Metodo Weissmann AI',
+    teamTitle: 'Le persone dietro il progetto',
+    team: [
+      { name: 'Giovanna Carpi', role: 'Fondatrice e CEO', text: 'Responsabile di strategia, implementazione e qualità di ogni progetto.', linkedin: 'https://www.linkedin.com/in/giovanna-carpi-85a520155/' },
+      { name: 'Nicola Mössner', role: 'Co-fondatore, strategia e relazioni pubbliche', text: 'Responsabile di partnership, comunicazione e sviluppo del mercato.' },
+    ],
+    ctaTitle: 'Conosciamoci',
+    ctaText: 'Una breve conversazione dice più di qualsiasi sito web. Aspettiamo la vostra sfida.',
+  },
+  fr: {
+    metaTitle: 'À propos | Weissmann AI – L’IA pratique depuis Zurich',
+    metaDesc:
+      'Weissmann AI a été fondée à Zurich et aide les entreprises à croître grâce à l’IA pratique : accompagnement personnel, conseil honnête, mise en œuvre mesurable.',
+    h1: 'L’IA pratique. Mise en œuvre personnellement.',
+    mission:
+      'Weissmann AI a été fondée à Zurich — avec la conviction que l’intelligence artificielle pour les entreprises ne doit pas être un slogan, mais produire des résultats mesurables. Nous ne vendons pas d’outils isolés : nous implémentons des systèmes qui gagnent des clients, répondent aux demandes et automatisent les processus — et nous restons personnellement à vos côtés jusqu’à ce que cela fonctionne de façon démontrable.',
+    philosophyTitle: 'Ce en quoi nous croyons',
+    philosophy: [
+      { title: 'La valeur avant la technologie', text: 'Nous partons du problème business, pas de l’outil. Ce qui n’apporte pas de valeur mesurable, nous ne le recommandons pas.' },
+      { title: 'L’honnêteté avant le battage', text: 'Nous vous disons aussi ce que l’IA ne peut pas (encore) faire — et ne garantissons rien que personne ne puisse garantir.' },
+      { title: 'Accompagnement, pas self-service', text: 'Mise en place sur site, tests en conditions réelles, suivi continu — pas un portail anonyme.' },
+      { title: 'Exigence suisse', text: 'Multilingue (DE/EN/FR/IT), précis, concentré sur les PME suisses.' },
+    ],
+    methodTitle: 'La Méthode Weissmann AI',
+    teamTitle: 'Les personnes derrière le projet',
+    team: [
+      { name: 'Giovanna Carpi', role: 'Fondatrice et CEO', text: 'Responsable de la stratégie, de la mise en œuvre et de la qualité de chaque projet.', linkedin: 'https://www.linkedin.com/in/giovanna-carpi-85a520155/' },
+      { name: 'Nicola Mössner', role: 'Co-fondateur, stratégie et relations publiques', text: 'Responsable des partenariats, de la communication et du développement du marché.' },
+    ],
+    ctaTitle: 'Faisons connaissance',
+    ctaText: 'Une courte conversation en dit plus que n’importe quel site web. Nous attendons votre défi.',
+  },
+};
+const c = C[locale];
+
+const schema = [
+  organization(locale),
+  webPage(locale, PATH, c.metaTitle, c.metaDesc),
+  breadcrumbs(locale, [
+    { name: t(locale, 'breadcrumb.home'), path: '/' },
+    { name: t(locale, 'nav.about'), path: PATH },
+  ]),
+];
+---
+
+<Layout locale={locale} path={PATH} title={c.metaTitle} description={c.metaDesc} schema={schema}>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">{t(locale, 'nav.about')}</span>
+      <h1 style="max-width:40rem;">{c.h1}</h1>
+      <p class="prose mt-4" style="font-size:var(--fs-500);">{c.mission}</p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head"><h2>{c.philosophyTitle}</h2></div>
+      <div class="grid grid--4">
+        {c.philosophy.map((item: any) => (
+          <div class="card">
+            <h3>{item.title}</h3>
+            <p class="mt-3" style="font-size:var(--fs-300);">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>{c.methodTitle}</h2></div>
+      <MethodTimeline locale={locale} />
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head"><h2>{c.teamTitle}</h2></div>
+      <div class="grid grid--2" style="max-width:56rem;">
+        {c.team.map((m: any) => (
+          <div class="card">
+            <h3>{m.name}</h3>
+            <p class="muted">{m.role}</p>
+            <p class="mt-3" style="font-size:var(--fs-300);">{m.text}</p>
+            {m.linkedin && (
+              <p class="mt-3"><a href={m.linkedin} rel="noopener" target="_blank">LinkedIn →</a></p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container center">
+      <h2>{c.ctaTitle}</h2>
+      <p class="mt-3" style="max-width:36rem;margin-inline:auto;">{c.ctaText}</p>
+      <div class="mt-4">
+        <a class="btn btn--primary" href={`${p}/kontakt/`} data-track="book_consultation">{t(locale, 'cta.consultation')}</a>
+      </div>
+    </div>
+  </section>
+</Layout>

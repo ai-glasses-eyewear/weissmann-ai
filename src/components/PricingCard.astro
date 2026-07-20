@@ -1,0 +1,81 @@
+---
+/**
+ * Pricing card — renders exclusively from the central pricing config.
+ * Stripe CTA only when a verified link exists; otherwise consultation CTA.
+ */
+import { formatPrice, type PricingPackage } from '../data/pricing';
+import { localePrefix, type Locale } from '../data/site';
+import { t } from '../i18n/ui';
+
+interface Props {
+  pkg: PricingPackage;
+  locale: Locale;
+  highlight?: boolean;
+}
+const { pkg, locale, highlight = false } = Astro.props;
+const p = localePrefix(locale);
+---
+
+<article class={`card pricing-card ${highlight ? 'card--raised pricing-card--highlight' : ''}`}>
+  <h3>{pkg.name[locale]}</h3>
+  <p class="pricing-card__price">
+    {pkg.price === null ? (
+      <span class="pricing-card__amount pricing-card__amount--custom">{t(locale, 'price.onRequest')}</span>
+    ) : (
+      <>
+        {pkg.isFrom && <span class="pricing-card__from">{t(locale, 'price.from')} </span>}
+        <span class="pricing-card__amount">{formatPrice(pkg.price)}</span>
+        <span class="pricing-card__interval">
+          {pkg.interval === 'month' ? t(locale, 'price.month') : t(locale, 'price.once')}
+        </span>
+      </>
+    )}
+  </p>
+  <p class="pricing-card__desc">{pkg.description[locale]}</p>
+
+  <ul class="checklist">
+    {pkg.features[locale].map((f) => <li>{f}</li>)}
+  </ul>
+
+  {pkg.disclosures[locale].length > 0 && (
+    <ul class="pricing-card__disclosures">
+      {pkg.disclosures[locale].map((d) => <li>{d}</li>)}
+    </ul>
+  )}
+
+  <div class="pricing-card__cta">
+    {pkg.ctaType === 'stripe' && pkg.stripeLink ? (
+      <a
+        class="btn btn--primary"
+        href={pkg.stripeLink}
+        rel="noopener"
+        target="_blank"
+        data-track="begin_checkout"
+      >
+        {t(locale, 'cta.buy')}
+      </a>
+    ) : (
+      <a class="btn btn--secondary" href={`${p}/kontakt/`} data-track="book_consultation">
+        {t(locale, 'cta.consultation')}
+      </a>
+    )}
+  </div>
+</article>
+
+<style>
+  .pricing-card { display: flex; flex-direction: column; }
+  .pricing-card--highlight { border: 1.5px solid var(--accent); }
+  .pricing-card__price { margin-top: var(--space-2); color: var(--ink); }
+  .pricing-card__amount { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
+  .pricing-card__amount--custom { font-size: 1.35rem; }
+  .pricing-card__from { font-weight: 600; }
+  .pricing-card__interval { color: var(--ink-mute); margin-left: 0.35rem; font-size: var(--fs-300); }
+  .pricing-card__desc { margin-top: var(--space-2); font-size: var(--fs-300); }
+  .pricing-card__disclosures {
+    margin: var(--space-3) 0 0;
+    padding-left: 1.1rem;
+    font-size: var(--fs-300);
+    color: var(--ink-mute);
+  }
+  .pricing-card__cta { margin-top: auto; padding-top: var(--space-4); }
+</style>

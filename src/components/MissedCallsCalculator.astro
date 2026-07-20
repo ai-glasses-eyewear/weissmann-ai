@@ -1,0 +1,123 @@
+---
+/**
+ * Missed-calls revenue calculator — rebuilt from the legacy site's tool as an
+ * accessible, localized island. Methodology is shown transparently below the
+ * result (inputs × 30 days). GA4: calculator_start on first input,
+ * calculator_complete on calculation.
+ */
+import type { Locale } from '../data/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+
+const L: Record<Locale, Record<string, string>> = {
+  de: {
+    title: 'Was kosten Sie verpasste Anrufe?',
+    calls: 'Anrufe pro Tag',
+    missed: 'Verpasste Anrufe (%)',
+    value: 'Ø Wert pro Buchung (CHF)',
+    button: 'Berechnen',
+    result: 'Geschätzter monatlicher Umsatzverlust',
+    method:
+      'Berechnung: Anrufe pro Tag × verpasste Anrufe in Prozent × durchschnittlicher Buchungswert × 30 Tage. Eine vereinfachte Schätzung – nicht jede verpasste Anfrage wäre eine Buchung geworden.',
+  },
+  en: {
+    title: 'What are missed calls costing you?',
+    calls: 'Calls per day',
+    missed: 'Missed calls (%)',
+    value: 'Ø value per booking (CHF)',
+    button: 'Calculate',
+    result: 'Estimated monthly revenue loss',
+    method:
+      'Calculation: calls per day × missed calls in percent × average booking value × 30 days. A simplified estimate — not every missed enquiry would have become a booking.',
+  },
+  it: {
+    title: 'Quanto vi costano le chiamate perse?',
+    calls: 'Chiamate al giorno',
+    missed: 'Chiamate perse (%)',
+    value: 'Valore medio per prenotazione (CHF)',
+    button: 'Calcola',
+    result: 'Perdita di fatturato mensile stimata',
+    method:
+      'Calcolo: chiamate al giorno × percentuale di chiamate perse × valore medio di prenotazione × 30 giorni. Una stima semplificata: non ogni richiesta persa sarebbe diventata una prenotazione.',
+  },
+  fr: {
+    title: 'Combien vous coûtent les appels manqués ?',
+    calls: 'Appels par jour',
+    missed: 'Appels manqués (%)',
+    value: 'Valeur moyenne par réservation (CHF)',
+    button: 'Calculer',
+    result: 'Perte de chiffre d’affaires mensuelle estimée',
+    method:
+      'Calcul : appels par jour × pourcentage d’appels manqués × valeur moyenne de réservation × 30 jours. Une estimation simplifiée — chaque demande manquée ne serait pas devenue une réservation.',
+  },
+};
+const s = L[locale];
+---
+
+<div class="calc card card--raised">
+  <h3>{s.title}</h3>
+  <form class="calc__form" data-calc>
+    <div class="field">
+      <label for="calc-calls">{s.calls}</label>
+      <input id="calc-calls" name="calls" type="number" min="0" max="2000" inputmode="numeric" value="40" />
+    </div>
+    <div class="field">
+      <label for="calc-missed">{s.missed}</label>
+      <input id="calc-missed" name="missed" type="number" min="0" max="100" inputmode="numeric" value="25" />
+    </div>
+    <div class="field">
+      <label for="calc-value">{s.value}</label>
+      <input id="calc-value" name="value" type="number" min="0" max="100000" inputmode="numeric" value="80" />
+    </div>
+    <button type="submit" class="btn btn--primary">{s.button}</button>
+  </form>
+  <p class="calc__result" data-calc-result aria-live="polite" hidden>
+    {s.result}: <strong data-calc-amount></strong>
+  </p>
+  <p class="muted calc__method">{s.method}</p>
+</div>
+
+<style>
+  .calc h3 { margin-bottom: var(--space-3); }
+  .calc__form {
+    display: grid;
+    gap: var(--space-3);
+    align-items: end;
+  }
+  @media (min-width: 760px) {
+    .calc__form { grid-template-columns: repeat(3, 1fr) auto; }
+    .calc__form .field { margin-bottom: 0; }
+  }
+  .calc__result {
+    margin-top: var(--space-3);
+    font-size: var(--fs-500);
+    color: var(--ink);
+  }
+  .calc__method { margin-top: var(--space-3); }
+</style>
+
+<script is:inline>
+  (function () {
+    var form = document.querySelector('[data-calc]');
+    if (!form) return;
+    var started = false;
+    form.addEventListener('input', function () {
+      if (started) return;
+      started = true;
+      if (window.wmEvent) window.wmEvent('calculator_start', { calculator: 'missed_calls' });
+    });
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var calls = Math.max(0, Number(form.calls.value) || 0);
+      var missed = Math.min(100, Math.max(0, Number(form.missed.value) || 0));
+      var value = Math.max(0, Number(form.value.value) || 0);
+      var loss = Math.round(calls * (missed / 100) * value * 30);
+      var box = document.querySelector('[data-calc-result]');
+      document.querySelector('[data-calc-amount]').textContent =
+        'CHF ' + loss.toLocaleString('de-CH');
+      box.hidden = false;
+      if (window.wmEvent) window.wmEvent('calculator_complete', { calculator: 'missed_calls', result: loss });
+    });
+  })();
+</script>

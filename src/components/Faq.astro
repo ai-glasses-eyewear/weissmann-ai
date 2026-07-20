@@ -1,0 +1,51 @@
+---
+/**
+ * Accessible FAQ accordion (native <details>). The same data array should be
+ * passed to schema.faqPage() so on-page FAQ and FAQPage JSON-LD never drift.
+ */
+interface Props {
+  items: { q: string; a: string }[];
+  title?: string;
+}
+const { items, title } = Astro.props;
+---
+
+<section class="faq">
+  {title && <h2>{title}</h2>}
+  <div class="faq__list">
+    {items.map((item) => (
+      <details class="faq__item">
+        <summary>{item.q}</summary>
+        <p>{item.a}</p>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  .faq__list { margin-top: var(--space-4); max-width: var(--maxw-text); }
+  .faq__item {
+    border-bottom: 1px solid var(--line);
+    padding-block: var(--space-3);
+  }
+  .faq__item summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ink);
+    list-style: none;
+    position: relative;
+    padding-right: 2rem;
+  }
+  .faq__item summary::-webkit-details-marker { display: none; }
+  .faq__item summary::after {
+    content: "+";
+    position: absolute;
+    right: 0.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: var(--accent);
+  }
+  .faq__item[open] summary::after { content: "–"; }
+  .faq__item p { margin-top: var(--space-2); font-size: var(--fs-300); }
+</style>

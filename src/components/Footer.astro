@@ -1,0 +1,94 @@
+---
+/**
+ * Site footer: tagline, nav, contact rails (canonical NAP), legal links.
+ * The address renders exclusively from SITE.address — never hardcode it.
+ */
+import { SITE, localePrefix, type Locale } from '../data/site';
+import { t } from '../i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const p = localePrefix(locale);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="grid grid--3 site-footer__grid">
+      <div>
+        <p class="site-footer__brand">Weissmann <strong>AI</strong></p>
+        <p class="site-footer__tagline">{t(locale, 'footer.tagline')}</p>
+        <p class="muted mt-3">{t(locale, 'footer.follow')}:</p>
+        <p class="site-footer__social">
+          <a href={SITE.social.linkedin} rel="noopener" target="_blank">LinkedIn</a>
+          <a href={SITE.social.instagram} rel="noopener" target="_blank">Instagram</a>
+          <a href={SITE.social.facebook} rel="noopener" target="_blank">Facebook</a>
+          <a href={SITE.social.x} rel="noopener" target="_blank">X</a>
+        </p>
+      </div>
+
+      <div>
+        <h2 class="site-footer__title">{t(locale, 'footer.navTitle')}</h2>
+        <ul class="site-footer__list">
+          <li><a href={`${p}/ki-telefonassistent/`}>{t(locale, 'nav.solutions')}</a></li>
+          <li><a href={`${p}/preise/`}>{t(locale, 'nav.pricing')}</a></li>
+          <li><a href={`${p}/ueber-uns/`}>{t(locale, 'nav.about')}</a></li>
+          <li><a href={`${p}/kontakt/`}>{t(locale, 'nav.contact')}</a></li>
+        </ul>
+        <h2 class="site-footer__title mt-4">{t(locale, 'footer.legalTitle')}</h2>
+        <ul class="site-footer__list">
+          <li><a href={`${p}/impressum/`}>{t(locale, 'footer.impressum')}</a></li>
+          <li><a href={`${p}/datenschutz/`}>{t(locale, 'footer.privacy')}</a></li>
+          <li><a href={`${p}/agb/`}>{t(locale, 'footer.terms')}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="site-footer__title">{t(locale, 'footer.contactTitle')}</h2>
+        <address class="site-footer__address">
+          Weissmann AI<br />
+          {SITE.address.street}<br />
+          {SITE.address.postalCode} {SITE.address.city}<br />
+          {SITE.address.country[locale]}
+        </address>
+        <ul class="site-footer__list mt-3">
+          <li><a href={`tel:${SITE.phone}`} data-track="phone_click">{SITE.phoneDisplay}</a></li>
+          <li><a href={`mailto:${SITE.email}`} data-track="email_click">{SITE.email}</a></li>
+          <li><a href={SITE.whatsapp} rel="noopener" target="_blank" data-track="whatsapp_click">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="site-footer__copyright">© {year} Weissmann AI. {t(locale, 'footer.rights')}</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--ink);
+    color: #c8cfda;
+    padding-block: var(--space-6) var(--space-4);
+    margin-top: var(--space-7);
+  }
+  .site-footer a { color: #e8ecf2; }
+  .site-footer__brand { font-size: var(--fs-600); color: #fff; }
+  .site-footer__tagline { margin-top: var(--space-2); font-size: var(--fs-300); max-width: 26rem; }
+  .site-footer__social { display: flex; gap: var(--space-3); margin-top: var(--space-1); font-size: var(--fs-300); }
+  .site-footer__title {
+    font-size: var(--fs-300);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8b95a5;
+    margin-bottom: var(--space-2);
+  }
+  .site-footer__list { list-style: none; padding: 0; margin: 0; font-size: var(--fs-300); }
+  .site-footer__list li + li { margin-top: var(--space-2); }
+  .site-footer__address { font-style: normal; font-size: var(--fs-300); line-height: 1.7; }
+  .site-footer__copyright {
+    margin-top: var(--space-5);
+    padding-top: var(--space-3);
+    border-top: 1px solid rgb(255 255 255 / 0.12);
+    font-size: var(--fs-300);
+    color: #8b95a5;
+  }
+</style>

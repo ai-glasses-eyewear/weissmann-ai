@@ -1,0 +1,16 @@
+{
+  "name": "weissmann-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/validate-pricing.mjs && astro build && node scripts/qa-gates.mjs",
+    "preview": "astro preview",
+    "validate": "node scripts/validate-pricing.mjs",
+    "qa": "node scripts/qa-gates.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.2.0"
+  }
+}
