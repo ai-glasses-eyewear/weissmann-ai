@@ -1,6 +1,7 @@
 ---
 /**
- * Site header: logo, primary nav, language switcher, demo CTA.
+ * Site header: real Weissmann logo, primary nav, language switcher, demo CTA.
+ * Dark translucent bar over the midnight-violet ground.
  * Mobile: CSS-only disclosure via <details>, no JS dependency.
  */
 import { LOCALES, localePrefix, type Locale } from '../data/site';
@@ -26,9 +27,8 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
 
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="site-header__brand" href={`${p}/`} aria-label="Weissmann AI">
-      <span class="site-header__logo" aria-hidden="true">W</span>
-      <span>Weissmann <strong>AI</strong></span>
+    <a class="site-header__brand" href={`${p}/`} aria-label="Weissmann AI – Home">
+      <img src="/logo-weissmann.png" alt="Weissmann AI" width="185" height="80" loading="eager" decoding="async" />
     </a>
 
     <nav class="site-header__nav" aria-label="Hauptnavigation">
@@ -79,46 +79,38 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgb(255 255 255 / 0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
+    background: rgba(10 1 24 / 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line-soft);
   }
   .site-header__inner {
     display: flex;
     align-items: center;
     gap: var(--space-4);
-    min-height: 4.25rem;
+    min-height: 4.5rem;
   }
-  .site-header__brand {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    color: var(--ink);
-    font-size: var(--fs-500);
-    text-decoration: none;
-  }
-  .site-header__brand:hover { text-decoration: none; }
-  .site-header__logo {
-    display: grid;
-    place-items: center;
-    width: 2.1rem;
-    height: 2.1rem;
-    border-radius: 8px;
-    background: var(--ink);
-    color: #fff;
-    font-weight: 700;
-  }
+  .site-header__brand { display: flex; align-items: center; }
+  .site-header__brand img { height: 2.3rem; width: auto; }
   .site-header__nav {
     display: none;
     gap: var(--space-4);
     margin-inline: auto;
   }
-  .site-header__nav a { color: var(--ink-soft); font-weight: 500; }
+  .site-header__nav a {
+    color: var(--ink-soft);
+    font-weight: 500;
+    font-size: var(--fs-300);
+    letter-spacing: 0.01em;
+    transition: color 0.15s ease;
+  }
   .site-header__nav a:hover { color: var(--ink); text-decoration: none; }
-  .site-header__nav a[aria-current='page'] { color: var(--accent); }
+  .site-header__nav a[aria-current='page'] { color: var(--accent-bright); }
   .site-header__actions { display: none; align-items: center; gap: var(--space-3); margin-left: auto; }
-  .lang-switch { display: flex; gap: 0.5rem; font-size: var(--fs-300); }
+  .site-header__cta { padding: 0.6rem 1.25rem; font-size: var(--fs-300); }
+  .lang-switch { display: flex; gap: 0.6rem; font-size: var(--fs-300); }
   .lang-switch a { color: var(--ink-mute); }
+  .lang-switch a:hover { color: var(--ink); text-decoration: none; }
   .lang-switch span[aria-current] { color: var(--ink); font-weight: 700; }
 
   .site-header__mobile { margin-left: auto; }
@@ -129,7 +121,7 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
     place-items: center;
     width: 2.6rem;
     height: 2.6rem;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 1px solid var(--line);
   }
   .site-header__mobile summary::-webkit-details-marker { display: none; }
@@ -137,8 +129,8 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
   .site-header__burger::before,
   .site-header__burger::after {
     display: block;
-    width: 1.15rem;
-    height: 2px;
+    width: 1.1rem;
+    height: 1.5px;
     background: var(--ink);
     position: relative;
   }

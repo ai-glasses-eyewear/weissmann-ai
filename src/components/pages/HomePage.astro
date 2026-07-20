@@ -244,15 +244,28 @@ const websiteStarter = getPackage('website-starter');
 
 <Layout locale={locale} path="/" title={c.metaTitle} description={c.metaDesc} schema={schema}>
   <!-- Hero -->
-  <section class="section hero">
-    <div class="container">
+  <section class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__content">
       <span class="eyebrow">{c.heroEyebrow}</span>
-      <h1>{c.heroTitle}</h1>
+      <h1 class="hero__title">{c.heroTitle}</h1>
       <p class="hero__text">{c.heroText}</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href={`${p}/kontakt/`} data-track="book_consultation">{c.heroPrimary}</a>
         <a class="btn btn--secondary" href="#demo" data-track="demo_play">{c.heroSecondary}</a>
       </div>
+      <div class="hero__wave" aria-hidden="true">
+        {Array.from({ length: 36 }, (_, i) => (
+          <span class="hero__bar" style={`--i:${i}; --h:${[18, 34, 52, 70, 84, 62, 40, 26][i % 8]}%`}></span>
+        ))}
+      </div>
+      <p class="hero__trust">
+        <span>24/7</span>
+        <span class="hero__dot"></span>
+        <span>DE · EN · FR · IT</span>
+        <span class="hero__dot"></span>
+        <span>Zürich, {locale === 'de' ? 'Schweiz' : locale === 'it' ? 'Svizzera' : locale === 'fr' ? 'Suisse' : 'Switzerland'}</span>
+      </p>
     </div>
   </section>
 
@@ -365,21 +378,103 @@ const websiteStarter = getPackage('website-starter');
 </Layout>
 
 <style>
-  .hero { padding-block: var(--space-7) var(--space-6); }
-  .hero h1 { max-width: 46rem; }
-  .hero__text { max-width: 40rem; margin-top: var(--space-4); font-size: var(--fs-500); }
+  /* ── Hero ─────────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(5rem, 12vh, 8.5rem) var(--space-6);
+  }
+  .hero__glow {
+    position: absolute;
+    inset: -20% -10% auto;
+    height: 70%;
+    background:
+      radial-gradient(42% 55% at 68% 18%, rgba(157 0 255 / 0.16), transparent 70%),
+      radial-gradient(30% 40% at 22% 8%, rgba(157 0 255 / 0.1), transparent 70%);
+    pointer-events: none;
+  }
+  .hero__content { position: relative; }
+  .hero__title {
+    max-width: 17ch;
+    background: linear-gradient(135deg, #ffffff 55%, #cba3f2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero__text {
+    max-width: 40rem;
+    margin-top: var(--space-4);
+    font-size: var(--fs-500);
+    color: var(--ink-mute);
+    line-height: 1.75;
+  }
   .hero__actions { display: flex; gap: var(--space-3); margin-top: var(--space-5); flex-wrap: wrap; }
+
+  /* Voice waveform — the Weissmann signature element */
+  .hero__wave {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 64px;
+    margin-top: var(--space-6);
+    max-width: 34rem;
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  }
+  .hero__bar {
+    flex: 1;
+    height: var(--h);
+    min-height: 6px;
+    border-radius: 99px;
+    background: linear-gradient(180deg, var(--accent-bright), var(--accent));
+    opacity: 0.85;
+    animation: wave 1.9s ease-in-out calc(var(--i) * -0.11s) infinite alternate;
+    transform-origin: center;
+  }
+  @keyframes wave {
+    from { transform: scaleY(0.45); opacity: 0.5; }
+    to   { transform: scaleY(1);    opacity: 0.95; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero__bar { animation: none; }
+  }
+  .hero__trust {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+    font-size: var(--fs-300);
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+  }
+  .hero__dot { width: 3px; height: 3px; border-radius: 50%; background: var(--line); }
+
+  /* ── Demo video ───────────────────────────────────────── */
   .demo-video {
     width: 100%;
     max-width: 52rem;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-    background: var(--ink);
+    border: 1px solid var(--line-soft);
+    box-shadow: var(--glow);
+    background: #000;
   }
+
+  /* ── Service cards ────────────────────────────────────── */
   .service-card { color: inherit; display: flex; flex-direction: column; }
-  .service-card:hover { text-decoration: none; border-color: var(--accent); }
-  .service-card p { margin-top: var(--space-2); font-size: var(--fs-300); }
-  .service-card__more { margin-top: auto; padding-top: var(--space-3); color: var(--accent); font-weight: 600; font-size: var(--fs-300); }
+  .service-card:hover {
+    text-decoration: none;
+    border-color: rgba(157 0 255 / 0.55);
+    background: var(--surface-hover);
+    transform: translateY(-2px);
+  }
+  .service-card p { margin-top: var(--space-2); font-size: var(--fs-300); color: var(--ink-mute); }
+  .service-card__more {
+    margin-top: auto;
+    padding-top: var(--space-3);
+    color: var(--accent-bright);
+    font-weight: 600;
+    font-size: var(--fs-300);
+  }
 </style>
 
 <script is:inline>

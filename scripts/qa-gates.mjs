@@ -35,6 +35,12 @@ const FORBIDDEN = [
   /8001\s*Z(ü|u|&#252;|&uuml;)rich/i,
   /CHF\s*590\b/,
   /\b590\s*CHF\b/,
+  // Brand separation: AI-Eyewear may only ever appear as a deliberate,
+  // reviewed contextual link — never as accidental leakage. Until such a
+  // link is intentionally added (with an explicit allowlist here), any
+  // occurrence fails the build.
+  /eyewear/i,
+  /even\s*realities/i,
 ];
 const VERIFIED_STRIPE = [
   'https://buy.stripe.com/00w00b0V818UcT646g1sQ01',
