@@ -28,7 +28,7 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="site-header__brand" href={`${p}/`} aria-label="Weissmann AI – Home">
-      <img src="/logo-weissmann.png" alt="Weissmann AI" width="185" height="80" loading="eager" decoding="async" />
+      <img src="/logo-weissmann-dark.png" alt="Weissmann AI" width="185" height="80" loading="eager" decoding="async" />
     </a>
 
     <nav class="site-header__nav" aria-label="Hauptnavigation">
@@ -79,19 +79,19 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(10 1 24 / 0.75);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--line-soft);
+    background: rgb(255 255 255 / 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
   }
   .site-header__inner {
     display: flex;
     align-items: center;
     gap: var(--space-4);
-    min-height: 4.5rem;
+    min-height: 4.25rem;
   }
   .site-header__brand { display: flex; align-items: center; }
-  .site-header__brand img { height: 2.3rem; width: auto; }
+  .site-header__brand img { height: 2.1rem; width: auto; }
   .site-header__nav {
     display: none;
     gap: var(--space-4);
@@ -105,9 +105,9 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
     transition: color 0.15s ease;
   }
   .site-header__nav a:hover { color: var(--ink); text-decoration: none; }
-  .site-header__nav a[aria-current='page'] { color: var(--accent-bright); }
+  .site-header__nav a[aria-current='page'] { color: var(--accent); }
   .site-header__actions { display: none; align-items: center; gap: var(--space-3); margin-left: auto; }
-  .site-header__cta { padding: 0.6rem 1.25rem; font-size: var(--fs-300); }
+  .site-header__cta { padding: 0.55rem 1.15rem; font-size: var(--fs-300); }
   .lang-switch { display: flex; gap: 0.6rem; font-size: var(--fs-300); }
   .lang-switch a { color: var(--ink-mute); }
   .lang-switch a:hover { color: var(--ink); text-decoration: none; }

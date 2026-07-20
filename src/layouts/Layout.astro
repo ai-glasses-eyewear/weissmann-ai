@@ -36,10 +36,14 @@ const ogImage = `${SITE.domain}/og-default.png`;
 const graph = schema.length
   ? JSON.stringify({ '@context': 'https://schema.org', '@graph': schema })
   : null;
+
+// Visual concept: 'a' (Swiss Editorial, default) or 'b' (Premium Technology).
+// Set at build time: PUBLIC_THEME=b npm run build
+const theme = (import.meta.env.PUBLIC_THEME as string) === 'b' ? 'b' : 'a';
 ---
 
 <!doctype html>
-<html lang={HTML_LANG[locale]}>
+<html lang={HTML_LANG[locale]} data-theme={theme}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -67,7 +71,7 @@ const graph = schema.length
     <meta name="msvalidate.01" content={SITE.tracking.bingVerification} />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="theme-color" content="#0a0118" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="preload" href="/fonts/instrument-sans-1.woff2" as="font" type="font/woff2" crossorigin />
 
     {graph && <script type="application/ld+json" set:html={graph} />}
