@@ -1,11 +1,11 @@
-# "Mit Weissmann chatten" — Chat Specification v2 (zero AI cost)
+# Weissmann Assistant — Chat Specification v3 (zero AI cost, approved)
 
-Status: **approved direction, not yet built.** Build starts only after the homepage
-concept (A/B) is selected. Owner decision 2026-07-20: **no recurring AI API costs** —
-v1 is a smart FAQ assistant using only website content; a real AI engine may be
-added later without redesign (see §9). Detailed research drafts live in
-`docs/chat/research/` (written for the earlier AI variant; facts and copy remain
-authoritative where referenced below).
+Status: **architecture approved by owner 2026-07-20; build after homepage
+concept (A/B) selection**, as part of the same design system. Owner decisions:
+no recurring AI API costs in v1; conversational experience (§5a), premium
+same-design-language UI (§5b), branding "Weissmann Assistant" (§5); engine
+abstraction unchanged so a future LLM swap replaces only the backend engine,
+never the interface (§9). Research drafts live in `docs/chat/research/`.
 
 ---
 
@@ -95,18 +95,55 @@ Adapted from `research/kb-design.md`; the generation pipeline carries over 1:1.
    single allowed case of visitor content in a URL — user-approved,
    user-initiated, PII-stripped, opens a third-party app.
 
-## 5. Labeling & languages (honesty requirement)
+## 5. Branding & languages (owner decision 2026-07-20)
 
-v1 has NO AI — never label it "KI-Assistent". Badge: **Digitaler Assistent**
-(EN "Digital assistant", IT "Assistente digitale", FR "Assistant numérique").
-Disclosure: automatic assistant answering from website content; team confirms
-anything important personally. Launcher labels: Mit Weissmann chatten / Chat
-with Weissmann / Chatta con Weissmann / Discutez avec Weissmann. Full four-
-language microcopy pack (consent line, buttons, error, offline) in
-research/flows.md §4 — adapt "KI-Assistent" → "Digitaler Assistent" wherever it
-appears; the AI wording is reserved for the §9 upgrade. Swiss orthography (ss,
-never ß), formal address (Sie/Lei/vous). Chat opens in page language; in-chat
-language switch reloads the per-language KB; no mixed-language turns.
+Product name: **Weissmann Assistant** (identical in all four languages — it is
+a brand name, not a description). Rationale: premium and brand-anchored; makes
+no capability claim v1 can't back; graduates naturally to "Weissmann AI
+Assistant" when the §9 LLM engine ships. "Ask Weissmann" is reserved as an
+optional EN marketing label; do not mix names in the UI.
+
+Disclosure line under the title (small, always visible):
+- DE "Basiert auf der Weissmann Wissensdatenbank. Bei komplexen Fragen verbinden wir Sie mit unserem Team."
+- EN "Powered by our Weissmann knowledge base. For complex questions you'll be connected with our team."
+- IT "Basato sulla knowledge base di Weissmann. Per domande complesse la mettiamo in contatto con il nostro team."
+- FR "Basé sur la base de connaissances Weissmann. Pour les questions complexes, nous vous mettons en contact avec notre équipe."
+
+Launcher labels stay localized: Mit Weissmann chatten / Chat with Weissmann /
+Chatta con Weissmann / Discutez avec Weissmann. Four-language microcopy pack
+(consent line, buttons, error, offline) in research/flows.md §4 — replace any
+"KI-Assistent"/"Digitaler Assistent" wording with "Weissmann Assistant" + the
+disclosure above; explicit AI self-description is reserved for the §9 upgrade.
+Swiss orthography (ss, never ß), formal address (Sie/Lei/vous). Chat opens in
+page language; in-chat switch reloads the per-language KB; no mixed-language turns.
+
+## 5a. Conversational experience (never a FAQ page)
+
+- Friendly greeting; the assistant asks **one question at a time**.
+- Answers are short: max ~60 words / 2 sentences per bubble; longer content is
+  split into sequential bubbles with a natural pause, or linked to the page.
+- Every assistant turn ends with a **clear next action**: 2–4 follow-up chips
+  plus one primary CTA (pricing, demo, consultation, WhatsApp).
+- **Topic memory per session**: the current topic/service persists in
+  sessionStorage; follow-ups resolve against it ("Und was kostet Premium?"
+  works after the phone-agent topic is active) and the recommended next step
+  is topic-aware (phone agent → demo; websites → consultation; SEO/GEO → audit).
+- Never dump documentation; never show more than one question or one answer
+  block at once; typing/appear transitions pace the exchange (no fake delays
+  pretending a human is typing — a brief 200–400ms reveal is pacing, not deception).
+
+## 5b. Visual design (same design system, no widget look)
+
+- Built from the site's design tokens — the assistant is part of the chosen
+  homepage concept (A or B), not a separate style. No third-party widget.
+- Panel: rounded **glass surface** (backdrop blur + translucent paper tone,
+  hairline border from --line), premium spacing, site typography (Instrument Sans).
+- Motion: subtle and functional — panel scale/fade on open (~250ms ease-out),
+  messages fade/slide in (~200ms, staggered), chip hover transitions; all
+  gated by prefers-reduced-motion; no infinite/decorative animation (QA
+  screenshot-stability rule applies).
+- Desktop: docked bottom-right panel (~390px). Mobile: full-height sheet with
+  slide-up transition. Benchmark: Apple support chat, not helpdesk widgets.
 
 ## 6. Analytics (single schema — critic fix #1)
 
