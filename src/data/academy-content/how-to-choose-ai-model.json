@@ -1,0 +1,336 @@
+{
+  "id": "how-to-choose-ai-model",
+  "cluster": "models-vendors",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "ki-modell-auswaehlen",
+    "en": "how-to-choose-ai-model-vendor",
+    "it": "scegliere-modello-ia",
+    "fr": "choisir-modele-ia"
+  },
+  "title": {
+    "de": "KI-Modell auswählen: Kriterien-Framework | Weissmann AI",
+    "en": "How to Choose an AI Model and Vendor | Weissmann AI",
+    "it": "Come scegliere un modello IA e vendor | Weissmann AI",
+    "fr": "Comment choisir un modèle et vendor IA | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie Schweizer Unternehmen ein KI-Modell und einen Anbieter auswählen: fünf Kriterien (Eignung, Datenstandort, Kosten, Integration, Compliance) plus Bewertungsraster.",
+    "en": "How Swiss companies choose an AI model and vendor: five criteria (capability, data location, cost, integration, compliance) plus a practical scorecard.",
+    "it": "Come le aziende svizzere scelgono un modello IA e un vendor: cinque criteri (idoneità, dati, costi, integrazione, compliance) e una scorecard pratica.",
+    "fr": "Comment les entreprises suisses choisissent un modèle IA et un vendor : cinq critères (aptitude, données, coûts, intégration, conformité) et une grille."
+  },
+  "kicker": {
+    "de": "Modelle & Anbieter",
+    "en": "Models & Vendors",
+    "it": "Modelli e vendor",
+    "fr": "Modèles et vendors"
+  },
+  "h1": {
+    "de": "Wie wählt ein Schweizer Unternehmen das richtige KI-Modell und den passenden Anbieter aus?",
+    "en": "How does a Swiss company choose the right AI model and vendor?",
+    "it": "Come sceglie un'azienda svizzera il modello IA e il vendor giusti?",
+    "fr": "Comment une entreprise suisse choisit-elle le bon modèle IA et le bon vendor ?"
+  },
+  "answerFirst": {
+    "de": "Ein KI-Modell wählen Schweizer Unternehmen anhand von fünf Kriterien: fachliche Eignung für den konkreten Use Case, Datenstandort und Datenhoheit, Kostenmodell über die gesamten Betriebskosten, Integrationsfähigkeit in bestehende Systeme sowie Compliance mit revDSG und EU AI Act. Kein Modell gewinnt überall. Entscheidend ist die gewichtete Passung zur Aufgabe, nicht der reine Benchmark-Rang.",
+    "en": "Swiss companies choose an AI model against five criteria: capability for the specific use case, data location and sovereignty, cost model across total operating cost, ability to integrate with existing systems, and compliance with the revised FADP and the EU AI Act. No single model wins everywhere. What matters is the weighted fit to the task, not the raw benchmark rank.",
+    "it": "Le aziende svizzere scelgono un modello IA in base a cinque criteri: idoneità al caso d'uso concreto, ubicazione e sovranità dei dati, modello di costo sul costo totale di gestione, capacità di integrazione con i sistemi esistenti e conformità alla revLPD e all'EU AI Act. Nessun modello vince ovunque: conta l'adeguatezza pesata al compito, non il punteggio di benchmark.",
+    "fr": "Les entreprises suisses choisissent un modèle IA selon cinq critères : aptitude au cas d'usage précis, localisation et souveraineté des données, modèle de coût sur le coût total, capacité d'intégration aux systèmes existants et conformité à la nLPD et au règlement européen sur l'IA. Aucun modèle ne gagne partout : c'est l'adéquation pondérée à la tâche qui compte, pas le rang au benchmark."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Modellwahl ist ein Business-Entscheid, kein Tech-Detail",
+        "en": "Choosing a model is a business decision, not a tech detail",
+        "it": "La scelta del modello è una decisione di business, non un dettaglio tecnico",
+        "fr": "Le choix du modèle est une décision métier, pas un détail technique"
+      },
+      "paragraphs": [
+        {
+          "de": "Die Frage «welches KI-Modell soll ich nehmen?» wird oft als Ranglisten-Vergleich verstanden: das Modell mit dem höchsten Benchmark-Wert gewinnt. Für Schweizer KMU führt das in die Irre. Ein Modell, das in synthetischen Tests brilliert, kann am realen Use Case scheitern, gegen den Datenschutz verstossen oder im Betrieb ein Vielfaches kosten. Die Modellwahl berührt Recht, Kosten, IT-Architektur und Risiko gleichzeitig.",
+          "en": "The question “which AI model should I pick?” is often treated as a leaderboard comparison: the model with the highest benchmark wins. For Swiss SMEs that is misleading. A model that shines in synthetic tests can fail on the real use case, breach data protection, or cost a multiple in production. Model choice touches law, cost, IT architecture and risk at the same time.",
+          "it": "La domanda «quale modello IA scelgo?» viene spesso trattata come un confronto di classifica: vince il modello con il benchmark più alto. Per le PMI svizzere è fuorviante. Un modello che brilla nei test sintetici può fallire sul caso d'uso reale, violare la protezione dati o costare molto di più in esercizio. La scelta tocca insieme diritto, costi, architettura IT e rischio.",
+          "fr": "La question « quel modèle IA choisir ? » est souvent traitée comme un classement : le modèle au meilleur benchmark gagne. Pour les PME suisses, c'est trompeur. Un modèle brillant en tests synthétiques peut échouer sur le cas d'usage réel, enfreindre la protection des données ou coûter bien plus en production. Le choix touche à la fois le droit, les coûts, l'architecture IT et le risque."
+        },
+        {
+          "de": "Ein belastbarer Entscheid startet deshalb nicht beim Modell, sondern beim Anwendungsfall: Was soll die KI konkret leisten, mit welchen Daten, für wen, mit welchem Fehlerrisiko? Erst daraus lassen sich Kriterien gewichten und Anbieter vergleichen. Dieser Leitfaden beschreibt ein wiederholbares Framework statt einer flüchtigen Modellempfehlung, die schon in Monaten überholt ist.",
+          "en": "A robust decision therefore starts not with the model but with the use case: what should the AI actually do, on which data, for whom, and at what error tolerance? Only then can criteria be weighted and vendors compared. This guide describes a repeatable framework rather than a fleeting model recommendation that is outdated within months.",
+          "it": "Una decisione solida parte quindi non dal modello ma dal caso d'uso: cosa deve fare concretamente l'IA, con quali dati, per chi, con quale tolleranza all'errore? Solo così si possono pesare i criteri e confrontare i vendor. Questa guida descrive un framework ripetibile invece di un consiglio effimero già superato in pochi mesi.",
+          "fr": "Une décision solide part donc non du modèle mais du cas d'usage : que doit faire l'IA concrètement, sur quelles données, pour qui, avec quelle tolérance à l'erreur ? Ce n'est qu'ensuite qu'on pondère les critères et compare les vendors. Ce guide décrit un cadre reproductible plutôt qu'une recommandation éphémère déjà dépassée en quelques mois."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die fünf Kernkriterien im Überblick",
+        "en": "The five core criteria at a glance",
+        "it": "I cinque criteri fondamentali in sintesi",
+        "fr": "Les cinq critères clés en un coup d'œil"
+      },
+      "bullets": [
+        {
+          "de": "Capability (fachliche Eignung): Löst das Modell die konkrete Aufgabe zuverlässig – Sprache, Fachdomäne, Kontextlänge, Werkzeug- und Bildverarbeitung, mehrsprachig DE/FR/IT/EN?",
+          "en": "Capability: does the model reliably solve the actual task – language, domain, context length, tool use, vision, and multilingual German/French/Italian/English coverage?",
+          "it": "Capacità: il modello risolve in modo affidabile il compito reale – lingua, dominio, lunghezza di contesto, uso di strumenti, visione, multilingue DE/FR/IT/EN?",
+          "fr": "Aptitude : le modèle résout-il la tâche réelle de façon fiable – langue, domaine, longueur de contexte, outils, vision et couverture multilingue DE/FR/IT/EN ?"
+        },
+        {
+          "de": "Datenstandort & Hoheit: Wo werden Daten verarbeitet und gespeichert, wer hat Zugriff, wird auf Ihren Eingaben trainiert, gibt es Schweizer oder EU-Hosting?",
+          "en": "Data location & sovereignty: where is data processed and stored, who has access, is training done on your inputs, and is Swiss or EU hosting available?",
+          "it": "Ubicazione e sovranità dei dati: dove vengono trattati e archiviati i dati, chi vi accede, si addestra sui vostri input, esiste hosting svizzero o UE?",
+          "fr": "Localisation et souveraineté des données : où les données sont-elles traitées et stockées, qui y accède, l'entraînement utilise-t-il vos saisies, un hébergement suisse ou UE existe-t-il ?"
+        },
+        {
+          "de": "Kostenmodell & TCO: Token-Preise, Volumenrabatte, Fixkosten für Self-Hosting, versteckte Kosten für Integration, Monitoring und Wartung.",
+          "en": "Cost model & TCO: token pricing, volume discounts, fixed costs for self-hosting, and hidden costs for integration, monitoring and maintenance.",
+          "it": "Modello di costo e TCO: prezzi a token, sconti a volume, costi fissi per il self-hosting e costi nascosti per integrazione, monitoraggio e manutenzione.",
+          "fr": "Modèle de coût et TCO : prix au token, remises volume, coûts fixes de l'auto-hébergement et coûts cachés d'intégration, supervision et maintenance."
+        },
+        {
+          "de": "Integration & Betrieb: API-Stabilität, SDKs, Latenz, Verfügbarkeit/SLA, Modell-Versionierung und Reifegrad des Ökosystems.",
+          "en": "Integration & operations: API stability, SDKs, latency, availability/SLA, model versioning and ecosystem maturity.",
+          "it": "Integrazione ed esercizio: stabilità delle API, SDK, latenza, disponibilità/SLA, versioning del modello e maturità dell'ecosistema.",
+          "fr": "Intégration et exploitation : stabilité de l'API, SDK, latence, disponibilité/SLA, versionnage du modèle et maturité de l'écosystème."
+        },
+        {
+          "de": "Compliance & Governance: revDSG, EU AI Act (extraterritorial), Branchenrecht (z. B. FINMA-Vorgaben), Auftragsbearbeitungsvertrag, Auditierbarkeit und Exit-Fähigkeit.",
+          "en": "Compliance & governance: revised FADP, the EU AI Act (extraterritorial), sector rules (e.g. FINMA requirements), a data-processing agreement, auditability and exit capability.",
+          "it": "Compliance e governance: revLPD, EU AI Act (extraterritoriale), norme di settore (es. requisiti FINMA), contratto di trattamento dati, auditabilità e capacità di uscita.",
+          "fr": "Conformité et gouvernance : nLPD, règlement européen sur l'IA (extraterritorial), règles sectorielles (ex. exigences FINMA), contrat de sous-traitance, auditabilité et capacité de sortie."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Capability: Passt das Modell zur Aufgabe?",
+        "en": "Capability: does the model fit the task?",
+        "it": "Capacità: il modello è adatto al compito?",
+        "fr": "Aptitude : le modèle convient-il à la tâche ?"
+      },
+      "paragraphs": [
+        {
+          "de": "Öffentliche Benchmarks messen allgemeine Fähigkeiten, nicht Ihren Use Case. Aussagekräftig wird die Eignung erst über eine eigene, kleine Evaluationssuite: 30 bis 100 repräsentative Beispiele aus Ihrem Alltag mit erwarteten Ergebnissen. Damit vergleichen Sie Kandidaten unter identischen Bedingungen und erkennen Schwächen, die Ranglisten verbergen – etwa bei Schweizer Fachbegriffen, Dialektnähe oder branchenspezifischem Vokabular.",
+          "en": "Public benchmarks measure general ability, not your use case. Capability only becomes meaningful through your own small evaluation suite: 30 to 100 representative examples from your daily work with expected outputs. This lets you compare candidates under identical conditions and expose weaknesses leaderboards hide – for instance with Swiss terminology, dialect proximity or industry vocabulary.",
+          "it": "I benchmark pubblici misurano capacità generali, non il vostro caso d'uso. L'idoneità diventa significativa solo con una piccola suite di valutazione propria: da 30 a 100 esempi rappresentativi del vostro lavoro con i risultati attesi. Così confrontate i candidati in condizioni identiche e scoprite debolezze che le classifiche nascondono – ad esempio su terminologia svizzera, dialetti o lessico di settore.",
+          "fr": "Les benchmarks publics mesurent l'aptitude générale, pas votre cas d'usage. L'aptitude ne devient parlante qu'avec votre propre petite suite d'évaluation : 30 à 100 exemples représentatifs de votre quotidien avec les résultats attendus. Vous comparez ainsi les candidats à conditions identiques et révélez des faiblesses que les classements masquent – par exemple sur la terminologie suisse, la proximité dialectale ou le vocabulaire métier."
+        },
+        {
+          "de": "Prüfen Sie zusätzlich die Rahmenparameter: benötigte Kontextlänge (lange Verträge oder Dossiers?), Multimodalität (Bild, PDF, Audio), Werkzeugaufrufe für Automatisierung, Latenzanforderungen und die Mehrsprachigkeit in allen vier Landessprachen. Oft ist ein mittelgrosses, günstigeres Modell mit sauberem Retrieval (RAG) und guten Prompts die bessere Wahl als das teuerste Spitzenmodell.",
+          "en": "Also check the frame conditions: required context length (long contracts or dossiers?), multimodality (image, PDF, audio), tool calls for automation, latency needs, and multilingual coverage across all four national languages. Often a mid-sized, cheaper model with clean retrieval (RAG) and good prompts beats the most expensive flagship.",
+          "it": "Verificate anche i parametri di contorno: lunghezza di contesto necessaria (contratti o dossier lunghi?), multimodalità (immagini, PDF, audio), chiamate a strumenti per l'automazione, requisiti di latenza e copertura nelle quattro lingue nazionali. Spesso un modello medio più economico con retrieval (RAG) pulito e buoni prompt batte l'ammiraglia più costosa.",
+          "fr": "Vérifiez aussi les paramètres cadres : longueur de contexte requise (contrats ou dossiers longs ?), multimodalité (image, PDF, audio), appels d'outils pour l'automatisation, besoins de latence et couverture dans les quatre langues nationales. Souvent un modèle intermédiaire moins cher, avec un retrieval (RAG) propre et de bons prompts, surpasse le vaisseau amiral le plus onéreux."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenstandort und Datenhoheit: der Schweizer Knackpunkt",
+        "en": "Data location and sovereignty: the Swiss crux",
+        "it": "Ubicazione e sovranità dei dati: il nodo svizzero",
+        "fr": "Localisation et souveraineté des données : le point sensible suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Für Schweizer Unternehmen ist die Datenfrage oft entscheidender als die reine Leistung. Zentral sind vier Punkte: Wo werden die Daten verarbeitet und gespeichert? Werden Ihre Eingaben zum Training des Modells verwendet (in der Regel abwählbar bei Business-Angeboten)? Wer kann rechtlich darauf zugreifen? Und existiert ein Auftragsbearbeitungsvertrag nach revDSG? Bei Personendaten oder Geschäftsgeheimnissen sind diese Antworten Voraussetzung, nicht Kür.",
+          "en": "For Swiss companies the data question often outweighs raw performance. Four points are central: where is data processed and stored? Are your inputs used to train the model (usually opt-out on business tiers)? Who can legally access it? And is there a data-processing agreement under the revised FADP? For personal data or trade secrets these answers are a precondition, not a nice-to-have.",
+          "it": "Per le aziende svizzere la questione dati pesa spesso più della pura prestazione. Quattro punti sono centrali: dove vengono trattati e archiviati i dati? I vostri input servono ad addestrare il modello (di norma disattivabile nei piani business)? Chi può accedervi legalmente? Ed esiste un contratto di trattamento secondo la revLPD? Per dati personali o segreti aziendali queste risposte sono un prerequisito, non un extra.",
+          "fr": "Pour les entreprises suisses, la question des données prime souvent sur la performance brute. Quatre points sont centraux : où les données sont-elles traitées et stockées ? Vos saisies servent-elles à entraîner le modèle (généralement désactivable en offre pro) ? Qui peut y accéder légalement ? Et existe-t-il un contrat de sous-traitance selon la nLPD ? Pour des données personnelles ou des secrets d'affaires, ces réponses sont un préalable, pas un bonus."
+        },
+        {
+          "de": "Das revDSG verlangt nicht zwingend ein Hosting in der Schweiz, sondern angemessenen Schutz und Transparenz bei Auslandsübermittlungen. Viele grosse Anbieter offerieren inzwischen Rechenregionen in der EU oder in der Schweiz; für hoch sensible Daten (Gesundheit, Finanzen, Behörden) kann ein EU-/CH-Hosting oder ein selbst betriebenes Open-Weight-Modell die sauberste Lösung sein. Schweizer und europäische Souveränitätsoptionen wie das offene Modell Apertus von ETH Zürich und EPFL erweitern die Auswahl jenseits der US-Anbieter.",
+          "en": "The revised FADP does not strictly require hosting in Switzerland, but it does require adequate protection and transparency for cross-border transfers. Many large vendors now offer compute regions in the EU or Switzerland; for highly sensitive data (health, finance, public sector) EU/CH hosting or a self-run open-weight model can be the cleanest option. Swiss and European sovereignty options such as the open Apertus model from ETH Zurich and EPFL widen the field beyond US providers.",
+          "it": "La revLPD non impone rigorosamente l'hosting in Svizzera, ma richiede protezione adeguata e trasparenza per i trasferimenti all'estero. Molti grandi vendor offrono ormai regioni di calcolo nell'UE o in Svizzera; per dati molto sensibili (sanità, finanza, settore pubblico) l'hosting UE/CH o un modello open-weight gestito internamente può essere la soluzione più pulita. Opzioni sovrane svizzere ed europee come il modello aperto Apertus di ETH Zurigo ed EPFL ampliano la scelta oltre i fornitori USA.",
+          "fr": "La nLPD n'exige pas strictement un hébergement en Suisse, mais impose une protection adéquate et de la transparence pour les transferts à l'étranger. De nombreux grands vendors proposent désormais des régions de calcul dans l'UE ou en Suisse ; pour des données très sensibles (santé, finance, secteur public), un hébergement UE/CH ou un modèle open-weight auto-hébergé peut être la solution la plus propre. Des options souveraines suisses et européennes comme le modèle ouvert Apertus d'ETH Zurich et de l'EPFL élargissent le choix au-delà des fournisseurs américains."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Kostenmodell und Total Cost of Ownership",
+        "en": "Cost model and total cost of ownership",
+        "it": "Modello di costo e total cost of ownership",
+        "fr": "Modèle de coût et coût total de possession"
+      },
+      "paragraphs": [
+        {
+          "de": "Der sichtbare Token-Preis ist nur ein Teil der Rechnung. Vergleichen Sie die tatsächlichen Betriebskosten (TCO) über ein realistisches Volumen: Ein-/Ausgabe-Tokens, Kontextgrösse, Wiederholungen durch Nachfragen, Caching-Rabatte und Batch-Optionen. Ein günstiger Grundpreis kann durch lange Prompts oder viele Iterationen teurer werden als ein scheinbar teureres Modell, das die Aufgabe beim ersten Versuch löst. Konkrete Preise ändern sich häufig – konsultieren Sie stets die aktuelle Preisliste des Anbieters.",
+          "en": "The visible token price is only part of the bill. Compare real operating cost (TCO) over a realistic volume: input/output tokens, context size, retries from clarifications, caching discounts and batch options. A cheap headline price can end up dearer through long prompts or many iterations than a seemingly pricier model that solves the task on the first try. Actual prices change often – always consult the provider's current pricing.",
+          "it": "Il prezzo a token visibile è solo una parte del conto. Confrontate il costo reale di gestione (TCO) su un volume realistico: token in/out, dimensione del contesto, ripetizioni dovute a chiarimenti, sconti di caching e opzioni batch. Un prezzo base basso può risultare più caro, per prompt lunghi o molte iterazioni, di un modello apparentemente più costoso che risolve al primo tentativo. I prezzi cambiano spesso – consultate sempre il listino aggiornato del fornitore.",
+          "fr": "Le prix au token visible n'est qu'une partie de la facture. Comparez le coût réel d'exploitation (TCO) sur un volume réaliste : tokens entrée/sortie, taille du contexte, reprises dues aux clarifications, remises de cache et options batch. Un prix d'appel bas peut coûter plus cher, via des prompts longs ou de nombreuses itérations, qu'un modèle apparemment plus onéreux qui résout dès le premier essai. Les prix évoluent souvent – consultez toujours la tarification en vigueur du fournisseur."
+        },
+        {
+          "de": "Bei Self-Hosting kehrt sich die Logik um: statt variabler Token-Preise fallen fixe Kosten für GPU-Infrastruktur, Betrieb und Know-how an. Das lohnt sich ab hohem, konstantem Volumen oder wenn Datenhoheit den Ausschlag gibt. Rechnen Sie auch weiche Kosten ein: Integration, Prompt- und Evaluations-Aufwand, Monitoring, Modell-Updates und Schulung der Mitarbeitenden.",
+          "en": "With self-hosting the logic reverses: instead of variable token prices you carry fixed costs for GPU infrastructure, operations and expertise. It pays off at high, steady volume or when data sovereignty is decisive. Include the soft costs too: integration, prompt and evaluation effort, monitoring, model updates and staff training.",
+          "it": "Con il self-hosting la logica si inverte: al posto dei prezzi variabili a token ci sono costi fissi per infrastruttura GPU, esercizio e competenze. Conviene a volumi alti e costanti o quando la sovranità dei dati è decisiva. Considerate anche i costi indiretti: integrazione, lavoro su prompt e valutazione, monitoraggio, aggiornamenti dei modelli e formazione del personale.",
+          "fr": "Avec l'auto-hébergement, la logique s'inverse : au lieu de prix variables au token, vous portez des coûts fixes d'infrastructure GPU, d'exploitation et de compétences. C'est rentable à volume élevé et constant ou quand la souveraineté des données prime. Intégrez aussi les coûts indirects : intégration, effort de prompt et d'évaluation, supervision, mises à jour de modèles et formation des collaborateurs."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Integration, Betrieb, Compliance und Exit",
+        "en": "Integration, operations, compliance and exit",
+        "it": "Integrazione, esercizio, compliance e uscita",
+        "fr": "Intégration, exploitation, conformité et sortie"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein Modell ist nur so nützlich wie seine Einbettung. Prüfen Sie API-Stabilität und Rückwärtskompatibilität, verfügbare SDKs, Latenz und Durchsatz, dokumentierte Verfügbarkeit (SLA) sowie die Reife des Ökosystems (Bibliotheken, Community, Support). Wichtig ist auch die Versionierungspolitik: Werden alte Modellversionen abgekündigt, müssen Sie neu evaluieren – planen Sie diesen Wartungszyklus von Anfang an ein.",
+          "en": "A model is only as useful as its embedding. Check API stability and backward compatibility, available SDKs, latency and throughput, documented availability (SLA), and ecosystem maturity (libraries, community, support). The versioning policy matters too: when old model versions are retired you must re-evaluate – plan this maintenance cycle in from the start.",
+          "it": "Un modello vale quanto la sua integrazione. Verificate stabilità e retrocompatibilità delle API, SDK disponibili, latenza e throughput, disponibilità documentata (SLA) e maturità dell'ecosistema (librerie, community, supporto). Conta anche la politica di versioning: quando le vecchie versioni vengono dismesse dovete rivalutare – pianificate da subito questo ciclo di manutenzione.",
+          "fr": "Un modèle ne vaut que par son intégration. Vérifiez la stabilité et la rétrocompatibilité de l'API, les SDK disponibles, la latence et le débit, la disponibilité documentée (SLA) et la maturité de l'écosystème (bibliothèques, communauté, support). La politique de versionnage compte aussi : quand d'anciennes versions sont retirées, il faut réévaluer – planifiez ce cycle de maintenance dès le départ."
+        },
+        {
+          "de": "Compliance-seitig gehören ein Auftragsbearbeitungsvertrag nach revDSG, Transparenz über Sub-Auftragsverarbeiter und Auslandsübermittlungen sowie die Einordnung unter dem EU AI Act dazu. Der EU AI Act wirkt extraterritorial: Er kann Schweizer Anbieter treffen, deren Systeme in der EU genutzt werden oder deren Ergebnisse dort verwendet werden. In regulierten Branchen kommen FINMA-Vorgaben oder Berufsgeheimnisse hinzu. Vermeiden Sie schliesslich Vendor Lock-in: Bevorzugen Sie offene Standards, portable Prompts und eine Architektur, die den Anbieterwechsel ermöglicht.",
+          "en": "On compliance you need a data-processing agreement under the revised FADP, transparency about sub-processors and cross-border transfers, and a classification under the EU AI Act. The EU AI Act is extraterritorial: it can reach Swiss providers whose systems are used in the EU or whose outputs are used there. In regulated sectors, FINMA requirements or professional secrecy add further duties. Finally, avoid vendor lock-in: prefer open standards, portable prompts and an architecture that keeps switching providers feasible.",
+          "it": "Sul fronte compliance servono un contratto di trattamento secondo la revLPD, trasparenza su sub-responsabili e trasferimenti all'estero e una classificazione ai sensi dell'EU AI Act. L'EU AI Act è extraterritoriale: può riguardare fornitori svizzeri i cui sistemi sono usati nell'UE o i cui risultati vi sono impiegati. Nei settori regolati si aggiungono requisiti FINMA o segreti professionali. Infine evitate il vendor lock-in: preferite standard aperti, prompt portabili e un'architettura che renda fattibile il cambio di fornitore.",
+          "fr": "Côté conformité, il faut un contrat de sous-traitance selon la nLPD, de la transparence sur les sous-traitants ultérieurs et les transferts à l'étranger, et un classement au titre du règlement européen sur l'IA. Ce règlement est extraterritorial : il peut viser des fournisseurs suisses dont les systèmes sont utilisés dans l'UE ou dont les résultats y sont exploités. Dans les secteurs régulés s'ajoutent les exigences FINMA ou le secret professionnel. Enfin, évitez le verrouillage : privilégiez des standards ouverts, des prompts portables et une architecture qui garde le changement de fournisseur possible."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Das Bewertungsraster: gewichten und entscheiden",
+        "en": "The scorecard: weight and decide",
+        "it": "La scorecard: pesare e decidere",
+        "fr": "La grille d'évaluation : pondérer et décider"
+      },
+      "paragraphs": [
+        {
+          "de": "Übersetzen Sie die fünf Kriterien in ein einfaches Bewertungsraster. Gewichten Sie jedes Kriterium nach Bedeutung für Ihren Use Case (Summe 100 %), bewerten Sie jeden Kandidaten auf einer Skala von 1 bis 5 und multiplizieren Sie. So wird der Entscheid transparent, nachvollziehbar und auditierbar – und lässt sich bei jedem Modell-Update wiederholen.",
+          "en": "Translate the five criteria into a simple scorecard. Weight each criterion by its importance to your use case (summing to 100%), rate each candidate on a 1-to-5 scale and multiply. This makes the decision transparent, defensible and auditable – and repeatable at every model update.",
+          "it": "Traducete i cinque criteri in una semplice scorecard. Pesate ogni criterio in base all'importanza per il vostro caso d'uso (totale 100%), valutate ogni candidato su una scala da 1 a 5 e moltiplicate. Così la decisione diventa trasparente, difendibile e auditabile – e ripetibile a ogni aggiornamento del modello.",
+          "fr": "Traduisez les cinq critères en une grille simple. Pondérez chaque critère selon son importance pour votre cas d'usage (total 100 %), notez chaque candidat sur une échelle de 1 à 5 et multipliez. La décision devient transparente, défendable et auditable – et reproductible à chaque mise à jour de modèle."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Gewichtungsbeispiel (anpassen!): Compliance 25 %, Datenstandort 25 %, Capability 20 %, Kosten/TCO 15 %, Integration 15 % – bei stark regulierten Daten.",
+          "en": "Example weighting (adapt it!): compliance 25%, data location 25%, capability 20%, cost/TCO 15%, integration 15% – for heavily regulated data.",
+          "it": "Esempio di pesi (da adattare!): compliance 25%, ubicazione dati 25%, capacità 20%, costi/TCO 15%, integrazione 15% – per dati fortemente regolati.",
+          "fr": "Exemple de pondération (à adapter !) : conformité 25 %, localisation 25 %, aptitude 20 %, coûts/TCO 15 %, intégration 15 % – pour des données très régulées."
+        },
+        {
+          "de": "Pilot vor Skalierung: Testen Sie die zwei besten Kandidaten in einem begrenzten Pilotprojekt mit echten Daten, bevor Sie sich festlegen.",
+          "en": "Pilot before scaling: test the top two candidates in a bounded pilot with real data before committing.",
+          "it": "Pilota prima di scalare: testate i due migliori candidati in un pilota circoscritto con dati reali prima di decidere.",
+          "fr": "Pilote avant mise à l'échelle : testez les deux meilleurs candidats dans un pilote délimité avec des données réelles avant de vous engager."
+        },
+        {
+          "de": "Nicht endgültig binden: Halten Sie die Architektur austauschbar; die Modelllandschaft ändert sich in Monaten, nicht Jahren.",
+          "en": "Do not lock in for good: keep the architecture swappable; the model landscape shifts in months, not years.",
+          "it": "Non vincolatevi per sempre: mantenete l'architettura sostituibile; il panorama dei modelli cambia in mesi, non anni.",
+          "fr": "Ne vous liez pas définitivement : gardez l'architecture interchangeable ; le paysage des modèles évolue en mois, pas en années."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Welches KI-Modell ist das beste für mein Unternehmen?",
+        "en": "Which AI model is the best for my company?",
+        "it": "Qual è il miglior modello IA per la mia azienda?",
+        "fr": "Quel est le meilleur modèle IA pour mon entreprise ?"
+      },
+      "a": {
+        "de": "Es gibt kein universell bestes Modell. Das richtige Modell ergibt sich aus Ihrem konkreten Use Case, Ihren Datenschutzanforderungen, Ihrem Volumen und Budget sowie Ihrer bestehenden IT. Definieren Sie zuerst die Aufgabe, bauen Sie eine kleine Evaluationssuite mit echten Beispielen und vergleichen Sie zwei bis drei Kandidaten anhand des gewichteten Bewertungsrasters.",
+        "en": "There is no universally best model. The right one follows from your specific use case, data-protection needs, volume and budget, and existing IT. Define the task first, build a small evaluation suite with real examples, and compare two or three candidates using the weighted scorecard.",
+        "it": "Non esiste un modello migliore in assoluto. Quello giusto deriva dal vostro caso d'uso, dalle esigenze di protezione dati, dal volume e budget e dall'IT esistente. Definite prima il compito, costruite una piccola suite di valutazione con esempi reali e confrontate due o tre candidati con la scorecard pesata.",
+        "fr": "Il n'existe pas de meilleur modèle universel. Le bon découle de votre cas d'usage, de vos besoins de protection des données, de votre volume et budget et de votre IT existante. Définissez d'abord la tâche, construisez une petite suite d'évaluation avec des exemples réels et comparez deux ou trois candidats via la grille pondérée."
+      }
+    },
+    {
+      "q": {
+        "de": "Cloud-API oder selbst gehostetes Open-Weight-Modell?",
+        "en": "Cloud API or self-hosted open-weight model?",
+        "it": "API cloud o modello open-weight self-hosted?",
+        "fr": "API cloud ou modèle open-weight auto-hébergé ?"
+      },
+      "a": {
+        "de": "Cloud-APIs bieten Spitzenleistung, schnelle Integration und variable Kosten ohne Infrastruktur. Selbst gehostete Open-Weight-Modelle geben maximale Datenhoheit und planbare Fixkosten, verlangen aber GPU-Infrastruktur und Know-how. Cloud lohnt sich für schnellen Start und schwankende Volumina; Self-Hosting bei hohem konstantem Volumen oder wenn Daten die Schweiz nicht verlassen dürfen.",
+        "en": "Cloud APIs offer top performance, fast integration and variable cost without infrastructure. Self-hosted open-weight models give maximum data sovereignty and predictable fixed cost but require GPU infrastructure and expertise. Cloud suits a fast start and fluctuating volume; self-hosting suits high steady volume or data that must not leave Switzerland.",
+        "it": "Le API cloud offrono prestazioni di punta, integrazione rapida e costi variabili senza infrastruttura. I modelli open-weight self-hosted danno massima sovranità dei dati e costi fissi prevedibili, ma richiedono infrastruttura GPU e competenze. Il cloud conviene per partenze rapide e volumi variabili; il self-hosting per volumi alti e costanti o dati che non devono lasciare la Svizzera.",
+        "fr": "Les API cloud offrent des performances de pointe, une intégration rapide et des coûts variables sans infrastructure. Les modèles open-weight auto-hébergés donnent une souveraineté maximale et des coûts fixes prévisibles, mais exigent une infrastructure GPU et des compétences. Le cloud convient à un démarrage rapide et à des volumes fluctuants ; l'auto-hébergement à un volume élevé constant ou à des données qui ne doivent pas quitter la Suisse."
+      }
+    },
+    {
+      "q": {
+        "de": "Muss ich für revDSG-Konformität zwingend in der Schweiz hosten?",
+        "en": "Do I have to host in Switzerland for revised-FADP compliance?",
+        "it": "Devo per forza ospitare in Svizzera per la conformità revLPD?",
+        "fr": "Dois-je obligatoirement héberger en Suisse pour la conformité nLPD ?"
+      },
+      "a": {
+        "de": "Nein. Das revDSG verlangt kein Hosting in der Schweiz, sondern angemessenen Schutz und Transparenz bei Auslandsübermittlungen, etwa in Länder mit anerkanntem Datenschutzniveau oder mit vertraglichen Garantien. Ein Auftragsbearbeitungsvertrag ist Pflicht. Bei besonders schützenswerten Daten kann CH- oder EU-Hosting dennoch die risikoärmste Wahl sein.",
+        "en": "No. The revised FADP does not require Swiss hosting but adequate protection and transparency for cross-border transfers, e.g. to countries with recognised protection levels or with contractual safeguards. A data-processing agreement is mandatory. For especially sensitive data, CH or EU hosting can still be the lowest-risk choice.",
+        "it": "No. La revLPD non impone l'hosting in Svizzera ma protezione adeguata e trasparenza per i trasferimenti all'estero, ad esempio verso Paesi con livello di protezione riconosciuto o con garanzie contrattuali. Il contratto di trattamento è obbligatorio. Per dati particolarmente sensibili, l'hosting CH o UE può comunque essere la scelta a minor rischio.",
+        "fr": "Non. La nLPD n'exige pas un hébergement suisse mais une protection adéquate et de la transparence pour les transferts à l'étranger, par exemple vers des pays au niveau de protection reconnu ou avec des garanties contractuelles. Un contrat de sous-traitance est obligatoire. Pour des données particulièrement sensibles, un hébergement CH ou UE reste le choix le moins risqué."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie vergleiche ich die Kosten verschiedener Anbieter fair?",
+        "en": "How do I compare vendor costs fairly?",
+        "it": "Come confronto in modo equo i costi dei vendor?",
+        "fr": "Comment comparer équitablement les coûts des vendors ?"
+      },
+      "a": {
+        "de": "Rechnen Sie nicht mit dem Listenpreis pro Token, sondern mit den Gesamtkosten für ein realistisches Monatsvolumen: durchschnittliche Prompt- und Antwortlänge, Anzahl Anfragen, Caching- und Batch-Rabatte sowie Wiederholungen. Ergänzen Sie weiche Kosten für Integration, Monitoring und Wartung. Konkrete Preise ändern sich oft, prüfen Sie stets die aktuelle Preisliste des Anbieters.",
+        "en": "Do not compute with the list price per token but with total cost for a realistic monthly volume: average prompt and response length, number of requests, caching and batch discounts, and retries. Add soft costs for integration, monitoring and maintenance. Actual prices change often, so always check the provider's current pricing.",
+        "it": "Non calcolate col prezzo di listino per token ma col costo totale su un volume mensile realistico: lunghezza media di prompt e risposta, numero di richieste, sconti di caching e batch e ripetizioni. Aggiungete i costi indiretti di integrazione, monitoraggio e manutenzione. I prezzi cambiano spesso, verificate sempre il listino aggiornato del fornitore.",
+        "fr": "Ne calculez pas au prix catalogue par token mais au coût total sur un volume mensuel réaliste : longueur moyenne des prompts et réponses, nombre de requêtes, remises de cache et batch, et reprises. Ajoutez les coûts indirects d'intégration, de supervision et de maintenance. Les prix évoluent souvent, vérifiez toujours la tarification en vigueur du fournisseur."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist Vendor Lock-in und wie vermeide ich ihn?",
+        "en": "What is vendor lock-in and how do I avoid it?",
+        "it": "Cos'è il vendor lock-in e come lo evito?",
+        "fr": "Qu'est-ce que le verrouillage fournisseur et comment l'éviter ?"
+      },
+      "a": {
+        "de": "Vendor Lock-in bedeutet, dass ein Anbieterwechsel technisch oder wirtschaftlich schwierig wird – etwa durch proprietäre Schnittstellen oder tief eingebettete Abhängigkeiten. Vermeiden Sie ihn durch eine Abstraktionsschicht zwischen Ihrer Anwendung und dem Modell, portable Prompts, offene Standards und regelmässige Tests eines Alternativmodells. So bleiben Sie handlungsfähig, wenn Preise, Qualität oder Bedingungen sich ändern.",
+        "en": "Vendor lock-in means switching providers becomes technically or economically hard – e.g. through proprietary interfaces or deeply embedded dependencies. Avoid it with an abstraction layer between your application and the model, portable prompts, open standards and regular testing of an alternative model. That keeps you able to act when prices, quality or terms change.",
+        "it": "Il vendor lock-in significa che cambiare fornitore diventa difficile sul piano tecnico o economico – ad esempio per interfacce proprietarie o dipendenze profonde. Evitatelo con uno strato di astrazione tra applicazione e modello, prompt portabili, standard aperti e test regolari di un modello alternativo. Così restate liberi di agire quando cambiano prezzi, qualità o condizioni.",
+        "fr": "Le verrouillage fournisseur signifie qu'un changement de vendor devient techniquement ou économiquement difficile – via des interfaces propriétaires ou des dépendances profondes. Évitez-le avec une couche d'abstraction entre votre application et le modèle, des prompts portables, des standards ouverts et des tests réguliers d'un modèle alternatif. Vous gardez ainsi votre liberté d'action quand prix, qualité ou conditions changent."
+      }
+    },
+    {
+      "q": {
+        "de": "Sollte ich ein Schweizer oder europäisches Modell wie Apertus nutzen?",
+        "en": "Should I use a Swiss or European model such as Apertus?",
+        "it": "Dovrei usare un modello svizzero o europeo come Apertus?",
+        "fr": "Devrais-je utiliser un modèle suisse ou européen comme Apertus ?"
+      },
+      "a": {
+        "de": "Apertus ist ein offenes, in der Schweiz von ETH Zürich und EPFL entwickeltes Sprachmodell und eine ernstzunehmende Souveränitätsoption, besonders wenn Datenhoheit, Transparenz und Unabhängigkeit von US-Anbietern zählen. Ob es passt, hängt vom Use Case ab: Bewerten Sie es wie jeden anderen Kandidaten über Ihre eigene Evaluationssuite, statt es allein aus Standortgründen zu wählen.",
+        "en": "Apertus is an open language model developed in Switzerland by ETH Zurich and EPFL and a serious sovereignty option, especially where data sovereignty, transparency and independence from US providers matter. Whether it fits depends on the use case: evaluate it like any other candidate through your own evaluation suite rather than choosing it on location alone.",
+        "it": "Apertus è un modello linguistico aperto sviluppato in Svizzera da ETH Zurigo ed EPFL e una seria opzione sovrana, soprattutto quando contano sovranità dei dati, trasparenza e indipendenza dai fornitori USA. Se sia adatto dipende dal caso d'uso: valutatelo come ogni altro candidato con la vostra suite di valutazione, non sceglietelo solo per la sede.",
+        "fr": "Apertus est un modèle de langue ouvert développé en Suisse par ETH Zurich et l'EPFL, et une véritable option souveraine, surtout quand comptent la souveraineté des données, la transparence et l'indépendance vis-à-vis des fournisseurs américains. Son adéquation dépend du cas d'usage : évaluez-le comme tout autre candidat via votre propre suite d'évaluation plutôt que de le choisir pour sa seule localisation."
+      }
+    }
+  ],
+  "keyEntities": [
+    "revDSG / nFADP",
+    "EDOEB",
+    "EU AI Act",
+    "Total Cost of Ownership (TCO)",
+    "Apertus",
+    "ETH Zürich",
+    "EPFL",
+    "FINMA",
+    "Retrieval-Augmented Generation (RAG)",
+    "Fine-Tuning",
+    "Open-Weight-Modell",
+    "Vendor Lock-in",
+    "Datenresidenz",
+    "Auftragsbearbeitungsvertrag",
+    "SLA",
+    "Token-basiertes Preismodell"
+  ]
+}

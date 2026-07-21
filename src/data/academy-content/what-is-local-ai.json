@@ -1,0 +1,381 @@
+{
+  "id": "what-is-local-ai",
+  "cluster": "local-opensource",
+  "type": "spoke",
+  "relatedServices": [
+    "integrations",
+    "consulting"
+  ],
+  "slug": {
+    "de": "was-ist-lokale-ki",
+    "en": "what-is-local-ai",
+    "it": "che-cos-e-l-ia-locale",
+    "fr": "qu-est-ce-que-l-ia-locale"
+  },
+  "title": {
+    "de": "Was ist lokale KI? On-Device und Self-Hosting | Weissmann AI",
+    "en": "What Is Local AI? On-Device and Self-Hosted | Weissmann AI",
+    "it": "Cos'e l'IA locale? On-device e self-hosted | Weissmann AI",
+    "fr": "Qu'est-ce que l'IA locale ? Guide complet | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Lokale KI laeuft auf Ihrer eigenen Hardware statt in der Cloud. Wie sie sich von Cloud-KI unterscheidet, wann sie sinnvoll ist - mit Schweizer Datenschutz-Blick.",
+    "en": "Local AI runs on your own hardware - on-device or self-hosted - instead of the cloud. How it differs from cloud AI, when it makes sense, and the trade-offs.",
+    "it": "L'IA locale gira sul vostro hardware, on-device o self-hosted, invece che nel cloud. Come si distingue dall'IA cloud, quando conviene e i compromessi.",
+    "fr": "L'IA locale s'execute sur votre materiel, on-device ou auto-hebergee, plutot que dans le cloud. Differences avec l'IA cloud, cas d'usage et compromis."
+  },
+  "kicker": {
+    "de": "Lokale vs. Cloud-KI",
+    "en": "Local vs. cloud AI",
+    "it": "IA locale vs. cloud",
+    "fr": "IA locale vs. cloud"
+  },
+  "h1": {
+    "de": "Was ist lokale KI?",
+    "en": "What is local AI?",
+    "it": "Che cos'e l'IA locale?",
+    "fr": "Qu'est-ce que l'IA locale ?"
+  },
+  "answerFirst": {
+    "de": "Lokale KI (auch On-Device- oder Self-hosted-KI) betreibt KI-Modelle auf eigener Hardware - Laptop, Smartphone oder Firmenserver - statt in der Cloud eines Anbieters. Ihre Daten verlassen die eigene Infrastruktur nie. Das eignet sich fuer datenschutzsensible, offline oder volumenstarke Aufgaben, verlangt aber lokale Rechenleistung und liefert kleinere Modelle als die groessten Cloud-Systeme. Cloud-KI bietet mehr Leistung und keine Wartung; lokale KI bietet Kontrolle und Datenhoheit.",
+    "en": "Local AI (also called on-device or self-hosted AI) runs AI models on hardware you control - a laptop, phone or company server - instead of a provider's cloud. Your data never leaves your infrastructure. It suits privacy-sensitive, offline or high-volume work, but demands local compute and delivers smaller models than the largest cloud systems. Cloud AI offers more power and no maintenance; local AI offers control and data sovereignty.",
+    "it": "L'IA locale (on-device o self-hosted) esegue i modelli su hardware che controllate voi - laptop, smartphone o server aziendale - invece che nel cloud di un fornitore. I dati non lasciano mai la vostra infrastruttura. E adatta a compiti sensibili, offline o ad alto volume, ma richiede potenza di calcolo locale e offre modelli piu piccoli dei maggiori sistemi cloud. Il cloud offre piu potenza e nessuna manutenzione; il locale, controllo e sovranita dei dati.",
+    "fr": "L'IA locale (on-device ou auto-hebergee) execute les modeles sur du materiel que vous controlez - portable, smartphone ou serveur d'entreprise - plutot que dans le cloud d'un fournisseur. Vos donnees ne quittent jamais votre infrastructure. Elle convient aux taches sensibles, hors ligne ou a fort volume, mais exige une puissance de calcul locale et offre des modeles plus petits que les plus grands systemes cloud. Le cloud offre plus de puissance et aucune maintenance ; le local, le controle et la souverainete des donnees."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Lokale KI: eine Definition",
+        "en": "Local AI: a definition",
+        "it": "IA locale: una definizione",
+        "fr": "L'IA locale : une definition"
+      },
+      "paragraphs": [
+        {
+          "de": "Lokale KI bedeutet, ein KI-Modell auf Hardware zu betreiben, die Sie selbst kontrollieren, statt Ihre Anfragen an das Rechenzentrum eines Anbieters zu senden. Die Modellgewichte liegen auf Ihrem Geraet, die Berechnung findet dort statt, und Ihre Eingaben und Daten verlassen Ihr System nie in Richtung eines Dritten.",
+          "en": "Local AI means running an AI model on hardware you control, rather than sending your requests to a provider's data centre. The model's weights sit on your device, the computation happens there, and your prompts and data never travel over the internet to a third party.",
+          "it": "IA locale significa eseguire un modello di intelligenza artificiale su hardware che controllate voi, invece di inviare le richieste al data center di un fornitore. I pesi del modello risiedono sul vostro dispositivo, il calcolo avviene li e i vostri dati e prompt non lasciano mai il vostro sistema verso terzi.",
+          "fr": "L'IA locale consiste a executer un modele d'intelligence artificielle sur du materiel que vous controlez, plutot que d'envoyer vos requetes au centre de donnees d'un fournisseur. Les poids du modele resident sur votre appareil, le calcul s'y effectue, et vos donnees et requetes ne quittent jamais votre systeme vers un tiers."
+        },
+        {
+          "de": "Der Begriff umfasst zwei Varianten. On-Device-KI laeuft direkt auf einem persoenlichen Geraet - Laptop, Smartphone oder Workstation -, meist fuer eine einzelne Person. Self-hosted KI laeuft auf einem Server oder Cluster, den Sie selbst betreiben und der ein Team, eine Anwendung oder eine ganze Organisation bedient. Beide sind 'lokal', weil Sie - nicht ein Anbieter - Infrastruktur und Daten in der Hand halten.",
+          "en": "The term covers two setups. On-device AI runs directly on a personal machine - a laptop, smartphone or workstation - often for a single user. Self-hosted AI runs on a server or cluster you operate, serving a team, an application or a whole organisation. Both are 'local' in the sense that you, not a vendor, hold the infrastructure and the data.",
+          "it": "Il termine comprende due configurazioni. L'IA on-device gira direttamente su un dispositivo personale - laptop, smartphone o workstation -, di solito per un singolo utente. L'IA self-hosted gira su un server o cluster gestito da voi, al servizio di un team, un'applicazione o un'intera organizzazione. Entrambe sono 'locali' perche siete voi, non un fornitore, a detenere infrastruttura e dati.",
+          "fr": "Le terme recouvre deux configurations. L'IA on-device (embarquee) fonctionne directement sur un appareil personnel - ordinateur portable, smartphone ou station de travail -, souvent pour un seul utilisateur. L'IA self-hosted (auto-hebergee) tourne sur un serveur ou un cluster que vous exploitez, au service d'une equipe, d'une application ou de toute une organisation. Les deux sont 'locales' parce que c'est vous, et non un fournisseur, qui detenez l'infrastructure et les donnees."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Lokale KI vs. Cloud-KI: die Unterschiede",
+        "en": "Local AI vs. cloud AI: the differences",
+        "it": "IA locale vs. IA cloud: le differenze",
+        "fr": "IA locale vs. IA cloud : les differences"
+      },
+      "bullets": [
+        {
+          "de": "Datenstandort: Lokal - Daten bleiben auf Ihrer Hardware; Cloud - Daten werden an die Server des Anbieters uebertragen und dort verarbeitet.",
+          "en": "Data location: Local - data stays on your hardware; Cloud - data is sent to and processed on the provider's servers.",
+          "it": "Posizione dei dati: Locale - i dati restano sul vostro hardware; Cloud - i dati vengono inviati ed elaborati sui server del fornitore.",
+          "fr": "Emplacement des donnees : Local - les donnees restent sur votre materiel ; Cloud - les donnees sont envoyees et traitees sur les serveurs du fournisseur."
+        },
+        {
+          "de": "Modellgroesse und Qualitaet: Die Cloud bietet Zugang zu den groessten Spitzenmodellen; lokal laufen kleinere Open-Weight-Modelle, abgestimmt auf Ihre Hardware.",
+          "en": "Model size and quality: Cloud gives access to the largest frontier models; local runs smaller open-weight models tuned to your hardware.",
+          "it": "Dimensione e qualita del modello: il cloud da accesso ai modelli di frontiera piu grandi; in locale girano modelli open-weight piu piccoli, adattati al vostro hardware.",
+          "fr": "Taille et qualite du modele : le cloud donne acces aux plus grands modeles de pointe ; en local tournent des modeles open-weight plus petits, adaptes a votre materiel."
+        },
+        {
+          "de": "Kostenmodell: Lokal - einmalige Hardware plus Strom; Cloud - Bezahlung pro Nutzung oder Abo, das mit dem Volumen waechst.",
+          "en": "Cost model: Local - one-off hardware plus electricity; Cloud - pay-per-use or subscription that scales with volume.",
+          "it": "Modello di costo: Locale - hardware una tantum piu elettricita; Cloud - pagamento a consumo o abbonamento che cresce con il volume.",
+          "fr": "Modele de cout : Local - materiel unique plus electricite ; Cloud - paiement a l'usage ou abonnement qui croit avec le volume."
+        },
+        {
+          "de": "Verfuegbarkeit: Lokal funktioniert vollstaendig offline; die Cloud braucht eine stabile Internetverbindung.",
+          "en": "Connectivity: Local works fully offline; cloud needs a reliable internet connection.",
+          "it": "Disponibilita: in locale funziona completamente offline; il cloud richiede una connessione stabile.",
+          "fr": "Disponibilite : en local, fonctionnement entierement hors ligne ; le cloud exige une connexion stable."
+        },
+        {
+          "de": "Wartung: Die Cloud wird fuer Sie betrieben; lokal uebernehmen Sie Updates, Sicherheit und Skalierung.",
+          "en": "Maintenance: Cloud is managed for you; local means you handle updates, security and scaling.",
+          "it": "Manutenzione: il cloud e gestito per voi; in locale gestite voi aggiornamenti, sicurezza e scalabilita.",
+          "fr": "Maintenance : le cloud est gere pour vous ; en local, vous assurez mises a jour, securite et mise a l'echelle."
+        },
+        {
+          "de": "Latenz und Limits: Lokal gibt es keine Rate-Limits oder Kosten pro Token; die Cloud drosselt und misst die Nutzung.",
+          "en": "Latency and limits: Local has no rate limits or per-token fees; cloud may throttle and meter usage.",
+          "it": "Latenza e limiti: in locale nessun limite di frequenza ne costo per token; il cloud limita e misura l'uso.",
+          "fr": "Latence et limites : en local, aucune limite de debit ni cout par token ; le cloud bride et mesure l'usage."
+        },
+        {
+          "de": "Kontrolle und Compliance: Lokal bedeutet volle Datenhoheit; die Cloud haengt von Bedingungen, Region und Zertifizierungen des Anbieters ab.",
+          "en": "Control and compliance: Local gives full data sovereignty; cloud depends on the provider's terms, region and certifications.",
+          "it": "Controllo e conformita: in locale piena sovranita sui dati; nel cloud dipende da condizioni, regione e certificazioni del fornitore.",
+          "fr": "Controle et conformite : en local, pleine souverainete des donnees ; dans le cloud, cela depend des conditions, de la region et des certifications du fournisseur."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wann sich lokale KI lohnt",
+        "en": "When local AI makes sense",
+        "it": "Quando conviene l'IA locale",
+        "fr": "Quand l'IA locale a du sens"
+      },
+      "bullets": [
+        {
+          "de": "Sensible Daten: Gesundheits-, Rechts-, Finanz- oder HR-Informationen, die das Haus unter revDSG/nDSG oder Berufsgeheimnis nicht verlassen duerfen.",
+          "en": "Sensitive data: health, legal, financial or HR information that must not leave your premises under revDSG/nFADP or professional secrecy.",
+          "it": "Dati sensibili: informazioni sanitarie, legali, finanziarie o del personale che non devono lasciare la sede secondo la nLPD o il segreto professionale.",
+          "fr": "Donnees sensibles : informations de sante, juridiques, financieres ou RH qui ne doivent pas quitter vos locaux au titre de la nLPD ou du secret professionnel."
+        },
+        {
+          "de": "Offline- und Edge-Umgebungen: Fabriken, Kliniken, Aussendienst oder Sicherheitsbereiche ohne verlaessliche Verbindung.",
+          "en": "Offline or edge settings: factories, clinics, field work or secure sites without reliable connectivity.",
+          "it": "Ambienti offline ed edge: fabbriche, cliniche, lavoro sul campo o aree sicure senza connessione affidabile.",
+          "fr": "Environnements hors ligne et edge : usines, cliniques, travail de terrain ou zones securisees sans connexion fiable."
+        },
+        {
+          "de": "Hohes, planbares Volumen: konstante Lasten, bei denen Cloud-Kosten pro Token dominieren wuerden.",
+          "en": "High, predictable volume: constant workloads where per-token cloud fees would dominate costs.",
+          "it": "Volume elevato e prevedibile: carichi costanti in cui i costi cloud per token diventerebbero dominanti.",
+          "fr": "Volume eleve et previsible : charges constantes ou les couts cloud par token deviendraient preponderants."
+        },
+        {
+          "de": "Anforderungen an Datensouveraenitaet: oeffentlicher Sektor, regulierte Branchen oder Vertraege mit Schweizer/EU-Datenhaltung.",
+          "en": "Data sovereignty requirements: public sector, regulated industries or contracts that mandate Swiss/EU data residency.",
+          "it": "Requisiti di sovranita dei dati: settore pubblico, industrie regolamentate o contratti che impongono la residenza dei dati in Svizzera/UE.",
+          "fr": "Exigences de souverainete des donnees : secteur public, industries reglementees ou contrats imposant l'hebergement des donnees en Suisse/UE."
+        },
+        {
+          "de": "Produktfunktionen: KI in einer App oder einem Geraet, das ohne Cloud-Abhaengigkeit oder laufende API-Rechnung funktionieren muss.",
+          "en": "Product features: embedding AI in an app or device that must work without a cloud dependency or recurring API bill.",
+          "it": "Funzionalita di prodotto: IA integrata in un'app o dispositivo che deve funzionare senza dipendenza dal cloud o bollette API ricorrenti.",
+          "fr": "Fonctionnalites produit : IA integree a une application ou un appareil devant fonctionner sans dependance au cloud ni facture d'API recurrente."
+        },
+        {
+          "de": "Experimentieren und Lernen: offene Modelle frei und ohne Nutzungslimits ausprobieren.",
+          "en": "Experimentation and learning: running open models freely without usage caps.",
+          "it": "Sperimentazione e apprendimento: usare modelli aperti liberamente e senza limiti d'uso.",
+          "fr": "Experimentation et apprentissage : utiliser librement des modeles ouverts sans plafond d'usage."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Grenzen und Kompromisse",
+        "en": "Limits and trade-offs",
+        "it": "Limiti e compromessi",
+        "fr": "Limites et compromis"
+      },
+      "bullets": [
+        {
+          "de": "Modellgrenze: Die besten lokalen Open-Weight-Modelle sind stark, liegen bei den schwierigsten Aufgaben aber meist hinter den groessten Cloud-Systemen.",
+          "en": "Model ceiling: the best local open-weight models are strong but generally trail the largest cloud systems on the hardest tasks.",
+          "it": "Limite del modello: i migliori modelli open-weight locali sono validi, ma nei compiti piu difficili restano di solito dietro ai maggiori sistemi cloud.",
+          "fr": "Plafond du modele : les meilleurs modeles open-weight locaux sont solides, mais restent generalement en deca des plus grands systemes cloud sur les taches les plus difficiles."
+        },
+        {
+          "de": "Hardwarekosten und Komplexitaet: Leistungsfaehige Modelle brauchen eine moderne GPU oder NPU und genuegend RAM/VRAM; Einrichtung und Feintuning erfordern Know-how.",
+          "en": "Hardware cost and complexity: capable models need a modern GPU or NPU and enough RAM/VRAM; setup and tuning take expertise.",
+          "it": "Costo e complessita dell'hardware: i modelli capaci richiedono una GPU o NPU moderna e RAM/VRAM sufficiente; configurazione e messa a punto richiedono competenze.",
+          "fr": "Cout et complexite du materiel : les modeles performants exigent un GPU ou NPU moderne et assez de RAM/VRAM ; l'installation et le reglage demandent de l'expertise."
+        },
+        {
+          "de": "Wartungsaufwand: Updates, Sicherheitspatches, Monitoring und Skalierung liegen bei Ihnen.",
+          "en": "Maintenance burden: you own updates, security patches, monitoring and scaling.",
+          "it": "Onere di manutenzione: aggiornamenti, patch di sicurezza, monitoraggio e scalabilita spettano a voi.",
+          "fr": "Charge de maintenance : mises a jour, correctifs de securite, supervision et mise a l'echelle vous incombent."
+        },
+        {
+          "de": "Langsamere Iteration: Sie aktualisieren Modelle manuell, statt automatisch die neueste Version des Anbieters zu erhalten.",
+          "en": "Slower iteration: you upgrade models manually instead of automatically getting the provider's newest version.",
+          "it": "Iterazione piu lenta: aggiornate i modelli manualmente invece di ricevere automaticamente l'ultima versione del fornitore.",
+          "fr": "Iteration plus lente : vous mettez a jour les modeles manuellement au lieu de recevoir automatiquement la derniere version du fournisseur."
+        },
+        {
+          "de": "Nicht automatisch konform: Lokal senkt das Uebertragungsrisiko, doch Governance, Zugriffskontrolle und Dokumentation bleiben Ihre Aufgabe.",
+          "en": "Not automatically compliant: local reduces data-transfer risk but you still owe governance, access control and documentation.",
+          "it": "Non conforme in automatico: il locale riduce il rischio di trasferimento, ma governance, controllo degli accessi e documentazione restano a vostro carico.",
+          "fr": "Pas conforme automatiquement : le local reduit le risque de transfert, mais la gouvernance, le controle d'acces et la documentation restent votre responsabilite."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Was Sie fuer lokale KI brauchen",
+        "en": "What you need to run local AI",
+        "it": "Cosa serve per l'IA locale",
+        "fr": "Ce qu'il faut pour l'IA locale"
+      },
+      "paragraphs": [
+        {
+          "de": "Sie brauchen kein Rechenzentrum fuer den Einstieg. Viele leistungsfaehige Open-Weight-Modelle laufen auf einem aktuellen Laptop, und die Werkzeuge sind wirklich zugaenglich geworden.",
+          "en": "You don't need a data centre to start. Many capable open-weight models run on a recent laptop, and the tooling has become genuinely accessible.",
+          "it": "Per iniziare non serve un data center. Molti modelli open-weight capaci girano su un laptop recente e gli strumenti sono diventati davvero accessibili.",
+          "fr": "Pas besoin d'un centre de donnees pour commencer. De nombreux modeles open-weight performants tournent sur un ordinateur portable recent, et les outils sont devenus vraiment accessibles."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Hardware: Eine moderne CPU genuegt fuer kleine Modelle; eine GPU oder NPU mit genuegend VRAM erschliesst groessere und schnellere.",
+          "en": "Hardware: a modern CPU works for small models; a GPU or NPU with sufficient VRAM unlocks larger, faster ones.",
+          "it": "Hardware: una CPU moderna basta per i modelli piccoli; una GPU o NPU con VRAM sufficiente sblocca quelli piu grandi e veloci.",
+          "fr": "Materiel : un processeur moderne suffit pour les petits modeles ; un GPU ou NPU dote d'assez de VRAM debloque les plus grands et plus rapides."
+        },
+        {
+          "de": "Open-Weight-Modelle: Familien wie Llama, Mistral, Gemma, Qwen oder DeepSeek sowie das Schweizer Modell Apertus von ETH Zuerich und EPFL.",
+          "en": "Open-weight models: families such as Llama, Mistral, Gemma, Qwen or DeepSeek, and the Swiss Apertus model from ETH Zurich and EPFL.",
+          "it": "Modelli open-weight: famiglie come Llama, Mistral, Gemma, Qwen o DeepSeek e il modello svizzero Apertus del Politecnico di Zurigo (ETH) e dell'EPFL.",
+          "fr": "Modeles open-weight : des familles comme Llama, Mistral, Gemma, Qwen ou DeepSeek, et le modele suisse Apertus de l'ETH Zurich et de l'EPFL."
+        },
+        {
+          "de": "Laufzeitumgebungen: Werkzeuge wie Ollama, LM Studio, llama.cpp oder vLLM, die Modelle lokal herunterladen, quantisieren und bereitstellen.",
+          "en": "Runtimes: tools like Ollama, LM Studio, llama.cpp or vLLM that download, quantise and serve models locally.",
+          "it": "Runtime: strumenti come Ollama, LM Studio, llama.cpp o vLLM che scaricano, quantizzano e servono i modelli in locale.",
+          "fr": "Environnements d'execution : des outils comme Ollama, LM Studio, llama.cpp ou vLLM qui telechargent, quantifient et servent les modeles en local."
+        },
+        {
+          "de": "Quantisierung: Ein Modell so komprimieren, dass es mit geringem Qualitaetsverlust auf Consumer-Hardware passt.",
+          "en": "Quantisation: compressing a model so it fits on consumer hardware with a modest quality trade-off.",
+          "it": "Quantizzazione: comprimere un modello perche entri su hardware consumer con un modesto compromesso di qualita.",
+          "fr": "Quantification : compresser un modele pour qu'il tienne sur du materiel grand public avec un compromis de qualite modere."
+        },
+        {
+          "de": "Optionale Oberflaeche: eine lokale Chat-Oberflaeche oder ein API-Endpunkt, den Ihre eigenen Anwendungen ansprechen.",
+          "en": "Optional interface: a local chat UI or an API endpoint your own applications call.",
+          "it": "Interfaccia opzionale: una chat locale o un endpoint API richiamato dalle vostre applicazioni.",
+          "fr": "Interface optionnelle : une interface de chat locale ou un point d'acces API appele par vos propres applications."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Der Schweizer Blick: Datenschutz und Souveraenitaet",
+        "en": "The Swiss lens: data protection and sovereignty",
+        "it": "La prospettiva svizzera: protezione dei dati e sovranita",
+        "fr": "Le regard suisse : protection des donnees et souverainete"
+      },
+      "paragraphs": [
+        {
+          "de": "Fuer Schweizer und DACH-Organisationen ist lokale KI oft ebenso sehr eine Datenschutz- und Souveraenitaetsentscheidung wie eine technische. Unter dem revidierten Datenschutzgesetz (revDSG/nDSG), beaufsichtigt vom EDOEB, entfallen durch das Speichern von Personendaten auf eigener Infrastruktur die Fragen zu grenzueberschreitender Uebermittlung und Auftragsbearbeitung durch Dritte, die Cloud-KI aufwirft.",
+          "en": "For Swiss and DACH organisations, local AI is often a data-protection and sovereignty decision as much as a technical one. Under the revised Swiss Data Protection Act (revDSG/nFADP), overseen by the FDPIC (EDOEB), keeping personal data on your own infrastructure removes the cross-border transfer and third-party-processing questions that cloud AI raises.",
+          "it": "Per le organizzazioni svizzere e della regione DACH, l'IA locale e spesso una scelta di protezione dei dati e di sovranita tanto quanto tecnica. Con la nuova legge sulla protezione dei dati (nLPD), vigilata dall'IFPDT, mantenere i dati personali sulla propria infrastruttura elimina le questioni di trasferimento transfrontaliero e di trattamento da parte di terzi che l'IA cloud solleva.",
+          "fr": "Pour les organisations suisses et de la region DACH, l'IA locale est souvent autant une decision de protection des donnees et de souverainete qu'un choix technique. Sous la nouvelle loi sur la protection des donnees (nLPD), surveillee par le PFPDT, conserver les donnees personnelles sur sa propre infrastructure elimine les questions de transfert transfrontalier et de traitement par un tiers que souleve l'IA cloud."
+        },
+        {
+          "de": "Der extraterritoriale EU AI Act kann auch fuer Schweizer Firmen gelten, die den EU-Markt bedienen. Modelle lokal zu betreiben befreit Sie nicht von diesen Regeln, vereinfacht aber Datengovernance und Nachvollziehbarkeit. Schweizer Open-Modelle wie Apertus von ETH Zuerich und EPFL zeigen, dass souveraene, transparente KI realistisch ist - aktuelle Faehigkeiten und Lizenzbedingungen entnehmen Sie der Dokumentation des Anbieters.",
+          "en": "The extraterritorial EU AI Act may also apply to Swiss firms serving the EU market. Running models locally does not exempt you from these rules, but it simplifies data governance and audit trails. Swiss-developed open models such as Apertus, built by ETH Zurich and EPFL, show that sovereign, transparent AI is a realistic option - see the provider's current documentation for capabilities and licensing.",
+          "it": "L'AI Act dell'UE, extraterritoriale, puo applicarsi anche alle aziende svizzere che servono il mercato europeo. Eseguire i modelli in locale non vi esenta da queste regole, ma semplifica la governance dei dati e la tracciabilita. I modelli aperti svizzeri come Apertus, sviluppato da ETH ed EPFL, mostrano che un'IA sovrana e trasparente e un'opzione realistica: per capacita e licenze consultate la documentazione aggiornata del fornitore.",
+          "fr": "Le reglement europeen sur l'IA (AI Act), extraterritorial, peut aussi s'appliquer aux entreprises suisses servant le marche de l'UE. Executer les modeles en local ne vous exempte pas de ces regles, mais simplifie la gouvernance des donnees et la tracabilite. Des modeles ouverts suisses comme Apertus, developpe par l'ETH Zurich et l'EPFL, montrent qu'une IA souveraine et transparente est une option realiste : consultez la documentation a jour du fournisseur pour les capacites et les licences."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ist lokale KI kostenlos?",
+        "en": "Is local AI free?",
+        "it": "L'IA locale e gratuita?",
+        "fr": "L'IA locale est-elle gratuite ?"
+      },
+      "a": {
+        "de": "Die Modelle selbst sind oft quelloffen und gratis nutzbar, doch kostenlos ist lokale KI nicht: Sie zahlen fuer Hardware und Strom statt Nutzungsgebuehren. Bei geringem Volumen ist die Cloud oft guenstiger, bei hohem, konstantem Volumen kann lokal wirtschaftlicher sein.",
+        "en": "The models are often open-source and free to use, but local AI is not cost-free: you pay for hardware and electricity instead of usage fees. At low volume the cloud is usually cheaper; at high, steady volume local can be more economical.",
+        "it": "I modelli sono spesso open-source e gratuiti, ma l'IA locale non e a costo zero: pagate hardware ed elettricita invece delle tariffe d'uso. A basso volume il cloud e di solito piu economico; ad alto volume costante il locale puo convenire.",
+        "fr": "Les modeles sont souvent open source et gratuits, mais l'IA locale n'est pas sans cout : vous payez le materiel et l'electricite au lieu de frais d'usage. A faible volume, le cloud est generalement moins cher ; a volume eleve et constant, le local peut etre plus economique."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist lokale KI sicherer und datenschutzfreundlicher?",
+        "en": "Is local AI safer and more private?",
+        "it": "L'IA locale e piu sicura e rispettosa della privacy?",
+        "fr": "L'IA locale est-elle plus sure et plus respectueuse de la vie privee ?"
+      },
+      "a": {
+        "de": "In der Regel ja, weil Ihre Daten Ihre Infrastruktur nicht verlassen und nicht an Dritte uebermittelt werden. Das vereinfacht die Einhaltung des revDSG/nDSG. Sicher ist sie aber nicht automatisch: Zugriffskontrolle, Verschluesselung und Wartung bleiben Ihre Verantwortung.",
+        "en": "Usually yes, because your data never leaves your infrastructure and is not sent to a third party, which simplifies revDSG/nFADP compliance. But it is not automatically secure: access control, encryption and maintenance remain your responsibility.",
+        "it": "Di solito si, perche i dati non lasciano la vostra infrastruttura e non vengono inviati a terzi, il che semplifica la conformita alla nLPD. Ma non e sicura in automatico: controllo degli accessi, cifratura e manutenzione restano vostra responsabilita.",
+        "fr": "En general oui, car vos donnees ne quittent pas votre infrastructure et ne sont pas transmises a un tiers, ce qui simplifie la conformite a la nLPD. Mais elle n'est pas sure automatiquement : controle d'acces, chiffrement et maintenance restent votre responsabilite."
+      }
+    },
+    {
+      "q": {
+        "de": "Funktioniert lokale KI ohne Internet?",
+        "en": "Does local AI work without internet?",
+        "it": "L'IA locale funziona senza internet?",
+        "fr": "L'IA locale fonctionne-t-elle sans internet ?"
+      },
+      "a": {
+        "de": "Ja. Sobald das Modell heruntergeladen ist, laeuft lokale KI vollstaendig offline. Das ist ein wesentlicher Vorteil in Umgebungen ohne verlaessliche Verbindung oder mit hohen Vertraulichkeitsanforderungen.",
+        "en": "Yes. Once the model is downloaded, local AI runs fully offline. That is a key advantage in settings without reliable connectivity or with strict confidentiality requirements.",
+        "it": "Si. Una volta scaricato il modello, l'IA locale gira completamente offline. E un vantaggio chiave in ambienti senza connessione affidabile o con requisiti di riservatezza elevati.",
+        "fr": "Oui. Une fois le modele telecharge, l'IA locale fonctionne entierement hors ligne. C'est un atout majeur dans les environnements sans connexion fiable ou a fortes exigences de confidentialite."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Hardware brauche ich?",
+        "en": "What hardware do I need?",
+        "it": "Quale hardware serve?",
+        "fr": "De quel materiel ai-je besoin ?"
+      },
+      "a": {
+        "de": "Kleine Modelle laufen auf einem aktuellen Laptop mit genuegend RAM. Groessere, schnellere Modelle brauchen eine GPU oder NPU mit ausreichend VRAM. Der Bedarf haengt von Modellgroesse und Quantisierung ab.",
+        "en": "Small models run on a recent laptop with enough RAM. Larger, faster models need a GPU or NPU with sufficient VRAM. Requirements depend on model size and quantisation.",
+        "it": "I modelli piccoli girano su un laptop recente con RAM sufficiente. Quelli piu grandi e veloci richiedono una GPU o NPU con VRAM adeguata. Il fabbisogno dipende da dimensione del modello e quantizzazione.",
+        "fr": "Les petits modeles tournent sur un ordinateur portable recent dote d'assez de RAM. Les modeles plus grands et plus rapides exigent un GPU ou NPU avec suffisamment de VRAM. Les besoins dependent de la taille du modele et de la quantification."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist lokale KI so gut wie ChatGPT oder andere Cloud-Dienste?",
+        "en": "Is local AI as good as ChatGPT or other cloud services?",
+        "it": "L'IA locale e valida quanto ChatGPT o altri servizi cloud?",
+        "fr": "L'IA locale vaut-elle ChatGPT ou d'autres services cloud ?"
+      },
+      "a": {
+        "de": "Fuer viele Alltagsaufgaben ja. Bei den schwierigsten Aufgaben liegen die groessten Cloud-Modelle meist vorn. Der Abstand schrumpft jedoch stetig, und fuer definierte Anwendungsfaelle reichen lokale Modelle oft aus.",
+        "en": "For many everyday tasks, yes. On the hardest tasks the largest cloud models usually lead, but the gap keeps shrinking, and for defined use cases local models are often enough.",
+        "it": "Per molte attivita quotidiane si. Nei compiti piu difficili i maggiori modelli cloud restano in testa, ma il divario si riduce e per casi d'uso definiti i modelli locali spesso bastano.",
+        "fr": "Pour de nombreuses taches quotidiennes, oui. Sur les taches les plus difficiles, les plus grands modeles cloud gardent l'avantage, mais l'ecart se reduit et, pour des cas d'usage definis, les modeles locaux suffisent souvent."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen On-Device und self-hosted?",
+        "en": "What is the difference between on-device and self-hosted?",
+        "it": "Che differenza c'e tra on-device e self-hosted?",
+        "fr": "Quelle est la difference entre on-device et self-hosted ?"
+      },
+      "a": {
+        "de": "On-Device-KI laeuft auf einem persoenlichen Geraet fuer meist eine Person. Self-hosted KI laeuft auf einem eigenen Server oder Cluster fuer ein Team oder eine Organisation. Beide sind lokal, weil Sie Infrastruktur und Daten kontrollieren.",
+        "en": "On-device AI runs on a personal machine, usually for one person. Self-hosted AI runs on a server or cluster you operate for a team or organisation. Both are local because you control the infrastructure and data.",
+        "it": "L'IA on-device gira su un dispositivo personale, di solito per una persona. L'IA self-hosted gira su un server o cluster proprio per un team o un'organizzazione. Entrambe sono locali perche controllate infrastruttura e dati.",
+        "fr": "L'IA on-device fonctionne sur un appareil personnel, souvent pour une seule personne. L'IA self-hosted tourne sur un serveur ou un cluster propre, pour une equipe ou une organisation. Les deux sont locales car vous controlez l'infrastructure et les donnees."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Lokale KI / Local AI",
+    "On-Device-KI",
+    "Self-Hosting",
+    "Cloud-KI",
+    "Open-Weight-Modelle",
+    "Ollama",
+    "llama.cpp",
+    "LM Studio",
+    "Llama",
+    "Mistral",
+    "Gemma",
+    "Apertus",
+    "ETH Zuerich",
+    "EPFL",
+    "revDSG/nFADP",
+    "EU AI Act"
+  ]
+}

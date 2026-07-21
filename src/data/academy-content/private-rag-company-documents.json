@@ -1,0 +1,401 @@
+{
+  "id": "private-rag-company-documents",
+  "cluster": "local-opensource",
+  "type": "spoke",
+  "relatedServices": [
+    "integrations",
+    "consulting"
+  ],
+  "slug": {
+    "de": "privates-rag-firmendokumente",
+    "en": "private-rag-company-documents",
+    "it": "rag-privato-documenti-aziendali",
+    "fr": "rag-prive-documents-entreprise"
+  },
+  "title": {
+    "de": "Privates RAG für Firmendokumente: Anleitung | Weissmann AI",
+    "en": "Private RAG for Company Documents Explained | Weissmann AI",
+    "it": "RAG privato sui documenti aziendali: guida | Weissmann AI",
+    "fr": "RAG privé sur vos documents d'entreprise | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie privates RAG eine KI auf Ihren Firmendokumenten erdet, ohne vertrauliche Daten preiszugeben: Funktionsweise, Betriebsmodelle und Schweizer Datenschutz.",
+    "en": "How private RAG grounds an AI in your company documents without exposing confidential data: how it works, deployment models and Swiss data protection.",
+    "it": "Come il RAG privato ancora un'IA ai documenti aziendali senza esporre dati riservati: funzionamento, modelli di deployment e privacy svizzera.",
+    "fr": "Comment le RAG privé ancre une IA dans vos documents d'entreprise sans exposer de données confidentielles : fonctionnement, déploiement et protection suisse."
+  },
+  "kicker": {
+    "de": "Lokale & Open-Source-KI",
+    "en": "Local & Open-Source AI",
+    "it": "IA locale e open source",
+    "fr": "IA locale et open source"
+  },
+  "h1": {
+    "de": "Wie funktioniert privates RAG über Firmendokumente?",
+    "en": "How does private RAG over company documents work?",
+    "it": "Come funziona il RAG privato sui documenti aziendali?",
+    "fr": "Comment fonctionne le RAG privé sur les documents d'entreprise ?"
+  },
+  "answerFirst": {
+    "de": "Privates RAG (Retrieval-Augmented Generation) erdet ein Sprachmodell auf Ihren eigenen Firmendokumenten, ohne diese an einen öffentlichen KI-Dienst zu senden. Das System indexiert Ihre Dateien, sucht zu jeder Frage die passenden Textstellen heraus und lässt das Modell aus diesem Kontext antworten. Lokal oder in einer Schweizer Umgebung betrieben, behalten Sie die Hoheit über vertrauliche Daten und erhalten belegte, quellenbasierte Antworten.",
+    "en": "Private RAG (Retrieval-Augmented Generation) grounds a language model in your own company documents without sending them to a public AI service. The system indexes your files, retrieves the passages relevant to each question and lets the model answer from that context. Run locally or in a Swiss environment, it keeps confidential data under your control while giving staff accurate, source-cited answers.",
+    "it": "Il RAG privato (Retrieval-Augmented Generation) ancora un modello linguistico ai documenti della tua azienda senza inviarli a un servizio IA pubblico. Il sistema indicizza i file, recupera i passaggi pertinenti a ogni domanda e lascia che il modello risponda da quel contesto. Eseguito in locale o in un ambiente svizzero, mantiene i dati riservati sotto il tuo controllo con risposte accurate e citate.",
+    "fr": "Le RAG privé (Retrieval-Augmented Generation) ancre un modèle de langage dans vos propres documents d'entreprise sans les envoyer à un service d'IA public. Le système indexe vos fichiers, retrouve les passages pertinents pour chaque question et laisse le modèle répondre à partir de ce contexte. Exécuté localement ou dans un environnement suisse, il garde vos données confidentielles sous contrôle avec des réponses sourcées."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was privates RAG ist – und warum es mehr als ein Chatbot ist",
+        "en": "What private RAG is – and why it is more than a chatbot",
+        "it": "Cos'è il RAG privato – e perché è più di un chatbot",
+        "fr": "Ce qu'est le RAG privé – et pourquoi c'est plus qu'un chatbot"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein Sprachmodell allein weiss nichts über Ihr Unternehmen: nichts über Ihre Verträge, Prozesse, Angebote oder Projektakten. Fragt man es trotzdem, rät es plausibel klingend – und liegt oft daneben. RAG löst dieses Problem, indem es das Modell bei jeder Frage mit den relevanten Auszügen aus Ihren eigenen Dokumenten versorgt. Das Modell formuliert die Antwort dann nicht aus dem Gedächtnis, sondern aus dem mitgelieferten Kontext.",
+          "en": "A language model on its own knows nothing about your company: nothing about your contracts, processes, offers or project files. Ask it anyway and it produces plausible-sounding guesses – often wrong. RAG solves this by supplying the model, for every question, with the relevant excerpts from your own documents. The model then formulates its answer not from memory but from the context it was given.",
+          "it": "Un modello linguistico da solo non sa nulla della tua azienda: nulla sui contratti, i processi, le offerte o i dossier di progetto. Se glielo chiedi comunque, produce ipotesi plausibili – spesso errate. Il RAG risolve il problema fornendo al modello, per ogni domanda, gli estratti pertinenti dei tuoi documenti. Il modello formula così la risposta non dalla memoria ma dal contesto ricevuto.",
+          "fr": "Un modèle de langage seul ne sait rien de votre entreprise : ni vos contrats, ni vos processus, ni vos offres, ni vos dossiers de projet. Interrogez-le malgré tout et il produit des suppositions plausibles – souvent fausses. Le RAG résout cela en fournissant au modèle, pour chaque question, les extraits pertinents de vos propres documents. Le modèle formule alors sa réponse à partir du contexte fourni, non de sa mémoire."
+        },
+        {
+          "de": "«Privat» heisst dabei zweierlei: Erstens verlassen Ihre Dokumente die von Ihnen kontrollierte Umgebung nicht – sie werden weder zum Training fremder Modelle verwendet noch an einen öffentlichen Dienst übertragen. Zweitens sieht jede Nutzerin nur, was sie sehen darf. Ein gut gebautes privates RAG ist damit weniger ein «Chatbot» als eine durchsuchbare, antwortende Wissensschicht über Ihrem bestehenden Dokumentenbestand.",
+          "en": "«Private» here means two things. First, your documents never leave the environment you control – they are neither used to train third-party models nor sent to a public service. Second, each user sees only what they are allowed to see. A well-built private RAG is therefore less a «chatbot» than a searchable, answering knowledge layer on top of your existing document estate.",
+          "it": "«Privato» significa due cose. Primo: i tuoi documenti non lasciano mai l'ambiente che controlli – non vengono usati per addestrare modelli di terzi né inviati a un servizio pubblico. Secondo: ogni utente vede solo ciò a cui è autorizzato. Un RAG privato ben costruito è quindi meno un «chatbot» che uno strato di conoscenza ricercabile e capace di rispondere, sovrapposto al tuo patrimonio documentale.",
+          "fr": "« Privé » signifie ici deux choses. D'abord, vos documents ne quittent jamais l'environnement que vous contrôlez – ils ne servent ni à entraîner des modèles tiers ni à alimenter un service public. Ensuite, chaque utilisateur ne voit que ce qu'il est autorisé à voir. Un RAG privé bien conçu est donc moins un « chatbot » qu'une couche de connaissance interrogeable et capable de répondre, posée sur votre patrimoine documentaire."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die RAG-Pipeline Schritt für Schritt",
+        "en": "The RAG pipeline step by step",
+        "it": "La pipeline RAG passo dopo passo",
+        "fr": "Le pipeline RAG étape par étape"
+      },
+      "paragraphs": [
+        {
+          "de": "Technisch besteht RAG aus zwei Phasen: einer einmaligen (bzw. laufenden) Aufbereitung Ihrer Dokumente und einer Abfrage bei jeder Frage. Die Aufbereitung baut den durchsuchbaren Index; die Abfrage holt Kontext und erzeugt die Antwort.",
+          "en": "Technically, RAG has two phases: a one-off (and then ongoing) preparation of your documents, and a lookup performed for every question. Preparation builds the searchable index; the lookup fetches context and produces the answer.",
+          "it": "Tecnicamente il RAG ha due fasi: una preparazione dei documenti (iniziale e poi continua) e una ricerca eseguita a ogni domanda. La preparazione costruisce l'indice ricercabile; la ricerca recupera il contesto e produce la risposta.",
+          "fr": "Techniquement, le RAG comporte deux phases : une préparation des documents (initiale puis continue) et une recherche effectuée à chaque question. La préparation construit l'index interrogeable ; la recherche récupère le contexte et produit la réponse."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Ingestion & Bereinigung: PDFs, Office-Dateien, Wiki-Seiten, E-Mails oder Tickets werden eingelesen und in reinen Text plus Metadaten (Quelle, Datum, Zugriffsrechte) umgewandelt.",
+          "en": "Ingestion & cleaning: PDFs, Office files, wiki pages, emails or tickets are read in and converted into plain text plus metadata (source, date, access rights).",
+          "it": "Ingestione e pulizia: PDF, file Office, pagine wiki, e-mail o ticket vengono letti e convertiti in testo semplice più metadati (fonte, data, diritti di accesso).",
+          "fr": "Ingestion et nettoyage : PDF, fichiers Office, pages wiki, e-mails ou tickets sont lus et convertis en texte brut plus métadonnées (source, date, droits d'accès)."
+        },
+        {
+          "de": "Chunking: Lange Dokumente werden in kleinere, sinnvoll geschnittene Abschnitte zerlegt – gross genug, um Bedeutung zu tragen, klein genug, um präzise gefunden zu werden.",
+          "en": "Chunking: long documents are split into smaller, sensibly cut passages – large enough to carry meaning, small enough to be retrieved precisely.",
+          "it": "Chunking: i documenti lunghi vengono suddivisi in passaggi più piccoli e tagliati con criterio – abbastanza grandi da avere senso, abbastanza piccoli da essere recuperati con precisione.",
+          "fr": "Découpage (chunking) : les longs documents sont scindés en passages plus courts et bien coupés – assez grands pour porter du sens, assez petits pour être retrouvés précisément."
+        },
+        {
+          "de": "Embeddings: Ein Embedding-Modell wandelt jeden Abschnitt in einen Vektor um – eine Zahlenrepräsentation seiner Bedeutung. Ähnliche Inhalte liegen im Vektorraum nahe beieinander.",
+          "en": "Embeddings: an embedding model turns each passage into a vector – a numeric representation of its meaning. Similar content ends up close together in vector space.",
+          "it": "Embedding: un modello di embedding trasforma ogni passaggio in un vettore – una rappresentazione numerica del suo significato. Contenuti simili finiscono vicini nello spazio vettoriale.",
+          "fr": "Embeddings : un modèle d'embedding transforme chaque passage en vecteur – une représentation numérique de son sens. Les contenus proches se retrouvent voisins dans l'espace vectoriel."
+        },
+        {
+          "de": "Vektor-Index: Die Vektoren landen in einer Vektordatenbank, oft ergänzt um klassische Stichwortsuche (hybride Suche), damit auch exakte Begriffe und Aktenzeichen zuverlässig treffen.",
+          "en": "Vector index: the vectors go into a vector database, often combined with classic keyword search (hybrid search) so that exact terms and reference numbers also hit reliably.",
+          "it": "Indice vettoriale: i vettori confluiscono in un database vettoriale, spesso combinato con la ricerca per parole chiave classica (ricerca ibrida) perché anche termini esatti e numeri di pratica vengano trovati.",
+          "fr": "Index vectoriel : les vecteurs sont stockés dans une base vectorielle, souvent combinée à la recherche par mots-clés classique (recherche hybride) pour que les termes exacts et numéros de dossier soient aussi trouvés."
+        },
+        {
+          "de": "Retrieval & Re-Ranking: Zur Frage werden die passendsten Abschnitte gesucht; ein Re-Ranker sortiert sie nach echter Relevanz, bevor die besten weitergereicht werden.",
+          "en": "Retrieval & re-ranking: the most fitting passages for the question are searched; a re-ranker sorts them by true relevance before the best ones are passed on.",
+          "it": "Recupero e re-ranking: si cercano i passaggi più adatti alla domanda; un re-ranker li ordina per rilevanza reale prima di inoltrare i migliori.",
+          "fr": "Récupération et re-ranking : les passages les plus adaptés à la question sont recherchés ; un re-ranker les trie par pertinence réelle avant de transmettre les meilleurs."
+        },
+        {
+          "de": "Generierung mit Belegen: Frage plus gefundene Abschnitte gehen an das Sprachmodell, das eine Antwort formuliert – idealerweise mit Quellenangabe, sodass jede Aussage nachprüfbar bleibt.",
+          "en": "Generation with citations: the question plus retrieved passages go to the language model, which formulates an answer – ideally with source references, so every statement stays verifiable.",
+          "it": "Generazione con citazioni: domanda e passaggi recuperati vanno al modello linguistico, che formula una risposta – idealmente con riferimenti alle fonti, così ogni affermazione resta verificabile.",
+          "fr": "Génération avec citations : la question et les passages récupérés sont transmis au modèle, qui formule une réponse – idéalement avec références aux sources, pour que chaque affirmation reste vérifiable."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Was «privat» konkret bedeutet: Betriebsmodelle",
+        "en": "What «private» concretely means: deployment models",
+        "it": "Cosa significa «privato» in concreto: modelli di deployment",
+        "fr": "Ce que « privé » veut dire concrètement : les modèles de déploiement"
+      },
+      "paragraphs": [
+        {
+          "de": "Privatheit ist keine Eigenschaft von RAG an sich, sondern eine Frage, wo Modell, Index und Daten laufen. Es gibt ein Spektrum – vom vollständig lokalen Betrieb bis zu abgeschotteten Cloud-Endpunkten. Der richtige Punkt hängt von Sensibilität der Daten, benötigter Antwortqualität und internen IT-Ressourcen ab.",
+          "en": "Privacy is not a property of RAG itself but a question of where the model, index and data run. There is a spectrum – from fully local operation to walled-off cloud endpoints. The right point depends on data sensitivity, the answer quality you need and your internal IT resources.",
+          "it": "La privacy non è una proprietà del RAG in sé, ma una questione di dove girano modello, indice e dati. Esiste uno spettro – dall'esecuzione totalmente locale a endpoint cloud isolati. Il punto giusto dipende dalla sensibilità dei dati, dalla qualità richiesta e dalle risorse IT interne.",
+          "fr": "La confidentialité n'est pas une propriété du RAG en soi, mais une question de savoir où tournent le modèle, l'index et les données. Il existe un spectre – de l'exécution entièrement locale aux points de terminaison cloud cloisonnés. Le bon choix dépend de la sensibilité des données, de la qualité requise et des ressources IT internes."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Vollständig lokal / On-Premises: Open-Weight-Modelle (etwa Llama, Mistral oder das Schweizer Apertus von ETH/EPFL) und Vektordatenbank laufen auf eigener Hardware. Maximale Kontrolle, kein Datenabfluss – aber Sie tragen Betrieb, GPU-Kosten und Wartung selbst.",
+          "en": "Fully local / on-premises: open-weight models (e.g. Llama, Mistral or Switzerland's Apertus from ETH/EPFL) and the vector database run on your own hardware. Maximum control, no data outflow – but you carry operations, GPU cost and maintenance yourself.",
+          "it": "Totalmente locale / on-premise: modelli open-weight (es. Llama, Mistral o lo svizzero Apertus di ETH/EPFL) e database vettoriale girano su hardware proprio. Controllo massimo, nessuna fuoriuscita di dati – ma gestione, costi GPU e manutenzione sono a tuo carico.",
+          "fr": "Entièrement local / on-premises : des modèles open-weight (Llama, Mistral ou le suisse Apertus d'ETH/EPFL) et la base vectorielle tournent sur votre matériel. Contrôle maximal, aucune fuite de données – mais exploitation, coût GPU et maintenance sont à votre charge."
+        },
+        {
+          "de": "Private Cloud in der Schweiz / EU: dediziertes Konto oder Schweizer Rechenzentrum mit vertraglich zugesicherter Datenresidenz und Zusicherung, dass Ihre Daten nicht zum Modelltraining genutzt werden. Guter Kompromiss aus Qualität, Aufwand und Datenhoheit.",
+          "en": "Private cloud in Switzerland / EU: a dedicated account or Swiss data centre with contractually guaranteed data residency and an assurance that your data is not used for model training. A good compromise between quality, effort and data sovereignty.",
+          "it": "Cloud privato in Svizzera / UE: account dedicato o data center svizzero con residenza dei dati garantita per contratto e assicurazione che i dati non siano usati per l'addestramento. Buon compromesso tra qualità, sforzo e sovranità dei dati.",
+          "fr": "Cloud privé en Suisse / UE : compte dédié ou centre de données suisse avec résidence des données garantie par contrat et assurance que vos données ne servent pas à l'entraînement. Bon compromis entre qualité, effort et souveraineté."
+        },
+        {
+          "de": "Vertraulicher Cloud-Endpunkt eines grossen Anbieters: gehostete Modelle mit Zero-Retention- und Auftragsbearbeitungsverträgen. Schnell startklar und leistungsstark, verlangt aber sorgfältige Vertrags- und Standortprüfung.",
+          "en": "Confidential cloud endpoint from a major provider: hosted models with zero-retention and data-processing agreements. Fast to start and powerful, but requires careful contract and location review.",
+          "it": "Endpoint cloud riservato di un grande fornitore: modelli ospitati con accordi di zero-retention e trattamento dei dati. Avvio rapido e potente, ma richiede attenta verifica di contratto e localizzazione.",
+          "fr": "Point de terminaison cloud confidentiel d'un grand fournisseur : modèles hébergés avec accords de non-conservation et de traitement des données. Rapide et puissant, mais exige une revue attentive du contrat et de la localisation."
+        },
+        {
+          "de": "Wichtig in allen Varianten: Der Vektor-Index enthält Bruchstücke Ihrer Dokumente im Klartext. Er ist ebenso schützenswert wie die Originaldateien und muss verschlüsselt, zugriffsbeschränkt und in derselben Rechtssphäre gehalten werden.",
+          "en": "Important in all variants: the vector index contains fragments of your documents in plain text. It deserves the same protection as the original files and must be encrypted, access-restricted and kept in the same legal jurisdiction.",
+          "it": "Importante in ogni variante: l'indice vettoriale contiene frammenti dei tuoi documenti in chiaro. Merita la stessa protezione dei file originali e va cifrato, con accesso limitato e mantenuto nella stessa giurisdizione.",
+          "fr": "Important dans toutes les variantes : l'index vectoriel contient des fragments de vos documents en clair. Il mérite la même protection que les fichiers d'origine et doit être chiffré, à accès restreint et conservé dans la même juridiction."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer und DACH-Perspektive: Recht, Datenschutz, Zugriff",
+        "en": "Swiss and DACH perspective: law, data protection, access",
+        "it": "Prospettiva svizzera e DACH: diritto, protezione dati, accessi",
+        "fr": "Perspective suisse et DACH : droit, protection des données, accès"
+      },
+      "paragraphs": [
+        {
+          "de": "Firmendokumente enthalten häufig Personendaten und Geschäftsgeheimnisse. In der Schweiz gilt das revidierte Datenschutzgesetz (revDSG / nFADP), beaufsichtigt vom EDÖB; sprechen Sie hier nie von «DSGVO». Wer Personen in der EU betrifft, fällt zusätzlich unter die DSGVO und – bei bestimmten KI-Anwendungen – unter den extraterritorial wirkenden EU AI Act. Ein privates RAG erleichtert die Compliance, ersetzt aber die rechtliche Beurteilung nicht.",
+          "en": "Company documents often contain personal data and trade secrets. In Switzerland the revised Data Protection Act (revDSG / nFADP) applies, supervised by the EDÖB; never call this «GDPR». If EU individuals are affected, the GDPR applies too, and – for certain AI uses – the extraterritorial EU AI Act. A private RAG makes compliance easier but does not replace legal assessment.",
+          "it": "I documenti aziendali contengono spesso dati personali e segreti commerciali. In Svizzera vige la legge riveduta sulla protezione dei dati (revDSG / nLPD), vigilata dall'IFPDT (EDÖB); non chiamarla mai «GDPR». Se sono coinvolte persone nell'UE, si applica anche il GDPR e – per certi usi di IA – l'EU AI Act, che ha effetto extraterritoriale. Un RAG privato facilita la compliance ma non sostituisce la valutazione legale.",
+          "fr": "Les documents d'entreprise contiennent souvent des données personnelles et des secrets d'affaires. En Suisse s'applique la loi révisée sur la protection des données (nLPD / revDSG), surveillée par le PFPDT (EDÖB) ; ne parlez jamais de « RGPD » pour le droit suisse. Si des personnes de l'UE sont concernées, le RGPD s'applique aussi, et – pour certains usages d'IA – l'EU AI Act, à portée extraterritoriale. Un RAG privé facilite la conformité mais ne remplace pas l'analyse juridique."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Berechtigungsbewusstes Retrieval: Zugriffsrechte aus Ihren Quellsystemen müssen bis in die Antwort durchgereicht werden. Sonst «leakt» das RAG Inhalte, die eine Nutzerin im Original nie öffnen dürfte.",
+          "en": "Permission-aware retrieval: access rights from your source systems must flow through to the answer. Otherwise the RAG «leaks» content a user could never open in the original.",
+          "it": "Recupero consapevole dei permessi: i diritti di accesso dei sistemi sorgente devono propagarsi fino alla risposta. Altrimenti il RAG «trapela» contenuti che l'utente non potrebbe mai aprire nell'originale.",
+          "fr": "Récupération sensible aux droits : les autorisations des systèmes sources doivent se propager jusqu'à la réponse. Sinon le RAG « fuite » des contenus que l'utilisateur ne pourrait jamais ouvrir à la source."
+        },
+        {
+          "de": "Datenresidenz: Halten Sie Dokumente, Index und Modell-Inferenz nachvollziehbar in der Schweiz oder EU, wenn Verträge oder Branchenregeln dies verlangen.",
+          "en": "Data residency: keep documents, index and model inference demonstrably in Switzerland or the EU where contracts or sector rules require it.",
+          "it": "Residenza dei dati: mantieni documenti, indice e inferenza del modello in modo dimostrabile in Svizzera o UE quando contratti o regole di settore lo richiedono.",
+          "fr": "Résidence des données : gardez documents, index et inférence du modèle de façon démontrable en Suisse ou dans l'UE si les contrats ou règles sectorielles l'exigent."
+        },
+        {
+          "de": "Nachvollziehbarkeit: Quellenzitate, Protokollierung der Abfragen und eine klare Zweckbindung unterstützen Rechenschaftspflichten nach revDSG und die Transparenzanforderungen des EU AI Act.",
+          "en": "Traceability: source citations, query logging and clear purpose limitation support accountability duties under revDSG and the transparency requirements of the EU AI Act.",
+          "it": "Tracciabilità: citazioni delle fonti, log delle interrogazioni e chiara limitazione delle finalità supportano gli obblighi di rendicontazione della revDSG e i requisiti di trasparenza dell'EU AI Act.",
+          "fr": "Traçabilité : citations des sources, journalisation des requêtes et limitation claire des finalités soutiennent les obligations de responsabilité de la nLPD et les exigences de transparence de l'EU AI Act."
+        },
+        {
+          "de": "Datensparsamkeit: Nehmen Sie nur Dokumente in den Index auf, die für den Zweck nötig sind, und definieren Sie Lösch- und Aktualisierungszyklen, damit veraltete oder zu löschende Inhalte nicht weiter beantwortet werden.",
+          "en": "Data minimisation: index only documents needed for the purpose, and define deletion and refresh cycles so that outdated or to-be-deleted content is no longer answered from.",
+          "it": "Minimizzazione dei dati: indicizza solo i documenti necessari allo scopo e definisci cicli di cancellazione e aggiornamento, così che contenuti obsoleti o da eliminare non vengano più usati per rispondere.",
+          "fr": "Minimisation des données : n'indexez que les documents nécessaires à la finalité et définissez des cycles de suppression et de mise à jour, afin que les contenus périmés ou à supprimer ne servent plus aux réponses."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Retrieval-Qualität: der Unterschied zwischen nützlich und irreführend",
+        "en": "Retrieval quality: the difference between useful and misleading",
+        "it": "Qualità del recupero: la differenza tra utile e fuorviante",
+        "fr": "Qualité de la récupération : la différence entre utile et trompeur"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein RAG-System ist nur so gut wie das, was es findet. Erhält das Modell die falschen oder unvollständigen Abschnitte, formuliert es eine überzeugende, aber falsche Antwort. Der Grossteil der Qualitätsarbeit steckt deshalb nicht im Sprachmodell, sondern im Retrieval.",
+          "en": "A RAG system is only as good as what it retrieves. Give the model the wrong or incomplete passages and it will produce a convincing but wrong answer. Most of the quality work therefore sits not in the language model but in retrieval.",
+          "it": "Un sistema RAG vale quanto ciò che recupera. Se al modello arrivano passaggi sbagliati o incompleti, produrrà una risposta convincente ma errata. Gran parte del lavoro sulla qualità sta quindi non nel modello linguistico ma nel recupero.",
+          "fr": "Un système RAG ne vaut que ce qu'il récupère. Donnez au modèle les mauvais passages ou des passages incomplets et il produira une réponse convaincante mais fausse. L'essentiel du travail de qualité se situe donc non dans le modèle mais dans la récupération."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Durchdachtes Chunking: An semantischen Grenzen (Überschriften, Absätze) schneiden, statt stur nach Zeichenzahl; Tabellen und Listen nicht mitten auseinanderreissen.",
+          "en": "Thoughtful chunking: cut at semantic boundaries (headings, paragraphs) rather than rigidly by character count; do not tear tables and lists apart mid-way.",
+          "it": "Chunking ponderato: tagliare ai confini semantici (titoli, paragrafi) invece che rigidamente per numero di caratteri; non spezzare tabelle ed elenchi a metà.",
+          "fr": "Découpage réfléchi : couper aux frontières sémantiques (titres, paragraphes) plutôt que rigidement au nombre de caractères ; ne pas déchirer tableaux et listes en plein milieu."
+        },
+        {
+          "de": "Hybride Suche: Semantische Vektorsuche mit Stichwortsuche kombinieren, damit Fachbegriffe, Produktnamen und Aktenzeichen exakt treffen.",
+          "en": "Hybrid search: combine semantic vector search with keyword search so that technical terms, product names and reference numbers hit exactly.",
+          "it": "Ricerca ibrida: combinare la ricerca vettoriale semantica con quella per parole chiave, così che termini tecnici, nomi di prodotto e numeri di pratica siano trovati esattamente.",
+          "fr": "Recherche hybride : combiner recherche vectorielle sémantique et recherche par mots-clés pour que termes techniques, noms de produits et numéros de dossier soient trouvés exactement."
+        },
+        {
+          "de": "Re-Ranking und Kontextgrenzen: Mehr Kandidaten holen, dann per Re-Ranker die besten auswählen – so vermeiden Sie, den Kontext mit Irrelevantem zu füllen.",
+          "en": "Re-ranking and context limits: retrieve more candidates, then pick the best via a re-ranker – avoiding filling the context with irrelevant material.",
+          "it": "Re-ranking e limiti di contesto: recuperare più candidati e poi scegliere i migliori con un re-ranker – evitando di riempire il contesto con materiale irrilevante.",
+          "fr": "Re-ranking et limites de contexte : récupérer plus de candidats puis choisir les meilleurs via un re-ranker – pour éviter de remplir le contexte de contenu non pertinent."
+        },
+        {
+          "de": "«Ich weiss es nicht» erlauben: Das System sollte offen sagen, wenn die Dokumente keine Grundlage liefern, statt zu raten. Das ist die wirksamste Bremse gegen Halluzinationen.",
+          "en": "Allow «I don't know»: the system should openly say when the documents provide no basis, rather than guess. This is the most effective brake on hallucination.",
+          "it": "Permettere «non lo so»: il sistema dovrebbe dichiarare apertamente quando i documenti non offrono basi, invece di indovinare. È il freno più efficace contro le allucinazioni.",
+          "fr": "Autoriser « je ne sais pas » : le système doit dire ouvertement quand les documents ne fournissent aucune base, plutôt que deviner. C'est le frein le plus efficace contre les hallucinations."
+        },
+        {
+          "de": "Messen statt hoffen: Mit einem Satz echter Fragen und geprüfter Soll-Antworten regelmässig evaluieren (Trefferquote des Retrievals, Beleg-Treue der Antwort), bevor und nachdem Sie etwas ändern.",
+          "en": "Measure, don't hope: evaluate regularly with a set of real questions and vetted expected answers (retrieval hit rate, faithfulness of the answer to its sources) before and after every change.",
+          "it": "Misurare, non sperare: valutare regolarmente con un insieme di domande reali e risposte attese verificate (tasso di successo del recupero, fedeltà della risposta alle fonti) prima e dopo ogni modifica.",
+          "fr": "Mesurer, pas espérer : évaluer régulièrement avec un jeu de vraies questions et de réponses attendues vérifiées (taux de succès de la récupération, fidélité de la réponse aux sources) avant et après chaque changement."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "RAG, Fine-Tuning oder langer Kontext – wann was?",
+        "en": "RAG, fine-tuning or long context – which when?",
+        "it": "RAG, fine-tuning o contesto lungo – quando cosa?",
+        "fr": "RAG, fine-tuning ou contexte long – lequel, quand ?"
+      },
+      "paragraphs": [
+        {
+          "de": "RAG wird oft mit Fine-Tuning verwechselt. Sie lösen unterschiedliche Probleme und lassen sich kombinieren.",
+          "en": "RAG is often confused with fine-tuning. They solve different problems and can be combined.",
+          "it": "Il RAG viene spesso confuso con il fine-tuning. Risolvono problemi diversi e possono essere combinati.",
+          "fr": "Le RAG est souvent confondu avec le fine-tuning. Ils résolvent des problèmes différents et peuvent se combiner."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "RAG: liefert aktuelles, unternehmensspezifisches Wissen mit Quellenbelegen. Ideal, wenn sich Inhalte häufig ändern und Nachvollziehbarkeit zählt. Neue Dokumente heisst: neu indexieren, nicht neu trainieren.",
+          "en": "RAG: delivers current, company-specific knowledge with source citations. Ideal when content changes often and traceability matters. New documents means re-indexing, not retraining.",
+          "it": "RAG: fornisce conoscenza aggiornata e specifica dell'azienda con citazioni delle fonti. Ideale quando i contenuti cambiano spesso e conta la tracciabilità. Nuovi documenti significa reindicizzare, non riaddestrare.",
+          "fr": "RAG : fournit un savoir actuel et propre à l'entreprise avec citations des sources. Idéal quand le contenu change souvent et que la traçabilité compte. De nouveaux documents signifient réindexer, pas réentraîner."
+        },
+        {
+          "de": "Fine-Tuning: prägt Stil, Format oder Fachton in ein Modell ein, fügt aber kein zuverlässiges, prüfbares Faktenwissen hinzu. Aufwändiger und bei jeder Wissensänderung erneut nötig.",
+          "en": "Fine-tuning: bakes style, format or domain tone into a model, but adds no reliable, verifiable factual knowledge. More costly and needed again with every knowledge change.",
+          "it": "Fine-tuning: imprime stile, formato o tono di dominio in un modello, ma non aggiunge conoscenza fattuale affidabile e verificabile. Più oneroso e da rifare a ogni cambio di conoscenza.",
+          "fr": "Fine-tuning : inscrit style, format ou ton métier dans un modèle, mais n'ajoute pas de savoir factuel fiable et vérifiable. Plus coûteux et à refaire à chaque évolution du savoir."
+        },
+        {
+          "de": "Langer Kontext ohne Retrieval: Bei wenigen Dokumenten kann man sie direkt ins Modell geben. Skaliert aber nicht auf tausende Dateien, ist teurer pro Frage und verliert bei sehr langem Kontext an Präzision.",
+          "en": "Long context without retrieval: for a handful of documents you can feed them directly to the model. It does not scale to thousands of files, costs more per question and loses precision at very long context.",
+          "it": "Contesto lungo senza recupero: con pochi documenti si possono passare direttamente al modello. Non scala a migliaia di file, costa di più per domanda e perde precisione con contesti molto lunghi.",
+          "fr": "Contexte long sans récupération : pour une poignée de documents, on peut les donner directement au modèle. Cela ne passe pas à l'échelle de milliers de fichiers, coûte plus par question et perd en précision sur de très longs contextes."
+        },
+        {
+          "de": "Pragmatische Regel: Mit RAG beginnen. Fine-Tuning nur ergänzen, wenn Tonalität oder Format anders nicht erreichbar sind – nie, um Faktenwissen zu «speichern».",
+          "en": "Pragmatic rule: start with RAG. Add fine-tuning only if tone or format cannot be achieved otherwise – never to «store» factual knowledge.",
+          "it": "Regola pragmatica: iniziare con il RAG. Aggiungere il fine-tuning solo se tono o formato non sono altrimenti ottenibili – mai per «memorizzare» conoscenza fattuale.",
+          "fr": "Règle pragmatique : commencer par le RAG. N'ajouter le fine-tuning que si le ton ou le format sont autrement inatteignables – jamais pour « stocker » du savoir factuel."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Verlassen unsere Dokumente bei privatem RAG das Unternehmen?",
+        "en": "Do our documents leave the company with private RAG?",
+        "it": "Con il RAG privato i nostri documenti escono dall'azienda?",
+        "fr": "Avec le RAG privé, nos documents quittent-ils l'entreprise ?"
+      },
+      "a": {
+        "de": "Nein, wenn es richtig aufgesetzt ist. Bei lokalem oder On-Premises-Betrieb bleiben Dokumente, Index und Modell in Ihrer Infrastruktur. Bei einer privaten Cloud sichern Verträge Datenresidenz und Zero-Retention zu. Wichtig: Auch der Vektor-Index enthält Klartext-Auszüge und muss gleich streng geschützt werden wie die Originale.",
+        "en": "No, when set up correctly. In local or on-premises operation, documents, index and model stay within your infrastructure. In a private cloud, contracts guarantee data residency and zero retention. Note: the vector index also holds plain-text excerpts and must be protected as strictly as the originals.",
+        "it": "No, se configurato correttamente. In modalità locale o on-premise, documenti, indice e modello restano nella tua infrastruttura. In un cloud privato, i contratti garantiscono residenza dei dati e zero-retention. Attenzione: anche l'indice vettoriale contiene estratti in chiaro e va protetto come gli originali.",
+        "fr": "Non, s'il est bien configuré. En local ou on-premises, documents, index et modèle restent dans votre infrastructure. En cloud privé, les contrats garantissent résidence des données et non-conservation. À noter : l'index vectoriel contient aussi des extraits en clair et doit être protégé aussi strictement que les originaux."
+      }
+    },
+    {
+      "q": {
+        "de": "Braucht privates RAG teure GPUs und ein eigenes Rechenzentrum?",
+        "en": "Does private RAG need expensive GPUs and your own data centre?",
+        "it": "Il RAG privato richiede GPU costose e un data center proprio?",
+        "fr": "Le RAG privé exige-t-il des GPU coûteux et un centre de données ?"
+      },
+      "a": {
+        "de": "Nicht zwingend. Vollständig lokaler Betrieb mit grossen Open-Weight-Modellen profitiert von GPUs, doch kleinere Modelle laufen auch auf bescheidener Hardware, und eine private Schweizer Cloud vermeidet eigene Hardware ganz. Für einen Prototyp genügt oft ein Server; erst breite Nutzung und hohe Antwortqualität treiben den Ressourcenbedarf.",
+        "en": "Not necessarily. Fully local operation with large open-weight models benefits from GPUs, but smaller models run on modest hardware, and a private Swiss cloud avoids owning hardware entirely. A prototype often needs just one server; only wide adoption and high answer quality drive resource needs up.",
+        "it": "Non necessariamente. L'esecuzione totalmente locale con grandi modelli open-weight beneficia delle GPU, ma i modelli più piccoli girano su hardware modesto e un cloud privato svizzero evita del tutto l'hardware proprio. Per un prototipo basta spesso un server; solo l'adozione ampia e l'alta qualità aumentano il fabbisogno.",
+        "fr": "Pas forcément. L'exécution entièrement locale avec de grands modèles open-weight profite des GPU, mais des modèles plus petits tournent sur du matériel modeste, et un cloud privé suisse évite tout matériel propre. Un prototype ne demande souvent qu'un serveur ; seuls l'adoption large et la haute qualité font grimper les besoins."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie verhindert RAG, dass die KI Antworten erfindet?",
+        "en": "How does RAG stop the AI from inventing answers?",
+        "it": "Come impedisce il RAG che l'IA inventi risposte?",
+        "fr": "Comment le RAG empêche-t-il l'IA d'inventer des réponses ?"
+      },
+      "a": {
+        "de": "RAG reduziert Halluzinationen, indem das Modell aus mitgelieferten Belegstellen statt aus dem Gedächtnis antwortet und Quellen zitiert. Ganz eliminieren lässt es sich nicht: Findet das Retrieval falsche Abschnitte, kann die Antwort trotzdem falsch sein. Deshalb sind gute Retrieval-Qualität, Quellenzitate und die erlaubte Antwort «keine Grundlage gefunden» entscheidend.",
+        "en": "RAG reduces hallucination by having the model answer from supplied evidence rather than memory, and cite sources. It cannot be fully eliminated: if retrieval finds the wrong passages, the answer can still be wrong. That is why strong retrieval quality, source citations and the permitted answer «no basis found» are decisive.",
+        "it": "Il RAG riduce le allucinazioni facendo rispondere il modello dalle prove fornite invece che dalla memoria, con citazione delle fonti. Non si elimina del tutto: se il recupero trova i passaggi sbagliati, la risposta può essere comunque errata. Per questo contano qualità del recupero, citazioni e la risposta ammessa «nessuna base trovata».",
+        "fr": "Le RAG réduit les hallucinations en faisant répondre le modèle à partir des preuves fournies plutôt que de sa mémoire, avec citation des sources. On ne les élimine pas totalement : si la récupération trouve les mauvais passages, la réponse peut rester fausse. D'où l'importance de la qualité de récupération, des citations et de la réponse permise « aucune base trouvée »."
+      }
+    },
+    {
+      "q": {
+        "de": "Sieht im RAG jeder alle Dokumente?",
+        "en": "Does everyone see all documents in a RAG?",
+        "it": "Nel RAG tutti vedono tutti i documenti?",
+        "fr": "Dans un RAG, chacun voit-il tous les documents ?"
+      },
+      "a": {
+        "de": "Nur wenn man es falsch baut. Ein sauber umgesetztes privates RAG ist berechtigungsbewusst: Es reicht die Zugriffsrechte aus Ihren Quellsystemen bis in die Suche durch, sodass eine Person nur Antworten aus Dokumenten erhält, die sie ohnehin öffnen dürfte. Zugriffskontrolle gehört von Anfang an ins Design, nicht nachträglich.",
+        "en": "Only if built wrong. A properly implemented private RAG is permission-aware: it carries the access rights from your source systems through to the search, so a person only gets answers from documents they may open anyway. Access control belongs in the design from the start, not as an afterthought.",
+        "it": "Solo se costruito male. Un RAG privato ben implementato è consapevole dei permessi: propaga i diritti di accesso dei sistemi sorgente fino alla ricerca, così che una persona ottenga risposte solo da documenti che potrebbe comunque aprire. Il controllo degli accessi va nel design fin dall'inizio, non dopo.",
+        "fr": "Seulement s'il est mal conçu. Un RAG privé bien implémenté est sensible aux droits : il propage les autorisations des systèmes sources jusqu'à la recherche, de sorte qu'une personne n'obtient de réponses que des documents qu'elle pourrait de toute façon ouvrir. Le contrôle d'accès s'intègre dès la conception, pas après coup."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist ein privates RAG mit revDSG und EU AI Act vereinbar?",
+        "en": "Is a private RAG compatible with revDSG and the EU AI Act?",
+        "it": "Un RAG privato è compatibile con revDSG ed EU AI Act?",
+        "fr": "Un RAG privé est-il compatible avec la nLPD et l'EU AI Act ?"
+      },
+      "a": {
+        "de": "Es kann die Einhaltung stark erleichtern – durch Datenresidenz in der Schweiz oder EU, Zugriffskontrolle, Protokollierung und Quellenbelege. Es ersetzt aber keine rechtliche Beurteilung. Prüfen Sie Zweckbindung, Betroffenenrechte nach revDSG (Aufsicht: EDÖB) und, bei EU-Bezug, die Transparenz- und Risikopflichten des EU AI Act für Ihren konkreten Anwendungsfall.",
+        "en": "It can strongly ease compliance – via data residency in Switzerland or the EU, access control, logging and source citations. But it does not replace legal assessment. Check purpose limitation, data-subject rights under revDSG (supervised by the EDÖB) and, where there is an EU nexus, the transparency and risk duties of the EU AI Act for your specific use case.",
+        "it": "Può agevolare molto la conformità – con residenza dei dati in Svizzera o UE, controllo degli accessi, log e citazioni. Ma non sostituisce la valutazione legale. Verifica limitazione delle finalità, diritti degli interessati secondo la revDSG (vigilanza: IFPDT/EDÖB) e, in presenza di nesso UE, gli obblighi di trasparenza e rischio dell'EU AI Act per il tuo caso d'uso.",
+        "fr": "Il peut grandement faciliter la conformité – via la résidence des données en Suisse ou dans l'UE, le contrôle d'accès, la journalisation et les citations. Mais il ne remplace pas l'analyse juridique. Vérifiez la limitation des finalités, les droits des personnes selon la nLPD (surveillance : PFPDT/EDÖB) et, en cas de lien avec l'UE, les obligations de transparence et de risque de l'EU AI Act pour votre cas d'usage."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie halte ich die Antworten aktuell, wenn sich Dokumente ändern?",
+        "en": "How do I keep answers current when documents change?",
+        "it": "Come mantengo aggiornate le risposte quando i documenti cambiano?",
+        "fr": "Comment garder les réponses à jour quand les documents changent ?"
+      },
+      "a": {
+        "de": "Über den Index, nicht über Neutraining. Richten Sie eine laufende Synchronisation ein, die neue, geänderte und gelöschte Dokumente erkennt und den Vektor-Index entsprechend aktualisiert. So verschwinden veraltete Inhalte aus den Antworten, sobald sie in der Quelle entfernt werden – ein zentraler Vorteil von RAG gegenüber fein abgestimmten Modellen.",
+        "en": "Through the index, not retraining. Set up an ongoing sync that detects new, changed and deleted documents and updates the vector index accordingly. Outdated content then disappears from answers as soon as it is removed at the source – a core advantage of RAG over fine-tuned models.",
+        "it": "Tramite l'indice, non il riaddestramento. Imposta una sincronizzazione continua che rilevi documenti nuovi, modificati ed eliminati e aggiorni di conseguenza l'indice vettoriale. Così i contenuti obsoleti spariscono dalle risposte appena vengono rimossi alla fonte – un vantaggio chiave del RAG rispetto ai modelli fine-tuned.",
+        "fr": "Par l'index, pas par le réentraînement. Mettez en place une synchronisation continue qui détecte les documents nouveaux, modifiés et supprimés et met à jour l'index vectoriel en conséquence. Les contenus périmés disparaissent alors des réponses dès qu'ils sont retirés à la source – un avantage clé du RAG sur les modèles fine-tunés."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Retrieval-Augmented Generation (RAG)",
+    "Vektordatenbank / Vector database",
+    "Embeddings",
+    "Chunking",
+    "Re-Ranking",
+    "Hybride Suche / Hybrid search",
+    "Grosses Sprachmodell (LLM)",
+    "Open-Weight-Modelle (Llama, Mistral)",
+    "Apertus (ETH / EPFL)",
+    "On-Premises / lokaler Betrieb",
+    "Datenresidenz",
+    "revDSG / nFADP",
+    "EDÖB",
+    "EU AI Act",
+    "Berechtigungsbewusstes Retrieval / RBAC",
+    "Fine-Tuning"
+  ]
+}

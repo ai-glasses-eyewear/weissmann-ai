@@ -64,19 +64,19 @@ export const CLUSTERS: AcademyCluster[] = [
     tagline: { de: 'Agenten, Automatisierung, Voice AI, Telefonassistenten und Chatbots erklärt.', en: 'Agents, automation, voice AI, phone assistants and chatbots explained.', it: 'Agenti, automazione, voice AI, assistenti telefonici e chatbot spiegati.', fr: 'Agents, automatisation, IA vocale, assistants téléphoniques et chatbots expliqués.' },
   },
   {
-    id: 'models-vendors', order: 4, status: 'draft',
+    id: 'models-vendors', order: 4, status: 'live',
     slug: { de: 'modelle-anbieter', en: 'models-vendors', it: 'modelli-fornitori', fr: 'modeles-fournisseurs' },
     name: { de: 'KI-Modelle & Anbieter', en: 'AI Models & Vendors', it: 'Modelli e fornitori AI', fr: 'Modèles et fournisseurs IA' },
     tagline: { de: 'ChatGPT, Claude, Gemini, Copilot & Co. – Vergleiche und Auswahl.', en: 'ChatGPT, Claude, Gemini, Copilot & co. – comparisons and how to choose.', it: 'ChatGPT, Claude, Gemini, Copilot & co. – confronti e come scegliere.', fr: 'ChatGPT, Claude, Gemini, Copilot & co. – comparaisons et choix.' },
   },
   {
-    id: 'local-opensource', order: 5, status: 'draft',
+    id: 'local-opensource', order: 5, status: 'live',
     slug: { de: 'lokale-open-source-ki', en: 'local-open-source', it: 'ai-locale-open-source', fr: 'ia-locale-open-source' },
     name: { de: 'Lokale & Open-Source-KI', en: 'Local & Open-Source AI', it: 'AI locale e open source', fr: 'IA locale et open source' },
     tagline: { de: 'Modelle selbst hosten, Datensouveränität und Open Source.', en: 'Self-hosting models, data sovereignty and open source.', it: 'Ospitare i modelli in proprio, sovranità dei dati e open source.', fr: 'Héberger ses modèles, souveraineté des données et open source.' },
   },
   {
-    id: 'trust-security-privacy-regulation', order: 6, status: 'draft',
+    id: 'trust-security-privacy-regulation', order: 6, status: 'live',
     slug: { de: 'sicherheit-datenschutz-regulierung', en: 'security-privacy-regulation', it: 'sicurezza-privacy-normative', fr: 'securite-confidentialite-reglementation' },
     name: { de: 'Sicherheit, Datenschutz & Regulierung', en: 'AI Security, Privacy & Regulation', it: 'Sicurezza, privacy e normative AI', fr: 'Sécurité, confidentialité et réglementation' },
     tagline: { de: 'KI-Sicherheit, Datenschutz, revDSG, EU AI Act und KI in der Schweiz.', en: 'AI security, privacy, revDSG, the EU AI Act and AI in Switzerland.', it: 'Sicurezza AI, privacy, nLPD, EU AI Act e AI in Svizzera.', fr: 'Sécurité de l’IA, confidentialité, nLPD, EU AI Act et l’IA en Suisse.' },

@@ -1,0 +1,399 @@
+{
+  "id": "ai-data-sovereignty-switzerland",
+  "cluster": "local-opensource",
+  "type": "spoke",
+  "relatedServices": [
+    "integrations",
+    "consulting"
+  ],
+  "slug": {
+    "de": "ki-datensouveraenitaet-schweiz",
+    "en": "ai-data-sovereignty-switzerland",
+    "it": "sovranita-dati-ia-svizzera",
+    "fr": "souverainete-donnees-ia-suisse"
+  },
+  "title": {
+    "de": "KI-Datensouveränität Schweiz: Daten behalten | Weissmann AI",
+    "en": "AI Data Sovereignty in Switzerland: Full Guide | Weissmann AI",
+    "it": "Sovranità dei dati IA in Svizzera: guida | Weissmann AI",
+    "fr": "Souveraineté des données IA en Suisse : guide | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI-Datensouveränität in der Schweiz: warum sie zählt, was revDSG, CLOUD Act und EU AI Act bedeuten und welche Optionen – Swiss Hosting, souveräne Cloud, lokale Modelle.",
+    "en": "AI data sovereignty in Switzerland: why it matters, what the revFADP, CLOUD Act and EU AI Act mean, and your options – Swiss hosting, sovereign cloud, local models.",
+    "it": "Sovranità dei dati IA in Svizzera: perché conta, cosa significano revLPD, CLOUD Act e EU AI Act e quali opzioni: hosting svizzero, cloud sovrano, modelli locali.",
+    "fr": "Souveraineté des données IA en Suisse : pourquoi elle compte, ce qu'impliquent nLPD, CLOUD Act et EU AI Act, et vos options : hébergement suisse, cloud souverain, modèles locaux."
+  },
+  "kicker": {
+    "de": "Datenschutz & Souveränität",
+    "en": "Privacy & Sovereignty",
+    "it": "Privacy e sovranità",
+    "fr": "Confidentialité et souveraineté"
+  },
+  "h1": {
+    "de": "Was bedeutet KI-Datensouveränität für Schweizer Unternehmen?",
+    "en": "What does AI data sovereignty mean for Swiss businesses?",
+    "it": "Cosa significa sovranità dei dati IA per le imprese svizzere?",
+    "fr": "Que signifie la souveraineté des données IA pour les entreprises suisses ?"
+  },
+  "answerFirst": {
+    "de": "KI-Datensouveränität bedeutet, dass eine Organisation jederzeit die rechtliche und technische Kontrolle darüber behält, wo ihre Daten bei der KI-Nutzung liegen, wer darauf zugreifen kann und welchem Recht sie unterstehen. Für Schweizer Firmen heisst das meist: Daten in der Schweiz oder EU halten, Zugriffe ausländischer Behörden ausschliessen und revDSG sowie Berufsgeheimnisse einhalten – über Swiss Hosting, souveräne Cloud oder lokal betriebene Open-Source-Modelle.",
+    "en": "AI data sovereignty means an organisation keeps continuous legal and technical control over where its data sits when using AI, who can access it and which law governs it. For Swiss firms this usually means: keep data in Switzerland or the EU, exclude foreign-authority access, and comply with the revFADP and professional secrecy – via Swiss hosting, sovereign cloud or locally run open-source models.",
+    "it": "La sovranità dei dati IA significa che un'organizzazione mantiene sempre il controllo giuridico e tecnico su dove risiedono i suoi dati quando usa l'IA, chi può accedervi e quale diritto li governa. Per le imprese svizzere significa in genere: tenere i dati in Svizzera o nell'UE, escludere l'accesso di autorità estere e rispettare la revLPD e i segreti professionali, tramite hosting svizzero, cloud sovrano o modelli open source eseguiti localmente.",
+    "fr": "La souveraineté des données IA signifie qu'une organisation conserve en permanence le contrôle juridique et technique sur l'emplacement de ses données lors de l'usage de l'IA, sur qui peut y accéder et sur le droit applicable. Pour les entreprises suisses, cela implique généralement : garder les données en Suisse ou dans l'UE, exclure l'accès des autorités étrangères et respecter la nLPD et les secrets professionnels, via l'hébergement suisse, le cloud souverain ou des modèles open source exécutés localement."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was ist KI-Datensouveränität – und was nicht?",
+        "en": "What AI data sovereignty is – and is not",
+        "it": "Cos'è la sovranità dei dati IA e cosa non è",
+        "fr": "Ce qu'est la souveraineté des données IA – et ce qu'elle n'est pas"
+      },
+      "paragraphs": [
+        {
+          "de": "Datensouveränität beschreibt die dauerhafte Kontrolle einer Organisation über ihre Daten: wer darauf zugreifen kann, wo sie liegen und welchem Recht sie unterstehen. Bei KI verschärft sich die Frage, weil Prompts, Dokumente, Kundendaten und teils ganze Wissensdatenbanken an ein Modell übergeben werden – häufig an einen Cloud-Dienst im Ausland.",
+          "en": "Data sovereignty is an organisation's lasting control over its data: who can access it, where it resides and which law applies. AI raises the stakes, because prompts, documents, customer data and sometimes whole knowledge bases are handed to a model – often a cloud service located abroad.",
+          "it": "La sovranità dei dati è il controllo duraturo di un'organizzazione sui propri dati: chi può accedervi, dove risiedono e quale diritto si applica. L'IA alza la posta, perché prompt, documenti, dati dei clienti e talvolta intere basi di conoscenza vengono affidati a un modello, spesso un servizio cloud all'estero.",
+          "fr": "La souveraineté des données est le contrôle durable d'une organisation sur ses données : qui peut y accéder, où elles résident et quel droit s'applique. L'IA accroît l'enjeu, car les prompts, documents, données clients et parfois des bases de connaissances entières sont confiés à un modèle, souvent un service cloud situé à l'étranger."
+        },
+        {
+          "de": "Wichtig ist die Abgrenzung zu verwandten Begriffen. Datenresidenz legt nur den geografischen Speicherort fest. Datenlokalisierung verlangt, dass Daten ein Land nicht verlassen. Souveränität geht weiter: Sie umfasst auch den rechtlichen Zugriff – etwa ob eine ausländische Behörde die Herausgabe erzwingen kann, selbst wenn der Server in Zürich steht.",
+          "en": "It matters to separate related terms. Data residency only fixes the geographic storage location. Data localisation requires that data never leave a country. Sovereignty goes further: it also covers legal reach – for instance whether a foreign authority can compel disclosure even when the server sits in Zurich.",
+          "it": "È importante distinguere termini affini. La residenza dei dati fissa solo il luogo geografico di archiviazione. La localizzazione dei dati impone che i dati non lascino un Paese. La sovranità va oltre: comprende anche la portata giuridica, ad esempio se un'autorità estera possa imporre la divulgazione anche quando il server è a Zurigo.",
+          "fr": "Il faut distinguer des termes voisins. La résidence des données ne fixe que le lieu géographique de stockage. La localisation des données exige que les données ne quittent pas un pays. La souveraineté va plus loin : elle couvre aussi la portée juridique, par exemple si une autorité étrangère peut contraindre à la divulgation même lorsque le serveur est à Zurich."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Datenresidenz: Wo liegen die Daten physisch?",
+          "en": "Data residency: where does the data physically sit?",
+          "it": "Residenza dei dati: dove risiedono fisicamente i dati?",
+          "fr": "Résidence des données : où les données se trouvent-elles physiquement ?"
+        },
+        {
+          "de": "Datenlokalisierung: Dürfen die Daten das Land verlassen?",
+          "en": "Data localisation: may the data leave the country at all?",
+          "it": "Localizzazione dei dati: i dati possono lasciare il Paese?",
+          "fr": "Localisation des données : les données peuvent-elles quitter le pays ?"
+        },
+        {
+          "de": "Datensouveränität: Wer hat rechtlich und technisch die Kontrolle und den Zugriff?",
+          "en": "Data sovereignty: who holds legal and technical control and access?",
+          "it": "Sovranità dei dati: chi detiene il controllo e l'accesso giuridico e tecnico?",
+          "fr": "Souveraineté des données : qui détient le contrôle et l'accès juridique et technique ?"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Warum Datensouveränität für Schweizer Unternehmen zählt",
+        "en": "Why data sovereignty matters for Swiss businesses",
+        "it": "Perché la sovranità dei dati conta per le imprese svizzere",
+        "fr": "Pourquoi la souveraineté des données compte pour les entreprises suisses"
+      },
+      "bullets": [
+        {
+          "de": "revDSG/nFADP: Das revidierte Datenschutzgesetz verlangt angemessenen Schutz bei der Bekanntgabe ins Ausland; Übermittlungen in Staaten ohne angemessenes Datenschutzniveau brauchen zusätzliche Garantien.",
+          "en": "revFADP/nFADP: the revised Data Protection Act requires adequate protection when data is disclosed abroad; transfers to states without an adequate level of protection need additional safeguards.",
+          "it": "revLPD/nLPD: la legge riveduta sulla protezione dei dati richiede una protezione adeguata in caso di comunicazione all'estero; i trasferimenti verso Stati senza un livello adeguato richiedono garanzie aggiuntive.",
+          "fr": "nLPD/revLPD : la loi révisée sur la protection des données exige une protection adéquate en cas de communication à l'étranger ; les transferts vers des États sans niveau adéquat requièrent des garanties supplémentaires."
+        },
+        {
+          "de": "Berufs- und Amtsgeheimnisse: Ärzte, Anwälte und Treuhänder (Art. 321 StGB) sowie Banken unterliegen besonderen Geheimhaltungspflichten – ein unkontrollierter KI-Datenabfluss kann strafbar sein.",
+          "en": "Professional and official secrecy: doctors, lawyers and fiduciaries (Art. 321 Swiss Criminal Code) and banks are bound by special confidentiality duties – an uncontrolled AI data leak can be a criminal offence.",
+          "it": "Segreti professionali e d'ufficio: medici, avvocati e fiduciari (art. 321 CP) e banche sono soggetti a obblighi speciali di riservatezza; una fuga incontrollata di dati verso l'IA può costituire reato.",
+          "fr": "Secrets professionnels et de fonction : médecins, avocats et fiduciaires (art. 321 CP) ainsi que les banques sont soumis à des obligations de confidentialité spécifiques ; une fuite incontrôlée de données vers l'IA peut être pénalement répréhensible."
+        },
+        {
+          "de": "US CLOUD Act: US-Anbieter können unter Umständen verpflichtet werden, Daten herauszugeben, auch wenn diese physisch in Europa liegen.",
+          "en": "US CLOUD Act: US providers can under certain conditions be compelled to hand over data even when it physically resides in Europe.",
+          "it": "US CLOUD Act: i fornitori statunitensi possono, a determinate condizioni, essere obbligati a consegnare dati anche se risiedono fisicamente in Europa.",
+          "fr": "US CLOUD Act : les fournisseurs américains peuvent, sous certaines conditions, être contraints de remettre des données même lorsqu'elles résident physiquement en Europe."
+        },
+        {
+          "de": "EU AI Act (extraterritorial): Gilt auch für Schweizer Anbieter, deren KI-Ergebnisse in der EU genutzt werden, und bringt Transparenz- und Risikopflichten mit sich.",
+          "en": "EU AI Act (extraterritorial): also applies to Swiss providers whose AI outputs are used in the EU, adding transparency and risk-management duties.",
+          "it": "EU AI Act (extraterritoriale): si applica anche ai fornitori svizzeri i cui risultati IA sono usati nell'UE, con obblighi di trasparenza e gestione del rischio.",
+          "fr": "EU AI Act (extraterritorial) : s'applique aussi aux fournisseurs suisses dont les résultats d'IA sont utilisés dans l'UE, avec des obligations de transparence et de gestion des risques."
+        },
+        {
+          "de": "Vertrauen und Wettbewerb: Kunden, Spitäler und Behörden verlangen zunehmend nachweisbare Datenhaltung in der Schweiz oder EU – Souveränität wird zum Verkaufsargument.",
+          "en": "Trust and competition: customers, hospitals and public bodies increasingly demand provable data hosting in Switzerland or the EU – sovereignty becomes a selling point.",
+          "it": "Fiducia e concorrenza: clienti, ospedali e autorità richiedono sempre più una conservazione dei dati dimostrabile in Svizzera o nell'UE; la sovranità diventa un argomento di vendita.",
+          "fr": "Confiance et concurrence : clients, hôpitaux et administrations exigent de plus en plus un hébergement des données prouvable en Suisse ou dans l'UE ; la souveraineté devient un argument commercial."
+        },
+        {
+          "de": "EDÖB: Die Aufsichtsbehörde erwartet dokumentierte Bearbeitungen und Risikoabwägungen, etwa ein Bearbeitungsverzeichnis und bei hohem Risiko eine Datenschutz-Folgenabschätzung.",
+          "en": "FDPIC (EDÖB): the supervisory authority expects documented processing and risk assessments, such as a record of processing and, for high risk, a data protection impact assessment.",
+          "it": "IFPDT (EDÖB): l'autorità di vigilanza si attende trattamenti documentati e valutazioni del rischio, come un registro dei trattamenti e, in caso di rischio elevato, una valutazione d'impatto.",
+          "fr": "PFPDT (EDÖB) : l'autorité de surveillance attend des traitements documentés et des analyses de risque, comme un registre des traitements et, en cas de risque élevé, une analyse d'impact."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die Optionen im Überblick",
+        "en": "Your options at a glance",
+        "it": "Le opzioni in sintesi",
+        "fr": "Vos options en un coup d'œil"
+      },
+      "paragraphs": [
+        {
+          "de": "Es gibt kein universell «richtiges» Modell – die passende Wahl hängt von Datenklasse, Budget und internem Know-how ab. Diese fünf Ansätze bilden das Spektrum von voller Auslagerung bis vollständiger Eigenkontrolle ab.",
+          "en": "There is no universally 'right' model – the fit depends on data class, budget and in-house know-how. These five approaches span the spectrum from full outsourcing to complete self-control.",
+          "it": "Non esiste un modello universalmente «giusto»: la scelta dipende dalla classe di dati, dal budget e dal know-how interno. Questi cinque approcci coprono lo spettro dalla piena esternalizzazione al pieno autocontrollo.",
+          "fr": "Il n'existe pas de modèle universellement « bon » : le choix dépend de la classe de données, du budget et du savoir-faire interne. Ces cinq approches couvrent le spectre, de l'externalisation totale au contrôle intégral."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Schweizer Cloud / Swiss Hosting: KI-Dienste bei Anbietern mit Rechenzentren in der Schweiz (z. B. Infomaniak, Exoscale, Swisscom). Vorteil: Daten und Recht in der Schweiz. Zu prüfen: verfügbare Modelle und ob Sub-Dienstleister im Ausland eingebunden sind.",
+          "en": "Swiss cloud / Swiss hosting: AI services from providers with Swiss data centres (e.g. Infomaniak, Exoscale, Swisscom). Upside: data and law stay in Switzerland. Check: which models are available and whether sub-processors abroad are involved.",
+          "it": "Cloud svizzero / hosting svizzero: servizi IA presso fornitori con data center in Svizzera (es. Infomaniak, Exoscale, Swisscom). Vantaggio: dati e diritto restano in Svizzera. Da verificare: modelli disponibili e presenza di sub-responsabili all'estero.",
+          "fr": "Cloud suisse / hébergement suisse : services d'IA chez des fournisseurs disposant de centres de données en Suisse (p. ex. Infomaniak, Exoscale, Swisscom). Avantage : données et droit restent en Suisse. À vérifier : modèles disponibles et sous-traitants à l'étranger."
+        },
+        {
+          "de": "Souveräne/EU-Cloud: Angebote mit garantierter EU-Datenhaltung und teils Abschirmung vor Drittstaatenzugriff. Guter Kompromiss aus Leistung und Kontrolle.",
+          "en": "Sovereign/EU cloud: offerings with guaranteed EU data residency and partial shielding from third-country access. A good compromise between performance and control.",
+          "it": "Cloud sovrano/UE: offerte con residenza dei dati garantita nell'UE e parziale schermatura dall'accesso di Paesi terzi. Buon compromesso tra prestazioni e controllo.",
+          "fr": "Cloud souverain/UE : offres avec résidence des données garantie dans l'UE et protection partielle contre l'accès de pays tiers. Bon compromis entre performance et contrôle."
+        },
+        {
+          "de": "Hyperscaler mit Schweizer Region: AWS, Azure und Google Cloud betreiben Zürcher Regionen. Daten liegen in der Schweiz, doch CLOUD-Act-Restrisiko und Konzernstruktur bleiben zu bewerten.",
+          "en": "Hyperscaler with a Swiss region: AWS, Azure and Google Cloud run Zurich regions. Data sits in Switzerland, but residual CLOUD Act risk and group structure still need weighing.",
+          "it": "Hyperscaler con regione svizzera: AWS, Azure e Google Cloud gestiscono regioni a Zurigo. I dati risiedono in Svizzera, ma restano da valutare il rischio residuo CLOUD Act e la struttura del gruppo.",
+          "fr": "Hyperscaler avec région suisse : AWS, Azure et Google Cloud exploitent des régions à Zurich. Les données résident en Suisse, mais le risque résiduel lié au CLOUD Act et la structure du groupe restent à évaluer."
+        },
+        {
+          "de": "Lokale/On-Premise-Modelle: Open-Source-LLMs im eigenen Rechenzentrum oder auf eigener Hardware. Höchste Kontrolle, kein Datenabfluss – dafür Aufwand für Betrieb, Hardware und Wartung.",
+          "en": "Local/on-premise models: open-source LLMs in your own data centre or on your own hardware. Maximum control, no data leaving the house – at the cost of operations, hardware and maintenance.",
+          "it": "Modelli locali/on-premise: LLM open source nel proprio data center o su hardware proprio. Massimo controllo, nessuna fuga di dati, ma con oneri di gestione, hardware e manutenzione.",
+          "fr": "Modèles locaux/on-premise : LLM open source dans son propre centre de données ou sur son matériel. Contrôle maximal, aucune donnée ne sort – au prix de l'exploitation, du matériel et de la maintenance."
+        },
+        {
+          "de": "Hybrid: Sensible Daten lokal, unkritische Aufgaben in der Cloud. In der Praxis oft der pragmatischste Weg.",
+          "en": "Hybrid: sensitive data local, non-critical tasks in the cloud. Often the most pragmatic route in practice.",
+          "it": "Ibrido: dati sensibili in locale, attività non critiche nel cloud. Spesso la via più pragmatica nella pratica.",
+          "fr": "Hybride : données sensibles en local, tâches non critiques dans le cloud. Souvent la voie la plus pragmatique en pratique."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Lokale und Open-Source-Modelle als souveräne Basis",
+        "en": "Local and open-source models as a sovereign foundation",
+        "it": "Modelli locali e open source come base sovrana",
+        "fr": "Modèles locaux et open source comme socle souverain"
+      },
+      "paragraphs": [
+        {
+          "de": "Wer maximale Souveränität will, betreibt Modelle selbst. Offene Sprachmodelle lassen sich auf eigener Infrastruktur ausführen, sodass keine Daten das Haus verlassen. Mit Apertus steht zudem ein vollständig offenes, in der Schweiz von ETH Zürich, EPFL und dem Supercomputing-Zentrum CSCS entwickeltes Sprachmodell zur Verfügung, das Transparenz über Trainingsdaten und Gewichte bietet.",
+          "en": "For maximum sovereignty, run models yourself. Open language models can run on your own infrastructure so that no data leaves the building. Apertus adds a fully open language model developed in Switzerland by ETH Zurich, EPFL and the CSCS supercomputing centre, offering transparency over training data and weights.",
+          "it": "Per la massima sovranità, si eseguono i modelli in proprio. I modelli linguistici aperti possono girare sulla propria infrastruttura, così nessun dato lascia l'azienda. Apertus aggiunge un modello linguistico completamente aperto sviluppato in Svizzera da ETH Zurigo, EPFL e dal centro di supercalcolo CSCS, con trasparenza su dati di addestramento e pesi.",
+          "fr": "Pour une souveraineté maximale, on exécute les modèles soi-même. Les modèles de langage ouverts peuvent tourner sur sa propre infrastructure, de sorte qu'aucune donnée ne quitte l'entreprise. Apertus ajoute un modèle de langage entièrement ouvert développé en Suisse par l'ETH Zurich, l'EPFL et le centre de supercalcul CSCS, offrant une transparence sur les données d'entraînement et les poids."
+        },
+        {
+          "de": "Der Preis dafür ist Aufwand: GPU-Hardware oder ein souveräner Schweizer Rechencluster, Fachwissen für Betrieb, Feinabstimmung und Sicherheit. Für viele KMU ist ein gehostetes Open-Source-Modell bei einem Schweizer Anbieter der bessere Mittelweg – offene Gewichte, aber ohne eigenen Serverbetrieb.",
+          "en": "The price is effort: GPU hardware or a sovereign Swiss compute cluster, plus expertise for operations, fine-tuning and security. For many SMEs a hosted open-source model at a Swiss provider is the better middle path – open weights, but without running your own servers.",
+          "it": "Il prezzo è l'impegno: hardware GPU o un cluster di calcolo svizzero sovrano, oltre a competenze per gestione, fine-tuning e sicurezza. Per molte PMI un modello open source ospitato presso un fornitore svizzero è la via di mezzo migliore: pesi aperti, ma senza gestire i propri server.",
+          "fr": "Le prix, c'est l'effort : matériel GPU ou un cluster de calcul suisse souverain, plus l'expertise pour l'exploitation, l'ajustement et la sécurité. Pour beaucoup de PME, un modèle open source hébergé chez un fournisseur suisse est la meilleure voie médiane : poids ouverts, mais sans gérer ses propres serveurs."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Ein praktischer Entscheidungsrahmen",
+        "en": "A practical decision framework",
+        "it": "Un quadro decisionale pratico",
+        "fr": "Un cadre de décision pratique"
+      },
+      "bullets": [
+        {
+          "de": "Daten klassifizieren: Welche Daten sind besonders schützenswert (Gesundheit, Finanzen, Geheimnisträger)?",
+          "en": "Classify data: which data is especially sensitive (health, finance, secrecy-bound professions)?",
+          "it": "Classificare i dati: quali dati sono particolarmente sensibili (salute, finanza, professioni vincolate al segreto)?",
+          "fr": "Classer les données : lesquelles sont particulièrement sensibles (santé, finance, professions soumises au secret) ?"
+        },
+        {
+          "de": "Rechtsrahmen klären: revDSG, Berufsgeheimnis, EU AI Act und branchenspezifische Vorgaben (FINMA, Gesundheitswesen).",
+          "en": "Clarify the legal frame: revFADP, professional secrecy, EU AI Act and sector rules (FINMA, healthcare).",
+          "it": "Chiarire il quadro giuridico: revLPD, segreto professionale, EU AI Act e norme di settore (FINMA, sanità).",
+          "fr": "Clarifier le cadre juridique : nLPD, secret professionnel, EU AI Act et règles sectorielles (FINMA, santé)."
+        },
+        {
+          "de": "Zugriffsmodell prüfen: Nicht nur den Speicherort, sondern wer rechtlich Zugriff erzwingen kann.",
+          "en": "Assess the access model: not just storage location, but who can legally compel access.",
+          "it": "Valutare il modello di accesso: non solo il luogo di archiviazione, ma chi può imporre legalmente l'accesso.",
+          "fr": "Évaluer le modèle d'accès : pas seulement le lieu de stockage, mais qui peut légalement contraindre l'accès."
+        },
+        {
+          "de": "Anbieter prüfen: Rechenzentrumsstandort, Konzernsitz, Sub-Dienstleister, Verträge und Zertifizierungen.",
+          "en": "Vet the provider: data-centre location, group headquarters, sub-processors, contracts and certifications.",
+          "it": "Verificare il fornitore: sede del data center, sede del gruppo, sub-responsabili, contratti e certificazioni.",
+          "fr": "Examiner le fournisseur : emplacement du centre de données, siège du groupe, sous-traitants, contrats et certifications."
+        },
+        {
+          "de": "Verträge gestalten: Auftragsbearbeitungsvertrag, Standardvertragsklauseln, Löschkonzepte und keine Nutzung der Daten fürs Modelltraining.",
+          "en": "Shape contracts: data-processing agreement, standard contractual clauses, deletion concepts and no use of your data for model training.",
+          "it": "Definire i contratti: contratto di trattamento, clausole contrattuali standard, concetti di cancellazione e nessun uso dei dati per l'addestramento.",
+          "fr": "Cadrer les contrats : contrat de sous-traitance, clauses contractuelles types, concepts d'effacement et aucun usage des données pour l'entraînement."
+        },
+        {
+          "de": "Technisch schützen: Verschlüsselung, Pseudonymisierung, Confidential Computing und Zugriffskontrollen.",
+          "en": "Protect technically: encryption, pseudonymisation, confidential computing and access controls.",
+          "it": "Proteggere tecnicamente: cifratura, pseudonimizzazione, confidential computing e controlli di accesso.",
+          "fr": "Protéger techniquement : chiffrement, pseudonymisation, confidential computing et contrôles d'accès."
+        },
+        {
+          "de": "Dokumentieren: Bearbeitungsverzeichnis führen und bei hohem Risiko eine Datenschutz-Folgenabschätzung erstellen.",
+          "en": "Document: keep a record of processing and, for high risk, run a data protection impact assessment.",
+          "it": "Documentare: tenere un registro dei trattamenti e, in caso di rischio elevato, svolgere una valutazione d'impatto.",
+          "fr": "Documenter : tenir un registre des traitements et, en cas de risque élevé, réaliser une analyse d'impact."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Missverständnisse",
+        "en": "Common misconceptions",
+        "it": "Errori comuni",
+        "fr": "Idées reçues fréquentes"
+      },
+      "bullets": [
+        {
+          "de": "«Server in der Schweiz = souverän»: Nicht zwingend – Konzernsitz und anwendbares Recht des Anbieters zählen mit.",
+          "en": "'Server in Switzerland = sovereign': not necessarily – the provider's group headquarters and applicable law count too.",
+          "it": "«Server in Svizzera = sovrano»: non necessariamente; contano anche la sede del gruppo e il diritto applicabile del fornitore.",
+          "fr": "« Serveur en Suisse = souverain » : pas forcément – le siège du groupe et le droit applicable du fournisseur comptent aussi."
+        },
+        {
+          "de": "«Open Source löst alles»: Nur, wenn man es selbst oder bei einem souveränen Anbieter betreibt; ein offenes Modell über eine ausländische API bleibt abhängig.",
+          "en": "'Open source solves everything': only if you run it yourself or at a sovereign provider; an open model via a foreign API still leaves you dependent.",
+          "it": "«L'open source risolve tutto»: solo se lo si esegue in proprio o presso un fornitore sovrano; un modello aperto tramite un'API estera resta dipendente.",
+          "fr": "« L'open source résout tout » : seulement si vous l'exécutez vous-même ou chez un fournisseur souverain ; un modèle ouvert via une API étrangère reste dépendant."
+        },
+        {
+          "de": "«revDSG = DSGVO»: Ähnlich, aber eigenständig; für die Schweiz gilt revDSG/nFADP, nicht die DSGVO.",
+          "en": "'revFADP = GDPR': similar but distinct; Switzerland is governed by the revFADP/nFADP, not the GDPR.",
+          "it": "«revLPD = GDPR»: simili ma distinte; per la Svizzera vale la revLPD/nLPD, non il GDPR.",
+          "fr": "« nLPD = RGPD » : proches mais distinctes ; la Suisse relève de la nLPD/revLPD, pas du RGPD."
+        },
+        {
+          "de": "«Kleine Firmen sind nicht betroffen»: Berufsgeheimnisse und Kundenerwartungen gelten unabhängig von der Grösse.",
+          "en": "'Small firms are not affected': professional secrecy and customer expectations apply regardless of size.",
+          "it": "«Le piccole imprese non sono coinvolte»: segreti professionali e aspettative dei clienti valgono indipendentemente dalle dimensioni.",
+          "fr": "« Les petites entreprises ne sont pas concernées » : secrets professionnels et attentes des clients s'appliquent quelle que soit la taille."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen Datenresidenz und Datensouveränität?",
+        "en": "What is the difference between data residency and data sovereignty?",
+        "it": "Qual è la differenza tra residenza e sovranità dei dati?",
+        "fr": "Quelle est la différence entre résidence et souveraineté des données ?"
+      },
+      "a": {
+        "de": "Datenresidenz beschreibt nur, wo die Daten physisch gespeichert sind. Datensouveränität umfasst zusätzlich die rechtliche Kontrolle: wer Zugriff erzwingen kann und welchem Recht die Daten und der Anbieter unterstehen. Ein Server in der Schweiz erfüllt die Residenz, garantiert aber noch keine volle Souveränität.",
+        "en": "Data residency only describes where data is physically stored. Data sovereignty adds legal control: who can compel access and which law governs the data and the provider. A server in Switzerland satisfies residency but does not by itself guarantee full sovereignty.",
+        "it": "La residenza dei dati descrive solo dove i dati sono archiviati fisicamente. La sovranità aggiunge il controllo giuridico: chi può imporre l'accesso e quale diritto governa dati e fornitore. Un server in Svizzera soddisfa la residenza ma non garantisce da solo la piena sovranità.",
+        "fr": "La résidence des données décrit uniquement où les données sont stockées physiquement. La souveraineté ajoute le contrôle juridique : qui peut contraindre l'accès et quel droit régit les données et le fournisseur. Un serveur en Suisse satisfait la résidence mais ne garantit pas à lui seul la pleine souveraineté."
+      }
+    },
+    {
+      "q": {
+        "de": "Dürfen Schweizer Unternehmen ChatGPT oder Claude nutzen?",
+        "en": "Can Swiss businesses use ChatGPT or Claude?",
+        "it": "Le imprese svizzere possono usare ChatGPT o Claude?",
+        "fr": "Les entreprises suisses peuvent-elles utiliser ChatGPT ou Claude ?"
+      },
+      "a": {
+        "de": "Ja, sofern der Datenschutz gewahrt bleibt. Für besonders schützenswerte oder dem Berufsgeheimnis unterliegende Daten braucht es geeignete Vertragsgrundlagen (Auftragsbearbeitung, keine Nutzung fürs Training), möglichst EU-/Schweizer Verarbeitung und idealerweise Pseudonymisierung. Ohne solche Garantien sollten sensible Inhalte nicht in öffentliche Dienste eingegeben werden.",
+        "en": "Yes, provided data protection is preserved. For especially sensitive or secrecy-bound data you need proper contractual bases (data-processing terms, no use for training), preferably EU/Swiss processing and ideally pseudonymisation. Without such safeguards, sensitive content should not be entered into public services.",
+        "it": "Sì, purché sia garantita la protezione dei dati. Per dati particolarmente sensibili o coperti da segreto servono basi contrattuali adeguate (trattamento, nessun uso per l'addestramento), preferibilmente elaborazione UE/svizzera e idealmente pseudonimizzazione. Senza tali garanzie, i contenuti sensibili non andrebbero inseriti in servizi pubblici.",
+        "fr": "Oui, à condition de préserver la protection des données. Pour des données particulièrement sensibles ou soumises au secret, il faut des bases contractuelles adéquates (sous-traitance, pas d'usage pour l'entraînement), de préférence un traitement UE/suisse et idéalement une pseudonymisation. Sans ces garanties, les contenus sensibles ne devraient pas être saisis dans des services publics."
+      }
+    },
+    {
+      "q": {
+        "de": "Reicht ein Schweizer Rechenzentrum, um dem CLOUD Act zu entgehen?",
+        "en": "Is a Swiss data centre enough to escape the CLOUD Act?",
+        "it": "Un data center svizzero basta per sfuggire al CLOUD Act?",
+        "fr": "Un centre de données suisse suffit-il pour échapper au CLOUD Act ?"
+      },
+      "a": {
+        "de": "Nicht unbedingt. Der US CLOUD Act kann Unternehmen mit US-Bezug zur Herausgabe verpflichten, unabhängig vom Speicherort. Wer dieses Restrisiko ausschliessen will, wählt einen Anbieter, der ausschliesslich Schweizer bzw. EU-Recht untersteht, oder setzt auf Verschlüsselung, bei der nur das eigene Unternehmen die Schlüssel hält.",
+        "en": "Not necessarily. The US CLOUD Act can compel companies with a US nexus to disclose data regardless of storage location. To exclude this residual risk, choose a provider governed solely by Swiss or EU law, or use encryption where only your own company holds the keys.",
+        "it": "Non necessariamente. Il CLOUD Act statunitense può obbligare aziende con legami USA a divulgare dati indipendentemente dal luogo di archiviazione. Per escludere questo rischio residuo, scegliere un fornitore soggetto solo al diritto svizzero o UE, oppure usare cifratura di cui solo la propria azienda detiene le chiavi.",
+        "fr": "Pas nécessairement. Le CLOUD Act américain peut contraindre les entreprises ayant un lien avec les États-Unis à divulguer des données quel que soit le lieu de stockage. Pour exclure ce risque résiduel, choisissez un fournisseur soumis uniquement au droit suisse ou UE, ou utilisez un chiffrement dont seule votre entreprise détient les clés."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist ein lokales Open-Source-Modell für ein KMU realistisch?",
+        "en": "Is a local open-source model realistic for an SME?",
+        "it": "Un modello open source locale è realistico per una PMI?",
+        "fr": "Un modèle open source local est-il réaliste pour une PME ?"
+      },
+      "a": {
+        "de": "Für abgegrenzte Aufgaben ja. Kleinere offene Modelle laufen bereits auf leistungsfähiger Standard- oder GPU-Hardware. Für hohe Qualität und viele Nutzer steigen Hardware- und Betriebsanforderungen jedoch deutlich. Oft ist ein gehostetes Open-Source-Modell bei einem Schweizer Anbieter der pragmatischere Einstieg, mit späterer Option auf vollen Eigenbetrieb.",
+        "en": "For scoped tasks, yes. Smaller open models already run on capable standard or GPU hardware. For high quality and many users, hardware and operating demands rise sharply, though. Often a hosted open-source model at a Swiss provider is the more pragmatic start, with a later option to move fully in-house.",
+        "it": "Per compiti circoscritti, sì. I modelli aperti più piccoli girano già su hardware standard o GPU performante. Per alta qualità e molti utenti, però, i requisiti di hardware e gestione crescono nettamente. Spesso un modello open source ospitato presso un fornitore svizzero è l'avvio più pragmatico, con la possibilità di internalizzare in seguito.",
+        "fr": "Pour des tâches délimitées, oui. Les modèles ouverts plus petits tournent déjà sur du matériel standard ou GPU performant. Pour une haute qualité et de nombreux utilisateurs, les exigences matérielles et d'exploitation augmentent toutefois fortement. Souvent, un modèle open source hébergé chez un fournisseur suisse est le démarrage le plus pragmatique, avec une internalisation ultérieure possible."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist Apertus?",
+        "en": "What is Apertus?",
+        "it": "Cos'è Apertus?",
+        "fr": "Qu'est-ce qu'Apertus ?"
+      },
+      "a": {
+        "de": "Apertus ist ein vollständig offenes, mehrsprachiges Sprachmodell aus der Schweiz, entwickelt von ETH Zürich, EPFL und dem nationalen Supercomputing-Zentrum CSCS. Offengelegt sind unter anderem Gewichte und Angaben zu den Trainingsdaten. Das macht es für souveräne Szenarien attraktiv, in denen Nachvollziehbarkeit und lokaler Betrieb wichtig sind.",
+        "en": "Apertus is a fully open, multilingual language model from Switzerland, developed by ETH Zurich, EPFL and the national supercomputing centre CSCS. Its weights and details about the training data are disclosed, among other things. That makes it attractive for sovereign scenarios where transparency and local operation matter.",
+        "it": "Apertus è un modello linguistico multilingue completamente aperto dalla Svizzera, sviluppato da ETH Zurigo, EPFL e dal centro nazionale di supercalcolo CSCS. Sono divulgati, tra l'altro, i pesi e le informazioni sui dati di addestramento. Ciò lo rende interessante per scenari sovrani in cui contano tracciabilità ed esecuzione locale.",
+        "fr": "Apertus est un modèle de langage multilingue entièrement ouvert issu de Suisse, développé par l'ETH Zurich, l'EPFL et le centre national de supercalcul CSCS. Ses poids et des informations sur les données d'entraînement sont notamment divulgués. Cela le rend attrayant pour des scénarios souverains où la traçabilité et l'exécution locale importent."
+      }
+    },
+    {
+      "q": {
+        "de": "Brauche ich eine Datenschutz-Folgenabschätzung für KI?",
+        "en": "Do I need a data protection impact assessment for AI?",
+        "it": "Serve una valutazione d'impatto sulla protezione dei dati per l'IA?",
+        "fr": "Ai-je besoin d'une analyse d'impact sur la protection des données pour l'IA ?"
+      },
+      "a": {
+        "de": "Nach revDSG ist eine Datenschutz-Folgenabschätzung nötig, wenn eine Bearbeitung ein hohes Risiko für Persönlichkeit oder Grundrechte mit sich bringt. KI-Anwendungen mit umfangreichen oder besonders schützenswerten Personendaten fallen häufig darunter. Die Abschätzung dokumentiert Risiken und Massnahmen und sollte vor Produktivstart vorliegen.",
+        "en": "Under the revFADP, a data protection impact assessment is required when processing entails a high risk to personality or fundamental rights. AI applications handling large-scale or especially sensitive personal data often qualify. The assessment documents risks and measures and should be in place before go-live.",
+        "it": "Secondo la revLPD, una valutazione d'impatto è necessaria quando un trattamento comporta un rischio elevato per la personalità o i diritti fondamentali. Le applicazioni IA con dati personali estesi o particolarmente sensibili spesso vi rientrano. La valutazione documenta rischi e misure e dovrebbe essere pronta prima dell'avvio in produzione.",
+        "fr": "Selon la nLPD, une analyse d'impact est requise lorsqu'un traitement présente un risque élevé pour la personnalité ou les droits fondamentaux. Les applications d'IA traitant des données personnelles à grande échelle ou particulièrement sensibles y entrent souvent. L'analyse documente les risques et les mesures et devrait être prête avant la mise en production."
+      }
+    }
+  ],
+  "keyEntities": [
+    "KI-Datensouveränität",
+    "Datenresidenz",
+    "Datenlokalisierung",
+    "revDSG/nFADP",
+    "EDÖB",
+    "EU AI Act",
+    "US CLOUD Act",
+    "Berufsgeheimnis (Art. 321 StGB)",
+    "Swiss Hosting",
+    "Souveräne Cloud",
+    "On-Premise",
+    "Open-Source-LLM",
+    "Apertus",
+    "ETH Zürich",
+    "EPFL",
+    "CSCS",
+    "Confidential Computing",
+    "Datenschutz-Folgenabschätzung",
+    "Auftragsbearbeitungsvertrag",
+    "FINMA"
+  ]
+}

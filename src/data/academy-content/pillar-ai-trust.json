@@ -1,0 +1,368 @@
+{
+  "id": "pillar-ai-trust",
+  "cluster": "trust-security-privacy-regulation",
+  "type": "pillar",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "ki-sicherheit-datenschutz-regulierung",
+    "en": "ai-security-privacy-regulation",
+    "it": "sicurezza-privacy-regolamentazione-ia",
+    "fr": "securite-protection-donnees-regulation-ia"
+  },
+  "title": {
+    "de": "KI-Sicherheit, Datenschutz, Regulierung Schweiz | Weissmann AI",
+    "en": "AI Security, Privacy & Regulation in Switzerland | Weissmann AI",
+    "it": "Sicurezza IA, privacy e regolamentazione | Weissmann AI",
+    "fr": "Sécurité IA, protection des données, régulation | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie Schweizer Unternehmen KI-Sicherheit, Datenschutz (revDSG) und Regulierung (EU AI Act) zusammen denken: Risiken, Pflichten und ein praktischer Fahrplan.",
+    "en": "How Swiss companies connect AI security, privacy (revDSG) and regulation (EU AI Act): the risks, the duties and a practical governance roadmap.",
+    "it": "Come le aziende svizzere integrano sicurezza IA, privacy (revLPD) e regolamentazione (EU AI Act): rischi, obblighi e una roadmap pratica.",
+    "fr": "Comment les entreprises suisses relient sécurité IA, protection des données (nLPD) et régulation (EU AI Act) : risques, obligations et feuille de route."
+  },
+  "kicker": {
+    "de": "Vertrauen, Sicherheit & Recht",
+    "en": "Trust, Security & Law",
+    "it": "Fiducia, sicurezza e diritto",
+    "fr": "Confiance, sécurité et droit"
+  },
+  "h1": {
+    "de": "KI-Sicherheit, Datenschutz und Regulierung: der Überblick für Schweizer Unternehmen",
+    "en": "AI Security, Privacy and Regulation: the Overview for Swiss Businesses",
+    "it": "Sicurezza IA, privacy e regolamentazione: la guida per le imprese svizzere",
+    "fr": "Sécurité IA, protection des données et régulation : le panorama pour les entreprises suisses"
+  },
+  "answerFirst": {
+    "de": "KI-Sicherheit, Datenschutz und Regulierung bilden für Schweizer Unternehmen ein zusammenhängendes Pflichtenheft: Die Sicherheit schützt Modelle und Daten vor Angriffen wie Prompt Injection, der Datenschutz nach revDSG regelt den Umgang mit Personendaten, und die Regulierung (EU AI Act, sektorielle Vorgaben) bestimmt, welche Anwendungen zulässig sind. Wer KI verantwortungsvoll einsetzt, plant alle drei Ebenen gemeinsam statt nacheinander.",
+    "en": "For Swiss companies, AI security, privacy and regulation form one connected set of obligations: security protects models and data against attacks such as prompt injection, privacy under the revised FADP governs the handling of personal data, and regulation (the EU AI Act, sector rules) determines which applications are permitted. Responsible AI adoption plans all three layers together rather than in sequence.",
+    "it": "Per le imprese svizzere, sicurezza IA, privacy e regolamentazione formano un insieme unico di obblighi: la sicurezza protegge modelli e dati da attacchi come la prompt injection, la privacy secondo la revLPD disciplina il trattamento dei dati personali e la regolamentazione (EU AI Act, norme settoriali) stabilisce quali applicazioni sono ammesse. Un uso responsabile dell'IA pianifica i tre livelli insieme, non in sequenza.",
+    "fr": "Pour les entreprises suisses, sécurité IA, protection des données et régulation forment un ensemble d'obligations lié : la sécurité protège modèles et données contre des attaques comme l'injection de prompt, la nLPD encadre le traitement des données personnelles, et la régulation (EU AI Act, règles sectorielles) détermine les usages autorisés. Une IA responsable planifie ces trois niveaux ensemble, pas l'un après l'autre."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Die drei Ebenen und wie sie zusammenhängen",
+        "en": "The three layers and how they connect",
+        "it": "I tre livelli e come si collegano",
+        "fr": "Les trois niveaux et leurs liens"
+      },
+      "paragraphs": [
+        {
+          "de": "Sicherheit, Datenschutz und Regulierung werden oft getrennt behandelt, greifen beim KI-Einsatz aber ineinander. Sicherheit fragt: Ist das System technisch robust und gegen Missbrauch geschützt? Datenschutz fragt: Werden Personendaten rechtmässig und transparent verarbeitet? Regulierung fragt: Ist die Anwendung überhaupt zulässig und unter welchen Auflagen? Erst zusammen ergeben sie einen belastbaren Rahmen.",
+          "en": "Security, privacy and regulation are often treated separately, yet in AI they overlap. Security asks: is the system technically robust and protected against misuse? Privacy asks: is personal data processed lawfully and transparently? Regulation asks: is the application permitted at all, and under what conditions? Only together do they form a dependable framework.",
+          "it": "Sicurezza, privacy e regolamentazione vengono spesso trattate separatamente, ma nell'IA si sovrappongono. La sicurezza chiede: il sistema è robusto e protetto da abusi? La privacy chiede: i dati personali sono trattati in modo lecito e trasparente? La regolamentazione chiede: l'applicazione è ammessa e a quali condizioni? Solo insieme formano un quadro solido.",
+          "fr": "Sécurité, protection des données et régulation sont souvent traitées séparément, mais dans l'IA elles se recoupent. La sécurité demande : le système est-il robuste et protégé contre les abus ? La protection des données demande : les données personnelles sont-elles traitées licitement et de façon transparente ? La régulation demande : l'usage est-il autorisé, et à quelles conditions ? Ensemble seulement, elles forment un cadre fiable."
+        },
+        {
+          "de": "Für Schweizer Unternehmen kommt eine Besonderheit hinzu: Sie unterstehen dem revidierten Datenschutzgesetz (revDSG), können aber gleichzeitig vom extraterritorialen EU AI Act erfasst werden, sobald ihre KI-Ergebnisse in der EU genutzt werden. Ein rein nationaler Blick greift deshalb zu kurz.",
+          "en": "Swiss companies face an added twist: they are governed by the revised Federal Act on Data Protection (revFADP) but can simultaneously fall under the extraterritorial EU AI Act as soon as their AI outputs are used in the EU. A purely national view is therefore too narrow.",
+          "it": "Le imprese svizzere hanno una complessità in più: sono soggette alla legge federale sulla protezione dei dati riveduta (revLPD) ma possono al contempo rientrare nell'EU AI Act extraterritoriale non appena i risultati della loro IA sono usati nell'UE. Una prospettiva solo nazionale è quindi insufficiente.",
+          "fr": "Les entreprises suisses ont une contrainte supplémentaire : elles relèvent de la loi fédérale révisée sur la protection des données (nLPD) mais peuvent aussi tomber sous l'EU AI Act extraterritorial dès que leurs résultats d'IA sont utilisés dans l'UE. Une lecture purement nationale est donc trop étroite."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Sicherheit: Schützt Modelle, Daten und Infrastruktur vor Angriffen, Manipulation und Datenabfluss (technische und organisatorische Ebene).",
+          "en": "Security: protects models, data and infrastructure against attacks, manipulation and data leakage (technical and organisational layer).",
+          "it": "Sicurezza: protegge modelli, dati e infrastruttura da attacchi, manipolazione e fughe di dati (livello tecnico e organizzativo).",
+          "fr": "Sécurité : protège modèles, données et infrastructure contre attaques, manipulation et fuites (niveau technique et organisationnel)."
+        },
+        {
+          "de": "Datenschutz: Regelt, wie Personendaten erhoben, verarbeitet und offengelegt werden dürfen (revDSG, Aufsicht durch den EDÖB).",
+          "en": "Privacy: governs how personal data may be collected, processed and disclosed (revFADP, supervised by the FDPIC).",
+          "it": "Privacy: disciplina come i dati personali possono essere raccolti, trattati e comunicati (revLPD, vigilanza dell'IFPDT).",
+          "fr": "Protection des données : encadre la collecte, le traitement et la communication des données personnelles (nLPD, supervision du PFPDT)."
+        },
+        {
+          "de": "Regulierung: Bestimmt Zulässigkeit, Risikoklasse und Pflichten je nach Anwendung (EU AI Act, Sektorrecht wie FINMA-Vorgaben oder Medizinprodukterecht).",
+          "en": "Regulation: sets permissibility, risk class and duties per use case (EU AI Act, sector law such as FINMA rules or medical-device law).",
+          "it": "Regolamentazione: definisce ammissibilità, classe di rischio e obblighi per ogni caso d'uso (EU AI Act, diritto settoriale come norme FINMA o dispositivi medici).",
+          "fr": "Régulation : fixe la licéité, la classe de risque et les obligations selon l'usage (EU AI Act, droit sectoriel comme les règles FINMA ou dispositifs médicaux)."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "KI-Sicherheit: die wichtigsten Risiken",
+        "en": "AI security: the key risks",
+        "it": "Sicurezza IA: i rischi principali",
+        "fr": "Sécurité IA : les risques majeurs"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Systeme, besonders solche mit grossen Sprachmodellen, öffnen Angriffsflächen, die klassische Software nicht kennt. Die verbreitetsten Risiken hat die OWASP-Community in ihrer Liste für LLM-Anwendungen zusammengefasst. Sie sollten Teil jeder Sicherheitsbetrachtung sein, bevor ein KI-Feature in Produktion geht.",
+          "en": "AI systems, especially those built on large language models, open attack surfaces that classic software does not have. The OWASP community has summarised the most common ones in its list for LLM applications. They belong in every security review before an AI feature ships to production.",
+          "it": "I sistemi IA, soprattutto quelli basati su grandi modelli linguistici, aprono superfici di attacco che il software classico non conosce. La community OWASP ha riassunto le più comuni nella sua lista per le applicazioni LLM. Vanno considerate in ogni analisi di sicurezza prima di mettere in produzione una funzione IA.",
+          "fr": "Les systèmes d'IA, surtout ceux fondés sur de grands modèles de langage, ouvrent des surfaces d'attaque inconnues des logiciels classiques. La communauté OWASP les a résumées dans sa liste pour les applications LLM. Elles doivent figurer dans toute revue de sécurité avant la mise en production d'une fonction IA."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Prompt Injection: Angreifer schmuggeln Anweisungen in Eingaben oder Dokumente, um das Modell zu unerwünschten Aktionen oder Datenpreisgabe zu bewegen.",
+          "en": "Prompt injection: attackers smuggle instructions into inputs or documents to make the model take unwanted actions or leak data.",
+          "it": "Prompt injection: gli attaccanti nascondono istruzioni negli input o nei documenti per indurre il modello ad azioni indesiderate o a divulgare dati.",
+          "fr": "Injection de prompt : des attaquants glissent des instructions dans les entrées ou documents pour pousser le modèle à des actions indésirables ou à divulguer des données."
+        },
+        {
+          "de": "Datenabfluss: Personendaten oder Geschäftsgeheimnisse gelangen über Prompts in externe Modelle oder erscheinen in Antworten an falsche Empfänger.",
+          "en": "Data leakage: personal data or trade secrets reach external models via prompts, or surface in responses to the wrong recipients.",
+          "it": "Fuga di dati: dati personali o segreti aziendali finiscono in modelli esterni tramite i prompt o compaiono in risposte a destinatari errati.",
+          "fr": "Fuite de données : données personnelles ou secrets d'affaires atteignent des modèles externes via les prompts, ou apparaissent dans des réponses aux mauvais destinataires."
+        },
+        {
+          "de": "Halluzinationen und Fehlausgaben: Falsche, aber überzeugend formulierte Antworten führen zu Fehlentscheidungen, wenn keine Kontrolle greift.",
+          "en": "Hallucinations and faulty output: wrong but convincing answers drive bad decisions when no control catches them.",
+          "it": "Allucinazioni e output errati: risposte sbagliate ma convincenti portano a decisioni errate se nessun controllo interviene.",
+          "fr": "Hallucinations et sorties erronées : des réponses fausses mais convaincantes mènent à de mauvaises décisions sans contrôle en place."
+        },
+        {
+          "de": "Lieferketten- und Modellrisiken: Kompromittierte Modelle, Plugins oder Trainingsdaten schleusen Schwachstellen ein (Supply-Chain-Risiko).",
+          "en": "Supply-chain and model risks: compromised models, plugins or training data introduce vulnerabilities.",
+          "it": "Rischi di supply chain e di modello: modelli, plugin o dati di addestramento compromessi introducono vulnerabilità.",
+          "fr": "Risques de chaîne d'approvisionnement et de modèle : modèles, plugins ou données d'entraînement compromis introduisent des failles."
+        },
+        {
+          "de": "Shadow AI: Mitarbeitende nutzen unfreigegebene KI-Tools mit Firmendaten, ausserhalb jeder Kontrolle und Vertragslage.",
+          "en": "Shadow AI: staff use unapproved AI tools with company data, outside any control or contractual coverage.",
+          "it": "Shadow AI: i dipendenti usano strumenti IA non approvati con dati aziendali, fuori da ogni controllo e copertura contrattuale.",
+          "fr": "Shadow AI : des collaborateurs utilisent des outils d'IA non approuvés avec des données d'entreprise, hors de tout contrôle ou cadre contractuel."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz: revDSG und der Umgang mit Personendaten",
+        "en": "Privacy: the revised FADP and handling personal data",
+        "it": "Privacy: la revLPD e il trattamento dei dati personali",
+        "fr": "Protection des données : la nLPD et le traitement des données personnelles"
+      },
+      "paragraphs": [
+        {
+          "de": "Seit dem 1. September 2023 gilt in der Schweiz das totalrevidierte Datenschutzgesetz (revDSG). Es ist am risikobasierten Ansatz des europäischen Rechts orientiert, bleibt aber ein eigenständiges Gesetz: Für Schweizer Sachverhalte spricht man von revDSG oder nDSG, nicht von der DSGVO. Sobald KI Personendaten verarbeitet, gelten dieselben Grundsätze wie sonst auch: Rechtmässigkeit, Zweckbindung, Transparenz, Verhältnismässigkeit und Datensicherheit.",
+          "en": "Since 1 September 2023 Switzerland applies the fully revised Federal Act on Data Protection (revFADP). It is aligned with the risk-based logic of European law but remains a distinct statute: for Swiss matters you refer to the revFADP, not the GDPR. As soon as AI processes personal data, the usual principles apply: lawfulness, purpose limitation, transparency, proportionality and data security.",
+          "it": "Dal 1° settembre 2023 la Svizzera applica la legge sulla protezione dei dati totalmente riveduta (revLPD). È allineata alla logica basata sul rischio del diritto europeo ma resta una legge autonoma: per le questioni svizzere si parla di revLPD, non di GDPR. Quando l'IA tratta dati personali valgono i principi consueti: liceità, limitazione della finalità, trasparenza, proporzionalità e sicurezza dei dati.",
+          "fr": "Depuis le 1er septembre 2023, la Suisse applique la loi fédérale sur la protection des données entièrement révisée (nLPD). Alignée sur la logique fondée sur le risque du droit européen, elle reste une loi distincte : pour les cas suisses, on parle de nLPD, pas du RGPD. Dès que l'IA traite des données personnelles, les principes habituels s'appliquent : licéité, limitation de la finalité, transparence, proportionnalité et sécurité des données."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Datenschutz-Folgenabschätzung (DSFA): bei voraussichtlich hohem Risiko, etwa umfangreichem Profiling oder Bearbeitung besonders schützenswerter Daten, vor dem Einsatz durchführen.",
+          "en": "Data protection impact assessment (DPIA): carry out before deployment when a high risk is likely, e.g. large-scale profiling or processing of sensitive data.",
+          "it": "Valutazione d'impatto sulla protezione dei dati (VIPD): da effettuare prima dell'uso in caso di rischio elevato probabile, ad es. profilazione su vasta scala o trattamento di dati sensibili.",
+          "fr": "Analyse d'impact relative à la protection des données (AIPD) : à réaliser avant tout déploiement en cas de risque élevé probable, p. ex. profilage à grande échelle ou données sensibles."
+        },
+        {
+          "de": "Auftragsverarbeitung: KI-Anbieter sind meist Auftragsbearbeiter; ein Vertrag, geprüfte Sub-Verarbeiter und der Bearbeitungsort (Schweiz/EU vs. Drittstaat) müssen geklärt sein.",
+          "en": "Processing on behalf: AI vendors are usually processors; you need a contract, vetted sub-processors and clarity on the processing location (Switzerland/EU vs third country).",
+          "it": "Responsabile del trattamento: i fornitori IA sono di solito responsabili; servono un contratto, sub-responsabili verificati e chiarezza sul luogo del trattamento (Svizzera/UE o Paese terzo).",
+          "fr": "Sous-traitance : les fournisseurs d'IA sont généralement des sous-traitants ; il faut un contrat, des sous-traitants ultérieurs vérifiés et un lieu de traitement clair (Suisse/UE ou pays tiers)."
+        },
+        {
+          "de": "Transparenz und Betroffenenrechte: Informieren Sie, wenn KI Entscheidungen unterstützt, und stellen Sie Auskunft, Berichtigung und menschliche Überprüfung sicher.",
+          "en": "Transparency and data-subject rights: disclose when AI supports decisions and ensure access, rectification and human review.",
+          "it": "Trasparenza e diritti degli interessati: informate quando l'IA supporta decisioni e garantite accesso, rettifica e revisione umana.",
+          "fr": "Transparence et droits des personnes : informez lorsque l'IA appuie des décisions et garantissez accès, rectification et contrôle humain."
+        },
+        {
+          "de": "Datenminimierung: Nur die wirklich nötigen Personendaten in Prompts, Trainingssätze oder Vektordatenbanken geben; anonymisieren oder pseudonymisieren, wo möglich.",
+          "en": "Data minimisation: put only truly necessary personal data into prompts, training sets or vector databases; anonymise or pseudonymise where possible.",
+          "it": "Minimizzazione dei dati: inserite solo i dati personali realmente necessari in prompt, set di addestramento o database vettoriali; anonimizzate o pseudonimizzate ove possibile.",
+          "fr": "Minimisation des données : n'introduisez que les données personnelles réellement nécessaires dans les prompts, jeux d'entraînement ou bases vectorielles ; anonymisez ou pseudonymisez si possible."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Regulierung: EU AI Act und Schweizer Recht",
+        "en": "Regulation: the EU AI Act and Swiss law",
+        "it": "Regolamentazione: EU AI Act e diritto svizzero",
+        "fr": "Régulation : EU AI Act et droit suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Der EU AI Act ist die erste umfassende KI-Regulierung und tritt gestaffelt in Kraft. Er verfolgt einen risikobasierten Ansatz: verbotene Praktiken (etwa Social Scoring), Hochrisiko-Anwendungen mit strengen Pflichten (z. B. in Personalauswahl oder Kreditvergabe), begrenzte Transparenzpflichten (etwa Kennzeichnung von Chatbots und KI-generierten Inhalten) sowie minimales Risiko. Wichtig für die Schweiz: Der Act wirkt extraterritorial, sobald KI-Ergebnisse in der EU genutzt werden.",
+          "en": "The EU AI Act is the first comprehensive AI regulation and enters into force in stages. It follows a risk-based approach: prohibited practices (such as social scoring), high-risk applications with strict duties (e.g. hiring or credit scoring), limited transparency duties (labelling of chatbots and AI-generated content) and minimal risk. Key for Switzerland: the Act applies extraterritorially as soon as AI outputs are used in the EU.",
+          "it": "L'EU AI Act è la prima regolamentazione completa sull'IA ed entra in vigore in modo scaglionato. Segue un approccio basato sul rischio: pratiche vietate (come il social scoring), applicazioni ad alto rischio con obblighi severi (es. selezione del personale o scoring creditizio), obblighi di trasparenza limitati (etichettatura di chatbot e contenuti generati) e rischio minimo. Rilevante per la Svizzera: l'Act ha effetto extraterritoriale non appena i risultati dell'IA sono usati nell'UE.",
+          "fr": "L'EU AI Act est la première régulation complète de l'IA et entre en vigueur par étapes. Il suit une approche fondée sur le risque : pratiques interdites (comme le scoring social), applications à haut risque aux obligations strictes (p. ex. recrutement ou scoring de crédit), obligations de transparence limitées (marquage des chatbots et contenus générés) et risque minimal. Essentiel pour la Suisse : l'Act s'applique de façon extraterritoriale dès que les résultats d'IA sont utilisés dans l'UE."
+        },
+        {
+          "de": "In der Schweiz gibt es bislang kein eigenes horizontales KI-Gesetz. Der Bundesrat verfolgt einen sektoriellen, technologieneutralen Ansatz und prüft, wie internationale Vorgaben wie die KI-Konvention des Europarats umgesetzt werden. Für regulierte Branchen gelten zusätzlich bestehende Regeln, etwa der FINMA im Finanzsektor oder das Heilmittelrecht bei medizinischen Anwendungen. Wer exportiert oder EU-Kundschaft bedient, richtet sich praktisch am strengeren EU-Standard aus.",
+          "en": "Switzerland has no dedicated horizontal AI law yet. The Federal Council favours a sector-specific, technology-neutral approach and is examining how international instruments such as the Council of Europe's AI Convention will be implemented. Regulated industries also face existing rules, e.g. FINMA in finance or therapeutic-products law for medical uses. Exporters and firms serving EU customers effectively align with the stricter EU standard.",
+          "it": "La Svizzera non ha ancora una legge orizzontale dedicata all'IA. Il Consiglio federale predilige un approccio settoriale e tecnologicamente neutro e valuta come attuare strumenti internazionali come la Convenzione sull'IA del Consiglio d'Europa. I settori regolati seguono anche norme esistenti, ad es. la FINMA nella finanza o il diritto sugli agenti terapeutici per usi medici. Chi esporta o serve clientela UE si allinea di fatto allo standard UE più severo.",
+          "fr": "La Suisse n'a pas encore de loi horizontale dédiée à l'IA. Le Conseil fédéral privilégie une approche sectorielle et neutre sur le plan technologique et examine la mise en œuvre d'instruments internationaux comme la Convention sur l'IA du Conseil de l'Europe. Les secteurs régulés relèvent aussi de règles existantes, p. ex. la FINMA dans la finance ou le droit des produits thérapeutiques pour les usages médicaux. Les exportateurs et ceux qui servent des clients UE s'alignent de fait sur le standard européen, plus strict."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Ein praktischer Fahrplan für Schweizer KMU",
+        "en": "A practical roadmap for Swiss SMEs",
+        "it": "Una roadmap pratica per le PMI svizzere",
+        "fr": "Une feuille de route pratique pour les PME suisses"
+      },
+      "paragraphs": [
+        {
+          "de": "Governance muss nicht schwerfällig sein. Ein pragmatischer Ablauf verbindet die drei Ebenen, ohne Innovation zu blockieren, und lässt sich an anerkannten Rahmenwerken wie dem NIST AI Risk Management Framework oder der Norm ISO/IEC 42001 ausrichten.",
+          "en": "Governance need not be heavy. A pragmatic sequence connects the three layers without blocking innovation and can be aligned with recognised frameworks such as the NIST AI Risk Management Framework or the ISO/IEC 42001 standard.",
+          "it": "La governance non deve essere pesante. Una sequenza pragmatica collega i tre livelli senza bloccare l'innovazione e può allinearsi a framework riconosciuti come il NIST AI Risk Management Framework o la norma ISO/IEC 42001.",
+          "fr": "La gouvernance n'a pas à être lourde. Une séquence pragmatique relie les trois niveaux sans bloquer l'innovation et peut s'aligner sur des référentiels reconnus comme le NIST AI Risk Management Framework ou la norme ISO/IEC 42001."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Inventar: Alle eingesetzten und geplanten KI-Anwendungen erfassen, inklusive Shadow AI, und je nach Datenart und Zweck priorisieren.",
+          "en": "Inventory: list every AI use in play or planned, including shadow AI, and prioritise by data type and purpose.",
+          "it": "Inventario: censite tutti gli usi IA attivi o previsti, inclusa la shadow AI, e date priorità per tipo di dati e finalità.",
+          "fr": "Inventaire : recensez tous les usages d'IA en place ou prévus, y compris la shadow AI, et priorisez selon le type de données et la finalité."
+        },
+        {
+          "de": "Risiko- und Rechtsklassierung: Pro Anwendung Sicherheitsrisiko, Datenschutzrelevanz und mögliche EU-AI-Act-Risikoklasse bestimmen.",
+          "en": "Risk and legal classification: for each use, determine the security risk, privacy relevance and potential EU AI Act risk class.",
+          "it": "Classificazione di rischio e giuridica: per ogni uso, definite rischio di sicurezza, rilevanza privacy e possibile classe di rischio EU AI Act.",
+          "fr": "Classement risque et droit : pour chaque usage, déterminez le risque de sécurité, la pertinence en protection des données et la classe de risque EU AI Act possible."
+        },
+        {
+          "de": "Leitplanken: Interne KI-Richtlinie, Freigabeprozess für Tools, geprüfte Anbieter mit Auftragsverarbeitungsvertrag und klarer Umgang mit Kundendaten.",
+          "en": "Guardrails: an internal AI policy, a tool-approval process, vetted vendors with a processing agreement and clear rules for customer data.",
+          "it": "Guardrail: policy IA interna, processo di approvazione degli strumenti, fornitori verificati con contratto di trattamento e regole chiare sui dati dei clienti.",
+          "fr": "Garde-fous : politique IA interne, processus d'approbation des outils, fournisseurs vérifiés avec contrat de traitement et règles claires sur les données clients."
+        },
+        {
+          "de": "Technische Kontrollen: Zugriffssteuerung, Protokollierung, Eingabe-/Ausgabefilter gegen Prompt Injection und menschliche Kontrolle bei relevanten Entscheidungen.",
+          "en": "Technical controls: access management, logging, input/output filters against prompt injection and human oversight for significant decisions.",
+          "it": "Controlli tecnici: gestione degli accessi, logging, filtri input/output contro la prompt injection e supervisione umana nelle decisioni rilevanti.",
+          "fr": "Contrôles techniques : gestion des accès, journalisation, filtres entrée/sortie contre l'injection de prompt et supervision humaine pour les décisions importantes."
+        },
+        {
+          "de": "Menschen und Wiederholung: Mitarbeitende schulen, Verantwortlichkeiten festlegen und die Bewertung regelmässig aktualisieren, da sich Modelle und Recht schnell ändern.",
+          "en": "People and iteration: train staff, assign accountability and revisit the assessment regularly, since models and law change fast.",
+          "it": "Persone e iterazione: formate il personale, assegnate responsabilità e aggiornate la valutazione con regolarità, perché modelli e diritto cambiano in fretta.",
+          "fr": "Personnes et itération : formez les équipes, attribuez les responsabilités et réévaluez régulièrement, car modèles et droit évoluent vite."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Souveränität und der Schweizer Weg",
+        "en": "Sovereignty and the Swiss path",
+        "it": "Sovranità e la via svizzera",
+        "fr": "Souveraineté et la voie suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Für sensible Daten rückt digitale Souveränität in den Vordergrund: Wo werden Daten verarbeitet, wer hat Zugriff, und wie unabhängig ist man von einzelnen Anbietern? Die Schweiz baut hier eigene Kompetenz auf. Das offene Sprachmodell Apertus, entwickelt an ETH Zürich und EPFL mit dem Swiss National Supercomputing Centre, zeigt, dass transparente, in der Schweiz gehostete KI möglich ist. Innosuisse fördert entsprechende Innovationsprojekte.",
+          "en": "For sensitive data, digital sovereignty moves to the fore: where is data processed, who has access, and how dependent are you on single vendors? Switzerland is building its own capability here. The open language model Apertus, developed at ETH Zurich and EPFL with the Swiss National Supercomputing Centre, shows that transparent, Swiss-hosted AI is feasible. Innosuisse funds related innovation projects.",
+          "it": "Per i dati sensibili, la sovranità digitale passa in primo piano: dove sono trattati i dati, chi vi accede e quanto si dipende da singoli fornitori? La Svizzera sta costruendo competenze proprie. Il modello linguistico aperto Apertus, sviluppato all'ETH di Zurigo e all'EPFL con lo Swiss National Supercomputing Centre, mostra che un'IA trasparente e ospitata in Svizzera è possibile. Innosuisse finanzia progetti d'innovazione affini.",
+          "fr": "Pour les données sensibles, la souveraineté numérique passe au premier plan : où les données sont-elles traitées, qui y a accès, et quelle est la dépendance envers un fournisseur unique ? La Suisse développe ses propres capacités. Le modèle de langage ouvert Apertus, développé à l'ETH Zurich et à l'EPFL avec le Swiss National Supercomputing Centre, montre qu'une IA transparente et hébergée en Suisse est possible. Innosuisse soutient des projets d'innovation en ce sens."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen revDSG und DSGVO?",
+        "en": "What is the difference between the revFADP and the GDPR?",
+        "it": "Qual è la differenza tra revLPD e GDPR?",
+        "fr": "Quelle est la différence entre la nLPD et le RGPD ?"
+      },
+      "a": {
+        "de": "Das revDSG ist das Schweizer Datenschutzgesetz, die DSGVO das der EU. Beide folgen einer ähnlichen, risikobasierten Logik, sind aber getrennte Rechtsordnungen mit Unterschieden bei Bussen, Meldepflichten und Terminologie. Für Schweizer Sachverhalte gilt das revDSG; die DSGVO kann zusätzlich greifen, wenn Sie Personen in der EU bearbeiten.",
+        "en": "The revFADP is Switzerland's data protection law, the GDPR the EU's. Both follow a similar risk-based logic but are separate legal regimes differing in fines, notification duties and terminology. Swiss matters fall under the revFADP; the GDPR may additionally apply when you process data of people in the EU.",
+        "it": "La revLPD è la legge svizzera sulla protezione dei dati, il GDPR quella dell'UE. Seguono una logica simile basata sul rischio ma sono ordinamenti distinti, con differenze su sanzioni, obblighi di notifica e terminologia. Per i casi svizzeri vale la revLPD; il GDPR può aggiungersi se trattate dati di persone nell'UE.",
+        "fr": "La nLPD est la loi suisse sur la protection des données, le RGPD celle de l'UE. Toutes deux suivent une logique fondée sur le risque, mais ce sont des régimes distincts qui diffèrent sur les amendes, les obligations de notification et la terminologie. Les cas suisses relèvent de la nLPD ; le RGPD peut s'ajouter si vous traitez des données de personnes dans l'UE."
+      }
+    },
+    {
+      "q": {
+        "de": "Gilt der EU AI Act für Schweizer Unternehmen?",
+        "en": "Does the EU AI Act apply to Swiss companies?",
+        "it": "L'EU AI Act si applica alle aziende svizzere?",
+        "fr": "L'EU AI Act s'applique-t-il aux entreprises suisses ?"
+      },
+      "a": {
+        "de": "Ja, er kann extraterritorial greifen. Sobald ein Schweizer Unternehmen KI-Systeme in der EU anbietet oder die von der KI erzeugten Ergebnisse in der EU genutzt werden, kann der Act anwendbar sein. Unabhängig davon lohnt sich eine Orientierung am risikobasierten Ansatz, weil er internationalen Standard setzt.",
+        "en": "Yes, it can apply extraterritorially. As soon as a Swiss company places AI systems on the EU market or the AI-generated output is used in the EU, the Act may apply. Independently, aligning with its risk-based approach is worthwhile because it is becoming the international benchmark.",
+        "it": "Sì, può applicarsi in via extraterritoriale. Non appena un'azienda svizzera immette sistemi IA nel mercato UE o i risultati generati dall'IA sono usati nell'UE, l'Act può applicarsi. A prescindere, allinearsi al suo approccio basato sul rischio è utile perché sta diventando lo standard internazionale.",
+        "fr": "Oui, il peut s'appliquer de façon extraterritoriale. Dès qu'une entreprise suisse met des systèmes d'IA sur le marché de l'UE ou que les résultats générés par l'IA y sont utilisés, l'Act peut s'appliquer. Indépendamment, s'aligner sur son approche fondée sur le risque est judicieux car elle devient la référence internationale."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist Prompt Injection und warum ist sie gefährlich?",
+        "en": "What is prompt injection and why is it dangerous?",
+        "it": "Cos'è la prompt injection e perché è pericolosa?",
+        "fr": "Qu'est-ce que l'injection de prompt et pourquoi est-elle dangereuse ?"
+      },
+      "a": {
+        "de": "Bei einer Prompt Injection schmuggeln Angreifer versteckte Anweisungen in Texte, Dokumente oder Webseiten, die das KI-System verarbeitet. Das Modell kann dadurch Regeln umgehen, Daten preisgeben oder ungewollte Aktionen auslösen. Gefährlich ist sie, weil sie ohne klassischen Code-Exploit auskommt und besonders bei KI-Agenten mit Zugriff auf Tools und Daten wirkt.",
+        "en": "In a prompt injection, attackers hide instructions in text, documents or web pages that the AI system processes. The model may then bypass rules, leak data or trigger unwanted actions. It is dangerous because it needs no classic code exploit and is especially potent against AI agents with access to tools and data.",
+        "it": "Nella prompt injection gli attaccanti nascondono istruzioni in testi, documenti o pagine web che il sistema IA elabora. Il modello può così aggirare regole, divulgare dati o attivare azioni indesiderate. È pericolosa perché non richiede un exploit di codice classico ed è particolarmente efficace contro gli agenti IA con accesso a strumenti e dati.",
+        "fr": "Dans une injection de prompt, les attaquants cachent des instructions dans des textes, documents ou pages web que le système d'IA traite. Le modèle peut alors contourner des règles, divulguer des données ou déclencher des actions indésirables. Elle est dangereuse car elle ne requiert aucun exploit de code classique et frappe surtout les agents d'IA ayant accès à des outils et des données."
+      }
+    },
+    {
+      "q": {
+        "de": "Brauche ich für eine KI-Anwendung eine Datenschutz-Folgenabschätzung?",
+        "en": "Do I need a data protection impact assessment for an AI application?",
+        "it": "Serve una valutazione d'impatto per un'applicazione IA?",
+        "fr": "Faut-il une analyse d'impact pour une application d'IA ?"
+      },
+      "a": {
+        "de": "Wenn die Bearbeitung voraussichtlich ein hohes Risiko für Persönlichkeit oder Grundrechte mit sich bringt, verlangt das revDSG eine DSFA vor dem Einsatz. Das ist bei KI oft der Fall, etwa bei umfangreichem Profiling oder besonders schützenswerten Daten. Die Abschätzung dokumentiert Risiken und Massnahmen; im Zweifel ziehen Sie den EDÖB oder Fachrat bei.",
+        "en": "If the processing is likely to entail a high risk to personality or fundamental rights, the revFADP requires a DPIA before deployment. With AI this is often the case, e.g. large-scale profiling or sensitive data. The assessment documents risks and measures; when in doubt, consult the FDPIC or expert advice.",
+        "it": "Se il trattamento comporta verosimilmente un rischio elevato per la personalità o i diritti fondamentali, la revLPD richiede una VIPD prima dell'uso. Con l'IA accade spesso, ad es. profilazione su vasta scala o dati sensibili. La valutazione documenta rischi e misure; nel dubbio consultate l'IFPDT o un parere esperto.",
+        "fr": "Si le traitement est susceptible d'entraîner un risque élevé pour la personnalité ou les droits fondamentaux, la nLPD exige une AIPD avant le déploiement. Avec l'IA, c'est souvent le cas, p. ex. profilage à grande échelle ou données sensibles. L'analyse documente risques et mesures ; en cas de doute, consultez le PFPDT ou un avis d'expert."
+      }
+    },
+    {
+      "q": {
+        "de": "Darf ich öffentliche KI-Tools mit Kundendaten nutzen?",
+        "en": "May I use public AI tools with customer data?",
+        "it": "Posso usare strumenti IA pubblici con dati dei clienti?",
+        "fr": "Puis-je utiliser des outils d'IA publics avec des données clients ?"
+      },
+      "a": {
+        "de": "Nur mit Vorsicht. Ohne geeignete vertragliche Grundlage, geklärten Bearbeitungsort und Zusicherung, dass Eingaben nicht zum Training verwendet werden, riskieren Sie Datenschutzverstösse und Geheimnisverlust. Besser sind geschäftliche Angebote mit Auftragsverarbeitungsvertrag, EU-/Schweiz-Hosting oder lokal betriebene Modelle. Personendaten grundsätzlich minimieren oder pseudonymisieren.",
+        "en": "Only with care. Without a suitable contractual basis, a clarified processing location and assurance that inputs are not used for training, you risk privacy breaches and loss of secrecy. Business offerings with a processing agreement, EU/Swiss hosting or locally run models are preferable. Minimise or pseudonymise personal data by default.",
+        "it": "Solo con cautela. Senza una base contrattuale idonea, un luogo di trattamento chiarito e la garanzia che gli input non siano usati per l'addestramento, rischiate violazioni della privacy e perdita di segretezza. Meglio offerte business con contratto di trattamento, hosting UE/Svizzera o modelli locali. Minimizzate o pseudonimizzate per principio i dati personali.",
+        "fr": "Avec prudence seulement. Sans base contractuelle adaptée, lieu de traitement clarifié et garantie que les entrées ne servent pas à l'entraînement, vous risquez des violations et une perte de confidentialité. Préférez des offres professionnelles avec contrat de traitement, hébergement UE/Suisse ou modèles exécutés localement. Minimisez ou pseudonymisez par défaut les données personnelles."
+      }
+    },
+    {
+      "q": {
+        "de": "Wo fange ich mit KI-Governance am besten an?",
+        "en": "Where should I start with AI governance?",
+        "it": "Da dove conviene iniziare con la governance dell'IA?",
+        "fr": "Par où commencer la gouvernance de l'IA ?"
+      },
+      "a": {
+        "de": "Beginnen Sie mit einem Inventar aller genutzten KI-Tools, inklusive inoffizieller. Klassieren Sie diese nach Sicherheitsrisiko, Datenschutzrelevanz und möglicher EU-AI-Act-Risikoklasse, definieren Sie eine schlanke interne Richtlinie und einen Freigabeprozess. Orientierung bieten das NIST AI Risk Management Framework und die Norm ISO/IEC 42001. Wichtig ist, den Prozess regelmässig zu wiederholen.",
+        "en": "Start with an inventory of all AI tools in use, including unofficial ones. Classify them by security risk, privacy relevance and potential EU AI Act risk class, then define a lean internal policy and an approval process. The NIST AI Risk Management Framework and ISO/IEC 42001 offer orientation. Crucially, repeat the process regularly.",
+        "it": "Iniziate con un inventario di tutti gli strumenti IA in uso, inclusi quelli non ufficiali. Classificateli per rischio di sicurezza, rilevanza privacy e possibile classe di rischio EU AI Act, poi definite una policy interna snella e un processo di approvazione. Il NIST AI Risk Management Framework e la ISO/IEC 42001 offrono orientamento. È essenziale ripetere il processo con regolarità.",
+        "fr": "Commencez par un inventaire de tous les outils d'IA utilisés, y compris non officiels. Classez-les par risque de sécurité, pertinence en protection des données et classe de risque EU AI Act possible, puis définissez une politique interne légère et un processus d'approbation. Le NIST AI Risk Management Framework et l'ISO/IEC 42001 servent de repères. L'essentiel : répéter le processus régulièrement."
+      }
+    }
+  ],
+  "keyEntities": [
+    "revDSG (nDSG)",
+    "EDÖB",
+    "EU AI Act",
+    "DSGVO",
+    "Prompt Injection",
+    "OWASP Top 10 for LLM Applications",
+    "Datenschutz-Folgenabschätzung (DSFA)",
+    "Auftragsverarbeitung",
+    "NIST AI Risk Management Framework",
+    "ISO/IEC 42001",
+    "Shadow AI",
+    "Apertus",
+    "ETH Zürich",
+    "EPFL",
+    "Innosuisse",
+    "FINMA"
+  ]
+}

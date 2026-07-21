@@ -1,0 +1,380 @@
+{
+  "id": "eu-ai-act-explained",
+  "cluster": "trust-security-privacy-regulation",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "eu-ai-act-erklaert",
+    "en": "eu-ai-act-explained",
+    "it": "eu-ai-act-spiegato",
+    "fr": "eu-ai-act-explique"
+  },
+  "title": {
+    "de": "EU AI Act erklärt: Leitfaden für die Schweiz | Weissmann AI",
+    "en": "EU AI Act Explained: A Guide for Swiss Firms | Weissmann AI",
+    "it": "EU AI Act spiegato: guida per la Svizzera | Weissmann AI",
+    "fr": "EU AI Act expliqué : guide pour la Suisse | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Der EU AI Act einfach erklärt: Risikoklassen, Transparenzpflichten (Art. 50), extraterritoriale Wirkung und Zeitplan – mit klarem Fokus auf die Schweiz und DACH.",
+    "en": "The EU AI Act explained: risk tiers, transparency duties (Art. 50), extraterritorial reach and the timeline, with a clear focus on Swiss and DACH businesses.",
+    "it": "L'EU AI Act spiegato: classi di rischio, obblighi di trasparenza (art. 50), portata extraterritoriale e calendario, con focus su Svizzera e area DACH.",
+    "fr": "L'EU AI Act expliqué : niveaux de risque, obligations de transparence (art. 50), portée extraterritoriale et calendrier, avec un focus Suisse et DACH."
+  },
+  "kicker": {
+    "de": "Regulierung · EU AI Act",
+    "en": "Regulation · EU AI Act",
+    "it": "Regolamentazione · EU AI Act",
+    "fr": "Réglementation · EU AI Act"
+  },
+  "h1": {
+    "de": "Was ist der EU AI Act – und was bedeutet er für Schweizer Unternehmen?",
+    "en": "What is the EU AI Act – and what does it mean for Swiss businesses?",
+    "it": "Cos'è l'EU AI Act e cosa significa per le imprese svizzere?",
+    "fr": "Qu'est-ce que l'EU AI Act et que signifie-t-il pour les entreprises suisses ?"
+  },
+  "answerFirst": {
+    "de": "Der EU AI Act (Verordnung (EU) 2024/1689) ist das weltweit erste umfassende KI-Gesetz. Er stuft KI-Systeme nach Risiko ein – von verboten über hoch und begrenzt bis minimal – und knüpft daran abgestufte Pflichten. Dank extraterritorialer Wirkung betrifft er auch Schweizer Unternehmen, deren KI-Systeme oder deren Ergebnisse in der EU genutzt werden. Die Pflichten greifen gestaffelt zwischen Februar 2025 und August 2027.",
+    "en": "The EU AI Act (Regulation (EU) 2024/1689) is the world's first comprehensive law on artificial intelligence. It classifies AI systems by risk – unacceptable, high, limited and minimal – and attaches graduated obligations to each tier. Thanks to its extraterritorial reach, it also affects Swiss companies whose AI systems, or whose outputs, are used in the EU. Obligations apply in stages between February 2025 and August 2027.",
+    "it": "L'EU AI Act (Regolamento (UE) 2024/1689) è la prima legge organica al mondo sull'intelligenza artificiale. Classifica i sistemi di IA per rischio – inaccettabile, alto, limitato e minimo – associando a ciascun livello obblighi graduati. Grazie alla portata extraterritoriale riguarda anche le imprese svizzere i cui sistemi di IA, o i cui output, sono usati nell'UE. Gli obblighi si applicano per fasi tra febbraio 2025 e agosto 2027.",
+    "fr": "L'EU AI Act (règlement (UE) 2024/1689) est la première loi complète au monde sur l'intelligence artificielle. Il classe les systèmes d'IA par risque – inacceptable, élevé, limité et minimal – et associe à chaque niveau des obligations graduées. Par sa portée extraterritoriale, il touche aussi les entreprises suisses dont les systèmes d'IA, ou les résultats, sont utilisés dans l'UE. Les obligations s'appliquent par étapes entre février 2025 et août 2027."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was ist der EU AI Act?",
+        "en": "What is the EU AI Act?",
+        "it": "Cos'è l'EU AI Act?",
+        "fr": "Qu'est-ce que l'EU AI Act ?"
+      },
+      "paragraphs": [
+        {
+          "de": "Der EU AI Act ist die erste horizontale, sektorübergreifende Regulierung für Künstliche Intelligenz. Als Verordnung (EU) 2024/1689 trat er am 1. August 2024 in Kraft und gilt unmittelbar in allen EU-Mitgliedstaaten – ohne nationale Umsetzung. Ziel ist ein Binnenmarkt für vertrauenswürdige KI: Innovation ermöglichen und zugleich Grundrechte, Gesundheit und Sicherheit schützen.",
+          "en": "The EU AI Act is the first horizontal, cross-sector regulation for artificial intelligence. As Regulation (EU) 2024/1689 it entered into force on 1 August 2024 and applies directly in every EU member state, with no national transposition needed. Its goal is a single market for trustworthy AI: enabling innovation while protecting fundamental rights, health and safety.",
+          "it": "L'EU AI Act è la prima regolamentazione orizzontale e trasversale per l'intelligenza artificiale. In quanto Regolamento (UE) 2024/1689 è entrato in vigore il 1° agosto 2024 e si applica direttamente in ogni Stato membro dell'UE, senza recepimento nazionale. L'obiettivo è un mercato unico per un'IA affidabile: favorire l'innovazione tutelando al contempo diritti fondamentali, salute e sicurezza.",
+          "fr": "L'EU AI Act est la première réglementation horizontale et transsectorielle sur l'intelligence artificielle. En tant que règlement (UE) 2024/1689, il est entré en vigueur le 1er août 2024 et s'applique directement dans chaque État membre de l'UE, sans transposition nationale. Son but est un marché unique pour une IA digne de confiance : permettre l'innovation tout en protégeant les droits fondamentaux, la santé et la sécurité."
+        },
+        {
+          "de": "Der Ansatz ist risikobasiert, nicht technologiespezifisch. Reguliert wird nicht die Technik selbst, sondern der Verwendungszweck eines KI-Systems und das damit verbundene Risiko. Je höher das Risiko für Menschen und Gesellschaft, desto strenger die Anforderungen – von einem vollständigen Verbot bis hin zu gar keinen zusätzlichen Pflichten.",
+          "en": "The approach is risk-based, not technology-specific. What is regulated is not the technology itself but the intended purpose of an AI system and the risk it entails. The higher the risk to people and society, the stricter the requirements – ranging from an outright ban to no additional obligations at all.",
+          "it": "L'approccio è basato sul rischio, non sulla tecnologia. Non si regola la tecnologia in sé, ma la finalità d'uso di un sistema di IA e il rischio che comporta. Più alto è il rischio per le persone e la società, più severi sono i requisiti: dal divieto totale a nessun obbligo aggiuntivo.",
+          "fr": "L'approche est fondée sur le risque, non sur la technologie. Ce qui est réglementé n'est pas la technologie elle-même, mais la finalité d'un système d'IA et le risque qu'il comporte. Plus le risque pour les personnes et la société est élevé, plus les exigences sont strictes : de l'interdiction totale à aucune obligation supplémentaire."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die vier Risikoklassen im Überblick",
+        "en": "The four risk tiers at a glance",
+        "it": "Le quattro classi di rischio in sintesi",
+        "fr": "Les quatre niveaux de risque en un coup d'œil"
+      },
+      "bullets": [
+        {
+          "de": "Unannehmbares Risiko (verboten, Art. 5): Praktiken wie Social Scoring durch Behörden, manipulative oder ausnutzende Techniken, ungezieltes Auslesen von Gesichtsbildern zum Aufbau von Datenbanken sowie – mit engen Ausnahmen – Emotionserkennung am Arbeitsplatz und in Bildungseinrichtungen.",
+          "en": "Unacceptable risk (prohibited, Art. 5): practices such as social scoring by authorities, manipulative or exploitative techniques, untargeted scraping of facial images to build databases, and – with narrow exceptions – emotion recognition in the workplace and in education.",
+          "it": "Rischio inaccettabile (vietato, art. 5): pratiche come il social scoring da parte delle autorità, tecniche manipolative o di sfruttamento, il prelievo non mirato di immagini facciali per creare banche dati e – con eccezioni ristrette – il riconoscimento delle emozioni sul lavoro e nell'istruzione.",
+          "fr": "Risque inacceptable (interdit, art. 5) : pratiques telles que la notation sociale par les autorités, les techniques manipulatrices ou d'exploitation, la collecte non ciblée d'images faciales pour constituer des bases de données et – avec de rares exceptions – la reconnaissance des émotions au travail et dans l'éducation."
+        },
+        {
+          "de": "Hohes Risiko: KI in sensiblen Bereichen (Anhang III) wie Personalauswahl, Kreditwürdigkeit, kritische Infrastruktur, Bildung, Strafverfolgung oder Migration sowie KI als Sicherheitsbauteil regulierter Produkte. Pflichten: Risikomanagement, Datenqualität, technische Dokumentation, menschliche Aufsicht, Konformitätsbewertung.",
+          "en": "High risk: AI in sensitive areas (Annex III) such as recruitment, creditworthiness, critical infrastructure, education, law enforcement or migration, as well as AI acting as a safety component of regulated products. Duties: risk management, data quality, technical documentation, human oversight and conformity assessment.",
+          "it": "Rischio alto: IA in ambiti sensibili (Allegato III) come selezione del personale, merito creditizio, infrastrutture critiche, istruzione, applicazione della legge o migrazione, oltre all'IA come componente di sicurezza di prodotti regolamentati. Obblighi: gestione del rischio, qualità dei dati, documentazione tecnica, sorveglianza umana, valutazione di conformità.",
+          "fr": "Risque élevé : IA dans des domaines sensibles (annexe III) comme le recrutement, la solvabilité, les infrastructures critiques, l'éducation, la police ou la migration, ainsi que l'IA comme composant de sécurité de produits réglementés. Obligations : gestion des risques, qualité des données, documentation technique, surveillance humaine, évaluation de la conformité."
+        },
+        {
+          "de": "Begrenztes Risiko (Transparenz, Art. 50): Systeme, die mit Menschen interagieren oder Inhalte erzeugen. Pflicht ist vor allem Offenlegung – Nutzerinnen und Nutzer müssen wissen, dass sie es mit KI zu tun haben oder dass Inhalte künstlich erzeugt sind.",
+          "en": "Limited risk (transparency, Art. 50): systems that interact with people or generate content. The main duty is disclosure – users must know they are dealing with AI or that content is artificially generated.",
+          "it": "Rischio limitato (trasparenza, art. 50): sistemi che interagiscono con le persone o generano contenuti. L'obbligo principale è la divulgazione: gli utenti devono sapere di avere a che fare con l'IA o che i contenuti sono generati artificialmente.",
+          "fr": "Risque limité (transparence, art. 50) : systèmes qui interagissent avec des personnes ou génèrent du contenu. L'obligation principale est la divulgation : les utilisateurs doivent savoir qu'ils ont affaire à une IA ou que le contenu est généré artificiellement."
+        },
+        {
+          "de": "Minimales Risiko: Die grosse Mehrheit heutiger Anwendungen – etwa Spamfilter, Empfehlungssysteme oder KI in Videospielen. Hier stellt der EU AI Act keine zusätzlichen rechtlichen Pflichten; freiwillige Verhaltenskodizes sind möglich.",
+          "en": "Minimal risk: the vast majority of today's applications – e.g. spam filters, recommendation systems or AI in video games. Here the EU AI Act imposes no additional legal obligations; voluntary codes of conduct are encouraged.",
+          "it": "Rischio minimo: la grande maggioranza delle applicazioni attuali – ad esempio filtri antispam, sistemi di raccomandazione o IA nei videogiochi. Qui l'EU AI Act non impone obblighi giuridici aggiuntivi; sono incoraggiati codici di condotta volontari.",
+          "fr": "Risque minimal : la grande majorité des applications actuelles – filtres anti-spam, systèmes de recommandation ou IA dans les jeux vidéo. Ici, l'EU AI Act n'impose aucune obligation légale supplémentaire ; des codes de conduite volontaires sont encouragés."
+        }
+      ],
+      "paragraphs": [
+        {
+          "de": "Quer zu diesen Klassen stehen die Regeln für General-Purpose-KI-Modelle (GPAI), etwa grosse Sprachmodelle. Ihre Anbieter müssen technische Dokumentation, eine Urheberrechts-Policy und eine Zusammenfassung der Trainingsdaten bereitstellen; für besonders leistungsfähige Modelle mit systemischem Risiko gelten zusätzliche Pflichten.",
+          "en": "Cutting across these tiers are the rules for general-purpose AI models (GPAI), such as large language models. Their providers must supply technical documentation, a copyright policy and a summary of training data; models powerful enough to pose systemic risk face additional obligations.",
+          "it": "Trasversali a queste classi sono le regole per i modelli di IA per finalità generali (GPAI), come i grandi modelli linguistici. I loro fornitori devono fornire documentazione tecnica, una policy sul diritto d'autore e una sintesi dei dati di addestramento; i modelli abbastanza potenti da comportare un rischio sistemico hanno obblighi aggiuntivi.",
+          "fr": "Transversales à ces niveaux, les règles pour les modèles d'IA à usage général (GPAI), comme les grands modèles de langage. Leurs fournisseurs doivent fournir une documentation technique, une politique de droit d'auteur et un résumé des données d'entraînement ; les modèles assez puissants pour présenter un risque systémique ont des obligations supplémentaires."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Extraterritoriale Wirkung: Warum die Schweiz betroffen ist",
+        "en": "Extraterritorial reach: why Switzerland is affected",
+        "it": "Portata extraterritoriale: perché la Svizzera è coinvolta",
+        "fr": "Portée extraterritoriale : pourquoi la Suisse est concernée"
+      },
+      "paragraphs": [
+        {
+          "de": "Die Schweiz ist kein EU-Mitglied, dennoch kann der EU AI Act für Schweizer Unternehmen unmittelbar gelten. Massgeblich ist der Marktbezug, nicht der Firmensitz. Erfasst werden Anbieter, die KI-Systeme in der EU in Verkehr bringen, sowie Anbieter und Betreiber ausserhalb der EU, wenn die Ergebnisse ihres KI-Systems in der EU verwendet werden.",
+          "en": "Switzerland is not an EU member, yet the EU AI Act can apply directly to Swiss companies. What matters is the link to the EU market, not where the company is based. It captures providers that place AI systems on the EU market, and providers and deployers outside the EU where the output of their AI system is used within the EU.",
+          "it": "La Svizzera non è membro dell'UE, eppure l'EU AI Act può applicarsi direttamente alle imprese svizzere. Ciò che conta è il collegamento con il mercato UE, non la sede dell'azienda. Sono interessati i fornitori che immettono sistemi di IA sul mercato UE e i fornitori e deployer al di fuori dell'UE quando l'output del loro sistema di IA è usato nell'UE.",
+          "fr": "La Suisse n'est pas membre de l'UE, pourtant l'EU AI Act peut s'appliquer directement aux entreprises suisses. Ce qui compte est le lien avec le marché de l'UE, non le siège de l'entreprise. Sont visés les fournisseurs qui mettent des systèmes d'IA sur le marché de l'UE, ainsi que les fournisseurs et déployeurs hors UE dès lors que le résultat de leur système d'IA est utilisé dans l'UE."
+        },
+        {
+          "de": "Praktisch bedeutet das: Ein Schweizer KMU, das ein KI-Tool an Kundinnen in Deutschland verkauft oder dessen KI-generierte Bewerbungsauswertung eine Person in der EU betrifft, kann in den Anwendungsbereich fallen. Ähnlich wie bei der EU-Datenschutz-Grundverordnung ist die Reichweite bewusst grenzüberschreitend gestaltet.",
+          "en": "In practice this means: a Swiss SME that sells an AI tool to customers in Germany, or whose AI-generated screening of a job application concerns a person in the EU, can fall within scope. As with the EU's data protection regulation, the reach is deliberately cross-border.",
+          "it": "In pratica: una PMI svizzera che vende uno strumento di IA a clienti in Germania, o la cui valutazione automatizzata di una candidatura riguarda una persona nell'UE, può rientrare nell'ambito di applicazione. Come per il regolamento europeo sulla protezione dei dati, la portata è volutamente transfrontaliera.",
+          "fr": "En pratique : une PME suisse qui vend un outil d'IA à des clients en Allemagne, ou dont l'analyse automatisée d'une candidature concerne une personne dans l'UE, peut entrer dans le champ d'application. Comme pour le règlement européen sur la protection des données, la portée est volontairement transfrontalière."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Transparenzpflichten nach Artikel 50",
+        "en": "Transparency duties under Article 50",
+        "it": "Obblighi di trasparenza ai sensi dell'articolo 50",
+        "fr": "Obligations de transparence au titre de l'article 50"
+      },
+      "paragraphs": [
+        {
+          "de": "Artikel 50 betrifft eine sehr breite Gruppe von Anwendungen und ist für viele Unternehmen die praktisch relevanteste Pflicht. Er verlangt Offenlegung, damit Menschen nicht über die Beteiligung von KI getäuscht werden.",
+          "en": "Article 50 covers a very broad set of applications and is, for many companies, the most practically relevant duty. It requires disclosure so that people are not misled about the involvement of AI.",
+          "it": "L'articolo 50 riguarda un insieme molto ampio di applicazioni ed è, per molte aziende, l'obbligo più rilevante nella pratica. Richiede la divulgazione affinché le persone non siano ingannate sul coinvolgimento dell'IA.",
+          "fr": "L'article 50 couvre un ensemble très large d'applications et constitue, pour beaucoup d'entreprises, l'obligation la plus concrète. Il exige une divulgation afin que les personnes ne soient pas trompées sur l'implication de l'IA."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Chatbots und Assistenten: Menschen müssen erkennen können, dass sie mit einem KI-System und nicht mit einer Person interagieren – ausser es ist offensichtlich.",
+          "en": "Chatbots and assistants: people must be able to tell they are interacting with an AI system and not a human – unless this is obvious.",
+          "it": "Chatbot e assistenti: le persone devono poter capire di interagire con un sistema di IA e non con una persona, salvo quando è evidente.",
+          "fr": "Chatbots et assistants : les personnes doivent pouvoir savoir qu'elles interagissent avec un système d'IA et non un humain, sauf si c'est évident."
+        },
+        {
+          "de": "Generierte Inhalte: Synthetische Audio-, Bild-, Video- oder Textinhalte müssen maschinenlesbar als künstlich erzeugt gekennzeichnet werden.",
+          "en": "Generated content: synthetic audio, image, video or text content must be marked in a machine-readable way as artificially generated.",
+          "it": "Contenuti generati: i contenuti sintetici audio, immagini, video o testo devono essere marcati in modo leggibile dalle macchine come generati artificialmente.",
+          "fr": "Contenus générés : les contenus synthétiques audio, image, vidéo ou texte doivent être marqués de manière lisible par machine comme générés artificiellement."
+        },
+        {
+          "de": "Deepfakes: Wer Bild-, Audio- oder Videoinhalte erzeugt oder manipuliert, die echt wirken, muss offenlegen, dass sie künstlich erstellt wurden.",
+          "en": "Deepfakes: anyone generating or manipulating image, audio or video content that appears authentic must disclose that it was artificially created.",
+          "it": "Deepfake: chi genera o manipola contenuti di immagini, audio o video che sembrano autentici deve dichiarare che sono stati creati artificialmente.",
+          "fr": "Deepfakes : quiconque génère ou manipule des contenus image, audio ou vidéo paraissant authentiques doit indiquer qu'ils ont été créés artificiellement."
+        },
+        {
+          "de": "Emotionserkennung und biometrische Kategorisierung: Betroffene Personen müssen über den Einsatz solcher Systeme informiert werden.",
+          "en": "Emotion recognition and biometric categorisation: affected individuals must be informed that such systems are in use.",
+          "it": "Riconoscimento delle emozioni e categorizzazione biometrica: le persone interessate devono essere informate dell'uso di tali sistemi.",
+          "fr": "Reconnaissance des émotions et catégorisation biométrique : les personnes concernées doivent être informées de l'utilisation de tels systèmes."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Der Zeitplan: Wann welche Pflichten greifen",
+        "en": "The timeline: when each obligation applies",
+        "it": "Il calendario: quando si applica ciascun obbligo",
+        "fr": "Le calendrier : quand chaque obligation s'applique"
+      },
+      "bullets": [
+        {
+          "de": "1. August 2024: Inkrafttreten der Verordnung.",
+          "en": "1 August 2024: the regulation enters into force.",
+          "it": "1° agosto 2024: entrata in vigore del regolamento.",
+          "fr": "1er août 2024 : entrée en vigueur du règlement."
+        },
+        {
+          "de": "2. Februar 2025: Die Verbote (Art. 5) und die Pflicht zur KI-Kompetenz (Art. 4) gelten.",
+          "en": "2 February 2025: the prohibitions (Art. 5) and the AI-literacy duty (Art. 4) apply.",
+          "it": "2 febbraio 2025: si applicano i divieti (art. 5) e l'obbligo di alfabetizzazione all'IA (art. 4).",
+          "fr": "2 février 2025 : les interdictions (art. 5) et l'obligation de maîtrise de l'IA (art. 4) s'appliquent."
+        },
+        {
+          "de": "2. August 2025: Pflichten für General-Purpose-KI-Modelle, Governance-Strukturen und Sanktionsbestimmungen greifen.",
+          "en": "2 August 2025: obligations for general-purpose AI models, governance structures and penalty provisions take effect.",
+          "it": "2 agosto 2025: entrano in vigore gli obblighi per i modelli di IA per finalità generali, le strutture di governance e le disposizioni sanzionatorie.",
+          "fr": "2 août 2025 : les obligations pour les modèles d'IA à usage général, les structures de gouvernance et les dispositions relatives aux sanctions prennent effet."
+        },
+        {
+          "de": "2. August 2026: Die Mehrheit der Bestimmungen gilt, darunter die Hochrisiko-Anforderungen nach Anhang III und die Transparenzpflichten des Art. 50.",
+          "en": "2 August 2026: the majority of provisions apply, including the high-risk requirements under Annex III and the Article 50 transparency duties.",
+          "it": "2 agosto 2026: si applica la maggior parte delle disposizioni, inclusi i requisiti per l'alto rischio dell'Allegato III e gli obblighi di trasparenza dell'art. 50.",
+          "fr": "2 août 2026 : la majorité des dispositions s'appliquent, y compris les exigences relatives au risque élevé de l'annexe III et les obligations de transparence de l'article 50."
+        },
+        {
+          "de": "2. August 2027: Die Hochrisiko-Regeln für KI als Sicherheitsbauteil regulierter Produkte (Anhang I) greifen.",
+          "en": "2 August 2027: the high-risk rules for AI as a safety component of regulated products (Annex I) apply.",
+          "it": "2 agosto 2027: si applicano le regole per l'alto rischio dell'IA come componente di sicurezza di prodotti regolamentati (Allegato I).",
+          "fr": "2 août 2027 : les règles de risque élevé pour l'IA comme composant de sécurité de produits réglementés (annexe I) s'appliquent."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Was das für die Schweiz bedeutet – EU AI Act, revDSG und der Schweizer Weg",
+        "en": "What this means for Switzerland – EU AI Act, revFADP and the Swiss path",
+        "it": "Cosa significa per la Svizzera – EU AI Act, revLPD e la via svizzera",
+        "fr": "Ce que cela signifie pour la Suisse – EU AI Act, nLPD et la voie suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Die Schweiz kennt derzeit kein eigenes horizontales KI-Gesetz. Der Bundesrat hat 2025 entschieden, die KI-Konvention des Europarats zu ratifizieren und KI vorrangig sektorspezifisch sowie durch Anpassung bestehenden Rechts zu regeln, statt eine umfassende Einzelverordnung zu schaffen. Eine entsprechende Vorlage soll bis Ende 2026 erarbeitet werden.",
+          "en": "Switzerland currently has no horizontal AI law of its own. In 2025 the Federal Council decided to ratify the Council of Europe's Convention on AI and to regulate AI primarily in a sector-specific way and by adapting existing law, rather than creating one comprehensive statute. A corresponding bill is to be drafted by the end of 2026.",
+          "it": "La Svizzera attualmente non ha una propria legge orizzontale sull'IA. Nel 2025 il Consiglio federale ha deciso di ratificare la Convenzione del Consiglio d'Europa sull'IA e di regolare l'IA principalmente in modo settoriale e adattando il diritto esistente, anziché creare un'unica legge organica. Un relativo progetto dovrà essere elaborato entro fine 2026.",
+          "fr": "La Suisse n'a actuellement pas de loi horizontale propre sur l'IA. En 2025, le Conseil fédéral a décidé de ratifier la Convention du Conseil de l'Europe sur l'IA et de réglementer l'IA principalement de manière sectorielle et en adaptant le droit existant, plutôt que de créer une loi unique et globale. Un projet en ce sens doit être élaboré d'ici fin 2026."
+        },
+        {
+          "de": "Unabhängig davon gilt für den Umgang mit Personendaten in KI-Systemen bereits das revidierte Datenschutzgesetz (revDSG/nFADP), überwacht durch den EDÖB. Wer KI in der Schweiz einsetzt, muss also schon heute Datenschutz-, Transparenz- und Fairnessfragen adressieren – der EU AI Act kommt für EU-Marktbezug hinzu, ersetzt das revDSG aber nicht.",
+          "en": "Independently of this, the revised Data Protection Act (revFADP/nFADP), overseen by the FDPIC, already governs the handling of personal data in AI systems. Anyone deploying AI in Switzerland must therefore already address data-protection, transparency and fairness questions today – the EU AI Act adds to this where there is an EU-market link, but does not replace the revFADP.",
+          "it": "Indipendentemente da ciò, la trattazione dei dati personali nei sistemi di IA è già disciplinata dalla legge sulla protezione dei dati riveduta (revLPD/nLPD), vigilata dall'IFPDT. Chi impiega l'IA in Svizzera deve quindi già oggi affrontare questioni di protezione dei dati, trasparenza ed equità: l'EU AI Act si aggiunge in presenza di un collegamento con il mercato UE, ma non sostituisce la revLPD.",
+          "fr": "Indépendamment, le traitement des données personnelles dans les systèmes d'IA est déjà régi par la loi révisée sur la protection des données (nLPD), surveillée par le PFPDT. Quiconque déploie de l'IA en Suisse doit donc déjà aujourd'hui traiter les questions de protection des données, de transparence et d'équité : l'EU AI Act s'y ajoute en cas de lien avec le marché de l'UE, mais ne remplace pas la nLPD."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Erste Schritte: So bereiten Sie sich vor",
+        "en": "First steps: how to prepare",
+        "it": "Primi passi: come prepararsi",
+        "fr": "Premiers pas : comment se préparer"
+      },
+      "bullets": [
+        {
+          "de": "Inventar erstellen: Erfassen Sie alle eingesetzten und geplanten KI-Systeme samt Verwendungszweck und ob EU-Bezug besteht.",
+          "en": "Build an inventory: catalogue all AI systems in use and planned, with their intended purpose and whether there is an EU link.",
+          "it": "Creare un inventario: catalogare tutti i sistemi di IA in uso e previsti, con la finalità d'uso e l'eventuale collegamento con l'UE.",
+          "fr": "Constituer un inventaire : recenser tous les systèmes d'IA utilisés et prévus, avec leur finalité et l'existence éventuelle d'un lien avec l'UE."
+        },
+        {
+          "de": "Rolle klären: Sind Sie Anbieter, Betreiber, Importeur oder Händler? Die Pflichten unterscheiden sich je nach Rolle deutlich.",
+          "en": "Clarify your role: are you a provider, deployer, importer or distributor? Obligations differ significantly by role.",
+          "it": "Chiarire il ruolo: siete fornitore, deployer, importatore o distributore? Gli obblighi variano sensibilmente in base al ruolo.",
+          "fr": "Clarifier votre rôle : êtes-vous fournisseur, déployeur, importateur ou distributeur ? Les obligations diffèrent nettement selon le rôle."
+        },
+        {
+          "de": "Risiko einstufen: Prüfen Sie je System, ob es verboten, hochriskant, transparenzpflichtig oder minimal ist.",
+          "en": "Classify the risk: for each system, check whether it is prohibited, high-risk, subject to transparency duties or minimal.",
+          "it": "Classificare il rischio: per ogni sistema, verificare se è vietato, ad alto rischio, soggetto a obblighi di trasparenza o minimo.",
+          "fr": "Classer le risque : pour chaque système, vérifier s'il est interdit, à risque élevé, soumis à des obligations de transparence ou minimal."
+        },
+        {
+          "de": "KI-Kompetenz aufbauen: Schulen Sie Mitarbeitende im verantwortungsvollen Umgang mit KI (Art. 4 verlangt ausreichende KI-Kompetenz).",
+          "en": "Build AI literacy: train staff in the responsible use of AI (Art. 4 requires a sufficient level of AI literacy).",
+          "it": "Sviluppare competenze sull'IA: formare il personale all'uso responsabile dell'IA (l'art. 4 richiede un livello sufficiente di alfabetizzazione all'IA).",
+          "fr": "Développer la culture de l'IA : former le personnel à un usage responsable de l'IA (l'art. 4 exige un niveau suffisant de maîtrise de l'IA)."
+        },
+        {
+          "de": "Transparenz umsetzen: Kennzeichnen Sie Chatbots und KI-generierte Inhalte und dokumentieren Sie Ihre Massnahmen nachvollziehbar.",
+          "en": "Implement transparency: label chatbots and AI-generated content, and document your measures in a traceable way.",
+          "it": "Attuare la trasparenza: etichettare chatbot e contenuti generati dall'IA e documentare le misure in modo tracciabile.",
+          "fr": "Mettre en œuvre la transparence : signaler les chatbots et les contenus générés par IA, et documenter vos mesures de façon traçable."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Gilt der EU AI Act für Schweizer Unternehmen?",
+        "en": "Does the EU AI Act apply to Swiss companies?",
+        "it": "L'EU AI Act si applica alle imprese svizzere?",
+        "fr": "L'EU AI Act s'applique-t-il aux entreprises suisses ?"
+      },
+      "a": {
+        "de": "Er kann direkt gelten. Massgeblich ist der EU-Marktbezug: Wer KI-Systeme in der EU in Verkehr bringt oder deren Ergebnisse in der EU genutzt werden, fällt unabhängig vom Firmensitz in der Schweiz in den Anwendungsbereich – ähnlich der extraterritorialen Logik des EU-Datenschutzrechts.",
+        "en": "It can apply directly. What matters is the link to the EU market: if you place AI systems on the EU market, or their output is used in the EU, you fall within scope regardless of a Swiss registered office – similar to the extraterritorial logic of EU data protection law.",
+        "it": "Può applicarsi direttamente. Ciò che conta è il collegamento con il mercato UE: chi immette sistemi di IA nell'UE o i cui output sono usati nell'UE rientra nell'ambito indipendentemente dalla sede svizzera, in modo simile alla logica extraterritoriale del diritto UE sulla protezione dei dati.",
+        "fr": "Il peut s'appliquer directement. Ce qui compte est le lien avec le marché de l'UE : si vous mettez des systèmes d'IA sur le marché de l'UE ou que leurs résultats y sont utilisés, vous entrez dans le champ d'application quel que soit votre siège suisse, à l'image de la logique extraterritoriale du droit européen de la protection des données."
+      }
+    },
+    {
+      "q": {
+        "de": "Ab wann gilt der EU AI Act?",
+        "en": "When does the EU AI Act start to apply?",
+        "it": "Da quando si applica l'EU AI Act?",
+        "fr": "À partir de quand l'EU AI Act s'applique-t-il ?"
+      },
+      "a": {
+        "de": "Er ist am 1. August 2024 in Kraft getreten und gilt gestaffelt: Verbote seit 2. Februar 2025, GPAI-Pflichten seit 2. August 2025, die meisten Pflichten inklusive Hochrisiko (Anhang III) und Transparenz (Art. 50) ab 2. August 2026, produktbezogene Hochrisiko-Regeln (Anhang I) ab 2. August 2027.",
+        "en": "It entered into force on 1 August 2024 and applies in stages: prohibitions since 2 February 2025, GPAI duties since 2 August 2025, most obligations including high-risk (Annex III) and transparency (Art. 50) from 2 August 2026, and product-embedded high-risk rules (Annex I) from 2 August 2027.",
+        "it": "È entrato in vigore il 1° agosto 2024 e si applica per fasi: divieti dal 2 febbraio 2025, obblighi GPAI dal 2 agosto 2025, la maggior parte degli obblighi inclusi alto rischio (Allegato III) e trasparenza (art. 50) dal 2 agosto 2026, e regole per l'alto rischio nei prodotti (Allegato I) dal 2 agosto 2027.",
+        "fr": "Il est entré en vigueur le 1er août 2024 et s'applique par étapes : interdictions depuis le 2 février 2025, obligations GPAI depuis le 2 août 2025, la plupart des obligations dont le risque élevé (annexe III) et la transparence (art. 50) à partir du 2 août 2026, et les règles de risque élevé intégrées aux produits (annexe I) à partir du 2 août 2027."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist ein Hochrisiko-KI-System?",
+        "en": "What is a high-risk AI system?",
+        "it": "Cos'è un sistema di IA ad alto rischio?",
+        "fr": "Qu'est-ce qu'un système d'IA à risque élevé ?"
+      },
+      "a": {
+        "de": "Ein System, das in sensiblen Bereichen nach Anhang III eingesetzt wird – etwa Personalauswahl, Kreditwürdigkeit, kritische Infrastruktur, Bildung oder Strafverfolgung – oder das als Sicherheitsbauteil regulierter Produkte dient. Solche Systeme unterliegen Pflichten wie Risikomanagement, Datenqualität, Dokumentation, menschlicher Aufsicht und Konformitätsbewertung.",
+        "en": "A system used in sensitive areas listed in Annex III – such as recruitment, creditworthiness, critical infrastructure, education or law enforcement – or one acting as a safety component of a regulated product. Such systems face duties like risk management, data quality, documentation, human oversight and conformity assessment.",
+        "it": "Un sistema usato in ambiti sensibili elencati nell'Allegato III – come selezione del personale, merito creditizio, infrastrutture critiche, istruzione o applicazione della legge – o che funge da componente di sicurezza di un prodotto regolamentato. Tali sistemi hanno obblighi come gestione del rischio, qualità dei dati, documentazione, sorveglianza umana e valutazione di conformità.",
+        "fr": "Un système utilisé dans des domaines sensibles listés à l'annexe III – recrutement, solvabilité, infrastructures critiques, éducation ou police – ou servant de composant de sécurité d'un produit réglementé. Ces systèmes sont soumis à des obligations comme la gestion des risques, la qualité des données, la documentation, la surveillance humaine et l'évaluation de la conformité."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Strafen drohen bei Verstössen?",
+        "en": "What penalties apply for non-compliance?",
+        "it": "Quali sanzioni si applicano in caso di violazione?",
+        "fr": "Quelles sanctions en cas de non-conformité ?"
+      },
+      "a": {
+        "de": "Die Bussen sind gestaffelt: bis zu 35 Mio. Euro oder 7 % des weltweiten Jahresumsatzes bei verbotenen Praktiken und bis zu 15 Mio. Euro oder 3 % bei Verstössen gegen andere Pflichten (jeweils der höhere Betrag). Für KMU und Start-ups gilt der jeweils niedrigere Betrag.",
+        "en": "Fines are tiered: up to 35 million euros or 7% of worldwide annual turnover for prohibited practices, and up to 15 million euros or 3% for breaches of other obligations (whichever is higher). For SMEs and start-ups the lower of the two amounts applies.",
+        "it": "Le sanzioni sono graduate: fino a 35 milioni di euro o il 7% del fatturato annuo mondiale per le pratiche vietate e fino a 15 milioni di euro o il 3% per la violazione di altri obblighi (l'importo più alto). Per PMI e start-up si applica l'importo inferiore.",
+        "fr": "Les amendes sont graduées : jusqu'à 35 millions d'euros ou 7 % du chiffre d'affaires annuel mondial pour les pratiques interdites, et jusqu'à 15 millions d'euros ou 3 % pour les manquements aux autres obligations (le montant le plus élevé). Pour les PME et start-up, c'est le montant le plus bas qui s'applique."
+      }
+    },
+    {
+      "q": {
+        "de": "Muss ich KI-generierte Inhalte und Chatbots kennzeichnen?",
+        "en": "Do I have to label AI-generated content and chatbots?",
+        "it": "Devo etichettare i contenuti generati dall'IA e i chatbot?",
+        "fr": "Dois-je signaler les contenus générés par IA et les chatbots ?"
+      },
+      "a": {
+        "de": "Ja, sofern Artikel 50 greift. Chatbots müssen offenlegen, dass eine KI mit der Person interagiert (ausser es ist offensichtlich), und synthetische Inhalte sowie Deepfakes müssen als künstlich erzeugt erkennbar bzw. maschinenlesbar gekennzeichnet werden. Diese Pflichten gelten ab dem 2. August 2026.",
+        "en": "Yes, where Article 50 applies. Chatbots must disclose that an AI is interacting with the person (unless obvious), and synthetic content and deepfakes must be identifiable or machine-readable as artificially generated. These duties apply from 2 August 2026.",
+        "it": "Sì, quando si applica l'articolo 50. I chatbot devono dichiarare che è un'IA a interagire con la persona (salvo quando è evidente) e i contenuti sintetici e i deepfake devono essere riconoscibili o marcati in modo leggibile dalle macchine come generati artificialmente. Questi obblighi si applicano dal 2 agosto 2026.",
+        "fr": "Oui, lorsque l'article 50 s'applique. Les chatbots doivent indiquer qu'une IA interagit avec la personne (sauf si c'est évident), et les contenus synthétiques et deepfakes doivent être identifiables ou marqués de manière lisible par machine comme générés artificiellement. Ces obligations s'appliquent à partir du 2 août 2026."
+      }
+    },
+    {
+      "q": {
+        "de": "Ersetzt der EU AI Act das Schweizer Datenschutzgesetz (revDSG)?",
+        "en": "Does the EU AI Act replace the Swiss Data Protection Act (revFADP)?",
+        "it": "L'EU AI Act sostituisce la legge svizzera sulla protezione dei dati (revLPD)?",
+        "fr": "L'EU AI Act remplace-t-il la loi suisse sur la protection des données (nLPD) ?"
+      },
+      "a": {
+        "de": "Nein. Der EU AI Act regelt KI-Systeme, das revDSG/nFADP regelt den Umgang mit Personendaten. Beide können parallel gelten: In der Schweiz überwacht der EDÖB den Datenschutz, während der EU AI Act bei EU-Marktbezug zusätzlich greift. Die Schweiz plant zudem einen eigenen, sektorspezifischen KI-Regulierungsweg.",
+        "en": "No. The EU AI Act governs AI systems, while the revFADP/nFADP governs the handling of personal data. Both can apply in parallel: in Switzerland the FDPIC oversees data protection, while the EU AI Act applies additionally where there is an EU-market link. Switzerland is also pursuing its own sector-specific path to AI regulation.",
+        "it": "No. L'EU AI Act disciplina i sistemi di IA, mentre la revLPD/nLPD disciplina il trattamento dei dati personali. Entrambi possono applicarsi in parallelo: in Svizzera l'IFPDT vigila sulla protezione dei dati, mentre l'EU AI Act si applica in aggiunta in presenza di un collegamento con il mercato UE. La Svizzera persegue inoltre una propria via settoriale alla regolamentazione dell'IA.",
+        "fr": "Non. L'EU AI Act régit les systèmes d'IA, tandis que la nLPD régit le traitement des données personnelles. Les deux peuvent s'appliquer en parallèle : en Suisse, le PFPDT surveille la protection des données, tandis que l'EU AI Act s'applique en plus en cas de lien avec le marché de l'UE. La Suisse suit par ailleurs sa propre voie sectorielle de réglementation de l'IA."
+      }
+    }
+  ],
+  "keyEntities": [
+    "EU AI Act",
+    "Verordnung (EU) 2024/1689",
+    "Europäische Kommission",
+    "AI Office (Büro für Künstliche Intelligenz)",
+    "Risikobasierter Ansatz",
+    "Hochrisiko-KI-System",
+    "General-Purpose AI (GPAI)",
+    "Artikel 50 (Transparenzpflichten)",
+    "Artikel 5 (verbotene Praktiken)",
+    "Anhang III",
+    "Deepfake",
+    "Biometrische Kategorisierung",
+    "revDSG / nFADP",
+    "EDÖB",
+    "Europarat-KI-Konvention",
+    "CE-Konformitätsbewertung"
+  ]
+}

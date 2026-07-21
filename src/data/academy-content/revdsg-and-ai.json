@@ -1,0 +1,404 @@
+{
+  "id": "revdsg-and-ai",
+  "cluster": "trust-security-privacy-regulation",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "revdsg-ki-pflichten",
+    "en": "revised-fadp-ai-obligations",
+    "it": "nlpd-ia-obblighi",
+    "fr": "nlpd-ia-obligations"
+  },
+  "title": {
+    "de": "revDSG und KI: Pflichten für Schweizer Firmen | Weissmann AI",
+    "en": "Revised FADP and AI: Duties for Swiss Firms | Weissmann AI",
+    "it": "nLPD e IA: obblighi per le aziende svizzere | Weissmann AI",
+    "fr": "nLPD et IA : obligations des entreprises | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "revDSG und KI erklärt: Pflichten, besonders schützenswerte Daten, automatisierte Entscheide, EDÖB-Meldung und Auslandtransfer für Schweizer Unternehmen.",
+    "en": "The revised FADP and AI explained: duties, sensitive data, automated decisions, FDPIC breach notice and cross-border transfers for Swiss businesses.",
+    "it": "nLPD e IA spiegate: obblighi, dati sensibili, decisioni automatizzate, notifica IFPDT e trasferimenti all'estero per le aziende svizzere.",
+    "fr": "nLPD et IA expliquées : obligations, données sensibles, décisions automatisées, notification PFPDT et transferts à l'étranger pour les entreprises."
+  },
+  "kicker": {
+    "de": "Trust, Sicherheit & Regulierung",
+    "en": "Trust, Security & Regulation",
+    "it": "Fiducia, sicurezza e regolamentazione",
+    "fr": "Confiance, sécurité et réglementation"
+  },
+  "h1": {
+    "de": "revDSG und KI: Welche Pflichten gelten für Schweizer Unternehmen?",
+    "en": "The Revised FADP and AI: What Must Swiss Businesses Consider?",
+    "it": "nLPD e IA: quali obblighi per le aziende svizzere?",
+    "fr": "nLPD et IA : quelles obligations pour les entreprises suisses ?"
+  },
+  "answerFirst": {
+    "de": "Das revidierte Datenschutzgesetz (revDSG, in Kraft seit 1. September 2023) gilt für jede KI-Anwendung, die Personendaten von Menschen in der Schweiz bearbeitet - auch bei Anbietern im Ausland. Zentrale Pflichten sind Transparenz, Verhältnismässigkeit, Datensicherheit, die Meldung von Datenschutzverletzungen an den EDÖB sowie eine Datenschutz-Folgenabschätzung bei hohem Risiko. Automatisierte Einzelentscheide und Profiling mit hohem Risiko sind besonders geregelt. Verstösse können Bussen bis 250'000 Franken gegen verantwortliche Personen auslösen.",
+    "en": "The revised Federal Act on Data Protection (revFADP, in force since 1 September 2023) applies to any AI application that processes personal data of people in Switzerland, including tools hosted abroad. Core duties include transparency, proportionality, data security, notifying breaches to the FDPIC, and a data protection impact assessment for high-risk processing. Automated individual decisions and high-risk profiling carry specific rules. Violations can trigger fines up to CHF 250,000 against responsible individuals.",
+    "it": "La nuova Legge sulla protezione dei dati (nLPD, in vigore dal 1° settembre 2023) si applica a ogni applicazione IA che tratta dati personali di persone in Svizzera, anche con fornitori all'estero. Gli obblighi principali sono trasparenza, proporzionalità, sicurezza dei dati, notifica delle violazioni all'IFPDT e una valutazione d'impatto per i trattamenti ad alto rischio. Decisioni automatizzate e profilazione a rischio elevato hanno regole specifiche. Le violazioni possono comportare multe fino a 250'000 franchi verso le persone responsabili.",
+    "fr": "La nouvelle loi sur la protection des données (nLPD, en vigueur depuis le 1er septembre 2023) s'applique à toute application d'IA traitant des données personnelles de personnes en Suisse, y compris chez des fournisseurs à l'étranger. Les obligations clés : transparence, proportionnalité, sécurité, notification des violations au PFPDT et une analyse d'impact en cas de risque élevé. Les décisions individuelles automatisées et le profilage à risque élevé sont spécifiquement encadrés. Les infractions peuvent entraîner des amendes jusqu'à 250'000 francs contre les personnes responsables."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "revDSG in Kürze: Geltung, Umfang und Bussen",
+        "en": "The revised FADP in brief: scope, reach and fines",
+        "it": "La nLPD in breve: campo d'applicazione, portata e multe",
+        "fr": "La nLPD en bref : champ, portée et amendes"
+      },
+      "paragraphs": [
+        {
+          "de": "Das revDSG hat das alte Datenschutzgesetz von 1992 abgelöst und die Schweiz näher an das europäische Schutzniveau gebracht, ohne mit der DSGVO identisch zu sein. Es schützt nur noch Daten natürlicher Personen; Daten juristischer Personen fallen nicht mehr darunter. Für KI zählt vor allem: Sobald ein Modell oder Tool Personendaten bearbeitet, greifen die Pflichten - unabhängig davon, ob der Anbieter in Zürich, Dublin oder Kalifornien sitzt.",
+          "en": "The revised FADP replaced the 1992 act and moved Switzerland closer to the European protection level without being identical to the GDPR. It now protects only the data of natural persons; data of legal entities is no longer covered. For AI the key point is: as soon as a model or tool processes personal data, the duties apply, regardless of whether the provider sits in Zurich, Dublin or California.",
+          "it": "La nLPD ha sostituito la legge del 1992 avvicinando la Svizzera al livello di protezione europeo, pur senza coincidere con il GDPR. Ora protegge solo i dati delle persone fisiche; i dati delle persone giuridiche non rientrano più. Per l'IA conta soprattutto: appena un modello o uno strumento tratta dati personali, gli obblighi si applicano, che il fornitore sia a Zurigo, Dublino o in California.",
+          "fr": "La nLPD a remplacé la loi de 1992 et rapproché la Suisse du niveau de protection européen, sans être identique au RGPD. Elle ne protège plus que les données des personnes physiques ; celles des personnes morales ne sont plus couvertes. Pour l'IA, l'essentiel : dès qu'un modèle ou un outil traite des données personnelles, les obligations s'appliquent, que le fournisseur soit à Zurich, Dublin ou en Californie."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Extraterritoriale Wirkung: Das revDSG erfasst auch Bearbeitungen im Ausland, die sich in der Schweiz auswirken.",
+          "en": "Extraterritorial effect: the revFADP also covers processing abroad that has an impact in Switzerland.",
+          "it": "Effetto extraterritoriale: la nLPD copre anche i trattamenti all'estero con effetti in Svizzera.",
+          "fr": "Effet extraterritorial : la nLPD couvre aussi les traitements à l'étranger ayant un effet en Suisse."
+        },
+        {
+          "de": "Aufsicht: Der EDÖB (Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter) überwacht und kann Untersuchungen führen.",
+          "en": "Supervision: the FDPIC (Federal Data Protection and Information Commissioner) oversees compliance and can open investigations.",
+          "it": "Vigilanza: l'IFPDT (Incaricato federale della protezione dei dati e della trasparenza) sorveglia e può avviare indagini.",
+          "fr": "Surveillance : le PFPDT (Préposé fédéral à la protection des données et à la transparence) contrôle et peut ouvrir des enquêtes."
+        },
+        {
+          "de": "Sanktionen: Bussen bis 250'000 Franken treffen im Grundsatz die verantwortlichen natürlichen Personen, nicht primär das Unternehmen - anders als bei der DSGVO.",
+          "en": "Penalties: fines up to CHF 250,000 generally target the responsible natural persons, not primarily the company - unlike the GDPR.",
+          "it": "Sanzioni: multe fino a 250'000 franchi colpiscono in linea di principio le persone fisiche responsabili, non anzitutto l'azienda - a differenza del GDPR.",
+          "fr": "Sanctions : les amendes jusqu'à 250'000 francs visent en principe les personnes physiques responsables, et non d'abord l'entreprise - contrairement au RGPD."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Besonders schützenswerte Personendaten und KI",
+        "en": "Sensitive personal data and AI",
+        "it": "Dati personali degni di particolare protezione e IA",
+        "fr": "Données sensibles et IA"
+      },
+      "paragraphs": [
+        {
+          "de": "Das revDSG definiert besonders schützenswerte Personendaten, deren Bearbeitung strengere Anforderungen auslöst - etwa eine ausdrückliche Einwilligung oder eine Datenschutz-Folgenabschätzung. Genau diese Kategorien tauchen in KI-Projekten häufig auf: Gesundheits-Chatbots, biometrische Gesichts- oder Stimmerkennung, HR-Screening oder Bonitätsmodelle. Wer solche Daten in ein KI-System speist, muss die Rechtsgrundlage und die Schutzmassnahmen vorher klären.",
+          "en": "The revised FADP defines sensitive personal data, whose processing triggers stricter requirements - such as explicit consent or a data protection impact assessment. These categories appear often in AI projects: health chatbots, biometric face or voice recognition, HR screening or credit-scoring models. Anyone feeding such data into an AI system must clarify the legal basis and safeguards beforehand.",
+          "it": "La nLPD definisce i dati degni di particolare protezione, il cui trattamento richiede requisiti più severi - come un consenso esplicito o una valutazione d'impatto. Proprio queste categorie ricorrono nei progetti IA: chatbot sanitari, riconoscimento biometrico del volto o della voce, screening HR o modelli di scoring creditizio. Chi immette questi dati in un sistema IA deve chiarire prima la base giuridica e le misure di protezione.",
+          "fr": "La nLPD définit les données sensibles, dont le traitement impose des exigences renforcées - consentement explicite ou analyse d'impact, par exemple. Ces catégories reviennent souvent dans les projets d'IA : chatbots santé, reconnaissance biométrique du visage ou de la voix, tri de CV ou modèles de scoring de crédit. Quiconque alimente un système d'IA avec de telles données doit clarifier au préalable la base légale et les mesures de protection."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Erfasste Kategorien: religiöse, weltanschauliche, politische oder gewerkschaftliche Ansichten und Tätigkeiten; Gesundheit, Intimsphäre, Rassenzugehörigkeit oder Ethnie.",
+          "en": "Covered categories: religious, ideological, political or trade-union views and activities; health, intimate sphere, racial or ethnic origin.",
+          "it": "Categorie coperte: opinioni e attività religiose, ideologiche, politiche o sindacali; salute, sfera intima, origine razziale o etnica.",
+          "fr": "Catégories couvertes : opinions et activités religieuses, idéologiques, politiques ou syndicales ; santé, sphère intime, origine raciale ou ethnique."
+        },
+        {
+          "de": "Genetische Daten sowie biometrische Daten, die eine Person eindeutig identifizieren - hochrelevant für KI-basierte Erkennungssysteme.",
+          "en": "Genetic data and biometric data that uniquely identify a person - highly relevant for AI-based recognition systems.",
+          "it": "Dati genetici e dati biometrici che identificano univocamente una persona - molto rilevanti per i sistemi di riconoscimento basati su IA.",
+          "fr": "Données génétiques et biométriques identifiant une personne de manière univoque - très pertinentes pour les systèmes de reconnaissance par IA."
+        },
+        {
+          "de": "Daten über verwaltungs- und strafrechtliche Verfolgungen oder Sanktionen sowie über Massnahmen der sozialen Hilfe.",
+          "en": "Data on administrative and criminal proceedings or sanctions, and on social assistance measures.",
+          "it": "Dati su procedimenti e sanzioni amministrativi e penali, e su misure di assistenza sociale.",
+          "fr": "Données sur les poursuites et sanctions administratives ou pénales, et sur les mesures d'aide sociale."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Kernpflichten beim KI-Einsatz",
+        "en": "Core duties when deploying AI",
+        "it": "Obblighi principali nell'uso dell'IA",
+        "fr": "Obligations clés lors du recours à l'IA"
+      },
+      "bullets": [
+        {
+          "de": "Grundsätze einhalten: Rechtmässigkeit, Treu und Glauben, Verhältnismässigkeit, Zweckbindung, Transparenz und Datenrichtigkeit - auch für Trainings- und Eingabedaten.",
+          "en": "Respect the principles: lawfulness, good faith, proportionality, purpose limitation, transparency and data accuracy - including for training and input data.",
+          "it": "Rispettare i principi: liceità, buona fede, proporzionalità, limitazione della finalità, trasparenza ed esattezza - anche per i dati di addestramento e di input.",
+          "fr": "Respecter les principes : licéité, bonne foi, proportionnalité, limitation de la finalité, transparence et exactitude - y compris pour les données d'entraînement et d'entrée."
+        },
+        {
+          "de": "Informationspflicht: Betroffene sind über die Beschaffung von Personendaten und den KI-Einsatz verständlich zu informieren.",
+          "en": "Duty to inform: data subjects must be informed clearly about the collection of personal data and the use of AI.",
+          "it": "Obbligo di informazione: gli interessati vanno informati in modo comprensibile sulla raccolta dei dati e sull'uso dell'IA.",
+          "fr": "Devoir d'information : les personnes concernées doivent être informées clairement de la collecte des données et du recours à l'IA."
+        },
+        {
+          "de": "Datenschutz-Folgenabschätzung (DSFA) bei voraussichtlich hohem Risiko, etwa bei neuen Technologien, umfangreicher Bearbeitung sensibler Daten oder systematischer Überwachung; bleibt ein hohes Restrisiko, ist der EDÖB zu konsultieren.",
+          "en": "Data protection impact assessment (DPIA) where processing is likely high-risk - new technologies, extensive processing of sensitive data or systematic monitoring; if a high residual risk remains, the FDPIC must be consulted.",
+          "it": "Valutazione d'impatto (VIPD) in caso di rischio elevato probabile - nuove tecnologie, trattamento esteso di dati sensibili o sorveglianza sistematica; se resta un rischio residuo elevato, va consultato l'IFPDT.",
+          "fr": "Analyse d'impact (AIPD) en cas de risque élevé probable - technologies nouvelles, traitement étendu de données sensibles ou surveillance systématique ; si un risque résiduel élevé subsiste, le PFPDT doit être consulté."
+        },
+        {
+          "de": "Verzeichnis der Bearbeitungstätigkeiten führen; KMU mit weniger als 250 Mitarbeitenden und geringem Risiko sind teilweise befreit.",
+          "en": "Maintain a record of processing activities; SMEs with fewer than 250 employees and low-risk processing are partially exempt.",
+          "it": "Tenere un registro delle attività di trattamento; le PMI con meno di 250 dipendenti e rischio ridotto sono in parte esentate.",
+          "fr": "Tenir un registre des activités de traitement ; les PME de moins de 250 employés à faible risque en sont partiellement dispensées."
+        },
+        {
+          "de": "Privacy by Design und datenschutzfreundliche Voreinstellungen von Beginn an in KI-Systeme einbauen.",
+          "en": "Build privacy by design and privacy-friendly default settings into AI systems from the start.",
+          "it": "Integrare privacy by design e impostazioni predefinite rispettose della privacy fin dall'inizio nei sistemi IA.",
+          "fr": "Intégrer le privacy by design et des paramètres par défaut protecteurs dès la conception des systèmes d'IA."
+        },
+        {
+          "de": "Datensicherheit gewährleisten und Datenschutzverletzungen so rasch als möglich dem EDÖB melden, wenn ein hohes Risiko für Betroffene besteht.",
+          "en": "Ensure data security and report data breaches to the FDPIC as soon as possible where there is a high risk to data subjects.",
+          "it": "Garantire la sicurezza dei dati e notificare le violazioni all'IFPDT il più rapidamente possibile in caso di rischio elevato per gli interessati.",
+          "fr": "Garantir la sécurité des données et notifier les violations au PFPDT dans les meilleurs délais en cas de risque élevé pour les personnes."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Automatisierte Einzelentscheide und Profiling mit hohem Risiko",
+        "en": "Automated individual decisions and high-risk profiling",
+        "it": "Decisioni individuali automatizzate e profilazione a rischio elevato",
+        "fr": "Décisions individuelles automatisées et profilage à risque élevé"
+      },
+      "paragraphs": [
+        {
+          "de": "Trifft ein KI-System eine Entscheidung ausschliesslich automatisiert und hat diese eine rechtliche Wirkung oder erhebliche Beeinträchtigung - etwa Kreditablehnung, automatische Bewerberauswahl oder Tarifeinstufung -, muss das Unternehmen die betroffene Person darüber informieren. Diese kann verlangen, dass eine natürliche Person die Entscheidung überprüft, und ihren Standpunkt einbringen. Ausnahmen bestehen unter anderem, wenn der Entscheid im Zusammenhang mit einem Vertrag steht und dem Begehren entsprochen wird oder eine Einwilligung vorliegt.",
+          "en": "If an AI system makes a decision based solely on automated processing that has a legal effect or significantly affects the person - for example loan refusal, automated candidate selection or premium tiering - the company must inform the data subject. They may request that a natural person review the decision and state their view. Exceptions apply, among others, where the decision relates to a contract and the request is granted, or where consent has been given.",
+          "it": "Se un sistema IA prende una decisione esclusivamente automatizzata con effetti giuridici o notevole incidenza - ad esempio rifiuto di credito, selezione automatica dei candidati o classificazione tariffaria -, l'azienda deve informare l'interessato. Questi può chiedere che una persona fisica riesamini la decisione ed esprimere il proprio punto di vista. Vi sono eccezioni, tra cui quando la decisione è legata a un contratto e la richiesta è accolta, o in presenza di consenso.",
+          "fr": "Si un système d'IA prend une décision reposant exclusivement sur un traitement automatisé produisant un effet juridique ou affectant sensiblement la personne - refus de crédit, présélection automatique de candidats ou classification tarifaire -, l'entreprise doit en informer la personne concernée. Celle-ci peut demander qu'une personne physique réexamine la décision et faire valoir son point de vue. Des exceptions existent, notamment lorsque la décision est liée à un contrat et que la demande est acceptée, ou en cas de consentement."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Profiling mit hohem Risiko - eine umfassende Bewertung wesentlicher Persönlichkeitsmerkmale - kann eine ausdrückliche Einwilligung erfordern.",
+          "en": "High-risk profiling - an extensive assessment of key personality traits - can require explicit consent.",
+          "it": "La profilazione a rischio elevato - una valutazione estesa di caratteristiche essenziali della personalità - può richiedere un consenso esplicito.",
+          "fr": "Le profilage à risque élevé - une évaluation étendue de traits essentiels de la personnalité - peut exiger un consentement explicite."
+        },
+        {
+          "de": "Dokumentieren Sie, wann ein Mensch die KI-Entscheidung überprüft (Human-in-the-Loop), und wie Betroffene Einspruch erheben können.",
+          "en": "Document when a human reviews the AI decision (human-in-the-loop) and how data subjects can object.",
+          "it": "Documentate quando una persona riesamina la decisione IA (human-in-the-loop) e come gli interessati possono opporsi.",
+          "fr": "Documentez quand un humain réexamine la décision de l'IA (human-in-the-loop) et comment les personnes peuvent s'y opposer."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenübermittlung ins Ausland: KI-Anbieter richtig einsetzen",
+        "en": "Cross-border transfers: using AI providers correctly",
+        "it": "Trasferimenti all'estero: usare correttamente i fornitori IA",
+        "fr": "Transferts à l'étranger : recourir correctement aux fournisseurs d'IA"
+      },
+      "paragraphs": [
+        {
+          "de": "Viele KI-Dienste laufen auf Servern ausserhalb der Schweiz. Eine Bekanntgabe ins Ausland ist zulässig, wenn der Zielstaat auf der Angemessenheitsliste des Bundesrates steht. Fehlt ein angemessenes Schutzniveau, braucht es geeignete Garantien wie Standardvertragsklauseln, verbindliche unternehmensinterne Datenschutzvorschriften oder in engen Grenzen eine Einwilligung. Für Anbieter in den USA ist zusätzlich der jeweils geltende Rahmen (Swiss-US Data Privacy Framework) zu prüfen.",
+          "en": "Many AI services run on servers outside Switzerland. A transfer abroad is allowed if the destination country is on the Federal Council's adequacy list. Where an adequate level of protection is missing, appropriate safeguards are needed - standard contractual clauses, binding corporate rules or, within narrow limits, consent. For US providers, the applicable framework (Swiss-US Data Privacy Framework) should additionally be checked.",
+          "it": "Molti servizi IA operano su server fuori dalla Svizzera. Un trasferimento all'estero è ammesso se lo Stato di destinazione figura nell'elenco di adeguatezza del Consiglio federale. In assenza di un livello adeguato servono garanzie appropriate - clausole contrattuali tipo, norme vincolanti d'impresa o, entro limiti stretti, il consenso. Per i fornitori statunitensi va inoltre verificato il quadro vigente (Swiss-US Data Privacy Framework).",
+          "fr": "De nombreux services d'IA fonctionnent sur des serveurs hors de Suisse. Un transfert à l'étranger est licite si l'État destinataire figure sur la liste d'adéquation du Conseil fédéral. À défaut d'un niveau de protection adéquat, des garanties appropriées sont requises - clauses contractuelles types, règles d'entreprise contraignantes ou, dans des limites étroites, le consentement. Pour les fournisseurs américains, il faut en outre vérifier le cadre applicable (Swiss-US Data Privacy Framework)."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Prüfen Sie Auftragsbearbeitungsverträge: Der KI-Anbieter bearbeitet Daten nur auf Weisung und mit ausreichender Datensicherheit.",
+          "en": "Review data processing agreements: the AI provider processes data only on instruction and with adequate security.",
+          "it": "Verificate i contratti di responsabile del trattamento: il fornitore IA tratta i dati solo su istruzione e con sicurezza adeguata.",
+          "fr": "Vérifiez les contrats de sous-traitance : le fournisseur d'IA ne traite les données que sur instruction et avec une sécurité suffisante."
+        },
+        {
+          "de": "Souveräne Alternativen prüfen: Schweizer oder EU-Hosting und offene Modelle wie Apertus (ETH Zürich, EPFL, CSCS) können Auslandtransfers reduzieren.",
+          "en": "Consider sovereign alternatives: Swiss or EU hosting and open models such as Apertus (ETH Zurich, EPFL, CSCS) can reduce cross-border transfers.",
+          "it": "Valutate alternative sovrane: hosting svizzero o UE e modelli aperti come Apertus (ETH Zurigo, EPFL, CSCS) possono ridurre i trasferimenti all'estero.",
+          "fr": "Envisagez des alternatives souveraines : un hébergement suisse ou UE et des modèles ouverts comme Apertus (ETH Zurich, EPFL, CSCS) peuvent réduire les transferts à l'étranger."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "revDSG, DSGVO und EU AI Act: das Zusammenspiel",
+        "en": "The revised FADP, GDPR and EU AI Act: how they interact",
+        "it": "nLPD, GDPR ed EU AI Act: come interagiscono",
+        "fr": "nLPD, RGPD et EU AI Act : comment ils s'articulent"
+      },
+      "paragraphs": [
+        {
+          "de": "Schweizer Unternehmen unterstehen dem revDSG, können aber zusätzlich von der DSGVO erfasst werden, wenn sie Personen in der EU ansprechen. Der EU AI Act regelt KI produktbezogen nach Risikoklassen und wirkt ebenfalls extraterritorial - er kann greifen, wenn KI-Ergebnisse in der EU genutzt werden. Die drei Regelwerke ergänzen sich: Das revDSG adressiert den Datenschutz, der EU AI Act die Sicherheit und Governance des KI-Systems.",
+          "en": "Swiss businesses are subject to the revised FADP but may additionally fall under the GDPR if they target people in the EU. The EU AI Act regulates AI as a product by risk class and is also extraterritorial - it can apply where AI outputs are used in the EU. The three regimes complement each other: the revised FADP addresses data protection, the EU AI Act the safety and governance of the AI system.",
+          "it": "Le aziende svizzere sono soggette alla nLPD, ma possono ricadere anche sotto il GDPR se si rivolgono a persone nell'UE. L'EU AI Act regola l'IA come prodotto per classi di rischio ed è anch'esso extraterritoriale - può applicarsi quando gli output IA sono usati nell'UE. I tre regimi si integrano: la nLPD riguarda la protezione dei dati, l'EU AI Act la sicurezza e la governance del sistema IA.",
+          "fr": "Les entreprises suisses relèvent de la nLPD, mais peuvent aussi tomber sous le RGPD si elles ciblent des personnes dans l'UE. L'EU AI Act encadre l'IA comme un produit selon des classes de risque et s'applique lui aussi de façon extraterritoriale - il peut jouer lorsque des résultats d'IA sont utilisés dans l'UE. Les trois cadres se complètent : la nLPD traite la protection des données, l'EU AI Act la sécurité et la gouvernance du système d'IA."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Schutzobjekt: revDSG - Daten natürlicher Personen; EU AI Act - Sicherheit und Grundrechte rund um das KI-System.",
+          "en": "Object of protection: revised FADP - data of natural persons; EU AI Act - safety and fundamental rights around the AI system.",
+          "it": "Oggetto di tutela: nLPD - dati delle persone fisiche; EU AI Act - sicurezza e diritti fondamentali attorno al sistema IA.",
+          "fr": "Objet de protection : nLPD - données des personnes physiques ; EU AI Act - sécurité et droits fondamentaux autour du système d'IA."
+        },
+        {
+          "de": "Sanktionslogik: revDSG - Bussen gegen verantwortliche Personen bis 250'000 Franken; DSGVO - Bussgelder gegen Unternehmen bis zu prozentualen Umsatzanteilen.",
+          "en": "Penalty logic: revised FADP - fines against responsible individuals up to CHF 250,000; GDPR - corporate fines up to a percentage of turnover.",
+          "it": "Logica sanzionatoria: nLPD - multe verso le persone responsabili fino a 250'000 franchi; GDPR - sanzioni aziendali fino a una quota del fatturato.",
+          "fr": "Logique de sanction : nLPD - amendes contre les personnes responsables jusqu'à 250'000 francs ; RGPD - amendes d'entreprise jusqu'à un pourcentage du chiffre d'affaires."
+        },
+        {
+          "de": "Praxis: Ein gemeinsames Governance-Framework deckt Datenschutz und KI-Risiko effizienter ab als getrennte Projekte.",
+          "en": "In practice: a joint governance framework covers data protection and AI risk more efficiently than separate projects.",
+          "it": "In pratica: un framework di governance unico copre protezione dati e rischio IA in modo più efficiente di progetti separati.",
+          "fr": "En pratique : un cadre de gouvernance commun couvre protection des données et risque IA plus efficacement que des projets séparés."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Praxis-Checkliste für Schweizer Unternehmen",
+        "en": "Practical checklist for Swiss businesses",
+        "it": "Checklist pratica per le aziende svizzere",
+        "fr": "Check-list pratique pour les entreprises suisses"
+      },
+      "bullets": [
+        {
+          "de": "Inventarisieren Sie alle KI-Tools und die dabei bearbeiteten Personendaten, inklusive Prompts und hochgeladener Dokumente.",
+          "en": "Inventory all AI tools and the personal data they process, including prompts and uploaded documents.",
+          "it": "Inventariate tutti gli strumenti IA e i dati personali trattati, inclusi prompt e documenti caricati.",
+          "fr": "Recensez tous les outils d'IA et les données personnelles traitées, y compris les prompts et documents téléversés."
+        },
+        {
+          "de": "Legen Sie eine interne KI-Nutzungsrichtlinie fest: Was darf eingegeben werden, was nicht (besonders schützenswerte Daten, Geschäftsgeheimnisse)?",
+          "en": "Set an internal AI usage policy: what may be entered and what may not (sensitive data, trade secrets)?",
+          "it": "Definite una policy interna d'uso dell'IA: cosa si può inserire e cosa no (dati sensibili, segreti aziendali)?",
+          "fr": "Établissez une politique interne d'usage de l'IA : ce qui peut être saisi ou non (données sensibles, secrets d'affaires)."
+        },
+        {
+          "de": "Aktualisieren Sie Datenschutzerklärung, Verzeichnis der Bearbeitungstätigkeiten und Auftragsbearbeitungsverträge um den KI-Einsatz.",
+          "en": "Update your privacy notice, record of processing activities and data processing agreements to reflect AI use.",
+          "it": "Aggiornate informativa privacy, registro dei trattamenti e contratti di trattamento per includere l'uso dell'IA.",
+          "fr": "Mettez à jour votre déclaration de confidentialité, votre registre des traitements et vos contrats de sous-traitance pour l'IA."
+        },
+        {
+          "de": "Führen Sie bei riskanten KI-Vorhaben früh eine DSFA durch und definieren Sie einen Human-in-the-Loop für automatisierte Entscheide.",
+          "en": "Run a DPIA early for risky AI initiatives and define a human-in-the-loop for automated decisions.",
+          "it": "Eseguite presto una VIPD per i progetti IA rischiosi e definite un human-in-the-loop per le decisioni automatizzate.",
+          "fr": "Réalisez tôt une AIPD pour les projets d'IA à risque et prévoyez un human-in-the-loop pour les décisions automatisées."
+        },
+        {
+          "de": "Hinweis: Dieser Beitrag ist eine allgemeine Orientierung und ersetzt keine individuelle Rechtsberatung.",
+          "en": "Note: this article is general orientation and does not replace individual legal advice.",
+          "it": "Nota: questo articolo è un orientamento generale e non sostituisce una consulenza legale individuale.",
+          "fr": "Remarque : cet article est une orientation générale et ne remplace pas un conseil juridique individuel."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Gilt das revDSG auch für ChatGPT und andere KI-Tools aus dem Ausland?",
+        "en": "Does the revised FADP also apply to ChatGPT and other AI tools from abroad?",
+        "it": "La nLPD si applica anche a ChatGPT e ad altri strumenti IA esteri?",
+        "fr": "La nLPD s'applique-t-elle aussi à ChatGPT et à d'autres outils d'IA étrangers ?"
+      },
+      "a": {
+        "de": "Ja. Sobald Sie Personendaten von Menschen in der Schweiz bearbeiten, gilt das revDSG unabhängig vom Sitz des Anbieters. Nutzen Sie ein ausländisches KI-Tool, sind zusätzlich die Regeln zur Datenübermittlung ins Ausland und ein Auftragsbearbeitungsvertrag zu beachten.",
+        "en": "Yes. As soon as you process personal data of people in Switzerland, the revised FADP applies regardless of where the provider is based. Using a foreign AI tool additionally triggers the rules on cross-border transfers and the need for a data processing agreement.",
+        "it": "Sì. Appena trattate dati personali di persone in Svizzera, la nLPD si applica a prescindere dalla sede del fornitore. Con uno strumento IA estero valgono inoltre le regole sui trasferimenti all'estero e serve un contratto di trattamento.",
+        "fr": "Oui. Dès que vous traitez des données personnelles de personnes en Suisse, la nLPD s'applique quel que soit le siège du fournisseur. Un outil d'IA étranger déclenche en plus les règles sur les transferts à l'étranger et un contrat de sous-traitance."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen revDSG und DSGVO?",
+        "en": "What is the difference between the revised FADP and the GDPR?",
+        "it": "Qual è la differenza tra nLPD e GDPR?",
+        "fr": "Quelle est la différence entre la nLPD et le RGPD ?"
+      },
+      "a": {
+        "de": "Beide verfolgen ähnliche Ziele, unterscheiden sich aber in Details. Das revDSG schützt nur natürliche Personen und sanktioniert primär verantwortliche Personen mit Bussen bis 250'000 Franken. Die DSGVO kennt hohe Unternehmensbussen. Wer EU-Kundschaft anspricht, kann beiden Regelwerken unterstehen.",
+        "en": "Both pursue similar goals but differ in the details. The revised FADP protects only natural persons and mainly sanctions responsible individuals with fines up to CHF 250,000. The GDPR provides for high corporate fines. If you target EU customers, you can be subject to both regimes.",
+        "it": "Perseguono obiettivi simili ma differiscono nei dettagli. La nLPD protegge solo le persone fisiche e sanziona soprattutto le persone responsabili con multe fino a 250'000 franchi. Il GDPR prevede elevate sanzioni aziendali. Chi si rivolge a clienti UE può essere soggetto a entrambi.",
+        "fr": "Les deux poursuivent des objectifs proches mais diffèrent dans le détail. La nLPD ne protège que les personnes physiques et sanctionne surtout les personnes responsables, jusqu'à 250'000 francs. Le RGPD prévoit de fortes amendes d'entreprise. Cibler une clientèle UE peut vous soumettre aux deux régimes."
+      }
+    },
+    {
+      "q": {
+        "de": "Wann brauche ich eine Datenschutz-Folgenabschätzung für ein KI-Projekt?",
+        "en": "When do I need a data protection impact assessment for an AI project?",
+        "it": "Quando serve una valutazione d'impatto per un progetto IA?",
+        "fr": "Quand ai-je besoin d'une analyse d'impact pour un projet d'IA ?"
+      },
+      "a": {
+        "de": "Immer dann, wenn die Bearbeitung voraussichtlich ein hohes Risiko für die Persönlichkeit oder Grundrechte mit sich bringt - etwa bei neuen Technologien, umfangreicher Bearbeitung besonders schützenswerter Daten oder systematischer Überwachung. Bleibt trotz Massnahmen ein hohes Restrisiko, muss der EDÖB konsultiert werden.",
+        "en": "Whenever the processing is likely to entail a high risk to personality or fundamental rights - for example new technologies, extensive processing of sensitive data or systematic monitoring. If a high residual risk remains despite safeguards, the FDPIC must be consulted.",
+        "it": "Ogni volta che il trattamento comporta probabilmente un rischio elevato per la personalità o i diritti fondamentali - ad esempio nuove tecnologie, trattamento esteso di dati sensibili o sorveglianza sistematica. Se resta un rischio residuo elevato, va consultato l'IFPDT.",
+        "fr": "Chaque fois que le traitement est susceptible d'entraîner un risque élevé pour la personnalité ou les droits fondamentaux - technologies nouvelles, traitement étendu de données sensibles ou surveillance systématique. Si un risque résiduel élevé subsiste, le PFPDT doit être consulté."
+      }
+    },
+    {
+      "q": {
+        "de": "Darf ich Gesundheits- oder andere sensible Daten in ein KI-Tool eingeben?",
+        "en": "May I enter health or other sensitive data into an AI tool?",
+        "it": "Posso inserire dati sanitari o altri dati sensibili in uno strumento IA?",
+        "fr": "Puis-je saisir des données de santé ou autres données sensibles dans un outil d'IA ?"
+      },
+      "a": {
+        "de": "Nur mit klarer Rechtsgrundlage und angemessenen Schutzmassnahmen. Besonders schützenswerte Personendaten wie Gesundheits- oder biometrische Daten erfordern erhöhte Sorgfalt, oft eine ausdrückliche Einwilligung und eine DSFA. Ohne diese Grundlagen sollten solche Daten nicht in öffentliche KI-Tools gelangen.",
+        "en": "Only with a clear legal basis and appropriate safeguards. Sensitive personal data such as health or biometric data demand heightened care, often explicit consent and a DPIA. Without these foundations, such data should not be entered into public AI tools.",
+        "it": "Solo con una chiara base giuridica e misure di protezione adeguate. I dati sensibili come quelli sanitari o biometrici richiedono maggiore cautela, spesso un consenso esplicito e una VIPD. Senza tali presupposti, questi dati non dovrebbero finire in strumenti IA pubblici.",
+        "fr": "Uniquement avec une base légale claire et des mesures appropriées. Les données sensibles comme les données de santé ou biométriques exigent une vigilance accrue, souvent un consentement explicite et une AIPD. Sans ces fondements, de telles données ne devraient pas être saisies dans des outils d'IA publics."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie hoch sind die Bussen bei Verstössen gegen das revDSG?",
+        "en": "How high are the fines for breaching the revised FADP?",
+        "it": "A quanto ammontano le multe per violazione della nLPD?",
+        "fr": "À combien s'élèvent les amendes en cas d'infraction à la nLPD ?"
+      },
+      "a": {
+        "de": "Bussen können bis zu 250'000 Franken betragen und richten sich im Grundsatz gegen die verantwortlichen natürlichen Personen, nicht primär gegen das Unternehmen. Verfolgt werden bestimmte vorsätzliche Verstösse, etwa gegen Informations- oder Sorgfaltspflichten. Die Verfahren führen kantonale Behörden.",
+        "en": "Fines can reach CHF 250,000 and generally target the responsible natural persons rather than the company itself. Certain intentional breaches are prosecuted, for example of information or due-diligence duties. Proceedings are conducted by cantonal authorities.",
+        "it": "Le multe possono arrivare a 250'000 franchi e colpiscono in linea di principio le persone fisiche responsabili, non anzitutto l'azienda. Sono perseguite determinate violazioni intenzionali, ad esempio di obblighi di informazione o diligenza. I procedimenti sono condotti dalle autorità cantonali.",
+        "fr": "Les amendes peuvent atteindre 250'000 francs et visent en principe les personnes physiques responsables, non l'entreprise elle-même. Certaines infractions intentionnelles sont poursuivies, par exemple aux devoirs d'information ou de diligence. Les procédures relèvent des autorités cantonales."
+      }
+    },
+    {
+      "q": {
+        "de": "Muss ich Kundinnen und Kunden informieren, wenn eine KI Entscheide trifft?",
+        "en": "Must I inform customers when an AI makes decisions?",
+        "it": "Devo informare i clienti se un'IA prende decisioni?",
+        "fr": "Dois-je informer les clients lorsqu'une IA prend des décisions ?"
+      },
+      "a": {
+        "de": "Ja, wenn ein Entscheid ausschliesslich automatisiert erfolgt und rechtliche Wirkung hat oder erheblich beeinträchtigt. Die betroffene Person ist zu informieren und kann eine Überprüfung durch einen Menschen sowie die Darlegung ihres Standpunkts verlangen. Bestimmte Ausnahmen, etwa bei Vertragserfüllung oder Einwilligung, sind möglich.",
+        "en": "Yes, where a decision is made solely automatically and has legal effect or significantly affects the person. You must inform the data subject, who may request human review and the opportunity to state their view. Certain exceptions, such as contract performance or consent, may apply.",
+        "it": "Sì, quando una decisione è esclusivamente automatizzata e ha effetti giuridici o incide in modo notevole. L'interessato va informato e può chiedere un riesame umano e di esprimere il proprio punto di vista. Sono possibili alcune eccezioni, ad esempio per l'esecuzione di un contratto o il consenso.",
+        "fr": "Oui, lorsqu'une décision est prise uniquement de façon automatisée et produit un effet juridique ou affecte sensiblement la personne. Vous devez informer la personne concernée, qui peut demander un réexamen humain et faire valoir son point de vue. Certaines exceptions, comme l'exécution d'un contrat ou le consentement, sont possibles."
+      }
+    }
+  ],
+  "keyEntities": [
+    "revDSG",
+    "nFADP (revised Federal Act on Data Protection)",
+    "nLPD",
+    "EDÖB / FDPIC",
+    "DSGVO",
+    "EU AI Act",
+    "Datenschutz-Folgenabschätzung (DSFA)",
+    "besonders schützenswerte Personendaten",
+    "automatisierte Einzelentscheidung",
+    "Profiling mit hohem Risiko",
+    "Privacy by Design",
+    "Verzeichnis der Bearbeitungstätigkeiten",
+    "Datenschutzverletzung / Meldepflicht",
+    "Standardvertragsklauseln",
+    "Angemessenheitsliste des Bundesrates",
+    "Apertus (ETH Zürich, EPFL, CSCS)"
+  ]
+}

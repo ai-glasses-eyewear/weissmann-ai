@@ -1,0 +1,331 @@
+{
+  "id": "what-is-open-source-ai",
+  "cluster": "local-opensource",
+  "type": "spoke",
+  "relatedServices": [
+    "integrations",
+    "consulting"
+  ],
+  "slug": {
+    "de": "was-ist-open-source-ki",
+    "en": "what-is-open-source-ai",
+    "it": "cosa-e-ia-open-source",
+    "fr": "qu-est-ce-que-l-ia-open-source"
+  },
+  "title": {
+    "de": "Open Source KI: Modelle, Lizenzen, Nutzen | Weissmann AI",
+    "en": "What Is Open-Source AI? Models & Licences | Weissmann AI",
+    "it": "Cos'e l'IA open source: modelli e licenze | Weissmann AI",
+    "fr": "Qu'est-ce que l'IA open source ? Le guide | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Open Source KI einfach erklaert: Unterschied zu Open-Weight-Modellen, Lizenzen wie Apache 2.0, Beispiele wie Llama, Mistral und das Schweizer Apertus.",
+    "en": "Open-source AI explained: the difference from open-weight models, licences like Apache 2.0, and examples such as Llama, Mistral and Switzerland's Apertus.",
+    "it": "L'IA open source spiegata: differenza dai modelli open-weight, licenze come Apache 2.0 ed esempi come Llama, Mistral e lo svizzero Apertus.",
+    "fr": "L'IA open source expliquee : difference avec les modeles open-weight, licences comme Apache 2.0 et exemples comme Llama, Mistral et le suisse Apertus."
+  },
+  "kicker": {
+    "de": "Lokale & Open-Source-KI",
+    "en": "Local & Open-Source AI",
+    "it": "IA locale e open source",
+    "fr": "IA locale et open source"
+  },
+  "h1": {
+    "de": "Was ist Open Source KI?",
+    "en": "What is open-source AI?",
+    "it": "Che cos'e l'IA open source?",
+    "fr": "Qu'est-ce que l'IA open source ?"
+  },
+  "answerFirst": {
+    "de": "Open Source KI bezeichnet KI-Modelle, deren Bestandteile - meist die trainierten Gewichte, teils auch Code, Trainingsdaten und Dokumentation - unter einer Lizenz veroeffentlicht werden, die Nutzung, Studium, Anpassung und Weitergabe erlaubt. In der Praxis sind die meisten bekannten Modelle wie Metas Llama eher Open-Weight als vollstaendig quelloffen. Wirklich offen sind etwa Mistrals Apache-2.0-Modelle und das Schweizer Apertus.",
+    "en": "Open-source AI refers to AI models whose components - typically the trained weights, and sometimes the code, training data and documentation - are released under a licence permitting use, study, modification and sharing. In practice most well-known 'open' models, such as Meta's Llama, are open-weight rather than fully open source. Genuinely open examples include Mistral's Apache-2.0 releases and Switzerland's Apertus.",
+    "it": "L'IA open source indica modelli di IA i cui componenti - di solito i pesi addestrati e talvolta il codice, i dati di addestramento e la documentazione - sono rilasciati con una licenza che consente uso, studio, modifica e condivisione. In pratica la maggior parte dei modelli 'aperti' noti, come Llama di Meta, sono open-weight piu che pienamente open source. Esempi davvero aperti sono i modelli Apache 2.0 di Mistral e lo svizzero Apertus.",
+    "fr": "L'IA open source designe des modeles d'IA dont les composants - le plus souvent les poids entraines, parfois le code, les donnees d'entrainement et la documentation - sont publies sous une licence autorisant l'usage, l'etude, la modification et le partage. En pratique, la plupart des modeles 'ouverts' connus, comme Llama de Meta, sont open-weight plutot que pleinement open source. Des exemples vraiment ouverts sont les modeles Apache 2.0 de Mistral et le suisse Apertus."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Open Source KI vs. Open Weights - der entscheidende Unterschied",
+        "en": "Open-source AI vs. open weights - the key distinction",
+        "it": "IA open source vs. open weights - la distinzione chiave",
+        "fr": "IA open source vs. open weights - la distinction essentielle"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Begriff Open Source KI wird uneinheitlich verwendet. Streng genommen bedeutet Open Source, dass die Lizenz jedem erlaubt, die Software fuer jeden Zweck zu nutzen, zu studieren, zu veraendern und weiterzugeben. Die Open Source Initiative hat 2024 ihre Open Source AI Definition (OSAID 1.0) veroeffentlicht, die zusaetzlich genug Informationen ueber die Trainingsdaten erwartet, um ein vergleichbares Modell nachbauen zu koennen. Die meisten bekannten offenen Sprachmodelle erfuellen diese hohe Latte nicht.",
+          "en": "The term open-source AI is used loosely. Strictly, open source means the licence lets anyone use, study, modify and redistribute the software for any purpose. In 2024 the Open Source Initiative published its Open Source AI Definition (OSAID 1.0), which additionally expects enough information about the training data to rebuild a comparable model. Most well-known 'open' language models do not clear that bar.",
+          "it": "Il termine IA open source e usato in modo impreciso. In senso stretto, open source significa che la licenza consente a chiunque di usare, studiare, modificare e ridistribuire il software per qualsiasi scopo. Nel 2024 la Open Source Initiative ha pubblicato la sua Open Source AI Definition (OSAID 1.0), che richiede inoltre informazioni sufficienti sui dati di addestramento per ricostruire un modello comparabile. La maggior parte dei noti modelli 'aperti' non raggiunge questo livello.",
+          "fr": "Le terme IA open source est employe de facon imprecise. Au sens strict, l'open source signifie que la licence permet a chacun d'utiliser, d'etudier, de modifier et de redistribuer le logiciel pour tout usage. En 2024, l'Open Source Initiative a publie sa Open Source AI Definition (OSAID 1.0), qui exige en outre assez d'informations sur les donnees d'entrainement pour reconstruire un modele comparable. La plupart des modeles 'ouverts' connus n'atteignent pas ce niveau."
+        },
+        {
+          "de": "Der praezisere Begriff fuer die meisten veroeffentlichten Modelle ist Open-Weight: Die trainierten Parameter (Gewichte) sind herunterladbar, sodass Sie das Modell selbst betreiben und feinjustieren koennen - Trainingsdaten, vollstaendiger Trainingscode oder Lizenzbedingungen bleiben aber teils eingeschraenkt. Offene Gewichte liefern dennoch die meisten praktischen Vorteile - lokaler Betrieb, Anpassung, keine Gebuehr pro Token -, auch wenn ein Modell nicht Open Source im strengen Sinn ist.",
+          "en": "The more precise term for most released models is open-weight: the trained parameters (weights) are downloadable, so you can run and fine-tune the model yourself, while the training data, full training code or licence terms may stay restricted. Open weights still deliver most practical benefits - local deployment, customization, no per-token fee - even when a model is not 'open source' in the strict sense.",
+          "it": "Il termine piu preciso per la maggior parte dei modelli rilasciati e open-weight: i parametri addestrati (pesi) sono scaricabili, cosi puoi eseguire e mettere a punto il modello, mentre dati di addestramento, codice completo o termini di licenza possono restare limitati. I pesi aperti offrono comunque quasi tutti i vantaggi pratici - esecuzione locale, personalizzazione, nessun costo per token - anche se il modello non e 'open source' in senso stretto.",
+          "fr": "Le terme plus precis pour la plupart des modeles publies est open-weight : les parametres entraines (poids) sont telechargeables, ce qui permet d'executer et d'affiner le modele soi-meme, tandis que les donnees d'entrainement, le code complet ou les termes de licence peuvent rester restreints. Les poids ouverts apportent malgre tout la plupart des avantages pratiques - execution locale, personnalisation, pas de frais par token - meme si un modele n'est pas 'open source' au sens strict."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Lizenzen verstehen: worauf es ankommt",
+        "en": "Understanding licences: what matters",
+        "it": "Capire le licenze: cio che conta",
+        "fr": "Comprendre les licences : ce qui compte"
+      },
+      "bullets": [
+        {
+          "de": "Permissive Lizenzen (Apache 2.0, MIT): kommerzielle Nutzung erlaubt, Apache 2.0 enthaelt zudem eine Patentklausel. Genutzt u. a. von Mistral 7B, Mixtral, vielen Qwen-Modellen und Apertus.",
+          "en": "Permissive licences (Apache 2.0, MIT): commercial use allowed; Apache 2.0 also includes a patent grant. Used by Mistral 7B, Mixtral, many Qwen models and Apertus.",
+          "it": "Licenze permissive (Apache 2.0, MIT): uso commerciale consentito; Apache 2.0 include anche una concessione di brevetto. Usate da Mistral 7B, Mixtral, molti modelli Qwen e Apertus.",
+          "fr": "Licences permissives (Apache 2.0, MIT) : usage commercial autorise ; Apache 2.0 inclut aussi une concession de brevet. Utilisees par Mistral 7B, Mixtral, de nombreux modeles Qwen et Apertus."
+        },
+        {
+          "de": "Community-/Custom-Lizenzen (Llama Community License, Gemma Terms): kommerzielle Nutzung meist erlaubt, aber mit Bedingungen - Acceptable-Use-Regeln, Namens-/Branding-Vorgaben oder Schwellenwerte (Llama verlangt eine separate Lizenz oberhalb von 700 Mio. monatlich aktiven Nutzern).",
+          "en": "Community/custom licences (Llama Community License, Gemma Terms): commercial use usually allowed but with conditions - acceptable-use rules, naming/branding requirements or thresholds (Llama requires a separate licence above 700M monthly active users).",
+          "it": "Licenze community/personalizzate (Llama Community License, Gemma Terms): uso commerciale di norma consentito ma con condizioni - regole d'uso accettabile, obblighi di denominazione/branding o soglie (Llama richiede una licenza separata oltre 700 mln di utenti attivi mensili).",
+          "fr": "Licences communautaires/personnalisees (Llama Community License, Gemma Terms) : usage commercial generalement autorise mais sous conditions - regles d'usage acceptable, exigences de nommage/marque ou seuils (Llama exige une licence distincte au-dela de 700 M d'utilisateurs actifs mensuels)."
+        },
+        {
+          "de": "Nicht-kommerzielle / Research-only-Lizenzen: Gewichte fuer Forschung verfuegbar, aber kein produktiver kommerzieller Einsatz erlaubt.",
+          "en": "Non-commercial / research-only licences: weights available for research, but no commercial production use permitted.",
+          "it": "Licenze non commerciali / solo ricerca: pesi disponibili per la ricerca, ma nessun uso commerciale in produzione consentito.",
+          "fr": "Licences non commerciales / recherche uniquement : poids disponibles pour la recherche, mais aucun usage commercial en production autorise."
+        },
+        {
+          "de": "Vor dem Produktivbetrieb pruefen: Ist kommerzielle Nutzung erlaubt? Duerfen feinjustierte Gewichte weitergegeben werden? Bestehen Attributions- oder Namenspflichten? Gibt es Output-Beschraenkungen? Lesen Sie stets die tatsaechliche Lizenz.",
+          "en": "Check before production: is commercial use permitted? May fine-tuned weights be redistributed? Are there attribution or naming duties? Any output restrictions? Always read the actual licence.",
+          "it": "Da verificare prima della produzione: l'uso commerciale e consentito? I pesi messi a punto possono essere ridistribuiti? Ci sono obblighi di attribuzione o denominazione? Restrizioni sugli output? Leggi sempre la licenza effettiva.",
+          "fr": "A verifier avant la production : l'usage commercial est-il autorise ? Les poids affines peuvent-ils etre redistribues ? Y a-t-il des obligations d'attribution ou de nommage ? Des restrictions sur les sorties ? Lisez toujours la licence reelle."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Beispiele: Llama, Mistral und weitere offene Modelle",
+        "en": "Examples: Llama, Mistral and other open models",
+        "it": "Esempi: Llama, Mistral e altri modelli aperti",
+        "fr": "Exemples : Llama, Mistral et autres modeles ouverts"
+      },
+      "bullets": [
+        {
+          "de": "Llama (Meta): grosse Open-Weight-Familie unter einer Community-Lizenz, sehr grosses Oekosystem und viele feinjustierte Ableger - offiziell nicht OSI-anerkannt.",
+          "en": "Llama (Meta): large open-weight family under a community licence, with a very large ecosystem and many fine-tuned derivatives - not officially OSI-approved.",
+          "it": "Llama (Meta): ampia famiglia open-weight con licenza community, ecosistema molto vasto e molti derivati messi a punto - non ufficialmente approvato dalla OSI.",
+          "fr": "Llama (Meta) : vaste famille open-weight sous licence communautaire, ecosysteme tres large et nombreux derives affines - non approuve officiellement par l'OSI."
+        },
+        {
+          "de": "Mistral (Frankreich): mischt echte Open-Source-Modelle unter Apache 2.0 (Mistral 7B, Mixtral 8x7B) mit Flaggschiff-Modellen unter kommerzieller Lizenz.",
+          "en": "Mistral (France): mixes genuinely open Apache-2.0 models (Mistral 7B, Mixtral 8x7B) with flagship models under commercial licences.",
+          "it": "Mistral (Francia): combina modelli realmente aperti sotto Apache 2.0 (Mistral 7B, Mixtral 8x7B) con modelli di punta sotto licenza commerciale.",
+          "fr": "Mistral (France) : combine des modeles reellement ouverts sous Apache 2.0 (Mistral 7B, Mixtral 8x7B) avec des modeles phares sous licence commerciale."
+        },
+        {
+          "de": "Gemma (Google): kompakte Open-Weight-Modelle unter eigenen Nutzungsbedingungen; Qwen (Alibaba): viele Apache-2.0-Modelle mit starker Mehrsprachigkeit; DeepSeek: offene Gewichte, u. a. beachtete Reasoning-Modelle.",
+          "en": "Gemma (Google): compact open-weight models under custom terms; Qwen (Alibaba): many Apache-2.0 models with strong multilingual ability; DeepSeek: open weights, including notable reasoning models.",
+          "it": "Gemma (Google): modelli open-weight compatti con termini propri; Qwen (Alibaba): molti modelli Apache 2.0 con forte multilinguismo; DeepSeek: pesi aperti, inclusi rilevanti modelli di ragionamento.",
+          "fr": "Gemma (Google) : modeles open-weight compacts sous conditions propres ; Qwen (Alibaba) : de nombreux modeles Apache 2.0 avec un fort multilinguisme ; DeepSeek : poids ouverts, dont des modeles de raisonnement remarques."
+        },
+        {
+          "de": "Apertus (Schweiz): ein vollstaendig offenes Sprachmodell von ETH Zuerich, EPFL und dem Nationalen Hochleistungsrechenzentrum CSCS, in mehreren Groessen. Gewichte, Trainingsdaten und Trainingsdetails sind offengelegt, Lizenz Apache 2.0, mehrsprachig - ein Referenzbeispiel fuer echte Offenheit.",
+          "en": "Apertus (Switzerland): a fully open language model from ETH Zurich, EPFL and the CSCS national supercomputing centre, released in several sizes. Weights, training data and training details are disclosed, licensed under Apache 2.0, multilingual - a reference example of genuine openness.",
+          "it": "Apertus (Svizzera): un modello linguistico pienamente aperto di ETH Zurigo, EPFL e del centro nazionale di supercalcolo CSCS, rilasciato in piu dimensioni. Pesi, dati e dettagli di addestramento sono divulgati, licenza Apache 2.0, multilingue - un esempio di riferimento di reale apertura.",
+          "fr": "Apertus (Suisse) : un modele de langue pleinement ouvert de l'ETH Zurich, de l'EPFL et du centre national de calcul CSCS, publie en plusieurs tailles. Poids, donnees et details d'entrainement sont divulgues, sous licence Apache 2.0, multilingue - un exemple de reference d'ouverture reelle."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Vorteile - besonders aus Schweizer Sicht",
+        "en": "Benefits - especially from a Swiss perspective",
+        "it": "Vantaggi - soprattutto in ottica svizzera",
+        "fr": "Avantages - notamment du point de vue suisse"
+      },
+      "bullets": [
+        {
+          "de": "Datenhoheit und Datenschutz: On-Premises oder in einer Schweizer Cloud betreibbar, sodass Daten unter Ihrer Kontrolle bleiben - hilfreich fuer revDSG/nDSG-Konformitaet und Berufsgeheimnisse.",
+          "en": "Data sovereignty and privacy: run on-premises or in a Swiss cloud so data stays under your control - helpful for revDSG/nFADP compliance and professional secrecy.",
+          "it": "Sovranita dei dati e privacy: esecuzione on-premises o in un cloud svizzero, cosi i dati restano sotto il tuo controllo - utile per la conformita alla revDSG/nLPD e ai segreti professionali.",
+          "fr": "Souverainete des donnees et confidentialite : execution sur site ou dans un cloud suisse, les donnees restant sous votre controle - utile pour la conformite a la revLPD/nLPD et aux secrets professionnels."
+        },
+        {
+          "de": "Kein Vendor-Lock-in: Sie sind nicht an einen Anbieter, dessen Preise oder Roadmap gebunden und koennen Modelle wechseln oder selbst hosten.",
+          "en": "No vendor lock-in: you are not tied to one provider's pricing or roadmap and can switch models or self-host.",
+          "it": "Nessun lock-in del fornitore: non sei vincolato ai prezzi o alla roadmap di un unico fornitore e puoi cambiare modello o auto-ospitare.",
+          "fr": "Pas de dependance a un fournisseur : vous n'etes lie ni aux prix ni a la feuille de route d'un seul fournisseur et pouvez changer de modele ou l'heberger vous-meme."
+        },
+        {
+          "de": "Kostenkontrolle im Skalierungsfall und Anpassung: Feinjustierung auf eigenen Fach- und Sprachdaten (auch Schweizerdeutsch-nahe Kontexte) statt Zahlung pro Token.",
+          "en": "Cost control at scale and customization: fine-tune on your own domain and language data instead of paying per token.",
+          "it": "Controllo dei costi su larga scala e personalizzazione: messa a punto sui propri dati di dominio e di lingua invece di pagare per token.",
+          "fr": "Maitrise des couts a l'echelle et personnalisation : affinage sur vos propres donnees metier et linguistiques au lieu de payer au token."
+        },
+        {
+          "de": "Transparenz, Auditierbarkeit und Langlebigkeit: offene Modelle lassen sich pruefen und werden Ihnen nicht ploetzlich abgeschaltet oder veraltet aufgezwungen.",
+          "en": "Transparency, auditability and longevity: open models can be inspected and cannot be suddenly deprecated out from under you.",
+          "it": "Trasparenza, verificabilita e longevita: i modelli aperti possono essere ispezionati e non possono essere improvvisamente dismessi a tua insaputa.",
+          "fr": "Transparence, auditabilite et perennite : les modeles ouverts peuvent etre inspectes et ne peuvent pas etre brusquement abandonnes a votre insu."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Nachteile und Grenzen",
+        "en": "Caveats and limits",
+        "it": "Svantaggi e limiti",
+        "fr": "Limites et points de vigilance"
+      },
+      "bullets": [
+        {
+          "de": "Verantwortung liegt bei Ihnen: Sicherheitsleitplanken, Missbrauchsschutz und Compliance - inklusive moeglicher Pflichten unter dem EU AI Act fuer Anbieter von KI-Modellen mit allgemeinem Verwendungszweck (GPAI).",
+          "en": "Responsibility sits with you: safety guardrails, misuse protection and compliance - including possible EU AI Act duties for providers of general-purpose AI (GPAI) models.",
+          "it": "La responsabilita e tua: guardrail di sicurezza, protezione dagli abusi e conformita - inclusi possibili obblighi ai sensi dell'EU AI Act per i fornitori di modelli di IA per finalita generali (GPAI).",
+          "fr": "La responsabilite vous incombe : garde-fous de securite, protection contre les abus et conformite - y compris d'eventuelles obligations au titre de l'EU AI Act pour les fournisseurs de modeles d'IA a usage general (GPAI)."
+        },
+        {
+          "de": "Infrastruktur und Know-how: GPUs, MLOps und Betrieb kosten Geld und erfordern Fachwissen; 'kostenlos herunterladbar' heisst nicht 'kostenlos im Betrieb'.",
+          "en": "Infrastructure and expertise: GPUs, MLOps and operations cost money and require skills; 'free to download' does not mean 'free to run'.",
+          "it": "Infrastruttura e competenze: GPU, MLOps ed esercizio costano e richiedono competenze; 'scaricabile gratis' non significa 'gratis da eseguire'.",
+          "fr": "Infrastructure et competences : GPU, MLOps et exploitation ont un cout et exigent du savoir-faire ; 'telechargeable gratuitement' ne veut pas dire 'gratuit a exploiter'."
+        },
+        {
+          "de": "'Offen' ist oft nur teilweise: Lizenzbeschraenkungen, nicht offengelegte Trainingsdaten und Nutzungsklauseln koennen Einsatzszenarien einschraenken.",
+          "en": "'Open' is often only partial: licence restrictions, undisclosed training data and use clauses can limit deployment scenarios.",
+          "it": "'Aperto' e spesso solo parziale: restrizioni di licenza, dati di addestramento non divulgati e clausole d'uso possono limitare gli scenari.",
+          "fr": "'Ouvert' n'est souvent que partiel : restrictions de licence, donnees d'entrainement non divulguees et clauses d'usage peuvent limiter les scenarios."
+        },
+        {
+          "de": "Sicherheit und Pflege: Updates, Modell-Herkunft (Provenienz) und Lieferketten muessen Sie selbst verwalten; Support ist Community-basiert, sofern Sie keinen kommerziellen Vertrag abschliessen. Auf den schwierigsten Aufgaben koennen offene Modelle fuehrenden geschlossenen Modellen noch nachstehen.",
+          "en": "Security and maintenance: you manage updates, model provenance and supply chains yourself; support is community-based unless you buy a commercial contract. On the hardest tasks, open models can still trail leading closed models.",
+          "it": "Sicurezza e manutenzione: aggiornamenti, provenienza del modello e catene di fornitura li gestisci tu; il supporto e della community salvo contratto commerciale. Sui compiti piu difficili i modelli aperti possono ancora essere dietro ai migliori modelli chiusi.",
+          "fr": "Securite et maintenance : vous gerez vous-meme les mises a jour, la provenance du modele et les chaines d'approvisionnement ; le support est communautaire sauf contrat commercial. Sur les taches les plus difficiles, les modeles ouverts peuvent encore etre en retrait des meilleurs modeles fermes."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Open Source KI in der Schweiz: wann sie sich lohnt",
+        "en": "Open-source AI in Switzerland: when it makes sense",
+        "it": "IA open source in Svizzera: quando conviene",
+        "fr": "IA open source en Suisse : quand cela a du sens"
+      },
+      "paragraphs": [
+        {
+          "de": "Mit Apertus zeigt die Schweiz, dass digitale Souveraenitaet und offene KI zusammengehoeren koennen - ein wichtiges Signal fuer Behoerden, Gesundheitswesen, Banken und KMU, die Daten im Land halten muessen. Offene Modelle eignen sich besonders, wenn Datenschutz, Berufsgeheimnis oder Kostenkontrolle im Vordergrund stehen und Sie On-Premises oder in einer Schweizer Cloud betreiben wollen. Geschlossene Frontier-Modelle bleiben oft die pragmatischere Wahl fuer maximale Faehigkeit ohne eigenen Betrieb.",
+          "en": "With Apertus, Switzerland shows that digital sovereignty and open AI can go together - an important signal for government, healthcare, banking and SMEs that must keep data in-country. Open models fit especially where privacy, professional secrecy or cost control dominate and you want to run on-premises or in a Swiss cloud. Closed frontier models often remain the more pragmatic choice for maximum capability without operating your own stack.",
+          "it": "Con Apertus la Svizzera dimostra che sovranita digitale e IA aperta possono coesistere - un segnale importante per enti pubblici, sanita, banche e PMI che devono tenere i dati nel Paese. I modelli aperti sono adatti soprattutto dove privacy, segreto professionale o controllo dei costi sono prioritari e si vuole operare on-premises o in un cloud svizzero. I modelli chiusi di frontiera restano spesso la scelta piu pragmatica per la massima capacita senza gestire un proprio stack.",
+          "fr": "Avec Apertus, la Suisse montre que souverainete numerique et IA ouverte peuvent aller de pair - un signal important pour l'administration, la sante, la banque et les PME qui doivent garder les donnees dans le pays. Les modeles ouverts conviennent surtout lorsque confidentialite, secret professionnel ou maitrise des couts priment et que l'on veut operer sur site ou dans un cloud suisse. Les modeles fermes de pointe restent souvent le choix le plus pragmatique pour une capacite maximale sans exploiter sa propre infrastructure."
+        },
+        {
+          "de": "Rechtlich gilt: Fuer den Umgang mit Personendaten ist das revDSG/nDSG massgeblich (nicht die DSGVO), Aufsichtsbehoerde ist der EDOEB. Der EU AI Act wirkt extraterritorial und kann Schweizer Anbieter treffen, wenn sie in der EU anbieten; er sieht fuer freie und offene Modelle gewisse Erleichterungen vor, jedoch nicht bei systemischen Risiken oder verbotenen bzw. hochriskanten Anwendungen. Waehlen Sie das Modell nach Anwendungsfall, benoetigten Sprachen und Hardware - es gibt kein pauschal 'bestes' Modell.",
+          "en": "Legally: for handling personal data the revDSG/nFADP applies (not the GDPR), and the supervisory authority is the EDOEB (FDPIC). The EU AI Act has extraterritorial reach and can affect Swiss providers offering in the EU; it grants certain relief for free and open models, but not for systemic risks or prohibited/high-risk uses. Choose the model by use case, required languages and hardware - there is no blanket 'best' model.",
+          "it": "Sul piano legale: per il trattamento dei dati personali si applica la revDSG/nLPD (non il GDPR) e l'autorita di controllo e l'IFPDT (EDOEB). L'EU AI Act ha portata extraterritoriale e puo riguardare fornitori svizzeri che offrono nell'UE; prevede alcune agevolazioni per i modelli liberi e aperti, ma non per rischi sistemici o usi vietati/ad alto rischio. Scegli il modello in base a caso d'uso, lingue necessarie e hardware - non esiste un modello 'migliore' in assoluto.",
+          "fr": "Sur le plan juridique : pour le traitement des donnees personnelles, c'est la revLPD/nLPD qui s'applique (pas le RGPD), et l'autorite de controle est le PFPDT (EDOEB). L'EU AI Act a une portee extraterritoriale et peut concerner des fournisseurs suisses proposant leurs services dans l'UE ; il prevoit certains allegements pour les modeles libres et ouverts, mais pas pour les risques systemiques ni les usages interdits/a haut risque. Choisissez le modele selon le cas d'usage, les langues requises et le materiel - il n'existe pas de modele 'meilleur' universel."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ist Open Source KI kostenlos?",
+        "en": "Is open-source AI free?",
+        "it": "L'IA open source e gratuita?",
+        "fr": "L'IA open source est-elle gratuite ?"
+      },
+      "a": {
+        "de": "Die Modelle sind meist kostenlos herunterladbar und lizenzfrei nutzbar, doch Betrieb, Hosting und Feinjustierung verursachen Kosten fuer Hardware (GPUs), Infrastruktur und Fachwissen. 'Kostenlos herunterladbar' bedeutet nicht 'kostenlos im Betrieb'.",
+        "en": "The models are usually free to download and licence-free to use, but running, hosting and fine-tuning incur costs for hardware (GPUs), infrastructure and expertise. 'Free to download' does not mean 'free to run'.",
+        "it": "I modelli sono di solito scaricabili gratuitamente e utilizzabili senza costi di licenza, ma esecuzione, hosting e messa a punto comportano costi per hardware (GPU), infrastruttura e competenze. 'Scaricabile gratis' non significa 'gratis da eseguire'.",
+        "fr": "Les modeles sont generalement telechargeables gratuitement et utilisables sans frais de licence, mais l'execution, l'hebergement et l'affinage engendrent des couts de materiel (GPU), d'infrastructure et de competences. 'Telechargeable gratuitement' ne veut pas dire 'gratuit a exploiter'."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist Llama Open Source?",
+        "en": "Is Llama open source?",
+        "it": "Llama e open source?",
+        "fr": "Llama est-il open source ?"
+      },
+      "a": {
+        "de": "Llama ist Open-Weight unter einer Community-Lizenz, aber nicht von der Open Source Initiative als Open Source anerkannt. Kommerzielle Nutzung ist mit Bedingungen erlaubt; ab 700 Mio. monatlich aktiven Nutzern ist eine separate Lizenz erforderlich.",
+        "en": "Llama is open-weight under a community licence but is not recognized as open source by the Open Source Initiative. Commercial use is allowed with conditions; above 700M monthly active users a separate licence is required.",
+        "it": "Llama e open-weight con licenza community ma non e riconosciuto come open source dalla Open Source Initiative. L'uso commerciale e consentito con condizioni; oltre 700 mln di utenti attivi mensili serve una licenza separata.",
+        "fr": "Llama est open-weight sous licence communautaire mais n'est pas reconnu comme open source par l'Open Source Initiative. L'usage commercial est autorise sous conditions ; au-dela de 700 M d'utilisateurs actifs mensuels, une licence distincte est requise."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen Open Weights und Open Source?",
+        "en": "What is the difference between open weights and open source?",
+        "it": "Qual e la differenza tra open weights e open source?",
+        "fr": "Quelle est la difference entre open weights et open source ?"
+      },
+      "a": {
+        "de": "Open-Weight bedeutet, dass die trainierten Parameter veroeffentlicht sind, sodass Sie das Modell nutzen und anpassen koennen. Echtes Open Source verlangt zusaetzlich uneingeschraenkte Nutzungs- und Weitergaberechte und - laut OSAID - genug Informationen ueber die Trainingsdaten, um das Modell nachzubauen.",
+        "en": "Open-weight means the trained parameters are released so you can use and adapt the model. True open source additionally requires unrestricted use and redistribution rights and - per OSAID - enough information about the training data to rebuild the model.",
+        "it": "Open-weight significa che i parametri addestrati sono rilasciati, cosi puoi usare e adattare il modello. Il vero open source richiede inoltre diritti di uso e ridistribuzione senza restrizioni e - secondo l'OSAID - informazioni sufficienti sui dati di addestramento per ricostruire il modello.",
+        "fr": "Open-weight signifie que les parametres entraines sont publies afin de pouvoir utiliser et adapter le modele. Le veritable open source exige en plus des droits d'usage et de redistribution sans restriction et - selon l'OSAID - assez d'informations sur les donnees d'entrainement pour reconstruire le modele."
+      }
+    },
+    {
+      "q": {
+        "de": "Darf ich Open Source KI in der Schweiz kommerziell nutzen?",
+        "en": "Can I use open-source AI commercially in Switzerland?",
+        "it": "Posso usare l'IA open source a scopo commerciale in Svizzera?",
+        "fr": "Puis-je utiliser l'IA open source a des fins commerciales en Suisse ?"
+      },
+      "a": {
+        "de": "Das haengt von der Lizenz ab: Apache 2.0 und MIT erlauben kommerzielle Nutzung, Community-Lizenzen (Llama, Gemma) knuepfen Bedingungen daran, manche Modelle sind research-only. Zudem muessen Sie das revDSG/nDSG einhalten und pruefen, ob der EU AI Act greift.",
+        "en": "It depends on the licence: Apache 2.0 and MIT allow commercial use, community licences (Llama, Gemma) attach conditions, and some models are research-only. You must also comply with the revDSG/nFADP and check whether the EU AI Act applies.",
+        "it": "Dipende dalla licenza: Apache 2.0 e MIT consentono l'uso commerciale, le licenze community (Llama, Gemma) pongono condizioni e alcuni modelli sono solo per ricerca. Devi inoltre rispettare la revDSG/nLPD e verificare se si applica l'EU AI Act.",
+        "fr": "Cela depend de la licence : Apache 2.0 et MIT autorisent l'usage commercial, les licences communautaires (Llama, Gemma) posent des conditions, et certains modeles sont reserves a la recherche. Vous devez aussi respecter la revLPD/nLPD et verifier si l'EU AI Act s'applique."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist Open Source KI sicherer und datenschutzfreundlicher?",
+        "en": "Is open-source AI safer and more private?",
+        "it": "L'IA open source e piu sicura e rispettosa della privacy?",
+        "fr": "L'IA open source est-elle plus sure et plus respectueuse de la vie privee ?"
+      },
+      "a": {
+        "de": "Sie kann sehr datenschutzfreundlich sein, weil Sie das Modell On-Premises oder in einer Schweizer Cloud betreiben und Daten unter Ihrer Kontrolle halten. Fuer Sicherheitsleitplanken, Updates und Compliance sind jedoch Sie selbst verantwortlich - Offenheit garantiert keine Sicherheit.",
+        "en": "It can be very private because you can run the model on-premises or in a Swiss cloud and keep data under your control. However, you are responsible for safety guardrails, updates and compliance - openness does not guarantee security.",
+        "it": "Puo essere molto rispettosa della privacy perche puoi eseguire il modello on-premises o in un cloud svizzero mantenendo i dati sotto il tuo controllo. Tuttavia sei responsabile di guardrail, aggiornamenti e conformita - l'apertura non garantisce la sicurezza.",
+        "fr": "Elle peut etre tres respectueuse de la vie privee car vous pouvez executer le modele sur site ou dans un cloud suisse et garder les donnees sous controle. En revanche, vous etes responsable des garde-fous, des mises a jour et de la conformite - l'ouverture ne garantit pas la securite."
+      }
+    },
+    {
+      "q": {
+        "de": "Welches offene Modell sollte ein Schweizer KMU waehlen?",
+        "en": "Which open model should a Swiss SME choose?",
+        "it": "Quale modello aperto dovrebbe scegliere una PMI svizzera?",
+        "fr": "Quel modele ouvert une PME suisse doit-elle choisir ?"
+      },
+      "a": {
+        "de": "Es gibt kein pauschal bestes Modell. Waehlen Sie nach Anwendungsfall, benoetigten Sprachen, Datenschutzanforderungen und verfuegbarer Hardware. Kandidaten sind u. a. Apertus (Schweizer Souveraenitaet), Llama, Mistral/Mixtral und Qwen - testen Sie mehrere an Ihren realen Aufgaben.",
+        "en": "There is no blanket best model. Choose by use case, required languages, privacy needs and available hardware. Candidates include Apertus (Swiss sovereignty), Llama, Mistral/Mixtral and Qwen - evaluate several on your real tasks.",
+        "it": "Non esiste un modello migliore in assoluto. Scegli in base a caso d'uso, lingue necessarie, esigenze di privacy e hardware disponibile. Tra i candidati: Apertus (sovranita svizzera), Llama, Mistral/Mixtral e Qwen - testane diversi sui tuoi compiti reali.",
+        "fr": "Il n'existe pas de meilleur modele universel. Choisissez selon le cas d'usage, les langues requises, les besoins de confidentialite et le materiel disponible. Parmi les candidats : Apertus (souverainete suisse), Llama, Mistral/Mixtral et Qwen - evaluez-en plusieurs sur vos taches reelles."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Open-Weight-Modelle",
+    "Open Source Initiative (OSAID)",
+    "Apache 2.0",
+    "MIT License",
+    "Llama (Meta)",
+    "Mistral AI / Mixtral",
+    "Gemma (Google)",
+    "Qwen (Alibaba)",
+    "DeepSeek",
+    "Apertus",
+    "ETH Zurich / EPFL / CSCS",
+    "EU AI Act",
+    "revDSG / nFADP",
+    "EDOEB",
+    "Hugging Face",
+    "Fine-Tuning / On-Premises"
+  ]
+}

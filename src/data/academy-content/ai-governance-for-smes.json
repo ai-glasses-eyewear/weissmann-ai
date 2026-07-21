@@ -1,0 +1,390 @@
+{
+  "id": "ai-governance-for-smes",
+  "cluster": "trust-security-privacy-regulation",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "ki-governance-kmu",
+    "en": "ai-governance-smes",
+    "it": "governance-ia-pmi",
+    "fr": "gouvernance-ia-pme"
+  },
+  "title": {
+    "de": "KI-Governance für KMU: der praktische Leitfaden | Weissmann AI",
+    "en": "AI Governance for SMEs: A Practical Guide | Weissmann AI",
+    "it": "Governance dell'IA per le PMI: guida pratica | Weissmann AI",
+    "fr": "Gouvernance de l'IA pour les PME : guide pratique | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI-Governance im KMU ohne Konzern-Bürokratie: Richtlinie, Rollen, menschliche Aufsicht, KI-Inventar und Risikoprüfung - mit revDSG- und EU-AI-Act-Bezug.",
+    "en": "Lightweight AI governance for SMEs: policy, roles, human oversight, AI inventory and risk review - with revised FADP and EU AI Act context for Switzerland.",
+    "it": "Governance dell'IA per le PMI senza burocrazia: policy, ruoli, supervisione umana, inventario IA e valutazione del rischio, con revLPD ed EU AI Act.",
+    "fr": "Gouvernance de l'IA pour PME sans bureaucratie : charte, rôles, supervision humaine, inventaire IA et revue des risques, avec nLPD et EU AI Act."
+  },
+  "kicker": {
+    "de": "Vertrauen, Sicherheit & Regulierung",
+    "en": "Trust, Security & Regulation",
+    "it": "Fiducia, sicurezza e regolamentazione",
+    "fr": "Confiance, sécurité et réglementation"
+  },
+  "h1": {
+    "de": "Wie richten KMU eine praktische KI-Governance ein?",
+    "en": "How do SMEs set up practical AI governance?",
+    "it": "Come impostare una governance dell'IA pratica in una PMI?",
+    "fr": "Comment une PME met-elle en place une gouvernance de l'IA concrète ?"
+  },
+  "answerFirst": {
+    "de": "KI-Governance im KMU ist der schlanke Rahmen aus Richtlinie, Rollen, menschlicher Aufsicht und Dokumentation, der KI-Einsatz sicher, rechtskonform und nützlich hält - ohne Konzern-Bürokratie. Starten Sie mit einem KI-Inventar, einer einseitigen Nutzungsrichtlinie, einer verantwortlichen Person, menschlicher Prüfung bei folgenreichen Entscheiden und einer kurzen Risikoprüfung. In der Schweiz richten Sie sich am revidierten DSG und an der extraterritorialen Reichweite des EU AI Act aus.",
+    "en": "AI governance for SMEs is the lightweight set of policy, roles, human oversight and documentation that keeps AI use safe, lawful and useful - without enterprise overhead. Start with an AI inventory, a one-page usage policy, a named owner, human review for high-impact decisions, and a short risk check. In Switzerland, align with the revised FADP and the EU AI Act's extraterritorial reach.",
+    "it": "La governance dell'IA per le PMI è l'insieme snello di policy, ruoli, supervisione umana e documentazione che rende l'uso dell'IA sicuro, conforme e utile, senza burocrazia da grande impresa. Si parte da un inventario dell'IA, una policy d'uso di una pagina, un responsabile designato, la revisione umana per le decisioni ad alto impatto e una breve valutazione del rischio. In Svizzera ci si allinea alla revLPD e alla portata extraterritoriale dell'EU AI Act.",
+    "fr": "La gouvernance de l'IA pour les PME est l'ensemble léger de charte, rôles, supervision humaine et documentation qui rend l'usage de l'IA sûr, conforme et utile, sans lourdeur de grand groupe. Commencez par un inventaire IA, une charte d'usage d'une page, un responsable désigné, une revue humaine pour les décisions à fort impact et un contrôle des risques succinct. En Suisse, alignez-vous sur la nLPD révisée et la portée extraterritoriale de l'EU AI Act."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was KI-Governance für ein KMU wirklich bedeutet",
+        "en": "What AI governance actually means for an SME",
+        "it": "Cosa significa davvero la governance dell'IA per una PMI",
+        "fr": "Ce que la gouvernance de l'IA signifie vraiment pour une PME"
+      },
+      "paragraphs": [
+        {
+          "de": "Governance ist keine Bürokratie, sondern eine Reihe klarer Entscheide: Wer darf welches KI-Werkzeug für welchen Zweck nutzen, mit welchen Daten - und wie wird das Ergebnis überprüft? Für ein KMU heisst das nicht, Konzern-Frameworks zu kopieren, sondern eine handhabbare Fassung davon zu bauen, die zum Team passt und tatsächlich gelebt wird.",
+          "en": "Governance is not bureaucracy but a set of clear decisions: who may use which AI tool, for what purpose, with which data - and how the output gets checked? For an SME this does not mean copying enterprise frameworks, but building a workable version that fits the team and is actually followed.",
+          "it": "La governance non è burocrazia, ma un insieme di decisioni chiare: chi può usare quale strumento di IA, per quale scopo, con quali dati, e come si verifica il risultato? Per una PMI non significa copiare i framework delle grandi aziende, ma costruire una versione praticabile, adatta al team e realmente applicata.",
+          "fr": "La gouvernance n'est pas de la bureaucratie mais un ensemble de décisions claires : qui peut utiliser quel outil d'IA, pour quel usage, avec quelles données, et comment le résultat est-il contrôlé ? Pour une PME, il ne s'agit pas de copier les cadres des grands groupes, mais d'en bâtir une version applicable, adaptée à l'équipe et réellement suivie."
+        },
+        {
+          "de": "Der Handlungsdruck ist real. Ohne Regeln entsteht Schatten-KI: Mitarbeitende fügen Kundendaten, Verträge oder Quellcode in kostenlose Chatbots ein, ohne zu wissen, wohin die Daten fliessen. Gleichzeitig verlangen das revidierte Datenschutzgesetz (revDSG) und der extraterritoriale EU AI Act zunehmend nachweisbare Sorgfalt. Eine schlanke Governance schützt vor beidem - Datenabfluss und Regelverstoss - und macht KI-Nutzen planbar statt zufällig.",
+          "en": "The pressure is real. Without rules, shadow AI appears: staff paste customer data, contracts or source code into free chatbots without knowing where the data goes. At the same time, the revised Data Protection Act (FADP) and the extraterritorial EU AI Act increasingly require demonstrable diligence. Lightweight governance protects against both - data leakage and non-compliance - and makes AI value predictable rather than accidental.",
+          "it": "La pressione è concreta. Senza regole nasce la shadow AI: il personale incolla dati dei clienti, contratti o codice sorgente in chatbot gratuiti senza sapere dove finiscono i dati. Al contempo, la legge sulla protezione dei dati riveduta (revLPD) e l'EU AI Act extraterritoriale richiedono sempre più una diligenza dimostrabile. Una governance snella protegge da entrambi - fuga di dati e non conformità - e rende il valore dell'IA prevedibile anziché casuale.",
+          "fr": "La pression est réelle. Sans règles apparaît le shadow AI : les collaborateurs collent des données clients, des contrats ou du code source dans des chatbots gratuits sans savoir où vont les données. En parallèle, la loi révisée sur la protection des données (nLPD) et l'EU AI Act extraterritorial exigent de plus en plus une diligence démontrable. Une gouvernance légère protège des deux - fuite de données et non-conformité - et rend la valeur de l'IA prévisible plutôt qu'accidentelle."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Rollen: Wer die KI-Governance im kleinen Team verantwortet",
+        "en": "Roles: who owns AI governance in a small team",
+        "it": "Ruoli: chi è responsabile della governance dell'IA in un piccolo team",
+        "fr": "Rôles : qui pilote la gouvernance de l'IA dans une petite équipe"
+      },
+      "paragraphs": [
+        {
+          "de": "Sie brauchen keinen Chief AI Officer. Sie brauchen eine namentlich benannte, verantwortliche Person und ein paar klar verteilte Aufgaben. Entscheidend ist Rechenschaft: Eine konkrete Person hält das Inventar aktuell, beantwortet Fragen und gibt neue Anwendungsfälle frei. Alles andere kann verteilt und leichtgewichtig bleiben.",
+          "en": "You do not need a Chief AI Officer. You need one named, accountable person and a few clearly assigned tasks. The key is accountability: a specific person keeps the inventory current, answers questions and approves new use cases. Everything else can stay distributed and lightweight.",
+          "it": "Non serve un Chief AI Officer. Serve una persona designata e responsabile e alcune attività chiaramente assegnate. La chiave è la responsabilità: una persona precisa tiene aggiornato l'inventario, risponde alle domande e approva i nuovi casi d'uso. Il resto può restare distribuito e leggero.",
+          "fr": "Vous n'avez pas besoin d'un Chief AI Officer. Vous avez besoin d'une personne désignée et responsable et de quelques tâches clairement réparties. L'essentiel est la responsabilité : une personne précise tient l'inventaire à jour, répond aux questions et valide les nouveaux cas d'usage. Le reste peut rester réparti et léger."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Sponsor (Geschäftsleitung): setzt den Rahmen, gibt Budget und Rückendeckung, trägt die letzte Verantwortung.",
+          "en": "Sponsor (management): sets the frame, provides budget and backing, holds ultimate responsibility.",
+          "it": "Sponsor (direzione): definisce il quadro, fornisce budget e sostegno, ha la responsabilità ultima.",
+          "fr": "Sponsor (direction) : fixe le cadre, fournit budget et soutien, porte la responsabilité ultime."
+        },
+        {
+          "de": "KI-Verantwortliche:r (oft IT-Lead oder Inhaber:in): pflegt Richtlinie und Inventar, prüft neue Werkzeuge, ist Anlaufstelle.",
+          "en": "AI owner (often IT lead or founder): maintains policy and inventory, vets new tools, is the point of contact.",
+          "it": "Responsabile IA (spesso IT lead o titolare): cura policy e inventario, valuta i nuovi strumenti, è il punto di riferimento.",
+          "fr": "Responsable IA (souvent lead IT ou dirigeant) : entretient charte et inventaire, évalue les nouveaux outils, sert de point de contact."
+        },
+        {
+          "de": "Datenschutz-Kontakt: prüft Personendaten-Bezug; im KMU oft dieselbe Person, bei revDSG-relevanten Vorgängen einbezogen.",
+          "en": "Data protection contact: checks personal-data implications; in an SME often the same person, involved on FADP-relevant matters.",
+          "it": "Referente protezione dati: verifica gli aspetti sui dati personali; in una PMI spesso la stessa persona, coinvolta nei casi rilevanti per la revLPD.",
+          "fr": "Référent protection des données : vérifie les implications sur les données personnelles ; dans une PME souvent la même personne, sollicitée sur les sujets liés à la nLPD."
+        },
+        {
+          "de": "Nutzende (alle Mitarbeitenden): halten die Richtlinie ein, kennzeichnen KI-Ergebnisse und melden Zwischenfälle.",
+          "en": "Users (all staff): follow the policy, label AI output and report incidents.",
+          "it": "Utenti (tutto il personale): rispettano la policy, segnalano i contenuti generati dall'IA e comunicano gli incidenti.",
+          "fr": "Utilisateurs (tout le personnel) : respectent la charte, signalent les contenus produits par l'IA et remontent les incidents."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die einseitige KI-Richtlinie: was hineingehört",
+        "en": "The one-page AI policy: what to include",
+        "it": "La policy sull'IA di una pagina: cosa includere",
+        "fr": "La charte d'IA d'une page : que faut-il y mettre"
+      },
+      "paragraphs": [
+        {
+          "de": "Eine gute KMU-Richtlinie passt auf eine Seite und wird gelesen, weil sie kurz und konkret ist. Sie beantwortet die Fragen, die im Alltag wirklich auftauchen: Welche Werkzeuge sind erlaubt, welche Daten dürfen nie hinein, wer bleibt verantwortlich, und wie wird KI-Nutzung transparent gemacht.",
+          "en": "A good SME policy fits on one page and gets read because it is short and concrete. It answers the questions that actually come up day to day: which tools are allowed, which data must never go in, who stays responsible, and how AI use is made transparent.",
+          "it": "Una buona policy per PMI sta in una pagina e viene letta perché breve e concreta. Risponde alle domande che sorgono davvero ogni giorno: quali strumenti sono ammessi, quali dati non vanno mai inseriti, chi resta responsabile e come si rende trasparente l'uso dell'IA.",
+          "fr": "Une bonne charte de PME tient sur une page et se lit parce qu'elle est courte et concrète. Elle répond aux questions qui se posent réellement au quotidien : quels outils sont autorisés, quelles données ne doivent jamais y être saisies, qui reste responsable et comment l'usage de l'IA est rendu transparent."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Erlaubte und verbotene Werkzeuge - eine kurze Liste freigegebener Dienste plus die Regel, Neues vorab freigeben zu lassen.",
+          "en": "Allowed and disallowed tools - a short list of approved services plus the rule to get anything new approved first.",
+          "it": "Strumenti ammessi e vietati - un breve elenco di servizi approvati più la regola di far approvare in anticipo le novità.",
+          "fr": "Outils autorisés et interdits - une courte liste de services approuvés et la règle de faire valider tout nouvel outil au préalable."
+        },
+        {
+          "de": "Datenklassifizierung - klar benennen, was nie eingegeben werden darf: Personendaten, Geschäftsgeheimnisse, Zugangsdaten, vertrauliche Kundeninhalte.",
+          "en": "Data classification - clearly name what must never be entered: personal data, trade secrets, credentials, confidential client content.",
+          "it": "Classificazione dei dati - indicare chiaramente cosa non va mai inserito: dati personali, segreti aziendali, credenziali, contenuti riservati dei clienti.",
+          "fr": "Classification des données - nommer clairement ce qui ne doit jamais être saisi : données personnelles, secrets d'affaires, identifiants, contenus clients confidentiels."
+        },
+        {
+          "de": "Menschliche Verantwortung - KI ist Assistenz, nicht Entscheider; die Mitarbeitenden bleiben für das Ergebnis verantwortlich.",
+          "en": "Human accountability - AI assists, it does not decide; staff remain responsible for the output.",
+          "it": "Responsabilità umana - l'IA assiste, non decide; il personale resta responsabile del risultato.",
+          "fr": "Responsabilité humaine - l'IA assiste, elle ne décide pas ; les collaborateurs restent responsables du résultat."
+        },
+        {
+          "de": "Transparenz - wo sinnvoll oder gefordert, KI-generierte Inhalte kennzeichnen, intern wie extern.",
+          "en": "Transparency - where sensible or required, label AI-generated content, internally and externally.",
+          "it": "Trasparenza - dove sensato o richiesto, etichettare i contenuti generati dall'IA, all'interno e all'esterno.",
+          "fr": "Transparence - lorsque pertinent ou requis, signaler les contenus générés par l'IA, en interne comme en externe."
+        },
+        {
+          "de": "Prüfpflicht - Ergebnisse auf Fakten, Bias und Vertraulichkeit prüfen, bevor sie das Haus verlassen oder eine Entscheidung stützen.",
+          "en": "Review duty - check outputs for facts, bias and confidentiality before they leave the building or support a decision.",
+          "it": "Obbligo di verifica - controllare i risultati su fatti, bias e riservatezza prima che escano o supportino una decisione.",
+          "fr": "Obligation de revue - vérifier les résultats (faits, biais, confidentialité) avant qu'ils ne sortent ou n'appuient une décision."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Menschliche Aufsicht: eine Person in der Schleife halten",
+        "en": "Human oversight: keep a person in the loop",
+        "it": "Supervisione umana: mantenere una persona nel ciclo",
+        "fr": "Supervision humaine : garder une personne dans la boucle"
+      },
+      "paragraphs": [
+        {
+          "de": "Nicht jeder KI-Einsatz braucht dieselbe Kontrolle. Ein Entwurf für eine interne E-Mail ist etwas anderes als eine Vorauswahl von Bewerbungen. Die Faustregel: Je grösser die Auswirkung auf Menschen, desto verbindlicher die menschliche Prüfung. Der EU AI Act verlangt für Hochrisiko-Systeme ausdrücklich wirksame menschliche Aufsicht - ein guter Massstab auch dort, wo Sie rechtlich (noch) nicht dazu verpflichtet sind.",
+          "en": "Not every AI use needs the same control. A draft of an internal email is different from screening job applications. The rule of thumb: the greater the impact on people, the more binding the human review. The EU AI Act explicitly requires effective human oversight for high-risk systems - a good benchmark even where you are not (yet) legally obliged.",
+          "it": "Non ogni uso dell'IA richiede lo stesso controllo. La bozza di un'email interna è diversa dalla preselezione di candidature. La regola: maggiore è l'impatto sulle persone, più vincolante è la revisione umana. L'EU AI Act richiede esplicitamente una supervisione umana efficace per i sistemi ad alto rischio, un buon riferimento anche dove non si è (ancora) obbligati per legge.",
+          "fr": "Tous les usages de l'IA n'exigent pas le même contrôle. Le brouillon d'un e-mail interne diffère de la présélection de candidatures. La règle : plus l'impact sur les personnes est fort, plus la revue humaine est contraignante. L'EU AI Act exige explicitement une supervision humaine effective pour les systèmes à haut risque, un bon repère même là où vous n'y êtes pas (encore) légalement tenu."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Immer menschlich prüfen: Entscheide zu Anstellung, Kredit, Kündigung, Preis, Gesundheit oder Sicherheit sowie alles Rechtsverbindliche.",
+          "en": "Always review by a human: decisions on hiring, credit, dismissal, pricing, health or safety, and anything legally binding.",
+          "it": "Sempre revisione umana: decisioni su assunzioni, credito, licenziamento, prezzi, salute o sicurezza e tutto ciò che è giuridicamente vincolante.",
+          "fr": "Toujours une revue humaine : décisions d'embauche, de crédit, de licenciement, de prix, de santé ou de sécurité, et tout ce qui est juridiquement contraignant."
+        },
+        {
+          "de": "Stichprobe genügt: bei geringem Risiko wie internen Entwürfen oder Ideensammlungen reicht sporadische Kontrolle.",
+          "en": "Sampling suffices: for low risk such as internal drafts or brainstorming, occasional checks are enough.",
+          "it": "Basta un campione: per rischi bassi come bozze interne o brainstorming, bastano controlli sporadici.",
+          "fr": "Un échantillon suffit : pour un risque faible (brouillons internes, remue-méninges), des contrôles ponctuels suffisent."
+        },
+        {
+          "de": "Kein Blindvertrauen: Prüfende müssen KI-Ergebnisse überstimmen können und dürfen sich nicht automatisch darauf verlassen (Automation Bias).",
+          "en": "No blind trust: reviewers must be able to override AI output and must not defer to it automatically (automation bias).",
+          "it": "Nessuna fiducia cieca: chi verifica deve poter contraddire l'output dell'IA e non affidarvisi automaticamente (automation bias).",
+          "fr": "Pas de confiance aveugle : le relecteur doit pouvoir contredire le résultat de l'IA et ne pas s'y fier automatiquement (biais d'automatisation)."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Dokumentation: das KI-Inventar als Rückgrat",
+        "en": "Documentation: the AI inventory as backbone",
+        "it": "Documentazione: l'inventario dell'IA come spina dorsale",
+        "fr": "Documentation : l'inventaire IA comme colonne vertébrale"
+      },
+      "paragraphs": [
+        {
+          "de": "Das einzige Dokument, das Sie wirklich brauchen, ist ein einfaches KI-Inventar - eine Tabelle, kein Aktenordner. Sie zeigt auf einen Blick, wo im Betrieb KI im Einsatz ist, mit welchen Daten und wer verantwortlich zeichnet. Dieses Register ist die Grundlage für Risikoprüfung, Lieferanten-Sorgfalt und die Nachweisbarkeit, die revDSG und EU AI Act verlangen.",
+          "en": "The only document you truly need is a simple AI inventory - a spreadsheet, not a binder. It shows at a glance where AI is used across the business, with which data and who is responsible. This register is the basis for risk review, vendor due diligence and the demonstrability the FADP and EU AI Act require.",
+          "it": "L'unico documento davvero necessario è un semplice inventario dell'IA - un foglio di calcolo, non un raccoglitore. Mostra a colpo d'occhio dove l'IA è usata in azienda, con quali dati e chi ne è responsabile. Questo registro è la base per la valutazione del rischio, la due diligence sui fornitori e la dimostrabilità richiesta da revLPD ed EU AI Act.",
+          "fr": "Le seul document vraiment nécessaire est un simple inventaire IA - un tableur, pas un classeur. Il montre d'un coup d'œil où l'IA est utilisée dans l'entreprise, avec quelles données et qui en est responsable. Ce registre est la base de la revue des risques, de la diligence fournisseur et de la démontrabilité qu'exigent la nLPD et l'EU AI Act."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Pro Anwendung erfassen: Werkzeug, Zweck, verwendete Datenarten, verantwortliche Person, Risikostufe, Status des Auftragsbearbeitungsvertrags.",
+          "en": "Per use case, record: tool, purpose, data types used, responsible person, risk level, status of the data-processing agreement.",
+          "it": "Per ogni caso d'uso registrare: strumento, scopo, tipi di dati usati, responsabile, livello di rischio, stato del contratto di trattamento dati.",
+          "fr": "Par cas d'usage, noter : outil, finalité, types de données, responsable, niveau de risque, statut du contrat de sous-traitance des données."
+        },
+        {
+          "de": "Lieferanten-Sorgfalt: Hosting-Standort, Sub-Auftragnehmer, ob Eingaben zum Training genutzt werden, und ein passender AVV/DPA.",
+          "en": "Vendor due diligence: hosting location, sub-processors, whether inputs are used for training, and a suitable DPA.",
+          "it": "Due diligence sul fornitore: sede di hosting, sub-responsabili, se gli input sono usati per l'addestramento, e un adeguato DPA.",
+          "fr": "Diligence fournisseur : lieu d'hébergement, sous-traitants ultérieurs, si les saisies servent à l'entraînement, et un DPA adapté."
+        },
+        {
+          "de": "Bei Personendaten: prüfen, ob eine Datenschutz-Folgenabschätzung nötig ist, und den Vorgang im Bearbeitungsverzeichnis führen.",
+          "en": "For personal data: assess whether a data protection impact assessment is needed and log the activity in the record of processing.",
+          "it": "Per i dati personali: valutare se serve una valutazione d'impatto sulla protezione dei dati e registrare l'attività nel registro dei trattamenti.",
+          "fr": "Pour les données personnelles : évaluer si une analyse d'impact est nécessaire et consigner l'activité dans le registre des traitements."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Leichtgewichtige Risikoprüfung und Schweizer Rechtsrahmen",
+        "en": "Lightweight risk review and the Swiss legal frame",
+        "it": "Valutazione del rischio snella e quadro giuridico svizzero",
+        "fr": "Revue des risques allégée et cadre juridique suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Bevor ein neuer Anwendungsfall live geht, genügt eine kurze Triage in wenigen Minuten: Welche Daten sind betroffen, wer wird durch das Ergebnis berührt, und was passiert im Fehlerfall? Der EU AI Act denkt in Risikoklassen - unannehmbar, hoch, begrenzt, minimal - und dieselbe Logik hilft KMU, Aufwand dorthin zu lenken, wo er zählt. Die meisten KMU-Anwendungen sind minimal- oder begrenzt-riskant; die wenigen heiklen erkennen Sie so früh.",
+          "en": "Before a new use case goes live, a short triage of a few minutes is enough: which data is involved, who is affected by the output, and what happens if it fails? The EU AI Act thinks in risk tiers - unacceptable, high, limited, minimal - and the same logic helps SMEs steer effort where it counts. Most SME uses are minimal or limited risk; the few sensitive ones you catch early.",
+          "it": "Prima che un nuovo caso d'uso entri in produzione basta una breve triage di pochi minuti: quali dati sono coinvolti, chi è toccato dal risultato e cosa succede in caso di errore? L'EU AI Act ragiona per classi di rischio - inaccettabile, alto, limitato, minimo - e la stessa logica aiuta le PMI a concentrare gli sforzi dove contano. La maggior parte degli usi in PMI è a rischio minimo o limitato; i pochi delicati si individuano così per tempo.",
+          "fr": "Avant qu'un nouveau cas d'usage passe en production, une courte triage de quelques minutes suffit : quelles données sont concernées, qui est affecté par le résultat et que se passe-t-il en cas d'erreur ? L'EU AI Act raisonne par niveaux de risque - inacceptable, élevé, limité, minimal - et la même logique aide les PME à concentrer l'effort là où il compte. La plupart des usages en PME sont à risque minimal ou limité ; les rares cas sensibles se repèrent tôt."
+        },
+        {
+          "de": "Für Schweizer KMU gelten zwei Bezugspunkte parallel. Erstens das revidierte DSG (revDSG), beaufsichtigt vom EDÖB - nicht die DSGVO, auch wenn vieles ähnlich ist. Zweitens der EU AI Act, der extraterritorial greift, sobald Ergebnisse in der EU verwendet werden oder Sie EU-Kunden bedienen. Wer beides früh mitdenkt, muss später nichts nachbauen. Angebote wie Innosuisse oder Schweizer Modelle im Umfeld von ETH und EPFL (etwa Apertus) zeigen zudem, dass datenschutzfreundliche, lokale KI-Optionen zunehmend verfügbar sind.",
+          "en": "For Swiss SMEs, two reference points apply in parallel. First, the revised FADP, supervised by the FDPIC - not the GDPR, even if much is similar. Second, the EU AI Act, which applies extraterritorially once outputs are used in the EU or you serve EU customers. Think of both early and you avoid retrofitting later. Programmes like Innosuisse and Swiss models around ETH and EPFL (such as Apertus) also show that privacy-friendly, local AI options are increasingly available.",
+          "it": "Per le PMI svizzere valgono in parallelo due riferimenti. Primo, la revLPD, vigilata dall'IFPDT - non il GDPR, anche se molto è simile. Secondo, l'EU AI Act, che si applica extraterritorialmente quando i risultati sono usati nell'UE o si servono clienti UE. Considerarli entrambi per tempo evita rifacimenti successivi. Iniziative come Innosuisse e modelli svizzeri nell'ambito di ETH ed EPFL (come Apertus) mostrano inoltre che opzioni di IA locali e rispettose della privacy sono sempre più disponibili.",
+          "fr": "Pour les PME suisses, deux points de repère s'appliquent en parallèle. D'abord la nLPD révisée, supervisée par le PFPDT - pas le RGPD, même si beaucoup se ressemble. Ensuite l'EU AI Act, qui s'applique de manière extraterritoriale dès que les résultats sont utilisés dans l'UE ou que vous servez des clients de l'UE. Anticiper les deux évite de tout refaire plus tard. Des programmes comme Innosuisse et des modèles suisses autour de l'ETH et de l'EPFL (tels qu'Apertus) montrent aussi que des options d'IA locales et respectueuses de la vie privée sont de plus en plus disponibles."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "In 90 Tagen startklar: ein realistischer Fahrplan",
+        "en": "Ready in 90 days: a realistic roadmap",
+        "it": "Pronti in 90 giorni: una tabella di marcia realistica",
+        "fr": "Prêt en 90 jours : une feuille de route réaliste"
+      },
+      "bullets": [
+        {
+          "de": "Tage 1-30: KI-Verantwortliche:n benennen, bestehende Nutzung inklusive Schatten-KI erheben und das Inventar erstmals füllen.",
+          "en": "Days 1-30: name the AI owner, survey existing use including shadow AI, and populate the inventory for the first time.",
+          "it": "Giorni 1-30: nominare il responsabile IA, rilevare l'uso esistente inclusa la shadow AI e popolare per la prima volta l'inventario.",
+          "fr": "Jours 1-30 : désigner le responsable IA, recenser les usages existants y compris le shadow AI et remplir l'inventaire une première fois."
+        },
+        {
+          "de": "Tage 31-60: einseitige Richtlinie verabschieden, freigegebene Werkzeuge festlegen und eine kurze Team-Schulung durchführen.",
+          "en": "Days 31-60: adopt the one-page policy, decide the approved tools and run a short team training.",
+          "it": "Giorni 31-60: adottare la policy di una pagina, definire gli strumenti approvati e svolgere una breve formazione del team.",
+          "fr": "Jours 31-60 : adopter la charte d'une page, décider des outils approuvés et organiser une courte formation de l'équipe."
+        },
+        {
+          "de": "Tage 61-90: Risiko-Triage für laufende Fälle nachziehen, AVV/DPA prüfen und einen fixen Quartals-Review terminieren.",
+          "en": "Days 61-90: apply risk triage to current use cases, check DPAs and schedule a fixed quarterly review.",
+          "it": "Giorni 61-90: applicare la triage del rischio ai casi in corso, verificare i DPA e fissare una revisione trimestrale ricorrente.",
+          "fr": "Jours 61-90 : appliquer la triage des risques aux cas en cours, vérifier les DPA et planifier une revue trimestrielle récurrente."
+        },
+        {
+          "de": "Danach laufend: Inventar aktuell halten, neue Anwendungsfälle freigeben, Vorfälle festhalten und die Richtlinie jährlich überarbeiten.",
+          "en": "Ongoing: keep the inventory current, approve new use cases, log incidents and refresh the policy annually.",
+          "it": "In continuo: mantenere aggiornato l'inventario, approvare nuovi casi d'uso, registrare gli incidenti e rivedere la policy ogni anno.",
+          "fr": "En continu : tenir l'inventaire à jour, valider les nouveaux cas d'usage, consigner les incidents et réviser la charte chaque année."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Braucht ein KMU wirklich eine KI-Governance?",
+        "en": "Does an SME really need AI governance?",
+        "it": "Una PMI ha davvero bisogno di una governance dell'IA?",
+        "fr": "Une PME a-t-elle vraiment besoin d'une gouvernance de l'IA ?"
+      },
+      "a": {
+        "de": "Ja, sobald KI-Werkzeuge im Einsatz sind - und das sind sie meist bereits, oft unbemerkt als Schatten-KI. Ohne Regeln riskieren Sie Datenabfluss und Verstösse gegen revDSG oder EU AI Act. Der Aufwand ist gering: eine verantwortliche Person, eine einseitige Richtlinie und ein Inventar genügen zum Start.",
+        "en": "Yes, as soon as AI tools are in use - and they usually already are, often unnoticed as shadow AI. Without rules you risk data leakage and breaches of the FADP or EU AI Act. The effort is small: one responsible person, a one-page policy and an inventory are enough to start.",
+        "it": "Sì, non appena si usano strumenti di IA - e di solito è già così, spesso inosservato come shadow AI. Senza regole si rischiano fughe di dati e violazioni di revLPD o EU AI Act. Lo sforzo è minimo: un responsabile, una policy di una pagina e un inventario bastano per iniziare.",
+        "fr": "Oui, dès que des outils d'IA sont utilisés - et c'est généralement déjà le cas, souvent en shadow AI inaperçu. Sans règles, vous risquez fuites de données et manquements à la nLPD ou à l'EU AI Act. L'effort est faible : un responsable, une charte d'une page et un inventaire suffisent pour démarrer."
+      }
+    },
+    {
+      "q": {
+        "de": "Fällt ein Schweizer KMU unter den EU AI Act?",
+        "en": "Does a Swiss SME fall under the EU AI Act?",
+        "it": "Una PMI svizzera rientra nell'EU AI Act?",
+        "fr": "Une PME suisse relève-t-elle de l'EU AI Act ?"
+      },
+      "a": {
+        "de": "Möglicherweise. Der EU AI Act wirkt extraterritorial: Er kann greifen, sobald die Ergebnisse eines KI-Systems in der EU verwendet werden oder Sie EU-Kunden bedienen - unabhängig vom Firmensitz. Prüfen Sie im Einzelfall Ihre Rolle (etwa als Anbieter oder Betreiber) und die Risikoklasse der Anwendung.",
+        "en": "Possibly. The EU AI Act applies extraterritorially: it can apply once the output of an AI system is used in the EU or you serve EU customers - regardless of where you are based. Assess case by case your role (e.g. provider or deployer) and the risk tier of the application.",
+        "it": "Forse. L'EU AI Act ha portata extraterritoriale: può applicarsi quando l'output di un sistema di IA è usato nell'UE o se si servono clienti UE, indipendentemente dalla sede. Valutate caso per caso il vostro ruolo (ad es. fornitore o deployer) e la classe di rischio dell'applicazione.",
+        "fr": "Peut-être. L'EU AI Act a une portée extraterritoriale : il peut s'appliquer dès que le résultat d'un système d'IA est utilisé dans l'UE ou que vous servez des clients de l'UE, quel que soit votre siège. Évaluez au cas par cas votre rôle (fournisseur ou déployeur) et le niveau de risque de l'application."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen revDSG und DSGVO für uns?",
+        "en": "What is the difference between the FADP and the GDPR for us?",
+        "it": "Qual è la differenza tra revLPD e GDPR per noi?",
+        "fr": "Quelle est la différence entre la nLPD et le RGPD pour nous ?"
+      },
+      "a": {
+        "de": "Für Schweizer Sachverhalte gilt das revidierte DSG (revDSG), beaufsichtigt vom EDÖB - nicht die DSGVO. Beide verfolgen ähnliche Grundsätze wie Transparenz, Datensparsamkeit und Betroffenenrechte, unterscheiden sich aber in Details und Zuständigkeit. Wer auch EU-Personendaten bearbeitet, kann zusätzlich der DSGVO unterliegen; sprechen Sie im Zweifel eine Rechtsberatung an.",
+        "en": "For Swiss matters the revised FADP applies, supervised by the FDPIC - not the GDPR. Both share similar principles such as transparency, data minimisation and data-subject rights, but differ in detail and jurisdiction. If you also process EU personal data, the GDPR may apply as well; when in doubt, consult legal advice.",
+        "it": "Per le fattispecie svizzere vale la revLPD, vigilata dall'IFPDT - non il GDPR. Entrambi condividono principi simili come trasparenza, minimizzazione dei dati e diritti degli interessati, ma differiscono nei dettagli e nella competenza. Se trattate anche dati personali UE, può applicarsi anche il GDPR; nel dubbio consultate un legale.",
+        "fr": "Pour les situations suisses, c'est la nLPD révisée qui s'applique, supervisée par le PFPDT - pas le RGPD. Les deux partagent des principes proches (transparence, minimisation, droits des personnes concernées) mais diffèrent dans le détail et la compétence. Si vous traitez aussi des données personnelles de l'UE, le RGPD peut s'appliquer en plus ; en cas de doute, consultez un juriste."
+      }
+    },
+    {
+      "q": {
+        "de": "Dürfen Mitarbeitende ChatGPT oder ähnliche Tools bei der Arbeit nutzen?",
+        "en": "May staff use ChatGPT or similar tools at work?",
+        "it": "Il personale può usare ChatGPT o strumenti simili al lavoro?",
+        "fr": "Les collaborateurs peuvent-ils utiliser ChatGPT ou des outils similaires au travail ?"
+      },
+      "a": {
+        "de": "Ja, wenn klare Leitplanken bestehen. Legen Sie fest, welche Werkzeuge freigegeben sind, welche Daten nie eingegeben werden dürfen (Personendaten, Geheimnisse, Zugangsdaten) und dass Ergebnisse vor Nutzung geprüft werden. Prüfen Sie zudem die Einstellungen des Anbieters, etwa ob Eingaben zum Training verwendet werden, und schliessen Sie wo nötig einen AVV/DPA ab.",
+        "en": "Yes, if clear guardrails exist. Define which tools are approved, which data must never be entered (personal data, secrets, credentials) and that outputs are reviewed before use. Also check the provider's settings, such as whether inputs are used for training, and sign a DPA where needed.",
+        "it": "Sì, se esistono regole chiare. Definite quali strumenti sono approvati, quali dati non vanno mai inseriti (dati personali, segreti, credenziali) e che i risultati siano verificati prima dell'uso. Controllate anche le impostazioni del fornitore, ad esempio se gli input sono usati per l'addestramento, e stipulate un DPA dove necessario.",
+        "fr": "Oui, si des garde-fous clairs existent. Définissez quels outils sont approuvés, quelles données ne doivent jamais être saisies (données personnelles, secrets, identifiants) et que les résultats sont vérifiés avant usage. Vérifiez aussi les réglages du fournisseur, par exemple si les saisies servent à l'entraînement, et signez un DPA si nécessaire."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie lange dauert die Einführung und wer sollte sie verantworten?",
+        "en": "How long does setup take and who should own it?",
+        "it": "Quanto tempo richiede l'avvio e chi dovrebbe esserne responsabile?",
+        "fr": "Combien de temps prend la mise en place et qui doit la piloter ?"
+      },
+      "a": {
+        "de": "Ein funktionierender Grundstock steht in rund 90 Tagen: Inventar und Verantwortliche im ersten Monat, Richtlinie und Schulung im zweiten, Risikoprüfung und Quartals-Review im dritten. Verantworten sollte es eine einzelne benannte Person - oft die IT-Leitung oder die Inhaberin selbst - mit Rückendeckung der Geschäftsleitung.",
+        "en": "A working baseline is in place in about 90 days: inventory and owner in month one, policy and training in month two, risk review and quarterly cadence in month three. It should be owned by a single named person - often the IT lead or the founder - with management backing.",
+        "it": "Una base funzionante è pronta in circa 90 giorni: inventario e responsabile nel primo mese, policy e formazione nel secondo, valutazione del rischio e revisione trimestrale nel terzo. La responsabilità dovrebbe essere di una singola persona designata - spesso l'IT lead o il titolare - con il sostegno della direzione.",
+        "fr": "Une base fonctionnelle est en place en environ 90 jours : inventaire et responsable le premier mois, charte et formation le deuxième, revue des risques et cadence trimestrielle le troisième. Elle doit être pilotée par une seule personne désignée - souvent le lead IT ou le dirigeant - avec le soutien de la direction."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der häufigste Fehler bei KI-Governance im KMU?",
+        "en": "What is the most common mistake in SME AI governance?",
+        "it": "Qual è l'errore più comune nella governance dell'IA in una PMI?",
+        "fr": "Quelle est l'erreur la plus fréquente en gouvernance de l'IA en PME ?"
+      },
+      "a": {
+        "de": "Zu viel oder zu wenig. Zu viel heisst ein 40-seitiges Regelwerk, das niemand liest und das den KI-Nutzen erstickt. Zu wenig heisst gar keine Regeln und damit Schatten-KI. Der Mittelweg für KMU: eine kurze, gelebte Richtlinie, ein aktuelles Inventar und eine klar verantwortliche Person - schlank, aber verbindlich.",
+        "en": "Too much or too little. Too much means a 40-page rulebook nobody reads that smothers the value of AI. Too little means no rules at all, hence shadow AI. The middle path for SMEs: a short, lived policy, a current inventory and one clearly responsible person - lightweight but binding.",
+        "it": "Troppo o troppo poco. Troppo significa un regolamento di 40 pagine che nessuno legge e che soffoca il valore dell'IA. Troppo poco significa nessuna regola, quindi shadow AI. La via di mezzo per le PMI: una policy breve e applicata, un inventario aggiornato e una persona chiaramente responsabile - snella ma vincolante.",
+        "fr": "Trop ou trop peu. Trop, c'est un règlement de 40 pages que personne ne lit et qui étouffe la valeur de l'IA. Trop peu, c'est l'absence de règles, donc le shadow AI. La voie médiane pour les PME : une charte courte et vécue, un inventaire à jour et une personne clairement responsable - légère mais contraignante."
+      }
+    }
+  ],
+  "keyEntities": [
+    "KI-Governance",
+    "KMU",
+    "revidiertes Datenschutzgesetz (revDSG/nFADP)",
+    "EDÖB",
+    "EU AI Act",
+    "Schatten-KI (Shadow AI)",
+    "Human-in-the-Loop",
+    "menschliche Aufsicht",
+    "Datenklassifizierung",
+    "KI-Inventar",
+    "Auftragsbearbeitungsvertrag (DPA/AVV)",
+    "Datenschutz-Folgenabschätzung",
+    "Risikoklassen",
+    "KI-Nutzungsrichtlinie",
+    "Innosuisse",
+    "Apertus (ETH/EPFL)"
+  ]
+}

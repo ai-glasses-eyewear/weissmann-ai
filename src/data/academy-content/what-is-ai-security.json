@@ -1,0 +1,416 @@
+{
+  "id": "what-is-ai-security",
+  "cluster": "trust-security-privacy-regulation",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "was-ist-ki-sicherheit",
+    "en": "what-is-ai-security",
+    "it": "che-cos-e-la-sicurezza-ia",
+    "fr": "qu-est-ce-que-la-securite-de-l-ia"
+  },
+  "title": {
+    "de": "Was ist KI-Sicherheit? Risiken & Schutz | Weissmann AI",
+    "en": "What Is AI Security? Risks and Safeguards | Weissmann AI",
+    "it": "Che cos'è la sicurezza dell'IA? Rischi | Weissmann AI",
+    "fr": "Qu'est-ce que la sécurité de l'IA ? Risques | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI-Sicherheit erklärt: Risiken wie Datenlecks, Prompt Injection und Modellmissbrauch, wirksame Schutzmassnahmen, menschliche Aufsicht sowie revDSG und EU AI Act.",
+    "en": "AI security explained: risks like data leakage, prompt injection and model misuse, effective safeguards, human oversight, plus the revised FADP and EU AI Act.",
+    "it": "La sicurezza dell'IA spiegata: rischi come fuga di dati, prompt injection e uso improprio, misure di protezione, supervisione umana, revLPD ed EU AI Act.",
+    "fr": "La sécurité de l'IA expliquée : risques comme fuites de données, injection de requête et usage abusif, protections, supervision humaine, nLPD et EU AI Act."
+  },
+  "kicker": {
+    "de": "Vertrauen, Sicherheit & Regulierung",
+    "en": "Trust, Security & Regulation",
+    "it": "Fiducia, sicurezza e regolamentazione",
+    "fr": "Confiance, sécurité et réglementation"
+  },
+  "h1": {
+    "de": "Was ist KI-Sicherheit?",
+    "en": "What is AI security?",
+    "it": "Che cos'è la sicurezza dell'IA?",
+    "fr": "Qu'est-ce que la sécurité de l'IA ?"
+  },
+  "answerFirst": {
+    "de": "KI-Sicherheit umfasst alle technischen und organisatorischen Massnahmen, die KI-Systeme vor Missbrauch, Manipulation und Datenabfluss schützen und ihre Ergebnisse verlässlich halten. Zu den zentralen Risiken zählen Datenlecks, Prompt Injection und Modellmissbrauch. Wirksamer Schutz kombiniert Zugriffskontrollen, Eingabe- und Ausgabefilter, Protokollierung sowie menschliche Aufsicht. In der Schweiz gelten dabei das revDSG, die Vorgaben des EDÖB und – bei EU-Bezug – der EU AI Act.",
+    "en": "AI security covers the technical and organisational measures that protect AI systems from misuse, manipulation and data leakage while keeping their outputs reliable. The main risks include data leakage, prompt injection and model misuse. Effective protection combines access controls, input and output filtering, logging and human oversight. In Switzerland the revised FADP, guidance from the FDPIC and – where the EU is involved – the EU AI Act apply.",
+    "it": "La sicurezza dell'IA comprende le misure tecniche e organizzative che proteggono i sistemi di IA da abusi, manipolazioni e fughe di dati, mantenendo affidabili i risultati. I rischi principali sono la fuga di dati, la prompt injection e l'uso improprio dei modelli. Una protezione efficace combina controlli di accesso, filtri su input e output, registrazione e supervisione umana. In Svizzera si applicano la revLPD, le indicazioni dell'IFPDT e, in caso di legami con l'UE, l'EU AI Act.",
+    "fr": "La sécurité de l'IA regroupe les mesures techniques et organisationnelles qui protègent les systèmes d'IA contre les abus, la manipulation et les fuites de données, tout en garantissant la fiabilité des résultats. Les principaux risques sont la fuite de données, l'injection de requête et l'usage abusif des modèles. Une protection efficace combine contrôles d'accès, filtrage des entrées et sorties, journalisation et supervision humaine. En Suisse s'appliquent la nLPD, les recommandations du PFPDT et, en cas de lien avec l'UE, l'EU AI Act."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "KI-Sicherheit kurz erklärt",
+        "en": "AI security in brief",
+        "it": "La sicurezza dell'IA in breve",
+        "fr": "La sécurité de l'IA en bref"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Sicherheit bezeichnet den Schutz von KI-Systemen – und der mit ihnen verarbeiteten Daten – vor Missbrauch, Manipulation und Ausfall. Sie verbindet klassische Informationssicherheit (Vertraulichkeit, Integrität, Verfügbarkeit) mit neuen, KI-spezifischen Bedrohungen, die durch grosse Sprachmodelle und autonome Agenten entstehen.",
+          "en": "AI security means protecting AI systems – and the data they process – from misuse, manipulation and failure. It combines classic information security (confidentiality, integrity, availability) with new, AI-specific threats that arise from large language models and autonomous agents.",
+          "it": "La sicurezza dell'IA indica la protezione dei sistemi di IA – e dei dati che elaborano – da abusi, manipolazioni e guasti. Unisce la sicurezza informatica classica (riservatezza, integrità, disponibilità) alle nuove minacce specifiche dell'IA legate ai grandi modelli linguistici e agli agenti autonomi.",
+          "fr": "La sécurité de l'IA désigne la protection des systèmes d'IA – et des données qu'ils traitent – contre les abus, la manipulation et les pannes. Elle associe la sécurité de l'information classique (confidentialité, intégrité, disponibilité) aux nouvelles menaces propres à l'IA, liées aux grands modèles de langage et aux agents autonomes."
+        },
+        {
+          "de": "Zu unterscheiden ist zwischen der Sicherheit von KI (das System gegen Angriffe härten) und KI für die Sicherheit (KI zur Abwehr von Cyberangriffen einsetzen). Dieser Artikel behandelt vor allem die erste Perspektive: wie Unternehmen generative KI verantwortungsvoll und robust betreiben.",
+          "en": "It is worth distinguishing security of AI (hardening the system against attacks) from AI for security (using AI to defend against cyberattacks). This article focuses on the first perspective: how organisations run generative AI responsibly and robustly.",
+          "it": "Occorre distinguere tra sicurezza dell'IA (rendere il sistema resistente agli attacchi) e IA per la sicurezza (usare l'IA per difendersi dagli attacchi informatici). Questo articolo tratta soprattutto la prima prospettiva: come le organizzazioni usano l'IA generativa in modo responsabile e robusto.",
+          "fr": "Il faut distinguer la sécurité de l'IA (renforcer le système contre les attaques) de l'IA pour la sécurité (utiliser l'IA pour contrer les cyberattaques). Cet article traite surtout de la première perspective : comment les organisations exploitent l'IA générative de manière responsable et robuste."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die grössten Risiken generativer KI",
+        "en": "The biggest risks of generative AI",
+        "it": "I maggiori rischi dell'IA generativa",
+        "fr": "Les principaux risques de l'IA générative"
+      },
+      "bullets": [
+        {
+          "de": "Datenleck (Data Leakage): Vertrauliche Eingaben, Geschäftsgeheimnisse oder Personendaten gelangen über Prompts, Trainingsdaten oder Log-Dateien nach aussen.",
+          "en": "Data leakage: confidential inputs, trade secrets or personal data escape via prompts, training data or log files.",
+          "it": "Fuga di dati (data leakage): input riservati, segreti aziendali o dati personali escono tramite prompt, dati di addestramento o file di log.",
+          "fr": "Fuite de données : des saisies confidentielles, des secrets d'affaires ou des données personnelles s'échappent via les requêtes, les données d'entraînement ou les journaux."
+        },
+        {
+          "de": "Prompt Injection: Manipulierte Eingaben oder versteckte Anweisungen in Dokumenten und Webseiten bringen das Modell dazu, Schutzregeln zu ignorieren oder unerwünschte Aktionen auszuführen.",
+          "en": "Prompt injection: manipulated inputs or hidden instructions in documents and web pages make the model ignore safety rules or perform unwanted actions.",
+          "it": "Prompt injection: input manipolati o istruzioni nascoste in documenti e pagine web spingono il modello a ignorare le regole di sicurezza o a compiere azioni indesiderate.",
+          "fr": "Injection de requête : des saisies manipulées ou des instructions cachées dans des documents et des pages web poussent le modèle à ignorer les règles de sécurité ou à exécuter des actions indésirables."
+        },
+        {
+          "de": "Modellmissbrauch (Model Misuse): Angreifer nutzen KI für Phishing, Schadcode oder Desinformation oder umgehen Sicherheitsfilter per Jailbreak.",
+          "en": "Model misuse: attackers use AI for phishing, malicious code or disinformation, or bypass safety filters through jailbreaks.",
+          "it": "Uso improprio del modello (model misuse): gli aggressori usano l'IA per phishing, codice dannoso o disinformazione, oppure aggirano i filtri di sicurezza con il jailbreak.",
+          "fr": "Usage abusif du modèle : les attaquants utilisent l'IA pour le hameçonnage, le code malveillant ou la désinformation, ou contournent les filtres de sécurité par jailbreak."
+        },
+        {
+          "de": "Halluzinationen: Das Modell erzeugt überzeugende, aber falsche Aussagen – ein Risiko für Entscheidungen ohne Prüfung.",
+          "en": "Hallucinations: the model produces convincing but false statements – a risk for decisions made without review.",
+          "it": "Allucinazioni: il modello genera affermazioni convincenti ma false, un rischio per decisioni prese senza verifica.",
+          "fr": "Hallucinations : le modèle produit des affirmations convaincantes mais fausses, un risque pour les décisions prises sans vérification."
+        },
+        {
+          "de": "Shadow AI: Mitarbeitende nutzen unautorisierte Tools und speisen dabei sensible Daten in unkontrollierte Dienste ein.",
+          "en": "Shadow AI: employees use unauthorised tools and feed sensitive data into uncontrolled services.",
+          "it": "Shadow AI: i collaboratori usano strumenti non autorizzati e immettono dati sensibili in servizi non controllati.",
+          "fr": "Shadow AI : les collaborateurs utilisent des outils non autorisés et transmettent des données sensibles à des services non contrôlés."
+        },
+        {
+          "de": "Lieferketten- und Modellrisiken: Kompromittierte Modelle, Plug-ins oder Trainingsdaten (Data Poisoning) schleusen Schwachstellen ein.",
+          "en": "Supply-chain and model risks: compromised models, plug-ins or training data (data poisoning) introduce vulnerabilities.",
+          "it": "Rischi di supply chain e di modello: modelli, plug-in o dati di addestramento compromessi (data poisoning) introducono vulnerabilità.",
+          "fr": "Risques de chaîne d'approvisionnement et de modèle : des modèles, extensions ou données d'entraînement compromis (empoisonnement de données) introduisent des vulnérabilités."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schutzmassnahmen: technisch und organisatorisch",
+        "en": "Safeguards: technical and organisational",
+        "it": "Misure di protezione: tecniche e organizzative",
+        "fr": "Mesures de protection : techniques et organisationnelles"
+      },
+      "paragraphs": [
+        {
+          "de": "Wirksame KI-Sicherheit ist mehrschichtig; keine Einzelmassnahme genügt. Technische Kontrollen und organisatorische Regeln greifen ineinander (Defense in Depth).",
+          "en": "Effective AI security is layered; no single measure is enough. Technical controls and organisational rules work together (defence in depth).",
+          "it": "Una sicurezza dell'IA efficace è stratificata; nessuna singola misura basta. Controlli tecnici e regole organizzative si integrano (difesa in profondità).",
+          "fr": "Une sécurité de l'IA efficace est multicouche ; aucune mesure isolée ne suffit. Les contrôles techniques et les règles organisationnelles se combinent (défense en profondeur)."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Datenminimierung und Klassifizierung: nur nötige Daten teilen, sensible Kategorien technisch sperren.",
+          "en": "Data minimisation and classification: share only necessary data, block sensitive categories technically.",
+          "it": "Minimizzazione e classificazione dei dati: condividere solo i dati necessari, bloccare tecnicamente le categorie sensibili.",
+          "fr": "Minimisation et classification des données : ne partager que le nécessaire, bloquer techniquement les catégories sensibles."
+        },
+        {
+          "de": "Zugriffs- und Rechtekonzept (Least Privilege, Zero-Trust) für Modelle, Daten und Agenten-Werkzeuge.",
+          "en": "Access and permission model (least privilege, zero-trust) for models, data and agent tools.",
+          "it": "Modello di accessi e permessi (privilegio minimo, zero-trust) per modelli, dati e strumenti degli agenti.",
+          "fr": "Modèle d'accès et de droits (moindre privilège, zero-trust) pour les modèles, les données et les outils des agents."
+        },
+        {
+          "de": "Eingabe- und Ausgabefilter (Guardrails) gegen Injection, Datenabfluss und toxische Inhalte.",
+          "en": "Input and output filters (guardrails) against injection, data leakage and toxic content.",
+          "it": "Filtri su input e output (guardrail) contro injection, fuga di dati e contenuti tossici.",
+          "fr": "Filtres d'entrée et de sortie (garde-fous) contre l'injection, les fuites de données et les contenus toxiques."
+        },
+        {
+          "de": "Retrieval-Augmented Generation mit geprüften Quellen statt blindem Modellwissen, plus Quellenangaben.",
+          "en": "Retrieval-augmented generation with vetted sources instead of blind model knowledge, plus citations.",
+          "it": "Retrieval-Augmented Generation con fonti verificate invece della conoscenza cieca del modello, con citazioni.",
+          "fr": "Génération augmentée par récupération (RAG) avec des sources vérifiées plutôt que la connaissance aveugle du modèle, avec citations."
+        },
+        {
+          "de": "Protokollierung, Monitoring und Anomalieerkennung; regelmässiges Red Teaming und Penetrationstests.",
+          "en": "Logging, monitoring and anomaly detection; regular red teaming and penetration testing.",
+          "it": "Registrazione, monitoraggio e rilevamento di anomalie; red teaming e test di penetrazione regolari.",
+          "fr": "Journalisation, surveillance et détection d'anomalies ; red teaming et tests d'intrusion réguliers."
+        },
+        {
+          "de": "Vertragliche Zusicherungen zu Datenverarbeitung, Standort und Kein-Training-auf-Kundendaten; wo nötig EU-/Schweiz-Hosting.",
+          "en": "Contractual assurances on data processing, location and no-training-on-customer-data; EU/Switzerland hosting where needed.",
+          "it": "Garanzie contrattuali su trattamento dei dati, ubicazione e nessun addestramento sui dati dei clienti; hosting UE/Svizzera dove necessario.",
+          "fr": "Garanties contractuelles sur le traitement des données, la localisation et l'absence d'entraînement sur les données clients ; hébergement UE/Suisse si nécessaire."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Menschliche Aufsicht als letzte Schicht",
+        "en": "Human oversight as the final layer",
+        "it": "La supervisione umana come ultimo livello",
+        "fr": "La supervision humaine comme dernière couche"
+      },
+      "paragraphs": [
+        {
+          "de": "Menschliche Aufsicht ist die letzte und wichtigste Sicherheitsschicht. Der EU AI Act verlangt sie für Hochrisiko-Systeme ausdrücklich, und auch ohne EU-Bezug ist sie gute Praxis. Entscheidend ist, dass Menschen KI-Ergebnisse verstehen, hinterfragen und übersteuern können.",
+          "en": "Human oversight is the final and most important layer of security. The EU AI Act explicitly requires it for high-risk systems, and it is good practice even without an EU link. The key is that people can understand, question and override AI outputs.",
+          "it": "La supervisione umana è l'ultimo e più importante livello di sicurezza. L'EU AI Act la richiede esplicitamente per i sistemi ad alto rischio ed è una buona prassi anche senza legami con l'UE. È essenziale che le persone possano comprendere, mettere in discussione e correggere i risultati dell'IA.",
+          "fr": "La supervision humaine est la dernière et la plus importante couche de sécurité. L'EU AI Act l'exige explicitement pour les systèmes à haut risque, et c'est une bonne pratique même sans lien avec l'UE. L'essentiel est que des personnes puissent comprendre, questionner et remplacer les résultats de l'IA."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Human-in-the-Loop: kritische Aktionen (Zahlungen, Rechtsauskünfte, medizinische Hinweise) werden vor Ausführung freigegeben.",
+          "en": "Human-in-the-loop: critical actions (payments, legal advice, medical guidance) are approved before execution.",
+          "it": "Human-in-the-loop: le azioni critiche (pagamenti, pareri legali, indicazioni mediche) sono approvate prima dell'esecuzione.",
+          "fr": "Humain dans la boucle : les actions critiques (paiements, conseils juridiques, indications médicales) sont validées avant exécution."
+        },
+        {
+          "de": "Klare Verantwortlichkeiten: Wer prüft, wer haftet, wer darf abschalten (Kill Switch).",
+          "en": "Clear accountability: who reviews, who is liable, who may shut it down (kill switch).",
+          "it": "Responsabilità chiare: chi controlla, chi risponde, chi può spegnere (kill switch).",
+          "fr": "Responsabilités claires : qui vérifie, qui répond, qui peut arrêter (kill switch)."
+        },
+        {
+          "de": "Schulung: Mitarbeitende erkennen Halluzinationen, Injection-Versuche und Datenschutzgrenzen.",
+          "en": "Training: employees recognise hallucinations, injection attempts and data-protection limits.",
+          "it": "Formazione: i collaboratori riconoscono allucinazioni, tentativi di injection e limiti di protezione dei dati.",
+          "fr": "Formation : les collaborateurs reconnaissent les hallucinations, les tentatives d'injection et les limites en matière de protection des données."
+        },
+        {
+          "de": "Transparenz gegenüber Betroffenen, wenn KI mit ihnen interagiert oder über sie entscheidet.",
+          "en": "Transparency towards individuals when AI interacts with them or decides about them.",
+          "it": "Trasparenza verso le persone quando l'IA interagisce con loro o decide sul loro conto.",
+          "fr": "Transparence envers les personnes lorsque l'IA interagit avec elles ou décide à leur sujet."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Rechtsrahmen und Standards: Schweiz und EU",
+        "en": "Legal framework and standards: Switzerland and EU",
+        "it": "Quadro giuridico e standard: Svizzera e UE",
+        "fr": "Cadre juridique et normes : Suisse et UE"
+      },
+      "paragraphs": [
+        {
+          "de": "In der Schweiz gibt es (noch) kein eigenes KI-Gesetz, doch bestehende Regeln greifen: Das revidierte Datenschutzgesetz (revDSG) verlangt Datensicherheit, Transparenz und gegebenenfalls eine Datenschutz-Folgenabschätzung. Der EDÖB überwacht die Einhaltung. Wer Personen in der EU bedient, unterliegt zusätzlich dem extraterritorialen EU AI Act, der risikobasierte Pflichten – bis hin zu Verboten – festlegt.",
+          "en": "Switzerland has no dedicated AI law (yet), but existing rules apply: the revised Federal Act on Data Protection (revised FADP) requires data security, transparency and, where relevant, a data protection impact assessment. The FDPIC monitors compliance. Organisations serving people in the EU are additionally subject to the extraterritorial EU AI Act, which sets risk-based obligations up to outright bans.",
+          "it": "La Svizzera non ha (ancora) una legge specifica sull'IA, ma si applicano le regole esistenti: la legge federale rivista sulla protezione dei dati (revLPD) richiede sicurezza dei dati, trasparenza e, se del caso, una valutazione d'impatto. L'IFPDT vigila sul rispetto. Chi serve persone nell'UE è inoltre soggetto all'EU AI Act extraterritoriale, che stabilisce obblighi basati sul rischio fino a veri e propri divieti.",
+          "fr": "La Suisse n'a pas (encore) de loi propre sur l'IA, mais les règles existantes s'appliquent : la loi fédérale révisée sur la protection des données (nLPD) exige la sécurité des données, la transparence et, le cas échéant, une analyse d'impact. Le PFPDT en surveille le respect. Les organisations servant des personnes dans l'UE relèvent en outre de l'EU AI Act extraterritorial, qui fixe des obligations fondées sur le risque, jusqu'à des interdictions."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "EU AI Act: risikobasiert, mit Pflichten zu Robustheit, Transparenz und menschlicher Aufsicht.",
+          "en": "EU AI Act: risk-based, with duties on robustness, transparency and human oversight.",
+          "it": "EU AI Act: basato sul rischio, con obblighi su robustezza, trasparenza e supervisione umana.",
+          "fr": "EU AI Act : fondé sur le risque, avec des obligations de robustesse, de transparence et de supervision humaine."
+        },
+        {
+          "de": "revDSG und EDÖB-Leitlinien: Datensicherheit und Betroffenenrechte in der Schweiz.",
+          "en": "Revised FADP and FDPIC guidance: data security and data-subject rights in Switzerland.",
+          "it": "revLPD e linee guida dell'IFPDT: sicurezza dei dati e diritti degli interessati in Svizzera.",
+          "fr": "nLPD et recommandations du PFPDT : sécurité des données et droits des personnes en Suisse."
+        },
+        {
+          "de": "ISO/IEC 42001: Managementsystem für verantwortungsvolle KI.",
+          "en": "ISO/IEC 42001: a management system for responsible AI.",
+          "it": "ISO/IEC 42001: sistema di gestione per un'IA responsabile.",
+          "fr": "ISO/IEC 42001 : système de management pour une IA responsable."
+        },
+        {
+          "de": "NIST AI Risk Management Framework: freiwilliger, weit anerkannter Steuerungsrahmen.",
+          "en": "NIST AI Risk Management Framework: a voluntary, widely recognised governance framework.",
+          "it": "NIST AI Risk Management Framework: quadro di governance volontario e ampiamente riconosciuto.",
+          "fr": "NIST AI Risk Management Framework : cadre de gouvernance volontaire et largement reconnu."
+        },
+        {
+          "de": "OWASP Top 10 für LLM-Anwendungen: konkrete Angriffs- und Schutzliste für Entwickler.",
+          "en": "OWASP Top 10 for LLM applications: a concrete list of attacks and defences for developers.",
+          "it": "OWASP Top 10 per le applicazioni LLM: elenco concreto di attacchi e difese per gli sviluppatori.",
+          "fr": "OWASP Top 10 pour les applications LLM : liste concrète d'attaques et de protections pour les développeurs."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "KI-Sicherheit einführen: ein pragmatischer Fahrplan",
+        "en": "Introducing AI security: a pragmatic roadmap",
+        "it": "Introdurre la sicurezza dell'IA: una roadmap pragmatica",
+        "fr": "Mettre en place la sécurité de l'IA : une feuille de route pragmatique"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Sicherheit lässt sich schrittweise aufbauen – auch in KMU ohne grosses Sicherheitsteam.",
+          "en": "AI security can be built step by step – even in SMEs without a large security team.",
+          "it": "La sicurezza dell'IA si costruisce passo dopo passo, anche nelle PMI senza un grande team di sicurezza.",
+          "fr": "La sécurité de l'IA se construit pas à pas, même dans les PME sans grande équipe de sécurité."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Inventar erstellen: Welche KI-Tools sind im Einsatz, mit welchen Daten?",
+          "en": "Build an inventory: which AI tools are in use, with what data?",
+          "it": "Creare un inventario: quali strumenti di IA sono in uso e con quali dati?",
+          "fr": "Établir un inventaire : quels outils d'IA sont utilisés, avec quelles données ?"
+        },
+        {
+          "de": "KI-Richtlinie verabschieden: erlaubte Tools, verbotene Datenarten, Meldewege.",
+          "en": "Adopt an AI policy: permitted tools, prohibited data types, reporting channels.",
+          "it": "Adottare una policy sull'IA: strumenti consentiti, tipi di dati vietati, canali di segnalazione.",
+          "fr": "Adopter une politique d'IA : outils autorisés, types de données interdits, canaux de signalement."
+        },
+        {
+          "de": "Datenklassen definieren und sensible Daten aus öffentlichen Diensten fernhalten.",
+          "en": "Define data classes and keep sensitive data out of public services.",
+          "it": "Definire le classi di dati e tenere i dati sensibili fuori dai servizi pubblici.",
+          "fr": "Définir des classes de données et tenir les données sensibles à l'écart des services publics."
+        },
+        {
+          "de": "Anbieter prüfen: Standort, Zertifizierungen, Training-Opt-out, Vertragslage.",
+          "en": "Vet providers: location, certifications, training opt-out, contractual terms.",
+          "it": "Valutare i fornitori: ubicazione, certificazioni, opt-out dall'addestramento, condizioni contrattuali.",
+          "fr": "Évaluer les fournisseurs : localisation, certifications, exclusion de l'entraînement, conditions contractuelles."
+        },
+        {
+          "de": "Pilot mit Guardrails und Logging starten, dann kontrolliert ausrollen.",
+          "en": "Start a pilot with guardrails and logging, then roll out in a controlled way.",
+          "it": "Avviare un progetto pilota con guardrail e logging, poi distribuire in modo controllato.",
+          "fr": "Lancer un pilote avec garde-fous et journalisation, puis déployer de façon contrôlée."
+        },
+        {
+          "de": "Regelmässig testen, schulen und an neue Bedrohungen anpassen.",
+          "en": "Test, train and adapt to new threats on a regular basis.",
+          "it": "Testare, formare e adattarsi alle nuove minacce con regolarità.",
+          "fr": "Tester, former et s'adapter régulièrement aux nouvelles menaces."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen KI-Sicherheit und Datenschutz?",
+        "en": "What is the difference between AI security and data protection?",
+        "it": "Qual è la differenza tra sicurezza dell'IA e protezione dei dati?",
+        "fr": "Quelle est la différence entre sécurité de l'IA et protection des données ?"
+      },
+      "a": {
+        "de": "KI-Sicherheit schützt das gesamte System vor Angriffen und Fehlfunktionen. Datenschutz (in der Schweiz: revDSG) regelt speziell den Umgang mit Personendaten. Sie überschneiden sich stark: Ein Datenleck ist zugleich ein Sicherheits- und ein Datenschutzvorfall, weshalb beide Disziplinen zusammen betrachtet werden sollten.",
+        "en": "AI security protects the entire system from attacks and malfunctions. Data protection (in Switzerland, the revised FADP) specifically governs the handling of personal data. They overlap heavily: a data leak is both a security incident and a data-protection incident, so the two disciplines should be considered together.",
+        "it": "La sicurezza dell'IA protegge l'intero sistema da attacchi e malfunzionamenti. La protezione dei dati (in Svizzera la revLPD) disciplina in particolare il trattamento dei dati personali. Si sovrappongono molto: una fuga di dati è sia un incidente di sicurezza sia di protezione dei dati, perciò vanno considerate insieme.",
+        "fr": "La sécurité de l'IA protège l'ensemble du système contre les attaques et les dysfonctionnements. La protection des données (en Suisse, la nLPD) régit spécifiquement le traitement des données personnelles. Elles se recoupent fortement : une fuite de données est à la fois un incident de sécurité et de protection des données, d'où l'intérêt de les traiter ensemble."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist Prompt Injection?",
+        "en": "What is prompt injection?",
+        "it": "Che cos'è la prompt injection?",
+        "fr": "Qu'est-ce que l'injection de requête ?"
+      },
+      "a": {
+        "de": "Prompt Injection ist ein Angriff, bei dem manipulierte Anweisungen – oft versteckt in E-Mails, Dokumenten oder Webseiten – ein Sprachmodell dazu bringen, seine Schutzregeln zu missachten, vertrauliche Daten preiszugeben oder unerwünschte Aktionen auszuführen. Sie gilt als eines der grössten Risiken bei KI-Agenten und steht in der OWASP-Liste für LLM-Anwendungen ganz oben.",
+        "en": "Prompt injection is an attack in which manipulated instructions – often hidden in emails, documents or web pages – make a language model disregard its safety rules, reveal confidential data or perform unwanted actions. It is considered one of the biggest risks for AI agents and tops the OWASP list for LLM applications.",
+        "it": "La prompt injection è un attacco in cui istruzioni manipolate – spesso nascoste in e-mail, documenti o pagine web – inducono un modello linguistico a ignorare le regole di sicurezza, rivelare dati riservati o compiere azioni indesiderate. È considerata uno dei maggiori rischi per gli agenti di IA ed è in cima all'elenco OWASP per le applicazioni LLM.",
+        "fr": "L'injection de requête est une attaque où des instructions manipulées – souvent cachées dans des e-mails, documents ou pages web – amènent un modèle de langage à ignorer ses règles de sécurité, divulguer des données confidentielles ou exécuter des actions indésirables. C'est l'un des plus grands risques pour les agents d'IA et il figure en tête de la liste OWASP pour les applications LLM."
+      }
+    },
+    {
+      "q": {
+        "de": "Sind meine Eingaben in ChatGPT oder Claude vertraulich?",
+        "en": "Are my inputs to ChatGPT or Claude confidential?",
+        "it": "I miei input in ChatGPT o Claude sono riservati?",
+        "fr": "Mes saisies dans ChatGPT ou Claude sont-elles confidentielles ?"
+      },
+      "a": {
+        "de": "Das hängt vom Anbieter, Tarif und den Einstellungen ab. Business- und Enterprise-Angebote sichern in der Regel zu, Eingaben nicht zum Training zu verwenden; kostenlose Varianten oft nicht. Prüfen Sie die aktuellen Bedingungen des Anbieters, aktivieren Sie ein Training-Opt-out und geben Sie ohne vertragliche Grundlage keine Geschäftsgeheimnisse oder Personendaten ein.",
+        "en": "It depends on the provider, plan and settings. Business and enterprise offerings usually commit not to use inputs for training; free tiers often do not. Check the provider's current terms, enable a training opt-out and do not enter trade secrets or personal data without a contractual basis.",
+        "it": "Dipende dal fornitore, dal piano e dalle impostazioni. Le offerte business ed enterprise di norma si impegnano a non usare gli input per l'addestramento; le versioni gratuite spesso no. Verificate le condizioni attuali del fornitore, attivate l'opt-out dall'addestramento e non inserite segreti aziendali o dati personali senza una base contrattuale.",
+        "fr": "Cela dépend du fournisseur, de l'offre et des réglages. Les offres business et entreprise s'engagent généralement à ne pas utiliser les saisies pour l'entraînement ; les versions gratuites souvent non. Vérifiez les conditions actuelles du fournisseur, activez l'exclusion de l'entraînement et n'entrez pas de secrets d'affaires ou de données personnelles sans base contractuelle."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Standards helfen bei der KI-Sicherheit?",
+        "en": "Which standards help with AI security?",
+        "it": "Quali standard aiutano nella sicurezza dell'IA?",
+        "fr": "Quelles normes aident à la sécurité de l'IA ?"
+      },
+      "a": {
+        "de": "Für die Steuerung bieten sich das NIST AI Risk Management Framework und die zertifizierbare Norm ISO/IEC 42001 an. Für die technische Umsetzung ist die OWASP Top 10 für LLM-Anwendungen sehr praxisnah. In der Schweiz kommen die Vorgaben des revDSG und Empfehlungen des EDÖB hinzu, bei EU-Bezug der EU AI Act.",
+        "en": "For governance, the NIST AI Risk Management Framework and the certifiable ISO/IEC 42001 standard are useful. For technical implementation, the OWASP Top 10 for LLM applications is very practical. In Switzerland the revised FADP and FDPIC recommendations add to this, and the EU AI Act where the EU is involved.",
+        "it": "Per la governance sono utili il NIST AI Risk Management Framework e la norma certificabile ISO/IEC 42001. Per l'attuazione tecnica la OWASP Top 10 per le applicazioni LLM è molto concreta. In Svizzera si aggiungono la revLPD e le raccomandazioni dell'IFPDT e, in caso di legami con l'UE, l'EU AI Act.",
+        "fr": "Pour la gouvernance, le NIST AI Risk Management Framework et la norme certifiable ISO/IEC 42001 sont utiles. Pour la mise en œuvre technique, le OWASP Top 10 pour les applications LLM est très concret. En Suisse s'ajoutent la nLPD et les recommandations du PFPDT, et l'EU AI Act en cas de lien avec l'UE."
+      }
+    },
+    {
+      "q": {
+        "de": "Braucht mein KMU eine KI-Richtlinie?",
+        "en": "Does my SME need an AI policy?",
+        "it": "La mia PMI ha bisogno di una policy sull'IA?",
+        "fr": "Ma PME a-t-elle besoin d'une politique d'IA ?"
+      },
+      "a": {
+        "de": "Ja. Schon eine kurze, klare Richtlinie verhindert Shadow AI und Datenlecks: Sie legt erlaubte Tools, verbotene Datenarten, Freigabeprozesse und Meldewege fest. Wichtiger als Umfang ist, dass sie bekannt, verständlich und aktuell ist – und durch Schulung im Alltag verankert wird.",
+        "en": "Yes. Even a short, clear policy prevents shadow AI and data leaks: it defines permitted tools, prohibited data types, approval processes and reporting channels. What matters more than length is that it is known, understandable and up to date – and embedded in daily work through training.",
+        "it": "Sì. Anche una policy breve e chiara previene la shadow AI e le fughe di dati: definisce strumenti consentiti, tipi di dati vietati, processi di approvazione e canali di segnalazione. Più della lunghezza conta che sia conosciuta, comprensibile e aggiornata, e radicata nel lavoro quotidiano tramite formazione.",
+        "fr": "Oui. Même une politique courte et claire prévient la shadow AI et les fuites de données : elle définit les outils autorisés, les types de données interdits, les processus de validation et les canaux de signalement. Plus que la longueur, l'essentiel est qu'elle soit connue, compréhensible et à jour, et ancrée au quotidien par la formation."
+      }
+    },
+    {
+      "q": {
+        "de": "Was verlangt der EU AI Act in Bezug auf Sicherheit?",
+        "en": "What does the EU AI Act require regarding security?",
+        "it": "Cosa richiede l'EU AI Act in materia di sicurezza?",
+        "fr": "Qu'exige l'EU AI Act en matière de sécurité ?"
+      },
+      "a": {
+        "de": "Der EU AI Act ist risikobasiert: Bestimmte Anwendungen sind verboten, Hochrisiko-Systeme müssen unter anderem Robustheit, Genauigkeit, Cybersicherheit, Protokollierung und wirksame menschliche Aufsicht nachweisen. Er wirkt extraterritorial und betrifft daher auch Schweizer Anbieter, die den EU-Markt bedienen; die Pflichten gelten gestaffelt.",
+        "en": "The EU AI Act is risk-based: certain uses are banned, and high-risk systems must demonstrate, among other things, robustness, accuracy, cybersecurity, logging and effective human oversight. It applies extraterritorially and therefore also affects Swiss providers serving the EU market; the obligations phase in over time.",
+        "it": "L'EU AI Act è basato sul rischio: alcuni usi sono vietati e i sistemi ad alto rischio devono dimostrare, tra l'altro, robustezza, accuratezza, cibersicurezza, registrazione e una supervisione umana efficace. Ha effetto extraterritoriale e riguarda quindi anche i fornitori svizzeri che servono il mercato UE; gli obblighi entrano in vigore in modo scaglionato.",
+        "fr": "L'EU AI Act est fondé sur le risque : certains usages sont interdits et les systèmes à haut risque doivent démontrer, entre autres, robustesse, exactitude, cybersécurité, journalisation et supervision humaine effective. Il s'applique de façon extraterritoriale et concerne donc aussi les fournisseurs suisses servant le marché de l'UE ; les obligations entrent en vigueur de manière échelonnée."
+      }
+    }
+  ],
+  "keyEntities": [
+    "KI-Sicherheit",
+    "Prompt Injection",
+    "Data Leakage / Datenleck",
+    "Model Misuse",
+    "Jailbreak",
+    "Halluzination",
+    "Shadow AI",
+    "Data Poisoning",
+    "revDSG / nDSG",
+    "EDÖB",
+    "EU AI Act",
+    "OWASP Top 10 für LLM-Anwendungen",
+    "NIST AI Risk Management Framework",
+    "ISO/IEC 42001",
+    "Human-in-the-Loop",
+    "Retrieval-Augmented Generation"
+  ]
+}

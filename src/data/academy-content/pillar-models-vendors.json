@@ -1,0 +1,414 @@
+{
+  "id": "pillar-models-vendors",
+  "cluster": "models-vendors",
+  "type": "pillar",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "ki-modelle-anbieter-vergleich",
+    "en": "ai-models-vendors-comparison",
+    "it": "modelli-ia-fornitori-confronto",
+    "fr": "modeles-ia-fournisseurs-comparatif"
+  },
+  "title": {
+    "de": "KI-Modelle & Anbieter im grossen Vergleich | Weissmann AI",
+    "en": "AI Models & Vendors Compared: How to Choose | Weissmann AI",
+    "it": "Modelli IA e fornitori a confronto: la guida | Weissmann AI",
+    "fr": "Modeles d'IA et fournisseurs: le comparatif | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "OpenAI, Anthropic, Google, Microsoft und Perplexity im neutralen Vergleich: Staerken, Unterschiede und wie Sie das richtige KI-Modell fuer die Schweiz waehlen.",
+    "en": "OpenAI, Anthropic, Google, Microsoft and Perplexity compared: strengths, differences and how to choose the right AI model, with a Swiss compliance lens.",
+    "it": "OpenAI, Anthropic, Google, Microsoft e Perplexity a confronto: punti di forza, differenze e come scegliere il modello IA giusto, con focus svizzero.",
+    "fr": "OpenAI, Anthropic, Google, Microsoft et Perplexity compares: forces, differences et comment choisir le bon modele d'IA, avec un regard suisse."
+  },
+  "kicker": {
+    "de": "Modelle & Anbieter",
+    "en": "Models & Vendors",
+    "it": "Modelli e fornitori",
+    "fr": "Modeles et fournisseurs"
+  },
+  "h1": {
+    "de": "Welches KI-Modell und welcher Anbieter passt zu Ihnen?",
+    "en": "Which AI model and vendor is right for you?",
+    "it": "Quale modello IA e quale fornitore fanno per te?",
+    "fr": "Quel modele d'IA et quel fournisseur choisir?"
+  },
+  "answerFirst": {
+    "de": "Die fuenf wichtigsten KI-Anbieter sind OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), Microsoft (Copilot) und Perplexity. Kein Modell ist pauschal das beste: Die Wahl haengt vom Anwendungsfall, der Integration in bestehende Tools, den Kosten und, fuer Schweizer Organisationen zentral, von Datenschutz und Compliance ab. Wer mehrere Modelle testet und nach Aufgabe kombiniert, erzielt meist die besten Resultate.",
+    "en": "The five most important AI vendors are OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), Microsoft (Copilot) and Perplexity. No single model is best for everything: the choice depends on your use case, how it integrates with existing tools, cost and, crucially for Swiss organisations, data protection and compliance. Testing several models and combining them by task usually yields the best results.",
+    "it": "I cinque principali fornitori di IA sono OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), Microsoft (Copilot) e Perplexity. Nessun modello e il migliore in assoluto: la scelta dipende dal caso d'uso, dall'integrazione con gli strumenti esistenti, dai costi e, aspetto centrale per le organizzazioni svizzere, dalla protezione dei dati e dalla conformita. Testare piu modelli e combinarli per compito offre di solito i risultati migliori.",
+    "fr": "Les cinq principaux fournisseurs d'IA sont OpenAI (ChatGPT), Anthropic (Claude), Google (Gemini), Microsoft (Copilot) et Perplexity. Aucun modele n'est le meilleur pour tout: le choix depend du cas d'usage, de l'integration aux outils existants, des couts et, point central pour les organisations suisses, de la protection des donnees et de la conformite. Tester plusieurs modeles et les combiner par tache donne souvent les meilleurs resultats."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Die grossen KI-Anbieter im Ueberblick",
+        "en": "The major AI vendors at a glance",
+        "it": "I principali fornitori di IA in sintesi",
+        "fr": "Les grands fournisseurs d'IA en un coup d'oeil"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Markt fuer generative KI wird von wenigen grossen Anbietern gepraegt, die sich in Ausrichtung, Oekosystem und Staerken unterscheiden. Die folgende Uebersicht ist bewusst neutral und beschreibt die typischen Profile, ohne einen Anbieter zu bevorzugen.",
+          "en": "The generative-AI market is shaped by a handful of large vendors that differ in focus, ecosystem and strengths. The overview below is deliberately neutral and describes the typical profiles without favouring any single provider.",
+          "it": "Il mercato dell'IA generativa e definito da pochi grandi fornitori che si distinguono per orientamento, ecosistema e punti di forza. La panoramica seguente e volutamente neutrale e descrive i profili tipici senza privilegiare alcun fornitore.",
+          "fr": "Le marche de l'IA generative est structure par quelques grands fournisseurs qui different par leur orientation, leur ecosysteme et leurs forces. L'apercu ci-dessous est volontairement neutre et decrit les profils types sans favoriser aucun fournisseur."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "OpenAI / ChatGPT: Breit einsetzbarer Allrounder mit grossem Oekosystem, Sprach- und Bildfunktionen sowie API; oft der Standard-Einstieg fuer Text, Code und multimodale Aufgaben.",
+          "en": "OpenAI / ChatGPT: Versatile all-rounder with a large ecosystem, voice and image features and a broad API; often the default entry point for text, code and multimodal tasks.",
+          "it": "OpenAI / ChatGPT: tuttofare versatile con un ampio ecosistema, funzioni vocali e di immagine e API estese; spesso il punto di ingresso predefinito per testo, codice e compiti multimodali.",
+          "fr": "OpenAI / ChatGPT: polyvalent avec un vaste ecosysteme, des fonctions vocales et d'image et une API etendue; souvent le point d'entree par defaut pour le texte, le code et les taches multimodales."
+        },
+        {
+          "de": "Anthropic / Claude: Fokus auf zuverlaessige, sicherheitsorientierte Modelle mit grossem Kontextfenster; beliebt fuer lange Dokumente, Analyse, strukturiertes Arbeiten und Coding.",
+          "en": "Anthropic / Claude: Focus on reliable, safety-oriented models with a large context window; popular for long documents, analysis, structured work and coding.",
+          "it": "Anthropic / Claude: focus su modelli affidabili e orientati alla sicurezza con un'ampia finestra di contesto; apprezzati per documenti lunghi, analisi, lavoro strutturato e programmazione.",
+          "fr": "Anthropic / Claude: axe sur des modeles fiables et orientes securite avec une grande fenetre de contexte; apprecie pour les longs documents, l'analyse, le travail structure et le code."
+        },
+        {
+          "de": "Google / Gemini: Tief in Google Workspace, Android und die Google-Suche integriert; stark bei Multimodalitaet und der Anbindung an das Google-Oekosystem.",
+          "en": "Google / Gemini: Deeply integrated into Google Workspace, Android and Google Search; strong on multimodality and connection to the Google ecosystem.",
+          "it": "Google / Gemini: profondamente integrato in Google Workspace, Android e la Ricerca Google; forte nella multimodalita e nel collegamento all'ecosistema Google.",
+          "fr": "Google / Gemini: profondement integre a Google Workspace, Android et la recherche Google; solide en multimodalite et en connexion a l'ecosysteme Google."
+        },
+        {
+          "de": "Microsoft / Copilot: In Microsoft 365, Windows und GitHub eingebettet; bringt KI direkt in bestehende Buero- und Entwickler-Workflows, teils auf Basis von OpenAI-Modellen.",
+          "en": "Microsoft / Copilot: Embedded in Microsoft 365, Windows and GitHub; brings AI directly into existing office and developer workflows, partly built on OpenAI models.",
+          "it": "Microsoft / Copilot: integrato in Microsoft 365, Windows e GitHub; porta l'IA direttamente nei flussi di lavoro d'ufficio e di sviluppo esistenti, in parte basato su modelli OpenAI.",
+          "fr": "Microsoft / Copilot: integre a Microsoft 365, Windows et GitHub; amene l'IA directement dans les flux de travail bureautiques et de developpement existants, en partie sur la base de modeles OpenAI."
+        },
+        {
+          "de": "Perplexity: Antwort- und Recherchemaschine mit Fokus auf Quellenangaben; kombiniert Websuche mit KI-Zusammenfassungen statt reiner Chat-Konversation.",
+          "en": "Perplexity: Answer and research engine focused on source citations; combines web search with AI summaries rather than pure chat conversation.",
+          "it": "Perplexity: motore di risposta e ricerca incentrato sulle citazioni delle fonti; combina la ricerca web con riassunti IA anziche pura conversazione in chat.",
+          "fr": "Perplexity: moteur de reponse et de recherche axe sur les citations de sources; combine la recherche web avec des resumes d'IA plutot qu'une simple conversation."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wie sich die Modelle technisch unterscheiden",
+        "en": "How the models differ technically",
+        "it": "Come si differenziano i modelli sul piano tecnico",
+        "fr": "Comment les modeles different techniquement"
+      },
+      "paragraphs": [
+        {
+          "de": "Hinter den Marken stehen ganze Modellfamilien, die laufend aktualisiert werden. Statt sich an einzelnen Versionsnummern festzuhalten, lohnt es sich, die entscheidenden Vergleichsdimensionen zu verstehen.",
+          "en": "Behind the brands sit entire model families that are updated continuously. Rather than fixating on individual version numbers, it pays to understand the dimensions that actually matter when comparing them.",
+          "it": "Dietro i marchi ci sono intere famiglie di modelli aggiornate di continuo. Invece di fissarsi sui singoli numeri di versione, conviene comprendere le dimensioni di confronto che contano davvero.",
+          "fr": "Derriere les marques se trouvent des familles entieres de modeles mises a jour en continu. Plutot que de se focaliser sur les numeros de version, mieux vaut comprendre les criteres de comparaison qui comptent vraiment."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Denkleistung (Reasoning): Wie gut ein Modell mehrstufige Aufgaben, Logik und komplexe Anweisungen bewaeltigt; sogenannte Reasoning-Modelle rechnen laenger fuer schwierige Probleme.",
+          "en": "Reasoning: How well a model handles multi-step tasks, logic and complex instructions; dedicated reasoning models spend more compute on harder problems.",
+          "it": "Ragionamento: quanto bene un modello gestisce compiti a piu passaggi, logica e istruzioni complesse; i modelli di ragionamento dedicati impiegano piu calcolo sui problemi difficili.",
+          "fr": "Raisonnement: la capacite d'un modele a gerer des taches en plusieurs etapes, la logique et des consignes complexes; les modeles de raisonnement dedies calculent plus longtemps sur les problemes difficiles."
+        },
+        {
+          "de": "Kontextfenster: Wie viel Text (Dokumente, Code, Verlauf) ein Modell auf einmal verarbeiten kann. Grosse Kontextfenster helfen bei langen Vertraegen, Berichten oder Codebasen.",
+          "en": "Context window: How much text (documents, code, history) a model can process at once. Large context windows help with long contracts, reports or codebases.",
+          "it": "Finestra di contesto: quanto testo (documenti, codice, cronologia) un modello puo elaborare in una volta. Finestre ampie aiutano con contratti lunghi, report o basi di codice.",
+          "fr": "Fenetre de contexte: la quantite de texte (documents, code, historique) qu'un modele traite en une fois. De grandes fenetres aident pour les longs contrats, rapports ou bases de code."
+        },
+        {
+          "de": "Multimodalitaet: Ob ein Modell neben Text auch Bilder, Audio, Video oder Dateien versteht und erzeugt, was fuer viele praktische Einsaetze entscheidend ist.",
+          "en": "Multimodality: Whether a model understands and generates not just text but also images, audio, video or files, which is decisive for many practical use cases.",
+          "it": "Multimodalita: se un modello comprende e genera non solo testo ma anche immagini, audio, video o file, aspetto decisivo per molti usi pratici.",
+          "fr": "Multimodalite: la capacite d'un modele a comprendre et generer non seulement du texte mais aussi des images, de l'audio, de la video ou des fichiers, decisive pour de nombreux usages."
+        },
+        {
+          "de": "Werkzeuge und Agenten: Ob ein Modell externe Tools, Websuche, Code-Ausfuehrung oder Unternehmensdaten anbinden und mehrstufige Aufgaben teilautonom erledigen kann.",
+          "en": "Tools and agents: Whether a model can connect to external tools, web search, code execution or business data and complete multi-step tasks semi-autonomously.",
+          "it": "Strumenti e agenti: se un modello puo collegarsi a strumenti esterni, ricerca web, esecuzione di codice o dati aziendali e svolgere compiti a piu passaggi in modo semi-autonomo.",
+          "fr": "Outils et agents: la capacite d'un modele a se connecter a des outils externes, a la recherche web, a l'execution de code ou aux donnees d'entreprise et a accomplir des taches en plusieurs etapes de facon semi-autonome."
+        },
+        {
+          "de": "Geschwindigkeit und Kosten: Grosse Modelle sind faehiger, aber langsamer und teurer; kleinere oder schnellere Varianten reichen fuer viele Routineaufgaben. Aktuelle Preise beim jeweiligen Anbieter pruefen.",
+          "en": "Speed and cost: Larger models are more capable but slower and pricier; smaller or faster variants suffice for many routine tasks. Check current pricing with each provider.",
+          "it": "Velocita e costi: i modelli grandi sono piu capaci ma piu lenti e costosi; varianti piu piccole o veloci bastano per molti compiti di routine. Verificare i prezzi attuali presso ciascun fornitore.",
+          "fr": "Vitesse et cout: les grands modeles sont plus performants mais plus lents et plus chers; des variantes plus petites ou rapides suffisent pour de nombreuses taches courantes. Verifiez les tarifs actuels aupres de chaque fournisseur."
+        },
+        {
+          "de": "Offen vs. geschlossen: Neben geschlossenen Anbietermodellen gibt es offene bzw. offen gewichtete Modelle (etwa Llama, Mistral oder das Schweizer Modell Apertus von ETH Zuerich und EPFL), die sich selbst hosten lassen, mehr Kontrolle bieten, aber eigenes Know-how erfordern.",
+          "en": "Open vs. closed: Beyond closed vendor models there are open or open-weight models (such as Llama, Mistral or the Swiss Apertus model from ETH Zurich and EPFL) that can be self-hosted, offer more control but require in-house expertise.",
+          "it": "Aperti vs. chiusi: oltre ai modelli chiusi dei fornitori esistono modelli aperti o a pesi aperti (come Llama, Mistral o il modello svizzero Apertus di ETH Zurigo ed EPFL) che possono essere ospitati internamente, offrono piu controllo ma richiedono competenze interne.",
+          "fr": "Ouverts vs. fermes: au-dela des modeles fermes des fournisseurs existent des modeles ouverts ou a poids ouverts (comme Llama, Mistral ou le modele suisse Apertus de l'ETH Zurich et de l'EPFL) qui peuvent etre heberges en interne, offrent plus de controle mais exigent un savoir-faire propre."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "So waehlen Sie das passende Modell",
+        "en": "How to choose the right model",
+        "it": "Come scegliere il modello giusto",
+        "fr": "Comment choisir le bon modele"
+      },
+      "paragraphs": [
+        {
+          "de": "Statt nach dem vermeintlich besten Modell zu suchen, gehen Sie strukturiert vom Bedarf aus. Die folgende Reihenfolge hat sich in der Praxis bewaehrt.",
+          "en": "Instead of hunting for the supposedly best model, work structurally from your needs. The following order has proven useful in practice.",
+          "it": "Invece di cercare il presunto modello migliore, procedi in modo strutturato partendo dalle esigenze. Il seguente ordine si e dimostrato utile nella pratica.",
+          "fr": "Plutot que de chercher le modele soi-disant meilleur, partez de vos besoins de facon structuree. L'ordre suivant a fait ses preuves dans la pratique."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Anwendungsfall zuerst: Definieren Sie die konkrete Aufgabe (Recherche, Texterstellung, Coding, Kundenservice, Datenanalyse) und die geforderte Qualitaet, bevor Sie ein Modell waehlen.",
+          "en": "Use case first: Define the concrete task (research, writing, coding, customer service, data analysis) and the required quality before picking a model.",
+          "it": "Prima il caso d'uso: definisci il compito concreto (ricerca, scrittura, programmazione, assistenza clienti, analisi dati) e la qualita richiesta prima di scegliere un modello.",
+          "fr": "Le cas d'usage d'abord: definissez la tache concrete (recherche, redaction, code, service client, analyse de donnees) et la qualite requise avant de choisir un modele."
+        },
+        {
+          "de": "Integration: Ein Modell, das sich in Ihre bestehenden Tools (Microsoft 365, Google Workspace, CRM, Entwicklungsumgebung) einfuegt, spart Reibung und Einarbeitung.",
+          "en": "Integration: A model that fits into your existing tools (Microsoft 365, Google Workspace, CRM, development environment) saves friction and onboarding.",
+          "it": "Integrazione: un modello che si inserisce nei tuoi strumenti esistenti (Microsoft 365, Google Workspace, CRM, ambiente di sviluppo) riduce attriti e formazione.",
+          "fr": "Integration: un modele qui s'insere dans vos outils existants (Microsoft 365, Google Workspace, CRM, environnement de developpement) reduit les frictions et la prise en main."
+        },
+        {
+          "de": "Datenschutz: Klaeren Sie, welche Daten verarbeitet werden duerfen, ob ein Auftragsbearbeitungsvertrag vorliegt und ob Eingaben zum Modelltraining genutzt werden. Fuer sensible Daten sind Business- oder Enterprise-Tarife meist Pflicht.",
+          "en": "Data protection: Clarify which data may be processed, whether a data-processing agreement is in place and whether inputs are used for model training. For sensitive data, business or enterprise plans are usually mandatory.",
+          "it": "Protezione dei dati: chiarisci quali dati possono essere trattati, se esiste un contratto di trattamento dei dati e se gli input vengono usati per l'addestramento. Per i dati sensibili i piani business o enterprise sono di solito obbligatori.",
+          "fr": "Protection des donnees: clarifiez quelles donnees peuvent etre traitees, l'existence d'un contrat de sous-traitance et si les saisies servent a l'entrainement. Pour les donnees sensibles, les offres business ou enterprise sont generalement indispensables."
+        },
+        {
+          "de": "Kosten und Skalierung: Rechnen Sie mit realistischen Nutzungsmengen und pruefen Sie die aktuellen Preise beim Anbieter; oft mischt man teure Modelle fuer Anspruchsvolles mit guenstigen fuer Routine.",
+          "en": "Cost and scaling: Estimate realistic usage volumes and check the provider's current pricing; teams often mix pricier models for demanding work with cheaper ones for routine tasks.",
+          "it": "Costi e scalabilita: stima volumi d'uso realistici e verifica i prezzi attuali del fornitore; spesso si combinano modelli costosi per attivita impegnative con modelli economici per la routine.",
+          "fr": "Cout et mise a l'echelle: estimez des volumes d'usage realistes et verifiez les tarifs actuels du fournisseur; on combine souvent des modeles couteux pour les taches exigeantes avec des modeles bon marche pour la routine."
+        },
+        {
+          "de": "Selbst testen: Vergleichen Sie Kandidaten mit Ihren eigenen, typischen Aufgaben (einem kleinen Testset), nicht nur mit oeffentlichen Rankings. Qualitaet ist aufgabenspezifisch.",
+          "en": "Test it yourself: Compare candidates on your own typical tasks (a small test set), not just on public rankings. Quality is task-specific.",
+          "it": "Testa in prima persona: confronta i candidati sui tuoi compiti tipici (un piccolo set di prova), non solo sulle classifiche pubbliche. La qualita dipende dal compito.",
+          "fr": "Testez vous-meme: comparez les candidats sur vos taches types (un petit jeu de test), pas seulement sur les classements publics. La qualite depend de la tache."
+        },
+        {
+          "de": "Lock-in vermeiden: Achten Sie auf offene Schnittstellen und die Moeglichkeit, Anbieter zu wechseln oder zu kombinieren, damit Sie nicht von einem einzigen Modell abhaengig werden.",
+          "en": "Avoid lock-in: Favour open interfaces and the ability to switch or combine vendors so you do not become dependent on a single model.",
+          "it": "Evita il lock-in: privilegia interfacce aperte e la possibilita di cambiare o combinare fornitori per non dipendere da un unico modello.",
+          "fr": "Evitez le verrouillage: privilegiez des interfaces ouvertes et la possibilite de changer ou combiner les fournisseurs afin de ne pas dependre d'un seul modele."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz und Compliance in der Schweiz",
+        "en": "Data protection and compliance in Switzerland",
+        "it": "Protezione dei dati e conformita in Svizzera",
+        "fr": "Protection des donnees et conformite en Suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Fuer Schweizer Organisationen gilt das revidierte Datenschutzgesetz (revDSG/nFADP), ueberwacht durch den Eidgenoessischen Datenschutz- und Oeffentlichkeitsbeauftragten (EDOEB). Personendaten duerfen nur mit ausreichender Rechtsgrundlage und Transparenz in KI-Dienste fliessen; besondere Vorsicht gilt bei besonders schuetzenswerten Daten.",
+          "en": "Swiss organisations are governed by the revised Data Protection Act (revDSG/nFADP), overseen by the Federal Data Protection and Information Commissioner (EDOEB). Personal data may only flow into AI services with a sufficient legal basis and transparency; particular care applies to sensitive data.",
+          "it": "Le organizzazioni svizzere sono soggette alla legge riveduta sulla protezione dei dati (revDSG/nFADP), vigilata dall'Incaricato federale della protezione dei dati e della trasparenza (IFPDT/EDOEB). I dati personali possono confluire nei servizi IA solo con base giuridica sufficiente e trasparenza; massima cautela per i dati degni di particolare protezione.",
+          "fr": "Les organisations suisses sont soumises a la loi revisee sur la protection des donnees (revDSG/nFADP), surveillee par le Prepose federal a la protection des donnees et a la transparence (PFPDT/EDOEB). Les donnees personnelles ne peuvent alimenter les services d'IA qu'avec une base legale suffisante et de la transparence; une prudence particuliere s'impose pour les donnees sensibles."
+        },
+        {
+          "de": "Wer Personen in der EU bearbeitet oder KI-Systeme in der EU anbietet, kann zusaetzlich unter die EU-Datenschutz-Grundverordnung und den EU AI Act fallen; beide wirken extraterritorial. Der EU AI Act stuft KI-Anwendungen nach Risiko ein und bringt gestaffelte Pflichten mit sich.",
+          "en": "Anyone processing individuals in the EU or offering AI systems in the EU may additionally fall under the EU General Data Protection Regulation and the EU AI Act; both apply extraterritorially. The EU AI Act classifies AI applications by risk and introduces staggered obligations.",
+          "it": "Chi tratta persone nell'UE o offre sistemi IA nell'UE puo rientrare anche nel Regolamento generale UE sulla protezione dei dati e nell'EU AI Act; entrambi hanno effetto extraterritoriale. L'EU AI Act classifica le applicazioni IA in base al rischio e introduce obblighi graduati.",
+          "fr": "Quiconque traite des personnes dans l'UE ou propose des systemes d'IA dans l'UE peut aussi relever du Reglement general europeen sur la protection des donnees et de l'EU AI Act; les deux s'appliquent de maniere extraterritoriale. L'EU AI Act classe les applications d'IA par risque et introduit des obligations graduees."
+        },
+        {
+          "de": "Praktisch heisst das: Nutzen Sie fuer geschaeftliche Daten Business- oder Enterprise-Angebote mit Auftragsbearbeitungsvertrag, in denen Eingaben nicht zum Training verwendet werden. Achten Sie auf Datenresidenz (wo Daten gespeichert und verarbeitet werden) und dokumentieren Sie Zweck, Rechtsgrundlage und Aufbewahrung.",
+          "en": "In practice: for business data use business or enterprise offerings with a data-processing agreement in which inputs are not used for training. Pay attention to data residency (where data is stored and processed) and document purpose, legal basis and retention.",
+          "it": "In pratica: per i dati aziendali usa offerte business o enterprise con contratto di trattamento in cui gli input non vengono usati per l'addestramento. Presta attenzione alla residenza dei dati (dove sono archiviati ed elaborati) e documenta finalita, base giuridica e conservazione.",
+          "fr": "Concretement: pour les donnees professionnelles, utilisez des offres business ou enterprise avec contrat de sous-traitance dans lequel les saisies ne servent pas a l'entrainement. Surveillez la residence des donnees (lieu de stockage et de traitement) et documentez la finalite, la base legale et la conservation."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Vergleich auf einen Blick",
+        "en": "Comparison at a glance",
+        "it": "Confronto in sintesi",
+        "fr": "Comparatif en un coup d'oeil"
+      },
+      "bullets": [
+        {
+          "de": "OpenAI / ChatGPT: Staerke breites Oekosystem und Vielseitigkeit; passt fuer allgemeine Produktivitaet, Prototyping und Entwicklung ueber die API.",
+          "en": "OpenAI / ChatGPT: Strength is a broad ecosystem and versatility; fits general productivity, prototyping and building on the API.",
+          "it": "OpenAI / ChatGPT: punto di forza l'ampio ecosistema e la versatilita; adatto a produttivita generale, prototipazione e sviluppo tramite API.",
+          "fr": "OpenAI / ChatGPT: force dans son vaste ecosysteme et sa polyvalence; convient a la productivite generale, au prototypage et au developpement via l'API."
+        },
+        {
+          "de": "Anthropic / Claude: Staerke Zuverlaessigkeit, grosser Kontext und Sicherheitsfokus; passt fuer lange Dokumente, Analyse und anspruchsvolles Coding.",
+          "en": "Anthropic / Claude: Strength is reliability, large context and a safety focus; fits long documents, analysis and demanding coding.",
+          "it": "Anthropic / Claude: punto di forza affidabilita, ampio contesto e focus sulla sicurezza; adatto a documenti lunghi, analisi e programmazione impegnativa.",
+          "fr": "Anthropic / Claude: force dans la fiabilite, un grand contexte et l'accent sur la securite; convient aux longs documents, a l'analyse et au code exigeant."
+        },
+        {
+          "de": "Google / Gemini: Staerke Multimodalitaet und Google-Integration; passt fuer Nutzer von Workspace, Android und stark visuelle Aufgaben.",
+          "en": "Google / Gemini: Strength is multimodality and Google integration; fits Workspace and Android users and highly visual tasks.",
+          "it": "Google / Gemini: punto di forza multimodalita e integrazione Google; adatto a utenti di Workspace, Android e compiti fortemente visivi.",
+          "fr": "Google / Gemini: force dans la multimodalite et l'integration Google; convient aux utilisateurs de Workspace, d'Android et aux taches tres visuelles."
+        },
+        {
+          "de": "Microsoft / Copilot: Staerke Einbettung in Buero- und Entwickler-Tools; passt fuer Unternehmen, die bereits Microsoft 365 und GitHub nutzen.",
+          "en": "Microsoft / Copilot: Strength is embedding in office and developer tools; fits organisations already using Microsoft 365 and GitHub.",
+          "it": "Microsoft / Copilot: punto di forza l'integrazione negli strumenti d'ufficio e di sviluppo; adatto ad aziende che gia usano Microsoft 365 e GitHub.",
+          "fr": "Microsoft / Copilot: force dans l'integration aux outils bureautiques et de developpement; convient aux organisations utilisant deja Microsoft 365 et GitHub."
+        },
+        {
+          "de": "Perplexity: Staerke quellenbasierte Recherche; passt fuer schnelle, belegte Antworten und Wissensarbeit mit Nachvollziehbarkeit.",
+          "en": "Perplexity: Strength is source-based research; fits fast, cited answers and knowledge work that needs traceability.",
+          "it": "Perplexity: punto di forza la ricerca basata sulle fonti; adatto a risposte rapide e documentate e al lavoro di conoscenza tracciabile.",
+          "fr": "Perplexity: force dans la recherche sourcee; convient aux reponses rapides et sourcees et au travail de connaissance tracable."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Haeufige Fehler bei der Auswahl",
+        "en": "Common mistakes when choosing",
+        "it": "Errori frequenti nella scelta",
+        "fr": "Erreurs frequentes lors du choix"
+      },
+      "bullets": [
+        {
+          "de": "Sich nur auf oeffentliche Benchmarks verlassen, statt Modelle an den eigenen, realen Aufgaben zu testen.",
+          "en": "Relying only on public benchmarks instead of testing models on your own real tasks.",
+          "it": "Affidarsi solo ai benchmark pubblici invece di testare i modelli sui propri compiti reali.",
+          "fr": "Se fier uniquement aux benchmarks publics au lieu de tester les modeles sur ses propres taches reelles."
+        },
+        {
+          "de": "Datenschutz zu spaet klaeren und sensible Daten in kostenlose Consumer-Versionen eingeben.",
+          "en": "Clarifying data protection too late and entering sensitive data into free consumer versions.",
+          "it": "Chiarire troppo tardi la protezione dei dati e inserire dati sensibili in versioni consumer gratuite.",
+          "fr": "Traiter la protection des donnees trop tard et saisir des donnees sensibles dans des versions grand public gratuites."
+        },
+        {
+          "de": "Sich vorschnell auf einen einzigen Anbieter festlegen und Wechselkosten sowie Lock-in unterschaetzen.",
+          "en": "Committing prematurely to a single vendor and underestimating switching costs and lock-in.",
+          "it": "Impegnarsi prematuramente con un unico fornitore sottovalutando costi di cambio e lock-in.",
+          "fr": "S'engager prematurement aupres d'un seul fournisseur en sous-estimant les couts de changement et le verrouillage."
+        },
+        {
+          "de": "Immer das groesste Modell einsetzen, obwohl kleinere, schnellere Varianten fuer Routineaufgaben genuegen und Kosten sparen.",
+          "en": "Always using the largest model when smaller, faster variants suffice for routine tasks and save cost.",
+          "it": "Usare sempre il modello piu grande quando varianti piu piccole e veloci bastano per la routine e riducono i costi.",
+          "fr": "Utiliser toujours le plus grand modele alors que des variantes plus petites et rapides suffisent pour la routine et reduisent les couts."
+        },
+        {
+          "de": "KI-Ausgaben ungeprueft uebernehmen, statt Ergebnisse zu verifizieren und Verantwortliche fuer die Kontrolle festzulegen.",
+          "en": "Accepting AI outputs unchecked instead of verifying results and assigning responsibility for review.",
+          "it": "Accettare gli output IA senza controllo invece di verificare i risultati e assegnare la responsabilita della revisione.",
+          "fr": "Accepter les sorties d'IA sans controle au lieu de verifier les resultats et d'attribuer la responsabilite de la revision."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Welches KI-Modell ist das beste?",
+        "en": "Which AI model is the best?",
+        "it": "Qual e il miglior modello IA?",
+        "fr": "Quel est le meilleur modele d'IA?"
+      },
+      "a": {
+        "de": "Es gibt kein pauschal bestes Modell. Fuer Recherche mit Quellen eignet sich Perplexity, fuer lange Dokumente und Coding oft Claude, fuer breite Vielseitigkeit ChatGPT, fuer das Google-Oekosystem Gemini und fuer Microsoft-Umgebungen Copilot. Testen Sie Kandidaten an Ihren eigenen Aufgaben.",
+        "en": "There is no universally best model. Perplexity suits sourced research, Claude often fits long documents and coding, ChatGPT offers broad versatility, Gemini fits the Google ecosystem and Copilot the Microsoft world. Test candidates on your own tasks.",
+        "it": "Non esiste un modello migliore in assoluto. Perplexity e adatto alla ricerca con fonti, Claude spesso a documenti lunghi e programmazione, ChatGPT offre ampia versatilita, Gemini si adatta all'ecosistema Google e Copilot al mondo Microsoft. Testa i candidati sui tuoi compiti.",
+        "fr": "Il n'existe pas de meilleur modele universel. Perplexity convient a la recherche sourcee, Claude souvent aux longs documents et au code, ChatGPT offre une grande polyvalence, Gemini s'adapte a l'ecosysteme Google et Copilot au monde Microsoft. Testez les candidats sur vos propres taches."
+      }
+    },
+    {
+      "q": {
+        "de": "Was kostet die Nutzung dieser KI-Modelle?",
+        "en": "What does using these AI models cost?",
+        "it": "Quanto costa usare questi modelli IA?",
+        "fr": "Combien coute l'utilisation de ces modeles d'IA?"
+      },
+      "a": {
+        "de": "Die meisten Anbieter bieten kostenlose Basisversionen, kostenpflichtige Abonnements und nutzungsbasierte API-Preise. Da sich Tarife und Kontingente haeufig aendern, konsultieren Sie die aktuelle Preisseite des jeweiligen Anbieters statt fixer Zahlen.",
+        "en": "Most vendors offer free basic tiers, paid subscriptions and usage-based API pricing. Because plans and quotas change frequently, consult each provider's current pricing page rather than fixed figures.",
+        "it": "La maggior parte dei fornitori offre versioni base gratuite, abbonamenti a pagamento e prezzi API a consumo. Poiche piani e quote cambiano spesso, consulta la pagina prezzi aggiornata di ciascun fornitore invece di cifre fisse.",
+        "fr": "La plupart des fournisseurs proposent des offres de base gratuites, des abonnements payants et une tarification API a l'usage. Comme les offres et quotas changent souvent, consultez la page tarifaire actuelle de chaque fournisseur plutot que des chiffres fixes."
+      }
+    },
+    {
+      "q": {
+        "de": "Darf ich ChatGPT und Co. in der Schweiz rechtskonform nutzen?",
+        "en": "Can I use ChatGPT and similar tools compliantly in Switzerland?",
+        "it": "Posso usare ChatGPT e simili in Svizzera in modo conforme?",
+        "fr": "Puis-je utiliser ChatGPT et consorts en conformite en Suisse?"
+      },
+      "a": {
+        "de": "Ja, sofern Sie das revDSG/nFADP einhalten. Fuer Personendaten braucht es eine Rechtsgrundlage, Transparenz und in der Regel einen Auftragsbearbeitungsvertrag. Nutzen Sie Business- oder Enterprise-Tarife, bei denen Eingaben nicht zum Training verwendet werden, und pruefen Sie die Datenresidenz.",
+        "en": "Yes, provided you comply with the revDSG/nFADP. Personal data needs a legal basis, transparency and usually a data-processing agreement. Use business or enterprise plans where inputs are not used for training, and check data residency.",
+        "it": "Si, purche tu rispetti la revDSG/nFADP. Per i dati personali servono base giuridica, trasparenza e di norma un contratto di trattamento. Usa piani business o enterprise in cui gli input non vengono usati per l'addestramento e verifica la residenza dei dati.",
+        "fr": "Oui, a condition de respecter la revDSG/nFADP. Les donnees personnelles exigent une base legale, de la transparence et generalement un contrat de sous-traitance. Utilisez des offres business ou enterprise ou les saisies ne servent pas a l'entrainement, et verifiez la residence des donnees."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen offenen und geschlossenen Modellen?",
+        "en": "What is the difference between open and closed models?",
+        "it": "Qual e la differenza tra modelli aperti e chiusi?",
+        "fr": "Quelle est la difference entre modeles ouverts et fermes?"
+      },
+      "a": {
+        "de": "Geschlossene Modelle laufen ausschliesslich beim Anbieter und sind bequem, aber weniger kontrollierbar. Offene bzw. offen gewichtete Modelle wie Llama, Mistral oder das Schweizer Apertus lassen sich selbst hosten und anpassen, bieten mehr Datenkontrolle, erfordern jedoch technisches Know-how und Infrastruktur.",
+        "en": "Closed models run only at the vendor and are convenient but less controllable. Open or open-weight models such as Llama, Mistral or the Swiss Apertus can be self-hosted and adapted, offering more data control but requiring technical expertise and infrastructure.",
+        "it": "I modelli chiusi girano solo presso il fornitore e sono comodi ma meno controllabili. Modelli aperti o a pesi aperti come Llama, Mistral o lo svizzero Apertus possono essere ospitati e adattati internamente, offrono piu controllo sui dati ma richiedono competenze tecniche e infrastruttura.",
+        "fr": "Les modeles fermes ne s'executent que chez le fournisseur et sont pratiques mais moins controlables. Les modeles ouverts ou a poids ouverts comme Llama, Mistral ou le suisse Apertus peuvent etre heberges et adaptes en interne, offrent plus de controle sur les donnees mais exigent des competences techniques et une infrastructure."
+      }
+    },
+    {
+      "q": {
+        "de": "Sollte sich ein Unternehmen auf einen einzigen Anbieter festlegen?",
+        "en": "Should a company commit to a single vendor?",
+        "it": "Un'azienda dovrebbe puntare su un unico fornitore?",
+        "fr": "Une entreprise doit-elle se limiter a un seul fournisseur?"
+      },
+      "a": {
+        "de": "Meist nicht. Eine Multi-Modell-Strategie, die Anbieter je nach Aufgabe kombiniert, senkt Abhaengigkeit und nutzt Staerken gezielt. Achten Sie auf offene Schnittstellen und die Moeglichkeit, Modelle zu wechseln, um Lock-in zu vermeiden.",
+        "en": "Usually not. A multi-model strategy that combines vendors by task reduces dependency and leverages strengths deliberately. Favour open interfaces and the ability to switch models to avoid lock-in.",
+        "it": "Di solito no. Una strategia multi-modello che combina i fornitori in base al compito riduce la dipendenza e sfrutta i punti di forza in modo mirato. Privilegia interfacce aperte e la possibilita di cambiare modello per evitare il lock-in.",
+        "fr": "En general non. Une strategie multi-modeles combinant les fournisseurs selon la tache reduit la dependance et exploite les forces de maniere ciblee. Privilegiez des interfaces ouvertes et la possibilite de changer de modele pour eviter le verrouillage."
+      }
+    },
+    {
+      "q": {
+        "de": "Was bedeutet das Kontextfenster eines Modells?",
+        "en": "What does a model's context window mean?",
+        "it": "Cosa significa la finestra di contesto di un modello?",
+        "fr": "Que signifie la fenetre de contexte d'un modele?"
+      },
+      "a": {
+        "de": "Das Kontextfenster ist die Menge an Text, die ein Modell gleichzeitig beruecksichtigen kann, gemessen in Tokens. Ein grosses Kontextfenster erlaubt es, lange Vertraege, Berichte oder Codebasen am Stueck zu verarbeiten, ohne den Inhalt in kleine Teile zerlegen zu muessen.",
+        "en": "The context window is the amount of text a model can consider at once, measured in tokens. A large context window lets it process long contracts, reports or codebases in one piece without splitting the content into small parts.",
+        "it": "La finestra di contesto e la quantita di testo che un modello puo considerare contemporaneamente, misurata in token. Una finestra ampia consente di elaborare contratti, report o basi di codice lunghi in un'unica volta senza suddividere il contenuto.",
+        "fr": "La fenetre de contexte est la quantite de texte qu'un modele peut prendre en compte simultanement, mesuree en tokens. Une grande fenetre permet de traiter de longs contrats, rapports ou bases de code d'un seul tenant sans decouper le contenu."
+      }
+    }
+  ],
+  "keyEntities": [
+    "OpenAI",
+    "ChatGPT",
+    "Anthropic",
+    "Claude",
+    "Google Gemini",
+    "Microsoft Copilot",
+    "Perplexity",
+    "EU AI Act",
+    "revDSG / nFADP",
+    "EDOEB",
+    "Apertus",
+    "ETH Zuerich",
+    "EPFL",
+    "Large Language Model (LLM)",
+    "Kontextfenster",
+    "Datenresidenz"
+  ]
+}

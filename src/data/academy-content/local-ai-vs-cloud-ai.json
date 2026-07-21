@@ -1,0 +1,353 @@
+{
+  "id": "local-ai-vs-cloud-ai",
+  "cluster": "local-opensource",
+  "type": "spoke",
+  "relatedServices": [
+    "integrations",
+    "consulting"
+  ],
+  "slug": {
+    "de": "lokale-ki-vs-cloud-ki",
+    "en": "local-ai-vs-cloud-ai",
+    "it": "ia-locale-vs-ia-cloud",
+    "fr": "ia-locale-vs-ia-cloud"
+  },
+  "title": {
+    "de": "Lokale KI vs Cloud KI: Der Entscheidungs-Guide | Weissmann AI",
+    "en": "Local AI vs Cloud AI: A Practical Decision Guide | Weissmann AI",
+    "it": "IA locale vs IA cloud: guida pratica alla scelta | Weissmann AI",
+    "fr": "IA locale vs IA cloud : le guide de décision | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Lokale KI vs Cloud KI im Vergleich: Kontrolle, Kosten, Leistung und Datenschutz. Praktische Entscheidungshilfe mit Schweizer Blick auf revDSG und EU AI Act.",
+    "en": "Local AI vs cloud AI compared: control, cost, performance and privacy. A practical decision guide with a Swiss lens on the nFADP and the EU AI Act.",
+    "it": "IA locale vs IA cloud a confronto: controllo, costi, prestazioni e privacy. Guida pratica alla scelta con lente svizzera su nLPD ed EU AI Act.",
+    "fr": "IA locale vs IA cloud comparées : contrôle, coûts, performances et confidentialité. Guide de décision pratique avec un regard suisse (nLPD, EU AI Act)."
+  },
+  "kicker": {
+    "de": "KI-Infrastruktur · Entscheidungs-Guide",
+    "en": "AI infrastructure · Decision guide",
+    "it": "Infrastruttura IA · Guida alla scelta",
+    "fr": "Infrastructure IA · Guide de décision"
+  },
+  "h1": {
+    "de": "Lokale KI oder Cloud KI: Was passt zu Ihrem Anwendungsfall?",
+    "en": "Local AI or Cloud AI: Which Fits Your Use Case?",
+    "it": "IA locale o IA cloud: quale scegliere per il tuo caso d'uso?",
+    "fr": "IA locale ou IA cloud : laquelle choisir pour votre cas d'usage ?"
+  },
+  "answerFirst": {
+    "de": "Lokale KI läuft auf eigener Hardware (Server, Workstation oder Edge-Gerät), Cloud KI über die Schnittstelle eines Anbieters. Lokal bietet maximale Datenkontrolle, planbare Fixkosten und Unabhängigkeit, verlangt aber Hardware und Know-how. Cloud liefert die stärksten Modelle sofort und skaliert flexibel, bei laufenden Kosten und Datenabfluss zum Anbieter. Die Wahl hängt von Datenschutz, Volumen, Latenz und Budget ab – oft ist ein hybrider Ansatz optimal.",
+    "en": "Local AI runs on your own hardware (server, workstation or edge device); cloud AI runs through a provider's API. Local gives you maximum data control, predictable fixed costs and independence, but demands hardware and expertise. Cloud delivers the strongest models instantly and scales flexibly, at recurring cost and with data leaving your premises. The right choice depends on privacy, volume, latency and budget – and is often a hybrid.",
+    "it": "L'IA locale gira su hardware proprio (server, workstation o dispositivo edge); l'IA cloud passa dall'API di un fornitore. Il locale offre massimo controllo dei dati, costi fissi prevedibili e indipendenza, ma richiede hardware e competenze. Il cloud dà subito i modelli più potenti e scala in modo flessibile, con costi ricorrenti e dati che escono dall'azienda. La scelta dipende da privacy, volume, latenza e budget – spesso la risposta è ibrida.",
+    "fr": "L'IA locale s'exécute sur votre matériel (serveur, poste de travail ou appareil edge) ; l'IA cloud passe par l'API d'un fournisseur. Le local offre un contrôle maximal des données, des coûts fixes prévisibles et l'indépendance, mais exige matériel et compétences. Le cloud fournit immédiatement les modèles les plus puissants et s'adapte à la charge, moyennant des coûts récurrents et une sortie des données. Le bon choix dépend de la confidentialité, du volume, de la latence et du budget – souvent hybride."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Lokale KI und Cloud KI: die Definitionen",
+        "en": "Local AI and cloud AI: the definitions",
+        "it": "IA locale e IA cloud: le definizioni",
+        "fr": "IA locale et IA cloud : les définitions"
+      },
+      "paragraphs": [
+        {
+          "de": "Lokale KI (auch On-Premise, Self-Hosted oder On-Device) bedeutet, dass ein KI-Modell auf Infrastruktur läuft, die Sie kontrollieren: ein Server im eigenen Rechenzentrum, eine GPU-Workstation oder ein Edge-Gerät. Genutzt werden dafür meist Open-Weight-Modelle wie Llama, Mistral, Qwen, Gemma oder das Schweizer Modell Apertus, betrieben über Werkzeuge wie Ollama, LM Studio, llama.cpp oder vLLM.",
+          "en": "Local AI (also called on-premise, self-hosted or on-device) means an AI model runs on infrastructure you control: a server in your own data centre, a GPU workstation or an edge device. It typically uses open-weight models such as Llama, Mistral, Qwen, Gemma or the Swiss model Apertus, served through tools like Ollama, LM Studio, llama.cpp or vLLM.",
+          "it": "IA locale (anche on-premise, self-hosted o on-device) significa che un modello gira su infrastruttura che controlli tu: un server nel tuo data center, una workstation con GPU o un dispositivo edge. Di norma si usano modelli open-weight come Llama, Mistral, Qwen, Gemma o il modello svizzero Apertus, serviti tramite strumenti come Ollama, LM Studio, llama.cpp o vLLM.",
+          "fr": "L'IA locale (aussi appelée on-premise, auto-hébergée ou embarquée) signifie qu'un modèle s'exécute sur une infrastructure que vous contrôlez : un serveur dans votre centre de données, un poste de travail équipé d'un GPU ou un appareil edge. On y emploie surtout des modèles à poids ouverts comme Llama, Mistral, Qwen, Gemma ou le modèle suisse Apertus, servis via Ollama, LM Studio, llama.cpp ou vLLM."
+        },
+        {
+          "de": "Cloud KI bedeutet, dass Sie ein Modell über die Schnittstelle (API) oder Web-App eines Anbieters nutzen – etwa ChatGPT von OpenAI, Claude von Anthropic oder Gemini von Google. Der Anbieter betreibt Hardware, Modell und Updates; Sie senden Anfragen und bezahlen meist nutzungsbasiert. Beide Ansätze schliessen sich nicht aus: Viele Organisationen kombinieren sie in einer hybriden Architektur.",
+          "en": "Cloud AI means you use a model through a provider's API or web app – for example ChatGPT from OpenAI, Claude from Anthropic or Gemini from Google. The provider runs the hardware, model and updates; you send requests and usually pay per use. The two approaches are not mutually exclusive: many organisations combine them in a hybrid architecture.",
+          "it": "IA cloud significa usare un modello tramite l'API o l'app web di un fornitore – per esempio ChatGPT di OpenAI, Claude di Anthropic o Gemini di Google. Il fornitore gestisce hardware, modello e aggiornamenti; tu invii richieste e di solito paghi a consumo. I due approcci non si escludono: molte organizzazioni li combinano in un'architettura ibrida.",
+          "fr": "L'IA cloud consiste à utiliser un modèle via l'API ou l'application web d'un fournisseur – par exemple ChatGPT d'OpenAI, Claude d'Anthropic ou Gemini de Google. Le fournisseur gère le matériel, le modèle et les mises à jour ; vous envoyez des requêtes et payez généralement à l'usage. Les deux approches ne s'excluent pas : beaucoup d'organisations les combinent dans une architecture hybride."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Der direkte Vergleich: Kontrolle, Kosten, Leistung, Datenschutz",
+        "en": "Head-to-head: control, cost, performance, privacy",
+        "it": "Confronto diretto: controllo, costi, prestazioni, privacy",
+        "fr": "Comparaison directe : contrôle, coûts, performances, confidentialité"
+      },
+      "paragraphs": [
+        {
+          "de": "Die vier entscheidenden Dimensionen im direkten Vergleich:",
+          "en": "The four decisive dimensions, side by side:",
+          "it": "Le quattro dimensioni decisive, a confronto:",
+          "fr": "Les quatre dimensions décisives, côte à côte :"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kontrolle & Souveränität – Lokal: Daten und Modell bleiben im Haus, Versionen sind stabil, kein Vendor-Lock-in. Cloud: Der Anbieter kontrolliert Modell, Updates und Verfügbarkeit; Modelle können sich ohne Ihr Zutun ändern.",
+          "en": "Control & sovereignty – Local: data and model stay in-house, versions are stable, no vendor lock-in. Cloud: the provider controls the model, updates and availability; models can change without your input.",
+          "it": "Controllo e sovranità – Locale: dati e modello restano in casa, versioni stabili, nessun lock-in. Cloud: il fornitore controlla modello, aggiornamenti e disponibilità; i modelli possono cambiare senza il tuo consenso.",
+          "fr": "Contrôle et souveraineté – Local : données et modèle restent en interne, versions stables, pas de dépendance fournisseur. Cloud : le fournisseur contrôle le modèle, les mises à jour et la disponibilité ; les modèles peuvent changer sans votre accord."
+        },
+        {
+          "de": "Kosten – Lokal: hohe Anfangsinvestition (CapEx) in Hardware, danach planbare Fixkosten unabhängig vom Volumen. Cloud: keine Vorabkosten, nutzungsbasiert (OpEx), skaliert direkt mit dem Anfragevolumen.",
+          "en": "Cost – Local: high upfront investment (CapEx) in hardware, then predictable fixed costs regardless of volume. Cloud: no upfront cost, usage-based (OpEx), scaling directly with request volume.",
+          "it": "Costi – Locale: forte investimento iniziale (CapEx) in hardware, poi costi fissi prevedibili indipendenti dal volume. Cloud: nessun costo iniziale, a consumo (OpEx), cresce con il volume di richieste.",
+          "fr": "Coûts – Local : investissement initial élevé (CapEx) en matériel, puis coûts fixes prévisibles quel que soit le volume. Cloud : aucun coût initial, à l'usage (OpEx), qui suit directement le volume de requêtes."
+        },
+        {
+          "de": "Leistung – Cloud: Zugriff auf die stärksten Frontier-Modelle für anspruchsvolles Reasoning und multimodale Aufgaben. Lokal: Open-Weight-Modelle, für viele Aufgaben stark und gut genug, mit Grenzen bei absoluten Spitzenfähigkeiten.",
+          "en": "Performance – Cloud: access to the strongest frontier models for demanding reasoning and multimodal tasks. Local: open-weight models, strong and good enough for many tasks, with limits at the very top of capability.",
+          "it": "Prestazioni – Cloud: accesso ai modelli di frontiera più potenti per ragionamento complesso e compiti multimodali. Locale: modelli open-weight, validi e sufficienti per molti compiti, con limiti sulle capacità di punta assolute.",
+          "fr": "Performances – Cloud : accès aux modèles de pointe les plus puissants pour le raisonnement exigeant et le multimodal. Local : modèles à poids ouverts, solides et suffisants pour de nombreuses tâches, avec des limites au sommet de la capacité."
+        },
+        {
+          "de": "Datenschutz – Lokal: kein Datenabfluss an Dritte, ideal für Berufsgeheimnis und hochsensible Daten. Cloud: erfordert Auftragsverarbeitungsvertrag, geprüfte Datenresidenz und klare Regeln zur Trainingsnutzung.",
+          "en": "Privacy – Local: no data leaves for third parties, ideal for professional secrecy and highly sensitive data. Cloud: requires a data-processing agreement, verified data residency and clear rules on training use.",
+          "it": "Privacy – Locale: nessun dato esce verso terzi, ideale per segreto professionale e dati altamente sensibili. Cloud: richiede un accordo sul trattamento, residenza dei dati verificata e regole chiare sull'uso per l'addestramento.",
+          "fr": "Confidentialité – Local : aucune donnée ne part vers des tiers, idéal pour le secret professionnel et les données très sensibles. Cloud : exige un contrat de sous-traitance, une résidence des données vérifiée et des règles claires sur l'usage pour l'entraînement."
+        },
+        {
+          "de": "Latenz & Offline – Lokal/Edge: niedrige Latenz, funktioniert offline und air-gapped. Cloud: netzabhängig, dafür weltweit verfügbar und ohne eigene Wartung.",
+          "en": "Latency & offline – Local/edge: low latency, works offline and air-gapped. Cloud: network-dependent, but globally available with no maintenance on your side.",
+          "it": "Latenza e offline – Locale/edge: bassa latenza, funziona offline e air-gapped. Cloud: dipende dalla rete, ma disponibile ovunque e senza manutenzione a tuo carico.",
+          "fr": "Latence et hors ligne – Local/edge : faible latence, fonctionne hors ligne et en air-gap. Cloud : dépend du réseau, mais disponible partout et sans maintenance de votre côté."
+        },
+        {
+          "de": "Skalierung & Wartung – Lokal: durch die eigene Hardware begrenzt, verlangt ein Ops/MLOps-Team. Cloud: elastisch skalierbar, Betrieb und Sicherheit liegen beim Anbieter.",
+          "en": "Scaling & maintenance – Local: limited by your own hardware, needs an ops/MLOps team. Cloud: elastically scalable, with operation and security handled by the provider.",
+          "it": "Scalabilità e manutenzione – Locale: limitata dall'hardware proprio, richiede un team ops/MLOps. Cloud: scalabilità elastica, gestione e sicurezza a carico del fornitore.",
+          "fr": "Mise à l'échelle et maintenance – Local : limité par votre matériel, nécessite une équipe ops/MLOps. Cloud : élastique, exploitation et sécurité assurées par le fournisseur."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Kosten realistisch: CapEx, OpEx und der Break-even",
+        "en": "Cost, realistically: CapEx, OpEx and the break-even",
+        "it": "Costi, realisticamente: CapEx, OpEx e il punto di pareggio",
+        "fr": "Les coûts, concrètement : CapEx, OpEx et le seuil de rentabilité"
+      },
+      "paragraphs": [
+        {
+          "de": "Bei Cloud KI zahlen Sie pro Nutzung (meist pro Token), es fallen keine Vorabkosten an. Konkrete Preise ändern sich häufig – konsultieren Sie die aktuelle Preisliste des jeweiligen Anbieters. Der Vorteil: Sie starten sofort und die Kosten folgen dem tatsächlichen Bedarf. Der Nachteil: Bei hohem, konstantem Volumen summieren sich die laufenden Kosten schnell.",
+          "en": "With cloud AI you pay per use (usually per token), with no upfront cost. Actual prices change often – check the provider's current pricing. The upside: you start immediately and costs follow real demand. The downside: at high, steady volume recurring costs add up quickly.",
+          "it": "Con l'IA cloud paghi a consumo (di solito per token), senza costi iniziali. I prezzi effettivi cambiano spesso – consulta il listino aggiornato del fornitore. Il vantaggio: parti subito e i costi seguono la domanda reale. Lo svantaggio: con volumi alti e costanti i costi ricorrenti crescono in fretta.",
+          "fr": "Avec l'IA cloud, vous payez à l'usage (souvent par token), sans coût initial. Les prix évoluent souvent – consultez la tarification actuelle du fournisseur. L'avantage : vous démarrez immédiatement et les coûts suivent la demande réelle. L'inconvénient : à volume élevé et constant, les coûts récurrents s'accumulent vite."
+        },
+        {
+          "de": "Bei lokaler KI dominiert die Anfangsinvestition in Hardware. Als grobe technische Orientierung: Ein 7-bis-8-Milliarden-Parameter-Modell in 4-Bit-Quantisierung läuft auf einer Consumer-GPU mit rund 16 GB VRAM; ein 70-Milliarden-Modell benötigt eher 40 GB und mehr, oft mehrere GPUs. Dazu kommen Strom, Kühlung, Ersatzteile und – häufig unterschätzt – Personal für Betrieb, Sicherheit und Modell-Updates.",
+          "en": "With local AI the upfront hardware investment dominates. As rough technical guidance: a 7–8 billion parameter model in 4-bit quantisation runs on a consumer GPU with around 16 GB of VRAM; a 70 billion model needs closer to 40 GB and up, often several GPUs. Add electricity, cooling, spare parts and – frequently underestimated – staff for operations, security and model updates.",
+          "it": "Con l'IA locale domina l'investimento iniziale in hardware. Come orientamento tecnico di massima: un modello da 7-8 miliardi di parametri in quantizzazione a 4 bit gira su una GPU consumer con circa 16 GB di VRAM; un modello da 70 miliardi richiede piuttosto 40 GB e oltre, spesso più GPU. A ciò si aggiungono elettricità, raffreddamento, ricambi e – spesso sottovalutato – personale per gestione, sicurezza e aggiornamenti del modello.",
+          "fr": "Avec l'IA locale, l'investissement matériel initial domine. À titre d'orientation technique : un modèle de 7 à 8 milliards de paramètres en quantification 4 bits tourne sur un GPU grand public d'environ 16 Go de VRAM ; un modèle de 70 milliards demande plutôt 40 Go et plus, souvent plusieurs GPU. S'y ajoutent l'électricité, le refroidissement, les pièces et – souvent sous-estimé – le personnel pour l'exploitation, la sécurité et les mises à jour."
+        },
+        {
+          "de": "Die Faustregel: Niedriges oder stark schwankendes Volumen spricht für die Cloud, hohes und konstantes Volumen kann lokal auf Dauer günstiger sein. Rechnen Sie über die gesamte Nutzungsdauer (Total Cost of Ownership) und beziehen Sie versteckte Kosten wie Ausfallsicherheit und Fachpersonal ein.",
+          "en": "Rule of thumb: low or highly variable volume favours the cloud; high and steady volume can be cheaper locally over time. Calculate over the full lifetime (total cost of ownership) and include hidden costs such as redundancy and specialist staff.",
+          "it": "Regola pratica: volumi bassi o molto variabili favoriscono il cloud; volumi alti e costanti possono risultare più economici in locale nel tempo. Calcola sull'intero ciclo di vita (total cost of ownership) e includi i costi nascosti come ridondanza e personale specializzato.",
+          "fr": "Règle empirique : un volume faible ou très variable favorise le cloud ; un volume élevé et constant peut revenir moins cher en local sur la durée. Raisonnez sur toute la durée de vie (coût total de possession) et intégrez les coûts cachés comme la redondance et le personnel spécialisé."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz und Compliance: der Schweizer Blick",
+        "en": "Privacy and compliance: the Swiss lens",
+        "it": "Privacy e conformità: la lente svizzera",
+        "fr": "Confidentialité et conformité : le regard suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "In der Schweiz gilt seit September 2023 das revidierte Datenschutzgesetz (revDSG/nFADP), überwacht durch den EDÖB. Für Schweizer Sachverhalte ist nicht die DSGVO massgeblich, sondern das revDSG; die EU-DSGVO greift, wenn Sie Personen in der EU bearbeiten. Zusätzlich wirkt der EU AI Act extraterritorial und kann Schweizer Anbieter treffen, die KI-Systeme in den EU-Markt bringen.",
+          "en": "In Switzerland the revised Data Protection Act (nFADP/revDSG) has applied since September 2023, supervised by the FDPIC (EDÖB). For Swiss matters the nFADP governs, not the GDPR; the EU GDPR applies when you process people in the EU. In addition, the EU AI Act has extraterritorial reach and can affect Swiss providers placing AI systems on the EU market.",
+          "it": "In Svizzera dal settembre 2023 si applica la legge riveduta sulla protezione dei dati (nLPD/revDSG), vigilata dall'IFPDT (EDÖB). Per le fattispecie svizzere vale la nLPD, non il GDPR; il GDPR UE si applica quando tratti persone nell'UE. Inoltre l'EU AI Act ha portata extraterritoriale e può riguardare fornitori svizzeri che immettono sistemi di IA sul mercato UE.",
+          "fr": "En Suisse, la loi révisée sur la protection des données (nLPD/revDSG) s'applique depuis septembre 2023, sous la surveillance du PFPDT (EDÖB). Pour les cas suisses, c'est la nLPD qui prévaut, pas le RGPD ; le RGPD de l'UE s'applique lorsque vous traitez des personnes dans l'UE. De plus, l'EU AI Act a une portée extraterritoriale et peut concerner les fournisseurs suisses mettant des systèmes d'IA sur le marché européen."
+        },
+        {
+          "de": "Für besonders schützenswerte Daten und das Berufsgeheimnis (etwa Art. 321 StGB für Ärztinnen, Anwälte, Treuhänder) ist lokale KI oft die klarste Lösung: Die Daten verlassen die eigene Infrastruktur nie. Wollen Sie dennoch Cloud nutzen, achten Sie auf: Datenresidenz in der Schweiz oder EU, einen Auftragsverarbeitungsvertrag, die vertragliche Zusicherung, dass Ihre Daten nicht zum Training verwendet werden, sowie ein sauberes Löschkonzept.",
+          "en": "For particularly sensitive data and professional secrecy (e.g. Art. 321 of the Swiss Criminal Code for doctors, lawyers, fiduciaries), local AI is often the cleanest solution: the data never leaves your own infrastructure. If you still want cloud, insist on: data residency in Switzerland or the EU, a data-processing agreement, a contractual guarantee that your data is not used for training, and a clear deletion concept.",
+          "it": "Per dati particolarmente sensibili e per il segreto professionale (es. art. 321 CP svizzero per medici, avvocati, fiduciari), l'IA locale è spesso la soluzione più netta: i dati non lasciano mai la propria infrastruttura. Se vuoi comunque il cloud, pretendi: residenza dei dati in Svizzera o UE, un accordo sul trattamento, la garanzia contrattuale che i dati non siano usati per l'addestramento e un chiaro piano di cancellazione.",
+          "fr": "Pour les données particulièrement sensibles et le secret professionnel (p. ex. art. 321 du Code pénal suisse pour médecins, avocats, fiduciaires), l'IA locale est souvent la solution la plus nette : les données ne quittent jamais votre infrastructure. Si vous optez tout de même pour le cloud, exigez : une résidence des données en Suisse ou dans l'UE, un contrat de sous-traitance, la garantie contractuelle que vos données ne servent pas à l'entraînement, et un concept de suppression clair."
+        },
+        {
+          "de": "Ein Schweizer Aspekt für die Souveränität: Mit Apertus steht ein an ETH Zürich, EPFL und dem Supercomputing-Zentrum CSCS entwickeltes, offen verfügbares Sprachmodell zur Verfügung, das lokal betrieben werden kann. Solche offenen Modelle stärken die digitale Unabhängigkeit, wenn Datenhoheit oberste Priorität hat.",
+          "en": "A Swiss angle on sovereignty: Apertus, an openly available language model developed at ETH Zurich, EPFL and the CSCS supercomputing centre, can be run locally. Such open models strengthen digital independence when data sovereignty is the top priority.",
+          "it": "Un aspetto svizzero sulla sovranità: con Apertus è disponibile un modello linguistico ad accesso aperto, sviluppato all'ETH di Zurigo, all'EPFL e al centro di supercalcolo CSCS, eseguibile in locale. Modelli aperti così rafforzano l'indipendenza digitale quando la sovranità dei dati è la priorità.",
+          "fr": "Un angle suisse sur la souveraineté : Apertus, un modèle de langage librement disponible développé à l'ETH Zurich, à l'EPFL et au centre de calcul CSCS, peut être exécuté en local. De tels modèles ouverts renforcent l'indépendance numérique lorsque la souveraineté des données prime."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Leistung und Fähigkeiten: was Modelle heute wirklich leisten",
+        "en": "Performance and capability: what models really deliver today",
+        "it": "Prestazioni e capacità: cosa fanno davvero i modelli oggi",
+        "fr": "Performances et capacités : ce que les modèles offrent vraiment aujourd'hui"
+      },
+      "paragraphs": [
+        {
+          "de": "Bei den anspruchsvollsten Aufgaben – komplexes Reasoning, lange Kontexte, fortgeschrittene Multimodalität – führen weiterhin die grossen Frontier-Modelle in der Cloud. Sie werden vom Anbieter laufend verbessert, ohne dass Sie Hardware aufrüsten müssen.",
+          "en": "For the most demanding tasks – complex reasoning, long context, advanced multimodality – the large frontier models in the cloud still lead. They are continuously improved by the provider without you having to upgrade hardware.",
+          "it": "Per i compiti più impegnativi – ragionamento complesso, contesti lunghi, multimodalità avanzata – restano in testa i grandi modelli di frontiera nel cloud. Vengono migliorati di continuo dal fornitore senza che tu debba potenziare l'hardware.",
+          "fr": "Pour les tâches les plus exigeantes – raisonnement complexe, longs contextes, multimodalité avancée – les grands modèles de pointe dans le cloud restent en tête. Ils sont améliorés en continu par le fournisseur, sans que vous ayez à faire évoluer votre matériel."
+        },
+        {
+          "de": "Für viele reale Geschäftsaufgaben sind lokale Open-Weight-Modelle jedoch längst gut genug: Zusammenfassen, Informationen extrahieren, klassifizieren, Entwürfe schreiben oder eine wissensbasierte Suche (RAG) über interne Dokumente. Quantisierung verkleinert Modelle für bescheidenere Hardware – auf Kosten etwas geringerer Genauigkeit. Lokale Modelle lassen sich zudem gezielt auf Ihre Domäne feinjustieren (Fine-Tuning), was Konsistenz und Fachsprache verbessert.",
+          "en": "For many real business tasks, however, local open-weight models are long since good enough: summarising, extracting information, classifying, drafting, or knowledge-grounded search (RAG) over internal documents. Quantisation shrinks models for more modest hardware – at the cost of slightly lower accuracy. Local models can also be fine-tuned to your domain, improving consistency and specialist language.",
+          "it": "Per molti compiti aziendali reali, però, i modelli open-weight locali sono ormai più che sufficienti: riassumere, estrarre informazioni, classificare, redigere bozze o una ricerca basata sulla conoscenza (RAG) sui documenti interni. La quantizzazione riduce i modelli per hardware più modesto – a costo di un'accuratezza leggermente inferiore. I modelli locali si possono inoltre mettere a punto (fine-tuning) sul tuo dominio, migliorando coerenza e linguaggio tecnico.",
+          "fr": "Pour de nombreuses tâches métier réelles, les modèles locaux à poids ouverts sont pourtant largement suffisants : résumer, extraire de l'information, classer, rédiger des brouillons ou une recherche ancrée dans la connaissance (RAG) sur des documents internes. La quantification réduit les modèles pour un matériel plus modeste – au prix d'une précision un peu moindre. Les modèles locaux peuvent aussi être affinés (fine-tuning) sur votre domaine, améliorant cohérence et langage spécialisé."
+        },
+        {
+          "de": "Bei der Latenz gibt es kein pauschales Urteil: On-Device-Modelle antworten ohne Netzwerkweg oft sehr schnell, während grosse Cloud-Rechenzentren enorme Parallelität und Durchsatz bieten. Entscheidend ist Ihr Lastprofil.",
+          "en": "On latency there is no blanket verdict: on-device models often respond very fast without a network hop, while large cloud data centres offer enormous parallelism and throughput. What matters is your load profile.",
+          "it": "Sulla latenza non c'è un verdetto univoco: i modelli on-device rispondono spesso molto rapidamente senza passare dalla rete, mentre i grandi data center cloud offrono parallelismo e throughput enormi. Ciò che conta è il tuo profilo di carico.",
+          "fr": "Sur la latence, pas de verdict tranché : les modèles embarqués répondent souvent très vite sans passer par le réseau, tandis que les grands centres de données cloud offrent un parallélisme et un débit énormes. C'est votre profil de charge qui décide."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Entscheidungs-Guide: wann lokal, wann Cloud, wann hybrid",
+        "en": "Decision guide: when to go local, cloud or hybrid",
+        "it": "Guida alla scelta: quando locale, quando cloud, quando ibrido",
+        "fr": "Guide de décision : quand choisir le local, le cloud ou l'hybride"
+      },
+      "paragraphs": [
+        {
+          "de": "Nutzen Sie diese Kriterien, um schnell zu einer fundierten Wahl zu kommen:",
+          "en": "Use these criteria to reach a sound choice quickly:",
+          "it": "Usa questi criteri per arrivare rapidamente a una scelta solida:",
+          "fr": "Utilisez ces critères pour parvenir rapidement à un choix éclairé :"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Wählen Sie lokal, wenn: strenge Vertraulichkeit oder Berufsgeheimnis gilt, das Volumen hoch und konstant ist, Sie offline oder air-gapped arbeiten müssen, volle Kontrolle und Anpassbarkeit zählen und Sie ein Ops-Team haben.",
+          "en": "Choose local when: strict confidentiality or professional secrecy applies, volume is high and steady, you must work offline or air-gapped, full control and customisation matter, and you have an ops team.",
+          "it": "Scegli il locale quando: vige riservatezza stretta o segreto professionale, il volume è alto e costante, devi lavorare offline o air-gapped, contano controllo e personalizzazione totali e disponi di un team ops.",
+          "fr": "Choisissez le local quand : une confidentialité stricte ou un secret professionnel s'applique, le volume est élevé et constant, vous devez travailler hors ligne ou en air-gap, le contrôle et la personnalisation totale comptent, et vous avez une équipe ops."
+        },
+        {
+          "de": "Wählen Sie Cloud, wenn: Sie die höchste Modellleistung brauchen, das Volumen niedrig oder schwankend ist, ein schneller Start zählt, kein eigenes Betriebsteam vorhanden ist und Sie stets die neuesten multimodalen Funktionen wollen.",
+          "en": "Choose cloud when: you need top model performance, volume is low or variable, fast time-to-value matters, you have no ops team, and you always want the latest multimodal features.",
+          "it": "Scegli il cloud quando: ti serve la massima prestazione del modello, il volume è basso o variabile, conta un avvio rapido, non hai un team operativo e vuoi sempre le ultime funzioni multimodali.",
+          "fr": "Choisissez le cloud quand : vous avez besoin des meilleures performances, le volume est faible ou variable, le démarrage rapide compte, vous n'avez pas d'équipe d'exploitation et vous voulez toujours les dernières fonctions multimodales."
+        },
+        {
+          "de": "Wählen Sie hybrid, wenn: verschiedene Aufgaben verschiedene Antworten verlangen. Ein bewährtes Muster: sensible Daten und Standardaufgaben lokal verarbeiten, besonders schwierige Anfragen an die Cloud weiterreichen, und personenbezogene Angaben vor jedem Cloud-Aufruf lokal anonymisieren oder maskieren.",
+          "en": "Choose hybrid when: different tasks call for different answers. A proven pattern: process sensitive data and standard tasks locally, route the hardest queries to the cloud, and anonymise or mask personal data locally before any cloud call.",
+          "it": "Scegli l'ibrido quando: compiti diversi richiedono risposte diverse. Uno schema collaudato: elaborare in locale dati sensibili e compiti standard, inoltrare al cloud le richieste più difficili e anonimizzare o mascherare in locale i dati personali prima di ogni chiamata al cloud.",
+          "fr": "Choisissez l'hybride quand : des tâches différentes appellent des réponses différentes. Un schéma éprouvé : traiter en local les données sensibles et les tâches standard, router vers le cloud les requêtes les plus difficiles, et anonymiser ou masquer localement les données personnelles avant tout appel au cloud."
+        },
+        {
+          "de": "Prüfen Sie unabhängig vom Modell immer: Wo liegen die Daten, wer haftet, wie sieht der Ausstieg (Exit) aus und wie vermeiden Sie Lock-in? Standardisierte Schnittstellen und Open-Weight-Optionen halten Ihnen die Tür offen.",
+          "en": "Whatever the model, always check: where the data sits, who is liable, what the exit looks like, and how you avoid lock-in. Standardised interfaces and open-weight options keep the door open.",
+          "it": "Qualunque sia il modello, verifica sempre: dove risiedono i dati, chi è responsabile, come avviene l'uscita e come eviti il lock-in. Interfacce standardizzate e opzioni open-weight ti tengono la porta aperta.",
+          "fr": "Quel que soit le modèle, vérifiez toujours : où se trouvent les données, qui est responsable, à quoi ressemble la sortie et comment éviter la dépendance. Des interfaces standardisées et des options à poids ouverts vous laissent la porte ouverte."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Hauptunterschied zwischen lokaler KI und Cloud KI?",
+        "en": "What is the main difference between local AI and cloud AI?",
+        "it": "Qual è la differenza principale tra IA locale e IA cloud?",
+        "fr": "Quelle est la principale différence entre IA locale et IA cloud ?"
+      },
+      "a": {
+        "de": "Lokale KI läuft auf Hardware, die Sie kontrollieren, sodass Daten das Haus nicht verlassen; Cloud KI läuft beim Anbieter und wird über eine Schnittstelle genutzt. Lokal bedeutet mehr Kontrolle und Fixkosten, Cloud mehr Leistung und Flexibilität bei laufenden Kosten.",
+        "en": "Local AI runs on hardware you control, so data stays in-house; cloud AI runs at the provider and is used via an API. Local means more control and fixed costs, cloud means more capability and flexibility at recurring cost.",
+        "it": "L'IA locale gira su hardware che controlli, quindi i dati restano in casa; l'IA cloud gira presso il fornitore e si usa via API. Il locale offre più controllo e costi fissi, il cloud più capacità e flessibilità con costi ricorrenti.",
+        "fr": "L'IA locale s'exécute sur un matériel que vous contrôlez, les données restent en interne ; l'IA cloud tourne chez le fournisseur et s'utilise via une API. Le local offre plus de contrôle et des coûts fixes, le cloud plus de capacité et de flexibilité à coût récurrent."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist lokale KI immer günstiger als Cloud KI?",
+        "en": "Is local AI always cheaper than cloud AI?",
+        "it": "L'IA locale è sempre più economica dell'IA cloud?",
+        "fr": "L'IA locale est-elle toujours moins chère que l'IA cloud ?"
+      },
+      "a": {
+        "de": "Nein. Lokal verlangt hohe Anfangsinvestitionen und laufenden Betrieb; das lohnt sich vor allem bei hohem, konstantem Volumen. Bei niedrigem oder schwankendem Bedarf ist die nutzungsbasierte Cloud meist günstiger. Rechnen Sie immer über die gesamte Nutzungsdauer inklusive Personal und Ausfallsicherheit.",
+        "en": "No. Local demands high upfront investment and ongoing operation; it pays off mainly at high, steady volume. For low or variable demand, usage-based cloud is usually cheaper. Always calculate over the full lifetime, including staff and redundancy.",
+        "it": "No. Il locale richiede forti investimenti iniziali e gestione continua; conviene soprattutto con volumi alti e costanti. Per esigenze basse o variabili il cloud a consumo è di solito più economico. Calcola sempre sull'intero ciclo di vita, incluso personale e ridondanza.",
+        "fr": "Non. Le local exige un fort investissement initial et une exploitation continue ; il est rentable surtout à volume élevé et constant. Pour une demande faible ou variable, le cloud à l'usage est généralement moins cher. Raisonnez toujours sur toute la durée de vie, personnel et redondance compris."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Option ist für Datenschutz und Berufsgeheimnis besser?",
+        "en": "Which option is better for privacy and professional secrecy?",
+        "it": "Quale opzione è migliore per privacy e segreto professionale?",
+        "fr": "Quelle option est préférable pour la confidentialité et le secret professionnel ?"
+      },
+      "a": {
+        "de": "Für sehr sensible Daten und Berufsgeheimnis (z. B. Medizin, Recht, Treuhand) ist lokale KI oft die klarste Wahl, weil Daten die eigene Infrastruktur nie verlassen. Cloud kann konform sein, verlangt aber Datenresidenz in der Schweiz oder EU, einen Auftragsverarbeitungsvertrag und die Zusicherung, dass Daten nicht zum Training genutzt werden – im Einklang mit dem revDSG.",
+        "en": "For highly sensitive data and professional secrecy (e.g. medicine, law, fiduciary work), local AI is often the clearest choice because data never leaves your infrastructure. Cloud can be compliant but requires data residency in Switzerland or the EU, a data-processing agreement and a guarantee that data is not used for training – in line with the nFADP.",
+        "it": "Per dati molto sensibili e segreto professionale (es. medicina, diritto, fiduciaria), l'IA locale è spesso la scelta più chiara perché i dati non lasciano mai la tua infrastruttura. Il cloud può essere conforme, ma richiede residenza dei dati in Svizzera o UE, un accordo sul trattamento e la garanzia che i dati non siano usati per l'addestramento – in linea con la nLPD.",
+        "fr": "Pour des données très sensibles et le secret professionnel (p. ex. médecine, droit, fiduciaire), l'IA locale est souvent le choix le plus net car les données ne quittent jamais votre infrastructure. Le cloud peut être conforme, mais exige une résidence des données en Suisse ou dans l'UE, un contrat de sous-traitance et la garantie que les données ne servent pas à l'entraînement – conformément à la nLPD."
+      }
+    },
+    {
+      "q": {
+        "de": "Sind lokale Open-Weight-Modelle so leistungsfähig wie Cloud-Modelle?",
+        "en": "Are local open-weight models as capable as cloud models?",
+        "it": "I modelli open-weight locali sono potenti quanto quelli cloud?",
+        "fr": "Les modèles locaux à poids ouverts sont-ils aussi performants que ceux du cloud ?"
+      },
+      "a": {
+        "de": "Bei den schwierigsten Aufgaben führen weiterhin grosse Frontier-Modelle in der Cloud. Für viele Standardaufgaben – Zusammenfassen, Extrahieren, Klassifizieren, Entwürfe, RAG – sind lokale Open-Weight-Modelle jedoch gut genug und lassen sich gezielt feinjustieren. Prüfen Sie die Eignung immer an Ihren konkreten Aufgaben, nicht an allgemeinen Ranglisten.",
+        "en": "For the hardest tasks, large frontier models in the cloud still lead. For many standard tasks – summarising, extracting, classifying, drafting, RAG – local open-weight models are good enough and can be fine-tuned. Always test fitness on your actual tasks, not on generic leaderboards.",
+        "it": "Per i compiti più difficili guidano ancora i grandi modelli di frontiera nel cloud. Per molti compiti standard – riassumere, estrarre, classificare, bozze, RAG – i modelli open-weight locali sono sufficienti e si possono mettere a punto. Verifica sempre l'idoneità sui tuoi compiti reali, non su classifiche generiche.",
+        "fr": "Pour les tâches les plus difficiles, les grands modèles de pointe du cloud restent en tête. Pour de nombreuses tâches standard – résumer, extraire, classer, rédiger, RAG – les modèles locaux à poids ouverts suffisent et peuvent être affinés. Testez toujours l'adéquation sur vos tâches réelles, pas sur des classements génériques."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist ein hybrider Ansatz und wann ergibt er Sinn?",
+        "en": "What is a hybrid approach and when does it make sense?",
+        "it": "Cos'è un approccio ibrido e quando ha senso?",
+        "fr": "Qu'est-ce qu'une approche hybride et quand est-elle pertinente ?"
+      },
+      "a": {
+        "de": "Hybrid kombiniert beide Welten: Sensible Daten und Standardaufgaben werden lokal verarbeitet, besonders schwierige Anfragen an die Cloud weitergereicht. Häufig werden personenbezogene Angaben vor dem Cloud-Aufruf lokal anonymisiert. Das lohnt sich, wenn Datenschutz und Spitzenleistung gleichzeitig gefragt sind.",
+        "en": "Hybrid combines both worlds: sensitive data and standard tasks are processed locally, while the hardest queries are routed to the cloud. Personal data is often anonymised locally before the cloud call. It pays off when privacy and top performance are both required.",
+        "it": "L'ibrido unisce i due mondi: dati sensibili e compiti standard elaborati in locale, richieste più difficili inoltrate al cloud. Spesso i dati personali vengono anonimizzati in locale prima della chiamata al cloud. Conviene quando servono insieme privacy e massime prestazioni.",
+        "fr": "L'hybride combine les deux mondes : les données sensibles et les tâches standard sont traitées en local, tandis que les requêtes les plus difficiles vont au cloud. Les données personnelles sont souvent anonymisées localement avant l'appel cloud. C'est rentable lorsque confidentialité et performance de pointe sont requises ensemble."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie vermeide ich Vendor-Lock-in bei der KI-Wahl?",
+        "en": "How do I avoid vendor lock-in when choosing AI?",
+        "it": "Come evito il lock-in del fornitore nella scelta dell'IA?",
+        "fr": "Comment éviter la dépendance à un fournisseur d'IA ?"
+      },
+      "a": {
+        "de": "Setzen Sie auf standardisierte, austauschbare Schnittstellen, halten Sie Prompts und Daten portabel und behalten Sie eine Open-Weight-Option als Alternative. Klären Sie vorab Datenexport, Löschung und Ausstiegsbedingungen. Offene Modelle wie das Schweizer Apertus stärken zusätzlich die Unabhängigkeit.",
+        "en": "Rely on standardised, swappable interfaces, keep prompts and data portable, and keep an open-weight option as a fallback. Clarify data export, deletion and exit terms up front. Open models such as Switzerland's Apertus further strengthen independence.",
+        "it": "Punta su interfacce standardizzate e intercambiabili, mantieni prompt e dati portabili e conserva un'opzione open-weight come alternativa. Chiarisci in anticipo esportazione dei dati, cancellazione e condizioni di uscita. Modelli aperti come lo svizzero Apertus rafforzano ulteriormente l'indipendenza.",
+        "fr": "Misez sur des interfaces standardisées et interchangeables, gardez prompts et données portables, et conservez une option à poids ouverts en repli. Clarifiez d'emblée l'export des données, la suppression et les conditions de sortie. Des modèles ouverts comme le suisse Apertus renforcent encore l'indépendance."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Lokale KI",
+    "Cloud KI",
+    "Open-Weight-Modelle",
+    "On-Premise",
+    "Ollama",
+    "vLLM",
+    "Llama",
+    "Mistral",
+    "Apertus",
+    "ETH Zürich",
+    "EPFL",
+    "revDSG/nFADP",
+    "EDÖB",
+    "EU AI Act",
+    "Fine-Tuning",
+    "Total Cost of Ownership"
+  ]
+}

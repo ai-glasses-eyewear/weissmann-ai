@@ -1,0 +1,385 @@
+{
+  "id": "ai-model-pricing-explained",
+  "cluster": "models-vendors",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "ki-preismodelle-tokens-abo-api",
+    "en": "how-ai-pricing-works-tokens-subscriptions-api",
+    "it": "come-funzionano-prezzi-ia-token-abbonamenti-api",
+    "fr": "comment-fonctionnent-prix-ia-tokens-abonnements-api"
+  },
+  "title": {
+    "de": "KI-Preismodelle: Tokens, Abos und API erklärt | Weissmann AI",
+    "en": "How AI Pricing Works: Tokens, Subscriptions, API | Weissmann AI",
+    "it": "Prezzi IA: token, abbonamenti e API spiegati | Weissmann AI",
+    "fr": "Prix de l'IA : tokens, abonnements et API | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie funktionieren KI-Preismodelle? Tokens, Abonnements und API-Kosten als klares Mentalmodell erklärt - mit Schweizer Blick. Aktuelle Preise nur beim Anbieter.",
+    "en": "How does AI pricing work? Tokens, subscriptions and API costs explained as a clear mental model, with a Swiss lens. Current figures only from providers.",
+    "it": "Come funzionano i prezzi dell'IA? Token, abbonamenti e costi API come modello mentale chiaro, con sguardo svizzero. Prezzi attuali solo dal fornitore.",
+    "fr": "Comment fonctionnent les prix de l'IA ? Tokens, abonnements et coûts API en modèle mental clair, avec regard suisse. Tarifs actuels chez le fournisseur."
+  },
+  "kicker": {
+    "de": "Modelle & Anbieter",
+    "en": "Models & Vendors",
+    "it": "Modelli e fornitori",
+    "fr": "Modèles et fournisseurs"
+  },
+  "h1": {
+    "de": "Wie funktionieren KI-Preismodelle?",
+    "en": "How does AI model pricing work?",
+    "it": "Come funzionano i prezzi dei modelli di IA?",
+    "fr": "Comment fonctionne la tarification des modèles d'IA ?"
+  },
+  "answerFirst": {
+    "de": "KI-Preismodelle folgen meist zwei Logiken: Apps wie ChatGPT werden als monatliches Abonnement zum Pauschalpreis abgerechnet, API-Zugänge dagegen nutzungsbasiert pro Token. Ein Token ist ein Textbaustein von rund vier Zeichen; Eingabe- und Ausgabe-Token werden getrennt und unterschiedlich hoch bepreist. Wer Kosten plant, rechnet Token pro Anfrage mal Anzahl Anfragen. Konkrete, aktuelle Preise nennen nur die Anbieter selbst.",
+    "en": "AI pricing usually follows two logics: apps like ChatGPT are billed as a flat monthly subscription, while API access is usage-based per token. A token is a chunk of text of roughly four characters; input and output tokens are counted separately and priced differently. To budget, multiply tokens per request by number of requests. Only providers publish concrete, current figures.",
+    "it": "I prezzi dell'IA seguono di solito due logiche: le app come ChatGPT si pagano con un abbonamento mensile forfettario, mentre l'accesso API è a consumo per token. Un token è un frammento di testo di circa quattro caratteri; i token di input e output si contano separatamente e hanno prezzi diversi. Per stimare il budget, moltiplica i token per richiesta per il numero di richieste. Solo i fornitori pubblicano i prezzi attuali.",
+    "fr": "La tarification de l'IA suit généralement deux logiques : les applications comme ChatGPT se paient par abonnement mensuel forfaitaire, tandis que l'accès API est facturé à l'usage, au token. Un token est un fragment de texte d'environ quatre caractères ; les tokens d'entrée et de sortie sont comptés séparément et tarifés différemment. Pour budgétiser, multipliez les tokens par requête par le nombre de requêtes. Seuls les fournisseurs publient les tarifs actuels."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Der Grundbaustein: Was ist ein Token?",
+        "en": "The basic unit: what is a token?",
+        "it": "L'unità di base: cos'è un token?",
+        "fr": "L'unité de base : qu'est-ce qu'un token ?"
+      },
+      "paragraphs": [
+        {
+          "de": "Sprachmodelle lesen und schreiben nicht in Wörtern, sondern in Tokens - kleinen Textbausteinen. Ein Token entspricht im Durchschnitt etwa vier Zeichen oder rund drei Vierteln eines englischen Wortes; im Deutschen mit langen Komposita fallen pro Wort oft mehr Tokens an. Jede Anfrage und jede Antwort wird in Tokens zerlegt und gezählt.",
+          "en": "Language models do not read and write in words but in tokens - small chunks of text. On average a token is about four characters, or roughly three quarters of an English word; longer languages and compound words produce more tokens per word. Every request and every response is broken into tokens and counted.",
+          "it": "I modelli linguistici non leggono e scrivono in parole ma in token, piccoli frammenti di testo. In media un token vale circa quattro caratteri, ovvero circa tre quarti di una parola inglese; le lingue con parole lunghe generano più token per parola. Ogni richiesta e ogni risposta viene scomposta in token e conteggiata.",
+          "fr": "Les modèles de langage ne lisent ni n'écrivent en mots, mais en tokens - de petits fragments de texte. En moyenne, un token vaut environ quatre caractères, soit environ trois quarts d'un mot anglais ; les langues à mots longs génèrent plus de tokens par mot. Chaque requête et chaque réponse est découpée en tokens et comptée."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Token = kleinste Abrechnungseinheit bei nutzungsbasierten KI-Preismodellen.",
+          "en": "Token = the smallest billing unit in usage-based AI pricing.",
+          "it": "Token = unità minima di fatturazione nei prezzi IA a consumo.",
+          "fr": "Token = plus petite unité de facturation dans la tarification IA à l'usage."
+        },
+        {
+          "de": "Faustregel: ~1'000 Tokens entsprechen grob 750 englischen Wörtern; im Deutschen etwas weniger.",
+          "en": "Rule of thumb: ~1,000 tokens equal roughly 750 English words; somewhat fewer in German.",
+          "it": "Regola pratica: ~1.000 token equivalgono a circa 750 parole inglesi; un po' meno in italiano tecnico.",
+          "fr": "Règle empirique : ~1 000 tokens valent environ 750 mots anglais ; un peu moins en français."
+        },
+        {
+          "de": "Nicht nur Text: auch Bilder, Audio und Anhänge werden in Token-Äquivalente umgerechnet.",
+          "en": "Not just text: images, audio and attachments are also converted into token equivalents.",
+          "it": "Non solo testo: anche immagini, audio e allegati vengono convertiti in equivalenti in token.",
+          "fr": "Pas seulement du texte : images, audio et pièces jointes sont aussi convertis en équivalents tokens."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "App-Abo oder API: zwei Abrechnungswelten",
+        "en": "App subscription or API: two billing worlds",
+        "it": "Abbonamento app o API: due mondi di fatturazione",
+        "fr": "Abonnement application ou API : deux mondes de facturation"
+      },
+      "paragraphs": [
+        {
+          "de": "Für Endnutzer gibt es meist eine Chat-App (etwa ChatGPT, Claude oder Gemini) mit einem festen Monatsabo. Sie zahlen einen Pauschalbetrag und nutzen das Modell im Rahmen fairer Nutzungslimits - unabhängig davon, wie viele Tokens intern anfallen. Für Entwickler und Produkte gibt es die API: Hier zahlen Sie nutzungsbasiert genau die verbrauchten Tokens, dafür ist die Integration in eigene Software möglich.",
+          "en": "For end users there is usually a chat app (such as ChatGPT, Claude or Gemini) with a fixed monthly subscription. You pay a flat fee and use the model within fair-use limits, regardless of how many tokens are consumed internally. For developers and products there is the API: you pay per token actually used, but you can integrate the model into your own software.",
+          "it": "Per gli utenti finali di solito c'è un'app di chat (come ChatGPT, Claude o Gemini) con un abbonamento mensile fisso. Paghi una tariffa forfettaria e usi il modello entro limiti di uso corretto, a prescindere dai token consumati internamente. Per sviluppatori e prodotti c'è l'API: paghi i token effettivamente usati, ma puoi integrare il modello nel tuo software.",
+          "fr": "Pour les utilisateurs finaux, il existe généralement une application de chat (comme ChatGPT, Claude ou Gemini) avec un abonnement mensuel fixe. Vous payez un forfait et utilisez le modèle dans des limites d'usage raisonnable, quel que soit le nombre de tokens consommés en interne. Pour les développeurs et produits, il y a l'API : vous payez les tokens réellement utilisés, mais pouvez intégrer le modèle dans votre logiciel."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Abo (App): planbarer Fixpreis, keine Einrichtung, ideal für persönliche und gelegentliche Nutzung.",
+          "en": "Subscription (app): predictable flat price, no setup, ideal for personal and occasional use.",
+          "it": "Abbonamento (app): prezzo fisso prevedibile, nessuna configurazione, ideale per uso personale e occasionale.",
+          "fr": "Abonnement (app) : prix fixe prévisible, sans configuration, idéal pour un usage personnel et occasionnel."
+        },
+        {
+          "de": "API: variable Kosten je Verbrauch, volle Automatisierbarkeit, ideal für Produkte und hohe Volumina.",
+          "en": "API: variable cost by usage, full automation, ideal for products and high volumes.",
+          "it": "API: costo variabile in base al consumo, piena automazione, ideale per prodotti e grandi volumi.",
+          "fr": "API : coût variable selon l'usage, automatisation complète, idéale pour les produits et gros volumes."
+        },
+        {
+          "de": "Business- und Enterprise-Tarife mischen beides und ergänzen Verwaltung, Rechteverwaltung und Datenschutzzusagen.",
+          "en": "Business and enterprise tiers blend both and add administration, access control and data-protection commitments.",
+          "it": "I piani business ed enterprise combinano entrambi e aggiungono amministrazione, controllo accessi e garanzie sui dati.",
+          "fr": "Les offres business et entreprise combinent les deux et ajoutent administration, gestion des accès et engagements de protection des données."
+        },
+        {
+          "de": "Manche Anbieter erlauben pro-Nachricht-Abrechnung oder Guthaben-Modelle als Zwischenform.",
+          "en": "Some providers offer per-message billing or prepaid-credit models as a middle ground.",
+          "it": "Alcuni fornitori offrono fatturazione a messaggio o modelli a credito prepagato come via di mezzo.",
+          "fr": "Certains fournisseurs proposent une facturation au message ou des modèles de crédit prépayé en solution intermédiaire."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Warum Input- und Output-Token unterschiedlich kosten",
+        "en": "Why input and output tokens cost differently",
+        "it": "Perché i token di input e output costano in modo diverso",
+        "fr": "Pourquoi les tokens d'entrée et de sortie coûtent différemment"
+      },
+      "paragraphs": [
+        {
+          "de": "In der API werden Eingabe-Token (Ihr Prompt plus mitgegebener Kontext) und Ausgabe-Token (die generierte Antwort) getrennt bepreist. Ausgabe-Token sind fast immer teurer, weil das Generieren rechenintensiver ist als das Lesen. Wichtig für die Kostenkontrolle: Der gesamte mitgeschickte Kontext - System-Anweisung, Chatverlauf, hochgeladene Dokumente - zählt bei jeder Anfrage erneut als Eingabe.",
+          "en": "In the API, input tokens (your prompt plus supplied context) and output tokens (the generated answer) are priced separately. Output tokens are almost always more expensive, because generating text is more compute-intensive than reading it. Crucial for cost control: the entire context you send - system instruction, chat history, uploaded documents - counts again as input on every request.",
+          "it": "Nell'API, i token di input (il prompt più il contesto fornito) e i token di output (la risposta generata) hanno prezzi separati. I token di output sono quasi sempre più cari, perché generare testo è più oneroso che leggerlo. Fondamentale per il controllo dei costi: tutto il contesto inviato - istruzione di sistema, cronologia, documenti caricati - conta di nuovo come input a ogni richiesta.",
+          "fr": "Dans l'API, les tokens d'entrée (votre prompt plus le contexte fourni) et les tokens de sortie (la réponse générée) sont tarifés séparément. Les tokens de sortie sont presque toujours plus chers, car générer du texte demande plus de calcul que le lire. Essentiel pour le contrôle des coûts : tout le contexte envoyé - instruction système, historique, documents téléversés - est recompté comme entrée à chaque requête."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kontextfenster = maximale Token-Menge, die ein Modell pro Anfrage verarbeitet; grössere Fenster ermöglichen mehr Kontext, aber jeder mitgeschickte Token kostet.",
+          "en": "Context window = the maximum tokens a model handles per request; larger windows allow more context, but every token you send costs.",
+          "it": "Finestra di contesto = numero massimo di token gestiti per richiesta; finestre più ampie consentono più contesto, ma ogni token inviato costa.",
+          "fr": "Fenêtre de contexte = nombre maximal de tokens traités par requête ; de plus grandes fenêtres permettent plus de contexte, mais chaque token envoyé coûte."
+        },
+        {
+          "de": "Lange Chatverläufe werden teuer, weil die Historie bei jeder neuen Nachricht wieder als Eingabe mitläuft.",
+          "en": "Long chat threads get expensive because the history is resent as input with every new message.",
+          "it": "Le conversazioni lunghe diventano costose perché la cronologia viene rinviata come input a ogni nuovo messaggio.",
+          "fr": "Les longues conversations deviennent coûteuses, car l'historique est renvoyé en entrée à chaque nouveau message."
+        },
+        {
+          "de": "Kürzere, präzisere Prompts und gezielte Kontextauswahl senken die Kosten direkt.",
+          "en": "Shorter, sharper prompts and selective context directly cut costs.",
+          "it": "Prompt più brevi e mirati e una selezione del contesto riducono direttamente i costi.",
+          "fr": "Des prompts plus courts et ciblés et une sélection du contexte réduisent directement les coûts."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Rabatte, Caching und versteckte Kostentreiber",
+        "en": "Discounts, caching and hidden cost drivers",
+        "it": "Sconti, caching e costi nascosti",
+        "fr": "Remises, mise en cache et coûts cachés"
+      },
+      "paragraphs": [
+        {
+          "de": "Anbieter bieten Mechanismen, um Kosten zu senken - und Faktoren, die sie unbemerkt erhöhen. Prompt-Caching berechnet wiederkehrenden Kontext günstiger, Batch-Verarbeitung gibt Rabatt für zeitunkritische Massenanfragen. Umgekehrt können neuere Reasoning-Modelle intern zusätzliche, oft unsichtbare Denk-Token erzeugen, die ebenfalls als Ausgabe abgerechnet werden.",
+          "en": "Providers offer mechanisms to lower costs - and factors that quietly raise them. Prompt caching charges recurring context at a reduced rate, and batch processing discounts non-urgent bulk requests. Conversely, newer reasoning models may generate extra, often invisible thinking tokens internally, which are also billed as output.",
+          "it": "I fornitori offrono meccanismi per ridurre i costi - e fattori che li aumentano silenziosamente. Il prompt caching addebita il contesto ricorrente a tariffa ridotta, e il batch sconta le richieste massive non urgenti. Al contrario, i modelli di ragionamento più recenti possono generare token di pensiero extra, spesso invisibili, anch'essi fatturati come output.",
+          "fr": "Les fournisseurs offrent des mécanismes pour réduire les coûts - et des facteurs qui les augmentent discrètement. La mise en cache des prompts facture le contexte récurrent à tarif réduit, et le traitement par lots remise les requêtes massives non urgentes. À l'inverse, les modèles de raisonnement récents peuvent générer des tokens de réflexion supplémentaires, souvent invisibles, également facturés comme sortie."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Prompt-Caching: wiederholt genutzter Kontext (z. B. lange Anleitung) wird günstiger verrechnet.",
+          "en": "Prompt caching: repeatedly used context (e.g. a long instruction) is billed at a lower rate.",
+          "it": "Prompt caching: il contesto riutilizzato (es. un'istruzione lunga) viene addebitato a tariffa ridotta.",
+          "fr": "Mise en cache des prompts : le contexte réutilisé (ex. une longue consigne) est facturé à tarif réduit."
+        },
+        {
+          "de": "Batch-/Asynchron-Modus: Rabatt für Aufgaben, die nicht in Echtzeit fertig sein müssen.",
+          "en": "Batch/async mode: a discount for tasks that need not finish in real time.",
+          "it": "Modalità batch/asincrona: sconto per attività che non devono essere immediate.",
+          "fr": "Mode batch/asynchrone : remise pour les tâches sans exigence de temps réel."
+        },
+        {
+          "de": "Reasoning-Token: interne Denkschritte teurer Modelle erhöhen die Ausgabe-Token unbemerkt.",
+          "en": "Reasoning tokens: the internal thinking steps of advanced models silently raise output tokens.",
+          "it": "Token di ragionamento: i passaggi interni dei modelli avanzati aumentano silenziosamente i token di output.",
+          "fr": "Tokens de raisonnement : les étapes internes des modèles avancés augmentent discrètement les tokens de sortie."
+        },
+        {
+          "de": "Modellwahl ist der grösste Hebel: kleinere Modelle kosten pro Token oft ein Vielfaches weniger als Spitzenmodelle.",
+          "en": "Model choice is the biggest lever: smaller models often cost many times less per token than flagship models.",
+          "it": "La scelta del modello è la leva maggiore: i modelli più piccoli costano spesso molte volte meno per token dei modelli di punta.",
+          "fr": "Le choix du modèle est le plus grand levier : les petits modèles coûtent souvent bien moins par token que les modèles phares."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "KI-Kosten schätzen: ein einfaches Mentalmodell",
+        "en": "Estimating AI costs: a simple mental model",
+        "it": "Stimare i costi dell'IA: un modello mentale semplice",
+        "fr": "Estimer les coûts de l'IA : un modèle mental simple"
+      },
+      "paragraphs": [
+        {
+          "de": "Für eine grobe API-Kalkulation genügt eine Kette: geschätzte Eingabe-Token plus geschätzte Ausgabe-Token pro Anfrage, multipliziert mit der Anzahl Anfragen pro Monat, multipliziert mit den vom Anbieter genannten Token-Preisen. Rechnen Sie Eingabe und Ausgabe getrennt, weil die Tarife abweichen. Für Apps vergleichen Sie stattdessen den Abopreis mit dem erwarteten Nutzen pro aktivem Nutzer.",
+          "en": "For a rough API estimate, one chain suffices: estimated input tokens plus estimated output tokens per request, times requests per month, times the token prices published by the provider. Calculate input and output separately, since the rates differ. For apps, instead compare the subscription price against the expected value per active user.",
+          "it": "Per una stima API approssimativa basta una catena: token di input stimati più token di output stimati per richiesta, per numero di richieste al mese, per i prezzi dei token indicati dal fornitore. Calcola input e output separatamente, perché le tariffe differiscono. Per le app, confronta invece il prezzo dell'abbonamento con il valore atteso per utente attivo.",
+          "fr": "Pour une estimation API approximative, une chaîne suffit : tokens d'entrée estimés plus tokens de sortie estimés par requête, multipliés par le nombre de requêtes par mois, multipliés par les prix des tokens publiés par le fournisseur. Calculez entrée et sortie séparément, car les tarifs diffèrent. Pour les applications, comparez plutôt le prix de l'abonnement à la valeur attendue par utilisateur actif."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Formel API: (Eingabe-Token + Ausgabe-Token) x Anfragen x Token-Preis = ungefähre Monatskosten.",
+          "en": "API formula: (input tokens + output tokens) x requests x token price = approximate monthly cost.",
+          "it": "Formula API: (token input + token output) x richieste x prezzo token = costo mensile approssimativo.",
+          "fr": "Formule API : (tokens entrée + tokens sortie) x requêtes x prix du token = coût mensuel approximatif."
+        },
+        {
+          "de": "Beginnen Sie mit einem kleineren Modell und wechseln Sie erst bei nachweisbarem Bedarf zum grösseren.",
+          "en": "Start with a smaller model and only move to a larger one when the need is proven.",
+          "it": "Parti da un modello più piccolo e passa a uno più grande solo quando il bisogno è provato.",
+          "fr": "Commencez par un modèle plus petit et ne passez au plus grand qu'en cas de besoin avéré."
+        },
+        {
+          "de": "Setzen Sie Ausgabe-Limits, Nutzungskontingente und Kostenwarnungen, bevor Sie produktiv gehen.",
+          "en": "Set output limits, usage quotas and cost alerts before going into production.",
+          "it": "Imposta limiti di output, quote d'uso e avvisi di costo prima di andare in produzione.",
+          "fr": "Fixez des limites de sortie, des quotas d'usage et des alertes de coût avant la mise en production."
+        },
+        {
+          "de": "Aktuelle Zahlen niemals aus dem Gedächtnis - immer die Preisseite des Anbieters prüfen.",
+          "en": "Never quote current figures from memory - always check the provider's pricing page.",
+          "it": "Mai citare cifre attuali a memoria - controlla sempre la pagina prezzi del fornitore.",
+          "fr": "Ne citez jamais les tarifs actuels de mémoire - vérifiez toujours la page de tarifs du fournisseur."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Perspektive: Währung, Datenschutz und Governance",
+        "en": "Swiss perspective: currency, data protection and governance",
+        "it": "Prospettiva svizzera: valuta, protezione dei dati e governance",
+        "fr": "Perspective suisse : monnaie, protection des données et gouvernance"
+      },
+      "paragraphs": [
+        {
+          "de": "Die meisten grossen KI-Anbieter fakturieren in US-Dollar; für Schweizer Budgets kommen Wechselkurs und je nach Situation Mehrwertsteuer hinzu, weshalb CHF-Endkosten schwanken können. Neben dem Preis zählt die Verarbeitung: Wer Personendaten in Prompts gibt, unterliegt dem revidierten Datenschutzgesetz (revDSG) und der Aufsicht des EDOEB. Der EU AI Act wirkt extraterritorial und kann auch Schweizer Anbieter treffen, die in den EU-Markt liefern.",
+          "en": "Most major AI providers bill in US dollars; Swiss budgets must add the exchange rate and, depending on the case, VAT, so final CHF costs can fluctuate. Beyond price, processing matters: putting personal data into prompts falls under the revised Data Protection Act (revDSG/nFADP) and the oversight of the FDPIC (EDOEB). The EU AI Act applies extraterritorially and can affect Swiss providers serving the EU market.",
+          "it": "La maggior parte dei grandi fornitori di IA fattura in dollari USA; per i budget svizzeri si aggiungono il cambio e, a seconda dei casi, l'IVA, quindi i costi finali in CHF possono variare. Oltre al prezzo conta il trattamento: inserire dati personali nei prompt ricade sotto la nuova legge sulla protezione dei dati (revDSG/nLPD) e la vigilanza dell'IFPDT (EDOEB). L'EU AI Act ha effetto extraterritoriale e può toccare fornitori svizzeri che operano sul mercato UE.",
+          "fr": "La plupart des grands fournisseurs d'IA facturent en dollars américains ; les budgets suisses doivent ajouter le taux de change et, selon les cas, la TVA, si bien que les coûts finaux en CHF peuvent varier. Au-delà du prix, le traitement compte : introduire des données personnelles dans les prompts relève de la nouvelle loi sur la protection des données (revDSG/nLPD) et de la surveillance du PFPDT (EDOEB). L'EU AI Act s'applique de façon extraterritoriale et peut concerner des fournisseurs suisses actifs sur le marché de l'UE."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kalkulieren Sie in CHF mit Puffer für Wechselkursschwankungen und mögliche Steuern.",
+          "en": "Budget in CHF with a buffer for exchange-rate swings and possible taxes.",
+          "it": "Calcola in CHF con un margine per le oscillazioni del cambio e possibili imposte.",
+          "fr": "Budgétisez en CHF avec une marge pour les fluctuations de change et d'éventuelles taxes."
+        },
+        {
+          "de": "Klären Sie Datenstandort, Auftragsverarbeitung und ob Ihre Eingaben zum Training genutzt werden.",
+          "en": "Clarify data location, data-processing terms and whether your inputs are used for training.",
+          "it": "Chiarisci ubicazione dei dati, condizioni di trattamento e se i tuoi input servono all'addestramento.",
+          "fr": "Clarifiez la localisation des données, les conditions de traitement et si vos entrées servent à l'entraînement."
+        },
+        {
+          "de": "Souveräne Optionen wie das offene Schweizer Modell Apertus (ETH/EPFL) können Datenschutz und Kostenkontrolle stärken.",
+          "en": "Sovereign options such as the open Swiss model Apertus (ETH/EPFL) can strengthen data protection and cost control.",
+          "it": "Opzioni sovrane come il modello svizzero aperto Apertus (ETH/EPFL) possono rafforzare protezione dei dati e controllo dei costi.",
+          "fr": "Des options souveraines comme le modèle suisse ouvert Apertus (ETH/EPFL) peuvent renforcer protection des données et maîtrise des coûts."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was kostet ein Token?",
+        "en": "What does a token cost?",
+        "it": "Quanto costa un token?",
+        "fr": "Combien coûte un token ?"
+      },
+      "a": {
+        "de": "Ein fester Betrag lässt sich nicht seriös nennen, weil Token-Preise pro Modell, pro Anbieter und zwischen Eingabe und Ausgabe stark variieren und sich laufend ändern. Preise werden meist pro Million Tokens ausgewiesen. Prüfen Sie für aktuelle Zahlen immer die offizielle Preisseite des jeweiligen Anbieters.",
+        "en": "No single figure is trustworthy, because token prices vary strongly by model, by provider and between input and output, and they change frequently. Prices are usually quoted per million tokens. For current figures, always check the provider's official pricing page.",
+        "it": "Non esiste una cifra unica affidabile, perché i prezzi variano molto per modello, fornitore e tra input e output, e cambiano spesso. I prezzi si indicano di solito per milione di token. Per i valori attuali, controlla sempre la pagina prezzi ufficiale del fornitore.",
+        "fr": "Aucun chiffre unique n'est fiable, car les prix varient fortement selon le modèle, le fournisseur et entre entrée et sortie, et changent souvent. Les prix sont généralement indiqués par million de tokens. Pour les tarifs actuels, consultez toujours la page de tarifs officielle du fournisseur."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist ein Abo oder die API günstiger?",
+        "en": "Is a subscription or the API cheaper?",
+        "it": "Conviene l'abbonamento o l'API?",
+        "fr": "L'abonnement ou l'API, lequel est moins cher ?"
+      },
+      "a": {
+        "de": "Es kommt auf das Nutzungsmuster an. Für regelmässige, persönliche Nutzung über eine Chat-Oberfläche ist das Pauschalabo meist planbarer und günstiger. Für automatisierte, in Software integrierte oder stark schwankende Nutzung ist die nutzungsbasierte API oft wirtschaftlicher - Sie zahlen nur, was Sie verbrauchen.",
+        "en": "It depends on usage patterns. For regular personal use through a chat interface, the flat subscription is usually more predictable and cheaper. For automated, software-integrated or highly variable use, the usage-based API is often more economical - you pay only for what you consume.",
+        "it": "Dipende dal modello d'uso. Per un uso personale e regolare tramite chat, l'abbonamento forfettario è di solito più prevedibile ed economico. Per un uso automatizzato, integrato nel software o molto variabile, l'API a consumo è spesso più conveniente: paghi solo ciò che usi.",
+        "fr": "Cela dépend des usages. Pour un usage personnel régulier via une interface de chat, l'abonnement forfaitaire est généralement plus prévisible et économique. Pour un usage automatisé, intégré au logiciel ou très variable, l'API à l'usage est souvent plus rentable : vous ne payez que ce que vous consommez."
+      }
+    },
+    {
+      "q": {
+        "de": "Warum sind Ausgabe-Token teurer als Eingabe-Token?",
+        "en": "Why are output tokens more expensive than input tokens?",
+        "it": "Perché i token di output costano più di quelli di input?",
+        "fr": "Pourquoi les tokens de sortie coûtent-ils plus que ceux d'entrée ?"
+      },
+      "a": {
+        "de": "Weil das Erzeugen von Text rechenintensiver ist als das Einlesen. Das Modell berechnet jedes Ausgabe-Token einzeln und nacheinander, während der Eingabe-Kontext in einem Durchgang verarbeitet wird. Deshalb weisen Anbieter für Ausgabe meist einen höheren Preis pro Token aus.",
+        "en": "Because generating text is more compute-intensive than reading it. The model computes each output token one after another, whereas the input context is processed in one pass. That is why providers usually list a higher price per output token.",
+        "it": "Perché generare testo è più oneroso che leggerlo. Il modello calcola ogni token di output uno dopo l'altro, mentre il contesto di input è elaborato in un unico passaggio. Per questo i fornitori indicano di solito un prezzo per token più alto per l'output.",
+        "fr": "Parce que générer du texte demande plus de calcul que le lire. Le modèle calcule chaque token de sortie l'un après l'autre, alors que le contexte d'entrée est traité en une seule passe. C'est pourquoi les fournisseurs affichent généralement un prix par token plus élevé pour la sortie."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist ein Kontextfenster und beeinflusst es den Preis?",
+        "en": "What is a context window and does it affect price?",
+        "it": "Cos'è la finestra di contesto e influisce sul prezzo?",
+        "fr": "Qu'est-ce que la fenêtre de contexte et influe-t-elle sur le prix ?"
+      },
+      "a": {
+        "de": "Das Kontextfenster ist die maximale Token-Menge, die ein Modell pro Anfrage gleichzeitig berücksichtigt. Ein grösseres Fenster erlaubt längere Dokumente und Verläufe, kostet aber nur, wenn Sie es tatsächlich füllen: Bezahlt wird nach genutzten Token, nicht nach der Fenstergrösse selbst.",
+        "en": "The context window is the maximum number of tokens a model considers at once per request. A larger window allows longer documents and histories, but it only costs when you actually fill it: you pay for tokens used, not for the window size itself.",
+        "it": "La finestra di contesto è il numero massimo di token che un modello considera insieme per richiesta. Una finestra più ampia consente documenti e cronologie più lunghi, ma costa solo se la riempi davvero: paghi i token usati, non la dimensione della finestra.",
+        "fr": "La fenêtre de contexte est le nombre maximal de tokens qu'un modèle considère à la fois par requête. Une fenêtre plus grande permet des documents et historiques plus longs, mais ne coûte que si vous la remplissez : vous payez les tokens utilisés, pas la taille de la fenêtre."
+      }
+    },
+    {
+      "q": {
+        "de": "Was sind Reasoning-Token?",
+        "en": "What are reasoning tokens?",
+        "it": "Cosa sono i token di ragionamento?",
+        "fr": "Que sont les tokens de raisonnement ?"
+      },
+      "a": {
+        "de": "Neuere Modelle mit ausgeprägtem Schlussfolgern erzeugen vor der eigentlichen Antwort interne Denkschritte. Diese Reasoning-Token sind oft nicht sichtbar, werden aber wie Ausgabe-Token abgerechnet. Bei komplexen Aufgaben kann das die Kosten deutlich erhöhen - ein Grund, Modell und Aufgabe bewusst aufeinander abzustimmen.",
+        "en": "Newer models with strong reasoning produce internal thinking steps before the actual answer. These reasoning tokens are often invisible but are billed like output tokens. On complex tasks this can raise costs noticeably - a reason to deliberately match model to task.",
+        "it": "I modelli recenti con forte ragionamento producono passaggi di pensiero interni prima della risposta. Questi token di ragionamento spesso non sono visibili ma vengono fatturati come token di output. Su compiti complessi possono aumentare i costi in modo sensibile: un motivo per abbinare con cura modello e compito.",
+        "fr": "Les modèles récents à fort raisonnement produisent des étapes de réflexion internes avant la réponse. Ces tokens de raisonnement sont souvent invisibles mais facturés comme des tokens de sortie. Sur des tâches complexes, cela peut augmenter nettement les coûts - une raison d'accorder soigneusement le modèle à la tâche."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie budgetiere ich KI-Kosten für ein Unternehmen?",
+        "en": "How do I budget AI costs for a business?",
+        "it": "Come stimo i costi dell'IA per un'azienda?",
+        "fr": "Comment budgétiser les coûts d'IA pour une entreprise ?"
+      },
+      "a": {
+        "de": "Schätzen Sie Eingabe- und Ausgabe-Token pro typischem Vorgang, multiplizieren Sie mit dem erwarteten Volumen und mit den aktuellen Anbieterpreisen. Beginnen Sie mit einem kleineren Modell, setzen Sie Kostenlimits und Alerts und rechnen Sie in CHF mit Wechselkurspuffer. Prüfen Sie zusätzlich Datenschutz nach revDSG, bevor Personendaten verarbeitet werden.",
+        "en": "Estimate input and output tokens per typical operation, multiply by expected volume and by current provider prices. Start with a smaller model, set cost limits and alerts, and budget in CHF with an exchange-rate buffer. Also check revDSG data-protection requirements before processing personal data.",
+        "it": "Stima i token di input e output per operazione tipica, moltiplica per il volume atteso e per i prezzi attuali del fornitore. Parti da un modello più piccolo, imposta limiti di costo e avvisi, e calcola in CHF con un margine sul cambio. Verifica inoltre i requisiti di protezione dati secondo la revDSG prima di trattare dati personali.",
+        "fr": "Estimez les tokens d'entrée et de sortie par opération type, multipliez par le volume attendu et par les prix actuels du fournisseur. Commencez par un modèle plus petit, fixez des limites de coût et des alertes, et budgétisez en CHF avec une marge de change. Vérifiez aussi les exigences de protection des données selon la revDSG avant de traiter des données personnelles."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Token",
+    "Input-Token",
+    "Output-Token",
+    "Kontextfenster",
+    "API",
+    "Abonnement",
+    "ChatGPT",
+    "Claude",
+    "Google Gemini",
+    "Prompt Caching",
+    "Batch-Verarbeitung",
+    "Reasoning-Token",
+    "revDSG/nFADP",
+    "EU AI Act",
+    "EDOEB",
+    "Apertus (ETH/EPFL)",
+    "CHF"
+  ]
+}

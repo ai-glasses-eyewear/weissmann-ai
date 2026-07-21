@@ -1,0 +1,444 @@
+{
+  "id": "ai-risks-and-limitations",
+  "cluster": "trust-security-privacy-regulation",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "ki-risiken-grenzen",
+    "en": "ai-risks-limitations",
+    "it": "rischi-limiti-ia",
+    "fr": "risques-limites-ia"
+  },
+  "title": {
+    "de": "KI-Risiken und Grenzen: der ehrliche Überblick | Weissmann AI",
+    "en": "AI Risks and Limitations: An Honest Guide | Weissmann AI",
+    "it": "Rischi e limiti dell'IA: la guida onesta | Weissmann AI",
+    "fr": "Risques et limites de l'IA : le guide clair | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Halluzination, Bias, Over-Reliance und Sicherheit: Was KI wirklich nicht kann und wie Sie die Risiken nach revDSG und EU AI Act verantwortungsvoll mindern.",
+    "en": "Hallucination, bias, over-reliance and security: what AI really cannot do, and how to mitigate the risks responsibly under Swiss revFADP and the EU AI Act.",
+    "it": "Allucinazioni, bias, eccessiva fiducia e sicurezza: cosa l'IA non sa fare e come ridurre i rischi secondo la revLPD e l'EU AI Act.",
+    "fr": "Hallucination, biais, dépendance excessive et sécurité : ce que l'IA ne peut pas faire et comment réduire les risques selon la nLPD et l'EU AI Act."
+  },
+  "kicker": {
+    "de": "Vertrauen, Sicherheit & Regulierung",
+    "en": "Trust, Security & Regulation",
+    "it": "Fiducia, sicurezza e regolamentazione",
+    "fr": "Confiance, sécurité et réglementation"
+  },
+  "h1": {
+    "de": "KI-Risiken und Grenzen: Was Sie wissen müssen und wie Sie sie mindern",
+    "en": "AI Risks and Limitations: What You Need to Know and How to Mitigate Them",
+    "it": "Rischi e limiti dell'IA: cosa sapere e come mitigarli",
+    "fr": "Risques et limites de l'IA : ce qu'il faut savoir et comment les atténuer"
+  },
+  "answerFirst": {
+    "de": "KI-Systeme wie grosse Sprachmodelle haben systematische Grenzen: Sie erfinden plausibel klingende Fakten (Halluzination), reproduzieren Verzerrungen aus Trainingsdaten (Bias), verleiten zu unkritischem Vertrauen (Over-Reliance) und eröffnen neue Angriffsflächen wie Prompt Injection. Diese Risiken lassen sich nicht vollständig beseitigen, aber durch menschliche Kontrolle, Quellenprüfung, klare Einsatzgrenzen und Governance nach revDSG und EU AI Act deutlich reduzieren.",
+    "en": "AI systems such as large language models have systematic limitations: they invent plausible-sounding facts (hallucination), reproduce biases from training data, encourage uncritical trust (over-reliance) and open new attack surfaces such as prompt injection. These risks cannot be fully eliminated, but they can be substantially reduced through human oversight, source verification, clear boundaries of use and governance aligned with the Swiss revFADP and the EU AI Act.",
+    "it": "I sistemi di IA come i grandi modelli linguistici hanno limiti sistematici: inventano fatti plausibili (allucinazioni), riproducono i bias dei dati di addestramento, inducono una fiducia acritica (eccessiva fiducia) e aprono nuove superfici d'attacco come la prompt injection. Questi rischi non si eliminano del tutto, ma si riducono nettamente con supervisione umana, verifica delle fonti, limiti d'uso chiari e una governance conforme alla revLPD e all'EU AI Act.",
+    "fr": "Les systèmes d'IA comme les grands modèles de langage ont des limites systématiques : ils inventent des faits plausibles (hallucination), reproduisent les biais des données d'entraînement, encouragent une confiance non critique (dépendance excessive) et ouvrent de nouvelles surfaces d'attaque comme l'injection de prompt. Ces risques ne s'éliminent pas totalement, mais se réduisent fortement par la supervision humaine, la vérification des sources, des limites d'usage claires et une gouvernance conforme à la nLPD et à l'EU AI Act."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Die vier grossen Risikofelder der KI im Überblick",
+        "en": "The Four Main Risk Areas of AI at a Glance",
+        "it": "I quattro grandi ambiti di rischio dell'IA in sintesi",
+        "fr": "Les quatre grands domaines de risque de l'IA en un coup d'œil"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Risiken lassen sich in vier Kategorien bündeln: inhaltliche Fehler (Halluzinationen), systematische Verzerrungen (Bias), menschliche Fehlanpassung (Over-Reliance und Automation Bias) sowie technische und rechtliche Risiken (Sicherheit, Datenschutz, Haftung). Keine dieser Kategorien ist ein Bug, der sich mit dem nächsten Update behebt. Sie folgen aus der Funktionsweise heutiger Modelle, die statistische Muster aus Daten lernen, statt Wahrheit oder Kausalität zu verstehen.",
+          "en": "AI risks fall into four categories: content errors (hallucination), systematic distortion (bias), human misalignment (over-reliance and automation bias), and technical and legal risk (security, data protection, liability). None of these is a bug that the next update will fix. They follow from how today's models work: they learn statistical patterns from data rather than understanding truth or causality.",
+          "it": "I rischi dell'IA si raggruppano in quattro categorie: errori di contenuto (allucinazioni), distorsioni sistematiche (bias), disallineamento umano (eccessiva fiducia e automation bias) e rischi tecnici e giuridici (sicurezza, protezione dei dati, responsabilità). Nessuna di queste è un bug che il prossimo aggiornamento risolverà: derivano dal modo in cui funzionano i modelli attuali, che apprendono schemi statistici dai dati anziché comprendere verità o causalità.",
+          "fr": "Les risques de l'IA se répartissent en quatre catégories : erreurs de contenu (hallucination), distorsions systématiques (biais), désalignement humain (dépendance excessive et biais d'automatisation) et risques techniques et juridiques (sécurité, protection des données, responsabilité). Aucun n'est un bug que la prochaine mise à jour corrigera : ils découlent du fonctionnement des modèles actuels, qui apprennent des schémas statistiques plutôt que de comprendre la vérité ou la causalité."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Halluzination: die KI erzeugt falsche, aber überzeugend formulierte Inhalte.",
+          "en": "Hallucination: the AI produces false but convincingly worded content.",
+          "it": "Allucinazione: l'IA genera contenuti falsi ma formulati in modo convincente.",
+          "fr": "Hallucination : l'IA produit un contenu faux mais formulé de façon convaincante."
+        },
+        {
+          "de": "Bias: gesellschaftliche und datenbedingte Verzerrungen werden reproduziert.",
+          "en": "Bias: societal and data-driven distortions are reproduced.",
+          "it": "Bias: vengono riprodotte distorsioni sociali e legate ai dati.",
+          "fr": "Biais : les distorsions sociales et liées aux données sont reproduites."
+        },
+        {
+          "de": "Over-Reliance: Menschen übernehmen KI-Ergebnisse unkritisch.",
+          "en": "Over-reliance: people accept AI output uncritically.",
+          "it": "Eccessiva fiducia: le persone accettano acriticamente gli output dell'IA.",
+          "fr": "Dépendance excessive : on accepte les résultats de l'IA sans esprit critique."
+        },
+        {
+          "de": "Sicherheit und Datenschutz: neue Angriffsflächen und rechtliche Pflichten.",
+          "en": "Security and data protection: new attack surfaces and legal obligations.",
+          "it": "Sicurezza e protezione dei dati: nuove superfici d'attacco e obblighi legali.",
+          "fr": "Sécurité et protection des données : nouvelles surfaces d'attaque et obligations légales."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Halluzinationen: Wenn KI überzeugend danebenliegt",
+        "en": "Hallucination: When AI Is Confidently Wrong",
+        "it": "Allucinazioni: quando l'IA sbaglia con sicurezza",
+        "fr": "Hallucination : quand l'IA se trompe avec assurance"
+      },
+      "paragraphs": [
+        {
+          "de": "Grosse Sprachmodelle erzeugen Text, indem sie das statistisch wahrscheinlichste nächste Wort vorhersagen. Sie besitzen kein internes Faktenmodell und keinen Wahrheitsbegriff, deshalb formulieren sie falsche Aussagen mit derselben Souveränität wie korrekte: erfundene Studien, nicht existierende Gerichtsurteile, falsche Zitate, plausible aber falsche Zahlen. Besonders heikel ist das in Recht, Medizin und Finanzen, wo ein einziger Fehler teuer wird und die flüssige Sprache echte Verlässlichkeit vortäuscht.",
+          "en": "Large language models generate text by predicting the statistically most likely next word. They have no internal model of facts and no concept of truth, so they state falsehoods with the same fluency as correct information: fabricated studies, non-existent court rulings, false quotes, plausible but wrong figures. This is especially dangerous in law, medicine and finance, where a single error is costly and fluent language creates a false impression of reliability.",
+          "it": "I grandi modelli linguistici generano testo prevedendo la parola successiva statisticamente più probabile. Non hanno un modello interno dei fatti né un concetto di verità, quindi affermano falsità con la stessa scioltezza delle informazioni corrette: studi inventati, sentenze inesistenti, citazioni false, cifre plausibili ma errate. È particolarmente rischioso in ambito legale, medico e finanziario, dove un solo errore costa caro e il linguaggio fluido simula un'affidabilità che non c'è.",
+          "fr": "Les grands modèles de langage génèrent du texte en prédisant le mot suivant le plus probable statistiquement. Ils n'ont ni modèle interne des faits ni notion de vérité : ils énoncent donc des faussetés avec la même aisance que des informations exactes — études inventées, décisions de justice inexistantes, fausses citations, chiffres plausibles mais erronés. C'est particulièrement dangereux en droit, en médecine et en finance, où une seule erreur coûte cher et où la fluidité du langage simule une fiabilité inexistante."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Mindern: Antworten an geprüfte Quellen binden (Retrieval-Augmented Generation) und Belege mitliefern lassen.",
+          "en": "Mitigate: ground answers in verified sources (retrieval-augmented generation) and require citations.",
+          "it": "Mitigare: ancorare le risposte a fonti verificate (retrieval-augmented generation) e richiedere le citazioni.",
+          "fr": "Atténuer : ancrer les réponses dans des sources vérifiées (retrieval-augmented generation) et exiger des citations."
+        },
+        {
+          "de": "Fakten, Zahlen, Namen und Zitate immer unabhängig verifizieren, nie ungeprüft übernehmen.",
+          "en": "Always verify facts, figures, names and quotes independently; never accept them unchecked.",
+          "it": "Verificare sempre in modo indipendente fatti, cifre, nomi e citazioni; mai accettarli senza controllo.",
+          "fr": "Toujours vérifier de façon indépendante faits, chiffres, noms et citations ; ne jamais les accepter sans contrôle."
+        },
+        {
+          "de": "KI für Entwürfe, Zusammenfassungen und Ideen nutzen, nicht als letzte Faktenquelle.",
+          "en": "Use AI for drafts, summaries and ideas, not as a final source of truth.",
+          "it": "Usare l'IA per bozze, sintesi e idee, non come fonte ultima di verità.",
+          "fr": "Utiliser l'IA pour des brouillons, des synthèses et des idées, pas comme source ultime de vérité."
+        },
+        {
+          "de": "Hinweis: Kein Prompt und kein Update beseitigt Halluzinationen vollständig; sie werden seltener, aber nicht null.",
+          "en": "Note: no prompt or update removes hallucination entirely; it becomes rarer, not zero.",
+          "it": "Nota: nessun prompt o aggiornamento elimina del tutto le allucinazioni; diventano più rare, non nulle.",
+          "fr": "À noter : aucun prompt ni aucune mise à jour n'élimine totalement l'hallucination ; elle devient rare, pas nulle."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Bias und Verzerrung: Vorurteile aus den Daten",
+        "en": "Bias and Distortion: Prejudice From the Data",
+        "it": "Bias e distorsione: pregiudizi che vengono dai dati",
+        "fr": "Biais et distorsion : des préjugés issus des données"
+      },
+      "paragraphs": [
+        {
+          "de": "Modelle lernen aus riesigen Textmengen, die gesellschaftliche Stereotype, historische Ungleichheiten und Lücken enthalten. Diese Muster reproduzieren sie, etwa bei der Vorauswahl von Bewerbungen, bei Bonitätslogiken, Bildbeschreibungen oder der Qualität für kleinere Sprachen. Für die Schweiz relevant: Modelle sind meist stark englischlastig trainiert, Schweizerdeutsch, Rätoromanisch und lokale Rechts- und Verwaltungskontexte sind unterrepräsentiert, was zu subtil falschen oder unpassenden Ergebnissen führt.",
+          "en": "Models learn from vast amounts of text that carry societal stereotypes, historical inequalities and gaps. They reproduce these patterns, for example when screening job applications, in credit-scoring logic, in image descriptions, or in quality for smaller languages. Relevant for Switzerland: models are usually trained heavily on English, while Swiss German, Romansh and local legal and administrative contexts are underrepresented, leading to subtly wrong or ill-fitting results.",
+          "it": "I modelli apprendono da enormi quantità di testo che contengono stereotipi sociali, disuguaglianze storiche e lacune. Riproducono questi schemi, per esempio nella preselezione delle candidature, nelle logiche di merito creditizio, nelle descrizioni di immagini o nella qualità per le lingue minori. Rilevante per la Svizzera: i modelli sono addestrati soprattutto sull'inglese, mentre lo svizzero tedesco, il romancio e i contesti giuridici e amministrativi locali sono sottorappresentati, con risultati sottilmente errati o inadeguati.",
+          "fr": "Les modèles apprennent à partir d'énormes volumes de texte porteurs de stéréotypes sociaux, d'inégalités historiques et de lacunes. Ils reproduisent ces schémas, par exemple lors du tri de candidatures, dans les logiques de scoring de crédit, dans les descriptions d'images ou dans la qualité pour les langues moins répandues. Pertinent pour la Suisse : les modèles sont surtout entraînés sur l'anglais, tandis que le suisse allemand, le romanche et les contextes juridiques et administratifs locaux sont sous-représentés, d'où des résultats subtilement faux ou inadaptés."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Bei Entscheidungen über Menschen (Personal, Kredit, Versicherung) prüft der EU AI Act solche Anwendungen als Hochrisiko.",
+          "en": "For decisions about people (HR, credit, insurance), the EU AI Act treats such applications as high-risk.",
+          "it": "Per decisioni sulle persone (HR, credito, assicurazioni) l'EU AI Act classifica queste applicazioni come ad alto rischio.",
+          "fr": "Pour les décisions concernant des personnes (RH, crédit, assurance), l'EU AI Act classe ces applications à haut risque."
+        },
+        {
+          "de": "Das revDSG gibt Betroffenen Rechte bei automatisierten Einzelentscheidungen, inklusive Information und menschlicher Überprüfung.",
+          "en": "The Swiss revFADP gives individuals rights regarding automated individual decisions, including information and human review.",
+          "it": "La revLPD conferisce agli interessati diritti sulle decisioni individuali automatizzate, tra cui informazione e revisione umana.",
+          "fr": "La nLPD confère aux personnes concernées des droits sur les décisions individuelles automatisées, dont l'information et un réexamen humain."
+        },
+        {
+          "de": "Ergebnisse über verschiedene Gruppen hinweg testen und dokumentieren, statt Fairness zu unterstellen.",
+          "en": "Test and document outputs across different groups instead of assuming fairness.",
+          "it": "Testare e documentare gli output su gruppi diversi invece di dare per scontata l'equità.",
+          "fr": "Tester et documenter les résultats sur différents groupes au lieu de présumer l'équité."
+        },
+        {
+          "de": "Souveräne und mehrsprachige Ansätze wie das offene Schweizer Modell Apertus (ETH Zürich, EPFL) adressieren Sprach- und Kontextlücken.",
+          "en": "Sovereign, multilingual efforts such as the open Swiss model Apertus (ETH Zurich, EPFL) address language and context gaps.",
+          "it": "Approcci sovrani e multilingue come il modello svizzero aperto Apertus (ETH Zurigo, EPFL) affrontano le lacune linguistiche e di contesto.",
+          "fr": "Des approches souveraines et multilingues comme le modèle suisse ouvert Apertus (ETH Zurich, EPFL) comblent les lacunes de langue et de contexte."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Over-Reliance: das Risiko des blinden Vertrauens",
+        "en": "Over-Reliance: The Risk of Blind Trust",
+        "it": "Eccessiva fiducia: il rischio della fiducia cieca",
+        "fr": "Dépendance excessive : le risque de la confiance aveugle"
+      },
+      "paragraphs": [
+        {
+          "de": "Automation Bias beschreibt die menschliche Neigung, KI-Vorschläge unkritisch zu übernehmen, gerade weil sie kompetent und flüssig klingen. Die Folgen sind schleichend: Fachwissen verkümmert (Deskilling), Fehler bleiben unentdeckt, und die Verantwortung verwischt, wenn niemand mehr sagen kann, wer die Entscheidung eigentlich getroffen hat. Je überzeugender und bequemer ein System wirkt, desto grösser ist paradoxerweise das Risiko, dass seine Fehler ungeprüft in reale Entscheidungen einfliessen.",
+          "en": "Automation bias is the human tendency to accept AI suggestions uncritically, precisely because they sound competent and fluent. The effects creep in: expertise atrophies (de-skilling), errors go undetected, and accountability blurs when no one can say who actually made the decision. Paradoxically, the more convincing and convenient a system feels, the greater the risk that its errors flow unchecked into real decisions.",
+          "it": "L'automation bias è la tendenza umana ad accettare acriticamente i suggerimenti dell'IA, proprio perché suonano competenti e scorrevoli. Gli effetti sono insidiosi: le competenze si atrofizzano (deskilling), gli errori restano nascosti e la responsabilità si dissolve quando nessuno sa più chi abbia preso la decisione. Paradossalmente, più un sistema appare convincente e comodo, maggiore è il rischio che i suoi errori confluiscano senza controllo in decisioni reali.",
+          "fr": "Le biais d'automatisation est la tendance humaine à accepter sans esprit critique les suggestions de l'IA, précisément parce qu'elles semblent compétentes et fluides. Les effets s'installent insidieusement : l'expertise s'atrophie (perte de compétences), les erreurs passent inaperçues et la responsabilité se dilue quand plus personne ne sait qui a réellement décidé. Paradoxalement, plus un système paraît convaincant et pratique, plus le risque que ses erreurs se glissent sans contrôle dans des décisions réelles est élevé."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Menschliche Letztverantwortung festlegen: KI schlägt vor, ein Mensch entscheidet und haftet.",
+          "en": "Assign final human accountability: AI proposes, a human decides and is responsible.",
+          "it": "Definire la responsabilità umana finale: l'IA propone, una persona decide e risponde.",
+          "fr": "Fixer la responsabilité humaine finale : l'IA propose, un humain décide et répond."
+        },
+        {
+          "de": "Kompetenzen aktiv erhalten, damit Teams KI-Ergebnisse noch beurteilen und korrigieren können.",
+          "en": "Actively maintain skills so teams can still judge and correct AI output.",
+          "it": "Mantenere attivamente le competenze affinché i team possano ancora valutare e correggere gli output dell'IA.",
+          "fr": "Entretenir activement les compétences pour que les équipes puissent encore évaluer et corriger les résultats de l'IA."
+        },
+        {
+          "de": "Bei hohem Risiko bewusste Reibung einbauen: Zweitmeinung, Vier-Augen-Prinzip, Pflicht zur Begründung.",
+          "en": "For high stakes, build in deliberate friction: second opinion, four-eyes principle, required justification.",
+          "it": "Per casi ad alto rischio, introdurre un attrito voluto: seconda opinione, principio dei quattro occhi, obbligo di motivazione.",
+          "fr": "Pour les enjeux élevés, introduire une friction délibérée : deuxième avis, principe des quatre yeux, justification obligatoire."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Sicherheit und Datenschutz: neue Angriffsflächen",
+        "en": "Security and Data Protection: New Attack Surfaces",
+        "it": "Sicurezza e protezione dei dati: nuove superfici d'attacco",
+        "fr": "Sécurité et protection des données : de nouvelles surfaces d'attaque"
+      },
+      "paragraphs": [
+        {
+          "de": "KI schafft eigene Sicherheitsrisiken. Bei Prompt Injection schmuggeln Angreifer Anweisungen in Webseiten, Dokumente oder E-Mails, die ein KI-Assistent dann als Befehl ausführt, etwa um Daten abzugreifen oder Aktionen auszulösen. Dazu kommen Datenabfluss über Eingaben in Cloud-Modelle, Jailbreaks, unsichere Agenten mit Tool-Zugriff und manipulierte Trainingsdaten. Datenschutzrechtlich gilt: Wer Personendaten oder Geschäftsgeheimnisse in ein externes Modell eingibt, kann ohne saubere Grundlage gegen das revDSG verstossen.",
+          "en": "AI creates its own security risks. In prompt injection, attackers hide instructions inside web pages, documents or emails that an AI assistant then executes as commands, for example to exfiltrate data or trigger actions. Add to this data leakage through inputs to cloud models, jailbreaks, insecure agents with tool access, and poisoned training data. On data protection: entering personal data or trade secrets into an external model can breach the Swiss revFADP without a proper legal basis.",
+          "it": "L'IA crea rischi di sicurezza propri. Nella prompt injection gli aggressori nascondono istruzioni in pagine web, documenti o e-mail che un assistente IA esegue poi come comandi, ad esempio per sottrarre dati o innescare azioni. A ciò si aggiungono la fuga di dati tramite input a modelli cloud, i jailbreak, gli agenti insicuri con accesso agli strumenti e i dati di addestramento manomessi. Sul piano della protezione dei dati: inserire dati personali o segreti aziendali in un modello esterno può violare la revLPD senza una base giuridica adeguata.",
+          "fr": "L'IA crée ses propres risques de sécurité. Dans l'injection de prompt, des attaquants dissimulent des instructions dans des pages web, des documents ou des e-mails qu'un assistant IA exécute ensuite comme des commandes, par exemple pour exfiltrer des données ou déclencher des actions. S'y ajoutent la fuite de données via les saisies dans les modèles cloud, les jailbreaks, les agents non sécurisés avec accès aux outils et les données d'entraînement empoisonnées. Côté protection des données : saisir des données personnelles ou des secrets d'affaires dans un modèle externe peut enfreindre la nLPD sans base légale appropriée."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Keine sensiblen Personen- oder Geschäftsdaten in Consumer-Chatbots eingeben; auf Geschäftsangebote mit Auftragsbearbeitungsvertrag setzen.",
+          "en": "Never enter sensitive personal or business data into consumer chatbots; use business tiers with a data-processing agreement.",
+          "it": "Non inserire dati personali o aziendali sensibili nei chatbot consumer; usare offerte business con contratto di responsabile del trattamento.",
+          "fr": "Ne jamais saisir de données personnelles ou d'affaires sensibles dans des chatbots grand public ; privilégier les offres pro avec contrat de sous-traitance."
+        },
+        {
+          "de": "Datenstandort, Aufbewahrung und ein mögliches Training auf Ihren Eingaben klären; Opt-outs nutzen.",
+          "en": "Clarify data location, retention and whether your inputs are used for training; use opt-outs.",
+          "it": "Chiarire ubicazione dei dati, conservazione ed eventuale uso degli input per l'addestramento; usare gli opt-out.",
+          "fr": "Clarifier la localisation des données, la conservation et l'usage éventuel de vos saisies pour l'entraînement ; activer les options de retrait."
+        },
+        {
+          "de": "Agenten und Integrationen nach dem Prinzip der minimalen Rechte gestalten und ausgehende Aktionen begrenzen.",
+          "en": "Design agents and integrations on least-privilege principles and constrain outbound actions.",
+          "it": "Progettare agenti e integrazioni secondo il principio del privilegio minimo e limitare le azioni in uscita.",
+          "fr": "Concevoir agents et intégrations selon le moindre privilège et limiter les actions sortantes."
+        },
+        {
+          "de": "Bei riskanten Anwendungen eine Datenschutz-Folgenabschätzung durchführen; der EDÖB ist die Schweizer Aufsichtsbehörde.",
+          "en": "Run a data protection impact assessment for risky use cases; the FDPIC is the Swiss supervisory authority.",
+          "it": "Per usi rischiosi svolgere una valutazione d'impatto sulla protezione dei dati; l'IFPDT è l'autorità di vigilanza svizzera.",
+          "fr": "Réaliser une analyse d'impact relative à la protection des données pour les usages à risque ; le PFPDT est l'autorité suisse de surveillance."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Grenzen der KI: was Sprachmodelle grundsätzlich nicht können",
+        "en": "Limits of AI: What Language Models Fundamentally Cannot Do",
+        "it": "Limiti dell'IA: cosa i modelli linguistici non possono fare",
+        "fr": "Limites de l'IA : ce que les modèles de langage ne peuvent pas faire"
+      },
+      "paragraphs": [
+        {
+          "de": "Neben Risiken haben KI-Modelle harte, bauartbedingte Grenzen. Sie verstehen keine Kausalität, sondern erkennen Korrelationen; sie kennen die Welt nur bis zu einem Wissensstichtag und ohne angebundene Werkzeuge keine Echtzeit-Ereignisse; sie rechnen nicht zuverlässig; und sie sind nicht deterministisch, dieselbe Frage kann unterschiedliche Antworten liefern. Entscheidend: Ein Modell kann seine eigene Unsicherheit nicht verlässlich einschätzen und warnt selten, wenn es an eine Grenze stösst.",
+          "en": "Beyond risks, AI models have hard, by-design limits. They do not understand causality but detect correlations; they know the world only up to a knowledge cut-off and, without connected tools, no real-time events; they do not calculate reliably; and they are non-deterministic, so the same question can yield different answers. Crucially, a model cannot reliably gauge its own uncertainty and rarely warns you when it hits a boundary.",
+          "it": "Oltre ai rischi, i modelli di IA hanno limiti rigidi e strutturali. Non comprendono la causalità ma rilevano correlazioni; conoscono il mondo solo fino a una data limite delle conoscenze e, senza strumenti collegati, nessun evento in tempo reale; non calcolano in modo affidabile; e non sono deterministici, quindi la stessa domanda può dare risposte diverse. Fondamentale: un modello non sa valutare in modo affidabile la propria incertezza e raramente avverte quando raggiunge un limite.",
+          "fr": "Au-delà des risques, les modèles d'IA ont des limites structurelles et incontournables. Ils ne comprennent pas la causalité mais détectent des corrélations ; ils ne connaissent le monde que jusqu'à une date de coupure des connaissances et, sans outils connectés, aucun événement en temps réel ; ils ne calculent pas de façon fiable ; et ils sont non déterministes, si bien que la même question peut donner des réponses différentes. Essentiel : un modèle ne sait pas évaluer sa propre incertitude et prévient rarement lorsqu'il atteint une limite."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kein echtes Verständnis und keine Kausalität, nur Musterfortsetzung.",
+          "en": "No genuine understanding or causality, only pattern continuation.",
+          "it": "Nessuna vera comprensione né causalità, solo continuazione di schemi.",
+          "fr": "Aucune compréhension réelle ni causalité, seulement une continuation de schémas."
+        },
+        {
+          "de": "Wissensstichtag und begrenztes Kontextfenster: langer oder aktueller Kontext geht verloren.",
+          "en": "Knowledge cut-off and limited context window: long or current context is lost.",
+          "it": "Data limite delle conoscenze e finestra di contesto limitata: il contesto lungo o attuale va perso.",
+          "fr": "Date de coupure et fenêtre de contexte limitée : le contexte long ou actuel se perd."
+        },
+        {
+          "de": "Unzuverlässig bei Mathematik, exakter Logik und reproduzierbaren Ergebnissen.",
+          "en": "Unreliable at mathematics, exact logic and reproducible results.",
+          "it": "Inaffidabile in matematica, logica esatta e risultati riproducibili.",
+          "fr": "Peu fiable en mathématiques, logique exacte et résultats reproductibles."
+        },
+        {
+          "de": "Keine verlässliche Selbsteinschätzung der eigenen Verlässlichkeit oder Quellen.",
+          "en": "No reliable self-assessment of its own reliability or sources.",
+          "it": "Nessuna autovalutazione affidabile della propria affidabilità o delle fonti.",
+          "fr": "Aucune auto-évaluation fiable de sa propre fiabilité ou de ses sources."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Verantwortungsvoll mindern: ein Governance-Fahrplan",
+        "en": "Mitigate Responsibly: A Governance Roadmap",
+        "it": "Mitigare responsabilmente: una roadmap di governance",
+        "fr": "Atténuer de façon responsable : une feuille de route de gouvernance"
+      },
+      "paragraphs": [
+        {
+          "de": "Risiken mindern heisst nicht, auf KI zu verzichten, sondern sie mit Augenmass und Kontrollen einzusetzen. Ein praktikabler Rahmen ordnet jeden Anwendungsfall nach Risiko ein, definiert menschliche Kontrolle und dokumentiert Entscheidungen, damit sie überprüfbar bleiben. Der EU AI Act (extraterritorial, betrifft auch Schweizer Anbieter mit EU-Bezug) und das revDSG geben dafür den rechtlichen Rahmen; Programme wie Innosuisse und Schweizer Forschung liefern vertrauenswürdige Bausteine.",
+          "en": "Mitigating risk does not mean abandoning AI, but deploying it with judgement and controls. A workable framework classifies each use case by risk, defines human oversight, and documents decisions so they remain auditable. The EU AI Act (extraterritorial, reaching Swiss providers with EU ties) and the revFADP set the legal frame; programmes such as Innosuisse and Swiss research provide trustworthy building blocks.",
+          "it": "Mitigare i rischi non significa rinunciare all'IA, ma impiegarla con criterio e controlli. Un quadro praticabile classifica ogni caso d'uso per rischio, definisce la supervisione umana e documenta le decisioni affinché restino verificabili. L'EU AI Act (extraterritoriale, riguarda anche i fornitori svizzeri con legami UE) e la revLPD forniscono la cornice giuridica; programmi come Innosuisse e la ricerca svizzera offrono componenti affidabili.",
+          "fr": "Atténuer les risques ne signifie pas renoncer à l'IA, mais la déployer avec discernement et contrôles. Un cadre praticable classe chaque cas d'usage par risque, définit la supervision humaine et documente les décisions pour qu'elles restent auditables. L'EU AI Act (extraterritorial, touchant les fournisseurs suisses liés à l'UE) et la nLPD fixent le cadre juridique ; des programmes comme Innosuisse et la recherche suisse fournissent des briques de confiance."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Jeden Use Case nach Risiko klassifizieren und ungeeignete Einsätze (z. B. autonome Hochrisiko-Entscheide) ausschliessen.",
+          "en": "Classify each use case by risk and rule out unsuitable uses (e.g. autonomous high-risk decisions).",
+          "it": "Classificare ogni caso d'uso per rischio ed escludere gli impieghi inadatti (es. decisioni autonome ad alto rischio).",
+          "fr": "Classer chaque cas d'usage par risque et exclure les usages inadaptés (p. ex. décisions autonomes à haut risque)."
+        },
+        {
+          "de": "Human-in-the-loop, Quellenbindung und Faktenprüfung als Standard verankern.",
+          "en": "Embed human-in-the-loop, source grounding and fact-checking as standard.",
+          "it": "Rendere standard human-in-the-loop, ancoraggio alle fonti e verifica dei fatti.",
+          "fr": "Ancrer comme standard le human-in-the-loop, l'ancrage aux sources et la vérification des faits."
+        },
+        {
+          "de": "KI-Nutzung transparent kennzeichnen und Mitarbeitende in Grenzen und Risiken schulen.",
+          "en": "Label AI use transparently and train staff on limits and risks.",
+          "it": "Segnalare in modo trasparente l'uso dell'IA e formare il personale su limiti e rischi.",
+          "fr": "Signaler l'usage de l'IA de façon transparente et former le personnel aux limites et risques."
+        },
+        {
+          "de": "Datenschutz-Folgenabschätzung, Logging, Monitoring und regelmässige Überprüfung (auch Red-Teaming) etablieren.",
+          "en": "Establish a data protection impact assessment, logging, monitoring and regular review (including red-teaming).",
+          "it": "Istituire valutazione d'impatto, logging, monitoraggio e revisioni periodiche (incluso il red-teaming).",
+          "fr": "Mettre en place une analyse d'impact, la journalisation, le monitoring et des revues régulières (y compris le red-teaming)."
+        },
+        {
+          "de": "Anbieter und Modelle prüfen: Datenstandort, Sicherheit, Nachvollziehbarkeit und Exit-Optionen.",
+          "en": "Vet vendors and models: data location, security, traceability and exit options.",
+          "it": "Valutare fornitori e modelli: ubicazione dei dati, sicurezza, tracciabilità e opzioni di uscita.",
+          "fr": "Évaluer fournisseurs et modèles : localisation des données, sécurité, traçabilité et options de sortie."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist eine KI-Halluzination?",
+        "en": "What is an AI hallucination?",
+        "it": "Che cos'è un'allucinazione dell'IA?",
+        "fr": "Qu'est-ce qu'une hallucination de l'IA ?"
+      },
+      "a": {
+        "de": "Eine Halluzination ist eine falsche, aber überzeugend formulierte Aussage eines KI-Modells, etwa eine erfundene Quelle, ein falsches Zitat oder eine nicht existierende Zahl. Sie entsteht, weil Sprachmodelle wahrscheinliche Wortfolgen erzeugen und keinen Wahrheitsbegriff besitzen. Prüfen Sie faktische Angaben deshalb immer unabhängig.",
+        "en": "A hallucination is a false but convincingly worded statement from an AI model, such as a fabricated source, a wrong quote or a non-existent figure. It arises because language models generate likely word sequences and have no concept of truth. Always verify factual claims independently.",
+        "it": "Un'allucinazione è un'affermazione falsa ma formulata in modo convincente da un modello di IA, come una fonte inventata, una citazione errata o una cifra inesistente. Nasce perché i modelli linguistici generano sequenze di parole probabili e non hanno un concetto di verità. Verificate sempre in modo indipendente i dati fattuali.",
+        "fr": "Une hallucination est une affirmation fausse mais formulée de façon convaincante par un modèle d'IA, comme une source inventée, une citation erronée ou un chiffre inexistant. Elle survient parce que les modèles de langage génèrent des suites de mots probables et n'ont aucune notion de vérité. Vérifiez toujours les faits de façon indépendante."
+      }
+    },
+    {
+      "q": {
+        "de": "Kann man KI-Risiken vollständig beseitigen?",
+        "en": "Can AI risks be eliminated completely?",
+        "it": "Si possono eliminare del tutto i rischi dell'IA?",
+        "fr": "Peut-on éliminer complètement les risques de l'IA ?"
+      },
+      "a": {
+        "de": "Nein. Halluzination, Bias und Unsicherheit folgen aus der Funktionsweise heutiger Modelle und lassen sich reduzieren, aber nicht auf null bringen. Verantwortungsvoll bedeutet, Risiken zu managen: menschliche Kontrolle, Quellenbindung, klare Einsatzgrenzen, Datenschutz und Monitoring statt der Erwartung eines fehlerfreien Systems.",
+        "en": "No. Hallucination, bias and uncertainty follow from how today's models work and can be reduced but not brought to zero. Responsible use means managing risk: human oversight, source grounding, clear boundaries, data protection and monitoring, rather than expecting an error-free system.",
+        "it": "No. Allucinazioni, bias e incertezza derivano dal funzionamento dei modelli attuali e si possono ridurre ma non azzerare. Un uso responsabile significa gestire il rischio: supervisione umana, ancoraggio alle fonti, limiti chiari, protezione dei dati e monitoraggio, anziché attendersi un sistema privo di errori.",
+        "fr": "Non. Hallucination, biais et incertitude découlent du fonctionnement des modèles actuels et peuvent être réduits mais pas ramenés à zéro. Un usage responsable, c'est gérer le risque : supervision humaine, ancrage aux sources, limites claires, protection des données et monitoring, plutôt que d'attendre un système sans erreur."
+      }
+    },
+    {
+      "q": {
+        "de": "Was gilt in der Schweiz rechtlich bei KI-Risiken?",
+        "en": "What are the legal rules in Switzerland for AI risks?",
+        "it": "Quali regole legali valgono in Svizzera per i rischi dell'IA?",
+        "fr": "Quelles règles juridiques s'appliquent en Suisse aux risques de l'IA ?"
+      },
+      "a": {
+        "de": "Für Personendaten gilt das revDSG mit Rechten bei automatisierten Entscheidungen; Aufsicht ist der EDÖB. Zusätzlich wirkt der EU AI Act extraterritorial und betrifft Schweizer Anbieter mit EU-Bezug, mit strengeren Pflichten für Hochrisiko-Anwendungen. Verwenden Sie nicht den Begriff DSGVO für Schweizer Sachverhalte.",
+        "en": "For personal data the Swiss revFADP applies, with rights around automated decisions; the supervisory authority is the FDPIC. Additionally, the EU AI Act applies extraterritorially and affects Swiss providers with EU ties, with stricter duties for high-risk uses. Do not use the term GDPR for Swiss matters.",
+        "it": "Per i dati personali si applica la revLPD, con diritti sulle decisioni automatizzate; l'autorità di vigilanza è l'IFPDT. Inoltre l'EU AI Act si applica extraterritorialmente e riguarda i fornitori svizzeri con legami UE, con obblighi più severi per gli usi ad alto rischio. Non usate il termine GDPR per le questioni svizzere.",
+        "fr": "Pour les données personnelles, la nLPD s'applique, avec des droits sur les décisions automatisées ; l'autorité de surveillance est le PFPDT. De plus, l'EU AI Act s'applique de façon extraterritoriale et touche les fournisseurs suisses liés à l'UE, avec des obligations renforcées pour les usages à haut risque. N'employez pas le terme RGPD pour les cas suisses."
+      }
+    },
+    {
+      "q": {
+        "de": "Was bedeutet Over-Reliance oder Automation Bias?",
+        "en": "What does over-reliance or automation bias mean?",
+        "it": "Che cosa significa eccessiva fiducia o automation bias?",
+        "fr": "Que signifie dépendance excessive ou biais d'automatisation ?"
+      },
+      "a": {
+        "de": "Es ist die Tendenz, KI-Ergebnisse unkritisch zu übernehmen, weil sie kompetent klingen. Folgen sind unentdeckte Fehler, Kompetenzverlust und verwischte Verantwortung. Gegenmittel: menschliche Letztentscheidung, bewusste Prüfschritte bei hohem Risiko und der Erhalt eigener Fachkompetenz.",
+        "en": "It is the tendency to accept AI output uncritically because it sounds competent. Consequences include undetected errors, loss of skills and blurred accountability. Remedies: a human final decision, deliberate checks for high-stakes cases and maintaining your own expertise.",
+        "it": "È la tendenza ad accettare acriticamente gli output dell'IA perché suonano competenti. Le conseguenze sono errori non rilevati, perdita di competenze e responsabilità sfumata. Rimedi: decisione finale umana, controlli deliberati nei casi ad alto rischio e mantenimento delle proprie competenze.",
+        "fr": "C'est la tendance à accepter sans esprit critique les résultats de l'IA parce qu'ils semblent compétents. Conséquences : erreurs non détectées, perte de compétences et responsabilité diluée. Remèdes : décision finale humaine, contrôles délibérés pour les cas à fort enjeu et maintien de sa propre expertise."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie schütze ich Unternehmensdaten bei der KI-Nutzung?",
+        "en": "How do I protect company data when using AI?",
+        "it": "Come proteggo i dati aziendali quando uso l'IA?",
+        "fr": "Comment protéger les données de l'entreprise avec l'IA ?"
+      },
+      "a": {
+        "de": "Geben Sie keine sensiblen Personen- oder Geschäftsdaten in Consumer-Chatbots ein. Nutzen Sie Geschäftsangebote mit Auftragsbearbeitungsvertrag, klären Sie Datenstandort, Aufbewahrung und Training-Opt-out, begrenzen Sie Agenten-Rechte und führen Sie bei riskanten Fällen eine Datenschutz-Folgenabschätzung durch. Achten Sie zudem auf Prompt Injection über externe Inhalte.",
+        "en": "Do not enter sensitive personal or business data into consumer chatbots. Use business tiers with a data-processing agreement, clarify data location, retention and training opt-out, limit agent permissions, and run a data protection impact assessment for risky cases. Also watch for prompt injection via external content.",
+        "it": "Non inserite dati personali o aziendali sensibili nei chatbot consumer. Usate offerte business con contratto di responsabile del trattamento, chiarite ubicazione dei dati, conservazione e opt-out dall'addestramento, limitate i permessi degli agenti e svolgete una valutazione d'impatto nei casi rischiosi. Attenzione anche alla prompt injection tramite contenuti esterni.",
+        "fr": "Ne saisissez pas de données personnelles ou d'affaires sensibles dans les chatbots grand public. Utilisez des offres pro avec contrat de sous-traitance, clarifiez la localisation des données, la conservation et le retrait de l'entraînement, limitez les droits des agents et réalisez une analyse d'impact pour les cas à risque. Méfiez-vous aussi de l'injection de prompt via des contenus externes."
+      }
+    },
+    {
+      "q": {
+        "de": "Was kann KI grundsätzlich nicht?",
+        "en": "What can AI fundamentally not do?",
+        "it": "Che cosa l'IA non può fare per natura?",
+        "fr": "Que ne peut fondamentalement pas faire l'IA ?"
+      },
+      "a": {
+        "de": "Sprachmodelle verstehen keine Kausalität, kennen die Welt nur bis zu einem Wissensstichtag, rechnen nicht zuverlässig, liefern nicht immer reproduzierbare Antworten und können ihre eigene Unsicherheit nicht verlässlich einschätzen. Für exakte, aktuelle oder rechtsverbindliche Aufgaben brauchen sie angebundene Werkzeuge und menschliche Prüfung.",
+        "en": "Language models do not understand causality, know the world only up to a knowledge cut-off, do not calculate reliably, do not always give reproducible answers and cannot reliably judge their own uncertainty. For exact, current or legally binding tasks they need connected tools and human review.",
+        "it": "I modelli linguistici non comprendono la causalità, conoscono il mondo solo fino a una data limite, non calcolano in modo affidabile, non danno sempre risposte riproducibili e non sanno valutare la propria incertezza. Per compiti esatti, attuali o giuridicamente vincolanti servono strumenti collegati e revisione umana.",
+        "fr": "Les modèles de langage ne comprennent pas la causalité, ne connaissent le monde que jusqu'à une date de coupure, ne calculent pas de façon fiable, ne donnent pas toujours des réponses reproductibles et ne savent pas évaluer leur propre incertitude. Pour des tâches exactes, actuelles ou juridiquement contraignantes, il leur faut des outils connectés et une revue humaine."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Halluzination",
+    "Bias",
+    "Automation Bias / Over-Reliance",
+    "Prompt Injection",
+    "Grosse Sprachmodelle (LLM)",
+    "Retrieval-Augmented Generation",
+    "Human-in-the-Loop",
+    "revDSG / nFADP",
+    "EDÖB",
+    "EU AI Act",
+    "Datenschutz-Folgenabschätzung",
+    "Wissensstichtag",
+    "Apertus",
+    "ETH Zürich / EPFL",
+    "Innosuisse",
+    "KI-Governance"
+  ]
+}

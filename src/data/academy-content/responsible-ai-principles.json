@@ -1,0 +1,358 @@
+{
+  "id": "responsible-ai-principles",
+  "cluster": "trust-security-privacy-regulation",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "verantwortungsvolle-ki-prinzipien",
+    "en": "responsible-ai-principles",
+    "it": "principi-ia-responsabile",
+    "fr": "principes-ia-responsable"
+  },
+  "title": {
+    "de": "Verantwortungsvolle KI: die 5 Prinzipien | Weissmann AI",
+    "en": "Responsible AI: the 5 Core Principles | Weissmann AI",
+    "it": "IA responsabile: i 5 principi chiave | Weissmann AI",
+    "fr": "IA responsable : les 5 principes clés | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Fairness, Transparenz, Rechenschaft, Sicherheit, menschliche Aufsicht: die fünf Prinzipien verantwortungsvoller KI und wie Sie sie im Schweizer Kontext praktisch umsetzen.",
+    "en": "Fairness, transparency, accountability, safety and human oversight: the five principles of responsible AI and how to apply them practically in a Swiss context.",
+    "it": "Equità, trasparenza, responsabilità, sicurezza e supervisione umana: i cinque principi dell'IA responsabile e come applicarli nel contesto svizzero.",
+    "fr": "Équité, transparence, responsabilité, sécurité et supervision humaine : les cinq principes de l'IA responsable et leur application concrète en Suisse."
+  },
+  "kicker": {
+    "de": "Vertrauen, Sicherheit & Regulierung",
+    "en": "Trust, Security & Regulation",
+    "it": "Fiducia, sicurezza e regolamentazione",
+    "fr": "Confiance, sécurité et réglementation"
+  },
+  "h1": {
+    "de": "Was ist verantwortungsvolle KI und wie setzt man sie um?",
+    "en": "What is responsible AI and how do you put it into practice?",
+    "it": "Cos'è l'IA responsabile e come si mette in pratica?",
+    "fr": "Qu'est-ce que l'IA responsable et comment la mettre en pratique ?"
+  },
+  "answerFirst": {
+    "de": "Verantwortungsvolle KI bezeichnet die Entwicklung und den Einsatz von KI-Systemen entlang fünf Kernprinzipien: Fairness, Transparenz, Rechenschaftspflicht, Sicherheit und menschliche Aufsicht. Praktisch heisst das, Verzerrungen zu prüfen, Entscheide nachvollziehbar zu machen, klare Verantwortliche zu benennen, Systeme robust abzusichern und Menschen die Kontrolle über kritische Entscheide zu belassen. In der Schweiz bilden das revidierte Datenschutzgesetz (revDSG) und der extraterritoriale EU AI Act den rechtlichen Rahmen.",
+    "en": "Responsible AI means developing and deploying AI systems along five core principles: fairness, transparency, accountability, safety and human oversight. In practice this means testing for bias, making decisions explainable, naming clear owners, hardening systems against failure and misuse, and keeping humans in control of critical decisions. In Switzerland, the revised Data Protection Act (revDSG) and the extraterritorial EU AI Act form the legal frame.",
+    "it": "L'IA responsabile indica lo sviluppo e l'uso di sistemi di IA secondo cinque principi chiave: equità, trasparenza, responsabilità, sicurezza e supervisione umana. In pratica significa verificare i bias, rendere le decisioni spiegabili, definire responsabili chiari, proteggere i sistemi da guasti e abusi e mantenere l'uomo al controllo delle decisioni critiche. In Svizzera la nuova legge sulla protezione dei dati (nLPD) e l'AI Act europeo, extraterritoriale, ne definiscono il quadro giuridico.",
+    "fr": "L'IA responsable désigne le développement et l'usage de systèmes d'IA selon cinq principes clés : équité, transparence, responsabilité, sécurité et supervision humaine. Concrètement, cela implique de tester les biais, de rendre les décisions explicables, de désigner des responsables, de sécuriser les systèmes contre les défaillances et de garder l'humain aux commandes des décisions critiques. En Suisse, la nLPD révisée et l'AI Act européen, extraterritorial, forment le cadre légal."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was bedeutet verantwortungsvolle KI?",
+        "en": "What does responsible AI mean?",
+        "it": "Cosa significa IA responsabile?",
+        "fr": "Que signifie l'IA responsable ?"
+      },
+      "paragraphs": [
+        {
+          "de": "Verantwortungsvolle KI (englisch «Responsible AI») ist ein Ansatz, der technische Leistung mit ethischen, rechtlichen und gesellschaftlichen Anforderungen verbindet. Es geht nicht darum, ob ein Modell funktioniert, sondern ob es fair, nachvollziehbar, sicher und rechenschaftspflichtig eingesetzt wird – über den gesamten Lebenszyklus von der Datenbeschaffung bis zur Ausserbetriebnahme.",
+          "en": "Responsible AI is an approach that combines technical performance with ethical, legal and societal requirements. The question is not whether a model works, but whether it is deployed in a way that is fair, explainable, safe and accountable – across the entire lifecycle, from data sourcing to decommissioning.",
+          "it": "L'IA responsabile è un approccio che unisce le prestazioni tecniche a requisiti etici, giuridici e sociali. La domanda non è se un modello funziona, ma se viene utilizzato in modo equo, spiegabile, sicuro e responsabile, lungo l'intero ciclo di vita, dalla raccolta dei dati alla dismissione.",
+          "fr": "L'IA responsable est une approche qui associe la performance technique aux exigences éthiques, juridiques et sociétales. La question n'est pas de savoir si un modèle fonctionne, mais s'il est déployé de manière équitable, explicable, sûre et responsable, sur tout le cycle de vie, de la collecte des données au retrait du service."
+        },
+        {
+          "de": "Die meisten anerkannten Rahmenwerke – die OECD-KI-Prinzipien, das NIST AI Risk Management Framework, die Norm ISO/IEC 42001 und die Grundsätze des EU AI Act – lassen sich auf fünf wiederkehrende Prinzipien verdichten. Verantwortungsvolle KI ist damit kein einzelnes Werkzeug, sondern eine Governance-Haltung, die diese Prinzipien in Prozesse, Rollen und Dokumentation übersetzt.",
+          "en": "Most recognised frameworks – the OECD AI Principles, the NIST AI Risk Management Framework, the ISO/IEC 42001 standard and the principles of the EU AI Act – converge on five recurring principles. Responsible AI is therefore not a single tool but a governance posture that translates these principles into processes, roles and documentation.",
+          "it": "La maggior parte dei framework riconosciuti – i principi dell'OCSE sull'IA, il NIST AI Risk Management Framework, la norma ISO/IEC 42001 e i principi dell'AI Act europeo – converge su cinque principi ricorrenti. L'IA responsabile non è quindi un singolo strumento, ma un atteggiamento di governance che traduce questi principi in processi, ruoli e documentazione.",
+          "fr": "La plupart des cadres reconnus – les principes de l'OCDE sur l'IA, le NIST AI Risk Management Framework, la norme ISO/IEC 42001 et les principes de l'AI Act européen – convergent vers cinq principes récurrents. L'IA responsable n'est donc pas un outil unique, mais une posture de gouvernance qui traduit ces principes en processus, rôles et documentation."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die fünf Prinzipien verantwortungsvoller KI",
+        "en": "The five principles of responsible AI",
+        "it": "I cinque principi dell'IA responsabile",
+        "fr": "Les cinq principes de l'IA responsable"
+      },
+      "bullets": [
+        {
+          "de": "Fairness: KI-Systeme sollen keine Personen aufgrund von Geschlecht, Herkunft, Alter oder anderen geschützten Merkmalen systematisch benachteiligen. Verzerrungen entstehen oft unbeabsichtigt durch unausgewogene Trainingsdaten.",
+          "en": "Fairness: AI systems should not systematically disadvantage people based on gender, origin, age or other protected attributes. Bias often arises unintentionally from unbalanced training data.",
+          "it": "Equità: i sistemi di IA non devono penalizzare sistematicamente le persone in base a genere, origine, età o altre caratteristiche protette. I bias nascono spesso in modo involontario da dati di addestramento sbilanciati.",
+          "fr": "Équité : les systèmes d'IA ne doivent pas désavantager systématiquement des personnes selon le genre, l'origine, l'âge ou d'autres attributs protégés. Les biais proviennent souvent, involontairement, de données d'entraînement déséquilibrées."
+        },
+        {
+          "de": "Transparenz: Betroffene und Aufsicht sollen verstehen, dass KI im Spiel ist und wie ein Ergebnis zustande kommt. Dazu gehören Offenlegung, erklärbare Modelle (Explainable AI) und dokumentierte Grenzen.",
+          "en": "Transparency: those affected and oversight bodies should understand that AI is involved and how a result is reached. This includes disclosure, explainable models (Explainable AI) and documented limitations.",
+          "it": "Trasparenza: le persone coinvolte e gli organi di controllo devono sapere che l'IA è in gioco e come si arriva a un risultato. Ciò include la divulgazione, modelli spiegabili (Explainable AI) e limiti documentati.",
+          "fr": "Transparence : les personnes concernées et les instances de contrôle doivent savoir que l'IA intervient et comment un résultat est produit. Cela inclut la divulgation, des modèles explicables (Explainable AI) et des limites documentées."
+        },
+        {
+          "de": "Rechenschaftspflicht: Für jedes System gibt es benennbare Verantwortliche, die für Entscheide, Fehler und Korrekturen geradestehen. Verantwortung lässt sich nicht an den Algorithmus delegieren.",
+          "en": "Accountability: every system has identifiable owners answerable for decisions, failures and remediation. Responsibility cannot be delegated to the algorithm.",
+          "it": "Responsabilità: ogni sistema ha responsabili identificabili che rispondono di decisioni, errori e correzioni. La responsabilità non si delega all'algoritmo.",
+          "fr": "Responsabilité : chaque système a des responsables identifiables qui répondent des décisions, des erreurs et des corrections. La responsabilité ne se délègue pas à l'algorithme."
+        },
+        {
+          "de": "Sicherheit und Robustheit: Systeme sollen zuverlässig, gegen Missbrauch geschützt und auch bei ungewöhnlichen Eingaben stabil sein. Dazu zählen Datensicherheit, Schutz vor Manipulation und Tests unter realen Bedingungen.",
+          "en": "Safety and robustness: systems should be reliable, protected against misuse and stable even with unusual inputs. This covers data security, protection against manipulation and testing under real-world conditions.",
+          "it": "Sicurezza e robustezza: i sistemi devono essere affidabili, protetti dagli abusi e stabili anche con input insoliti. Ciò comprende la sicurezza dei dati, la protezione dalle manipolazioni e i test in condizioni reali.",
+          "fr": "Sécurité et robustesse : les systèmes doivent être fiables, protégés contre les abus et stables même face à des entrées inhabituelles. Cela couvre la sécurité des données, la protection contre les manipulations et les tests en conditions réelles."
+        },
+        {
+          "de": "Menschliche Aufsicht: Bei folgenreichen Entscheiden behält der Mensch die Kontrolle – er kann eingreifen, korrigieren oder das System abschalten. «Human in the loop» ist bei Hochrisiko-Anwendungen zentral.",
+          "en": "Human oversight: for consequential decisions, humans stay in control – able to intervene, correct or shut the system down. «Human in the loop» is central for high-risk applications.",
+          "it": "Supervisione umana: per le decisioni rilevanti l'uomo mantiene il controllo, potendo intervenire, correggere o spegnere il sistema. «Human in the loop» è centrale nelle applicazioni ad alto rischio.",
+          "fr": "Supervision humaine : pour les décisions à fort impact, l'humain garde le contrôle et peut intervenir, corriger ou arrêter le système. Le principe « human in the loop » est central pour les applications à haut risque."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Von Prinzip zu Praxis: konkrete Massnahmen",
+        "en": "From principle to practice: concrete measures",
+        "it": "Dal principio alla pratica: misure concrete",
+        "fr": "Du principe à la pratique : des mesures concrètes"
+      },
+      "paragraphs": [
+        {
+          "de": "Prinzipien wirken nur, wenn sie zu überprüfbaren Handlungen werden. Die folgenden Massnahmen ordnen jedem Prinzip praktische Schritte zu, die sich in KMU wie in Konzernen umsetzen lassen.",
+          "en": "Principles only work when they become verifiable actions. The measures below map practical steps to each principle, workable for SMEs and large organisations alike.",
+          "it": "I principi funzionano solo se diventano azioni verificabili. Le misure seguenti associano a ogni principio passi pratici, applicabili sia dalle PMI sia dalle grandi organizzazioni.",
+          "fr": "Les principes ne fonctionnent que lorsqu'ils deviennent des actions vérifiables. Les mesures ci-dessous associent à chaque principe des étapes concrètes, applicables aussi bien aux PME qu'aux grandes organisations."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Fairness prüfen: Trainingsdaten auf Repräsentativität analysieren, Ergebnisse nach relevanten Gruppen aufschlüsseln (Bias-Testing) und Schwellenwerte für akzeptable Abweichungen festlegen.",
+          "en": "Test fairness: analyse training data for representativeness, break down outcomes by relevant groups (bias testing) and define thresholds for acceptable disparity.",
+          "it": "Verificare l'equità: analizzare la rappresentatività dei dati di addestramento, scomporre i risultati per gruppi rilevanti (bias testing) e fissare soglie di scostamento accettabili.",
+          "fr": "Tester l'équité : analyser la représentativité des données d'entraînement, ventiler les résultats par groupes pertinents (bias testing) et définir des seuils d'écart acceptables."
+        },
+        {
+          "de": "Transparenz schaffen: KI-Einsatz gegenüber Betroffenen offenlegen, Model Cards und Entscheidprotokolle führen und für kritische Fälle erklärbare Verfahren wählen.",
+          "en": "Create transparency: disclose AI use to those affected, maintain model cards and decision logs, and choose explainable methods for critical cases.",
+          "it": "Creare trasparenza: dichiarare l'uso dell'IA agli interessati, tenere model card e registri decisionali e scegliere metodi spiegabili per i casi critici.",
+          "fr": "Créer de la transparence : informer les personnes concernées de l'usage de l'IA, tenir des model cards et des journaux de décision, et choisir des méthodes explicables pour les cas critiques."
+        },
+        {
+          "de": "Rechenschaft verankern: pro System einen fachlichen Verantwortlichen (Business Owner) und einen technischen Verantwortlichen benennen, ein KI-Inventar führen und Entscheide dokumentieren.",
+          "en": "Anchor accountability: assign a business owner and a technical owner per system, maintain an AI inventory and document decisions.",
+          "it": "Radicare la responsabilità: assegnare a ogni sistema un responsabile di business e uno tecnico, tenere un inventario dell'IA e documentare le decisioni.",
+          "fr": "Ancrer la responsabilité : désigner par système un responsable métier et un responsable technique, tenir un inventaire de l'IA et documenter les décisions."
+        },
+        {
+          "de": "Sicherheit härten: Zugriffsrechte begrenzen, Eingaben validieren, gegen Prompt Injection und Datenabfluss schützen und Modelle vor dem Go-live sowie im Betrieb regelmässig testen.",
+          "en": "Harden safety: limit access rights, validate inputs, protect against prompt injection and data leakage, and test models before go-live and regularly in operation.",
+          "it": "Rafforzare la sicurezza: limitare i diritti di accesso, validare gli input, proteggere da prompt injection e fughe di dati e testare i modelli prima del rilascio e regolarmente in esercizio.",
+          "fr": "Renforcer la sécurité : limiter les droits d'accès, valider les entrées, se protéger contre l'injection de prompt et les fuites de données, et tester les modèles avant la mise en production et régulièrement en exploitation."
+        },
+        {
+          "de": "Aufsicht sichern: für folgenreiche Entscheide eine menschliche Freigabe vorsehen, Eskalationswege definieren und einen «Not-Aus» einplanen, mit dem sich das System abschalten lässt.",
+          "en": "Secure oversight: require human sign-off for consequential decisions, define escalation paths and plan a «kill switch» that lets you shut the system down.",
+          "it": "Garantire la supervisione: prevedere un'approvazione umana per le decisioni rilevanti, definire percorsi di escalation e predisporre un «kill switch» per spegnere il sistema.",
+          "fr": "Assurer la supervision : prévoir une validation humaine pour les décisions à fort impact, définir des voies d'escalade et prévoir un « coupe-circuit » permettant d'arrêter le système."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Rechtlicher Rahmen in der Schweiz und der EU",
+        "en": "Legal framework in Switzerland and the EU",
+        "it": "Quadro giuridico in Svizzera e nell'UE",
+        "fr": "Cadre juridique en Suisse et dans l'UE"
+      },
+      "paragraphs": [
+        {
+          "de": "Die Schweiz kennt bisher kein eigenes umfassendes KI-Gesetz. Massgeblich sind das revidierte Datenschutzgesetz (revDSG, in Kraft seit September 2023) sowie das bestehende Recht – etwa zu Diskriminierung, Produktehaftung und Sektorregulierung. Das revDSG verlangt unter anderem Transparenz bei automatisierten Einzelentscheidungen und in bestimmten Fällen eine Datenschutz-Folgenabschätzung. Aufsichtsbehörde ist der EDÖB.",
+          "en": "Switzerland so far has no dedicated comprehensive AI law. What applies is the revised Data Protection Act (revDSG, in force since September 2023) together with existing law – on discrimination, product liability and sector regulation. The revDSG requires, among other things, transparency for automated individual decisions and, in certain cases, a data protection impact assessment. The supervisory authority is the EDÖB.",
+          "it": "La Svizzera non dispone finora di una legge organica sull'IA. Si applicano la nuova legge sulla protezione dei dati (nLPD, in vigore da settembre 2023) e il diritto esistente – su discriminazione, responsabilità da prodotto e regolazione settoriale. La nLPD richiede, tra l'altro, trasparenza per le decisioni individuali automatizzate e, in certi casi, una valutazione d'impatto sulla protezione dei dati. L'autorità di vigilanza è l'IFPDT (EDÖB).",
+          "fr": "La Suisse ne dispose pas encore d'une loi générale sur l'IA. S'appliquent la loi révisée sur la protection des données (nLPD, en vigueur depuis septembre 2023) et le droit existant – discrimination, responsabilité du fait des produits, régulation sectorielle. La nLPD exige notamment la transparence pour les décisions individuelles automatisées et, dans certains cas, une analyse d'impact relative à la protection des données. L'autorité de surveillance est le PFPDT (EDÖB)."
+        },
+        {
+          "de": "Der EU AI Act wirkt extraterritorial: Schweizer Unternehmen sind betroffen, sobald ihre KI-Systeme in der EU auf den Markt kommen oder deren Ergebnisse in der EU genutzt werden. Der Act stuft Anwendungen nach Risiko ein (verbotene Praktiken, Hochrisiko, begrenztes Risiko, minimales Risiko) und knüpft an Hochrisiko-Systeme Pflichten wie Risikomanagement, Datenqualität, Transparenz und menschliche Aufsicht – dieselben Prinzipien in gesetzlicher Form.",
+          "en": "The EU AI Act applies extraterritorially: Swiss companies are affected as soon as their AI systems are placed on the EU market or their outputs are used in the EU. It classifies applications by risk (prohibited practices, high-risk, limited risk, minimal risk) and ties obligations to high-risk systems – risk management, data quality, transparency and human oversight – the same principles in statutory form.",
+          "it": "L'AI Act europeo ha effetto extraterritoriale: le imprese svizzere sono coinvolte non appena i loro sistemi di IA sono immessi sul mercato UE o i loro risultati sono usati nell'UE. Classifica le applicazioni per rischio (pratiche vietate, alto rischio, rischio limitato, rischio minimo) e collega ai sistemi ad alto rischio obblighi come gestione del rischio, qualità dei dati, trasparenza e supervisione umana: gli stessi principi in forma di legge.",
+          "fr": "L'AI Act européen s'applique de manière extraterritoriale : les entreprises suisses sont concernées dès que leurs systèmes d'IA sont mis sur le marché de l'UE ou que leurs résultats y sont utilisés. Il classe les applications par risque (pratiques interdites, haut risque, risque limité, risque minimal) et rattache aux systèmes à haut risque des obligations – gestion des risques, qualité des données, transparence et supervision humaine – soit les mêmes principes sous forme légale."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Governance: Rollen, Prozesse und Dokumentation",
+        "en": "Governance: roles, processes and documentation",
+        "it": "Governance: ruoli, processi e documentazione",
+        "fr": "Gouvernance : rôles, processus et documentation"
+      },
+      "paragraphs": [
+        {
+          "de": "Prinzipien brauchen eine organisatorische Heimat. Eine schlanke KI-Governance macht Verantwortung sichtbar und prüfbar, ohne Innovation auszubremsen. Für den Einstieg genügen wenige, konsequent gelebte Elemente.",
+          "en": "Principles need an organisational home. Lean AI governance makes responsibility visible and auditable without stalling innovation. A few consistently practised elements are enough to start.",
+          "it": "I principi hanno bisogno di una casa organizzativa. Una governance dell'IA snella rende la responsabilità visibile e verificabile senza frenare l'innovazione. Per iniziare bastano pochi elementi applicati con costanza.",
+          "fr": "Les principes ont besoin d'un ancrage organisationnel. Une gouvernance de l'IA légère rend la responsabilité visible et auditable sans freiner l'innovation. Quelques éléments appliqués avec constance suffisent pour démarrer."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "KI-Inventar: eine aktuelle Liste aller eingesetzten und geplanten KI-Systeme mit Zweck, Datenquellen, Verantwortlichen und Risikoeinstufung.",
+          "en": "AI inventory: a current list of all deployed and planned AI systems with purpose, data sources, owners and risk classification.",
+          "it": "Inventario dell'IA: un elenco aggiornato di tutti i sistemi di IA in uso e previsti, con finalità, fonti dei dati, responsabili e classificazione del rischio.",
+          "fr": "Inventaire de l'IA : une liste à jour de tous les systèmes d'IA déployés et prévus, avec finalité, sources de données, responsables et classification du risque."
+        },
+        {
+          "de": "Risikoklassifizierung: jede Anwendung einer Risikostufe zuordnen und die Kontrolltiefe daran ausrichten – kein Overhead für harmlose Fälle, klare Auflagen für Hochrisiko.",
+          "en": "Risk classification: assign each application a risk level and scale controls accordingly – no overhead for harmless cases, clear requirements for high-risk ones.",
+          "it": "Classificazione del rischio: assegnare a ogni applicazione un livello di rischio e calibrare i controlli di conseguenza – nessun sovraccarico per i casi innocui, requisiti chiari per l'alto rischio.",
+          "fr": "Classification du risque : attribuer à chaque application un niveau de risque et calibrer les contrôles en conséquence – pas de charge inutile pour les cas anodins, exigences claires pour le haut risque."
+        },
+        {
+          "de": "Interne Richtlinie: eine kurze KI-Nutzungsrichtlinie regelt zulässige Tools, Umgang mit vertraulichen Daten und Freigabewege.",
+          "en": "Internal policy: a short AI usage policy governs permitted tools, handling of confidential data and approval paths.",
+          "it": "Direttiva interna: una breve policy sull'uso dell'IA disciplina gli strumenti ammessi, la gestione dei dati riservati e i percorsi di approvazione.",
+          "fr": "Directive interne : une courte charte d'usage de l'IA encadre les outils autorisés, le traitement des données confidentielles et les circuits de validation."
+        },
+        {
+          "de": "Schulung und Kultur: Mitarbeitende kennen Chancen, Grenzen und Meldewege – verantwortungsvolle KI ist auch eine Frage der KI-Kompetenz.",
+          "en": "Training and culture: staff know the opportunities, limits and reporting channels – responsible AI is also a matter of AI literacy.",
+          "it": "Formazione e cultura: le persone conoscono opportunità, limiti e canali di segnalazione – l'IA responsabile è anche una questione di competenza sull'IA.",
+          "fr": "Formation et culture : les collaborateurs connaissent les opportunités, les limites et les canaux de signalement – l'IA responsable est aussi une question de culture de l'IA."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler und wie Sie sie vermeiden",
+        "en": "Common mistakes and how to avoid them",
+        "it": "Errori frequenti e come evitarli",
+        "fr": "Erreurs fréquentes et comment les éviter"
+      },
+      "bullets": [
+        {
+          "de": "Ethik als Papier: Grundsätze werden formuliert, aber nicht in Prozesse übersetzt («Ethics washing»). Abhilfe: jedes Prinzip mit einer konkreten, überprüfbaren Massnahme hinterlegen.",
+          "en": "Ethics on paper: principles are stated but never translated into processes («ethics washing»). Fix: back every principle with a concrete, verifiable measure.",
+          "it": "Etica sulla carta: i principi vengono enunciati ma non tradotti in processi («ethics washing»). Rimedio: associare a ogni principio una misura concreta e verificabile.",
+          "fr": "L'éthique sur le papier : les principes sont énoncés mais jamais traduits en processus (« ethics washing »). Remède : adosser chaque principe à une mesure concrète et vérifiable."
+        },
+        {
+          "de": "Blindes Vertrauen in Modelle: Ergebnisse generativer KI werden ungeprüft übernommen. Abhilfe: menschliche Kontrolle bei folgenreichen Ausgaben und Quellenprüfung verpflichtend machen.",
+          "en": "Blind trust in models: generative AI outputs are accepted unchecked. Fix: mandate human review for consequential outputs and source verification.",
+          "it": "Fiducia cieca nei modelli: gli output dell'IA generativa vengono accettati senza verifica. Rimedio: rendere obbligatori il controllo umano sugli output rilevanti e la verifica delle fonti.",
+          "fr": "Confiance aveugle dans les modèles : les sorties de l'IA générative sont acceptées sans vérification. Remède : rendre obligatoires le contrôle humain sur les sorties à fort impact et la vérification des sources."
+        },
+        {
+          "de": "Datenschutz zu spät: vertrauliche oder Personendaten fliessen unbedacht in externe Dienste. Abhilfe: Datenschutz früh mitdenken, Datenminimierung und geprüfte Anbieter wählen.",
+          "en": "Privacy too late: confidential or personal data flows carelessly into external services. Fix: consider privacy early, minimise data and choose vetted providers.",
+          "it": "Privacy troppo tardi: dati riservati o personali finiscono con leggerezza in servizi esterni. Rimedio: considerare la privacy fin dall'inizio, minimizzare i dati e scegliere fornitori verificati.",
+          "fr": "Confidentialité trop tardive : des données confidentielles ou personnelles partent sans précaution vers des services externes. Remède : intégrer la protection des données en amont, minimiser les données et choisir des prestataires vérifiés."
+        },
+        {
+          "de": "Einmal geprüft, nie wieder: Systeme werden vor dem Go-live getestet, danach nicht mehr überwacht. Abhilfe: laufendes Monitoring auf Drift, Fehler und veränderte Datenlage.",
+          "en": "Checked once, never again: systems are tested before go-live but not monitored afterwards. Fix: continuous monitoring for drift, errors and changing data.",
+          "it": "Controllato una volta, mai più: i sistemi vengono testati prima del rilascio ma poi non monitorati. Rimedio: monitoraggio continuo su drift, errori e cambiamenti nei dati.",
+          "fr": "Vérifié une fois, plus jamais : les systèmes sont testés avant la mise en production mais plus surveillés ensuite. Remède : un monitoring continu du drift, des erreurs et de l'évolution des données."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was sind die fünf Prinzipien verantwortungsvoller KI?",
+        "en": "What are the five principles of responsible AI?",
+        "it": "Quali sono i cinque principi dell'IA responsabile?",
+        "fr": "Quels sont les cinq principes de l'IA responsable ?"
+      },
+      "a": {
+        "de": "Fairness, Transparenz, Rechenschaftspflicht, Sicherheit (inklusive Robustheit) und menschliche Aufsicht. Diese fünf Prinzipien finden sich in nahezu allen anerkannten Rahmenwerken wie den OECD-KI-Prinzipien, dem NIST AI RMF und den Grundsätzen des EU AI Act wieder und bilden die Grundlage für konkrete Massnahmen.",
+        "en": "Fairness, transparency, accountability, safety (including robustness) and human oversight. These five recur in nearly every recognised framework – the OECD AI Principles, the NIST AI RMF and the principles of the EU AI Act – and form the basis for concrete measures.",
+        "it": "Equità, trasparenza, responsabilità, sicurezza (compresa la robustezza) e supervisione umana. Questi cinque principi ricorrono in quasi tutti i framework riconosciuti – principi OCSE, NIST AI RMF e principi dell'AI Act – e sono la base per misure concrete.",
+        "fr": "Équité, transparence, responsabilité, sécurité (robustesse comprise) et supervision humaine. Ces cinq principes reviennent dans presque tous les cadres reconnus – principes de l'OCDE, NIST AI RMF et principes de l'AI Act – et fondent des mesures concrètes."
+      }
+    },
+    {
+      "q": {
+        "de": "Gilt der EU AI Act für Schweizer Unternehmen?",
+        "en": "Does the EU AI Act apply to Swiss companies?",
+        "it": "L'AI Act europeo si applica alle imprese svizzere?",
+        "fr": "L'AI Act européen s'applique-t-il aux entreprises suisses ?"
+      },
+      "a": {
+        "de": "Ja, indirekt und extraterritorial. Sobald ein Schweizer Unternehmen KI-Systeme in der EU auf den Markt bringt oder deren Ergebnisse in der EU verwendet werden, greifen die Pflichten des EU AI Act. Zusätzlich gilt in der Schweiz das revDSG. Eine frühzeitige Risikoeinstufung hilft, den passenden Pflichtenumfang zu bestimmen.",
+        "en": "Yes, indirectly and extraterritorially. As soon as a Swiss company places AI systems on the EU market or their outputs are used in the EU, the EU AI Act's obligations apply. The revDSG applies additionally in Switzerland. An early risk classification helps determine the right scope of obligations.",
+        "it": "Sì, in modo indiretto ed extraterritoriale. Non appena un'impresa svizzera immette sistemi di IA sul mercato UE o i loro risultati vengono usati nell'UE, si applicano gli obblighi dell'AI Act. In Svizzera vale inoltre la nLPD. Una classificazione precoce del rischio aiuta a definire l'ampiezza degli obblighi.",
+        "fr": "Oui, de manière indirecte et extraterritoriale. Dès qu'une entreprise suisse met des systèmes d'IA sur le marché de l'UE ou que leurs résultats y sont utilisés, les obligations de l'AI Act s'appliquent. La nLPD s'applique en plus en Suisse. Une classification précoce du risque aide à cerner l'étendue des obligations."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen verantwortungsvoller KI und KI-Ethik?",
+        "en": "What is the difference between responsible AI and AI ethics?",
+        "it": "Qual è la differenza tra IA responsabile ed etica dell'IA?",
+        "fr": "Quelle est la différence entre IA responsable et éthique de l'IA ?"
+      },
+      "a": {
+        "de": "KI-Ethik beschreibt die Werte und Prinzipien, die wünschenswert sind. Verantwortungsvolle KI ist deren praktische Umsetzung: Sie übersetzt Werte in Prozesse, Rollen, Tests und Dokumentation. Ethik liefert das «Warum», verantwortungsvolle KI das «Wie» im Alltag.",
+        "en": "AI ethics describes the values and principles that are desirable. Responsible AI is their practical implementation: it translates values into processes, roles, tests and documentation. Ethics provides the «why», responsible AI the everyday «how».",
+        "it": "L'etica dell'IA descrive i valori e i principi desiderabili. L'IA responsabile ne è l'attuazione pratica: traduce i valori in processi, ruoli, test e documentazione. L'etica fornisce il «perché», l'IA responsabile il «come» quotidiano.",
+        "fr": "L'éthique de l'IA décrit les valeurs et principes souhaitables. L'IA responsable en est la mise en œuvre concrète : elle traduit les valeurs en processus, rôles, tests et documentation. L'éthique donne le « pourquoi », l'IA responsable le « comment » au quotidien."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie erkennt und reduziert man Bias in KI-Systemen?",
+        "en": "How do you detect and reduce bias in AI systems?",
+        "it": "Come si individua e si riduce il bias nei sistemi di IA?",
+        "fr": "Comment détecter et réduire les biais dans les systèmes d'IA ?"
+      },
+      "a": {
+        "de": "Bias erkennt man, indem man Ergebnisse nach relevanten Gruppen (etwa Geschlecht oder Region) aufschlüsselt und mit definierten Fairness-Kriterien vergleicht. Reduzieren lässt er sich durch repräsentativere Trainingsdaten, angepasste Schwellenwerte, menschliche Kontrolle bei Grenzfällen und regelmässiges Nachtesten im laufenden Betrieb.",
+        "en": "You detect bias by breaking down outcomes across relevant groups (e.g. gender or region) and comparing them against defined fairness criteria. You reduce it through more representative training data, adjusted thresholds, human review of edge cases and regular re-testing in production.",
+        "it": "Il bias si individua scomponendo i risultati per gruppi rilevanti (ad esempio genere o regione) e confrontandoli con criteri di equità definiti. Si riduce con dati di addestramento più rappresentativi, soglie adeguate, controllo umano nei casi limite e ritest periodici in esercizio.",
+        "fr": "On détecte les biais en ventilant les résultats par groupes pertinents (genre, région) et en les comparant à des critères d'équité définis. On les réduit par des données d'entraînement plus représentatives, des seuils ajustés, un contrôle humain des cas limites et des re-tests réguliers en production."
+      }
+    },
+    {
+      "q": {
+        "de": "Braucht ein KMU eine KI-Governance?",
+        "en": "Does an SME need AI governance?",
+        "it": "Una PMI ha bisogno di una governance dell'IA?",
+        "fr": "Une PME a-t-elle besoin d'une gouvernance de l'IA ?"
+      },
+      "a": {
+        "de": "Ja, aber im passenden Massstab. Für ein KMU genügen oft ein KI-Inventar, eine kurze Nutzungsrichtlinie, eine einfache Risikoeinstufung und benannte Verantwortliche. Wichtig ist nicht der Umfang der Dokumente, sondern dass Verantwortung klar, Datenschutz gewahrt und kritische Entscheide menschlich kontrolliert sind.",
+        "en": "Yes, but at the right scale. For an SME an AI inventory, a short usage policy, a simple risk classification and named owners are often enough. What matters is not document volume but clear responsibility, protected data and human control over critical decisions.",
+        "it": "Sì, ma nella misura giusta. Per una PMI bastano spesso un inventario dell'IA, una breve policy d'uso, una classificazione del rischio semplice e responsabili definiti. Non conta la mole di documenti, ma la chiarezza delle responsabilità, la tutela dei dati e il controllo umano sulle decisioni critiche.",
+        "fr": "Oui, mais à la bonne échelle. Pour une PME, un inventaire de l'IA, une courte charte d'usage, une classification simple du risque et des responsables désignés suffisent souvent. L'essentiel n'est pas le volume de documents, mais des responsabilités claires, des données protégées et un contrôle humain des décisions critiques."
+      }
+    },
+    {
+      "q": {
+        "de": "Was bedeutet «menschliche Aufsicht» konkret?",
+        "en": "What does «human oversight» mean in practice?",
+        "it": "Cosa significa concretamente «supervisione umana»?",
+        "fr": "Que signifie concrètement la « supervision humaine » ?"
+      },
+      "a": {
+        "de": "Menschliche Aufsicht bedeutet, dass Personen folgenreiche KI-Entscheide verstehen, überprüfen, korrigieren oder rückgängig machen können und das System notfalls abschalten. Je nach Risiko reicht das von einer stichprobenartigen Kontrolle bis zu einer verpflichtenden menschlichen Freigabe vor jeder Ausführung («Human in the loop»).",
+        "en": "Human oversight means people can understand, review, correct or overturn consequential AI decisions and, if needed, shut the system down. Depending on risk, this ranges from spot checks to mandatory human sign-off before every execution («human in the loop»).",
+        "it": "La supervisione umana significa che le persone possono comprendere, verificare, correggere o annullare decisioni rilevanti dell'IA e, se necessario, spegnere il sistema. A seconda del rischio si va da controlli a campione a un'approvazione umana obbligatoria prima di ogni esecuzione («human in the loop»).",
+        "fr": "La supervision humaine signifie que des personnes peuvent comprendre, vérifier, corriger ou annuler des décisions d'IA à fort impact et, au besoin, arrêter le système. Selon le risque, cela va de contrôles par échantillonnage à une validation humaine obligatoire avant chaque exécution (« human in the loop »)."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Verantwortungsvolle KI",
+    "Responsible AI",
+    "EU AI Act",
+    "revDSG / nFADP",
+    "EDÖB",
+    "OECD-KI-Prinzipien",
+    "NIST AI Risk Management Framework",
+    "ISO/IEC 42001",
+    "Fairness",
+    "Transparenz / Explainable AI",
+    "Rechenschaftspflicht",
+    "Menschliche Aufsicht / Human in the loop",
+    "Algorithmic Bias",
+    "Risikoklassifizierung",
+    "KI-Governance",
+    "Datenschutz-Folgenabschätzung"
+  ]
+}

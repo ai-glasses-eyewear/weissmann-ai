@@ -1,0 +1,354 @@
+{
+  "id": "what-is-claude",
+  "cluster": "models-vendors",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "was-ist-claude",
+    "en": "what-is-claude",
+    "it": "cos-e-claude",
+    "fr": "qu-est-ce-que-claude"
+  },
+  "title": {
+    "de": "Was ist Claude? Anthropics KI-Assistent erklärt | Weissmann AI",
+    "en": "What Is Claude? Anthropic's AI Assistant Explained | Weissmann AI",
+    "it": "Cos'è Claude? L'assistente IA di Anthropic | Weissmann AI",
+    "fr": "Qu'est-ce que Claude ? L'assistant IA d'Anthropic | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Claude ist der KI-Assistent von Anthropic. Modellfamilie, Stärken, geschäftliche Anwendungsfälle, Grenzen und der Schweizer Datenschutz-Blick – neutral erklärt.",
+    "en": "Claude is Anthropic's AI assistant. Model family, strengths, business use cases, limits and a Swiss data-protection view – explained neutrally, no hype.",
+    "it": "Claude è l'assistente IA di Anthropic. Famiglia di modelli, punti di forza, casi d'uso aziendali, limiti e lo sguardo svizzero sulla privacy.",
+    "fr": "Claude est l'assistant IA d'Anthropic. Famille de modèles, forces, cas d'usage, limites et regard suisse sur la protection des données."
+  },
+  "kicker": {
+    "de": "Modelle & Anbieter",
+    "en": "Models & Vendors",
+    "it": "Modelli e fornitori",
+    "fr": "Modèles et fournisseurs"
+  },
+  "h1": {
+    "de": "Was ist Claude – und wofür wird er eingesetzt?",
+    "en": "What is Claude – and what is it used for?",
+    "it": "Cos'è Claude e a cosa serve?",
+    "fr": "Qu'est-ce que Claude et à quoi sert-il ?"
+  },
+  "answerFirst": {
+    "de": "Claude ist ein KI-Assistent des US-Unternehmens Anthropic, basierend auf grossen Sprachmodellen (LLMs). Er versteht und generiert Text, analysiert Dokumente und Bilder und unterstützt beim Schreiben, Programmieren und Recherchieren. Claude ist über claude.ai, eine API sowie die Cloud-Plattformen Amazon Bedrock und Google Cloud Vertex AI verfügbar. Anthropic legt besonderen Wert auf die Sicherheit und das verlässliche Verhalten der Modelle.",
+    "en": "Claude is an AI assistant from the US company Anthropic, built on large language models (LLMs). It understands and generates text, analyses documents and images, and helps with writing, coding and research. Claude is available through claude.ai, an API, and the cloud platforms Amazon Bedrock and Google Cloud Vertex AI. Anthropic places particular emphasis on the safety and reliable behaviour of its models.",
+    "it": "Claude è un assistente IA dell'azienda statunitense Anthropic, basato su grandi modelli linguistici (LLM). Comprende e genera testo, analizza documenti e immagini e supporta scrittura, programmazione e ricerca. È disponibile tramite claude.ai, un'API e le piattaforme cloud Amazon Bedrock e Google Cloud Vertex AI. Anthropic pone particolare attenzione alla sicurezza e all'affidabilità dei modelli.",
+    "fr": "Claude est un assistant IA de l'entreprise américaine Anthropic, fondé sur de grands modèles de langage (LLM). Il comprend et génère du texte, analyse documents et images, et aide à la rédaction, au code et à la recherche. Claude est accessible via claude.ai, une API et les plateformes cloud Amazon Bedrock et Google Cloud Vertex AI. Anthropic met un accent particulier sur la sûreté et la fiabilité de ses modèles."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Claude im Überblick: Anbieter, Herkunft, Idee",
+        "en": "Claude at a glance: vendor, origins, idea",
+        "it": "Claude in sintesi: fornitore, origini, idea",
+        "fr": "Claude en bref : éditeur, origines, idée"
+      },
+      "paragraphs": [
+        {
+          "de": "Claude ist die Familie generativer KI-Modelle von Anthropic, einem 2021 gegründeten US-amerikanischen Unternehmen mit Fokus auf KI-Sicherheit. Anthropic wurde von ehemaligen OpenAI-Forschenden mitgegründet, darunter Dario und Daniela Amodei. Der Name verweist gemäss verbreiteter Darstellung auf den Informationstheoretiker Claude Shannon.",
+          "en": "Claude is the family of generative AI models from Anthropic, a US company founded in 2021 with a focus on AI safety. Anthropic was co-founded by former OpenAI researchers, including Dario and Daniela Amodei. The name is commonly said to reference the information theorist Claude Shannon.",
+          "it": "Claude è la famiglia di modelli di IA generativa di Anthropic, azienda statunitense fondata nel 2021 e focalizzata sulla sicurezza dell'IA. Anthropic è stata co-fondata da ex ricercatori di OpenAI, tra cui Dario e Daniela Amodei. Il nome, secondo una lettura diffusa, richiama il teorico dell'informazione Claude Shannon.",
+          "fr": "Claude est la famille de modèles d'IA générative d'Anthropic, société américaine fondée en 2021 et axée sur la sûreté de l'IA. Anthropic a été cofondée par d'anciens chercheurs d'OpenAI, dont Dario et Daniela Amodei. Le nom ferait référence, selon la lecture courante, au théoricien de l'information Claude Shannon."
+        },
+        {
+          "de": "Technisch ist Claude ein grosses Sprachmodell (Large Language Model): Es sagt auf Basis von Trainingsdaten den jeweils wahrscheinlichsten nächsten Textbaustein voraus. Ein prägendes Merkmal ist Anthropics Trainingsansatz «Constitutional AI», bei dem sich das Modell an einem Satz expliziter Prinzipien orientiert, um hilfreich und zugleich risikoarm zu antworten.",
+          "en": "Technically, Claude is a large language model: based on training data, it predicts the most likely next piece of text. A defining feature is Anthropic's training approach called Constitutional AI, in which the model is guided by a set of explicit principles to answer in ways that are helpful yet low-risk.",
+          "it": "Tecnicamente Claude è un grande modello linguistico: sulla base dei dati di addestramento prevede il segmento di testo successivo più probabile. Un tratto distintivo è l'approccio di Anthropic detto «Constitutional AI», in cui il modello è guidato da un insieme di principi espliciti per rispondere in modo utile ma a basso rischio.",
+          "fr": "Techniquement, Claude est un grand modèle de langage : à partir de ses données d'entraînement, il prédit le segment de texte suivant le plus probable. Un trait marquant est l'approche d'Anthropic appelée « Constitutional AI », où le modèle suit un ensemble de principes explicites pour répondre de façon utile tout en limitant les risques."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Modellfamilie und Zugangswege",
+        "en": "Model family and ways to access it",
+        "it": "Famiglia di modelli e modalità di accesso",
+        "fr": "Famille de modèles et accès"
+      },
+      "paragraphs": [
+        {
+          "de": "Claude wird in mehreren Modellstufen angeboten, die einen Kompromiss zwischen Leistungsfähigkeit, Geschwindigkeit und Kosten abdecken. Die Stufen tragen wiederkehrende Namen; konkrete Versionsnummern und Preise ändern sich laufend – massgeblich ist stets die aktuelle Übersicht des Anbieters.",
+          "en": "Claude comes in several model tiers that trade off capability, speed and cost. The tiers carry recurring names; specific version numbers and prices change regularly – the provider's current overview is always authoritative.",
+          "it": "Claude è offerto in diverse fasce di modello che bilanciano capacità, velocità e costo. Le fasce hanno nomi ricorrenti; numeri di versione e prezzi cambiano di frequente – fa fede sempre la panoramica aggiornata del fornitore.",
+          "fr": "Claude se décline en plusieurs niveaux de modèles arbitrant capacité, vitesse et coût. Ces niveaux portent des noms récurrents ; les numéros de version et les prix évoluent régulièrement – seule la page à jour de l'éditeur fait foi."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Opus: die leistungsstärkste Stufe für komplexe Analysen, Programmierung und anspruchsvolles Reasoning.",
+          "en": "Opus: the most capable tier for complex analysis, coding and demanding reasoning.",
+          "it": "Opus: la fascia più potente per analisi complesse, programmazione e ragionamento avanzato.",
+          "fr": "Opus : le niveau le plus performant pour l'analyse complexe, le code et le raisonnement exigeant."
+        },
+        {
+          "de": "Sonnet: die ausgewogene Stufe für den produktiven Alltag mit gutem Verhältnis aus Qualität und Tempo.",
+          "en": "Sonnet: the balanced tier for everyday production work with a good quality-to-speed ratio.",
+          "it": "Sonnet: la fascia bilanciata per il lavoro quotidiano, con buon rapporto qualità/velocità.",
+          "fr": "Sonnet : le niveau équilibré pour le quotidien, bon rapport qualité/rapidité."
+        },
+        {
+          "de": "Haiku: die schnelle, kostengünstige Stufe für hohe Volumina und latenzsensitive Aufgaben.",
+          "en": "Haiku: the fast, economical tier for high volumes and latency-sensitive tasks.",
+          "it": "Haiku: la fascia rapida ed economica per grandi volumi e attività sensibili alla latenza.",
+          "fr": "Haiku : le niveau rapide et économique pour les gros volumes et les tâches sensibles à la latence."
+        },
+        {
+          "de": "Zugang: über die Weboberfläche und Apps von claude.ai, über die Anthropic-API sowie über Amazon Bedrock und Google Cloud Vertex AI.",
+          "en": "Access: via the claude.ai web interface and apps, via the Anthropic API, and via Amazon Bedrock and Google Cloud Vertex AI.",
+          "it": "Accesso: tramite l'interfaccia web e le app di claude.ai, l'API di Anthropic e le piattaforme Amazon Bedrock e Google Cloud Vertex AI.",
+          "fr": "Accès : via l'interface web et les applications claude.ai, via l'API Anthropic, ainsi que via Amazon Bedrock et Google Cloud Vertex AI."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Stärken von Claude",
+        "en": "Claude's strengths",
+        "it": "Punti di forza di Claude",
+        "fr": "Les forces de Claude"
+      },
+      "paragraphs": [
+        {
+          "de": "Claude ist auf durchdachtes, gut strukturiertes Antworten und das genaue Befolgen von Anweisungen ausgelegt. Charakteristisch sind ein sehr grosses Kontextfenster (mehrere hunderttausend Tokens, je nach Modell), das die Verarbeitung langer Dokumente erlaubt, sowie multimodale Eingaben: Neben Text lassen sich auch Bilder und PDF-Inhalte analysieren.",
+          "en": "Claude is designed for considered, well-structured answers and precise instruction-following. Hallmarks include a very large context window (several hundred thousand tokens, depending on the model) that allows processing of long documents, plus multimodal input: alongside text, it can analyse images and PDF content.",
+          "it": "Claude è progettato per risposte ponderate e ben strutturate e per seguire le istruzioni con precisione. Caratteristici sono una finestra di contesto molto ampia (diverse centinaia di migliaia di token, a seconda del modello), che consente di elaborare documenti lunghi, e l'input multimodale: oltre al testo può analizzare immagini e contenuti PDF.",
+          "fr": "Claude est conçu pour des réponses réfléchies, bien structurées, et un suivi précis des instructions. Ses atouts : une très grande fenêtre de contexte (plusieurs centaines de milliers de tokens selon le modèle) permettant de traiter de longs documents, et une entrée multimodale : outre le texte, il analyse images et contenus PDF."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Schreiben und Redigieren: Entwürfe, Zusammenfassungen, Übersetzungen und Ton-Anpassungen in mehreren Sprachen.",
+          "en": "Writing and editing: drafts, summaries, translations and tone adjustments across multiple languages.",
+          "it": "Scrittura ed editing: bozze, riassunti, traduzioni e adattamenti di tono in più lingue.",
+          "fr": "Rédaction et révision : brouillons, résumés, traductions et ajustements de ton en plusieurs langues."
+        },
+        {
+          "de": "Programmierung: Code erklären, generieren und debuggen; mit Claude Code auch agentisch im Terminal und in Entwicklungsumgebungen.",
+          "en": "Coding: explaining, generating and debugging code; with Claude Code also working agentically in the terminal and in development environments.",
+          "it": "Programmazione: spiegare, generare ed eseguire il debug del codice; con Claude Code anche in modo agentico nel terminale e negli ambienti di sviluppo.",
+          "fr": "Code : expliquer, générer et déboguer du code ; avec Claude Code, aussi de manière agentique dans le terminal et les environnements de développement."
+        },
+        {
+          "de": "Dokumentenanalyse: lange Verträge, Berichte oder Datensätze auswerten, vergleichen und strukturieren.",
+          "en": "Document analysis: reviewing, comparing and structuring long contracts, reports or datasets.",
+          "it": "Analisi documentale: esaminare, confrontare e strutturare contratti lunghi, report o dataset.",
+          "fr": "Analyse documentaire : examiner, comparer et structurer contrats longs, rapports ou jeux de données."
+        },
+        {
+          "de": "Werkzeug- und Datenanbindung: über das offene Model Context Protocol (MCP) lassen sich externe Systeme und Datenquellen einbinden; Funktionen wie Artifacts erleichtern das Erstellen von Dokumenten und kleinen Anwendungen.",
+          "en": "Tool and data integration: the open Model Context Protocol (MCP) connects external systems and data sources; features such as Artifacts make it easier to build documents and small apps.",
+          "it": "Integrazione di strumenti e dati: il Model Context Protocol (MCP) aperto collega sistemi e fonti dati esterni; funzioni come Artifacts semplificano la creazione di documenti e piccole applicazioni.",
+          "fr": "Intégration d'outils et de données : le Model Context Protocol (MCP) ouvert connecte systèmes et sources externes ; des fonctions comme Artifacts facilitent la création de documents et de petites applications."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Geschäftliche Anwendungsfälle",
+        "en": "Business use cases",
+        "it": "Casi d'uso aziendali",
+        "fr": "Cas d'usage en entreprise"
+      },
+      "bullets": [
+        {
+          "de": "Kundendienst: Assistenz für Support-Teams, Entwürfe für Antworten und Zusammenfassungen von Verläufen (mit menschlicher Freigabe).",
+          "en": "Customer service: assisting support teams, drafting replies and summarising conversation histories (with human sign-off).",
+          "it": "Assistenza clienti: supporto ai team, bozze di risposte e sintesi delle conversazioni (con approvazione umana).",
+          "fr": "Service client : assistance aux équipes support, brouillons de réponses et résumés d'historiques (avec validation humaine)."
+        },
+        {
+          "de": "Wissensarbeit: Recherche, Aufbereitung interner Dokumentation und Frage-Antwort-Systeme über eigene Inhalte (Retrieval-Augmented Generation).",
+          "en": "Knowledge work: research, preparing internal documentation and question-answering over your own content (retrieval-augmented generation).",
+          "it": "Lavoro di conoscenza: ricerca, preparazione della documentazione interna e sistemi di domanda-risposta sui propri contenuti (retrieval-augmented generation).",
+          "fr": "Travail de la connaissance : recherche, préparation de la documentation interne et questions-réponses sur vos contenus (retrieval-augmented generation)."
+        },
+        {
+          "de": "Softwareentwicklung: Prototyping, Code-Reviews und Automatisierung wiederkehrender Entwicklungsaufgaben.",
+          "en": "Software development: prototyping, code reviews and automating repetitive engineering tasks.",
+          "it": "Sviluppo software: prototipazione, code review e automazione di attività ricorrenti.",
+          "fr": "Développement logiciel : prototypage, revues de code et automatisation de tâches répétitives."
+        },
+        {
+          "de": "Marketing und Kommunikation: mehrsprachige Inhalte, Zusammenfassungen und erste Entwürfe – redaktionell geprüft.",
+          "en": "Marketing and communications: multilingual content, summaries and first drafts – reviewed editorially.",
+          "it": "Marketing e comunicazione: contenuti multilingue, riassunti e prime bozze – con revisione redazionale.",
+          "fr": "Marketing et communication : contenus multilingues, résumés et premiers jets – relus par la rédaction."
+        },
+        {
+          "de": "Agenten und Automatisierung: mehrstufige Abläufe, die über MCP kontrolliert Werkzeuge und Systeme ansteuern.",
+          "en": "Agents and automation: multi-step workflows that drive tools and systems in a controlled way via MCP.",
+          "it": "Agenti e automazione: flussi in più fasi che pilotano strumenti e sistemi in modo controllato tramite MCP.",
+          "fr": "Agents et automatisation : flux en plusieurs étapes pilotant outils et systèmes de façon contrôlée via MCP."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Grenzen und Risiken",
+        "en": "Limits and risks",
+        "it": "Limiti e rischi",
+        "fr": "Limites et risques"
+      },
+      "paragraphs": [
+        {
+          "de": "Wie alle Sprachmodelle kann Claude plausibel klingende, aber falsche Aussagen erzeugen («Halluzinationen»). Das Wissen endet an einem Trainings-Stichtag; ohne angebundene Web- oder Datenwerkzeuge kennt das Modell keine aktuellen Ereignisse. Ausgaben sind nicht deterministisch und sollten bei geschäftskritischen Entscheidungen stets von Menschen geprüft werden.",
+          "en": "Like all language models, Claude can produce plausible-sounding but incorrect statements (\"hallucinations\"). Its knowledge ends at a training cutoff; without connected web or data tools, the model has no awareness of current events. Outputs are not deterministic and should always be checked by humans for business-critical decisions.",
+          "it": "Come tutti i modelli linguistici, Claude può produrre affermazioni plausibili ma errate («allucinazioni»). La conoscenza si ferma a una data di addestramento; senza strumenti web o dati collegati, il modello ignora gli eventi recenti. Gli output non sono deterministici e vanno sempre verificati da persone nelle decisioni critiche.",
+          "fr": "Comme tout modèle de langage, Claude peut produire des affirmations plausibles mais fausses (« hallucinations »). Ses connaissances s'arrêtent à une date de coupure ; sans outils web ou données connectés, il ignore l'actualité. Les sorties ne sont pas déterministes et doivent toujours être vérifiées par des humains pour les décisions critiques."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kontextgrenze: sehr lange Eingaben können trotz grossem Fenster gekürzt oder ungenau verarbeitet werden.",
+          "en": "Context limit: very long inputs may be truncated or handled imprecisely despite the large window.",
+          "it": "Limite di contesto: input molto lunghi possono essere troncati o gestiti con imprecisione nonostante l'ampia finestra.",
+          "fr": "Limite de contexte : des entrées très longues peuvent être tronquées ou traitées imprécisément malgré la grande fenêtre."
+        },
+        {
+          "de": "Datenschutz und Vertraulichkeit: sensible Daten nur nach klaren internen Regeln und passendem Vertragsrahmen eingeben.",
+          "en": "Privacy and confidentiality: enter sensitive data only under clear internal rules and an appropriate contractual framework.",
+          "it": "Privacy e riservatezza: inserire dati sensibili solo con regole interne chiare e un quadro contrattuale adeguato.",
+          "fr": "Confidentialité : ne saisir des données sensibles que dans un cadre interne clair et contractuel adapté."
+        },
+        {
+          "de": "Kosten und Abhängigkeit: Volumen treibt die Kosten; eine Anbieterbindung sollte bewusst gestaltet werden.",
+          "en": "Cost and lock-in: volume drives cost; vendor dependency should be a deliberate design choice.",
+          "it": "Costi e dipendenza: il volume incide sui costi; la dipendenza dal fornitore va gestita consapevolmente.",
+          "fr": "Coût et dépendance : le volume pèse sur les coûts ; la dépendance à l'éditeur doit être un choix assumé."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Blick: Datenschutz und Compliance",
+        "en": "Swiss lens: data protection and compliance",
+        "it": "Prospettiva svizzera: protezione dei dati e compliance",
+        "fr": "Regard suisse : protection des données et conformité"
+      },
+      "paragraphs": [
+        {
+          "de": "Für Schweizer Organisationen gilt beim Einsatz von Claude in erster Linie das revidierte Datenschutzgesetz (revDSG/nFADP), beaufsichtigt durch den EDÖB. Werden Personen in der EU betroffen oder Systeme dort genutzt, kann zusätzlich die extraterritoriale EU-KI-Verordnung (EU AI Act) einschlägig sein. Für Auftragsbearbeitungen ist ein Auftragsbearbeitungsvertrag (AVV/DPA) nötig, und die Datenlokalisierung sollte geprüft werden – etwa über regionale Bereitstellung via Amazon Bedrock oder Google Cloud Vertex AI.",
+          "en": "For Swiss organisations, using Claude is governed primarily by the revised Data Protection Act (revDSG/nFADP), overseen by the FDPIC (EDÖB). Where EU individuals are involved or systems are used there, the extraterritorial EU AI Act may also apply. Processing on your behalf requires a data processing agreement (DPA), and data localisation should be reviewed – for example via regional deployment through Amazon Bedrock or Google Cloud Vertex AI.",
+          "it": "Per le organizzazioni svizzere l'uso di Claude è regolato in primo luogo dalla legge sulla protezione dei dati riveduta (revDSG/nFADP), vigilata dall'IFPDT (EDÖB). Se sono coinvolte persone nell'UE o vi si usano i sistemi, può applicarsi anche l'extraterritoriale EU AI Act. Per il trattamento per conto terzi serve un accordo (DPA) e va valutata la localizzazione dei dati – ad esempio con il deployment regionale via Amazon Bedrock o Google Cloud Vertex AI.",
+          "fr": "Pour les organisations suisses, l'usage de Claude relève d'abord de la loi révisée sur la protection des données (nLPD/revDSG), surveillée par le PFPDT (EDÖB). Si des personnes de l'UE sont concernées ou si des systèmes y sont utilisés, le règlement extraterritorial européen (EU AI Act) peut aussi s'appliquer. Un contrat de sous-traitance (DPA) est requis et la localisation des données doit être examinée – par exemple via un déploiement régional avec Amazon Bedrock ou Google Cloud Vertex AI."
+        },
+        {
+          "de": "Anthropic gibt an, Eingaben und Ausgaben von kommerziellen Produkten und der API standardmässig nicht zum Training seiner Modelle zu verwenden; für Enterprise-Nutzung werden zusätzliche Zusagen wie eingeschränkte Datenaufbewahrung angeboten. Prüfen Sie stets die aktuellen Nutzungs- und Datenschutzbedingungen des Anbieters, da sich diese ändern können.",
+          "en": "Anthropic states that it does not, by default, use inputs and outputs from its commercial products and API to train its models; for enterprise use, additional commitments such as limited data retention are offered. Always review the provider's current terms and privacy documentation, as these can change.",
+          "it": "Anthropic dichiara di non utilizzare, per impostazione predefinita, input e output dei prodotti commerciali e dell'API per addestrare i modelli; per l'uso enterprise offre impegni aggiuntivi come la conservazione limitata dei dati. Verificare sempre le condizioni d'uso e sulla privacy aggiornate del fornitore, poiché possono cambiare.",
+          "fr": "Anthropic indique ne pas utiliser, par défaut, les entrées et sorties de ses produits commerciaux et de son API pour entraîner ses modèles ; pour l'usage entreprise, des engagements supplémentaires comme une rétention limitée des données sont proposés. Vérifiez toujours les conditions d'utilisation et de confidentialité en vigueur, susceptibles d'évoluer."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Wer steckt hinter Claude?",
+        "en": "Who is behind Claude?",
+        "it": "Chi c'è dietro Claude?",
+        "fr": "Qui est derrière Claude ?"
+      },
+      "a": {
+        "de": "Claude wird vom US-Unternehmen Anthropic entwickelt, das 2021 mit Fokus auf KI-Sicherheit gegründet wurde. Zu den Mitgründenden zählen ehemalige OpenAI-Forschende, darunter Dario und Daniela Amodei.",
+        "en": "Claude is developed by the US company Anthropic, founded in 2021 with a focus on AI safety. Its co-founders include former OpenAI researchers, among them Dario and Daniela Amodei.",
+        "it": "Claude è sviluppato dall'azienda statunitense Anthropic, fondata nel 2021 con focus sulla sicurezza dell'IA. Tra i co-fondatori figurano ex ricercatori di OpenAI, come Dario e Daniela Amodei.",
+        "fr": "Claude est développé par l'entreprise américaine Anthropic, fondée en 2021 et axée sur la sûreté de l'IA. Parmi ses cofondateurs figurent d'anciens chercheurs d'OpenAI, dont Dario et Daniela Amodei."
+      }
+    },
+    {
+      "q": {
+        "de": "Was unterscheidet Opus, Sonnet und Haiku?",
+        "en": "How do Opus, Sonnet and Haiku differ?",
+        "it": "Che differenza c'è tra Opus, Sonnet e Haiku?",
+        "fr": "Quelle différence entre Opus, Sonnet et Haiku ?"
+      },
+      "a": {
+        "de": "Es sind Modellstufen mit unterschiedlichem Gleichgewicht: Opus für höchste Leistung, Sonnet als ausgewogene Alltagswahl, Haiku für Tempo und tiefe Kosten. Konkrete Versionen und Preise ändern sich – massgeblich ist die aktuelle Übersicht des Anbieters.",
+        "en": "They are model tiers with different balances: Opus for top capability, Sonnet as the balanced everyday choice, Haiku for speed and low cost. Specific versions and prices change – rely on the provider's current overview.",
+        "it": "Sono fasce di modello con equilibri diversi: Opus per la massima capacità, Sonnet come scelta bilanciata quotidiana, Haiku per velocità e costi bassi. Versioni e prezzi cambiano – fa fede la panoramica aggiornata del fornitore.",
+        "fr": "Ce sont des niveaux de modèles aux équilibres différents : Opus pour la performance maximale, Sonnet comme choix équilibré au quotidien, Haiku pour la rapidité et le faible coût. Versions et prix évoluent – référez-vous à la page à jour de l'éditeur."
+      }
+    },
+    {
+      "q": {
+        "de": "Kann Claude im Internet suchen und aktuelle Informationen liefern?",
+        "en": "Can Claude search the web and provide up-to-date information?",
+        "it": "Claude può cercare sul web e fornire informazioni aggiornate?",
+        "fr": "Claude peut-il chercher sur le web et fournir des informations à jour ?"
+      },
+      "a": {
+        "de": "Von sich aus kennt Claude nur Wissen bis zu einem Trainings-Stichtag. Aktuelle Informationen sind nur möglich, wenn Web- oder Datenwerkzeuge angebunden sind – etwa über Funktionen der Anwendung oder über das Model Context Protocol (MCP).",
+        "en": "On its own, Claude only knows information up to a training cutoff. Up-to-date information is only possible when web or data tools are connected – for example via app features or the Model Context Protocol (MCP).",
+        "it": "Da solo Claude conosce informazioni fino a una data di addestramento. Le informazioni aggiornate sono possibili solo se sono collegati strumenti web o dati – ad esempio tramite funzioni dell'app o il Model Context Protocol (MCP).",
+        "fr": "Seul, Claude ne connaît les informations que jusqu'à une date de coupure. L'information à jour n'est possible que si des outils web ou de données sont connectés – par exemple via des fonctions de l'application ou le Model Context Protocol (MCP)."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist Claude für Schweizer Unternehmen datenschutzkonform nutzbar?",
+        "en": "Can Swiss companies use Claude in a privacy-compliant way?",
+        "it": "Le aziende svizzere possono usare Claude in modo conforme alla privacy?",
+        "fr": "Les entreprises suisses peuvent-elles utiliser Claude conformément à la protection des données ?"
+      },
+      "a": {
+        "de": "Ja, mit passenden Massnahmen: Grundlage ist das revDSG/nFADP unter Aufsicht des EDÖB, gegebenenfalls ergänzt durch den EU AI Act. Nötig sind ein Auftragsbearbeitungsvertrag, klare interne Regeln für sensible Daten und eine bewusste Wahl von Bereitstellung und Datenstandort.",
+        "en": "Yes, with the right measures: the basis is the revDSG/nFADP under FDPIC (EDÖB) supervision, possibly complemented by the EU AI Act. You need a data processing agreement, clear internal rules for sensitive data, and a deliberate choice of deployment and data location.",
+        "it": "Sì, con misure adeguate: la base è la revDSG/nFADP sotto la vigilanza dell'IFPDT (EDÖB), eventualmente integrata dall'EU AI Act. Servono un accordo sul trattamento, regole interne chiare per i dati sensibili e una scelta consapevole di deployment e localizzazione dei dati.",
+        "fr": "Oui, avec les mesures adéquates : la base est la nLPD/revDSG sous la surveillance du PFPDT (EDÖB), éventuellement complétée par l'EU AI Act. Il faut un contrat de sous-traitance, des règles internes claires pour les données sensibles et un choix réfléchi du déploiement et de la localisation des données."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist das Model Context Protocol (MCP)?",
+        "en": "What is the Model Context Protocol (MCP)?",
+        "it": "Cos'è il Model Context Protocol (MCP)?",
+        "fr": "Qu'est-ce que le Model Context Protocol (MCP) ?"
+      },
+      "a": {
+        "de": "MCP ist ein von Anthropic initiierter, offener Standard, um KI-Modelle sicher und einheitlich mit externen Werkzeugen und Datenquellen zu verbinden. Er erleichtert Integrationen und agentische Abläufe über verschiedene Systeme hinweg.",
+        "en": "MCP is an open standard initiated by Anthropic to connect AI models to external tools and data sources in a secure, consistent way. It simplifies integrations and agentic workflows across different systems.",
+        "it": "MCP è uno standard aperto avviato da Anthropic per collegare i modelli di IA a strumenti e fonti dati esterni in modo sicuro e uniforme. Semplifica integrazioni e flussi agentici tra sistemi diversi.",
+        "fr": "MCP est un standard ouvert lancé par Anthropic pour connecter les modèles d'IA à des outils et sources de données externes de façon sûre et cohérente. Il simplifie les intégrations et les flux agentiques entre systèmes."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie unterscheidet sich Claude von ChatGPT oder Gemini?",
+        "en": "How does Claude differ from ChatGPT or Gemini?",
+        "it": "In cosa Claude si differenzia da ChatGPT o Gemini?",
+        "fr": "En quoi Claude diffère-t-il de ChatGPT ou Gemini ?"
+      },
+      "a": {
+        "de": "Alle drei sind leistungsfähige KI-Assistenten auf Basis grosser Sprachmodelle. Claude wird oft für langes Kontextverständnis, strukturiertes Schreiben und seinen Sicherheitsfokus (Constitutional AI) genannt. Die passende Wahl hängt von Aufgabe, Integrationen, Datenschutzanforderungen und aktuellen Konditionen ab – ein Vergleich anhand eigener Anwendungsfälle ist ratsam.",
+        "en": "All three are capable AI assistants built on large language models. Claude is often noted for long-context understanding, structured writing and its safety focus (Constitutional AI). The right choice depends on the task, integrations, privacy requirements and current terms – comparing against your own use cases is advisable.",
+        "it": "Tutti e tre sono assistenti IA basati su grandi modelli linguistici. Claude è spesso citato per la comprensione di contesti lunghi, la scrittura strutturata e il focus sulla sicurezza (Constitutional AI). La scelta giusta dipende da attività, integrazioni, requisiti di privacy e condizioni correnti – conviene confrontarli sui propri casi d'uso.",
+        "fr": "Les trois sont des assistants IA fondés sur de grands modèles de langage. Claude est souvent cité pour la compréhension de longs contextes, la rédaction structurée et son accent sur la sûreté (Constitutional AI). Le bon choix dépend de la tâche, des intégrations, des exigences de confidentialité et des conditions du moment – mieux vaut comparer sur ses propres cas d'usage."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Anthropic",
+    "Claude",
+    "Claude Opus",
+    "Claude Sonnet",
+    "Claude Haiku",
+    "Constitutional AI",
+    "Model Context Protocol (MCP)",
+    "Claude Code",
+    "Artifacts",
+    "Anthropic API",
+    "Amazon Bedrock",
+    "Google Cloud Vertex AI",
+    "Grosses Sprachmodell (LLM)",
+    "Dario Amodei",
+    "revDSG/nFADP",
+    "EU AI Act"
+  ]
+}

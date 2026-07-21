@@ -1,0 +1,370 @@
+{
+  "id": "what-is-copilot",
+  "cluster": "models-vendors",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "was-ist-microsoft-copilot",
+    "en": "what-is-microsoft-copilot",
+    "it": "cosa-e-microsoft-copilot",
+    "fr": "qu-est-ce-que-microsoft-copilot"
+  },
+  "title": {
+    "de": "Was ist Microsoft Copilot? Funktionen & Grenzen | Weissmann AI",
+    "en": "What Is Microsoft Copilot? Features and Limits | Weissmann AI",
+    "it": "Cos'e Microsoft Copilot? Funzioni e limiti | Weissmann AI",
+    "fr": "Qu'est-ce que Microsoft Copilot ? Guide | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Microsoft Copilot erklaert: Integration in Microsoft 365, Funktionen, Geschaeftsnutzen, Datenschutz nach revDSG und Grenzen. Neutraler Ueberblick fuer die Schweiz.",
+    "en": "Microsoft Copilot explained: Microsoft 365 integration, capabilities, business uses, data protection under revDSG, and limits. A neutral overview with a Swiss lens.",
+    "it": "Microsoft Copilot spiegato: integrazione in Microsoft 365, funzioni, usi aziendali, protezione dati secondo la revLPD e limiti. Panoramica neutrale per la Svizzera.",
+    "fr": "Microsoft Copilot explique : integration Microsoft 365, fonctions, usages, protection des donnees selon la nLPD et limites. Un apercu neutre avec un regard suisse."
+  },
+  "kicker": {
+    "de": "KI-Assistenten & Anbieter",
+    "en": "AI Assistants & Vendors",
+    "it": "Assistenti IA e fornitori",
+    "fr": "Assistants IA et fournisseurs"
+  },
+  "h1": {
+    "de": "Was ist Microsoft Copilot?",
+    "en": "What is Microsoft Copilot?",
+    "it": "Cos'e Microsoft Copilot?",
+    "fr": "Qu'est-ce que Microsoft Copilot ?"
+  },
+  "answerFirst": {
+    "de": "Microsoft Copilot ist die Markenfamilie der KI-Assistenten von Microsoft. Sie basiert auf grossen Sprachmodellen (unter anderem von OpenAI) und ist in Produkte wie Microsoft 365, Windows, Edge und GitHub eingebettet. Microsoft 365 Copilot verbindet das Sprachmodell ueber den Microsoft Graph mit Ihren eigenen E-Mails, Dokumenten und Chats, um Inhalte zu erstellen, zusammenzufassen und Fragen zu Ihren Firmendaten zu beantworten.",
+    "en": "Microsoft Copilot is Microsoft's brand family of AI assistants. It is built on large language models (including OpenAI's) and embedded across products such as Microsoft 365, Windows, Edge and GitHub. Microsoft 365 Copilot connects the language model, through the Microsoft Graph, to your own emails, documents and chats to draft content, summarise information and answer questions grounded in your organisation's data.",
+    "it": "Microsoft Copilot e la famiglia di marchi degli assistenti IA di Microsoft. Si basa su grandi modelli linguistici (tra cui quelli di OpenAI) ed e integrato in prodotti come Microsoft 365, Windows, Edge e GitHub. Microsoft 365 Copilot collega il modello, tramite il Microsoft Graph, a e-mail, documenti e chat aziendali per redigere contenuti, riassumere informazioni e rispondere a domande basate sui dati dell'organizzazione.",
+    "fr": "Microsoft Copilot est la famille de marques d'assistants IA de Microsoft. Elle repose sur de grands modeles de langage (dont ceux d'OpenAI) et s'integre a des produits comme Microsoft 365, Windows, Edge et GitHub. Microsoft 365 Copilot relie le modele, via le Microsoft Graph, a vos e-mails, documents et conversations pour rediger, resumer et repondre a des questions ancrees dans les donnees de votre organisation."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Copilot ist ein Markenname, kein einzelnes Produkt",
+        "en": "Copilot is a brand name, not a single product",
+        "it": "Copilot e un marchio, non un unico prodotto",
+        "fr": "Copilot est une marque, pas un produit unique"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Begriff Copilot ist eine Dachmarke. Microsoft verwendet ihn fuer sehr unterschiedliche KI-Funktionen, die teils kostenlos, teils kostenpflichtig sind und je nach Kontext auf unterschiedliche Daten zugreifen. Wer 'Copilot' sagt, muss deshalb praezisieren, welches Produkt gemeint ist. Der gemeinsame Nenner: ein generativer KI-Assistent, der Text, Code oder Zusammenfassungen erzeugt und in eine Microsoft-Oberflaeche eingebettet ist.",
+          "en": "The word Copilot is an umbrella brand. Microsoft applies it to very different AI features that are partly free, partly paid, and that access different data depending on context. Saying 'Copilot' therefore requires specifying which product you mean. The common denominator is a generative AI assistant that produces text, code or summaries and is embedded inside a Microsoft surface.",
+          "it": "Il termine Copilot e un marchio ombrello. Microsoft lo applica a funzioni IA molto diverse, in parte gratuite e in parte a pagamento, che accedono a dati differenti a seconda del contesto. Dire 'Copilot' richiede quindi di precisare quale prodotto si intende. Il denominatore comune e un assistente IA generativo che produce testo, codice o riassunti ed e integrato in un'interfaccia Microsoft.",
+          "fr": "Le terme Copilot est une marque generique. Microsoft l'applique a des fonctions IA tres differentes, en partie gratuites et en partie payantes, qui accedent a des donnees variables selon le contexte. Dire 'Copilot' impose donc de preciser de quel produit on parle. Le denominateur commun est un assistant IA generatif qui produit du texte, du code ou des resumes et s'integre a une surface Microsoft."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Microsoft Copilot (kostenlos): der oeffentliche Web- und Chat-Assistent, frueher Bing Chat, auch in Windows und Edge.",
+          "en": "Microsoft Copilot (free): the public web and chat assistant, formerly Bing Chat, also in Windows and Edge.",
+          "it": "Microsoft Copilot (gratuito): l'assistente web e chat pubblico, gia Bing Chat, presente anche in Windows ed Edge.",
+          "fr": "Microsoft Copilot (gratuit) : l'assistant web et chat public, ex-Bing Chat, present aussi dans Windows et Edge."
+        },
+        {
+          "de": "Microsoft 365 Copilot: der kostenpflichtige Assistent in Word, Excel, PowerPoint, Outlook und Teams mit Zugriff auf Firmendaten.",
+          "en": "Microsoft 365 Copilot: the paid assistant in Word, Excel, PowerPoint, Outlook and Teams with access to organisational data.",
+          "it": "Microsoft 365 Copilot: l'assistente a pagamento in Word, Excel, PowerPoint, Outlook e Teams con accesso ai dati aziendali.",
+          "fr": "Microsoft 365 Copilot : l'assistant payant dans Word, Excel, PowerPoint, Outlook et Teams avec acces aux donnees de l'organisation."
+        },
+        {
+          "de": "Copilot Studio: eine Low-Code-Umgebung, um eigene Assistenten und Agenten zu bauen.",
+          "en": "Copilot Studio: a low-code environment for building custom assistants and agents.",
+          "it": "Copilot Studio: un ambiente low-code per creare assistenti e agenti personalizzati.",
+          "fr": "Copilot Studio : un environnement low-code pour creer des assistants et agents personnalises."
+        },
+        {
+          "de": "GitHub Copilot: ein separater Assistent fuer Softwareentwicklung, in Entwicklungsumgebungen integriert.",
+          "en": "GitHub Copilot: a separate assistant for software development, integrated into coding environments.",
+          "it": "GitHub Copilot: un assistente distinto per lo sviluppo software, integrato negli ambienti di programmazione.",
+          "fr": "GitHub Copilot : un assistant distinct pour le developpement logiciel, integre aux environnements de code."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wie Microsoft 365 Copilot technisch funktioniert",
+        "en": "How Microsoft 365 Copilot works technically",
+        "it": "Come funziona tecnicamente Microsoft 365 Copilot",
+        "fr": "Comment fonctionne techniquement Microsoft 365 Copilot"
+      },
+      "paragraphs": [
+        {
+          "de": "Microsoft 365 Copilot kombiniert drei Bausteine: ein grosses Sprachmodell, den Microsoft Graph und die Microsoft-365-Anwendungen. Wenn Sie eine Anweisung eingeben, sucht Copilot zuerst im Microsoft Graph nach relevanten Inhalten, auf die Sie berechtigt zugreifen duerfen. Dieser Kontext wird der Anfrage beigefuegt und an das Sprachmodell weitergegeben. Das Verfahren heisst Grounding oder Retrieval Augmented Generation und soll die Antworten an Ihre echten Daten binden statt an das reine Modellwissen.",
+          "en": "Microsoft 365 Copilot combines three building blocks: a large language model, the Microsoft Graph and the Microsoft 365 apps. When you enter a prompt, Copilot first searches the Microsoft Graph for relevant content you are permitted to access. That context is attached to the request and passed to the language model. This technique, called grounding or retrieval augmented generation, is meant to tie answers to your real data rather than to the model's general knowledge alone.",
+          "it": "Microsoft 365 Copilot combina tre elementi: un grande modello linguistico, il Microsoft Graph e le app di Microsoft 365. Quando inserite un'istruzione, Copilot cerca prima nel Microsoft Graph i contenuti pertinenti a cui siete autorizzati ad accedere. Questo contesto viene allegato alla richiesta e trasmesso al modello. La tecnica, detta grounding o retrieval augmented generation, mira ad ancorare le risposte ai vostri dati reali e non alla sola conoscenza del modello.",
+          "fr": "Microsoft 365 Copilot combine trois briques : un grand modele de langage, le Microsoft Graph et les applications Microsoft 365. Lorsque vous saisissez une instruction, Copilot recherche d'abord dans le Microsoft Graph les contenus pertinents auxquels vous etes autorise a acceder. Ce contexte est joint a la requete et transmis au modele. Cette technique, appelee grounding ou retrieval augmented generation, vise a ancrer les reponses dans vos donnees reelles plutot que dans la seule connaissance du modele."
+        },
+        {
+          "de": "Entscheidend ist das Berechtigungsmodell: Copilot zeigt einer Nutzerin nur Inhalte, die ihr Konto ohnehin sehen darf. Die Qualitaet der Antworten haengt damit direkt von einer sauberen Rechteverwaltung in SharePoint, OneDrive und Teams ab. Sind Dateien zu breit freigegeben, kann Copilot diese Informationen ebenfalls anzeigen.",
+          "en": "The permission model is decisive: Copilot only surfaces content the user's account is already allowed to see. The quality and safety of answers therefore depend directly on clean access management in SharePoint, OneDrive and Teams. If files are shared too broadly, Copilot can surface that information too.",
+          "it": "Il modello di autorizzazioni e decisivo: Copilot mostra solo i contenuti che l'account dell'utente e gia autorizzato a vedere. La qualita e la sicurezza delle risposte dipendono quindi direttamente da una gestione pulita dei permessi in SharePoint, OneDrive e Teams. Se i file sono condivisi in modo troppo ampio, Copilot puo mostrarne le informazioni.",
+          "fr": "Le modele d'autorisations est decisif : Copilot n'affiche que les contenus que le compte de l'utilisateur est deja autorise a voir. La qualite et la securite des reponses dependent donc directement d'une gestion propre des droits dans SharePoint, OneDrive et Teams. Si des fichiers sont partages trop largement, Copilot peut aussi en afficher les informations."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Integration in Microsoft 365: Was Copilot in den Apps tut",
+        "en": "Microsoft 365 integration: what Copilot does in each app",
+        "it": "Integrazione in Microsoft 365: cosa fa Copilot nelle app",
+        "fr": "Integration Microsoft 365 : ce que fait Copilot dans chaque app"
+      },
+      "bullets": [
+        {
+          "de": "Word: Entwuerfe erstellen, umschreiben, kuerzen oder Dokumente auf Basis vorhandener Dateien verfassen.",
+          "en": "Word: draft, rewrite, shorten or generate documents based on existing files.",
+          "it": "Word: redigere bozze, riscrivere, accorciare o generare documenti a partire da file esistenti.",
+          "fr": "Word : rediger, reecrire, raccourcir ou generer des documents a partir de fichiers existants."
+        },
+        {
+          "de": "Excel: Daten analysieren, Formeln vorschlagen, Trends erklaeren und Tabellen strukturieren.",
+          "en": "Excel: analyse data, suggest formulas, explain trends and structure tables.",
+          "it": "Excel: analizzare dati, suggerire formule, spiegare tendenze e strutturare tabelle.",
+          "fr": "Excel : analyser des donnees, suggerer des formules, expliquer des tendances et structurer des tableaux."
+        },
+        {
+          "de": "PowerPoint: Praesentationen aus einem Dokument oder Prompt erzeugen und Folien umgestalten.",
+          "en": "PowerPoint: generate presentations from a document or prompt and restyle slides.",
+          "it": "PowerPoint: generare presentazioni da un documento o prompt e riformattare le diapositive.",
+          "fr": "PowerPoint : generer des presentations a partir d'un document ou d'une instruction et remettre en forme les diapositives."
+        },
+        {
+          "de": "Outlook: E-Mails entwerfen, lange Threads zusammenfassen und Antworten im gewuenschten Ton vorschlagen.",
+          "en": "Outlook: draft emails, summarise long threads and suggest replies in a chosen tone.",
+          "it": "Outlook: redigere e-mail, riassumere lunghi thread e proporre risposte nel tono desiderato.",
+          "fr": "Outlook : rediger des e-mails, resumer de longs fils et proposer des reponses dans le ton choisi."
+        },
+        {
+          "de": "Teams: Besprechungen live oder nachtraeglich zusammenfassen, offene Punkte und Aufgaben herausarbeiten.",
+          "en": "Teams: summarise meetings live or afterwards and extract open points and action items.",
+          "it": "Teams: riassumere riunioni in tempo reale o a posteriori ed evidenziare punti aperti e azioni.",
+          "fr": "Teams : resumer les reunions en direct ou apres coup et degager les points ouverts et les taches."
+        },
+        {
+          "de": "Copilot Chat: eine app-uebergreifende Chatoberflaeche, die Firmendaten und optional das Web als Quelle nutzt.",
+          "en": "Copilot Chat: a cross-app chat interface that draws on organisational data and, optionally, the web.",
+          "it": "Copilot Chat: un'interfaccia chat trasversale che attinge ai dati aziendali e, facoltativamente, al web.",
+          "fr": "Copilot Chat : une interface de chat transversale qui exploite les donnees de l'organisation et, en option, le web."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Typische geschaeftliche Anwendungsfaelle",
+        "en": "Typical business use cases",
+        "it": "Casi d'uso aziendali tipici",
+        "fr": "Cas d'usage typiques en entreprise"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Nutzen von Copilot liegt vor allem in wiederkehrenden, textlastigen Buerotaetigkeiten. Ob sich die Lizenzkosten lohnen, haengt davon ab, wie viele Mitarbeitende taeglich mit Microsoft 365 arbeiten und wie gut die Datenbasis gepflegt ist. Realistische Einsatzfelder sind:",
+          "en": "Copilot's value lies mainly in recurring, text-heavy office work. Whether the licence cost pays off depends on how many employees work in Microsoft 365 daily and how well the underlying data is maintained. Realistic areas of use include:",
+          "it": "Il valore di Copilot risiede soprattutto nel lavoro d'ufficio ricorrente e ricco di testo. Se il costo della licenza convenga dipende da quanti dipendenti usano Microsoft 365 ogni giorno e da quanto e curata la base dati. Ambiti d'impiego realistici sono:",
+          "fr": "La valeur de Copilot reside surtout dans le travail de bureau recurrent et riche en texte. La rentabilite de la licence depend du nombre de collaborateurs qui utilisent Microsoft 365 au quotidien et de la qualite des donnees sous-jacentes. Des domaines d'usage realistes sont :"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Besprechungsprotokolle und Aufgabenlisten automatisch aus Teams-Meetings erstellen.",
+          "en": "Automatically generating meeting notes and task lists from Teams meetings.",
+          "it": "Generare automaticamente verbali e liste di attivita dalle riunioni Teams.",
+          "fr": "Generer automatiquement des comptes rendus et des listes de taches a partir des reunions Teams."
+        },
+        {
+          "de": "E-Mail-Postfaecher entlasten, indem lange Threads zusammengefasst und Antworten vorbereitet werden.",
+          "en": "Reducing inbox load by summarising long threads and drafting replies.",
+          "it": "Alleggerire la posta riassumendo lunghi thread e preparando risposte.",
+          "fr": "Alleger la boite de reception en resumant de longs fils et en preparant des reponses."
+        },
+        {
+          "de": "Erste Entwuerfe fuer Berichte, Angebote oder interne Dokumentation schneller vorliegen haben.",
+          "en": "Producing first drafts of reports, proposals or internal documentation faster.",
+          "it": "Ottenere piu rapidamente prime bozze di report, offerte o documentazione interna.",
+          "fr": "Obtenir plus vite des premiers jets de rapports, d'offres ou de documentation interne."
+        },
+        {
+          "de": "Grosse Dokumentbestaende durchsuchen und Kernaussagen fuer die Entscheidungsfindung extrahieren.",
+          "en": "Searching large document sets and extracting key points for decision-making.",
+          "it": "Esplorare grandi insiemi di documenti ed estrarre punti chiave per le decisioni.",
+          "fr": "Explorer de grands ensembles de documents et extraire les points cles pour la decision."
+        },
+        {
+          "de": "Mit Copilot Studio interne Support- oder HR-Assistenten auf Basis firmeneigener Inhalte aufbauen.",
+          "en": "Building internal support or HR assistants on company content with Copilot Studio.",
+          "it": "Costruire assistenti interni di supporto o HR sui contenuti aziendali con Copilot Studio.",
+          "fr": "Construire des assistants internes de support ou RH sur les contenus de l'entreprise avec Copilot Studio."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz und Schweizer Perspektive",
+        "en": "Data protection and the Swiss perspective",
+        "it": "Protezione dei dati e prospettiva svizzera",
+        "fr": "Protection des donnees et perspective suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Fuer geschaeftliche Copilot-Angebote sagt Microsoft zu, dass Prompts und Firmendaten aus dem Microsoft-365-Tenant nicht zum Training der zugrunde liegenden Sprachmodelle verwendet werden und innerhalb der Vertrags- und Compliance-Grenzen von Microsoft 365 verbleiben. Das kostenlose, oeffentliche Copilot ohne angemeldetes Geschaeftskonto unterliegt anderen Bedingungen und sollte nicht mit vertraulichen Firmendaten befuellt werden.",
+          "en": "For business Copilot offerings, Microsoft commits that prompts and organisational data from the Microsoft 365 tenant are not used to train the underlying language models and stay within the contractual and compliance boundary of Microsoft 365. The free public Copilot, used without a signed-in business account, is governed by different terms and should not be fed confidential company data.",
+          "it": "Per le offerte Copilot aziendali, Microsoft dichiara che i prompt e i dati dell'organizzazione provenienti dal tenant di Microsoft 365 non vengono usati per addestrare i modelli sottostanti e restano entro i confini contrattuali e di conformita di Microsoft 365. Il Copilot pubblico gratuito, usato senza un account aziendale, e soggetto a condizioni diverse e non dovrebbe ricevere dati aziendali riservati.",
+          "fr": "Pour les offres Copilot professionnelles, Microsoft s'engage a ce que les instructions et les donnees de l'organisation issues du tenant Microsoft 365 ne servent pas a entrainer les modeles sous-jacents et restent dans le perimetre contractuel et de conformite de Microsoft 365. Le Copilot public gratuit, utilise sans compte professionnel connecte, releve de conditions differentes et ne devrait pas recevoir de donnees confidentielles."
+        },
+        {
+          "de": "In der Schweiz gilt das revidierte Datenschutzgesetz (revDSG); der zustaendige Aufsichtsdienst ist der EDOEB. Der Begriff DSGVO betrifft die EU, nicht das Schweizer Recht, auch wenn beide aehnlich sind. Microsoft betreibt Rechenzentrumsregionen in Zuerich und Genf und bietet fuer Kerndienste von Microsoft 365 Optionen zur Datenresidenz an; welche Copilot-Verarbeitungen davon abgedeckt sind, sollten Unternehmen anhand der aktuellen Microsoft-Zusagen und ihres eigenen Datenbearbeitungsvertrags pruefen. Da Copilot auf einem universell einsetzbaren KI-Modell aufsetzt, greifen zudem die Transparenzpflichten des EU AI Act, der extraterritorial auch Schweizer Anbieter mit EU-Bezug treffen kann.",
+          "en": "In Switzerland the revised Data Protection Act (revDSG/nFADP) applies, supervised by the FDPIC (EDOEB). The term GDPR concerns the EU, not Swiss law, even though the two are similar. Microsoft operates datacentre regions in Zurich and Geneva and offers data-residency options for Microsoft 365 core services; which Copilot processing is covered should be verified against Microsoft's current commitments and your own data-processing agreement. Because Copilot builds on a general-purpose AI model, the transparency duties of the EU AI Act also apply and can reach Swiss providers with an EU nexus extraterritorially.",
+          "it": "In Svizzera si applica la legge riveduta sulla protezione dei dati (revLPD/nLPD), vigilata dall'IFPDT (EDOEB). Il termine GDPR riguarda l'UE, non il diritto svizzero, pur essendo i due simili. Microsoft gestisce regioni di data center a Zurigo e Ginevra e offre opzioni di residenza dei dati per i servizi core di Microsoft 365; quali elaborazioni di Copilot siano coperte va verificato con gli impegni attuali di Microsoft e con il proprio contratto di trattamento. Poiche Copilot si basa su un modello IA per finalita generali, valgono anche gli obblighi di trasparenza dell'EU AI Act, che extraterritorialmente puo riguardare fornitori svizzeri con legami con l'UE.",
+          "fr": "En Suisse s'applique la loi revisee sur la protection des donnees (nLPD/revLPD), supervisee par le PFPDT (EDOEB). Le terme RGPD concerne l'UE, pas le droit suisse, meme si les deux sont proches. Microsoft exploite des regions de centres de donnees a Zurich et Geneve et propose des options de residence des donnees pour les services de base Microsoft 365 ; il convient de verifier quels traitements de Copilot sont couverts au regard des engagements actuels de Microsoft et de votre propre contrat de traitement. Comme Copilot repose sur un modele d'IA a usage general, les obligations de transparence du reglement europeen sur l'IA (EU AI Act) s'appliquent aussi et peuvent atteindre les fournisseurs suisses ayant un lien avec l'UE."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Grenzen und Herausforderungen",
+        "en": "Limits and challenges",
+        "it": "Limiti e sfide",
+        "fr": "Limites et defis"
+      },
+      "bullets": [
+        {
+          "de": "Fehler und Erfindungen: Wie alle generativen Modelle kann Copilot plausibel klingende, aber falsche Aussagen erzeugen. Ergebnisse muessen geprueft werden.",
+          "en": "Errors and fabrication: like all generative models, Copilot can produce plausible-sounding but false statements. Output must be checked.",
+          "it": "Errori e invenzioni: come tutti i modelli generativi, Copilot puo produrre affermazioni plausibili ma false. Gli output vanno verificati.",
+          "fr": "Erreurs et inventions : comme tout modele generatif, Copilot peut produire des affirmations plausibles mais fausses. Les resultats doivent etre verifies."
+        },
+        {
+          "de": "Datenhygiene: Ueberbreite Freigaben in SharePoint koennen dazu fuehren, dass Copilot sensible Inhalte sichtbar macht. Berechtigungen sollten vor der Einfuehrung aufgeraeumt werden.",
+          "en": "Data hygiene: over-broad sharing in SharePoint can lead Copilot to surface sensitive content. Permissions should be cleaned up before rollout.",
+          "it": "Igiene dei dati: condivisioni troppo ampie in SharePoint possono far emergere contenuti sensibili tramite Copilot. I permessi vanno sistemati prima dell'adozione.",
+          "fr": "Hygiene des donnees : des partages trop larges dans SharePoint peuvent amener Copilot a exposer des contenus sensibles. Les droits doivent etre nettoyes avant le deploiement."
+        },
+        {
+          "de": "Abhaengigkeit vom Oekosystem: Der volle Nutzen von Microsoft 365 Copilot entsteht nur, wenn Ihre Daten und Arbeitsablaeufe bereits in Microsoft 365 liegen.",
+          "en": "Ecosystem dependence: the full value of Microsoft 365 Copilot only appears when your data and workflows already live in Microsoft 365.",
+          "it": "Dipendenza dall'ecosistema: il pieno valore di Microsoft 365 Copilot emerge solo se dati e flussi di lavoro sono gia in Microsoft 365.",
+          "fr": "Dependance a l'ecosysteme : toute la valeur de Microsoft 365 Copilot n'apparait que si vos donnees et flux de travail sont deja dans Microsoft 365."
+        },
+        {
+          "de": "Kosten und Lizenzierung: Microsoft 365 Copilot ist ein kostenpflichtiges Add-on pro Nutzer; aktuelle Preise entnehmen Sie den Angaben des Anbieters.",
+          "en": "Cost and licensing: Microsoft 365 Copilot is a paid per-user add-on; see the provider's current pricing for figures.",
+          "it": "Costi e licenze: Microsoft 365 Copilot e un componente aggiuntivo a pagamento per utente; per gli importi consultare i prezzi attuali del fornitore.",
+          "fr": "Cout et licences : Microsoft 365 Copilot est un module payant par utilisateur ; consultez les tarifs actuels du fournisseur pour les montants."
+        },
+        {
+          "de": "Change Management: Ohne Schulung, klare Anwendungsfaelle und Governance bleibt die Akzeptanz oft gering und der versprochene Produktivitaetsgewinn aus.",
+          "en": "Change management: without training, clear use cases and governance, adoption often stays low and the promised productivity gains fail to appear.",
+          "it": "Gestione del cambiamento: senza formazione, casi d'uso chiari e governance, l'adozione resta spesso bassa e i guadagni di produttivita promessi non si concretizzano.",
+          "fr": "Conduite du changement : sans formation, cas d'usage clairs et gouvernance, l'adoption reste souvent faible et les gains de productivite promis n'apparaissent pas."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was kostet Microsoft Copilot?",
+        "en": "How much does Microsoft Copilot cost?",
+        "it": "Quanto costa Microsoft Copilot?",
+        "fr": "Combien coute Microsoft Copilot ?"
+      },
+      "a": {
+        "de": "Das oeffentliche Microsoft Copilot ist in einer Basisversion kostenlos. Microsoft 365 Copilot ist ein kostenpflichtiges Add-on, das pro Nutzer und Monat zu einem Microsoft-365-Business- oder -Enterprise-Plan hinzugebucht wird. Konkrete Preise aendern sich; massgeblich ist die aktuelle Preisliste des Anbieters.",
+        "en": "The public Microsoft Copilot is free in a basic version. Microsoft 365 Copilot is a paid add-on billed per user per month on top of a Microsoft 365 Business or Enterprise plan. Specific prices change, so the provider's current pricing is authoritative.",
+        "it": "Il Microsoft Copilot pubblico e gratuito in versione base. Microsoft 365 Copilot e un componente a pagamento addebitato per utente al mese in aggiunta a un piano Microsoft 365 Business o Enterprise. I prezzi cambiano: fa fede il listino attuale del fornitore.",
+        "fr": "Le Microsoft Copilot public est gratuit dans une version de base. Microsoft 365 Copilot est un module payant facture par utilisateur et par mois en complement d'un plan Microsoft 365 Business ou Enterprise. Les tarifs evoluent : la grille actuelle du fournisseur fait foi."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen Microsoft Copilot und ChatGPT?",
+        "en": "What is the difference between Microsoft Copilot and ChatGPT?",
+        "it": "Qual e la differenza tra Microsoft Copilot e ChatGPT?",
+        "fr": "Quelle est la difference entre Microsoft Copilot et ChatGPT ?"
+      },
+      "a": {
+        "de": "ChatGPT von OpenAI ist ein eigenstaendiger Chatdienst. Microsoft Copilot ist eine Produktfamilie, die Sprachmodelle (teils von OpenAI) in Microsoft-Anwendungen einbettet. Der zentrale Unterschied bei Microsoft 365 Copilot ist der geregelte Zugriff auf Ihre eigenen Firmendaten ueber den Microsoft Graph, den ein allgemeiner Chatdienst nicht hat.",
+        "en": "OpenAI's ChatGPT is a standalone chat service. Microsoft Copilot is a product family that embeds language models (partly OpenAI's) into Microsoft applications. The key difference with Microsoft 365 Copilot is governed access to your own organisational data via the Microsoft Graph, which a general chat service does not have.",
+        "it": "ChatGPT di OpenAI e un servizio di chat autonomo. Microsoft Copilot e una famiglia di prodotti che integra modelli linguistici (in parte di OpenAI) nelle applicazioni Microsoft. La differenza chiave di Microsoft 365 Copilot e l'accesso regolato ai dati aziendali tramite il Microsoft Graph, assente in un servizio di chat generico.",
+        "fr": "ChatGPT d'OpenAI est un service de chat autonome. Microsoft Copilot est une famille de produits qui integre des modeles de langage (en partie ceux d'OpenAI) aux applications Microsoft. La difference cle de Microsoft 365 Copilot est l'acces encadre a vos donnees d'entreprise via le Microsoft Graph, absent d'un service de chat generique."
+      }
+    },
+    {
+      "q": {
+        "de": "Werden meine Firmendaten zum Training der KI verwendet?",
+        "en": "Is my company data used to train the AI?",
+        "it": "I miei dati aziendali vengono usati per addestrare l'IA?",
+        "fr": "Mes donnees d'entreprise servent-elles a entrainer l'IA ?"
+      },
+      "a": {
+        "de": "Fuer Microsoft 365 Copilot sagt Microsoft zu, dass Prompts und Tenant-Daten nicht zum Training der zugrunde liegenden Modelle genutzt werden und im Microsoft-365-Vertragsrahmen verbleiben. Beim kostenlosen oeffentlichen Copilot ohne Geschaeftskonto gelten andere Bedingungen; dort gehoeren keine vertraulichen Daten hinein. Pruefen Sie stets die aktuellen Vertragsunterlagen von Microsoft.",
+        "en": "For Microsoft 365 Copilot, Microsoft states that prompts and tenant data are not used to train the underlying models and remain within the Microsoft 365 contractual boundary. The free public Copilot without a business account is governed by different terms; confidential data does not belong there. Always check Microsoft's current contractual documents.",
+        "it": "Per Microsoft 365 Copilot, Microsoft dichiara che prompt e dati del tenant non sono usati per addestrare i modelli sottostanti e restano nel perimetro contrattuale di Microsoft 365. Il Copilot pubblico gratuito senza account aziendale ha condizioni diverse; non vi vanno inseriti dati riservati. Verificate sempre i documenti contrattuali aggiornati di Microsoft.",
+        "fr": "Pour Microsoft 365 Copilot, Microsoft indique que les instructions et les donnees du tenant ne servent pas a entrainer les modeles sous-jacents et restent dans le perimetre contractuel de Microsoft 365. Le Copilot public gratuit sans compte professionnel releve de conditions differentes ; aucune donnee confidentielle ne doit y figurer. Verifiez toujours les documents contractuels a jour de Microsoft."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist Microsoft Copilot mit dem Schweizer revDSG konform?",
+        "en": "Is Microsoft Copilot compliant with the Swiss revDSG?",
+        "it": "Microsoft Copilot e conforme alla revLPD svizzera?",
+        "fr": "Microsoft Copilot est-il conforme a la nLPD suisse ?"
+      },
+      "a": {
+        "de": "Konformitaet ist keine Eigenschaft des Werkzeugs allein, sondern Ergebnis Ihrer Konfiguration und Vertraege. Microsoft stellt Vertragsgrundlagen, Sicherheitszusagen und Datenresidenz-Optionen bereit; die Einhaltung von revDSG und den Transparenzpflichten des EU AI Act muss Ihr Unternehmen mit Datenbearbeitungsvertrag, Rollen- und Berechtigungskonzept sowie einer Folgenabschaetzung selbst sicherstellen. Der EDOEB ist die zustaendige Aufsicht.",
+        "en": "Compliance is not a property of the tool alone but the result of your configuration and contracts. Microsoft provides contractual terms, security commitments and data-residency options; meeting revDSG and the EU AI Act transparency duties is something your organisation must ensure via a data-processing agreement, a roles-and-permissions concept and an impact assessment. The FDPIC (EDOEB) is the competent authority.",
+        "it": "La conformita non e una proprieta del solo strumento, ma il risultato della vostra configurazione e dei contratti. Microsoft offre basi contrattuali, impegni di sicurezza e opzioni di residenza dei dati; il rispetto della revLPD e degli obblighi di trasparenza dell'EU AI Act va garantito dalla vostra organizzazione tramite contratto di trattamento, concetto di ruoli e permessi e valutazione d'impatto. L'IFPDT (EDOEB) e l'autorita competente.",
+        "fr": "La conformite n'est pas une propriete du seul outil mais le resultat de votre configuration et de vos contrats. Microsoft fournit des bases contractuelles, des engagements de securite et des options de residence des donnees ; le respect de la nLPD et des obligations de transparence de l'EU AI Act incombe a votre organisation via un contrat de traitement, un concept de roles et de droits et une analyse d'impact. Le PFPDT (EDOEB) est l'autorite competente."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen Microsoft 365 Copilot und dem kostenlosen Copilot Chat?",
+        "en": "What is the difference between Microsoft 365 Copilot and the free Copilot Chat?",
+        "it": "Che differenza c'e tra Microsoft 365 Copilot e Copilot Chat gratuito?",
+        "fr": "Quelle difference entre Microsoft 365 Copilot et le Copilot Chat gratuit ?"
+      },
+      "a": {
+        "de": "Der wesentliche Unterschied ist der Datenzugriff. Kostenloses Copilot Chat beantwortet allgemeine Fragen und kann sich auf das Web stuetzen. Das kostenpflichtige Microsoft 365 Copilot arbeitet zusaetzlich in Word, Excel, Outlook und Teams und greift ueber den Microsoft Graph auf Ihre berechtigten Firmeninhalte zu, was app-integrierte und datenbasierte Ergebnisse ermoeglicht.",
+        "en": "The essential difference is data access. Free Copilot Chat answers general questions and can draw on the web. Paid Microsoft 365 Copilot additionally works inside Word, Excel, Outlook and Teams and reaches your permitted organisational content via the Microsoft Graph, enabling app-embedded, data-grounded results.",
+        "it": "La differenza essenziale e l'accesso ai dati. Copilot Chat gratuito risponde a domande generali e puo attingere al web. Microsoft 365 Copilot a pagamento opera anche dentro Word, Excel, Outlook e Teams e raggiunge i contenuti aziendali autorizzati tramite il Microsoft Graph, consentendo risultati integrati nelle app e basati sui dati.",
+        "fr": "La difference essentielle est l'acces aux donnees. Le Copilot Chat gratuit repond a des questions generales et peut s'appuyer sur le web. Le Microsoft 365 Copilot payant fonctionne en plus dans Word, Excel, Outlook et Teams et atteint vos contenus d'entreprise autorises via le Microsoft Graph, permettant des resultats integres aux apps et ancres dans les donnees."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist GitHub Copilot dasselbe wie Microsoft Copilot?",
+        "en": "Is GitHub Copilot the same as Microsoft Copilot?",
+        "it": "GitHub Copilot e la stessa cosa di Microsoft Copilot?",
+        "fr": "GitHub Copilot est-il la meme chose que Microsoft Copilot ?"
+      },
+      "a": {
+        "de": "Nein. GitHub Copilot ist ein separates Produkt, das speziell Softwareentwickelnde beim Schreiben und Erklaeren von Code in ihrer Entwicklungsumgebung unterstuetzt. Es teilt die Dachmarke Copilot, wird aber getrennt lizenziert und ist nicht Teil von Microsoft 365 Copilot fuer die Buero-Apps.",
+        "en": "No. GitHub Copilot is a separate product aimed specifically at software developers, assisting them in writing and explaining code inside their development environment. It shares the Copilot umbrella brand but is licensed separately and is not part of Microsoft 365 Copilot for the office apps.",
+        "it": "No. GitHub Copilot e un prodotto distinto rivolto specificamente agli sviluppatori, che li assiste nello scrivere e spiegare codice nel loro ambiente di sviluppo. Condivide il marchio ombrello Copilot ma ha licenza separata e non fa parte di Microsoft 365 Copilot per le app d'ufficio.",
+        "fr": "Non. GitHub Copilot est un produit distinct destine specifiquement aux developpeurs, qui les aide a ecrire et expliquer du code dans leur environnement de developpement. Il partage la marque generique Copilot mais fait l'objet d'une licence separee et ne fait pas partie de Microsoft 365 Copilot pour les applications bureautiques."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Microsoft Copilot",
+    "Microsoft 365 Copilot",
+    "Copilot Chat",
+    "Copilot Studio",
+    "GitHub Copilot",
+    "Microsoft Graph",
+    "OpenAI",
+    "Grosse Sprachmodelle (LLM)",
+    "Retrieval Augmented Generation",
+    "Microsoft 365",
+    "SharePoint",
+    "Microsoft Teams",
+    "revDSG / nFADP",
+    "EDOEB",
+    "EU AI Act",
+    "Datenresidenz Schweiz (Zuerich, Genf)"
+  ]
+}

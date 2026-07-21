@@ -1,0 +1,416 @@
+{
+  "id": "what-is-gemini",
+  "cluster": "models-vendors",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "was-ist-google-gemini",
+    "en": "what-is-google-gemini",
+    "it": "cos-e-google-gemini",
+    "fr": "qu-est-ce-que-google-gemini"
+  },
+  "title": {
+    "de": "Was ist Google Gemini? KI-Modelle erklärt | Weissmann AI",
+    "en": "What Is Google Gemini? Capabilities Explained | Weissmann AI",
+    "it": "Cos'è Google Gemini? Modelli e usi spiegati | Weissmann AI",
+    "fr": "Qu'est-ce que Google Gemini ? Guide complet | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Google Gemini einfach erklärt: multimodale KI-Modelle, Integration in Workspace und Android, geschäftliche Anwendungsfälle, Grenzen und Datenschutz in der Schweiz.",
+    "en": "Google Gemini explained: multimodal AI models, integration with Workspace and Android, business use cases, limitations, and Swiss data-protection points.",
+    "it": "Google Gemini spiegato: modelli IA multimodali, integrazione con Workspace e Android, casi d'uso aziendali, limiti e protezione dati in Svizzera.",
+    "fr": "Google Gemini expliqué : modèles d'IA multimodaux, intégration à Workspace et Android, cas d'usage, limites et protection des données en Suisse."
+  },
+  "kicker": {
+    "de": "Modelle & Anbieter",
+    "en": "Models & Vendors",
+    "it": "Modelli e fornitori",
+    "fr": "Modèles et fournisseurs"
+  },
+  "h1": {
+    "de": "Was ist Google Gemini?",
+    "en": "What is Google Gemini?",
+    "it": "Cos'è Google Gemini?",
+    "fr": "Qu'est-ce que Google Gemini ?"
+  },
+  "answerFirst": {
+    "de": "Gemini ist die Familie multimodaler KI-Modelle von Google, entwickelt von Google DeepMind. Sie verarbeitet Text, Bilder, Audio, Video und Code in einem Modell und treibt die gleichnamige Chat-App, Google Workspace, die Android-Assistenz sowie über Vertex AI auch Unternehmensanwendungen an. Gemini löste 2023/2024 den früheren Dienst Bard ab und ist in mehreren Modellgrössen wie Pro, Flash und Nano verfügbar.",
+    "en": "Gemini is Google's family of multimodal AI models, developed by Google DeepMind. It processes text, images, audio, video and code within one model and powers the Gemini chat app, Google Workspace, Android assistance and, via Vertex AI, enterprise applications. Gemini replaced the earlier Bard service in 2023/2024 and comes in several model sizes such as Pro, Flash and Nano.",
+    "it": "Gemini è la famiglia di modelli IA multimodali di Google, sviluppata da Google DeepMind. Elabora testo, immagini, audio, video e codice in un unico modello e alimenta l'app di chat Gemini, Google Workspace, l'assistenza su Android e, tramite Vertex AI, le applicazioni aziendali. Gemini ha sostituito il precedente servizio Bard nel 2023/2024 ed è disponibile in più dimensioni, come Pro, Flash e Nano.",
+    "fr": "Gemini est la famille de modèles d'IA multimodaux de Google, développée par Google DeepMind. Elle traite texte, images, audio, vidéo et code dans un même modèle et alimente l'application Gemini, Google Workspace, l'assistance Android et, via Vertex AI, les applications d'entreprise. Gemini a remplacé le service Bard en 2023/2024 et existe en plusieurs tailles comme Pro, Flash et Nano."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was ist Gemini genau?",
+        "en": "What exactly is Gemini?",
+        "it": "Che cos'è esattamente Gemini?",
+        "fr": "Qu'est-ce que Gemini, précisément ?"
+      },
+      "paragraphs": [
+        {
+          "de": "Gemini ist Googles Antwort auf generative KI: eine Modellfamilie, die von Grund auf multimodal konzipiert wurde. Statt nur Text zu verarbeiten, versteht und erzeugt Gemini Sprache, Bilder, Audio, Video und Programmcode innerhalb desselben Modells. Der Name bezeichnet zugleich das zugrunde liegende Modell, die Chat-App (früher Bard) und die KI-Funktionen, die Google in seine Produkte einbettet.",
+          "en": "Gemini is Google's answer to generative AI: a model family designed to be multimodal from the ground up. Rather than handling text alone, Gemini understands and generates language, images, audio, video and code within the same model. The name refers at once to the underlying model, the chat app (formerly Bard) and the AI features Google embeds across its products.",
+          "it": "Gemini è la risposta di Google all'IA generativa: una famiglia di modelli progettata per essere multimodale fin dall'inizio. Invece di gestire solo testo, Gemini comprende e genera linguaggio, immagini, audio, video e codice all'interno dello stesso modello. Il nome indica allo stesso tempo il modello di base, l'app di chat (già Bard) e le funzioni IA che Google integra nei suoi prodotti.",
+          "fr": "Gemini est la réponse de Google à l'IA générative : une famille de modèles conçue dès le départ pour être multimodale. Au lieu de traiter uniquement du texte, Gemini comprend et génère langage, images, audio, vidéo et code au sein d'un même modèle. Le nom désigne à la fois le modèle sous-jacent, l'application de chat (anciennement Bard) et les fonctions d'IA que Google intègre à ses produits."
+        },
+        {
+          "de": "Entwickelt wird Gemini von Google DeepMind. Google aktualisiert die Modelle in schnellen Generationen (etwa Gemini 1.5, 2.0 und neuere Versionen); konkrete Versionsnummern, Kontextlängen und Preise ändern sich häufig. Für verbindliche Angaben lohnt daher stets ein Blick in die aktuelle Google-Dokumentation.",
+          "en": "Gemini is developed by Google DeepMind. Google updates the models in rapid generations (such as Gemini 1.5, 2.0 and newer releases); exact version numbers, context lengths and prices change frequently. For binding details, always consult Google's current documentation.",
+          "it": "Gemini è sviluppato da Google DeepMind. Google aggiorna i modelli in generazioni rapide (come Gemini 1.5, 2.0 e versioni più recenti); numeri di versione, lunghezze di contesto e prezzi cambiano spesso. Per informazioni vincolanti conviene sempre consultare la documentazione aggiornata di Google.",
+          "fr": "Gemini est développé par Google DeepMind. Google met à jour les modèles par générations rapides (Gemini 1.5, 2.0 et versions plus récentes) ; numéros de version, longueurs de contexte et tarifs changent souvent. Pour des informations fiables, consultez toujours la documentation Google à jour."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Modellfamilie und Fähigkeiten",
+        "en": "Model family and capabilities",
+        "it": "Famiglia di modelli e capacità",
+        "fr": "Famille de modèles et capacités"
+      },
+      "bullets": [
+        {
+          "de": "Multimodal: verarbeitet Text, Bild, Audio, Video und Code in einem einzigen Modell.",
+          "en": "Multimodal: handles text, image, audio, video and code within a single model.",
+          "it": "Multimodale: gestisce testo, immagini, audio, video e codice in un unico modello.",
+          "fr": "Multimodal : traite texte, image, audio, vidéo et code dans un seul modèle."
+        },
+        {
+          "de": "Modellgrössen: leistungsstarke Pro-Modelle, schnelle und günstige Flash-Modelle sowie Nano für die Ausführung direkt auf Geräten (on-device).",
+          "en": "Model sizes: powerful Pro models, fast and cost-efficient Flash models, and Nano for on-device execution.",
+          "it": "Dimensioni: potenti modelli Pro, modelli Flash veloci ed economici e Nano per l'esecuzione direttamente sui dispositivi (on-device).",
+          "fr": "Tailles de modèles : modèles Pro puissants, modèles Flash rapides et économiques, et Nano pour l'exécution directement sur l'appareil (on-device)."
+        },
+        {
+          "de": "Langes Kontextfenster: neuere Gemini-Versionen können sehr grosse Dokumentmengen bis in den Millionen-Token-Bereich auf einmal verarbeiten.",
+          "en": "Long context window: newer Gemini versions can process very large volumes of documents, reaching into the millions of tokens at once.",
+          "it": "Contesto lungo: le versioni più recenti di Gemini possono elaborare grandi quantità di documenti, fino a milioni di token in una sola volta.",
+          "fr": "Fenêtre de contexte étendue : les versions récentes de Gemini peuvent traiter de très grands volumes de documents, jusqu'à des millions de tokens à la fois."
+        },
+        {
+          "de": "Werkzeuge: Anbindung an die Google-Suche für aktuelle Informationen, Code-Ausführung und Funktionsaufrufe (function calling).",
+          "en": "Tools: connection to Google Search for up-to-date information, code execution and function calling.",
+          "it": "Strumenti: collegamento alla Ricerca Google per informazioni aggiornate, esecuzione di codice e chiamate di funzione (function calling).",
+          "fr": "Outils : connexion à la recherche Google pour des informations à jour, exécution de code et appels de fonctions (function calling)."
+        },
+        {
+          "de": "Zugänge: verfügbar über die Gemini-App, die Gemini-API, Google AI Studio und die Cloud-Plattform Vertex AI.",
+          "en": "Access: available through the Gemini app, the Gemini API, Google AI Studio and the Vertex AI cloud platform.",
+          "it": "Accesso: disponibile tramite l'app Gemini, l'API Gemini, Google AI Studio e la piattaforma cloud Vertex AI.",
+          "fr": "Accès : disponible via l'application Gemini, l'API Gemini, Google AI Studio et la plateforme cloud Vertex AI."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die Google-Integration",
+        "en": "The Google integration",
+        "it": "L'integrazione con Google",
+        "fr": "L'intégration à l'écosystème Google"
+      },
+      "paragraphs": [
+        {
+          "de": "Der grösste Unterschied zu eigenständigen KI-Diensten ist die tiefe Verankerung im Google-Ökosystem. Gemini erscheint dort, wo viele Menschen und Unternehmen ohnehin arbeiten.",
+          "en": "The biggest difference from standalone AI services is how deeply Gemini is embedded in the Google ecosystem. It appears where many people and organisations already work.",
+          "it": "La differenza più grande rispetto ai servizi IA autonomi è la profonda integrazione nell'ecosistema Google. Gemini compare dove molte persone e aziende già lavorano.",
+          "fr": "La plus grande différence avec les services d'IA autonomes tient à l'ancrage profond de Gemini dans l'écosystème Google. Il apparaît là où beaucoup de personnes et d'entreprises travaillent déjà."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Google Workspace: KI-Unterstützung in Gmail, Docs, Sheets, Slides und Meet für Entwürfe, Zusammenfassungen und Notizen.",
+          "en": "Google Workspace: AI assistance in Gmail, Docs, Sheets, Slides and Meet for drafts, summaries and notes.",
+          "it": "Google Workspace: assistenza IA in Gmail, Docs, Sheets, Slides e Meet per bozze, riassunti e appunti.",
+          "fr": "Google Workspace : assistance IA dans Gmail, Docs, Sheets, Slides et Meet pour brouillons, résumés et notes."
+        },
+        {
+          "de": "Android und Pixel: Gemini kann den Google Assistant als Sprach- und Systemassistenz ablösen.",
+          "en": "Android and Pixel: Gemini can replace Google Assistant as the voice and system assistant.",
+          "it": "Android e Pixel: Gemini può sostituire Google Assistant come assistente vocale e di sistema.",
+          "fr": "Android et Pixel : Gemini peut remplacer Google Assistant comme assistant vocal et système."
+        },
+        {
+          "de": "Chrome und Google Suche: KI-Übersichten (AI Overviews) und Assistenzfunktionen im Browser.",
+          "en": "Chrome and Google Search: AI Overviews and assistance features in the browser.",
+          "it": "Chrome e Ricerca Google: panoramiche IA (AI Overviews) e funzioni di assistenza nel browser.",
+          "fr": "Chrome et recherche Google : aperçus IA (AI Overviews) et fonctions d'assistance dans le navigateur."
+        },
+        {
+          "de": "Google Cloud / Vertex AI: Plattform, um Gemini in eigene Unternehmensanwendungen zu integrieren, inklusive Wahl der Datenregion.",
+          "en": "Google Cloud / Vertex AI: platform to integrate Gemini into your own enterprise applications, including a choice of data region.",
+          "it": "Google Cloud / Vertex AI: piattaforma per integrare Gemini nelle proprie applicazioni aziendali, con scelta della regione dei dati.",
+          "fr": "Google Cloud / Vertex AI : plateforme pour intégrer Gemini à vos propres applications d'entreprise, avec choix de la région des données."
+        },
+        {
+          "de": "Gemini API und AI Studio: für Entwickler zum schnellen Prototyping und produktiven Betrieb.",
+          "en": "Gemini API and AI Studio: for developers to prototype quickly and run in production.",
+          "it": "API Gemini e AI Studio: per gli sviluppatori, per prototipare rapidamente e andare in produzione.",
+          "fr": "API Gemini et AI Studio : pour les développeurs, du prototypage rapide à la mise en production."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Geschäftliche Anwendungsfälle",
+        "en": "Business use cases",
+        "it": "Casi d'uso aziendali",
+        "fr": "Cas d'usage en entreprise"
+      },
+      "bullets": [
+        {
+          "de": "Dokumente zusammenfassen, Berichte und E-Mails entwerfen sowie Meeting-Notizen automatisch erstellen.",
+          "en": "Summarise documents, draft reports and emails, and generate meeting notes automatically.",
+          "it": "Riassumere documenti, redigere report ed e-mail e generare automaticamente le note delle riunioni.",
+          "fr": "Résumer des documents, rédiger rapports et e-mails, et générer automatiquement des comptes-rendus de réunion."
+        },
+        {
+          "de": "Recherche und Wissensmanagement über grosse Dokumentbestände dank des langen Kontextfensters.",
+          "en": "Research and knowledge management across large document sets, thanks to the long context window.",
+          "it": "Ricerca e gestione della conoscenza su grandi archivi documentali grazie al contesto lungo.",
+          "fr": "Recherche et gestion des connaissances sur de grands ensembles de documents grâce à la fenêtre de contexte étendue."
+        },
+        {
+          "de": "Kundenservice-Assistenten und interne Chatbots, aufgebaut über Vertex AI.",
+          "en": "Customer-service assistants and internal chatbots built on Vertex AI.",
+          "it": "Assistenti per il servizio clienti e chatbot interni realizzati con Vertex AI.",
+          "fr": "Assistants de service client et chatbots internes construits sur Vertex AI."
+        },
+        {
+          "de": "Datenanalyse und Unterstützung in der Tabellenkalkulation direkt in Google Sheets.",
+          "en": "Data analysis and spreadsheet support directly in Google Sheets.",
+          "it": "Analisi dei dati e supporto ai fogli di calcolo direttamente in Google Sheets.",
+          "fr": "Analyse de données et aide au tableur directement dans Google Sheets."
+        },
+        {
+          "de": "Softwareentwicklung: Code erzeugen, erklären, dokumentieren und testen.",
+          "en": "Software development: generate, explain, document and test code.",
+          "it": "Sviluppo software: generare, spiegare, documentare e testare codice.",
+          "fr": "Développement logiciel : générer, expliquer, documenter et tester du code."
+        }
+      ],
+      "paragraphs": [
+        {
+          "de": "Der konkrete Nutzen hängt stark von der Workspace- oder Cloud-Lizenz ab. Funktionsumfang, Sprachen und Verfügbarkeit variieren je nach Plan und Region; ein Pilotprojekt mit klaren Kennzahlen ist sinnvoller als eine flächendeckende Einführung ohne Test.",
+          "en": "Actual value depends heavily on the Workspace or Cloud licence. Feature scope, languages and availability vary by plan and region; a pilot with clear metrics is wiser than a blanket rollout without testing.",
+          "it": "Il valore reale dipende molto dalla licenza Workspace o Cloud. Funzionalità, lingue e disponibilità variano per piano e regione; un progetto pilota con metriche chiare è preferibile a un'adozione generalizzata senza test.",
+          "fr": "La valeur réelle dépend fortement de la licence Workspace ou Cloud. Périmètre fonctionnel, langues et disponibilité varient selon le forfait et la région ; un pilote avec des indicateurs clairs vaut mieux qu'un déploiement général sans test."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Grenzen und Risiken",
+        "en": "Limits and risks",
+        "it": "Limiti e rischi",
+        "fr": "Limites et risques"
+      },
+      "bullets": [
+        {
+          "de": "Halluzinationen: Gemini kann plausible, aber falsche Aussagen erzeugen; Ergebnisse müssen geprüft werden.",
+          "en": "Hallucinations: Gemini can produce plausible but false statements; outputs must be verified.",
+          "it": "Allucinazioni: Gemini può generare affermazioni plausibili ma false; i risultati vanno verificati.",
+          "fr": "Hallucinations : Gemini peut produire des affirmations plausibles mais fausses ; les résultats doivent être vérifiés."
+        },
+        {
+          "de": "Wissensstand: ohne Websuche ist das Modell auf Trainingsdaten mit einem Stichtag begrenzt.",
+          "en": "Knowledge cutoff: without web search, the model is limited to training data up to a certain date.",
+          "it": "Conoscenza aggiornata: senza ricerca web, il modello è limitato ai dati di addestramento fino a una certa data.",
+          "fr": "Actualité des connaissances : sans recherche web, le modèle se limite aux données d'entraînement jusqu'à une certaine date."
+        },
+        {
+          "de": "Verfügbarkeit: Funktionen, Sprachen und Modelle unterscheiden sich je nach Region und Lizenz.",
+          "en": "Availability: features, languages and models differ by region and licence.",
+          "it": "Disponibilità: funzioni, lingue e modelli variano per regione e licenza.",
+          "fr": "Disponibilité : fonctions, langues et modèles diffèrent selon la région et la licence."
+        },
+        {
+          "de": "Abhängigkeit vom Google-Ökosystem (Vendor Lock-in): ein Wechsel des Anbieters kann Aufwand verursachen.",
+          "en": "Dependence on the Google ecosystem (vendor lock-in): switching providers can be costly.",
+          "it": "Dipendenza dall'ecosistema Google (vendor lock-in): cambiare fornitore può risultare oneroso.",
+          "fr": "Dépendance à l'écosystème Google (verrouillage fournisseur) : changer de prestataire peut être coûteux."
+        },
+        {
+          "de": "Reproduzierbarkeit: Antworten variieren; für regulierte Prozesse braucht es Kontrollen und Freigaben durch Menschen.",
+          "en": "Reproducibility: answers vary; regulated processes need human review and controls.",
+          "it": "Riproducibilità: le risposte variano; i processi regolamentati richiedono controlli e supervisione umana.",
+          "fr": "Reproductibilité : les réponses varient ; les processus réglementés exigent contrôles et validation humaine."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz und Compliance in der Schweiz und DACH",
+        "en": "Data protection and compliance in Switzerland and DACH",
+        "it": "Protezione dei dati e conformità in Svizzera e area DACH",
+        "fr": "Protection des données et conformité en Suisse et zone DACH"
+      },
+      "paragraphs": [
+        {
+          "de": "Wer Gemini geschäftlich in der Schweiz einsetzt, muss das revidierte Datenschutzgesetz (revDSG/nFADP) beachten; der EDÖB ist die zuständige Aufsichtsbehörde. Bei Personendaten sind Rechtsgrundlage, Transparenz und Auftragsverarbeitung zu klären. Bei EU-Bezug gilt zusätzlich die extraterritoriale EU-KI-Verordnung (EU AI Act).",
+          "en": "Anyone using Gemini for business in Switzerland must observe the revised Data Protection Act (revDSG/nFADP); the FDPIC (EDÖB) is the supervisory authority. For personal data, clarify the legal basis, transparency and data-processing arrangements. Where there is an EU nexus, the extraterritorial EU AI Act also applies.",
+          "it": "Chi usa Gemini a fini aziendali in Svizzera deve rispettare la legge sulla protezione dei dati riveduta (revDSG/nFADP); l'IFPDT (EDÖB) è l'autorità di vigilanza. Per i dati personali vanno chiariti base giuridica, trasparenza e trattamento su incarico. In presenza di legami con l'UE si applica inoltre il Regolamento UE sull'IA (EU AI Act), extraterritoriale.",
+          "fr": "Toute utilisation professionnelle de Gemini en Suisse doit respecter la loi révisée sur la protection des données (revDSG/nFADP) ; le PFPDT (EDÖB) est l'autorité de surveillance. Pour les données personnelles, il faut clarifier la base légale, la transparence et le traitement sous-traité. En cas de lien avec l'UE, le règlement européen sur l'IA (EU AI Act), extraterritorial, s'applique également."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Konsumenten- von Unternehmensversion unterscheiden: die kostenlose Gemini-App kann anders behandelt werden als Workspace- oder Vertex-AI-Verträge.",
+          "en": "Distinguish consumer from enterprise editions: the free Gemini app may be handled differently from Workspace or Vertex AI contracts.",
+          "it": "Distinguere versione consumer ed enterprise: l'app Gemini gratuita può essere trattata diversamente dai contratti Workspace o Vertex AI.",
+          "fr": "Distinguer les versions grand public et entreprise : l'application Gemini gratuite peut être traitée différemment des contrats Workspace ou Vertex AI."
+        },
+        {
+          "de": "Datenregion wählbar: Google Cloud betreibt unter anderem eine Region in Zürich; Datenresidenz und Verarbeitungsstandort vertraglich prüfen.",
+          "en": "Selectable data region: Google Cloud operates a region in Zurich, among others; check data residency and processing location contractually.",
+          "it": "Regione dei dati selezionabile: Google Cloud gestisce, tra le altre, una regione a Zurigo; verificare contrattualmente residenza dei dati e luogo di trattamento.",
+          "fr": "Région des données au choix : Google Cloud exploite notamment une région à Zurich ; vérifier contractuellement la résidence des données et le lieu de traitement."
+        },
+        {
+          "de": "Auftragsverarbeitungsvertrag (AVV) und technische wie organisatorische Massnahmen vereinbaren.",
+          "en": "Agree a data-processing agreement (DPA) and technical and organisational measures.",
+          "it": "Stipulare un accordo sul trattamento dei dati (DPA) e misure tecniche e organizzative.",
+          "fr": "Conclure un contrat de sous-traitance (DPA) et définir des mesures techniques et organisationnelles."
+        },
+        {
+          "de": "Keine besonders schützenswerten Daten ohne geklärte Rechtsgrundlage und Freigabe eingeben.",
+          "en": "Do not enter sensitive data without a clarified legal basis and approval.",
+          "it": "Non inserire dati particolarmente sensibili senza una base giuridica chiarita e l'approvazione.",
+          "fr": "Ne pas saisir de données sensibles sans base légale clarifiée ni validation."
+        },
+        {
+          "de": "Souveräne Alternativen wie das Schweizer Sprachmodell Apertus (ETH Zürich/EPFL) prüfen, wenn Datenhoheit im Vordergrund steht.",
+          "en": "Consider sovereign alternatives such as the Swiss language model Apertus (ETH Zurich/EPFL) when data sovereignty is paramount.",
+          "it": "Valutare alternative sovrane come il modello linguistico svizzero Apertus (ETH Zurigo/EPFL) quando la sovranità dei dati è prioritaria.",
+          "fr": "Envisager des alternatives souveraines comme le modèle linguistique suisse Apertus (ETH Zurich/EPFL) lorsque la souveraineté des données prime."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Einordnung im Wettbewerb",
+        "en": "How Gemini compares",
+        "it": "Come si colloca Gemini",
+        "fr": "Positionnement face à la concurrence"
+      },
+      "paragraphs": [
+        {
+          "de": "Gemini konkurriert mit ChatGPT (OpenAI), Claude (Anthropic) und offenen Modellen. Seine Stärke liegt weniger in einem einzelnen Benchmark als in der Integration: Wer bereits Google Workspace oder Google Cloud nutzt, erhält KI direkt im gewohnten Arbeitsfluss. Die Wahl sollte sich an Datenschutz, bestehendem Ökosystem, benötigten Funktionen und Kosten orientieren – nicht an Marketingversprechen. Ein kurzer Vergleichstest mit realen eigenen Aufgaben ist aussagekräftiger als jede Anbieterangabe.",
+          "en": "Gemini competes with ChatGPT (OpenAI), Claude (Anthropic) and open models. Its strength lies less in any single benchmark than in integration: organisations already on Google Workspace or Google Cloud get AI directly within their existing workflow. The choice should rest on data protection, existing ecosystem, required features and cost — not marketing claims. A short comparison using your own real tasks is more telling than any vendor figure.",
+          "it": "Gemini compete con ChatGPT (OpenAI), Claude (Anthropic) e modelli aperti. La sua forza sta meno in un singolo benchmark che nell'integrazione: chi usa già Google Workspace o Google Cloud ottiene l'IA direttamente nel flusso di lavoro abituale. La scelta va basata su protezione dei dati, ecosistema esistente, funzioni necessarie e costi, non sulle promesse di marketing. Un breve confronto con i propri compiti reali è più indicativo di qualsiasi dato del fornitore.",
+          "fr": "Gemini rivalise avec ChatGPT (OpenAI), Claude (Anthropic) et les modèles ouverts. Sa force tient moins à un benchmark isolé qu'à l'intégration : les organisations déjà sur Google Workspace ou Google Cloud disposent de l'IA directement dans leur flux de travail. Le choix doit reposer sur la protection des données, l'écosystème existant, les fonctions requises et le coût, non sur les promesses marketing. Un court test comparatif sur vos propres tâches réelles est plus parlant que n'importe quel chiffre fournisseur."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ist Google Gemini kostenlos?",
+        "en": "Is Google Gemini free?",
+        "it": "Google Gemini è gratuito?",
+        "fr": "Google Gemini est-il gratuit ?"
+      },
+      "a": {
+        "de": "Es gibt eine kostenlose Stufe der Gemini-App mit Basismodellen. Leistungsfähigere Modelle sowie die geschäftliche Nutzung über Workspace, Vertex AI oder die API sind kostenpflichtig. Da sich Tarife häufig ändern, prüfen Sie die aktuellen Preise beim Anbieter.",
+        "en": "There is a free tier of the Gemini app with base models. More capable models and business use via Workspace, Vertex AI or the API are paid. As pricing changes often, check the provider's current pricing.",
+        "it": "Esiste un livello gratuito dell'app Gemini con modelli di base. I modelli più potenti e l'uso aziendale tramite Workspace, Vertex AI o l'API sono a pagamento. Poiché i prezzi cambiano spesso, consultare le tariffe aggiornate del fornitore.",
+        "fr": "Il existe un niveau gratuit de l'application Gemini avec des modèles de base. Les modèles plus puissants et l'usage professionnel via Workspace, Vertex AI ou l'API sont payants. Les tarifs évoluant souvent, consultez les prix actuels du fournisseur."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen Gemini und Bard?",
+        "en": "What is the difference between Gemini and Bard?",
+        "it": "Qual è la differenza tra Gemini e Bard?",
+        "fr": "Quelle est la différence entre Gemini et Bard ?"
+      },
+      "a": {
+        "de": "Bard war Googles früherer KI-Chatdienst. Er wurde in Gemini umbenannt und läuft nun auf den Gemini-Modellen. Die Marke Bard existiert nicht mehr; funktional handelt es sich um denselben, weiterentwickelten Dienst.",
+        "en": "Bard was Google's earlier AI chat service. It was renamed Gemini and now runs on the Gemini models. The Bard brand no longer exists; functionally it is the same, further-developed service.",
+        "it": "Bard era il precedente servizio di chat IA di Google. È stato rinominato Gemini e ora funziona sui modelli Gemini. Il marchio Bard non esiste più; dal punto di vista funzionale è lo stesso servizio, evoluto.",
+        "fr": "Bard était l'ancien service de chat IA de Google. Il a été renommé Gemini et fonctionne désormais avec les modèles Gemini. La marque Bard n'existe plus ; il s'agit fonctionnellement du même service, plus abouti."
+      }
+    },
+    {
+      "q": {
+        "de": "Unterstützt Gemini Deutsch?",
+        "en": "Does Gemini support German?",
+        "it": "Gemini supporta l'italiano?",
+        "fr": "Gemini prend-il en charge le français ?"
+      },
+      "a": {
+        "de": "Ja, Gemini versteht und erzeugt Deutsch sowie viele weitere Sprachen. Die Verfügbarkeit einzelner Funktionen und Modelle kann jedoch je nach Region und Lizenz variieren.",
+        "en": "Yes, Gemini understands and generates German along with many other languages. Availability of specific features and models can, however, vary by region and licence.",
+        "it": "Sì, Gemini comprende e genera l'italiano e molte altre lingue. La disponibilità di singole funzioni e modelli può però variare per regione e licenza.",
+        "fr": "Oui, Gemini comprend et génère le français ainsi que de nombreuses autres langues. La disponibilité de certaines fonctions et de certains modèles peut toutefois varier selon la région et la licence."
+      }
+    },
+    {
+      "q": {
+        "de": "Kann ich Gemini datenschutzkonform in der Schweiz nutzen?",
+        "en": "Can I use Gemini in a data-protection-compliant way in Switzerland?",
+        "it": "Posso usare Gemini in modo conforme alla protezione dei dati in Svizzera?",
+        "fr": "Puis-je utiliser Gemini de façon conforme à la protection des données en Suisse ?"
+      },
+      "a": {
+        "de": "Grundsätzlich ja – mit passender Vertragsgrundlage (AVV), gewählter Datenregion und Beachtung von revDSG/nFADP. Für Personendaten oder sensible Inhalte empfiehlt sich die Unternehmensversion (Workspace/Vertex AI) statt der kostenlosen App und eine vorherige Datenschutzprüfung.",
+        "en": "In principle yes — with a suitable contract (DPA), a chosen data region and compliance with revDSG/nFADP. For personal or sensitive content, the enterprise edition (Workspace/Vertex AI) is preferable to the free app, together with a prior data-protection assessment.",
+        "it": "In linea di principio sì, con un contratto adeguato (DPA), una regione dei dati scelta e il rispetto della revDSG/nFADP. Per dati personali o sensibili è preferibile la versione enterprise (Workspace/Vertex AI) rispetto all'app gratuita, con una valutazione preliminare sulla protezione dei dati.",
+        "fr": "En principe oui, avec un contrat adapté (DPA), une région de données choisie et le respect de la revDSG/nFADP. Pour des données personnelles ou sensibles, la version entreprise (Workspace/Vertex AI) est préférable à l'application gratuite, accompagnée d'une analyse préalable de protection des données."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Gemini-Modelle gibt es?",
+        "en": "Which Gemini models are there?",
+        "it": "Quali modelli Gemini esistono?",
+        "fr": "Quels modèles Gemini existent ?"
+      },
+      "a": {
+        "de": "Google bietet mehrere Grössen über verschiedene Generationen an – etwa leistungsstarke Pro-, schnelle Flash- und geräteinterne Nano-Modelle. Die genaue Auswahl ändert sich regelmässig; die aktuelle Liste steht in Googles Dokumentation.",
+        "en": "Google offers several sizes across generations — for example powerful Pro, fast Flash and on-device Nano models. The exact line-up changes regularly; the current list is in Google's documentation.",
+        "it": "Google offre più dimensioni su diverse generazioni, ad esempio potenti modelli Pro, veloci Flash e Nano on-device. La gamma esatta cambia regolarmente; l'elenco aggiornato è nella documentazione di Google.",
+        "fr": "Google propose plusieurs tailles au fil des générations, par exemple des modèles Pro puissants, Flash rapides et Nano embarqués. La gamme exacte évolue régulièrement ; la liste à jour figure dans la documentation Google."
+      }
+    },
+    {
+      "q": {
+        "de": "Läuft Gemini auch offline auf dem Smartphone?",
+        "en": "Does Gemini run offline on a smartphone?",
+        "it": "Gemini funziona anche offline sullo smartphone?",
+        "fr": "Gemini fonctionne-t-il hors ligne sur un smartphone ?"
+      },
+      "a": {
+        "de": "Die Nano-Modelle sind für die Ausführung direkt auf dem Gerät konzipiert, etwa auf Pixel-Smartphones. Die meisten leistungsstarken Funktionen benötigen jedoch weiterhin eine Cloud-Verbindung.",
+        "en": "The Nano models are designed to run directly on the device, for example on Pixel phones. Most high-end features, however, still require a cloud connection.",
+        "it": "I modelli Nano sono progettati per l'esecuzione direttamente sul dispositivo, ad esempio sugli smartphone Pixel. La maggior parte delle funzioni più avanzate richiede però ancora una connessione al cloud.",
+        "fr": "Les modèles Nano sont conçus pour s'exécuter directement sur l'appareil, par exemple sur les smartphones Pixel. La plupart des fonctions avancées nécessitent toutefois encore une connexion au cloud."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Google Gemini",
+    "Google DeepMind",
+    "Gemini Pro",
+    "Gemini Flash",
+    "Gemini Nano",
+    "Google Workspace",
+    "Vertex AI",
+    "Google AI Studio",
+    "Gemini API",
+    "Google Cloud",
+    "AI Overviews",
+    "Bard",
+    "Google Assistant",
+    "ChatGPT",
+    "Claude",
+    "revDSG/nFADP",
+    "EU AI Act",
+    "EDÖB",
+    "Apertus",
+    "multimodale KI"
+  ]
+}

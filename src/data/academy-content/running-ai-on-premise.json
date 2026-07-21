@@ -1,0 +1,445 @@
+{
+  "id": "running-ai-on-premise",
+  "cluster": "local-opensource",
+  "type": "spoke",
+  "relatedServices": [
+    "integrations",
+    "consulting"
+  ],
+  "slug": {
+    "de": "ki-on-premise",
+    "en": "on-premise-ai",
+    "it": "ia-on-premise",
+    "fr": "ia-on-premise"
+  },
+  "title": {
+    "de": "KI On-Premise: Architektur & Sicherheit für KMU | Weissmann AI",
+    "en": "On-Premise AI: Architecture, Security & SME Reality | Weissmann AI",
+    "it": "IA On-Premise: architettura e sicurezza per PMI | Weissmann AI",
+    "fr": "IA On-Premise : architecture et sécurité PME | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI On-Premise für KMU: Architektur, Hardware-Anforderungen, Sicherheits- und Compliance-Vorteile (revDSG) sowie realistische Erwartungen zu Kosten und Qualität.",
+    "en": "On-premise AI for SMEs: architecture, hardware requirements, security and compliance benefits, and realistic expectations on cost, quality and day-to-day operations.",
+    "it": "IA on-premise per PMI: architettura, requisiti hardware, vantaggi di sicurezza e conformità (nLPD) e aspettative realistiche su costi e qualità.",
+    "fr": "IA on-premise pour PME : architecture, besoins matériels, avantages de sécurité et conformité (nLPD), et attentes réalistes sur les coûts et la qualité."
+  },
+  "kicker": {
+    "de": "Lokale & Open-Source-KI",
+    "en": "Local & Open-Source AI",
+    "it": "IA locale e open source",
+    "fr": "IA locale et open source"
+  },
+  "h1": {
+    "de": "Was bedeutet KI On-Premise – und lohnt sie sich für ein KMU?",
+    "en": "What Is On-Premise AI — and Is It Worth It for an SME?",
+    "it": "Cos'è l'IA on-premise e conviene a una PMI?",
+    "fr": "Qu'est-ce que l'IA on-premise et est-elle rentable pour une PME ?"
+  },
+  "answerFirst": {
+    "de": "KI On-Premise bedeutet, Sprachmodelle und KI-Anwendungen auf eigener, kontrollierter Hardware zu betreiben, statt über eine externe Cloud-API. Für KMU bringt das volle Datenhoheit, leichtere Konformität mit dem revidierten DSG und planbare Kosten – erfordert aber GPU-Hardware, Betriebs-Know-how und realistische Erwartungen: Open-Weights-Modelle wie Llama, Mistral oder das Schweizer Apertus decken viele Aufgaben gut ab, erreichen bei komplexem Reasoning aber nicht immer das Niveau der grossen Cloud-Modelle.",
+    "en": "On-premise AI means running language models and AI applications on hardware you control, instead of through an external cloud API. For an SME this delivers full data sovereignty, easier compliance with Switzerland's revised FADP, and predictable costs — but it requires GPU hardware, operational know-how and realistic expectations: open-weights models such as Llama, Mistral or Switzerland's Apertus handle many tasks well, yet do not always match the top cloud models on complex reasoning.",
+    "it": "IA on-premise significa eseguire modelli linguistici e applicazioni di IA su hardware controllato dall'azienda, invece che tramite un'API cloud esterna. Per una PMI questo garantisce piena sovranità sui dati, conformità più semplice alla nLPD svizzera e costi prevedibili, ma richiede hardware GPU, competenze operative e aspettative realistiche: modelli open-weights come Llama, Mistral o lo svizzero Apertus coprono bene molti compiti, senza però eguagliare sempre i grandi modelli cloud sul ragionamento complesso.",
+    "fr": "L'IA on-premise consiste à exécuter des modèles de langage et des applications d'IA sur du matériel que vous contrôlez, plutôt que via une API cloud externe. Pour une PME, cela apporte une pleine souveraineté des données, une conformité facilitée avec la nLPD suisse et des coûts prévisibles, mais exige du matériel GPU, un savoir-faire opérationnel et des attentes réalistes : les modèles open-weights comme Llama, Mistral ou le suisse Apertus couvrent bien de nombreuses tâches, sans toujours égaler les grands modèles cloud sur le raisonnement complexe."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was bedeutet \"KI On-Premise\" genau?",
+        "en": "What Does \"On-Premise AI\" Actually Mean?",
+        "it": "Cosa significa esattamente \"IA on-premise\"?",
+        "fr": "Que signifie exactement \"IA on-premise\" ?"
+      },
+      "paragraphs": [
+        {
+          "de": "KI On-Premise (auch selbstgehostete oder lokale KI) beschreibt den Betrieb von KI-Modellen – vor allem grossen Sprachmodellen (LLMs) – auf Infrastruktur, die das Unternehmen selbst kontrolliert. Prompts, Dokumente und Antworten verlassen die eigene Umgebung nicht und werden nicht an einen externen Anbieter übermittelt.",
+          "en": "On-premise AI (also called self-hosted or local AI) refers to running AI models — primarily large language models (LLMs) — on infrastructure the organisation itself controls. Prompts, documents and responses never leave your environment and are not transmitted to an external provider.",
+          "it": "L'IA on-premise (detta anche self-hosted o locale) indica l'esecuzione di modelli di IA – soprattutto grandi modelli linguistici (LLM) – su infrastruttura controllata direttamente dall'azienda. Prompt, documenti e risposte non lasciano l'ambiente interno e non vengono trasmessi a un fornitore esterno.",
+          "fr": "L'IA on-premise (aussi appelée auto-hébergée ou locale) désigne l'exécution de modèles d'IA – surtout de grands modèles de langage (LLM) – sur une infrastructure que l'organisation contrôle elle-même. Les requêtes, documents et réponses ne quittent pas votre environnement et ne sont pas transmis à un fournisseur externe."
+        },
+        {
+          "de": "In der Praxis ist \"lokal\" ein Spektrum: von einer einzelnen GPU-Workstation als Pilot über einen Server im eigenen Rechenzentrum bis zu einer dedizierten, mandantengetrennten Instanz bei einem Schweizer Provider (Sovereign Cloud). Entscheidend ist nicht der Standort allein, sondern wer die Daten und Schlüssel kontrolliert.",
+          "en": "In practice \"local\" is a spectrum: from a single GPU workstation as a pilot, to a server in your own data centre, to a dedicated, single-tenant instance at a Swiss provider (sovereign cloud). What matters is not location alone but who controls the data and the keys.",
+          "it": "Nella pratica \"locale\" è uno spettro: da una singola workstation GPU come pilota, a un server nel proprio data center, fino a un'istanza dedicata e a tenant singolo presso un provider svizzero (sovereign cloud). Ciò che conta non è solo la posizione, ma chi controlla i dati e le chiavi.",
+          "fr": "En pratique, « local » est un spectre : d'une simple station GPU en pilote, à un serveur dans votre propre centre de données, jusqu'à une instance dédiée et mono-locataire chez un fournisseur suisse (cloud souverain). L'important n'est pas seulement l'emplacement, mais qui contrôle les données et les clés."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "On-Premise: Hardware im eigenen Serverraum oder Rechenzentrum – volle physische Kontrolle.",
+          "en": "On-premise: hardware in your own server room or data centre — full physical control.",
+          "it": "On-premise: hardware nella propria sala server o data center – pieno controllo fisico.",
+          "fr": "On-premise : matériel dans votre propre salle serveur ou centre de données – contrôle physique total."
+        },
+        {
+          "de": "Private/Sovereign Cloud: dedizierte Instanz bei einem Schweizer Anbieter, keine geteilte Mandantschaft.",
+          "en": "Private/sovereign cloud: a dedicated instance at a Swiss provider, no shared tenancy.",
+          "it": "Private/sovereign cloud: istanza dedicata presso un provider svizzero, senza multi-tenancy.",
+          "fr": "Cloud privé/souverain : instance dédiée chez un fournisseur suisse, sans colocation."
+        },
+        {
+          "de": "Cloud-API (zum Vergleich): schnell und skalierbar, aber die Daten verlassen das Unternehmen.",
+          "en": "Cloud API (for comparison): fast and scalable, but data leaves the company.",
+          "it": "API cloud (per confronto): rapida e scalabile, ma i dati escono dall'azienda.",
+          "fr": "API cloud (pour comparaison) : rapide et évolutive, mais les données quittent l'entreprise."
+        },
+        {
+          "de": "Air-Gap: vollständig vom Internet getrennter Betrieb für höchste Vertraulichkeit.",
+          "en": "Air-gap: fully internet-isolated operation for maximum confidentiality.",
+          "it": "Air-gap: funzionamento completamente isolato da internet per la massima riservatezza.",
+          "fr": "Air-gap : fonctionnement totalement isolé d'internet pour une confidentialité maximale."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Referenzarchitektur: die Bausteine eines On-Premise-Stacks",
+        "en": "Reference Architecture: the Building Blocks of an On-Premise Stack",
+        "it": "Architettura di riferimento: i componenti di uno stack on-premise",
+        "fr": "Architecture de référence : les composants d'une pile on-premise"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein On-Premise-KI-System ist ein Schichtmodell. Ganz unten liegt die Hardware, darüber die Software, die das Modell ausführt, dann die eigentlichen Anwendungen und quer dazu Betrieb und Sicherheit. Wer die Schichten trennt, kann Modelle austauschen, ohne die Anwendung neu zu bauen.",
+          "en": "An on-premise AI system is a layered model. Hardware sits at the bottom, the software that runs the model above it, the applications on top, and operations and security run across all of it. Separating the layers lets you swap models without rebuilding the application.",
+          "it": "Un sistema di IA on-premise è un modello a livelli. In basso c'è l'hardware, sopra il software che esegue il modello, poi le applicazioni vere e proprie, e trasversalmente operatività e sicurezza. Separare i livelli consente di cambiare modello senza ricostruire l'applicazione.",
+          "fr": "Un système d'IA on-premise est un modèle en couches. Le matériel est à la base, le logiciel qui exécute le modèle au-dessus, puis les applications, et l'exploitation et la sécurité traversent l'ensemble. Séparer les couches permet de changer de modèle sans reconstruire l'application."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Hardware-Schicht: GPU-Server mit ausreichend VRAM, schnelles Netzwerk und Storage.",
+          "en": "Hardware layer: GPU server with sufficient VRAM, fast networking and storage.",
+          "it": "Livello hardware: server GPU con VRAM sufficiente, rete e storage veloci.",
+          "fr": "Couche matérielle : serveur GPU avec VRAM suffisante, réseau et stockage rapides."
+        },
+        {
+          "de": "Inferenz-Runtime: die Software, die das Modell lädt und Antworten erzeugt (z. B. vLLM, Ollama, llama.cpp, Hugging Face TGI).",
+          "en": "Inference runtime: the software that loads the model and generates responses (e.g. vLLM, Ollama, llama.cpp, Hugging Face TGI).",
+          "it": "Runtime di inferenza: il software che carica il modello e genera risposte (es. vLLM, Ollama, llama.cpp, Hugging Face TGI).",
+          "fr": "Runtime d'inférence : le logiciel qui charge le modèle et génère les réponses (p. ex. vLLM, Ollama, llama.cpp, Hugging Face TGI)."
+        },
+        {
+          "de": "Modell-Schicht: Open-Weights-Modelle wie Llama, Mistral, Qwen, Gemma oder das Schweizer Apertus.",
+          "en": "Model layer: open-weights models such as Llama, Mistral, Qwen, Gemma or Switzerland's Apertus.",
+          "it": "Livello modello: modelli open-weights come Llama, Mistral, Qwen, Gemma o lo svizzero Apertus.",
+          "fr": "Couche modèle : modèles open-weights comme Llama, Mistral, Qwen, Gemma ou le suisse Apertus."
+        },
+        {
+          "de": "Wissensanbindung (RAG): Vektordatenbank, Embeddings und Retrieval, damit das Modell auf eigene Dokumente zugreift.",
+          "en": "Knowledge grounding (RAG): vector database, embeddings and retrieval so the model can draw on your own documents.",
+          "it": "Collegamento alla conoscenza (RAG): database vettoriale, embedding e retrieval affinché il modello attinga ai documenti aziendali.",
+          "fr": "Ancrage documentaire (RAG) : base vectorielle, embeddings et recherche pour que le modèle exploite vos propres documents."
+        },
+        {
+          "de": "Anwendungsschicht: Chat-Oberfläche, API-Gateway und Integrationen in bestehende Systeme.",
+          "en": "Application layer: chat interface, API gateway and integrations into existing systems.",
+          "it": "Livello applicativo: interfaccia chat, API gateway e integrazioni con i sistemi esistenti.",
+          "fr": "Couche applicative : interface de chat, passerelle API et intégrations aux systèmes existants."
+        },
+        {
+          "de": "Betrieb & Sicherheit: Authentifizierung, Zugriffskontrolle, Logging, Monitoring und Updates.",
+          "en": "Operations & security: authentication, access control, logging, monitoring and updates.",
+          "it": "Operatività e sicurezza: autenticazione, controllo degli accessi, logging, monitoraggio e aggiornamenti.",
+          "fr": "Exploitation et sécurité : authentification, contrôle d'accès, journalisation, supervision et mises à jour."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Hardware- und Software-Anforderungen",
+        "en": "Hardware and Software Requirements",
+        "it": "Requisiti hardware e software",
+        "fr": "Besoins matériels et logiciels"
+      },
+      "paragraphs": [
+        {
+          "de": "Der wichtigste Engpass ist der Grafikspeicher (VRAM). Er bestimmt, wie gross ein Modell sein darf. Durch Quantisierung – das Modell wird mit weniger Bits pro Parameter gespeichert – sinkt der VRAM-Bedarf deutlich, meist mit nur geringem Qualitätsverlust. Als grobe Faustregel gilt: VRAM ≈ Parameterzahl × Bytes pro Parameter (4-Bit-Quantisierung ≈ 0,5 Byte).",
+          "en": "The key bottleneck is graphics memory (VRAM). It determines how large a model can be. Quantisation — storing the model with fewer bits per parameter — sharply reduces VRAM needs, usually with only minor quality loss. A rough rule of thumb: VRAM ≈ parameter count × bytes per parameter (4-bit quantisation ≈ 0.5 byte).",
+          "it": "Il collo di bottiglia principale è la memoria grafica (VRAM). Determina quanto può essere grande un modello. La quantizzazione – memorizzare il modello con meno bit per parametro – riduce nettamente la VRAM necessaria, di solito con una perdita di qualità minima. Regola empirica: VRAM ≈ numero di parametri × byte per parametro (quantizzazione a 4 bit ≈ 0,5 byte).",
+          "fr": "Le principal goulet d'étranglement est la mémoire graphique (VRAM). Elle détermine la taille de modèle possible. La quantification – stocker le modèle avec moins de bits par paramètre – réduit fortement les besoins en VRAM, généralement avec une faible perte de qualité. Règle approximative : VRAM ≈ nombre de paramètres × octets par paramètre (quantification 4 bits ≈ 0,5 octet)."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Modell mit 7–8 Mrd. Parametern (quantisiert): grob 6–12 GB VRAM – läuft auf einer leistungsfähigen Consumer-GPU (16–24 GB).",
+          "en": "7–8B-parameter model (quantised): roughly 6–12 GB VRAM — runs on a strong consumer GPU (16–24 GB).",
+          "it": "Modello da 7–8 mld di parametri (quantizzato): circa 6–12 GB di VRAM – gira su una GPU consumer potente (16–24 GB).",
+          "fr": "Modèle de 7–8 milliards de paramètres (quantifié) : environ 6–12 Go de VRAM – tourne sur un GPU grand public performant (16–24 Go)."
+        },
+        {
+          "de": "Modell mit ~70 Mrd. Parametern (quantisiert): grob 40–48 GB VRAM – braucht eine Data-Center-GPU oder mehrere Karten.",
+          "en": "~70B-parameter model (quantised): roughly 40–48 GB VRAM — needs a data-centre GPU or multiple cards.",
+          "it": "Modello da ~70 mld di parametri (quantizzato): circa 40–48 GB di VRAM – richiede una GPU da data center o più schede.",
+          "fr": "Modèle de ~70 milliards de paramètres (quantifié) : environ 40–48 Go de VRAM – nécessite un GPU de centre de données ou plusieurs cartes."
+        },
+        {
+          "de": "Reiner CPU-Betrieb ist möglich, aber deutlich langsamer; für Produktivlast wird eine GPU empfohlen.",
+          "en": "CPU-only operation is possible but much slower; a GPU is recommended for production load.",
+          "it": "Il funzionamento solo CPU è possibile ma molto più lento; per il carico di produzione si consiglia una GPU.",
+          "fr": "Le fonctionnement CPU seul est possible mais bien plus lent ; un GPU est recommandé pour la charge de production."
+        },
+        {
+          "de": "Weitere Dimensionierungsfaktoren: Zahl gleichzeitiger Nutzer, Kontextlänge und geforderter Durchsatz (Tokens pro Sekunde).",
+          "en": "Further sizing factors: number of concurrent users, context length and required throughput (tokens per second).",
+          "it": "Altri fattori di dimensionamento: numero di utenti simultanei, lunghezza del contesto e throughput richiesto (token al secondo).",
+          "fr": "Autres facteurs de dimensionnement : nombre d'utilisateurs simultanés, longueur de contexte et débit requis (jetons par seconde)."
+        },
+        {
+          "de": "Software ist überwiegend Open Source und quelloffen betreibbar; konkrete Hardwarepreise beim jeweiligen Anbieter prüfen.",
+          "en": "The software stack is largely open source and self-hostable; check current hardware prices with the respective vendor.",
+          "it": "Lo stack software è in gran parte open source e auto-ospitabile; verificare i prezzi hardware attuali presso il fornitore.",
+          "fr": "La pile logicielle est en grande partie open source et auto-hébergeable ; vérifiez les prix matériels actuels auprès du fournisseur."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Sicherheits- und Compliance-Vorteile – der Schweizer Blick",
+        "en": "Security and Compliance Benefits — the Swiss Lens",
+        "it": "Vantaggi di sicurezza e conformità – la prospettiva svizzera",
+        "fr": "Avantages de sécurité et conformité – le regard suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Der stärkste Vorteil von On-Premise ist Datenhoheit: Personendaten, Geschäftsgeheimnisse und Kundenunterlagen bleiben im Unternehmen. Das erleichtert den Nachweis der Konformität mit dem revidierten Datenschutzgesetz (revDSG/nFADP) und vermeidet heikle Auslandtransfers. Für Berufe mit gesetzlichem Geheimnis – Anwältinnen, Ärzte, Treuhänder (Art. 321 StGB) – kann lokale Verarbeitung entscheidend sein.",
+          "en": "The strongest benefit of on-premise is data sovereignty: personal data, trade secrets and client files stay inside the company. That eases proof of compliance with the revised Data Protection Act (revFADP/nFADP) and avoids sensitive cross-border transfers. For professions bound by statutory secrecy — lawyers, doctors, fiduciaries (Art. 321 Swiss Criminal Code) — local processing can be decisive.",
+          "it": "Il vantaggio più forte dell'on-premise è la sovranità sui dati: dati personali, segreti aziendali e documenti dei clienti restano in azienda. Ciò facilita la prova di conformità alla legge riveduta sulla protezione dei dati (nLPD) ed evita delicati trasferimenti all'estero. Per le professioni vincolate al segreto (avvocati, medici, fiduciari; art. 321 CP) l'elaborazione locale può essere decisiva.",
+          "fr": "L'atout majeur de l'on-premise est la souveraineté des données : données personnelles, secrets d'affaires et dossiers clients restent dans l'entreprise. Cela facilite la preuve de conformité à la loi révisée sur la protection des données (nLPD) et évite les transferts transfrontaliers sensibles. Pour les professions soumises au secret (avocats, médecins, fiduciaires ; art. 321 CP), le traitement local peut être décisif."
+        },
+        {
+          "de": "Auch der EU AI Act ist relevant: Er wirkt extraterritorial und kann Schweizer Unternehmen betreffen, die in die EU liefern. On-Premise erleichtert Nachvollziehbarkeit und Kontrolle, ersetzt aber keine Governance. Wichtig: Lokal ist nicht automatisch sicher – Härtung, Zugriffskontrolle, Verschlüsselung und Patching bleiben in Ihrer Verantwortung.",
+          "en": "The EU AI Act matters too: it applies extraterritorially and can affect Swiss companies selling into the EU. On-premise eases traceability and control, but does not replace governance. Important: local does not mean automatically secure — hardening, access control, encryption and patching remain your responsibility.",
+          "it": "Anche l'EU AI Act è rilevante: ha effetto extraterritoriale e può interessare le aziende svizzere che vendono nell'UE. L'on-premise facilita tracciabilità e controllo, ma non sostituisce la governance. Importante: locale non significa automaticamente sicuro – hardening, controllo accessi, cifratura e patching restano una vostra responsabilità.",
+          "fr": "Le règlement européen sur l'IA (EU AI Act) compte aussi : il s'applique de façon extraterritoriale et peut concerner les entreprises suisses vendant dans l'UE. L'on-premise facilite la traçabilité et le contrôle, mais ne remplace pas la gouvernance. Important : local ne signifie pas automatiquement sûr – durcissement, contrôle d'accès, chiffrement et correctifs restent votre responsabilité."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Keine Übermittlung an Dritte und kein unkontrollierter Auslandtransfer von Daten.",
+          "en": "No transmission to third parties and no uncontrolled cross-border data transfer.",
+          "it": "Nessuna trasmissione a terzi e nessun trasferimento incontrollato di dati all'estero.",
+          "fr": "Aucune transmission à des tiers ni transfert de données transfrontalier incontrôlé."
+        },
+        {
+          "de": "Prompts und Dokumente fliessen nicht ins Training fremder Modelle ein.",
+          "en": "Prompts and documents are not fed into third-party model training.",
+          "it": "Prompt e documenti non alimentano l'addestramento di modelli di terzi.",
+          "fr": "Les requêtes et documents ne nourrissent pas l'entraînement de modèles tiers."
+        },
+        {
+          "de": "Air-Gap-Betrieb für hochsensible Umgebungen möglich.",
+          "en": "Air-gapped operation possible for highly sensitive environments.",
+          "it": "Funzionamento air-gap possibile per ambienti altamente sensibili.",
+          "fr": "Fonctionnement air-gap possible pour les environnements très sensibles."
+        },
+        {
+          "de": "Aufsicht in der Schweiz: der EDÖB; klare Zuständigkeit statt Anbieter-AGB im Ausland.",
+          "en": "Swiss oversight: the FDPIC; clear accountability instead of foreign provider terms.",
+          "it": "Vigilanza in Svizzera: l'IFPDT; responsabilità chiara invece dei termini di un fornitore estero.",
+          "fr": "Surveillance en Suisse : le PFPDT ; responsabilité claire plutôt que des CGU d'un fournisseur étranger."
+        },
+        {
+          "de": "Aber: Sicherheit ist kein Automatismus – eigenes Betriebssicherheits-Konzept nötig.",
+          "en": "But: security is not automatic — you need your own operational security concept.",
+          "it": "Ma: la sicurezza non è automatica – serve un proprio concetto di sicurezza operativa.",
+          "fr": "Mais : la sécurité n'est pas automatique – un concept de sécurité opérationnelle propre est nécessaire."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Realistische Erwartungen: Kosten, Qualität, Aufwand",
+        "en": "Realistic Expectations: Cost, Quality, Effort",
+        "it": "Aspettative realistiche: costi, qualità, impegno",
+        "fr": "Attentes réalistes : coûts, qualité, effort"
+      },
+      "paragraphs": [
+        {
+          "de": "On-Premise ist kein Selbstläufer. Die Qualität guter Open-Weights-Modelle reicht für viele KMU-Aufgaben – Zusammenfassen, Entwürfe, interne Suche, Klassifikation – oft völlig aus. Bei komplexem Reasoning, langen Ketten und mehrsprachiger Nuance liegen die grössten Cloud-Modelle jedoch häufig noch voraus. Diese Lücke wird kleiner, verschwindet aber nicht über Nacht.",
+          "en": "On-premise is not a set-and-forget move. The quality of good open-weights models is often entirely sufficient for many SME tasks — summarising, drafting, internal search, classification. On complex reasoning, long chains and multilingual nuance, however, the largest cloud models often still lead. That gap is narrowing but will not vanish overnight.",
+          "it": "L'on-premise non è un percorso automatico. La qualità dei buoni modelli open-weights è spesso del tutto sufficiente per molti compiti delle PMI: sintesi, bozze, ricerca interna, classificazione. Sul ragionamento complesso, le catene lunghe e le sfumature multilingue, però, i più grandi modelli cloud restano spesso avanti. Il divario si riduce, ma non svanirà da un giorno all'altro.",
+          "fr": "L'on-premise ne se pilote pas tout seul. La qualité des bons modèles open-weights suffit souvent pleinement à de nombreuses tâches de PME : résumé, rédaction, recherche interne, classification. Sur le raisonnement complexe, les longues chaînes et la nuance multilingue, les plus grands modèles cloud gardent toutefois souvent une avance. Cet écart se réduit, mais ne disparaîtra pas du jour au lendemain."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kostenmodell: hohe Anfangsinvestition in Hardware (CapEx) statt laufender Cloud-Gebühren (OpEx); Amortisation erst ab gewissem, konstantem Nutzungsvolumen.",
+          "en": "Cost model: high upfront hardware investment (CapEx) instead of recurring cloud fees (OpEx); payback only above a certain, steady usage volume.",
+          "it": "Modello di costo: forte investimento iniziale in hardware (CapEx) invece di canoni cloud ricorrenti (OpEx); ammortamento solo oltre un certo volume d'uso costante.",
+          "fr": "Modèle de coûts : fort investissement initial en matériel (CapEx) au lieu de frais cloud récurrents (OpEx) ; rentabilité seulement au-delà d'un volume d'usage constant."
+        },
+        {
+          "de": "Betriebsaufwand: Updates, Modellwechsel, Skalierung und Verfügbarkeit müssen intern oder über einen Partner sichergestellt werden.",
+          "en": "Operational effort: updates, model swaps, scaling and availability must be handled in-house or via a partner.",
+          "it": "Impegno operativo: aggiornamenti, cambi di modello, scalabilità e disponibilità vanno gestiti internamente o tramite partner.",
+          "fr": "Effort opérationnel : mises à jour, changements de modèle, mise à l'échelle et disponibilité à assurer en interne ou via un partenaire."
+        },
+        {
+          "de": "Zeit bis produktiv: eher Wochen bis Monate als Tage – inklusive Datenanbindung und Testing.",
+          "en": "Time to production: weeks to months rather than days — including data integration and testing.",
+          "it": "Tempo di messa in produzione: settimane o mesi più che giorni – inclusi integrazione dei dati e test.",
+          "fr": "Délai de mise en production : plutôt des semaines à des mois que des jours – intégration des données et tests compris."
+        },
+        {
+          "de": "Nicht alles selbst bauen: Appliance- oder Managed-On-Prem-Ansätze reduzieren den Betriebsaufwand deutlich.",
+          "en": "Don't build everything yourself: appliance or managed-on-prem approaches sharply cut the operational burden.",
+          "it": "Non costruire tutto in casa: soluzioni appliance o managed-on-prem riducono nettamente l'impegno operativo.",
+          "fr": "Ne pas tout construire soi-même : les approches appliance ou managed-on-prem réduisent nettement la charge d'exploitation."
+        },
+        {
+          "de": "Stromverbrauch, Kühlung und Ersatzhardware gehören in die Gesamtkostenrechnung (TCO).",
+          "en": "Power consumption, cooling and spare hardware belong in the total cost of ownership (TCO).",
+          "it": "Consumo elettrico, raffreddamento e hardware di riserva rientrano nel costo totale di proprietà (TCO).",
+          "fr": "Consommation électrique, refroidissement et matériel de secours entrent dans le coût total de possession (TCO)."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "On-Premise, Cloud oder hybrid? Entscheidungshilfe für KMU",
+        "en": "On-Premise, Cloud or Hybrid? A Decision Guide for SMEs",
+        "it": "On-premise, cloud o ibrido? Guida alla decisione per le PMI",
+        "fr": "On-premise, cloud ou hybride ? Guide de décision pour PME"
+      },
+      "paragraphs": [
+        {
+          "de": "Die Frage ist selten \"entweder/oder\". Viele KMU fahren am besten mit einem hybriden Modell: sensible Daten und wiederkehrende Standardaufgaben lokal, Spitzenlast und besonders anspruchsvolle Aufgaben in einer (idealerweise Schweizer) Cloud. Beginnen Sie mit einem klar umrissenen Use-Case und einem einzelnen GPU-Server, statt gleich ein Rechenzentrum zu planen.",
+          "en": "The question is rarely either/or. Many SMEs do best with a hybrid model: keep sensitive data and recurring standard tasks local, and send peak load and especially demanding tasks to a (ideally Swiss) cloud. Start with one clearly scoped use case and a single GPU server rather than planning a data centre from day one.",
+          "it": "La domanda raramente è \"o/o\". Molte PMI ottengono i risultati migliori con un modello ibrido: dati sensibili e attività standard ricorrenti in locale, picchi di carico e compiti particolarmente impegnativi in un cloud (idealmente svizzero). Iniziate con un caso d'uso ben definito e un singolo server GPU, invece di progettare subito un data center.",
+          "fr": "La question est rarement binaire. De nombreuses PME s'en sortent mieux avec un modèle hybride : garder en local les données sensibles et les tâches standard récurrentes, et envoyer les pics de charge et les tâches très exigeantes vers un cloud (idéalement suisse). Commencez par un cas d'usage bien délimité et un seul serveur GPU, plutôt que de planifier d'emblée un centre de données."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "On-Premise sinnvoll bei: hochsensiblen Daten, regulierten Branchen, hohem konstantem Volumen, Air-Gap-Anforderung.",
+          "en": "On-premise makes sense when: highly sensitive data, regulated industries, high steady volume, air-gap requirement.",
+          "it": "On-premise conviene con: dati altamente sensibili, settori regolamentati, volume elevato e costante, requisito air-gap.",
+          "fr": "L'on-premise se justifie avec : données très sensibles, secteurs réglementés, volume élevé et constant, exigence d'air-gap."
+        },
+        {
+          "de": "Cloud sinnvoll bei: schnellem Start, stark schwankender Last, Bedarf an Spitzenmodellen, knappen IT-Ressourcen.",
+          "en": "Cloud makes sense when: fast start, highly variable load, need for frontier models, limited IT resources.",
+          "it": "Il cloud conviene con: avvio rapido, carico molto variabile, necessità di modelli di punta, risorse IT limitate.",
+          "fr": "Le cloud se justifie avec : démarrage rapide, charge très variable, besoin de modèles de pointe, ressources IT limitées."
+        },
+        {
+          "de": "Hybrid: das Beste aus beidem – lokale Datenhoheit plus Cloud-Spitzenmodelle bei Bedarf.",
+          "en": "Hybrid: the best of both — local data sovereignty plus cloud frontier models when needed.",
+          "it": "Ibrido: il meglio di entrambi – sovranità locale dei dati più modelli cloud di punta quando serve.",
+          "fr": "Hybride : le meilleur des deux – souveraineté locale des données plus modèles cloud de pointe au besoin."
+        },
+        {
+          "de": "Pilot zuerst: einen messbaren Use-Case wählen, Nutzen belegen, dann skalieren.",
+          "en": "Pilot first: pick one measurable use case, prove the value, then scale.",
+          "it": "Prima il pilota: scegliere un caso d'uso misurabile, dimostrare il valore, poi scalare.",
+          "fr": "Pilote d'abord : choisir un cas d'usage mesurable, prouver la valeur, puis passer à l'échelle."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Braucht man für KI On-Premise zwingend teure GPUs?",
+        "en": "Do you strictly need expensive GPUs for on-premise AI?",
+        "it": "Servono per forza GPU costose per l'IA on-premise?",
+        "fr": "Faut-il obligatoirement des GPU coûteux pour l'IA on-premise ?"
+      },
+      "a": {
+        "de": "Nein. Kleinere Modelle mit 7–8 Milliarden Parametern laufen quantisiert bereits auf einer leistungsfähigen Consumer-GPU mit 16–24 GB VRAM und eignen sich gut für Pilotprojekte. Für Produktivbetrieb mit mehreren gleichzeitigen Nutzern oder grosse 70-Milliarden-Modelle braucht es dedizierte Data-Center-GPUs. Aktuelle Hardwarepreise beim Anbieter prüfen.",
+        "en": "No. Smaller 7–8B-parameter models run quantised on a strong consumer GPU with 16–24 GB of VRAM and are well suited to pilots. Production use with several concurrent users, or large 70B models, calls for dedicated data-centre GPUs. Check current hardware prices with the vendor.",
+        "it": "No. I modelli più piccoli da 7–8 miliardi di parametri, quantizzati, girano su una GPU consumer potente con 16–24 GB di VRAM e sono adatti ai progetti pilota. Per l'uso in produzione con più utenti simultanei o per grandi modelli da 70 miliardi servono GPU dedicate da data center. Verificare i prezzi attuali presso il fornitore.",
+        "fr": "Non. Les modèles plus petits de 7–8 milliards de paramètres, quantifiés, tournent sur un GPU grand public performant doté de 16–24 Go de VRAM et conviennent aux pilotes. Un usage en production avec plusieurs utilisateurs simultanés, ou de grands modèles de 70 milliards, exige des GPU dédiés de centre de données. Vérifiez les prix actuels auprès du fournisseur."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist KI On-Premise automatisch revDSG-konform?",
+        "en": "Is on-premise AI automatically compliant with the revised FADP?",
+        "it": "L'IA on-premise è automaticamente conforme alla nLPD?",
+        "fr": "L'IA on-premise est-elle automatiquement conforme à la nLPD ?"
+      },
+      "a": {
+        "de": "Nein, aber sie erleichtert die Konformität erheblich. Weil die Daten das Unternehmen nicht verlassen, entfallen heikle Auslandtransfers und die Nachvollziehbarkeit steigt. Zwingend nötig bleiben ein Bearbeitungsverzeichnis, Zugriffskontrollen, Verschlüsselung, Löschkonzepte und – je nach Anwendung – eine Datenschutz-Folgenabschätzung. Datenhoheit ersetzt keine Governance.",
+        "en": "No, but it makes compliance substantially easier. Because data never leaves the company, sensitive cross-border transfers fall away and traceability improves. You still need a processing register, access controls, encryption, deletion policies and — depending on the use case — a data protection impact assessment. Data sovereignty does not replace governance.",
+        "it": "No, ma la rende molto più semplice. Poiché i dati non lasciano l'azienda, cadono i delicati trasferimenti all'estero e migliora la tracciabilità. Restano necessari un registro dei trattamenti, controlli degli accessi, cifratura, politiche di cancellazione e – a seconda del caso – una valutazione d'impatto. La sovranità sui dati non sostituisce la governance.",
+        "fr": "Non, mais elle facilite nettement la conformité. Comme les données ne quittent pas l'entreprise, les transferts transfrontaliers sensibles disparaissent et la traçabilité s'améliore. Il faut toujours un registre des traitements, des contrôles d'accès, du chiffrement, des politiques de suppression et – selon l'usage – une analyse d'impact. La souveraineté des données ne remplace pas la gouvernance."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Open-Source-Modelle eignen sich für KMU?",
+        "en": "Which open-source models are suitable for SMEs?",
+        "it": "Quali modelli open source sono adatti alle PMI?",
+        "fr": "Quels modèles open source conviennent aux PME ?"
+      },
+      "a": {
+        "de": "Verbreitet sind offene Modellfamilien wie Llama, Mistral, Qwen und Gemma; für den Schweizer Kontext ist Apertus (aus dem Umfeld von ETH, EPFL und CSCS) interessant. Die Wahl hängt von Sprachabdeckung, Lizenzbedingungen, Modellgrösse und verfügbarer Hardware ab. Prüfen Sie stets die aktuelle Lizenz, da diese die kommerzielle Nutzung einschränken kann.",
+        "en": "Common open model families include Llama, Mistral, Qwen and Gemma; for the Swiss context, Apertus (from the ETH, EPFL and CSCS ecosystem) is of interest. The choice depends on language coverage, licence terms, model size and available hardware. Always check the current licence, as it may restrict commercial use.",
+        "it": "Tra le famiglie di modelli aperti più diffuse ci sono Llama, Mistral, Qwen e Gemma; per il contesto svizzero è interessante Apertus (dall'ecosistema di ETH, EPFL e CSCS). La scelta dipende da copertura linguistica, condizioni di licenza, dimensione del modello e hardware disponibile. Verificate sempre la licenza attuale, poiché può limitare l'uso commerciale.",
+        "fr": "Parmi les familles de modèles ouverts répandues figurent Llama, Mistral, Qwen et Gemma ; pour le contexte suisse, Apertus (issu de l'écosystème EPFZ, EPFL et CSCS) est intéressant. Le choix dépend de la couverture linguistique, des conditions de licence, de la taille du modèle et du matériel disponible. Vérifiez toujours la licence en vigueur, car elle peut restreindre l'usage commercial."
+      }
+    },
+    {
+      "q": {
+        "de": "Erreicht lokale KI die Qualität von ChatGPT oder Claude?",
+        "en": "Does local AI reach the quality of ChatGPT or Claude?",
+        "it": "L'IA locale raggiunge la qualità di ChatGPT o Claude?",
+        "fr": "L'IA locale atteint-elle la qualité de ChatGPT ou Claude ?"
+      },
+      "a": {
+        "de": "Für viele Alltagsaufgaben – Zusammenfassen, Entwürfe, interne Suche, Klassifikation – ja. Bei sehr komplexem Reasoning, langen Aufgabenketten und feiner mehrsprachiger Nuance liegen die grössten Cloud-Modelle jedoch oft noch vorne. Der Abstand schrumpft laufend, ist aber je nach Anwendungsfall real und sollte im Pilot konkret getestet werden.",
+        "en": "For many everyday tasks — summarising, drafting, internal search, classification — yes. On very complex reasoning, long task chains and fine multilingual nuance, the largest cloud models often still lead. The gap keeps shrinking but is real depending on the use case, and should be tested concretely in a pilot.",
+        "it": "Per molti compiti quotidiani – sintesi, bozze, ricerca interna, classificazione – sì. Sul ragionamento molto complesso, le lunghe catene di attività e le sfumature multilingue fini, i più grandi modelli cloud restano spesso avanti. Il divario si riduce di continuo, ma è reale a seconda del caso d'uso e va testato concretamente nel pilota.",
+        "fr": "Pour de nombreuses tâches quotidiennes – résumé, rédaction, recherche interne, classification – oui. Sur le raisonnement très complexe, les longues chaînes de tâches et la nuance multilingue fine, les plus grands modèles cloud gardent souvent l'avantage. L'écart se réduit sans cesse, mais reste réel selon le cas d'usage et doit être testé concrètement en pilote."
+      }
+    },
+    {
+      "q": {
+        "de": "Was kostet KI On-Premise für ein KMU?",
+        "en": "What does on-premise AI cost an SME?",
+        "it": "Quanto costa l'IA on-premise a una PMI?",
+        "fr": "Combien coûte l'IA on-premise pour une PME ?"
+      },
+      "a": {
+        "de": "Es gibt keinen Pauschalpreis. Massgeblich sind die Hardware (Anfangsinvestition), Strom und Kühlung, Betriebsaufwand sowie eventuelle Partnerkosten. Gegenüber der Cloud verschiebt sich das Modell von laufenden Gebühren (OpEx) zu einer Investition (CapEx), die sich erst ab einem gewissen, konstanten Nutzungsvolumen amortisiert. Für konkrete Zahlen die aktuellen Hardware- und Anbieterpreise heranziehen.",
+        "en": "There is no flat price. The main drivers are hardware (upfront investment), power and cooling, operational effort and any partner costs. Versus the cloud, the model shifts from recurring fees (OpEx) to an investment (CapEx) that pays off only above a certain, steady usage volume. For concrete figures, refer to current hardware and vendor pricing.",
+        "it": "Non esiste un prezzo forfettario. I fattori principali sono l'hardware (investimento iniziale), energia e raffreddamento, l'impegno operativo ed eventuali costi di partner. Rispetto al cloud, il modello passa da canoni ricorrenti (OpEx) a un investimento (CapEx) che si ripaga solo oltre un certo volume d'uso costante. Per cifre concrete, consultare i prezzi attuali di hardware e fornitori.",
+        "fr": "Il n'existe pas de prix forfaitaire. Les facteurs principaux sont le matériel (investissement initial), l'électricité et le refroidissement, l'effort opérationnel et d'éventuels coûts de partenaire. Face au cloud, le modèle passe de frais récurrents (OpEx) à un investissement (CapEx) qui n'est rentable qu'au-delà d'un certain volume d'usage constant. Pour des chiffres concrets, consultez les prix actuels du matériel et des fournisseurs."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen On-Premise und einer Schweizer Private Cloud?",
+        "en": "What is the difference between on-premise and a Swiss private cloud?",
+        "it": "Qual è la differenza tra on-premise e una private cloud svizzera?",
+        "fr": "Quelle est la différence entre l'on-premise et un cloud privé suisse ?"
+      },
+      "a": {
+        "de": "On-Premise heisst Hardware im eigenen Haus mit voller physischer Kontrolle, aber auch vollem Betriebsaufwand. Eine Schweizer Private/Sovereign Cloud stellt Ihnen eine dedizierte, mandantengetrennte Instanz auf Schweizer Infrastruktur bereit: Die Daten bleiben im Inland, den Betrieb übernimmt der Anbieter. Der Kompromiss lautet maximale Kontrolle gegen weniger Aufwand.",
+        "en": "On-premise means hardware in your own building with full physical control but also full operational effort. A Swiss private/sovereign cloud gives you a dedicated, single-tenant instance on Swiss infrastructure: data stays in the country while the provider runs the operations. The trade-off is maximum control versus less effort.",
+        "it": "On-premise significa hardware nella propria sede con pieno controllo fisico ma anche pieno impegno operativo. Una private/sovereign cloud svizzera offre un'istanza dedicata e a tenant singolo su infrastruttura svizzera: i dati restano nel Paese e il provider gestisce l'operatività. Il compromesso è massimo controllo contro minore impegno.",
+        "fr": "L'on-premise, c'est du matériel dans vos propres locaux avec un contrôle physique total mais aussi une charge d'exploitation totale. Un cloud privé/souverain suisse vous fournit une instance dédiée et mono-locataire sur une infrastructure suisse : les données restent dans le pays et le fournisseur assure l'exploitation. Le compromis : contrôle maximal contre moindre effort."
+      }
+    }
+  ],
+  "keyEntities": [
+    "KI On-Premise",
+    "Grosses Sprachmodell (LLM)",
+    "Open-Weights-Modelle",
+    "Llama",
+    "Mistral",
+    "Apertus (ETH/EPFL/CSCS)",
+    "GPU / VRAM",
+    "Quantisierung",
+    "Inferenz-Runtime (vLLM, Ollama, llama.cpp)",
+    "RAG / Vektordatenbank",
+    "revDSG / nFADP",
+    "EDÖB",
+    "EU AI Act",
+    "Private / Sovereign Cloud",
+    "Air-Gap",
+    "KMU / TCO"
+  ]
+}
