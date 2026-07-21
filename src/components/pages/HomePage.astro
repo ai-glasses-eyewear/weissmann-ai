@@ -14,6 +14,8 @@ import Faq from '../Faq.astro';
 import PricingCard from '../PricingCard.astro';
 import WeissmannAssistant from '../WeissmannAssistant.astro';
 import { localePrefix, type Locale } from '../../data/site';
+import { pillarHome, relFor } from '../../data/routes';
+import { getService, servicePaths } from '../../data/services';
 import { t } from '../../i18n/ui';
 import { getPackage } from '../../data/pricing';
 import { organization, webSite, webPage, faqPage } from '../../data/schema';
@@ -22,6 +24,47 @@ interface Props { locale: Locale }
 const { locale } = Astro.props;
 const p = localePrefix(locale);
 const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
+
+// The six system rows resolve to canonical siloed service URLs from the registry
+// (index-aligned to c.system); the last row routes to the Services hub.
+const SYSTEM_LINKS = ['websites', 'seo', 'google-ads', 'agents', 'automation', '__hub__'] as const;
+const linkFor = (i: number): string => {
+  const id = SYSTEM_LINKS[i];
+  if (id === '__hub__') return relFor(locale, pillarHome('services'));
+  const s = getService(id);
+  return s ? relFor(locale, servicePaths(s)) : relFor(locale, pillarHome('services'));
+};
+const phoneService = getService('phone-assistant');
+const phoneHref = phoneService ? relFor(locale, servicePaths(phoneService)) : `${p}/kontakt/`;
+
+// Ecosystem-router: introduce the four content pillars and link to their hubs.
+const ECO: Record<Locale, { eyebrow: string; title: string; text: string; items: Array<{ title: string; text: string; href: string }> }> = {
+  de: { eyebrow: 'Ein Ökosystem', title: 'Mehr als eine Agentur', text: 'Dedizierte Leistungen, Branchenwissen, eine KI-Wissensplattform und praktische Werkzeuge – an einem Ort.', items: [
+    { title: 'Leistungen', text: 'Neun dedizierte KI- und Wachstumsleistungen.', href: relFor(locale, pillarHome('services')) },
+    { title: 'Branchen', text: 'Praktische KI für Ihre Branche.', href: relFor(locale, pillarHome('industries')) },
+    { title: 'AI Academy', text: 'Verständliches KI-Wissen und ein Glossar.', href: relFor(locale, pillarHome('academy')) },
+    { title: 'Ressourcen', text: 'Rechner, Checklisten und Tools – kostenlos.', href: relFor(locale, pillarHome('resources')) },
+  ] },
+  en: { eyebrow: 'An ecosystem', title: 'More than an agency', text: 'Dedicated services, industry know-how, an AI knowledge platform and practical tools – in one place.', items: [
+    { title: 'Services', text: 'Nine dedicated AI and growth services.', href: relFor(locale, pillarHome('services')) },
+    { title: 'Industries', text: 'Practical AI for your sector.', href: relFor(locale, pillarHome('industries')) },
+    { title: 'AI Academy', text: 'Clear AI knowledge and a glossary.', href: relFor(locale, pillarHome('academy')) },
+    { title: 'Resources', text: 'Calculators, checklists and tools – free.', href: relFor(locale, pillarHome('resources')) },
+  ] },
+  it: { eyebrow: 'Un ecosistema', title: 'Più di un’agenzia', text: 'Servizi dedicati, competenza settoriale, una piattaforma di conoscenza AI e strumenti pratici – in un unico posto.', items: [
+    { title: 'Servizi', text: 'Nove servizi dedicati di AI e crescita.', href: relFor(locale, pillarHome('services')) },
+    { title: 'Settori', text: 'AI pratica per il vostro settore.', href: relFor(locale, pillarHome('industries')) },
+    { title: 'AI Academy', text: 'Conoscenza AI chiara e un glossario.', href: relFor(locale, pillarHome('academy')) },
+    { title: 'Risorse', text: 'Calcolatori, checklist e strumenti – gratis.', href: relFor(locale, pillarHome('resources')) },
+  ] },
+  fr: { eyebrow: 'Un écosystème', title: 'Plus qu’une agence', text: 'Des services dédiés, une expertise sectorielle, une plateforme de savoir IA et des outils pratiques – en un seul endroit.', items: [
+    { title: 'Services', text: 'Neuf services dédiés d’IA et de croissance.', href: relFor(locale, pillarHome('services')) },
+    { title: 'Secteurs', text: 'L’IA pratique pour votre secteur.', href: relFor(locale, pillarHome('industries')) },
+    { title: 'AI Academy', text: 'Un savoir IA clair et un glossaire.', href: relFor(locale, pillarHome('academy')) },
+    { title: 'Ressources', text: 'Calculateurs, checklists et outils – gratuits.', href: relFor(locale, pillarHome('resources')) },
+  ] },
+};
+const eco = ECO[locale];
 
 const C: Record<Locale, any> = {
   de: {
@@ -344,17 +387,37 @@ const websiteStarter = getPackage('website-starter');
       </p>
 
       <ol class="system">
-        {c.system.map((s: any) => (
+        {c.system.map((s: any, i: number) => (
           <li class="system__row">
             <span class="system__num" aria-hidden="true">{s.n}</span>
             <div class="system__body">
-              <h3><a href={`${p}${s.href}`} data-track="service_view">{s.title}</a></h3>
+              <h3><a href={linkFor(i)} data-track="service_view">{s.title}</a></h3>
               <p>{s.text}</p>
             </div>
-            <a class="system__link" href={`${p}${s.href}`} data-track="service_view" aria-label={s.title}>→</a>
+            <a class="system__link" href={linkFor(i)} data-track="service_view" aria-label={s.title}>→</a>
           </li>
         ))}
       </ol>
+    </div>
+  </section>
+
+  <!-- ── Ecosystem router: the four content pillars ───────── -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">{eco.eyebrow}</span>
+        <h2>{eco.title}</h2>
+        <p>{eco.text}</p>
+      </div>
+      <div class="eco-grid">
+        {eco.items.map((it) => (
+          <a class="eco-card" href={it.href}>
+            <h3>{it.title}</h3>
+            <p>{it.text}</p>
+            <span class="eco-card__arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -378,7 +441,7 @@ const websiteStarter = getPackage('website-starter');
         <h2>{c.voiceTitle}</h2>
         <p class="mt-3 voice__text">{c.voiceText}</p>
         <p class="mt-4">
-          <a class="btn btn--secondary" href={`${p}/ki-telefonassistent/`}>{c.voiceCta}</a>
+          <a class="btn btn--secondary" href={phoneHref}>{c.voiceCta}</a>
         </p>
       </div>
       <video controls preload="none" poster={posterSrc} class="demo-video" data-demo-video>
@@ -592,6 +655,22 @@ const websiteStarter = getPackage('website-starter');
   }
 
   .final-cta { padding-block: var(--space-7); }
+
+  /* ── Ecosystem router cards ───────────────────────────── */
+  .eco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--space-4); }
+  .eco-card {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    background: var(--paper);
+    display: block;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .eco-card:hover { border-color: var(--accent); text-decoration: none; transform: translateY(-2px); }
+  .eco-card h3 { font-size: var(--fs-500); margin: 0 0 0.4rem; color: var(--ink); }
+  .eco-card p { color: var(--ink-mute); font-size: var(--fs-300); margin: 0; }
+  .eco-card__arrow { position: absolute; top: var(--space-4); right: var(--space-5); color: var(--accent); font-size: var(--fs-500); }
 </style>
 
 <script is:inline>
