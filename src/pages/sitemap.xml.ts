@@ -10,9 +10,20 @@ import { SITE, LOCALES } from '../data/site';
 import { HOME_PATHS, pillarHome, urlFor, type LocalePaths } from '../data/routes';
 import { liveServices, servicePaths } from '../data/services';
 import { liveIndustries, industryPaths } from '../data/industries';
+import { liveClusters, clusterPaths, pillarOf, spokesOf, articlePaths } from '../data/academy';
+import { liveResources, resourcePaths } from '../data/resources';
 
 /** Legacy same-slug page (identical path in every locale) as LocalePaths. */
 const sameSlug = (path: string): LocalePaths => ({ de: path, en: path, it: path, fr: path });
+
+function academyPages(): LocalePaths[] {
+  const pages: LocalePaths[] = [pillarHome('academy')];
+  for (const cl of liveClusters()) {
+    pages.push(clusterPaths(cl)); // cluster pillar page
+    for (const sp of spokesOf(cl.id)) pages.push(articlePaths(sp));
+  }
+  return pages;
+}
 
 function indexablePages(): LocalePaths[] {
   return [
@@ -21,11 +32,16 @@ function indexablePages(): LocalePaths[] {
     ...liveServices().map(servicePaths),
     pillarHome('industries'),
     ...liveIndustries().map(industryPaths),
+    ...academyPages(),
+    pillarHome('resources'),
+    ...liveResources().map(resourcePaths),
     sameSlug('/preise/'),
     sameSlug('/ueber-uns/'),
     sameSlug('/kontakt/'),
   ];
 }
+// pillarOf is imported for parity with academy article listing; referenced to keep the import used.
+void pillarOf;
 
 export const GET: APIRoute = () => {
   const urls = indexablePages().flatMap((lp) =>
