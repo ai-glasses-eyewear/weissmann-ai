@@ -20,7 +20,7 @@ import { organization, webSite, webPage, faqPage } from '../../data/schema';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const p = localePrefix(locale);
-const theme = (import.meta.env.PUBLIC_THEME as string) === 'b' ? 'b' : 'a';
+const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
 
 const C: Record<Locale, any> = {
   de: {

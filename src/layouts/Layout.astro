@@ -37,9 +37,9 @@ const graph = schema.length
   ? JSON.stringify({ '@context': 'https://schema.org', '@graph': schema })
   : null;
 
-// Visual concept: 'a' (Swiss Editorial, default) or 'b' (Premium Technology).
-// Set at build time: PUBLIC_THEME=b npm run build
-const theme = (import.meta.env.PUBLIC_THEME as string) === 'b' ? 'b' : 'a';
+// Visual concept: 'b' (Premium Technology) is the approved default.
+// 'a' (Swiss Editorial) remains previewable via PUBLIC_THEME=a npm run build.
+const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
 ---
 
 <!doctype html>
