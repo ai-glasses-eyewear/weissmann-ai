@@ -5,15 +5,24 @@
  * Mobile: CSS-only disclosure via <details>, no JS dependency.
  */
 import { LOCALES, localePrefix, type Locale } from '../data/site';
+import type { LocalePaths } from '../data/routes';
 import { t } from '../i18n/ui';
 
 interface Props {
   locale: Locale;
-  path: string;
+  /** Locale-independent path (legacy German-slug pages). */
+  path?: string;
+  /** Localized path per locale — preferred; drives the language switcher. */
+  localePaths?: LocalePaths;
   availableLocales?: Locale[];
 }
-const { locale, path, availableLocales = [...LOCALES] } = Astro.props;
+const { locale, path, localePaths, availableLocales = [...LOCALES] } = Astro.props;
 const p = localePrefix(locale);
+
+// Per-locale paths for the language switcher, from whichever prop was passed.
+const lp: LocalePaths | null = localePaths ?? (path ? { de: path, en: path, it: path, fr: path } : null);
+const switchTarget = (l: Locale): string =>
+  availableLocales.includes(l) && lp ? `${localePrefix(l)}${lp[l]}` : `${localePrefix(l)}/`;
 
 const nav = [
   { key: 'nav.solutions', href: `${p}/ki-telefonassistent/` },
@@ -42,10 +51,9 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
     <div class="site-header__actions">
       <nav class="lang-switch" aria-label={t(locale, 'lang.switch')}>
         {LOCALES.map((l) => {
-          const target = availableLocales.includes(l) ? `${localePrefix(l)}${path}` : `${localePrefix(l)}/`;
           return l === locale
             ? <span aria-current="true">{langLabel[l]}</span>
-            : <a href={target} hreflang={l}>{langLabel[l]}</a>;
+            : <a href={switchTarget(l)} hreflang={l}>{langLabel[l]}</a>;
         })}
       </nav>
       <a class="btn btn--primary site-header__cta" href={`${p}/kontakt/`} data-track="request_demo">
@@ -66,7 +74,7 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
           {LOCALES.map((l) =>
             l === locale
               ? <span aria-current="true">{langLabel[l]}</span>
-              : <a href={availableLocales.includes(l) ? `${localePrefix(l)}${path}` : `${localePrefix(l)}/`} hreflang={l}>{langLabel[l]}</a>
+              : <a href={switchTarget(l)} hreflang={l}>{langLabel[l]}</a>
           )}
         </div>
       </div>

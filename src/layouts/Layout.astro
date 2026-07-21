@@ -12,6 +12,7 @@
  *  - schema: optional array of JSON-LD objects rendered as one @graph.
  */
 import { SITE, LOCALES, HTML_LANG, localeUrl, type Locale } from '../data/site';
+import type { LocalePaths } from '../data/routes';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ConsentAnalytics from '../components/ConsentAnalytics.astro';
@@ -20,7 +21,14 @@ import '../styles/global.css';
 
 interface Props {
   locale: Locale;
-  path: string;
+  /** Locale-independent path (German-slug pages that reuse one path across locales). */
+  path?: string;
+  /**
+   * Localized path per locale (siloed/localized-slug pages). Preferred over
+   * `path`; drives canonical, hreflang and the language switcher. Exactly one
+   * of `path` / `localePaths` should be provided.
+   */
+  localePaths?: LocalePaths;
   title: string;
   description: string;
   availableLocales?: Locale[];
@@ -28,9 +36,12 @@ interface Props {
   noindex?: boolean;
 }
 
-const { locale, path, title, description, availableLocales = [...LOCALES], schema = [], noindex = false } = Astro.props;
+const { locale, path, localePaths, title, description, availableLocales = [...LOCALES], schema = [], noindex = false } = Astro.props;
 
-const canonical = localeUrl(locale, path);
+// Unify: a per-locale path map, whether the page passed localePaths or a single path.
+const lp: LocalePaths = localePaths ?? { de: path!, en: path!, it: path!, fr: path! };
+
+const canonical = localeUrl(locale, lp[locale]);
 const ogImage = `${SITE.domain}/og-default.png`;
 
 const graph = schema.length
@@ -52,9 +63,9 @@ const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
     {availableLocales.map((l) => (
-      <link rel="alternate" hreflang={l === 'de' ? 'de-CH' : l} href={localeUrl(l, path)} />
+      <link rel="alternate" hreflang={l === 'de' ? 'de-CH' : l} href={localeUrl(l, lp[l])} />
     ))}
-    <link rel="alternate" hreflang="x-default" href={localeUrl('de', path)} />
+    <link rel="alternate" hreflang="x-default" href={localeUrl('en', lp.en)} />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.name} />
@@ -79,7 +90,7 @@ const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
   </head>
   <body>
     <a class="skip-link" href="#main">{locale === 'de' ? 'Zum Inhalt springen' : locale === 'fr' ? 'Aller au contenu' : locale === 'it' ? 'Vai al contenuto' : 'Skip to content'}</a>
-    <Header locale={locale} path={path} availableLocales={availableLocales} />
+    <Header locale={locale} localePaths={lp} availableLocales={availableLocales} />
     <main id="main">
       <slot />
     </main>

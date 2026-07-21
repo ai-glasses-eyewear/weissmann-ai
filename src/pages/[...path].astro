@@ -1,0 +1,36 @@
+---
+/**
+ * Registry-driven catch-all — the single route that generates every localized,
+ * siloed page from the data registries (docs/architecture/MASTER-PAGE-MAP.md).
+ * getStaticPaths emits an explicit path per locale (localized slugs), and each
+ * entry carries a `type` + data that selects the right template below.
+ *
+ * Hand-written pages in src/pages/** take precedence over this catch-all, so
+ * legacy pages keep working while sections migrate here one at a time.
+ */
+import { LOCALES, type Locale } from '../data/site';
+import { pillarHome, routeParam, type LocalePaths } from '../data/routes';
+import ServicesHubPage from '../components/pages/ServicesHubPage.astro';
+
+export function getStaticPaths() {
+  const out: Array<{ params: { path: string }; props: Record<string, unknown> }> = [];
+
+  // Services hub (/leistungen/, /en/services/, /it/servizi/, /fr/services/)
+  const servicesHub = pillarHome('services');
+  for (const l of LOCALES) {
+    out.push({
+      params: { path: routeParam(l, servicesHub) },
+      props: { type: 'services-hub', locale: l, localePaths: servicesHub },
+    });
+  }
+
+  return out;
+}
+
+const { type, locale, localePaths } = Astro.props as {
+  type: string;
+  locale: Locale;
+  localePaths: LocalePaths;
+};
+---
+{type === 'services-hub' && <ServicesHubPage locale={locale} localePaths={localePaths} />}
