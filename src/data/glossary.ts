@@ -50,3 +50,22 @@ export function getTerm(id: string): GlossaryTerm | undefined {
 export function orderedTerms(locale: Locale): GlossaryTerm[] {
   return [...GLOSSARY].sort((a, b) => a.term[locale].localeCompare(b.term[locale], locale));
 }
+
+const normalize = (s: string): string => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '');
+
+/**
+ * Match a list of entity strings (e.g. an Academy article's keyEntities) to
+ * glossary terms by id or localized display name — the automatic bridge that
+ * links every article into the glossary entity backbone.
+ */
+export function matchGlossaryTerms(entities: string[], excludeIds: string[] = [], limit = 10): GlossaryTerm[] {
+  const wanted = new Set(entities.map(normalize));
+  const out: GlossaryTerm[] = [];
+  for (const t of GLOSSARY) {
+    if (excludeIds.includes(t.id)) continue;
+    const names = [t.id, ...Object.values(t.term)].map(normalize);
+    if (names.some((n) => wanted.has(n))) out.push(t);
+    if (out.length >= limit) break;
+  }
+  return out;
+}

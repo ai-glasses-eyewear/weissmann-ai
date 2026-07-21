@@ -10,6 +10,7 @@ import { SITE, localeUrl, HTML_LANG, type Locale } from '../../data/site';
 import { type LocalePaths, pillarHome, urlFor, relFor } from '../../data/routes';
 import { type AcademyArticle, type AcademyCluster, clusterPaths, articlePaths, spokesOf } from '../../data/academy';
 import { getService, servicePaths } from '../../data/services';
+import { matchGlossaryTerms, termPaths } from '../../data/glossary';
 import { breadcrumbs, faqPage } from '../../data/schema';
 import { t } from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
@@ -29,6 +30,7 @@ const LBL: Record<Locale, { short: string; faq: string; inCluster: string; relat
   fr: { short: 'En bref', faq: 'Questions fréquentes', inCluster: 'Dans ce domaine', related: 'Services pertinents', backToCluster: 'Retour à l’aperçu', ctaTitle: 'L’IA pratique pour votre entreprise', ctaText: 'De l’idée à la mise en œuvre – nous vous montrons ce qui est concrètement possible dans votre cas.', academy: 'AI Academy', by: 'Par' },
 };
 const lbl = LBL[locale];
+const termsLabel: Record<Locale, string> = { de: 'Begriffe im Glossar', en: 'Key terms in the glossary', it: 'Termini nel glossario', fr: 'Termes du glossaire' };
 
 const pre = locale === 'de' ? '' : `/${locale}`;
 const contactHref = `${pre}/kontakt/`;
@@ -40,6 +42,9 @@ const spokes = isPillar ? spokesOf(cluster.id) : [];
 const relServices = (article.relatedServices ?? [])
   .map((id) => getService(id))
   .filter((s): s is NonNullable<typeof s> => !!s && s.status === 'live');
+
+// Auto-link into the glossary via the article's key entities (entity backbone).
+const glossTerms = matchGlossaryTerms(article.keyEntities ?? [], [], 8);
 
 const crumbHome = { de: 'Startseite', en: 'Home', it: 'Home', fr: 'Accueil' }[locale];
 const author = SITE.founders[0].name; // Giovanna Carpi
@@ -140,6 +145,15 @@ const schema = [
       </section>
     )}
 
+    {glossTerms.length > 0 && (
+      <section class="container ac-terms">
+        <h2>{termsLabel[locale]}</h2>
+        <div class="ac-term-chips">
+          {glossTerms.map((gt) => <a class="chip" href={relFor(locale, termPaths(gt))}>{gt.term[locale]}</a>)}
+        </div>
+      </section>
+    )}
+
     {!isPillar && (
       <p class="container ac-back"><a href={clusterUrl}>← {lbl.backToCluster}</a></p>
     )}
@@ -181,6 +195,11 @@ const schema = [
   .faq-item { border: 1px solid var(--line); border-radius: 12px; padding: var(--space-3) var(--space-4); background: var(--paper); }
   .faq-item summary { font-weight: 600; cursor: pointer; }
   .faq-item p { margin: 0.6rem 0 0; color: var(--ink-soft); }
+  .ac-terms { max-width: 52rem; padding-top: var(--space-2); padding-bottom: var(--space-4); }
+  .ac-terms h2 { font-size: var(--fs-300); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-mute); margin-bottom: var(--space-3); }
+  .ac-term-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .ac-term-chips .chip { border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: var(--fs-300); color: var(--ink-soft); }
+  .ac-term-chips .chip:hover { border-color: var(--accent); color: var(--ink); text-decoration: none; }
   .ac-back { max-width: 52rem; }
   .ac-back a { color: var(--accent); font-weight: 600; }
   .ac-cta { text-align: center; padding: var(--space-7) var(--space-4); margin-bottom: var(--space-7); border-top: 1px solid var(--line); }
