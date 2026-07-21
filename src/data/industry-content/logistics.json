@@ -1,0 +1,289 @@
+{
+  "id": "logistics",
+  "title": {
+    "de": "KI für Logistik und Transport in der Schweiz | Weissmann AI",
+    "en": "Practical AI for Logistics & Transport | Weissmann AI",
+    "it": "IA per la logistica e i trasporti in Svizzera | Weissmann AI",
+    "fr": "IA pour la logistique et le transport en Suisse | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie praktische KI Schweizer Logistik- und Transportfirmen bei Auftragserfassung, Statusanfragen und Datenfluss entlastet – revDSG-konform, mehrsprachig, ohne IT-Grossprojekt.",
+    "en": "How practical AI relieves Swiss logistics and transport firms with order intake, status enquiries and data flow – revDSG-compliant, multilingual, without a major IT project.",
+    "it": "Come l'IA pratica aiuta le aziende svizzere di logistica e trasporto in acquisizione ordini, richieste di stato e flusso dati – conforme alla revLPD, multilingue.",
+    "fr": "Comment l'IA pratique soulage les entreprises suisses de logistique et transport : saisie des commandes, suivi, flux de données – conforme à la nLPD, multilingue."
+  },
+  "kicker": {
+    "de": "Branche: Logistik & Transport",
+    "en": "Industry: Logistics & Transport",
+    "it": "Settore: logistica e trasporti",
+    "fr": "Secteur : logistique et transport"
+  },
+  "h1": {
+    "de": "Praktische KI für Logistik und Transport in der Schweiz",
+    "en": "Practical AI for Logistics and Transport in Switzerland",
+    "it": "IA pratica per la logistica e i trasporti in Svizzera",
+    "fr": "L'IA pratique pour la logistique et le transport en Suisse"
+  },
+  "answerFirst": {
+    "de": "Praktische KI unterstützt Schweizer Logistik- und Transportunternehmen, indem sie eingehende Aufträge aus E-Mail und PDF ausliest und direkt ins TMS oder ERP überträgt, wiederkehrende Sendungsstatus-Anfragen rund um die Uhr per Telefon oder Chat auf Deutsch, Französisch und Italienisch beantwortet und Disposition, Lager sowie Kundensysteme so verbindet, dass Daten automatisch fliessen statt von Hand erfasst zu werden.",
+    "en": "Practical AI helps Swiss logistics and transport firms by reading incoming orders from email and PDF and posting them straight into the TMS or ERP, answering routine shipment-status enquiries by phone or chat around the clock in German, French and Italian, and connecting dispatch, warehouse and customer systems so data flows automatically instead of being re-keyed by hand.",
+    "it": "L'IA pratica aiuta le aziende svizzere di logistica e trasporto a leggere gli ordini ricevuti via e-mail o PDF e a registrarli direttamente nel TMS o nell'ERP, a rispondere alle richieste sullo stato delle spedizioni 24 ore su 24 per telefono o chat in tedesco, francese e italiano, e a collegare spedizione, magazzino e sistemi dei clienti affinché i dati circolino automaticamente invece di essere reinseriti a mano.",
+    "fr": "L'IA pratique aide les entreprises suisses de logistique et de transport à lire les commandes reçues par e-mail ou PDF et à les enregistrer directement dans le TMS ou l'ERP, à répondre aux demandes de suivi d'expédition 24h/24 par téléphone ou chat en allemand, français et italien, et à relier expédition, entrepôt et systèmes clients pour que les données circulent automatiquement au lieu d'être ressaisies à la main."
+  },
+  "challenges": [
+    {
+      "de": "Aufträge treffen fragmentiert über E-Mail, PDF, Telefon und Kundenportale ein – manuelles Abtippen kostet Zeit und erzeugt Fehler.",
+      "en": "Orders arrive fragmented across email, PDF, phone and customer portals – manual re-keying costs time and creates errors.",
+      "it": "Gli ordini arrivano frammentati tra e-mail, PDF, telefono e portali clienti: la digitazione manuale costa tempo e genera errori.",
+      "fr": "Les commandes arrivent de façon fragmentée par e-mail, PDF, téléphone et portails clients : la ressaisie manuelle coûte du temps et génère des erreurs."
+    },
+    {
+      "de": "Ständige «Wo ist meine Sendung?»-Anfragen binden Disposition und Kundendienst.",
+      "en": "Constant 'where is my shipment?' enquiries tie up dispatch and customer service.",
+      "it": "Le continue richieste «dov'è la mia spedizione?» impegnano la logistica e il servizio clienti.",
+      "fr": "Les demandes incessantes « où est mon envoi ? » monopolisent la répartition et le service client."
+    },
+    {
+      "de": "TMS, ERP, Lagerverwaltung, Telematik und Kundensysteme sprechen selten dieselbe Sprache – Daten werden mehrfach erfasst.",
+      "en": "TMS, ERP, warehouse management, telematics and customer systems rarely speak the same language – data gets entered several times.",
+      "it": "TMS, ERP, gestione magazzino, telematica e sistemi dei clienti raramente parlano la stessa lingua: i dati vengono inseriti più volte.",
+      "fr": "TMS, ERP, gestion d'entrepôt, télématique et systèmes clients parlent rarement la même langue : les données sont saisies plusieurs fois."
+    },
+    {
+      "de": "Dünne Margen und Fahrer- sowie Personalengpässe lassen kaum Spielraum für administrativen Aufwand.",
+      "en": "Thin margins and driver and staff shortages leave little room for administrative overhead.",
+      "it": "Margini ridotti e carenza di autisti e personale lasciano poco spazio ai costi amministrativi.",
+      "fr": "Des marges faibles et une pénurie de chauffeurs et de personnel laissent peu de place aux tâches administratives."
+    },
+    {
+      "de": "Mehrsprachige Kundschaft und grenzüberschreitender Verkehr (DE/FR/IT plus EU) vervielfachen die Kommunikationslast.",
+      "en": "Multilingual customers and cross-border traffic (DE/FR/IT plus EU) multiply the communication load.",
+      "it": "Clientela multilingue e traffico transfrontaliero (DE/FR/IT più UE) moltiplicano il carico di comunicazione.",
+      "fr": "Une clientèle multilingue et le trafic transfrontalier (DE/FR/IT plus UE) multiplient la charge de communication."
+    },
+    {
+      "de": "Spitzenvolumen und zeitkritische Zeitfenster machen manuelle Prozesse fehleranfällig.",
+      "en": "Peak volumes and time-critical windows make manual processes fragile.",
+      "it": "Picchi di volume e finestre temporali critiche rendono fragili i processi manuali.",
+      "fr": "Les pics de volume et les créneaux critiques rendent les processus manuels fragiles."
+    }
+  ],
+  "opportunities": [
+    {
+      "title": {
+        "de": "Automatisierte Auftragserfassung",
+        "en": "Automated order intake",
+        "it": "Acquisizione ordini automatizzata",
+        "fr": "Saisie automatisée des commandes"
+      },
+      "text": {
+        "de": "Mit AI Automation lassen sich Aufträge aus E-Mails, PDF-Lieferscheinen und Formularen auslesen, strukturieren und direkt ins TMS oder ERP übergeben. Typischerweise werden Absender, Adressen, Positionen und Termine erkannt und zur Kontrolle vorgelegt, statt Zeile für Zeile abgetippt zu werden.",
+        "en": "With AI Automation, orders from emails, PDF delivery notes and forms can be read, structured and passed straight into the TMS or ERP. Typically the sender, addresses, line items and dates are extracted and presented for a quick check instead of being typed line by line.",
+        "it": "Con AI Automation gli ordini da e-mail, bolle PDF e moduli vengono letti, strutturati e trasferiti direttamente nel TMS o nell'ERP. In genere mittente, indirizzi, righe e date vengono estratti e proposti per un controllo rapido, anziché digitati riga per riga.",
+        "fr": "Avec AI Automation, les commandes issues d'e-mails, de bons de livraison PDF et de formulaires sont lues, structurées et transmises directement dans le TMS ou l'ERP. En général, l'expéditeur, les adresses, les lignes et les dates sont extraits et présentés pour un contrôle rapide, au lieu d'être saisis ligne par ligne."
+      }
+    },
+    {
+      "title": {
+        "de": "Statusauskünfte rund um die Uhr",
+        "en": "Round-the-clock status enquiries",
+        "it": "Informazioni sullo stato 24 ore su 24",
+        "fr": "Renseignements de suivi 24h/24"
+      },
+      "text": {
+        "de": "Ein AI Phone Assistant beantwortet wiederkehrende «Wo ist meine Sendung?»-Anfragen am Telefon oder im Chat – auf Deutsch, Französisch und Italienisch. Er zieht den Status typischerweise aus dem verbundenen System und leitet komplexe Fälle sauber an die Disposition weiter.",
+        "en": "An AI Phone Assistant answers recurring 'where is my shipment?' enquiries on the phone or in chat – in German, French and Italian. It typically pulls the status from the connected system and hands complex cases cleanly over to dispatch.",
+        "it": "Un AI Phone Assistant risponde alle ricorrenti richieste «dov'è la mia spedizione?» al telefono o in chat, in tedesco, francese e italiano. In genere recupera lo stato dal sistema collegato e inoltra in modo ordinato i casi complessi alla logistica.",
+        "fr": "Un AI Phone Assistant répond aux demandes récurrentes « où est mon envoi ? » par téléphone ou chat, en allemand, français et italien. Il récupère généralement le statut depuis le système connecté et transmet proprement les cas complexes à la répartition."
+      }
+    },
+    {
+      "title": {
+        "de": "Verbundene Systeme statt Doppelerfassung",
+        "en": "Connected systems instead of double entry",
+        "it": "Sistemi collegati invece del doppio inserimento",
+        "fr": "Systèmes connectés au lieu de la double saisie"
+      },
+      "text": {
+        "de": "AI Integrations verbinden Disposition, Lager, Telematik und Kundensysteme, sodass Sendungsdaten einmal entstehen und überall aktuell sind. So entfällt die mehrfache Erfassung, und Statusänderungen werden beispielsweise automatisch an die Kundschaft zurückgespielt.",
+        "en": "AI Integrations connect dispatch, warehouse, telematics and customer systems so shipment data is created once and stays current everywhere. This removes duplicate entry, and status changes can, for example, be pushed back to customers automatically.",
+        "it": "Le AI Integrations collegano logistica, magazzino, telematica e sistemi dei clienti così che i dati di spedizione nascano una sola volta e restino aggiornati ovunque. Si elimina il doppio inserimento e le variazioni di stato possono, ad esempio, essere ritrasmesse automaticamente ai clienti.",
+        "fr": "Les AI Integrations relient répartition, entrepôt, télématique et systèmes clients afin que les données d'expédition soient créées une seule fois et restent à jour partout. La double saisie disparaît, et les changements de statut peuvent, par exemple, être renvoyés automatiquement aux clients."
+      }
+    },
+    {
+      "title": {
+        "de": "Dokumente prüfen und Abweichungen melden",
+        "en": "Checking documents and flagging discrepancies",
+        "it": "Controllo documenti e segnalazione anomalie",
+        "fr": "Vérification des documents et signalement des écarts"
+      },
+      "text": {
+        "de": "Mit AI Automation lassen sich Lieferscheine, Auftragsbestätigungen und Rechnungen abgleichen. Weichen Mengen, Adressen oder Termine ab, wird der Fall typischerweise markiert und einer Person vorgelegt – statt still im Tagesgeschäft unterzugehen.",
+        "en": "With AI Automation, delivery notes, order confirmations and invoices can be matched. When quantities, addresses or dates diverge, the case is typically flagged and put in front of a person – rather than quietly slipping through the daily workload.",
+        "it": "Con AI Automation è possibile confrontare bolle, conferme d'ordine e fatture. Quando quantità, indirizzi o date divergono, il caso viene tipicamente segnalato e sottoposto a una persona, invece di perdersi nell'operatività quotidiana.",
+        "fr": "Avec AI Automation, les bons de livraison, confirmations de commande et factures peuvent être rapprochés. Lorsque quantités, adresses ou dates divergent, le cas est généralement signalé et soumis à une personne, plutôt que de passer inaperçu dans le travail quotidien."
+      }
+    }
+  ],
+  "sections": [
+    {
+      "heading": {
+        "de": "Illustrative Einsatzbeispiele",
+        "en": "Illustrative implementation examples",
+        "it": "Esempi illustrativi di applicazione",
+        "fr": "Exemples d'application illustratifs"
+      },
+      "paragraphs": [
+        {
+          "de": "Die folgenden Beispiele zeigen typische Ausgangslagen in der Logistik und im Transport. Sie sind illustrativ und beschreiben, wie eine Lösung aussehen kann – nicht gemessene Ergebnisse bei einem bestimmten Unternehmen.",
+          "en": "The following examples show typical situations in logistics and transport. They are illustrative and describe what a solution can look like – not measured results at any specific company.",
+          "it": "I seguenti esempi mostrano situazioni tipiche nella logistica e nel trasporto. Sono illustrativi e descrivono come può presentarsi una soluzione, non risultati misurati presso una specifica azienda.",
+          "fr": "Les exemples suivants illustrent des situations typiques en logistique et transport. Ils sont illustratifs et décrivent à quoi une solution peut ressembler, non des résultats mesurés dans une entreprise précise."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Ein Speditionsbetrieb erhält Aufträge als PDF-Anhang. Die KI liest sie aus und legt sie zur Freigabe im TMS an – die Disposition prüft statt tippt.",
+          "en": "A freight forwarder receives orders as PDF attachments. The AI reads them and creates them in the TMS for release – dispatch checks instead of typing.",
+          "it": "Uno spedizioniere riceve ordini come allegati PDF. L'IA li legge e li crea nel TMS per l'approvazione: la logistica controlla invece di digitare.",
+          "fr": "Un transitaire reçoit des commandes en pièce jointe PDF. L'IA les lit et les crée dans le TMS pour validation : la répartition vérifie au lieu de saisir."
+        },
+        {
+          "de": "Endkunden fragen abends und am Wochenende nach dem Lieferstatus. Der Telefon- und Chat-Assistent gibt auf DE/FR/IT Auskunft und eskaliert nur echte Ausnahmen.",
+          "en": "End customers ask about delivery status in the evening and at weekends. The phone and chat assistant answers in DE/FR/IT and escalates only genuine exceptions.",
+          "it": "I clienti finali chiedono lo stato della consegna la sera e nel fine settimana. L'assistente telefonico e in chat risponde in DE/FR/IT ed esclama solo le eccezioni reali.",
+          "fr": "Les clients finaux demandent le statut de livraison le soir et le week-end. L'assistant téléphonique et chat répond en DE/FR/IT et n'escalade que les véritables exceptions."
+        },
+        {
+          "de": "Zwischen Onlineshop, ERP und Lager werden Bestell- und Sendungsdaten heute doppelt erfasst. Eine Integration lässt die Daten einmalig fliessen.",
+          "en": "Order and shipment data is currently entered twice between the online shop, ERP and warehouse. An integration lets the data flow once.",
+          "it": "Oggi i dati di ordini e spedizioni vengono inseriti due volte tra shop online, ERP e magazzino. Un'integrazione fa circolare i dati una sola volta.",
+          "fr": "Aujourd'hui, les données de commande et d'expédition sont saisies deux fois entre la boutique en ligne, l'ERP et l'entrepôt. Une intégration fait circuler les données une seule fois."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "So gehen wir vor",
+        "en": "How it works",
+        "it": "Come procediamo",
+        "fr": "Notre approche"
+      },
+      "paragraphs": [
+        {
+          "de": "Wir starten mit einem konkreten, häufigen Vorgang – etwa der Auftragserfassung – und automatisieren ihn Schritt für Schritt entlang Ihrer bestehenden Systeme. Kein Grossprojekt, sondern ein klar abgegrenzter erster Anwendungsfall, der sich im Alltag bewährt und danach erweitert wird.",
+          "en": "We start with one concrete, frequent process – order intake, for instance – and automate it step by step along your existing systems. No major project, but a clearly scoped first use case that proves itself in daily operations and is then extended.",
+          "it": "Partiamo da un processo concreto e frequente, ad esempio l'acquisizione degli ordini, e lo automatizziamo passo dopo passo lungo i sistemi esistenti. Nessun grande progetto, ma un primo caso d'uso ben delimitato che si dimostra valido nell'operatività quotidiana e viene poi ampliato.",
+          "fr": "Nous commençons par un processus concret et fréquent – la saisie des commandes, par exemple – et l'automatisons pas à pas le long de vos systèmes existants. Pas de grand projet, mais un premier cas d'usage clairement délimité qui fait ses preuves au quotidien, puis s'étend."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Daten bleiben in der Schweiz oder in geeigneten Regionen; die Verarbeitung richtet sich nach revDSG/nFADP, bei Bedarf mit Blick auf den EDÖB.",
+          "en": "Data stays in Switzerland or in suitable regions; processing follows revDSG/nFADP, with the EDÖB in view where relevant.",
+          "it": "I dati restano in Svizzera o in regioni idonee; il trattamento segue la revLPD/nLPD, tenendo conto dell'IFPDT ove pertinente.",
+          "fr": "Les données restent en Suisse ou dans des régions adaptées ; le traitement suit la nLPD/revLPD, en tenant compte du PFPDT le cas échéant."
+        },
+        {
+          "de": "Der Mensch behält die Kontrolle: Bei Unsicherheit legt die KI den Fall vor, statt eigenständig zu entscheiden.",
+          "en": "People stay in control: when uncertain, the AI presents the case rather than deciding on its own.",
+          "it": "La persona mantiene il controllo: in caso di incertezza l'IA sottopone il caso invece di decidere da sola.",
+          "fr": "L'humain garde le contrôle : en cas de doute, l'IA soumet le cas au lieu de décider seule."
+        },
+        {
+          "de": "Mehrsprachigkeit von Anfang an: Deutsch, Französisch und Italienisch werden gemeinsam berücksichtigt.",
+          "en": "Multilingual from the start: German, French and Italian are considered together.",
+          "it": "Multilingue fin dall'inizio: tedesco, francese e italiano vengono considerati insieme.",
+          "fr": "Multilingue dès le départ : l'allemand, le français et l'italien sont pris en compte ensemble."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Muss ich unser TMS oder ERP ersetzen?",
+        "en": "Do I have to replace our TMS or ERP?",
+        "it": "Devo sostituire il nostro TMS o ERP?",
+        "fr": "Dois-je remplacer notre TMS ou ERP ?"
+      },
+      "a": {
+        "de": "Nein. Wir setzen auf Ihren bestehenden Systemen auf. Die KI liest, ergänzt und verbindet Daten über Schnittstellen, statt Ihre Software abzulösen. Ziel ist, vorhandene Werkzeuge besser zusammenspielen zu lassen.",
+        "en": "No. We build on your existing systems. The AI reads, enriches and connects data through interfaces rather than replacing your software. The goal is to make the tools you already have work together better.",
+        "it": "No. Ci basiamo sui vostri sistemi esistenti. L'IA legge, arricchisce e collega i dati tramite interfacce anziché sostituire il software. L'obiettivo è far collaborare meglio gli strumenti che avete già.",
+        "fr": "Non. Nous nous appuyons sur vos systèmes existants. L'IA lit, enrichit et relie les données via des interfaces, sans remplacer vos logiciels. L'objectif est de mieux faire fonctionner ensemble les outils que vous avez déjà."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie zuverlässig erkennt die KI Aufträge aus PDF und E-Mail?",
+        "en": "How reliably does the AI read orders from PDF and email?",
+        "it": "Quanto è affidabile l'IA nel leggere ordini da PDF ed e-mail?",
+        "fr": "Avec quelle fiabilité l'IA lit-elle les commandes en PDF et e-mail ?"
+      },
+      "a": {
+        "de": "Die Erkennung ist in der Regel hoch, aber nie als fehlerfrei zu betrachten. Deshalb legt die KI erkannte Aufträge zur Freigabe vor und markiert unsichere Felder. Ihr Team prüft im Zweifel, statt jeden Auftrag von Grund auf zu erfassen.",
+        "en": "Recognition is usually high but should never be treated as flawless. That is why the AI presents recognised orders for release and flags uncertain fields. Your team checks in case of doubt instead of capturing every order from scratch.",
+        "it": "Il riconoscimento è di norma elevato, ma non va mai considerato infallibile. Per questo l'IA propone gli ordini riconosciuti per l'approvazione e segnala i campi incerti. In caso di dubbio il vostro team controlla, invece di inserire ogni ordine da zero.",
+        "fr": "La reconnaissance est généralement élevée, mais ne doit jamais être considérée comme parfaite. C'est pourquoi l'IA présente les commandes reconnues pour validation et signale les champs incertains. En cas de doute, votre équipe vérifie au lieu de tout ressaisir."
+      }
+    },
+    {
+      "q": {
+        "de": "Kann der Telefonassistent wirklich auf Deutsch, Französisch und Italienisch antworten?",
+        "en": "Can the phone assistant really answer in German, French and Italian?",
+        "it": "L'assistente telefonico può davvero rispondere in tedesco, francese e italiano?",
+        "fr": "L'assistant téléphonique peut-il vraiment répondre en allemand, français et italien ?"
+      },
+      "a": {
+        "de": "Ja. Der Assistent ist auf die Schweizer Mehrsprachigkeit ausgelegt und wechselt je nach anrufender Person die Sprache. Für komplexe Anliegen übergibt er strukturiert an Ihr Team, statt zu raten.",
+        "en": "Yes. The assistant is designed for Swiss multilingualism and switches language depending on the caller. For complex matters it hands over to your team in a structured way rather than guessing.",
+        "it": "Sì. L'assistente è pensato per il multilinguismo svizzero e cambia lingua a seconda di chi chiama. Per le richieste complesse trasferisce in modo strutturato al vostro team, invece di tirare a indovinare.",
+        "fr": "Oui. L'assistant est conçu pour le multilinguisme suisse et change de langue selon l'appelant. Pour les demandes complexes, il transmet à votre équipe de manière structurée plutôt que de deviner."
+      }
+    },
+    {
+      "q": {
+        "de": "Was passiert mit unseren Sendungs- und Kundendaten?",
+        "en": "What happens to our shipment and customer data?",
+        "it": "Cosa succede ai nostri dati di spedizione e dei clienti?",
+        "fr": "Qu'advient-il de nos données d'expédition et clients ?"
+      },
+      "a": {
+        "de": "Die Verarbeitung richtet sich nach dem revDSG/nFADP. Daten bleiben nach Möglichkeit in der Schweiz oder in geeigneten Regionen, Zugriffe werden geregelt und dokumentiert. Wir klären Datenschutzfragen vor der Umsetzung gemeinsam mit Ihnen.",
+        "en": "Processing follows the revDSG/nFADP. Data stays in Switzerland or suitable regions where possible, and access is governed and documented. We clarify data-protection questions with you before implementation.",
+        "it": "Il trattamento segue la revLPD/nLPD. Ove possibile i dati restano in Svizzera o in regioni idonee, gli accessi sono regolati e documentati. Chiariamo con voi le questioni di protezione dei dati prima dell'implementazione.",
+        "fr": "Le traitement suit la nLPD/revLPD. Les données restent si possible en Suisse ou dans des régions adaptées, et les accès sont encadrés et documentés. Nous clarifions les questions de protection des données avec vous avant la mise en œuvre."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie schnell ist ein erster Anwendungsfall einsatzbereit?",
+        "en": "How quickly is a first use case ready?",
+        "it": "Quanto rapidamente è pronto un primo caso d'uso?",
+        "fr": "En combien de temps un premier cas d'usage est-il prêt ?"
+      },
+      "a": {
+        "de": "Das hängt von Ihren Systemen und Datenquellen ab. Wir beginnen bewusst klein mit einem klar abgegrenzten Vorgang, damit Sie den Nutzen früh im Alltag sehen und danach entscheiden, was als Nächstes automatisiert wird.",
+        "en": "That depends on your systems and data sources. We deliberately start small with a clearly scoped process so you see the benefit early in daily operations and then decide what to automate next.",
+        "it": "Dipende dai vostri sistemi e dalle fonti di dati. Iniziamo volutamente in piccolo con un processo ben delimitato, così vedete presto il beneficio nell'operatività e decidete poi cosa automatizzare in seguito.",
+        "fr": "Cela dépend de vos systèmes et sources de données. Nous commençons volontairement petit, avec un processus bien délimité, afin que vous voyiez le bénéfice tôt au quotidien et décidiez ensuite quoi automatiser."
+      }
+    },
+    {
+      "q": {
+        "de": "Ersetzt die KI unsere Disponentinnen und Disponenten?",
+        "en": "Does the AI replace our dispatchers?",
+        "it": "L'IA sostituisce i nostri operatori di logistica?",
+        "fr": "L'IA remplace-t-elle nos répartiteurs ?"
+      },
+      "a": {
+        "de": "Nein. Sie übernimmt wiederkehrende, zeitraubende Routine – Abtippen, Standardauskünfte, Datenabgleich – und gibt Ihrem Team Zeit für Ausnahmen, Kundenbeziehungen und Entscheidungen, die Erfahrung verlangen.",
+        "en": "No. It takes over recurring, time-consuming routine – re-keying, standard enquiries, data matching – and frees your team for exceptions, customer relationships and decisions that require experience.",
+        "it": "No. Si occupa della routine ripetitiva e dispendiosa – digitazione, informazioni standard, confronto dati – e libera il vostro team per le eccezioni, le relazioni con i clienti e le decisioni che richiedono esperienza.",
+        "fr": "Non. Elle prend en charge la routine répétitive et chronophage – ressaisie, renseignements standards, rapprochement de données – et libère votre équipe pour les exceptions, la relation client et les décisions qui exigent de l'expérience."
+      }
+    }
+  ]
+}

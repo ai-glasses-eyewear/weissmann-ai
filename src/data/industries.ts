@@ -26,7 +26,7 @@ export interface IndustryDef {
 
 export const INDUSTRIES: IndustryDef[] = [
   {
-    id: 'healthcare', order: 1, status: 'draft',
+    id: 'healthcare', order: 1, status: 'live',
     slug: { de: 'gesundheitswesen', en: 'healthcare', it: 'sanita', fr: 'sante' },
     name: { de: 'Gesundheitswesen', en: 'Healthcare', it: 'Sanità', fr: 'Santé' },
     tagline: {
@@ -38,7 +38,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['phone-assistant', 'websites', 'automation'],
   },
   {
-    id: 'dental', order: 2, status: 'draft',
+    id: 'dental', order: 2, status: 'live',
     slug: { de: 'zahnarztpraxen', en: 'dental-practices', it: 'studi-dentistici', fr: 'cabinets-dentaires' },
     name: { de: 'Zahnarztpraxen', en: 'Dental Practices', it: 'Studi dentistici', fr: 'Cabinets dentaires' },
     tagline: {
@@ -50,7 +50,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['phone-assistant', 'websites'],
   },
   {
-    id: 'medical-clinics', order: 3, status: 'draft',
+    id: 'medical-clinics', order: 3, status: 'live',
     slug: { de: 'kliniken', en: 'medical-clinics', it: 'cliniche', fr: 'cliniques' },
     name: { de: 'Kliniken', en: 'Medical Clinics', it: 'Cliniche', fr: 'Cliniques' },
     tagline: {
@@ -62,7 +62,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['phone-assistant', 'automation', 'integrations'],
   },
   {
-    id: 'restaurants', order: 4, status: 'draft',
+    id: 'restaurants', order: 4, status: 'live',
     slug: { de: 'gastronomie', en: 'restaurants', it: 'ristoranti', fr: 'restaurants' },
     name: { de: 'Gastronomie', en: 'Restaurants', it: 'Ristoranti', fr: 'Restaurants' },
     tagline: {
@@ -74,7 +74,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['phone-assistant', 'websites'],
   },
   {
-    id: 'hotels', order: 5, status: 'draft',
+    id: 'hotels', order: 5, status: 'live',
     slug: { de: 'hotellerie', en: 'hotels', it: 'hotel', fr: 'hotellerie' },
     name: { de: 'Hotellerie', en: 'Hotels', it: 'Hotel', fr: 'Hôtellerie' },
     tagline: {
@@ -86,7 +86,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['phone-assistant', 'websites'],
   },
   {
-    id: 'retail', order: 6, status: 'draft',
+    id: 'retail', order: 6, status: 'live',
     slug: { de: 'einzelhandel', en: 'retail', it: 'commercio-al-dettaglio', fr: 'commerce-de-detail' },
     name: { de: 'Einzelhandel', en: 'Retail', it: 'Commercio al dettaglio', fr: 'Commerce de détail' },
     tagline: {
@@ -98,7 +98,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['websites', 'seo', 'google-ads'],
   },
   {
-    id: 'real-estate', order: 7, status: 'draft',
+    id: 'real-estate', order: 7, status: 'live',
     slug: { de: 'immobilien', en: 'real-estate', it: 'immobiliare', fr: 'immobilier' },
     name: { de: 'Immobilien', en: 'Real Estate', it: 'Immobiliare', fr: 'Immobilier' },
     tagline: {
@@ -110,7 +110,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['phone-assistant', 'websites', 'google-ads'],
   },
   {
-    id: 'insurance', order: 8, status: 'draft',
+    id: 'insurance', order: 8, status: 'live',
     slug: { de: 'versicherungen', en: 'insurance', it: 'assicurazioni', fr: 'assurances' },
     name: { de: 'Versicherungen', en: 'Insurance', it: 'Assicurazioni', fr: 'Assurances' },
     tagline: {
@@ -122,7 +122,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['automation', 'agents', 'consulting'],
   },
   {
-    id: 'professional-services', order: 9, status: 'draft',
+    id: 'professional-services', order: 9, status: 'live',
     slug: { de: 'dienstleister', en: 'professional-services', it: 'servizi-professionali', fr: 'services-professionnels' },
     name: { de: 'Dienstleister', en: 'Professional Services', it: 'Servizi professionali', fr: 'Services professionnels' },
     tagline: {
@@ -134,7 +134,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['phone-assistant', 'seo', 'automation', 'consulting'],
   },
   {
-    id: 'beauty', order: 10, status: 'draft',
+    id: 'beauty', order: 10, status: 'live',
     slug: { de: 'beauty-wellness', en: 'beauty-wellness', it: 'bellezza-benessere', fr: 'beaute-bien-etre' },
     name: { de: 'Beauty & Wellness', en: 'Beauty & Wellness', it: 'Bellezza & Benessere', fr: 'Beauté & Bien-être' },
     tagline: {
@@ -146,7 +146,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['phone-assistant', 'websites'],
   },
   {
-    id: 'finance', order: 11, status: 'draft',
+    id: 'finance', order: 11, status: 'live',
     slug: { de: 'finanzwesen', en: 'finance', it: 'finanza', fr: 'finance' },
     name: { de: 'Finanzwesen', en: 'Finance', it: 'Finanza', fr: 'Finance' },
     tagline: {
@@ -158,7 +158,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['automation', 'agents', 'integrations', 'consulting'],
   },
   {
-    id: 'construction', order: 12, status: 'draft',
+    id: 'construction', order: 12, status: 'live',
     slug: { de: 'baugewerbe', en: 'construction', it: 'edilizia', fr: 'construction' },
     name: { de: 'Baugewerbe', en: 'Construction', it: 'Edilizia', fr: 'Construction' },
     tagline: {
@@ -170,7 +170,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['phone-assistant', 'websites', 'automation'],
   },
   {
-    id: 'manufacturing', order: 13, status: 'draft',
+    id: 'manufacturing', order: 13, status: 'live',
     slug: { de: 'produktion', en: 'manufacturing', it: 'produzione', fr: 'industrie' },
     name: { de: 'Produktion', en: 'Manufacturing', it: 'Produzione', fr: 'Industrie' },
     tagline: {
@@ -182,7 +182,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['automation', 'integrations', 'consulting'],
   },
   {
-    id: 'logistics', order: 14, status: 'draft',
+    id: 'logistics', order: 14, status: 'live',
     slug: { de: 'logistik', en: 'logistics', it: 'logistica', fr: 'logistique' },
     name: { de: 'Logistik', en: 'Logistics', it: 'Logistica', fr: 'Logistique' },
     tagline: {
@@ -194,7 +194,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['automation', 'integrations', 'phone-assistant'],
   },
   {
-    id: 'education', order: 15, status: 'draft',
+    id: 'education', order: 15, status: 'live',
     slug: { de: 'bildung', en: 'education', it: 'istruzione', fr: 'education' },
     name: { de: 'Bildung', en: 'Education', it: 'Istruzione', fr: 'Éducation' },
     tagline: {
@@ -206,7 +206,7 @@ export const INDUSTRIES: IndustryDef[] = [
     relatedServices: ['phone-assistant', 'websites', 'seo'],
   },
   {
-    id: 'e-commerce', order: 16, status: 'draft',
+    id: 'e-commerce', order: 16, status: 'live',
     slug: { de: 'e-commerce', en: 'e-commerce', it: 'e-commerce', fr: 'e-commerce' },
     name: { de: 'E-Commerce', en: 'E-Commerce', it: 'E-Commerce', fr: 'E-Commerce' },
     tagline: {

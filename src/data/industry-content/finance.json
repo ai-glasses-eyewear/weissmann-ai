@@ -1,0 +1,289 @@
+{
+  "id": "finance",
+  "title": {
+    "de": "KI für Finanzdienstleister in der Schweiz | Weissmann AI",
+    "en": "AI for Financial Services in Switzerland | Weissmann AI",
+    "it": "IA per i servizi finanziari in Svizzera | Weissmann AI",
+    "fr": "IA pour les services financiers en Suisse | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie Schweizer Finanzdienstleister mit praktischer KI Prozesse automatisieren, Systeme verbinden und compliance-bewusst arbeiten – von Automation über Agenten bis Integration.",
+    "en": "How Swiss financial-services firms use practical AI to automate processes, connect systems and work compliance-aware — from automation and agents to integration.",
+    "it": "Come gli operatori finanziari svizzeri usano l'IA pratica per automatizzare i processi, collegare i sistemi e lavorare con attenzione alla compliance.",
+    "fr": "Comment les acteurs financiers suisses utilisent l'IA pratique pour automatiser les processus, connecter les systèmes et travailler en conscience de la conformité."
+  },
+  "kicker": {
+    "de": "Branche: Finanzdienstleistungen",
+    "en": "Sector: Financial services",
+    "it": "Settore: Servizi finanziari",
+    "fr": "Secteur : Services financiers"
+  },
+  "h1": {
+    "de": "Praktische KI für Finanzdienstleister in der Schweiz",
+    "en": "Practical AI for Financial Services in Switzerland",
+    "it": "IA pratica per i servizi finanziari in Svizzera",
+    "fr": "L'IA pratique pour les services financiers en Suisse"
+  },
+  "answerFirst": {
+    "de": "Finanzdienstleister in der Schweiz setzen praktische KI vor allem für wiederkehrende Aufgaben ein: Dokumente prüfen, Daten zwischen Kernsystemen abgleichen, Anfragen vorqualifizieren und Berichte vorbereiten. Richtig umgesetzt entlastet das Fach- und Compliance-Teams, verkürzt Durchlaufzeiten und hält sensible Kundendaten unter Kontrolle – mit Mensch-im-Prozess und revDSG-konformer Datenverarbeitung.",
+    "en": "Financial-services firms in Switzerland use practical AI mainly for repetitive work: checking documents, reconciling data across core systems, pre-qualifying requests and preparing reports. Done properly, it frees up specialist and compliance teams, shortens turnaround times and keeps sensitive client data under control — with a human in the loop and revDSG/nFADP-compliant data handling.",
+    "it": "Gli operatori finanziari in Svizzera usano l'IA pratica soprattutto per attività ripetitive: verificare documenti, riconciliare dati tra i sistemi centrali, prequalificare le richieste e preparare i report. Se implementata bene, alleggerisce i team specialistici e di compliance, riduce i tempi di lavorazione e mantiene sotto controllo i dati sensibili dei clienti, con l'intervento umano e un trattamento conforme alla revLPD.",
+    "fr": "Les prestataires de services financiers en Suisse utilisent l'IA pratique surtout pour les tâches répétitives : vérifier des documents, réconcilier les données entre systèmes centraux, préqualifier les demandes et préparer des rapports. Bien mise en œuvre, elle soulage les équipes métier et conformité, réduit les délais de traitement et garde le contrôle des données clients sensibles, avec un humain dans la boucle et un traitement conforme à la nLPD."
+  },
+  "challenges": [
+    {
+      "de": "Zeitintensive, fehleranfällige Abläufe bei Onboarding, KYC-Prüfung und Dokumentenerfassung",
+      "en": "Time-consuming, error-prone onboarding, KYC checks and document capture",
+      "it": "Onboarding, verifiche KYC e acquisizione documenti lenti e soggetti a errori",
+      "fr": "Onboarding, contrôles KYC et saisie de documents chronophages et sources d'erreurs"
+    },
+    {
+      "de": "Kundendaten liegen verstreut über Kernsystem, CRM, E-Mail und Excel-Tabellen",
+      "en": "Client data scattered across core systems, CRM, email and spreadsheets",
+      "it": "Dati dei clienti dispersi tra sistema centrale, CRM, e-mail e fogli Excel",
+      "fr": "Données clients dispersées entre système central, CRM, e-mails et tableurs"
+    },
+    {
+      "de": "Hohe regulatorische Anforderungen und Nachweispflichten (revDSG, EDÖB, FINMA-Aufsicht)",
+      "en": "High regulatory and audit-trail demands (revDSG/nFADP, FDPIC, FINMA supervision)",
+      "it": "Requisiti normativi e obblighi di tracciabilità elevati (revLPD, IFPDT, vigilanza FINMA)",
+      "fr": "Fortes exigences réglementaires et de traçabilité (nLPD, PFPDT, surveillance FINMA)"
+    },
+    {
+      "de": "Knappe Fachkräfte bei gleichzeitig wachsendem Volumen an Anfragen und Reports",
+      "en": "Scarce specialists facing a growing volume of requests and reports",
+      "it": "Personale specializzato limitato a fronte di volumi crescenti di richieste e report",
+      "fr": "Spécialistes rares face à un volume croissant de demandes et de rapports"
+    },
+    {
+      "de": "Sensible Daten verlangen strenge Zugriffskontrolle und Datenhaltung in der Schweiz",
+      "en": "Sensitive data requires strict access control and data residency in Switzerland",
+      "it": "I dati sensibili richiedono controlli di accesso rigorosi e residenza dei dati in Svizzera",
+      "fr": "Les données sensibles exigent un contrôle d'accès strict et un hébergement en Suisse"
+    },
+    {
+      "de": "Silo-Systeme, die nur über manuelle Doppelerfassung zusammenkommen",
+      "en": "Siloed systems that only connect through manual double entry",
+      "it": "Sistemi a silos che si collegano solo con doppia registrazione manuale",
+      "fr": "Systèmes en silos qui ne communiquent que par double saisie manuelle"
+    }
+  ],
+  "opportunities": [
+    {
+      "title": {
+        "de": "Wiederkehrende Prozesse automatisieren",
+        "en": "Automate repetitive processes",
+        "it": "Automatizzare i processi ripetitivi",
+        "fr": "Automatiser les processus répétitifs"
+      },
+      "text": {
+        "de": "Von der Dokumentenprüfung über den Datenabgleich bis zur Reporting-Vorbereitung: Mit AI Automation lassen sich Routineschritte zuverlässig abbilden – zum Beispiel das Vorsortieren eingehender Unterlagen –, sodass Ihr Team sich auf Beurteilung und Kundenkontakt konzentriert.",
+        "en": "From document checks and data reconciliation to report preparation: AI Automation can reliably handle routine steps — for example pre-sorting incoming paperwork — so your team focuses on judgement and client contact.",
+        "it": "Dalla verifica dei documenti alla riconciliazione dei dati fino alla preparazione dei report: con l'AI Automation i passaggi di routine — per esempio la preselezione della documentazione in arrivo — vengono gestiti in modo affidabile, così il team si concentra su valutazione e relazione con il cliente.",
+        "fr": "De la vérification des documents à la réconciliation des données jusqu'à la préparation des rapports : l'AI Automation prend en charge les étapes de routine — par exemple le pré-tri des dossiers entrants — pour que votre équipe se concentre sur l'analyse et la relation client."
+      }
+    },
+    {
+      "title": {
+        "de": "Assistenz für die Sachbearbeitung",
+        "en": "Support for case handling",
+        "it": "Assistenza per l'istruttoria",
+        "fr": "Assistance au traitement des dossiers"
+      },
+      "text": {
+        "de": "KI-Agenten können Mitarbeitende unterstützen, indem sie typischerweise Informationen aus mehreren Quellen zusammentragen, Anfragen vorqualifizieren oder Antwortentwürfe vorbereiten – stets mit Mensch-im-Prozess für die finale Entscheidung.",
+        "en": "AI Agents can support staff by typically gathering information from several sources, pre-qualifying requests or drafting replies — always with a human in the loop for the final decision.",
+        "it": "Gli AI Agents possono supportare il personale raccogliendo tipicamente informazioni da più fonti, prequalificando le richieste o preparando bozze di risposta, sempre con l'intervento umano per la decisione finale.",
+        "fr": "Les AI Agents peuvent épauler les collaborateurs en rassemblant généralement des informations de plusieurs sources, en préqualifiant les demandes ou en préparant des projets de réponse — toujours avec un humain dans la boucle pour la décision finale."
+      }
+    },
+    {
+      "title": {
+        "de": "Kernsysteme und Tools verbinden",
+        "en": "Connect core systems and tools",
+        "it": "Collegare sistemi centrali e strumenti",
+        "fr": "Connecter systèmes centraux et outils"
+      },
+      "text": {
+        "de": "AI Integrations verknüpfen Kernbankensystem, CRM, Portale und Postfächer, damit Daten fliessen statt doppelt erfasst zu werden. So entsteht ein konsistenter Stand ohne Medienbrüche.",
+        "en": "AI Integrations link your core banking system, CRM, portals and mailboxes so data flows instead of being entered twice — creating one consistent state without media breaks.",
+        "it": "Le AI Integrations connettono sistema centrale, CRM, portali e caselle di posta, così i dati circolano invece di essere inseriti due volte, con uno stato coerente e senza interruzioni di supporto.",
+        "fr": "Les AI Integrations relient système central, CRM, portails et boîtes de réception pour que les données circulent au lieu d'être saisies deux fois — un état cohérent, sans rupture de support."
+      }
+    },
+    {
+      "title": {
+        "de": "Compliance-bewusst starten",
+        "en": "Start compliance-aware",
+        "it": "Partire con attenzione alla compliance",
+        "fr": "Démarrer en conscience de la conformité"
+      },
+      "text": {
+        "de": "Mit AI Consulting klären wir zuerst Use Cases, Datenflüsse und Datenschutz nach revDSG, bevor etwas gebaut wird – ein pragmatischer Fahrplan statt Technik um ihrer selbst willen.",
+        "en": "With AI Consulting we first clarify use cases, data flows and revDSG/nFADP data protection before anything is built — a pragmatic roadmap rather than technology for its own sake.",
+        "it": "Con l'AI Consulting chiariamo prima i casi d'uso, i flussi di dati e la protezione dei dati secondo la revLPD, prima di costruire qualcosa: una roadmap pragmatica invece della tecnologia fine a sé stessa.",
+        "fr": "Avec l'AI Consulting, nous clarifions d'abord les cas d'usage, les flux de données et la protection des données selon la nLPD avant de construire quoi que ce soit — une feuille de route pragmatique plutôt que la technique pour elle-même."
+      }
+    }
+  ],
+  "sections": [
+    {
+      "heading": {
+        "de": "Illustrative Einsatzbeispiele",
+        "en": "Illustrative use cases",
+        "it": "Esempi d'uso illustrativi",
+        "fr": "Exemples d'usage illustratifs"
+      },
+      "paragraphs": [
+        {
+          "de": "Die folgenden Beispiele sind illustrativ und zeigen mögliche Anwendungen – sie sind keine gemessenen Ergebnisse oder Referenzprojekte.",
+          "en": "The examples below are illustrative and show possible applications — they are not measured results or reference projects.",
+          "it": "Gli esempi seguenti sono illustrativi e mostrano applicazioni possibili: non sono risultati misurati né progetti di riferimento.",
+          "fr": "Les exemples ci-dessous sont illustratifs et montrent des applications possibles : ce ne sont pas des résultats mesurés ni des projets de référence."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Beispiel: Eingehende Onboarding-Unterlagen werden automatisch klassifiziert, auf Vollständigkeit geprüft und der zuständigen Person vorgelegt.",
+          "en": "Example: incoming onboarding documents are automatically classified, checked for completeness and presented to the responsible person.",
+          "it": "Esempio: i documenti di onboarding in arrivo vengono classificati automaticamente, verificati per completezza e presentati alla persona responsabile.",
+          "fr": "Exemple : les documents d'onboarding entrants sont automatiquement classés, vérifiés quant à leur complétude et présentés à la personne responsable."
+        },
+        {
+          "de": "Beispiel: Daten aus einem Kundenportal werden regelmässig mit dem CRM abgeglichen, Abweichungen werden markiert.",
+          "en": "Example: data from a client portal is regularly reconciled with the CRM, and discrepancies are flagged.",
+          "it": "Esempio: i dati di un portale clienti vengono riconciliati regolarmente con il CRM e le discrepanze vengono segnalate.",
+          "fr": "Exemple : les données d'un portail client sont régulièrement réconciliées avec le CRM et les écarts sont signalés."
+        },
+        {
+          "de": "Beispiel: Ein Assistent stellt für eine Kreditanfrage typischerweise relevante Unterlagen zusammen und erstellt einen Entwurf zur Prüfung.",
+          "en": "Example: an assistant typically compiles the relevant documents for a credit request and prepares a draft for review.",
+          "it": "Esempio: un assistente raccoglie tipicamente i documenti rilevanti per una richiesta di credito e prepara una bozza da rivedere.",
+          "fr": "Exemple : un assistant rassemble généralement les documents pertinents pour une demande de crédit et prépare un projet à examiner."
+        },
+        {
+          "de": "Beispiel: Wiederkehrende Reports werden vorbereitet, während die inhaltliche Freigabe bei Fachpersonen bleibt.",
+          "en": "Example: recurring reports are prepared, while sign-off on content stays with your specialists.",
+          "it": "Esempio: i report ricorrenti vengono preparati, mentre l'approvazione dei contenuti resta agli specialisti.",
+          "fr": "Exemple : les rapports récurrents sont préparés, tandis que la validation du contenu reste chez vos spécialistes."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "So gehen wir vor",
+        "en": "How we work",
+        "it": "Come lavoriamo",
+        "fr": "Notre façon de travailler"
+      },
+      "paragraphs": [
+        {
+          "de": "Wir beginnen klein und konkret: ein klar umrissener Prozess, messbare Ziele und ein definierter Datenfluss. Statt einer grossen Plattform steht ein realer Engpass im Zentrum, den KI spürbar entlastet.",
+          "en": "We start small and concrete: a clearly scoped process, measurable goals and a defined data flow. Instead of a large platform, the focus is a real bottleneck that AI noticeably relieves.",
+          "it": "Partiamo in piccolo e in concreto: un processo ben delimitato, obiettivi misurabili e un flusso di dati definito. Invece di una grande piattaforma, al centro c'è un collo di bottiglia reale che l'IA alleggerisce in modo tangibile.",
+          "fr": "Nous commençons petit et concret : un processus clairement délimité, des objectifs mesurables et un flux de données défini. Plutôt qu'une grande plateforme, le centre d'attention est un véritable goulet d'étranglement que l'IA soulage sensiblement."
+        },
+        {
+          "de": "Sensible Schritte behalten eine menschliche Kontrolle. Ergebnisse bleiben nachvollziehbar, damit sie in Ihre bestehenden Kontroll- und Nachweisprozesse passen. Erst wenn ein Use Case trägt, wird er ausgeweitet.",
+          "en": "Sensitive steps keep a human in control. Results stay traceable so they fit into your existing control and audit processes. Only once a use case proves its value do we extend it.",
+          "it": "I passaggi sensibili mantengono il controllo umano. I risultati restano tracciabili per inserirsi nei vostri processi di controllo e verifica esistenti. Solo quando un caso d'uso dimostra il suo valore lo estendiamo.",
+          "fr": "Les étapes sensibles gardent un contrôle humain. Les résultats restent traçables afin de s'intégrer à vos processus de contrôle et d'audit existants. Ce n'est qu'une fois qu'un cas d'usage a fait ses preuves que nous l'étendons."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz und Compliance im Blick",
+        "en": "Data protection and compliance in focus",
+        "it": "Protezione dei dati e compliance al centro",
+        "fr": "Protection des données et conformité au centre"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Finanzsektor ist stark reguliert. Wir bauen Lösungen so, dass sie sich in Ihr bestehendes Governance- und Kontrollumfeld einfügen; regulatorische Verantwortung und Aufsicht (etwa durch die FINMA) bleiben bei Ihnen und Ihren Fachstellen.",
+          "en": "The financial sector is heavily regulated. We build solutions to fit into your existing governance and control environment; regulatory responsibility and supervision (for example by FINMA) remain with you and your specialist functions.",
+          "it": "Il settore finanziario è fortemente regolamentato. Costruiamo soluzioni che si inseriscono nel vostro ambiente di governance e controllo esistente; la responsabilità normativa e la vigilanza (per esempio da parte della FINMA) restano a voi e alle vostre funzioni specialistiche.",
+          "fr": "Le secteur financier est fortement réglementé. Nous concevons des solutions qui s'intègrent à votre environnement de gouvernance et de contrôle existant ; la responsabilité réglementaire et la surveillance (par exemple par la FINMA) restent chez vous et vos fonctions spécialisées."
+        },
+        {
+          "de": "Personendaten werden nach revDSG sorgfältig behandelt: Zugriffe werden begrenzt, Datenflüsse dokumentiert und, wo sinnvoll, eine Datenhaltung in der Schweiz gewählt. Wir treffen keine Compliance-Zusicherungen an Ihrer Stelle, sondern gestalten die Umsetzung so, dass Ihre Prüfung leichter fällt.",
+          "en": "Personal data is handled carefully under revDSG/nFADP: access is limited, data flows are documented and, where sensible, data is kept in Switzerland. We make no compliance assurances on your behalf; instead we shape the implementation so your own review is easier.",
+          "it": "I dati personali sono trattati con cura secondo la revLPD: gli accessi sono limitati, i flussi di dati documentati e, dove sensato, i dati sono mantenuti in Svizzera. Non forniamo garanzie di compliance al posto vostro, ma progettiamo l'implementazione in modo da facilitare la vostra verifica.",
+          "fr": "Les données personnelles sont traitées avec soin selon la nLPD : les accès sont limités, les flux de données documentés et, lorsque c'est pertinent, les données sont conservées en Suisse. Nous ne donnons aucune garantie de conformité à votre place ; nous concevons la mise en œuvre pour faciliter votre propre contrôle."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ist der Einsatz von KI im Schweizer Finanzsektor zulässig?",
+        "en": "Is using AI allowed in the Swiss financial sector?",
+        "it": "L'uso dell'IA è consentito nel settore finanziario svizzero?",
+        "fr": "L'utilisation de l'IA est-elle autorisée dans le secteur financier suisse ?"
+      },
+      "a": {
+        "de": "Ja, sofern regulatorische und datenschutzrechtliche Vorgaben eingehalten werden. Der Finanzsektor untersteht besonderer Aufsicht (u. a. FINMA) und dem revDSG. Wir treffen keine regulatorischen Zusicherungen, sondern gestalten Lösungen so, dass sie sich in Ihre bestehenden Kontroll- und Governance-Prozesse einordnen lassen.",
+        "en": "Yes, provided regulatory and data-protection requirements are met. The financial sector is subject to specific supervision (including FINMA) and to revDSG/nFADP. We make no regulatory assurances; we design solutions so they fit into your existing control and governance processes.",
+        "it": "Sì, a condizione che siano rispettati i requisiti normativi e di protezione dei dati. Il settore finanziario è soggetto a una vigilanza specifica (tra cui la FINMA) e alla revLPD. Non forniamo garanzie normative; progettiamo soluzioni che si inseriscono nei vostri processi di controllo e governance esistenti.",
+        "fr": "Oui, à condition de respecter les exigences réglementaires et de protection des données. Le secteur financier est soumis à une surveillance spécifique (notamment la FINMA) et à la nLPD. Nous ne donnons aucune garantie réglementaire ; nous concevons des solutions qui s'intègrent à vos processus de contrôle et de gouvernance existants."
+      }
+    },
+    {
+      "q": {
+        "de": "Bleiben unsere Kundendaten in der Schweiz?",
+        "en": "Does our client data stay in Switzerland?",
+        "it": "I dati dei nostri clienti restano in Svizzera?",
+        "fr": "Nos données clients restent-elles en Suisse ?"
+      },
+      "a": {
+        "de": "Wo es sinnvoll und gewünscht ist, richten wir Datenflüsse und Datenhaltung auf Schweizer bzw. lokale Verarbeitung aus. Zugriffe werden begrenzt und dokumentiert. Die konkrete Ausgestaltung klären wir vorab gemeinsam im Rahmen der Beratung.",
+        "en": "Where sensible and desired, we align data flows and storage with Swiss or local processing. Access is limited and documented. The specific setup is clarified together in advance during consulting.",
+        "it": "Dove è sensato e desiderato, orientiamo i flussi e la conservazione dei dati verso un trattamento svizzero o locale. Gli accessi sono limitati e documentati. La configurazione concreta viene chiarita insieme in anticipo, nell'ambito della consulenza.",
+        "fr": "Lorsque c'est pertinent et souhaité, nous orientons les flux et le stockage des données vers un traitement suisse ou local. Les accès sont limités et documentés. La configuration concrète est clarifiée ensemble au préalable, dans le cadre du conseil."
+      }
+    },
+    {
+      "q": {
+        "de": "Ersetzt KI unsere Sachbearbeiter?",
+        "en": "Will AI replace our case handlers?",
+        "it": "L'IA sostituirà i nostri addetti all'istruttoria?",
+        "fr": "L'IA va-t-elle remplacer nos gestionnaires de dossiers ?"
+      },
+      "a": {
+        "de": "Nein. Der Ansatz ist Assistenz statt Ersatz: KI übernimmt wiederkehrende Vorarbeit, Beurteilung und Entscheidung bleiben bei Ihren Fachpersonen. Gerade in sensiblen Schritten arbeiten wir bewusst mit Mensch-im-Prozess.",
+        "en": "No. The approach is assistance, not replacement: AI takes on repetitive preparatory work, while assessment and decisions stay with your specialists. In sensitive steps in particular, we deliberately keep a human in the loop.",
+        "it": "No. L'approccio è assistenza, non sostituzione: l'IA si occupa del lavoro preparatorio ripetitivo, mentre valutazione e decisioni restano ai vostri specialisti. Soprattutto nei passaggi sensibili manteniamo volutamente l'intervento umano.",
+        "fr": "Non. L'approche est l'assistance, pas le remplacement : l'IA prend en charge le travail préparatoire répétitif, tandis que l'évaluation et les décisions restent chez vos spécialistes. Dans les étapes sensibles en particulier, nous gardons délibérément un humain dans la boucle."
+      }
+    },
+    {
+      "q": {
+        "de": "Wo fangen wir am besten an?",
+        "en": "Where is the best place to start?",
+        "it": "Da dove conviene iniziare?",
+        "fr": "Par où vaut-il mieux commencer ?"
+      },
+      "a": {
+        "de": "Mit einem klar umrissenen, wiederkehrenden Prozess mit hohem manuellem Aufwand – etwa Dokumentenprüfung oder Datenabgleich. So wird der Nutzen schnell sichtbar und das Risiko bleibt überschaubar, bevor weitere Use Cases folgen.",
+        "en": "With a clearly scoped, recurring process that involves a lot of manual effort — such as document checking or data reconciliation. The benefit becomes visible quickly and the risk stays manageable before further use cases follow.",
+        "it": "Da un processo ricorrente ben delimitato con molto lavoro manuale, come la verifica dei documenti o la riconciliazione dei dati. Il beneficio diventa visibile rapidamente e il rischio resta gestibile prima di aggiungere altri casi d'uso.",
+        "fr": "Par un processus récurrent bien délimité impliquant beaucoup de travail manuel — comme la vérification de documents ou la réconciliation de données. Le bénéfice devient rapidement visible et le risque reste maîtrisable avant d'ajouter d'autres cas d'usage."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Weissmann-Leistungen sind für uns relevant?",
+        "en": "Which Weissmann services are relevant for us?",
+        "it": "Quali servizi Weissmann sono rilevanti per noi?",
+        "fr": "Quels services Weissmann sont pertinents pour nous ?"
+      },
+      "a": {
+        "de": "Typischerweise eine Kombination: AI Consulting für Fahrplan und Datenschutz, AI Automation für Routineprozesse, AI Agents für Assistenzaufgaben und AI Integrations, um Ihre Systeme zu verbinden. Preise finden Sie auf den jeweiligen Leistungsseiten.",
+        "en": "Typically a combination: AI Consulting for roadmap and data protection, AI Automation for routine processes, AI Agents for assistance tasks and AI Integrations to connect your systems. You'll find prices on the respective service pages.",
+        "it": "Tipicamente una combinazione: AI Consulting per roadmap e protezione dei dati, AI Automation per i processi di routine, AI Agents per le attività di assistenza e AI Integrations per collegare i vostri sistemi. I prezzi sono indicati sulle rispettive pagine dei servizi.",
+        "fr": "Généralement une combinaison : AI Consulting pour la feuille de route et la protection des données, AI Automation pour les processus de routine, AI Agents pour les tâches d'assistance et AI Integrations pour connecter vos systèmes. Les prix figurent sur les pages de services correspondantes."
+      }
+    }
+  ]
+}

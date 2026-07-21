@@ -1,0 +1,261 @@
+{
+  "id": "insurance",
+  "title": {
+    "de": "Praktische KI für Versicherungen Schweiz | Weissmann AI",
+    "en": "Practical AI for Insurers in Switzerland | Weissmann AI",
+    "it": "IA pratica per assicurazioni in Svizzera | Weissmann AI",
+    "fr": "IA pratique pour l'assurance en Suisse | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie praktische KI Schweizer Versicherungen hilft: Anfragen qualifizieren, Routineprozesse automatisieren, Beratende entlasten – revDSG-konform und mit Mensch im Prozess.",
+    "en": "How practical AI helps Swiss insurers: qualify enquiries, automate routine processes and support advisors – revDSG-compliant with a human in the loop.",
+    "it": "Come l'IA pratica aiuta le assicurazioni svizzere: qualificare richieste, automatizzare processi di routine, supportare i consulenti, in conformità con la revLPD.",
+    "fr": "Comment l'IA pratique aide les assureurs suisses: qualifier les demandes, automatiser les processus de routine et épauler les conseillers, en conformité avec la nLPD."
+  },
+  "kicker": {
+    "de": "Branche: Versicherungen",
+    "en": "Sector: Insurance",
+    "it": "Settore: Assicurazioni",
+    "fr": "Secteur: Assurance"
+  },
+  "h1": {
+    "de": "Praktische KI für Versicherungen in der Schweiz",
+    "en": "Practical AI for Insurers in Switzerland",
+    "it": "IA pratica per le assicurazioni in Svizzera",
+    "fr": "L'IA pratique pour l'assurance en Suisse"
+  },
+  "answerFirst": {
+    "de": "Praktische KI hilft Schweizer Versicherungen, Anfragen rund um die Uhr zu qualifizieren, Routineprozesse wie Schadenerfassung und Policenänderungen zu automatisieren und Beratende mit schnellem Zugriff auf Vertragswissen zu entlasten. Richtig umgesetzt – revDSG-konform und mit Mensch im Prozess – verkürzt das die Antwortzeiten, senkt manuelle Arbeit und verbessert die Servicequalität über alle Sprachregionen.",
+    "en": "Practical AI helps Swiss insurers qualify enquiries around the clock, automate routine processes such as claims intake and policy changes, and support advisors with fast access to contract knowledge. Done right – revDSG-compliant and with a human in the loop – it shortens response times, reduces manual work and improves service quality across all language regions.",
+    "it": "L'IA pratica aiuta le assicurazioni svizzere a qualificare le richieste 24 ore su 24, ad automatizzare i processi di routine come l'apertura sinistri e le modifiche di polizza e a supportare i consulenti con un accesso rapido alle informazioni contrattuali. Se ben applicata – conforme alla revLPD e con supervisione umana – riduce i tempi di risposta e il lavoro manuale.",
+    "fr": "L'IA pratique aide les assureurs suisses à qualifier les demandes en continu, à automatiser les processus de routine comme la saisie des sinistres et les modifications de police, et à épauler les conseillers grâce à un accès rapide aux informations contractuelles. Bien mise en œuvre – conforme à la nLPD et avec supervision humaine – elle réduit les délais et le travail manuel."
+  },
+  "challenges": [
+    {
+      "de": "Hohes Volumen an Routineanfragen (Schadenstatus, Policenänderungen, Deckungsfragen) bindet Fachkräfte im Tagesgeschäft.",
+      "en": "High volume of routine enquiries (claim status, policy changes, coverage questions) ties up specialists in day-to-day work.",
+      "it": "Volume elevato di richieste di routine (stato sinistri, modifiche di polizza, domande sulle coperture) che impegna gli specialisti nel quotidiano.",
+      "fr": "Volume élevé de demandes de routine (état des sinistres, modifications de police, questions de couverture) qui mobilise les spécialistes au quotidien."
+    },
+    {
+      "de": "Dokumentenlastige, manuelle Prozesse: Schadenerfassung, Antragsprüfung und Datenübertragung aus PDFs und Formularen.",
+      "en": "Document-heavy, manual processes: claims intake, application review and data transfer from PDFs and forms.",
+      "it": "Processi manuali ad alta intensità documentale: apertura sinistri, verifica delle richieste e trasferimento dati da PDF e moduli.",
+      "fr": "Processus manuels à forte charge documentaire: saisie des sinistres, examen des demandes et transfert de données depuis des PDF et formulaires."
+    },
+    {
+      "de": "Eingehende Anfragen zu qualifizieren und an die richtige Fachperson zu leiten, kostet Zeit und führt zu Wartezeiten.",
+      "en": "Qualifying inbound enquiries and routing them to the right specialist costs time and creates waiting periods.",
+      "it": "Qualificare le richieste in entrata e indirizzarle allo specialista giusto richiede tempo e genera attese.",
+      "fr": "Qualifier les demandes entrantes et les orienter vers le bon spécialiste prend du temps et génère des attentes."
+    },
+    {
+      "de": "Hohe Sensibilität der Daten: Personen-, Gesundheits- und Finanzdaten erfordern strikte revDSG-/nFADP-Konformität.",
+      "en": "Highly sensitive data: personal, health and financial data require strict revDSG/nFADP compliance.",
+      "it": "Dati altamente sensibili: dati personali, sanitari e finanziari richiedono una rigorosa conformità alla revLPD/nLPD.",
+      "fr": "Données très sensibles: les données personnelles, de santé et financières exigent une stricte conformité à la nLPD/revLPD."
+    },
+    {
+      "de": "Mehrsprachiger Service über Deutsch-, Französisch- und Italienischsprachige Kantone hinweg.",
+      "en": "Multilingual service across German-, French- and Italian-speaking cantons.",
+      "it": "Servizio multilingue nei cantoni di lingua tedesca, francese e italiana.",
+      "fr": "Service multilingue dans les cantons germanophones, francophones et italophones."
+    },
+    {
+      "de": "Fragmentierte Daten und Altsysteme erschweren den schnellen Zugriff auf Vertrags- und Kundeninformationen.",
+      "en": "Fragmented data and legacy systems make fast access to contract and customer information difficult.",
+      "it": "Dati frammentati e sistemi legacy rendono difficile l'accesso rapido alle informazioni contrattuali e dei clienti.",
+      "fr": "Des données fragmentées et des systèmes hérités compliquent l'accès rapide aux informations contractuelles et clients."
+    }
+  ],
+  "opportunities": [
+    {
+      "title": {
+        "de": "Anfragen qualifizieren und triagieren",
+        "en": "Qualify and triage enquiries",
+        "it": "Qualificare e smistare le richieste",
+        "fr": "Qualifier et trier les demandes"
+      },
+      "text": {
+        "de": "Ein KI-Agent beantwortet Standardfragen rund um die Uhr, erfasst strukturiert die nötigen Angaben, qualifiziert Interessenten und leitet komplexe Fälle mit Kontext an die zuständige Beratung weiter – so gelangen nur relevante Anliegen ins Team.",
+        "en": "An AI agent answers standard questions around the clock, captures the required details in a structured way, qualifies prospects and hands complex cases with context to the right advisor – so only relevant matters reach the team.",
+        "it": "Un agente IA risponde alle domande standard 24 ore su 24, raccoglie in modo strutturato i dati necessari, qualifica i potenziali clienti e trasferisce i casi complessi con il relativo contesto al consulente giusto.",
+        "fr": "Un agent IA répond aux questions standard en continu, recueille les informations requises de manière structurée, qualifie les prospects et transmet les cas complexes avec leur contexte au bon conseiller."
+      }
+    },
+    {
+      "title": {
+        "de": "Routineprozesse automatisieren",
+        "en": "Automate routine processes",
+        "it": "Automatizzare i processi di routine",
+        "fr": "Automatiser les processus de routine"
+      },
+      "text": {
+        "de": "Mit KI-Automatisierung lassen sich Schadenerfassung, Datenextraktion aus Formularen und PDFs sowie die Vorprüfung wiederkehrender Vorgänge beschleunigen – manuelle Übertragungsfehler sinken und Sachbearbeitende gewinnen Zeit für Beratung.",
+        "en": "With AI Automation you can speed up claims intake, data extraction from forms and PDFs, and the pre-check of recurring cases – manual transcription errors drop and case handlers gain time for advisory work.",
+        "it": "Con l'AI Automation è possibile accelerare l'apertura sinistri, l'estrazione dati da moduli e PDF e la pre-verifica delle pratiche ricorrenti, riducendo gli errori di trascrizione manuale.",
+        "fr": "Avec l'AI Automation, vous accélérez la saisie des sinistres, l'extraction de données depuis formulaires et PDF, et la pré-vérification des dossiers récurrents, réduisant les erreurs de transcription."
+      }
+    },
+    {
+      "title": {
+        "de": "Wissensassistent für Beratende",
+        "en": "Knowledge assistant for advisors",
+        "it": "Assistente di conoscenza per i consulenti",
+        "fr": "Assistant de connaissances pour conseillers"
+      },
+      "text": {
+        "de": "Ein interner KI-Agent durchsucht Policen, Bedingungen und Prozessunterlagen und liefert Beratenden präzise, belegte Antworten in Sekunden – statt langem Blättern in Dokumenten, mit klarem Verweis auf die Quelle.",
+        "en": "An internal AI agent searches policies, terms and process documents and gives advisors precise, sourced answers in seconds – instead of long document searches, with a clear reference to the source.",
+        "it": "Un agente IA interno consulta polizze, condizioni e documenti di processo e fornisce ai consulenti risposte precise e documentate in pochi secondi, con un chiaro riferimento alla fonte.",
+        "fr": "Un agent IA interne interroge polices, conditions et documents de processus et fournit aux conseillers des réponses précises et sourcées en quelques secondes, avec un renvoi clair à la source."
+      }
+    },
+    {
+      "title": {
+        "de": "Datenschutz-first Roadmap",
+        "en": "Data-protection-first roadmap",
+        "it": "Roadmap orientata alla protezione dei dati",
+        "fr": "Feuille de route axée protection des données"
+      },
+      "text": {
+        "de": "KI-Beratung hilft, die richtigen Anwendungsfälle zu priorisieren und von Beginn an revDSG-konform, mit klarer Datenhaltung und Mensch-im-Prozess-Kontrollen aufzusetzen – pragmatisch und auf die Realität Ihres Betriebs zugeschnitten.",
+        "en": "AI Consulting helps prioritise the right use cases and set them up revDSG-compliant from the start, with clear data handling and human-in-the-loop controls – pragmatic and tailored to your operational reality.",
+        "it": "L'AI Consulting aiuta a dare priorità ai casi d'uso giusti e a impostarli fin dall'inizio in conformità con la revLPD, con una chiara gestione dei dati e controlli con supervisione umana.",
+        "fr": "L'AI Consulting aide à prioriser les bons cas d'usage et à les concevoir conformes à la nLPD dès le départ, avec une gestion claire des données et des contrôles avec supervision humaine."
+      }
+    }
+  ],
+  "sections": [
+    {
+      "heading": {
+        "de": "So kann praktische KI im Versicherungsalltag aussehen",
+        "en": "What practical AI can look like in insurance",
+        "it": "Come può apparire l'IA pratica nel lavoro assicurativo",
+        "fr": "À quoi peut ressembler l'IA pratique dans l'assurance"
+      },
+      "paragraphs": [
+        {
+          "de": "Die folgenden Beispiele sind illustrativ und zeigen typische Ansatzpunkte – keine gemessenen Resultate. Welche davon für Sie sinnvoll sind, hängt von Ihren Prozessen, Systemen und Ihrer Datenlage ab.",
+          "en": "The following examples are illustrative and show typical starting points – not measured results. Which of them make sense for you depends on your processes, systems and data situation.",
+          "it": "Gli esempi seguenti sono illustrativi e mostrano tipici punti di partenza, non risultati misurati. Quali abbiano senso per voi dipende dai vostri processi, sistemi e dalla situazione dei dati.",
+          "fr": "Les exemples suivants sont illustratifs et montrent des points de départ typiques, pas des résultats mesurés. Ceux qui vous conviennent dépendent de vos processus, systèmes et données."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Ein Erstkontakt-Agent auf Website und E-Mail beantwortet z. B. Fragen zu Deckung und Fristen, erfasst Fallangaben und schlägt einen Beratungstermin vor.",
+          "en": "A first-contact agent on the website and email answers, for example, coverage and deadline questions, captures case details and proposes an advisory appointment.",
+          "it": "Un agente di primo contatto su sito ed e-mail risponde ad esempio a domande su coperture e scadenze, raccoglie i dati del caso e propone un appuntamento di consulenza.",
+          "fr": "Un agent de premier contact sur le site et par e-mail répond par exemple aux questions de couverture et de délais, recueille les détails du dossier et propose un rendez-vous de conseil."
+        },
+        {
+          "de": "Bei einer Schadenmeldung liest ein Automatisierungs-Flow typischerweise strukturierte Daten aus Formularen aus, prüft auf Vollständigkeit und legt den Fall vorbereitet zur Freigabe vor.",
+          "en": "For a claim notification, an automation flow typically extracts structured data from forms, checks completeness and presents the case prepared for release.",
+          "it": "Per una notifica di sinistro, un flusso di automazione estrae tipicamente dati strutturati dai moduli, verifica la completezza e presenta la pratica pronta per l'approvazione.",
+          "fr": "Pour une déclaration de sinistre, un flux d'automatisation extrait généralement les données structurées des formulaires, vérifie l'exhaustivité et prépare le dossier pour validation."
+        },
+        {
+          "de": "Ein interner Assistent beantwortet Beratenden Fragen zu Bedingungen und Prozessen – mit Quellenverweis, sodass die Antwort nachvollziehbar bleibt.",
+          "en": "An internal assistant answers advisors' questions on terms and processes – with source references, so the answer stays traceable.",
+          "it": "Un assistente interno risponde alle domande dei consulenti su condizioni e processi, con riferimento alle fonti, così la risposta resta verificabile.",
+          "fr": "Un assistant interne répond aux questions des conseillers sur les conditions et processus, avec renvoi aux sources, pour une réponse traçable."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wie wir vorgehen – Datenschutz und Kontrolle zuerst",
+        "en": "How we work – data protection and control first",
+        "it": "Come procediamo – prima protezione dei dati e controllo",
+        "fr": "Notre approche – protection des données et contrôle d'abord"
+      },
+      "paragraphs": [
+        {
+          "de": "Wir starten mit einem klar umrissenen Anwendungsfall statt mit einem Grossprojekt. Zuerst klären wir, welche Daten überhaupt nötig sind, wo sie verarbeitet werden und wie sich revDSG-Vorgaben einhalten lassen.",
+          "en": "We start with a clearly scoped use case rather than a large project. First we clarify which data is actually needed, where it is processed and how revDSG requirements can be met.",
+          "it": "Iniziamo con un caso d'uso ben delimitato anziché con un grande progetto. Prima chiariamo quali dati servono davvero, dove vengono elaborati e come rispettare i requisiti della revLPD.",
+          "fr": "Nous commençons par un cas d'usage bien délimité plutôt qu'un grand projet. Nous clarifions d'abord quelles données sont réellement nécessaires, où elles sont traitées et comment respecter les exigences de la nLPD."
+        },
+        {
+          "de": "Entscheidungen mit Konsequenzen für Kundinnen und Kunden bleiben beim Menschen: KI bereitet vor, schlägt vor und entlastet – die Freigabe erfolgt durch Ihre Fachpersonen. So bleiben Qualität, Haftung und Vertrauen gewahrt.",
+          "en": "Decisions with consequences for customers stay with people: AI prepares, suggests and relieves – the release is made by your specialists. This preserves quality, accountability and trust.",
+          "it": "Le decisioni con conseguenze per i clienti restano alle persone: l'IA prepara, propone e alleggerisce, mentre l'approvazione spetta ai vostri specialisti. Così si preservano qualità, responsabilità e fiducia.",
+          "fr": "Les décisions ayant des conséquences pour les clients restent humaines: l'IA prépare, propose et allège, la validation revenant à vos spécialistes. Qualité, responsabilité et confiance sont ainsi préservées."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ersetzt KI unsere Beraterinnen und Berater?",
+        "en": "Will AI replace our advisors?",
+        "it": "L'IA sostituirà i nostri consulenti?",
+        "fr": "L'IA va-t-elle remplacer nos conseillers?"
+      },
+      "a": {
+        "de": "Nein. Der Ansatz ist, Routinearbeit zu automatisieren und Anfragen vorzuqualifizieren, damit Ihre Fachpersonen mehr Zeit für Beratung und Entscheidungen haben. Fälle mit Konsequenzen bleiben in menschlicher Hand.",
+        "en": "No. The approach is to automate routine work and pre-qualify enquiries so your specialists have more time for advisory work and decisions. Cases with consequences stay in human hands.",
+        "it": "No. L'approccio è automatizzare il lavoro di routine e pre-qualificare le richieste, così i vostri specialisti hanno più tempo per la consulenza e le decisioni. I casi con conseguenze restano in mani umane.",
+        "fr": "Non. L'approche consiste à automatiser le travail de routine et à préqualifier les demandes pour que vos spécialistes disposent de plus de temps pour le conseil et les décisions. Les cas à conséquences restent humains."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie steht es um den Datenschutz nach revDSG?",
+        "en": "What about data protection under revDSG?",
+        "it": "Come viene gestita la protezione dei dati secondo la revLPD?",
+        "fr": "Qu'en est-il de la protection des données selon la nLPD?"
+      },
+      "a": {
+        "de": "Datenschutz ist Ausgangspunkt, nicht Nachgedanke. Wir klären pro Anwendungsfall, welche Daten nötig sind und wo sie verarbeitet werden, und richten Prozesse an den Vorgaben des revDSG/nFADP aus. Konkrete Rechtsberatung ersetzen wir nicht.",
+        "en": "Data protection is the starting point, not an afterthought. Per use case we clarify which data is needed and where it is processed, and align processes with revDSG/nFADP requirements. We do not replace specific legal advice.",
+        "it": "La protezione dei dati è il punto di partenza, non un ripensamento. Per ogni caso d'uso chiariamo quali dati servono e dove vengono elaborati, allineando i processi ai requisiti della revLPD/nLPD. Non sostituiamo una consulenza legale specifica.",
+        "fr": "La protection des données est le point de départ, pas une réflexion tardive. Pour chaque cas d'usage, nous clarifions quelles données sont nécessaires et où elles sont traitées, en alignant les processus sur la nLPD/revLPD. Nous ne remplaçons pas un conseil juridique spécifique."
+      }
+    },
+    {
+      "q": {
+        "de": "Funktioniert das mehrsprachig für die ganze Schweiz?",
+        "en": "Does it work multilingually for all of Switzerland?",
+        "it": "Funziona in più lingue per tutta la Svizzera?",
+        "fr": "Cela fonctionne-t-il en plusieurs langues pour toute la Suisse?"
+      },
+      "a": {
+        "de": "Ja. Anfrage-Agenten und Assistenten lassen sich für Deutsch, Französisch und Italienisch einrichten, sodass Kundinnen und Kunden in ihrer Sprache betreut werden und Anliegen korrekt zugeordnet werden.",
+        "en": "Yes. Enquiry agents and assistants can be set up for German, French and Italian, so customers are served in their language and matters are routed correctly.",
+        "it": "Sì. Gli agenti per le richieste e gli assistenti possono essere configurati per tedesco, francese e italiano, così i clienti vengono seguiti nella loro lingua e le pratiche sono smistate correttamente.",
+        "fr": "Oui. Les agents de demande et assistants peuvent être configurés en allemand, français et italien, afin que les clients soient servis dans leur langue et les demandes correctement orientées."
+      }
+    },
+    {
+      "q": {
+        "de": "Womit sollten wir am besten starten?",
+        "en": "Where is the best place to start?",
+        "it": "Da dove conviene iniziare?",
+        "fr": "Par où vaut-il mieux commencer?"
+      },
+      "a": {
+        "de": "Typischerweise mit einem gut abgegrenzten Anwendungsfall mit hohem Volumen und klarem Prozess – etwa der Vorqualifizierung von Anfragen oder der Schadenerfassung. So sind Nutzen und Aufwand früh sichtbar, bevor Sie breiter ausrollen.",
+        "en": "Typically with a well-scoped, high-volume use case with a clear process – for example pre-qualifying enquiries or claims intake. This makes value and effort visible early, before you roll out more broadly.",
+        "it": "Di solito con un caso d'uso ben delimitato, ad alto volume e con un processo chiaro, ad esempio la pre-qualificazione delle richieste o l'apertura sinistri. Così valore e impegno sono visibili presto, prima di un'estensione più ampia.",
+        "fr": "En général par un cas d'usage bien délimité, à fort volume et au processus clair – par exemple la préqualification des demandes ou la saisie des sinistres. La valeur et l'effort sont ainsi visibles tôt, avant un déploiement plus large."
+      }
+    },
+    {
+      "q": {
+        "de": "Lässt sich KI mit unseren bestehenden Systemen verbinden?",
+        "en": "Can AI connect to our existing systems?",
+        "it": "L'IA può collegarsi ai nostri sistemi esistenti?",
+        "fr": "L'IA peut-elle se connecter à nos systèmes existants?"
+      },
+      "a": {
+        "de": "In vielen Fällen ja, abhängig von den vorhandenen Schnittstellen. Wir prüfen zu Beginn, was technisch sinnvoll und mit vertretbarem Aufwand machbar ist, und wählen einen pragmatischen Weg statt eines Komplettumbaus.",
+        "en": "In many cases yes, depending on the available interfaces. At the start we assess what is technically sensible and feasible with reasonable effort, and choose a pragmatic path rather than a full rebuild.",
+        "it": "In molti casi sì, a seconda delle interfacce disponibili. All'inizio valutiamo cosa è tecnicamente sensato e fattibile con un impegno ragionevole, scegliendo una via pragmatica anziché una ricostruzione completa.",
+        "fr": "Dans de nombreux cas oui, selon les interfaces disponibles. Au départ, nous évaluons ce qui est techniquement pertinent et réalisable avec un effort raisonnable, et choisissons une voie pragmatique plutôt qu'une refonte complète."
+      }
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "id": "healthcare",
+  "title": {
+    "de": "KI für Arztpraxen & Gesundheitswesen | Weissmann AI",
+    "en": "Practical AI for Medical Practices | Weissmann AI",
+    "it": "IA per studi medici in Svizzera | Weissmann AI",
+    "fr": "IA pour cabinets médicaux en Suisse | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie praktische KI Arztpraxen in der Schweiz entlastet: Telefon, Termine und Administration automatisieren – revDSG-konform, medizinische Fälle bleiben beim Menschen.",
+    "en": "How practical AI relieves Swiss medical practices: automate phone, scheduling and admin – revDSG-compliant, with medical matters always handled by humans.",
+    "it": "Come l'IA pratica alleggerisce gli studi medici in Svizzera: telefono, appuntamenti e amministrazione automatizzati, conformi alla revLPD, con le questioni mediche sempre affidate a persone.",
+    "fr": "Comment l'IA pratique soulage les cabinets médicaux suisses : téléphone, rendez-vous et administration automatisés, conformes à la nLPD, les questions médicales restant humaines."
+  },
+  "kicker": {
+    "de": "Branche: Gesundheitswesen",
+    "en": "Sector: Healthcare",
+    "it": "Settore: Sanità",
+    "fr": "Secteur : Santé"
+  },
+  "h1": {
+    "de": "Praktische KI für Arztpraxen und Gesundheitsdienstleister in der Schweiz",
+    "en": "Practical AI for Medical Practices and Healthcare Providers in Switzerland",
+    "it": "IA pratica per studi medici e operatori sanitari in Svizzera",
+    "fr": "IA pratique pour cabinets médicaux et prestataires de santé en Suisse"
+  },
+  "answerFirst": {
+    "de": "Praktische KI entlastet Arztpraxen bei Routineaufgaben: Ein KI-Telefonassistent nimmt Anrufe entgegen, vereinbart Termine und beantwortet Standardfragen, während dringende oder medizinische Anliegen sofort an das Praxisteam weitergeleitet werden. Automatisierte Erinnerungen und Administration reduzieren No-Shows und Papierkram. Patientendaten bleiben revDSG-konform geschützt, medizinische Entscheidungen immer beim Menschen.",
+    "en": "Practical AI relieves medical practices of routine work: an AI phone assistant answers calls, books appointments and handles standard questions, while urgent or medical matters are escalated immediately to the practice team. Automated reminders and admin cut no-shows and paperwork. Patient data stays protected under revDSG, and medical decisions always remain with humans.",
+    "it": "L'IA pratica alleggerisce gli studi medici dai compiti di routine: un assistente telefonico IA risponde alle chiamate, fissa appuntamenti e gestisce le domande standard, mentre le questioni urgenti o mediche vengono inoltrate subito al team. Promemoria e amministrazione automatizzati riducono assenze e burocrazia. I dati dei pazienti restano protetti secondo la revLPD e le decisioni mediche spettano sempre a persone.",
+    "fr": "L'IA pratique soulage les cabinets médicaux des tâches routinières : un assistant téléphonique IA répond aux appels, fixe les rendez-vous et traite les questions standard, tandis que les cas urgents ou médicaux sont transmis immédiatement à l'équipe. Rappels et administration automatisés réduisent absences et paperasse. Les données des patients restent protégées selon la nLPD et les décisions médicales reviennent toujours à des humains."
+  },
+  "challenges": [
+    {
+      "de": "Das Praxistelefon klingelt ständig – Anrufspitzen, Wartschlaufen und Rückrufwünsche binden die MPA und lassen weniger Zeit für Patientinnen und Patienten vor Ort.",
+      "en": "The practice phone never stops ringing – call peaks, hold queues and callback requests tie up staff and leave less time for patients on site.",
+      "it": "Il telefono dello studio squilla di continuo: picchi di chiamate, attese e richieste di richiamata impegnano il personale e riducono il tempo per i pazienti presenti.",
+      "fr": "Le téléphone du cabinet sonne sans arrêt : pics d'appels, files d'attente et demandes de rappel mobilisent le personnel au détriment des patients sur place."
+    },
+    {
+      "de": "No-Shows und manuelle Terminplanung: Vergessene Termine, kurzfristige Absagen und die ständige Umbuchung per Telefon kosten Zeit und ungenutzte Behandlungskapazität.",
+      "en": "No-shows and manual scheduling: forgotten appointments, last-minute cancellations and constant rebooking by phone waste time and treatment capacity.",
+      "it": "Assenze e pianificazione manuale: appuntamenti dimenticati, disdette dell'ultimo minuto e continue riprogrammazioni telefoniche sprecano tempo e capacità di cura.",
+      "fr": "Absences et planification manuelle : rendez-vous oubliés, annulations de dernière minute et reprogrammations téléphoniques permanentes font perdre du temps et de la capacité de soins."
+    },
+    {
+      "de": "Administrativer Aufwand: Formulare, Rezeptwünsche, Überweisungen und Korrespondenz mit Kassen und Versicherern binden Ressourcen, die im Behandlungsalltag fehlen.",
+      "en": "Administrative load: forms, prescription requests, referrals and correspondence with insurers and health funds consume resources needed for care.",
+      "it": "Carico amministrativo: moduli, richieste di ricette, invii e corrispondenza con casse e assicuratori assorbono risorse che mancano nella cura.",
+      "fr": "Charge administrative : formulaires, demandes d'ordonnance, orientations et correspondance avec caisses et assureurs consomment des ressources utiles aux soins."
+    },
+    {
+      "de": "Fachkräftemangel: Qualifizierte MPA sind schwer zu finden, und Routineaufgaben verstärken die Belastung des bestehenden Teams zusätzlich.",
+      "en": "Staff shortages: qualified medical assistants are hard to find, and routine tasks add further strain on the existing team.",
+      "it": "Carenza di personale: gli assistenti di studio qualificati sono difficili da trovare e i compiti di routine aggravano il carico del team.",
+      "fr": "Pénurie de personnel : les assistantes médicales qualifiées sont difficiles à recruter et les tâches routinières alourdissent l'équipe en place."
+    },
+    {
+      "de": "Mehrsprachige Patientenkommunikation entlang der kantonalen Realität – Deutsch, Französisch, Italienisch und oft Englisch – erhöht den Aufwand am Empfang.",
+      "en": "Multilingual patient communication reflecting cantonal reality – German, French, Italian and often English – increases the workload at the front desk.",
+      "it": "La comunicazione multilingue con i pazienti, secondo la realtà cantonale – tedesco, francese, italiano e spesso inglese – aumenta il lavoro alla reception.",
+      "fr": "La communication multilingue avec les patients selon la réalité cantonale – allemand, français, italien et souvent anglais – accroît la charge à l'accueil."
+    },
+    {
+      "de": "Strenger Datenschutz: Gesundheitsdaten sind besonders schützenswerte Personendaten nach revDSG – jede digitale Lösung muss diesem Anspruch gerecht werden.",
+      "en": "Strict data protection: health data are sensitive personal data under revDSG – any digital solution must meet that standard.",
+      "it": "Protezione dei dati rigorosa: i dati sanitari sono dati personali degni di particolare protezione secondo la revLPD e ogni soluzione digitale deve rispettarlo.",
+      "fr": "Protection des données stricte : les données de santé sont des données sensibles au sens de la nLPD et toute solution numérique doit répondre à cette exigence."
+    }
+  ],
+  "opportunities": [
+    {
+      "title": {
+        "de": "Das Telefon entlasten mit dem KI-Telefonassistenten",
+        "en": "Take pressure off the phone with the AI Phone Assistant",
+        "it": "Alleggerire il telefono con l'assistente telefonico IA",
+        "fr": "Soulager le téléphone avec l'assistant téléphonique IA"
+      },
+      "text": {
+        "de": "Ein KI-Telefonassistent kann Routineanrufe rund um die Uhr annehmen: Öffnungszeiten, Terminwünsche und wiederkehrende Standardfragen. Dringende oder medizinische Anliegen werden nach klaren Regeln sofort an das Praxisteam eskaliert – der Assistent gibt keine medizinischen Auskünfte.",
+        "en": "An AI phone assistant can handle routine calls around the clock: opening hours, appointment requests and recurring standard questions. Urgent or medical matters are escalated to the practice team immediately by clear rules – the assistant gives no medical advice.",
+        "it": "Un assistente telefonico IA può gestire le chiamate di routine 24 ore su 24: orari, richieste di appuntamento e domande standard ricorrenti. Le questioni urgenti o mediche vengono inoltrate subito al team secondo regole chiare e l'assistente non fornisce indicazioni mediche.",
+        "fr": "Un assistant téléphonique IA peut traiter les appels de routine en continu : horaires, demandes de rendez-vous et questions standard récurrentes. Les cas urgents ou médicaux sont transmis immédiatement à l'équipe selon des règles claires, et l'assistant ne donne aucun conseil médical."
+      }
+    },
+    {
+      "title": {
+        "de": "Eine patientenfreundliche Website mit Online-Terminen",
+        "en": "A patient-friendly website with online booking",
+        "it": "Un sito adatto ai pazienti con appuntamenti online",
+        "fr": "Un site adapté aux patients avec prise de rendez-vous en ligne"
+      },
+      "text": {
+        "de": "Mit KI-gestützter Webentwicklung entsteht eine mehrsprachige, barrierearme Praxis-Website: klare Informationen, Online-Terminanfragen und digitale Formulare, die Anrufe reduzieren. Inhalte lassen sich für Deutsch, Französisch, Italienisch und Englisch effizient pflegen.",
+        "en": "AI-supported web development delivers a multilingual, accessible practice website: clear information, online appointment requests and digital forms that reduce phone traffic. Content can be maintained efficiently across German, French, Italian and English.",
+        "it": "Lo sviluppo web assistito dall'IA crea un sito dello studio multilingue e accessibile: informazioni chiare, richieste di appuntamento online e moduli digitali che riducono le telefonate. I contenuti si aggiornano in modo efficiente in tedesco, francese, italiano e inglese.",
+        "fr": "Le développement web assisté par l'IA crée un site de cabinet multilingue et accessible : informations claires, demandes de rendez-vous en ligne et formulaires numériques qui réduisent les appels. Les contenus se gèrent efficacement en allemand, français, italien et anglais."
+      }
+    },
+    {
+      "title": {
+        "de": "Administration automatisieren",
+        "en": "Automate administration",
+        "it": "Automatizzare l'amministrazione",
+        "fr": "Automatiser l'administration"
+      },
+      "text": {
+        "de": "KI-Automation kann wiederkehrende Abläufe übernehmen: Terminerinnerungen und Recall, Vorbereitung von Formularen sowie strukturierte Weiterleitung von Anfragen an die zuständige Person. So sinken No-Shows und der administrative Aufwand – ohne dass das Team die Kontrolle abgibt.",
+        "en": "AI automation can take over recurring workflows: appointment reminders and recall, form preparation and structured routing of requests to the right person. This lowers no-shows and admin effort – without the team giving up control.",
+        "it": "L'automazione IA può occuparsi dei flussi ricorrenti: promemoria e recall degli appuntamenti, preparazione dei moduli e smistamento strutturato delle richieste alla persona giusta. Così calano le assenze e il carico amministrativo, senza che il team perda il controllo.",
+        "fr": "L'automatisation IA peut prendre en charge les flux récurrents : rappels et recall de rendez-vous, préparation des formulaires et routage structuré des demandes vers la bonne personne. Les absences et la charge administrative diminuent, sans que l'équipe perde le contrôle."
+      }
+    },
+    {
+      "title": {
+        "de": "Mehr Zeit für die eigentliche Patientenbetreuung",
+        "en": "More time for actual patient care",
+        "it": "Più tempo per l'assistenza ai pazienti",
+        "fr": "Plus de temps pour les soins aux patients"
+      },
+      "text": {
+        "de": "Wenn Routineanrufe und Papierkram automatisiert sind, gewinnt das Team typischerweise Zeit für Menschen im Wartezimmer und am Behandlungsstuhl. KI übernimmt das Wiederkehrende, damit sich Fachpersonal auf das konzentrieren kann, was nur Menschen leisten.",
+        "en": "When routine calls and paperwork are automated, the team typically regains time for people in the waiting room and the treatment chair. AI handles the repetitive so clinical staff can focus on what only humans can do.",
+        "it": "Quando chiamate di routine e burocrazia sono automatizzate, il team recupera in genere tempo per le persone in sala d'attesa e alla poltrona. L'IA gestisce il ripetitivo, così il personale può concentrarsi su ciò che solo le persone sanno fare.",
+        "fr": "Lorsque les appels de routine et la paperasse sont automatisés, l'équipe regagne généralement du temps pour les personnes en salle d'attente et au fauteuil. L'IA gère le répétitif afin que le personnel se concentre sur ce que seuls les humains peuvent faire."
+      }
+    }
+  ],
+  "sections": [
+    {
+      "heading": {
+        "de": "So könnte praktische KI in Ihrer Praxis aussehen",
+        "en": "What practical AI could look like in your practice",
+        "it": "Come potrebbe presentarsi l'IA pratica nel vostro studio",
+        "fr": "À quoi l'IA pratique pourrait ressembler dans votre cabinet"
+      },
+      "paragraphs": [
+        {
+          "de": "Die folgenden Beispiele sind rein illustrativ und zeigen typische Einsatzfelder – keine gemessenen Ergebnisse oder realen Fallstudien. Welche Bausteine sinnvoll sind, hängt immer von Fachgebiet, Team und bestehenden Systemen Ihrer Praxis ab.",
+          "en": "The following examples are purely illustrative and show typical use cases – not measured results or real case studies. Which building blocks make sense always depends on your specialty, team and existing systems.",
+          "it": "Gli esempi seguenti sono puramente illustrativi e mostrano casi d'uso tipici, non risultati misurati o casi reali. Quali elementi abbiano senso dipende sempre dalla specialità, dal team e dai sistemi esistenti del vostro studio.",
+          "fr": "Les exemples suivants sont purement illustratifs et montrent des cas d'usage typiques – ni résultats mesurés ni études de cas réelles. Les briques pertinentes dépendent toujours de votre spécialité, de votre équipe et de vos systèmes existants."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Beispielsweise nimmt der KI-Telefonassistent abends und über Mittag Terminwünsche entgegen, statt sie in die Combox zu schicken.",
+          "en": "For example, the AI phone assistant takes appointment requests in the evening and over lunch instead of sending them to voicemail.",
+          "it": "Per esempio, l'assistente telefonico IA raccoglie le richieste di appuntamento la sera e a mezzogiorno invece di rimandarle alla segreteria.",
+          "fr": "Par exemple, l'assistant téléphonique IA prend les demandes de rendez-vous le soir et à midi au lieu de les renvoyer vers la messagerie."
+        },
+        {
+          "de": "Typischerweise erhalten Patientinnen und Patienten automatische Terminerinnerungen per SMS oder E-Mail, um No-Shows zu reduzieren.",
+          "en": "Typically, patients receive automated appointment reminders by SMS or e-mail to reduce no-shows.",
+          "it": "Di norma i pazienti ricevono promemoria automatici via SMS o e-mail per ridurre le assenze.",
+          "fr": "En général, les patients reçoivent des rappels automatiques par SMS ou e-mail afin de réduire les absences."
+        },
+        {
+          "de": "Ein mehrsprachiges Kontaktformular auf der Website leitet Anliegen strukturiert an die richtige Person weiter – etwa Rezeptwünsche getrennt von Terminfragen.",
+          "en": "A multilingual contact form on the website routes requests to the right person in a structured way – for instance prescription requests separate from appointment questions.",
+          "it": "Un modulo di contatto multilingue sul sito instrada le richieste alla persona giusta in modo strutturato, ad esempio separando le richieste di ricetta dalle domande sugli appuntamenti.",
+          "fr": "Un formulaire de contact multilingue sur le site achemine les demandes vers la bonne personne de façon structurée, par exemple en séparant les demandes d'ordonnance des questions de rendez-vous."
+        },
+        {
+          "de": "Bei jedem Anzeichen von Dringlichkeit oder medizinischem Bedarf bricht die Automatisierung ab und übergibt an einen Menschen.",
+          "en": "At any sign of urgency or medical need, the automation stops and hands over to a human.",
+          "it": "A ogni segnale di urgenza o necessità medica, l'automazione si interrompe e passa la mano a una persona.",
+          "fr": "Au moindre signe d'urgence ou de besoin médical, l'automatisation s'arrête et passe le relais à un humain."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Patientensicherheit und Datenschutz zuerst",
+        "en": "Patient safety and data protection first",
+        "it": "Prima la sicurezza dei pazienti e la protezione dei dati",
+        "fr": "La sécurité des patients et la protection des données d'abord"
+      },
+      "paragraphs": [
+        {
+          "de": "KI übernimmt in der Praxis ausschliesslich Routine- und Administrationsaufgaben. Sie stellt keine Diagnosen, gibt keine medizinischen Ratschläge und trifft keine Behandlungsentscheidungen. Alles Dringende oder Medizinische wird nach klar definierten Regeln an qualifiziertes Fachpersonal eskaliert – der Mensch bleibt immer in der Verantwortung.",
+          "en": "In the practice, AI handles only routine and administrative tasks. It makes no diagnoses, gives no medical advice and takes no treatment decisions. Anything urgent or medical is escalated to qualified staff by clearly defined rules – a human always stays responsible.",
+          "it": "Nello studio l'IA si occupa solo di compiti di routine e amministrativi. Non formula diagnosi, non dà consigli medici e non prende decisioni di cura. Tutto ciò che è urgente o medico viene inoltrato a personale qualificato secondo regole chiare: la responsabilità resta sempre umana.",
+          "fr": "Au cabinet, l'IA ne traite que des tâches de routine et administratives. Elle ne pose aucun diagnostic, ne donne aucun conseil médical et ne prend aucune décision de traitement. Tout ce qui est urgent ou médical est transmis à du personnel qualifié selon des règles claires : la responsabilité reste toujours humaine."
+        },
+        {
+          "de": "Weil Gesundheitsdaten nach revDSG (nFADP) besonders schützenswerte Personendaten sind, gestalten wir Lösungen datensparsam und mit klaren Zugriffsregeln. Datenverarbeitung, Aufbewahrung und Auftragsverhältnisse werden vorab mit Ihnen abgestimmt und dokumentiert, im Einklang mit den Vorgaben des EDÖB und Ihren berufsrechtlichen Pflichten.",
+          "en": "Because health data are sensitive personal data under revDSG (nFADP), we design solutions to be data-minimal with clear access rules. Data processing, retention and processor arrangements are agreed and documented with you in advance, in line with EDÖB guidance and your professional obligations.",
+          "it": "Poiché i dati sanitari sono dati personali degni di particolare protezione secondo la revLPD (nLPD), progettiamo soluzioni con minimizzazione dei dati e regole di accesso chiare. Trattamento, conservazione e rapporti di responsabile del trattamento vengono concordati e documentati in anticipo con voi, in linea con le indicazioni dell'IFPDT e con i vostri obblighi professionali.",
+          "fr": "Comme les données de santé sont des données sensibles au sens de la nLPD, nous concevons des solutions avec minimisation des données et règles d'accès claires. Le traitement, la conservation et les rapports de sous-traitance sont convenus et documentés avec vous à l'avance, conformément aux indications du PFPDT et à vos obligations professionnelles."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wie eine Einführung typischerweise abläuft",
+        "en": "How a rollout typically works",
+        "it": "Come si svolge tipicamente un'introduzione",
+        "fr": "Comment se déroule typiquement une mise en place"
+      },
+      "bullets": [
+        {
+          "de": "Standortbestimmung: Wir schauen gemeinsam an, wo im Praxisalltag Zeit verloren geht und welche Aufgaben sich sicher automatisieren lassen.",
+          "en": "Assessment: together we look at where time is lost in daily practice and which tasks can be safely automated.",
+          "it": "Analisi iniziale: guardiamo insieme dove si perde tempo nella quotidianità dello studio e quali compiti si possono automatizzare in sicurezza.",
+          "fr": "État des lieux : nous examinons ensemble où le temps se perd au quotidien et quelles tâches peuvent être automatisées en toute sécurité."
+        },
+        {
+          "de": "Klein starten: Ein klar abgegrenzter erster Anwendungsfall – etwa Terminanfragen am Telefon – wird eingerichtet und getestet.",
+          "en": "Start small: one clearly scoped first use case – such as appointment requests by phone – is set up and tested.",
+          "it": "Partire in piccolo: si configura e si testa un primo caso d'uso ben delimitato, come le richieste di appuntamento al telefono.",
+          "fr": "Commencer petit : un premier cas d'usage bien délimité – par exemple les demandes de rendez-vous par téléphone – est mis en place et testé."
+        },
+        {
+          "de": "Eskalationsregeln definieren: Gemeinsam legen wir fest, welche Anliegen sofort an einen Menschen gehen und wie Übergaben dokumentiert werden.",
+          "en": "Define escalation rules: together we set which matters go straight to a human and how handovers are documented.",
+          "it": "Definire le regole di escalation: stabiliamo insieme quali richieste passano subito a una persona e come si documentano i passaggi.",
+          "fr": "Définir les règles d'escalade : nous fixons ensemble quels cas vont directement à un humain et comment les transferts sont documentés."
+        },
+        {
+          "de": "Team einbinden und ausbauen: Nach einer Testphase mit Ihrem Team werden weitere Bausteine schrittweise ergänzt.",
+          "en": "Involve the team and expand: after a test phase with your team, further building blocks are added step by step.",
+          "it": "Coinvolgere il team ed estendere: dopo una fase di test con il vostro team, si aggiungono gradualmente altri elementi.",
+          "fr": "Impliquer l'équipe et étendre : après une phase de test avec votre équipe, d'autres briques sont ajoutées progressivement."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ersetzt KI mein Praxisteam?",
+        "en": "Does AI replace my practice team?",
+        "it": "L'IA sostituisce il mio team?",
+        "fr": "L'IA remplace-t-elle mon équipe ?"
+      },
+      "a": {
+        "de": "Nein. KI übernimmt Routine- und Administrationsaufgaben wie Terminanfragen, Erinnerungen und Standardfragen, damit Ihr Team mehr Zeit für Patientinnen und Patienten hat. Medizinische und dringende Anliegen bleiben immer bei qualifizierten Menschen.",
+        "en": "No. AI takes over routine and administrative tasks such as appointment requests, reminders and standard questions, so your team has more time for patients. Medical and urgent matters always stay with qualified people.",
+        "it": "No. L'IA si occupa di compiti di routine e amministrativi come richieste di appuntamento, promemoria e domande standard, così il team ha più tempo per i pazienti. Le questioni mediche e urgenti restano sempre a persone qualificate.",
+        "fr": "Non. L'IA prend en charge les tâches de routine et administratives comme les demandes de rendez-vous, les rappels et les questions standard, pour que votre équipe ait plus de temps pour les patients. Les cas médicaux et urgents restent toujours confiés à des personnes qualifiées."
+      }
+    },
+    {
+      "q": {
+        "de": "Gibt die KI medizinische Auskünfte oder Ratschläge?",
+        "en": "Does the AI give medical information or advice?",
+        "it": "L'IA fornisce informazioni o consigli medici?",
+        "fr": "L'IA donne-t-elle des informations ou des conseils médicaux ?"
+      },
+      "a": {
+        "de": "Nein. Der KI-Assistent gibt bewusst keine medizinischen Auskünfte, stellt keine Diagnosen und trifft keine Behandlungsentscheidungen. Bei jedem medizinischen oder dringenden Anliegen wird sofort an Ihr Fachpersonal übergeben.",
+        "en": "No. The AI assistant deliberately gives no medical information, makes no diagnoses and takes no treatment decisions. Any medical or urgent matter is handed over to your clinical staff immediately.",
+        "it": "No. L'assistente IA non fornisce di proposito informazioni mediche, non formula diagnosi e non prende decisioni di cura. Ogni questione medica o urgente viene passata subito al vostro personale.",
+        "fr": "Non. L'assistant IA ne donne délibérément aucune information médicale, ne pose aucun diagnostic et ne prend aucune décision de traitement. Tout cas médical ou urgent est transmis immédiatement à votre personnel."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist das mit dem Schweizer Datenschutz (revDSG) vereinbar?",
+        "en": "Is this compatible with Swiss data protection (revDSG)?",
+        "it": "È compatibile con la protezione dei dati svizzera (revLPD)?",
+        "fr": "Est-ce compatible avec la protection des données suisse (nLPD) ?"
+      },
+      "a": {
+        "de": "Wir gestalten Lösungen datensparsam und mit klaren Zugriffs- und Aufbewahrungsregeln. Da Gesundheitsdaten nach revDSG besonders schützenswert sind, werden Datenverarbeitung und Auftragsverhältnisse vorab mit Ihnen abgestimmt und dokumentiert – im Einklang mit den Vorgaben des EDÖB und Ihren berufsrechtlichen Pflichten.",
+        "en": "We design solutions to be data-minimal with clear access and retention rules. Because health data are sensitive under revDSG, data processing and processor arrangements are agreed and documented with you in advance – in line with EDÖB guidance and your professional obligations.",
+        "it": "Progettiamo soluzioni con minimizzazione dei dati e regole chiare di accesso e conservazione. Poiché i dati sanitari sono degni di particolare protezione secondo la revLPD, trattamento e rapporti di responsabile vengono concordati e documentati in anticipo con voi, in linea con le indicazioni dell'IFPDT e i vostri obblighi professionali.",
+        "fr": "Nous concevons des solutions avec minimisation des données et des règles claires d'accès et de conservation. Les données de santé étant sensibles au sens de la nLPD, le traitement et les rapports de sous-traitance sont convenus et documentés avec vous à l'avance, conformément aux indications du PFPDT et à vos obligations professionnelles."
+      }
+    },
+    {
+      "q": {
+        "de": "Was passiert bei einem Notfall?",
+        "en": "What happens in an emergency?",
+        "it": "Cosa succede in caso di emergenza?",
+        "fr": "Que se passe-t-il en cas d'urgence ?"
+      },
+      "a": {
+        "de": "Der Assistent ist so eingerichtet, dass er Hinweise auf Dringlichkeit erkennt und sofort an einen Menschen übergibt oder auf den regulären Notfallweg verweist. Die Eskalationsregeln legen wir gemeinsam mit Ihnen fest, bevor etwas produktiv geht.",
+        "en": "The assistant is set up to recognise signs of urgency and hand over to a human immediately or point to your standard emergency pathway. We define the escalation rules together with you before anything goes live.",
+        "it": "L'assistente è configurato per riconoscere i segnali di urgenza e passare subito a una persona o indicare il normale percorso di emergenza. Le regole di escalation le definiamo insieme a voi prima di andare in produzione.",
+        "fr": "L'assistant est configuré pour reconnaître les signes d'urgence et passer immédiatement à un humain ou orienter vers votre filière d'urgence habituelle. Nous définissons les règles d'escalade avec vous avant toute mise en production."
+      }
+    },
+    {
+      "q": {
+        "de": "In welchen Sprachen funktioniert das?",
+        "en": "Which languages does it work in?",
+        "it": "In quali lingue funziona?",
+        "fr": "Dans quelles langues cela fonctionne-t-il ?"
+      },
+      "a": {
+        "de": "Passend zur mehrsprachigen Schweiz lassen sich Telefonassistent, Website und Automatisierungen für Deutsch, Französisch, Italienisch und Englisch einrichten – so wird die Kommunikation am Empfang spürbar einfacher.",
+        "en": "In keeping with multilingual Switzerland, the phone assistant, website and automations can be set up for German, French, Italian and English – making front-desk communication noticeably easier.",
+        "it": "In linea con la Svizzera multilingue, l'assistente telefonico, il sito e le automazioni si possono configurare in tedesco, francese, italiano e inglese, rendendo la comunicazione alla reception nettamente più semplice.",
+        "fr": "En phase avec la Suisse multilingue, l'assistant téléphonique, le site et les automatisations peuvent être configurés en allemand, français, italien et anglais, ce qui simplifie nettement la communication à l'accueil."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie aufwendig ist die Einführung?",
+        "en": "How much effort is the rollout?",
+        "it": "Quanto è impegnativa l'introduzione?",
+        "fr": "Quel est l'effort de mise en place ?"
+      },
+      "a": {
+        "de": "Typischerweise starten wir klein mit einem klar abgegrenzten Anwendungsfall, testen ihn mit Ihrem Team und bauen erst danach schrittweise aus. So bleibt der Aufwand überschaubar und Ihr Praxisbetrieb wird nicht unterbrochen.",
+        "en": "Typically we start small with one clearly scoped use case, test it with your team and only then expand step by step. This keeps the effort manageable and does not disrupt your practice.",
+        "it": "Di norma partiamo in piccolo con un caso d'uso ben delimitato, lo testiamo con il vostro team e solo dopo lo estendiamo gradualmente. Così l'impegno resta gestibile e l'attività dello studio non viene interrotta.",
+        "fr": "En général, nous commençons petit avec un cas d'usage bien délimité, le testons avec votre équipe, puis l'étendons progressivement. L'effort reste ainsi maîtrisé et votre cabinet n'est pas perturbé."
+      }
+    }
+  ]
+}

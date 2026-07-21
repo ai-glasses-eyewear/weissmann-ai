@@ -1,0 +1,337 @@
+{
+  "id": "manufacturing",
+  "title": {
+    "de": "KI für Fertigung & Industrie Schweiz | Weissmann AI",
+    "en": "AI for Manufacturing & Industry Switzerland | Weissmann AI",
+    "it": "IA per l'industria e la produzione in Svizzera | Weissmann AI",
+    "fr": "IA pour l'industrie et la fabrication en Suisse | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie praxisnahe KI Schweizer Fertigungs- und Industriebetriebe unterstützt: Prozesse automatisieren, ERP und Maschinen verbinden, Industrie 4.0 realistisch umsetzen.",
+    "en": "How practical AI supports Swiss manufacturing and industrial firms: automate processes, connect ERP and machines, and make Industrie 4.0 realistic.",
+    "it": "Come l'IA pratica supporta le aziende industriali e manifatturiere svizzere: automatizzare i processi, collegare ERP e macchine, realizzare l'industria 4.0.",
+    "fr": "Comment l'IA pratique aide les entreprises industrielles et manufacturières suisses : automatiser les processus, relier l'ERP et les machines, réussir l'industrie 4.0."
+  },
+  "kicker": {
+    "de": "Branche: Fertigung & Industrie",
+    "en": "Sector: Manufacturing & Industry",
+    "it": "Settore: industria e produzione",
+    "fr": "Secteur : industrie et fabrication"
+  },
+  "h1": {
+    "de": "Praxisnahe KI für Schweizer Fertigungs- und Industriebetriebe",
+    "en": "Practical AI for Swiss manufacturing and industrial firms",
+    "it": "IA pratica per l'industria e la produzione svizzere",
+    "fr": "L'IA pratique pour l'industrie et la fabrication suisses"
+  },
+  "answerFirst": {
+    "de": "Praxisnahe KI hilft Schweizer Fertigungsbetrieben, ERP, MES und Maschinendaten zu verbinden, Angebots- und Auftragsprozesse zu automatisieren und Qualitätsdokumentation zu vereinfachen. Für einen Präzisionsfertiger bedeutet das typischerweise weniger manuelle Übergaben, schnellere Reaktion auf Kundenanfragen und lückenlose Rückverfolgbarkeit – ohne das Know-how erfahrener Mitarbeitender zu ersetzen.",
+    "en": "Practical AI helps Swiss manufacturers connect ERP, MES and machine data, automate quoting and order processing, and simplify quality documentation. For a precision manufacturer, that typically means fewer manual handovers, faster response to customer enquiries and complete traceability — without replacing the know-how of experienced staff.",
+    "it": "L'IA pratica aiuta i produttori svizzeri a collegare ERP, MES e dati delle macchine, ad automatizzare preventivi ed elaborazione degli ordini e a semplificare la documentazione di qualità. Per un'azienda di precisione questo significa in genere meno passaggi manuali, risposte più rapide ai clienti e una tracciabilità completa — senza sostituire il know-how dei collaboratori esperti.",
+    "fr": "L'IA pratique aide les fabricants suisses à relier l'ERP, le MES et les données machines, à automatiser les devis et le traitement des commandes et à simplifier la documentation qualité. Pour un fabricant de précision, cela signifie généralement moins de transferts manuels, une réponse plus rapide aux clients et une traçabilité complète — sans remplacer le savoir-faire des collaborateurs expérimentés."
+  },
+  "challenges": [
+    {
+      "de": "Fragmentierte Systeme: ERP, MES, CAQ, CAD und Excel-Listen, die nicht miteinander sprechen",
+      "en": "Fragmented systems: ERP, MES, CAQ, CAD and spreadsheets that don't talk to each other",
+      "it": "Sistemi frammentati: ERP, MES, CAQ, CAD e fogli di calcolo che non dialogano tra loro",
+      "fr": "Systèmes fragmentés : ERP, MES, CAQ, CAO et tableurs qui ne communiquent pas entre eux"
+    },
+    {
+      "de": "Fachkräftemangel und Wissen, das in den Köpfen erfahrener Mitarbeitender steckt",
+      "en": "Skilled-labour shortage, with critical know-how locked in experienced employees' heads",
+      "it": "Carenza di personale qualificato e know-how concentrato nella testa dei collaboratori esperti",
+      "fr": "Pénurie de main-d'œuvre qualifiée et savoir-faire concentré dans la tête des collaborateurs expérimentés"
+    },
+    {
+      "de": "Kleine Losgrössen und hohe Variantenvielfalt machen Kalkulation und Planung aufwendig",
+      "en": "Small batch sizes and high variant complexity that make quoting and planning slow",
+      "it": "Piccoli lotti ed elevata varietà di varianti che rallentano preventivi e pianificazione",
+      "fr": "Petites séries et forte diversité des variantes qui ralentissent le chiffrage et la planification"
+    },
+    {
+      "de": "Steigende Anforderungen an Dokumentation und Rückverfolgbarkeit durch Kunden und Audits",
+      "en": "Rising documentation and traceability demands from customers and audits",
+      "it": "Crescenti requisiti di documentazione e tracciabilità da parte di clienti e audit",
+      "fr": "Exigences croissantes de documentation et de traçabilité de la part des clients et des audits"
+    },
+    {
+      "de": "Kosten- und Margendruck gegenüber internationaler Billigkonkurrenz",
+      "en": "Cost and margin pressure against low-cost international competition",
+      "it": "Pressione su costi e margini rispetto alla concorrenza internazionale a basso costo",
+      "fr": "Pression sur les coûts et les marges face à la concurrence internationale à bas prix"
+    },
+    {
+      "de": "Ältere Maschinen und getrennte OT/IT, die sich schwer verbinden und absichern lassen",
+      "en": "Legacy machines and separated OT/IT that are hard to connect and secure",
+      "it": "Macchinari datati e separazione OT/IT difficili da collegare e proteggere",
+      "fr": "Machines anciennes et séparation OT/IT difficiles à connecter et à sécuriser"
+    }
+  ],
+  "opportunities": [
+    {
+      "title": {
+        "de": "Angebots- und Auftragsprozesse automatisieren",
+        "en": "Automate quoting and order processing",
+        "it": "Automatizzare preventivi ed elaborazione ordini",
+        "fr": "Automatiser les devis et le traitement des commandes"
+      },
+      "text": {
+        "de": "Wiederkehrende Schritte von der Anfrage bis zur Auftragsbestätigung lassen sich mit AI Automation entlasten – zum Beispiel, indem Anfragen vorstrukturiert, Stammdaten geprüft und Angebote vorbereitet werden. So gewinnt Ihr Team Zeit für die eigentliche Fertigung.",
+        "en": "Recurring steps from enquiry to order confirmation can be eased with AI Automation — for example by pre-structuring enquiries, checking master data and preparing quotes. Your team gains time for the actual production work.",
+        "it": "I passaggi ricorrenti, dalla richiesta alla conferma d'ordine, possono essere alleggeriti con l'AI Automation — ad esempio pre-strutturando le richieste, verificando i dati anagrafici e preparando i preventivi. Il vostro team guadagna tempo per la produzione vera e propria.",
+        "fr": "Les étapes récurrentes, de la demande à la confirmation de commande, peuvent être allégées grâce à l'AI Automation — par exemple en pré-structurant les demandes, en vérifiant les données de base et en préparant les devis. Votre équipe gagne du temps pour la production."
+      }
+    },
+    {
+      "title": {
+        "de": "ERP, MES und Werkstatt verbinden",
+        "en": "Connect ERP, MES and the shop floor",
+        "it": "Collegare ERP, MES e officina",
+        "fr": "Relier l'ERP, le MES et l'atelier"
+      },
+      "text": {
+        "de": "Mit AI Integrations verknüpfen wir bestehende Systeme wie Ihr ERP mit Maschinen- und Werkstattdaten, statt sie zu ersetzen. Informationen fliessen dann automatisch dorthin, wo sie gebraucht werden – von der Auftragsannahme bis zur Auslieferung.",
+        "en": "With AI Integrations we link existing systems such as your ERP with machine and shop-floor data instead of replacing them. Information then flows automatically to where it is needed, from order intake to delivery.",
+        "it": "Con le AI Integrations colleghiamo i sistemi esistenti come l'ERP ai dati di macchine e officina, invece di sostituirli. Le informazioni fluiscono così automaticamente dove servono, dalla presa dell'ordine alla consegna.",
+        "fr": "Avec les AI Integrations, nous connectons vos systèmes existants comme l'ERP aux données machines et d'atelier au lieu de les remplacer. L'information circule alors automatiquement là où elle est nécessaire, de la prise de commande à la livraison."
+      }
+    },
+    {
+      "title": {
+        "de": "Produktions- und Maschinendaten nutzbar machen",
+        "en": "Make production and machine data usable",
+        "it": "Rendere utilizzabili i dati di produzione",
+        "fr": "Rendre exploitables les données de production"
+      },
+      "text": {
+        "de": "Rohdaten aus Maschinen, Prüfständen und Systemen werden verständlich aufbereitet. Typischerweise heisst das: Auffälligkeiten früher erkennen, Ausschuss reduzieren und fundierter planen – ohne dass Ihre Leute Datenanalyse studieren müssen.",
+        "en": "Raw data from machines, test benches and systems is turned into something people can read. Typically that means spotting anomalies earlier, reducing scrap and planning with more confidence — without your staff needing to study data science.",
+        "it": "I dati grezzi di macchine, banchi di prova e sistemi vengono resi leggibili. In genere questo significa individuare prima le anomalie, ridurre gli scarti e pianificare con maggiore sicurezza — senza che i vostri collaboratori debbano studiare analisi dei dati.",
+        "fr": "Les données brutes issues des machines, des bancs d'essai et des systèmes deviennent lisibles. Généralement, cela permet de repérer plus tôt les anomalies, de réduire les rebuts et de planifier avec plus d'assurance — sans que vos équipes doivent maîtriser l'analyse de données."
+      }
+    },
+    {
+      "title": {
+        "de": "Erfahrungswissen sichern und verfügbar machen",
+        "en": "Capture and share expert knowledge",
+        "it": "Preservare e condividere il know-how",
+        "fr": "Préserver et partager le savoir-faire"
+      },
+      "text": {
+        "de": "Prüfpläne, Rüstanweisungen und Erfahrungswerte sind oft nur mündlich vorhanden. Ein KI-gestützter Wissensassistent macht sie durchsuchbar und stützt so die Einarbeitung neuer Mitarbeitender.",
+        "en": "Inspection plans, set-up instructions and hard-won experience often exist only verbally. A KI-based knowledge assistant makes them searchable and supports the onboarding of new staff.",
+        "it": "Piani di controllo, istruzioni di attrezzaggio ed esperienza maturata spesso esistono solo a voce. Un assistente della conoscenza basato sull'IA li rende consultabili e facilita l'inserimento dei nuovi collaboratori.",
+        "fr": "Plans de contrôle, instructions de réglage et expérience acquise n'existent souvent qu'à l'oral. Un assistant de connaissances basé sur l'IA les rend consultables et facilite l'intégration des nouveaux collaborateurs."
+      }
+    },
+    {
+      "title": {
+        "de": "Realistische Industrie-4.0-Roadmap",
+        "en": "A realistic Industrie 4.0 roadmap",
+        "it": "Una roadmap industria 4.0 realistica",
+        "fr": "Une feuille de route industrie 4.0 réaliste"
+      },
+      "text": {
+        "de": "In der AI Consulting klären wir gemeinsam, welche Schritte sich für Ihren Betrieb wirklich lohnen – priorisiert nach Nutzen, Aufwand und Datenlage, statt nach Schlagworten.",
+        "en": "In AI Consulting we work out together which steps genuinely pay off for your operation — prioritised by value, effort and data maturity rather than by buzzwords.",
+        "it": "Con l'AI Consulting definiamo insieme quali passi convengono davvero alla vostra azienda — con priorità basate su valore, impegno e maturità dei dati, non sulle parole d'ordine.",
+        "fr": "En AI Consulting, nous déterminons ensemble les étapes réellement rentables pour votre entreprise — priorisées selon la valeur, l'effort et la maturité des données, plutôt que selon les mots à la mode."
+      }
+    }
+  ],
+  "sections": [
+    {
+      "heading": {
+        "de": "Wie praxisnahe KI in der Schweizer Werkstatt aussieht",
+        "en": "What practical AI looks like on a Swiss shop floor",
+        "it": "Come si presenta l'IA pratica in un'officina svizzera",
+        "fr": "À quoi ressemble l'IA pratique dans un atelier suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Die folgenden Beispiele sind bewusst illustrativ und zeigen typische Einsatzfelder – keine gemessenen Ergebnisse aus konkreten Projekten.",
+          "en": "The examples below are deliberately illustrative and show typical use cases — not measured results from specific projects.",
+          "it": "Gli esempi seguenti sono volutamente illustrativi e mostrano casi d'uso tipici — non risultati misurati di progetti specifici.",
+          "fr": "Les exemples ci-dessous sont volontairement illustratifs et présentent des cas d'usage typiques — et non des résultats mesurés issus de projets précis."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Eingehende Anfragen und Zeichnungen werden vorsortiert und mit den passenden Stammdaten im ERP verknüpft.",
+          "en": "Incoming enquiries and drawings are pre-sorted and linked to the right master data in the ERP.",
+          "it": "Le richieste e i disegni in arrivo vengono pre-ordinati e collegati ai dati anagrafici corretti nell'ERP.",
+          "fr": "Les demandes et plans entrants sont pré-triés et reliés aux bonnes données de base dans l'ERP."
+        },
+        {
+          "de": "Kalkulationen für wiederkehrende Teilefamilien werden auf Basis früherer Aufträge vorbereitet und vom Team freigegeben.",
+          "en": "Quotes for recurring part families are prepared from earlier orders and released by your team.",
+          "it": "I preventivi per famiglie di pezzi ricorrenti vengono preparati a partire dagli ordini precedenti e approvati dal vostro team.",
+          "fr": "Les devis pour les familles de pièces récurrentes sont préparés à partir des commandes passées, puis validés par votre équipe."
+        },
+        {
+          "de": "Prüf- und Messprotokolle werden automatisch zusammengeführt und als Rückverfolgbarkeitsnachweis dokumentiert.",
+          "en": "Inspection and measurement records are consolidated automatically and documented as traceability evidence.",
+          "it": "I verbali di controllo e misura vengono uniti automaticamente e documentati come prova di tracciabilità.",
+          "fr": "Les procès-verbaux de contrôle et de mesure sont regroupés automatiquement et documentés comme preuve de traçabilité."
+        },
+        {
+          "de": "Ein interner Assistent beantwortet Fragen zu Arbeitsplänen, Normen und Rüstprozessen auf Basis Ihrer eigenen Dokumente.",
+          "en": "An internal assistant answers questions about work plans, standards and set-up processes based on your own documents.",
+          "it": "Un assistente interno risponde alle domande su cicli di lavoro, norme e attrezzaggi in base ai vostri documenti.",
+          "fr": "Un assistant interne répond aux questions sur les gammes de fabrication, les normes et les réglages à partir de vos propres documents."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "So arbeiten wir – vom Pilot zur Produktion",
+        "en": "How we work — from pilot to production",
+        "it": "Come lavoriamo — dal pilota alla produzione",
+        "fr": "Notre façon de travailler — du pilote à la production"
+      },
+      "paragraphs": [
+        {
+          "de": "Wir starten klein und messbar: ein klar abgegrenzter Anwendungsfall, der schnell Nutzen zeigt, bevor grösser skaliert wird. Bestehende Systeme werden angebunden, nicht abgelöst.",
+          "en": "We start small and measurable: one clearly scoped use case that shows value quickly before scaling up. Existing systems are connected, not replaced.",
+          "it": "Iniziamo in piccolo e in modo misurabile: un caso d'uso ben delimitato che mostra valore rapidamente prima di scalare. I sistemi esistenti vengono collegati, non sostituiti.",
+          "fr": "Nous commençons petit et mesurable : un cas d'usage clairement délimité qui montre rapidement sa valeur avant de passer à l'échelle. Les systèmes existants sont connectés, pas remplacés."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kurzer Discovery-Workshop, um Prozesse, Systeme und Datenlage zu verstehen.",
+          "en": "A short discovery workshop to understand your processes, systems and data.",
+          "it": "Un breve workshop di discovery per capire processi, sistemi e dati.",
+          "fr": "Un court atelier de découverte pour comprendre vos processus, systèmes et données."
+        },
+        {
+          "de": "Priorisierung nach Nutzen und Aufwand, gemeinsam mit Ihrem Team.",
+          "en": "Prioritisation by value and effort, together with your team.",
+          "it": "Una prioritizzazione per valore e impegno, insieme al vostro team.",
+          "fr": "Une priorisation selon la valeur et l'effort, avec votre équipe."
+        },
+        {
+          "de": "Pilot mit klaren Erfolgskriterien, danach schrittweiser Ausbau.",
+          "en": "A pilot with clear success criteria, followed by step-by-step rollout.",
+          "it": "Un pilota con criteri di successo chiari, seguito da un'introduzione graduale.",
+          "fr": "Un pilote avec des critères de succès clairs, suivi d'un déploiement progressif."
+        },
+        {
+          "de": "Schulung Ihrer Mitarbeitenden, damit die Lösung im Alltag getragen wird.",
+          "en": "Training for your staff so the solution is supported in daily work.",
+          "it": "La formazione dei vostri collaboratori affinché la soluzione viva nel quotidiano.",
+          "fr": "La formation de vos collaborateurs pour que la solution vive au quotidien."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz und Sicherheit im Schweizer Kontext",
+        "en": "Data protection and security in a Swiss context",
+        "it": "Protezione dei dati e sicurezza nel contesto svizzero",
+        "fr": "Protection des données et sécurité dans le contexte suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Fertigungsdaten sind sensibel – von Konstruktionszeichnungen bis zu Kundenaufträgen. Wir gestalten Lösungen so, dass sie zum revidierten Datenschutzgesetz (revDSG/nFADP) passen, klären wo Daten verarbeitet und gespeichert werden und berücksichtigen die Trennung von OT und IT. Wo sinnvoll, bleiben Daten in der Schweiz.",
+          "en": "Manufacturing data is sensitive — from design drawings to customer orders. We design solutions to fit the revised Data Protection Act (revDSG/nFADP), clarify where data is processed and stored, and respect the separation of OT and IT. Where it makes sense, data stays in Switzerland.",
+          "it": "I dati di produzione sono sensibili — dai disegni costruttivi agli ordini dei clienti. Progettiamo soluzioni conformi alla legge riveduta sulla protezione dei dati (nLPD/revDSG), chiariamo dove i dati vengono elaborati e archiviati e rispettiamo la separazione tra OT e IT. Dove ha senso, i dati restano in Svizzera.",
+          "fr": "Les données de fabrication sont sensibles — des plans de conception aux commandes clients. Nous concevons des solutions conformes à la loi révisée sur la protection des données (nLPD/revDSG), précisons où les données sont traitées et stockées et respectons la séparation entre OT et IT. Lorsque cela a du sens, les données restent en Suisse."
+        },
+        {
+          "de": "Konkrete rechtliche Prüfungen stimmen wir mit Ihren Verantwortlichen ab; die Anforderungen des EDÖB behalten wir dabei im Blick.",
+          "en": "Specific legal reviews are aligned with your responsible officers, and we keep the expectations of the EDÖB in view.",
+          "it": "Le verifiche legali specifiche vengono coordinate con i vostri responsabili, tenendo presenti le aspettative dell'IFPDT.",
+          "fr": "Les vérifications juridiques précises sont coordonnées avec vos responsables, en gardant à l'esprit les attentes du PFPDT."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Müssen wir dafür unser ERP ersetzen?",
+        "en": "Do we need to replace our ERP for this?",
+        "it": "Dobbiamo sostituire il nostro ERP per questo?",
+        "fr": "Devons-nous remplacer notre ERP pour cela ?"
+      },
+      "a": {
+        "de": "Nein. Der Ansatz von Weissmann AI baut bewusst auf Ihren bestehenden Systemen auf. Über AI Integrations verbinden wir ERP, MES und weitere Werkzeuge, statt sie abzulösen – das senkt Risiko und Aufwand.",
+        "en": "No. Weissmann AI's approach deliberately builds on your existing systems. Through AI Integrations we connect ERP, MES and other tools rather than replacing them, which lowers both risk and effort.",
+        "it": "No. L'approccio di Weissmann AI si basa volutamente sui vostri sistemi esistenti. Con le AI Integrations colleghiamo ERP, MES e altri strumenti invece di sostituirli, riducendo rischio e impegno.",
+        "fr": "Non. L'approche de Weissmann AI s'appuie volontairement sur vos systèmes existants. Grâce aux AI Integrations, nous connectons l'ERP, le MES et d'autres outils au lieu de les remplacer, ce qui réduit le risque et l'effort."
+      }
+    },
+    {
+      "q": {
+        "de": "Lohnt sich KI auch bei kleinen Losgrössen?",
+        "en": "Is AI worthwhile even for small batch sizes?",
+        "it": "L'IA conviene anche per piccoli lotti?",
+        "fr": "L'IA en vaut-elle la peine même pour de petites séries ?"
+      },
+      "a": {
+        "de": "Gerade dann. Hohe Variantenvielfalt und kleine Serien verursachen viel manuellen Aufwand in Kalkulation, Planung und Dokumentation. Genau diese wiederkehrenden Schritte lassen sich häufig sinnvoll entlasten.",
+        "en": "Especially then. High variant complexity and small series create a lot of manual work in quoting, planning and documentation. It is precisely these recurring steps that can often be sensibly eased.",
+        "it": "Proprio in quel caso. L'elevata varietà di varianti e i piccoli lotti generano molto lavoro manuale in preventivi, pianificazione e documentazione. Sono proprio questi passaggi ricorrenti che spesso si possono alleggerire.",
+        "fr": "Justement dans ce cas. La forte diversité des variantes et les petites séries génèrent beaucoup de travail manuel dans le chiffrage, la planification et la documentation. Ce sont précisément ces étapes récurrentes qui peuvent souvent être allégées."
+      }
+    },
+    {
+      "q": {
+        "de": "Brauchen wir zuerst perfekte, saubere Daten?",
+        "en": "Do we need perfectly clean data first?",
+        "it": "Servono prima dati perfettamente puliti?",
+        "fr": "Avons-nous d'abord besoin de données parfaitement propres ?"
+      },
+      "a": {
+        "de": "Nein, aber die Datenlage bestimmt das Vorgehen. In der AI Consulting schauen wir, was heute schon nutzbar ist, und wählen einen Anwendungsfall, der zu Ihrer aktuellen Datenqualität passt.",
+        "en": "No, but your data situation shapes the approach. In AI Consulting we look at what is already usable today and choose a use case that fits your current data quality.",
+        "it": "No, ma la situazione dei dati determina l'approccio. Con l'AI Consulting valutiamo ciò che è già utilizzabile oggi e scegliamo un caso d'uso adatto alla vostra attuale qualità dei dati.",
+        "fr": "Non, mais l'état de vos données oriente la démarche. En AI Consulting, nous examinons ce qui est déjà exploitable aujourd'hui et choisissons un cas d'usage adapté à la qualité actuelle de vos données."
+      }
+    },
+    {
+      "q": {
+        "de": "Was passiert mit unseren älteren Maschinen?",
+        "en": "What about our older machines?",
+        "it": "E le nostre macchine più datate?",
+        "fr": "Qu'en est-il de nos machines plus anciennes ?"
+      },
+      "a": {
+        "de": "Auch ohne modernste Steuerung lassen sich oft Daten erfassen oder Prozesse rundherum automatisieren. Wir prüfen pragmatisch, welche Anbindung mit vertretbarem Aufwand möglich ist.",
+        "en": "Even without the latest controls, it is often possible to capture data or automate the surrounding processes. We pragmatically assess which connection is feasible with reasonable effort.",
+        "it": "Anche senza i controlli più recenti, spesso è possibile acquisire dati o automatizzare i processi circostanti. Valutiamo in modo pragmatico quale collegamento è realizzabile con un impegno ragionevole.",
+        "fr": "Même sans commande de dernière génération, il est souvent possible de collecter des données ou d'automatiser les processus autour. Nous évaluons de manière pragmatique quelle connexion est réalisable avec un effort raisonnable."
+      }
+    },
+    {
+      "q": {
+        "de": "Wo bleiben unsere Fertigungsdaten?",
+        "en": "Where does our manufacturing data stay?",
+        "it": "Dove restano i nostri dati di produzione?",
+        "fr": "Où restent nos données de fabrication ?"
+      },
+      "a": {
+        "de": "Das klären wir vor dem Start. Lösungen werden am revidierten Datenschutzgesetz (revDSG/nFADP) ausgerichtet; wo sinnvoll bleiben Daten in der Schweiz und die OT-Umgebung getrennt.",
+        "en": "We clarify this before starting. Solutions are aligned with the revised Data Protection Act (revDSG/nFADP); where it makes sense, data stays in Switzerland and the OT environment remains separated.",
+        "it": "Lo chiariamo prima di iniziare. Le soluzioni sono allineate alla legge riveduta sulla protezione dei dati (nLPD/revDSG); dove ha senso, i dati restano in Svizzera e l'ambiente OT rimane separato.",
+        "fr": "Nous le clarifions avant de commencer. Les solutions sont alignées sur la loi révisée sur la protection des données (nLPD/revDSG) ; lorsque cela a du sens, les données restent en Suisse et l'environnement OT reste séparé."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie fangen wir am besten an?",
+        "en": "How do we best get started?",
+        "it": "Come conviene iniziare?",
+        "fr": "Comment bien commencer ?"
+      },
+      "a": {
+        "de": "Mit einem kurzen Gespräch und einem klar abgegrenzten Pilotfall. So sehen Sie den Nutzen im eigenen Betrieb, bevor Sie grösser investieren.",
+        "en": "With a short conversation and one clearly scoped pilot. That way you see the value in your own operation before investing more heavily.",
+        "it": "Con un breve colloquio e un pilota ben delimitato. Così vedete il valore nella vostra azienda prima di investire di più.",
+        "fr": "Par un court échange et un pilote clairement délimité. Vous constatez ainsi la valeur dans votre propre entreprise avant d'investir davantage."
+      }
+    }
+  ]
+}
