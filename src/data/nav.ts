@@ -19,7 +19,7 @@ export interface NavItem {
 export const PILLAR_LIVE: Record<Pillar, boolean> = {
   services: true,
   industries: true,
-  academy: false,
+  academy: true,
   resources: false,
 };
 

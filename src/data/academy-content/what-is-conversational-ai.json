@@ -1,0 +1,329 @@
+{
+  "id": "what-is-conversational-ai",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "slug": {
+    "de": "was-ist-conversational-ai",
+    "en": "what-is-conversational-ai",
+    "it": "cos-e-la-conversational-ai",
+    "fr": "qu-est-ce-que-l-ia-conversationnelle"
+  },
+  "relatedServices": [
+    "agents",
+    "phone-assistant"
+  ],
+  "title": {
+    "de": "Was ist Conversational AI? NLU, LLMs & Voice | Weissmann AI",
+    "en": "What Is Conversational AI? NLU, LLMs & Voice | Weissmann AI",
+    "it": "Cos'è la Conversational AI? NLU e LLM | Weissmann AI",
+    "fr": "Qu'est-ce que la Conversational AI ? | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Conversational AI einfach erklärt: NLU, Dialogmanagement und LLMs, Text und Voice – und warum sie sich von alten Chatbots unterscheidet. Mit Schweizer Praxislens.",
+    "en": "Conversational AI explained: NLU, dialogue management and LLMs, text and voice – and how it differs from old rule-based chatbots. With a Swiss business lens.",
+    "it": "Conversational AI spiegata: NLU, gestione del dialogo e LLM, testo e voce, e come si distingue dai vecchi chatbot. Con una lente svizzera per le PMI.",
+    "fr": "La Conversational AI expliquée : NLU, gestion du dialogue et LLM, texte et voix, et sa différence avec les anciens chatbots. Avec un regard suisse."
+  },
+  "kicker": {
+    "de": "KI-Grundlagen · Conversational AI",
+    "en": "AI Foundations · Conversational AI",
+    "it": "Fondamenti di IA · Conversational AI",
+    "fr": "Fondamentaux de l'IA · Conversational AI"
+  },
+  "h1": {
+    "de": "Was ist Conversational AI?",
+    "en": "What is Conversational AI?",
+    "it": "Che cos'è la Conversational AI?",
+    "fr": "Qu'est-ce que la Conversational AI ?"
+  },
+  "answerFirst": {
+    "de": "Conversational AI bezeichnet Systeme, die menschliche Sprache in Text oder Stimme verstehen, verarbeiten und in natürlicher Sprache beantworten. Sie kombinieren Natural Language Understanding (NLU), Dialogmanagement und heute grosse Sprachmodelle (LLMs). Anders als alte, regelbasierte Chatbots erkennen sie frei formulierte Absichten und Kontext – und führen zusammenhängende Gespräche per Chat, Telefon oder Sprachassistent.",
+    "en": "Conversational AI refers to systems that understand, process and respond to human language in text or voice using natural language. They combine Natural Language Understanding (NLU), dialogue management and, today, large language models (LLMs). Unlike old rule-based chatbots, they recognise freely phrased intent and context – holding coherent conversations via chat, phone or voice assistant.",
+    "it": "Con Conversational AI si indicano i sistemi che comprendono, elaborano e rispondono al linguaggio umano in testo o voce usando il linguaggio naturale. Combinano Natural Language Understanding (NLU), gestione del dialogo e, oggi, grandi modelli linguistici (LLM). A differenza dei vecchi chatbot a regole, riconoscono intenti e contesto formulati liberamente, sostenendo conversazioni coerenti via chat, telefono o assistente vocale.",
+    "fr": "La Conversational AI désigne les systèmes qui comprennent, traitent et répondent au langage humain en texte ou en voix, dans un langage naturel. Ils combinent le Natural Language Understanding (NLU), la gestion du dialogue et, aujourd'hui, de grands modèles de langage (LLM). Contrairement aux anciens chatbots à règles, ils reconnaissent l'intention et le contexte formulés librement et tiennent des conversations cohérentes par chat, téléphone ou assistant vocal."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Conversational AI in einem Satz",
+        "en": "Conversational AI in one sentence",
+        "it": "La Conversational AI in una frase",
+        "fr": "La Conversational AI en une phrase"
+      },
+      "paragraphs": [
+        {
+          "de": "Conversational AI ist der Oberbegriff für Technologien, die es Maschinen erlauben, in natürlicher Sprache mit Menschen zu kommunizieren – geschrieben oder gesprochen. Der Begriff beschreibt kein einzelnes Produkt, sondern ein Zusammenspiel mehrerer Komponenten: Spracherkennung, Sprachverständnis, Gesprächssteuerung und Antworterzeugung.",
+          "en": "Conversational AI is the umbrella term for technologies that let machines communicate with people in natural language – written or spoken. It is not a single product but an interplay of several components: speech recognition, language understanding, dialogue control and response generation.",
+          "it": "Conversational AI è il termine ombrello per le tecnologie che permettono alle macchine di comunicare con le persone in linguaggio naturale, scritto o parlato. Non è un singolo prodotto, ma l'interazione di più componenti: riconoscimento vocale, comprensione del linguaggio, gestione del dialogo e generazione della risposta.",
+          "fr": "La Conversational AI est le terme générique désignant les technologies qui permettent aux machines de communiquer avec les personnes en langage naturel, écrit ou parlé. Ce n'est pas un produit unique mais l'interaction de plusieurs composants : reconnaissance vocale, compréhension du langage, gestion du dialogue et génération de la réponse."
+        },
+        {
+          "de": "Typische Ausprägungen sind Chatbots auf Websites, virtuelle Assistenten in Apps, Voicebots am Telefon sowie Sprachassistenten wie in Smartphones oder Lautsprechern. Ziel ist immer dasselbe: eine Anfrage verstehen und sinnvoll darauf reagieren, ohne dass Nutzende starre Menüs oder exakte Stichwörter kennen müssen.",
+          "en": "Typical forms include website chatbots, virtual assistants in apps, phone voicebots and voice assistants as found in smartphones or speakers. The goal is always the same: understand a request and respond meaningfully, without users needing rigid menus or exact keywords.",
+          "it": "Le forme tipiche includono i chatbot sui siti web, gli assistenti virtuali nelle app, i voicebot al telefono e gli assistenti vocali di smartphone o altoparlanti. L'obiettivo è sempre lo stesso: capire una richiesta e rispondere in modo sensato, senza che l'utente debba conoscere menu rigidi o parole chiave esatte.",
+          "fr": "Les formes typiques sont les chatbots de sites web, les assistants virtuels dans les applications, les voicebots au téléphone et les assistants vocaux des smartphones ou enceintes. L'objectif est toujours le même : comprendre une demande et y répondre utilement, sans que l'utilisateur ait à connaître des menus rigides ou des mots-clés exacts."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die Bausteine: NLU, Dialogmanagement, LLM und NLG",
+        "en": "The building blocks: NLU, dialogue management, LLM and NLG",
+        "it": "I mattoni: NLU, gestione del dialogo, LLM e NLG",
+        "fr": "Les briques : NLU, gestion du dialogue, LLM et NLG"
+      },
+      "paragraphs": [
+        {
+          "de": "Klassische Conversational AI verarbeitet eine Eingabe in mehreren Schritten. Zuerst analysiert das Natural Language Understanding (NLU) den Text: Es erkennt die Absicht (Intent, z. B. «Termin verschieben») und die relevanten Angaben (Entitäten, z. B. Datum, Uhrzeit, Name). Anschliessend entscheidet das Dialogmanagement, was als Nächstes geschieht – nachfragen, eine Aktion auslösen oder antworten. Die Natural Language Generation (NLG) formuliert schliesslich die Antwort in flüssiger Sprache.",
+          "en": "Classic conversational AI processes an input in several steps. First, Natural Language Understanding (NLU) analyses the text: it detects the intent (e.g. \"reschedule appointment\") and the relevant details (entities, e.g. date, time, name). Then dialogue management decides what happens next – ask a follow-up, trigger an action or answer. Finally, Natural Language Generation (NLG) phrases the reply in fluent language.",
+          "it": "La Conversational AI classica elabora un input in più fasi. Prima il Natural Language Understanding (NLU) analizza il testo: rileva l'intento (es. «spostare l'appuntamento») e i dettagli rilevanti (entità, es. data, ora, nome). Poi la gestione del dialogo decide cosa fare: chiedere un chiarimento, avviare un'azione o rispondere. Infine la Natural Language Generation (NLG) formula la risposta in linguaggio fluente.",
+          "fr": "La Conversational AI classique traite une entrée en plusieurs étapes. D'abord, le Natural Language Understanding (NLU) analyse le texte : il détecte l'intention (ex. « déplacer un rendez-vous ») et les informations pertinentes (entités, ex. date, heure, nom). Ensuite, la gestion du dialogue décide de la suite : poser une question, déclencher une action ou répondre. Enfin, la Natural Language Generation (NLG) formule la réponse dans un langage fluide."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "NLU – versteht Absicht und Details einer Eingabe (Intent- und Entitätserkennung).",
+          "en": "NLU – understands the intent and details of an input (intent and entity recognition).",
+          "it": "NLU – comprende l'intento e i dettagli di un input (riconoscimento di intento ed entità).",
+          "fr": "NLU – comprend l'intention et les détails d'une entrée (reconnaissance d'intention et d'entités)."
+        },
+        {
+          "de": "Dialogmanagement – steuert den Gesprächsverlauf, hält den Kontext über mehrere Turns.",
+          "en": "Dialogue management – steers the conversation flow and holds context across multiple turns.",
+          "it": "Gestione del dialogo – guida il flusso della conversazione e mantiene il contesto su più turni.",
+          "fr": "Gestion du dialogue – pilote le déroulé de la conversation et conserve le contexte sur plusieurs tours."
+        },
+        {
+          "de": "LLM (grosses Sprachmodell) – erzeugt heute Verständnis und Antwort oft in einem Schritt, flexibel und offen formuliert.",
+          "en": "LLM (large language model) – today often produces understanding and answer in one step, flexible and open-ended.",
+          "it": "LLM (grande modello linguistico) – oggi spesso produce comprensione e risposta in un unico passaggio, in modo flessibile e aperto.",
+          "fr": "LLM (grand modèle de langage) – produit aujourd'hui souvent compréhension et réponse en une seule étape, de manière flexible et ouverte."
+        },
+        {
+          "de": "NLG – formuliert die Antwort in natürlicher, verständlicher Sprache.",
+          "en": "NLG – phrases the answer in natural, understandable language.",
+          "it": "NLG – formula la risposta in un linguaggio naturale e comprensibile.",
+          "fr": "NLG – formule la réponse dans un langage naturel et compréhensible."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Text und Stimme: von ASR bis TTS",
+        "en": "Text and voice: from ASR to TTS",
+        "it": "Testo e voce: da ASR a TTS",
+        "fr": "Texte et voix : de l'ASR au TTS"
+      },
+      "paragraphs": [
+        {
+          "de": "Conversational AI funktioniert per Text und per Stimme. Bei Voice kommen zwei zusätzliche Bausteine hinzu: Die automatische Spracherkennung (ASR, Speech-to-Text) wandelt gesprochene Sprache in Text um, den das System versteht. Am Ende wandelt die Sprachsynthese (TTS, Text-to-Speech) die Antwort wieder in eine hörbare Stimme um. Dazwischen läuft dieselbe Verstehens- und Dialoglogik wie beim Chat.",
+          "en": "Conversational AI works via text and via voice. Voice adds two components: automatic speech recognition (ASR, speech-to-text) converts spoken language into text the system can understand. At the end, speech synthesis (TTS, text-to-speech) turns the answer back into an audible voice. In between runs the same understanding and dialogue logic as in chat.",
+          "it": "La Conversational AI funziona via testo e via voce. Con la voce si aggiungono due componenti: il riconoscimento vocale automatico (ASR, speech-to-text) converte il parlato in testo comprensibile al sistema. Alla fine la sintesi vocale (TTS, text-to-speech) trasforma di nuovo la risposta in una voce udibile. Nel mezzo agisce la stessa logica di comprensione e dialogo della chat.",
+          "fr": "La Conversational AI fonctionne par texte et par voix. La voix ajoute deux composants : la reconnaissance vocale automatique (ASR, speech-to-text) convertit la parole en texte compréhensible par le système. À la fin, la synthèse vocale (TTS, text-to-speech) retransforme la réponse en une voix audible. Entre les deux s'exécute la même logique de compréhension et de dialogue que dans le chat."
+        },
+        {
+          "de": "Für die Schweiz ist die Sprachvielfalt relevant: Standarddeutsch, Französisch, Italienisch und Englisch werden von modernen Modellen gut abgedeckt. Schweizerdeutsche Dialekte sind für ASR anspruchsvoller und sollten vor dem Produktivbetrieb mit realen Aufnahmen getestet werden.",
+          "en": "For Switzerland, language diversity matters: standard German, French, Italian and English are well covered by modern models. Swiss German dialects are more demanding for ASR and should be tested with real recordings before going live.",
+          "it": "Per la Svizzera conta la diversità linguistica: tedesco standard, francese, italiano e inglese sono ben coperti dai modelli moderni. I dialetti svizzero-tedeschi sono più impegnativi per l'ASR e vanno testati con registrazioni reali prima della messa in produzione.",
+          "fr": "Pour la Suisse, la diversité linguistique compte : allemand standard, français, italien et anglais sont bien couverts par les modèles modernes. Les dialectes suisses alémaniques sont plus exigeants pour l'ASR et devraient être testés avec de vrais enregistrements avant la mise en production."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Alte Chatbots vs. moderne Conversational AI",
+        "en": "Old chatbots vs. modern conversational AI",
+        "it": "Vecchi chatbot vs. Conversational AI moderna",
+        "fr": "Anciens chatbots vs. Conversational AI moderne"
+      },
+      "paragraphs": [
+        {
+          "de": "Der grösste Unterschied liegt in der Flexibilität. Frühe Chatbots waren regelbasiert: Sie folgten Entscheidungsbäumen, reagierten auf Schlüsselwörter und boten oft nur Buttons an. Wich die Frage vom Skript ab, kam die Antwort «Das habe ich nicht verstanden». Moderne Conversational AI auf Basis von LLMs interpretiert dagegen frei formulierte Sätze, versteht Kontext über mehrere Nachrichten hinweg und kann Antworten neu zusammensetzen statt sie nur abzurufen.",
+          "en": "The biggest difference is flexibility. Early chatbots were rule-based: they followed decision trees, reacted to keywords and often only offered buttons. If a question strayed from the script, the answer was \"I didn't understand that.\" Modern conversational AI built on LLMs, by contrast, interprets freely phrased sentences, understands context across several messages and can compose answers rather than merely retrieve them.",
+          "it": "La differenza maggiore è la flessibilità. I primi chatbot erano a regole: seguivano alberi decisionali, reagivano a parole chiave e spesso offrivano solo pulsanti. Se la domanda usciva dal copione, la risposta era «Non ho capito». La Conversational AI moderna basata su LLM, invece, interpreta frasi formulate liberamente, comprende il contesto su più messaggi e può comporre le risposte anziché limitarsi a recuperarle.",
+          "fr": "La plus grande différence est la flexibilité. Les premiers chatbots étaient à règles : ils suivaient des arbres de décision, réagissaient à des mots-clés et n'offraient souvent que des boutons. Si la question s'écartait du script, la réponse était « Je n'ai pas compris ». La Conversational AI moderne fondée sur les LLM, à l'inverse, interprète des phrases librement formulées, comprend le contexte sur plusieurs messages et peut composer les réponses au lieu de simplement les récupérer."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Verständnis: Schlüsselwörter und starre Regeln früher – freie Sprache und Kontext heute.",
+          "en": "Understanding: keywords and rigid rules then – free language and context now.",
+          "it": "Comprensione: parole chiave e regole rigide prima – linguaggio libero e contesto ora.",
+          "fr": "Compréhension : mots-clés et règles rigides avant – langage libre et contexte aujourd'hui."
+        },
+        {
+          "de": "Antworten: vordefinierte Bausteine früher – dynamisch generierte Antworten heute.",
+          "en": "Answers: predefined snippets then – dynamically generated responses now.",
+          "it": "Risposte: frammenti predefiniti prima – risposte generate dinamicamente ora.",
+          "fr": "Réponses : fragments prédéfinis avant – réponses générées dynamiquement aujourd'hui."
+        },
+        {
+          "de": "Pflege: jeder Dialogpfad manuell gebaut früher – Wissen aus Dokumenten anbindbar (RAG) heute.",
+          "en": "Maintenance: every dialogue path hand-built then – knowledge from documents connectable (RAG) now.",
+          "it": "Manutenzione: ogni percorso costruito a mano prima – conoscenza dai documenti collegabile (RAG) ora.",
+          "fr": "Maintenance : chaque parcours construit à la main avant – connaissances issues de documents connectables (RAG) aujourd'hui."
+        },
+        {
+          "de": "Risiko: begrenzte, aber vorhersehbare Antworten früher – höhere Reichweite, aber Halluzinationsrisiko heute.",
+          "en": "Risk: limited but predictable answers then – broader coverage but hallucination risk now.",
+          "it": "Rischio: risposte limitate ma prevedibili prima – copertura più ampia ma rischio di allucinazioni ora.",
+          "fr": "Risque : réponses limitées mais prévisibles avant – couverture plus large mais risque d'hallucination aujourd'hui."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Praxisbeispiele für Schweizer KMU",
+        "en": "Practical examples for Swiss SMEs",
+        "it": "Esempi pratici per le PMI svizzere",
+        "fr": "Exemples pratiques pour les PME suisses"
+      },
+      "paragraphs": [
+        {
+          "de": "Conversational AI zeigt ihren Wert dort, wo viele ähnliche Anfragen auf natürliche Sprache treffen. Die folgenden Beispiele sind illustrativ und zeigen typische Einsatzfelder – keine gemessenen Resultate.",
+          "en": "Conversational AI proves its value where many similar requests meet natural language. The following examples are illustrative and show typical use cases – not measured results.",
+          "it": "La Conversational AI mostra il suo valore dove molte richieste simili incontrano il linguaggio naturale. Gli esempi seguenti sono illustrativi e mostrano casi d'uso tipici, non risultati misurati.",
+          "fr": "La Conversational AI prouve sa valeur là où de nombreuses demandes similaires rencontrent le langage naturel. Les exemples suivants sont illustratifs et montrent des cas d'usage typiques, pas des résultats mesurés."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kundenservice: Ein Bot beantwortet wiederkehrende Fragen zu Lieferzeiten oder Rechnungen rund um die Uhr und leitet Komplexes an Mitarbeitende weiter.",
+          "en": "Customer service: a bot answers recurring questions about delivery times or invoices around the clock and hands complex cases to staff.",
+          "it": "Assistenza clienti: un bot risponde 24 ore su 24 a domande ricorrenti su tempi di consegna o fatture e inoltra i casi complessi al personale.",
+          "fr": "Service client : un bot répond 24h/24 aux questions récurrentes sur les délais de livraison ou les factures et transfère les cas complexes au personnel."
+        },
+        {
+          "de": "Terminbuchung: Ein Voicebot einer Praxis oder Werkstatt nimmt Anrufe entgegen, versteht das Anliegen und trägt Termine im Kalender ein.",
+          "en": "Appointment booking: a practice or garage voicebot takes calls, understands the request and enters appointments in the calendar.",
+          "it": "Prenotazione appuntamenti: il voicebot di uno studio o di un'officina risponde alle chiamate, capisce la richiesta e inserisce gli appuntamenti in agenda.",
+          "fr": "Prise de rendez-vous : le voicebot d'un cabinet ou d'un garage prend les appels, comprend la demande et inscrit les rendez-vous dans l'agenda."
+        },
+        {
+          "de": "Interne Assistenz: Mitarbeitende fragen einen Assistenten nach Richtlinien oder Prozessen, angebunden an die eigene Wissensdatenbank (RAG).",
+          "en": "Internal assistance: employees ask an assistant about policies or processes, connected to the company knowledge base (RAG).",
+          "it": "Assistenza interna: i collaboratori interrogano un assistente su policy o processi, collegato alla base di conoscenza aziendale (RAG).",
+          "fr": "Assistance interne : les collaborateurs interrogent un assistant sur les politiques ou processus, connecté à la base de connaissances de l'entreprise (RAG)."
+        },
+        {
+          "de": "Mehrsprachigkeit: Dieselbe Lösung bedient Kundschaft auf Deutsch, Französisch, Italienisch und Englisch – ein Vorteil im viersprachigen Markt Schweiz.",
+          "en": "Multilingual reach: the same solution serves customers in German, French, Italian and English – an advantage in Switzerland's multilingual market.",
+          "it": "Multilinguismo: la stessa soluzione serve la clientela in tedesco, francese, italiano e inglese, un vantaggio nel mercato plurilingue svizzero.",
+          "fr": "Multilinguisme : la même solution sert la clientèle en allemand, français, italien et anglais – un atout sur le marché plurilingue suisse."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler und Schweizer Datenschutz",
+        "en": "Common mistakes and Swiss data protection",
+        "it": "Errori comuni e protezione dei dati in Svizzera",
+        "fr": "Erreurs fréquentes et protection des données en Suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Die häufigsten Fehler sind organisatorisch, nicht technisch: einen Bot ohne saubere Wissensbasis live schalten, keine Übergabe an Menschen vorsehen, oder generierte Antworten nicht gegen geprüfte Quellen absichern. Weil LLMs plausibel klingende, aber falsche Antworten (Halluzinationen) erzeugen können, gehört zu jeder seriösen Lösung ein Faktenanker – etwa Retrieval-Augmented Generation (RAG), die Antworten an freigegebene Dokumente bindet.",
+          "en": "The most common mistakes are organisational, not technical: launching a bot without a clean knowledge base, providing no handover to humans, or failing to ground generated answers in verified sources. Because LLMs can produce plausible-sounding but wrong answers (hallucinations), every serious solution needs a factual anchor – such as retrieval-augmented generation (RAG), which ties answers to approved documents.",
+          "it": "Gli errori più comuni sono organizzativi, non tecnici: mettere online un bot senza una base di conoscenza pulita, non prevedere il passaggio a un operatore o non ancorare le risposte generate a fonti verificate. Poiché gli LLM possono produrre risposte plausibili ma errate (allucinazioni), ogni soluzione seria richiede un'ancora fattuale, come la retrieval-augmented generation (RAG), che lega le risposte a documenti approvati.",
+          "fr": "Les erreurs les plus fréquentes sont organisationnelles, pas techniques : lancer un bot sans base de connaissances propre, ne prévoir aucun transfert vers un humain, ou ne pas ancrer les réponses générées dans des sources vérifiées. Comme les LLM peuvent produire des réponses plausibles mais fausses (hallucinations), toute solution sérieuse a besoin d'un ancrage factuel – comme la retrieval-augmented generation (RAG), qui relie les réponses à des documents validés."
+        },
+        {
+          "de": "In der Schweiz gilt das revidierte Datenschutzgesetz (revDSG/nFADP), überwacht durch den EDÖB. Wer Conversational AI einsetzt, sollte transparent machen, dass mit einer Maschine kommuniziert wird, Gesprächsdaten sparsam und zweckgebunden verarbeiten, den Serverstandort und Auftragsverarbeiter prüfen und bei Anbietern ausserhalb der Schweiz die Datenübermittlung absichern. Zusätzlich kann der EU AI Act extraterritorial greifen, sobald Kundschaft in der EU bedient wird – etwa mit Transparenzpflichten für KI-Interaktionen.",
+          "en": "In Switzerland the revised Data Protection Act (revDSG/nFADP) applies, supervised by the FDPIC (EDÖB). Anyone deploying conversational AI should make clear that users are talking to a machine, process conversation data sparingly and for a defined purpose, check the server location and processors, and secure data transfers for providers outside Switzerland. The EU AI Act may also apply extraterritorially once EU customers are served – for instance with transparency duties for AI interactions.",
+          "it": "In Svizzera si applica la legge riveduta sulla protezione dei dati (revDSG/nLPD), vigilata dall'IFPDT (EDÖB). Chi usa la Conversational AI dovrebbe rendere chiaro che si comunica con una macchina, trattare i dati della conversazione con parsimonia e per uno scopo definito, verificare l'ubicazione dei server e i responsabili del trattamento, e proteggere i trasferimenti verso fornitori fuori dalla Svizzera. Inoltre l'EU AI Act può applicarsi in via extraterritoriale non appena si serve clientela nell'UE, ad esempio con obblighi di trasparenza per le interazioni con l'IA.",
+          "fr": "En Suisse s'applique la loi révisée sur la protection des données (nLPD/revDSG), surveillée par le PFPDT (EDÖB). Quiconque déploie de la Conversational AI devrait indiquer clairement que l'on communique avec une machine, traiter les données de conversation avec parcimonie et pour une finalité définie, vérifier l'emplacement des serveurs et les sous-traitants, et sécuriser les transferts vers des prestataires hors de Suisse. De plus, l'EU AI Act peut s'appliquer de manière extraterritoriale dès qu'une clientèle de l'UE est servie, par exemple avec des obligations de transparence pour les interactions avec l'IA."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen Conversational AI und einem Chatbot?",
+        "en": "What is the difference between conversational AI and a chatbot?",
+        "it": "Qual è la differenza tra Conversational AI e chatbot?",
+        "fr": "Quelle est la différence entre Conversational AI et chatbot ?"
+      },
+      "a": {
+        "de": "«Chatbot» ist eine mögliche Erscheinungsform, «Conversational AI» der übergeordnete Technologiebegriff. Ein Chatbot kann simpel und regelbasiert sein; Conversational AI meint Systeme, die Sprache tatsächlich verstehen (NLU) und den Dialog steuern. Moderne Chatbots auf LLM-Basis sind Conversational AI, alte Klick-Menü-Bots nicht.",
+        "en": "\"Chatbot\" is one possible form; \"conversational AI\" is the broader technology term. A chatbot can be simple and rule-based; conversational AI means systems that genuinely understand language (NLU) and manage the dialogue. Modern LLM-based chatbots are conversational AI; old click-menu bots are not.",
+        "it": "«Chatbot» è una possibile forma; «Conversational AI» è il termine tecnologico più ampio. Un chatbot può essere semplice e a regole; la Conversational AI indica sistemi che comprendono davvero il linguaggio (NLU) e gestiscono il dialogo. I chatbot moderni basati su LLM sono Conversational AI, i vecchi bot a menu no.",
+        "fr": "« Chatbot » est une forme possible ; « Conversational AI » est le terme technologique plus large. Un chatbot peut être simple et à règles ; la Conversational AI désigne des systèmes qui comprennent réellement le langage (NLU) et gèrent le dialogue. Les chatbots modernes fondés sur LLM sont de la Conversational AI, pas les anciens bots à menus."
+      }
+    },
+    {
+      "q": {
+        "de": "Braucht Conversational AI zwingend ein LLM?",
+        "en": "Does conversational AI necessarily need an LLM?",
+        "it": "La Conversational AI richiede necessariamente un LLM?",
+        "fr": "La Conversational AI nécessite-t-elle forcément un LLM ?"
+      },
+      "a": {
+        "de": "Nein. Conversational AI gab es vor den LLMs, aufgebaut aus separaten NLU-, Dialog- und NLG-Modulen. LLMs haben die Qualität stark verbessert und viele Schritte vereinfacht, sind aber kein Muss. Für eng umrissene, stark regulierte Abläufe kann ein schlankeres, kontrollierbares System sinnvoller sein.",
+        "en": "No. Conversational AI existed before LLMs, built from separate NLU, dialogue and NLG modules. LLMs have greatly improved quality and simplified many steps, but they are not mandatory. For narrow, heavily regulated flows, a leaner, more controllable system can make more sense.",
+        "it": "No. La Conversational AI esisteva prima degli LLM, costruita con moduli separati di NLU, dialogo e NLG. Gli LLM hanno migliorato molto la qualità e semplificato molti passaggi, ma non sono obbligatori. Per flussi ristretti e fortemente regolati, un sistema più snello e controllabile può essere più adatto.",
+        "fr": "Non. La Conversational AI existait avant les LLM, construite à partir de modules NLU, dialogue et NLG distincts. Les LLM ont fortement amélioré la qualité et simplifié de nombreuses étapes, mais ne sont pas obligatoires. Pour des flux étroits et très réglementés, un système plus léger et contrôlable peut être plus pertinent."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie verhindert man falsche Antworten (Halluzinationen)?",
+        "en": "How do you prevent wrong answers (hallucinations)?",
+        "it": "Come si evitano risposte errate (allucinazioni)?",
+        "fr": "Comment éviter les réponses fausses (hallucinations) ?"
+      },
+      "a": {
+        "de": "Man verankert Antworten in geprüften Quellen. Retrieval-Augmented Generation (RAG) bindet das Modell an freigegebene Dokumente, klare Grenzen definieren erlaubte Themen, und für heikle Fälle wird an Menschen übergeben. Wichtig sind zudem Tests mit realen Anfragen und laufende Kontrolle der Gesprächsprotokolle.",
+        "en": "You ground answers in verified sources. Retrieval-augmented generation (RAG) ties the model to approved documents, clear boundaries define allowed topics, and sensitive cases are handed to humans. Testing with real requests and ongoing review of conversation logs are equally important.",
+        "it": "Si ancorano le risposte a fonti verificate. La retrieval-augmented generation (RAG) lega il modello a documenti approvati, confini chiari definiscono i temi ammessi e i casi delicati passano a un operatore. Sono importanti anche i test con richieste reali e il controllo continuo dei log delle conversazioni.",
+        "fr": "On ancre les réponses dans des sources vérifiées. La retrieval-augmented generation (RAG) relie le modèle à des documents validés, des limites claires définissent les sujets autorisés et les cas sensibles sont transférés à des humains. Les tests avec de vraies demandes et la revue continue des journaux de conversation sont tout aussi importants."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist Conversational AI in der Schweiz datenschutzkonform einsetzbar?",
+        "en": "Can conversational AI be used in a data-protection-compliant way in Switzerland?",
+        "it": "La Conversational AI è utilizzabile in Svizzera nel rispetto della protezione dei dati?",
+        "fr": "La Conversational AI est-elle utilisable en Suisse en conformité avec la protection des données ?"
+      },
+      "a": {
+        "de": "Ja, mit Sorgfalt. Massgeblich ist das revDSG/nFADP unter Aufsicht des EDÖB: Transparenz über den KI-Einsatz, Datensparsamkeit, geklärte Auftragsverarbeitung und Serverstandort sowie abgesicherte Übermittlung ins Ausland. Wird EU-Kundschaft bedient, kann zusätzlich der EU AI Act mit Transparenzpflichten greifen.",
+        "en": "Yes, with care. The revDSG/nFADP under FDPIC (EDÖB) supervision is decisive: transparency about AI use, data minimisation, clarified processing and server location, and secured transfers abroad. If EU customers are served, the EU AI Act with its transparency duties may also apply.",
+        "it": "Sì, con attenzione. È determinante la revDSG/nLPD sotto la vigilanza dell'IFPDT (EDÖB): trasparenza sull'uso dell'IA, minimizzazione dei dati, responsabilità del trattamento e ubicazione dei server chiarite, e trasferimenti all'estero protetti. Se si serve clientela dell'UE, può applicarsi anche l'EU AI Act con i suoi obblighi di trasparenza.",
+        "fr": "Oui, avec soin. La nLPD/revDSG sous la surveillance du PFPDT (EDÖB) est déterminante : transparence sur l'usage de l'IA, minimisation des données, sous-traitance et emplacement des serveurs clarifiés, et transferts à l'étranger sécurisés. Si une clientèle de l'UE est servie, l'EU AI Act et ses obligations de transparence peuvent aussi s'appliquer."
+      }
+    },
+    {
+      "q": {
+        "de": "Funktioniert Conversational AI auch auf Schweizerdeutsch?",
+        "en": "Does conversational AI also work in Swiss German?",
+        "it": "La Conversational AI funziona anche in svizzero-tedesco?",
+        "fr": "La Conversational AI fonctionne-t-elle aussi en suisse allemand ?"
+      },
+      "a": {
+        "de": "Standarddeutsch, Französisch, Italienisch und Englisch funktionieren zuverlässig. Schweizerdeutsche Dialekte sind für die Spracherkennung (ASR) anspruchsvoller, weil sie stark variieren und wenig standardisiert verschriftlicht sind. Vor dem Produktivstart lohnt sich ein Test mit echten Aufnahmen der eigenen Zielgruppe.",
+        "en": "Standard German, French, Italian and English work reliably. Swiss German dialects are more demanding for speech recognition (ASR) because they vary widely and are rarely written in a standardised way. A test with real recordings of your own audience is worthwhile before going live.",
+        "it": "Tedesco standard, francese, italiano e inglese funzionano in modo affidabile. I dialetti svizzero-tedeschi sono più impegnativi per il riconoscimento vocale (ASR) perché variano molto e sono raramente scritti in modo standardizzato. Prima della messa in produzione conviene un test con registrazioni reali del proprio pubblico.",
+        "fr": "L'allemand standard, le français, l'italien et l'anglais fonctionnent de manière fiable. Les dialectes suisses alémaniques sont plus exigeants pour la reconnaissance vocale (ASR) car ils varient beaucoup et sont rarement écrits de façon standardisée. Un test avec de vrais enregistrements de votre public est utile avant la mise en production."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Conversational AI",
+    "Natural Language Understanding (NLU)",
+    "Dialogmanagement",
+    "Large Language Model (LLM)",
+    "Intent-Erkennung",
+    "Entitätserkennung",
+    "Natural Language Generation (NLG)",
+    "Speech-to-Text (ASR)",
+    "Text-to-Speech (TTS)",
+    "Retrieval-Augmented Generation (RAG)",
+    "regelbasierter Chatbot",
+    "Voicebot",
+    "Halluzination",
+    "revDSG / nFADP",
+    "EDÖB",
+    "EU AI Act"
+  ]
+}

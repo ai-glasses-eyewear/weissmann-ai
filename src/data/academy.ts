@@ -58,7 +58,7 @@ export const CLUSTERS: AcademyCluster[] = [
     tagline: { de: 'Praktische KI-Anwendung, Implementierung und ROI für Schweizer KMU.', en: 'Practical AI adoption, implementation and ROI for Swiss SMEs.', it: 'Adozione pratica dell’AI, implementazione e ROI per le PMI svizzere.', fr: 'Adoption pratique de l’IA, mise en œuvre et ROI pour les PME suisses.' },
   },
   {
-    id: 'agents-automation-voice', order: 3, status: 'draft',
+    id: 'agents-automation-voice', order: 3, status: 'live',
     slug: { de: 'agenten-automatisierung', en: 'agents-automation', it: 'agenti-automazione', fr: 'agents-automatisation' },
     name: { de: 'KI-Agenten, Automatisierung & Voice', en: 'AI Agents, Automation & Voice', it: 'Agenti AI, automazione e voce', fr: 'Agents IA, automatisation et voix' },
     tagline: { de: 'Agenten, Automatisierung, Voice AI, Telefonassistenten und Chatbots erklärt.', en: 'Agents, automation, voice AI, phone assistants and chatbots explained.', it: 'Agenti, automazione, voice AI, assistenti telefonici e chatbot spiegati.', fr: 'Agents, automatisation, IA vocale, assistants téléphoniques et chatbots expliqués.' },

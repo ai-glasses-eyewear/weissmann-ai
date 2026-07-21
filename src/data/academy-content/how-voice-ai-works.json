@@ -1,0 +1,305 @@
+{
+  "id": "how-voice-ai-works",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "slug": {
+    "de": "wie-funktioniert-voice-ai",
+    "en": "how-voice-ai-works",
+    "it": "come-funziona-il-voice-ai",
+    "fr": "comment-fonctionne-la-voix-ia"
+  },
+  "relatedServices": [
+    "phone-assistant",
+    "agents"
+  ],
+  "title": {
+    "de": "Wie funktioniert Voice AI? Technik erklärt | Weissmann AI",
+    "en": "How Voice AI Works: Speech to Answer | Weissmann AI",
+    "it": "Come funziona la Voice AI: la pipeline | Weissmann AI",
+    "fr": "Comment fonctionne la Voice AI : le pipeline | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Voice AI Schritt für Schritt: Spracherkennung, LLM-Verständnis, Sprachausgabe, Latenz, Barge-in und die Übergabe an Menschen – verständlich erklärt.",
+    "en": "Voice AI step by step: speech-to-text, LLM understanding, text-to-speech, latency, barge-in and human handoff – explained clearly and accurately.",
+    "it": "Voice AI passo per passo: riconoscimento vocale, comprensione LLM, sintesi vocale, latenza, barge-in e passaggio all'operatore, spiegati con chiarezza.",
+    "fr": "La Voice AI étape par étape : reconnaissance vocale, compréhension par LLM, synthèse vocale, latence, barge-in et transfert humain, expliqués simplement."
+  },
+  "kicker": {
+    "de": "KI-Grundlagen · Voice AI",
+    "en": "AI Foundations · Voice AI",
+    "it": "Fondamenti di IA · Voice AI",
+    "fr": "Fondamentaux de l'IA · Voice AI"
+  },
+  "h1": {
+    "de": "Wie funktioniert Voice AI?",
+    "en": "How does Voice AI work?",
+    "it": "Come funziona la Voice AI?",
+    "fr": "Comment fonctionne la Voice AI ?"
+  },
+  "answerFirst": {
+    "de": "Voice AI führt ein gesprochenes Gespräch in Echtzeit, indem sie drei KI-Bausteine verkettet: Spracherkennung (Speech-to-Text) wandelt gesprochene Wörter in Text, ein Sprachmodell (LLM) versteht die Absicht und formuliert eine Antwort, und Text-to-Speech spricht diese natürlich aus. Eine Orchestrierungsschicht steuert Sprechpausen, Unterbrechungen (Barge-in), Latenz und die saubere Übergabe an einen Menschen, wenn nötig.",
+    "en": "Voice AI holds a spoken conversation in real time by chaining three AI building blocks: speech recognition (speech-to-text) turns spoken words into text, a language model (LLM) interprets the intent and drafts a reply, and text-to-speech speaks it back naturally. An orchestration layer manages timing, interruptions (barge-in), latency and a clean handover to a human when needed.",
+    "it": "La Voice AI sostiene una conversazione parlata in tempo reale collegando tre componenti di IA: il riconoscimento vocale (speech-to-text) trasforma le parole in testo, un modello linguistico (LLM) ne interpreta l'intento e formula una risposta, e il text-to-speech la pronuncia in modo naturale. Uno strato di orchestrazione gestisce tempi, interruzioni (barge-in), latenza e il passaggio pulito a un operatore quando serve.",
+    "fr": "La Voice AI mène une conversation parlée en temps réel en enchaînant trois briques d'IA : la reconnaissance vocale (speech-to-text) transforme la parole en texte, un modèle de langage (LLM) en comprend l'intention et formule une réponse, et le text-to-speech la prononce naturellement. Une couche d'orchestration gère le rythme, les interruptions (barge-in), la latence et le transfert propre vers un humain si nécessaire."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Voice AI in einem Satz",
+        "en": "Voice AI in one sentence",
+        "it": "La Voice AI in una frase",
+        "fr": "La Voice AI en une phrase"
+      },
+      "paragraphs": [
+        {
+          "de": "Voice AI ist Software, die ein gesprochenes Gespräch führt, indem sie drei KI-Komponenten in Echtzeit verkettet: Spracherkennung wandelt Ihre Worte in Text, ein Sprachmodell interpretiert sie und entscheidet, was gesagt wird, und Sprachsynthese spricht die Antwort aus. Was sich wie ein Dialog und nicht wie eine Befehlsliste anfühlt, ist die Orchestrierungsschicht: Sie steuert das Timing, verarbeitet Unterbrechungen und übergibt bei Bedarf sauber an einen Menschen.",
+          "en": "Voice AI is software that holds a spoken conversation by chaining three AI components in real time: speech recognition turns your words into text, a language model interprets them and decides what to say, and speech synthesis speaks the reply back. What makes it feel like a dialogue rather than a list of commands is the orchestration layer: it manages timing, handles interruptions and, when needed, hands over cleanly to a human agent.",
+          "it": "La Voice AI è un software che sostiene una conversazione parlata concatenando tre componenti di IA in tempo reale: il riconoscimento vocale trasforma le parole in testo, un modello linguistico le interpreta e decide cosa dire, e la sintesi vocale pronuncia la risposta. Ciò che la fa sembrare un dialogo e non un elenco di comandi è lo strato di orchestrazione: gestisce i tempi, elabora le interruzioni e, se serve, passa in modo pulito a un operatore umano.",
+          "fr": "La Voice AI est un logiciel qui mène une conversation parlée en enchaînant trois composants d'IA en temps réel : la reconnaissance vocale transforme vos mots en texte, un modèle de langage les interprète et décide quoi dire, et la synthèse vocale prononce la réponse. Ce qui donne l'impression d'un dialogue plutôt que d'une liste de commandes, c'est la couche d'orchestration : elle gère le rythme, traite les interruptions et, au besoin, transfère proprement vers un agent humain."
+        },
+        {
+          "de": "Moderne Systeme durchlaufen diese Schleife in deutlich unter zwei Sekunden. Genau deshalb kann ein gut gebauter Sprachassistent eine Tischreservierung entgegennehmen oder einen Support-Anruf vorqualifizieren, ohne roboterhaft zu wirken.",
+          "en": "Modern systems run this loop in well under two seconds. That is precisely why a well-built voice assistant can take a table booking or triage a support call without sounding robotic.",
+          "it": "I sistemi moderni completano questo ciclo in ben meno di due secondi. È proprio per questo che un assistente vocale ben costruito può prendere una prenotazione o smistare una chiamata di supporto senza sembrare robotico.",
+          "fr": "Les systèmes modernes bouclent ce cycle en bien moins de deux secondes. C'est précisément pour cela qu'un assistant vocal bien conçu peut prendre une réservation ou pré-qualifier un appel de support sans paraître robotique."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die Pipeline Schritt für Schritt",
+        "en": "The pipeline, step by step",
+        "it": "La pipeline, passo per passo",
+        "fr": "Le pipeline, étape par étape"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein Voice-AI-Turn läuft als Kette streamender Stufen ab. Jede Stufe reicht Zwischenergebnisse an die nächste weiter, statt auf ihren vollständigen Abschluss zu warten – das ist der Schlüssel zur natürlichen Geschwindigkeit.",
+          "en": "A voice AI turn runs as a chain of streaming stages. Each stage passes intermediate results to the next instead of waiting for full completion – the key to natural speed.",
+          "it": "Un turno di Voice AI si svolge come una catena di stadi in streaming. Ogni stadio passa risultati intermedi al successivo invece di attendere il completamento totale: è la chiave della naturalezza dei tempi.",
+          "fr": "Un tour de Voice AI se déroule comme une chaîne d'étapes en streaming. Chaque étape transmet des résultats intermédiaires à la suivante au lieu d'attendre son achèvement complet : c'est la clé d'une vitesse naturelle."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Audioaufnahme & VAD/Endpointing: Der Mikrofonstrom wird von einer Voice Activity Detection überwacht, die Sprache von Stille trennt und erkennt, wann Sie ausgesprochen haben (Endpointing).",
+          "en": "Audio capture & VAD/endpointing: the microphone stream is monitored by Voice Activity Detection, which separates speech from silence and decides when you have finished your turn (endpointing).",
+          "it": "Acquisizione audio e VAD/endpointing: il flusso del microfono è monitorato dalla Voice Activity Detection, che distingue voce e silenzio e capisce quando avete finito di parlare (endpointing).",
+          "fr": "Capture audio et VAD/endpointing : le flux du micro est surveillé par une Voice Activity Detection, qui distingue la parole du silence et détecte la fin de votre tour de parole (endpointing)."
+        },
+        {
+          "de": "Speech-to-Text (STT/ASR): Ein Streaming-Modell transkribiert Audio fortlaufend in Text und liefert vorläufige (\"partielle\") Ergebnisse, die sich zu finalem Text verfestigen. Dialekt, Fachjargon und Hintergrundlärm sind die harten Fälle.",
+          "en": "Speech-to-text (STT/ASR): a streaming model continuously transcribes audio into text, emitting provisional (\"partial\") results that firm up into final text. Accents, domain jargon and background noise are the hard cases.",
+          "it": "Speech-to-text (STT/ASR): un modello in streaming trascrive l'audio in testo di continuo, producendo risultati provvisori (\"parziali\") che si consolidano in testo finale. Accenti, gergo tecnico e rumore di fondo sono i casi difficili.",
+          "fr": "Speech-to-text (STT/ASR) : un modèle en streaming transcrit l'audio en texte en continu, produisant des résultats provisoires (\"partiels\") qui se figent en texte final. Accents, jargon métier et bruit de fond sont les cas difficiles."
+        },
+        {
+          "de": "Verständnis mit einem LLM: Transkript, Gesprächsverlauf und Geschäftskontext (über RAG oder Tool-/API-Aufrufe) gehen an ein Sprachmodell, das die Absicht bestimmt und eine Antwort entwirft. Hier werden Buchungssysteme, CRM oder Wissensdatenbanken abgefragt.",
+          "en": "Understanding with an LLM: the transcript, conversation history and business context (via RAG or tool/API calls) go to a language model that determines intent and drafts a reply. This is where booking systems, CRMs or knowledge bases are queried.",
+          "it": "Comprensione con un LLM: trascrizione, cronologia e contesto aziendale (tramite RAG o chiamate a tool/API) vanno a un modello linguistico che individua l'intento e abbozza una risposta. Qui vengono interrogati sistemi di prenotazione, CRM o basi di conoscenza.",
+          "fr": "Compréhension par un LLM : la transcription, l'historique et le contexte métier (via RAG ou appels d'outils/API) sont transmis à un modèle de langage qui détermine l'intention et rédige une réponse. C'est ici que sont interrogés systèmes de réservation, CRM ou bases de connaissances."
+        },
+        {
+          "de": "Text-to-Speech (TTS): Der Antworttext wird in natürliches, streamendes Audio synthetisiert – oft Satz für Satz, damit die Wiedergabe beginnt, bevor die ganze Antwort fertig ist.",
+          "en": "Text-to-speech (TTS): the reply text is synthesised into natural, streaming audio – often sentence by sentence, so playback starts before the whole answer is ready.",
+          "it": "Text-to-speech (TTS): il testo della risposta viene sintetizzato in audio naturale e in streaming, spesso frase per frase, così la riproduzione inizia prima che la risposta sia completa.",
+          "fr": "Text-to-speech (TTS) : le texte de réponse est synthétisé en audio naturel et diffusé en streaming, souvent phrase par phrase, pour que la lecture démarre avant que la réponse complète soit prête."
+        },
+        {
+          "de": "Orchestrierung: Eine Steuerungsschicht verbindet alles – sie streamt jede Stufe in die nächste, verfolgt den Dialogzustand und setzt die Regeln für Unterbrechungen und Eskalation durch.",
+          "en": "Orchestration: a control layer ties it all together – streaming each stage into the next, tracking dialogue state and enforcing the rules for interruptions and escalation.",
+          "it": "Orchestrazione: uno strato di controllo collega tutto, inoltra ogni stadio al successivo, tiene traccia dello stato del dialogo e applica le regole per interruzioni ed escalation.",
+          "fr": "Orchestration : une couche de contrôle relie le tout, achemine chaque étape vers la suivante, suit l'état du dialogue et applique les règles d'interruption et d'escalade."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Latenz und Barge-in: warum sich gute Voice AI natürlich anfühlt",
+        "en": "Latency and barge-in: why good voice AI feels natural",
+        "it": "Latenza e barge-in: perché una buona Voice AI sembra naturale",
+        "fr": "Latence et barge-in : pourquoi une bonne Voice AI paraît naturelle"
+      },
+      "paragraphs": [
+        {
+          "de": "Im menschlichen Gespräch erwarten wir eine Antwort innerhalb weniger hundert Millisekunden; lange Pausen wirken kaputt. Die grösste technische Herausforderung ist deshalb nicht die Genauigkeit, sondern die Latenz. Entwickler sparen Zeit, indem sie jede Stufe streamen statt auf ihren Abschluss zu warten, TTS bereits beim ersten Satz starten und wahrscheinlich benötigte Daten vorab laden.",
+          "en": "In human conversation we expect a reply within a few hundred milliseconds; long gaps feel broken. So the biggest engineering challenge is not accuracy but latency. Builders shave time by streaming every stage instead of waiting for it to finish, starting TTS on the first sentence, and pre-fetching data that is likely to be needed.",
+          "it": "Nella conversazione umana ci aspettiamo una risposta entro poche centinaia di millisecondi; le pause lunghe sembrano un guasto. La sfida tecnica maggiore non è quindi la precisione ma la latenza. Gli sviluppatori risparmiano tempo mettendo in streaming ogni stadio invece di attenderne la fine, avviando il TTS già alla prima frase e precaricando i dati probabilmente necessari.",
+          "fr": "Dans une conversation humaine, on attend une réponse en quelques centaines de millisecondes ; les longs silences semblent cassés. Le plus grand défi technique n'est donc pas la précision mais la latence. Les développeurs gagnent du temps en diffusant chaque étape au lieu d'attendre sa fin, en démarrant le TTS dès la première phrase et en préchargeant les données probablement nécessaires."
+        },
+        {
+          "de": "Echte Konversation heisst auch: unterbrechen können. Barge-in erlaubt es dem Anrufer, in die Antwort des Assistenten hineinzureden; die VAD erkennt die eingehende Sprache, das System stoppt die Wiedergabe sofort, verwirft das gepufferte Audio und verarbeitet die neue Eingabe. Dafür braucht es akustische Echounterdrückung, damit der Assistent nicht seine eigene Stimme als Anrufer transkribiert.",
+          "en": "Real conversation also means being able to interrupt. Barge-in lets the caller talk over the assistant; VAD detects the incoming speech, the system stops playback instantly, discards the buffered audio and processes the new input. This needs acoustic echo cancellation so the assistant does not transcribe its own voice as if it were the caller.",
+          "it": "Conversazione vera significa anche poter interrompere. Il barge-in consente al chiamante di parlare sopra l'assistente; la VAD rileva la voce in arrivo, il sistema ferma subito la riproduzione, scarta l'audio in buffer ed elabora il nuovo input. Serve la cancellazione acustica dell'eco affinché l'assistente non trascriva la propria voce come se fosse il chiamante.",
+          "fr": "Une vraie conversation, c'est aussi pouvoir interrompre. Le barge-in permet à l'appelant de parler par-dessus l'assistant ; la VAD détecte la parole entrante, le système stoppe aussitôt la lecture, jette l'audio en mémoire tampon et traite la nouvelle entrée. Cela exige une annulation acoustique de l'écho pour que l'assistant ne transcrive pas sa propre voix comme celle de l'appelant."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Menschliche Übergabe und Zuverlässigkeit",
+        "en": "Human handoff and reliability",
+        "it": "Passaggio all'operatore e affidabilità",
+        "fr": "Transfert humain et fiabilité"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein produktionsreifer Sprachassistent kennt seine Grenzen und übergibt sauber. Die Übergabe (Human Handoff) ist kein Versagen, sondern ein bewusst gestalteter Teil des Ablaufs.",
+          "en": "A production-grade voice assistant knows its limits and hands off cleanly. Human handoff is not a failure but a deliberately designed part of the flow.",
+          "it": "Un assistente vocale di livello produttivo conosce i propri limiti e passa la mano in modo pulito. Il passaggio all'operatore non è un fallimento, ma una parte progettata del flusso.",
+          "fr": "Un assistant vocal de niveau production connaît ses limites et transfère proprement. Le transfert humain n'est pas un échec mais une partie délibérément conçue du parcours."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Auslöser: ausdrücklicher Wunsch (\"bitte einen Mitarbeiter\"), niedrige STT-/Intent-Konfidenz, negative Stimmung oder Frust, ausserhalb des Zuständigkeitsbereichs oder heikle Themen (Zahlungen, Beschwerden, Rechtliches), wiederholtes Scheitern.",
+          "en": "Triggers: explicit request (\"an agent, please\"), low STT/intent confidence, negative sentiment or frustration, out-of-scope or sensitive topics (payments, complaints, legal), repeated failure to resolve.",
+          "it": "Trigger: richiesta esplicita (\"un operatore, prego\"), bassa confidenza STT/intento, sentiment negativo o frustrazione, temi fuori ambito o delicati (pagamenti, reclami, legale), fallimenti ripetuti.",
+          "fr": "Déclencheurs : demande explicite (\"un conseiller, svp\"), faible confiance STT/intention, sentiment négatif ou frustration, sujets hors périmètre ou sensibles (paiements, réclamations, juridique), échecs répétés."
+        },
+        {
+          "de": "Warmer Transfer: Das System übergibt das laufende Transkript und den gesammelten Kontext an den Menschen, damit der Anrufer sich nicht wiederholen muss.",
+          "en": "Warm transfer: the system passes the live transcript and collected context to the human, so the caller does not have to repeat themselves.",
+          "it": "Trasferimento assistito: il sistema passa all'operatore la trascrizione in corso e il contesto raccolto, così il chiamante non deve ripetersi.",
+          "fr": "Transfert accompagné : le système transmet à l'humain la transcription en cours et le contexte collecté, pour que l'appelant n'ait pas à se répéter."
+        },
+        {
+          "de": "Fallbacks: Ist kein Mitarbeiter verfügbar, wird ein Rückruf erfasst oder auf ein Formular geleitet – der Anrufer bleibt nie in einer Schleife hängen.",
+          "en": "Fallbacks: if no agent is available, capture a callback request or route to a form – never leave the caller stuck in a loop.",
+          "it": "Fallback: se nessun operatore è disponibile, si registra una richiesta di richiamata o si indirizza a un modulo, senza mai lasciare il chiamante in un loop.",
+          "fr": "Solutions de repli : si aucun conseiller n'est disponible, enregistrer un rappel ou orienter vers un formulaire, sans jamais laisser l'appelant bloqué dans une boucle."
+        },
+        {
+          "de": "Leitplanken: Konfidenz protokollieren, das LLM mit abgerufenen Fakten erden (um Halluzinationen zu senken) und offenlegen, dass der Anrufer mit einer KI spricht.",
+          "en": "Guardrails: log confidence, ground the LLM in retrieved facts (to reduce hallucination), and disclose that the caller is speaking to an AI.",
+          "it": "Guardrail: registrare la confidenza, ancorare l'LLM a fatti recuperati (per ridurre le allucinazioni) e dichiarare che il chiamante sta parlando con un'IA.",
+          "fr": "Garde-fous : journaliser la confiance, ancrer le LLM sur des faits récupérés (pour réduire les hallucinations) et indiquer que l'appelant parle à une IA."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Perspektive: Datenschutz, Transparenz, Datenhaltung",
+        "en": "The Swiss perspective: privacy, transparency, data residency",
+        "it": "Prospettiva svizzera: privacy, trasparenza, ubicazione dei dati",
+        "fr": "Perspective suisse : protection des données, transparence, hébergement"
+      },
+      "bullets": [
+        {
+          "de": "revDSG/nFADP: Die Aufnahme einer Stimme ist Personendaten; ein Stimmabdruck zur Identifikation einer Person kann als biometrisches Datum besonders schützenswert sein. Anrufer informieren, Zweck und Rechtsgrundlage festlegen, Aufbewahrung begrenzen.",
+          "en": "revDSG/nFADP: a recording of someone's voice is personal data; a voiceprint used to identify a person can be sensitive biometric data. Inform callers, define purpose and legal basis, and limit retention.",
+          "it": "revDSG/nFADP: la registrazione di una voce è un dato personale; un'impronta vocale usata per identificare una persona può essere un dato biometrico degno di particolare protezione. Informare i chiamanti, definire scopo e base giuridica, limitare la conservazione.",
+          "fr": "revDSG/nFADP : l'enregistrement d'une voix est une donnée personnelle ; une empreinte vocale servant à identifier une personne peut être une donnée biométrique sensible. Informer les appelants, définir finalité et base légale, limiter la conservation."
+        },
+        {
+          "de": "Transparenz: Offenlegen, dass der Anrufer mit einer Maschine spricht – das deckt sich mit den Transparenzpflichten des EU AI Act (extraterritorial, also relevant für Schweizer KMU mit EU-Kundschaft) und den Erwartungen an eine faire Bearbeitung, über die in der Schweiz der EDÖB wacht.",
+          "en": "Transparency: disclose that the caller is talking to a machine – this aligns with the EU AI Act's transparency duties (extraterritorial, hence relevant for Swiss SMEs serving the EU) and with fair-processing expectations overseen in Switzerland by the EDÖB.",
+          "it": "Trasparenza: dichiarare che il chiamante parla con una macchina, in linea con gli obblighi di trasparenza dell'EU AI Act (extraterritoriale, quindi rilevante per le PMI svizzere che servono l'UE) e con le aspettative di trattamento corretto vigilate in Svizzera dall'EDÖB.",
+          "fr": "Transparence : indiquer que l'appelant parle à une machine, conformément aux obligations de transparence de l'EU AI Act (extraterritorial, donc pertinent pour les PME suisses servant l'UE) et aux attentes de traitement loyal surveillées en Suisse par le PFPDT (EDÖB)."
+        },
+        {
+          "de": "Datenhaltung & Auftragsverarbeiter: Wissen, wo Audio und Transkripte verarbeitet und gespeichert werden; wo möglich CH/EU-Hosting bevorzugen und mit den Voice-/LLM-Anbietern einen Auftragsverarbeitungsvertrag abschliessen.",
+          "en": "Data residency & processors: know where audio and transcripts are processed and stored; prefer CH/EU hosting where possible and put a data-processing agreement in place with your voice/LLM providers.",
+          "it": "Ubicazione dei dati e responsabili del trattamento: sapere dove audio e trascrizioni vengono elaborati e conservati; preferire l'hosting CH/UE quando possibile e stipulare un accordo sul trattamento dei dati con i fornitori di voce/LLM.",
+          "fr": "Hébergement des données et sous-traitants : savoir où l'audio et les transcriptions sont traités et stockés ; privilégier un hébergement CH/UE si possible et conclure un contrat de sous-traitance avec vos fournisseurs de voix/LLM."
+        },
+        {
+          "de": "Häufige Fehler: Genauigkeit jagen und Latenz ignorieren; kein Barge-in (Nutzer fühlen sich überredet); keine saubere Übergabe; ohne Hinweis aufzeichnen; das LLM ungeerdet antworten lassen (erfundene Richtlinien); nur im stillen Raum mit Muttersprachlern testen.",
+          "en": "Common mistakes: chasing accuracy while ignoring latency; no barge-in (users feel talked over); no clean handoff; recording without notice; letting the LLM answer ungrounded (invented policies); testing only in a quiet room with native speakers.",
+          "it": "Errori comuni: inseguire la precisione ignorando la latenza; niente barge-in (l'utente si sente sovrastato); nessun passaggio pulito; registrare senza avviso; lasciare che l'LLM risponda senza fondamento (regole inventate); testare solo in stanza silenziosa con madrelingua.",
+          "fr": "Erreurs fréquentes : courir après la précision en ignorant la latence ; pas de barge-in (l'utilisateur se sent coupé) ; pas de transfert propre ; enregistrer sans prévenir ; laisser le LLM répondre sans ancrage (règles inventées) ; tester seulement au calme avec des locuteurs natifs."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ist Voice AI dasselbe wie ein Chatbot?",
+        "en": "Is voice AI the same as a chatbot?",
+        "it": "La Voice AI è la stessa cosa di un chatbot?",
+        "fr": "La Voice AI est-elle la même chose qu'un chatbot ?"
+      },
+      "a": {
+        "de": "Nein. Das LLM-\"Gehirn\" ist ähnlich, doch Voice AI ergänzt Echtzeit-Spracherkennung, Sprachsynthese und eine strenge Steuerung von Latenz und Unterbrechungen. Eine halbe Sekunde Verzögerung, die im Chat unsichtbar bleibt, wirkt am Telefon störend.",
+        "en": "No. The LLM \"brain\" is similar, but voice AI adds real-time speech recognition, speech synthesis and strict handling of latency and interruptions. A half-second delay that is invisible in chat is jarring on a call.",
+        "it": "No. Il \"cervello\" LLM è simile, ma la Voice AI aggiunge riconoscimento vocale in tempo reale, sintesi vocale e una gestione rigorosa di latenza e interruzioni. Mezzo secondo di ritardo, invisibile in chat, al telefono è fastidioso.",
+        "fr": "Non. Le \"cerveau\" LLM est similaire, mais la Voice AI ajoute la reconnaissance vocale en temps réel, la synthèse vocale et une gestion stricte de la latence et des interruptions. Un demi-seconde de délai, invisible en chat, est gênant au téléphone."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie schnell muss Voice AI antworten?",
+        "en": "How fast does voice AI need to respond?",
+        "it": "Quanto veloce deve rispondere la Voice AI?",
+        "fr": "À quelle vitesse la Voice AI doit-elle répondre ?"
+      },
+      "a": {
+        "de": "Um natürlich zu wirken, sollte die Gesamtreaktion deutlich unter etwa einer Sekunde liegen; Menschen bemerken Gesprächslücken jenseits einiger hundert Millisekunden. Jede Stufe zu streamen ist die wichtigste Technik dafür.",
+        "en": "To feel natural, the round-trip should be well under about a second; humans notice conversational gaps beyond a few hundred milliseconds. Streaming every stage is the main technique for achieving this.",
+        "it": "Per sembrare naturale, il tempo di risposta complessivo dovrebbe stare ben sotto circa un secondo; le persone notano vuoti oltre poche centinaia di millisecondi. Mettere in streaming ogni stadio è la tecnica principale.",
+        "fr": "Pour paraître naturel, l'aller-retour doit rester bien en dessous d'environ une seconde ; on remarque les silences au-delà de quelques centaines de millisecondes. Diffuser chaque étape est la technique principale."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist Barge-in?",
+        "en": "What is barge-in?",
+        "it": "Che cos'è il barge-in?",
+        "fr": "Qu'est-ce que le barge-in ?"
+      },
+      "a": {
+        "de": "Die Fähigkeit, den Assistenten mitten im Satz zu unterbrechen: Er erkennt Ihre Sprache, hört sofort auf zu reden und hört zu. Das ist für einen natürlichen Anruf unverzichtbar und erfordert Echounterdrückung.",
+        "en": "The ability to interrupt the assistant mid-sentence: it detects your speech, stops talking immediately and listens. It is essential for a natural call and requires echo cancellation.",
+        "it": "La capacità di interrompere l'assistente a metà frase: rileva la vostra voce, smette subito di parlare e ascolta. È essenziale per una chiamata naturale e richiede la cancellazione dell'eco.",
+        "fr": "La capacité d'interrompre l'assistant en pleine phrase : il détecte votre parole, se tait immédiatement et écoute. Essentiel pour un appel naturel, cela exige l'annulation de l'écho."
+      }
+    },
+    {
+      "q": {
+        "de": "Wann sollte an einen Menschen übergeben werden?",
+        "en": "When should it hand off to a human?",
+        "it": "Quando dovrebbe passare a un operatore?",
+        "fr": "Quand doit-elle transférer vers un humain ?"
+      },
+      "a": {
+        "de": "Bei ausdrücklichem Wunsch, niedriger Konfidenz, Frust oder heiklen bzw. risikoreichen Themen. Ein gutes System macht einen warmen Transfer mit vollem Kontext, damit sich der Anrufer nicht wiederholen muss.",
+        "en": "On explicit request, low confidence, frustration, or sensitive/high-risk topics. A good system does a warm transfer with full context so the caller does not have to repeat themselves.",
+        "it": "Su richiesta esplicita, bassa confidenza, frustrazione o temi delicati/ad alto rischio. Un buon sistema effettua un trasferimento assistito con contesto completo, così il chiamante non deve ripetersi.",
+        "fr": "Sur demande explicite, faible confiance, frustration ou sujets sensibles/à haut risque. Un bon système effectue un transfert accompagné avec contexte complet, pour que l'appelant n'ait pas à se répéter."
+      }
+    },
+    {
+      "q": {
+        "de": "Worauf müssen Schweizer Unternehmen rechtlich achten?",
+        "en": "What do Swiss businesses need to watch legally?",
+        "it": "A cosa devono badare legalmente le aziende svizzere?",
+        "fr": "Que doivent surveiller juridiquement les entreprises suisses ?"
+      },
+      "a": {
+        "de": "Stimme ist Personendaten nach revDSG/nFADP: Anrufer informieren, offenlegen, dass sie mit einer KI sprechen (auch eine Pflicht des EU AI Act), Aufbewahrung begrenzen und klären, wo die Daten verarbeitet werden.",
+        "en": "Voice is personal data under the revDSG/nFADP: inform callers, disclose they are talking to an AI (also an EU AI Act duty), limit retention, and clarify where the data is processed.",
+        "it": "La voce è un dato personale secondo la revDSG/nFADP: informare i chiamanti, dichiarare che parlano con un'IA (anche un obbligo dell'EU AI Act), limitare la conservazione e chiarire dove i dati vengono elaborati.",
+        "fr": "La voix est une donnée personnelle selon la revDSG/nFADP : informer les appelants, indiquer qu'ils parlent à une IA (aussi une obligation de l'EU AI Act), limiter la conservation et préciser où les données sont traitées."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Voice AI",
+    "Speech-to-Text (STT)",
+    "Automatic Speech Recognition (ASR)",
+    "Large Language Model (LLM)",
+    "Text-to-Speech (TTS)",
+    "Voice Activity Detection (VAD)",
+    "Endpointing",
+    "Barge-in",
+    "Latenz",
+    "Echo Cancellation",
+    "Human Handoff",
+    "Retrieval-Augmented Generation (RAG)",
+    "revDSG/nFADP",
+    "EU AI Act",
+    "EDÖB",
+    "Conversational AI"
+  ]
+}

@@ -1,0 +1,338 @@
+{
+  "id": "automation-vs-ai-agents",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "slug": {
+    "de": "automatisierung-vs-ki-agenten",
+    "en": "automation-vs-ai-agents",
+    "it": "automazione-vs-agenti-ai",
+    "fr": "automatisation-vs-agents-ia"
+  },
+  "relatedServices": [
+    "automation",
+    "agents"
+  ],
+  "title": {
+    "de": "Automatisierung vs. KI-Agenten: Vergleich | Weissmann AI",
+    "en": "Automation vs. AI Agents: The Comparison | Weissmann AI",
+    "it": "Automazione vs Agenti IA: il confronto | Weissmann AI",
+    "fr": "Automatisation vs agents IA : comparatif | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Regelbasierte Automatisierung oder autonome KI-Agenten? Stärken, Grenzen und ein Entscheidungsleitfaden für Schweizer KMU – neutral erklärt, mit revDSG-Blick.",
+    "en": "Rule-based automation or autonomous AI agents? Strengths, limits and a clear decision guide for Swiss SMEs – explained neutrally, with a revDSG lens.",
+    "it": "Automazione a regole o agenti IA autonomi? Punti di forza, limiti e una guida alla scelta per le PMI svizzere, spiegati in modo neutrale.",
+    "fr": "Automatisation à règles ou agents IA autonomes ? Forces, limites et un guide de décision pour les PME suisses, expliqué de façon neutre."
+  },
+  "kicker": {
+    "de": "KI-Agenten, Automatisierung & Chatbots",
+    "en": "AI Agents, Automation & Chatbots",
+    "it": "Agenti IA, automazione e chatbot",
+    "fr": "Agents IA, automatisation et chatbots"
+  },
+  "h1": {
+    "de": "Automatisierung vs. KI-Agenten: Wann brauchen Sie was?",
+    "en": "Automation vs. AI Agents: When Do You Need Which?",
+    "it": "Automazione vs agenti IA: quando serve l'una o l'altro?",
+    "fr": "Automatisation vs agents IA : quand utiliser quoi ?"
+  },
+  "answerFirst": {
+    "de": "Regelbasierte Automatisierung folgt festen Wenn-dann-Abläufen: vorhersehbar, günstig und prüfbar, aber starr. KI-Agenten nutzen Sprachmodelle, um Ziele eigenständig in Schritte zu zerlegen, Werkzeuge zu wählen und mit Unschärfe umzugehen – flexibel, aber weniger deterministisch. Faustregel: Klare, stabile, regulierte Prozesse automatisieren; offene, variantenreiche Aufgaben mit Urteilsbedarf an Agenten übergeben, oft in Kombination.",
+    "en": "Rule-based automation follows fixed if-then flows: predictable, cheap and auditable, but rigid. AI agents use language models to break goals into steps on their own, choose tools and handle ambiguity – flexible, but less deterministic. Rule of thumb: automate clear, stable, regulated processes; hand open, high-variance tasks that need judgement to agents, often combining both.",
+    "it": "L'automazione a regole segue flussi se-allora fissi: prevedibile, economica e verificabile, ma rigida. Gli agenti IA usano modelli linguistici per scomporre gli obiettivi in passi, scegliere strumenti e gestire l'ambiguità – flessibili, ma meno deterministici. Regola pratica: automatizzare processi chiari, stabili e regolati; affidare agli agenti compiti aperti e variabili che richiedono giudizio, spesso in combinazione.",
+    "fr": "L'automatisation à règles suit des flux si-alors figés : prévisible, économique et vérifiable, mais rigide. Les agents IA utilisent des modèles de langage pour décomposer un objectif en étapes, choisir des outils et gérer l'ambiguïté – flexibles, mais moins déterministes. Règle générale : automatiser les processus clairs, stables et réglementés ; confier aux agents les tâches ouvertes exigeant du jugement, souvent en combinant les deux."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Zwei unterschiedliche Ansätze – klar definiert",
+        "en": "Two different approaches – clearly defined",
+        "it": "Due approcci diversi, definiti con chiarezza",
+        "fr": "Deux approches distinctes, clairement définies"
+      },
+      "paragraphs": [
+        {
+          "de": "Regelbasierte Automatisierung bildet einen Prozess als festen Ablauf ab: Ein Auslöser startet eine vordefinierte Kette von Schritten («Wenn Rechnung eingeht, dann prüfe Betrag, dann verbuche, dann sende Bestätigung»). Der Weg ist vom Menschen entworfen; das System führt ihn nur aus. Typische Werkzeuge sind Workflow-Plattformen, RPA (Robotic Process Automation) und iPaaS-Dienste, die Systeme über Regeln und Konnektoren verbinden.",
+          "en": "Rule-based automation encodes a process as a fixed path: a trigger starts a predefined chain of steps (\"When an invoice arrives, check the amount, post it, send confirmation\"). Humans design the path; the system only executes it. Typical tools are workflow platforms, RPA (Robotic Process Automation) and iPaaS services that connect systems through rules and connectors.",
+          "it": "L'automazione a regole codifica un processo come percorso fisso: un trigger avvia una catena predefinita di passi (\"quando arriva una fattura, verifica l'importo, registrala, invia conferma\"). Il percorso lo progetta l'uomo; il sistema lo esegue soltanto. Gli strumenti tipici sono piattaforme di workflow, RPA (Robotic Process Automation) e servizi iPaaS che collegano i sistemi tramite regole e connettori.",
+          "fr": "L'automatisation à règles code un processus comme un chemin figé : un déclencheur lance une suite prédéfinie d'étapes (« quand une facture arrive, vérifier le montant, comptabiliser, envoyer la confirmation »). L'humain conçoit le chemin ; le système ne fait que l'exécuter. Les outils types sont les plateformes de workflow, le RPA (Robotic Process Automation) et les services iPaaS qui relient les systèmes via règles et connecteurs."
+        },
+        {
+          "de": "Ein KI-Agent bekommt statt eines Ablaufs ein Ziel. Auf Basis eines grossen Sprachmodells (LLM) plant er selbst, welche Schritte nötig sind, wählt aus verfügbaren Werkzeugen (etwa Suche, E-Mail, Datenbank, API), führt sie aus, bewertet das Ergebnis und passt den nächsten Schritt an. Der Agent geht mit natürlicher Sprache und mit Situationen um, die nicht vollständig vorab bekannt sind – dafür ist sein Verhalten weniger genau vorhersehbar.",
+          "en": "An AI agent receives a goal rather than a flow. Built on a large language model (LLM), it plans the necessary steps itself, chooses from available tools (search, email, database, API), executes them, evaluates the result and adjusts the next step. The agent copes with natural language and with situations not fully known in advance – at the cost of being less exactly predictable.",
+          "it": "Un agente IA riceve un obiettivo anziché un flusso. Basato su un modello linguistico di grandi dimensioni (LLM), pianifica da sé i passi necessari, sceglie fra gli strumenti disponibili (ricerca, e-mail, database, API), li esegue, valuta il risultato e adatta il passo successivo. L'agente gestisce il linguaggio naturale e situazioni non del tutto note in anticipo, al prezzo di un comportamento meno prevedibile.",
+          "fr": "Un agent IA reçoit un objectif plutôt qu'un flux. Reposant sur un grand modèle de langage (LLM), il planifie lui-même les étapes, choisit parmi les outils disponibles (recherche, e-mail, base de données, API), les exécute, évalue le résultat et ajuste l'étape suivante. L'agent gère le langage naturel et des situations non entièrement connues d'avance, au prix d'un comportement moins prévisible."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Automatisierung = fester Weg, vom Menschen definiert, deterministisch.",
+          "en": "Automation = fixed path, defined by humans, deterministic.",
+          "it": "Automazione = percorso fisso, definito dall'uomo, deterministico.",
+          "fr": "Automatisation = chemin figé, défini par l'humain, déterministe."
+        },
+        {
+          "de": "KI-Agent = Ziel vorgegeben, Weg selbst geplant, adaptiv.",
+          "en": "AI agent = goal given, path planned by itself, adaptive.",
+          "it": "Agente IA = obiettivo dato, percorso pianificato da sé, adattivo.",
+          "fr": "Agent IA = objectif donné, chemin planifié par lui-même, adaptatif."
+        },
+        {
+          "de": "Ein Chatbot mit festen Antwortbäumen ist Automatisierung; ein Chatbot, der Werkzeuge nutzt und selbst entscheidet, tendiert zum Agenten.",
+          "en": "A chatbot with fixed answer trees is automation; a chatbot that uses tools and decides for itself leans toward an agent.",
+          "it": "Un chatbot con alberi di risposta fissi è automazione; un chatbot che usa strumenti e decide da sé tende all'agente.",
+          "fr": "Un chatbot à arbres de réponses figés relève de l'automatisation ; un chatbot qui utilise des outils et décide seul tend vers l'agent."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wie sie funktionieren: deterministisch vs. autonom",
+        "en": "How they work: deterministic vs. autonomous",
+        "it": "Come funzionano: deterministico vs autonomo",
+        "fr": "Comment ils fonctionnent : déterministe vs autonome"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Kernunterschied ist Determinismus. Bei gleicher Eingabe liefert eine Regel-Automatisierung stets dasselbe Ergebnis – das macht sie testbar, zertifizierbar und leicht zu überwachen. Ein KI-Agent kann bei identischer Eingabe unterschiedliche, aber plausible Wege wählen. Das ist bei kreativen oder unstrukturierten Aufgaben ein Vorteil und bei buchhalterischen oder rechtlichen Aufgaben ein Risiko, das durch Leitplanken eingegrenzt werden muss.",
+          "en": "The core difference is determinism. Given the same input, rule-based automation always returns the same result – which makes it testable, certifiable and easy to monitor. An AI agent may choose different but plausible paths for identical input. That is an advantage for creative or unstructured tasks and a risk for accounting or legal ones, to be contained with guardrails.",
+          "it": "La differenza chiave è il determinismo. A parità di input, l'automazione a regole restituisce sempre lo stesso risultato: è testabile, certificabile e facile da monitorare. Un agente IA può scegliere percorsi diversi ma plausibili con lo stesso input. È un vantaggio per compiti creativi o non strutturati e un rischio per quelli contabili o legali, da contenere con delle barriere di sicurezza.",
+          "fr": "La différence centrale est le déterminisme. À entrée égale, l'automatisation à règles renvoie toujours le même résultat : elle est testable, certifiable et facile à surveiller. Un agent IA peut choisir des chemins différents mais plausibles pour une même entrée. C'est un atout pour les tâches créatives ou non structurées, et un risque pour les tâches comptables ou juridiques, à encadrer par des garde-fous."
+        },
+        {
+          "de": "In der Praxis verschwimmt die Grenze. Viele robuste Lösungen sind hybrid: Ein Agent übernimmt das Verstehen und Entscheiden (etwa eine E-Mail einordnen), während deterministische Automatisierung die sensiblen Aktionen ausführt (Datensatz anlegen, Zahlung auslösen) – nur innerhalb erlaubter Grenzen und mit menschlicher Freigabe bei kritischen Schritten. So kombiniert man die Flexibilität des Agenten mit der Kontrollierbarkeit der Regel.",
+          "en": "In practice the boundary blurs. Many robust solutions are hybrid: an agent handles understanding and deciding (e.g. classifying an email), while deterministic automation performs the sensitive actions (create a record, trigger a payment) – only within permitted limits and with human sign-off on critical steps. This pairs the agent's flexibility with the rule's controllability.",
+          "it": "In pratica il confine sfuma. Molte soluzioni solide sono ibride: un agente si occupa di comprendere e decidere (ad esempio classificare un'e-mail), mentre l'automazione deterministica esegue le azioni sensibili (creare un record, avviare un pagamento), solo entro limiti consentiti e con approvazione umana nei passaggi critici. Così si unisce la flessibilità dell'agente alla controllabilità della regola.",
+          "fr": "En pratique, la frontière s'estompe. Beaucoup de solutions robustes sont hybrides : un agent comprend et décide (par exemple classer un e-mail), tandis que l'automatisation déterministe exécute les actions sensibles (créer un enregistrement, déclencher un paiement), uniquement dans des limites autorisées et avec validation humaine aux étapes critiques. On associe ainsi la souplesse de l'agent à la contrôlabilité de la règle."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Direkter Vergleich: Stärken und Grenzen",
+        "en": "Direct comparison: strengths and limits",
+        "it": "Confronto diretto: punti di forza e limiti",
+        "fr": "Comparatif direct : forces et limites"
+      },
+      "bullets": [
+        {
+          "de": "Vorhersehbarkeit: Automatisierung hoch und stabil; Agenten variabel und probabilistisch.",
+          "en": "Predictability: automation high and stable; agents variable and probabilistic.",
+          "it": "Prevedibilità: automazione alta e stabile; agenti variabile e probabilistica.",
+          "fr": "Prévisibilité : automatisation élevée et stable ; agents variable et probabiliste."
+        },
+        {
+          "de": "Umgang mit Unschärfe: Regeln scheitern an Ausnahmen und Freitext; Agenten glänzen bei Sprache, Varianten und unvollständigen Angaben.",
+          "en": "Handling ambiguity: rules fail on exceptions and free text; agents excel at language, variants and incomplete input.",
+          "it": "Gestione dell'ambiguità: le regole falliscono su eccezioni e testo libero; gli agenti eccellono con linguaggio, varianti e dati incompleti.",
+          "fr": "Gestion de l'ambiguïté : les règles échouent sur les exceptions et le texte libre ; les agents excellent sur le langage, les variantes et les données incomplètes."
+        },
+        {
+          "de": "Aufwand & Wartung: Automatisierung braucht klare Spezifikation vorab; Agenten starten schneller, brauchen aber Tests, Leitplanken und laufende Beobachtung.",
+          "en": "Effort & maintenance: automation needs a clear spec up front; agents start faster but need testing, guardrails and ongoing observation.",
+          "it": "Sforzo e manutenzione: l'automazione richiede una specifica chiara a monte; gli agenti partono prima ma richiedono test, barriere e monitoraggio continuo.",
+          "fr": "Effort et maintenance : l'automatisation exige une spécification claire en amont ; les agents démarrent plus vite mais exigent tests, garde-fous et suivi continu."
+        },
+        {
+          "de": "Kosten pro Vorgang: Regeln sind nach dem Bau sehr günstig; Agenten verursachen laufende Modellkosten pro Aufruf.",
+          "en": "Cost per operation: rules are very cheap once built; agents incur ongoing model costs per call.",
+          "it": "Costo per operazione: le regole, una volta costruite, sono molto economiche; gli agenti comportano costi di modello ricorrenti per chiamata.",
+          "fr": "Coût par opération : une fois construites, les règles sont très économiques ; les agents génèrent des coûts de modèle récurrents par appel."
+        },
+        {
+          "de": "Nachvollziehbarkeit: Regel-Logs zeigen exakt jeden Schritt; Agenten-Entscheidungen sind schwerer zu erklären und zu auditieren.",
+          "en": "Traceability: rule logs show every step exactly; agent decisions are harder to explain and audit.",
+          "it": "Tracciabilità: i log delle regole mostrano ogni passo con esattezza; le decisioni degli agenti sono più difficili da spiegare e verificare.",
+          "fr": "Traçabilité : les journaux de règles montrent chaque étape exactement ; les décisions d'agents sont plus difficiles à expliquer et à auditer."
+        },
+        {
+          "de": "Fehlerbild: Regeln brechen sichtbar ab (Ausnahme); Agenten können still «halluzinieren» und plausibel wirkende, falsche Ergebnisse liefern.",
+          "en": "Failure mode: rules break visibly (an exception); agents can silently \"hallucinate\" and produce plausible-looking wrong results.",
+          "it": "Modalità di errore: le regole si bloccano in modo visibile (un'eccezione); gli agenti possono \"allucinare\" in silenzio e produrre risultati errati ma plausibili.",
+          "fr": "Mode de défaillance : les règles s'arrêtent visiblement (une exception) ; les agents peuvent « halluciner » silencieusement et produire des résultats faux mais plausibles."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Entscheidungsleitfaden: Wann Regeln, wann Agenten?",
+        "en": "Decision guide: when rules, when agents?",
+        "it": "Guida alla scelta: quando le regole, quando gli agenti?",
+        "fr": "Guide de décision : quand des règles, quand des agents ?"
+      },
+      "paragraphs": [
+        {
+          "de": "Prüfen Sie den Prozess entlang von vier Fragen: Ist der Ablauf klar und stabil? Ist die Eingabe strukturiert? Sind Fehler teuer oder reguliert? Ändern sich die Fälle häufig? Je öfter Sie mit «klar, strukturiert, reguliert, stabil» antworten, desto eher genügt deterministische Automatisierung. Je mehr Unschärfe, Sprache und Varianz im Spiel sind, desto eher lohnt ein Agent – idealerweise mit einem Menschen im kritischen Pfad.",
+          "en": "Assess the process along four questions: Is the flow clear and stable? Is the input structured? Are errors costly or regulated? Do cases change often? The more you answer \"clear, structured, regulated, stable\", the more deterministic automation suffices. The more ambiguity, language and variance are involved, the more an agent pays off – ideally with a human in the critical path.",
+          "it": "Valuta il processo con quattro domande: il flusso è chiaro e stabile? L'input è strutturato? Gli errori sono costosi o regolati? I casi cambiano spesso? Più rispondi \"chiaro, strutturato, regolato, stabile\", più basta l'automazione deterministica. Più entrano in gioco ambiguità, linguaggio e varianza, più conviene un agente, idealmente con una persona nel percorso critico.",
+          "fr": "Évaluez le processus selon quatre questions : le flux est-il clair et stable ? L'entrée est-elle structurée ? Les erreurs sont-elles coûteuses ou réglementées ? Les cas changent-ils souvent ? Plus vous répondez « clair, structuré, réglementé, stable », plus l'automatisation déterministe suffit. Plus l'ambiguïté, le langage et la variance interviennent, plus un agent est rentable, idéalement avec un humain dans le chemin critique."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Regeln wählen bei: Lohnläufen, Rechnungsfreigaben nach festen Schwellen, Datenabgleich zwischen Systemen, Terminbestätigungen, Compliance-Checklisten.",
+          "en": "Choose rules for: payroll runs, invoice approvals within fixed thresholds, data sync between systems, appointment confirmations, compliance checklists.",
+          "it": "Scegliere le regole per: buste paga, approvazioni fatture entro soglie fisse, sincronizzazione dati tra sistemi, conferme appuntamenti, checklist di conformità.",
+          "fr": "Choisir les règles pour : paie, validation de factures dans des seuils fixes, synchronisation de données entre systèmes, confirmations de rendez-vous, checklists de conformité."
+        },
+        {
+          "de": "Agenten wählen bei: E-Mails triagieren und beantworten, Rechercheaufgaben, Angebotsentwürfe aus unstrukturierten Anfragen, mehrsprachiger Support-Erstlinie, Zusammenfassungen aus vielen Quellen.",
+          "en": "Choose agents for: triaging and answering emails, research tasks, drafting quotes from unstructured requests, multilingual first-line support, summaries across many sources.",
+          "it": "Scegliere gli agenti per: smistare e rispondere alle e-mail, ricerche, bozze di preventivo da richieste non strutturate, primo livello di supporto multilingue, sintesi da molte fonti.",
+          "fr": "Choisir les agents pour : trier et répondre aux e-mails, tâches de recherche, brouillons de devis à partir de demandes non structurées, support de premier niveau multilingue, synthèses multi-sources."
+        },
+        {
+          "de": "Hybrid wählen bei: Prozessen, die vorne verstehen und hinten sicher ausführen müssen – Agent interpretiert, Regel und Freigabe kontrollieren die Wirkung.",
+          "en": "Choose hybrid for: processes that must understand up front and execute safely at the end – the agent interprets, the rule and sign-off control the effect.",
+          "it": "Scegliere l'ibrido per: processi che devono comprendere a monte ed eseguire in sicurezza a valle: l'agente interpreta, la regola e l'approvazione controllano l'effetto.",
+          "fr": "Choisir l'hybride pour : les processus qui doivent comprendre en amont et exécuter en sécurité en aval : l'agent interprète, la règle et la validation contrôlent l'effet."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler bei der Wahl",
+        "en": "Common mistakes when choosing",
+        "it": "Errori frequenti nella scelta",
+        "fr": "Erreurs fréquentes dans le choix"
+      },
+      "bullets": [
+        {
+          "de": "Einen Agenten für eine Aufgabe einsetzen, die eine simple Regel deterministisch und billiger löst – Komplexität und Kosten ohne Nutzen.",
+          "en": "Using an agent for a task a simple rule solves deterministically and more cheaply – complexity and cost without benefit.",
+          "it": "Usare un agente per un compito che una semplice regola risolve in modo deterministico e più economico: complessità e costi senza beneficio.",
+          "fr": "Employer un agent pour une tâche qu'une simple règle résout de façon déterministe et moins chère : complexité et coûts sans bénéfice."
+        },
+        {
+          "de": "Einem Agenten ohne Leitplanken direkten Zugriff auf kritische Aktionen (Zahlungen, Löschungen, Versand) geben, statt Freigaben und Grenzen einzuziehen.",
+          "en": "Giving an agent direct access to critical actions (payments, deletions, sending) without guardrails, instead of adding approvals and limits.",
+          "it": "Dare a un agente accesso diretto ad azioni critiche (pagamenti, cancellazioni, invii) senza barriere, invece di inserire approvazioni e limiti.",
+          "fr": "Donner à un agent un accès direct aux actions critiques (paiements, suppressions, envois) sans garde-fous, au lieu d'ajouter validations et limites."
+        },
+        {
+          "de": "Keine Beobachtung: Agenten ohne Logging, Auswertung und regelmässige Stichproben laufen zu lassen und Fehler erst spät zu bemerken.",
+          "en": "No observation: running agents without logging, evaluation and regular spot-checks, noticing errors only late.",
+          "it": "Nessun monitoraggio: far girare agenti senza logging, valutazione e controlli a campione periodici, accorgendosi degli errori troppo tardi.",
+          "fr": "Aucune observation : faire tourner des agents sans journalisation, évaluation et contrôles réguliers, et repérer les erreurs trop tard."
+        },
+        {
+          "de": "Den Datenschutz vergessen: personenbezogene Daten unnötig an externe Modelle senden, ohne Rechtsgrundlage, Auftragsverarbeitung und Zweckbindung zu klären.",
+          "en": "Forgetting data protection: sending personal data to external models unnecessarily, without clarifying legal basis, processing agreements and purpose limitation.",
+          "it": "Dimenticare la protezione dei dati: inviare dati personali a modelli esterni senza necessità, senza chiarire base giuridica, contratto di trattamento e limitazione delle finalità.",
+          "fr": "Oublier la protection des données : envoyer des données personnelles à des modèles externes sans nécessité, sans clarifier base légale, contrat de sous-traitance et limitation des finalités."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Perspektive: revDSG, EU AI Act und Governance",
+        "en": "Swiss perspective: revDSG, EU AI Act and governance",
+        "it": "Prospettiva svizzera: revDSG, EU AI Act e governance",
+        "fr": "Perspective suisse : revDSG, EU AI Act et gouvernance"
+      },
+      "paragraphs": [
+        {
+          "de": "Für Schweizer KMU gilt bei beiden Ansätzen das revidierte Datenschutzgesetz (revDSG). Sobald Personendaten verarbeitet werden, brauchen Sie Zweckbindung, Transparenz und – bei externen KI-Diensten – einen Auftragsverarbeitungsvertrag; bei Übermittlung ins Ausland ist ein angemessenes Schutzniveau sicherzustellen. Aufsichtsbehörde ist der EDÖB. Deterministische Automatisierung ist hier meist leichter zu beherrschen, weil Datenflüsse fest und dokumentierbar sind.",
+          "en": "For Swiss SMEs, the revised Data Protection Act (revDSG) applies to both approaches. As soon as personal data is processed you need purpose limitation, transparency and – with external AI services – a data-processing agreement; for transfers abroad an adequate level of protection must be ensured. The supervisory authority is the EDÖB. Deterministic automation is usually easier to control here, because data flows are fixed and documentable.",
+          "it": "Per le PMI svizzere, la legge riveduta sulla protezione dei dati (revDSG) si applica a entrambi gli approcci. Non appena si trattano dati personali servono limitazione delle finalità, trasparenza e – con servizi IA esterni – un contratto di trattamento; per i trasferimenti all'estero va garantito un livello di protezione adeguato. L'autorità di vigilanza è l'IFPDT (EDÖB). L'automazione deterministica è di solito più facile da controllare, perché i flussi di dati sono fissi e documentabili.",
+          "fr": "Pour les PME suisses, la loi révisée sur la protection des données (revDSG) s'applique aux deux approches. Dès que des données personnelles sont traitées, il faut limitation des finalités, transparence et – avec des services IA externes – un contrat de sous-traitance ; pour les transferts à l'étranger, un niveau de protection adéquat doit être assuré. L'autorité de surveillance est le PFPDT (EDÖB). L'automatisation déterministe est généralement plus facile à maîtriser, car les flux de données sont fixes et documentables."
+        },
+        {
+          "de": "Zusätzlich kann der EU AI Act extraterritorial greifen, wenn Sie in den EU-Markt liefern oder Ergebnisse dort genutzt werden. Er verlangt risikobasierte Sorgfalt, etwa Transparenz, wenn Menschen mit KI interagieren. Praktisch heisst das: Autonomie eines Agenten dosieren, kritische Aktionen mit menschlicher Freigabe versehen, Entscheidungen protokollieren und den Anwendungsfall dokumentieren. So bleibt auch der flexiblere Agenten-Ansatz governance-fähig.",
+          "en": "In addition, the EU AI Act can apply extraterritorially if you supply the EU market or results are used there. It requires risk-based diligence, such as transparency when people interact with AI. In practice: dose an agent's autonomy, gate critical actions with human sign-off, log decisions and document the use case. That keeps even the more flexible agent approach governable.",
+          "it": "Inoltre l'EU AI Act può applicarsi in via extraterritoriale se fornite il mercato UE o i risultati vi sono usati. Richiede diligenza basata sul rischio, come la trasparenza quando le persone interagiscono con l'IA. In pratica: dosare l'autonomia di un agente, subordinare le azioni critiche all'approvazione umana, registrare le decisioni e documentare il caso d'uso. Così anche l'approccio ad agenti, più flessibile, resta governabile.",
+          "fr": "De plus, l'EU AI Act peut s'appliquer de façon extraterritoriale si vous fournissez le marché de l'UE ou que les résultats y sont utilisés. Il exige une diligence fondée sur le risque, comme la transparence lorsque des personnes interagissent avec l'IA. En pratique : doser l'autonomie d'un agent, soumettre les actions critiques à une validation humaine, journaliser les décisions et documenter le cas d'usage. Ainsi, même l'approche agent, plus souple, reste gouvernable."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Hauptunterschied zwischen Automatisierung und KI-Agenten?",
+        "en": "What is the main difference between automation and AI agents?",
+        "it": "Qual è la differenza principale tra automazione e agenti IA?",
+        "fr": "Quelle est la principale différence entre automatisation et agents IA ?"
+      },
+      "a": {
+        "de": "Automatisierung führt einen vom Menschen definierten, festen Ablauf aus und ist deterministisch. Ein KI-Agent erhält nur ein Ziel und plant den Weg selbst, wählt Werkzeuge und passt sich an – flexibler, aber weniger vorhersehbar. Kurz: fester Weg gegen selbst geplanter Weg.",
+        "en": "Automation executes a fixed, human-defined flow and is deterministic. An AI agent only receives a goal and plans the path itself, choosing tools and adapting – more flexible but less predictable. In short: fixed path versus self-planned path.",
+        "it": "L'automazione esegue un flusso fisso, definito dall'uomo, ed è deterministica. Un agente IA riceve solo un obiettivo e pianifica da sé il percorso, scegliendo strumenti e adattandosi: più flessibile ma meno prevedibile. In breve: percorso fisso contro percorso pianificato da sé.",
+        "fr": "L'automatisation exécute un flux figé, défini par l'humain, et est déterministe. Un agent IA ne reçoit qu'un objectif et planifie lui-même le chemin, choisit des outils et s'adapte : plus souple mais moins prévisible. En bref : chemin figé contre chemin auto-planifié."
+      }
+    },
+    {
+      "q": {
+        "de": "Sind KI-Agenten besser als klassische Automatisierung?",
+        "en": "Are AI agents better than classic automation?",
+        "it": "Gli agenti IA sono migliori dell'automazione classica?",
+        "fr": "Les agents IA sont-ils meilleurs que l'automatisation classique ?"
+      },
+      "a": {
+        "de": "Nein, sie lösen andere Probleme. Bei klaren, stabilen, regulierten Prozessen ist deterministische Automatisierung günstiger, sicherer und besser prüfbar. Agenten sind stark bei Sprache, Varianten und Urteilsaufgaben. Oft ist die beste Lösung eine Kombination, kein Entweder-oder.",
+        "en": "No, they solve different problems. For clear, stable, regulated processes, deterministic automation is cheaper, safer and more auditable. Agents shine at language, variants and judgement tasks. Often the best solution is a combination, not an either-or.",
+        "it": "No, risolvono problemi diversi. Per processi chiari, stabili e regolati, l'automazione deterministica è più economica, sicura e verificabile. Gli agenti eccellono con linguaggio, varianti e compiti di giudizio. Spesso la soluzione migliore è una combinazione, non un aut-aut.",
+        "fr": "Non, ils résolvent des problèmes différents. Pour des processus clairs, stables et réglementés, l'automatisation déterministe est moins chère, plus sûre et plus vérifiable. Les agents brillent sur le langage, les variantes et le jugement. Souvent, la meilleure solution est une combinaison, pas un choix exclusif."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist ein Chatbot ein KI-Agent?",
+        "en": "Is a chatbot an AI agent?",
+        "it": "Un chatbot è un agente IA?",
+        "fr": "Un chatbot est-il un agent IA ?"
+      },
+      "a": {
+        "de": "Nicht unbedingt. Ein Chatbot mit festen Entscheidungsbäumen ist regelbasierte Automatisierung. Erst wenn er selbst plant, Werkzeuge wie Suche oder Datenbank nutzt und Zwischenergebnisse bewertet, verhält er sich wie ein Agent. Viele produktive Bots sind eine Mischung aus beidem.",
+        "en": "Not necessarily. A chatbot with fixed decision trees is rule-based automation. Only when it plans by itself, uses tools like search or a database and evaluates intermediate results does it behave like an agent. Many production bots are a mix of both.",
+        "it": "Non necessariamente. Un chatbot con alberi decisionali fissi è automazione a regole. Solo quando pianifica da sé, usa strumenti come ricerca o database e valuta i risultati intermedi si comporta come un agente. Molti bot in produzione sono un misto dei due.",
+        "fr": "Pas forcément. Un chatbot à arbres de décision figés relève de l'automatisation à règles. Ce n'est que lorsqu'il planifie lui-même, utilise des outils comme la recherche ou une base de données et évalue des résultats intermédiaires qu'il se comporte en agent. Beaucoup de bots en production sont un mélange des deux."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie behalte ich einen KI-Agenten unter Kontrolle?",
+        "en": "How do I keep an AI agent under control?",
+        "it": "Come mantengo sotto controllo un agente IA?",
+        "fr": "Comment garder un agent IA sous contrôle ?"
+      },
+      "a": {
+        "de": "Grenzen Sie seine Rechte ein, versehen Sie kritische Aktionen mit menschlicher Freigabe, protokollieren Sie Entscheidungen und werten Sie sie regelmässig aus. Setzen Sie klare Leitplanken und lassen Sie sensible Ausführungen von deterministischer Automatisierung erledigen statt vom Agenten direkt.",
+        "en": "Limit its permissions, gate critical actions with human sign-off, log its decisions and review them regularly. Set clear guardrails and let deterministic automation carry out sensitive executions rather than the agent directly.",
+        "it": "Limita i suoi permessi, subordina le azioni critiche all'approvazione umana, registra le decisioni e verificale regolarmente. Definisci barriere chiare e fai eseguire le operazioni sensibili all'automazione deterministica anziché direttamente all'agente.",
+        "fr": "Limitez ses droits, soumettez les actions critiques à une validation humaine, journalisez ses décisions et examinez-les régulièrement. Posez des garde-fous clairs et confiez les exécutions sensibles à l'automatisation déterministe plutôt qu'à l'agent directement."
+      }
+    },
+    {
+      "q": {
+        "de": "Was muss ich in der Schweiz beim Datenschutz beachten?",
+        "en": "What must I consider for data protection in Switzerland?",
+        "it": "Cosa devo considerare per la protezione dei dati in Svizzera?",
+        "fr": "Que dois-je prendre en compte pour la protection des données en Suisse ?"
+      },
+      "a": {
+        "de": "Bei Personendaten gilt das revDSG: Zweckbindung, Transparenz und ein Auftragsverarbeitungsvertrag mit externen KI-Diensten; bei Auslandtransfer ein angemessenes Schutzniveau. Aufsicht ist der EDÖB. Zusätzlich kann der EU AI Act extraterritorial gelten, wenn Sie den EU-Markt bedienen.",
+        "en": "For personal data the revDSG applies: purpose limitation, transparency and a data-processing agreement with external AI services; for transfers abroad, an adequate level of protection. The supervisory authority is the EDÖB. The EU AI Act may also apply extraterritorially if you serve the EU market.",
+        "it": "Per i dati personali si applica la revDSG: limitazione delle finalità, trasparenza e un contratto di trattamento con i servizi IA esterni; per i trasferimenti all'estero, un livello di protezione adeguato. L'autorità è l'IFPDT (EDÖB). Anche l'EU AI Act può applicarsi in via extraterritoriale se servite il mercato UE.",
+        "fr": "Pour les données personnelles, la revDSG s'applique : limitation des finalités, transparence et un contrat de sous-traitance avec les services IA externes ; pour les transferts à l'étranger, un niveau de protection adéquat. L'autorité est le PFPDT (EDÖB). L'EU AI Act peut aussi s'appliquer de façon extraterritoriale si vous servez le marché de l'UE."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Regelbasierte Automatisierung",
+    "KI-Agenten",
+    "Grosses Sprachmodell (LLM)",
+    "Robotic Process Automation (RPA)",
+    "Workflow-Automatisierung",
+    "iPaaS",
+    "Determinismus",
+    "Chatbot",
+    "Human-in-the-loop",
+    "Leitplanken (Guardrails)",
+    "Halluzination",
+    "revDSG / nFADP",
+    "EDÖB",
+    "EU AI Act",
+    "Auftragsverarbeitungsvertrag"
+  ]
+}

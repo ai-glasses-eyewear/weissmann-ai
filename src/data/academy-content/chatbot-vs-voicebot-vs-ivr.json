@@ -1,0 +1,384 @@
+{
+  "id": "chatbot-vs-voicebot-vs-ivr",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "slug": {
+    "de": "chatbot-vs-voicebot-vs-ivr",
+    "en": "chatbot-vs-voicebot-vs-ivr",
+    "it": "chatbot-vs-voicebot-vs-ivr",
+    "fr": "chatbot-vs-voicebot-vs-ivr"
+  },
+  "relatedServices": [
+    "phone-assistant",
+    "agents"
+  ],
+  "title": {
+    "de": "Chatbot vs. Voicebot vs. IVR: der Unterschied | Weissmann AI",
+    "en": "Chatbot vs Voicebot vs IVR vs Conversational AI | Weissmann AI",
+    "it": "Chatbot vs Voicebot vs IVR: le differenze | Weissmann AI",
+    "fr": "Chatbot, voicebot, SVI et IA conversationnelle | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Chatbot, Voicebot, IVR oder Conversational AI? Klare Definitionen, ein direkter Vergleich und wann sich was eignet — mit Blick auf KMU und revDSG.",
+    "en": "Chatbot, voicebot, IVR or conversational AI? Clear definitions, a side-by-side comparison and when each fits — with a Swiss SME and revDSG lens.",
+    "it": "Chatbot, voicebot, IVR o IA conversazionale? Definizioni chiare, un confronto diretto e quando usare ciascuno — con focus PMI svizzere e nLPD.",
+    "fr": "Chatbot, voicebot, SVI ou IA conversationnelle? Définitions claires, comparatif direct et quand choisir chacun — optique PME suisses et nLPD."
+  },
+  "kicker": {
+    "de": "KI-Agenten, Automatisierung & Voice",
+    "en": "AI Agents, Automation & Voice",
+    "it": "Agenti IA, automazione e voice",
+    "fr": "Agents IA, automatisation et voice"
+  },
+  "h1": {
+    "de": "Chatbot vs. Voicebot vs. IVR vs. Conversational AI: Wo liegt der Unterschied?",
+    "en": "Chatbot vs voicebot vs IVR vs conversational AI: what's the difference?",
+    "it": "Chatbot, voicebot, IVR e IA conversazionale: quali sono le differenze?",
+    "fr": "Chatbot, voicebot, SVI et IA conversationnelle: quelles différences?"
+  },
+  "answerFirst": {
+    "de": "Ein Chatbot führt Gespräche in Textform, ein Voicebot gesprochene, und IVR ist das ältere Telefonmenü, das Anrufende per Taste oder einfachem Sprachbefehl weiterleitet. Conversational AI ist der Oberbegriff für die Technologie — Sprachverständnis plus maschinelles Lernen oder grosse Sprachmodelle —, die moderne Chatbots und Voicebots Absichten erkennen lässt, statt starren Menüs zu folgen.",
+    "en": "A chatbot handles text conversations, a voicebot handles spoken ones, and IVR is the older phone-menu system that routes callers by keypad or simple speech. Conversational AI is the umbrella technology — natural-language understanding plus machine learning or large language models — that gives modern chatbots and voicebots the ability to understand intent rather than follow fixed menus.",
+    "it": "Un chatbot gestisce conversazioni testuali, un voicebot quelle vocali, e l'IVR è il più datato menu telefonico che instrada chi chiama con i tasti o semplici comandi vocali. L'IA conversazionale è la tecnologia ombrello — comprensione del linguaggio naturale più apprendimento automatico o grandi modelli linguistici — che permette a chatbot e voicebot moderni di cogliere l'intento invece di seguire menu fissi.",
+    "fr": "Un chatbot gère les conversations écrites, un voicebot les conversations parlées, et le SVI est l'ancien menu téléphonique qui oriente les appelants par touches ou commandes vocales simples. L'IA conversationnelle est la technologie chapeau — compréhension du langage naturel plus apprentissage automatique ou grands modèles de langage — qui permet aux chatbots et voicebots modernes de saisir l'intention au lieu de suivre des menus figés."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Definitionen auf einen Blick",
+        "en": "Definitions at a glance",
+        "it": "Definizioni in breve",
+        "fr": "Les définitions en bref"
+      },
+      "paragraphs": [
+        {
+          "de": "Die vier Begriffe werden oft synonym verwendet, meinen aber Unterschiedliches: Drei bezeichnen Kommunikationskanäle oder Produkte, einer die dahinterliegende Intelligenz. Wer die Unterscheidung sauber trifft, spart Geld und kauft nicht das falsche Werkzeug für die Aufgabe.",
+          "en": "The four terms are often used interchangeably, but they describe different things: three are communication channels or products, and one is the underlying intelligence. Getting the distinction right saves money and prevents the wrong tool being bought for the job.",
+          "it": "I quattro termini vengono spesso usati come sinonimi, ma indicano cose diverse: tre sono canali di comunicazione o prodotti, uno è l'intelligenza sottostante. Distinguerli con precisione fa risparmiare denaro ed evita di acquistare lo strumento sbagliato per il compito.",
+          "fr": "Les quatre termes sont souvent employés comme synonymes, mais désignent des choses distinctes: trois sont des canaux de communication ou des produits, un est l'intelligence sous-jacente. Bien les distinguer permet d'économiser et d'éviter d'acheter le mauvais outil pour la tâche."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Chatbot — Software, die ein Gespräch in Textform führt, etwa im Website-Widget, in WhatsApp, Teams oder einer Messaging-App. Er kann regelbasiert (fester Entscheidungsbaum) oder KI-gestützt sein.",
+          "en": "Chatbot — software that holds a conversation in text, inside a website widget, WhatsApp, Teams or a messaging app. It can be rule-based (fixed decision tree) or AI-powered.",
+          "it": "Chatbot — software che conduce una conversazione in forma testuale, in un widget del sito, in WhatsApp, Teams o un'app di messaggistica. Può essere basato su regole (albero decisionale fisso) o basato su IA.",
+          "fr": "Chatbot — logiciel qui mène une conversation par écrit, dans un widget de site, sur WhatsApp, Teams ou une application de messagerie. Il peut être basé sur des règles (arbre de décision fixe) ou propulsé par l'IA."
+        },
+        {
+          "de": "Voicebot — das gesprochene Pendant: Er hört zu, versteht und antwortet in natürlicher Sprache, am Telefon oder über einen Sprachassistenten. Er kombiniert Speech-to-Text, Sprachverständnis und Text-to-Speech.",
+          "en": "Voicebot — the spoken equivalent: it listens, understands and replies in natural speech, over the phone or through a voice assistant. It combines speech-to-text, language understanding and text-to-speech.",
+          "it": "Voicebot — l'equivalente vocale: ascolta, comprende e risponde con voce naturale, al telefono o tramite un assistente vocale. Combina speech-to-text, comprensione del linguaggio e text-to-speech.",
+          "fr": "Voicebot — l'équivalent vocal: il écoute, comprend et répond d'une voix naturelle, au téléphone ou via un assistant vocal. Il combine reconnaissance vocale (speech-to-text), compréhension du langage et synthèse vocale (text-to-speech)."
+        },
+        {
+          "de": "IVR (Interactive Voice Response, Sprachdialogsystem) — das klassische Telefonmenü («Drücken Sie 1 für Verkauf, 2 für Support»). Es leitet Anrufende über Tastentöne (DTMF) oder einfache Sprachbefehle weiter und folgt einem festen Skript.",
+          "en": "IVR (Interactive Voice Response) — the classic phone menu ('press 1 for sales, 2 for support'). It routes callers via keypad tones (DTMF) or simple voice commands, following a fixed script.",
+          "it": "IVR (Interactive Voice Response, risponditore vocale interattivo) — il classico menu telefonico («prema 1 per le vendite, 2 per l'assistenza»). Instrada chi chiama tramite toni dei tasti (DTMF) o semplici comandi vocali, seguendo uno script fisso.",
+          "fr": "SVI (Serveur Vocal Interactif, IVR en anglais) — le menu téléphonique classique («tapez 1 pour les ventes, 2 pour le support»). Il oriente les appelants via les touches (DTMF) ou de simples commandes vocales, en suivant un script figé."
+        },
+        {
+          "de": "Conversational AI (dialogorientierte KI) — kein Kanal, sondern die Technologieschicht: Sprachverständnis (NLU), Dialogsteuerung sowie maschinelles Lernen oder grosse Sprachmodelle, die einen Bot die Absicht erfassen lassen statt nur Stichwörter abzugleichen.",
+          "en": "Conversational AI — not a channel but the technology layer: natural-language understanding, dialogue management and machine learning or large language models that let a bot grasp intent instead of matching keywords.",
+          "it": "IA conversazionale (Conversational AI) — non un canale ma lo strato tecnologico: comprensione del linguaggio naturale (NLU), gestione del dialogo e apprendimento automatico o grandi modelli linguistici, che permettono a un bot di cogliere l'intento invece di confrontare parole chiave.",
+          "fr": "IA conversationnelle (Conversational AI) — non pas un canal mais la couche technologique: compréhension du langage naturel (NLU), gestion du dialogue et apprentissage automatique ou grands modèles de langage, qui permettent à un bot de saisir l'intention plutôt que de comparer des mots-clés."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Der entscheidende Unterschied: Kanal vs. Intelligenz",
+        "en": "The key distinction: channel vs intelligence",
+        "it": "La differenza chiave: canale vs intelligenza",
+        "fr": "La distinction clé: canal ou intelligence"
+      },
+      "paragraphs": [
+        {
+          "de": "Zwei Achsen trennen diese Begriffe. Die erste ist der Kanal: Text (Chatbot) versus Sprache (Voicebot, IVR). Die zweite ist die Intelligenz: festes Skript versus Conversational AI, die frei formulierte Sprache interpretiert. IVR steht am unteren Ende der Intelligenz im Sprachkanal, ein moderner Voicebot am oberen. Ein Chatbot kann an beiden Enden stehen. Conversational AI ist die Intelligenzachse selbst — die Fähigkeit, die aus einem Menü ein Gespräch macht.",
+          "en": "Two axes separate these terms. The first is channel: text (chatbot) versus voice (voicebot, IVR). The second is intelligence: a fixed script versus conversational AI that interprets free-form language. IVR sits at the low-intelligence end of the voice channel; a modern voicebot sits at the high-intelligence end. A chatbot can live at either end. Conversational AI is the intelligence axis itself — the capability that upgrades a menu into a conversation.",
+          "it": "Due assi separano questi termini. Il primo è il canale: testo (chatbot) contro voce (voicebot, IVR). Il secondo è l'intelligenza: script fisso contro IA conversazionale che interpreta il linguaggio libero. L'IVR sta all'estremo di bassa intelligenza del canale vocale; un voicebot moderno all'estremo alto. Un chatbot può stare a entrambi gli estremi. L'IA conversazionale è l'asse dell'intelligenza stesso — la capacità che trasforma un menu in una conversazione.",
+          "fr": "Deux axes séparent ces termes. Le premier est le canal: texte (chatbot) contre voix (voicebot, SVI). Le second est l'intelligence: script figé contre IA conversationnelle qui interprète le langage libre. Le SVI se situe à l'extrémité peu intelligente du canal vocal; un voicebot moderne à l'extrémité haute. Un chatbot peut se placer aux deux extrémités. L'IA conversationnelle est l'axe de l'intelligence lui-même — la capacité qui transforme un menu en conversation."
+        },
+        {
+          "de": "Anders gesagt: IVR und Voicebot sind beide Sprache am Telefon, doch IVR zwingt die anrufende Person in Ihr Menü, während ein Voicebot sie frei sprechen lässt und selbst herausfindet, was sie braucht. Ebenso teilen ein regelbasierter und ein KI-Chatbot dasselbe Textfenster, aber nur der zweite versteht eine Frage, für die er nie ausdrücklich skriptet wurde.",
+          "en": "Put differently: IVR and voicebot are both voice on the phone, but IVR forces the caller into your menu, while a voicebot lets the caller speak naturally and works out what they need. Likewise, a rule-based chatbot and an AI chatbot share a text window, but only the second understands a question it was never explicitly scripted for.",
+          "it": "In altre parole: IVR e voicebot sono entrambi voce al telefono, ma l'IVR costringe chi chiama nel vostro menu, mentre un voicebot lo lascia parlare liberamente e capisce da solo di cosa ha bisogno. Allo stesso modo, un chatbot a regole e uno a IA condividono la stessa finestra di testo, ma solo il secondo comprende una domanda per cui non è mai stato esplicitamente programmato.",
+          "fr": "Autrement dit: SVI et voicebot sont tous deux de la voix au téléphone, mais le SVI force l'appelant dans votre menu, tandis qu'un voicebot le laisse parler librement et déduit lui-même ce dont il a besoin. De même, un chatbot à règles et un chatbot à IA partagent la même fenêtre de texte, mais seul le second comprend une question pour laquelle il n'a jamais été explicitement scripté."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Vergleich im Überblick",
+        "en": "Side-by-side comparison",
+        "it": "Confronto a colpo d'occhio",
+        "fr": "Comparatif en un coup d'œil"
+      },
+      "bullets": [
+        {
+          "de": "Kanal: Chatbot = Text; Voicebot = Sprache; IVR = Sprache (Telefonie); Conversational AI = kanalunabhängig (treibt beide an).",
+          "en": "Channel: chatbot = text; voicebot = voice; IVR = voice (telephony); conversational AI = channel-agnostic (powers both).",
+          "it": "Canale: chatbot = testo; voicebot = voce; IVR = voce (telefonia); IA conversazionale = indipendente dal canale (alimenta entrambi).",
+          "fr": "Canal: chatbot = texte; voicebot = voix; SVI = voix (téléphonie); IA conversationnelle = indépendante du canal (alimente les deux)."
+        },
+        {
+          "de": "Intelligenz: Chatbot = regelbasiert oder KI; Voicebot = meist KI; IVR = regelbasierte Menüs; Conversational AI = die KI selbst.",
+          "en": "Intelligence: chatbot = rule-based or AI; voicebot = usually AI; IVR = rule-based menus; conversational AI = the AI itself.",
+          "it": "Intelligenza: chatbot = a regole o IA; voicebot = di solito IA; IVR = menu a regole; IA conversazionale = l'IA stessa.",
+          "fr": "Intelligence: chatbot = à règles ou IA; voicebot = généralement IA; SVI = menus à règles; IA conversationnelle = l'IA elle-même."
+        },
+        {
+          "de": "Typischer Einstiegspunkt: Chatbot = Website oder Messaging; Voicebot = ein- und ausgehende Anrufe; IVR = Telefonzentrale; Conversational AI = die Engine dahinter.",
+          "en": "Typical entry point: chatbot = website or messaging; voicebot = inbound/outbound phone; IVR = phone switchboard; conversational AI = the engine behind any of them.",
+          "it": "Punto d'ingresso tipico: chatbot = sito o messaggistica; voicebot = chiamate in entrata/uscita; IVR = centralino; IA conversazionale = il motore dietro le quinte.",
+          "fr": "Point d'entrée typique: chatbot = site ou messagerie; voicebot = appels entrants/sortants; SVI = standard téléphonique; IA conversationnelle = le moteur en coulisses."
+        },
+        {
+          "de": "Stärke: Chatbot = günstig, skalierbar, asynchron; Voicebot = freihändig, natürlich, 24/7 am Telefon; IVR = zuverlässige Weiterleitung, tiefe Kosten; Conversational AI = versteht Absicht und Kontext.",
+          "en": "Strength: chatbot = cheap, scalable, async; voicebot = hands-free, natural, 24/7 phone cover; IVR = reliable routing, low cost; conversational AI = understands intent and context.",
+          "it": "Punto di forza: chatbot = economico, scalabile, asincrono; voicebot = a mani libere, naturale, telefono 24/7; IVR = instradamento affidabile, costi bassi; IA conversazionale = comprende intento e contesto.",
+          "fr": "Atout: chatbot = économique, évolutif, asynchrone; voicebot = mains libres, naturel, téléphone 24/7; SVI = routage fiable, coûts faibles; IA conversationnelle = comprend l'intention et le contexte."
+        },
+        {
+          "de": "Hauptgrenze: Chatbot = nur Text, kann bei starren Skripten frustrieren; Voicebot = aufwändiger, Erkennungsfehler; IVR = starr, «Menü-Hölle»; Conversational AI = braucht Daten, Governance und Aufsicht.",
+          "en": "Main limit: chatbot = text-only, can frustrate if scripted; voicebot = harder to build, speech errors; IVR = rigid, 'menu hell'; conversational AI = needs data, governance and oversight.",
+          "it": "Limite principale: chatbot = solo testo, può frustrare se troppo rigido; voicebot = più complesso, errori di riconoscimento; IVR = rigido, «inferno dei menu»; IA conversazionale = richiede dati, governance e supervisione.",
+          "fr": "Limite principale: chatbot = texte seul, peut frustrer s'il est trop rigide; voicebot = plus complexe, erreurs de reconnaissance; SVI = rigide, «enfer des menus»; IA conversationnelle = exige des données, une gouvernance et une supervision."
+        },
+        {
+          "de": "Am besten für: Chatbot = FAQ, Lead-Erfassung, Bestellstatus; Voicebot = Telefon-Triage, Terminbuchung; IVR = einfache Anrufverteilung; Conversational AI = jeder Fall, der echtes Verständnis braucht.",
+          "en": "Best for: chatbot = FAQs, lead capture, order status; voicebot = phone triage, appointment booking; IVR = simple call routing; conversational AI = any case needing genuine understanding.",
+          "it": "Ideale per: chatbot = FAQ, raccolta lead, stato ordini; voicebot = triage telefonico, prenotazione appuntamenti; IVR = semplice smistamento chiamate; IA conversazionale = ogni caso che richiede vera comprensione.",
+          "fr": "Idéal pour: chatbot = FAQ, capture de leads, statut de commande; voicebot = tri téléphonique, prise de rendez-vous; SVI = simple aiguillage des appels; IA conversationnelle = tout cas nécessitant une vraie compréhension."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wann passt was? Beispiele für KMU",
+        "en": "When does each fit? SME examples",
+        "it": "Quando usare cosa? Esempi per le PMI",
+        "fr": "Quand choisir quoi? Exemples pour PME"
+      },
+      "bullets": [
+        {
+          "de": "Ein Zürcher Handwerksbetrieb, der in «Wo bleibt meine Bestellung?»-Mails ertrinkt: Ein KI-Chatbot auf Website und WhatsApp antwortet sofort und bucht Rückrufe — ohne neue Telefonleitung.",
+          "en": "A Zurich trades business drowning in 'where is my order?' emails: an AI chatbot on the website and WhatsApp answers instantly and books call-backs — no new phone line needed.",
+          "it": "Un artigiano di Zurigo sommerso da e-mail «dov'è il mio ordine?»: un chatbot a IA su sito e WhatsApp risponde all'istante e prenota richiami — senza una nuova linea telefonica.",
+          "fr": "Un artisan zurichois submergé de courriels «où en est ma commande?»: un chatbot à IA sur le site et WhatsApp répond aussitôt et planifie des rappels — sans nouvelle ligne téléphonique."
+        },
+        {
+          "de": "Eine Zahnarzt- oder Physiopraxis, die Anrufe ausserhalb der Öffnungszeiten verliert: Ein Voicebot nimmt rund um die Uhr ab, bucht Termine in den Kalender und eskaliert Notfälle an einen Menschen.",
+          "en": "A dental or physiotherapy practice losing after-hours calls: a voicebot answers 24/7, books appointments into the calendar and escalates emergencies to a human.",
+          "it": "Uno studio dentistico o di fisioterapia che perde chiamate fuori orario: un voicebot risponde 24/7, prenota appuntamenti in agenda ed escala le emergenze a una persona.",
+          "fr": "Un cabinet dentaire ou de physiothérapie qui perd les appels hors horaires: un voicebot répond 24/7, inscrit les rendez-vous à l'agenda et transmet les urgences à une personne."
+        },
+        {
+          "de": "Ein kleiner Versicherer mit stark frequentierter Zentrale: Ein gut gestaltetes IVR (oder ein vorgeschalteter Voicebot) leitet Anrufende schneller ans richtige Team als jede Telefonistin.",
+          "en": "A small insurer with a busy switchboard: a well-designed IVR (or a voicebot front end) routes callers to the right team faster than a receptionist ever could.",
+          "it": "Un piccolo assicuratore con un centralino affollato: un IVR ben progettato (o un voicebot in front-end) instrada chi chiama al team giusto più in fretta di qualsiasi centralinista.",
+          "fr": "Un petit assureur au standard saturé: un SVI bien conçu (ou un voicebot en frontal) oriente les appelants vers la bonne équipe plus vite que n'importe quel standardiste."
+        },
+        {
+          "de": "Ein Händler, der in der DACH-Region expandiert: Conversational AI trägt einen Assistenten, der Deutsch, Französisch und Italienisch über Chat und Telefon bedient und Antworten konsistent hält.",
+          "en": "A retailer expanding across the DACH region: conversational AI underpins one assistant that serves German, French and Italian across chat and phone, keeping answers consistent.",
+          "it": "Un rivenditore che si espande nella regione DACH: l'IA conversazionale sostiene un unico assistente che serve tedesco, francese e italiano su chat e telefono, mantenendo risposte coerenti.",
+          "fr": "Un détaillant en expansion dans la région DACH: l'IA conversationnelle soutient un assistant unique qui sert l'allemand, le français et l'italien sur le chat et le téléphone, avec des réponses cohérentes."
+        }
+      ],
+      "paragraphs": [
+        {
+          "de": "Als Faustregel gilt: Beginnen Sie dort, wo Schmerz und Volumen am grössten sind. Kommen die meisten Anfragen schriftlich, liefert ein Chatbot am schnellsten und günstigsten Nutzen. Rufen Ihre Kundinnen und Kunden an und sind die Leitungen überlastet, lohnt sich Voice. Wählen Sie Conversational AI statt eines festen Skripts, sobald die Fragen vielfältig und schwer vorhersehbar sind — und sorgen Sie für eine saubere, getestete Übergabe an einen Menschen für alles, was der Bot nicht lösen kann.",
+          "en": "As a rule of thumb, start where the pain and the volume are. If most requests arrive in writing, a chatbot delivers value fastest and cheapest. If your customers phone and lines are congested, look at voice. Choose conversational AI over a fixed script whenever questions are varied and hard to predict — and keep a clean, tested handover to a human for everything the bot cannot resolve.",
+          "it": "Come regola pratica, partite da dove il problema e i volumi sono maggiori. Se la maggior parte delle richieste arriva per iscritto, un chatbot offre valore più in fretta e a costi minori. Se i clienti telefonano e le linee sono congestionate, valutate la voce. Scegliete l'IA conversazionale invece di uno script fisso quando le domande sono varie e difficili da prevedere — e mantenete un passaggio pulito e testato a una persona per tutto ciò che il bot non riesce a risolvere.",
+          "fr": "En règle générale, commencez là où la douleur et le volume sont les plus forts. Si la plupart des demandes arrivent par écrit, un chatbot apporte de la valeur le plus vite et au moindre coût. Si vos clients téléphonent et que les lignes sont saturées, examinez la voix. Choisissez l'IA conversationnelle plutôt qu'un script figé dès que les questions sont variées et difficiles à prévoir — et prévoyez un transfert propre et testé vers une personne pour tout ce que le bot ne peut pas résoudre."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler",
+        "en": "Common mistakes",
+        "it": "Errori frequenti",
+        "fr": "Erreurs fréquentes"
+      },
+      "bullets": [
+        {
+          "de": "Einen Kanal kaufen, bevor die Aufgabe definiert ist. Legen Sie zuerst fest, welche Aufgaben automatisiert werden sollen, dann wählen Sie Chatbot, Voicebot oder IVR.",
+          "en": "Buying a channel before defining the job. Decide which tasks to automate first, then pick chatbot, voicebot or IVR.",
+          "it": "Acquistare un canale prima di definire il compito. Decidete prima quali attività automatizzare, poi scegliete chatbot, voicebot o IVR.",
+          "fr": "Acheter un canal avant de définir la tâche. Décidez d'abord quelles tâches automatiser, puis choisissez chatbot, voicebot ou SVI."
+        },
+        {
+          "de": "Alles «KI» nennen. Viele «KI-Chatbots» sind getarnte Entscheidungsbäume; fragen Sie, ob das System frei formulierte Eingaben wirklich versteht.",
+          "en": "Calling everything 'AI'. Many 'AI chatbots' are decision trees in disguise; ask whether it truly understands free-form input.",
+          "it": "Chiamare tutto «IA». Molti «chatbot a IA» sono alberi decisionali travestiti; chiedete se il sistema comprende davvero input in forma libera.",
+          "fr": "Tout appeler «IA». Beaucoup de «chatbots à IA» sont des arbres de décision déguisés; demandez si le système comprend vraiment une saisie libre."
+        },
+        {
+          "de": "Menschen ersetzen statt entlasten. Die besten Lösungen übergeben elegant; ein Bot ohne Ausweg untergräbt das Vertrauen.",
+          "en": "Replacing humans instead of augmenting them. The best deployments hand off gracefully; a bot with no exit route erodes trust.",
+          "it": "Sostituire le persone invece di potenziarle. Le implementazioni migliori passano la mano con eleganza; un bot senza via d'uscita erode la fiducia.",
+          "fr": "Remplacer les humains au lieu de les épauler. Les meilleurs déploiements passent la main avec élégance; un bot sans issue érode la confiance."
+        },
+        {
+          "de": "Wartung ignorieren. Bots brauchen Inhaltspflege, Monitoring und Nachtraining — sie sind ein Produkt, kein einmaliges Projekt.",
+          "en": "Ignoring maintenance. Bots need content updates, monitoring and retraining — they are a product, not a one-off project.",
+          "it": "Ignorare la manutenzione. I bot richiedono aggiornamento dei contenuti, monitoraggio e riaddestramento — sono un prodotto, non un progetto una tantum.",
+          "fr": "Négliger la maintenance. Les bots exigent mise à jour du contenu, supervision et réentraînement — c'est un produit, pas un projet ponctuel."
+        },
+        {
+          "de": "Vergessen, dass Sprache sensibel ist. Anrufaufzeichnungen und Stimmprofile bringen schwerere Datenschutzpflichten mit sich als ein Textprotokoll.",
+          "en": "Forgetting voice is sensitive. Call recordings and voiceprints carry heavier data-protection duties than a text log.",
+          "it": "Dimenticare che la voce è sensibile. Registrazioni delle chiamate e impronte vocali comportano obblighi di protezione dei dati più gravosi di un log testuale.",
+          "fr": "Oublier que la voix est sensible. Enregistrements d'appels et empreintes vocales impliquent des obligations de protection des données plus lourdes qu'un journal texte."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Perspektive: revDSG, EDÖB und EU AI Act",
+        "en": "The Swiss angle: revDSG, EDÖB and the EU AI Act",
+        "it": "Prospettiva svizzera: nLPD, IFPDT e AI Act europeo",
+        "fr": "Regard suisse: nLPD, PFPDT et AI Act européen"
+      },
+      "paragraphs": [
+        {
+          "de": "In der Schweiz verarbeitet jedes dieser Werkzeuge Personendaten und fällt unter das revidierte Datenschutzgesetz (revDSG), beaufsichtigt durch den EDÖB. Sprachkanäle verlangen besondere Sorgfalt: Aufzeichnungen, Transkripte und Stimmprofile sind sensibler als Text — erheben Sie nur das Nötige, informieren Sie Anrufende und setzen Sie Löschfristen. Bedienen Sie EU-Kundschaft, gilt der EU AI Act extraterritorial und verlangt, dass Menschen erfahren, wenn sie mit einem KI-System statt einem Menschen interagieren — eine Transparenzpflicht, die ohnehin guter Praxis entspricht.",
+          "en": "In Switzerland, any of these tools processes personal data and falls under the revised Federal Act on Data Protection (revDSG/nFADP), supervised by the EDÖB. Voice channels deserve extra care: recordings, transcripts and voiceprints are more sensitive than text, so collect only what you need, inform callers, and set retention limits. If you serve EU customers, the EU AI Act applies extraterritorially and requires that people be told when they are interacting with an AI system rather than a human — a transparency duty that is good practice regardless.",
+          "it": "In Svizzera, ognuno di questi strumenti tratta dati personali e ricade sotto la revisione della Legge sulla protezione dei dati (nLPD/revLPD), sorvegliata dall'IFPDT. I canali vocali richiedono cura in più: registrazioni, trascrizioni e impronte vocali sono più sensibili del testo, quindi raccogliete solo il necessario, informate chi chiama e fissate termini di cancellazione. Se servite clienti nell'UE, l'AI Act europeo si applica in modo extraterritoriale e impone di informare le persone quando interagiscono con un sistema di IA anziché con un essere umano — un obbligo di trasparenza comunque consigliabile.",
+          "fr": "En Suisse, chacun de ces outils traite des données personnelles et relève de la loi fédérale révisée sur la protection des données (nLPD/révision LPD), supervisée par le PFPDT. Les canaux vocaux méritent une vigilance accrue: enregistrements, transcriptions et empreintes vocales sont plus sensibles que le texte — ne collectez que le nécessaire, informez les appelants et fixez des délais de suppression. Si vous servez des clients de l'UE, le règlement européen sur l'IA (AI Act) s'applique de façon extraterritoriale et impose d'informer les personnes lorsqu'elles interagissent avec un système d'IA plutôt qu'avec un humain — une obligation de transparence de toute façon recommandée."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Transparenz: Machen Sie deutlich, dass die anrufende oder besuchende Person mit einem Bot spricht, und bieten Sie einen Weg zum Menschen.",
+          "en": "Transparency: disclose that the caller or visitor is talking to a bot, and offer a route to a human.",
+          "it": "Trasparenza: rendete chiaro che chi chiama o naviga sta parlando con un bot e offrite una via verso una persona.",
+          "fr": "Transparence: indiquez clairement que l'appelant ou le visiteur parle à un bot et offrez une voie vers une personne."
+        },
+        {
+          "de": "Datenminimierung: Erfassen Sie nur, was die Aufgabe braucht; speichern Sie nicht standardmässig vollständige Aufzeichnungen.",
+          "en": "Data minimisation: capture only the data the task needs; avoid storing full recordings by default.",
+          "it": "Minimizzazione dei dati: raccogliete solo ciò che serve al compito; non salvate registrazioni complete per impostazione predefinita.",
+          "fr": "Minimisation des données: ne captez que ce que la tâche exige; ne stockez pas d'enregistrements complets par défaut."
+        },
+        {
+          "de": "Hosting und Auftragsbearbeiter: Wissen Sie, wo Modell und Daten liegen — gerade bei grenzüberschreitenden LLM-Anbietern.",
+          "en": "Hosting and sub-processors: know where the model and data sit, especially for cross-border LLM providers.",
+          "it": "Hosting e responsabili del trattamento: sappiate dove risiedono modello e dati, soprattutto con fornitori di LLM transfrontalieri.",
+          "fr": "Hébergement et sous-traitants: sachez où résident le modèle et les données, surtout avec des fournisseurs de LLM transfrontaliers."
+        },
+        {
+          "de": "Dokumentation: Halten Sie Zweck, Datenflüsse und Schutzmassnahmen fest — nützlich für die Rechenschaftspflicht nach revDSG und allfällige Pflichten aus dem EU AI Act.",
+          "en": "Documentation: keep a record of purpose, data flows and safeguards — useful for revDSG accountability and any EU AI Act obligations.",
+          "it": "Documentazione: tenete traccia di finalità, flussi di dati e misure di sicurezza — utile per il principio di responsabilità della nLPD e per eventuali obblighi dell'AI Act.",
+          "fr": "Documentation: consignez finalité, flux de données et mesures de protection — utile pour le principe de responsabilité de la nLPD et d'éventuelles obligations de l'AI Act."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ist ein IVR dasselbe wie ein Voicebot?",
+        "en": "Is IVR the same as a voicebot?",
+        "it": "L'IVR è la stessa cosa di un voicebot?",
+        "fr": "Le SVI est-il la même chose qu'un voicebot?"
+      },
+      "a": {
+        "de": "Nein. Beide arbeiten am Telefon mit Sprache, doch ein IVR folgt einem festen Menü und leitet Anrufende über Tasten oder einfache Befehle weiter. Ein Voicebot nutzt Conversational AI, versteht natürliche Sprache und kann eine Aufgabe tatsächlich beantworten oder erledigen, statt nur weiterzuverbinden. Ein Voicebot kann ein IVR ersetzen oder ihm vorgeschaltet werden.",
+        "en": "No. Both work over the phone with voice, but IVR follows a fixed menu and routes callers by keypad or simple commands. A voicebot uses conversational AI to understand natural speech and can actually answer or complete a task, not just transfer the call. A voicebot can replace or sit in front of an IVR.",
+        "it": "No. Entrambi funzionano al telefono con la voce, ma l'IVR segue un menu fisso e instrada chi chiama tramite tasti o comandi semplici. Un voicebot usa l'IA conversazionale per comprendere il linguaggio naturale e può davvero rispondere o completare un compito, non solo trasferire la chiamata. Un voicebot può sostituire un IVR o esserne il front-end.",
+        "fr": "Non. Les deux fonctionnent au téléphone avec la voix, mais le SVI suit un menu figé et oriente les appelants via les touches ou de simples commandes. Un voicebot utilise l'IA conversationnelle pour comprendre le langage naturel et peut réellement répondre ou accomplir une tâche, pas seulement transférer l'appel. Un voicebot peut remplacer un SVI ou le précéder en frontal."
+      }
+    },
+    {
+      "q": {
+        "de": "Braucht ein Chatbot immer KI?",
+        "en": "Does a chatbot always use AI?",
+        "it": "Un chatbot usa sempre l'IA?",
+        "fr": "Un chatbot utilise-t-il toujours l'IA?"
+      },
+      "a": {
+        "de": "Nein. Viele Chatbots sind regelbasiert: Sie folgen einem skriptierten Entscheidungsbaum und gleichen Schaltflächen oder Stichwörter ab. Das ist günstig und vorhersehbar, scheitert aber, wenn Nutzende unerwartet formulieren. Ein KI-Chatbot auf Basis von Conversational AI oder einem grossen Sprachmodell interpretiert frei formulierte Fragen und bewältigt Fälle, für die er nie ausdrücklich skriptet wurde.",
+        "en": "No. Many chatbots are rule-based: they follow a scripted decision tree and match buttons or keywords. These are cheap and predictable but break when a user phrases things unexpectedly. An AI chatbot, powered by conversational AI or a large language model, interprets free-form questions and handles cases it was never explicitly scripted for.",
+        "it": "No. Molti chatbot sono a regole: seguono un albero decisionale predefinito e confrontano pulsanti o parole chiave. Sono economici e prevedibili, ma si bloccano quando l'utente formula in modo inatteso. Un chatbot a IA, basato su IA conversazionale o su un grande modello linguistico, interpreta domande libere e gestisce casi per cui non è mai stato esplicitamente programmato.",
+        "fr": "Non. Beaucoup de chatbots sont à règles: ils suivent un arbre de décision scripté et comparent boutons ou mots-clés. C'est économique et prévisible, mais cela échoue quand l'utilisateur formule de façon inattendue. Un chatbot à IA, propulsé par l'IA conversationnelle ou un grand modèle de langage, interprète des questions libres et gère des cas pour lesquels il n'a jamais été explicitement scripté."
+      }
+    },
+    {
+      "q": {
+        "de": "Chatbot oder Voicebot — womit soll ein KMU starten?",
+        "en": "Chatbot or voicebot — which should an SME start with?",
+        "it": "Chatbot o voicebot: con quale dovrebbe iniziare una PMI?",
+        "fr": "Chatbot ou voicebot: par lequel une PME devrait-elle commencer?"
+      },
+      "a": {
+        "de": "Meist mit dem Kanal, den Ihre Kundschaft ohnehin nutzt. Kommen die meisten Anfragen per Chat, E-Mail oder Messaging, liefert ein Chatbot am schnellsten und günstigsten Nutzen. Sind die Telefonleitungen überlastet und kommen Anrufe ausserhalb der Öffnungszeiten, zahlt sich ein Voicebot aus. Viele Schweizer KMU starten mit einem Website-Chatbot und ergänzen Voice später.",
+        "en": "Usually the channel your customers already use. If most enquiries arrive by chat, email or messaging, a chatbot delivers value fastest and at the lowest cost. If phone lines are congested and calls come after hours, a voicebot pays off. Many Swiss SMEs begin with a website chatbot and add voice later.",
+        "it": "Di solito con il canale che i vostri clienti già usano. Se la maggior parte delle richieste arriva via chat, e-mail o messaggistica, un chatbot offre valore più in fretta e al costo più basso. Se le linee telefoniche sono congestionate e le chiamate arrivano fuori orario, un voicebot conviene. Molte PMI svizzere iniziano con un chatbot sul sito e aggiungono la voce in seguito.",
+        "fr": "En général par le canal que vos clients utilisent déjà. Si la plupart des demandes arrivent par chat, courriel ou messagerie, un chatbot apporte de la valeur le plus vite et au coût le plus bas. Si les lignes téléphoniques sont saturées et que les appels arrivent hors horaires, un voicebot est rentable. Beaucoup de PME suisses débutent avec un chatbot sur le site et ajoutent la voix ensuite."
+      }
+    },
+    {
+      "q": {
+        "de": "Worin unterscheidet sich Conversational AI von einem grossen Sprachmodell?",
+        "en": "How is conversational AI different from a large language model?",
+        "it": "In cosa l'IA conversazionale differisce da un grande modello linguistico?",
+        "fr": "En quoi l'IA conversationnelle diffère-t-elle d'un grand modèle de langage?"
+      },
+      "a": {
+        "de": "Ein grosses Sprachmodell (LLM) ist eine Komponente; Conversational AI ist das Gesamtsystem darum herum. Dazu gehören Absichtserkennung, Dialogsteuerung, Anbindungen an Kalender oder CRM, Leitplanken und Rückfallebenen. Das LLM liefert Sprachverständnis und -erzeugung, doch ein produktiver Assistent braucht die umgebende Orchestrierung, um zuverlässig und sicher zu sein.",
+        "en": "A large language model (LLM) is one component; conversational AI is the whole system around it. Conversational AI includes intent recognition, dialogue management, integrations with your calendar or CRM, guardrails and fallbacks. An LLM supplies the language understanding and generation, but a production assistant needs the surrounding orchestration to be reliable and safe.",
+        "it": "Un grande modello linguistico (LLM) è un componente; l'IA conversazionale è l'intero sistema attorno. Comprende riconoscimento dell'intento, gestione del dialogo, integrazioni con agenda o CRM, guardrail e piani di ripiego. L'LLM fornisce comprensione e generazione del linguaggio, ma un assistente in produzione ha bisogno dell'orchestrazione circostante per essere affidabile e sicuro.",
+        "fr": "Un grand modèle de langage (LLM) est un composant; l'IA conversationnelle est le système entier autour. Elle comprend reconnaissance de l'intention, gestion du dialogue, intégrations à l'agenda ou au CRM, garde-fous et solutions de repli. Le LLM fournit la compréhension et la génération du langage, mais un assistant en production a besoin de l'orchestration environnante pour être fiable et sûr."
+      }
+    },
+    {
+      "q": {
+        "de": "Gilt der EU AI Act für Schweizer Unternehmen?",
+        "en": "Does the EU AI Act apply to Swiss companies?",
+        "it": "L'AI Act europeo vale per le aziende svizzere?",
+        "fr": "Le règlement européen sur l'IA s'applique-t-il aux entreprises suisses?"
+      },
+      "a": {
+        "de": "Er kann gelten. Der EU AI Act wirkt extraterritorial: Bedient Ihr Chatbot oder Voicebot Nutzende in der EU, greifen seine Transparenz- und Risikoregeln. In der Praxis sind der Hinweis auf die KI-Interaktion und eine saubere Dokumentation für jedes Schweizer Unternehmen sinnvoll — sie stützen zugleich die Rechenschaftspflicht nach revDSG.",
+        "en": "It can. The EU AI Act has extraterritorial reach: if your chatbot or voicebot serves users in the EU, its transparency and risk rules apply. In practice, telling users they are interacting with an AI and keeping documentation are sensible steps for any Swiss business, and they also support revDSG accountability.",
+        "it": "Può valere. L'AI Act ha portata extraterritoriale: se il vostro chatbot o voicebot serve utenti nell'UE, si applicano le sue regole di trasparenza e di rischio. In pratica, informare gli utenti dell'interazione con un'IA e tenere una documentazione ordinata sono passi sensati per qualsiasi azienda svizzera, e sostengono anche il principio di responsabilità della nLPD.",
+        "fr": "Il le peut. L'AI Act a une portée extraterritoriale: si votre chatbot ou voicebot sert des utilisateurs dans l'UE, ses règles de transparence et de risque s'appliquent. En pratique, informer les utilisateurs de l'interaction avec une IA et tenir une documentation soignée sont des démarches sensées pour toute entreprise suisse, et elles soutiennent aussi le principe de responsabilité de la nLPD."
+      }
+    },
+    {
+      "q": {
+        "de": "Muss ich Kundinnen und Kunden sagen, dass sie mit einem Bot sprechen?",
+        "en": "Do I have to tell customers they're talking to a bot?",
+        "it": "Devo dire ai clienti che stanno parlando con un bot?",
+        "fr": "Dois-je dire aux clients qu'ils parlent à un bot?"
+      },
+      "a": {
+        "de": "Es ist dringend zu empfehlen und wird zunehmend erwartet. Wo der EU AI Act greift, ist der Hinweis auf die KI-Interaktion Pflicht; nach revDSG ist Transparenz über die Bearbeitung ein Grundprinzip. Über die Compliance hinaus schafft ein klarer Hinweis samt Übergabe an einen Menschen Vertrauen und reduziert Frust.",
+        "en": "It is strongly advisable and increasingly expected. Under the EU AI Act, disclosing AI interaction is required where it applies; under revDSG, transparency about processing is a core principle. Beyond compliance, telling people plainly and offering a human hand-off builds trust and reduces frustration.",
+        "it": "È fortemente consigliato e sempre più atteso. Dove si applica l'AI Act europeo, informare dell'interazione con l'IA è obbligatorio; secondo la nLPD, la trasparenza sul trattamento è un principio cardine. Oltre alla conformità, dirlo con chiarezza e offrire il passaggio a una persona costruisce fiducia e riduce la frustrazione.",
+        "fr": "C'est vivement conseillé et de plus en plus attendu. Là où l'AI Act s'applique, informer de l'interaction avec l'IA est obligatoire; selon la nLPD, la transparence sur le traitement est un principe fondamental. Au-delà de la conformité, le dire clairement et proposer un transfert vers une personne renforce la confiance et réduit la frustration."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Chatbot",
+    "Voicebot",
+    "IVR (Interactive Voice Response)",
+    "Conversational AI",
+    "Natural Language Understanding (NLU)",
+    "Large Language Model (LLM)",
+    "Speech-to-Text",
+    "Text-to-Speech",
+    "Dialogue Management",
+    "Intent Recognition",
+    "DTMF",
+    "revDSG / nFADP",
+    "EDÖB",
+    "EU AI Act",
+    "Omnichannel"
+  ]
+}

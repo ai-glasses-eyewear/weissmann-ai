@@ -1,0 +1,371 @@
+{
+  "id": "what-is-an-ai-phone-assistant",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "slug": {
+    "de": "was-ist-ein-ki-telefonassistent",
+    "en": "what-is-an-ai-phone-assistant",
+    "it": "cos-e-un-assistente-telefonico-ai",
+    "fr": "qu-est-ce-qu-un-assistant-telephonique-ia"
+  },
+  "relatedServices": [
+    "phone-assistant"
+  ],
+  "title": {
+    "de": "Was ist ein KI-Telefonassistent? Definition | Weissmann AI",
+    "en": "What Is an AI Phone Assistant (Voice Agent)? | Weissmann AI",
+    "it": "Cos'è un assistente telefonico IA (voice agent)? | Weissmann AI",
+    "fr": "Assistant téléphonique IA (voice agent) : définition | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI-Telefonassistent einfach erklärt: Wie ein Voice Agent Anrufe annimmt, Termine bucht und weiterleitet, worin er sich vom IVR unterscheidet und wo die Grenzen liegen.",
+    "en": "AI phone assistant explained: how a voice agent answers calls, books appointments and routes them, how it differs from an IVR, and where its limits lie.",
+    "it": "Assistente telefonico IA spiegato: come un voice agent risponde alle chiamate, fissa appuntamenti e le smista, in cosa differisce da un IVR e quali sono i limiti.",
+    "fr": "L'assistant téléphonique IA expliqué : comment un voice agent répond aux appels, prend des rendez-vous et les oriente, en quoi il diffère d'un SVI et ses limites."
+  },
+  "kicker": {
+    "de": "KI-Agenten & Automatisierung",
+    "en": "AI Agents & Automation",
+    "it": "Agenti IA e automazione",
+    "fr": "Agents IA & automatisation"
+  },
+  "h1": {
+    "de": "Was ist ein KI-Telefonassistent (Voice Agent)?",
+    "en": "What Is an AI Phone Assistant (Voice Agent)?",
+    "it": "Cos'è un assistente telefonico IA (voice agent)?",
+    "fr": "Qu'est-ce qu'un assistant téléphonique IA (voice agent) ?"
+  },
+  "answerFirst": {
+    "de": "Ein KI-Telefonassistent (Voice Agent) ist eine Software, die eingehende Anrufe mit natürlicher Sprache entgegennimmt, das Anliegen versteht und selbstständig handelt: Termine buchen, Fragen beantworten, Anrufe weiterleiten oder Informationen erfassen. Anders als ein klassisches IVR-Menü führt er ein freies Gespräch, statt Tastendrücke abzufragen. Er kombiniert Spracherkennung, Sprachmodelle und Sprachsynthese und ist rund um die Uhr erreichbar.",
+    "en": "An AI phone assistant (voice agent) is software that answers incoming calls in natural language, understands the caller's intent and acts on it: booking appointments, answering questions, routing calls or capturing information. Unlike a traditional IVR menu, it holds a free-flowing conversation instead of asking for keypresses. It combines speech recognition, language models and speech synthesis, and is reachable around the clock.",
+    "it": "Un assistente telefonico IA (voice agent) è un software che risponde alle chiamate in arrivo usando il linguaggio naturale, comprende la richiesta di chi chiama e agisce: fissa appuntamenti, risponde a domande, smista le chiamate o raccoglie informazioni. A differenza di un menu IVR tradizionale, conduce una conversazione libera invece di chiedere di premere tasti. Combina riconoscimento vocale, modelli linguistici e sintesi vocale ed è raggiungibile 24 ore su 24.",
+    "fr": "Un assistant téléphonique IA (voice agent) est un logiciel qui répond aux appels entrants en langage naturel, comprend la demande de l'appelant et agit : prise de rendez-vous, réponses aux questions, transfert des appels ou collecte d'informations. Contrairement à un menu SVI classique, il mène une conversation libre au lieu de demander d'appuyer sur des touches. Il combine reconnaissance vocale, modèles de langage et synthèse vocale, et reste joignable 24 h/24."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Definition: KI-Telefonassistent in einem Satz",
+        "en": "Definition: an AI phone assistant in one sentence",
+        "it": "Definizione: l'assistente telefonico IA in una frase",
+        "fr": "Définition : l'assistant téléphonique IA en une phrase"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein KI-Telefonassistent ist ein Sprachagent, der Telefonanrufe automatisch entgegennimmt, in natürlicher Sprache versteht und Aufgaben eigenständig erledigt – etwa Termine vereinbaren, häufige Fragen beantworten oder an die richtige Person weiterleiten. Er ersetzt kein menschliches Team, sondern fängt Anrufe ab, die sonst unbeantwortet blieben. Technisch fügt er drei Bausteine zu einem flüssigen Gespräch zusammen:",
+          "en": "An AI phone assistant is a voice agent that automatically answers phone calls, understands them in natural language and completes tasks on its own – such as scheduling appointments, answering common questions or routing to the right person. It does not replace a human team; it catches calls that would otherwise go unanswered. Technically, it stitches three building blocks into one fluid conversation:",
+          "it": "Un assistente telefonico IA è un voice agent che risponde automaticamente alle chiamate, le comprende in linguaggio naturale e porta a termine da solo alcuni compiti: fissare appuntamenti, rispondere a domande frequenti o smistare alla persona giusta. Non sostituisce un team umano, ma intercetta le chiamate che altrimenti resterebbero senza risposta. Sul piano tecnico combina tre componenti in un'unica conversazione fluida:",
+          "fr": "Un assistant téléphonique IA est un agent vocal qui répond automatiquement aux appels, les comprend en langage naturel et accomplit seul certaines tâches : fixer des rendez-vous, répondre aux questions fréquentes ou orienter vers la bonne personne. Il ne remplace pas une équipe humaine ; il capte les appels qui, autrement, resteraient sans réponse. Techniquement, il assemble trois briques en une conversation fluide :"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Spracherkennung (Speech-to-Text): Der Assistent wandelt das Gesprochene in Echtzeit in Text um.",
+          "en": "Speech recognition (speech-to-text): the assistant converts what is said into text in real time.",
+          "it": "Riconoscimento vocale (speech-to-text): l'assistente converte in tempo reale ciò che viene detto in testo.",
+          "fr": "Reconnaissance vocale (speech-to-text) : l'assistant transcrit en temps réel ce qui est dit."
+        },
+        {
+          "de": "Sprachverständnis (LLM): Ein Sprachmodell erkennt Absicht und Kontext – auch bei freier Formulierung, nicht nur bei Stichwörtern.",
+          "en": "Language understanding (LLM): a language model detects intent and context – even with free phrasing, not just keywords.",
+          "it": "Comprensione del linguaggio (LLM): un modello linguistico riconosce l'intento e il contesto, anche con formulazioni libere e non solo parole chiave.",
+          "fr": "Compréhension du langage (LLM) : un modèle de langage identifie l'intention et le contexte, même en formulation libre et pas seulement par mots-clés."
+        },
+        {
+          "de": "Aktion: Der Assistent greift auf Kalender, CRM oder Wissensdatenbank zu, um zu buchen, zu beantworten oder zu erfassen.",
+          "en": "Action: the assistant taps into your calendar, CRM or knowledge base to book, answer or capture information.",
+          "it": "Azione: l'assistente accede a calendario, CRM o base di conoscenza per prenotare, rispondere o registrare dati.",
+          "fr": "Action : l'assistant se connecte à l'agenda, au CRM ou à la base de connaissances pour réserver, répondre ou enregistrer des données."
+        },
+        {
+          "de": "Sprachsynthese (Text-to-Speech): Die Antwort wird als natürlich klingende Stimme ausgegeben – das Gespräch fühlt sich flüssig an.",
+          "en": "Speech synthesis (text-to-speech): the reply is spoken back in a natural-sounding voice, so the conversation feels fluid.",
+          "it": "Sintesi vocale (text-to-speech): la risposta viene pronunciata con una voce dal suono naturale, così la conversazione risulta fluida.",
+          "fr": "Synthèse vocale (text-to-speech) : la réponse est prononcée d'une voix au son naturel, pour une conversation fluide."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "KI-Telefonassistent vs. IVR: der entscheidende Unterschied",
+        "en": "AI phone assistant vs. IVR: the decisive difference",
+        "it": "Assistente telefonico IA e IVR: la differenza decisiva",
+        "fr": "Assistant téléphonique IA et SVI : la différence décisive"
+      },
+      "paragraphs": [
+        {
+          "de": "Der grösste Unterschied zum klassischen IVR liegt im Gesprächsfluss: Ein IVR arbeitet mit starren Menübäumen («Drücken Sie die 1 für …»), ein KI-Telefonassistent führt ein freies Gespräch. Anrufende sagen ihr Anliegen in eigenen Worten, statt sich durch Tastenmenüs zu klicken.",
+          "en": "The biggest difference from a classic IVR is the flow of the conversation: an IVR uses rigid menu trees ('Press 1 for …'), while an AI phone assistant holds a free conversation. Callers state their request in their own words instead of clicking through keypad menus.",
+          "it": "La differenza principale rispetto a un IVR classico è il flusso della conversazione: l'IVR usa alberi di menu rigidi («Prema 1 per…»), mentre un assistente telefonico IA conduce una conversazione libera. Chi chiama espone la propria richiesta con parole proprie, invece di navigare tra i menu a tastiera.",
+          "fr": "La principale différence avec un SVI classique tient au déroulé de la conversation : le SVI repose sur des arborescences de menus rigides (« Tapez 1 pour… »), alors qu'un assistant téléphonique IA mène une conversation libre. L'appelant exprime sa demande avec ses propres mots, au lieu de naviguer dans des menus à touches."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "IVR: feste Menüs, Tastendruck oder einzelne Stichwörter, starre Pfade, häufiges «Zurück zum Hauptmenü».",
+          "en": "IVR: fixed menus, keypresses or single keywords, rigid paths, frequent 'back to the main menu'.",
+          "it": "IVR: menu fissi, pressione di tasti o singole parole chiave, percorsi rigidi, frequente «ritorno al menu principale».",
+          "fr": "SVI : menus figés, appui sur des touches ou mots-clés isolés, parcours rigides, fréquent « retour au menu principal »."
+        },
+        {
+          "de": "KI-Telefonassistent: freie Sprache, versteht Kontext und Nachfragen, kann mehrere Anliegen in einem Satz verarbeiten.",
+          "en": "AI phone assistant: free speech, understands context and follow-up questions, can handle several requests in one sentence.",
+          "it": "Assistente telefonico IA: linguaggio libero, comprende contesto e domande di follow-up, può gestire più richieste in una sola frase.",
+          "fr": "Assistant téléphonique IA : langage libre, comprend le contexte et les questions de suivi, peut traiter plusieurs demandes en une seule phrase."
+        },
+        {
+          "de": "IVR leitet meist nur weiter; ein Voice Agent kann die Aufgabe oft direkt abschliessen (z. B. Termin gebucht).",
+          "en": "An IVR mostly just routes; a voice agent can often complete the task directly (e.g. appointment booked).",
+          "it": "L'IVR di solito si limita a smistare; un voice agent spesso completa direttamente il compito (ad esempio l'appuntamento fissato).",
+          "fr": "Le SVI se contente le plus souvent d'orienter ; un voice agent peut souvent accomplir la tâche directement (par ex. rendez-vous pris)."
+        },
+        {
+          "de": "Grauzone: Moderne «Conversational IVR» nähert sich der KI an – entscheidend ist, ob echtes Sprachverständnis statt reiner Schlüsselwort-Abgleich dahintersteckt.",
+          "en": "Grey zone: modern 'conversational IVR' edges closer to AI – what matters is whether real language understanding sits behind it rather than keyword matching.",
+          "it": "Zona grigia: i moderni «IVR conversazionali» si avvicinano all'IA; ciò che conta è se dietro c'è una reale comprensione del linguaggio anziché il semplice confronto di parole chiave.",
+          "fr": "Zone grise : les « SVI conversationnels » modernes se rapprochent de l'IA ; l'essentiel est de savoir si une véritable compréhension du langage se trouve derrière, plutôt qu'un simple appariement de mots-clés."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Typische Anwendungsfälle (Schweizer KMU-Perspektive)",
+        "en": "Typical use cases (a Swiss SME lens)",
+        "it": "Casi d'uso tipici (nell'ottica delle PMI svizzere)",
+        "fr": "Cas d'usage typiques (regard PME suisse)"
+      },
+      "paragraphs": [
+        {
+          "de": "Am meisten Nutzen bringt ein KI-Telefonassistent dort, wo viele gleichartige Anrufe ausserhalb der Bürozeiten oder in Spitzen anfallen. Für ein Schweizer KMU heisst das konkret:",
+          "en": "An AI phone assistant delivers the most value where many similar calls arrive outside office hours or during peaks. For a Swiss SME, that means concretely:",
+          "it": "Un assistente telefonico IA offre il massimo valore dove arrivano molte chiamate simili fuori dagli orari d'ufficio o nei momenti di picco. Per una PMI svizzera, in concreto significa:",
+          "fr": "Un assistant téléphonique IA apporte le plus de valeur là où de nombreux appels similaires arrivent en dehors des heures de bureau ou lors des pics. Pour une PME suisse, cela signifie concrètement :"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Terminvereinbarung: Coiffeur, Praxis, Werkstatt oder Beratung – Buchen und Verschieben ohne Wartezeit, auch am Abend und am Wochenende.",
+          "en": "Appointment scheduling: hair salon, medical practice, garage or advisory – booking and rescheduling without waiting, including evenings and weekends.",
+          "it": "Fissare appuntamenti: parrucchiere, studio medico, officina o consulenza – prenotare e spostare senza attese, anche di sera e nel weekend.",
+          "fr": "Prise de rendez-vous : coiffeur, cabinet médical, garage ou conseil – réserver et reporter sans attente, y compris le soir et le week-end."
+        },
+        {
+          "de": "Erstauskunft: Öffnungszeiten, Anfahrt, Preisrahmen oder Standardfragen beantworten, damit das Team sich auf komplexe Fälle konzentriert.",
+          "en": "First-line information: opening hours, directions, price ranges or standard questions, so the team can focus on complex cases.",
+          "it": "Prima informazione: orari di apertura, come raggiungere la sede, fasce di prezzo o domande standard, così il team si concentra sui casi complessi.",
+          "fr": "Première information : horaires d'ouverture, accès, fourchettes de prix ou questions standard, pour que l'équipe se concentre sur les cas complexes."
+        },
+        {
+          "de": "Anrufweiterleitung mit Vorqualifizierung: Anliegen erfassen und an die richtige Abteilung oder Person routen.",
+          "en": "Routing with pre-qualification: capturing the request and routing it to the right department or person.",
+          "it": "Smistamento con pre-qualifica: registrare la richiesta e indirizzarla al reparto o alla persona giusta.",
+          "fr": "Transfert avec préqualification : recueillir la demande et l'orienter vers le bon service ou la bonne personne."
+        },
+        {
+          "de": "Auftrags- und Rückrufaufnahme: Name, Anliegen und Kontakt strukturiert erfassen und ins CRM schreiben.",
+          "en": "Order and callback capture: recording name, request and contact in a structured way and writing it to the CRM.",
+          "it": "Registrazione di ordini e richiami: raccogliere nome, richiesta e contatto in modo strutturato e scriverli nel CRM.",
+          "fr": "Prise de commandes et de rappels : consigner nom, demande et contact de façon structurée et les inscrire dans le CRM."
+        },
+        {
+          "de": "Überlauf und Randzeiten: Anrufe abfangen, wenn alle Leitungen besetzt sind – statt Besetztzeichen oder Mailbox.",
+          "en": "Overflow and off-hours: catching calls when all lines are busy – instead of a busy tone or voicemail.",
+          "it": "Sovraccarico e orari marginali: intercettare le chiamate quando tutte le linee sono occupate, invece del segnale di occupato o della segreteria.",
+          "fr": "Débordement et heures creuses : capter les appels quand toutes les lignes sont occupées – au lieu d'une tonalité d'occupation ou d'une messagerie."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Grenzen und häufige Fehler",
+        "en": "Limits and common mistakes",
+        "it": "Limiti ed errori frequenti",
+        "fr": "Limites et erreurs fréquentes"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein KI-Telefonassistent ist ein Werkzeug mit klaren Grenzen. Wer ihn als vollständigen Ersatz für Menschen einsetzt, riskiert Frust. Realistisch ist er ein Filter für Routine, der komplexe oder emotionale Fälle sauber an Menschen übergibt.",
+          "en": "An AI phone assistant is a tool with clear limits. Using it as a full replacement for people invites frustration. Realistically, it is a filter for routine that hands complex or emotional cases cleanly to humans.",
+          "it": "Un assistente telefonico IA è uno strumento con limiti chiari. Usarlo come sostituto totale delle persone genera frustrazione. Realisticamente è un filtro per la routine, che passa in modo pulito i casi complessi o emotivi agli esseri umani.",
+          "fr": "Un assistant téléphonique IA est un outil aux limites claires. L'utiliser comme un remplacement total des personnes mène à la frustration. Réalistement, c'est un filtre pour la routine, qui transmet proprement les cas complexes ou émotionnels aux humains."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Komplexe, emotionale oder eskalierende Anliegen gehören zu einem Menschen – ein guter Assistent erkennt das und leitet weiter.",
+          "en": "Complex, emotional or escalating matters belong with a person – a good assistant recognises this and routes on.",
+          "it": "Le richieste complesse, emotive o che degenerano spettano a una persona: un buon assistente lo riconosce e smista.",
+          "fr": "Les demandes complexes, émotionnelles ou qui s'enveniment relèvent d'une personne ; un bon assistant le reconnaît et transfère."
+        },
+        {
+          "de": "Latenz und Unterbrechungen: Zu lange Pausen oder Ins-Wort-Fallen wirken unnatürlich; die Qualität hängt stark an der Technik.",
+          "en": "Latency and interruptions: overly long pauses or talking over the caller feel unnatural; quality depends heavily on the technology.",
+          "it": "Latenza e interruzioni: pause troppo lunghe o il sovrapporsi alla voce di chi chiama risultano innaturali; la qualità dipende molto dalla tecnologia.",
+          "fr": "Latence et interruptions : des pauses trop longues ou le fait de couper la parole paraissent artificiels ; la qualité dépend fortement de la technologie."
+        },
+        {
+          "de": "Dialekt und Nebengeräusche: Schweizerdeutsche Mundart und laute Umgebungen können die Erkennung erschweren.",
+          "en": "Dialect and background noise: Swiss-German dialect and noisy environments can make recognition harder.",
+          "it": "Dialetto e rumori di fondo: lo svizzero tedesco e gli ambienti rumorosi possono complicare il riconoscimento.",
+          "fr": "Dialecte et bruits de fond : le suisse allemand et les environnements bruyants peuvent gêner la reconnaissance."
+        },
+        {
+          "de": "Häufiger Fehler: Der Assistent verschweigt, dass er eine KI ist, oder bietet keinen einfachen Weg zu einem Menschen – beides beschädigt Vertrauen.",
+          "en": "Common mistake: the assistant hides that it is an AI, or offers no easy path to a human – both damage trust.",
+          "it": "Errore frequente: l'assistente nasconde di essere un'IA oppure non offre una via semplice per raggiungere una persona; entrambe le cose minano la fiducia.",
+          "fr": "Erreur fréquente : l'assistant cache qu'il est une IA, ou n'offre pas de voie simple vers un humain – deux facteurs qui minent la confiance."
+        },
+        {
+          "de": "Halluzinationen: Ohne saubere Wissensbasis kann ein Sprachmodell falsche Auskünfte geben; verbindliche Aussagen brauchen geprüfte Datenquellen.",
+          "en": "Hallucinations: without a clean knowledge base, a language model can give wrong answers; binding statements need verified data sources.",
+          "it": "Allucinazioni: senza una base di conoscenza affidabile, un modello linguistico può dare informazioni errate; le affermazioni vincolanti richiedono fonti di dati verificate.",
+          "fr": "Hallucinations : sans base de connaissances fiable, un modèle de langage peut donner de fausses informations ; les affirmations engageantes exigent des sources de données vérifiées."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Perspektive: Datenschutz und Transparenz",
+        "en": "The Swiss angle: data protection and transparency",
+        "it": "La prospettiva svizzera: protezione dei dati e trasparenza",
+        "fr": "Le regard suisse : protection des données et transparence"
+      },
+      "paragraphs": [
+        {
+          "de": "In der Schweiz fällt ein KI-Telefonassistent unter das revidierte Datenschutzgesetz (revDSG). Anrufe enthalten Personendaten, teils besonders schützenswerte – die Bearbeitung muss verhältnismässig, zweckgebunden und transparent sein.",
+          "en": "In Switzerland, an AI phone assistant falls under the revised Federal Act on Data Protection (revFADP/nFADP). Calls contain personal data, sometimes sensitive – processing must be proportionate, purpose-bound and transparent.",
+          "it": "In Svizzera un assistente telefonico IA rientra nella nuova legge sulla protezione dei dati (nLPD). Le chiamate contengono dati personali, a volte degni di particolare protezione: il trattamento deve essere proporzionato, vincolato allo scopo e trasparente.",
+          "fr": "En Suisse, un assistant téléphonique IA relève de la nouvelle loi sur la protection des données (nLPD). Les appels contiennent des données personnelles, parfois sensibles : le traitement doit être proportionné, lié à une finalité et transparent."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Transparenz: Anrufende sollten wissen, dass sie mit einer KI sprechen, und einfach zu einem Menschen gelangen können.",
+          "en": "Transparency: callers should know they are talking to an AI and be able to reach a human easily.",
+          "it": "Trasparenza: chi chiama dovrebbe sapere di parlare con un'IA e poter raggiungere facilmente una persona.",
+          "fr": "Transparence : l'appelant devrait savoir qu'il parle à une IA et pouvoir joindre facilement une personne."
+        },
+        {
+          "de": "revDSG statt DSGVO: Für Schweizer Sachverhalte gilt das revDSG; die Aufsicht liegt beim EDÖB. Wer EU-Kundschaft bedient, muss zusätzlich die DSGVO beachten.",
+          "en": "revFADP, not GDPR: Swiss matters are governed by the revised FADP; oversight lies with the FDPIC. If you serve EU customers, the GDPR applies on top.",
+          "it": "nLPD, non GDPR: per le fattispecie svizzere vale la nLPD; la vigilanza spetta all'IFPDT. Chi serve clientela dell'UE deve inoltre rispettare il GDPR.",
+          "fr": "nLPD, pas RGPD : pour les situations suisses, c'est la nLPD qui s'applique ; la surveillance incombe au PFPDT. Qui sert une clientèle de l'UE doit en plus respecter le RGPD."
+        },
+        {
+          "de": "EU AI Act: Der EU AI Act wirkt extraterritorial und kann auch Schweizer Anbieter treffen, wenn sie in der EU tätig sind; er verlangt u. a. Transparenz bei KI-Interaktionen.",
+          "en": "EU AI Act: the EU AI Act has extraterritorial reach and can affect Swiss providers active in the EU; among other things it requires transparency in AI interactions.",
+          "it": "EU AI Act: l'EU AI Act ha portata extraterritoriale e può riguardare anche i fornitori svizzeri attivi nell'UE; tra l'altro richiede trasparenza nelle interazioni con l'IA.",
+          "fr": "Règlement européen sur l'IA (EU AI Act) : il a une portée extraterritoriale et peut concerner les prestataires suisses actifs dans l'UE ; il exige notamment la transparence des interactions avec l'IA."
+        },
+        {
+          "de": "Aufzeichnungen: Gesprächsmitschnitte oder Transkripte brauchen eine Rechtsgrundlage und die Information der Betroffenen; Speicherorte und Auftragsbearbeiter (auch ausserhalb der Schweiz) sind zu prüfen.",
+          "en": "Recordings: call recordings or transcripts need a legal basis and information for those affected; storage locations and processors (including outside Switzerland) must be checked.",
+          "it": "Registrazioni: le registrazioni delle chiamate o le trascrizioni necessitano di una base giuridica e dell'informazione agli interessati; vanno verificati i luoghi di conservazione e i responsabili del trattamento (anche fuori dalla Svizzera).",
+          "fr": "Enregistrements : les enregistrements d'appels ou les transcriptions nécessitent une base légale et l'information des personnes concernées ; les lieux de stockage et les sous-traitants (y compris hors de Suisse) doivent être vérifiés."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen einem KI-Telefonassistent und einem IVR?",
+        "en": "What is the difference between an AI phone assistant and an IVR?",
+        "it": "Qual è la differenza tra un assistente telefonico IA e un IVR?",
+        "fr": "Quelle est la différence entre un assistant téléphonique IA et un SVI ?"
+      },
+      "a": {
+        "de": "Ein IVR führt durch starre Tastenmenüs («Drücken Sie die 1»). Ein KI-Telefonassistent versteht frei gesprochene Sprache, erkennt die Absicht dahinter und kann Aufgaben wie eine Terminbuchung oft direkt abschliessen, statt nur weiterzuleiten.",
+        "en": "An IVR guides you through rigid keypad menus ('Press 1'). An AI phone assistant understands free speech, detects the intent behind it and can often complete tasks such as booking an appointment directly, instead of merely routing the call.",
+        "it": "Un IVR ti guida attraverso menu a tastiera rigidi («Prema 1»). Un assistente telefonico IA comprende il linguaggio libero, riconosce l'intento e spesso completa direttamente compiti come fissare un appuntamento, invece di limitarsi a smistare la chiamata.",
+        "fr": "Un SVI vous guide dans des menus à touches rigides (« Tapez 1 »). Un assistant téléphonique IA comprend le langage libre, identifie l'intention derrière la demande et peut souvent accomplir directement des tâches comme une prise de rendez-vous, au lieu de se contenter d'orienter l'appel."
+      }
+    },
+    {
+      "q": {
+        "de": "Kann ein KI-Telefonassistent Schweizerdeutsch verstehen?",
+        "en": "Can an AI phone assistant understand Swiss German?",
+        "it": "Un assistente telefonico IA capisce lo svizzero tedesco?",
+        "fr": "Un assistant téléphonique IA comprend-il le suisse allemand ?"
+      },
+      "a": {
+        "de": "Standardsprache versteht er in der Regel gut. Ausgeprägte Mundart ist anspruchsvoller: Viele Lösungen verstehen Schweizer Hochdeutsch zuverlässig, reine Dialekte je nach System unterschiedlich gut. Ein Test mit echten Anrufenden zeigt die tatsächliche Qualität.",
+        "en": "It usually handles standard German well. Broad dialect is harder: many solutions understand Swiss Standard German reliably, while pure dialect varies by system. A test with real callers reveals the actual quality.",
+        "it": "Di norma comprende bene il tedesco standard. Il dialetto marcato è più difficile: molte soluzioni capiscono in modo affidabile il tedesco standard svizzero, mentre il dialetto puro varia da sistema a sistema. Un test con chiamanti reali rivela la qualità effettiva.",
+        "fr": "Il comprend en général bien l'allemand standard. Le dialecte prononcé est plus délicat : beaucoup de solutions comprennent de manière fiable le bon allemand suisse, tandis que le dialecte pur varie selon le système. Un test avec de vrais appelants révèle la qualité réelle."
+      }
+    },
+    {
+      "q": {
+        "de": "Ersetzt ein Voice Agent mein Team?",
+        "en": "Does a voice agent replace my team?",
+        "it": "Un voice agent sostituisce il mio team?",
+        "fr": "Un voice agent remplace-t-il mon équipe ?"
+      },
+      "a": {
+        "de": "Nein. Er übernimmt Routine – Termine, Erstauskünfte, Weiterleitung – und schafft dem Team Zeit für komplexe Fälle. Emotionale oder heikle Gespräche gehören weiterhin zu Menschen; ein guter Assistent leitet solche Anrufe gezielt weiter.",
+        "en": "No. It takes over routine – appointments, first-line information, routing – freeing the team for complex cases. Emotional or delicate conversations still belong with people; a good assistant routes such calls on deliberately.",
+        "it": "No. Si occupa della routine – appuntamenti, prime informazioni, smistamento – liberando il team per i casi complessi. Le conversazioni emotive o delicate restano alle persone; un buon assistente inoltra miratamente queste chiamate.",
+        "fr": "Non. Il prend en charge la routine – rendez-vous, premières informations, transfert – et libère l'équipe pour les cas complexes. Les conversations émotionnelles ou délicates restent l'affaire de personnes ; un bon assistant transfère ces appels de manière ciblée."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist der Einsatz in der Schweiz datenschutzkonform?",
+        "en": "Is using one in Switzerland compliant with data protection law?",
+        "it": "L'utilizzo in Svizzera è conforme alla protezione dei dati?",
+        "fr": "L'utilisation en Suisse est-elle conforme à la protection des données ?"
+      },
+      "a": {
+        "de": "Ja, wenn das revDSG eingehalten wird: transparente Information, Zweckbindung, sparsame Datenbearbeitung und geprüfte Auftragsbearbeiter. Aufsicht ist der EDÖB. Bei EU-Kundschaft kommen die DSGVO und ggf. der EU AI Act hinzu.",
+        "en": "Yes, if the revFADP is met: transparent information, purpose limitation, data minimisation and vetted processors. Oversight is the FDPIC. For EU customers, the GDPR and possibly the EU AI Act apply as well.",
+        "it": "Sì, se si rispetta la nLPD: informazione trasparente, vincolo allo scopo, minimizzazione dei dati e responsabili del trattamento verificati. La vigilanza spetta all'IFPDT. Per la clientela UE si aggiungono il GDPR ed eventualmente l'EU AI Act.",
+        "fr": "Oui, si la nLPD est respectée : information transparente, limitation à la finalité, minimisation des données et sous-traitants vérifiés. La surveillance relève du PFPDT. Pour une clientèle de l'UE s'ajoutent le RGPD et, le cas échéant, le règlement européen sur l'IA."
+      }
+    },
+    {
+      "q": {
+        "de": "Was kostet ein KI-Telefonassistent?",
+        "en": "How much does an AI phone assistant cost?",
+        "it": "Quanto costa un assistente telefonico IA?",
+        "fr": "Combien coûte un assistant téléphonique IA ?"
+      },
+      "a": {
+        "de": "Die Kosten hängen von Anrufvolumen, Integrationen und Sprachen ab und werden meist pro Minute oder pro Monat abgerechnet. Statt einer Pauschalzahl lohnt sich eine Rechnung: Wie viele verpasste Anrufe entstehen heute pro Woche – und was ist ein gewonnener Termin wert?",
+        "en": "Cost depends on call volume, integrations and languages, and is usually billed per minute or per month. Rather than a flat figure, do the math: how many missed calls occur per week today – and what is a won appointment worth?",
+        "it": "Il costo dipende dal volume di chiamate, dalle integrazioni e dalle lingue, e di solito si fattura al minuto o al mese. Invece di una cifra forfettaria conviene fare un calcolo: quante chiamate perse ci sono ogni settimana oggi – e quanto vale un appuntamento acquisito?",
+        "fr": "Le coût dépend du volume d'appels, des intégrations et des langues, et se facture le plus souvent à la minute ou au mois. Plutôt qu'un montant forfaitaire, faites le calcul : combien d'appels manqués par semaine aujourd'hui – et que vaut un rendez-vous gagné ?"
+      }
+    },
+    {
+      "q": {
+        "de": "Wann lohnt sich ein KI-Telefonassistent nicht?",
+        "en": "When is an AI phone assistant not worth it?",
+        "it": "Quando un assistente telefonico IA non conviene?",
+        "fr": "Quand un assistant téléphonique IA n'est-il pas pertinent ?"
+      },
+      "a": {
+        "de": "Bei sehr geringem Anrufvolumen, überwiegend komplexen Beratungsgesprächen oder wenn jeder Kontakt individuell ist, ist der Nutzen klein. Er lohnt sich dort, wo viele gleichartige Routineanrufe anfallen – besonders in Randzeiten und Spitzen.",
+        "en": "With very low call volume, mostly complex advisory conversations, or when every contact is individual, the benefit is small. It pays off where many similar routine calls arrive – especially during off-hours and peaks.",
+        "it": "Con un volume di chiamate molto basso, conversazioni prevalentemente di consulenza complessa o quando ogni contatto è individuale, il beneficio è ridotto. Conviene dove arrivano molte chiamate di routine simili, soprattutto negli orari marginali e nei picchi.",
+        "fr": "Avec un très faible volume d'appels, des entretiens de conseil majoritairement complexes ou lorsque chaque contact est individuel, le bénéfice est faible. Il est rentable là où arrivent de nombreux appels de routine similaires – surtout aux heures creuses et lors des pics."
+      }
+    }
+  ],
+  "keyEntities": [
+    "KI-Telefonassistent",
+    "Voice Agent",
+    "Voicebot",
+    "IVR (Interactive Voice Response)",
+    "Conversational AI",
+    "Speech-to-Text",
+    "Text-to-Speech",
+    "Large Language Model (LLM)",
+    "Terminbuchung",
+    "Anrufweiterleitung",
+    "revDSG / nFADP",
+    "EDÖB / FDPIC",
+    "EU AI Act",
+    "CRM-Integration",
+    "Latenz"
+  ]
+}

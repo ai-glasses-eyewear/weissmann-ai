@@ -1,0 +1,362 @@
+{
+  "id": "rag-and-knowledge-bases",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "slug": {
+    "de": "rag-und-wissensdatenbanken",
+    "en": "rag-and-knowledge-bases",
+    "it": "rag-e-basi-di-conoscenza",
+    "fr": "rag-et-bases-de-connaissances"
+  },
+  "relatedServices": [
+    "agents",
+    "integrations"
+  ],
+  "title": {
+    "de": "RAG & Wissensdatenbank: LLM mit Fakten erden | Weissmann AI",
+    "en": "RAG & Knowledge Bases: Ground Your LLM | Weissmann AI",
+    "it": "RAG e knowledge base: ancorare l'LLM | Weissmann AI",
+    "fr": "RAG et base de connaissances : ancrer un LLM | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "RAG erklärt: Wie Sie ein LLM in Ihrer Wissensdatenbank erden, Halluzinationen reduzieren und genaue KI-Agenten mit Quellenangaben bauen. Swiss Lens.",
+    "en": "RAG explained: how grounding an LLM in your own knowledge base cuts hallucinations and powers accurate, source-citing AI agents. Swiss lens.",
+    "it": "Il RAG spiegato: come ancorare un LLM alla tua knowledge base per ridurre le allucinazioni e creare agenti IA accurati e citabili.",
+    "fr": "Le RAG expliqué : ancrer un LLM dans votre base de connaissances pour réduire les hallucinations et bâtir des agents IA fiables et sourcés."
+  },
+  "kicker": {
+    "de": "KI-Agenten & Automatisierung",
+    "en": "AI Agents & Automation",
+    "it": "Agenti IA e automazione",
+    "fr": "Agents IA et automatisation"
+  },
+  "h1": {
+    "de": "RAG und Wissensdatenbank: Wie Sie ein LLM in eigenen Dokumenten erden",
+    "en": "RAG and knowledge bases: grounding an LLM in your own documents",
+    "it": "RAG e knowledge base: ancorare un LLM ai tuoi documenti",
+    "fr": "RAG et base de connaissances : ancrer un LLM dans vos propres documents"
+  },
+  "answerFirst": {
+    "de": "Retrieval-Augmented Generation (RAG) verbindet ein Sprachmodell mit einer durchsuchbaren Wissensdatenbank. Bei jeder Anfrage werden passende Textstellen aus Ihren eigenen Dokumenten abgerufen und dem LLM als Kontext mitgegeben. Das Modell antwortet auf Basis geprüfter Fakten statt aus dem Gedächtnis. Das reduziert Halluzinationen deutlich, hält Antworten aktuell und ermöglicht nachvollziehbare Quellenangaben.",
+    "en": "Retrieval-Augmented Generation (RAG) connects a language model to a searchable knowledge base. For each query, relevant passages from your own documents are retrieved and handed to the LLM as context. The model answers from verified facts rather than memory. This sharply reduces hallucinations, keeps answers current as documents change, and lets the system cite its sources.",
+    "it": "La Retrieval-Augmented Generation (RAG) collega un modello linguistico a una knowledge base ricercabile. A ogni domanda, i passaggi pertinenti dei tuoi documenti vengono recuperati e forniti all'LLM come contesto. Il modello risponde sulla base di fatti verificati anziché a memoria. Questo riduce nettamente le allucinazioni, mantiene aggiornate le risposte e consente di citare le fonti.",
+    "fr": "La génération augmentée par récupération (RAG) relie un modèle de langage à une base de connaissances interrogeable. À chaque requête, les passages pertinents de vos propres documents sont récupérés et fournis au LLM comme contexte. Le modèle répond à partir de faits vérifiés plutôt que de mémoire. Cela réduit fortement les hallucinations, garde les réponses à jour et permet de citer les sources."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Wie RAG funktioniert: abrufen, anreichern, antworten",
+        "en": "How RAG works: retrieve, augment, generate",
+        "it": "Come funziona il RAG: recuperare, arricchire, rispondere",
+        "fr": "Comment fonctionne le RAG : récupérer, enrichir, répondre"
+      },
+      "paragraphs": [
+        {
+          "de": "RAG läuft in zwei Phasen. In der Indexierungsphase wird Ihre Wissensdatenbank vorbereitet: Dokumente werden in Textabschnitte (Chunks) zerlegt, jeder Chunk wird in einen Zahlenvektor (Embedding) übersetzt, der seine Bedeutung erfasst, und die Vektoren landen in einer Vektordatenbank. Zur Laufzeit wird die Nutzerfrage genauso in einen Vektor umgewandelt, das System sucht die semantisch ähnlichsten Chunks und fügt diese Textstellen als Kontext in den Prompt ein. Das LLM formuliert dann eine Antwort, die auf dem abgerufenen Text beruht statt auf seinem Trainingsgedächtnis.",
+          "en": "RAG runs in two phases. An indexing phase prepares your knowledge base: documents are split into passages (chunks), each chunk is turned into a numerical vector (embedding) that captures its meaning, and the vectors are stored in a vector database. At query time the user's question is embedded the same way, the system retrieves the most semantically similar chunks, and those passages are inserted into the prompt as context. The LLM then produces an answer grounded in the retrieved text rather than in its training memory.",
+          "it": "Il RAG opera in due fasi. Nella fase di indicizzazione si prepara la knowledge base: i documenti vengono suddivisi in passaggi (chunk), ogni chunk è convertito in un vettore numerico (embedding) che ne cattura il significato e i vettori sono archiviati in un database vettoriale. In fase di interrogazione la domanda dell'utente viene trasformata nello stesso modo in un vettore, il sistema recupera i chunk semanticamente più simili e li inserisce nel prompt come contesto. L'LLM genera quindi una risposta ancorata al testo recuperato anziché alla memoria di addestramento.",
+          "fr": "Le RAG se déroule en deux phases. Une phase d'indexation prépare votre base de connaissances : les documents sont découpés en passages (chunks), chaque chunk est converti en vecteur numérique (embedding) qui capte son sens, et les vecteurs sont stockés dans une base vectorielle. Au moment de la requête, la question de l'utilisateur est vectorisée de la même façon, le système récupère les chunks les plus proches sémantiquement et insère ces passages dans le prompt comme contexte. Le LLM produit alors une réponse ancrée dans le texte récupéré plutôt que dans sa mémoire d'entraînement."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Chunking: Dokumente in kohärente Abschnitte teilen, damit der Abruf fokussierte, zitierbare Textstellen liefert.",
+          "en": "Chunking: split documents into coherent passages so retrieval returns focused, citable snippets.",
+          "it": "Chunking: suddividere i documenti in passaggi coerenti affinché il recupero restituisca frammenti mirati e citabili.",
+          "fr": "Découpage : segmenter les documents en passages cohérents pour que la récupération renvoie des extraits ciblés et citables."
+        },
+        {
+          "de": "Embeddings: Text und Fragen in Vektoren übersetzen, sodass semantische Ähnlichkeit statt reiner Stichworte den Abruf steuert.",
+          "en": "Embeddings: convert text and questions into vectors so semantic similarity, not just keywords, drives retrieval.",
+          "it": "Embedding: convertire testo e domande in vettori affinché a guidare il recupero sia la somiglianza semantica, non le sole parole chiave.",
+          "fr": "Embeddings : convertir textes et questions en vecteurs pour que la similarité sémantique, et non de simples mots-clés, guide la récupération."
+        },
+        {
+          "de": "Vektordatenbank und Abruf: die am besten passenden Abschnitte finden, oft kombiniert mit Stichwortsuche (Hybridsuche).",
+          "en": "Vector store and retrieval: find the best-matching passages, often combined with keyword search (hybrid search).",
+          "it": "Database vettoriale e recupero: trovare i passaggi più pertinenti, spesso combinati con la ricerca per parole chiave (ricerca ibrida).",
+          "fr": "Base vectorielle et récupération : trouver les passages les plus pertinents, souvent combinés à la recherche par mots-clés (recherche hybride)."
+        },
+        {
+          "de": "Anreicherung und Generierung: abgerufene Abschnitte plus Frage an das LLM übergeben, das antwortet und Quellen nennen kann.",
+          "en": "Augmentation and generation: pass the retrieved passages plus the question to the LLM, which answers and can cite sources.",
+          "it": "Arricchimento e generazione: passare all'LLM i passaggi recuperati e la domanda; il modello risponde e può citare le fonti.",
+          "fr": "Enrichissement et génération : transmettre au LLM les passages récupérés et la question ; le modèle répond et peut citer ses sources."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Warum Erdung Halluzinationen reduziert",
+        "en": "Why grounding reduces hallucinations",
+        "it": "Perché l'ancoraggio riduce le allucinazioni",
+        "fr": "Pourquoi l'ancrage réduit les hallucinations"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein alleinstehendes LLM antwortet aus Mustern, die es im Training gelernt hat. Fehlt ihm ein Fakt, kann es trotzdem eine flüssige, aber falsche Antwort erzeugen – eine Halluzination. RAG verändert die Aufgabe von 'erinnern' zu 'lesen und zusammenfassen': Das Modell erhält den relevanten Quelltext und soll daraus antworten. Das schränkt den Spielraum zum Erfinden ein, hält Antworten aktuell, wenn sich Ihre Dokumente ändern, und – entscheidend – lässt das System zeigen, aus welcher Textstelle eine Antwort stammt, sodass Menschen sie prüfen können. Erdung beseitigt Fehler nicht vollständig: Liefert der Abruf die falsche Stelle oder weist der Prompt das Modell nicht an, im gelieferten Kontext zu bleiben, entstehen weiterhin Fehler.",
+          "en": "A standalone LLM answers from patterns learned during training. When it lacks a fact, it may still produce a fluent but wrong answer — a hallucination. RAG changes the task from 'recall' to 'read and summarise': the model is handed the relevant source text and asked to answer from it. This narrows its freedom to invent, keeps answers current as your documents change and — crucially — lets the system show which passage an answer came from, so humans can verify it. Grounding does not remove errors entirely: if retrieval returns the wrong passage, or the prompt does not instruct the model to stay within the provided context, mistakes still occur.",
+          "it": "Un LLM isolato risponde a partire dagli schemi appresi durante l'addestramento. Quando gli manca un fatto, può comunque produrre una risposta fluente ma errata: un'allucinazione. Il RAG trasforma il compito da 'ricordare' a 'leggere e riassumere': al modello viene fornito il testo di origine pertinente e gli si chiede di rispondere basandosi su quello. Questo riduce lo spazio per inventare, mantiene aggiornate le risposte quando i documenti cambiano e, soprattutto, permette al sistema di mostrare da quale passaggio proviene una risposta, così le persone possono verificarla. L'ancoraggio non elimina del tutto gli errori: se il recupero restituisce il passaggio sbagliato o il prompt non istruisce il modello a restare nel contesto fornito, gli errori possono ancora verificarsi.",
+          "fr": "Un LLM isolé répond à partir des schémas appris pendant l'entraînement. Lorsqu'un fait lui manque, il peut néanmoins produire une réponse fluide mais fausse — une hallucination. Le RAG transforme la tâche de « se souvenir » en « lire et résumer » : on remet au modèle le texte source pertinent et on lui demande d'y répondre. Cela restreint sa liberté d'inventer, garde les réponses à jour lorsque vos documents évoluent et, surtout, permet au système de montrer de quel passage provient une réponse, afin que des humains la vérifient. L'ancrage n'élimine pas totalement les erreurs : si la récupération renvoie le mauvais passage, ou si le prompt n'oblige pas le modèle à rester dans le contexte fourni, des erreurs surviennent encore."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Eine Wissensdatenbank aufbauen, die wirklich trägt",
+        "en": "Building a knowledge base that actually works",
+        "it": "Costruire una knowledge base che funziona davvero",
+        "fr": "Bâtir une base de connaissances qui tient vraiment"
+      },
+      "paragraphs": [
+        {
+          "de": "Die Qualität eines RAG-Systems entscheidet sich weniger am Modell als an der Wissensdatenbank dahinter. Saubere, gut strukturierte, aktuelle Dokumente schlagen ein grösseres Modell auf unordentlichen Daten.",
+          "en": "The quality of a RAG system is decided less by the model than by the knowledge base behind it. Clean, well-structured, up-to-date documents beat a bigger model running on messy data.",
+          "it": "La qualità di un sistema RAG dipende meno dal modello e più dalla knowledge base che lo alimenta. Documenti puliti, ben strutturati e aggiornati battono un modello più grande che gira su dati disordinati.",
+          "fr": "La qualité d'un système RAG se joue moins sur le modèle que sur la base de connaissances qui l'alimente. Des documents propres, bien structurés et à jour l'emportent sur un modèle plus gros nourri de données désordonnées."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Quellen kuratieren: Handbücher, Richtlinien, FAQ, Verträge, Wiki-Seiten – nur Inhalte, denen Sie vertrauen und die Sie pflegen können.",
+          "en": "Curate sources: manuals, policies, FAQs, contracts, wiki pages — only content you trust and can maintain.",
+          "it": "Selezionare le fonti: manuali, policy, FAQ, contratti, pagine wiki — solo contenuti affidabili e mantenibili.",
+          "fr": "Sélectionner les sources : manuels, politiques, FAQ, contrats, pages wiki — uniquement des contenus fiables et maintenables."
+        },
+        {
+          "de": "Sinnvoll chunken: zu grosse Abschnitte verwässern die Relevanz, zu kleine verlieren den Kontext. Natürliche Struktur (Überschriften, Abschnitte) respektieren.",
+          "en": "Chunk sensibly: passages that are too large dilute relevance, too small lose context. Respect natural structure (headings, sections).",
+          "it": "Suddividere con criterio: i passaggi troppo grandi diluiscono la pertinenza, quelli troppo piccoli perdono il contesto. Rispettare la struttura naturale (titoli, sezioni).",
+          "fr": "Découper avec discernement : des passages trop grands diluent la pertinence, trop petits perdent le contexte. Respecter la structure naturelle (titres, sections)."
+        },
+        {
+          "de": "Aktuell halten: bei Änderungen neu indexieren; veraltete Chunks sind eine häufige Ursache falscher Antworten.",
+          "en": "Keep it fresh: re-index when documents change; stale chunks are a common cause of wrong answers.",
+          "it": "Mantenerla aggiornata: reindicizzare quando i documenti cambiano; i chunk obsoleti sono una causa frequente di risposte errate.",
+          "fr": "La garder à jour : réindexer quand les documents changent ; des chunks périmés sont une cause fréquente de réponses erronées."
+        },
+        {
+          "de": "Metadaten ergänzen: Sprache, Abteilung, Gültigkeitsdatum, Zugriffsstufe – damit der Abruf filtern kann (z. B. nur aktuell, nur DE).",
+          "en": "Add metadata: language, department, effective date, access level — so retrieval can filter (e.g. only current, only DE).",
+          "it": "Aggiungere metadati: lingua, reparto, data di validità, livello di accesso — così il recupero può filtrare (es. solo attuali, solo DE).",
+          "fr": "Ajouter des métadonnées : langue, service, date de validité, niveau d'accès — pour que la récupération puisse filtrer (ex. seulement l'actuel, seulement le DE)."
+        },
+        {
+          "de": "Berechtigungen beachten: Ein RAG-Assistent muss respektieren, wer welches Dokument sehen darf.",
+          "en": "Handle permissions: a RAG assistant must respect who is allowed to see which document.",
+          "it": "Gestire i permessi: un assistente RAG deve rispettare chi può vedere quale documento.",
+          "fr": "Gérer les permissions : un assistant RAG doit respecter qui a le droit de voir quel document."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "RAG, Fine-Tuning oder grösseres Kontextfenster?",
+        "en": "RAG, fine-tuning or a bigger context window?",
+        "it": "RAG, fine-tuning o finestra di contesto più ampia?",
+        "fr": "RAG, fine-tuning ou fenêtre de contexte plus grande ?"
+      },
+      "paragraphs": [
+        {
+          "de": "Diese Ansätze lösen unterschiedliche Probleme und werden oft kombiniert. Ein praktisches Beispiel für ein Schweizer KMU: Ein interner Assistent beantwortet Mitarbeiterfragen aus dem HR-Handbuch und nennt die Klausel; ein Support-Bot ist in der aktuellen Produktdokumentation auf Deutsch und Französisch geerdet; ein Vertriebsassistent zieht die neueste Preisliste statt zu raten.",
+          "en": "These approaches solve different problems and are often combined. Illustrative examples for a Swiss SME: an internal assistant that answers staff questions from the HR handbook and cites the clause; a support bot grounded in current product documentation in German and French; a sales assistant that pulls the latest price list instead of guessing.",
+          "it": "Questi approcci risolvono problemi diversi e spesso si combinano. Esempi illustrativi per una PMI svizzera: un assistente interno che risponde alle domande del personale attingendo al manuale HR e cita la clausola; un bot di supporto ancorato alla documentazione di prodotto attuale in tedesco e francese; un assistente vendite che recupera il listino prezzi più recente invece di tirare a indovinare.",
+          "fr": "Ces approches résolvent des problèmes différents et se combinent souvent. Exemples illustratifs pour une PME suisse : un assistant interne qui répond aux questions du personnel à partir du manuel RH et cite la clause ; un bot de support ancré dans la documentation produit actuelle en allemand et en français ; un assistant commercial qui récupère la dernière liste de prix au lieu de deviner."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "RAG ergänzt Wissen: ideal, wenn Fakten häufig wechseln, zitierbar sein müssen oder zu zahlreich für einen Prompt sind. Aktualisieren heisst Dokumente bearbeiten, nicht neu trainieren.",
+          "en": "RAG adds knowledge: best when facts change often, must be citable, or are too numerous to fit in a prompt. You update by editing documents, not retraining.",
+          "it": "Il RAG aggiunge conoscenza: ideale quando i fatti cambiano spesso, devono essere citabili o sono troppi per un prompt. Si aggiorna modificando i documenti, non riaddestrando.",
+          "fr": "Le RAG ajoute de la connaissance : idéal quand les faits changent souvent, doivent être citables ou sont trop nombreux pour un prompt. On met à jour en modifiant les documents, pas en réentraînant."
+        },
+        {
+          "de": "Fine-Tuning prägt Verhalten und Stil: bringt Format, Ton oder eine enge Fähigkeit bei – kein verlässlicher Weg, um viele Fakten zu speichern.",
+          "en": "Fine-tuning shapes behaviour and style: it teaches format, tone or a narrow skill — not a reliable way to store many facts.",
+          "it": "Il fine-tuning plasma comportamento e stile: insegna formato, tono o una competenza specifica — non è un modo affidabile per memorizzare molti fatti.",
+          "fr": "Le fine-tuning façonne le comportement et le style : il enseigne un format, un ton ou une compétence précise — pas un moyen fiable de stocker de nombreux faits."
+        },
+        {
+          "de": "Grosse Kontextfenster erlauben es, Dokumente direkt einzufügen: einfach bei wenigen Dateien, aber teuer und langsamer im grossen Massstab – und Sie müssen weiterhin auswählen, was hineinkommt. Genau das leistet der Abruf.",
+          "en": "Large context windows let you paste documents directly: simple for a few files, but costly and slower at scale — and you still have to choose what to include, which is exactly what retrieval does.",
+          "it": "Le finestre di contesto ampie permettono di incollare i documenti direttamente: semplice con pochi file, ma costoso e più lento su larga scala — e devi comunque scegliere cosa includere, che è esattamente ciò che fa il recupero.",
+          "fr": "Les grandes fenêtres de contexte permettent de coller les documents directement : simple pour quelques fichiers, mais coûteux et plus lent à grande échelle — et il faut toujours choisir quoi inclure, ce que fait précisément la récupération."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler – und wie Sie sie vermeiden",
+        "en": "Common mistakes and how to avoid them",
+        "it": "Errori comuni e come evitarli",
+        "fr": "Erreurs fréquentes et comment les éviter"
+      },
+      "bullets": [
+        {
+          "de": "RAG als Plug-and-play behandeln: Abrufqualität muss getestet und feinjustiert werden (Chunking, Hybridsuche, Re-Ranking).",
+          "en": "Treating RAG as plug-and-play: retrieval quality must be tested and tuned (chunking, hybrid search, re-ranking).",
+          "it": "Trattare il RAG come plug-and-play: la qualità del recupero va testata e regolata (chunking, ricerca ibrida, re-ranking).",
+          "fr": "Traiter le RAG comme du plug-and-play : la qualité de récupération doit être testée et réglée (découpage, recherche hybride, re-ranking)."
+        },
+        {
+          "de": "Keine Quellenangaben: Ohne sichtbare Textstellen können Nutzer nicht prüfen, und Vertrauen schwindet.",
+          "en": "No source citations: without showing passages, users cannot verify and trust erodes.",
+          "it": "Nessuna citazione delle fonti: senza mostrare i passaggi, gli utenti non possono verificare e la fiducia si erode.",
+          "fr": "Aucune citation des sources : sans montrer les passages, les utilisateurs ne peuvent pas vérifier et la confiance s'érode."
+        },
+        {
+          "de": "Evaluation ignorieren: messen, ob Antworten im abgerufenen Text geerdet sind – nicht nur, ob sie flüssig klingen.",
+          "en": "Ignoring evaluation: measure whether answers are grounded in the retrieved text, not just whether they sound fluent.",
+          "it": "Ignorare la valutazione: misurare se le risposte sono ancorate al testo recuperato, non solo se suonano fluenti.",
+          "fr": "Ignorer l'évaluation : mesurer si les réponses sont ancrées dans le texte récupéré, pas seulement si elles sonnent bien."
+        },
+        {
+          "de": "Das Modell über den Kontext hinaus antworten lassen: anweisen, 'nicht in den Quellen gefunden' zu sagen, statt zu raten.",
+          "en": "Letting the model answer beyond the context: instruct it to say 'not found in the sources' rather than guess.",
+          "it": "Lasciare che il modello risponda oltre il contesto: istruirlo a dire 'non trovato nelle fonti' invece di indovinare.",
+          "fr": "Laisser le modèle répondre au-delà du contexte : lui demander de dire « introuvable dans les sources » plutôt que de deviner."
+        },
+        {
+          "de": "Data Governance vergessen: Sensible Dokumente im Index brauchen weiterhin Zugriffskontrolle und eine Rechtsgrundlage.",
+          "en": "Forgetting data governance: sensitive documents in an index still need access control and a lawful basis.",
+          "it": "Dimenticare la data governance: i documenti sensibili nell'indice necessitano comunque di controllo degli accessi e di una base giuridica.",
+          "fr": "Oublier la gouvernance des données : les documents sensibles dans un index nécessitent toujours un contrôle d'accès et une base légale."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer und DACH-Perspektive: Datenschutz von Anfang an",
+        "en": "The Swiss and DACH perspective: data protection by design",
+        "it": "Prospettiva svizzera e DACH: protezione dei dati fin dalla progettazione",
+        "fr": "Perspective suisse et DACH : protection des données dès la conception"
+      },
+      "paragraphs": [
+        {
+          "de": "Für Schweizer Organisationen enthält eine RAG-Wissensdatenbank oft personenbezogene oder vertrauliche Daten. Datenschutz ist damit Teil des Designs, kein nachträglicher Gedanke. Nach dem revidierten Datenschutzgesetz (revDSG/nFADP), beaufsichtigt durch den EDÖB, brauchen Sie eine Rechtsgrundlage, Transparenz und angemessene Sicherheit für Personendaten, die Sie indexieren und verarbeiten. Bedienen Sie EU-Nutzer oder setzen Sie dort KI-Systeme ein, kann der EU AI Act extraterritorial greifen.",
+          "en": "For Swiss organisations, a RAG knowledge base often contains personal or confidential data, so data protection is part of the design, not an afterthought. Under the revised Federal Act on Data Protection (revDSG/nFADP), supervised by the EDÖB, you need a lawful basis, transparency and appropriate security for the personal data you index and process. If you serve EU users or deploy AI systems there, the EU AI Act can apply extraterritorially.",
+          "it": "Per le organizzazioni svizzere, una knowledge base RAG contiene spesso dati personali o riservati, quindi la protezione dei dati è parte della progettazione, non un ripensamento. Ai sensi della legge federale riveduta sulla protezione dei dati (revDSG/nFADP), vigilata dall'EDÖB, servono una base giuridica, trasparenza e una sicurezza adeguata per i dati personali che indicizzi ed elabori. Se servi utenti dell'UE o vi implementi sistemi di IA, l'EU AI Act può applicarsi in via extraterritoriale.",
+          "fr": "Pour les organisations suisses, une base de connaissances RAG contient souvent des données personnelles ou confidentielles ; la protection des données fait donc partie de la conception, pas d'un ajout tardif. En vertu de la loi fédérale révisée sur la protection des données (revDSG/nFADP), supervisée par le PFPDT (EDÖB), vous avez besoin d'une base légale, de transparence et d'une sécurité appropriée pour les données personnelles que vous indexez et traitez. Si vous servez des utilisateurs de l'UE ou y déployez des systèmes d'IA, l'EU AI Act peut s'appliquer de façon extraterritoriale."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Datenstandort und Anbieterwahl: wissen, wo Indexierung, Embedding und Generierung stattfinden; für sensible Daten kann Hosting in der Schweiz oder EU nötig sein.",
+          "en": "Data residency and provider choice: know where indexing, embedding and generation happen; Swiss or EU hosting may be required for sensitive data.",
+          "it": "Residenza dei dati e scelta del fornitore: sapere dove avvengono indicizzazione, embedding e generazione; per i dati sensibili può essere necessario l'hosting in Svizzera o nell'UE.",
+          "fr": "Résidence des données et choix du prestataire : savoir où ont lieu l'indexation, l'embedding et la génération ; un hébergement en Suisse ou dans l'UE peut être requis pour les données sensibles."
+        },
+        {
+          "de": "Zugriffskontrolle: Der Abruf muss Dokumentberechtigungen respektieren, damit der Assistent nie Daten zeigt, die ein Nutzer nicht sehen darf.",
+          "en": "Access control: retrieval must respect document permissions so the assistant never surfaces data a user is not allowed to see.",
+          "it": "Controllo degli accessi: il recupero deve rispettare i permessi dei documenti affinché l'assistente non mostri mai dati che un utente non può vedere.",
+          "fr": "Contrôle d'accès : la récupération doit respecter les permissions des documents pour que l'assistant ne révèle jamais de données qu'un utilisateur n'a pas le droit de voir."
+        },
+        {
+          "de": "Transparenz und menschliche Aufsicht: Nutzern sagen, dass sie mit KI interagieren, Quellen zeigen und bei folgenreichen Antworten einen Menschen einbinden.",
+          "en": "Transparency and human oversight: tell users they are interacting with KI, show sources, and keep a human in the loop for consequential answers.",
+          "it": "Trasparenza e supervisione umana: informare gli utenti che interagiscono con la KI, mostrare le fonti e mantenere una persona nel processo per le risposte rilevanti.",
+          "fr": "Transparence et supervision humaine : indiquer aux utilisateurs qu'ils interagissent avec la KI, montrer les sources et garder un humain dans la boucle pour les réponses à fort enjeu."
+        },
+        {
+          "de": "Datensparsamkeit: nur indexieren, was der Anwendungsfall braucht; besonders schützenswerte Daten nicht ohne Grund in die Wissensdatenbank ziehen.",
+          "en": "Data minimisation: index only what the use case needs; do not pull special-category data into the knowledge base without justification.",
+          "it": "Minimizzazione dei dati: indicizzare solo ciò che serve al caso d'uso; non inserire nella knowledge base dati particolarmente degni di protezione senza giustificazione.",
+          "fr": "Minimisation des données : n'indexer que ce dont le cas d'usage a besoin ; ne pas verser de données sensibles dans la base de connaissances sans justification."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist eine RAG-Wissensdatenbank?",
+        "en": "What is a RAG knowledge base?",
+        "it": "Che cos'è una knowledge base RAG?",
+        "fr": "Qu'est-ce qu'une base de connaissances RAG ?"
+      },
+      "a": {
+        "de": "Eine RAG-Wissensdatenbank ist Ihre Sammlung eigener Dokumente, aufbereitet für den Abruf durch ein Sprachmodell: Inhalte werden in Abschnitte zerlegt, als Embeddings in einer Vektordatenbank gespeichert und bei jeder Frage nach Relevanz durchsucht. Die passenden Stellen gibt das System dem LLM als Kontext, damit es faktenbasiert und mit Quellen antwortet.",
+        "en": "A RAG knowledge base is your collection of own documents prepared for retrieval by a language model: content is split into passages, stored as embeddings in a vector database, and searched by relevance for each question. The matching passages are handed to the LLM as context so it answers from facts and can cite sources.",
+        "it": "Una knowledge base RAG è la raccolta dei tuoi documenti preparata per il recupero da parte di un modello linguistico: i contenuti sono suddivisi in passaggi, archiviati come embedding in un database vettoriale e cercati per pertinenza a ogni domanda. I passaggi corrispondenti vengono forniti all'LLM come contesto, così risponde basandosi sui fatti e può citare le fonti.",
+        "fr": "Une base de connaissances RAG est l'ensemble de vos propres documents préparé pour la récupération par un modèle de langage : le contenu est découpé en passages, stocké sous forme d'embeddings dans une base vectorielle et interrogé par pertinence à chaque question. Les passages correspondants sont fournis au LLM comme contexte, afin qu'il réponde à partir des faits et puisse citer ses sources."
+      }
+    },
+    {
+      "q": {
+        "de": "Verhindert RAG Halluzinationen vollständig?",
+        "en": "Does RAG fully prevent hallucinations?",
+        "it": "Il RAG elimina del tutto le allucinazioni?",
+        "fr": "Le RAG empêche-t-il totalement les hallucinations ?"
+      },
+      "a": {
+        "de": "Nein. RAG reduziert Halluzinationen deutlich, weil das Modell aus geliefertem Quelltext antwortet statt aus dem Gedächtnis, aber es beseitigt sie nicht vollständig. Fehler bleiben möglich, wenn der Abruf die falsche Stelle liefert, die Dokumente veraltet sind oder das Modell nicht angewiesen ist, im Kontext zu bleiben. Quellenangaben und Evaluation sind deshalb wichtig.",
+        "en": "No. RAG sharply reduces hallucinations because the model answers from supplied source text rather than memory, but it does not remove them entirely. Errors remain possible if retrieval returns the wrong passage, documents are outdated, or the model is not instructed to stay within the context. That is why source citations and evaluation matter.",
+        "it": "No. Il RAG riduce nettamente le allucinazioni perché il modello risponde dal testo di origine fornito anziché a memoria, ma non le elimina del tutto. Gli errori restano possibili se il recupero restituisce il passaggio sbagliato, i documenti sono obsoleti o il modello non è istruito a restare nel contesto. Per questo contano le citazioni delle fonti e la valutazione.",
+        "fr": "Non. Le RAG réduit fortement les hallucinations car le modèle répond à partir du texte source fourni plutôt que de sa mémoire, mais il ne les supprime pas totalement. Des erreurs restent possibles si la récupération renvoie le mauvais passage, si les documents sont périmés ou si le modèle n'est pas invité à rester dans le contexte. D'où l'importance des citations et de l'évaluation."
+      }
+    },
+    {
+      "q": {
+        "de": "RAG oder Fine-Tuning – was ist besser für Firmenwissen?",
+        "en": "RAG or fine-tuning — which is better for company knowledge?",
+        "it": "RAG o fine-tuning: qual è meglio per la conoscenza aziendale?",
+        "fr": "RAG ou fine-tuning : lequel est meilleur pour la connaissance d'entreprise ?"
+      },
+      "a": {
+        "de": "Für Firmenwissen ist meist RAG die bessere Wahl, weil Fakten häufig wechseln, zitierbar sein müssen und sich durch Bearbeiten von Dokumenten aktualisieren lassen – ohne Neutraining. Fine-Tuning eignet sich, um Format, Ton oder eine enge Fähigkeit zu prägen, nicht um viele Fakten verlässlich zu speichern. Häufig kombiniert man beides.",
+        "en": "For company knowledge, RAG is usually the better choice because facts change often, must be citable and can be updated by editing documents rather than retraining. Fine-tuning is suited to shaping format, tone or a narrow skill, not to reliably storing many facts. The two are often combined.",
+        "it": "Per la conoscenza aziendale il RAG è di solito la scelta migliore, perché i fatti cambiano spesso, devono essere citabili e si aggiornano modificando i documenti anziché riaddestrando. Il fine-tuning è adatto a plasmare formato, tono o una competenza specifica, non a memorizzare molti fatti in modo affidabile. Spesso i due si combinano.",
+        "fr": "Pour la connaissance d'entreprise, le RAG est généralement le meilleur choix, car les faits changent souvent, doivent être citables et se mettent à jour en modifiant les documents plutôt qu'en réentraînant. Le fine-tuning convient pour façonner un format, un ton ou une compétence précise, pas pour stocker de nombreux faits de façon fiable. On combine souvent les deux."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Daten eignen sich für eine Wissensdatenbank?",
+        "en": "What data is suitable for a knowledge base?",
+        "it": "Quali dati sono adatti a una knowledge base?",
+        "fr": "Quelles données conviennent à une base de connaissances ?"
+      },
+      "a": {
+        "de": "Geeignet sind vertrauenswürdige, pflegbare Inhalte: Handbücher, Richtlinien, FAQ, Produktdokumentation, Verträge oder Wiki-Seiten. Wichtig sind Aktualität, klare Struktur und Metadaten wie Sprache und Gültigkeitsdatum. Besonders schützenswerte Personendaten nur mit Rechtsgrundlage und Zugriffskontrolle indexieren, im Sinne der Datensparsamkeit nach revDSG/nFADP.",
+        "en": "Suitable content is trustworthy and maintainable: manuals, policies, FAQs, product documentation, contracts or wiki pages. What matters is being current, well-structured and tagged with metadata such as language and effective date. Index special-category personal data only with a lawful basis and access control, following the data-minimisation principle under revDSG/nFADP.",
+        "it": "Sono adatti contenuti affidabili e mantenibili: manuali, policy, FAQ, documentazione di prodotto, contratti o pagine wiki. Contano attualità, struttura chiara e metadati come lingua e data di validità. Indicizzare dati personali particolarmente sensibili solo con una base giuridica e controllo degli accessi, secondo il principio di minimizzazione del revDSG/nFADP.",
+        "fr": "Conviennent les contenus fiables et maintenables : manuels, politiques, FAQ, documentation produit, contrats ou pages wiki. L'important est d'être à jour, bien structuré et doté de métadonnées comme la langue et la date de validité. N'indexer les données personnelles sensibles qu'avec une base légale et un contrôle d'accès, selon le principe de minimisation du revDSG/nFADP."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie hält man eine RAG-Wissensdatenbank aktuell?",
+        "en": "How do you keep a RAG knowledge base up to date?",
+        "it": "Come si mantiene aggiornata una knowledge base RAG?",
+        "fr": "Comment maintenir une base de connaissances RAG à jour ?"
+      },
+      "a": {
+        "de": "Indem Sie den Index bei jeder Dokumentänderung neu aufbauen oder gezielt aktualisieren und mit Metadaten wie Gültigkeitsdatum arbeiten, damit veraltete Abschnitte herausgefiltert werden. Regelmässige Prüfung der Antworten gegen die Quellen zeigt, ob Chunks fehlen oder überholt sind. Veraltete Inhalte sind eine der häufigsten Ursachen falscher Antworten.",
+        "en": "By re-indexing or selectively updating whenever a document changes and using metadata such as effective date so outdated passages are filtered out. Regularly checking answers against the sources reveals whether chunks are missing or stale. Outdated content is one of the most common causes of wrong answers.",
+        "it": "Reindicizzando o aggiornando in modo mirato ogni volta che un documento cambia e usando metadati come la data di validità, così i passaggi obsoleti vengono filtrati. Verificare regolarmente le risposte rispetto alle fonti rivela se mancano chunk o se sono superati. I contenuti obsoleti sono una delle cause più frequenti di risposte errate.",
+        "fr": "En réindexant ou en mettant à jour de façon ciblée dès qu'un document change, et en utilisant des métadonnées comme la date de validité pour filtrer les passages périmés. Vérifier régulièrement les réponses par rapport aux sources révèle si des chunks manquent ou sont obsolètes. Le contenu périmé est l'une des causes les plus fréquentes de réponses erronées."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Retrieval-Augmented Generation (RAG)",
+    "Wissensdatenbank",
+    "Large Language Model (LLM)",
+    "Embeddings",
+    "Vektordatenbank",
+    "Chunking",
+    "Semantische Suche",
+    "Hybridsuche",
+    "Halluzination",
+    "Grounding",
+    "Kontextfenster",
+    "Fine-Tuning",
+    "Re-Ranking",
+    "KI-Agent",
+    "revDSG/nFADP",
+    "EDÖB",
+    "EU AI Act"
+  ]
+}

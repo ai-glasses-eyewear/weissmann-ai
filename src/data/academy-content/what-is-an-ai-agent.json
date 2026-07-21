@@ -1,0 +1,340 @@
+{
+  "id": "what-is-an-ai-agent",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "slug": {
+    "de": "was-ist-ein-ki-agent",
+    "en": "what-is-an-ai-agent",
+    "it": "cos-e-un-agente-ai",
+    "fr": "qu-est-ce-qu-un-agent-ia"
+  },
+  "relatedServices": [
+    "agents"
+  ],
+  "title": {
+    "de": "Was ist ein KI-Agent? Definition & Beispiele | Weissmann AI",
+    "en": "What Is an AI Agent? Definition & Examples | Weissmann AI",
+    "it": "Cos'è un agente AI? Definizione ed esempi | Weissmann AI",
+    "fr": "Qu'est-ce qu'un agent IA ? Définition et exemples | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI-Agent einfach erklärt: LLM-Systeme, die selbstständig planen, Werkzeuge nutzen und handeln – Abgrenzung zur Automation, Beispiele, Grenzen und Schweizer Sicht.",
+    "en": "AI agent explained simply: LLM systems that plan, use tools and act autonomously – how they differ from automation, real examples, limits and a Swiss lens.",
+    "it": "Agente AI spiegato semplice: sistemi LLM che pianificano, usano strumenti e agiscono in autonomia – differenze con l'automazione, esempi, limiti e visione svizzera.",
+    "fr": "Agent IA expliqué simplement : des systèmes LLM qui planifient, utilisent des outils et agissent – différence avec l'automatisation, exemples, limites et regard suisse."
+  },
+  "kicker": {
+    "de": "KI-Agenten, Automation & Chatbots",
+    "en": "AI Agents, Automation & Chatbots",
+    "it": "Agenti AI, automazione e chatbot",
+    "fr": "Agents IA, automatisation et chatbots"
+  },
+  "h1": {
+    "de": "Was ist ein KI-Agent?",
+    "en": "What is an AI agent?",
+    "it": "Che cos'è un agente AI?",
+    "fr": "Qu'est-ce qu'un agent IA ?"
+  },
+  "answerFirst": {
+    "de": "Ein KI-Agent ist ein auf einem Sprachmodell (LLM) basierendes System, das ein Ziel selbstständig verfolgt: Es plant Schritte, nutzt Werkzeuge wie APIs, Datenbanken oder Suche, führt Aktionen aus und prüft die Ergebnisse in einer Schleife. Anders als klassische Automation folgt ein Agent keinem starren Skript, sondern trifft situative Entscheidungen – mit unterschiedlich viel Autonomie und menschlicher Kontrolle.",
+    "en": "An AI agent is a system built on a large language model (LLM) that pursues a goal on its own: it plans steps, uses tools such as APIs, databases or search, takes actions and checks the results in a loop. Unlike classic automation, an agent does not follow a rigid script but makes situational decisions – with varying degrees of autonomy and human oversight.",
+    "it": "Un agente AI è un sistema basato su un modello linguistico (LLM) che persegue un obiettivo in autonomia: pianifica i passi, usa strumenti come API, database o ricerca, compie azioni e verifica i risultati in un ciclo. A differenza dell'automazione classica non segue uno script rigido, ma prende decisioni situazionali – con gradi diversi di autonomia e controllo umano.",
+    "fr": "Un agent IA est un système fondé sur un modèle de langage (LLM) qui poursuit un objectif de façon autonome : il planifie des étapes, utilise des outils comme des API, des bases de données ou la recherche, exécute des actions et vérifie les résultats en boucle. Contrairement à l'automatisation classique, il ne suit pas un script rigide mais prend des décisions situationnelles – avec des degrés variables d'autonomie et de supervision humaine."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Definition: Was einen KI-Agenten ausmacht",
+        "en": "Definition: what makes something an AI agent",
+        "it": "Definizione: cosa rende un sistema un agente AI",
+        "fr": "Définition : ce qui fait un agent IA"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein KI-Agent kombiniert ein Sprachmodell als „Denkzentrale“ mit der Fähigkeit, konkret zu handeln. Das Modell übernimmt das Verstehen der Aufgabe und die Planung; über angebundene Werkzeuge (Tools) kann es zusätzlich etwas bewirken – etwa eine Datenbank abfragen, eine E-Mail entwerfen, eine Rechnung prüfen oder eine Web-Suche starten. Der entscheidende Unterschied zu einem reinen Chatbot ist, dass ein Agent nicht nur antwortet, sondern Schritte selbst ableitet und ausführt.",
+          "en": "An AI agent combines a language model as its “reasoning core” with the ability to actually act. The model handles understanding the task and planning; through connected tools it can also make things happen – query a database, draft an email, check an invoice or run a web search. The key difference from a plain chatbot is that an agent does not just answer: it derives and carries out steps by itself.",
+          "it": "Un agente AI combina un modello linguistico come “centro di ragionamento” con la capacità di agire concretamente. Il modello comprende il compito e pianifica; tramite gli strumenti collegati può anche produrre effetti – interrogare un database, redigere un'email, controllare una fattura o avviare una ricerca sul web. La differenza chiave rispetto a un semplice chatbot è che l'agente non si limita a rispondere: deduce ed esegue i passi da solo.",
+          "fr": "Un agent IA associe un modèle de langage comme « centre de raisonnement » à la capacité d'agir concrètement. Le modèle comprend la tâche et planifie ; via des outils connectés, il peut aussi produire des effets – interroger une base de données, rédiger un e-mail, vérifier une facture ou lancer une recherche web. La différence essentielle avec un simple chatbot : un agent ne se contente pas de répondre, il déduit et exécute lui-même des étapes."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Ziel statt Einzelbefehl: Der Agent bekommt ein Ziel und findet den Weg dahin weitgehend selbst.",
+          "en": "Goal instead of single command: the agent receives a goal and largely finds the path itself.",
+          "it": "Un obiettivo invece di un singolo comando: l'agente riceve un obiettivo e trova in gran parte da solo il percorso.",
+          "fr": "Un objectif plutôt qu'une commande unique : l'agent reçoit un but et trouve en grande partie le chemin lui-même."
+        },
+        {
+          "de": "Werkzeuggebrauch (Tool Use / Function Calling): Zugriff auf Systeme, APIs, Dateien oder Suche.",
+          "en": "Tool use (function calling): access to systems, APIs, files or search.",
+          "it": "Uso di strumenti (function calling): accesso a sistemi, API, file o ricerca.",
+          "fr": "Usage d'outils (function calling) : accès à des systèmes, des API, des fichiers ou la recherche."
+        },
+        {
+          "de": "Gedächtnis: Zwischenergebnisse und Kontext werden über mehrere Schritte behalten.",
+          "en": "Memory: intermediate results and context are kept across several steps.",
+          "it": "Memoria: risultati intermedi e contesto vengono mantenuti attraverso più passaggi.",
+          "fr": "Mémoire : les résultats intermédiaires et le contexte sont conservés sur plusieurs étapes."
+        },
+        {
+          "de": "Autonomiegrad: von halbautonom (Mensch bestätigt jeden Schritt) bis weitgehend eigenständig.",
+          "en": "Level of autonomy: from semi-autonomous (a human confirms each step) to largely independent.",
+          "it": "Grado di autonomia: da semi-autonomo (un umano conferma ogni passo) fino a largamente indipendente.",
+          "fr": "Degré d'autonomie : du semi-autonome (un humain confirme chaque étape) au largement indépendant."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wie ein KI-Agent funktioniert: die Handlungsschleife",
+        "en": "How an AI agent works: the action loop",
+        "it": "Come funziona un agente AI: il ciclo d'azione",
+        "fr": "Comment fonctionne un agent IA : la boucle d'action"
+      },
+      "paragraphs": [
+        {
+          "de": "Im Kern arbeitet ein KI-Agent in einer wiederkehrenden Schleife: wahrnehmen, überlegen, handeln, prüfen – und bei Bedarf von vorne. Diese Schleife erlaubt es, auch Aufgaben zu lösen, die vorab nicht vollständig planbar sind, weil der Agent nach jedem Schritt neu entscheidet. Das ist zugleich die Stärke (Anpassungsfähigkeit) und die Herausforderung (weniger Vorhersehbarkeit).",
+          "en": "At its core, an AI agent runs a repeating loop: perceive, reason, act, check – and start over if needed. This loop lets it tackle tasks that cannot be fully planned in advance, because the agent decides anew after each step. That is both its strength (adaptability) and its challenge (less predictability).",
+          "it": "Nel suo nucleo, un agente AI esegue un ciclo ricorrente: percepire, ragionare, agire, verificare – e ricominciare se serve. Questo ciclo gli permette di affrontare compiti non pianificabili in anticipo, perché decide di nuovo dopo ogni passo. È al tempo stesso il suo punto di forza (adattabilità) e la sua sfida (minore prevedibilità).",
+          "fr": "Au cœur de son fonctionnement, un agent IA exécute une boucle récurrente : percevoir, raisonner, agir, vérifier – puis recommencer si nécessaire. Cette boucle lui permet de traiter des tâches non entièrement planifiables à l'avance, car il décide à nouveau après chaque étape. C'est à la fois sa force (adaptabilité) et son défi (moins de prévisibilité)."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Verstehen & planen: Das LLM zerlegt das Ziel in Teilschritte.",
+          "en": "Understand & plan: the LLM breaks the goal into sub-steps.",
+          "it": "Comprendere e pianificare: l'LLM scompone l'obiettivo in sotto-passi.",
+          "fr": "Comprendre et planifier : le LLM décompose l'objectif en sous-étapes."
+        },
+        {
+          "de": "Handeln: Es ruft ein passendes Werkzeug auf, etwa eine Datenbankabfrage oder eine Berechnung.",
+          "en": "Act: it calls a suitable tool, such as a database query or a calculation.",
+          "it": "Agire: richiama uno strumento adatto, ad esempio una query al database o un calcolo.",
+          "fr": "Agir : il appelle un outil adapté, par exemple une requête en base ou un calcul."
+        },
+        {
+          "de": "Beobachten: Das Ergebnis des Werkzeugs fliesst zurück in den Kontext.",
+          "en": "Observe: the tool's result flows back into the context.",
+          "it": "Osservare: il risultato dello strumento rientra nel contesto.",
+          "fr": "Observer : le résultat de l'outil revient dans le contexte."
+        },
+        {
+          "de": "Bewerten & fortfahren: Ziel erreicht? Falls nicht, folgt der nächste Schritt.",
+          "en": "Evaluate & continue: goal reached? If not, the next step follows.",
+          "it": "Valutare e proseguire: obiettivo raggiunto? Se no, segue il passo successivo.",
+          "fr": "Évaluer et poursuivre : objectif atteint ? Sinon, l'étape suivante suit."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "KI-Agent vs. klassische Automation",
+        "en": "AI agent vs. classic automation",
+        "it": "Agente AI vs. automazione classica",
+        "fr": "Agent IA vs. automatisation classique"
+      },
+      "paragraphs": [
+        {
+          "de": "Klassische Automation – etwa Workflow-Regeln, Skripte oder RPA (Robotic Process Automation) – folgt einem festen „Wenn-dann“-Ablauf. Sie ist schnell, günstig und sehr vorhersehbar, scheitert aber, sobald ein Fall vom vorgesehenen Muster abweicht. Ein KI-Agent ist umgekehrt: Er kommt mit unstrukturierten Eingaben und Ausnahmen zurecht, ist dafür aber weniger deterministisch und muss stärker überwacht werden. In der Praxis ist die beste Lösung oft eine Kombination: feste Automation für klare, regelbasierte Teile, ein Agent für die Schritte, die Sprachverständnis und Urteil erfordern.",
+          "en": "Classic automation – workflow rules, scripts or RPA (robotic process automation) – follows a fixed “if-then” flow. It is fast, cheap and highly predictable, but breaks as soon as a case deviates from the expected pattern. An AI agent is the opposite: it copes with unstructured inputs and exceptions, but is less deterministic and needs closer oversight. In practice the best solution is often a combination: fixed automation for clear, rule-based parts, and an agent for the steps that require language understanding and judgement.",
+          "it": "L'automazione classica – regole di workflow, script o RPA (robotic process automation) – segue un flusso fisso “se-allora”. È veloce, economica e molto prevedibile, ma si blocca appena un caso si discosta dallo schema previsto. L'agente AI è l'opposto: gestisce input non strutturati ed eccezioni, ma è meno deterministico e richiede una supervisione più stretta. Nella pratica la soluzione migliore è spesso una combinazione: automazione fissa per le parti chiare e basate su regole, un agente per i passaggi che richiedono comprensione del linguaggio e giudizio.",
+          "fr": "L'automatisation classique – règles de workflow, scripts ou RPA (robotic process automation) – suit un enchaînement fixe « si-alors ». Elle est rapide, économique et très prévisible, mais échoue dès qu'un cas s'écarte du schéma prévu. Un agent IA fait l'inverse : il gère des entrées non structurées et des exceptions, mais reste moins déterministe et exige une supervision plus étroite. En pratique, la meilleure solution combine souvent les deux : automatisation fixe pour les parties claires et basées sur des règles, agent pour les étapes qui demandent compréhension du langage et jugement."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Automation: deterministisch, regelbasiert, ideal für hohe Stückzahlen und klare Prozesse.",
+          "en": "Automation: deterministic, rule-based, ideal for high volumes and clear processes.",
+          "it": "Automazione: deterministica, basata su regole, ideale per grandi volumi e processi chiari.",
+          "fr": "Automatisation : déterministe, basée sur des règles, idéale pour les grands volumes et les processus clairs."
+        },
+        {
+          "de": "KI-Agent: flexibel, sprachfähig, gut bei Mehrdeutigkeit – aber teurer und weniger vorhersehbar.",
+          "en": "AI agent: flexible, language-capable, good with ambiguity – but costlier and less predictable.",
+          "it": "Agente AI: flessibile, capace col linguaggio, adatto all'ambiguità – ma più costoso e meno prevedibile.",
+          "fr": "Agent IA : flexible, capable en langage, à l'aise avec l'ambiguïté – mais plus coûteux et moins prévisible."
+        },
+        {
+          "de": "Faustregel: Je klarer die Regeln, desto eher klassische Automation; je mehr Urteil nötig, desto eher Agent.",
+          "en": "Rule of thumb: the clearer the rules, the more you lean to classic automation; the more judgement is needed, the more an agent fits.",
+          "it": "Regola pratica: più le regole sono chiare, più conviene l'automazione classica; più serve giudizio, più è adatto un agente.",
+          "fr": "Règle empirique : plus les règles sont claires, plus l'automatisation classique convient ; plus le jugement est requis, plus l'agent s'impose."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Praxisbeispiele für KMU",
+        "en": "Practical examples for SMEs",
+        "it": "Esempi pratici per le PMI",
+        "fr": "Exemples pratiques pour les PME"
+      },
+      "paragraphs": [
+        {
+          "de": "Die folgenden Beispiele sind illustrativ und zeigen typische Einsatzmuster in einem Schweizer KMU – nicht gemessene Ergebnisse. Wichtig ist jeweils, den Agenten eng an bestehende Systeme anzubinden und Freigaben für heikle Schritte vorzusehen.",
+          "en": "The following examples are illustrative and show typical usage patterns in a Swiss SME – not measured results. In each case the point is to connect the agent closely to existing systems and to require approvals for sensitive steps.",
+          "it": "Gli esempi seguenti sono illustrativi e mostrano schemi d'uso tipici in una PMI svizzera – non risultati misurati. In ogni caso l'importante è collegare l'agente strettamente ai sistemi esistenti e prevedere approvazioni per i passaggi delicati.",
+          "fr": "Les exemples suivants sont illustratifs et montrent des usages typiques dans une PME suisse – et non des résultats mesurés. Dans chaque cas, l'essentiel est de relier étroitement l'agent aux systèmes existants et de prévoir des validations pour les étapes sensibles."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kundenservice: Ein Agent liest eine Anfrage, schlägt im Bestellsystem nach, formuliert einen Antwortentwurf – die Mitarbeiterin gibt frei.",
+          "en": "Customer service: an agent reads a request, looks it up in the order system, drafts a reply – an employee approves it.",
+          "it": "Assistenza clienti: un agente legge una richiesta, la cerca nel sistema ordini, redige una bozza di risposta – un collaboratore la approva.",
+          "fr": "Service client : un agent lit une demande, la recherche dans le système de commandes, rédige un brouillon de réponse – un collaborateur valide."
+        },
+        {
+          "de": "Angebote & Offerten: Aus einer E-Mail-Anfrage werden Preisliste, Verfügbarkeit und Vorlage zu einem Entwurf zusammengeführt.",
+          "en": "Quotes & offers: from an email enquiry, price list, availability and a template are combined into a draft.",
+          "it": "Preventivi e offerte: da una richiesta via email si uniscono listino, disponibilità e modello in una bozza.",
+          "fr": "Devis et offres : à partir d'une demande par e-mail, tarif, disponibilité et modèle sont réunis en un brouillon."
+        },
+        {
+          "de": "Recherche & Zusammenfassung: Ein Agent durchsucht interne Dokumente (RAG), fasst zusammen und nennt die Quellen.",
+          "en": "Research & summarising: an agent searches internal documents (RAG), summarises them and cites the sources.",
+          "it": "Ricerca e sintesi: un agente cerca nei documenti interni (RAG), sintetizza e cita le fonti.",
+          "fr": "Recherche et synthèse : un agent parcourt les documents internes (RAG), résume et cite les sources."
+        },
+        {
+          "de": "Termin- und Backoffice-Aufgaben: Kalender abgleichen, Datensätze anlegen, Belege vorsortieren – mit Kontrolle bei Buchungen.",
+          "en": "Scheduling and back-office tasks: reconciling calendars, creating records, pre-sorting receipts – with control over bookings.",
+          "it": "Agenda e back-office: sincronizzare calendari, creare record, pre-ordinare ricevute – con controllo sulle registrazioni.",
+          "fr": "Agenda et back-office : synchroniser les calendriers, créer des enregistrements, pré-trier les justificatifs – avec contrôle sur les réservations."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Grenzen, Risiken und Leitplanken",
+        "en": "Limits, risks and guardrails",
+        "it": "Limiti, rischi e guardrail",
+        "fr": "Limites, risques et garde-fous"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Agenten sind mächtig, aber nicht unfehlbar. Sie können Fakten erfinden (Halluzination), auf manipulierte Eingaben hereinfallen (Prompt Injection) oder Handlungen ausführen, die niemand beabsichtigt hat. Deshalb braucht produktiver Einsatz Leitplanken: klar begrenzte Rechte, Bestätigung bei folgenreichen Schritten, Protokollierung und ein Mensch, der bei Bedarf eingreift. Je grösser die möglichen Auswirkungen einer Aktion, desto enger sollte die Kontrolle sein.",
+          "en": "AI agents are powerful but not infallible. They can invent facts (hallucination), fall for manipulated inputs (prompt injection) or take actions no one intended. That is why productive use needs guardrails: tightly scoped permissions, confirmation for consequential steps, logging and a human who can step in. The larger an action's potential impact, the tighter the control should be.",
+          "it": "Gli agenti AI sono potenti ma non infallibili. Possono inventare fatti (allucinazione), cadere in input manipolati (prompt injection) o compiere azioni non volute da nessuno. Per questo l'uso produttivo richiede guardrail: permessi ben delimitati, conferma per i passaggi importanti, registrazione dei log e una persona pronta a intervenire. Maggiore è l'impatto potenziale di un'azione, più stretto deve essere il controllo.",
+          "fr": "Les agents IA sont puissants mais pas infaillibles. Ils peuvent inventer des faits (hallucination), se laisser piéger par des entrées manipulées (prompt injection) ou exécuter des actions que personne ne voulait. C'est pourquoi un usage productif exige des garde-fous : droits strictement délimités, confirmation pour les étapes lourdes de conséquences, journalisation et un humain capable d'intervenir. Plus l'impact potentiel d'une action est grand, plus le contrôle doit être strict."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Datenschutz: Bei Personendaten gelten das revidierte revDSG/nFADP und die Aufsicht des EDÖB; klären, wo Daten verarbeitet und gespeichert werden.",
+          "en": "Data protection: for personal data the revised Swiss FADP (revDSG/nFADP) applies, overseen by the FDPIC; clarify where data is processed and stored.",
+          "it": "Protezione dei dati: per i dati personali si applica la legge svizzera revisionata (revDSG/nFADP), con la vigilanza dell'IFPDT; chiarire dove i dati vengono elaborati e conservati.",
+          "fr": "Protection des données : pour les données personnelles s'applique la LPD révisée (revDSG/nFADP), sous la surveillance du PFPDT ; clarifier où les données sont traitées et stockées."
+        },
+        {
+          "de": "EU AI Act: kann dank extraterritorialer Wirkung auch Schweizer Firmen betreffen, die in die EU liefern.",
+          "en": "EU AI Act: thanks to its extraterritorial reach it can also affect Swiss firms serving the EU.",
+          "it": "EU AI Act: per la sua portata extraterritoriale può riguardare anche aziende svizzere che operano verso l'UE.",
+          "fr": "EU AI Act : par sa portée extraterritoriale, il peut aussi concerner des entreprises suisses opérant vers l'UE."
+        },
+        {
+          "de": "Human-in-the-Loop: Freigaben für Zahlungen, Versand oder Löschungen niemals vollständig automatisieren.",
+          "en": "Human-in-the-loop: never fully automate approvals for payments, sending or deletions.",
+          "it": "Human-in-the-loop: non automatizzare mai del tutto le approvazioni per pagamenti, invii o cancellazioni.",
+          "fr": "Human-in-the-loop : ne jamais automatiser entièrement les validations de paiements, d'envois ou de suppressions."
+        },
+        {
+          "de": "Nachvollziehbarkeit: Aktionen protokollieren, Rechte minimal halten, Ergebnisse stichprobenartig prüfen.",
+          "en": "Traceability: log actions, keep permissions minimal, spot-check results.",
+          "it": "Tracciabilità: registrare le azioni, mantenere i permessi minimi, verificare i risultati a campione.",
+          "fr": "Traçabilité : journaliser les actions, garder des droits minimaux, contrôler les résultats par sondage."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen einem KI-Agenten und einem Chatbot?",
+        "en": "What is the difference between an AI agent and a chatbot?",
+        "it": "Qual è la differenza tra un agente AI e un chatbot?",
+        "fr": "Quelle est la différence entre un agent IA et un chatbot ?"
+      },
+      "a": {
+        "de": "Ein Chatbot antwortet in erster Linie mit Text. Ein KI-Agent kann zusätzlich handeln: Er nutzt Werkzeuge, ruft Systeme auf und führt mehrstufige Aufgaben aus, um ein Ziel zu erreichen. Viele Chatbots werden erst dann zu Agenten, wenn man ihnen Werkzeuge und einen Handlungsspielraum gibt.",
+        "en": "A chatbot mainly responds with text. An AI agent can also act: it uses tools, calls systems and carries out multi-step tasks to reach a goal. Many chatbots only become agents once you give them tools and room to act.",
+        "it": "Un chatbot risponde soprattutto con testo. Un agente AI può anche agire: usa strumenti, richiama sistemi ed esegue compiti in più passaggi per raggiungere un obiettivo. Molti chatbot diventano agenti solo quando si danno loro strumenti e margine d'azione.",
+        "fr": "Un chatbot répond surtout par du texte. Un agent IA peut aussi agir : il utilise des outils, appelle des systèmes et exécute des tâches en plusieurs étapes pour atteindre un but. Beaucoup de chatbots ne deviennent des agents qu'une fois dotés d'outils et d'une marge d'action."
+      }
+    },
+    {
+      "q": {
+        "de": "Sind KI-Agenten dasselbe wie RPA oder Automatisierung?",
+        "en": "Are AI agents the same as RPA or automation?",
+        "it": "Gli agenti AI sono la stessa cosa dell'RPA o dell'automazione?",
+        "fr": "Les agents IA sont-ils la même chose que la RPA ou l'automatisation ?"
+      },
+      "a": {
+        "de": "Nein. RPA und klassische Automation folgen festen Regeln und sind sehr vorhersehbar. Ein KI-Agent entscheidet situativ und kommt mit Mehrdeutigkeit zurecht, ist dafür weniger deterministisch. Oft ist die Kombination am stärksten: Regeln für klare Abläufe, Agent für die Schritte, die Sprachverständnis und Urteil erfordern.",
+        "en": "No. RPA and classic automation follow fixed rules and are highly predictable. An AI agent decides situationally and copes with ambiguity, but is less deterministic. Often the combination is strongest: rules for clear flows, an agent for the steps that need language understanding and judgement.",
+        "it": "No. L'RPA e l'automazione classica seguono regole fisse e sono molto prevedibili. Un agente AI decide in base alla situazione e gestisce l'ambiguità, ma è meno deterministico. Spesso la combinazione è la più efficace: regole per i flussi chiari, agente per i passaggi che richiedono comprensione del linguaggio e giudizio.",
+        "fr": "Non. La RPA et l'automatisation classique suivent des règles fixes et sont très prévisibles. Un agent IA décide selon la situation et gère l'ambiguïté, mais reste moins déterministe. Souvent, la combinaison est la plus efficace : des règles pour les flux clairs, un agent pour les étapes qui exigent compréhension du langage et jugement."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie autonom sollte ein KI-Agent handeln?",
+        "en": "How autonomous should an AI agent be?",
+        "it": "Quanto dovrebbe essere autonomo un agente AI?",
+        "fr": "Quel degré d'autonomie pour un agent IA ?"
+      },
+      "a": {
+        "de": "So autonom wie nötig, so kontrolliert wie möglich. Für risikoarme, leicht umkehrbare Aufgaben kann mehr Autonomie sinnvoll sein. Bei folgenreichen Schritten – Zahlungen, Versand, Löschungen – sollte ein Mensch freigeben. Als Faustregel gilt: Je grösser die möglichen Auswirkungen, desto enger die Kontrolle.",
+        "en": "As autonomous as necessary, as controlled as possible. For low-risk, easily reversible tasks more autonomy can make sense. For consequential steps – payments, sending, deletions – a human should approve. Rule of thumb: the larger the potential impact, the tighter the control.",
+        "it": "Autonomo quanto serve, controllato il più possibile. Per compiti a basso rischio e facilmente reversibili può avere senso più autonomia. Per i passaggi importanti – pagamenti, invii, cancellazioni – deve approvare una persona. Regola pratica: maggiore è l'impatto potenziale, più stretto il controllo.",
+        "fr": "Aussi autonome que nécessaire, aussi contrôlé que possible. Pour des tâches à faible risque et facilement réversibles, plus d'autonomie peut se justifier. Pour les étapes lourdes de conséquences – paiements, envois, suppressions – un humain doit valider. Règle empirique : plus l'impact potentiel est grand, plus le contrôle est strict."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Risiken bringen KI-Agenten mit sich?",
+        "en": "What risks do AI agents bring?",
+        "it": "Quali rischi comportano gli agenti AI?",
+        "fr": "Quels risques comportent les agents IA ?"
+      },
+      "a": {
+        "de": "Die wichtigsten sind Halluzinationen (erfundene Inhalte), Prompt Injection (Manipulation über eingeschleuste Anweisungen), unbeabsichtigte Aktionen und Datenschutzfragen. Gegenmassnahmen sind minimale Rechte, Freigaben bei heiklen Schritten, Protokollierung, Tests und die Klärung, wo Personendaten nach revDSG/nFADP verarbeitet werden.",
+        "en": "The main ones are hallucinations (fabricated content), prompt injection (manipulation via smuggled-in instructions), unintended actions and data-protection questions. Countermeasures are minimal permissions, approvals for sensitive steps, logging, testing and clarifying where personal data is processed under the Swiss FADP (revDSG/nFADP).",
+        "it": "I principali sono allucinazioni (contenuti inventati), prompt injection (manipolazione tramite istruzioni inserite), azioni non volute e questioni di protezione dei dati. Le contromisure: permessi minimi, approvazioni per i passaggi delicati, log, test e chiarire dove i dati personali sono trattati secondo la legge svizzera (revDSG/nFADP).",
+        "fr": "Les principaux sont les hallucinations (contenus inventés), la prompt injection (manipulation via des instructions glissées), les actions non voulues et les questions de protection des données. Les parades : droits minimaux, validations pour les étapes sensibles, journalisation, tests et clarification du lieu de traitement des données personnelles selon la LPD suisse (revDSG/nFADP)."
+      }
+    },
+    {
+      "q": {
+        "de": "Braucht mein KMU dafür eigene Modelle oder Programmierung?",
+        "en": "Does my SME need its own models or programming for this?",
+        "it": "La mia PMI ha bisogno di modelli propri o di programmazione?",
+        "fr": "Ma PME a-t-elle besoin de ses propres modèles ou de programmation ?"
+      },
+      "a": {
+        "de": "Meist nicht. Viele Agenten lassen sich auf bestehenden Sprachmodellen aufbauen und über Standard-Schnittstellen an vorhandene Systeme anbinden. Sinnvoll ist ein enger Anwendungsfall, saubere Datenanbindung und klare Leitplanken – statt eigener Modelle von Grund auf. So bleibt der Aufwand überschaubar und die Kontrolle hoch.",
+        "en": "Usually not. Many agents can be built on existing language models and connected to your systems via standard interfaces. What helps is a narrow use case, clean data integration and clear guardrails – rather than building your own models from scratch. That keeps effort manageable and control high.",
+        "it": "Di solito no. Molti agenti possono basarsi su modelli linguistici esistenti e collegarsi ai sistemi tramite interfacce standard. Ciò che aiuta è un caso d'uso circoscritto, un'integrazione dati pulita e guardrail chiari – anziché costruire modelli propri da zero. Così l'impegno resta gestibile e il controllo elevato.",
+        "fr": "Le plus souvent non. De nombreux agents peuvent s'appuyer sur des modèles de langage existants et se connecter à vos systèmes via des interfaces standard. Ce qui aide : un cas d'usage restreint, une intégration de données propre et des garde-fous clairs – plutôt que des modèles maison partant de zéro. L'effort reste maîtrisé et le contrôle élevé."
+      }
+    }
+  ],
+  "keyEntities": [
+    "KI-Agent",
+    "Large Language Model (LLM)",
+    "Function Calling",
+    "Tool Use",
+    "Agentic Workflow",
+    "Autonomie",
+    "Reasoning",
+    "Robotic Process Automation (RPA)",
+    "Orchestrierung",
+    "Human-in-the-Loop",
+    "Prompt Injection",
+    "Halluzination",
+    "Retrieval-Augmented Generation (RAG)",
+    "revDSG/nFADP",
+    "EU AI Act",
+    "EDÖB"
+  ]
+}

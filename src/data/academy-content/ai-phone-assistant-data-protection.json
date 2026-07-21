@@ -1,0 +1,332 @@
+{
+  "id": "ai-phone-assistant-data-protection",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "slug": {
+    "de": "ki-telefonassistent-datenschutz-revdsg",
+    "en": "ai-phone-assistant-data-protection",
+    "it": "assistente-telefonico-ai-protezione-dati",
+    "fr": "assistant-telephonique-ia-protection-donnees"
+  },
+  "relatedServices": [
+    "phone-assistant"
+  ],
+  "title": {
+    "de": "KI-Telefonassistent & Datenschutz in der Schweiz | Weissmann AI",
+    "en": "AI Phone Assistant Data Protection in Switzerland | Weissmann AI",
+    "it": "Assistente telefonico IA e privacy in Svizzera | Weissmann AI",
+    "fr": "Assistant téléphonique IA et protection des données | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI-Telefonassistent und Datenschutz: revDSG/nDSG-Grundlagen, Transparenzpflicht nach EU AI Act Art. 50 und sichere Datenverarbeitung für Schweizer KMU – neutral erklärt.",
+    "en": "AI phone assistant data protection: revDSG/nFADP basics, the EU AI Act Art. 50 disclosure duty and safe data handling for Swiss SMEs – explained neutrally.",
+    "it": "Assistente telefonico IA e privacy: basi nLPD, obbligo di trasparenza dell'AI Act art. 50 e trattamento dati sicuro per le PMI svizzere, spiegati con chiarezza.",
+    "fr": "Assistant téléphonique IA et protection des données: bases nLPD, obligation de transparence de l'art. 50 du règlement IA et traitement sûr pour les PME suisses."
+  },
+  "kicker": {
+    "de": "KI, Recht & Datenschutz",
+    "en": "AI, Law & Data Protection",
+    "it": "IA, diritto e privacy",
+    "fr": "IA, droit et protection des données"
+  },
+  "h1": {
+    "de": "KI-Telefonassistent und Datenschutz: Was Schweizer KMU beachten müssen",
+    "en": "AI Phone Assistants and Data Protection: What Swiss SMEs Need to Know",
+    "it": "Assistente telefonico IA e protezione dei dati: cosa devono sapere le PMI svizzere",
+    "fr": "Assistant téléphonique IA et protection des données: ce que les PME suisses doivent savoir"
+  },
+  "answerFirst": {
+    "de": "Ein KI-Telefonassistent nimmt Anrufe automatisiert entgegen und verarbeitet dabei Personendaten wie Stimme, Name und Anliegen. In der Schweiz gilt das revidierte Datenschutzgesetz (revDSG/nDSG) mit Grundsätzen wie Transparenz, Zweckbindung und Datenminimierung. Anrufende müssen erkennen können, dass sie mit einer KI sprechen – das verlangt sinngemäss auch Artikel 50 des EU AI Act. Aufzeichnungen brauchen eine Rechtsgrundlage und klare Information.",
+    "en": "An AI phone assistant answers calls automatically and processes personal data such as voice, name and request. In Switzerland the revised Data Protection Act (revDSG/nFADP) applies, with principles like transparency, purpose limitation and data minimisation. Callers must be able to tell they are speaking with an AI – Article 50 of the EU AI Act requires the same. Recordings need a legal basis and clear notice.",
+    "it": "Un assistente telefonico IA risponde alle chiamate in modo automatico e tratta dati personali come voce, nome e richiesta. In Svizzera si applica la nuova legge sulla protezione dei dati (nLPD) con principi quali trasparenza, limitazione della finalità e minimizzazione. Chi chiama deve poter capire di parlare con un'IA: lo richiede anche l'articolo 50 del regolamento europeo sull'IA. Le registrazioni necessitano di una base giuridica e di un'informativa chiara.",
+    "fr": "Un assistant téléphonique IA répond aux appels automatiquement et traite des données personnelles telles que la voix, le nom et la demande. En Suisse s'applique la loi révisée sur la protection des données (nLPD), avec des principes comme la transparence, la limitation de la finalité et la minimisation. L'appelant doit pouvoir savoir qu'il parle à une IA: l'article 50 du règlement européen sur l'IA l'exige aussi. Les enregistrements requièrent une base juridique et une information claire."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Welche Daten ein KI-Telefonassistent verarbeitet",
+        "en": "What data an AI phone assistant processes",
+        "it": "Quali dati tratta un assistente telefonico IA",
+        "fr": "Quelles données traite un assistant téléphonique IA"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein KI-Telefonassistent ist eine Software, die eingehende oder ausgehende Telefonate selbstständig führt: Sie versteht gesprochene Sprache, antwortet mit einer synthetischen Stimme und erledigt Aufgaben wie Terminvereinbarung, Auskunft oder Weiterleitung. Aus Datenschutzsicht ist entscheidend, dass dabei laufend Personendaten anfallen – die Stimme selbst, der Name, die Telefonnummer, das Anliegen und oft weitere Angaben, die Anrufende beiläufig nennen.",
+          "en": "An AI phone assistant is software that conducts inbound or outbound calls on its own: it understands spoken language, replies in a synthetic voice and handles tasks such as booking appointments, giving information or routing calls. From a data protection view, the key point is that personal data is generated continuously – the voice itself, the name, the phone number, the request and often further details callers mention in passing.",
+          "it": "Un assistente telefonico IA è un software che gestisce autonomamente chiamate in entrata o in uscita: comprende il linguaggio parlato, risponde con una voce sintetica e svolge compiti come fissare appuntamenti, fornire informazioni o inoltrare la chiamata. Sul piano della privacy, il punto chiave è che vengono continuamente generati dati personali: la voce stessa, il nome, il numero, la richiesta e spesso altri dettagli menzionati incidentalmente.",
+          "fr": "Un assistant téléphonique IA est un logiciel qui mène seul des appels entrants ou sortants: il comprend la parole, répond avec une voix synthétique et accomplit des tâches comme la prise de rendez-vous, le renseignement ou le transfert. Du point de vue de la protection des données, l'essentiel est que des données personnelles sont générées en continu: la voix elle-même, le nom, le numéro, la demande et souvent d'autres détails cités au passage."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Stimmaufnahmen und Transkripte gelten als Personendaten; werden Stimmen zur Identifikation genutzt, entstehen biometrische und damit besonders schützenswerte Personendaten.",
+          "en": "Voice recordings and transcripts count as personal data; if voices are used to identify individuals, biometric – and therefore sensitive – personal data arises.",
+          "it": "Registrazioni vocali e trascrizioni sono dati personali; se la voce serve a identificare le persone si tratta di dati biometrici, quindi dati personali degni di particolare protezione.",
+          "fr": "Les enregistrements vocaux et transcriptions sont des données personnelles; si la voix sert à identifier une personne, on obtient des données biométriques, donc sensibles."
+        },
+        {
+          "de": "Gesundheits-, Finanz- oder religiöse Angaben, die im Gespräch fallen, sind besonders schützenswert und verlangen erhöhte Sorgfalt.",
+          "en": "Health, financial or religious details mentioned in a call are sensitive data and require heightened care.",
+          "it": "Dati sanitari, finanziari o religiosi emersi nella conversazione sono degni di particolare protezione e richiedono maggiore attenzione.",
+          "fr": "Les informations de santé, financières ou religieuses évoquées lors d'un appel sont sensibles et exigent une vigilance accrue."
+        },
+        {
+          "de": "Metadaten wie Rufnummer, Zeitpunkt und Dauer sind ebenfalls Personendaten, auch ohne Namensnennung.",
+          "en": "Metadata such as caller number, time and duration are personal data too, even without a name.",
+          "it": "Anche i metadati come numero, orario e durata sono dati personali, pur senza nome.",
+          "fr": "Les métadonnées comme le numéro, l'heure et la durée sont aussi des données personnelles, même sans nom."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "revDSG/nDSG-Grundlagen für Sprachassistenten",
+        "en": "revDSG/nFADP basics for voice assistants",
+        "it": "Basi della nLPD per gli assistenti vocali",
+        "fr": "Les bases de la nLPD pour les assistants vocaux"
+      },
+      "paragraphs": [
+        {
+          "de": "Massgeblich ist das revidierte Datenschutzgesetz (revDSG/nDSG), in Kraft seit dem 1. September 2023; Aufsichtsbehörde ist der EDÖB. Es kennt keine generelle Bewilligungspflicht, sondern verpflichtet Unternehmen zu einer verantwortungsvollen Bearbeitung. Wer einen KI-Telefonassistenten einsetzt, ist als «verantwortliche Person» dafür zuständig, dass die Bearbeitungsgrundsätze eingehalten werden – unabhängig davon, ob die Technik selbst entwickelt oder von einem Anbieter bezogen wird.",
+          "en": "The relevant law is the revised Data Protection Act (revDSG/nFADP), in force since 1 September 2023; the supervisory authority is the FDPIC (EDÖB). It has no general permit requirement but obliges organisations to process data responsibly. Whoever deploys an AI phone assistant is the 'controller' responsible for upholding the processing principles – whether the technology is built in-house or bought from a provider.",
+          "it": "La legge di riferimento è la nuova legge sulla protezione dei dati (nLPD), in vigore dal 1° settembre 2023; l'autorità di vigilanza è l'IFPDT. Non prevede un obbligo generale di autorizzazione ma impone un trattamento responsabile. Chi impiega un assistente telefonico IA è il «titolare del trattamento» e risponde del rispetto dei principi, sia che la tecnologia sia sviluppata internamente sia acquistata da un fornitore.",
+          "fr": "La loi applicable est la loi révisée sur la protection des données (nLPD), en vigueur depuis le 1er septembre 2023; l'autorité de surveillance est le PFPDT. Elle n'impose pas d'autorisation générale mais un traitement responsable. Celui qui déploie un assistant téléphonique IA est le «responsable du traitement» et garantit le respect des principes, que la technologie soit développée en interne ou achetée à un prestataire."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Zweckbindung: Daten nur für den angekündigten Zweck (z. B. Terminbuchung) nutzen, nicht heimlich für Training oder Marketing.",
+          "en": "Purpose limitation: use data only for the stated purpose (e.g. booking), not secretly for training or marketing.",
+          "it": "Limitazione della finalità: usare i dati solo per lo scopo dichiarato (es. appuntamenti), non di nascosto per training o marketing.",
+          "fr": "Limitation de la finalité: n'utiliser les données que pour le but annoncé (p. ex. rendez-vous), pas en secret pour l'entraînement ou le marketing."
+        },
+        {
+          "de": "Datenminimierung und Verhältnismässigkeit: nur erfassen und speichern, was wirklich nötig ist, und Aufbewahrungsfristen definieren.",
+          "en": "Data minimisation and proportionality: collect and store only what is truly needed, and define retention periods.",
+          "it": "Minimizzazione e proporzionalità: raccogliere e conservare solo il necessario e definire tempi di conservazione.",
+          "fr": "Minimisation et proportionnalité: ne collecter et conserver que le nécessaire, avec des durées de conservation définies."
+        },
+        {
+          "de": "Privacy by Design und by Default sowie ein Bearbeitungsverzeichnis; bei hohem Risiko eine Datenschutz-Folgenabschätzung.",
+          "en": "Privacy by design and by default, plus a record of processing activities; a data protection impact assessment where risk is high.",
+          "it": "Privacy by design e by default, oltre a un registro delle attività; una valutazione d'impatto in caso di rischio elevato.",
+          "fr": "Protection des données dès la conception et par défaut, plus un registre des activités; une analyse d'impact en cas de risque élevé."
+        },
+        {
+          "de": "Betroffenenrechte: Anrufende können Auskunft, Berichtigung und Löschung verlangen – die Prozesse müssen das abbilden können.",
+          "en": "Data subject rights: callers can request access, rectification and erasure – processes must be able to fulfil this.",
+          "it": "Diritti degli interessati: chi chiama può chiedere accesso, rettifica e cancellazione; i processi devono poterlo garantire.",
+          "fr": "Droits des personnes: l'appelant peut demander accès, rectification et effacement; les processus doivent le permettre."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Transparenzpflicht: Anrufende über die KI informieren",
+        "en": "Transparency duty: telling callers it is an AI",
+        "it": "Obbligo di trasparenza: informare che è un'IA",
+        "fr": "Obligation de transparence: signaler qu'il s'agit d'une IA"
+      },
+      "paragraphs": [
+        {
+          "de": "Transparenz ist der sensibelste Punkt bei KI-Telefonassistenten. Anrufende sollen nicht getäuscht werden: Sie müssen erkennen können, dass sie mit einer Maschine und nicht mit einem Menschen sprechen. Das revDSG verlangt eine angemessene Information über die Bearbeitung von Personendaten. Parallel dazu schreibt Artikel 50 des EU AI Act ausdrücklich vor, dass Menschen darüber zu informieren sind, wenn sie mit einem KI-System interagieren, sofern dies nicht ohnehin offensichtlich ist. Der EU AI Act wirkt extraterritorial und kann Schweizer Unternehmen erfassen, die sich an Personen in der EU richten.",
+          "en": "Transparency is the most sensitive point with AI phone assistants. Callers must not be deceived: they must be able to tell they are speaking with a machine, not a human. The revDSG requires appropriate information about the processing of personal data. In parallel, Article 50 of the EU AI Act explicitly requires people to be informed when they interact with an AI system, unless this is already obvious. The EU AI Act has extraterritorial effect and can reach Swiss companies addressing people in the EU.",
+          "it": "La trasparenza è il punto più delicato. Chi chiama non deve essere ingannato: deve poter capire di parlare con una macchina, non con una persona. La nLPD richiede un'informazione adeguata sul trattamento dei dati. In parallelo, l'articolo 50 del regolamento europeo sull'IA impone esplicitamente di informare le persone quando interagiscono con un sistema di IA, salvo che sia già evidente. Il regolamento ha effetto extraterritoriale e può riguardare imprese svizzere che si rivolgono a persone nell'UE.",
+          "fr": "La transparence est le point le plus sensible. L'appelant ne doit pas être trompé: il doit pouvoir savoir qu'il parle à une machine et non à un humain. La nLPD exige une information adéquate sur le traitement des données. En parallèle, l'article 50 du règlement européen sur l'IA impose explicitement d'informer les personnes lorsqu'elles interagissent avec un système d'IA, sauf si cela est déjà évident. Ce règlement a une portée extraterritoriale et peut concerner des entreprises suisses s'adressant à des personnes dans l'UE."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Ansage zu Gesprächsbeginn: klar und kurz kommunizieren, dass ein KI-Assistent antwortet, und einen Weg zu einem Menschen anbieten.",
+          "en": "Opening announcement: state clearly and briefly that an AI assistant is answering, and offer a route to a human.",
+          "it": "Annuncio iniziale: comunicare in modo chiaro e breve che risponde un assistente IA e offrire un passaggio a un operatore.",
+          "fr": "Annonce initiale: indiquer clairement et brièvement qu'un assistant IA répond, et proposer un accès à un humain."
+        },
+        {
+          "de": "Aufzeichnung: Das heimliche Aufnehmen nicht-öffentlicher Gespräche ist nach Art. 179bis StGB strafbar – Aufzeichnung nur mit vorheriger Information und Rechtsgrundlage.",
+          "en": "Recording: secretly recording non-public conversations is a criminal offence under Art. 179bis SCC – record only with prior notice and a legal basis.",
+          "it": "Registrazione: registrare di nascosto conversazioni non pubbliche è reato ex art. 179bis CP; registrare solo con previa informazione e base giuridica.",
+          "fr": "Enregistrement: enregistrer secrètement des conversations non publiques est punissable selon l'art. 179bis CP; n'enregistrer qu'avec information préalable et base juridique."
+        },
+        {
+          "de": "Datenschutzerklärung: Zweck, Empfänger, Aufbewahrung und allfällige Auslandübermittlung leicht auffindbar dokumentieren.",
+          "en": "Privacy notice: document purpose, recipients, retention and any cross-border transfer in an easily findable way.",
+          "it": "Informativa privacy: documentare in modo facilmente reperibile finalità, destinatari, conservazione ed eventuale trasferimento all'estero.",
+          "fr": "Déclaration de confidentialité: documenter de façon accessible la finalité, les destinataires, la conservation et tout transfert à l'étranger."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenverarbeitung: Cloud, Auftragsbearbeiter und Auslandübermittlung",
+        "en": "Data handling: cloud, processors and cross-border transfers",
+        "it": "Trattamento: cloud, responsabili esterni e trasferimenti all'estero",
+        "fr": "Traitement: cloud, sous-traitants et transferts à l'étranger"
+      },
+      "paragraphs": [
+        {
+          "de": "Die meisten KI-Telefonassistenten stützen sich auf Cloud-Dienste und Sprachmodelle externer Anbieter. Diese sind aus Sicht des revDSG in der Regel Auftragsbearbeiter: Ihr Einsatz braucht einen Vertrag, der Zweck, Sicherheit und den Ausschluss zweckfremder Nutzung regelt, sowie die Kontrolle über beigezogene Unterauftragsbearbeiter. Werden Daten ins Ausland übermittelt – etwa in ein US-Rechenzentrum –, ist ein angemessenes Schutzniveau sicherzustellen, notfalls über Standardvertragsklauseln und ergänzende Massnahmen.",
+          "en": "Most AI phone assistants rely on cloud services and language models from external providers. Under the revDSG these are typically processors: using them requires a contract governing purpose, security and the exclusion of unauthorised use, plus oversight of any sub-processors. If data is transferred abroad – for example to a US data centre – an adequate level of protection must be ensured, if necessary via standard contractual clauses and supplementary measures.",
+          "it": "La maggior parte degli assistenti telefonici IA si basa su servizi cloud e modelli linguistici di fornitori esterni. Secondo la nLPD sono di norma responsabili del trattamento: il loro impiego richiede un contratto su finalità, sicurezza ed esclusione di usi impropri, oltre al controllo su eventuali sub-responsabili. Se i dati sono trasferiti all'estero, per esempio in un data center statunitense, va garantito un livello di protezione adeguato, se necessario con clausole contrattuali tipo e misure supplementari.",
+          "fr": "La plupart des assistants téléphoniques IA s'appuient sur des services cloud et des modèles linguistiques de prestataires externes. Selon la nLPD, ce sont en général des sous-traitants: leur recours exige un contrat réglant finalité, sécurité et exclusion d'usages détournés, ainsi que le contrôle des sous-traitants ultérieurs. Si des données sont transférées à l'étranger, par exemple vers un centre de données américain, un niveau de protection adéquat doit être assuré, au besoin par des clauses contractuelles types et des mesures complémentaires."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Prüfen, wo Sprache verarbeitet und gespeichert wird – Standort und Rechtsraum des Anbieters sind entscheidend.",
+          "en": "Check where speech is processed and stored – the provider's location and legal jurisdiction matter.",
+          "it": "Verificare dove la voce è trattata e archiviata: contano sede e giurisdizione del fornitore.",
+          "fr": "Vérifier où la parole est traitée et stockée: le lieu et la juridiction du prestataire sont décisifs."
+        },
+        {
+          "de": "Vertraglich ausschliessen, dass Gesprächsinhalte ohne Grundlage zum Modelltraining verwendet werden.",
+          "en": "Contractually exclude the use of call content for model training without a legal basis.",
+          "it": "Escludere per contratto l'uso dei contenuti delle chiamate per l'addestramento senza base giuridica.",
+          "fr": "Exclure contractuellement l'usage du contenu des appels pour l'entraînement des modèles sans base juridique."
+        },
+        {
+          "de": "Technische Sicherheit: Verschlüsselung, Zugriffskontrollen und definierte Löschfristen für Aufnahmen und Transkripte.",
+          "en": "Technical security: encryption, access controls and defined deletion periods for recordings and transcripts.",
+          "it": "Sicurezza tecnica: cifratura, controlli di accesso e tempi di cancellazione definiti per registrazioni e trascrizioni.",
+          "fr": "Sécurité technique: chiffrement, contrôles d'accès et durées d'effacement définies pour enregistrements et transcriptions."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler und eine kurze Praxis-Checkliste",
+        "en": "Common mistakes and a short practical checklist",
+        "it": "Errori frequenti e una breve checklist pratica",
+        "fr": "Erreurs fréquentes et courte liste de contrôle pratique"
+      },
+      "paragraphs": [
+        {
+          "de": "Viele Probleme entstehen nicht durch die Technik, sondern durch fehlende Transparenz und unklare Verantwortlichkeiten. Ein Schweizer KMU, das den Telefonempfang mit einer KI automatisiert, sollte das Vorhaben wie jede andere Datenbearbeitung behandeln: dokumentiert, minimal und nachvollziehbar. Die folgenden Punkte fassen die typischen Stolperfallen zusammen.",
+          "en": "Many problems stem not from the technology but from missing transparency and unclear responsibilities. A Swiss SME automating its phone reception with AI should treat it like any other data processing: documented, minimal and traceable. The points below sum up the typical pitfalls.",
+          "it": "Molti problemi non nascono dalla tecnologia ma dalla mancanza di trasparenza e da responsabilità poco chiare. Una PMI svizzera che automatizza la reception telefonica con l'IA dovrebbe trattarla come ogni altro trattamento: documentato, minimo e tracciabile. I punti seguenti riassumono le insidie tipiche.",
+          "fr": "Beaucoup de problèmes viennent non de la technologie mais d'un manque de transparence et de responsabilités floues. Une PME suisse qui automatise son accueil téléphonique avec l'IA devrait la traiter comme tout autre traitement: documenté, minimal et traçable. Les points suivants résument les pièges typiques."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Fehler: Anrufende im Unklaren lassen, ob sie mit einer KI sprechen. Besser: klare Ansage plus Mensch-Option.",
+          "en": "Mistake: leaving callers unsure whether they speak with an AI. Better: a clear announcement plus a human option.",
+          "it": "Errore: lasciare nel dubbio se si parla con un'IA. Meglio: annuncio chiaro e opzione umana.",
+          "fr": "Erreur: laisser l'appelant dans le doute. Mieux: annonce claire et option humaine."
+        },
+        {
+          "de": "Fehler: Alles aufzeichnen «für alle Fälle». Besser: nur Nötiges, mit Frist und Grundlage.",
+          "en": "Mistake: recording everything 'just in case'. Better: only what is needed, with retention and a legal basis.",
+          "it": "Errore: registrare tutto «per sicurezza». Meglio: solo il necessario, con termini e base giuridica.",
+          "fr": "Erreur: tout enregistrer «au cas où». Mieux: seulement le nécessaire, avec durée et base juridique."
+        },
+        {
+          "de": "Fehler: Anbieter ohne Auftragsbearbeitungsvertrag nutzen. Besser: Vertrag, Unterauftragsbearbeiter und Serverstandort klären.",
+          "en": "Mistake: using a provider without a processing agreement. Better: settle the contract, sub-processors and server location.",
+          "it": "Errore: usare un fornitore senza contratto di trattamento. Meglio: definire contratto, sub-responsabili e sede dei server.",
+          "fr": "Erreur: recourir à un prestataire sans contrat de sous-traitance. Mieux: régler contrat, sous-traitants et lieu des serveurs."
+        },
+        {
+          "de": "Fehler: Betroffenenrechte nicht bedienen können. Besser: Prozess für Auskunft und Löschung vorsehen.",
+          "en": "Mistake: being unable to serve data subject rights. Better: set up a process for access and erasure.",
+          "it": "Errore: non poter gestire i diritti degli interessati. Meglio: prevedere un processo per accesso e cancellazione.",
+          "fr": "Erreur: ne pas pouvoir traiter les droits des personnes. Mieux: prévoir un processus d'accès et d'effacement."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Muss ich Anrufenden sagen, dass ein KI-Telefonassistent antwortet?",
+        "en": "Do I have to tell callers that an AI phone assistant is answering?",
+        "it": "Devo dire a chi chiama che risponde un assistente telefonico IA?",
+        "fr": "Dois-je indiquer à l'appelant qu'un assistant téléphonique IA répond?"
+      },
+      "a": {
+        "de": "Ja, Transparenz ist zentral. Anrufende sollen nicht getäuscht werden und müssen erkennen können, dass sie mit einer KI sprechen. Das ergibt sich aus dem Transparenzgrundsatz des revDSG und – bei Bezug zur EU – ausdrücklich aus Artikel 50 des EU AI Act. Eine klare Ansage zu Gesprächsbeginn ist die einfachste Lösung.",
+        "en": "Yes, transparency is central. Callers must not be deceived and must be able to tell they are speaking with an AI. This follows from the revDSG transparency principle and – where the EU is involved – explicitly from Article 50 of the EU AI Act. A clear opening announcement is the simplest solution.",
+        "it": "Sì, la trasparenza è centrale. Chi chiama non deve essere ingannato e deve poter capire di parlare con un'IA. Deriva dal principio di trasparenza della nLPD e, quando è coinvolta l'UE, esplicitamente dall'articolo 50 del regolamento europeo sull'IA. Un annuncio chiaro all'inizio è la soluzione più semplice.",
+        "fr": "Oui, la transparence est centrale. L'appelant ne doit pas être trompé et doit pouvoir savoir qu'il parle à une IA. Cela découle du principe de transparence de la nLPD et, en cas de lien avec l'UE, explicitement de l'article 50 du règlement européen sur l'IA. Une annonce claire au début est la solution la plus simple."
+      }
+    },
+    {
+      "q": {
+        "de": "Darf ein KI-Telefonassistent Gespräche aufzeichnen?",
+        "en": "May an AI phone assistant record calls?",
+        "it": "Un assistente telefonico IA può registrare le chiamate?",
+        "fr": "Un assistant téléphonique IA peut-il enregistrer les appels?"
+      },
+      "a": {
+        "de": "Nur mit vorheriger Information und einer Rechtsgrundlage. Das heimliche Aufnehmen nicht-öffentlicher Gespräche ist in der Schweiz nach Art. 179bis StGB strafbar. Wer aufzeichnet, muss zu Beginn informieren, den Zweck nennen, die Speicherdauer begrenzen und die Aufnahmen sicher verwahren.",
+        "en": "Only with prior notice and a legal basis. Secretly recording non-public conversations is a criminal offence in Switzerland under Art. 179bis SCC. Anyone recording must inform callers at the start, state the purpose, limit the storage period and keep recordings secure.",
+        "it": "Solo con previa informazione e una base giuridica. Registrare di nascosto conversazioni non pubbliche è reato in Svizzera ex art. 179bis CP. Chi registra deve informare all'inizio, indicare la finalità, limitare la conservazione e custodire le registrazioni in modo sicuro.",
+        "fr": "Uniquement avec information préalable et une base juridique. Enregistrer secrètement des conversations non publiques est punissable en Suisse selon l'art. 179bis CP. Qui enregistre doit informer au début, préciser la finalité, limiter la durée de conservation et sécuriser les enregistrements."
+      }
+    },
+    {
+      "q": {
+        "de": "Gilt der EU AI Act für Schweizer Unternehmen?",
+        "en": "Does the EU AI Act apply to Swiss companies?",
+        "it": "Il regolamento europeo sull'IA vale per le imprese svizzere?",
+        "fr": "Le règlement européen sur l'IA s'applique-t-il aux entreprises suisses?"
+      },
+      "a": {
+        "de": "Er kann. Der EU AI Act wirkt extraterritorial und erfasst auch Anbieter oder Betreiber ausserhalb der EU, wenn sich ihr KI-System an Personen in der EU richtet oder dort Wirkung entfaltet. Ein Schweizer KMU mit Kundschaft in der EU sollte die Transparenzpflicht nach Artikel 50 deshalb einplanen. Dies ersetzt keine individuelle Rechtsberatung.",
+        "en": "It can. The EU AI Act has extraterritorial effect and also covers providers or deployers outside the EU when their AI system targets or affects people in the EU. A Swiss SME with EU customers should therefore plan for the Article 50 transparency duty. This does not replace individual legal advice.",
+        "it": "Può. Il regolamento ha effetto extraterritoriale e riguarda anche fornitori o utilizzatori fuori dall'UE quando il sistema di IA si rivolge a persone nell'UE o vi produce effetti. Una PMI svizzera con clientela nell'UE dovrebbe quindi prevedere l'obbligo di trasparenza dell'articolo 50. Ciò non sostituisce una consulenza legale individuale.",
+        "fr": "C'est possible. Le règlement a une portée extraterritoriale et vise aussi les fournisseurs ou déployeurs hors UE lorsque leur système d'IA cible des personnes dans l'UE ou y produit des effets. Une PME suisse avec une clientèle dans l'UE devrait donc prévoir l'obligation de transparence de l'article 50. Ceci ne remplace pas un conseil juridique individuel."
+      }
+    },
+    {
+      "q": {
+        "de": "Wo werden die Sprachdaten eines KI-Telefonassistenten verarbeitet?",
+        "en": "Where is an AI phone assistant's voice data processed?",
+        "it": "Dove vengono trattati i dati vocali di un assistente telefonico IA?",
+        "fr": "Où sont traitées les données vocales d'un assistant téléphonique IA?"
+      },
+      "a": {
+        "de": "Das hängt vom Anbieter ab und ist eine Kernfrage. Viele Dienste verarbeiten Sprache in Cloud-Rechenzentren, teils im Ausland. Nach revDSG sind solche Anbieter meist Auftragsbearbeiter und brauchen einen Vertrag; bei Übermittlung ins Ausland ist ein angemessenes Schutzniveau sicherzustellen. Klären Sie Serverstandort, Unterauftragsbearbeiter und ob Inhalte fürs Modelltraining genutzt werden.",
+        "en": "That depends on the provider and is a core question. Many services process speech in cloud data centres, sometimes abroad. Under the revDSG such providers are usually processors and need a contract; for transfers abroad an adequate level of protection must be ensured. Clarify server location, sub-processors and whether content is used for model training.",
+        "it": "Dipende dal fornitore ed è una domanda chiave. Molti servizi trattano la voce in data center cloud, talvolta all'estero. Secondo la nLPD tali fornitori sono di norma responsabili del trattamento e richiedono un contratto; per i trasferimenti all'estero va garantito un livello adeguato. Chiarire sede dei server, sub-responsabili e se i contenuti servono per l'addestramento.",
+        "fr": "Cela dépend du prestataire et constitue une question clé. De nombreux services traitent la parole dans des centres de données cloud, parfois à l'étranger. Selon la nLPD, ces prestataires sont généralement des sous-traitants et nécessitent un contrat; pour les transferts à l'étranger, un niveau adéquat doit être assuré. Clarifiez le lieu des serveurs, les sous-traitants et l'usage éventuel pour l'entraînement."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche ersten Schritte sollte ein KMU vor der Einführung machen?",
+        "en": "What first steps should an SME take before rolling one out?",
+        "it": "Quali primi passi dovrebbe fare una PMI prima dell'introduzione?",
+        "fr": "Quelles premières étapes une PME doit-elle suivre avant le déploiement?"
+      },
+      "a": {
+        "de": "Zweck und Datenarten festlegen, den Anbieter samt Serverstandort und Auftragsbearbeitungsvertrag prüfen, die Transparenzansage und Datenschutzerklärung vorbereiten, Aufbewahrungs- und Löschfristen definieren sowie Prozesse für Auskunfts- und Löschbegehren einrichten. Bei hohem Risiko empfiehlt sich eine Datenschutz-Folgenabschätzung. Diese Übersicht ist allgemein und ersetzt keine individuelle Rechtsberatung.",
+        "en": "Define purpose and data types, vet the provider including server location and processing agreement, prepare the transparency announcement and privacy notice, define retention and deletion periods, and set up processes for access and erasure requests. Where risk is high, a data protection impact assessment is advisable. This overview is general and not a substitute for individual legal advice.",
+        "it": "Definire finalità e tipi di dati, verificare il fornitore con sede dei server e contratto di trattamento, preparare l'annuncio di trasparenza e l'informativa, fissare tempi di conservazione e cancellazione e predisporre processi per accesso e cancellazione. In caso di rischio elevato è consigliata una valutazione d'impatto. Questa panoramica è generale e non sostituisce una consulenza legale individuale.",
+        "fr": "Définir la finalité et les types de données, vérifier le prestataire avec le lieu des serveurs et le contrat de sous-traitance, préparer l'annonce de transparence et la déclaration de confidentialité, fixer les durées de conservation et d'effacement, et mettre en place des processus pour les demandes d'accès et d'effacement. En cas de risque élevé, une analyse d'impact est recommandée. Cet aperçu est général et ne remplace pas un conseil juridique individuel."
+      }
+    }
+  ],
+  "keyEntities": [
+    "revDSG",
+    "nDSG",
+    "nFADP",
+    "nLPD",
+    "EDÖB",
+    "PFPDT",
+    "EU AI Act Artikel 50",
+    "Auftragsbearbeitung",
+    "Datenschutz-Folgenabschätzung",
+    "besonders schützenswerte Personendaten",
+    "Art. 179bis StGB",
+    "Bearbeitungsverzeichnis",
+    "Datenminimierung",
+    "Zweckbindung",
+    "Privacy by Design",
+    "Bekanntgabe ins Ausland",
+    "Standardvertragsklauseln",
+    "Stimmbiometrie",
+    "Auskunftsrecht",
+    "KI-Telefonassistent"
+  ]
+}
