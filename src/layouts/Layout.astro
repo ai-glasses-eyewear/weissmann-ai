@@ -13,6 +13,7 @@
  */
 import { SITE, LOCALES, HTML_LANG, localeUrl, type Locale } from '../data/site';
 import type { LocalePaths } from '../data/routes';
+import { organization, webSite } from '../data/schema';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ConsentAnalytics from '../components/ConsentAnalytics.astro';
@@ -44,9 +45,13 @@ const lp: LocalePaths = localePaths ?? { de: path!, en: path!, it: path!, fr: pa
 const canonical = localeUrl(locale, lp[locale]);
 const ogImage = `${SITE.domain}/og-default.png`;
 
-const graph = schema.length
-  ? JSON.stringify({ '@context': 'https://schema.org', '@graph': schema })
-  : null;
+// Every page carries the Organization + WebSite entity (defined once here), so
+// the @id references in page-level schema (publisher/provider/about) resolve and
+// the entity graph is present site-wide for search engines and AI assistants.
+const graph = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [organization(locale), webSite(locale), ...schema],
+});
 
 // Visual concept: 'b' (Premium Technology) is the approved default.
 // 'a' (Swiss Editorial) remains previewable via PUBLIC_THEME=a npm run build.

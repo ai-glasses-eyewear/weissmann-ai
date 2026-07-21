@@ -18,7 +18,7 @@ import { pillarHome, relFor } from '../../data/routes';
 import { getService, servicePaths } from '../../data/services';
 import { t } from '../../i18n/ui';
 import { getPackage } from '../../data/pricing';
-import { organization, webSite, webPage, faqPage } from '../../data/schema';
+import { webPage, faqPage } from '../../data/schema';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -332,9 +332,9 @@ const c = C[locale];
 const videoSrc = locale === 'de' ? '/videos/weissmann-demo-de.mp4' : '/videos/weissmann-demo-en.mp4';
 const posterSrc = theme === 'b' ? '/poster-call-dark.png' : '/poster-call-light.png';
 
+// Organization + WebSite are emitted site-wide by the Layout; the homepage adds
+// its WebPage + FAQ.
 const schema = [
-  organization(locale),
-  webSite(locale),
   webPage(locale, '/', c.metaTitle, c.metaDesc),
   faqPage(c.faq),
 ];
