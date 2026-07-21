@@ -1,0 +1,79 @@
+---
+/**
+ * GlossaryHubPage — the AI Glossary index (/ki-academy/glossar/). Alphabetical,
+ * answer-first definitions with DefinedTermSet schema. Every term links to its
+ * atomic page; the whole set is the site's internal-linking + GEO spine.
+ */
+import { SITE, localeUrl, type Locale } from '../../data/site';
+import { type LocalePaths, pillarHome, urlFor, relFor } from '../../data/routes';
+import { orderedTerms, termPaths } from '../../data/glossary';
+import Layout from '../../layouts/Layout.astro';
+
+interface Props { locale: Locale; localePaths: LocalePaths }
+const { locale, localePaths } = Astro.props;
+
+const COPY: Record<Locale, { title: string; h1: string; kicker: string; intro: string; crumbHome: string; academy: string; here: string }> = {
+  de: { title: 'KI-Glossar: Begriffe der Künstlichen Intelligenz | Weissmann AI', h1: 'KI-Glossar', kicker: 'Nachschlagen', intro: 'Klare, kurze Definitionen der wichtigsten KI-Begriffe – von A wie Agent bis Z. Jeder Eintrag ist eine eigenständige, faktenbasierte Antwort, verlinkt mit vertiefenden Artikeln und passenden Leistungen.', crumbHome: 'Startseite', academy: 'AI Academy', here: 'Glossar' },
+  en: { title: 'AI Glossary: Key Artificial Intelligence Terms | Weissmann AI', h1: 'AI Glossary', kicker: 'Reference', intro: 'Clear, short definitions of the most important AI terms. Each entry is a standalone, fact-based answer, linked to in-depth articles and relevant services.', crumbHome: 'Home', academy: 'AI Academy', here: 'Glossary' },
+  it: { title: 'Glossario AI: i termini dell’intelligenza artificiale | Weissmann AI', h1: 'Glossario AI', kicker: 'Consultazione', intro: 'Definizioni chiare e brevi dei principali termini dell’AI. Ogni voce è una risposta autonoma e basata sui fatti, collegata ad articoli di approfondimento e ai servizi pertinenti.', crumbHome: 'Home', academy: 'AI Academy', here: 'Glossario' },
+  fr: { title: 'Glossaire IA : les termes clés de l’intelligence artificielle | Weissmann AI', h1: 'Glossaire IA', kicker: 'Référence', intro: 'Des définitions claires et brèves des principaux termes de l’IA. Chaque entrée est une réponse autonome et factuelle, reliée à des articles approfondis et aux services pertinents.', crumbHome: 'Accueil', academy: 'AI Academy', here: 'Glossaire' },
+};
+const c = COPY[locale];
+const terms = orderedTerms(locale);
+const pre = locale === 'de' ? '' : `/${locale}`;
+const academyHub = pillarHome('academy');
+
+const schema = [
+  { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: c.crumbHome, item: localeUrl(locale, '/') },
+    { '@type': 'ListItem', position: 2, name: c.academy, item: urlFor(locale, academyHub) },
+    { '@type': 'ListItem', position: 3, name: c.here, item: urlFor(locale, localePaths) },
+  ] },
+  {
+    '@type': 'DefinedTermSet',
+    name: c.h1,
+    url: urlFor(locale, localePaths),
+    hasDefinedTerm: terms.map((tm) => ({
+      '@type': 'DefinedTerm',
+      name: tm.term[locale],
+      description: tm.definition[locale],
+      url: urlFor(locale, termPaths(tm)),
+    })),
+  },
+];
+---
+<Layout locale={locale} localePaths={localePaths} title={c.title} description={c.intro} schema={schema}>
+  <nav class="crumbs container" aria-label="Breadcrumb">
+    <a href={`${pre}/`}>{c.crumbHome}</a><span aria-hidden="true">›</span>
+    <a href={relFor(locale, academyHub)}>{c.academy}</a><span aria-hidden="true">›</span><span>{c.here}</span>
+  </nav>
+  <header class="hub-head container">
+    <p class="kicker">{c.kicker}</p>
+    <h1>{c.h1}</h1>
+    <p class="hub-intro">{c.intro}</p>
+  </header>
+  <dl class="container gloss-list">
+    {terms.map((tm) => (
+      <div class="gloss-item">
+        <dt><a href={relFor(locale, termPaths(tm))}>{tm.term[locale]}</a></dt>
+        <dd>{tm.definition[locale]}</dd>
+      </div>
+    ))}
+  </dl>
+</Layout>
+
+<style>
+  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); flex-wrap: wrap; }
+  .crumbs a { color: var(--ink-mute); }
+  .crumbs a:hover { color: var(--ink); }
+  .hub-head { padding-top: var(--space-5); padding-bottom: var(--space-4); max-width: 56rem; }
+  .hub-head h1 { font-size: var(--fs-700); margin: 0.4rem 0 1rem; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
+  .hub-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 52rem; }
+  .gloss-list { max-width: 52rem; padding-bottom: var(--space-7); display: flex; flex-direction: column; gap: 0; }
+  .gloss-item { padding: var(--space-4) 0; border-bottom: 1px solid var(--line); }
+  .gloss-item dt { margin-bottom: 0.3rem; }
+  .gloss-item dt a { font-size: var(--fs-500); font-weight: 600; color: var(--ink); }
+  .gloss-item dt a:hover { color: var(--accent); text-decoration: none; }
+  .gloss-item dd { margin: 0; color: var(--ink-soft); line-height: 1.6; }
+</style>
