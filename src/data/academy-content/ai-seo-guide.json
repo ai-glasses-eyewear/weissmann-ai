@@ -1,0 +1,462 @@
+{
+  "id": "ai-seo-guide",
+  "cluster": "marketing-seo-geo",
+  "type": "spoke",
+  "slug": {
+    "de": "ai-seo-leitfaden",
+    "en": "ai-seo-guide",
+    "it": "guida-ai-seo",
+    "fr": "guide-ai-seo"
+  },
+  "relatedServices": [
+    "seo"
+  ],
+  "title": {
+    "de": "AI SEO: Sichtbar in KI-Suche und Google | Weissmann AI",
+    "en": "AI SEO: Get Cited by AI Search and Google | Weissmann AI",
+    "it": "AI SEO: farsi citare da IA e Google | Weissmann AI",
+    "fr": "AI SEO: être cité par l'IA et Google | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "AI SEO praktisch erklärt: technisches SEO, Answer-first-Content, E-E-A-T und interne Verlinkung, damit Google und KI-Antworten Ihre Inhalte zitieren.",
+    "en": "AI SEO explained step by step: technical SEO, answer-first content, E-E-A-T and internal linking so Google and AI answers cite your content.",
+    "it": "AI SEO spiegata passo per passo: SEO tecnica, contenuti answer-first, E-E-A-T e link interni per farsi citare da Google e dalle risposte IA.",
+    "fr": "Le AI SEO expliqué pas à pas: SEO technique, contenu answer-first, E-E-A-T et maillage interne pour être cité par Google et les réponses IA."
+  },
+  "kicker": {
+    "de": "AI Marketing, SEO & GEO",
+    "en": "AI Marketing, SEO & GEO",
+    "it": "AI Marketing, SEO e GEO",
+    "fr": "Marketing IA, SEO & GEO"
+  },
+  "h1": {
+    "de": "Wie funktioniert SEO im Zeitalter der KI?",
+    "en": "How do you do SEO in the age of AI?",
+    "it": "Come si fa SEO nell'era dell'intelligenza artificiale?",
+    "fr": "Comment faire du SEO à l'ère de l'intelligence artificielle?"
+  },
+  "answerFirst": {
+    "de": "AI SEO verbindet klassische Suchmaschinenoptimierung mit Generative Engine Optimization (GEO): Inhalte werden so aufbereitet, dass sie sowohl in Google-Rankings als auch in KI-Antworten wie Google AI Overviews, ChatGPT oder Perplexity erscheinen. Entscheidend sind technische Sauberkeit, strukturierte Daten nach schema.org, belegbare Expertise nach E-E-A-T, eine klare Antwort-zuerst-Struktur und konsistente interne Verlinkung, damit Maschinen Ihre Seite als vertrauenswürdige Quelle zitieren.",
+    "en": "AI SEO combines classic search optimization with Generative Engine Optimization (GEO): content is structured so it appears both in Google rankings and in AI answers such as Google AI Overviews, ChatGPT or Perplexity. What matters is technical hygiene, structured data via schema.org, provable expertise under E-E-A-T, a clear answer-first structure and consistent internal linking, so machines cite your page as a trustworthy source.",
+    "it": "L'AI SEO unisce la SEO classica alla Generative Engine Optimization (GEO): i contenuti vengono strutturati per comparire sia nei ranking di Google sia nelle risposte IA come Google AI Overviews, ChatGPT o Perplexity. Contano l'igiene tecnica, i dati strutturati con schema.org, una competenza dimostrabile secondo E-E-A-T, una struttura answer-first e un maillage interno coerente, così le macchine citano la vostra pagina come fonte affidabile.",
+    "fr": "Le AI SEO relie le SEO classique à la Generative Engine Optimization (GEO): le contenu est structuré pour apparaître à la fois dans les classements Google et dans les réponses IA comme Google AI Overviews, ChatGPT ou Perplexity. L'essentiel: hygiène technique, données structurées via schema.org, expertise prouvable selon E-E-A-T, structure answer-first et maillage interne cohérent, pour que les machines citent votre page comme source fiable."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was ist AI SEO – und was ändert sich jetzt?",
+        "en": "What is AI SEO – and what changes now?",
+        "it": "Cos'è l'AI SEO e cosa cambia adesso?",
+        "fr": "Qu'est-ce que le AI SEO et qu'est-ce qui change?"
+      },
+      "paragraphs": [
+        {
+          "de": "AI SEO ist die Weiterentwicklung der Suchmaschinenoptimierung für eine Suche, die zunehmend Antworten statt nur Links liefert. Google zeigt mit AI Overviews KI-generierte Zusammenfassungen über den klassischen Treffern, und viele Menschen recherchieren direkt in ChatGPT, Perplexity oder Gemini. Das Ziel verschiebt sich: Es reicht nicht mehr, auf Platz eins der blauen Links zu stehen – Ihre Inhalte müssen die Quelle sein, die eine Maschine zitiert.",
+          "en": "AI SEO is the evolution of search optimization for a search that increasingly returns answers, not just links. Google's AI Overviews show AI-generated summaries above the classic results, and many people now research directly in ChatGPT, Perplexity or Gemini. The goal shifts: ranking first among blue links is no longer enough – your content has to be the source a machine cites.",
+          "it": "L'AI SEO è l'evoluzione della SEO per una ricerca che fornisce sempre più risposte e non solo link. Con gli AI Overviews Google mostra riassunti generati dall'IA sopra i risultati classici, e molte persone cercano direttamente in ChatGPT, Perplexity o Gemini. L'obiettivo cambia: non basta più essere primi tra i link blu, i vostri contenuti devono essere la fonte che una macchina cita.",
+          "fr": "Le AI SEO est l'évolution du référencement pour une recherche qui livre de plus en plus des réponses, pas seulement des liens. Avec les AI Overviews, Google affiche des résumés générés par l'IA au-dessus des résultats classiques, et beaucoup recherchent directement dans ChatGPT, Perplexity ou Gemini. L'objectif se déplace: être premier parmi les liens bleus ne suffit plus, votre contenu doit être la source qu'une machine cite."
+        },
+        {
+          "de": "Wichtig: GEO ersetzt klassisches SEO nicht, sondern baut darauf auf. KI-Systeme und AI Overviews schöpfen aus demselben Web, das Google gut crawlen und als vertrauenswürdig einstufen kann. Wer technisch sauber, thematisch tief und glaubwürdig publiziert, gewinnt beides – Rankings und Erwähnungen in KI-Antworten.",
+          "en": "Crucially, GEO does not replace classic SEO – it builds on it. AI systems and AI Overviews draw from the same web that Google can crawl well and judge trustworthy. Publish in a technically clean, topically deep and credible way, and you win both – rankings and mentions in AI answers.",
+          "it": "Importante: la GEO non sostituisce la SEO classica, la potenzia. I sistemi IA e gli AI Overviews attingono dallo stesso web che Google riesce a scansionare bene e a giudicare affidabile. Chi pubblica in modo tecnicamente pulito, tematicamente approfondito e credibile ottiene entrambi: ranking e citazioni nelle risposte IA.",
+          "fr": "Important: la GEO ne remplace pas le SEO classique, elle s'appuie dessus. Les systèmes IA et les AI Overviews puisent dans le même web que Google sait crawler et juger fiable. Publier de façon techniquement propre, thématiquement approfondie et crédible fait gagner les deux: classements et mentions dans les réponses IA."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Ziel SEO: Position in den blauen Links – Ziel GEO: als Quelle in der KI-Antwort genannt und verlinkt werden.",
+          "en": "SEO goal: a position among the blue links – GEO goal: being named and linked as a source inside the AI answer.",
+          "it": "Obiettivo SEO: una posizione tra i link blu – obiettivo GEO: essere nominati e linkati come fonte nella risposta IA.",
+          "fr": "But du SEO: une position parmi les liens bleus – but de la GEO: être nommé et lié comme source dans la réponse IA."
+        },
+        {
+          "de": "Messgrösse SEO: Rankings und Klicks – GEO: Erwähnungen in KI-Antworten und Referral-Traffic aus Perplexity oder ChatGPT.",
+          "en": "SEO metric: rankings and clicks – GEO: mentions in AI answers and referral traffic from Perplexity or ChatGPT.",
+          "it": "Metrica SEO: ranking e clic – GEO: menzioni nelle risposte IA e traffico di referral da Perplexity o ChatGPT.",
+          "fr": "Mesure SEO: classements et clics – GEO: mentions dans les réponses IA et trafic de référence depuis Perplexity ou ChatGPT."
+        },
+        {
+          "de": "Hebel SEO: Keywords, Backlinks, Technik – GEO zusätzlich: Antwort-zuerst, klar benannte Entitäten, zitierbare Fakten.",
+          "en": "SEO levers: keywords, backlinks, technique – GEO adds: answer-first, clearly named entities, quotable facts.",
+          "it": "Leve SEO: parole chiave, backlink, tecnica – la GEO aggiunge: answer-first, entità nominate con chiarezza, fatti citabili.",
+          "fr": "Leviers SEO: mots-clés, backlinks, technique – la GEO ajoute: answer-first, entités clairement nommées, faits citables."
+        },
+        {
+          "de": "Gemeinsame Basis: crawlbare, vertrauenswürdige, gut strukturierte Inhalte, die eine Maschine zuverlässig verstehen kann.",
+          "en": "Shared basis: crawlable, trustworthy, well-structured content a machine can reliably understand.",
+          "it": "Base comune: contenuti scansionabili, affidabili e ben strutturati che una macchina può capire in modo affidabile.",
+          "fr": "Base commune: un contenu crawlable, fiable et bien structuré qu'une machine peut comprendre de façon fiable."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Technisches SEO als Fundament",
+        "en": "Technical SEO as the foundation",
+        "it": "La SEO tecnica come fondamento",
+        "fr": "Le SEO technique comme fondation"
+      },
+      "paragraphs": [
+        {
+          "de": "Technisches SEO wird nicht unwichtiger, sondern wichtiger: Eine Maschine muss Ihre Seite zuverlässig crawlen, rendern und die enthaltenen Fakten extrahieren können. Fehlt dieses Fundament, hilft der beste Text nichts – die KI findet ihn schlicht nicht oder versteht ihn falsch. Arbeiten Sie diese Punkte der Reihe nach ab.",
+          "en": "Technical SEO is not becoming less important but more so: a machine must reliably crawl, render and extract the facts on your page. Without that foundation the best copy is wasted – the AI simply won't find it or will misread it. Work through these points in order.",
+          "it": "La SEO tecnica non perde importanza, la guadagna: una macchina deve poter scansionare, renderizzare ed estrarre i fatti dalla vostra pagina in modo affidabile. Senza questa base il testo migliore è inutile: l'IA semplicemente non lo trova o lo interpreta male. Affrontate questi punti in ordine.",
+          "fr": "Le SEO technique ne perd pas en importance, il en gagne: une machine doit pouvoir crawler, rendre et extraire de façon fiable les faits de votre page. Sans cette fondation, le meilleur texte est perdu – l'IA ne le trouve pas ou le comprend mal. Traitez ces points dans l'ordre."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Crawlbarkeit und Indexierung: saubere robots.txt, aktuelle XML-Sitemap, schnelle Server-Antwort, keine versehentlichen noindex-Tags.",
+          "en": "Crawlability and indexing: clean robots.txt, up-to-date XML sitemap, fast server response, no accidental noindex tags.",
+          "it": "Scansionabilità e indicizzazione: robots.txt pulito, sitemap XML aggiornata, risposta server veloce, nessun tag noindex per errore.",
+          "fr": "Crawlabilité et indexation: robots.txt propre, sitemap XML à jour, réponse serveur rapide, aucune balise noindex par erreur."
+        },
+        {
+          "de": "Core Web Vitals und Mobile-first: kurze Ladezeit, visuelle Stabilität, einwandfreie Darstellung auf dem Smartphone.",
+          "en": "Core Web Vitals and mobile-first: fast load times, visual stability, flawless rendering on smartphones.",
+          "it": "Core Web Vitals e mobile-first: tempi di caricamento brevi, stabilità visiva, resa impeccabile su smartphone.",
+          "fr": "Core Web Vitals et mobile-first: temps de chargement courts, stabilité visuelle, rendu impeccable sur smartphone."
+        },
+        {
+          "de": "Strukturierte Daten mit schema.org: Article, FAQPage, Organization, Person und Breadcrumb helfen Maschinen, Entitäten und Fakten sauber zu extrahieren.",
+          "en": "Structured data with schema.org: Article, FAQPage, Organization, Person and Breadcrumb help machines extract entities and facts cleanly.",
+          "it": "Dati strutturati con schema.org: Article, FAQPage, Organization, Person e Breadcrumb aiutano le macchine a estrarre entità e fatti in modo pulito.",
+          "fr": "Données structurées avec schema.org: Article, FAQPage, Organization, Person et Breadcrumb aident les machines à extraire proprement entités et faits."
+        },
+        {
+          "de": "KI-Crawler bewusst steuern: GPTBot, ClaudeBot, Google-Extended und PerplexityBot lassen sich in der robots.txt gezielt zulassen oder sperren – eine bewusste Entscheidung, ob Ihre Inhalte in KI-Antworten einfliessen dürfen.",
+          "en": "Govern AI crawlers deliberately: GPTBot, ClaudeBot, Google-Extended and PerplexityBot can be allowed or blocked in robots.txt – a conscious choice about whether your content may feed AI answers.",
+          "it": "Gestire i crawler IA con consapevolezza: GPTBot, ClaudeBot, Google-Extended e PerplexityBot si possono consentire o bloccare nel robots.txt: una scelta consapevole se i vostri contenuti possano alimentare le risposte IA.",
+          "fr": "Piloter les crawlers IA en connaissance: GPTBot, ClaudeBot, Google-Extended et PerplexityBot se laissent autoriser ou bloquer dans le robots.txt – un choix conscient sur l'usage de votre contenu par les réponses IA."
+        },
+        {
+          "de": "Semantisches HTML und saubere Überschriftenhierarchie (H1–H3), damit Passagen einzeln verständlich und extrahierbar bleiben.",
+          "en": "Semantic HTML and a clean heading hierarchy (H1–H3), so passages remain individually understandable and extractable.",
+          "it": "HTML semantico e gerarchia dei titoli pulita (H1–H3), così i passaggi restano comprensibili ed estraibili singolarmente.",
+          "fr": "HTML sémantique et hiérarchie de titres propre (H1–H3), pour que les passages restent compréhensibles et extractibles isolément."
+        },
+        {
+          "de": "HTTPS, sprechende URLs und hreflang bei Mehrsprachigkeit – in der Schweiz mit Deutsch, Französisch, Italienisch und Englisch besonders relevant.",
+          "en": "HTTPS, readable URLs and hreflang for multilingual sites – especially relevant in Switzerland with German, French, Italian and English.",
+          "it": "HTTPS, URL parlanti e hreflang per i siti multilingue: in Svizzera, con tedesco, francese, italiano e inglese, è particolarmente rilevante.",
+          "fr": "HTTPS, URL lisibles et hreflang pour les sites multilingues – particulièrement pertinent en Suisse avec l'allemand, le français, l'italien et l'anglais."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Content für Menschen und KI: Answer-first und Tiefe",
+        "en": "Content for people and AI: answer-first and depth",
+        "it": "Contenuti per persone e IA: answer-first e profondità",
+        "fr": "Contenu pour l'humain et l'IA: answer-first et profondeur"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Systeme extrahieren einzelne Passagen aus einer Seite. Deshalb muss jeder Abschnitt für sich verständlich und zitierbar sein: zuerst die klare Antwort, dann die Tiefe. Ein Text, der eine Frage präzise beantwortet und danach fundiert erklärt, überzeugt Leser und Maschinen gleichermassen.",
+          "en": "AI systems extract individual passages from a page. Each section must therefore stand on its own and be quotable: the clear answer first, then the depth. Text that answers a question precisely and then explains it soundly convinces readers and machines alike.",
+          "it": "I sistemi IA estraggono singoli passaggi da una pagina. Perciò ogni sezione deve reggersi da sola ed essere citabile: prima la risposta chiara, poi la profondità. Un testo che risponde con precisione e poi spiega in modo solido convince lettori e macchine allo stesso modo.",
+          "fr": "Les systèmes IA extraient des passages isolés d'une page. Chaque section doit donc tenir seule et être citable: d'abord la réponse claire, puis la profondeur. Un texte qui répond avec précision puis explique solidement convainc lecteurs et machines à la fois."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Antwort-zuerst: 40–80 Wörter präzise Antwort direkt unter der Überschrift, die eine KI wortwörtlich übernehmen kann.",
+          "en": "Answer-first: a precise 40–80-word answer right under the heading that an AI can lift verbatim.",
+          "it": "Answer-first: una risposta precisa di 40–80 parole subito sotto il titolo, che un'IA può riprendere alla lettera.",
+          "fr": "Answer-first: une réponse précise de 40 à 80 mots juste sous le titre, qu'une IA peut reprendre mot pour mot."
+        },
+        {
+          "de": "Eine Frage, eine klare Aussage pro Abschnitt – mit durchgängig konsistenter Terminologie.",
+          "en": "One question, one clear statement per section – with consistent terminology throughout.",
+          "it": "Una domanda, un'affermazione chiara per sezione, con terminologia coerente ovunque.",
+          "fr": "Une question, une affirmation claire par section – avec une terminologie constante partout."
+        },
+        {
+          "de": "Themen-Cluster statt Einzelseiten: eine Pillar-Seite plus vertiefende Spoke-Artikel decken ein Thema vollständig ab.",
+          "en": "Topic clusters instead of isolated pages: a pillar page plus deep spoke articles cover a topic fully.",
+          "it": "Cluster tematici invece di pagine isolate: una pillar più articoli spoke di approfondimento coprono il tema per intero.",
+          "fr": "Des clusters thématiques plutôt que des pages isolées: une page pilier plus des articles satellites couvrent un sujet entièrement."
+        },
+        {
+          "de": "Fakten strukturiert aufbereiten: Tabellen, Listen und klare Schritte sind für Maschinen leicht extrahierbar.",
+          "en": "Present facts in structure: tables, lists and clear steps are easy for machines to extract.",
+          "it": "Presentare i fatti in modo strutturato: tabelle, elenchi e passaggi chiari sono facili da estrarre per le macchine.",
+          "fr": "Présenter les faits de façon structurée: tableaux, listes et étapes claires sont faciles à extraire pour les machines."
+        },
+        {
+          "de": "Aktualität signalisieren: sichtbares Datum und echte Aktualisierungen – KI-Systeme bevorzugen frische, konsistente Quellen.",
+          "en": "Signal freshness: a visible date and genuine updates – AI systems favour fresh, consistent sources.",
+          "it": "Segnalare l'attualità: data visibile e aggiornamenti reali: i sistemi IA preferiscono fonti fresche e coerenti.",
+          "fr": "Signaler l'actualité: une date visible et de vraies mises à jour – les systèmes IA privilégient les sources fraîches et cohérentes."
+        },
+        {
+          "de": "Natürliche Sprache statt Keyword-Stuffing: schreiben Sie für den Leser, benennen Sie Entitäten aber explizit.",
+          "en": "Natural language over keyword stuffing: write for the reader, but name entities explicitly.",
+          "it": "Linguaggio naturale invece del keyword stuffing: scrivete per il lettore, ma nominate le entità in modo esplicito.",
+          "fr": "Un langage naturel plutôt que le bourrage de mots-clés: écrivez pour le lecteur, mais nommez explicitement les entités."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "E-E-A-T: Vertrauen belegbar machen",
+        "en": "E-E-A-T: make trust provable",
+        "it": "E-E-A-T: rendere la fiducia dimostrabile",
+        "fr": "E-E-A-T: rendre la confiance démontrable"
+      },
+      "paragraphs": [
+        {
+          "de": "E-E-A-T steht für Experience, Expertise, Authoritativeness und Trust – Signale, mit denen Google und zunehmend auch KI-Modelle die Verlässlichkeit einer Quelle gewichten. Besonders bei Themen rund um Gesundheit, Recht oder Finanzen (YMYL) entscheidet Vertrauenswürdigkeit darüber, ob Sie zitiert werden. Machen Sie diese Signale sichtbar, statt sie vorauszusetzen.",
+          "en": "E-E-A-T stands for Experience, Expertise, Authoritativeness and Trust – signals Google and increasingly AI models use to weigh a source's reliability. Especially for health, legal or financial topics (YMYL), trustworthiness decides whether you get cited. Make these signals visible instead of assuming them.",
+          "it": "E-E-A-T sta per Experience, Expertise, Authoritativeness e Trust: segnali con cui Google e sempre più i modelli IA pesano l'affidabilità di una fonte. Soprattutto per salute, diritto o finanza (YMYL), l'affidabilità decide se venite citati. Rendete visibili questi segnali invece di darli per scontati.",
+          "fr": "E-E-A-T signifie Experience, Expertise, Authoritativeness et Trust – des signaux par lesquels Google et de plus en plus les modèles IA pondèrent la fiabilité d'une source. Surtout pour la santé, le droit ou la finance (YMYL), la fiabilité décide si vous êtes cité. Rendez ces signaux visibles au lieu de les présupposer."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Autorenschaft sichtbar machen: benannte Autoren mit echter Expertise, Person-Schema und aussagekräftiger Kurzbiografie.",
+          "en": "Make authorship visible: named authors with real expertise, Person schema and a meaningful short bio.",
+          "it": "Rendere visibile la paternità: autori nominati con competenza reale, Person schema e una breve biografia significativa.",
+          "fr": "Rendre la paternité visible: des auteurs nommés avec une réelle expertise, un schema Person et une courte bio pertinente."
+        },
+        {
+          "de": "Erfahrung zeigen: eigene Beispiele, Praxiswissen und Originalität statt umformulierter Fremdinhalte.",
+          "en": "Show experience: your own examples, hands-on knowledge and originality instead of reworded third-party content.",
+          "it": "Mostrare esperienza: esempi propri, conoscenza pratica e originalità invece di contenuti altrui riformulati.",
+          "fr": "Montrer l'expérience: vos propres exemples, un savoir de terrain et de l'originalité plutôt que du contenu tiers reformulé."
+        },
+        {
+          "de": "Autorität aufbauen: konsistente Nennung als Entität, Erwähnungen und Backlinks aus themenrelevanten, glaubwürdigen Quellen.",
+          "en": "Build authority: consistent mention as an entity, references and backlinks from topically relevant, credible sources.",
+          "it": "Costruire autorità: menzione coerente come entità, citazioni e backlink da fonti credibili e pertinenti al tema.",
+          "fr": "Bâtir l'autorité: une mention cohérente comme entité, des citations et backlinks de sources crédibles et pertinentes."
+        },
+        {
+          "de": "Vertrauen absichern: vollständiges Impressum, echte Kontaktangaben, transparente Quellen, HTTPS und keine irreführenden Behauptungen.",
+          "en": "Secure trust: a complete imprint, real contact details, transparent sources, HTTPS and no misleading claims.",
+          "it": "Garantire fiducia: impressum completo, contatti reali, fonti trasparenti, HTTPS e nessuna affermazione fuorviante.",
+          "fr": "Sécuriser la confiance: mentions légales complètes, coordonnées réelles, sources transparentes, HTTPS et aucune affirmation trompeuse."
+        },
+        {
+          "de": "Schweizer Perspektive: revDSG-konforme Datenverarbeitung und transparente Datenschutzhinweise stärken das Vertrauen – und sind damit selbst ein E-E-A-T-Signal.",
+          "en": "Swiss perspective: revDSG-compliant data handling and transparent privacy notices build trust – and are themselves an E-E-A-T signal.",
+          "it": "Prospettiva svizzera: un trattamento dei dati conforme alla revDSG e informative privacy trasparenti rafforzano la fiducia, e sono quindi un segnale E-E-A-T.",
+          "fr": "Perspective suisse: un traitement des données conforme à la revDSG et des mentions de confidentialité transparentes renforcent la confiance – et sont donc un signal E-E-A-T."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Interne Verlinkung und Entitäten-Architektur",
+        "en": "Internal linking and entity architecture",
+        "it": "Maillage interno e architettura delle entità",
+        "fr": "Maillage interne et architecture des entités"
+      },
+      "paragraphs": [
+        {
+          "de": "Interne Verlinkung verteilt Autorität auf Ihrer Website und zeigt Maschinen, wie Ihre Themen zusammenhängen. Aus konsistent benannten und verknüpften Entitäten entsteht ein semantisches Netz, das KI-Systeme wie einen kleinen Wissensgraphen lesen – und das entscheidet mit, ob Ihre Seite als kompetente Quelle zu einem Thema gilt.",
+          "en": "Internal linking distributes authority across your site and shows machines how your topics relate. Consistently named and linked entities form a semantic web that AI systems read like a small knowledge graph – and that co-decides whether your site counts as a competent source on a topic.",
+          "it": "Il maillage interno distribuisce autorità nel sito e mostra alle macchine come si collegano i vostri temi. Da entità nominate e collegate in modo coerente nasce una rete semantica che i sistemi IA leggono come un piccolo knowledge graph, e ciò concorre a stabilire se il sito è una fonte competente su un tema.",
+          "fr": "Le maillage interne répartit l'autorité sur votre site et montre aux machines comment vos sujets se relient. Des entités nommées et liées de façon cohérente forment une toile sémantique que les systèmes IA lisent comme un petit knowledge graph – ce qui contribue à décider si votre site fait figure de source compétente."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Pillar-Seiten und Spoke-Artikel beidseitig verlinken, damit das Cluster als Einheit erkennbar wird.",
+          "en": "Link pillar pages and spoke articles both ways so the cluster is recognisable as a unit.",
+          "it": "Collegare pillar e articoli spoke in entrambe le direzioni, così il cluster è riconoscibile come unità.",
+          "fr": "Lier pages piliers et articles satellites dans les deux sens pour que le cluster soit reconnaissable comme un ensemble."
+        },
+        {
+          "de": "Aussagekräftige, beschreibende Ankertexte verwenden – nicht \"hier klicken\", sondern das Zielthema benennen.",
+          "en": "Use meaningful, descriptive anchor text – not \"click here\" but the target topic named.",
+          "it": "Usare anchor text significativi e descrittivi: non \"clicca qui\", ma il tema di destinazione.",
+          "fr": "Utiliser des ancres descriptives et parlantes – pas \"cliquez ici\", mais le sujet cible nommé."
+        },
+        {
+          "de": "Flache Struktur: wichtige Seiten in wenigen Klicks erreichbar, keine verwaisten Seiten ohne interne Links.",
+          "en": "Flat structure: important pages reachable in a few clicks, no orphan pages without internal links.",
+          "it": "Struttura piatta: pagine importanti raggiungibili in pochi clic, nessuna pagina orfana senza link interni.",
+          "fr": "Structure plate: pages importantes accessibles en quelques clics, aucune page orpheline sans lien interne."
+        },
+        {
+          "de": "Entitäten konsistent benennen: dieselben Begriffe für dieselben Konzepte, damit das semantische Netz stimmig bleibt.",
+          "en": "Name entities consistently: the same terms for the same concepts, so the semantic web stays coherent.",
+          "it": "Nominare le entità in modo coerente: gli stessi termini per gli stessi concetti, così la rete semantica resta coerente.",
+          "fr": "Nommer les entités de façon cohérente: les mêmes termes pour les mêmes concepts, pour une toile sémantique cohérente."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schritt für Schritt: Ihr AI-SEO-Playbook für KMU",
+        "en": "Step by step: your AI SEO playbook for SMEs",
+        "it": "Passo per passo: il vostro playbook AI SEO per le PMI",
+        "fr": "Pas à pas: votre playbook AI SEO pour PME"
+      },
+      "paragraphs": [
+        {
+          "de": "So bringen Schweizer KMU AI SEO in eine planbare Reihenfolge. Beginnen Sie beim Thema, sichern Sie die Technik und bauen Sie erst dann Inhalte und Vertrauen auf – konsequent viersprachig, wo Ihr Markt es verlangt.",
+          "en": "Here is how Swiss SMEs put AI SEO into a workable order. Start with the topic, secure the technical layer, then build content and trust – consistently in four languages where your market demands it.",
+          "it": "Ecco come le PMI svizzere mettono l'AI SEO in un ordine gestibile. Partite dal tema, mettete in sicurezza la tecnica e solo dopo costruite contenuti e fiducia, coerentemente in quattro lingue dove il mercato lo richiede.",
+          "fr": "Voici comment les PME suisses mettent le AI SEO dans un ordre applicable. Partez du sujet, sécurisez la couche technique, puis bâtissez contenu et confiance – de façon cohérente en quatre langues là où votre marché l'exige."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "1. Themen-Audit: Welche echten Fragen stellen Ihre Kunden? Daraus Themen-Cluster mit Pillar und Spokes ableiten.",
+          "en": "1. Topic audit: what real questions do your customers ask? Derive topic clusters with a pillar and spokes.",
+          "it": "1. Audit dei temi: quali domande reali pongono i clienti? Da qui ricavate cluster con pillar e spoke.",
+          "fr": "1. Audit des sujets: quelles vraies questions posent vos clients? En déduire des clusters avec pilier et satellites."
+        },
+        {
+          "de": "2. Technik-Check: Crawlbarkeit, Ladezeit, schema.org und Ihre KI-Crawler-Policy in der robots.txt festlegen.",
+          "en": "2. Technical check: crawlability, load time, schema.org and your AI-crawler policy set in robots.txt.",
+          "it": "2. Check tecnico: scansionabilità, tempi di caricamento, schema.org e la policy sui crawler IA nel robots.txt.",
+          "fr": "2. Contrôle technique: crawlabilité, temps de chargement, schema.org et votre politique de crawlers IA dans le robots.txt."
+        },
+        {
+          "de": "3. Pro Frage eine Answer-first-Seite mit echter Tiefe erstellen – klare Antwort oben, fundierte Erklärung darunter.",
+          "en": "3. Build one answer-first page per question with real depth – clear answer on top, sound explanation below.",
+          "it": "3. Creare una pagina answer-first per domanda con vera profondità: risposta chiara in alto, spiegazione solida sotto.",
+          "fr": "3. Créer une page answer-first par question avec une vraie profondeur – réponse claire en haut, explication solide en dessous."
+        },
+        {
+          "de": "4. E-E-A-T-Signale ergänzen: benannte Autoren, transparente Quellen, vollständiges Impressum.",
+          "en": "4. Add E-E-A-T signals: named authors, transparent sources, a complete imprint.",
+          "it": "4. Aggiungere segnali E-E-A-T: autori nominati, fonti trasparenti, impressum completo.",
+          "fr": "4. Ajouter des signaux E-E-A-T: auteurs nommés, sources transparentes, mentions légales complètes."
+        },
+        {
+          "de": "5. Intern verlinken: das Cluster verweben, beschreibende Ankertexte, keine verwaisten Seiten.",
+          "en": "5. Link internally: weave the cluster, descriptive anchors, no orphan pages.",
+          "it": "5. Collegare internamente: intrecciare il cluster, anchor descrittivi, nessuna pagina orfana.",
+          "fr": "5. Mailler en interne: tisser le cluster, ancres descriptives, aucune page orpheline."
+        },
+        {
+          "de": "6. Mehrsprachig ausspielen (DE/FR/IT/EN) mit hreflang und echter Lokalisierung – im Schweizer Kontext oft entscheidend.",
+          "en": "6. Publish multilingually (DE/FR/IT/EN) with hreflang and true localisation – often decisive in the Swiss context.",
+          "it": "6. Pubblicare in più lingue (DE/FR/IT/EN) con hreflang e vera localizzazione, spesso decisivo nel contesto svizzero.",
+          "fr": "6. Publier en plusieurs langues (DE/FR/IT/EN) avec hreflang et une vraie localisation – souvent décisif en contexte suisse."
+        },
+        {
+          "de": "7. Messen: klassische Rankings plus KI-Sichtbarkeit prüfen – stellen Sie Ihre Kernfragen direkt in ChatGPT, Perplexity und Google, und beobachten Sie, ob und wie Ihre Marke genannt wird.",
+          "en": "7. Measure: track classic rankings plus AI visibility – ask your core questions directly in ChatGPT, Perplexity and Google, and watch whether and how your brand is named.",
+          "it": "7. Misurare: ranking classici più visibilità IA: ponete le domande chiave direttamente in ChatGPT, Perplexity e Google e osservate se e come viene nominato il vostro brand.",
+          "fr": "7. Mesurer: classements classiques plus visibilité IA – posez vos questions clés directement dans ChatGPT, Perplexity et Google, et observez si et comment votre marque est nommée."
+        },
+        {
+          "de": "Wenn Sie diese Architektur nicht selbst aufbauen möchten, unterstützt Weissmann AI Schweizer KMU dabei, Technik, Content-Struktur und Mehrsprachigkeit für AI SEO aufzusetzen.",
+          "en": "If you would rather not build this architecture yourself, Weissmann AI helps Swiss SMEs set up the technical layer, content structure and multilingual publishing for AI SEO.",
+          "it": "Se preferite non costruire da soli questa architettura, Weissmann AI aiuta le PMI svizzere a impostare tecnica, struttura dei contenuti e multilinguismo per l'AI SEO.",
+          "fr": "Si vous préférez ne pas bâtir cette architecture vous-même, Weissmann AI aide les PME suisses à mettre en place la technique, la structure de contenu et le multilingue pour le AI SEO."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ersetzt GEO das klassische SEO?",
+        "en": "Does GEO replace classic SEO?",
+        "it": "La GEO sostituisce la SEO classica?",
+        "fr": "La GEO remplace-t-elle le SEO classique?"
+      },
+      "a": {
+        "de": "Nein. GEO baut auf klassischem SEO auf. KI-Antworten und Google AI Overviews schöpfen aus demselben crawlbaren, vertrauenswürdigen Web, das auch in den klassischen Rankings vorne steht. Wer technisch sauber, tief und glaubwürdig publiziert, gewinnt beides: Positionen in der Suche und Erwähnungen in KI-Antworten.",
+        "en": "No. GEO builds on classic SEO. AI answers and Google AI Overviews draw from the same crawlable, trustworthy web that also ranks well classically. Publishing in a technically clean, deep and credible way wins both: search positions and mentions in AI answers.",
+        "it": "No. La GEO si basa sulla SEO classica. Le risposte IA e gli AI Overviews attingono dallo stesso web scansionabile e affidabile che si posiziona bene anche nei ranking classici. Pubblicare in modo tecnicamente pulito, profondo e credibile fa vincere entrambi.",
+        "fr": "Non. La GEO s'appuie sur le SEO classique. Les réponses IA et les AI Overviews puisent dans le même web crawlable et fiable qui se classe déjà bien. Publier de façon propre, approfondie et crédible fait gagner les deux: positions et mentions IA."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie komme ich in Google AI Overviews oder in ChatGPT-Antworten?",
+        "en": "How do I get into Google AI Overviews or ChatGPT answers?",
+        "it": "Come entro negli AI Overviews di Google o nelle risposte di ChatGPT?",
+        "fr": "Comment apparaître dans les AI Overviews de Google ou les réponses de ChatGPT?"
+      },
+      "a": {
+        "de": "Beantworten Sie die Frage direkt und präzise (Answer-first), strukturieren Sie Fakten mit schema.org, belegen Sie Expertise nach E-E-A-T und sorgen Sie dafür, dass Ihre Seite crawlbar ist. Prüfen Sie zudem in der robots.txt, ob KI-Crawler wie GPTBot Zugriff haben. Es gibt keine Garantie, aber diese Faktoren erhöhen die Wahrscheinlichkeit einer Nennung deutlich.",
+        "en": "Answer the question directly and precisely (answer-first), structure facts with schema.org, prove expertise via E-E-A-T and keep your page crawlable. Also check in robots.txt whether AI crawlers like GPTBot have access. There is no guarantee, but these factors markedly raise the odds of being cited.",
+        "it": "Rispondete in modo diretto e preciso (answer-first), strutturate i fatti con schema.org, dimostrate competenza con E-E-A-T e mantenete la pagina scansionabile. Verificate nel robots.txt se i crawler IA come GPTBot hanno accesso. Non c'è garanzia, ma questi fattori aumentano nettamente le probabilità di essere citati.",
+        "fr": "Répondez directement et précisément (answer-first), structurez les faits avec schema.org, prouvez l'expertise via E-E-A-T et gardez la page crawlable. Vérifiez aussi dans le robots.txt si des crawlers IA comme GPTBot ont accès. Aucune garantie, mais ces facteurs augmentent nettement les chances d'être cité."
+      }
+    },
+    {
+      "q": {
+        "de": "Soll ich KI-Crawler wie GPTBot blockieren?",
+        "en": "Should I block AI crawlers like GPTBot?",
+        "it": "Dovrei bloccare i crawler IA come GPTBot?",
+        "fr": "Faut-il bloquer les crawlers IA comme GPTBot?"
+      },
+      "a": {
+        "de": "Das ist eine Abwägung. Blockieren schützt Inhalte vor der Nutzung im KI-Training, kann aber Erwähnungen in KI-Antworten verhindern. Wer Sichtbarkeit in KI-Systemen sucht, lässt die relevanten Crawler in der Regel zu. Entscheiden Sie bewusst pro Crawler (GPTBot, ClaudeBot, Google-Extended, PerplexityBot) und dokumentieren Sie die Wahl in der robots.txt.",
+        "en": "It is a trade-off. Blocking protects content from AI training use but can prevent mentions in AI answers. If you want visibility in AI systems, you typically allow the relevant crawlers. Decide deliberately per crawler (GPTBot, ClaudeBot, Google-Extended, PerplexityBot) and document the choice in robots.txt.",
+        "it": "È un compromesso. Bloccare protegge i contenuti dall'uso nell'addestramento IA, ma può impedire menzioni nelle risposte IA. Chi cerca visibilità nei sistemi IA di norma consente i crawler rilevanti. Decidete consapevolmente per ogni crawler (GPTBot, ClaudeBot, Google-Extended, PerplexityBot) e documentate la scelta nel robots.txt.",
+        "fr": "C'est un arbitrage. Bloquer protège le contenu d'un usage d'entraînement IA mais peut empêcher les mentions dans les réponses IA. Pour viser la visibilité IA, on autorise en général les crawlers pertinents. Décidez consciemment par crawler (GPTBot, ClaudeBot, Google-Extended, PerplexityBot) et documentez le choix dans le robots.txt."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie messe ich den Erfolg von AI SEO?",
+        "en": "How do I measure AI SEO success?",
+        "it": "Come misuro il successo dell'AI SEO?",
+        "fr": "Comment mesurer le succès du AI SEO?"
+      },
+      "a": {
+        "de": "Kombinieren Sie klassische Kennzahlen mit KI-Signalen: Rankings und Klicks aus der Search Console plus Referral-Traffic aus Perplexity oder ChatGPT. Ergänzen Sie qualitative Prüfungen – stellen Sie Ihre Kernfragen direkt in KI-Systeme und protokollieren Sie, ob und mit welchem Kontext Ihre Marke genannt wird. Beobachten Sie Trends über Zeit statt Einzelmessungen.",
+        "en": "Combine classic metrics with AI signals: rankings and clicks from Search Console plus referral traffic from Perplexity or ChatGPT. Add qualitative checks – ask your core questions directly in AI systems and log whether and in what context your brand is named. Watch trends over time rather than single measurements.",
+        "it": "Combinate metriche classiche e segnali IA: ranking e clic dalla Search Console più traffico di referral da Perplexity o ChatGPT. Aggiungete controlli qualitativi: ponete le domande chiave direttamente nei sistemi IA e annotate se e in che contesto viene nominato il brand. Osservate i trend nel tempo, non le singole misure.",
+        "fr": "Combinez métriques classiques et signaux IA: classements et clics de la Search Console plus trafic de référence depuis Perplexity ou ChatGPT. Ajoutez des contrôles qualitatifs – posez vos questions clés directement aux systèmes IA et notez si et dans quel contexte votre marque est nommée. Suivez les tendances dans le temps plutôt que des mesures ponctuelles."
+      }
+    },
+    {
+      "q": {
+        "de": "Sind strukturierte Daten (schema.org) zwingend nötig?",
+        "en": "Are structured data (schema.org) mandatory?",
+        "it": "I dati strutturati (schema.org) sono obbligatori?",
+        "fr": "Les données structurées (schema.org) sont-elles obligatoires?"
+      },
+      "a": {
+        "de": "Zwingend nicht, aber sehr empfehlenswert. Strukturierte Daten helfen Maschinen, Entitäten und Fakten eindeutig zu extrahieren – etwa Autor, Organisation, FAQ oder Artikel. Das erhöht die Chance auf Rich Results und erleichtert KI-Systemen das Zitieren. Für AI SEO gehören Article-, FAQPage-, Organization- und Person-Schema zum sinnvollen Standard.",
+        "en": "Not mandatory, but strongly recommended. Structured data help machines extract entities and facts unambiguously – author, organisation, FAQ or article. That raises the chance of rich results and makes it easier for AI systems to cite you. For AI SEO, Article, FAQPage, Organization and Person schema are a sensible standard.",
+        "it": "Non obbligatori, ma molto consigliati. I dati strutturati aiutano le macchine a estrarre entità e fatti in modo univoco: autore, organizzazione, FAQ o articolo. Aumentano le probabilità di rich result e facilitano la citazione da parte dei sistemi IA. Per l'AI SEO gli schema Article, FAQPage, Organization e Person sono uno standard sensato.",
+        "fr": "Pas obligatoires, mais fortement recommandées. Les données structurées aident les machines à extraire entités et faits sans ambiguïté – auteur, organisation, FAQ ou article. Cela augmente les chances de rich results et facilite la citation par les systèmes IA. Pour le AI SEO, les schemas Article, FAQPage, Organization et Person sont un standard raisonnable."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist bei mehrsprachigen Schweizer Websites besonders wichtig?",
+        "en": "What matters most for multilingual Swiss websites?",
+        "it": "Cosa conta di più per i siti svizzeri multilingue?",
+        "fr": "Qu'est-ce qui compte le plus pour les sites suisses multilingues?"
+      },
+      "a": {
+        "de": "Vollständige Parität und echte Lokalisierung statt maschineller Wort-für-Wort-Übersetzung. Setzen Sie hreflang korrekt, damit Google und KI-Systeme die richtige Sprachversion zuordnen, und passen Sie Beispiele, Terminologie und Rechtsbezüge (revDSG statt DSGVO, CHF) an den Schweizer Kontext an. So werden Sie in allen vier Landessprachen als konsistente, vertrauenswürdige Quelle erkannt.",
+        "en": "Full parity and true localisation instead of machine word-for-word translation. Set hreflang correctly so Google and AI systems match the right language version, and adapt examples, terminology and legal references (revDSG not GDPR, CHF) to the Swiss context. That way you are recognised as a consistent, trustworthy source across all four national languages.",
+        "it": "Parità completa e vera localizzazione, non traduzione automatica parola per parola. Impostate hreflang correttamente perché Google e i sistemi IA associno la versione linguistica giusta, e adattate esempi, terminologia e riferimenti legali (revDSG non GDPR, CHF) al contesto svizzero. Così sarete riconosciuti come fonte coerente e affidabile in tutte e quattro le lingue nazionali.",
+        "fr": "Parité complète et vraie localisation plutôt qu'une traduction machine mot à mot. Configurez hreflang correctement pour que Google et les systèmes IA associent la bonne version linguistique, et adaptez exemples, terminologie et références légales (revDSG et non RGPD, CHF) au contexte suisse. Vous serez ainsi reconnu comme source cohérente et fiable dans les quatre langues nationales."
+      }
+    }
+  ],
+  "keyEntities": [
+    "AI SEO",
+    "GEO (Generative Engine Optimization)",
+    "AEO (Answer Engine Optimization)",
+    "Google AI Overviews",
+    "E-E-A-T",
+    "schema.org",
+    "strukturierte Daten",
+    "technisches SEO",
+    "Core Web Vitals",
+    "interne Verlinkung",
+    "GPTBot",
+    "Google-Extended",
+    "PerplexityBot",
+    "Entitäten-SEO",
+    "hreflang",
+    "revDSG"
+  ]
+}

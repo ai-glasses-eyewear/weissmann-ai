@@ -82,7 +82,7 @@ export const CLUSTERS: AcademyCluster[] = [
     tagline: { de: 'KI-Sicherheit, Datenschutz, revDSG, EU AI Act und KI in der Schweiz.', en: 'AI security, privacy, revDSG, the EU AI Act and AI in Switzerland.', it: 'Sicurezza AI, privacy, nLPD, EU AI Act e AI in Svizzera.', fr: 'Sécurité de l’IA, confidentialité, nLPD, EU AI Act et l’IA en Suisse.' },
   },
   {
-    id: 'marketing-seo-geo', order: 7, status: 'draft',
+    id: 'marketing-seo-geo', order: 7, status: 'live',
     slug: { de: 'marketing-seo-geo', en: 'marketing-seo-geo', it: 'marketing-seo-geo', fr: 'marketing-seo-geo' },
     name: { de: 'KI-Marketing, SEO & GEO', en: 'AI Marketing, SEO & GEO', it: 'AI marketing, SEO e GEO', fr: 'Marketing IA, SEO et GEO' },
     tagline: { de: 'Sichtbar werden in Google und in KI-Antwortmaschinen.', en: 'Getting found in Google and in AI answer engines.', it: 'Farsi trovare su Google e nei motori di risposta AI.', fr: 'Se faire trouver sur Google et dans les moteurs de réponse IA.' },

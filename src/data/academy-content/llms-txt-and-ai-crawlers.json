@@ -1,0 +1,352 @@
+{
+  "id": "llms-txt-and-ai-crawlers",
+  "cluster": "marketing-seo-geo",
+  "type": "spoke",
+  "slug": {
+    "de": "llms-txt-und-ki-crawler",
+    "en": "llms-txt-and-ai-crawlers",
+    "it": "llms-txt-e-crawler-ai",
+    "fr": "llms-txt-et-crawlers-ia"
+  },
+  "relatedServices": [
+    "geo"
+  ],
+  "title": {
+    "de": "llms.txt & KI-Crawler richtig steuern | Weissmann AI",
+    "en": "llms.txt & AI Crawler Setup: The Guide | Weissmann AI",
+    "it": "llms.txt e crawler IA: guida tecnica | Weissmann AI",
+    "fr": "llms.txt et crawlers IA : le guide | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "llms.txt, robots.txt, Sitemaps und AI-Crawler-Policy (GPTBot, ClaudeBot, PerplexityBot, Google-Extended) Schritt fur Schritt einrichten - mit Beispielen.",
+    "en": "Set up llms.txt, robots.txt, sitemaps and your AI crawler policy (GPTBot, ClaudeBot, PerplexityBot, Google-Extended) step by step - with copy-ready examples.",
+    "it": "Configura llms.txt, robots.txt, sitemap e la policy per i crawler IA (GPTBot, ClaudeBot, PerplexityBot, Google-Extended) passo dopo passo, con esempi.",
+    "fr": "Configurez llms.txt, robots.txt, sitemaps et votre politique de crawlers IA (GPTBot, ClaudeBot, PerplexityBot, Google-Extended) pas a pas, avec exemples."
+  },
+  "kicker": {
+    "de": "KI-Sichtbarkeit & GEO",
+    "en": "AI Visibility & GEO",
+    "it": "Visibilita IA & GEO",
+    "fr": "Visibilite IA & GEO"
+  },
+  "h1": {
+    "de": "llms.txt und KI-Crawler: das technische Setup fur KI-Sichtbarkeit",
+    "en": "llms.txt and AI crawlers: the technical setup for AI visibility",
+    "it": "llms.txt e crawler IA: il setup tecnico per la visibilita nell'IA",
+    "fr": "llms.txt et crawlers IA : le setup technique pour la visibilite IA"
+  },
+  "answerFirst": {
+    "de": "llms.txt ist eine Markdown-Datei im Stammverzeichnis (/llms.txt), die KI-Assistenten kuratierte, klar strukturierte Inhalte anbietet. Parallel steuert die robots.txt, welche KI-Crawler wie GPTBot, ClaudeBot, PerplexityBot oder Google-Extended Ihre Seiten lesen durfen. Zusammen mit XML-Sitemaps bilden diese Dateien das technische Fundament, damit KI-Systeme Ihre Website korrekt finden, verstehen und zitieren.",
+    "en": "llms.txt is a Markdown file at your site root (/llms.txt) that offers AI assistants curated, clearly structured content. In parallel, robots.txt controls which AI crawlers - GPTBot, ClaudeBot, PerplexityBot or Google-Extended - may read your pages. Together with XML sitemaps, these files form the technical foundation that lets AI systems find, understand and cite your website correctly.",
+    "it": "llms.txt e un file Markdown nella radice del sito (/llms.txt) che offre agli assistenti IA contenuti curati e ben strutturati. In parallelo, robots.txt controlla quali crawler IA - GPTBot, ClaudeBot, PerplexityBot o Google-Extended - possono leggere le pagine. Insieme alle sitemap XML, questi file sono la base tecnica che permette all'IA di trovare, capire e citare correttamente il tuo sito.",
+    "fr": "llms.txt est un fichier Markdown a la racine du site (/llms.txt) qui propose aux assistants IA un contenu structure et selectionne. En parallele, robots.txt controle quels crawlers IA - GPTBot, ClaudeBot, PerplexityBot ou Google-Extended - peuvent lire vos pages. Avec les sitemaps XML, ces fichiers forment la base technique qui permet a l'IA de trouver, comprendre et citer correctement votre site."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was llms.txt, robots.txt und Sitemaps fur die KI-Sichtbarkeit leisten",
+        "en": "What llms.txt, robots.txt and sitemaps do for AI visibility",
+        "it": "Cosa fanno llms.txt, robots.txt e sitemap per la visibilita nell'IA",
+        "fr": "Ce que llms.txt, robots.txt et sitemaps apportent a la visibilite IA"
+      },
+      "paragraphs": [
+        {
+          "de": "Diese drei Dateien bilden getrennte Ebenen mit klarer Aufgabenteilung. Die robots.txt ist die Zugangskontrolle: Sie legt fur jeden Crawler fest, welche Bereiche gelesen werden durfen. Die XML-Sitemap ist die Landkarte: Sie listet Ihre wichtigsten, kanonischen URLs auf, damit nichts ubersehen wird. Die llms.txt ist die Einladung: Sie bietet KI-Assistenten eine kuratierte, gut lesbare Zusammenfassung Ihrer wichtigsten Inhalte in Markdown.",
+          "en": "These three files are separate layers with a clear division of labour. robots.txt is access control: for each crawler it defines which areas may be read. The XML sitemap is the map: it lists your most important, canonical URLs so nothing is missed. llms.txt is the invitation: it offers AI assistants a curated, easy-to-read summary of your key content in Markdown.",
+          "it": "Questi tre file sono livelli distinti con ruoli chiari. robots.txt e il controllo accessi: per ogni crawler definisce quali aree possono essere lette. La sitemap XML e la mappa: elenca le tue URL canoniche piu importanti perche nulla venga trascurato. llms.txt e l'invito: offre agli assistenti IA un riassunto curato e leggibile dei contenuti chiave in Markdown.",
+          "fr": "Ces trois fichiers sont des couches distinctes aux roles clairs. robots.txt est le controle d'acces : pour chaque crawler, il definit les zones lisibles. Le sitemap XML est la carte : il liste vos URL canoniques les plus importantes afin que rien ne soit oublie. llms.txt est l'invitation : il offre aux assistants IA un resume structure et lisible de vos contenus cles en Markdown."
+        },
+        {
+          "de": "Wichtig fur realistische Erwartungen: Keine dieser Dateien erzwingt eine Zitierung. Sie sorgen dafur, dass Ihre Inhalte auffindbar, maschinenlesbar und im Sinne Ihrer Policy zuganglich sind - das ist die Voraussetzung fur GEO (Generative Engine Optimization). robots.txt und Sitemaps sind etablierte, breit unterstutzte Standards. llms.txt ist dagegen ein junger Vorschlag (llmstxt.org, 2024) und wird noch nicht von allen grossen KI-Anbietern automatisch ausgewertet - setzen Sie also nie allein darauf.",
+          "en": "For realistic expectations: none of these files forces a citation. They ensure your content is discoverable, machine-readable and accessible per your policy - the precondition for GEO (Generative Engine Optimization). robots.txt and sitemaps are established, widely supported standards. llms.txt, by contrast, is a young proposal (llmstxt.org, 2024) and is not yet automatically honoured by every major AI provider - so never rely on it alone.",
+          "it": "Per aspettative realistiche: nessuno di questi file forza una citazione. Garantiscono che i contenuti siano trovabili, leggibili dalle macchine e accessibili secondo la tua policy - il presupposto della GEO (Generative Engine Optimization). robots.txt e sitemap sono standard consolidati e diffusi. llms.txt e invece una proposta recente (llmstxt.org, 2024), non ancora interpretata in automatico da tutti i grandi fornitori IA: non affidarti mai solo a esso.",
+          "fr": "Pour des attentes realistes : aucun de ces fichiers ne force une citation. Ils rendent vos contenus trouvables, lisibles par les machines et accessibles selon votre politique - la condition prealable au GEO (Generative Engine Optimization). robots.txt et sitemaps sont des standards etablis et largement supportes. llms.txt est en revanche une proposition recente (llmstxt.org, 2024), pas encore exploitee automatiquement par tous les grands fournisseurs IA : ne comptez jamais dessus seul."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die wichtigsten KI-Crawler und ihre User-Agents",
+        "en": "The key AI crawlers and their user-agents",
+        "it": "I principali crawler IA e i loro user-agent",
+        "fr": "Les principaux crawlers IA et leurs user-agents"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein zentraler Punkt: Training, Suche und Live-Abruf laufen oft uber unterschiedliche User-Agents desselben Anbieters. Wer pauschal alles blockiert, verliert auch die Kanale, die zu Zitaten fuhren. Die wichtigsten Namen (Stand 2026, Bezeichnungen andern sich):",
+          "en": "A crucial point: training, search and live fetching often run under different user-agents from the same provider. Block everything indiscriminately and you also lose the channels that produce citations. The key names (as of 2026; labels change over time):",
+          "it": "Un punto cruciale: addestramento, ricerca e recupero live spesso usano user-agent diversi dello stesso fornitore. Bloccare tutto indiscriminatamente fa perdere anche i canali che generano citazioni. I nomi principali (al 2026; le etichette cambiano):",
+          "fr": "Point crucial : entrainement, recherche et recuperation en direct passent souvent par des user-agents differents d'un meme fournisseur. Tout bloquer sans distinction fait perdre aussi les canaux qui produisent des citations. Les principaux noms (en 2026 ; les libelles evoluent) :"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "GPTBot (OpenAI) - Crawler fur Training/Index von ChatGPT. Blockieren entfernt Inhalte aus dem Trainingskorpus.",
+          "en": "GPTBot (OpenAI) - crawler for ChatGPT training/index. Blocking removes content from the training corpus.",
+          "it": "GPTBot (OpenAI) - crawler per addestramento/indice di ChatGPT. Bloccarlo toglie i contenuti dal corpus di training.",
+          "fr": "GPTBot (OpenAI) - crawler pour l'entrainement/index de ChatGPT. Le bloquer retire vos contenus du corpus d'entrainement."
+        },
+        {
+          "de": "OAI-SearchBot & ChatGPT-User (OpenAI) - liefern ChatGPT-Suchergebnisse bzw. rufen eine Seite ab, wenn ein Nutzer ChatGPT einen Link offnen lasst. Blockieren = keine Zitate in der ChatGPT-Suche.",
+          "en": "OAI-SearchBot & ChatGPT-User (OpenAI) - power ChatGPT search results, or fetch a page when a user asks ChatGPT to open a link. Block = no citations in ChatGPT search.",
+          "it": "OAI-SearchBot e ChatGPT-User (OpenAI) - alimentano i risultati di ricerca di ChatGPT o recuperano una pagina quando l'utente chiede a ChatGPT di aprire un link. Bloccarli = niente citazioni nella ricerca di ChatGPT.",
+          "fr": "OAI-SearchBot et ChatGPT-User (OpenAI) - alimentent les resultats de recherche ChatGPT ou recuperent une page quand l'utilisateur demande a ChatGPT d'ouvrir un lien. Bloquer = pas de citations dans la recherche ChatGPT."
+        },
+        {
+          "de": "ClaudeBot & Claude-User (Anthropic) - Crawler fur Claude bzw. nutzerinitiierter Abruf. Fur Sichtbarkeit in Claude-Antworten relevant.",
+          "en": "ClaudeBot & Claude-User (Anthropic) - crawler for Claude and user-initiated fetch. Relevant for visibility in Claude answers.",
+          "it": "ClaudeBot e Claude-User (Anthropic) - crawler per Claude e recupero avviato dall'utente. Rilevanti per la visibilita nelle risposte di Claude.",
+          "fr": "ClaudeBot et Claude-User (Anthropic) - crawler pour Claude et recuperation initiee par l'utilisateur. Pertinents pour la visibilite dans les reponses de Claude."
+        },
+        {
+          "de": "PerplexityBot & Perplexity-User (Perplexity) - Indexierung bzw. Live-Abruf fur Perplexity-Antworten mit Quellenangabe.",
+          "en": "PerplexityBot & Perplexity-User (Perplexity) - indexing and live fetch for Perplexity's sourced answers.",
+          "it": "PerplexityBot e Perplexity-User (Perplexity) - indicizzazione e recupero live per le risposte con fonti di Perplexity.",
+          "fr": "PerplexityBot et Perplexity-User (Perplexity) - indexation et recuperation en direct pour les reponses sourcees de Perplexity."
+        },
+        {
+          "de": "Google-Extended (Google) - kein eigener Crawler, sondern ein robots-Token: Er steuert nur, ob Inhalte Gemini/Vertex AI trainieren. Er beeinflusst weder Googlebot noch die Google AI Overviews.",
+          "en": "Google-Extended (Google) - not a separate crawler but a robots token: it only controls whether content trains Gemini/Vertex AI. It affects neither Googlebot nor Google AI Overviews.",
+          "it": "Google-Extended (Google) - non e un crawler ma un token robots: controlla solo se i contenuti addestrano Gemini/Vertex AI. Non influisce ne su Googlebot ne sulle AI Overviews di Google.",
+          "fr": "Google-Extended (Google) - pas un crawler mais un token robots : il controle uniquement si les contenus entrainent Gemini/Vertex AI. Il n'affecte ni Googlebot ni les AI Overviews de Google."
+        },
+        {
+          "de": "Googlebot (Google) - der klassische Crawler hinter der Google-Suche und den AI Overviews. Wer hier blockiert, verschwindet aus der organischen Suche.",
+          "en": "Googlebot (Google) - the classic crawler behind Google Search and AI Overviews. Block it and you disappear from organic search.",
+          "it": "Googlebot (Google) - il crawler classico dietro Google Search e le AI Overviews. Bloccarlo significa sparire dalla ricerca organica.",
+          "fr": "Googlebot (Google) - le crawler classique derriere Google Search et les AI Overviews. Le bloquer, c'est disparaitre de la recherche organique."
+        },
+        {
+          "de": "Weitere Trainings-Agents: CCBot (Common Crawl, Basis vieler Modelle), Applebot-Extended (Apple Intelligence), Bytespider (ByteDance), meta-externalagent (Meta).",
+          "en": "Other training agents: CCBot (Common Crawl, the basis of many models), Applebot-Extended (Apple Intelligence), Bytespider (ByteDance), meta-externalagent (Meta).",
+          "it": "Altri agent di training: CCBot (Common Crawl, base di molti modelli), Applebot-Extended (Apple Intelligence), Bytespider (ByteDance), meta-externalagent (Meta).",
+          "fr": "Autres agents d'entrainement : CCBot (Common Crawl, base de nombreux modeles), Applebot-Extended (Apple Intelligence), Bytespider (ByteDance), meta-externalagent (Meta)."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "robots.txt richtig konfigurieren - mit Beispiel",
+        "en": "Configuring robots.txt correctly - with example",
+        "it": "Configurare robots.txt correttamente - con esempio",
+        "fr": "Configurer robots.txt correctement - avec exemple"
+      },
+      "paragraphs": [
+        {
+          "de": "Entscheiden Sie zuerst Ihre Strategie: Suche- und Abruf-Bots (OAI-SearchBot, PerplexityBot, ClaudeBot) sollten Sie in der Regel erlauben, denn genau sie erzeugen zitierte Antworten. Bei reinen Trainings-Bots (GPTBot, CCBot, Google-Extended) entscheiden Sie je nach Marken- und IP-Strategie. Ein pragmatisches Beispiel fur eine sichtbarkeitsorientierte Policy:",
+          "en": "Decide your strategy first: you generally want to allow search and fetch bots (OAI-SearchBot, PerplexityBot, ClaudeBot), because they are exactly what produces cited answers. For pure training bots (GPTBot, CCBot, Google-Extended), decide based on your brand and IP strategy. A pragmatic example of a visibility-oriented policy:",
+          "it": "Decidi prima la strategia: in genere conviene consentire i bot di ricerca e recupero (OAI-SearchBot, PerplexityBot, ClaudeBot), perche sono proprio quelli che generano risposte citate. Per i bot solo di training (GPTBot, CCBot, Google-Extended) decidi in base alla strategia di marca e proprieta intellettuale. Un esempio pragmatico di policy orientata alla visibilita:",
+          "fr": "Definissez d'abord votre strategie : il vaut generalement mieux autoriser les bots de recherche et de recuperation (OAI-SearchBot, PerplexityBot, ClaudeBot), car ce sont eux qui produisent des reponses citees. Pour les bots purement d'entrainement (GPTBot, CCBot, Google-Extended), decidez selon votre strategie de marque et de propriete intellectuelle. Exemple pragmatique d'une politique orientee visibilite :"
+        },
+        {
+          "de": "# robots.txt - https://www.weissmann.ai/robots.txt\\nUser-agent: OAI-SearchBot\\nAllow: /\\n\\nUser-agent: ClaudeBot\\nAllow: /\\n\\nUser-agent: PerplexityBot\\nAllow: /\\n\\nUser-agent: GPTBot\\nAllow: /\\n\\nUser-agent: *\\nAllow: /\\nDisallow: /intern/\\n\\nSitemap: https://www.weissmann.ai/sitemap.xml",
+          "en": "# robots.txt - https://www.weissmann.ai/robots.txt\\nUser-agent: OAI-SearchBot\\nAllow: /\\n\\nUser-agent: ClaudeBot\\nAllow: /\\n\\nUser-agent: PerplexityBot\\nAllow: /\\n\\nUser-agent: GPTBot\\nAllow: /\\n\\nUser-agent: *\\nAllow: /\\nDisallow: /internal/\\n\\nSitemap: https://www.weissmann.ai/sitemap.xml",
+          "it": "# robots.txt - https://www.weissmann.ai/robots.txt\\nUser-agent: OAI-SearchBot\\nAllow: /\\n\\nUser-agent: ClaudeBot\\nAllow: /\\n\\nUser-agent: PerplexityBot\\nAllow: /\\n\\nUser-agent: GPTBot\\nAllow: /\\n\\nUser-agent: *\\nAllow: /\\nDisallow: /interno/\\n\\nSitemap: https://www.weissmann.ai/sitemap.xml",
+          "fr": "# robots.txt - https://www.weissmann.ai/robots.txt\\nUser-agent: OAI-SearchBot\\nAllow: /\\n\\nUser-agent: ClaudeBot\\nAllow: /\\n\\nUser-agent: PerplexityBot\\nAllow: /\\n\\nUser-agent: GPTBot\\nAllow: /\\n\\nUser-agent: *\\nAllow: /\\nDisallow: /interne/\\n\\nSitemap: https://www.weissmann.ai/sitemap.xml"
+        },
+        {
+          "de": "Wollen Sie das KI-Training einschranken, ohne die Google-Suche zu verlieren, blockieren Sie gezielt: ein eigener Block \"User-agent: GPTBot / Disallow: /\" sowie \"User-agent: Google-Extended / Disallow: /\" halt Sie aus dem Training heraus, wahrend Googlebot und OAI-SearchBot weiter Ihre Inhalte lesen. Zwei Grenzen sollten Sie kennen: robots.txt ist nur eine Anweisung - seriose Bots halten sich daran, boswillige nicht (dafur brauchen Sie serverseitige Sperren oder eine WAF). Und die Datei ist offentlich einsehbar, listen Sie darin also nie geheime Pfade auf.",
+          "en": "To limit AI training without losing Google Search, block selectively: a dedicated \"User-agent: GPTBot / Disallow: /\" block plus \"User-agent: Google-Extended / Disallow: /\" keeps you out of training while Googlebot and OAI-SearchBot keep reading your content. Know two limits: robots.txt is only a directive - reputable bots obey, malicious ones do not (for that you need server-side blocks or a WAF). And the file is publicly viewable, so never list secret paths in it.",
+          "it": "Per limitare l'addestramento IA senza perdere Google Search, blocca in modo selettivo: un blocco dedicato \"User-agent: GPTBot / Disallow: /\" piu \"User-agent: Google-Extended / Disallow: /\" ti tiene fuori dal training mentre Googlebot e OAI-SearchBot continuano a leggere i contenuti. Due limiti da conoscere: robots.txt e solo una direttiva - i bot seri la rispettano, quelli malevoli no (servono blocchi lato server o un WAF). E il file e pubblico, quindi non elencarvi mai percorsi segreti.",
+          "fr": "Pour limiter l'entrainement IA sans perdre Google Search, bloquez de facon selective : un bloc dedie \"User-agent: GPTBot / Disallow: /\" plus \"User-agent: Google-Extended / Disallow: /\" vous sort de l'entrainement tandis que Googlebot et OAI-SearchBot continuent de lire vos contenus. Deux limites a connaitre : robots.txt n'est qu'une directive - les bots serieux la respectent, les malveillants non (il faut alors des blocages cote serveur ou un WAF). Et le fichier est public : n'y listez jamais de chemins secrets."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "llms.txt erstellen: Aufbau und Beispiel",
+        "en": "Creating llms.txt: structure and example",
+        "it": "Creare llms.txt: struttura ed esempio",
+        "fr": "Creer llms.txt : structure et exemple"
+      },
+      "paragraphs": [
+        {
+          "de": "Die llms.txt liegt unter /llms.txt und ist reines Markdown. Der vorgeschlagene Aufbau: eine H1 mit dem Namen, ein kurzes Zitat-Blockquote als Zusammenfassung, dann thematische Abschnitte mit Markdown-Links zu Ihren wichtigsten kanonischen Seiten - jeweils mit einer kurzen Beschreibung. Optional erganzen Sie eine /llms-full.txt mit den vollstandigen Texten. Halten Sie die Liste kurz, aktuell und kuratiert.",
+          "en": "llms.txt lives at /llms.txt and is plain Markdown. The proposed structure: an H1 with your name, a short block-quote summary, then thematic sections with Markdown links to your most important canonical pages, each with a brief description. Optionally add a /llms-full.txt containing the full text. Keep the list short, current and curated.",
+          "it": "llms.txt si trova in /llms.txt ed e puro Markdown. La struttura proposta: un H1 con il nome, un breve blockquote di riepilogo, poi sezioni tematiche con link Markdown alle pagine canoniche piu importanti, ciascuna con una breve descrizione. Facoltativo: aggiungere /llms-full.txt con i testi integrali. Mantieni l'elenco breve, aggiornato e curato.",
+          "fr": "llms.txt se trouve a /llms.txt et est du Markdown pur. Structure proposee : un H1 avec votre nom, un court resume en blockquote, puis des sections thematiques avec des liens Markdown vers vos pages canoniques les plus importantes, chacune accompagnee d'une breve description. En option, ajoutez /llms-full.txt contenant les textes complets. Gardez la liste courte, a jour et selectionnee."
+        },
+        {
+          "de": "# Weissmann AI Academy\\n\\n> Schweizer Wissensplattform zu KI, SEO und GEO fur KMU.\\n\\n## Kern-Guides\\n- [Was ist GEO](https://www.weissmann.ai/wissen/geo): Grundlagen der Generative Engine Optimization\\n- [llms.txt & KI-Crawler](https://www.weissmann.ai/wissen/llms-txt): Dieses technische Setup\\n\\n## Uber uns\\n- [Uber Weissmann](https://www.weissmann.ai/ueber-uns): Team, Ansatz, Kontakt",
+          "en": "# Weissmann AI Academy\\n\\n> Swiss knowledge platform on AI, SEO and GEO for SMEs.\\n\\n## Core guides\\n- [What is GEO](https://www.weissmann.ai/en/wissen/geo): fundamentals of Generative Engine Optimization\\n- [llms.txt & AI crawlers](https://www.weissmann.ai/en/wissen/llms-txt): this technical setup\\n\\n## About\\n- [About Weissmann](https://www.weissmann.ai/en/about): team, approach, contact",
+          "it": "# Weissmann AI Academy\\n\\n> Piattaforma svizzera di conoscenza su IA, SEO e GEO per le PMI.\\n\\n## Guide principali\\n- [Cos'e la GEO](https://www.weissmann.ai/it/wissen/geo): fondamenti della Generative Engine Optimization\\n- [llms.txt e crawler IA](https://www.weissmann.ai/it/wissen/llms-txt): questo setup tecnico\\n\\n## Chi siamo\\n- [Chi e Weissmann](https://www.weissmann.ai/it/chi-siamo): team, approccio, contatti",
+          "fr": "# Weissmann AI Academy\\n\\n> Plateforme de connaissances suisse sur l'IA, le SEO et le GEO pour PME.\\n\\n## Guides principaux\\n- [Qu'est-ce que le GEO](https://www.weissmann.ai/fr/wissen/geo) : fondamentaux de la Generative Engine Optimization\\n- [llms.txt et crawlers IA](https://www.weissmann.ai/fr/wissen/llms-txt) : ce setup technique\\n\\n## A propos\\n- [A propos de Weissmann](https://www.weissmann.ai/fr/a-propos) : equipe, approche, contact"
+        },
+        {
+          "de": "Zwei Prinzipien entscheiden uber den Nutzen: Genauigkeit und Pflege. Verlinken Sie nur echte, erreichbare URLs, beschreiben Sie Inhalte ehrlich und aktualisieren Sie die Datei bei jeder wichtigen Anderung. Eine veraltete llms.txt mit toten Links schadet dem Vertrauen mehr, als gar keine zu haben.",
+          "en": "Two principles decide its value: accuracy and maintenance. Link only real, reachable URLs, describe content honestly, and update the file whenever something important changes. A stale llms.txt with dead links hurts trust more than having none.",
+          "it": "Due principi ne determinano il valore: accuratezza e manutenzione. Collega solo URL reali e raggiungibili, descrivi i contenuti in modo onesto e aggiorna il file a ogni modifica importante. Un llms.txt obsoleto con link morti danneggia la fiducia piu che non averlo affatto.",
+          "fr": "Deux principes decident de sa valeur : exactitude et maintenance. Ne liez que des URL reelles et accessibles, decrivez le contenu honnetement et mettez le fichier a jour a chaque changement important. Un llms.txt perime avec des liens morts nuit plus a la confiance que son absence."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Sitemaps und hreflang fur mehrsprachige Sichtbarkeit",
+        "en": "Sitemaps and hreflang for multilingual visibility",
+        "it": "Sitemap e hreflang per la visibilita multilingue",
+        "fr": "Sitemaps et hreflang pour la visibilite multilingue"
+      },
+      "paragraphs": [
+        {
+          "de": "Die XML-Sitemap listet Ihre kanonischen URLs mit lastmod-Datum. Referenzieren Sie sie in der robots.txt (Zeile \"Sitemap:\") und reichen Sie sie in der Google Search Console und den Bing Webmaster Tools ein - Bing speist unter anderem Copilot. Fur die Schweiz ist die Mehrsprachigkeit zentral: Mit hreflang-Annotationen (de-CH, fr-CH, it-CH, en) signalisieren Sie, welche Sprachversion zu welcher Zielgruppe gehort.",
+          "en": "The XML sitemap lists your canonical URLs with a lastmod date. Reference it in robots.txt (the \"Sitemap:\" line) and submit it in Google Search Console and Bing Webmaster Tools - Bing feeds Copilot, among others. For Switzerland, multilingual handling is central: hreflang annotations (de-CH, fr-CH, it-CH, en) signal which language version belongs to which audience.",
+          "it": "La sitemap XML elenca le URL canoniche con la data lastmod. Referenziala in robots.txt (riga \"Sitemap:\") e inviala in Google Search Console e Bing Webmaster Tools - Bing alimenta tra l'altro Copilot. Per la Svizzera il multilinguismo e centrale: con le annotazioni hreflang (de-CH, fr-CH, it-CH, en) segnali quale versione linguistica corrisponde a quale pubblico.",
+          "fr": "Le sitemap XML liste vos URL canoniques avec une date lastmod. Referencez-le dans robots.txt (ligne \"Sitemap:\") et soumettez-le dans Google Search Console et Bing Webmaster Tools - Bing alimente notamment Copilot. Pour la Suisse, le multilinguisme est central : les annotations hreflang (de-CH, fr-CH, it-CH, en) indiquent quelle version linguistique correspond a quel public."
+        },
+        {
+          "de": "Fur die KI-Sichtbarkeit zahlt das doppelt: Saubere hreflang-Verknupfungen helfen Assistenten, die sprachlich passende Version zu zitieren - statt eine deutsche Antwort mit der italienischen URL zu belegen. Pflegen Sie realistische lastmod-Werte und halten Sie die Sitemap frei von Weiterleitungen, Fehlerseiten und nicht-kanonischen Duplikaten.",
+          "en": "For AI visibility this counts double: clean hreflang links help assistants cite the language-appropriate version - instead of backing a German answer with the Italian URL. Maintain realistic lastmod values and keep the sitemap free of redirects, error pages and non-canonical duplicates.",
+          "it": "Per la visibilita nell'IA questo conta doppio: collegamenti hreflang puliti aiutano gli assistenti a citare la versione nella lingua giusta, invece di sostenere una risposta in tedesco con la URL italiana. Mantieni valori lastmod realistici e tieni la sitemap libera da redirect, pagine di errore e duplicati non canonici.",
+          "fr": "Pour la visibilite IA, cela compte double : des liens hreflang propres aident les assistants a citer la version dans la bonne langue - au lieu d'appuyer une reponse en allemand sur l'URL italienne. Maintenez des valeurs lastmod realistes et gardez le sitemap exempt de redirections, pages d'erreur et doublons non canoniques."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Haufige Fehler und der Schweizer Blick",
+        "en": "Common mistakes and the Swiss perspective",
+        "it": "Errori comuni e la prospettiva svizzera",
+        "fr": "Erreurs frequentes et le regard suisse"
+      },
+      "bullets": [
+        {
+          "de": "GPTBot blockieren und trotzdem ChatGPT-Zitate erwarten: Zitate liefern OAI-SearchBot und ChatGPT-User, nicht GPTBot.",
+          "en": "Blocking GPTBot yet expecting ChatGPT citations: citations come from OAI-SearchBot and ChatGPT-User, not GPTBot.",
+          "it": "Bloccare GPTBot aspettandosi comunque citazioni in ChatGPT: le citazioni vengono da OAI-SearchBot e ChatGPT-User, non da GPTBot.",
+          "fr": "Bloquer GPTBot en attendant quand meme des citations ChatGPT : elles viennent d'OAI-SearchBot et ChatGPT-User, pas de GPTBot."
+        },
+        {
+          "de": "Glauben, Google-Extended entferne Sie aus den AI Overviews: Diese nutzen den Googlebot-Index; Google-Extended betrifft nur das Gemini-Training.",
+          "en": "Believing Google-Extended removes you from AI Overviews: those use the Googlebot index; Google-Extended only affects Gemini training.",
+          "it": "Credere che Google-Extended ti tolga dalle AI Overviews: queste usano l'indice di Googlebot; Google-Extended riguarda solo il training di Gemini.",
+          "fr": "Croire que Google-Extended vous retire des AI Overviews : celles-ci utilisent l'index Googlebot ; Google-Extended ne concerne que l'entrainement de Gemini."
+        },
+        {
+          "de": "robots.txt als Sicherheitsmassnahme missverstehen: Sie ist eine Anweisung, keine Zugriffssperre - und offentlich lesbar.",
+          "en": "Mistaking robots.txt for a security control: it is a directive, not access control - and publicly readable.",
+          "it": "Scambiare robots.txt per una misura di sicurezza: e una direttiva, non un controllo d'accesso - ed e pubblicamente leggibile.",
+          "fr": "Prendre robots.txt pour une mesure de securite : c'est une directive, pas un controle d'acces - et il est lisible publiquement."
+        },
+        {
+          "de": "Widerspruchliche Regeln oder falsche Wildcard-Reihenfolge, die versehentlich alles sperren; und eine llms.txt, die veroffentlicht, aber nie gepflegt wird.",
+          "en": "Contradictory rules or wrong wildcard order that accidentally blocks everything; and an llms.txt that is published but never maintained.",
+          "it": "Regole contraddittorie o ordine errato delle wildcard che bloccano tutto per errore; e un llms.txt pubblicato ma mai aggiornato.",
+          "fr": "Regles contradictoires ou mauvais ordre des wildcards qui bloquent tout par accident ; et un llms.txt publie mais jamais entretenu."
+        }
+      ],
+      "paragraphs": [
+        {
+          "de": "Schweizer Blick: Ihre Crawler-Policy ist Teil der Data Governance. Wenn Sie personenbezogene oder sensible Inhalte publizieren, gelten das revidierte Datenschutzgesetz (revDSG/nFADP) und die Aufsicht des EDOEB - unabhangig davon, welcher Bot liest. Zusatzlich lohnt eine bewusste Entscheidung uber Urheberrecht und die Nutzung Ihrer Inhalte fur KI-Training. Fur den mehrsprachigen CH-Markt sind saubere hreflang-Signale Pflicht. Wo Sie diese Konfiguration nicht selbst umsetzen oder pruefen moechten, begleitet Sie das Weissmann-Team von der Policy bis zur Umsetzung.",
+          "en": "Swiss perspective: your crawler policy is part of data governance. If you publish personal or sensitive content, the revised Data Protection Act (revDSG/nFADP) and oversight by the FDPIC (EDOEB) apply - regardless of which bot reads. It is also worth a deliberate decision on copyright and the use of your content for AI training. For the multilingual Swiss market, clean hreflang signals are mandatory. Where you would rather not implement or audit this configuration yourself, the Weissmann team supports you from policy to implementation.",
+          "it": "Prospettiva svizzera: la tua policy sui crawler fa parte della data governance. Se pubblichi contenuti personali o sensibili, si applicano la legge riveduta sulla protezione dei dati (revDSG/nFADP) e la vigilanza dell'IFPDT (EDOEB), a prescindere da quale bot legga. Vale anche una decisione consapevole su diritto d'autore e uso dei contenuti per l'addestramento IA. Per il mercato svizzero multilingue, segnali hreflang puliti sono obbligatori. Dove preferisci non implementare o verificare da solo questa configurazione, il team Weissmann ti accompagna dalla policy alla realizzazione.",
+          "fr": "Regard suisse : votre politique de crawlers releve de la gouvernance des donnees. Si vous publiez des contenus personnels ou sensibles, la loi revisee sur la protection des donnees (revDSG/nFADP) et la surveillance du PFPDT (EDOEB) s'appliquent, quel que soit le bot qui lit. Une decision reflechie sur le droit d'auteur et l'usage de vos contenus pour l'entrainement IA s'impose aussi. Pour le marche suisse multilingue, des signaux hreflang propres sont obligatoires. La ou vous preferez ne pas implementer ou auditer cette configuration vous-meme, l'equipe Weissmann vous accompagne de la politique a la mise en oeuvre."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist llms.txt und brauche ich es?",
+        "en": "What is llms.txt and do I need it?",
+        "it": "Cos'e llms.txt e mi serve?",
+        "fr": "Qu'est-ce que llms.txt et en ai-je besoin ?"
+      },
+      "a": {
+        "de": "llms.txt ist eine Markdown-Datei unter /llms.txt, die KI-Assistenten kuratierte Links und Zusammenfassungen Ihrer wichtigsten Inhalte anbietet. Sie ist ein junger Vorschlag (2024), noch nicht von allen Anbietern automatisch ausgewertet. Pflicht ist sie nicht, aber ein sinnvoller, guenstiger Baustein - solange robots.txt und Sitemaps korrekt eingerichtet sind.",
+        "en": "llms.txt is a Markdown file at /llms.txt offering AI assistants curated links and summaries of your key content. It is a young proposal (2024) not yet automatically honoured by every provider. It is not mandatory, but a sensible, low-cost building block - as long as robots.txt and sitemaps are set up correctly first.",
+        "it": "llms.txt e un file Markdown in /llms.txt che offre agli assistenti IA link curati e riassunti dei contenuti chiave. E una proposta recente (2024), non ancora interpretata in automatico da tutti. Non e obbligatoria, ma un tassello utile ed economico, purche robots.txt e sitemap siano gia configurati bene.",
+        "fr": "llms.txt est un fichier Markdown a /llms.txt qui propose aux assistants IA des liens et resumes selectionnes de vos contenus cles. C'est une proposition recente (2024), pas encore exploitee automatiquement par tous. Non obligatoire, mais un element utile et peu couteux - a condition d'avoir d'abord bien configure robots.txt et sitemaps."
+      }
+    },
+    {
+      "q": {
+        "de": "Blockiert robots.txt KI-Crawler wirklich zuverlassig?",
+        "en": "Does robots.txt reliably block AI crawlers?",
+        "it": "robots.txt blocca davvero i crawler IA in modo affidabile?",
+        "fr": "robots.txt bloque-t-il vraiment les crawlers IA de maniere fiable ?"
+      },
+      "a": {
+        "de": "Nur bei seriosen Bots. GPTBot, ClaudeBot, PerplexityBot und Googlebot befolgen die Anweisungen. robots.txt ist jedoch keine technische Sperre: Bots, die sich nicht daran halten, koennen die Datei ignorieren. Fuer echte Durchsetzung brauchen Sie serverseitige Massnahmen wie IP-Sperren, Rate Limiting oder eine Web Application Firewall.",
+        "en": "Only for reputable bots. GPTBot, ClaudeBot, PerplexityBot and Googlebot obey the directives. But robots.txt is not a technical barrier: bots that choose not to comply can ignore the file. For real enforcement you need server-side measures such as IP blocks, rate limiting or a web application firewall.",
+        "it": "Solo con i bot seri. GPTBot, ClaudeBot, PerplexityBot e Googlebot rispettano le direttive. Ma robots.txt non e una barriera tecnica: i bot che scelgono di non conformarsi possono ignorare il file. Per un blocco reale servono misure lato server come blocchi IP, rate limiting o un web application firewall.",
+        "fr": "Seulement pour les bots serieux. GPTBot, ClaudeBot, PerplexityBot et Googlebot respectent les directives. Mais robots.txt n'est pas une barriere technique : les bots qui choisissent de ne pas s'y conformer peuvent l'ignorer. Pour un blocage reel, il faut des mesures cote serveur : blocages IP, limitation de debit ou un pare-feu applicatif."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie verhindere ich KI-Training, ohne die Google-Sichtbarkeit zu verlieren?",
+        "en": "How do I prevent AI training without losing Google visibility?",
+        "it": "Come evito l'addestramento IA senza perdere visibilita su Google?",
+        "fr": "Comment empecher l'entrainement IA sans perdre ma visibilite Google ?"
+      },
+      "a": {
+        "de": "Blockieren Sie gezielt die Trainings-Agents - insbesondere GPTBot und den Token Google-Extended - jeweils mit \"Disallow: /\". Lassen Sie gleichzeitig Googlebot (organische Suche) sowie OAI-SearchBot und PerplexityBot (Zitate) zu. So bleiben Sie in Suche und KI-Antworten sichtbar, ohne Ihre Inhalte in Trainingskorpora zu speisen.",
+        "en": "Selectively block the training agents - notably GPTBot and the Google-Extended token - each with \"Disallow: /\". At the same time, allow Googlebot (organic search) plus OAI-SearchBot and PerplexityBot (citations). You stay visible in search and AI answers without feeding your content into training corpora.",
+        "it": "Blocca in modo selettivo gli agent di training - in particolare GPTBot e il token Google-Extended - con \"Disallow: /\". Allo stesso tempo consenti Googlebot (ricerca organica) piu OAI-SearchBot e PerplexityBot (citazioni). Cosi resti visibile in ricerca e risposte IA senza alimentare i corpus di training.",
+        "fr": "Bloquez selectivement les agents d'entrainement - notamment GPTBot et le token Google-Extended - chacun avec \"Disallow: /\". En parallele, autorisez Googlebot (recherche organique) ainsi qu'OAI-SearchBot et PerplexityBot (citations). Vous restez visible en recherche et dans les reponses IA sans alimenter les corpus d'entrainement."
+      }
+    },
+    {
+      "q": {
+        "de": "Erscheine ich in Google AI Overviews, wenn ich Google-Extended blockiere?",
+        "en": "Will I still appear in Google AI Overviews if I block Google-Extended?",
+        "it": "Comparo ancora nelle Google AI Overviews se blocco Google-Extended?",
+        "fr": "Vais-je encore apparaitre dans les AI Overviews de Google si je bloque Google-Extended ?"
+      },
+      "a": {
+        "de": "Ja. AI Overviews stutzen sich auf den regularen Googlebot-Index, nicht auf Google-Extended. Der Token Google-Extended steuert nur, ob Ihre Inhalte Gemini/Vertex AI trainieren. Solange Googlebot Ihre Seiten crawlen darf, koennen Sie in AI Overviews auftauchen - ein Opt-out speziell fuer AI Overviews gibt es derzeit nicht.",
+        "en": "Yes. AI Overviews draw on the regular Googlebot index, not on Google-Extended. The Google-Extended token only controls whether your content trains Gemini/Vertex AI. As long as Googlebot may crawl your pages, you can appear in AI Overviews - there is currently no opt-out specifically for AI Overviews.",
+        "it": "Si. Le AI Overviews si basano sull'indice normale di Googlebot, non su Google-Extended. Il token Google-Extended controlla solo se i contenuti addestrano Gemini/Vertex AI. Finche Googlebot puo scansionare le pagine, puoi comparire nelle AI Overviews - al momento non esiste un opt-out specifico per le AI Overviews.",
+        "fr": "Oui. Les AI Overviews s'appuient sur l'index Googlebot classique, pas sur Google-Extended. Le token Google-Extended controle uniquement si vos contenus entrainent Gemini/Vertex AI. Tant que Googlebot peut explorer vos pages, vous pouvez apparaitre dans les AI Overviews - il n'existe actuellement pas d'opt-out specifique aux AI Overviews."
+      }
+    },
+    {
+      "q": {
+        "de": "Wo genau muessen diese Dateien liegen?",
+        "en": "Where exactly do these files need to be?",
+        "it": "Dove devono trovarsi esattamente questi file?",
+        "fr": "Ou ces fichiers doivent-ils exactement se trouver ?"
+      },
+      "a": {
+        "de": "Alle im Stammverzeichnis der Domain: https://www.ihre-domain.ch/robots.txt, /llms.txt und /sitemap.xml. Die robots.txt sollte per \"Sitemap:\"-Zeile auf die Sitemap verweisen. Nutzen Sie eine Domain pro Sprache oder Unterverzeichnisse, gehoert die robots.txt jeweils in das Root des Hosts, unter dem sie ausgeliefert wird.",
+        "en": "All at the domain root: https://www.your-domain.ch/robots.txt, /llms.txt and /sitemap.xml. robots.txt should point to the sitemap via a \"Sitemap:\" line. If you use one domain per language or subdirectories, robots.txt belongs at the root of each host under which it is served.",
+        "it": "Tutti nella radice del dominio: https://www.tuo-dominio.ch/robots.txt, /llms.txt e /sitemap.xml. robots.txt dovrebbe puntare alla sitemap con una riga \"Sitemap:\". Se usi un dominio per lingua o sottocartelle, robots.txt va nella radice di ogni host da cui viene servito.",
+        "fr": "Tous a la racine du domaine : https://www.votre-domaine.ch/robots.txt, /llms.txt et /sitemap.xml. robots.txt doit pointer vers le sitemap via une ligne \"Sitemap:\". Si vous utilisez un domaine par langue ou des sous-repertoires, robots.txt se place a la racine de chaque hote qui le sert."
+      }
+    },
+    {
+      "q": {
+        "de": "Sollte ich KI-Crawler eher erlauben oder blockieren?",
+        "en": "Should I allow or block AI crawlers?",
+        "it": "Meglio consentire o bloccare i crawler IA?",
+        "fr": "Faut-il autoriser ou bloquer les crawlers IA ?"
+      },
+      "a": {
+        "de": "Das haengt von Ihrem Ziel ab. Wollen Sie in KI-Antworten zitiert werden, erlauben Sie Such- und Abruf-Bots (OAI-SearchBot, PerplexityBot, ClaudeBot). Geht es Ihnen um Kontrolle ueber Ihr geistiges Eigentum, blockieren Sie reine Trainings-Bots. Fuer die meisten Schweizer KMU ist eine Mischform sinnvoll: Sichtbarkeit zulassen, Training bewusst begrenzen.",
+        "en": "It depends on your goal. If you want to be cited in AI answers, allow search and fetch bots (OAI-SearchBot, PerplexityBot, ClaudeBot). If your priority is control over your intellectual property, block pure training bots. For most Swiss SMEs a mixed approach makes sense: permit visibility, deliberately limit training.",
+        "it": "Dipende dal tuo obiettivo. Se vuoi essere citato nelle risposte IA, consenti i bot di ricerca e recupero (OAI-SearchBot, PerplexityBot, ClaudeBot). Se la priorita e il controllo sulla proprieta intellettuale, blocca i bot solo di training. Per la maggior parte delle PMI svizzere conviene un approccio misto: consentire la visibilita, limitare consapevolmente il training.",
+        "fr": "Cela depend de votre objectif. Pour etre cite dans les reponses IA, autorisez les bots de recherche et de recuperation (OAI-SearchBot, PerplexityBot, ClaudeBot). Si votre priorite est le controle de votre propriete intellectuelle, bloquez les bots purement d'entrainement. Pour la plupart des PME suisses, une approche mixte est pertinente : permettre la visibilite, limiter sciemment l'entrainement."
+      }
+    }
+  ],
+  "keyEntities": [
+    "llms.txt",
+    "robots.txt",
+    "GPTBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Google-Extended",
+    "Googlebot",
+    "XML-Sitemap",
+    "hreflang",
+    "Generative Engine Optimization (GEO)",
+    "Google AI Overviews",
+    "Common Crawl (CCBot)",
+    "User-Agent",
+    "revDSG/nFADP"
+  ]
+}

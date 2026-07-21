@@ -1,0 +1,367 @@
+{
+  "id": "structured-data-for-ai-search",
+  "cluster": "marketing-seo-geo",
+  "type": "spoke",
+  "slug": {
+    "de": "strukturierte-daten-fuer-ki-suche",
+    "en": "structured-data-for-ai-search",
+    "it": "dati-strutturati-per-la-ricerca-ai",
+    "fr": "donnees-structurees-pour-la-recherche-ia"
+  },
+  "relatedServices": [
+    "geo",
+    "seo"
+  ],
+  "title": {
+    "de": "Strukturierte Daten für KI-Suche: Schema.org | Weissmann AI",
+    "en": "Structured Data for AI Search: Schema.org | Weissmann AI",
+    "it": "Dati strutturati per la ricerca IA: Schema.org | Weissmann AI",
+    "fr": "Donnees structurees pour la recherche IA | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Welche Schema.org-Typen KI-Assistenten wie ChatGPT, Perplexity und Google AI Overviews helfen, Ihre Inhalte zu verstehen und zu zitieren. Praxisleitfaden.",
+    "en": "Which Schema.org types help AI assistants like ChatGPT, Perplexity and Google AI Overviews understand and cite your content. A practical guide.",
+    "it": "Quali tipi Schema.org aiutano assistenti IA come ChatGPT, Perplexity e Google AI Overviews a capire e citare i tuoi contenuti. Guida pratica.",
+    "fr": "Quels types Schema.org aident les assistants IA comme ChatGPT, Perplexity et Google AI Overviews a comprendre et citer vos contenus. Guide pratique."
+  },
+  "kicker": {
+    "de": "AI Marketing, SEO & GEO",
+    "en": "AI Marketing, SEO & GEO",
+    "it": "AI Marketing, SEO e GEO",
+    "fr": "AI Marketing, SEO et GEO"
+  },
+  "h1": {
+    "de": "Strukturierte Daten für die KI-Suche: Welche Schema.org-Typen zählen?",
+    "en": "Structured Data for AI Search: Which Schema.org Types Matter?",
+    "it": "Dati strutturati per la ricerca IA: quali tipi Schema.org contano?",
+    "fr": "Donnees structurees pour la recherche IA : quels types Schema.org comptent ?"
+  },
+  "answerFirst": {
+    "de": "Strukturierte Daten sind maschinenlesbare Auszeichnungen – meist als JSON-LD nach dem Schema.org-Standard –, die Inhalten eine eindeutige Bedeutung geben. Sie erklären, was ein Text ist: ein Artikel, eine FAQ, eine Organisation oder ein Fachbegriff. So verstehen KI-Assistenten wie ChatGPT, Google AI Overviews, Perplexity und Gemini eine Seite präziser, ordnen sie korrekt ein und zitieren sie eher als vertrauenswürdige Quelle.",
+    "en": "Structured data is machine-readable markup – usually JSON-LD following the Schema.org standard – that gives content unambiguous meaning. It tells machines what a text is: an article, an FAQ, an organisation or a defined term. This helps AI assistants like ChatGPT, Google AI Overviews, Perplexity and Gemini understand a page precisely, classify it correctly and cite it more readily as a trustworthy source.",
+    "it": "I dati strutturati sono marcature leggibili dalle macchine – di solito JSON-LD secondo lo standard Schema.org – che danno un significato univoco ai contenuti. Spiegano cosa e un testo: un articolo, una FAQ, un'organizzazione o un termine definito. Cosi assistenti IA come ChatGPT, Google AI Overviews, Perplexity e Gemini capiscono meglio una pagina, la classificano correttamente e la citano piu volentieri come fonte affidabile.",
+    "fr": "Les donnees structurees sont un balisage lisible par les machines – generalement du JSON-LD selon le standard Schema.org – qui donne un sens univoque au contenu. Elles indiquent ce qu'est un texte : un article, une FAQ, une organisation ou un terme defini. Ainsi les assistants IA comme ChatGPT, Google AI Overviews, Perplexity et Gemini comprennent mieux une page, la classent correctement et la citent plus volontiers comme source fiable."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was strukturierte Daten sind – und warum sie für KI zählen",
+        "en": "What structured data is – and why it matters for AI",
+        "it": "Cosa sono i dati strutturati – e perche contano per l'IA",
+        "fr": "Ce que sont les donnees structurees – et pourquoi elles comptent pour l'IA"
+      },
+      "paragraphs": [
+        {
+          "de": "Strukturierte Daten übersetzen menschlichen Text in maschinenlesbare Fakten. Statt einen Absatz nur als Buchstabenfolge zu sehen, erkennt eine Maschine dank Auszeichnung: Dies ist der Autor, dies das Veröffentlichungsdatum, dies eine Frage-Antwort-Einheit. Der weltweite Standard dafür ist Schema.org, ein gemeinsames Vokabular von Google, Microsoft, Yahoo und Yandex. Das empfohlene Format ist JSON-LD – ein Script-Block im Seitenkopf, der Inhalt und Auszeichnung sauber trennt.",
+          "en": "Structured data translates human text into machine-readable facts. Instead of seeing a paragraph as a mere string of characters, a machine recognises through markup: this is the author, this the publication date, this a question-answer unit. The global standard for this is Schema.org, a shared vocabulary from Google, Microsoft, Yahoo and Yandex. The recommended format is JSON-LD – a script block in the page head that cleanly separates content from markup.",
+          "it": "I dati strutturati traducono il testo umano in fatti leggibili dalle macchine. Invece di vedere un paragrafo come semplice sequenza di caratteri, grazie alla marcatura una macchina riconosce: questo e l'autore, questa la data di pubblicazione, questa un'unita domanda-risposta. Lo standard globale e Schema.org, un vocabolario condiviso da Google, Microsoft, Yahoo e Yandex. Il formato consigliato e JSON-LD – un blocco script nell'intestazione della pagina che separa nettamente contenuto e marcatura.",
+          "fr": "Les donnees structurees traduisent le texte humain en faits lisibles par les machines. Au lieu de voir un paragraphe comme une simple suite de caracteres, une machine reconnait grace au balisage : ceci est l'auteur, ceci la date de publication, ceci une unite question-reponse. Le standard mondial est Schema.org, un vocabulaire partage par Google, Microsoft, Yahoo et Yandex. Le format recommande est le JSON-LD – un bloc script dans l'en-tete de la page qui separe proprement contenu et balisage."
+        },
+        {
+          "de": "Für die klassische Suche ermöglichten strukturierte Daten seit Jahren Rich Results – Sternebewertungen, FAQ-Aufklapper, Breadcrumb-Pfade. Für die KI-Suche kommt eine zweite, wichtigere Funktion hinzu: Sie liefern generativen Systemen verlässliche, eindeutige Fakten, an denen sich das Modell orientieren kann, statt Bedeutung allein aus dem Fliesstext raten zu müssen.",
+          "en": "For classic search, structured data has enabled rich results for years – star ratings, FAQ expanders, breadcrumb paths. For AI search a second, more important function is added: it gives generative systems reliable, unambiguous facts to anchor on, rather than forcing the model to guess meaning from prose alone.",
+          "it": "Per la ricerca classica, i dati strutturati abilitano da anni i rich result – valutazioni a stelle, FAQ a fisarmonica, percorsi breadcrumb. Per la ricerca IA si aggiunge una seconda funzione, piu importante: fornire ai sistemi generativi fatti affidabili e univoci a cui ancorarsi, invece di costringere il modello a indovinare il significato dal solo testo.",
+          "fr": "Pour la recherche classique, les donnees structurees permettent depuis des annees les rich results – notes en etoiles, FAQ deroulantes, fils d'Ariane. Pour la recherche IA s'ajoute une seconde fonction, plus importante : fournir aux systemes generatifs des faits fiables et univoques sur lesquels s'ancrer, au lieu de forcer le modele a deviner le sens a partir du seul texte."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wie strukturierte Daten Maschinen beim Verstehen und Zitieren helfen",
+        "en": "How structured data helps machines understand and cite",
+        "it": "Come i dati strutturati aiutano le macchine a capire e citare",
+        "fr": "Comment les donnees structurees aident les machines a comprendre et citer"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Suchsysteme arbeiten meist mit Retrieval-Augmented Generation: Sie rufen passende Quellen ab und formulieren daraus eine Antwort samt Zitat. Strukturierte Daten greifen an drei Stellen dieses Prozesses.",
+          "en": "AI search systems mostly use retrieval-augmented generation: they retrieve relevant sources and compose an answer with a citation. Structured data intervenes at three points in this process.",
+          "it": "I sistemi di ricerca IA usano per lo piu la retrieval-augmented generation: recuperano fonti pertinenti e ne compongono una risposta con citazione. I dati strutturati intervengono in tre punti di questo processo.",
+          "fr": "Les systemes de recherche IA utilisent surtout la retrieval-augmented generation : ils recuperent des sources pertinentes et en composent une reponse avec citation. Les donnees structurees interviennent a trois points de ce processus."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Extraktion: Eine ausgezeichnete FAQ oder Definition lässt sich sauber als abgeschlossene Einheit herauslösen – ideal als zitierfähiges Snippet.",
+          "en": "Extraction: a marked-up FAQ or definition can be cleanly lifted as a self-contained unit – ideal as a citable snippet.",
+          "it": "Estrazione: una FAQ o definizione marcata puo essere estratta in modo netto come unita autonoma – ideale come snippet citabile.",
+          "fr": "Extraction : une FAQ ou definition balisee peut etre extraite proprement comme unite autonome – ideale comme extrait citable."
+        },
+        {
+          "de": "Einordnung: Organization-, Author- und Datumsangaben signalisieren Herkunft und Aktualität – Faktoren, an denen Modelle Vertrauenswürdigkeit festmachen.",
+          "en": "Classification: Organization, author and date fields signal provenance and freshness – factors models use to gauge trustworthiness.",
+          "it": "Classificazione: campi Organization, autore e data segnalano provenienza e attualita – fattori con cui i modelli valutano l'affidabilita.",
+          "fr": "Classement : les champs Organization, auteur et date signalent la provenance et la fraicheur – facteurs par lesquels les modeles jugent la fiabilite."
+        },
+        {
+          "de": "Verknüpfung: sameAs-Verweise und DefinedTerm binden Ihre Inhalte an bekannte Entitäten und stützen den Knowledge Graph, aus dem KI-Systeme Kontext ziehen.",
+          "en": "Linking: sameAs references and DefinedTerm tie your content to known entities and reinforce the Knowledge Graph that AI systems draw context from.",
+          "it": "Collegamento: i riferimenti sameAs e DefinedTerm legano i contenuti a entita note e rafforzano il Knowledge Graph da cui i sistemi IA traggono contesto.",
+          "fr": "Liaison : les references sameAs et DefinedTerm relient vos contenus a des entites connues et renforcent le Knowledge Graph d'ou les systemes IA tirent le contexte."
+        },
+        {
+          "de": "Wichtig: Auszeichnung ersetzt keine Substanz. Sie macht bereits sichtbaren, wahren Inhalt eindeutig – markieren Sie niemals etwas, das auf der Seite nicht steht.",
+          "en": "Important: markup does not replace substance. It disambiguates content that is already visible and true – never mark up anything not present on the page.",
+          "it": "Importante: la marcatura non sostituisce la sostanza. Rende univoco un contenuto gia visibile e vero – non marcare mai cio che non e presente in pagina.",
+          "fr": "Important : le balisage ne remplace pas le fond. Il leve l'ambiguite d'un contenu deja visible et vrai – ne balisez jamais ce qui n'apparait pas sur la page."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die fünf Schema-Typen, die für KI-Suche am meisten zählen",
+        "en": "The five schema types that matter most for AI search",
+        "it": "I cinque tipi Schema piu importanti per la ricerca IA",
+        "fr": "Les cinq types Schema qui comptent le plus pour la recherche IA"
+      },
+      "bullets": [
+        {
+          "de": "Article (bzw. BlogPosting): Kennzeichnet redaktionelle Inhalte mit headline, author, datePublished und dateModified. Gibt KI-Systemen Autorenschaft und Aktualität – zentrale Vertrauenssignale für ein Zitat.",
+          "en": "Article (or BlogPosting): marks editorial content with headline, author, datePublished and dateModified. Gives AI systems authorship and recency – core trust signals for a citation.",
+          "it": "Article (o BlogPosting): identifica contenuti editoriali con headline, author, datePublished e dateModified. Fornisce ai sistemi IA autorialita e attualita – segnali di fiducia chiave per una citazione.",
+          "fr": "Article (ou BlogPosting) : marque le contenu editorial avec headline, author, datePublished et dateModified. Donne aux systemes IA la paternite et la fraicheur – signaux de confiance cles pour une citation."
+        },
+        {
+          "de": "FAQPage: Zeichnet Frage-Antwort-Paare als geschlossene Einheiten aus. Genau das Format, das KI-Assistenten für direkte Antworten extrahieren und wörtlich zitieren.",
+          "en": "FAQPage: marks question-answer pairs as closed units. Precisely the format AI assistants extract for direct answers and cite verbatim.",
+          "it": "FAQPage: marca coppie domanda-risposta come unita chiuse. Esattamente il formato che gli assistenti IA estraggono per risposte dirette e citano alla lettera.",
+          "fr": "FAQPage : marque les paires question-reponse comme unites fermees. Exactement le format que les assistants IA extraient pour des reponses directes et citent mot pour mot."
+        },
+        {
+          "de": "Organization: Definiert den Herausgeber mit name, url, logo und sameAs (Verweise auf LinkedIn, Wikidata, Handelsregister). Das ist das Fundament, mit dem Sie als benennbare Entität im Knowledge Graph erscheinen.",
+          "en": "Organization: defines the publisher with name, url, logo and sameAs (links to LinkedIn, Wikidata, commercial register). This is the foundation that makes you a nameable entity in the Knowledge Graph.",
+          "it": "Organization: definisce l'editore con name, url, logo e sameAs (link a LinkedIn, Wikidata, registro di commercio). E la base che ti rende un'entita nominabile nel Knowledge Graph.",
+          "fr": "Organization : definit l'editeur avec name, url, logo et sameAs (liens vers LinkedIn, Wikidata, registre du commerce). C'est la base qui fait de vous une entite nommable dans le Knowledge Graph."
+        },
+        {
+          "de": "DefinedTerm: Zeichnet Fachbegriffe und Glossareinträge formal aus. Ideal für ein Wissensportal – KI-Systeme erkennen so präzise Definitionen und binden sie an das jeweilige Konzept.",
+          "en": "DefinedTerm: formally marks up technical terms and glossary entries. Ideal for a knowledge portal – AI systems thus recognise precise definitions and bind them to the concept.",
+          "it": "DefinedTerm: marca formalmente termini tecnici e voci di glossario. Ideale per un portale di conoscenza – i sistemi IA riconoscono cosi definizioni precise e le legano al concetto.",
+          "fr": "DefinedTerm : balise formellement les termes techniques et entrees de glossaire. Ideal pour un portail de connaissances – les systemes IA reconnaissent ainsi des definitions precises et les lient au concept."
+        },
+        {
+          "de": "BreadcrumbList: Bildet die Position der Seite in der Website-Hierarchie ab. Gibt Maschinen den thematischen Kontext (Cluster, Oberthema) und stärkt die interne Struktur, die Crawler und KI-Systeme lesen.",
+          "en": "BreadcrumbList: represents the page's position in the site hierarchy. Gives machines thematic context (cluster, parent topic) and strengthens the internal structure that crawlers and AI systems read.",
+          "it": "BreadcrumbList: rappresenta la posizione della pagina nella gerarchia del sito. Fornisce alle macchine il contesto tematico (cluster, tema principale) e rafforza la struttura interna che crawler e sistemi IA leggono.",
+          "fr": "BreadcrumbList : represente la position de la page dans la hierarchie du site. Donne aux machines le contexte thematique (cluster, theme parent) et renforce la structure interne que lisent les crawlers et systemes IA."
+        },
+        {
+          "de": "Ergänzend nützlich: Person für Autoren (mit Fach-Reputation), WebSite mit SearchAction, HowTo für Anleitungen und Product/Offer für Angebote – je nach Seitentyp gezielt einsetzen, nie pauschal.",
+          "en": "Also useful: Person for authors (with subject-matter reputation), WebSite with SearchAction, HowTo for instructions and Product/Offer for offers – apply per page type, never blanket.",
+          "it": "Utili anche: Person per gli autori (con reputazione tematica), WebSite con SearchAction, HowTo per le guide e Product/Offer per le offerte – da applicare per tipo di pagina, mai in modo generico.",
+          "fr": "Aussi utiles : Person pour les auteurs (avec reputation thematique), WebSite avec SearchAction, HowTo pour les guides et Product/Offer pour les offres – a appliquer par type de page, jamais en bloc."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schritt für Schritt: strukturierte Daten sauber implementieren",
+        "en": "Step by step: implementing structured data cleanly",
+        "it": "Passo dopo passo: implementare i dati strutturati in modo pulito",
+        "fr": "Etape par etape : implementer proprement les donnees structurees"
+      },
+      "bullets": [
+        {
+          "de": "1. Seitentyp bestimmen: Ratgeberartikel → Article; Glossar → DefinedTerm; jede Seite → Organization und BreadcrumbList. Wählen Sie pro Seite den passenden Haupttyp.",
+          "en": "1. Determine the page type: guide article → Article; glossary → DefinedTerm; every page → Organization and BreadcrumbList. Choose the right primary type per page.",
+          "it": "1. Determina il tipo di pagina: articolo guida → Article; glossario → DefinedTerm; ogni pagina → Organization e BreadcrumbList. Scegli il tipo principale adatto per pagina.",
+          "fr": "1. Determiner le type de page : article guide → Article ; glossaire → DefinedTerm ; chaque page → Organization et BreadcrumbList. Choisir le bon type principal par page."
+        },
+        {
+          "de": "2. JSON-LD im <head> einbetten: Ein <script type=\"application/ld+json\">-Block je Typ oder ein zusammengeführtes @graph-Array. JSON-LD ist Googles empfohlenes Format und am wartungsfreundlichsten.",
+          "en": "2. Embed JSON-LD in the <head>: one <script type=\"application/ld+json\"> block per type, or a merged @graph array. JSON-LD is Google's recommended format and the easiest to maintain.",
+          "it": "2. Incorpora JSON-LD nell'<head>: un blocco <script type=\"application/ld+json\"> per tipo, oppure un array @graph unificato. JSON-LD e il formato consigliato da Google e il piu semplice da mantenere.",
+          "fr": "2. Integrer le JSON-LD dans le <head> : un bloc <script type=\"application/ld+json\"> par type, ou un tableau @graph fusionne. Le JSON-LD est le format recommande par Google et le plus facile a maintenir."
+        },
+        {
+          "de": "3. Nur auszeichnen, was sichtbar ist: FAQPage-Antworten müssen wortgleich im sichtbaren Text stehen. Auszeichnung muss den Inhalt exakt spiegeln – sonst drohen Ignorieren oder eine manuelle Massnahme.",
+          "en": "3. Only mark up what is visible: FAQPage answers must appear verbatim in the visible text. Markup must mirror content exactly – otherwise it may be ignored or trigger a manual action.",
+          "it": "3. Marca solo cio che e visibile: le risposte FAQPage devono comparire alla lettera nel testo visibile. La marcatura deve rispecchiare esattamente il contenuto – altrimenti rischia di essere ignorata o penalizzata manualmente.",
+          "fr": "3. Ne baliser que le visible : les reponses FAQPage doivent figurer mot pour mot dans le texte visible. Le balisage doit refleter exactement le contenu – sinon il risque d'etre ignore ou de declencher une action manuelle."
+        },
+        {
+          "de": "4. Entitäten verknüpfen: In Organization sameAs auf LinkedIn, Wikidata und – für Schweizer Firmen – den Handelsregister-Eintrag setzen. Das verankert Sie als reale, überprüfbare Entität.",
+          "en": "4. Link entities: in Organization, set sameAs to LinkedIn, Wikidata and – for Swiss companies – the commercial-register entry. This anchors you as a real, verifiable entity.",
+          "it": "4. Collega le entita: in Organization imposta sameAs verso LinkedIn, Wikidata e – per le aziende svizzere – la voce del registro di commercio. Cosi ti ancori come entita reale e verificabile.",
+          "fr": "4. Relier les entites : dans Organization, definir sameAs vers LinkedIn, Wikidata et – pour les entreprises suisses – l'inscription au registre du commerce. Cela vous ancre comme entite reelle et verifiable."
+        },
+        {
+          "de": "5. Validieren und überwachen: Mit dem Schema.org-Validator und Googles Rich-Results-Test prüfen, danach die Search Console beobachten. Bei jeder inhaltlichen Änderung dateModified aktualisieren.",
+          "en": "5. Validate and monitor: check with the Schema.org validator and Google's Rich Results Test, then watch Search Console. Update dateModified with every content change.",
+          "it": "5. Valida e monitora: verifica con il validatore Schema.org e il Rich Results Test di Google, poi osserva la Search Console. Aggiorna dateModified a ogni modifica di contenuto.",
+          "fr": "5. Valider et surveiller : verifier avec le validateur Schema.org et le test des resultats enrichis de Google, puis suivre la Search Console. Mettre a jour dateModified a chaque modification de contenu."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler, die Zitationen verhindern",
+        "en": "Common mistakes that block citations",
+        "it": "Errori comuni che impediscono le citazioni",
+        "fr": "Erreurs frequentes qui bloquent les citations"
+      },
+      "bullets": [
+        {
+          "de": "Auszeichnung ohne sichtbaren Inhalt: markierte FAQ-Antworten, die nirgends auf der Seite erscheinen. Das gilt als irreführend und wird abgestraft.",
+          "en": "Markup without visible content: marked FAQ answers that appear nowhere on the page. This counts as misleading and is penalised.",
+          "it": "Marcatura senza contenuto visibile: risposte FAQ marcate che non compaiono in pagina. E considerato ingannevole e viene penalizzato.",
+          "fr": "Balisage sans contenu visible : reponses FAQ balisees qui n'apparaissent nulle part sur la page. C'est juge trompeur et penalise."
+        },
+        {
+          "de": "Widersprüchliche Angaben: ein datePublished im Schema, das nicht zum sichtbaren Datum passt, oder ein falscher Organisationsname. Widersprüche zerstören Vertrauen.",
+          "en": "Contradictory data: a datePublished in the schema that differs from the visible date, or a wrong organisation name. Contradictions destroy trust.",
+          "it": "Dati contraddittori: un datePublished nello schema diverso dalla data visibile, o un nome organizzazione errato. Le contraddizioni distruggono la fiducia.",
+          "fr": "Donnees contradictoires : un datePublished dans le schema different de la date visible, ou un mauvais nom d'organisation. Les contradictions detruisent la confiance."
+        },
+        {
+          "de": "Alles pauschal auszeichnen: Product-Markup auf einem Ratgeber oder Review-Sterne ohne echte Bewertungen wirken manipulativ statt hilfreich.",
+          "en": "Blanket markup: Product markup on a guide, or review stars without real ratings, look manipulative rather than helpful.",
+          "it": "Marcatura generica: Product markup su una guida o stelle di recensione senza valutazioni reali sembrano manipolativi anziche utili.",
+          "fr": "Balisage systematique : un Product markup sur un guide, ou des etoiles d'avis sans notes reelles, paraissent manipulateurs plutot qu'utiles."
+        },
+        {
+          "de": "Fehlende Wartung: dateModified bleibt trotz Überarbeitung stehen; KI-Systeme halten den Inhalt für veraltet und bevorzugen frischere Quellen.",
+          "en": "Missing maintenance: dateModified stays unchanged despite a rewrite; AI systems treat the content as stale and prefer fresher sources.",
+          "it": "Manutenzione assente: dateModified resta invariato nonostante la revisione; i sistemi IA considerano il contenuto obsoleto e preferiscono fonti piu recenti.",
+          "fr": "Maintenance absente : dateModified reste inchange malgre une refonte ; les systemes IA jugent le contenu perime et preferent des sources plus fraiches."
+        },
+        {
+          "de": "Nur an Suchmaschinen denken: Wer die menschliche Lesbarkeit vernachlässigt, verliert doppelt – KI-Systeme bewerten letztlich denselben klaren, hilfreichen Inhalt, den auch Menschen schätzen.",
+          "en": "Thinking only of search engines: neglecting human readability loses twice – AI systems ultimately reward the same clear, helpful content people value.",
+          "it": "Pensare solo ai motori di ricerca: trascurare la leggibilita umana fa perdere doppiamente – i sistemi IA premiano lo stesso contenuto chiaro e utile che apprezzano le persone.",
+          "fr": "Ne penser qu'aux moteurs de recherche : negliger la lisibilite humaine fait perdre deux fois – les systemes IA recompensent le meme contenu clair et utile que les humains apprecient."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Perspektive: Vertrauen, Sprachen und Datenschutz",
+        "en": "Swiss perspective: trust, languages and data protection",
+        "it": "Prospettiva svizzera: fiducia, lingue e protezione dei dati",
+        "fr": "Perspective suisse : confiance, langues et protection des donnees"
+      },
+      "paragraphs": [
+        {
+          "de": "Für Schweizer KMU ist strukturierte Daten ein glaubwürdiger Hebel, weil sie überprüfbare Herkunft belohnt. Verankern Sie Ihre Organization mit sameAs auf den Handelsregister-Eintrag und – wo vorhanden – Wikidata; das macht Sie zu einer eindeutigen, lokalen Entität statt einer anonymen Website. Für mehrsprachige Auftritte (DE, FR, IT, EN) gehört zu jeder Sprachversion die passende Auszeichnung samt inLanguage-Angabe und sauberen hreflang-Verweisen, damit KI-Systeme die richtige Fassung zitieren.",
+          "en": "For Swiss SMEs, structured data is a credible lever because it rewards verifiable provenance. Anchor your Organization with sameAs to the commercial-register entry and – where present – Wikidata; this makes you a distinct, local entity rather than an anonymous website. For multilingual sites (DE, FR, IT, EN), each language version needs matching markup with an inLanguage value and clean hreflang links, so AI systems cite the correct edition.",
+          "it": "Per le PMI svizzere i dati strutturati sono una leva credibile perche premiano una provenienza verificabile. Ancora la tua Organization con sameAs alla voce del registro di commercio e – ove presente – a Wikidata; cosi diventi un'entita locale distinta anziche un sito anonimo. Per i siti multilingue (DE, FR, IT, EN) ogni versione linguistica richiede una marcatura corrispondente con inLanguage e link hreflang puliti, affinche i sistemi IA citino l'edizione corretta.",
+          "fr": "Pour les PME suisses, les donnees structurees sont un levier credible car elles recompensent une provenance verifiable. Ancrez votre Organization avec sameAs vers l'inscription au registre du commerce et – si disponible – Wikidata ; cela fait de vous une entite locale distincte plutot qu'un site anonyme. Pour les sites multilingues (DE, FR, IT, EN), chaque version linguistique a besoin d'un balisage correspondant avec inLanguage et des liens hreflang propres, afin que les systemes IA citent la bonne edition."
+        },
+        {
+          "de": "Datenschutzrechtlich ist Schema.org unkritisch: Es beschreibt öffentliche Seiteninhalte und keine Personendaten von Besuchenden. Wer jedoch Person- oder Kontaktangaben auszeichnet, sollte nur veröffentlichte, freigegebene Daten verwenden – im Einklang mit dem revidierten Datenschutzgesetz (revDSG) und den Vorgaben des EDÖB. Strukturierte Daten sind kein Tracking; sie erzeugen keine zusätzlichen Einwilligungspflichten.",
+          "en": "In terms of data protection, Schema.org is uncritical: it describes public page content, not visitors' personal data. However, anyone marking up Person or contact details should use only published, cleared data – in line with the revised Data Protection Act (revDSG) and the guidance of the FDPIC (EDÖB). Structured data is not tracking; it creates no additional consent obligations.",
+          "it": "Sul piano della protezione dati, Schema.org e poco critico: descrive contenuti pubblici della pagina, non dati personali dei visitatori. Chi tuttavia marca dati Person o di contatto dovrebbe usare solo dati pubblicati e autorizzati – in linea con la legge riveduta sulla protezione dei dati (revDSG) e le indicazioni dell'IFPDT (EDOEB). I dati strutturati non sono tracciamento e non creano ulteriori obblighi di consenso.",
+          "fr": "En matiere de protection des donnees, Schema.org est peu sensible : il decrit un contenu public de page, pas les donnees personnelles des visiteurs. Mais quiconque balise des donnees Person ou de contact ne devrait utiliser que des donnees publiees et autorisees – conformement a la loi revisee sur la protection des donnees (revDSG) et aux indications du PFPDT (EDOEB). Les donnees structurees ne sont pas du tracage et ne creent aucune obligation de consentement supplementaire."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen SEO und GEO bei strukturierten Daten?",
+        "en": "What is the difference between SEO and GEO for structured data?",
+        "it": "Qual e la differenza tra SEO e GEO nei dati strutturati?",
+        "fr": "Quelle est la difference entre SEO et GEO pour les donnees structurees ?"
+      },
+      "a": {
+        "de": "SEO nutzt strukturierte Daten für Rich Results in der klassischen Trefferliste. GEO (Generative Engine Optimization) zielt darauf, in KI-generierten Antworten von ChatGPT, Perplexity oder Google AI Overviews zitiert zu werden. Dieselbe Schema.org-Auszeichnung dient beiden: Sie macht Fakten eindeutig extrahier- und zitierbar. GEO betont dabei stärker Entitäten, Definitionen und überprüfbare Herkunft.",
+        "en": "SEO uses structured data for rich results in the classic list. GEO (Generative Engine Optimization) aims to be cited in AI-generated answers from ChatGPT, Perplexity or Google AI Overviews. The same Schema.org markup serves both: it makes facts unambiguously extractable and citable. GEO simply puts more weight on entities, definitions and verifiable provenance.",
+        "it": "La SEO usa i dati strutturati per i rich result nella lista classica. La GEO (Generative Engine Optimization) punta a essere citata nelle risposte generate dall'IA di ChatGPT, Perplexity o Google AI Overviews. La stessa marcatura Schema.org serve a entrambe: rende i fatti estraibili e citabili in modo univoco. La GEO da solo piu peso a entita, definizioni e provenienza verificabile.",
+        "fr": "Le SEO utilise les donnees structurees pour les rich results dans la liste classique. Le GEO (Generative Engine Optimization) vise a etre cite dans les reponses generees par l'IA de ChatGPT, Perplexity ou Google AI Overviews. Le meme balisage Schema.org sert aux deux : il rend les faits extractibles et citables sans ambiguite. Le GEO accorde simplement plus de poids aux entites, definitions et a la provenance verifiable."
+      }
+    },
+    {
+      "q": {
+        "de": "Muss ich JSON-LD verwenden oder gehen auch Microdata und RDFa?",
+        "en": "Do I have to use JSON-LD, or do Microdata and RDFa work too?",
+        "it": "Devo usare JSON-LD o vanno bene anche Microdata e RDFa?",
+        "fr": "Dois-je utiliser JSON-LD, ou Microdata et RDFa conviennent-ils aussi ?"
+      },
+      "a": {
+        "de": "Alle drei Formate sind gültig, doch JSON-LD ist der Standard und wird von Google ausdrücklich empfohlen. Es liegt als separater Script-Block im Seitenkopf, vermischt sich nicht mit dem HTML und lässt sich zentral pflegen. Microdata und RDFa markieren direkt im sichtbaren Markup und sind fehleranfälliger. Für neue Projekte gibt es kaum einen Grund gegen JSON-LD.",
+        "en": "All three formats are valid, but JSON-LD is the standard and is explicitly recommended by Google. It sits as a separate script block in the page head, does not mix with the HTML and can be maintained centrally. Microdata and RDFa annotate directly within the visible markup and are more error-prone. For new projects there is little reason to avoid JSON-LD.",
+        "it": "Tutti e tre i formati sono validi, ma JSON-LD e lo standard ed e raccomandato esplicitamente da Google. Sta come blocco script separato nell'intestazione, non si mescola con l'HTML e si mantiene in modo centralizzato. Microdata e RDFa annotano direttamente nel markup visibile e sono piu soggetti a errori. Per nuovi progetti c'e poco motivo di evitare JSON-LD.",
+        "fr": "Les trois formats sont valides, mais le JSON-LD est le standard et explicitement recommande par Google. Il figure comme bloc script separe dans l'en-tete, ne se melange pas au HTML et se maintient de facon centralisee. Microdata et RDFa annotent directement dans le balisage visible et sont plus sujets aux erreurs. Pour de nouveaux projets, il y a peu de raisons d'eviter le JSON-LD."
+      }
+    },
+    {
+      "q": {
+        "de": "Garantieren strukturierte Daten, dass mich eine KI zitiert?",
+        "en": "Does structured data guarantee that an AI will cite me?",
+        "it": "I dati strutturati garantiscono che un'IA mi citi?",
+        "fr": "Les donnees structurees garantissent-elles qu'une IA me citera ?"
+      },
+      "a": {
+        "de": "Nein. Strukturierte Daten sind eine notwendige, aber keine hinreichende Bedingung. Sie erleichtern Maschinen das Verstehen und Extrahieren, ersetzen aber weder substanziellen, korrekten Inhalt noch Autorität und Aktualität. Betrachten Sie Auszeichnung als Verstärker: Sie erhöht die Chance, dass gute Inhalte gefunden, richtig eingeordnet und zitiert werden – ohne Qualität dahinter wirkt sie nicht.",
+        "en": "No. Structured data is a necessary but not sufficient condition. It makes content easier for machines to understand and extract, but replaces neither substantial, accurate content nor authority and recency. Treat markup as an amplifier: it raises the chance that good content is found, classified correctly and cited – without quality behind it, it does nothing.",
+        "it": "No. I dati strutturati sono una condizione necessaria ma non sufficiente. Facilitano alle macchine la comprensione e l'estrazione, ma non sostituiscono ne un contenuto sostanziale e corretto ne autorevolezza e attualita. Considera la marcatura un amplificatore: aumenta la probabilita che un buon contenuto sia trovato, classificato correttamente e citato – senza qualita a monte non serve.",
+        "fr": "Non. Les donnees structurees sont une condition necessaire mais pas suffisante. Elles facilitent la comprehension et l'extraction par les machines, mais ne remplacent ni un contenu substantiel et exact, ni l'autorite et la fraicheur. Considerez le balisage comme un amplificateur : il augmente la chance qu'un bon contenu soit trouve, bien classe et cite – sans qualite derriere, il n'a aucun effet."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Schema-Typen sollte ein Wissensartikel mindestens haben?",
+        "en": "Which schema types should a knowledge article have at minimum?",
+        "it": "Quali tipi Schema dovrebbe avere come minimo un articolo di conoscenza?",
+        "fr": "Quels types Schema un article de connaissance doit-il avoir au minimum ?"
+      },
+      "a": {
+        "de": "Als Basis: Article mit author und dateModified, Organization als Herausgeber mit sameAs, BreadcrumbList für die Einordnung und – wenn ein Frage-Antwort-Teil vorhanden ist – FAQPage. Erklärt der Artikel Fachbegriffe, ergänzt DefinedTerm die Definitionen. Diese Kombination deckt Autorenschaft, Herkunft, Kontext und zitierfähige Einheiten ab.",
+        "en": "As a baseline: Article with author and dateModified, Organization as publisher with sameAs, BreadcrumbList for context and – if a question-answer part exists – FAQPage. If the article explains technical terms, DefinedTerm adds the definitions. This combination covers authorship, provenance, context and citable units.",
+        "it": "Come base: Article con author e dateModified, Organization come editore con sameAs, BreadcrumbList per il contesto e – se c'e una parte domanda-risposta – FAQPage. Se l'articolo spiega termini tecnici, DefinedTerm aggiunge le definizioni. Questa combinazione copre autorialita, provenienza, contesto e unita citabili.",
+        "fr": "Comme base : Article avec author et dateModified, Organization comme editeur avec sameAs, BreadcrumbList pour le contexte et – s'il existe une partie question-reponse – FAQPage. Si l'article explique des termes techniques, DefinedTerm ajoute les definitions. Cette combinaison couvre la paternite, la provenance, le contexte et les unites citables."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie prüfe ich, ob meine strukturierten Daten korrekt sind?",
+        "en": "How do I check whether my structured data is correct?",
+        "it": "Come verifico se i miei dati strutturati sono corretti?",
+        "fr": "Comment verifier si mes donnees structurees sont correctes ?"
+      },
+      "a": {
+        "de": "Nutzen Sie den Schema.org-Validator für die Syntax und Googles Rich-Results-Test für die Anzeige-Fähigkeit. Beide melden Fehler und Warnungen pro Typ. Danach beobachten Sie in der Google Search Console den Bericht zu erweiterten Suchergebnissen. Prüfen Sie zusätzlich manuell, ob jede Auszeichnung dem sichtbaren Seiteninhalt exakt entspricht – die häufigste Fehlerquelle.",
+        "en": "Use the Schema.org validator for syntax and Google's Rich Results Test for display eligibility. Both report errors and warnings per type. Then watch the enhancement reports in Google Search Console. Also check manually that every piece of markup exactly matches the visible page content – the most common source of error.",
+        "it": "Usa il validatore Schema.org per la sintassi e il Rich Results Test di Google per l'idoneita alla visualizzazione. Entrambi segnalano errori e avvisi per tipo. Poi osserva i report sui risultati avanzati nella Google Search Console. Verifica anche manualmente che ogni marcatura corrisponda esattamente al contenuto visibile – la fonte di errore piu comune.",
+        "fr": "Utilisez le validateur Schema.org pour la syntaxe et le test des resultats enrichis de Google pour l'eligibilite a l'affichage. Les deux signalent erreurs et avertissements par type. Suivez ensuite les rapports d'ameliorations dans la Google Search Console. Verifiez aussi manuellement que chaque balisage correspond exactement au contenu visible – la source d'erreur la plus frequente."
+      }
+    },
+    {
+      "q": {
+        "de": "Sind strukturierte Daten mit dem Schweizer Datenschutz (revDSG) vereinbar?",
+        "en": "Is structured data compatible with Swiss data protection (revDSG)?",
+        "it": "I dati strutturati sono compatibili con la protezione dati svizzera (revDSG)?",
+        "fr": "Les donnees structurees sont-elles compatibles avec la protection suisse (revDSG) ?"
+      },
+      "a": {
+        "de": "Ja. Schema.org beschreibt öffentliche Seiteninhalte und sammelt keine Besucherdaten – es ist kein Tracking und löst keine Einwilligungspflicht aus. Achten Sie nur darauf, in Person- oder Kontaktangaben ausschliesslich veröffentlichte, freigegebene Daten auszuzeichnen. Das steht im Einklang mit dem revidierten Datenschutzgesetz (revDSG) und den Empfehlungen des EDÖB.",
+        "en": "Yes. Schema.org describes public page content and collects no visitor data – it is not tracking and triggers no consent requirement. Just make sure that in Person or contact fields you mark up only published, cleared data. This aligns with the revised Data Protection Act (revDSG) and the recommendations of the FDPIC (EDÖB).",
+        "it": "Si. Schema.org descrive contenuti pubblici della pagina e non raccoglie dati dei visitatori – non e tracciamento e non richiede consenso. Assicurati solo di marcare, nei campi Person o di contatto, esclusivamente dati pubblicati e autorizzati. Cio e in linea con la legge riveduta sulla protezione dei dati (revDSG) e le raccomandazioni dell'IFPDT (EDOEB).",
+        "fr": "Oui. Schema.org decrit un contenu public de page et ne collecte aucune donnee de visiteur – ce n'est pas du tracage et cela ne declenche aucune obligation de consentement. Veillez simplement, dans les champs Person ou de contact, a ne baliser que des donnees publiees et autorisees. Cela respecte la loi revisee sur la protection des donnees (revDSG) et les recommandations du PFPDT (EDOEB)."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Schema.org",
+    "strukturierte Daten",
+    "JSON-LD",
+    "Article",
+    "FAQPage",
+    "Organization",
+    "DefinedTerm",
+    "BreadcrumbList",
+    "Google AI Overviews",
+    "Perplexity",
+    "ChatGPT",
+    "Gemini",
+    "Generative Engine Optimization (GEO)",
+    "Knowledge Graph",
+    "Retrieval-Augmented Generation",
+    "sameAs",
+    "Rich Results Test",
+    "Google Search Console",
+    "Wikidata",
+    "revDSG"
+  ]
+}
