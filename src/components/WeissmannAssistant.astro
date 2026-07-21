@@ -1,0 +1,316 @@
+---
+/**
+ * Weissmann Assistant — zero-AI-cost guided chat (SPEC docs/chat/SPEC.md).
+ *
+ * Static, client-side, no backend, no API key. The knowledge base is generated
+ * from the central pricing/site config and serialized into the island. The
+ * launcher is a plain <a href="/kontakt/"> that progressively enhances into the
+ * chat toggle, so it works with JS disabled. Concept B design tokens.
+ *
+ * The LocalFaqEngine lives inline below. Swapping in a future LLM engine means
+ * replacing engine.answer() only — the UI is unchanged (SPEC §9).
+ */
+import { buildChatKB } from '../chat/content';
+import { localePrefix, type Locale } from '../data/site';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const p = localePrefix(locale);
+const kb = buildChatKB();
+const t = (k: string) => kb.ui[locale][k];
+---
+
+<div
+  class="wa"
+  data-wa
+  data-locale={locale}
+  data-kb={JSON.stringify(kb)}
+  data-kontakt={`${p}/kontakt/`}
+>
+  <!-- Launcher: real link first, enhanced into a toggle by JS -->
+  <a class="wa__launcher" href={`${p}/kontakt/`} data-wa-launcher aria-label={t('launcher')}>
+    <span class="wa__launcher-icon" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M2.5 4C2.5 3.2 3.2 2.5 4 2.5h10c.8 0 1.5.7 1.5 1.5v6.5c0 .8-.7 1.5-1.5 1.5H7l-3.2 2.8V12H4c-.8 0-1.5-.7-1.5-1.5V4Z" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="wa__launcher-label">{t('launcher')}</span>
+  </a>
+
+  <!-- Panel (built by JS; kept out of the DOM until first open) -->
+  <template data-wa-template>
+    <section class="wa__panel" role="dialog" aria-modal="false" aria-label={t('title')}>
+      <header class="wa__head">
+        <span class="wa__logo" aria-hidden="true">W</span>
+        <div class="wa__id">
+          <span class="wa__title">{t('title')}</span>
+          <span class="wa__disclosure">{t('disclosure')}</span>
+        </div>
+        <div class="wa__actions">
+          <select class="wa__lang" data-wa-lang aria-label={t('langLabel')}>
+            <option value="de">DE</option><option value="en">EN</option>
+            <option value="it">IT</option><option value="fr">FR</option>
+          </select>
+          <button class="wa__icon-btn" data-wa-close aria-label={t('close')}>&#10005;</button>
+        </div>
+      </header>
+      <div class="wa__body" data-wa-body aria-live="polite"></div>
+      <form class="wa__input" data-wa-form>
+        <input type="text" data-wa-text autocomplete="off" />
+        <button type="submit" class="wa__send" aria-label={t('send')}>&#8593;</button>
+      </form>
+      <p class="wa__foot"><span data-wa-foot></span> · <a href={`${p}/datenschutz/`}>Datenschutz</a></p>
+    </section>
+  </template>
+</div>
+
+<style>
+  .wa { position: fixed; right: clamp(1rem, 3vw, 1.5rem); bottom: clamp(1rem, 3vw, 1.5rem); z-index: 80; }
+
+  .wa__launcher {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    background: var(--btn-bg); color: var(--btn-fg);
+    padding: 0.7rem 1.15rem; border-radius: 999px; font-weight: 600; font-size: var(--fs-300);
+    text-decoration: none; box-shadow: 0 6px 24px rgb(17 17 17 / 0.18);
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+  }
+  .wa__launcher:hover { text-decoration: none; transform: translateY(-1px); box-shadow: 0 8px 30px rgb(17 17 17 / 0.24); }
+  .wa__launcher-icon { display: inline-flex; }
+
+  /* Panel — glass surface, Concept B tokens */
+  .wa__panel {
+    position: fixed; right: clamp(1rem, 3vw, 1.5rem); bottom: clamp(1rem, 3vw, 1.5rem);
+    width: min(390px, calc(100vw - 2rem)); max-height: min(640px, calc(100vh - 2rem));
+    display: flex; flex-direction: column;
+    background: color-mix(in srgb, var(--paper) 80%, transparent);
+    backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    border: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+    border-radius: 20px; box-shadow: 0 2px 8px rgb(17 17 17 / 0.05), 0 24px 64px rgb(17 17 17 / 0.16);
+    overflow: hidden; animation: waPanelIn 0.25s ease-out;
+  }
+  @keyframes waPanelIn { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+  .wa__head { display: flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1rem; border-bottom: 1px solid color-mix(in srgb, var(--ink) 7%, transparent); }
+  .wa__logo { display: grid; place-items: center; width: 1.9rem; height: 1.9rem; border-radius: 8px; background: var(--ink); color: var(--paper); font-weight: 700; font-size: 0.95rem; flex-shrink: 0; }
+  .wa__id { display: flex; flex-direction: column; min-width: 0; }
+  .wa__title { font-weight: 600; color: var(--ink); font-size: var(--fs-400); line-height: 1.15; }
+  .wa__disclosure { font-size: 0.72rem; color: var(--ink-mute); line-height: 1.35; margin-top: 2px; max-width: 15rem; }
+  .wa__actions { margin-left: auto; display: flex; gap: 0.4rem; align-items: center; }
+  .wa__lang { font-size: 0.75rem; color: var(--ink-mute); border: 1px solid var(--line); border-radius: 8px; padding: 0.25rem 0.4rem; background: color-mix(in srgb, var(--paper) 70%, transparent); color-scheme: light; }
+  .wa__icon-btn { width: 1.75rem; height: 1.75rem; border: 1px solid var(--line); background: color-mix(in srgb, var(--paper) 70%, transparent); border-radius: 8px; color: var(--ink-mute); cursor: pointer; font-size: 0.8rem; }
+
+  .wa__body { padding: 1rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.7rem; }
+  .wa__msg { max-width: 86%; padding: 0.6rem 0.8rem; border-radius: 14px; font-size: var(--fs-300); line-height: 1.55; animation: waMsgIn 0.2s ease-out both; }
+  .wa__msg--bot { background: color-mix(in srgb, var(--paper) 85%, transparent); border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent); color: var(--ink-soft); border-top-left-radius: 5px; align-self: flex-start; }
+  .wa__msg--user { background: var(--ink); color: var(--paper); border-bottom-right-radius: 5px; align-self: flex-end; }
+  .wa__msg strong { color: var(--ink); }
+  @keyframes waMsgIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  .wa__chips { display: flex; flex-wrap: wrap; gap: 0.45rem; animation: waMsgIn 0.2s ease-out 0.06s both; }
+  .wa__chip { border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent); background: color-mix(in srgb, var(--paper) 85%, transparent); border-radius: 999px; padding: 0.4rem 0.75rem; font-size: 0.8rem; font-weight: 500; color: var(--ink); cursor: pointer; transition: border-color 0.15s ease, transform 0.15s ease; }
+  .wa__chip:hover { border-color: var(--accent); transform: translateY(-1px); }
+
+  .wa__cta { align-self: flex-start; margin-top: 0.1rem; }
+
+  /* Handover card */
+  .wa__handover { border: 1px solid color-mix(in srgb, var(--ink) 8%, transparent); border-radius: 14px; padding: 0.75rem 0.85rem; background: color-mix(in srgb, var(--paper) 85%, transparent); animation: waMsgIn 0.2s ease-out both; }
+  .wa__handover-title { font-weight: 600; color: var(--ink); font-size: var(--fs-300); }
+  .wa__handover p { font-size: 0.8rem; color: var(--ink-mute); margin-top: 0.25rem; }
+  .wa__summary { margin-top: 0.5rem; font-size: 0.8rem; background: color-mix(in srgb, var(--paper-soft) 92%, transparent); border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent); border-radius: 10px; padding: 0.5rem 0.6rem; color: var(--ink-soft); width: 100%; resize: vertical; min-height: 3.5rem; font-family: inherit; }
+  .wa__handover-row { display: flex; gap: 0.5rem; margin-top: 0.6rem; }
+  .wa__btn { flex: 1; border-radius: 10px; padding: 0.5rem 0.6rem; font-size: 0.82rem; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; transition: transform 0.15s ease; border: 1px solid transparent; }
+  .wa__btn:hover { transform: translateY(-1px); text-decoration: none; }
+  .wa__btn--wa { background: var(--btn-bg); color: var(--btn-fg); }
+  .wa__btn--ghost { background: color-mix(in srgb, var(--paper) 70%, transparent); color: var(--ink); border-color: color-mix(in srgb, var(--ink) 12%, transparent); }
+
+  .wa__input { display: flex; gap: 0.5rem; padding: 0.7rem 0.8rem; border-top: 1px solid color-mix(in srgb, var(--ink) 7%, transparent); }
+  .wa__input input { flex: 1; border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent); border-radius: 12px; padding: 0.6rem 0.75rem; font-size: var(--fs-300); color: var(--ink); background: color-mix(in srgb, var(--paper) 85%, transparent); }
+  .wa__input input:focus { outline: none; border-color: var(--accent); }
+  .wa__send { width: 2.5rem; border: none; border-radius: 12px; background: var(--btn-bg); color: var(--btn-fg); font-size: 1rem; cursor: pointer; }
+  .wa__foot { padding: 0.5rem 0.85rem 0.7rem; font-size: 0.68rem; color: var(--ink-mute); text-align: center; }
+  .wa__foot a { color: var(--ink-mute); }
+
+  .wa[data-open] .wa__launcher { display: none; }
+
+  @media (max-width: 520px) {
+    .wa__panel { right: 0; bottom: 0; left: 0; top: 0; width: auto; max-height: none; border-radius: 0; border: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wa__panel, .wa__msg, .wa__chips, .wa__handover { animation: none !important; }
+    .wa__launcher, .wa__chip, .wa__btn { transition: none !important; }
+  }
+</style>
+
+<script>
+  // ── Weissmann Assistant — LocalFaqEngine + UI (vanilla, no dependencies) ──
+  (function () {
+    const root = document.querySelector('[data-wa]');
+    if (!root) return;
+    const KB = JSON.parse(root.getAttribute('data-kb'));
+    const kontakt = root.getAttribute('data-kontakt') || '/kontakt/';
+    let locale = root.getAttribute('data-locale') || 'de';
+
+    let turns = 0;
+    let currentTopic = 'none';
+    let lastFreeText = '';
+    let panel = null, body = null;
+
+    const ev = (name, extra) => {
+      if (typeof window.wmEvent === 'function') window.wmEvent(name, Object.assign({ language: locale, turn_count: turns, service_slug: currentTopic }, extra || {}));
+    };
+    const fold = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+    // ── LocalFaqEngine: resolve a node id or free text → { node, id } ──────
+    const engine = {
+      resolveText(text) {
+        const q = ' ' + fold(text) + ' ';
+        const idx = KB.keywords[locale] || {};
+        let best = null, bestLen = 0;
+        for (const kwStr in idx) {
+          if (q.indexOf(' ' + fold(kwStr)) !== -1 && kwStr.length > bestLen) { best = idx[kwStr]; bestLen = kwStr.length; }
+        }
+        return best || 'no-answer';
+      },
+      node(id) { return KB.nodes[id] || KB.nodes['no-answer']; },
+    };
+
+    // ── rendering ─────────────────────────────────────────────────────────
+    function scrollDown() { body.scrollTop = body.scrollHeight; }
+    function addBot(text) { const d = document.createElement('div'); d.className = 'wa__msg wa__msg--bot'; d.innerHTML = text; body.appendChild(d); scrollDown(); return d; }
+    function addUser(text) { const d = document.createElement('div'); d.className = 'wa__msg wa__msg--user'; d.textContent = text; body.appendChild(d); scrollDown(); }
+
+    function addChips(chips) {
+      if (!chips || !chips.length) return;
+      const wrap = document.createElement('div'); wrap.className = 'wa__chips';
+      chips.forEach((c) => {
+        const b = document.createElement('button'); b.className = 'wa__chip'; b.type = 'button';
+        b.textContent = c.label[locale];
+        b.addEventListener('click', () => { disableChips(wrap); goNode(c.to, c.label[locale]); });
+        wrap.appendChild(b);
+      });
+      body.appendChild(wrap); scrollDown();
+    }
+    function disableChips(wrap) { wrap.querySelectorAll('.wa__chip').forEach((b) => (b.disabled = true, b.style.opacity = '0.5')); }
+
+    function addCta(cta) {
+      if (!cta) return;
+      const a = document.createElement(cta.kind === 'link' ? 'a' : 'button');
+      a.className = 'wa__btn wa__btn--ghost wa__cta';
+      a.textContent = cta.label[locale];
+      if (cta.kind === 'link') { a.href = localizedHref(cta.href); }
+      if (cta.kind === 'consult') { a.addEventListener('click', () => { window.location.href = kontakt; }); }
+      a.addEventListener('click', () => { if (cta.event) ev(cta.event); });
+      body.appendChild(a); scrollDown();
+    }
+    function localizedHref(href) { const pre = locale === 'de' ? '' : '/' + locale; return pre + href; }
+
+    // ── conversation control ──────────────────────────────────────────────
+    function goNode(id, userEcho) {
+      turns++;
+      if (userEcho) addUser(userEcho);
+      if (id === 'human') { openHandover(); ev('chat_service_selected', { service_slug: currentTopic }); return; }
+      const node = engine.node(id);
+      if (node.service) currentTopic = node.service;
+      if (id === 'no-answer') ev('chat_no_answer'); else ev('chat_service_selected');
+      renderNode(node);
+    }
+
+    function renderNode(node) {
+      const parts = node.answer[locale] || node.answer.de;
+      parts.forEach((txt, i) => setTimeout(() => addBot(txt), i * 120));
+      setTimeout(() => { addCta(node.cta); addChips((node.chips && node.chips.length) ? node.chips : KB.greetingChips); }, parts.length * 120);
+    }
+
+    function handleFreeText(text) {
+      turns++; ev('chat_question');
+      lastFreeText = text;
+      addUser(text);
+      const id = engine.resolveText(text);
+      const node = engine.node(id);
+      if (node.service) currentTopic = node.service;
+      if (id === 'no-answer') ev('chat_no_answer');
+      renderNode(node);
+    }
+
+    // ── WhatsApp handover (approval-first) ────────────────────────────────
+    function defaultSummary() {
+      // Prefer the visitor's own typed question; fall back to a topic-based sentence.
+      if (lastFreeText) return lastFreeText;
+      const topical = {
+        de: 'Ich hätte gerne mehr Informationen zu ' + serviceLabel() + '.',
+        en: 'I’d like more information about ' + serviceLabel() + '.',
+        it: 'Vorrei maggiori informazioni su ' + serviceLabel() + '.',
+        fr: 'J’aimerais plus d’informations sur ' + serviceLabel() + '.',
+      };
+      const generic = { de: 'Ich habe eine Frage zu Ihren Leistungen.', en: 'I have a question about your services.', it: 'Ho una domanda sui vostri servizi.', fr: 'J’ai une question sur vos services.' };
+      return currentTopic === 'none' ? generic[locale] : topical[locale];
+    }
+    function serviceLabel() {
+      if (currentTopic === 'none') return KB.whatsapp.fallbackService[locale];
+      // best-effort readable label from greeting chips / nodes
+      const map = { 'phone-agent': { de: 'den KI-Telefonassistenten', en: 'the AI phone agent', it: 'l’assistente telefonico AI', fr: 'l’agent téléphonique IA' }, website: { de: 'eine Website', en: 'a website', it: 'un sito web', fr: 'un site web' }, seo: { de: 'SEO & GEO', en: 'SEO & GEO', it: 'SEO & GEO', fr: 'SEO & GEO' }, geo: { de: 'GEO', en: 'GEO', it: 'GEO', fr: 'GEO' }, ads: { de: 'Google Ads', en: 'Google Ads', it: 'Google Ads', fr: 'Google Ads' }, automation: { de: 'Automatisierung', en: 'automation', it: 'l’automazione', fr: 'l’automatisation' } };
+      return (map[currentTopic] && map[currentTopic][locale]) || KB.whatsapp.fallbackService[locale];
+    }
+
+    function openHandover() {
+      const ui = KB.ui[locale];
+      const card = document.createElement('div'); card.className = 'wa__handover';
+      const q = defaultSummary();
+      card.innerHTML = '<div class="wa__handover-title">' + ui.humanTitle + '</div><p>' + ui.humanIntro + '</p><p style="margin-top:.4rem">' + ui.availability + '</p>';
+      const ta = document.createElement('textarea'); ta.className = 'wa__summary'; ta.value = q; ta.setAttribute('aria-label', 'Summary');
+      card.appendChild(ta);
+      const row = document.createElement('div'); row.className = 'wa__handover-row';
+      const go = document.createElement('a'); go.className = 'wa__btn wa__btn--wa'; go.textContent = ui.approve; go.target = '_blank'; go.rel = 'noopener';
+      const cancel = document.createElement('button'); cancel.className = 'wa__btn wa__btn--ghost'; cancel.type = 'button'; cancel.textContent = ui.cancel;
+      function buildLink() {
+        const msg = KB.whatsapp.template[locale].replace('[service]', serviceLabel()).replace('[summary]', ta.value.trim());
+        go.href = 'https://wa.me/' + KB.whatsapp.number + '?text=' + encodeURIComponent(msg);
+      }
+      buildLink(); ta.addEventListener('input', buildLink);
+      go.addEventListener('click', () => ev('chat_whatsapp_transfer', { trigger: 'user_request' }));
+      cancel.addEventListener('click', () => { card.remove(); addChips(KB.greetingChips); });
+      row.appendChild(go); row.appendChild(cancel); card.appendChild(row);
+      body.appendChild(card); scrollDown();
+    }
+
+    // ── open / close / language ───────────────────────────────────────────
+    function greet() {
+      body.innerHTML = '';
+      currentTopic = 'none';
+      lastFreeText = '';
+      addBot(KB.ui[locale].greeting);
+      addChips(KB.greetingChips);
+    }
+
+    function openPanel() {
+      if (panel) { panel.style.display = 'flex'; root.setAttribute('data-open', ''); return; }
+      const tpl = root.querySelector('[data-wa-template]');
+      panel = tpl.content.firstElementChild.cloneNode(true);
+      root.appendChild(panel);
+      root.setAttribute('data-open', '');
+      body = panel.querySelector('[data-wa-body]');
+      panel.querySelector('[data-wa-foot]').textContent = KB.ui[locale].foot;
+      const langSel = panel.querySelector('[data-wa-lang]'); langSel.value = locale;
+      langSel.addEventListener('change', () => { locale = langSel.value; root.setAttribute('data-locale', locale); applyStaticText(); greet(); });
+      panel.querySelector('[data-wa-close]').addEventListener('click', closePanel);
+      const form = panel.querySelector('[data-wa-form]');
+      const input = panel.querySelector('[data-wa-text]');
+      applyStaticText();
+      form.addEventListener('submit', (e) => { e.preventDefault(); const v = input.value.trim(); if (!v) return; input.value = ''; handleFreeText(v); });
+      ev('chat_open');
+      greet();
+    }
+    function applyStaticText() {
+      if (!panel) return;
+      panel.querySelector('.wa__title').textContent = KB.ui[locale].title;
+      panel.querySelector('.wa__disclosure').textContent = KB.ui[locale].disclosure;
+      panel.querySelector('[data-wa-text]').placeholder = KB.ui[locale].inputPlaceholder;
+      panel.querySelector('[data-wa-foot]').textContent = KB.ui[locale].foot;
+    }
+    function closePanel() { if (panel) panel.style.display = 'none'; root.removeAttribute('data-open'); ev('chat_close'); }
+
+    // Progressive enhancement: turn the contact link into the chat toggle
+    const launcher = root.querySelector('[data-wa-launcher]');
+    launcher.addEventListener('click', (e) => { e.preventDefault(); openPanel(); });
+  })();
+</script>
