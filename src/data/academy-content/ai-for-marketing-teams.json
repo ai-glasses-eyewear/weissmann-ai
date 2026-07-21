@@ -1,0 +1,441 @@
+{
+  "id": "ai-for-marketing-teams",
+  "cluster": "functions",
+  "type": "spoke",
+  "relatedServices": [
+    "automation",
+    "agents"
+  ],
+  "slug": {
+    "de": "ki-im-marketing",
+    "en": "ai-in-marketing",
+    "it": "ia-nel-marketing",
+    "fr": "ia-en-marketing"
+  },
+  "title": {
+    "de": "KI im Marketing: der Praxis-Guide für Teams | Weissmann AI",
+    "en": "AI in Marketing: A Practical Guide for Teams | Weissmann AI",
+    "it": "IA nel marketing: guida pratica per i team | Weissmann AI",
+    "fr": "IA en marketing : le guide pratique equipes | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie Marketing-Teams KI wirksam einsetzen: Ideen, Textentwuerfe, Personalisierung und Asset-Varianten - mit Workflow, Qualitaetskontrolle und revDSG-konformem Rahmen.",
+    "en": "How marketing teams use AI effectively: ideation, drafting, personalisation and asset variations - with a workflow, quality control and a Swiss-compliant framework.",
+    "it": "Come i team di marketing usano l'IA: idee, bozze, personalizzazione e varianti di asset - con workflow, controllo qualita e quadro conforme alla revLPD.",
+    "fr": "Comment les equipes marketing utilisent l'IA : idees, brouillons, personnalisation et variantes - avec workflow, controle qualite et cadre conforme a la nLPD."
+  },
+  "kicker": {
+    "de": "Funktionen - Marketing",
+    "en": "Functions - Marketing",
+    "it": "Funzioni - Marketing",
+    "fr": "Fonctions - Marketing"
+  },
+  "h1": {
+    "de": "KI im Marketing: Wie Teams Inhalte schneller und besser produzieren",
+    "en": "AI in Marketing: How Teams Produce Content Faster and Better",
+    "it": "IA nel marketing: come i team producono contenuti piu velocemente e meglio",
+    "fr": "IA en marketing : produire des contenus plus vite et mieux en equipe"
+  },
+  "answerFirst": {
+    "de": "KI im Marketing bezeichnet den Einsatz generativer und analytischer KI, um Marketingarbeit zu beschleunigen: Ideen finden, Texte entwerfen, Inhalte personalisieren und Asset-Varianten erstellen. Am wirksamsten ist sie als Assistenz im Team-Workflow - mit klarem Briefing, menschlicher Pruefung und definierter Markenstimme. KI ersetzt keine Strategie, sondern verkuerzt Produktionszyklen und schafft Raum fuer Kreativitaet. In der Schweiz bilden revDSG und Urheberrecht dabei die Leitplanken.",
+    "en": "AI in marketing means using generative and analytical AI to speed up marketing work: finding ideas, drafting copy, personalising content and producing asset variations. It works best as an assistant inside the team workflow - with a clear brief, human review and a defined brand voice. AI does not replace strategy; it shortens production cycles and frees time for creativity. In Switzerland, the revDSG and copyright law set the guardrails.",
+    "it": "IA nel marketing significa usare l'intelligenza artificiale generativa e analitica per accelerare il lavoro: trovare idee, redigere testi, personalizzare contenuti e creare varianti di asset. Funziona meglio come assistente nel workflow del team, con brief chiaro, revisione umana e voce del marchio definita. L'IA non sostituisce la strategia: accorcia i cicli produttivi e libera tempo per la creativita. In Svizzera revLPD e diritto d'autore fissano i limiti.",
+    "fr": "L'IA en marketing consiste a utiliser l'IA generative et analytique pour accelerer le travail : trouver des idees, rediger, personnaliser et produire des variantes d'assets. Elle est plus efficace comme assistant dans le workflow d'equipe, avec un brief clair, une revision humaine et une voix de marque definie. L'IA ne remplace pas la strategie : elle raccourcit les cycles de production. En Suisse, la nLPD et le droit d'auteur fixent le cadre."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was KI im Marketing wirklich leistet",
+        "en": "What AI in marketing actually does",
+        "it": "Cosa fa davvero l'IA nel marketing",
+        "fr": "Ce que l'IA en marketing apporte reellement"
+      },
+      "paragraphs": [
+        {
+          "de": "KI im Marketing meint den praktischen Einsatz generativer und analytischer Modelle, um wiederkehrende Produktionsschritte zu beschleunigen - vom ersten Ideen-Sprint ueber Textentwuerfe bis zu Dutzenden Asset-Varianten fuer verschiedene Kanaele. Der Nutzen entsteht nicht durch ein einzelnes Wundertool, sondern durch die Integration in bestehende Team-Ablaeufe.",
+          "en": "AI in marketing is the practical use of generative and analytical models to speed up repetitive production steps - from the first ideation sprint through draft copy to dozens of asset variations for different channels. The value comes not from a single miracle tool but from integrating AI into existing team workflows.",
+          "it": "L'IA nel marketing e l'uso pratico di modelli generativi e analitici per accelerare le fasi ripetitive della produzione: dal primo sprint di idee alle bozze fino a decine di varianti di asset per canali diversi. Il valore non nasce da un tool miracoloso, ma dall'integrazione nei flussi di lavoro del team.",
+          "fr": "L'IA en marketing, c'est l'usage concret de modeles generatifs et analytiques pour accelerer les etapes repetitives de production : du premier sprint d'idees aux brouillons, jusqu'a des dizaines de variantes pour differents canaux. La valeur ne vient pas d'un outil miracle, mais de l'integration dans les workflows existants."
+        },
+        {
+          "de": "Wichtig ist die Abgrenzung: KI uebernimmt Fleissarbeit und liefert Rohmaterial, waehrend Strategie, Positionierung und finale Verantwortung beim Menschen bleiben. Diese Aufgabenteilung - KI als Verstaerker, nicht als Ersatz - entscheidet darueber, ob die Qualitaet steigt oder in Beliebigkeit kippt. Wer den Unterschied ignoriert, produziert schneller mittelmaessige Inhalte.",
+          "en": "The distinction matters: AI handles the legwork and produces raw material, while strategy, positioning and final accountability stay with people. This division of labour - AI as an amplifier, not a replacement - decides whether quality rises or tips into blandness. Ignore it, and you simply produce mediocre content faster.",
+          "it": "La distinzione conta: l'IA svolge il lavoro ripetitivo e fornisce materiale grezzo, mentre strategia, posizionamento e responsabilita finale restano alle persone. Questa divisione dei compiti - l'IA come amplificatore, non sostituto - decide se la qualita cresce o scivola nella banalita. Ignorarla significa produrre contenuti mediocri piu in fretta.",
+          "fr": "La distinction est essentielle : l'IA execute le travail de fond et fournit la matiere brute, tandis que strategie, positionnement et responsabilite finale restent humains. Cette repartition - l'IA comme amplificateur, pas comme remplacant - decide si la qualite monte ou bascule dans la banalite. L'ignorer, c'est produire du contenu mediocre plus vite."
+        },
+        {
+          "de": "Dieser Beitrag behandelt das Produzieren von Marketing mit KI. Die Sichtbarkeit in Suchmaschinen und KI-Antworten (SEO und GEO) ist ein eigenes, verwandtes Thema und wird separat behandelt.",
+          "en": "This article covers producing marketing work with AI. Visibility in search engines and AI answers (SEO and GEO) is a separate, related topic covered elsewhere.",
+          "it": "Questo articolo tratta la produzione di marketing con l'IA. La visibilita nei motori di ricerca e nelle risposte IA (SEO e GEO) e un tema distinto e correlato, trattato a parte.",
+          "fr": "Cet article traite de la production de marketing avec l'IA. La visibilite dans les moteurs de recherche et les reponses IA (SEO et GEO) est un sujet distinct et connexe, traite separement."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die wichtigsten Einsatzfelder fuer Marketing-Teams",
+        "en": "The key use cases for marketing teams",
+        "it": "I principali casi d'uso per i team di marketing",
+        "fr": "Les principaux cas d'usage pour les equipes marketing"
+      },
+      "bullets": [
+        {
+          "de": "Ideenfindung: Kampagnen-Winkel, Betreffzeilen und Hook-Varianten in Minuten statt Stunden - als Startpunkt fuer die Auswahl durch das Team.",
+          "en": "Ideation: campaign angles, subject lines and hook variations in minutes rather than hours - as a starting point for the team to select from.",
+          "it": "Ideazione: angoli di campagna, oggetti email e varianti di hook in minuti invece che ore, come punto di partenza per la scelta del team.",
+          "fr": "Ideation : angles de campagne, objets d'e-mails et variantes d'accroches en minutes plutot qu'en heures, comme point de depart pour l'equipe."
+        },
+        {
+          "de": "Textentwuerfe: Erste Fassungen fuer Blog, Newsletter, Social Media, Anzeigen und Landingpages - zum Redigieren, nicht zum blinden Veroeffentlichen.",
+          "en": "Draft copy: first versions for blogs, newsletters, social media, ads and landing pages - to be edited, not published blindly.",
+          "it": "Bozze: prime versioni per blog, newsletter, social, annunci e landing page, da rivedere e non da pubblicare alla cieca.",
+          "fr": "Brouillons : premieres versions pour blogs, newsletters, reseaux sociaux, publicites et landing pages, a reviser et non a publier tel quel."
+        },
+        {
+          "de": "Personalisierung: Varianten pro Segment, Persona, Branche oder Sprache - skalierbare Ansprache statt Einheitsbotschaft.",
+          "en": "Personalisation: variants per segment, persona, industry or language - scalable messaging instead of one-size-fits-all.",
+          "it": "Personalizzazione: varianti per segmento, persona, settore o lingua, per messaggi scalabili invece di un unico testo per tutti.",
+          "fr": "Personnalisation : variantes par segment, persona, secteur ou langue, pour un message adaptable plutot qu'uniforme."
+        },
+        {
+          "de": "Asset-Varianten: Dutzende Versionen einer Anzeige, eines Call-to-Action oder Bildkonzepts fuer strukturierte A/B-Tests.",
+          "en": "Asset variations: dozens of versions of an ad, a call-to-action or an image concept for structured A/B testing.",
+          "it": "Varianti di asset: decine di versioni di un annuncio, una call-to-action o un concept visivo per test A/B strutturati.",
+          "fr": "Variantes d'assets : des dizaines de versions d'une publicite, d'un appel a l'action ou d'un concept visuel pour des tests A/B structures."
+        },
+        {
+          "de": "Content-Repurposing: Ein Webinar wird zu Blogartikel, LinkedIn-Posts, Newsletter und Kurzvideo-Skripten - ein Asset, viele Formate.",
+          "en": "Content repurposing: one webinar becomes a blog article, LinkedIn posts, a newsletter and short-video scripts - one asset, many formats.",
+          "it": "Riuso dei contenuti: un webinar diventa articolo, post LinkedIn, newsletter e script per video brevi - un asset, molti formati.",
+          "fr": "Reutilisation de contenu : un webinaire devient article, posts LinkedIn, newsletter et scripts de videos courtes - un asset, plusieurs formats."
+        },
+        {
+          "de": "Recherche und Zusammenfassung: Briefings verdichten, Wettbewerbsmaterial strukturieren, Interviews transkribieren und Kernaussagen extrahieren.",
+          "en": "Research and summarising: condensing briefs, structuring competitor material, transcribing interviews and extracting key points.",
+          "it": "Ricerca e sintesi: condensare brief, strutturare materiale dei concorrenti, trascrivere interviste ed estrarre punti chiave.",
+          "fr": "Recherche et synthese : condenser des briefs, structurer les elements concurrents, transcrire des entretiens et en extraire l'essentiel."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Vom Prompt zum Workflow: ein wiederholbarer Prozess",
+        "en": "From prompt to workflow: a repeatable process",
+        "it": "Dal prompt al workflow: un processo ripetibile",
+        "fr": "Du prompt au workflow : un processus reproductible"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Unterschied zwischen einem netten Experiment und echtem Produktivitaetsgewinn liegt im Prozess. Ein einzelner Zuruf an ein Sprachmodell liefert generische Ergebnisse; ein strukturierter Ablauf mit Kontext, Iteration und Pruefung liefert brauchbare Team-Ergebnisse. Die folgenden Schritte machen KI-Nutzung reproduzierbar statt zufaellig.",
+          "en": "The difference between a fun experiment and a real productivity gain is the process. A one-off request to a language model yields generic output; a structured flow with context, iteration and review yields usable team results. The steps below make AI use repeatable rather than accidental.",
+          "it": "La differenza tra un esperimento simpatico e un vero guadagno di produttivita sta nel processo. Una richiesta isolata a un modello linguistico produce risultati generici; un flusso strutturato con contesto, iterazione e revisione produce risultati utilizzabili. I passaggi seguenti rendono l'uso dell'IA ripetibile e non casuale.",
+          "fr": "La difference entre une experience amusante et un vrai gain de productivite tient au processus. Une demande isolee a un modele de langage donne un resultat generique ; un flux structure avec contexte, iteration et revision donne des resultats exploitables. Les etapes ci-dessous rendent l'usage de l'IA reproductible plutot qu'accidentel."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Briefing statt Zuruf: Ziel, Zielgruppe, Kanal, Tonalitaet und No-Gos im Prompt praezise definieren.",
+          "en": "Brief, don't blurt: define goal, audience, channel, tone and no-gos precisely in the prompt.",
+          "it": "Brief, non improvvisazione: definire con precisione obiettivo, pubblico, canale, tono e cose da evitare.",
+          "fr": "Un brief, pas un jet : definir precisement objectif, cible, canal, ton et interdits dans le prompt."
+        },
+        {
+          "de": "Kontext geben: Markenrichtlinien, Beispieltexte und verifizierte Faktenquellen mitliefern.",
+          "en": "Provide context: supply brand guidelines, sample copy and verified factual sources.",
+          "it": "Dare contesto: fornire linee guida del marchio, testi di esempio e fonti verificate.",
+          "fr": "Donner du contexte : fournir la charte de marque, des exemples de textes et des sources verifiees."
+        },
+        {
+          "de": "Iterieren: In Runden verfeinern, statt einen perfekten Prompt auf Anhieb zu erwarten.",
+          "en": "Iterate: refine in rounds instead of expecting one perfect prompt.",
+          "it": "Iterare: affinare a piu riprese invece di aspettarsi il prompt perfetto al primo colpo.",
+          "fr": "Iterer : affiner par etapes plutot que d'attendre le prompt parfait du premier coup."
+        },
+        {
+          "de": "Human-in-the-Loop: Jede Ausgabe fachlich und redaktionell pruefen, bevor sie das Team verlaesst.",
+          "en": "Human-in-the-loop: review every output for accuracy and editorial quality before it leaves the team.",
+          "it": "Human-in-the-loop: rivedere ogni output per accuratezza e qualita editoriale prima di pubblicarlo.",
+          "fr": "Humain dans la boucle : verifier chaque sortie sur le fond et la forme avant diffusion."
+        },
+        {
+          "de": "Vorlagen sichern: Bewaehrte Prompts als wiederverwendbare Team-Bausteine dokumentieren.",
+          "en": "Save templates: document proven prompts as reusable team building blocks.",
+          "it": "Salvare i template: documentare i prompt efficaci come blocchi riutilizzabili dal team.",
+          "fr": "Capitaliser : documenter les prompts eprouves comme briques reutilisables par l'equipe."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Werkzeugkategorien statt einzelner Tools",
+        "en": "Tool categories, not individual tools",
+        "it": "Categorie di strumenti, non singoli tool",
+        "fr": "Des categories d'outils, pas des outils isoles"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Markt fuer KI-Werkzeuge veraendert sich schnell, einzelne Tools kommen und gehen. Nachhaltiger ist es, in Kategorien zu denken und die Auswahl an klaren Kriterien auszurichten - Datenschutz, Integration in bestehende Systeme, Nachvollziehbarkeit der Ergebnisse und Gesamtkosten in CHF - statt am jeweils lautesten Hype.",
+          "en": "The AI tool market moves fast and individual products come and go. It is more durable to think in categories and anchor your choice to clear criteria - data protection, integration with existing systems, traceability of results and total cost in CHF - rather than the loudest hype of the moment.",
+          "it": "Il mercato degli strumenti IA cambia in fretta e i singoli prodotti vanno e vengono. E piu solido ragionare per categorie e ancorare la scelta a criteri chiari - protezione dei dati, integrazione con i sistemi esistenti, tracciabilita dei risultati e costo totale in CHF - invece che all'hype del momento.",
+          "fr": "Le marche des outils IA evolue vite et les produits vont et viennent. Il est plus durable de raisonner par categories et d'ancrer le choix a des criteres clairs - protection des donnees, integration aux systemes existants, tracabilite des resultats et cout total en CHF - plutot qu'au battage du moment."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Sprachmodelle (LLMs) fuer Ideen, Textentwuerfe, Redigieren und Uebersetzung.",
+          "en": "Language models (LLMs) for ideation, drafting, editing and translation.",
+          "it": "Modelli linguistici (LLM) per idee, bozze, revisione e traduzione.",
+          "fr": "Modeles de langage (LLM) pour idees, brouillons, revision et traduction."
+        },
+        {
+          "de": "Bild- und Videogeneratoren fuer Visuals, Moodboards und Konzeptvarianten.",
+          "en": "Image and video generators for visuals, moodboards and concept variations.",
+          "it": "Generatori di immagini e video per visual, moodboard e varianti di concept.",
+          "fr": "Generateurs d'images et de videos pour visuels, moodboards et variantes de concept."
+        },
+        {
+          "de": "Integrierte Assistenten in bestehenden Marketing-, CRM- und Office-Suiten.",
+          "en": "Built-in assistants inside existing marketing, CRM and office suites.",
+          "it": "Assistenti integrati nelle suite di marketing, CRM e office gia in uso.",
+          "fr": "Assistants integres dans les suites marketing, CRM et bureautiques existantes."
+        },
+        {
+          "de": "Automations-Plattformen, die KI-Schritte mit CRM, CMS und E-Mail-Systemen verbinden.",
+          "en": "Automation platforms that connect AI steps to CRM, CMS and email systems.",
+          "it": "Piattaforme di automazione che collegano i passaggi IA a CRM, CMS ed email.",
+          "fr": "Plateformes d'automatisation reliant les etapes IA au CRM, au CMS et a l'e-mail."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Markenstimme, Qualitaet und Guardrails",
+        "en": "Brand voice, quality and guardrails",
+        "it": "Voce del marchio, qualita e guardrail",
+        "fr": "Voix de marque, qualite et garde-fous"
+      },
+      "paragraphs": [
+        {
+          "de": "Das groesste Risiko generativer KI ist nicht die fehlende Geschwindigkeit, sondern die plausibel klingende Ungenauigkeit und die austauschbare Tonalitaet. Beides laesst sich mit klaren Guardrails beherrschen. Der Aufwand fuer diese Kontrollen ist Teil der Rechnung - ohne sie verlagert KI die Arbeit nur vom Schreiben zum Korrigieren.",
+          "en": "The biggest risk of generative AI is not a lack of speed but plausible-sounding inaccuracy and interchangeable tone. Both are manageable with clear guardrails. The effort for these controls is part of the equation - without them, AI merely shifts the work from writing to correcting.",
+          "it": "Il rischio maggiore dell'IA generativa non e la mancanza di velocita, ma l'imprecisione dall'aria plausibile e il tono intercambiabile. Entrambi si gestiscono con guardrail chiari. Lo sforzo di questi controlli fa parte del conto: senza, l'IA sposta solo il lavoro dalla scrittura alla correzione.",
+          "fr": "Le plus grand risque de l'IA generative n'est pas le manque de vitesse, mais l'inexactitude d'apparence credible et le ton interchangeable. Les deux se maitrisent avec des garde-fous clairs. L'effort de ces controles fait partie de l'equation : sans eux, l'IA deplace simplement le travail de la redaction vers la correction."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Fakten pruefen: KI erfindet plausibel klingende Aussagen; Zahlen, Zitate und Quellen immer verifizieren.",
+          "en": "Check facts: AI invents plausible-sounding claims; always verify figures, quotes and sources.",
+          "it": "Verificare i fatti: l'IA inventa affermazioni plausibili; controllare sempre numeri, citazioni e fonti.",
+          "fr": "Verifier les faits : l'IA invente des affirmations credibles ; toujours verifier chiffres, citations et sources."
+        },
+        {
+          "de": "Markenstimme kodifizieren: Ton, Vokabular und Tabus in einem wiederverwendbaren Style-Prompt festhalten.",
+          "en": "Codify brand voice: capture tone, vocabulary and taboos in a reusable style prompt.",
+          "it": "Codificare la voce del marchio: fissare tono, lessico e tabu in uno style prompt riutilizzabile.",
+          "fr": "Codifier la voix de marque : consigner ton, vocabulaire et interdits dans un style prompt reutilisable."
+        },
+        {
+          "de": "Gegen Beliebigkeit: Konkrete Beispiele, echte Kundenprobleme und eigene Daten einbringen.",
+          "en": "Fight blandness: feed in concrete examples, real customer problems and your own data.",
+          "it": "Contro la banalita: inserire esempi concreti, problemi reali dei clienti e dati propri.",
+          "fr": "Contre la banalite : injecter des exemples concrets, de vrais problemes clients et vos propres donnees."
+        },
+        {
+          "de": "Rechte klaeren: Nutzungsrechte an generierten Bildern und die Herkunft von Trainingsdaten beachten.",
+          "en": "Clarify rights: mind usage rights for generated images and the provenance of training data.",
+          "it": "Chiarire i diritti: considerare i diritti d'uso delle immagini generate e l'origine dei dati di training.",
+          "fr": "Clarifier les droits : verifier les droits d'usage des images generees et l'origine des donnees d'entrainement."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz und Recht: der Schweizer Rahmen",
+        "en": "Data protection and law: the Swiss framework",
+        "it": "Protezione dei dati e diritto: il quadro svizzero",
+        "fr": "Protection des donnees et droit : le cadre suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Wer KI im Marketing produktiv einsetzt, verarbeitet oft Kunden- und Interessentendaten. In der Schweiz gilt dafuer das revidierte Datenschutzgesetz (revDSG), beaufsichtigt durch den EDOEB. Werden EU-Kundinnen und -Kunden angesprochen, kommen zusaetzlich die DSGVO und der EU AI Act ins Spiel. Praktisch heisst das: bewusst entscheiden, welche Daten ein Tool sehen darf.",
+          "en": "Using AI productively in marketing often means processing customer and prospect data. In Switzerland this falls under the revised Data Protection Act (revDSG), supervised by the EDOEB. If you address EU customers, the GDPR and the EU AI Act also apply. In practice, that means deciding deliberately which data a tool is allowed to see.",
+          "it": "Usare l'IA nel marketing significa spesso trattare dati di clienti e potenziali clienti. In Svizzera vale la legge sulla protezione dei dati revisionata (revLPD), vigilata dall'IFPDT. Se ci si rivolge a clienti UE, si aggiungono il GDPR e l'AI Act europeo. In pratica: decidere con consapevolezza quali dati un tool puo vedere.",
+          "fr": "Utiliser l'IA en marketing implique souvent de traiter des donnees de clients et de prospects. En Suisse, cela releve de la loi revisee sur la protection des donnees (nLPD), sous la surveillance du PFPDT. Pour une cible UE s'ajoutent le RGPD et l'AI Act europeen. En pratique : decider sciemment quelles donnees un outil peut voir."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "revDSG beachten: keine Personendaten oder Geschaeftsgeheimnisse ungeprueft in oeffentliche Tools eingeben.",
+          "en": "Respect the revDSG: do not paste personal data or trade secrets into public tools unchecked.",
+          "it": "Rispettare la revLPD: non inserire dati personali o segreti aziendali in tool pubblici senza verifica.",
+          "fr": "Respecter la nLPD : ne pas saisir de donnees personnelles ou de secrets d'affaires dans des outils publics sans controle."
+        },
+        {
+          "de": "Auftragsbearbeitung: Vertraege, Serverstandort und geschaeftliche Tarife mit Datenschutzgarantien pruefen.",
+          "en": "Data processing: check contracts, server location and business tiers with data-protection guarantees.",
+          "it": "Trattamento su incarico: verificare contratti, localizzazione dei server e piani business con garanzie sui dati.",
+          "fr": "Sous-traitance : verifier contrats, localisation des serveurs et offres pro avec garanties de protection des donnees."
+        },
+        {
+          "de": "Transparenz: Kennzeichnung KI-generierter Inhalte je nach Kontext und Kanal erwaegen.",
+          "en": "Transparency: consider labelling AI-generated content depending on context and channel.",
+          "it": "Trasparenza: valutare l'etichettatura dei contenuti generati dall'IA secondo contesto e canale.",
+          "fr": "Transparence : envisager un marquage des contenus generes par l'IA selon le contexte et le canal."
+        },
+        {
+          "de": "Verantwortlichkeit: Eine interne Richtlinie legt fest, welche Tools, Daten und Freigaben erlaubt sind.",
+          "en": "Accountability: an internal policy defines which tools, data and approvals are permitted.",
+          "it": "Responsabilita: una policy interna definisce tool, dati e approvazioni consentiti.",
+          "fr": "Responsabilite : une politique interne definit les outils, donnees et validations autorises."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wirkung messen statt Aktivitaet feiern",
+        "en": "Measure impact, not activity",
+        "it": "Misurare l'impatto, non l'attivita",
+        "fr": "Mesurer l'impact, pas l'activite"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Einsatz lohnt sich nur, wenn er nachweisbar etwas verbessert. Aussagekraeftig sind Kennzahlen, die Geschwindigkeit und Wirkung verbinden - nicht die blosse Zahl generierter Woerter. Ein kleiner, klar gemessener Pilot in einem einzigen Workflow liefert bessere Entscheidungsgrundlagen als eine breite, unkontrollierte Einfuehrung.",
+          "en": "AI is only worthwhile if it demonstrably improves something. The meaningful metrics connect speed and impact - not the sheer number of words generated. A small, clearly measured pilot in a single workflow gives you better decisions than a broad, uncontrolled rollout.",
+          "it": "L'IA conviene solo se migliora qualcosa in modo dimostrabile. Le metriche significative collegano velocita e impatto, non il semplice numero di parole generate. Un pilota piccolo e misurato con chiarezza su un singolo workflow offre decisioni migliori di un'adozione ampia e incontrollata.",
+          "fr": "L'IA n'a d'interet que si elle ameliore quelque chose de facon demontrable. Les indicateurs utiles relient vitesse et impact, pas le simple nombre de mots generes. Un pilote restreint et clairement mesure sur un seul workflow eclaire mieux les decisions qu'un deploiement large et non maitrise."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Produktionszeit pro Asset vor und nach dem KI-Einsatz.",
+          "en": "Production time per asset before and after adopting AI.",
+          "it": "Tempo di produzione per asset prima e dopo l'adozione dell'IA.",
+          "fr": "Temps de production par asset avant et apres l'adoption de l'IA."
+        },
+        {
+          "de": "Anzahl getesteter Varianten und daraus gewonnene Lernerfolge.",
+          "en": "Number of variations tested and the learnings gained from them.",
+          "it": "Numero di varianti testate e apprendimenti ottenuti.",
+          "fr": "Nombre de variantes testees et enseignements qui en decoulent."
+        },
+        {
+          "de": "Engagement- und Conversion-Wirkung der KI-gestuetzten Inhalte.",
+          "en": "Engagement and conversion impact of the AI-assisted content.",
+          "it": "Impatto su engagement e conversioni dei contenuti assistiti dall'IA.",
+          "fr": "Impact sur l'engagement et les conversions des contenus assistes par l'IA."
+        },
+        {
+          "de": "Freigesetzte Zeit fuer Strategie, Kreativitaet und Kundenkontakt.",
+          "en": "Time freed up for strategy, creativity and customer contact.",
+          "it": "Tempo liberato per strategia, creativita e contatto con i clienti.",
+          "fr": "Temps libere pour la strategie, la creativite et le contact client."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ersetzt KI Marketing-Teams?",
+        "en": "Does AI replace marketing teams?",
+        "it": "L'IA sostituisce i team di marketing?",
+        "fr": "L'IA remplace-t-elle les equipes marketing ?"
+      },
+      "a": {
+        "de": "Nein. KI verschiebt die Arbeit von der reinen Produktion hin zu Briefing, Auswahl, Redaktion und Strategie. Routineentwuerfe entstehen schneller, doch Urteilsvermoegen, Markenverstaendnis und finale Verantwortung bleiben menschlich. Teams, die KI als Assistenz nutzen, gewinnen Zeit fuer die Aufgaben, die tatsaechlich Wirkung erzielen.",
+        "en": "No. AI shifts work from pure production towards briefing, selection, editing and strategy. Routine drafts appear faster, but judgement, brand understanding and final accountability stay human. Teams that use AI as an assistant gain time for the tasks that truly move the needle.",
+        "it": "No. L'IA sposta il lavoro dalla pura produzione verso brief, selezione, revisione e strategia. Le bozze di routine arrivano piu in fretta, ma giudizio, comprensione del marchio e responsabilita finale restano umani. I team che usano l'IA come assistente guadagnano tempo per cio che conta.",
+        "fr": "Non. L'IA deplace le travail de la pure production vers le brief, la selection, la revision et la strategie. Les brouillons de routine arrivent plus vite, mais le jugement, la comprehension de la marque et la responsabilite finale restent humains. Les equipes qui l'utilisent comme assistant gagnent du temps pour ce qui compte."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Marketing-Aufgaben eignen sich am besten fuer KI?",
+        "en": "Which marketing tasks suit AI best?",
+        "it": "Quali attivita di marketing sono piu adatte all'IA?",
+        "fr": "Quelles taches marketing conviennent le mieux a l'IA ?"
+      },
+      "a": {
+        "de": "Am besten eignen sich Aufgaben mit vielen Wiederholungen und klaren Vorgaben: Ideensprints, erste Textentwuerfe, Varianten fuer A/B-Tests, Personalisierung pro Segment und das Umformen eines Inhalts in mehrere Formate. Weniger geeignet ist KI fuer originaere Strategie, sensible Kommunikation und Aussagen, die faktische Praezision erfordern.",
+        "en": "The best fits are tasks with high repetition and clear parameters: ideation sprints, first drafts, variations for A/B testing, personalisation per segment and repurposing one piece into several formats. AI is less suited to original strategy, sensitive communication and claims that demand factual precision.",
+        "it": "Sono ideali le attivita ripetitive e con parametri chiari: sprint di idee, prime bozze, varianti per test A/B, personalizzazione per segmento e riuso di un contenuto in piu formati. L'IA e meno adatta a strategia originale, comunicazione sensibile e affermazioni che richiedono precisione fattuale.",
+        "fr": "Les meilleures candidates sont les taches repetitives et bien cadrees : sprints d'idees, premiers brouillons, variantes pour tests A/B, personnalisation par segment et reutilisation d'un contenu en plusieurs formats. L'IA convient moins a la strategie originale, la communication sensible et les affirmations exigeant une precision factuelle."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie behalte ich mit KI meine Markenstimme?",
+        "en": "How do I keep my brand voice with AI?",
+        "it": "Come mantengo la voce del marchio con l'IA?",
+        "fr": "Comment garder ma voix de marque avec l'IA ?"
+      },
+      "a": {
+        "de": "Kodifizieren Sie die Markenstimme in einem wiederverwendbaren Style-Prompt: Tonalitaet, bevorzugtes Vokabular, Tabuwoerter und drei bis fuenf Beispieltexte. Liefern Sie diesen Kontext bei jeder Aufgabe mit und lassen Sie jede Ausgabe redaktionell pruefen. So bleibt die Stimme konsistent, statt in generische KI-Sprache abzugleiten.",
+        "en": "Codify your brand voice in a reusable style prompt: tone, preferred vocabulary, banned words and three to five sample texts. Supply this context with every task and have each output editorially reviewed. That keeps the voice consistent instead of drifting into generic AI language.",
+        "it": "Codifica la voce del marchio in uno style prompt riutilizzabile: tono, lessico preferito, parole vietate e da tre a cinque testi di esempio. Fornisci questo contesto a ogni attivita e fai revisionare ogni output. Cosi la voce resta coerente invece di scivolare in un linguaggio IA generico.",
+        "fr": "Codifiez votre voix de marque dans un style prompt reutilisable : ton, vocabulaire privilegie, mots interdits et trois a cinq exemples de textes. Fournissez ce contexte a chaque tache et faites reviser chaque sortie. La voix reste ainsi coherente au lieu de deriver vers un langage IA generique."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist der KI-Einsatz im Marketing in der Schweiz datenschutzkonform?",
+        "en": "Is using AI in marketing compliant with Swiss data protection?",
+        "it": "L'uso dell'IA nel marketing e conforme alla protezione dati svizzera?",
+        "fr": "L'usage de l'IA en marketing est-il conforme a la protection des donnees suisse ?"
+      },
+      "a": {
+        "de": "Er kann es sein, wenn Sie das revDSG einhalten. Geben Sie keine Personendaten oder Geschaeftsgeheimnisse ungeprueft in oeffentliche Tools ein, pruefen Sie Vertraege und Serverstandort bei geschaeftlicher Nutzung und legen Sie eine interne Richtlinie fest. Bei EU-Zielgruppen gelten zusaetzlich DSGVO und EU AI Act. Der EDOEB ist die zustaendige Aufsichtsbehoerde.",
+        "en": "It can be, if you comply with the revDSG. Do not enter personal data or trade secrets into public tools unchecked, review contracts and server location for business use, and set an internal policy. For EU audiences the GDPR and EU AI Act also apply. The EDOEB is the responsible supervisory authority.",
+        "it": "Puo esserlo, se rispetti la revLPD. Non inserire dati personali o segreti aziendali in tool pubblici senza verifica, controlla contratti e localizzazione dei server per l'uso business e definisci una policy interna. Per pubblici UE valgono anche GDPR e AI Act. L'IFPDT e l'autorita di vigilanza competente.",
+        "fr": "Cela peut l'etre si vous respectez la nLPD. N'entrez pas de donnees personnelles ni de secrets d'affaires dans des outils publics sans controle, verifiez contrats et localisation des serveurs pour un usage pro, et definissez une politique interne. Pour une cible UE, le RGPD et l'AI Act s'appliquent aussi. Le PFPDT est l'autorite de surveillance competente."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie fange ich mit KI im Marketing am besten an?",
+        "en": "What is the best way to start with AI in marketing?",
+        "it": "Qual e il modo migliore per iniziare con l'IA nel marketing?",
+        "fr": "Quelle est la meilleure facon de demarrer avec l'IA en marketing ?"
+      },
+      "a": {
+        "de": "Starten Sie klein: Waehlen Sie einen einzigen, wiederkehrenden Workflow - etwa Newsletter-Entwuerfe oder Social-Varianten - und messen Sie Zeit und Wirkung vor und nach dem KI-Einsatz. Dokumentieren Sie bewaehrte Prompts als Team-Vorlagen und skalieren Sie erst, wenn der Pilot einen klaren Nutzen zeigt.",
+        "en": "Start small: pick a single recurring workflow - such as newsletter drafts or social variations - and measure time and impact before and after adopting AI. Document proven prompts as team templates and scale only once the pilot shows clear value.",
+        "it": "Inizia in piccolo: scegli un solo workflow ricorrente - ad esempio bozze di newsletter o varianti social - e misura tempo e impatto prima e dopo. Documenta i prompt efficaci come template del team e scala solo quando il pilota mostra un valore chiaro.",
+        "fr": "Commencez petit : choisissez un seul workflow recurrent - brouillons de newsletter ou variantes sociales - et mesurez temps et impact avant et apres. Documentez les prompts eprouves comme modeles d'equipe et ne passez a l'echelle qu'une fois la valeur du pilote demontree."
+      }
+    },
+    {
+      "q": {
+        "de": "Was unterscheidet KI im Marketing von SEO und GEO?",
+        "en": "How does AI in marketing differ from SEO and GEO?",
+        "it": "In cosa si distingue l'IA nel marketing da SEO e GEO?",
+        "fr": "En quoi l'IA en marketing differe-t-elle du SEO et du GEO ?"
+      },
+      "a": {
+        "de": "KI im Marketing beschreibt das Produzieren von Inhalten und Kampagnen mit KI-Unterstuetzung. SEO und GEO betreffen die Sichtbarkeit dieser Inhalte - in klassischen Suchmaschinen (SEO) und in KI-Antworten wie ChatGPT oder Google AI Overviews (GEO). Beides ergaenzt sich: Erst produzieren, dann fuer Auffindbarkeit optimieren.",
+        "en": "AI in marketing describes producing content and campaigns with AI support. SEO and GEO concern the visibility of that content - in classic search engines (SEO) and in AI answers such as ChatGPT or Google AI Overviews (GEO). They complement each other: produce first, then optimise for discoverability.",
+        "it": "L'IA nel marketing descrive la produzione di contenuti e campagne con il supporto dell'IA. SEO e GEO riguardano la visibilita di quei contenuti - nei motori di ricerca classici (SEO) e nelle risposte IA come ChatGPT o Google AI Overviews (GEO). Sono complementari: prima si produce, poi si ottimizza per la reperibilita.",
+        "fr": "L'IA en marketing decrit la production de contenus et de campagnes avec l'appui de l'IA. Le SEO et le GEO concernent la visibilite de ces contenus - dans les moteurs classiques (SEO) et dans les reponses IA comme ChatGPT ou Google AI Overviews (GEO). Les deux se completent : produire d'abord, optimiser la trouvabilite ensuite."
+      }
+    }
+  ],
+  "keyEntities": [
+    "KI im Marketing",
+    "Generative KI",
+    "Large Language Models",
+    "Content-Erstellung",
+    "Personalisierung",
+    "Markenstimme",
+    "Prompt Engineering",
+    "Content-Repurposing",
+    "Marketing-Automation",
+    "A/B-Testing",
+    "Human-in-the-Loop",
+    "Bildgenerierung",
+    "revDSG",
+    "EDOEB",
+    "EU AI Act",
+    "Marketing-Team"
+  ]
+}

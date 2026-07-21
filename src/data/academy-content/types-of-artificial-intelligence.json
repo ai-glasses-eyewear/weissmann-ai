@@ -1,0 +1,398 @@
+{
+  "id": "types-of-artificial-intelligence",
+  "cluster": "foundations",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "arten-von-kuenstlicher-intelligenz",
+    "en": "types-of-ai",
+    "it": "tipi-di-intelligenza-artificiale",
+    "fr": "types-d-intelligence-artificielle"
+  },
+  "title": {
+    "de": "Arten von Künstlicher Intelligenz erklärt | Weissmann AI",
+    "en": "Types of AI: Narrow, General, Generative | Weissmann AI",
+    "it": "Tipi di intelligenza artificiale spiegati | Weissmann AI",
+    "fr": "Types d'intelligence artificielle expliques | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Enge, allgemeine, regelbasierte, lernende, prädiktive und generative KI: eine klare Landkarte aller KI-Arten mit Beispielen und Schweizer Einordnung.",
+    "en": "Narrow, general, rule-based, learning, predictive and generative AI: a clear map of every type of AI with examples and a Swiss governance lens.",
+    "it": "IA ristretta, generale, basata su regole, predittiva e generativa: una mappa chiara di ogni tipo di IA con esempi e prospettiva svizzera.",
+    "fr": "IA etroite, generale, a base de regles, predictive et generative : une carte claire de chaque type d'IA avec exemples et regard suisse."
+  },
+  "kicker": {
+    "de": "KI-Grundlagen",
+    "en": "AI Foundations",
+    "it": "Fondamenti di IA",
+    "fr": "Fondamentaux de l'IA"
+  },
+  "h1": {
+    "de": "Arten von Künstlicher Intelligenz: die vollständige Landkarte",
+    "en": "Types of Artificial Intelligence: The Complete Map",
+    "it": "Tipi di intelligenza artificiale: la mappa completa",
+    "fr": "Types d'intelligence artificielle : la carte complete"
+  },
+  "answerFirst": {
+    "de": "Künstliche Intelligenz lässt sich entlang drei Achsen ordnen: nach Fähigkeit (schwache/enge KI, starke/allgemeine KI, hypothetische Superintelligenz), nach Funktionsweise (regelbasierte Systeme versus lernende, datengetriebene Modelle) und nach Ergebnis (prädiktive KI, die vorhersagt oder klassifiziert, versus generative KI, die neue Inhalte erzeugt). Jede real existierende Anwendung – vom Spamfilter bis ChatGPT – ist heute enge KI und lässt sich auf dieser Landkarte präzise verorten.",
+    "en": "Artificial intelligence can be organised along three axes: by capability (weak/narrow AI, strong/general AI, hypothetical superintelligence), by mechanism (rule-based systems versus learning, data-driven models) and by output (predictive AI that forecasts or classifies versus generative AI that produces new content). Every application that actually exists today, from spam filters to ChatGPT, is narrow AI and can be located precisely on this map.",
+    "it": "L'intelligenza artificiale si ordina lungo tre assi: per capacita (IA debole/ristretta, IA forte/generale, ipotetica superintelligenza), per meccanismo (sistemi basati su regole rispetto a modelli che apprendono dai dati) e per risultato (IA predittiva che prevede o classifica rispetto a IA generativa che crea nuovi contenuti). Ogni applicazione oggi esistente, dal filtro antispam a ChatGPT, e IA ristretta e trova posto preciso su questa mappa.",
+    "fr": "L'intelligence artificielle s'organise selon trois axes : par capacite (IA faible/etroite, IA forte/generale, superintelligence hypothetique), par mecanisme (systemes a base de regles contre modeles qui apprennent des donnees) et par resultat (IA predictive qui prevoit ou classe contre IA generative qui cree du contenu). Toute application existant aujourd'hui, du filtre anti-spam a ChatGPT, est une IA etroite et se situe precisement sur cette carte."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Die drei Achsen der KI-Landkarte",
+        "en": "The three axes of the AI map",
+        "it": "I tre assi della mappa dell'IA",
+        "fr": "Les trois axes de la carte de l'IA"
+      },
+      "paragraphs": [
+        {
+          "de": "Es gibt keine einzige, offizielle Liste der KI-Arten. Die verwirrenden Begriffe – enge KI, generative KI, maschinelles Lernen, Expertensystem – beschreiben nämlich nicht dasselbe, sondern drei voneinander unabhängige Fragen. Wer diese drei Achsen trennt, kann jedes System sauber einordnen, statt Schlagworte zu vermischen.",
+          "en": "There is no single official list of AI types. The confusing labels – narrow AI, generative AI, machine learning, expert system – do not describe the same thing; they answer three independent questions. Separate these three axes and you can classify any system cleanly instead of blending buzzwords.",
+          "it": "Non esiste un'unica lista ufficiale dei tipi di IA. Le etichette confuse – IA ristretta, IA generativa, apprendimento automatico, sistema esperto – non descrivono la stessa cosa: rispondono a tre domande indipendenti. Separando questi tre assi si classifica con chiarezza qualsiasi sistema invece di mescolare slogan.",
+          "fr": "Il n'existe pas de liste officielle unique des types d'IA. Les etiquettes qui prêtent a confusion – IA etroite, IA generative, apprentissage automatique, systeme expert – ne decrivent pas la même chose : elles repondent a trois questions independantes. En separant ces trois axes, on classe proprement tout systeme au lieu de melanger les mots a la mode."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Fähigkeit – Wie breit ist die Intelligenz? Von enger Spezialisierung über hypothetische Allgemeinheit bis zur Superintelligenz.",
+          "en": "Capability – How broad is the intelligence? From narrow specialisation through hypothetical generality to superintelligence.",
+          "it": "Capacita – Quanto e ampia l'intelligenza? Dalla specializzazione ristretta alla generalita ipotetica fino alla superintelligenza.",
+          "fr": "Capacite – Quelle est l'ampleur de l'intelligence ? De la specialisation etroite a la generalite hypothetique jusqu'a la superintelligence."
+        },
+        {
+          "de": "Funktionsweise – Woher kommt das Verhalten? Aus fest programmierten Regeln oder aus Mustern, die aus Daten gelernt wurden.",
+          "en": "Mechanism – Where does the behaviour come from? From hand-coded rules or from patterns learned from data.",
+          "it": "Meccanismo – Da dove viene il comportamento? Da regole programmate a mano o da schemi appresi dai dati.",
+          "fr": "Mecanisme – D'ou vient le comportement ? De regles codees a la main ou de motifs appris a partir de donnees."
+        },
+        {
+          "de": "Ergebnis – Was liefert das System? Eine Vorhersage bzw. Klassifikation (prädiktiv) oder neue Inhalte wie Text, Bild, Code (generativ).",
+          "en": "Output – What does the system deliver? A prediction or classification (predictive) or new content such as text, images, code (generative).",
+          "it": "Risultato – Cosa produce il sistema? Una previsione o classificazione (predittivo) o nuovi contenuti come testo, immagini, codice (generativo).",
+          "fr": "Resultat – Que produit le systeme ? Une prediction ou classification (predictif) ou du contenu nouveau comme texte, image, code (generatif)."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Fähigkeit: enge, allgemeine und Superintelligenz",
+        "en": "Capability: narrow, general and superintelligence",
+        "it": "Capacita: ristretta, generale e superintelligenza",
+        "fr": "Capacite : etroite, generale et superintelligence"
+      },
+      "paragraphs": [
+        {
+          "de": "Diese Achse betrifft die Frage, die Alan Turing 1950 aufwarf: Wie allgemein ist die Maschine? Wichtig für die Praxis: Alle heute existierenden Systeme sind enge (schwache) KI. Allgemeine KI und Superintelligenz sind Forschungs- und Debattenbegriffe, keine verfügbaren Produkte.",
+          "en": "This axis concerns the question Alan Turing raised in 1950: how general is the machine? The practical point: every system that exists today is narrow (weak) AI. General AI and superintelligence are terms of research and debate, not products you can buy.",
+          "it": "Questo asse riguarda la domanda posta da Alan Turing nel 1950: quanto e generale la macchina? Il punto pratico: ogni sistema oggi esistente e IA ristretta (debole). IA generale e superintelligenza sono termini di ricerca e dibattito, non prodotti acquistabili.",
+          "fr": "Cet axe concerne la question soulevee par Alan Turing en 1950 : a quel point la machine est-elle generale ? Le point pratique : tout systeme existant aujourd'hui est une IA etroite (faible). L'IA generale et la superintelligence sont des termes de recherche et de debat, pas des produits disponibles."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Enge/schwache KI (ANI): auf eine Aufgabe spezialisiert – Übersetzen, Gesichtserkennung, Schach. Auch ChatGPT gehört hierher, so vielseitig es wirkt.",
+          "en": "Narrow/weak AI (ANI): specialised on one task – translation, face recognition, chess. ChatGPT belongs here too, however versatile it seems.",
+          "it": "IA ristretta/debole (ANI): specializzata su un compito – traduzione, riconoscimento facciale, scacchi. Anche ChatGPT rientra qui, per quanto versatile sembri.",
+          "fr": "IA etroite/faible (ANI) : specialisee sur une tâche – traduction, reconnaissance faciale, echecs. ChatGPT en fait aussi partie, aussi polyvalent soit-il."
+        },
+        {
+          "de": "Allgemeine/starke KI (AGI): hypothetisches System mit menschenähnlicher, aufgabenübergreifender Intelligenz. Existiert nicht; Zeitpunkt und Machbarkeit sind offen.",
+          "en": "General/strong AI (AGI): a hypothetical system with human-like, cross-task intelligence. Does not exist; timing and feasibility remain open.",
+          "it": "IA generale/forte (AGI): sistema ipotetico con intelligenza simile a quella umana, trasversale ai compiti. Non esiste; tempi e fattibilita restano aperti.",
+          "fr": "IA generale/forte (AGI) : systeme hypothetique dote d'une intelligence proche de l'humain, transversale aux tâches. N'existe pas ; echeance et faisabilite restent ouvertes."
+        },
+        {
+          "de": "Superintelligenz (ASI): rein spekulatives System, das menschliche Intelligenz in praktisch allen Bereichen übertreffen würde.",
+          "en": "Superintelligence (ASI): a purely speculative system that would surpass human intelligence in virtually every domain.",
+          "it": "Superintelligenza (ASI): sistema puramente speculativo che supererebbe l'intelligenza umana in quasi ogni ambito.",
+          "fr": "Superintelligence (ASI) : systeme purement speculatif qui depasserait l'intelligence humaine dans presque tous les domaines."
+        },
+        {
+          "de": "Alternative Sicht (nach Arend Hintze): reaktive Maschinen (z. B. Deep Blue), Systeme mit begrenztem Gedächtnis (heutige ML-Modelle), Theory of Mind und selbstbewusste KI – die letzten beiden bleiben Zukunftsmusik.",
+          "en": "Alternative lens (after Arend Hintze): reactive machines (e.g. Deep Blue), limited-memory systems (today's ML models), theory of mind and self-aware AI – the last two remain hypothetical.",
+          "it": "Prospettiva alternativa (secondo Arend Hintze): macchine reattive (es. Deep Blue), sistemi a memoria limitata (gli attuali modelli ML), theory of mind e IA autocosciente – le ultime due restano ipotetiche.",
+          "fr": "Autre grille (d'apres Arend Hintze) : machines reactives (ex. Deep Blue), systemes a memoire limitee (les modeles ML actuels), theorie de l'esprit et IA consciente – les deux dernieres restent hypothetiques."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Funktionsweise: regelbasiert versus lernend",
+        "en": "Mechanism: rule-based versus learning",
+        "it": "Meccanismo: basato su regole contro apprendimento",
+        "fr": "Mecanisme : a base de regles contre apprentissage"
+      },
+      "paragraphs": [
+        {
+          "de": "Die zweite Achse trennt die klassische, symbolische KI von der modernen, lernenden KI. Regelbasierte Systeme (auch «GOFAI» oder Expertensysteme, prägend seit den 1970er-Jahren) folgen von Menschen geschriebenen Wenn-dann-Regeln. Sie sind transparent, deterministisch und prüfbar – aber starr: Was nicht als Regel erfasst ist, können sie nicht.",
+          "en": "The second axis separates classic, symbolic AI from modern, learning AI. Rule-based systems (also called GOFAI or expert systems, influential since the 1970s) follow human-written if-then rules. They are transparent, deterministic and auditable – but rigid: whatever is not captured as a rule, they cannot do.",
+          "it": "Il secondo asse separa l'IA classica e simbolica da quella moderna che apprende. I sistemi basati su regole (detti anche GOFAI o sistemi esperti, influenti dagli anni '70) seguono regole se-allora scritte da persone. Sono trasparenti, deterministici e verificabili, ma rigidi: cio che non e codificato come regola non sanno farlo.",
+          "fr": "Le deuxieme axe separe l'IA classique et symbolique de l'IA moderne qui apprend. Les systemes a base de regles (aussi appeles GOFAI ou systemes experts, influents depuis les annees 1970) suivent des regles si-alors ecrites par des humains. Ils sont transparents, deterministes et verifiables, mais rigides : ce qui n'est pas code comme regle, ils ne savent pas le faire."
+        },
+        {
+          "de": "Lernende Systeme (maschinelles Lernen, ML) leiten ihr Verhalten aus Daten ab, statt es explizit programmiert zu bekommen. Arthur Samuel prägte den Begriff bereits 1959. Deep Learning mit neuronalen Netzen ist die heute dominante Spielart. Solche Modelle sind anpassungsfähig und stark bei Mustern, aber datenhungrig und oft schwer nachvollziehbar. Viele reale Systeme sind hybrid (neuro-symbolisch) und kombinieren beide Welten.",
+          "en": "Learning systems (machine learning, ML) derive their behaviour from data rather than being explicitly programmed. Arthur Samuel coined the term back in 1959. Deep learning with neural networks is today's dominant variant. Such models are adaptive and strong at patterns, but data-hungry and often hard to interpret. Many real systems are hybrid (neuro-symbolic), combining both worlds.",
+          "it": "I sistemi che apprendono (apprendimento automatico, ML) ricavano il comportamento dai dati invece di essere programmati esplicitamente. Arthur Samuel conio il termine gia nel 1959. Il deep learning con reti neurali e la variante oggi dominante. Questi modelli sono adattivi e forti sugli schemi, ma avidi di dati e spesso difficili da interpretare. Molti sistemi reali sono ibridi (neuro-simbolici) e uniscono i due mondi.",
+          "fr": "Les systemes qui apprennent (apprentissage automatique, ML) tirent leur comportement des donnees au lieu d'être programmes explicitement. Arthur Samuel a forge le terme des 1959. L'apprentissage profond avec des reseaux de neurones est la variante aujourd'hui dominante. Ces modeles sont adaptatifs et performants sur les motifs, mais gourmands en donnees et souvent difficiles a interpreter. Beaucoup de systemes reels sont hybrides (neuro-symboliques) et combinent les deux mondes."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Ergebnis: prädiktive versus generative KI",
+        "en": "Output: predictive versus generative AI",
+        "it": "Risultato: IA predittiva contro generativa",
+        "fr": "Resultat : IA predictive contre generative"
+      },
+      "paragraphs": [
+        {
+          "de": "Diese Achse ist seit dem Aufstieg von ChatGPT die meistdiskutierte. Prädiktive KI beantwortet «Was ist das?» oder «Was passiert als Nächstes?»: Sie klassifiziert, bewertet oder prognostiziert. Generative KI beantwortet «Erzeuge mir etwas Neues»: Sie produziert Text, Bilder, Code, Audio oder Video. Technisch nutzen beide oft dieselben ML-Grundlagen; generative Modelle lernen zusätzlich, die Verteilung der Daten so gut zu modellieren, dass sie neue, plausible Beispiele erzeugen können. Die Transformer-Architektur von 2017 machte die heutigen grossen Sprachmodelle möglich.",
+          "en": "Since the rise of ChatGPT this is the most-discussed axis. Predictive AI answers 'what is this?' or 'what happens next?': it classifies, scores or forecasts. Generative AI answers 'create something new for me': it produces text, images, code, audio or video. Technically both often share the same ML foundations; generative models additionally learn to model the data distribution well enough to produce new, plausible examples. The Transformer architecture of 2017 made today's large language models possible.",
+          "it": "Dall'ascesa di ChatGPT e l'asse piu discusso. L'IA predittiva risponde a «cos'e questo?» o «cosa succede dopo?»: classifica, valuta o prevede. L'IA generativa risponde a «creami qualcosa di nuovo»: produce testo, immagini, codice, audio o video. Tecnicamente entrambe condividono spesso le stesse basi di ML; i modelli generativi imparano inoltre a modellare la distribuzione dei dati abbastanza bene da produrre nuovi esempi plausibili. L'architettura Transformer del 2017 ha reso possibili gli attuali grandi modelli linguistici.",
+          "fr": "Depuis l'essor de ChatGPT, c'est l'axe le plus discute. L'IA predictive repond a « qu'est-ce que c'est ? » ou « que se passe-t-il ensuite ? » : elle classe, note ou prevoit. L'IA generative repond a « cree-moi quelque chose de nouveau » : elle produit texte, images, code, audio ou video. Techniquement, les deux partagent souvent les mêmes bases de ML ; les modeles generatifs apprennent en plus a modeliser la distribution des donnees assez bien pour produire de nouveaux exemples plausibles. L'architecture Transformer de 2017 a rendu possibles les grands modeles de langage actuels."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Prädiktiv: Spamfilter, Kreditscoring, Nachfrageprognose, medizinische Triage, Bilderkennung, Betrugserkennung.",
+          "en": "Predictive: spam filtering, credit scoring, demand forecasting, medical triage, image recognition, fraud detection.",
+          "it": "Predittivo: filtro antispam, credit scoring, previsione della domanda, triage medico, riconoscimento immagini, rilevamento frodi.",
+          "fr": "Predictif : filtrage anti-spam, notation de credit, prevision de la demande, triage medical, reconnaissance d'images, detection de fraude."
+        },
+        {
+          "de": "Generativ: Sprachmodelle (ChatGPT, Claude, Gemini), Bildgeneratoren (Diffusionsmodelle), Code-Assistenten, Sprachsynthese.",
+          "en": "Generative: language models (ChatGPT, Claude, Gemini), image generators (diffusion models), code assistants, speech synthesis.",
+          "it": "Generativo: modelli linguistici (ChatGPT, Claude, Gemini), generatori di immagini (modelli di diffusione), assistenti di codice, sintesi vocale.",
+          "fr": "Generatif : modeles de langage (ChatGPT, Claude, Gemini), generateurs d'images (modeles de diffusion), assistants de code, synthese vocale."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Lernverfahren im Detail: überwacht, unüberwacht, bestärkend",
+        "en": "Learning methods in detail: supervised, unsupervised, reinforcement",
+        "it": "Metodi di apprendimento in dettaglio: supervisionato, non supervisionato, per rinforzo",
+        "fr": "Methodes d'apprentissage en detail : supervise, non supervise, par renforcement"
+      },
+      "paragraphs": [
+        {
+          "de": "Innerhalb der lernenden KI unterscheidet man vor allem nach der Art des Trainings. Diese Unterscheidung erklärt, warum manche Systeme gelabelte Daten brauchen und andere aus Erfahrung lernen.",
+          "en": "Within learning AI, the main distinction is the kind of training. This distinction explains why some systems need labelled data while others learn from experience.",
+          "it": "All'interno dell'IA che apprende, la distinzione principale riguarda il tipo di addestramento. Spiega perche alcuni sistemi richiedono dati etichettati e altri imparano dall'esperienza.",
+          "fr": "Au sein de l'IA qui apprend, la distinction principale porte sur le type d'entrainement. Elle explique pourquoi certains systemes exigent des donnees etiquetees et d'autres apprennent par l'experience."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Überwachtes Lernen: aus Beispielen mit bekannten Antworten (Labels), z. B. E-Mails als «Spam»/«kein Spam». Grundlage der meisten prädiktiven Anwendungen.",
+          "en": "Supervised learning: from examples with known answers (labels), e.g. emails as 'spam'/'not spam'. The basis of most predictive applications.",
+          "it": "Apprendimento supervisionato: da esempi con risposte note (etichette), es. email come «spam»/«non spam». Base della maggior parte delle applicazioni predittive.",
+          "fr": "Apprentissage supervise : a partir d'exemples aux reponses connues (etiquettes), ex. e-mails « spam »/« non spam ». Base de la plupart des applications predictives."
+        },
+        {
+          "de": "Unüberwachtes Lernen: findet Struktur ohne Labels, etwa Kundensegmente oder Anomalien (Clustering).",
+          "en": "Unsupervised learning: finds structure without labels, such as customer segments or anomalies (clustering).",
+          "it": "Apprendimento non supervisionato: trova struttura senza etichette, come segmenti di clientela o anomalie (clustering).",
+          "fr": "Apprentissage non supervise : trouve une structure sans etiquettes, comme des segments de clients ou des anomalies (clustering)."
+        },
+        {
+          "de": "Bestärkendes Lernen: lernt durch Belohnung aus Versuch und Irrtum; ermöglichte etwa AlphaGo (DeepMind, 2016) und Robotersteuerung.",
+          "en": "Reinforcement learning: learns by reward through trial and error; enabled AlphaGo (DeepMind, 2016) and robot control, for example.",
+          "it": "Apprendimento per rinforzo: impara tramite ricompensa per tentativi ed errori; ha reso possibili ad esempio AlphaGo (DeepMind, 2016) e il controllo di robot.",
+          "fr": "Apprentissage par renforcement : apprend par recompense via essais et erreurs ; a permis par exemple AlphaGo (DeepMind, 2016) et le controle de robots."
+        },
+        {
+          "de": "Selbstüberwachtes Lernen: erzeugt die Trainingssignale aus den Daten selbst und ist die Grundlage, auf der grosse Sprachmodelle vortrainiert werden.",
+          "en": "Self-supervised learning: creates the training signal from the data itself and is the basis on which large language models are pre-trained.",
+          "it": "Apprendimento auto-supervisionato: genera il segnale di addestramento dai dati stessi ed e la base su cui vengono pre-addestrati i grandi modelli linguistici.",
+          "fr": "Apprentissage auto-supervise : cree le signal d'entrainement a partir des donnees elles-mêmes et constitue la base du pre-entrainement des grands modeles de langage."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wie die Typen zusammenspielen – konkrete Beispiele",
+        "en": "How the types combine – concrete examples",
+        "it": "Come si combinano i tipi – esempi concreti",
+        "fr": "Comment les types se combinent – exemples concrets"
+      },
+      "paragraphs": [
+        {
+          "de": "Die drei Achsen sind unabhängig, daher lässt sich jedes System als Kombination beschreiben (Fähigkeit • Funktionsweise • Ergebnis). Alle heutigen Beispiele sind enge KI:",
+          "en": "The three axes are independent, so every system can be described as a combination (capability • mechanism • output). All of today's examples are narrow AI:",
+          "it": "I tre assi sono indipendenti, quindi ogni sistema si descrive come combinazione (capacita • meccanismo • risultato). Tutti gli esempi odierni sono IA ristretta:",
+          "fr": "Les trois axes sont independants ; chaque systeme se decrit donc comme une combinaison (capacite • mecanisme • resultat). Tous les exemples actuels sont des IA etroites :"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Spamfilter: eng • lernend (überwacht) • prädiktiv.",
+          "en": "Spam filter: narrow • learning (supervised) • predictive.",
+          "it": "Filtro antispam: ristretto • apprende (supervisionato) • predittivo.",
+          "fr": "Filtre anti-spam : etroit • apprend (supervise) • predictif."
+        },
+        {
+          "de": "Steuer- oder Compliance-Regelwerk: eng • regelbasiert • deterministisch/prädiktiv.",
+          "en": "Tax or compliance rule engine: narrow • rule-based • deterministic/predictive.",
+          "it": "Motore di regole fiscali o di compliance: ristretto • basato su regole • deterministico/predittivo.",
+          "fr": "Moteur de regles fiscales ou de conformite : etroit • a base de regles • deterministe/predictif."
+        },
+        {
+          "de": "ChatGPT / Claude: eng • lernend (selbstüberwacht) • generativ.",
+          "en": "ChatGPT / Claude: narrow • learning (self-supervised) • generative.",
+          "it": "ChatGPT / Claude: ristretto • apprende (auto-supervisionato) • generativo.",
+          "fr": "ChatGPT / Claude : etroit • apprend (auto-supervise) • generatif."
+        },
+        {
+          "de": "Produktempfehlung im Onlineshop: eng • lernend • prädiktiv.",
+          "en": "Online-shop product recommendation: narrow • learning • predictive.",
+          "it": "Raccomandazione prodotti in un negozio online: ristretto • apprende • predittivo.",
+          "fr": "Recommandation de produits en boutique en ligne : etroit • apprend • predictif."
+        },
+        {
+          "de": "AlphaGo: eng • lernend (bestärkend) • entscheidungsorientiert.",
+          "en": "AlphaGo: narrow • learning (reinforcement) • decision-oriented.",
+          "it": "AlphaGo: ristretto • apprende (per rinforzo) • orientato alla decisione.",
+          "fr": "AlphaGo : etroit • apprend (par renforcement) • oriente decision."
+        },
+        {
+          "de": "Bildgenerator (Diffusionsmodell): eng • lernend • generativ.",
+          "en": "Image generator (diffusion model): narrow • learning • generative.",
+          "it": "Generatore di immagini (modello di diffusione): ristretto • apprende • generativo.",
+          "fr": "Generateur d'images (modele de diffusion) : etroit • apprend • generatif."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Perspektive: den richtigen KI-Typ wählen und regeln",
+        "en": "Swiss perspective: choosing and governing the right type of AI",
+        "it": "Prospettiva svizzera: scegliere e governare il tipo di IA giusto",
+        "fr": "Perspective suisse : choisir et encadrer le bon type d'IA"
+      },
+      "paragraphs": [
+        {
+          "de": "Der KI-Typ folgt der Aufgabe, nicht dem Hype. Für nachvollziehbare, regulierte Entscheidungen (Kredit, Versicherung, Behörden) sind regelbasierte oder prädiktive Modelle mit klarer Erklärbarkeit oft die bessere Wahl. Generative KI glänzt bei Entwürfen, Zusammenfassungen und Ideation, bringt aber eigene Risiken: Halluzinationen, unklare Quellen und mögliche Datenabflüsse.",
+          "en": "The type of AI should follow the task, not the hype. For explainable, regulated decisions (credit, insurance, public administration), rule-based or predictive models with clear explainability are often the better choice. Generative AI excels at drafts, summaries and ideation, but carries its own risks: hallucinations, unclear sources and possible data leakage.",
+          "it": "Il tipo di IA deve seguire il compito, non l'entusiasmo. Per decisioni spiegabili e regolamentate (credito, assicurazioni, amministrazione pubblica), i modelli basati su regole o predittivi con chiara spiegabilita sono spesso la scelta migliore. L'IA generativa eccelle in bozze, riassunti e ideazione, ma comporta rischi propri: allucinazioni, fonti poco chiare e possibili fughe di dati.",
+          "fr": "Le type d'IA doit suivre la tâche, pas la mode. Pour des decisions explicables et reglementees (credit, assurance, administration publique), les modeles a base de regles ou predictifs, clairement explicables, sont souvent le meilleur choix. L'IA generative excelle pour les brouillons, resumes et l'ideation, mais comporte ses propres risques : hallucinations, sources floues et fuites de donnees possibles."
+        },
+        {
+          "de": "In der Schweiz gilt für den Einsatz jedes KI-Typs das revidierte Datenschutzgesetz (revDSG); Aufsichtsbehörde ist der EDÖB. Wer Personendaten in prädiktive oder generative Systeme gibt, muss Zweck, Transparenz und Auftragsverarbeitung klären – gerade bei Cloud-Sprachmodellen. Für Unternehmen mit EU-Bezug kommt der EU AI Act als zusätzlicher, risikobasierter Rahmen hinzu. Menschliche Aufsicht bleibt bei allen Typen die Leitplanke.",
+          "en": "In Switzerland the revised Federal Act on Data Protection (nFADP) applies to the use of any type of AI; the supervisory authority is the FDPIC. Anyone feeding personal data into predictive or generative systems must clarify purpose, transparency and data-processing agreements – especially with cloud language models. Companies with an EU nexus also face the EU AI Act as an additional risk-based framework. Human oversight remains the guardrail across all types.",
+          "it": "In Svizzera la nuova legge sulla protezione dei dati (nLPD) si applica all'uso di qualsiasi tipo di IA; l'autorita di vigilanza e l'IFPDT. Chi immette dati personali in sistemi predittivi o generativi deve chiarire finalita, trasparenza e contratti di trattamento, soprattutto con modelli linguistici in cloud. Le aziende con legami con l'UE affrontano inoltre l'EU AI Act come quadro aggiuntivo basato sul rischio. La supervisione umana resta la garanzia per tutti i tipi.",
+          "fr": "En Suisse, la nouvelle loi sur la protection des donnees (nLPD) s'applique a l'usage de tout type d'IA ; l'autorite de surveillance est le PFPDT. Quiconque introduit des donnees personnelles dans des systemes predictifs ou generatifs doit clarifier finalite, transparence et contrats de sous-traitance, surtout avec des modeles de langage en nuage. Les entreprises liees a l'UE font aussi face au reglement europeen sur l'IA comme cadre supplementaire fonde sur le risque. La supervision humaine reste le garde-fou pour tous les types."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen schwacher und starker KI?",
+        "en": "What is the difference between weak and strong AI?",
+        "it": "Qual e la differenza tra IA debole e IA forte?",
+        "fr": "Quelle est la difference entre IA faible et IA forte ?"
+      },
+      "a": {
+        "de": "Schwache (enge) KI ist auf eine Aufgabe spezialisiert und umfasst alle heute existierenden Systeme. Starke (allgemeine) KI wäre ein hypothetisches System mit menschenähnlicher, aufgabenübergreifender Intelligenz – es existiert bislang nicht.",
+        "en": "Weak (narrow) AI is specialised on one task and covers every system that exists today. Strong (general) AI would be a hypothetical system with human-like, cross-task intelligence – it does not exist yet.",
+        "it": "L'IA debole (ristretta) e specializzata su un compito e comprende ogni sistema oggi esistente. L'IA forte (generale) sarebbe un sistema ipotetico con intelligenza simile a quella umana, trasversale ai compiti: non esiste ancora.",
+        "fr": "L'IA faible (etroite) est specialisee sur une tâche et couvre tout systeme existant aujourd'hui. L'IA forte (generale) serait un systeme hypothetique dote d'une intelligence proche de l'humain, transversale aux tâches – elle n'existe pas encore."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist ChatGPT eine allgemeine KI (AGI)?",
+        "en": "Is ChatGPT a general AI (AGI)?",
+        "it": "ChatGPT e un'IA generale (AGI)?",
+        "fr": "ChatGPT est-il une IA generale (AGI) ?"
+      },
+      "a": {
+        "de": "Nein. Trotz seiner Vielseitigkeit ist ChatGPT enge KI: ein grosses Sprachmodell, das auf Sprachverarbeitung spezialisiert ist. Es hat kein allgemeines Verständnis und keine echte Autonomie über Aufgaben hinweg.",
+        "en": "No. Despite its versatility, ChatGPT is narrow AI: a large language model specialised in language processing. It has no general understanding and no genuine cross-task autonomy.",
+        "it": "No. Nonostante la versatilita, ChatGPT e IA ristretta: un grande modello linguistico specializzato nell'elaborazione del linguaggio. Non ha comprensione generale ne vera autonomia tra compiti diversi.",
+        "fr": "Non. Malgre sa polyvalence, ChatGPT est une IA etroite : un grand modele de langage specialise dans le traitement du langage. Il n'a ni comprehension generale ni veritable autonomie entre les tâches."
+      }
+    },
+    {
+      "q": {
+        "de": "Was unterscheidet prädiktive von generativer KI?",
+        "en": "What distinguishes predictive from generative AI?",
+        "it": "Cosa distingue l'IA predittiva da quella generativa?",
+        "fr": "Qu'est-ce qui distingue l'IA predictive de l'IA generative ?"
+      },
+      "a": {
+        "de": "Prädiktive KI klassifiziert oder prognostiziert (etwa Spam-Erkennung oder Nachfrageprognose). Generative KI erzeugt neue Inhalte wie Text, Bilder oder Code. Beide können auf derselben ML-Technik beruhen, verfolgen aber unterschiedliche Ziele.",
+        "en": "Predictive AI classifies or forecasts (such as spam detection or demand forecasting). Generative AI produces new content such as text, images or code. Both may rely on the same ML technique but pursue different goals.",
+        "it": "L'IA predittiva classifica o prevede (ad esempio rilevamento spam o previsione della domanda). L'IA generativa crea nuovi contenuti come testo, immagini o codice. Entrambe possono basarsi sulla stessa tecnica di ML ma perseguono obiettivi diversi.",
+        "fr": "L'IA predictive classe ou prevoit (detection de spam ou prevision de la demande, par exemple). L'IA generative produit du contenu nouveau comme texte, images ou code. Les deux peuvent reposer sur la même technique de ML mais poursuivent des objectifs differents."
+      }
+    },
+    {
+      "q": {
+        "de": "Sind regelbasierte Systeme überhaupt echte KI?",
+        "en": "Are rule-based systems really AI at all?",
+        "it": "I sistemi basati su regole sono davvero IA?",
+        "fr": "Les systemes a base de regles sont-ils vraiment de l'IA ?"
+      },
+      "a": {
+        "de": "Ja. Regelbasierte Systeme und Expertensysteme sind die klassische, symbolische KI und prägten das Feld jahrzehntelang. Sie lernen nicht aus Daten, treffen aber regelbasierte Entscheidungen – transparent und prüfbar, dafür weniger flexibel.",
+        "en": "Yes. Rule-based and expert systems are the classic, symbolic AI that shaped the field for decades. They do not learn from data but make rule-based decisions – transparent and auditable, though less flexible.",
+        "it": "Si. I sistemi basati su regole e i sistemi esperti sono l'IA classica e simbolica che ha plasmato il campo per decenni. Non imparano dai dati ma prendono decisioni basate su regole: trasparenti e verificabili, ma meno flessibili.",
+        "fr": "Oui. Les systemes a base de regles et les systemes experts sont l'IA classique et symbolique qui a façonne le domaine pendant des decennies. Ils n'apprennent pas des donnees mais prennent des decisions fondees sur des regles – transparentes et verifiables, mais moins flexibles."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche KI-Art braucht mein Unternehmen?",
+        "en": "Which type of AI does my company need?",
+        "it": "Di quale tipo di IA ha bisogno la mia azienda?",
+        "fr": "De quel type d'IA mon entreprise a-t-elle besoin ?"
+      },
+      "a": {
+        "de": "Das hängt von der Aufgabe ab. Für nachvollziehbare, regulierte Entscheidungen eignen sich prädiktive oder regelbasierte Modelle; für Textentwürfe, Zusammenfassungen und Ideation generative KI. Wählen Sie den Typ nach Nutzen, Erklärbarkeit und Datenschutz – nicht nach Trend.",
+        "en": "It depends on the task. For explainable, regulated decisions, predictive or rule-based models fit; for drafting text, summaries and ideation, generative AI. Choose the type by value, explainability and data protection – not by trend.",
+        "it": "Dipende dal compito. Per decisioni spiegabili e regolamentate vanno bene modelli predittivi o basati su regole; per bozze di testo, riassunti e ideazione, l'IA generativa. Scegliete il tipo in base a valore, spiegabilita e protezione dei dati, non alla moda.",
+        "fr": "Cela depend de la tâche. Pour des decisions explicables et reglementees, les modeles predictifs ou a base de regles conviennent ; pour la redaction, les resumes et l'ideation, l'IA generative. Choisissez le type selon la valeur, l'explicabilite et la protection des donnees – pas selon la tendance."
+      }
+    },
+    {
+      "q": {
+        "de": "Was bedeutet die Einteilung für den Datenschutz in der Schweiz?",
+        "en": "What does this classification mean for data protection in Switzerland?",
+        "it": "Cosa significa questa classificazione per la protezione dei dati in Svizzera?",
+        "fr": "Que signifie cette classification pour la protection des donnees en Suisse ?"
+      },
+      "a": {
+        "de": "Für jeden KI-Typ gilt das revidierte Datenschutzgesetz (revDSG), beaufsichtigt vom EDÖB. Besonders bei generativen Cloud-Modellen sind Zweckbindung, Transparenz und Auftragsverarbeitung zu klären; Unternehmen mit EU-Bezug beachten zusätzlich den EU AI Act.",
+        "en": "Every type of AI is subject to the revised Federal Act on Data Protection (nFADP), supervised by the FDPIC. Especially with generative cloud models, clarify purpose limitation, transparency and processing agreements; companies with an EU nexus should also observe the EU AI Act.",
+        "it": "Ogni tipo di IA e soggetto alla nuova legge sulla protezione dei dati (nLPD), vigilata dall'IFPDT. Soprattutto con i modelli generativi in cloud vanno chiariti limitazione della finalita, trasparenza e contratti di trattamento; le aziende con legami UE osservano anche l'EU AI Act.",
+        "fr": "Chaque type d'IA est soumis a la nouvelle loi sur la protection des donnees (nLPD), sous la surveillance du PFPDT. Surtout avec les modeles generatifs en nuage, clarifiez la limitation de finalite, la transparence et les contrats de sous-traitance ; les entreprises liees a l'UE observent aussi le reglement europeen sur l'IA."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Enge KI (ANI)",
+    "Allgemeine KI (AGI)",
+    "Superintelligenz (ASI)",
+    "Regelbasierte KI / Expertensysteme",
+    "Maschinelles Lernen",
+    "Deep Learning",
+    "Neuronale Netze",
+    "Überwachtes Lernen",
+    "Unüberwachtes Lernen",
+    "Bestärkendes Lernen",
+    "Prädiktive KI",
+    "Generative KI",
+    "Grosse Sprachmodelle (LLM)",
+    "Transformer-Architektur",
+    "Alan Turing",
+    "revDSG / EDÖB"
+  ]
+}

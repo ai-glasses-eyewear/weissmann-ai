@@ -1,0 +1,362 @@
+{
+  "id": "how-machine-learning-works",
+  "cluster": "foundations",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "wie-funktioniert-maschinelles-lernen",
+    "en": "how-machine-learning-works",
+    "it": "come-funziona-apprendimento-automatico",
+    "fr": "comment-fonctionne-apprentissage-automatique"
+  },
+  "title": {
+    "de": "Wie funktioniert maschinelles Lernen? | Weissmann AI",
+    "en": "How Machine Learning Works, Explained | Weissmann AI",
+    "it": "Come funziona il machine learning? | Weissmann AI",
+    "fr": "Comment fonctionne le machine learning ? | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Maschinelles Lernen einfach erklärt: Lernen aus Daten, Training vs. Inferenz, überwachtes und unüberwachtes Lernen, warum Datenqualität entscheidet. Ohne Mathe.",
+    "en": "Machine learning explained simply: learning from data, training vs. inference, supervised and unsupervised learning, and why data quality decides results. No maths.",
+    "it": "Il machine learning spiegato in modo semplice: apprendere dai dati, training e inferenza, supervisionato e non, e perché conta la qualità dei dati.",
+    "fr": "Le machine learning expliqué simplement : apprendre des données, entraînement et inférence, apprentissage supervisé ou non, et le rôle de la qualité des données."
+  },
+  "kicker": {
+    "de": "KI-Grundlagen",
+    "en": "AI Foundations",
+    "it": "Fondamenti di IA",
+    "fr": "Fondamentaux de l'IA"
+  },
+  "h1": {
+    "de": "Wie funktioniert maschinelles Lernen? Einfach erklärt",
+    "en": "How Machine Learning Works, Explained Simply",
+    "it": "Come funziona il machine learning? Spiegato semplice",
+    "fr": "Comment fonctionne le machine learning ? Explication simple"
+  },
+  "answerFirst": {
+    "de": "Maschinelles Lernen ist ein Teilgebiet der künstlichen Intelligenz (KI), bei dem ein Modell Muster aus Daten lernt, statt festen, von Menschen geschriebenen Regeln zu folgen. Im Training passt ein Algorithmus interne Parameter an Beispieldaten an; in der Inferenz wendet das fertige Modell dieses Wissen auf neue Fälle an. Man unterscheidet überwachtes, unüberwachtes und bestärkendes Lernen. Die Qualität der Trainingsdaten bestimmt massgeblich, wie gut die Vorhersagen ausfallen.",
+    "en": "Machine learning is a branch of artificial intelligence (AI) in which a model learns patterns from data instead of following fixed, hand-written rules. During training, an algorithm adjusts internal parameters to fit example data; during inference, the finished model applies what it learned to new cases. The main types are supervised, unsupervised and reinforcement learning. The quality of the training data largely determines how accurate the predictions turn out.",
+    "it": "Il machine learning è un ramo dell'intelligenza artificiale (IA) in cui un modello apprende schemi dai dati invece di seguire regole fisse scritte a mano. Nel training un algoritmo regola parametri interni per adattarsi ai dati di esempio; nell'inferenza il modello applica ciò che ha appreso a nuovi casi. I tipi principali sono apprendimento supervisionato, non supervisionato e per rinforzo. La qualità dei dati determina in gran parte l'accuratezza delle previsioni.",
+    "fr": "Le machine learning est une branche de l'intelligence artificielle (IA) où un modèle apprend des motifs à partir de données au lieu de suivre des règles fixes écrites à la main. Pendant l'entraînement, un algorithme ajuste des paramètres internes pour coller aux données d'exemple ; lors de l'inférence, le modèle applique ce qu'il a appris à de nouveaux cas. Les grands types sont supervisé, non supervisé et par renforcement. La qualité des données détermine largement la justesse des prédictions."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Der Kernunterschied: gelernte Muster statt fester Regeln",
+        "en": "The Core Idea: Learned Patterns, Not Fixed Rules",
+        "it": "L'idea centrale: schemi appresi, non regole fisse",
+        "fr": "L'idée centrale : des motifs appris, pas des règles fixes"
+      },
+      "paragraphs": [
+        {
+          "de": "Klassische Software folgt Regeln, die Menschen ausformulieren: «Wenn der Betrag über 10'000 CHF liegt, markiere die Zahlung.» Das funktioniert, solange sich alle Fälle sauber in solche Wenn-Dann-Regeln fassen lassen. Bei komplexen Aufgaben wie Sprache verstehen, Bilder erkennen oder Nachfrage vorhersagen wird die Regelliste schnell unüberschaubar.",
+          "en": "Traditional software follows rules that people write out: \"If the amount exceeds CHF 10,000, flag the payment.\" That works as long as every case fits neatly into such if-then rules. For complex tasks like understanding language, recognising images or forecasting demand, the list of rules quickly becomes unmanageable.",
+          "it": "Il software tradizionale segue regole scritte dalle persone: «Se l'importo supera 10'000 CHF, segnala il pagamento». Funziona finché ogni caso rientra ordinatamente in tali regole se-allora. Per compiti complessi come capire il linguaggio, riconoscere immagini o prevedere la domanda, l'elenco di regole diventa presto ingestibile.",
+          "fr": "Le logiciel classique suit des règles écrites par des humains : « Si le montant dépasse 10 000 CHF, signale le paiement. » Cela fonctionne tant que chaque cas entre proprement dans ces règles si-alors. Pour des tâches complexes comme comprendre le langage, reconnaître des images ou prévoir la demande, la liste de règles devient vite ingérable."
+        },
+        {
+          "de": "Maschinelles Lernen dreht die Logik um: Statt Regeln vorzugeben, zeigt man dem System viele Beispiele und lässt es die zugrunde liegenden Muster selbst herausarbeiten. Aus tausenden markierten und nicht markierten Zahlungen leitet ein Modell selbstständig ab, was verdächtig aussieht. Das Ergebnis ist kein starres Programm, sondern ein statistisches Modell, das auf Wahrscheinlichkeiten beruht.",
+          "en": "Machine learning flips this around: instead of specifying rules, you show the system many examples and let it work out the underlying patterns itself. From thousands of flagged and unflagged payments, a model independently infers what looks suspicious. The result is not a rigid program but a statistical model based on probabilities.",
+          "it": "Il machine learning ribalta la logica: invece di fornire regole, si mostrano al sistema molti esempi e lo si lascia dedurre da solo gli schemi sottostanti. Da migliaia di pagamenti segnalati e non, un modello inferisce autonomamente cosa appare sospetto. Il risultato non è un programma rigido, ma un modello statistico basato su probabilità.",
+          "fr": "Le machine learning inverse la logique : au lieu de fournir des règles, on montre au système de nombreux exemples et on le laisse dégager lui-même les motifs sous-jacents. À partir de milliers de paiements signalés ou non, un modèle déduit seul ce qui semble suspect. Le résultat n'est pas un programme rigide mais un modèle statistique fondé sur des probabilités."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Training und Inferenz: die zwei Phasen jedes Modells",
+        "en": "Training and Inference: Every Model's Two Phases",
+        "it": "Training e inferenza: le due fasi di ogni modello",
+        "fr": "Entraînement et inférence : les deux phases de tout modèle"
+      },
+      "paragraphs": [
+        {
+          "de": "Jedes ML-Projekt durchläuft zwei klar getrennte Phasen. Das Training ist rechenintensiv und findet einmalig oder in Abständen statt; die Inferenz läuft danach millionenfach und schnell. Dieser Unterschied erklärt auch die Kostenstruktur: Training kostet viel Rechenzeit im Voraus, Inferenz kostet pro Anfrage.",
+          "en": "Every ML project runs through two clearly separated phases. Training is compute-intensive and happens once or periodically; inference then runs many times and fast. This distinction also explains the cost structure: training costs a lot of compute up front, inference costs per request.",
+          "it": "Ogni progetto ML attraversa due fasi nettamente separate. Il training è intensivo in calcolo e avviene una volta o periodicamente; l'inferenza poi viene eseguita moltissime volte e rapidamente. Questa distinzione spiega anche la struttura dei costi: il training costa molto calcolo in anticipo, l'inferenza costa per richiesta.",
+          "fr": "Tout projet ML passe par deux phases nettement séparées. L'entraînement est gourmand en calcul et a lieu une fois ou périodiquement ; l'inférence s'exécute ensuite de nombreuses fois et rapidement. Cette distinction explique aussi la structure des coûts : l'entraînement coûte beaucoup de calcul en amont, l'inférence coûte par requête."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Training: Das Modell sieht Beispieldaten und passt schrittweise seine internen Parameter an, um Fehler zu verringern. Ergebnis ist ein fertiges, gespeichertes Modell.",
+          "en": "Training: the model sees example data and gradually adjusts its internal parameters to reduce errors. The output is a finished, saved model.",
+          "it": "Training: il modello vede i dati di esempio e regola gradualmente i suoi parametri interni per ridurre gli errori. Il risultato è un modello finito e salvato.",
+          "fr": "Entraînement : le modèle voit des données d'exemple et ajuste progressivement ses paramètres internes pour réduire les erreurs. Le résultat est un modèle fini et enregistré."
+        },
+        {
+          "de": "Inferenz: Das trainierte Modell erhält neue, ungesehene Daten und liefert eine Vorhersage – ohne dass es dabei weiterlernt.",
+          "en": "Inference: the trained model receives new, unseen data and returns a prediction, without learning further in the process.",
+          "it": "Inferenza: il modello addestrato riceve dati nuovi e mai visti e restituisce una previsione, senza continuare ad apprendere.",
+          "fr": "Inférence : le modèle entraîné reçoit des données nouvelles et inédites et renvoie une prédiction, sans continuer à apprendre."
+        },
+        {
+          "de": "Validierung: Zwischen beiden Phasen prüft man das Modell an zurückgehaltenen Testdaten, um zu sehen, ob es wirklich verallgemeinert und nicht nur auswendig gelernt hat.",
+          "en": "Validation: between the two phases, the model is checked on held-out test data to see whether it truly generalises rather than just memorising.",
+          "it": "Validazione: tra le due fasi si verifica il modello su dati di test tenuti da parte, per capire se generalizza davvero invece di limitarsi a memorizzare.",
+          "fr": "Validation : entre les deux phases, on teste le modèle sur des données mises de côté pour voir s'il généralise vraiment au lieu de simplement mémoriser."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die drei Lernarten im Überblick",
+        "en": "The Three Types of Learning at a Glance",
+        "it": "I tre tipi di apprendimento in sintesi",
+        "fr": "Les trois types d'apprentissage en un coup d'œil"
+      },
+      "bullets": [
+        {
+          "de": "Überwachtes Lernen (supervised): Die Trainingsdaten sind mit der richtigen Antwort beschriftet (Label). Beispiel: E-Mails mit «Spam» oder «kein Spam» markiert. Ideal für Klassifikation und Vorhersage konkreter Werte.",
+          "en": "Supervised learning: the training data is labelled with the correct answer. Example: emails marked \"spam\" or \"not spam\". Ideal for classification and predicting concrete values.",
+          "it": "Apprendimento supervisionato: i dati di training sono etichettati con la risposta corretta. Esempio: email marcate come «spam» o «non spam». Ideale per classificazione e previsione di valori concreti.",
+          "fr": "Apprentissage supervisé : les données d'entraînement sont étiquetées avec la bonne réponse. Exemple : des e-mails marqués « spam » ou « non spam ». Idéal pour la classification et la prédiction de valeurs concrètes."
+        },
+        {
+          "de": "Unüberwachtes Lernen (unsupervised): Die Daten haben keine Labels. Das Modell sucht selbst Strukturen, etwa Kundensegmente oder Auffälligkeiten. Ideal für Gruppierung (Clustering) und Anomalieerkennung.",
+          "en": "Unsupervised learning: the data has no labels. The model finds structure on its own, such as customer segments or outliers. Ideal for grouping (clustering) and anomaly detection.",
+          "it": "Apprendimento non supervisionato: i dati non hanno etichette. Il modello trova da solo delle strutture, come segmenti di clienti o anomalie. Ideale per raggruppamento (clustering) e rilevamento di anomalie.",
+          "fr": "Apprentissage non supervisé : les données n'ont pas d'étiquettes. Le modèle trouve seul des structures, comme des segments de clients ou des anomalies. Idéal pour le regroupement (clustering) et la détection d'anomalies."
+        },
+        {
+          "de": "Bestärkendes Lernen (reinforcement): Ein Agent lernt durch Ausprobieren mit Belohnung und Bestrafung, etwa in Robotik oder Spielen. Weniger verbreitet im Alltag, aber wichtig für sequenzielle Entscheidungen.",
+          "en": "Reinforcement learning: an agent learns by trial and error through reward and penalty, for example in robotics or games. Less common in everyday use but important for sequential decisions.",
+          "it": "Apprendimento per rinforzo: un agente impara per tentativi tramite ricompensa e penalità, per esempio in robotica o nei giochi. Meno diffuso nell'uso quotidiano ma importante per decisioni sequenziali.",
+          "fr": "Apprentissage par renforcement : un agent apprend par essais et erreurs via récompense et pénalité, par exemple en robotique ou dans les jeux. Moins courant au quotidien mais important pour les décisions séquentielles."
+        },
+        {
+          "de": "Zwischenformen wie halbüberwachtes und selbstüberwachtes Lernen kombinieren wenige Labels mit vielen unbeschrifteten Daten – die Grundlage moderner Sprachmodelle.",
+          "en": "Hybrid forms such as semi-supervised and self-supervised learning combine a few labels with lots of unlabelled data, the basis of modern language models.",
+          "it": "Forme ibride come l'apprendimento semi-supervisionato e auto-supervisionato combinano poche etichette con molti dati non etichettati, alla base dei moderni modelli linguistici.",
+          "fr": "Des formes hybrides comme l'apprentissage semi-supervisé et auto-supervisé combinent quelques étiquettes avec beaucoup de données non étiquetées, à la base des modèles de langage modernes."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Warum Datenqualität über den Erfolg entscheidet",
+        "en": "Why Data Quality Decides Success",
+        "it": "Perché la qualità dei dati decide il successo",
+        "fr": "Pourquoi la qualité des données décide du succès"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein Modell kann nur so gut sein wie die Daten, aus denen es lernt. Der bekannte Grundsatz «garbage in, garbage out» gilt beim maschinellen Lernen besonders stark: Fehlerhafte, unvollständige oder einseitige Trainingsdaten führen zu Modellen, die selbstsicher falsche Ergebnisse liefern. Mehr Daten helfen nur, wenn sie relevant und sauber sind.",
+          "en": "A model can only be as good as the data it learns from. The familiar principle \"garbage in, garbage out\" applies especially strongly in machine learning: faulty, incomplete or skewed training data produces models that deliver confidently wrong results. More data only helps when it is relevant and clean.",
+          "it": "Un modello può essere buono solo quanto i dati da cui apprende. Il noto principio «garbage in, garbage out» vale in modo particolarmente forte nel machine learning: dati di training errati, incompleti o sbilanciati generano modelli che forniscono con sicurezza risultati sbagliati. Più dati aiutano solo se sono pertinenti e puliti.",
+          "fr": "Un modèle ne vaut que les données dont il apprend. Le principe connu « garbage in, garbage out » s'applique avec une force particulière en machine learning : des données d'entraînement erronées, incomplètes ou biaisées produisent des modèles qui livrent avec assurance des résultats faux. Plus de données n'aide que si elles sont pertinentes et propres."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Repräsentativität: Die Trainingsdaten müssen die spätere Realität abbilden. Fehlen ganze Gruppen, funktioniert das Modell für sie schlecht.",
+          "en": "Representativeness: the training data must reflect the later reality. If whole groups are missing, the model performs poorly for them.",
+          "it": "Rappresentatività: i dati di training devono rispecchiare la realtà futura. Se mancano interi gruppi, il modello funziona male per essi.",
+          "fr": "Représentativité : les données d'entraînement doivent refléter la réalité future. Si des groupes entiers manquent, le modèle fonctionne mal pour eux."
+        },
+        {
+          "de": "Verzerrung (Bias): Spiegeln Daten historische Ungleichheiten wider, lernt das Modell diese mit und verstärkt sie unter Umständen.",
+          "en": "Bias: if data reflects historical inequalities, the model learns them too and may amplify them.",
+          "it": "Distorsione (bias): se i dati riflettono disuguaglianze storiche, il modello le apprende e può amplificarle.",
+          "fr": "Biais : si les données reflètent des inégalités historiques, le modèle les apprend et peut les amplifier."
+        },
+        {
+          "de": "Aktualität: Verändert sich die Welt, veraltet ein Modell («Data Drift») und muss neu trainiert werden.",
+          "en": "Freshness: as the world changes, a model becomes outdated (\"data drift\") and must be retrained.",
+          "it": "Attualità: se il mondo cambia, un modello si deteriora («data drift») e va riaddestrato.",
+          "fr": "Fraîcheur : quand le monde change, un modèle se périme (« data drift ») et doit être réentraîné."
+        },
+        {
+          "de": "Beschriftungsqualität: Bei überwachtem Lernen entscheiden korrekte Labels über alles – falsch beschriftete Beispiele bringen dem Modell das Falsche bei.",
+          "en": "Label quality: in supervised learning correct labels are everything, mislabelled examples teach the model the wrong thing.",
+          "it": "Qualità delle etichette: nell'apprendimento supervisionato le etichette corrette sono tutto: esempi mal etichettati insegnano al modello la cosa sbagliata.",
+          "fr": "Qualité des étiquettes : en apprentissage supervisé, des étiquettes correctes sont primordiales ; des exemples mal étiquetés apprennent au modèle la mauvaise chose."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Ein einfaches Beispiel von Anfang bis Ende",
+        "en": "A Simple Example From Start to Finish",
+        "it": "Un esempio semplice dall'inizio alla fine",
+        "fr": "Un exemple simple du début à la fin"
+      },
+      "paragraphs": [
+        {
+          "de": "Angenommen, ein KMU möchte Immobilienpreise schätzen. Man sammelt historische Verkäufe mit Merkmalen wie Fläche, Lage und Baujahr sowie dem tatsächlichen Preis (das Label). Diese Tabelle ist der Trainingsdatensatz für ein überwachtes Modell.",
+          "en": "Suppose an SME wants to estimate property prices. You gather historical sales with features such as area, location and year built, plus the actual price (the label). This table is the training dataset for a supervised model.",
+          "it": "Supponiamo che una PMI voglia stimare i prezzi degli immobili. Si raccolgono vendite storiche con caratteristiche come superficie, posizione e anno di costruzione, più il prezzo effettivo (l'etichetta). Questa tabella è il set di training per un modello supervisionato.",
+          "fr": "Supposons qu'une PME veuille estimer des prix immobiliers. On rassemble des ventes passées avec des caractéristiques comme la surface, l'emplacement et l'année de construction, plus le prix réel (l'étiquette). Ce tableau est le jeu d'entraînement d'un modèle supervisé."
+        },
+        {
+          "de": "Im Training sucht der Algorithmus den Zusammenhang zwischen Merkmalen und Preis und passt seine Parameter an, bis seine Schätzungen den echten Preisen möglichst nahekommen. Danach prüft man an zurückgehaltenen Verkäufen, wie genau das Modell liegt. In der Inferenz gibt man die Merkmale einer neuen, noch nicht verkauften Wohnung ein und erhält eine Preisschätzung. Verschiebt sich der Markt, trainiert man das Modell mit frischen Daten neu.",
+          "en": "During training, the algorithm looks for the relationship between features and price and adjusts its parameters until its estimates come as close as possible to the real prices. You then check accuracy on held-out sales. In inference, you enter the features of a new, unsold flat and receive a price estimate. If the market shifts, you retrain the model with fresh data.",
+          "it": "Nel training l'algoritmo cerca la relazione tra caratteristiche e prezzo e regola i parametri finché le sue stime si avvicinano il più possibile ai prezzi reali. Poi si verifica l'accuratezza su vendite tenute da parte. Nell'inferenza si inseriscono le caratteristiche di un nuovo appartamento non ancora venduto e si ottiene una stima. Se il mercato cambia, si riaddestra il modello con dati freschi.",
+          "fr": "Pendant l'entraînement, l'algorithme cherche la relation entre les caractéristiques et le prix et ajuste ses paramètres jusqu'à ce que ses estimations approchent au mieux les prix réels. On vérifie ensuite la précision sur des ventes mises de côté. En inférence, on saisit les caractéristiques d'un logement nouveau, non vendu, et on obtient une estimation. Si le marché évolue, on réentraîne le modèle avec des données fraîches."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Grenzen und typische Missverständnisse",
+        "en": "Limits and Common Misconceptions",
+        "it": "Limiti e malintesi comuni",
+        "fr": "Limites et idées reçues courantes"
+      },
+      "bullets": [
+        {
+          "de": "ML versteht nicht wie ein Mensch: Ein Modell erkennt statistische Muster, nicht Bedeutung oder Ursache. Korrelation ist nicht Kausalität.",
+          "en": "ML does not understand like a human: a model spots statistical patterns, not meaning or cause. Correlation is not causation.",
+          "it": "Il ML non comprende come un essere umano: un modello coglie schemi statistici, non significato o causa. Correlazione non è causalità.",
+          "fr": "Le ML ne comprend pas comme un humain : un modèle repère des motifs statistiques, pas le sens ou la cause. Corrélation n'est pas causalité."
+        },
+        {
+          "de": "Überanpassung (Overfitting): Lernt ein Modell die Trainingsdaten auswendig, versagt es bei neuen Fällen. Deshalb die getrennte Testphase.",
+          "en": "Overfitting: if a model memorises the training data, it fails on new cases. Hence the separate test phase.",
+          "it": "Overfitting: se un modello memorizza i dati di training, fallisce su casi nuovi. Da qui la fase di test separata.",
+          "fr": "Surapprentissage : si un modèle mémorise les données d'entraînement, il échoue sur de nouveaux cas. D'où la phase de test séparée."
+        },
+        {
+          "de": "Kein gesunder Menschenverstand: Ausserhalb der gesehenen Daten kann ein Modell unsinnige Ausgaben liefern, ohne es zu «merken».",
+          "en": "No common sense: outside the data it has seen, a model can produce nonsensical outputs without \"noticing\".",
+          "it": "Nessun buon senso: al di fuori dei dati visti, un modello può produrre output insensati senza «accorgersene».",
+          "fr": "Pas de bon sens : en dehors des données vues, un modèle peut produire des sorties absurdes sans s'en « rendre compte »."
+        },
+        {
+          "de": "Nicht immer die richtige Wahl: Für klare, stabile Regeln sind klassische Programme oft einfacher, günstiger und transparenter als ML.",
+          "en": "Not always the right choice: for clear, stable rules, classic programs are often simpler, cheaper and more transparent than ML.",
+          "it": "Non sempre la scelta giusta: per regole chiare e stabili, i programmi classici sono spesso più semplici, economici e trasparenti del ML.",
+          "fr": "Pas toujours le bon choix : pour des règles claires et stables, les programmes classiques sont souvent plus simples, moins chers et plus transparents que le ML."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Perspektive: Datenschutz und verantwortungsvoller Einsatz",
+        "en": "Swiss Perspective: Data Protection and Responsible Use",
+        "it": "Prospettiva svizzera: protezione dei dati e uso responsabile",
+        "fr": "Perspective suisse : protection des données et usage responsable"
+      },
+      "paragraphs": [
+        {
+          "de": "Weil maschinelles Lernen von Daten lebt, berührt es in der Schweiz direkt das revidierte Datenschutzgesetz (revDSG). Wer Personendaten zum Training nutzt, braucht eine gültige Rechtsgrundlage, muss transparent informieren und die Grundsätze der Datenminimierung und Zweckbindung beachten. Aufsichtsbehörde ist der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (EDÖB).",
+          "en": "Because machine learning runs on data, in Switzerland it directly touches the revised Data Protection Act (revDSG/nFADP). Anyone using personal data for training needs a valid legal basis, must inform transparently and observe the principles of data minimisation and purpose limitation. The supervisory authority is the Federal Data Protection and Information Commissioner (FDPIC/EDÖB).",
+          "it": "Poiché il machine learning vive di dati, in Svizzera tocca direttamente la legge sulla protezione dei dati riveduta (revLPD/nLPD). Chi usa dati personali per il training necessita di una base giuridica valida, deve informare in modo trasparente e rispettare i principi di minimizzazione dei dati e limitazione dello scopo. L'autorità di vigilanza è l'Incaricato federale della protezione dei dati e della trasparenza (IFPDT/EDÖB).",
+          "fr": "Comme le machine learning vit de données, il touche directement en Suisse la loi révisée sur la protection des données (nLPD/revDSG). Quiconque utilise des données personnelles pour l'entraînement a besoin d'une base légale valable, doit informer de façon transparente et respecter les principes de minimisation des données et de limitation de la finalité. L'autorité de surveillance est le Préposé fédéral à la protection des données et à la transparence (PFPDT/EDÖB)."
+        },
+        {
+          "de": "Praktisch heisst das: Datenherkunft dokumentieren, Datensätze auf Verzerrungen prüfen, Modelle nachvollziehbar halten und für heikle Entscheidungen menschliche Kontrolle vorsehen. Gerade für Schweizer KMU ist ein sauberer Umgang mit Daten kein Bremsklotz, sondern ein Vertrauensvorteil gegenüber Kunden und Partnern.",
+          "en": "In practice this means: document data provenance, check datasets for bias, keep models explainable, and provide human oversight for sensitive decisions. Especially for Swiss SMEs, clean data handling is not a brake but a trust advantage with customers and partners.",
+          "it": "In pratica significa: documentare la provenienza dei dati, controllare i dataset per i bias, mantenere i modelli spiegabili e prevedere il controllo umano per le decisioni delicate. Proprio per le PMI svizzere, una gestione pulita dei dati non è un freno ma un vantaggio di fiducia verso clienti e partner.",
+          "fr": "En pratique : documenter la provenance des données, vérifier les biais des jeux de données, garder les modèles explicables et prévoir une supervision humaine pour les décisions sensibles. Pour les PME suisses en particulier, une gestion propre des données n'est pas un frein mais un avantage de confiance auprès des clients et partenaires."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen maschinellem Lernen und künstlicher Intelligenz?",
+        "en": "What is the difference between machine learning and artificial intelligence?",
+        "it": "Qual è la differenza tra machine learning e intelligenza artificiale?",
+        "fr": "Quelle est la différence entre machine learning et intelligence artificielle ?"
+      },
+      "a": {
+        "de": "Künstliche Intelligenz (KI) ist der Oberbegriff für Systeme, die Aufgaben lösen, die üblicherweise menschliche Intelligenz erfordern. Maschinelles Lernen ist ein Teilgebiet der KI, das Muster aus Daten lernt, statt Regeln vorgegeben zu bekommen. Deep Learning wiederum ist ein Teilgebiet des maschinellen Lernens mit vielschichtigen neuronalen Netzen.",
+        "en": "Artificial intelligence (AI) is the umbrella term for systems that solve tasks normally requiring human intelligence. Machine learning is a subfield of AI that learns patterns from data instead of being given rules. Deep learning, in turn, is a subfield of machine learning using multi-layered neural networks.",
+        "it": "L'intelligenza artificiale (IA) è il termine generale per sistemi che risolvono compiti che di norma richiedono intelligenza umana. Il machine learning è un sottocampo dell'IA che apprende schemi dai dati invece di ricevere regole. Il deep learning, a sua volta, è un sottocampo del machine learning con reti neurali a più livelli.",
+        "fr": "L'intelligence artificielle (IA) est le terme générique pour les systèmes qui résolvent des tâches nécessitant normalement l'intelligence humaine. Le machine learning est un sous-domaine de l'IA qui apprend des motifs à partir de données au lieu de recevoir des règles. Le deep learning est à son tour un sous-domaine du machine learning utilisant des réseaux de neurones à plusieurs couches."
+      }
+    },
+    {
+      "q": {
+        "de": "Was bedeutet Training im Vergleich zur Inferenz?",
+        "en": "What does training mean compared to inference?",
+        "it": "Cosa significa training rispetto a inferenza?",
+        "fr": "Que signifie l'entraînement par rapport à l'inférence ?"
+      },
+      "a": {
+        "de": "Training ist die Lernphase: Das Modell passt anhand vieler Beispiele seine internen Parameter an und wird dabei besser. Inferenz ist die Anwendungsphase: Das fertige Modell erhält neue Daten und liefert eine Vorhersage, ohne weiterzulernen. Training ist rechenintensiv und einmalig oder periodisch, Inferenz läuft schnell und häufig.",
+        "en": "Training is the learning phase: the model adjusts its internal parameters from many examples and improves. Inference is the application phase: the finished model receives new data and returns a prediction without learning further. Training is compute-intensive and one-off or periodic; inference runs fast and frequently.",
+        "it": "Il training è la fase di apprendimento: il modello regola i parametri interni a partire da molti esempi e migliora. L'inferenza è la fase di applicazione: il modello finito riceve nuovi dati e restituisce una previsione senza continuare ad apprendere. Il training è intensivo e una tantum o periodico; l'inferenza è rapida e frequente.",
+        "fr": "L'entraînement est la phase d'apprentissage : le modèle ajuste ses paramètres internes à partir de nombreux exemples et s'améliore. L'inférence est la phase d'application : le modèle fini reçoit de nouvelles données et renvoie une prédiction sans continuer à apprendre. L'entraînement est gourmand en calcul et ponctuel ou périodique ; l'inférence est rapide et fréquente."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen überwachtem und unüberwachtem Lernen?",
+        "en": "What is the difference between supervised and unsupervised learning?",
+        "it": "Qual è la differenza tra apprendimento supervisionato e non supervisionato?",
+        "fr": "Quelle est la différence entre apprentissage supervisé et non supervisé ?"
+      },
+      "a": {
+        "de": "Beim überwachten Lernen sind die Trainingsdaten mit der richtigen Antwort beschriftet, etwa Bilder mit «Katze» oder «Hund»; das Modell lernt, diese Antwort vorherzusagen. Beim unüberwachten Lernen fehlen solche Labels, und das Modell sucht selbst Strukturen wie Gruppen oder Auffälligkeiten. Überwacht eignet sich für Vorhersagen, unüberwacht für Entdeckungen in den Daten.",
+        "en": "In supervised learning the training data is labelled with the correct answer, for example images tagged \"cat\" or \"dog\"; the model learns to predict that answer. In unsupervised learning such labels are absent, and the model finds structure like groups or outliers on its own. Supervised suits prediction, unsupervised suits discovery in the data.",
+        "it": "Nell'apprendimento supervisionato i dati di training sono etichettati con la risposta corretta, per esempio immagini con «gatto» o «cane»; il modello impara a prevedere quella risposta. Nel non supervisionato tali etichette mancano e il modello trova da solo strutture come gruppi o anomalie. Il supervisionato serve per previsioni, il non supervisionato per scoperte nei dati.",
+        "fr": "En apprentissage supervisé, les données sont étiquetées avec la bonne réponse, par exemple des images marquées « chat » ou « chien » ; le modèle apprend à prédire cette réponse. En non supervisé, ces étiquettes sont absentes et le modèle trouve seul des structures comme des groupes ou des anomalies. Le supervisé convient à la prédiction, le non supervisé à la découverte dans les données."
+      }
+    },
+    {
+      "q": {
+        "de": "Warum ist Datenqualität wichtiger als Datenmenge?",
+        "en": "Why is data quality more important than data quantity?",
+        "it": "Perché la qualità dei dati è più importante della quantità?",
+        "fr": "Pourquoi la qualité des données prime-t-elle sur la quantité ?"
+      },
+      "a": {
+        "de": "Ein Modell lernt genau das, was in den Daten steckt. Grosse Mengen fehlerhafter, veralteter oder einseitiger Daten führen zu selbstsicher falschen Vorhersagen. Saubere, repräsentative und korrekt beschriftete Daten liefern oft bessere Ergebnisse als riesige, aber unsaubere Datensätze. Qualität reduziert zudem das Risiko von Verzerrungen und rechtlichen Problemen.",
+        "en": "A model learns exactly what is in the data. Large amounts of faulty, outdated or skewed data lead to confidently wrong predictions. Clean, representative and correctly labelled data often produces better results than huge but messy datasets. Quality also reduces the risk of bias and legal problems.",
+        "it": "Un modello apprende esattamente ciò che è nei dati. Grandi quantità di dati errati, obsoleti o sbilanciati portano a previsioni sicure ma sbagliate. Dati puliti, rappresentativi ed etichettati correttamente danno spesso risultati migliori di dataset enormi ma disordinati. La qualità riduce anche il rischio di bias e problemi legali.",
+        "fr": "Un modèle apprend exactement ce qui se trouve dans les données. De grandes quantités de données erronées, obsolètes ou biaisées mènent à des prédictions fausses mais assurées. Des données propres, représentatives et correctement étiquetées donnent souvent de meilleurs résultats que d'énormes jeux désordonnés. La qualité réduit aussi le risque de biais et de problèmes juridiques."
+      }
+    },
+    {
+      "q": {
+        "de": "Braucht man Mathematik, um maschinelles Lernen zu verstehen?",
+        "en": "Do you need maths to understand machine learning?",
+        "it": "Serve la matematica per capire il machine learning?",
+        "fr": "Faut-il des maths pour comprendre le machine learning ?"
+      },
+      "a": {
+        "de": "Um das Grundprinzip zu verstehen, nicht: Es genügt die Idee, dass ein System aus Beispielen Muster lernt und diese auf neue Fälle anwendet. Wer selbst Modelle entwickelt, braucht Statistik, lineare Algebra und etwas Analysis. Für Führungskräfte und Anwender reicht ein solides konzeptionelles Verständnis von Training, Inferenz, Datenqualität und Grenzen völlig aus.",
+        "en": "To understand the basic principle, no: the idea that a system learns patterns from examples and applies them to new cases is enough. Those who build models need statistics, linear algebra and some calculus. For leaders and users, a solid conceptual grasp of training, inference, data quality and limits is entirely sufficient.",
+        "it": "Per capire il principio di base, no: basta l'idea che un sistema apprende schemi dagli esempi e li applica a nuovi casi. Chi sviluppa modelli ha bisogno di statistica, algebra lineare e un po' di analisi. Per dirigenti e utenti è sufficiente una solida comprensione concettuale di training, inferenza, qualità dei dati e limiti.",
+        "fr": "Pour comprendre le principe de base, non : l'idée qu'un système apprend des motifs à partir d'exemples et les applique à de nouveaux cas suffit. Ceux qui construisent des modèles ont besoin de statistiques, d'algèbre linéaire et d'un peu d'analyse. Pour les dirigeants et utilisateurs, une bonne compréhension conceptuelle de l'entraînement, de l'inférence, de la qualité des données et des limites suffit largement."
+      }
+    },
+    {
+      "q": {
+        "de": "Was muss ich in der Schweiz beim Datenschutz beachten?",
+        "en": "What data protection rules apply in Switzerland?",
+        "it": "Quali regole sulla protezione dei dati valgono in Svizzera?",
+        "fr": "Quelles règles de protection des données s'appliquent en Suisse ?"
+      },
+      "a": {
+        "de": "Werden Personendaten für Training oder Inferenz genutzt, gilt das revidierte Datenschutzgesetz (revDSG). Sie brauchen eine Rechtsgrundlage, müssen transparent informieren sowie Datenminimierung und Zweckbindung einhalten; Aufsicht führt der EDÖB. Empfehlenswert sind die Dokumentation der Datenherkunft, eine Prüfung auf Verzerrungen und menschliche Kontrolle bei heiklen automatisierten Entscheiden.",
+        "en": "If personal data is used for training or inference, the revised Data Protection Act (revDSG/nFADP) applies. You need a legal basis, must inform transparently, and observe data minimisation and purpose limitation; the FDPIC (EDÖB) supervises. It is advisable to document data provenance, check for bias, and keep human oversight for sensitive automated decisions.",
+        "it": "Se si usano dati personali per training o inferenza, si applica la legge sulla protezione dei dati riveduta (revLPD/nLPD). Serve una base giuridica, occorre informare in modo trasparente e rispettare minimizzazione e limitazione dello scopo; vigila l'IFPDT (EDÖB). È consigliabile documentare la provenienza dei dati, verificare i bias e mantenere il controllo umano nelle decisioni automatizzate delicate.",
+        "fr": "Si des données personnelles servent à l'entraînement ou à l'inférence, la loi révisée sur la protection des données (nLPD/revDSG) s'applique. Il faut une base légale, informer de façon transparente et respecter la minimisation et la limitation de la finalité ; le PFPDT (EDÖB) supervise. Il est conseillé de documenter la provenance des données, de vérifier les biais et de garder une supervision humaine pour les décisions automatisées sensibles."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Maschinelles Lernen",
+    "Künstliche Intelligenz (KI)",
+    "Training",
+    "Inferenz",
+    "Überwachtes Lernen",
+    "Unüberwachtes Lernen",
+    "Bestärkendes Lernen",
+    "Trainingsdaten",
+    "Datenqualität",
+    "Overfitting",
+    "Neuronale Netze",
+    "Deep Learning",
+    "Bias",
+    "revDSG / nFADP",
+    "EDÖB",
+    "Klassifikation"
+  ]
+}

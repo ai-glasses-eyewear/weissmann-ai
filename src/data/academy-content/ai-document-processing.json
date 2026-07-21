@@ -1,0 +1,365 @@
+{
+  "id": "ai-document-processing",
+  "cluster": "functions",
+  "type": "spoke",
+  "relatedServices": [
+    "automation",
+    "agents"
+  ],
+  "slug": {
+    "de": "ki-dokumentenverarbeitung",
+    "en": "ai-document-processing",
+    "it": "elaborazione-documenti-ia",
+    "fr": "traitement-documents-ia"
+  },
+  "title": {
+    "de": "KI-Dokumentenverarbeitung: Extrahieren & Prüfen | Weissmann AI",
+    "en": "AI Document Processing: Extract, Classify, Review | Weissmann AI",
+    "it": "Elaborazione documenti con IA: guida pratica | Weissmann AI",
+    "fr": "Traitement de documents par IA : le guide | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie KI Rechnungen, Verträge und Formulare liest, klassifiziert und zusammenfasst: Pipeline, Genauigkeit, menschliche Prüfung und revDSG-konformer Datenschutz.",
+    "en": "How AI reads, classifies and summarises invoices, contracts and forms: the pipeline, accuracy, human review and data protection under Swiss revFADP.",
+    "it": "Come l'IA legge, classifica e riassume fatture, contratti e moduli: pipeline, accuratezza, revisione umana e protezione dati secondo la revLPD svizzera.",
+    "fr": "Comment l'IA lit, classe et résume factures, contrats et formulaires : pipeline, précision, revue humaine et protection des données selon la nLPD suisse."
+  },
+  "kicker": {
+    "de": "KI-Funktionen im Unternehmen",
+    "en": "AI functions in business",
+    "it": "Funzioni IA in azienda",
+    "fr": "Fonctions IA en entreprise"
+  },
+  "h1": {
+    "de": "KI-Dokumentenverarbeitung: extrahieren, klassifizieren, zusammenfassen",
+    "en": "AI document processing: extract, classify, summarise",
+    "it": "Elaborazione documenti con IA: estrarre, classificare, riassumere",
+    "fr": "Traitement de documents par IA : extraire, classer, résumer"
+  },
+  "answerFirst": {
+    "de": "KI-Dokumentenverarbeitung (Intelligent Document Processing) liest, klassifiziert und extrahiert Inhalte aus Dokumenten wie Rechnungen, Verträgen und Formularen und fasst sie zusammen. Sie kombiniert OCR mit KI-Modellen und grossen Sprachmodellen, um Daten strukturiert in nachgelagerte Systeme zu übergeben. Für verlässliche Ergebnisse braucht es Konfidenzwerte, Validierungsregeln und eine menschliche Prüfung. In der Schweiz gelten dabei das revDSG, gesetzliche Aufbewahrungspflichten und klare Vorgaben zum Datenstandort.",
+    "en": "AI document processing (Intelligent Document Processing) reads, classifies and extracts content from documents such as invoices, contracts and forms, and summarises them. It combines OCR with machine-learning models and large language models to hand structured data to downstream systems. Reliable results depend on confidence scores, validation rules and human review. In Switzerland the revised FADP, statutory retention periods and clear data-residency requirements apply.",
+    "it": "L'elaborazione documenti con IA (Intelligent Document Processing) legge, classifica ed estrae contenuti da documenti come fatture, contratti e moduli, e li riassume. Combina l'OCR con modelli di machine learning e grandi modelli linguistici per trasferire dati strutturati ai sistemi a valle. Risultati affidabili richiedono punteggi di confidenza, regole di validazione e revisione umana. In Svizzera si applicano la revLPD, gli obblighi di conservazione e precise regole sull'ubicazione dei dati.",
+    "fr": "Le traitement de documents par IA (Intelligent Document Processing) lit, classe et extrait le contenu de documents comme les factures, contrats et formulaires, puis les résume. Il combine l'OCR avec des modèles d'apprentissage automatique et de grands modèles de langage pour transmettre des données structurées aux systèmes en aval. Des résultats fiables exigent des scores de confiance, des règles de validation et une revue humaine. En Suisse s'appliquent la nLPD, les obligations légales de conservation et des exigences claires sur la localisation des données."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was ist KI-Dokumentenverarbeitung?",
+        "en": "What is AI document processing?",
+        "it": "Che cos'è l'elaborazione documenti con IA?",
+        "fr": "Qu'est-ce que le traitement de documents par IA ?"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Dokumentenverarbeitung – international als Intelligent Document Processing (IDP) bekannt – bezeichnet Software, die unstrukturierte Dokumente automatisch in strukturierte, weiterverarbeitbare Daten überführt. Statt fixer Vorlagen wie bei klassischer OCR nutzen moderne Systeme Layout-Verständnis, maschinelles Lernen und grosse Sprachmodelle. Damit erkennen sie Felder auch dann, wenn jede Rechnung, jeder Vertrag und jedes Formular anders aussieht.",
+          "en": "AI document processing – known internationally as Intelligent Document Processing (IDP) – describes software that automatically turns unstructured documents into structured, machine-usable data. Instead of fixed templates like classic OCR, modern systems use layout understanding, machine learning and large language models. This lets them recognise fields even when every invoice, contract and form looks different.",
+          "it": "L'elaborazione documenti con IA – nota a livello internazionale come Intelligent Document Processing (IDP) – indica software che trasforma automaticamente documenti non strutturati in dati strutturati e riutilizzabili. Invece di modelli fissi come nell'OCR classico, i sistemi moderni usano comprensione del layout, machine learning e grandi modelli linguistici. Così riconoscono i campi anche quando ogni fattura, contratto e modulo ha un aspetto diverso.",
+          "fr": "Le traitement de documents par IA – connu à l'international sous le nom d'Intelligent Document Processing (IDP) – désigne un logiciel qui transforme automatiquement des documents non structurés en données structurées et exploitables. Au lieu de gabarits figés comme l'OCR classique, les systèmes modernes recourent à la compréhension de la mise en page, à l'apprentissage automatique et aux grands modèles de langage. Ils reconnaissent ainsi les champs même lorsque chaque facture, contrat et formulaire est différent."
+        },
+        {
+          "de": "Drei Kernaufgaben stehen im Zentrum: Extraktion (relevante Felder wie Betrag, Datum, Vertragspartei herauslesen), Klassifizierung (den Dokumenttyp bestimmen, etwa Rechnung, Mahnung oder Vertrag) und Zusammenfassung (lange Texte auf das Wesentliche verdichten). Ziel ist nicht, den Menschen zu ersetzen, sondern repetitive Erfassung zu automatisieren und Fachpersonen für Prüfung und Ausnahmen freizuspielen.",
+          "en": "Three core tasks are central: extraction (reading out relevant fields such as amount, date, contracting party), classification (identifying the document type, e.g. invoice, reminder or contract) and summarisation (condensing long text to its essentials). The goal is not to replace people, but to automate repetitive capture and free specialists for review and exceptions.",
+          "it": "Tre compiti fondamentali sono centrali: estrazione (leggere campi rilevanti come importo, data, controparte), classificazione (identificare il tipo di documento, ad es. fattura, sollecito o contratto) e sintesi (condensare testi lunghi all'essenziale). L'obiettivo non è sostituire le persone, ma automatizzare l'acquisizione ripetitiva e liberare gli specialisti per revisione ed eccezioni.",
+          "fr": "Trois tâches centrales : l'extraction (lire des champs pertinents comme le montant, la date, la partie contractante), la classification (identifier le type de document, p. ex. facture, rappel ou contrat) et le résumé (condenser de longs textes à l'essentiel). L'objectif n'est pas de remplacer les personnes, mais d'automatiser la saisie répétitive et de libérer les spécialistes pour la revue et les exceptions."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wie die Verarbeitung funktioniert: von OCR bis Zusammenfassung",
+        "en": "How processing works: from OCR to summary",
+        "it": "Come funziona l'elaborazione: dall'OCR alla sintesi",
+        "fr": "Comment fonctionne le traitement : de l'OCR au résumé"
+      },
+      "paragraphs": [
+        {
+          "de": "Eine typische IDP-Pipeline läuft in mehreren Schritten ab. Jeder Schritt lässt sich einzeln messen und verbessern:",
+          "en": "A typical IDP pipeline runs in several steps. Each step can be measured and improved separately:",
+          "it": "Una pipeline IDP tipica si svolge in più fasi. Ogni fase può essere misurata e migliorata singolarmente:",
+          "fr": "Un pipeline IDP typique se déroule en plusieurs étapes. Chaque étape peut être mesurée et améliorée séparément :"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Erfassung und OCR: Gescanntes oder fotografiertes Papier wird in maschinenlesbaren Text umgewandelt; digitale PDFs liefern den Text direkt.",
+          "en": "Capture and OCR: scanned or photographed paper is converted into machine-readable text; digital PDFs provide the text directly.",
+          "it": "Acquisizione e OCR: la carta scansionata o fotografata viene convertita in testo leggibile dalla macchina; i PDF digitali forniscono il testo direttamente.",
+          "fr": "Capture et OCR : le papier scanné ou photographié est converti en texte lisible par machine ; les PDF numériques fournissent le texte directement."
+        },
+        {
+          "de": "Klassifizierung: Das System ordnet das Dokument einem Typ zu (Rechnung, Vertrag, Lieferschein, Formular) und leitet es an den richtigen Prozess weiter.",
+          "en": "Classification: the system assigns the document to a type (invoice, contract, delivery note, form) and routes it to the right process.",
+          "it": "Classificazione: il sistema assegna il documento a un tipo (fattura, contratto, bolla, modulo) e lo indirizza al processo corretto.",
+          "fr": "Classification : le système attribue le document à un type (facture, contrat, bon de livraison, formulaire) et l'achemine vers le bon processus."
+        },
+        {
+          "de": "Extraktion: Layout- und Sprachmodelle lesen Felder und Positionen aus – etwa Rechnungsnummer, MwSt-Satz, IBAN, Fälligkeitsdatum oder Vertragslaufzeit.",
+          "en": "Extraction: layout and language models read out fields and line items – e.g. invoice number, VAT rate, IBAN, due date or contract term.",
+          "it": "Estrazione: modelli di layout e linguistici leggono campi e righe – ad es. numero fattura, aliquota IVA, IBAN, scadenza o durata del contratto.",
+          "fr": "Extraction : les modèles de mise en page et de langage lisent champs et lignes – p. ex. numéro de facture, taux de TVA, IBAN, échéance ou durée du contrat."
+        },
+        {
+          "de": "Validierung: Regeln und Abgleiche prüfen die Daten (Summenkontrolle, Stammdaten-Abgleich, Format der IBAN oder Schweizer QR-Rechnung).",
+          "en": "Validation: rules and lookups check the data (totals check, master-data match, IBAN or Swiss QR-bill format).",
+          "it": "Validazione: regole e confronti verificano i dati (controllo dei totali, riscontro con anagrafiche, formato IBAN o QR-fattura svizzera).",
+          "fr": "Validation : des règles et rapprochements contrôlent les données (contrôle des totaux, rapprochement avec les données maîtres, format IBAN ou QR-facture suisse)."
+        },
+        {
+          "de": "Zusammenfassung und Analyse: Grosse Sprachmodelle verdichten Verträge zu Kernpunkten, extrahieren Fristen oder markieren Klauseln – idealerweise mit Quellenverweis auf die Fundstelle.",
+          "en": "Summarisation and analysis: large language models condense contracts into key points, extract deadlines or flag clauses – ideally with a reference back to the source passage.",
+          "it": "Sintesi e analisi: i grandi modelli linguistici condensano i contratti in punti chiave, estraggono scadenze o segnalano clausole – idealmente con rimando al passaggio d'origine.",
+          "fr": "Résumé et analyse : les grands modèles de langage condensent les contrats en points clés, extraient les échéances ou signalent des clauses – idéalement avec renvoi au passage source."
+        },
+        {
+          "de": "Übergabe: Die strukturierten Daten fliessen per Schnittstelle in ERP, Buchhaltung, DMS oder CRM – ohne manuelles Abtippen.",
+          "en": "Handover: the structured data flows via interfaces into ERP, accounting, DMS or CRM – without manual re-keying.",
+          "it": "Trasferimento: i dati strutturati confluiscono tramite interfacce in ERP, contabilità, DMS o CRM – senza reinserimento manuale.",
+          "fr": "Transmission : les données structurées alimentent via des interfaces l'ERP, la comptabilité, la GED ou le CRM – sans ressaisie manuelle."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Rechnungen, Verträge, Formulare: typische Anwendungsfälle",
+        "en": "Invoices, contracts, forms: typical use cases",
+        "it": "Fatture, contratti, moduli: casi d'uso tipici",
+        "fr": "Factures, contrats, formulaires : cas d'usage typiques"
+      },
+      "bullets": [
+        {
+          "de": "Rechnungen (Kreditorenbuchhaltung): automatisches Auslesen von Lieferant, Betrag, MwSt, IBAN und Positionen, Abgleich mit Bestellung und Wareneingang, Verbuchung mit menschlicher Freigabe. Schweizer Besonderheit: die QR-Rechnung mit strukturiertem QR-Code erleichtert die zuverlässige Extraktion.",
+          "en": "Invoices (accounts payable): automatic reading of supplier, amount, VAT, IBAN and line items, matching against purchase order and goods receipt, posting with human approval. Swiss specificity: the QR-bill with its structured QR code makes reliable extraction easier.",
+          "it": "Fatture (contabilità fornitori): lettura automatica di fornitore, importo, IVA, IBAN e righe, riscontro con ordine e ricezione merci, registrazione con approvazione umana. Particolarità svizzera: la QR-fattura con codice QR strutturato facilita un'estrazione affidabile.",
+          "fr": "Factures (comptabilité fournisseurs) : lecture automatique du fournisseur, du montant, de la TVA, de l'IBAN et des lignes, rapprochement avec la commande et la réception, comptabilisation avec validation humaine. Spécificité suisse : la QR-facture, avec son code QR structuré, facilite une extraction fiable."
+        },
+        {
+          "de": "Verträge: Klauseln, Kündigungsfristen, Laufzeiten und Vertragsparteien extrahieren, Verträge klassifizieren und für die juristische Prüfung zusammenfassen. KI liefert den Entwurf – die rechtliche Wertung bleibt bei Fachpersonen.",
+          "en": "Contracts: extract clauses, notice periods, terms and parties, classify contracts and summarise them for legal review. AI provides the draft – the legal judgement stays with professionals.",
+          "it": "Contratti: estrarre clausole, termini di disdetta, durate e parti, classificare i contratti e riassumerli per la revisione legale. L'IA fornisce la bozza – la valutazione giuridica resta ai professionisti.",
+          "fr": "Contrats : extraire clauses, délais de résiliation, durées et parties, classer les contrats et les résumer pour la revue juridique. L'IA fournit le brouillon – l'appréciation juridique reste aux professionnels."
+        },
+        {
+          "de": "Formulare und Anträge: Onboarding-, Schaden- oder Antragsformulare digitalisieren, Felder validieren und in Fachsysteme übernehmen – auch bei handschriftlichen Einträgen mit unterschiedlicher Qualität.",
+          "en": "Forms and applications: digitise onboarding, claims or application forms, validate fields and pass them into business systems – including handwritten entries of varying quality.",
+          "it": "Moduli e domande: digitalizzare moduli di onboarding, sinistri o domande, validare i campi e trasferirli nei sistemi aziendali – anche con voci scritte a mano di qualità variabile.",
+          "fr": "Formulaires et demandes : numériser les formulaires d'intégration, de sinistre ou de demande, valider les champs et les intégrer aux systèmes métier – y compris des saisies manuscrites de qualité variable."
+        },
+        {
+          "de": "Mehrsprachige Belege: In der Schweiz landen Dokumente in Deutsch, Französisch, Italienisch und Englisch im selben Posteingang. Moderne Modelle verarbeiten diese Sprachen, was manuelle Vorsortierung überflüssig macht.",
+          "en": "Multilingual documents: in Switzerland, documents in German, French, Italian and English arrive in the same inbox. Modern models handle these languages, removing the need for manual pre-sorting.",
+          "it": "Documenti multilingue: in Svizzera arrivano nello stesso inbox documenti in tedesco, francese, italiano e inglese. I modelli moderni gestiscono queste lingue, eliminando la pre-selezione manuale.",
+          "fr": "Documents multilingues : en Suisse, des documents en allemand, français, italien et anglais arrivent dans la même boîte. Les modèles modernes gèrent ces langues, supprimant le tri manuel préalable."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Genauigkeit, Konfidenz und die menschliche Prüfung",
+        "en": "Accuracy, confidence and human review",
+        "it": "Accuratezza, confidenza e revisione umana",
+        "fr": "Précision, confiance et revue humaine"
+      },
+      "paragraphs": [
+        {
+          "de": "Genauigkeit misst man nicht pauschal, sondern pro Feld: Ein Datum mag zu 99 Prozent stimmen, eine handschriftliche Notiz deutlich seltener. Entscheidend ist der Konfidenzwert, den das Modell für jede Extraktion ausgibt. Er steuert, welche Dokumente ohne Zutun durchlaufen (Straight-Through Processing) und welche zur Prüfung an Menschen gehen (Human-in-the-Loop).",
+          "en": "Accuracy is not measured in the aggregate but per field: a date may be right 99 percent of the time, a handwritten note far less often. What matters is the confidence score the model outputs for each extraction. It governs which documents pass through untouched (straight-through processing) and which go to people for review (human-in-the-loop).",
+          "it": "L'accuratezza non si misura in modo aggregato ma per campo: una data può essere corretta nel 99 percento dei casi, una nota manoscritta molto meno spesso. Ciò che conta è il punteggio di confidenza che il modello fornisce per ogni estrazione. Determina quali documenti passano senza intervento (straight-through processing) e quali vanno alla revisione umana (human-in-the-loop).",
+          "fr": "La précision ne se mesure pas globalement mais par champ : une date peut être correcte 99 pour cent du temps, une note manuscrite bien moins souvent. Ce qui compte, c'est le score de confiance que le modèle produit pour chaque extraction. Il détermine quels documents passent sans intervention (straight-through processing) et lesquels vont à la revue humaine (human-in-the-loop)."
+        },
+        {
+          "de": "Gute Systeme setzen deshalb auf einen Schwellenwert: Unterhalb einer bestimmten Konfidenz oder bei fehlgeschlagener Validierung landet das Dokument in einer Prüfmaske. So bleibt die Kontrolle beim Menschen, während der Grossteil der Routine automatisch läuft. Gerade bei Sprachmodell-Zusammenfassungen ist Vorsicht geboten: Modelle können plausibel klingende, aber falsche Angaben erzeugen (Halluzinationen). Quellenverweise und stichprobenartige Kontrollen sind daher Pflicht.",
+          "en": "Good systems therefore rely on a threshold: below a certain confidence, or when validation fails, the document lands in a review screen. Control stays with people, while most of the routine runs automatically. Caution is especially warranted with language-model summaries: models can produce plausible-sounding but false statements (hallucinations). Source references and spot checks are therefore mandatory.",
+          "it": "I buoni sistemi si affidano quindi a una soglia: sotto una certa confidenza, o se la validazione fallisce, il documento finisce in una schermata di revisione. Il controllo resta alle persone, mentre gran parte della routine è automatica. Prudenza soprattutto con le sintesi dei modelli linguistici: possono produrre affermazioni plausibili ma false (allucinazioni). Riferimenti alle fonti e controlli a campione sono quindi obbligatori.",
+          "fr": "Les bons systèmes s'appuient donc sur un seuil : en dessous d'une certaine confiance, ou en cas d'échec de validation, le document arrive sur un écran de revue. Le contrôle reste aux personnes, tandis que l'essentiel de la routine est automatisé. La prudence s'impose surtout avec les résumés de modèles de langage : ils peuvent produire des affirmations plausibles mais fausses (hallucinations). Renvois aux sources et contrôles par sondage sont donc indispensables."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz und Compliance in der Schweiz",
+        "en": "Data protection and compliance in Switzerland",
+        "it": "Protezione dei dati e conformità in Svizzera",
+        "fr": "Protection des données et conformité en Suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Dokumente enthalten oft Personendaten und Geschäftsgeheimnisse. In der Schweiz gilt das revidierte Datenschutzgesetz (revDSG), beaufsichtigt durch den EDÖB; für Kundinnen und Kunden im EU-Raum kann zusätzlich die DSGVO greifen. Wichtig sind Zweckbindung, Datenminimierung, ein Bearbeitungsverzeichnis und – bei heikleren Vorhaben – eine Datenschutz-Folgenabschätzung.",
+          "en": "Documents often contain personal data and trade secrets. In Switzerland the revised Federal Act on Data Protection (revFADP) applies, supervised by the FDPIC; for customers in the EU the GDPR may apply in addition. Purpose limitation, data minimisation, a record of processing activities and – for higher-risk projects – a data protection impact assessment all matter.",
+          "it": "I documenti contengono spesso dati personali e segreti aziendali. In Svizzera si applica la legge federale rivista sulla protezione dei dati (revLPD), vigilata dall'IFPDT; per i clienti nell'UE può applicarsi anche il GDPR. Contano la limitazione della finalità, la minimizzazione dei dati, un registro dei trattamenti e – per progetti a rischio maggiore – una valutazione d'impatto sulla protezione dei dati.",
+          "fr": "Les documents contiennent souvent des données personnelles et des secrets d'affaires. En Suisse s'applique la loi fédérale révisée sur la protection des données (nLPD), surveillée par le PFPDT ; pour les clients dans l'UE, le RGPD peut aussi s'appliquer. La limitation de la finalité, la minimisation des données, un registre des traitements et – pour les projets à risque élevé – une analyse d'impact sont essentiels."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Datenstandort: Klären, wo verarbeitet und gespeichert wird. Schweizer oder EU-Hosting, verschlüsselte Übertragung und ein Auftragsbearbeitungsvertrag mit dem Anbieter sind zentral.",
+          "en": "Data residency: clarify where processing and storage happen. Swiss or EU hosting, encrypted transfer and a data processing agreement with the provider are central.",
+          "it": "Ubicazione dei dati: chiarire dove avvengono trattamento e archiviazione. Hosting svizzero o UE, trasmissione cifrata e un contratto di trattamento con il fornitore sono centrali.",
+          "fr": "Localisation des données : clarifier où ont lieu le traitement et le stockage. Hébergement suisse ou UE, transfert chiffré et un contrat de sous-traitance avec le prestataire sont essentiels."
+        },
+        {
+          "de": "Training mit eigenen Daten: Vertraglich sicherstellen, dass eingereichte Dokumente nicht ohne Einwilligung zum Training fremder Modelle verwendet werden.",
+          "en": "Training on your data: contractually ensure that submitted documents are not used to train third-party models without consent.",
+          "it": "Addestramento sui propri dati: garantire contrattualmente che i documenti inviati non siano usati per addestrare modelli di terzi senza consenso.",
+          "fr": "Entraînement sur vos données : garantir contractuellement que les documents soumis ne servent pas à entraîner des modèles tiers sans consentement."
+        },
+        {
+          "de": "Aufbewahrung: Geschäftsbücher und Belege sind nach Obligationenrecht (OR Art. 958f) grundsätzlich zehn Jahre aufzubewahren – die Archivierung muss revisionssicher bleiben, auch wenn die Erfassung automatisiert ist.",
+          "en": "Retention: business records and vouchers must generally be kept for ten years under the Code of Obligations (CO Art. 958f) – archiving must remain audit-proof even when capture is automated.",
+          "it": "Conservazione: libri contabili e giustificativi vanno di norma conservati dieci anni secondo il Codice delle obbligazioni (CO Art. 958f) – l'archiviazione deve restare a prova di revisione anche se l'acquisizione è automatizzata.",
+          "fr": "Conservation : livres et pièces comptables doivent en principe être conservés dix ans selon le Code des obligations (CO art. 958f) – l'archivage doit rester à l'épreuve de révision même si la saisie est automatisée."
+        },
+        {
+          "de": "Berufsgeheimnis: Bei Gesundheits-, Anwalts- oder Bankunterlagen gelten zusätzliche Geheimhaltungspflichten, die eine On-Premise- oder streng abgeschottete Lösung nahelegen können.",
+          "en": "Professional secrecy: health, legal or banking records carry additional confidentiality duties that may call for an on-premises or strictly isolated solution.",
+          "it": "Segreto professionale: documenti sanitari, legali o bancari comportano obblighi di riservatezza aggiuntivi che possono richiedere una soluzione on-premise o rigorosamente isolata.",
+          "fr": "Secret professionnel : les dossiers médicaux, juridiques ou bancaires impliquent des obligations de confidentialité supplémentaires pouvant justifier une solution sur site ou strictement isolée."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "In fünf Schritten einführen",
+        "en": "Introduce it in five steps",
+        "it": "Introdurla in cinque passi",
+        "fr": "L'introduire en cinq étapes"
+      },
+      "bullets": [
+        {
+          "de": "Einen klar abgegrenzten, hochvolumigen Prozess wählen – etwa Eingangsrechnungen – statt alles auf einmal zu automatisieren.",
+          "en": "Pick one clearly bounded, high-volume process – such as incoming invoices – rather than automating everything at once.",
+          "it": "Scegliere un processo ben delimitato e ad alto volume – ad es. le fatture in entrata – invece di automatizzare tutto insieme.",
+          "fr": "Choisir un processus bien délimité et à fort volume – p. ex. les factures entrantes – plutôt que tout automatiser d'un coup."
+        },
+        {
+          "de": "Erfolgskriterien definieren: Zielgenauigkeit pro Feld, akzeptable Durchlaufquote und maximale Bearbeitungszeit.",
+          "en": "Define success criteria: target accuracy per field, acceptable straight-through rate and maximum processing time.",
+          "it": "Definire criteri di successo: accuratezza obiettivo per campo, tasso di automazione accettabile e tempo massimo di elaborazione.",
+          "fr": "Définir des critères de succès : précision cible par champ, taux d'automatisation acceptable et temps de traitement maximal."
+        },
+        {
+          "de": "Mit echten, repräsentativen Dokumenten testen – inklusive schlechter Scans, Fremdsprachen und Sonderfälle.",
+          "en": "Test with real, representative documents – including poor scans, foreign languages and edge cases.",
+          "it": "Testare con documenti reali e rappresentativi – inclusi scansioni scadenti, lingue straniere e casi limite.",
+          "fr": "Tester avec des documents réels et représentatifs – y compris mauvais scans, langues étrangères et cas particuliers."
+        },
+        {
+          "de": "Prüf-Workflow und Konfidenzschwellen einrichten, damit unsichere Fälle zuverlässig bei Menschen landen.",
+          "en": "Set up the review workflow and confidence thresholds so uncertain cases reliably reach people.",
+          "it": "Impostare il flusso di revisione e le soglie di confidenza affinché i casi incerti raggiungano le persone in modo affidabile.",
+          "fr": "Mettre en place le flux de revue et les seuils de confiance pour que les cas incertains parviennent de façon fiable aux personnes."
+        },
+        {
+          "de": "Datenschutz, Verträge und Datenstandort früh klären und die Genauigkeit im Betrieb laufend überwachen und nachjustieren.",
+          "en": "Clarify data protection, contracts and data residency early, and continuously monitor and tune accuracy in production.",
+          "it": "Chiarire per tempo protezione dei dati, contratti e ubicazione dei dati, e monitorare e regolare costantemente l'accuratezza in produzione.",
+          "fr": "Clarifier tôt la protection des données, les contrats et la localisation, puis surveiller et ajuster en continu la précision en production."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen OCR und KI-Dokumentenverarbeitung?",
+        "en": "What is the difference between OCR and AI document processing?",
+        "it": "Qual è la differenza tra OCR ed elaborazione documenti con IA?",
+        "fr": "Quelle est la différence entre l'OCR et le traitement de documents par IA ?"
+      },
+      "a": {
+        "de": "OCR wandelt Bild in Text um, versteht aber nicht dessen Bedeutung. KI-Dokumentenverarbeitung baut darauf auf: Sie klassifiziert das Dokument, erkennt Felder unabhängig vom Layout, validiert Werte und kann Inhalte zusammenfassen. OCR ist damit ein Baustein, IDP der gesamte Prozess von der Erfassung bis zur strukturierten Datenübergabe.",
+        "en": "OCR turns image into text but does not understand its meaning. AI document processing builds on top: it classifies the document, recognises fields regardless of layout, validates values and can summarise content. OCR is thus one building block; IDP is the whole process from capture to structured data handover.",
+        "it": "L'OCR trasforma l'immagine in testo ma non ne comprende il significato. L'elaborazione con IA vi si basa: classifica il documento, riconosce i campi a prescindere dal layout, valida i valori e può riassumere i contenuti. L'OCR è quindi un tassello; l'IDP è l'intero processo dall'acquisizione al trasferimento strutturato.",
+        "fr": "L'OCR transforme l'image en texte mais n'en comprend pas le sens. Le traitement par IA s'y appuie : il classe le document, reconnaît les champs quel que soit le format, valide les valeurs et peut résumer le contenu. L'OCR est un composant ; l'IDP est le processus complet, de la capture à la transmission structurée."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie genau ist KI bei der Datenextraktion?",
+        "en": "How accurate is AI at data extraction?",
+        "it": "Quanto è accurata l'IA nell'estrazione dei dati?",
+        "fr": "Quelle est la précision de l'IA pour l'extraction de données ?"
+      },
+      "a": {
+        "de": "Das hängt stark von Dokumentqualität, Feldtyp und Vielfalt ab und lässt sich nicht mit einer einzelnen Prozentzahl beziffern. Klar strukturierte Felder wie Beträge werden meist sehr zuverlässig erkannt, handschriftliche oder schlecht gescannte Inhalte deutlich schwerer. Deshalb steuern Konfidenzwerte, welche Dokumente automatisch durchlaufen und welche geprüft werden.",
+        "en": "It depends heavily on document quality, field type and variety, and cannot be captured in a single percentage. Clearly structured fields such as amounts are usually recognised very reliably; handwritten or poorly scanned content much less so. That is why confidence scores decide which documents pass automatically and which are reviewed.",
+        "it": "Dipende molto dalla qualità del documento, dal tipo di campo e dalla varietà, e non si riassume in una singola percentuale. I campi ben strutturati come gli importi sono in genere riconosciuti in modo molto affidabile; i contenuti manoscritti o mal scansionati molto meno. Per questo i punteggi di confidenza decidono cosa passa in automatico e cosa va rivisto.",
+        "fr": "Cela dépend fortement de la qualité du document, du type de champ et de la variété, et ne se résume pas à un seul pourcentage. Les champs bien structurés comme les montants sont généralement reconnus de façon très fiable ; les contenus manuscrits ou mal scannés beaucoup moins. C'est pourquoi les scores de confiance décident de ce qui passe automatiquement et de ce qui est revu."
+      }
+    },
+    {
+      "q": {
+        "de": "Können Sprachmodelle Verträge zuverlässig zusammenfassen?",
+        "en": "Can language models reliably summarise contracts?",
+        "it": "I modelli linguistici possono riassumere i contratti in modo affidabile?",
+        "fr": "Les modèles de langage peuvent-ils résumer les contrats de façon fiable ?"
+      },
+      "a": {
+        "de": "Sie liefern gute Entwürfe und finden Fristen oder Klauseln schnell, können aber Details verwechseln oder plausibel Falsches erzeugen. Für rechtlich relevante Aussagen braucht es Quellenverweise auf die Fundstelle und eine menschliche Endkontrolle. Als Assistenz sind sie stark, als alleinige Entscheidungsgrundlage ungeeignet.",
+        "en": "They produce good drafts and quickly find deadlines or clauses, but can confuse details or generate plausible falsehoods. For legally relevant statements you need references to the source passage and a human final check. As an assistant they are strong; as the sole basis for a decision they are unsuitable.",
+        "it": "Producono buone bozze e trovano rapidamente scadenze o clausole, ma possono confondere dettagli o generare falsità plausibili. Per affermazioni giuridicamente rilevanti servono rimandi al passaggio d'origine e un controllo umano finale. Come assistenza sono validi; come unica base decisionale non sono adatti.",
+        "fr": "Ils produisent de bons brouillons et trouvent vite échéances ou clauses, mais peuvent confondre des détails ou générer des faussetés plausibles. Pour des affirmations juridiquement pertinentes, il faut des renvois au passage source et un contrôle humain final. Comme assistance ils sont solides ; comme seule base de décision, ils ne conviennent pas."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist KI-Dokumentenverarbeitung revDSG-konform?",
+        "en": "Is AI document processing compliant with the revFADP?",
+        "it": "L'elaborazione documenti con IA è conforme alla revLPD?",
+        "fr": "Le traitement de documents par IA est-il conforme à la nLPD ?"
+      },
+      "a": {
+        "de": "Sie kann es sein, wenn die Rahmenbedingungen stimmen: klarer Bearbeitungszweck, Datenminimierung, geeigneter Datenstandort, Verschlüsselung, ein Auftragsbearbeitungsvertrag und ein Verzeichnis der Bearbeitungen. Bei besonders schützenswerten Daten empfiehlt sich eine Datenschutz-Folgenabschätzung. Die Compliance liegt nicht im Tool allein, sondern in seiner Konfiguration und Nutzung.",
+        "en": "It can be, if the framework is right: a clear processing purpose, data minimisation, a suitable data location, encryption, a data processing agreement and a record of processing activities. For sensitive data, a data protection impact assessment is advisable. Compliance lies not in the tool alone but in how it is configured and used.",
+        "it": "Può esserlo se le condizioni sono corrette: finalità chiara, minimizzazione dei dati, ubicazione adeguata, cifratura, un contratto di trattamento e un registro dei trattamenti. Per dati degni di particolare protezione è consigliabile una valutazione d'impatto. La conformità non sta nello strumento in sé, ma nella sua configurazione e nel suo uso.",
+        "fr": "Elle peut l'être si le cadre est adéquat : finalité claire, minimisation des données, localisation appropriée, chiffrement, un contrat de sous-traitance et un registre des traitements. Pour des données sensibles, une analyse d'impact est recommandée. La conformité ne réside pas dans l'outil seul, mais dans sa configuration et son usage."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie lange müssen Dokumente in der Schweiz aufbewahrt werden?",
+        "en": "How long must documents be retained in Switzerland?",
+        "it": "Per quanto tempo vanno conservati i documenti in Svizzera?",
+        "fr": "Combien de temps faut-il conserver les documents en Suisse ?"
+      },
+      "a": {
+        "de": "Für Geschäftsbücher und Buchungsbelege gilt nach Obligationenrecht (OR Art. 958f) grundsätzlich eine Aufbewahrungsfrist von zehn Jahren. Die Ablage muss unveränderbar und nachvollziehbar sein. Automatisierte Erfassung ändert nichts an dieser Pflicht – die revisionssichere Archivierung muss Teil der Lösung sein.",
+        "en": "For business records and accounting vouchers, the Code of Obligations (CO Art. 958f) generally requires a ten-year retention period. Storage must be unalterable and traceable. Automated capture does not change this duty – audit-proof archiving must be part of the solution.",
+        "it": "Per libri contabili e giustificativi, il Codice delle obbligazioni (CO Art. 958f) prevede in generale una conservazione di dieci anni. L'archiviazione deve essere immodificabile e tracciabile. L'acquisizione automatizzata non muta questo obbligo – l'archiviazione a prova di revisione deve far parte della soluzione.",
+        "fr": "Pour les livres et pièces comptables, le Code des obligations (CO art. 958f) exige en principe une conservation de dix ans. Le stockage doit être inaltérable et traçable. La saisie automatisée ne change rien à cette obligation – l'archivage à l'épreuve de révision doit faire partie de la solution."
+      }
+    },
+    {
+      "q": {
+        "de": "On-Premise oder Cloud – was passt besser?",
+        "en": "On-premises or cloud – which fits better?",
+        "it": "On-premise o cloud: cosa conviene?",
+        "fr": "Sur site ou cloud : que choisir ?"
+      },
+      "a": {
+        "de": "Cloud-Lösungen sind schnell startklar und leistungsfähig, verlangen aber Klarheit zu Datenstandort und Vertragslage. On-Premise oder Schweizer Hosting bietet sich an, wenn Berufsgeheimnisse, besonders heikle Daten oder strenge interne Vorgaben im Spiel sind. Entscheidend sind Schutzbedarf, Volumen und die vorhandene IT – nicht die Technologie an sich.",
+        "en": "Cloud solutions are quick to deploy and powerful but require clarity on data location and contracts. On-premises or Swiss hosting suits cases involving professional secrecy, especially sensitive data or strict internal rules. What decides is the protection need, volume and existing IT – not the technology itself.",
+        "it": "Le soluzioni cloud sono rapide da avviare e potenti, ma richiedono chiarezza su ubicazione dei dati e contratti. On-premise o hosting svizzero è indicato con segreti professionali, dati particolarmente sensibili o regole interne rigorose. A decidere sono il bisogno di protezione, il volume e l'IT esistente – non la tecnologia in sé.",
+        "fr": "Les solutions cloud sont rapides à déployer et performantes, mais exigent de la clarté sur la localisation et les contrats. Le sur site ou l'hébergement suisse convient en cas de secret professionnel, de données très sensibles ou de règles internes strictes. Ce qui décide, c'est le besoin de protection, le volume et l'IT existante – pas la technologie elle-même."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Intelligent Document Processing (IDP)",
+    "Optical Character Recognition (OCR)",
+    "Named Entity Recognition",
+    "Grosse Sprachmodelle (LLM)",
+    "Dokumentenklassifizierung",
+    "Straight-Through Processing",
+    "Human-in-the-Loop",
+    "Konfidenzwert",
+    "revDSG / nFADP",
+    "EDÖB",
+    "Schweizer QR-Rechnung",
+    "Kreditorenbuchhaltung",
+    "Obligationenrecht (OR Art. 958f)",
+    "Datenstandort / Data Residency",
+    "Datenschutz-Folgenabschätzung",
+    "Validierungsregeln"
+  ]
+}

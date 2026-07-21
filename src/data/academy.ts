@@ -46,7 +46,7 @@ export interface AcademyArticle {
 
 export const CLUSTERS: AcademyCluster[] = [
   {
-    id: 'foundations', order: 1, status: 'draft',
+    id: 'foundations', order: 1, status: 'live',
     slug: { de: 'grundlagen', en: 'foundations', it: 'fondamenti', fr: 'fondamentaux' },
     name: { de: 'KI-Grundlagen', en: 'AI Foundations', it: 'Fondamenti di AI', fr: 'Fondamentaux de l’IA' },
     tagline: { de: 'Was KI ist, wie sie funktioniert und wie man sie versteht.', en: 'What AI is, how it works and how to understand it.', it: 'Cos’è l’AI, come funziona e come capirla.', fr: 'Ce qu’est l’IA, comment elle fonctionne et comment la comprendre.' },
@@ -92,7 +92,7 @@ export const CLUSTERS: AcademyCluster[] = [
   // AI content; a parallel informational cluster would duplicate them and risk
   // keyword cannibalization. Sector depth lives under the Industries pillar.
   {
-    id: 'functions', order: 8, status: 'draft',
+    id: 'functions', order: 8, status: 'live',
     slug: { de: 'ki-nach-funktion', en: 'ai-by-function', it: 'ai-per-funzione', fr: 'ia-par-fonction' },
     name: { de: 'KI nach Funktion', en: 'AI by Function', it: 'AI per funzione', fr: 'IA par fonction' },
     tagline: { de: 'KI in Vertrieb, Support, HR, Finanzen und mehr.', en: 'AI in sales, support, HR, finance and more.', it: 'AI in vendite, supporto, HR, finanza e altro.', fr: 'L’IA dans les ventes, le support, les RH, la finance et plus.' },

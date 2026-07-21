@@ -1,0 +1,372 @@
+{
+  "id": "prompt-engineering-guide",
+  "cluster": "foundations",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "prompt-engineering-anleitung",
+    "en": "prompt-engineering-guide",
+    "it": "guida-prompt-engineering",
+    "fr": "guide-prompt-engineering"
+  },
+  "title": {
+    "de": "Prompt Engineering: Die praktische Anleitung | Weissmann AI",
+    "en": "Prompt Engineering: A Practical Hands-On Guide | Weissmann AI",
+    "it": "Prompt Engineering: la guida pratica completa | Weissmann AI",
+    "fr": "Prompt Engineering : le guide pratique complet | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Prompt Engineering praktisch erklärt: Aufbau wirksamer Prompts, Muster wie Rolle, Kontext, Beispiele und Constraints, typische Fehler und ein Workflow zum Iterieren.",
+    "en": "Prompt engineering made practical: how to structure effective prompts, patterns like role, context, examples and constraints, common mistakes, and a workflow to iterate.",
+    "it": "Prompt engineering in pratica: come strutturare prompt efficaci, pattern come ruolo, contesto, esempi e vincoli, errori comuni e un flusso per iterare.",
+    "fr": "Le prompt engineering en pratique : structurer des prompts efficaces, patterns (rôle, contexte, exemples, contraintes), erreurs fréquentes et méthode pour itérer."
+  },
+  "kicker": {
+    "de": "KI-Grundlagen",
+    "en": "AI Foundations",
+    "it": "Fondamenti di KI",
+    "fr": "Fondamentaux de l'IA"
+  },
+  "h1": {
+    "de": "Prompt Engineering: die praktische Anleitung für wirksame Prompts",
+    "en": "Prompt Engineering: A Practical Guide to Writing Effective Prompts",
+    "it": "Prompt Engineering: la guida pratica per scrivere prompt efficaci",
+    "fr": "Prompt Engineering : le guide pratique pour écrire des prompts efficaces"
+  },
+  "answerFirst": {
+    "de": "Prompt Engineering ist die Praxis, Anweisungen so zu formulieren, dass ein KI-Sprachmodell verlässlich das gewünschte Ergebnis liefert. Ein wirksamer Prompt verbindet Rolle, Kontext, eine klare Aufgabe, Beispiele und Constraints wie Format, Länge oder Tonalität. Entscheidend ist nicht die eine perfekte Formulierung, sondern iteratives Testen: schreiben, Ergebnis prüfen, präzisieren. Wer Struktur, Konkretheit und ein Ausgabeformat vorgibt, reduziert Fehler und Halluzinationen und spart Zeit.",
+    "en": "Prompt engineering is the practice of phrasing instructions so an AI language model reliably produces the result you want. An effective prompt combines a role, context, a clear task, examples and constraints such as format, length or tone. What matters is not one perfect wording but iterating: write, check the output, refine. Providing structure, specificity and an explicit output format reduces errors and hallucinations and saves time.",
+    "it": "Il prompt engineering è la pratica di formulare istruzioni affinché un modello linguistico di KI produca in modo affidabile il risultato voluto. Un prompt efficace combina un ruolo, il contesto, un compito chiaro, esempi e vincoli come formato, lunghezza o tono. Non conta la formulazione perfetta, ma l'iterazione: scrivere, verificare l'output, affinare. Fornire struttura, precisione e un formato di uscita riduce errori e allucinazioni e fa risparmiare tempo.",
+    "fr": "Le prompt engineering consiste à formuler des instructions pour qu'un modèle de langage d'IA produise de façon fiable le résultat souhaité. Un prompt efficace combine un rôle, un contexte, une tâche claire, des exemples et des contraintes comme le format, la longueur ou le ton. L'essentiel n'est pas la formulation parfaite mais l'itération : écrire, vérifier la sortie, affiner. Structure, précision et format de sortie réduisent erreurs et hallucinations."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was Prompt Engineering ist und warum es zählt",
+        "en": "What prompt engineering is and why it matters",
+        "it": "Cos'è il prompt engineering e perché conta",
+        "fr": "Ce qu'est le prompt engineering et pourquoi il compte"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein grosses Sprachmodell (Large Language Model) sagt auf Basis Ihrer Eingabe das jeweils wahrscheinlichste nächste Wort voraus. Der Prompt ist damit die zentrale Steuerung: Er bestimmt, welchen Ausschnitt des gelernten Wissens das Modell aktiviert und in welcher Form es antwortet. Prompt Engineering ist die systematische Praxis, diese Eingaben so zu gestalten, dass die Ausgabe brauchbar, konsistent und überprüfbar wird.",
+          "en": "A large language model predicts the most likely next word based on your input. The prompt is therefore the main control: it determines which slice of learned knowledge the model activates and in what form it answers. Prompt engineering is the systematic practice of shaping those inputs so the output becomes useful, consistent and verifiable.",
+          "it": "Un modello linguistico di grandi dimensioni prevede la parola successiva più probabile in base al tuo input. Il prompt è quindi il comando centrale: decide quale porzione di conoscenza appresa il modello attiva e in quale forma risponde. Il prompt engineering è la pratica sistematica di dare forma a questi input affinché l'output sia utile, coerente e verificabile.",
+          "fr": "Un grand modèle de langage prédit le mot suivant le plus probable à partir de votre saisie. Le prompt est donc le pilotage central : il détermine quelle part du savoir appris le modèle active et sous quelle forme il répond. Le prompt engineering est la pratique systématique de façonner ces entrées pour que la sortie soit utile, cohérente et vérifiable."
+        },
+        {
+          "de": "Der Nutzen ist konkret: Dieselbe Frage kann je nach Formulierung eine vage Allgemeinantwort oder ein direkt verwendbares Arbeitsergebnis erzeugen. Gute Prompts sind deshalb kein Nischenwissen für Fachleute, sondern eine Kernkompetenz für alle, die mit Werkzeugen wie ChatGPT, Claude oder Gemini arbeiten.",
+          "en": "The payoff is concrete: depending on wording, the same question can yield a vague general answer or a directly usable work product. Good prompting is therefore not niche expertise but a core skill for anyone working with tools such as ChatGPT, Claude or Gemini.",
+          "it": "Il vantaggio è concreto: a seconda della formulazione, la stessa domanda può produrre una risposta generica e vaga oppure un risultato direttamente utilizzabile. Saper scrivere buoni prompt non è quindi una competenza di nicchia, ma una capacità fondamentale per chiunque usi strumenti come ChatGPT, Claude o Gemini.",
+          "fr": "Le bénéfice est concret : selon la formulation, la même question peut donner une réponse générale vague ou un livrable directement exploitable. Bien rédiger un prompt n'est donc pas un savoir de spécialiste mais une compétence de base pour quiconque utilise des outils comme ChatGPT, Claude ou Gemini."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die Anatomie eines wirksamen Prompts",
+        "en": "The anatomy of an effective prompt",
+        "it": "L'anatomia di un prompt efficace",
+        "fr": "L'anatomie d'un prompt efficace"
+      },
+      "paragraphs": [
+        {
+          "de": "Die meisten starken Prompts lassen sich in sechs Bausteine zerlegen. Sie müssen nicht alle in jedem Fall vorkommen, aber je anspruchsvoller die Aufgabe, desto mehr davon lohnen sich.",
+          "en": "Most strong prompts can be broken into six building blocks. Not all are needed every time, but the more demanding the task, the more of them pay off.",
+          "it": "La maggior parte dei prompt efficaci si può scomporre in sei elementi. Non servono tutti ogni volta, ma più il compito è complesso, più conviene includerli.",
+          "fr": "La plupart des bons prompts se décomposent en six briques. Elles ne sont pas toutes nécessaires à chaque fois, mais plus la tâche est exigeante, plus elles sont utiles."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Rolle: Weisen Sie dem Modell eine Perspektive zu, z. B. 'Du bist eine erfahrene Steuerberaterin in der Schweiz.' Das schärft Wortwahl und Detailtiefe.",
+          "en": "Role: assign the model a perspective, e.g. 'You are an experienced Swiss tax advisor.' This sharpens vocabulary and level of detail.",
+          "it": "Ruolo: assegna al modello una prospettiva, ad es. 'Sei un commercialista esperto in Svizzera.' Affina lessico e livello di dettaglio.",
+          "fr": "Rôle : attribuez une perspective au modèle, ex. « Tu es une conseillère fiscale expérimentée en Suisse. » Cela affine le vocabulaire et le niveau de détail."
+        },
+        {
+          "de": "Kontext: Liefern Sie Hintergrund, Zielgruppe und Zweck. 'Für Neukunden eines KMU, die noch nie mit KI gearbeitet haben.'",
+          "en": "Context: supply background, audience and purpose. 'For new clients of an SME who have never worked with AI.'",
+          "it": "Contesto: fornisci background, pubblico e scopo. 'Per nuovi clienti di una PMI che non hanno mai usato la KI.'",
+          "fr": "Contexte : fournissez l'arrière-plan, le public et l'objectif. « Pour de nouveaux clients d'une PME n'ayant jamais utilisé l'IA. »"
+        },
+        {
+          "de": "Aufgabe: Formulieren Sie das Ziel als klares Verb. 'Fasse zusammen', 'vergleiche', 'entwirf' statt einer vagen Frage.",
+          "en": "Task: state the goal as a clear verb. 'Summarise', 'compare', 'draft' rather than a vague question.",
+          "it": "Compito: esprimi l'obiettivo con un verbo chiaro. 'Riassumi', 'confronta', 'redigi' invece di una domanda vaga.",
+          "fr": "Tâche : exprimez le but par un verbe clair. « Résume », « compare », « rédige » plutôt qu'une question vague."
+        },
+        {
+          "de": "Beispiele: Zeigen Sie ein oder zwei Muster der gewünschten Ausgabe (Few-Shot). Beispiele wirken oft stärker als Erklärungen.",
+          "en": "Examples: show one or two samples of the desired output (few-shot). Examples often work better than explanations.",
+          "it": "Esempi: mostra uno o due campioni dell'output desiderato (few-shot). Gli esempi spesso funzionano meglio delle spiegazioni.",
+          "fr": "Exemples : montrez un ou deux échantillons de la sortie voulue (few-shot). Les exemples sont souvent plus efficaces que les explications."
+        },
+        {
+          "de": "Constraints: Setzen Sie Grenzen für Länge, Tonalität, Sprache oder Was-nicht. 'Maximal 150 Wörter, sachlicher Ton, keine Fachbegriffe.'",
+          "en": "Constraints: set limits on length, tone, language or what to avoid. 'Max 150 words, neutral tone, no jargon.'",
+          "it": "Vincoli: definisci limiti di lunghezza, tono, lingua o cosa evitare. 'Massimo 150 parole, tono neutro, niente gergo.'",
+          "fr": "Contraintes : posez des limites de longueur, ton, langue ou interdits. « 150 mots maximum, ton neutre, sans jargon. »"
+        },
+        {
+          "de": "Ausgabeformat: Verlangen Sie eine konkrete Struktur, etwa Tabelle, Aufzählung, JSON oder ein festes Kapitelschema. Das macht Antworten weiterverarbeitbar.",
+          "en": "Output format: request a concrete structure, e.g. table, bullet list, JSON or a fixed section layout. This makes answers easy to reuse.",
+          "it": "Formato di uscita: richiedi una struttura concreta, ad es. tabella, elenco, JSON o uno schema fisso di sezioni. Rende le risposte riutilizzabili.",
+          "fr": "Format de sortie : demandez une structure concrète, ex. tableau, liste, JSON ou plan de sections fixe. Les réponses deviennent réutilisables."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Bewährte Muster für stärkere Prompts",
+        "en": "Proven patterns for stronger prompts",
+        "it": "Pattern collaudati per prompt più efficaci",
+        "fr": "Des patterns éprouvés pour des prompts plus solides"
+      },
+      "paragraphs": [
+        {
+          "de": "Über die Bausteine hinaus haben sich einige Muster etabliert, die je nach Aufgabe messbar helfen.",
+          "en": "Beyond the building blocks, a few patterns have become established and demonstrably help depending on the task.",
+          "it": "Oltre agli elementi di base, si sono affermati alcuni pattern che, a seconda del compito, aiutano in modo evidente.",
+          "fr": "Au-delà des briques, quelques patterns se sont imposés et aident nettement selon la tâche."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Zero-Shot vs. Few-Shot: Ohne Beispiel (Zero-Shot) genügt oft für einfache Aufgaben; mit zwei bis drei Beispielen (Few-Shot) steigt die Konsistenz bei Formaten und Klassifizierungen deutlich.",
+          "en": "Zero-shot vs. few-shot: no example (zero-shot) often suffices for simple tasks; two or three examples (few-shot) markedly improve consistency for formats and classification.",
+          "it": "Zero-shot vs few-shot: senza esempi (zero-shot) basta spesso per compiti semplici; con due o tre esempi (few-shot) la coerenza su formati e classificazioni migliora molto.",
+          "fr": "Zero-shot vs few-shot : sans exemple (zero-shot) suffit souvent pour les tâches simples ; deux ou trois exemples (few-shot) améliorent nettement la cohérence des formats et classifications."
+        },
+        {
+          "de": "Schritt-für-Schritt-Denken (Chain-of-Thought): Bitten Sie das Modell, seine Überlegungen zu strukturieren, bevor es die Antwort gibt. Das hilft bei Logik-, Rechen- und mehrstufigen Aufgaben.",
+          "en": "Step-by-step reasoning (chain-of-thought): ask the model to structure its reasoning before giving the answer. This helps with logic, arithmetic and multi-step tasks.",
+          "it": "Ragionamento passo-passo (chain-of-thought): chiedi al modello di strutturare il ragionamento prima di rispondere. Aiuta in compiti logici, di calcolo e in più fasi.",
+          "fr": "Raisonnement pas à pas (chain-of-thought) : demandez au modèle de structurer son raisonnement avant de répondre. Utile pour la logique, le calcul et les tâches en plusieurs étapes."
+        },
+        {
+          "de": "System- und Rollen-Prompt: In vielen Werkzeugen lässt sich ein dauerhafter System-Prompt setzen, der Ton und Regeln für die gesamte Sitzung vorgibt und so Wiederholungen spart.",
+          "en": "System and role prompt: many tools let you set a persistent system prompt that fixes tone and rules for the whole session, saving repetition.",
+          "it": "System e role prompt: molti strumenti permettono un system prompt persistente che fissa tono e regole per l'intera sessione, evitando ripetizioni.",
+          "fr": "System et role prompt : beaucoup d'outils permettent un system prompt persistant qui fixe le ton et les règles pour toute la session, évitant les répétitions."
+        },
+        {
+          "de": "Aufgabe zerlegen: Statt eines Riesen-Prompts mehrere kleinere Schritte hintereinander ausführen. Zwischenergebnisse lassen sich prüfen und korrigieren.",
+          "en": "Decompose the task: instead of one giant prompt, run several smaller steps in sequence. Intermediate results can be checked and corrected.",
+          "it": "Scomporre il compito: invece di un unico prompt enorme, esegui più passi piccoli in sequenza. I risultati intermedi si possono verificare e correggere.",
+          "fr": "Décomposer la tâche : au lieu d'un prompt géant, enchaînez plusieurs étapes plus petites. Les résultats intermédiaires se vérifient et se corrigent."
+        },
+        {
+          "de": "Referenztext mitgeben: Für faktentreue Antworten fügen Sie die Quelle direkt in den Prompt ein und weisen an, nur daraus zu antworten. Dieses Prinzip liegt auch Retrieval-Augmented-Generation (RAG) zugrunde.",
+          "en": "Provide a reference text: for factual answers, paste the source into the prompt and instruct the model to answer only from it. This principle also underlies retrieval-augmented generation (RAG).",
+          "it": "Fornire un testo di riferimento: per risposte fedeli ai fatti, incolla la fonte nel prompt e chiedi di rispondere solo da quella. È il principio alla base della retrieval-augmented generation (RAG).",
+          "fr": "Fournir un texte de référence : pour des réponses factuelles, collez la source dans le prompt et demandez de répondre uniquement à partir d'elle. C'est aussi le principe de la retrieval-augmented generation (RAG)."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler und wie Sie sie vermeiden",
+        "en": "Common mistakes and how to avoid them",
+        "it": "Errori comuni e come evitarli",
+        "fr": "Erreurs fréquentes et comment les éviter"
+      },
+      "bullets": [
+        {
+          "de": "Zu vage: 'Schreib etwas über Marketing' liefert Beliebiges. Nennen Sie Zielgruppe, Zweck, Umfang und Format.",
+          "en": "Too vague: 'Write something about marketing' yields anything. State audience, purpose, scope and format.",
+          "it": "Troppo vago: 'Scrivi qualcosa sul marketing' produce risultati casuali. Indica pubblico, scopo, ampiezza e formato.",
+          "fr": "Trop vague : « Écris quelque chose sur le marketing » donne n'importe quoi. Précisez public, objectif, ampleur et format."
+        },
+        {
+          "de": "Mehrere Ziele in einem Satz: Vermischte Aufgaben führen zu verwaschenen Antworten. Trennen Sie Teilaufgaben klar oder nummerieren Sie sie.",
+          "en": "Multiple goals in one sentence: mixed tasks produce muddled answers. Separate subtasks clearly or number them.",
+          "it": "Più obiettivi in una frase: compiti mescolati danno risposte confuse. Separa i sotto-compiti o numerali.",
+          "fr": "Plusieurs buts en une phrase : des tâches mêlées donnent des réponses floues. Séparez ou numérotez les sous-tâches."
+        },
+        {
+          "de": "Kein Ausgabeformat: Ohne Vorgabe erhalten Sie mal Fliesstext, mal Liste. Verlangen Sie explizit Struktur.",
+          "en": "No output format: without a spec you get prose one time, a list the next. Ask for structure explicitly.",
+          "it": "Nessun formato di uscita: senza specifica ottieni ora testo, ora elenco. Richiedi la struttura in modo esplicito.",
+          "fr": "Aucun format de sortie : sans consigne, vous obtenez tantôt du texte, tantôt une liste. Demandez explicitement la structure."
+        },
+        {
+          "de": "Halluzinationen als Fakten nehmen: Modelle können überzeugend Falsches erfinden. Fordern Sie Quellenangaben und prüfen Sie zentrale Fakten unabhängig.",
+          "en": "Taking hallucinations as fact: models can invent convincing falsehoods. Ask for sources and verify key facts independently.",
+          "it": "Prendere le allucinazioni per fatti: i modelli possono inventare falsità convincenti. Chiedi le fonti e verifica i fatti chiave in modo indipendente.",
+          "fr": "Prendre les hallucinations pour des faits : les modèles peuvent inventer des faussetés convaincantes. Demandez des sources et vérifiez les faits clés."
+        },
+        {
+          "de": "Negationen überschätzen: 'Schreib nicht zu lang' ist schwächer als 'maximal 120 Wörter'. Formulieren Sie Grenzen positiv und messbar.",
+          "en": "Overrating negations: 'Don't write too long' is weaker than 'max 120 words.' Phrase limits positively and measurably.",
+          "it": "Sopravvalutare le negazioni: 'Non scrivere troppo' è più debole di 'massimo 120 parole'. Formula i limiti in positivo e misurabili.",
+          "fr": "Surestimer les négations : « N'écris pas trop long » est plus faible que « 120 mots maximum ». Formulez des limites positives et mesurables."
+        },
+        {
+          "de": "Sensible Daten einfügen: Personendaten oder Geschäftsgeheimnisse gehören nur dann in einen Prompt, wenn Rechtsgrundlage und Anbieterbedingungen es zulassen.",
+          "en": "Pasting sensitive data: personal data or trade secrets belong in a prompt only if the legal basis and provider terms allow it.",
+          "it": "Inserire dati sensibili: dati personali o segreti aziendali vanno in un prompt solo se base giuridica e condizioni del fornitore lo consentono.",
+          "fr": "Coller des données sensibles : données personnelles ou secrets d'affaires n'ont leur place dans un prompt que si la base légale et les conditions du fournisseur le permettent."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Praxis-Workflow: iterativ zum guten Prompt",
+        "en": "A practical workflow: iterate toward a good prompt",
+        "it": "Flusso pratico: iterare verso un buon prompt",
+        "fr": "Méthode pratique : itérer vers un bon prompt"
+      },
+      "paragraphs": [
+        {
+          "de": "Behandeln Sie Prompting als Schleife, nicht als Einmalversuch. Ein bewährter Ablauf sieht so aus:",
+          "en": "Treat prompting as a loop, not a one-shot attempt. A reliable routine looks like this:",
+          "it": "Tratta il prompting come un ciclo, non come un tentativo unico. Una routine affidabile è questa:",
+          "fr": "Traitez le prompting comme une boucle, pas un essai unique. Une routine fiable ressemble à ceci :"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "1. Grundprompt schreiben mit Rolle, Aufgabe und Format. 2. Ergebnis kritisch prüfen: Was fehlt, was stimmt nicht? 3. Genau eine Sache pro Runde ändern, damit Sie die Wirkung sehen. 4. Gute Versionen als Vorlage speichern und wiederverwenden.",
+          "en": "1. Write a base prompt with role, task and format. 2. Review the output critically: what is missing or wrong? 3. Change exactly one thing per round so you can see its effect. 4. Save working versions as templates and reuse them.",
+          "it": "1. Scrivi un prompt base con ruolo, compito e formato. 2. Valuta l'output con spirito critico: cosa manca o è sbagliato? 3. Cambia una sola cosa per volta per vederne l'effetto. 4. Salva le versioni valide come modelli e riutilizzale.",
+          "fr": "1. Rédigez un prompt de base avec rôle, tâche et format. 2. Évaluez la sortie de façon critique : que manque-t-il ou est faux ? 3. Changez une seule chose par tour pour en voir l'effet. 4. Sauvegardez les bonnes versions comme modèles et réutilisez-les."
+        },
+        {
+          "de": "Nutzen Sie das Modell als Partner: Lassen Sie es Ihren Prompt kritisieren oder Rückfragen stellen, bevor es antwortet ('Frag nach, falls etwas unklar ist').",
+          "en": "Use the model as a partner: have it critique your prompt or ask clarifying questions before answering ('Ask me if anything is unclear').",
+          "it": "Usa il modello come partner: fagli criticare il tuo prompt o porre domande di chiarimento prima di rispondere ('Chiedi se qualcosa non è chiaro').",
+          "fr": "Utilisez le modèle comme partenaire : faites-lui critiquer votre prompt ou poser des questions avant de répondre (« Demande si quelque chose n'est pas clair »)."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz und Schweizer Kontext",
+        "en": "Data protection and the Swiss context",
+        "it": "Protezione dei dati e contesto svizzero",
+        "fr": "Protection des données et contexte suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "Prompts sind Eingaben in einen externen Dienst. In der Schweiz gilt das revidierte Datenschutzgesetz (revDSG); die Aufsicht liegt beim EDÖB. Wer Personendaten in ein KI-Werkzeug eingibt, braucht eine Rechtsgrundlage, muss den Bearbeitungszweck kennen und sollte prüfen, ob Eingaben zum Training verwendet werden oder in Drittländer fliessen.",
+          "en": "Prompts are inputs to an external service. In Switzerland the revised Data Protection Act (revDSG/nFADP) applies, supervised by the FDPIC (EDÖB). Anyone entering personal data into an AI tool needs a legal basis, must know the processing purpose, and should check whether inputs are used for training or transferred abroad.",
+          "it": "I prompt sono input verso un servizio esterno. In Svizzera si applica la legge revisionata sulla protezione dei dati (revDSG/nLPD), con vigilanza dell'IFPDT (EDÖB). Chi inserisce dati personali in uno strumento di KI necessita di una base giuridica, deve conoscere la finalità del trattamento e verificare se gli input siano usati per l'addestramento o trasferiti all'estero.",
+          "fr": "Les prompts sont des entrées vers un service externe. En Suisse s'applique la loi révisée sur la protection des données (nLPD/revDSG), sous la surveillance du PFPDT (EDÖB). Quiconque saisit des données personnelles dans un outil d'IA a besoin d'une base légale, doit connaître la finalité du traitement et vérifier si les entrées servent à l'entraînement ou sont transférées à l'étranger."
+        },
+        {
+          "de": "Praktische Faustregel: Anonymisieren oder pseudonymisieren Sie Daten vor der Eingabe, arbeiten Sie wo möglich mit Geschäftskonten mit vertraglich zugesicherter Trainingsausnahme, und halten Sie interne Prompt-Richtlinien fest. So bleibt Prompt Engineering produktiv und rechtlich sauber.",
+          "en": "Practical rule of thumb: anonymise or pseudonymise data before entry, prefer business accounts with a contractual no-training guarantee where possible, and document internal prompting guidelines. That keeps prompt engineering both productive and legally sound.",
+          "it": "Regola pratica: anonimizza o pseudonimizza i dati prima di inserirli, usa dove possibile account business con esclusione contrattuale dall'addestramento e definisci linee guida interne sui prompt. Così il prompt engineering resta produttivo e conforme.",
+          "fr": "Règle pratique : anonymisez ou pseudonymisez les données avant saisie, privilégiez si possible des comptes professionnels avec exclusion contractuelle de l'entraînement, et documentez des lignes directrices internes. Le prompt engineering reste ainsi productif et conforme."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen Zero-Shot und Few-Shot Prompting?",
+        "en": "What is the difference between zero-shot and few-shot prompting?",
+        "it": "Qual è la differenza tra zero-shot e few-shot prompting?",
+        "fr": "Quelle est la différence entre le zero-shot et le few-shot prompting ?"
+      },
+      "a": {
+        "de": "Bei Zero-Shot geben Sie nur die Anweisung ohne Beispiel; das reicht für einfache, eindeutige Aufgaben. Bei Few-Shot fügen Sie zwei bis drei Beispiele der gewünschten Ein- und Ausgabe hinzu. Das erhöht die Konsistenz spürbar, besonders bei festen Formaten, Klassifizierungen oder einem bestimmten Stil.",
+        "en": "Zero-shot gives only the instruction with no example; that suffices for simple, unambiguous tasks. Few-shot adds two or three examples of the desired input and output. This noticeably improves consistency, especially for fixed formats, classification or a specific style.",
+        "it": "Con zero-shot fornisci solo l'istruzione senza esempi; basta per compiti semplici e univoci. Con few-shot aggiungi due o tre esempi di input e output desiderati. Questo migliora sensibilmente la coerenza, soprattutto per formati fissi, classificazioni o uno stile preciso.",
+        "fr": "En zero-shot, vous ne donnez que la consigne, sans exemple ; cela suffit pour des tâches simples et sans ambiguïté. En few-shot, vous ajoutez deux ou trois exemples d'entrée et de sortie voulues. La cohérence s'améliore nettement, surtout pour des formats fixes, une classification ou un style précis."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie verhindere ich, dass das Modell Dinge erfindet?",
+        "en": "How do I stop the model from making things up?",
+        "it": "Come evito che il modello inventi informazioni?",
+        "fr": "Comment empêcher le modèle d'inventer des informations ?"
+      },
+      "a": {
+        "de": "Halluzinationen lassen sich nicht vollständig ausschliessen, aber deutlich reduzieren: Geben Sie einen Referenztext mit und weisen Sie an, nur daraus zu antworten. Erlauben Sie explizit die Antwort 'weiss ich nicht'. Fordern Sie Quellen und prüfen Sie zentrale Fakten unabhängig, bevor Sie sie verwenden.",
+        "en": "Hallucinations cannot be fully eliminated but can be greatly reduced: provide a reference text and instruct the model to answer only from it. Explicitly allow an 'I don't know' answer. Ask for sources and verify key facts independently before relying on them.",
+        "it": "Le allucinazioni non si eliminano del tutto ma si riducono molto: fornisci un testo di riferimento e chiedi di rispondere solo da quello. Consenti esplicitamente la risposta 'non lo so'. Richiedi le fonti e verifica i fatti chiave in modo indipendente prima di usarli.",
+        "fr": "Les hallucinations ne s'éliminent pas totalement mais se réduisent fortement : fournissez un texte de référence et demandez de répondre uniquement à partir de lui. Autorisez explicitement la réponse « je ne sais pas ». Exigez des sources et vérifiez les faits clés avant de vous y fier."
+      }
+    },
+    {
+      "q": {
+        "de": "Brauche ich für jedes KI-Modell einen anderen Prompt?",
+        "en": "Do I need a different prompt for each AI model?",
+        "it": "Serve un prompt diverso per ogni modello di KI?",
+        "fr": "Faut-il un prompt différent pour chaque modèle d'IA ?"
+      },
+      "a": {
+        "de": "Die Grundprinzipien, also Rolle, Kontext, klare Aufgabe, Beispiele und Format, gelten modellübergreifend. Feinheiten unterscheiden sich jedoch: Kontextfenster, Umgang mit System-Prompts und Formatvorgaben variieren zwischen ChatGPT, Claude, Gemini und anderen. Testen Sie wichtige Prompts pro Modell und passen Sie Details an.",
+        "en": "The core principles, role, context, clear task, examples and format, apply across models. Details differ, however: context window, handling of system prompts and format instructions vary between ChatGPT, Claude, Gemini and others. Test important prompts per model and adjust the details.",
+        "it": "I principi di base, ovvero ruolo, contesto, compito chiaro, esempi e formato, valgono per tutti i modelli. I dettagli però cambiano: finestra di contesto, gestione dei system prompt e dei formati variano tra ChatGPT, Claude, Gemini e altri. Testa i prompt importanti su ciascun modello e adatta i dettagli.",
+        "fr": "Les principes de base, à savoir rôle, contexte, tâche claire, exemples et format, valent pour tous les modèles. Les détails diffèrent toutefois : fenêtre de contexte, gestion des system prompts et des formats varient entre ChatGPT, Claude, Gemini et d'autres. Testez les prompts importants par modèle et ajustez les détails."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist ein System-Prompt und wann nutze ich ihn?",
+        "en": "What is a system prompt and when should I use it?",
+        "it": "Cos'è un system prompt e quando usarlo?",
+        "fr": "Qu'est-ce qu'un system prompt et quand l'utiliser ?"
+      },
+      "a": {
+        "de": "Ein System-Prompt legt dauerhafte Regeln, Rolle und Tonalität für eine gesamte Sitzung oder Anwendung fest, bevor die eigentliche Nutzerfrage kommt. Nutzen Sie ihn, wenn sich Rahmenbedingungen wiederholen, etwa bei einem Kundenservice-Assistenten mit festem Ton, festen Grenzen und immer gleichem Ausgabeformat.",
+        "en": "A system prompt sets persistent rules, role and tone for an entire session or application, before the actual user question arrives. Use it when the framing repeats, such as a customer-service assistant with a fixed tone, fixed limits and a consistent output format.",
+        "it": "Un system prompt fissa regole, ruolo e tono persistenti per un'intera sessione o applicazione, prima della domanda dell'utente. Usalo quando le condizioni si ripetono, ad esempio un assistente di assistenza clienti con tono fisso, limiti fissi e formato di uscita costante.",
+        "fr": "Un system prompt fixe des règles, un rôle et un ton persistants pour toute une session ou application, avant la question de l'utilisateur. Utilisez-le quand le cadre se répète, par exemple un assistant de service client avec un ton fixe, des limites fixes et un format de sortie constant."
+      }
+    },
+    {
+      "q": {
+        "de": "Darf ich Kundendaten in einen Prompt eingeben?",
+        "en": "May I enter customer data into a prompt?",
+        "it": "Posso inserire dati dei clienti in un prompt?",
+        "fr": "Puis-je saisir des données clients dans un prompt ?"
+      },
+      "a": {
+        "de": "Nur unter Bedingungen. In der Schweiz verlangt das revDSG eine Rechtsgrundlage und einen klaren Zweck; die Aufsicht führt der EDÖB. Prüfen Sie die Anbieterbedingungen, ob Eingaben zum Training genutzt oder ins Ausland übertragen werden. Anonymisieren Sie Daten wo möglich und nutzen Sie Geschäftskonten mit vertraglicher Trainingsausnahme.",
+        "en": "Only under conditions. In Switzerland the revDSG requires a legal basis and a clear purpose, supervised by the FDPIC (EDÖB). Check the provider terms on whether inputs are used for training or transferred abroad. Anonymise data where possible and use business accounts with a contractual no-training clause.",
+        "it": "Solo a certe condizioni. In Svizzera la revDSG richiede una base giuridica e una finalità chiara, con vigilanza dell'IFPDT (EDÖB). Verifica nelle condizioni del fornitore se gli input siano usati per l'addestramento o trasferiti all'estero. Anonimizza i dati dove possibile e usa account business con clausola contrattuale di esclusione dall'addestramento.",
+        "fr": "Seulement sous conditions. En Suisse, la nLPD exige une base légale et une finalité claire, sous la surveillance du PFPDT (EDÖB). Vérifiez dans les conditions du fournisseur si les entrées servent à l'entraînement ou sont transférées à l'étranger. Anonymisez les données si possible et utilisez des comptes professionnels avec clause contractuelle de non-entraînement."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie lang sollte ein guter Prompt sein?",
+        "en": "How long should a good prompt be?",
+        "it": "Quanto dovrebbe essere lungo un buon prompt?",
+        "fr": "Quelle doit être la longueur d'un bon prompt ?"
+      },
+      "a": {
+        "de": "So kurz wie möglich, so lang wie nötig. Für einfache Aufgaben genügen ein bis zwei Sätze. Anspruchsvolle Aufgaben profitieren von mehr Struktur: Rolle, Kontext, Beispiele und Format. Entscheidend ist nicht die Wortzahl, sondern Präzision. Vermeiden Sie Füllwörter und widersprüchliche Anweisungen, die das Modell verwirren.",
+        "en": "As short as possible, as long as necessary. Simple tasks need one or two sentences. Demanding tasks benefit from more structure: role, context, examples and format. What matters is precision, not word count. Avoid filler and contradictory instructions that confuse the model.",
+        "it": "Il più corto possibile, il più lungo necessario. Per compiti semplici bastano una o due frasi. I compiti complessi beneficiano di più struttura: ruolo, contesto, esempi e formato. Conta la precisione, non il numero di parole. Evita riempitivi e istruzioni contraddittorie che confondono il modello.",
+        "fr": "Aussi court que possible, aussi long que nécessaire. Les tâches simples tiennent en une ou deux phrases. Les tâches exigeantes gagnent en structure : rôle, contexte, exemples et format. C'est la précision qui compte, pas le nombre de mots. Évitez le remplissage et les consignes contradictoires qui embrouillent le modèle."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Prompt Engineering",
+    "Large Language Model",
+    "Zero-Shot-Prompting",
+    "Few-Shot-Prompting",
+    "Chain-of-Thought",
+    "System-Prompt",
+    "Kontextfenster",
+    "Token",
+    "Halluzination",
+    "Retrieval-Augmented Generation",
+    "ChatGPT",
+    "Claude",
+    "Gemini",
+    "revDSG",
+    "EDÖB",
+    "Ausgabeformat"
+  ]
+}

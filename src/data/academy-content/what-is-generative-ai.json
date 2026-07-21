@@ -1,0 +1,370 @@
+{
+  "id": "what-is-generative-ai",
+  "cluster": "foundations",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "was-ist-generative-ki",
+    "en": "what-is-generative-ai",
+    "it": "cos-e-ia-generativa",
+    "fr": "qu-est-ce-que-ia-generative"
+  },
+  "title": {
+    "de": "Was ist generative KI? Definition und Nutzen | Weissmann AI",
+    "en": "What Is Generative AI? Definition and Uses | Weissmann AI",
+    "it": "Cos'e l'IA generativa? Definizione e usi | Weissmann AI",
+    "fr": "Qu'est-ce que l'IA generative ? Definition | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Generative KI einfach erklaert: wie sie Text, Bilder, Audio und Code erzeugt, wie sie sich von praediktiver KI unterscheidet, Business-Nutzen und Grenzen.",
+    "en": "Generative AI explained: how it creates text, images, audio and code, how it differs from predictive AI, plus business use cases, limits and Swiss context.",
+    "it": "L'IA generativa spiegata: come crea testo, immagini, audio e codice, differenze con l'IA predittiva, usi aziendali, limiti e contesto svizzero.",
+    "fr": "L'IA generative expliquee : comment elle cree texte, images, audio et code, difference avec l'IA predictive, usages en entreprise et limites."
+  },
+  "kicker": {
+    "de": "KI-Grundlagen",
+    "en": "AI Foundations",
+    "it": "Fondamenti di IA",
+    "fr": "Fondamentaux de l'IA"
+  },
+  "h1": {
+    "de": "Was ist generative KI? Definition, Nutzen und Grenzen",
+    "en": "What Is Generative AI? Definition, Uses and Limits",
+    "it": "Cos'e l'IA generativa? Definizione, usi e limiti",
+    "fr": "Qu'est-ce que l'IA generative ? Definition, usages et limites"
+  },
+  "answerFirst": {
+    "de": "Generative KI ist eine Form kuenstlicher Intelligenz, die aus Trainingsdaten neue Inhalte erzeugt: Text, Bilder, Audio, Video und Programmcode. Sie beruht auf Foundation Models wie grossen Sprachmodellen (LLMs) und lernt statistische Muster, um auf eine Eingabe (Prompt) plausible Ausgaben zu generieren. Anders als praediktive KI, die Werte vorhersagt oder Daten klassifiziert, schafft generative KI eigenstaendig neue Artefakte statt nur bestehende zu bewerten.",
+    "en": "Generative AI is a form of artificial intelligence that creates new content from training data: text, images, audio, video and program code. It relies on foundation models such as large language models (LLMs) and learns statistical patterns to produce plausible outputs from an input (a prompt). Unlike predictive AI, which forecasts values or classifies data, generative AI produces original artefacts rather than merely scoring existing ones.",
+    "it": "L'IA generativa e una forma di intelligenza artificiale che crea nuovi contenuti a partire dai dati di addestramento: testo, immagini, audio, video e codice. Si basa su foundation model come i grandi modelli linguistici (LLM) e apprende schemi statistici per produrre output plausibili da un input (prompt). A differenza dell'IA predittiva, che prevede valori o classifica dati, l'IA generativa crea artefatti originali anziche limitarsi a valutarli.",
+    "fr": "L'IA generative est une forme d'intelligence artificielle qui cree de nouveaux contenus a partir de donnees d'entrainement : texte, images, audio, video et code. Elle repose sur des modeles de fondation comme les grands modeles de langage (LLM) et apprend des motifs statistiques pour produire des sorties plausibles a partir d'une entree (un prompt). Contrairement a l'IA predictive, qui prevoit ou classe, elle cree des artefacts originaux."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Generative KI in Kuerze: Definition und Funktionsweise",
+        "en": "Generative AI in Brief: Definition and How It Works",
+        "it": "L'IA generativa in breve: definizione e funzionamento",
+        "fr": "L'IA generative en bref : definition et fonctionnement"
+      },
+      "paragraphs": [
+        {
+          "de": "Generative KI bezeichnet Modelle, die neue, plausible Inhalte erzeugen, statt nur bestehende Daten zu analysieren. Sie werden auf sehr grossen Datenmengen trainiert und lernen dabei die statistische Struktur von Sprache, Bildern oder Toenen. Aus einer Eingabe, dem sogenannten Prompt, berechnet das Modell Schritt fuer Schritt die wahrscheinlichste Fortsetzung und setzt so ein neues Ergebnis zusammen.",
+          "en": "Generative AI refers to models that produce new, plausible content rather than only analysing existing data. They are trained on very large datasets and learn the statistical structure of language, images or sound. From an input, called a prompt, the model computes the most likely continuation step by step and thereby assembles a new result.",
+          "it": "Con IA generativa si intendono modelli che producono contenuti nuovi e plausibili anziche limitarsi ad analizzare dati esistenti. Vengono addestrati su enormi quantita di dati e apprendono la struttura statistica del linguaggio, delle immagini o dei suoni. A partire da un input, il prompt, il modello calcola passo dopo passo la continuazione piu probabile componendo cosi un nuovo risultato.",
+          "fr": "L'IA generative designe des modeles qui produisent des contenus nouveaux et plausibles plutot que de seulement analyser des donnees existantes. Ils sont entraines sur de tres grands jeux de donnees et apprennent la structure statistique du langage, des images ou du son. A partir d'une entree, le prompt, le modele calcule pas a pas la suite la plus probable et assemble ainsi un resultat inedit."
+        },
+        {
+          "de": "Die meisten heutigen Systeme basieren auf der Transformer-Architektur. Bei Text zerlegt das Modell Eingaben in Tokens und sagt jeweils das naechste Token voraus; bei Bildern kommen haeufig Diffusionsmodelle zum Einsatz, die aus zufaelligem Rauschen schrittweise ein Bild formen. Solche breit trainierten Grundmodelle heissen Foundation Models und lassen sich fuer viele Aufgaben wiederverwenden.",
+          "en": "Most of today's systems are based on the transformer architecture. For text, the model splits input into tokens and predicts the next token each time; for images, diffusion models are common, gradually shaping an image from random noise. Such broadly trained base models are called foundation models and can be reused for many tasks.",
+          "it": "La maggior parte dei sistemi attuali si basa sull'architettura transformer. Per il testo il modello scompone l'input in token e prevede ogni volta il token successivo; per le immagini sono diffusi i modelli di diffusione, che formano gradualmente un'immagine partendo da rumore casuale. Questi modelli di base addestrati in modo ampio si chiamano foundation model e sono riutilizzabili per molti compiti.",
+          "fr": "La plupart des systemes actuels reposent sur l'architecture transformeur. Pour le texte, le modele decoupe l'entree en tokens et predit a chaque fois le token suivant ; pour les images, les modeles de diffusion sont courants et forment progressivement une image a partir d'un bruit aleatoire. Ces modeles de base largement entraines s'appellent modeles de fondation et sont reutilisables pour de nombreuses taches."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Generative KI vs. praediktive KI: der zentrale Unterschied",
+        "en": "Generative AI vs. Predictive AI: The Core Difference",
+        "it": "IA generativa e IA predittiva: la differenza chiave",
+        "fr": "IA generative et IA predictive : la difference cle"
+      },
+      "paragraphs": [
+        {
+          "de": "Beide gehoeren zum maschinellen Lernen, verfolgen aber unterschiedliche Ziele. Praediktive KI beantwortet Fragen wie -Was wird passieren?- oder -Zu welcher Kategorie gehoert dieser Datensatz?-. Generative KI beantwortet -Erstelle etwas Neues-. In der Praxis werden beide oft kombiniert.",
+          "en": "Both belong to machine learning but pursue different goals. Predictive AI answers questions like -What will happen?- or -Which category does this record belong to?-. Generative AI answers -Create something new-. In practice, the two are often combined.",
+          "it": "Entrambe appartengono al machine learning ma perseguono obiettivi diversi. L'IA predittiva risponde a domande come -Cosa accadra?- o -A quale categoria appartiene questo dato?-. L'IA generativa risponde a -Crea qualcosa di nuovo-. Nella pratica le due vengono spesso combinate.",
+          "fr": "Les deux relevent de l'apprentissage automatique mais poursuivent des buts differents. L'IA predictive repond a des questions comme -Que va-t-il se passer ?- ou -A quelle categorie appartient cette donnee ?-. L'IA generative repond a -Cree quelque chose de nouveau-. En pratique, les deux sont souvent combinees."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Ziel: Praediktive KI prognostiziert oder klassifiziert; generative KI erzeugt neue Inhalte.",
+          "en": "Goal: predictive AI forecasts or classifies; generative AI creates new content.",
+          "it": "Obiettivo: l'IA predittiva prevede o classifica; l'IA generativa crea nuovi contenuti.",
+          "fr": "But : l'IA predictive prevoit ou classe ; l'IA generative cree du contenu."
+        },
+        {
+          "de": "Ausgabe: Praediktiv liefert Zahlen, Wahrscheinlichkeiten oder Labels; generativ liefert Text, Bild, Audio oder Code.",
+          "en": "Output: predictive returns numbers, probabilities or labels; generative returns text, image, audio or code.",
+          "it": "Output: la predittiva restituisce numeri, probabilita o etichette; la generativa testo, immagini, audio o codice.",
+          "fr": "Sortie : la predictive renvoie des nombres, probabilites ou etiquettes ; la generative du texte, image, audio ou code."
+        },
+        {
+          "de": "Typische Faelle: Praediktiv fuer Betrugserkennung, Nachfrageprognose, Scoring; generativ fuer Entwuerfe, Zusammenfassungen, Assistenz.",
+          "en": "Typical cases: predictive for fraud detection, demand forecasting, scoring; generative for drafts, summaries, assistance.",
+          "it": "Casi tipici: predittiva per frodi, previsione della domanda, scoring; generativa per bozze, sintesi, assistenza.",
+          "fr": "Cas types : predictive pour la fraude, la prevision de la demande, le scoring ; generative pour brouillons, resumes, assistance."
+        },
+        {
+          "de": "Bewertung: Praediktive Modelle misst man an Genauigkeit gegen bekannte Wahrheit; generative Ergebnisse brauchen zusaetzlich menschliche Qualitaets- und Faktenpruefung.",
+          "en": "Evaluation: predictive models are measured by accuracy against ground truth; generative outputs additionally need human quality and fact checks.",
+          "it": "Valutazione: i modelli predittivi si misurano sull'accuratezza rispetto al dato reale; gli output generativi richiedono anche verifica umana di qualita e fatti.",
+          "fr": "Evaluation : les modeles predictifs se mesurent a la verite terrain ; les sorties generatives exigent en plus un controle humain qualite et faits."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Was generative KI erzeugt: Text, Bild, Audio, Video, Code",
+        "en": "What Generative AI Creates: Text, Image, Audio, Video, Code",
+        "it": "Cosa crea l'IA generativa: testo, immagini, audio, video, codice",
+        "fr": "Ce que cree l'IA generative : texte, image, audio, video, code"
+      },
+      "bullets": [
+        {
+          "de": "Text: Entwuerfe, Zusammenfassungen, Uebersetzungen, Q&A und strukturierte Auszuege aus Dokumenten.",
+          "en": "Text: drafts, summaries, translations, Q&A and structured extraction from documents.",
+          "it": "Testo: bozze, sintesi, traduzioni, Q&A ed estrazione strutturata da documenti.",
+          "fr": "Texte : brouillons, resumes, traductions, questions-reponses et extraction structuree depuis des documents."
+        },
+        {
+          "de": "Bilder: Illustrationen, Produktvisualisierungen, Varianten und Bildbearbeitung nach Textbeschreibung.",
+          "en": "Images: illustrations, product visuals, variations and text-driven image editing.",
+          "it": "Immagini: illustrazioni, visual di prodotto, varianti e modifica guidata da testo.",
+          "fr": "Images : illustrations, visuels produit, variantes et retouche pilotee par le texte."
+        },
+        {
+          "de": "Audio: Sprachsynthese, Voice-Overs, Transkription und Musik- oder Sounddesign-Skizzen.",
+          "en": "Audio: speech synthesis, voice-overs, transcription and music or sound-design sketches.",
+          "it": "Audio: sintesi vocale, voice-over, trascrizione e bozze di musica o sound design.",
+          "fr": "Audio : synthese vocale, voix off, transcription et esquisses de musique ou sound design."
+        },
+        {
+          "de": "Video: kurze Clips, Animationen und Storyboards aus Text- oder Bildvorgaben.",
+          "en": "Video: short clips, animations and storyboards from text or image prompts.",
+          "it": "Video: clip brevi, animazioni e storyboard da input testuali o visivi.",
+          "fr": "Video : clips courts, animations et storyboards a partir de texte ou d'images."
+        },
+        {
+          "de": "Code: Codegenerierung, Erklaerung, Refactoring und Testentwuerfe als Assistenz fuer Entwicklerinnen und Entwickler.",
+          "en": "Code: code generation, explanation, refactoring and test drafts as assistance for developers.",
+          "it": "Codice: generazione, spiegazione, refactoring e bozze di test come assistenza per gli sviluppatori.",
+          "fr": "Code : generation, explication, refactoring et brouillons de tests en assistance aux developpeurs."
+        },
+        {
+          "de": "Multimodal: moderne Modelle verarbeiten und verbinden mehrere Formate, etwa Bild plus Frage zu einer Textantwort.",
+          "en": "Multimodal: modern models process and combine several formats, e.g. image plus question into a text answer.",
+          "it": "Multimodale: i modelli moderni elaborano e combinano piu formati, ad es. immagine piu domanda in una risposta testuale.",
+          "fr": "Multimodal : les modeles recents traitent et combinent plusieurs formats, par ex. image plus question vers une reponse texte."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Business-Anwendungen mit klarem Nutzen",
+        "en": "Business Use Cases with Clear Value",
+        "it": "Applicazioni aziendali con valore concreto",
+        "fr": "Cas d'usage en entreprise a valeur claire"
+      },
+      "paragraphs": [
+        {
+          "de": "Den groessten Nutzen bringt generative KI dort, wo viel Text und Wissen bewegt wird und ein Mensch das Ergebnis prueft. Sinnvoll ist der Einsatz als Assistenz, die Entwuerfe liefert und Routine beschleunigt, nicht als unkontrollierte Automatik.",
+          "en": "Generative AI delivers the most value where a lot of text and knowledge is handled and a human reviews the result. It works best as an assistant that produces drafts and speeds up routine work, not as unchecked automation.",
+          "it": "L'IA generativa offre il massimo valore dove si gestiscono molto testo e conoscenza e una persona verifica il risultato. Funziona meglio come assistente che produce bozze e accelera la routine, non come automazione incontrollata.",
+          "fr": "L'IA generative apporte le plus de valeur la ou l'on manipule beaucoup de texte et de connaissances et ou un humain verifie le resultat. Elle fonctionne mieux comme assistant qui produit des brouillons et accelere la routine, non comme automatisation sans controle."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Marketing und Content: erste Entwuerfe, Varianten und mehrsprachige Lokalisierung.",
+          "en": "Marketing and content: first drafts, variations and multilingual localisation.",
+          "it": "Marketing e contenuti: prime bozze, varianti e localizzazione multilingue.",
+          "fr": "Marketing et contenu : premiers brouillons, variantes et localisation multilingue."
+        },
+        {
+          "de": "Kundendienst: Antwortvorschlaege, Wissensdatenbank-Suche und Gespraechszusammenfassungen.",
+          "en": "Customer service: reply suggestions, knowledge-base search and conversation summaries.",
+          "it": "Servizio clienti: suggerimenti di risposta, ricerca nella knowledge base e sintesi delle conversazioni.",
+          "fr": "Service client : suggestions de reponse, recherche dans la base de connaissances et resumes d'echanges."
+        },
+        {
+          "de": "Wissensarbeit: Recherche, Zusammenfassen langer Dokumente und Frage-Antwort auf eigenen Daten via Retrieval-Augmented Generation.",
+          "en": "Knowledge work: research, summarising long documents and question-answering over your own data via retrieval-augmented generation.",
+          "it": "Lavoro sulla conoscenza: ricerca, sintesi di documenti lunghi e domande-risposte sui propri dati con retrieval-augmented generation.",
+          "fr": "Travail de la connaissance : recherche, resume de longs documents et questions-reponses sur vos donnees via retrieval-augmented generation."
+        },
+        {
+          "de": "Software-Entwicklung: Coding-Assistenz, Dokumentation und Testerstellung.",
+          "en": "Software development: coding assistance, documentation and test creation.",
+          "it": "Sviluppo software: assistenza al codice, documentazione e creazione di test.",
+          "fr": "Developpement logiciel : assistance au code, documentation et creation de tests."
+        },
+        {
+          "de": "Interne Prozesse: Formulare, Berichte und Protokolle strukturieren und vorbereiten.",
+          "en": "Internal processes: structuring and preparing forms, reports and minutes.",
+          "it": "Processi interni: strutturare e preparare moduli, report e verbali.",
+          "fr": "Processus internes : structurer et preparer formulaires, rapports et comptes-rendus."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Grenzen, Risiken und typische Fehler",
+        "en": "Limits, Risks and Common Pitfalls",
+        "it": "Limiti, rischi ed errori tipici",
+        "fr": "Limites, risques et erreurs frequentes"
+      },
+      "bullets": [
+        {
+          "de": "Halluzinationen: Modelle formulieren auch Falsches ueberzeugend. Fakten immer gegen verlaessliche Quellen pruefen.",
+          "en": "Hallucinations: models can state false things convincingly. Always verify facts against reliable sources.",
+          "it": "Allucinazioni: i modelli possono affermare il falso in modo convincente. Verificare sempre i fatti su fonti affidabili.",
+          "fr": "Hallucinations : les modeles peuvent affirmer des faussetes de facon convaincante. Toujours verifier les faits via des sources fiables."
+        },
+        {
+          "de": "Verzerrungen: Trainingsdaten enthalten Bias, der sich in Ausgaben fortsetzen kann.",
+          "en": "Bias: training data carries biases that can propagate into outputs.",
+          "it": "Distorsioni: i dati di addestramento contengono bias che possono ripresentarsi negli output.",
+          "fr": "Biais : les donnees d'entrainement contiennent des biais qui peuvent se retrouver dans les sorties."
+        },
+        {
+          "de": "Aktualitaet: Modelle kennen Ereignisse nach ihrem Trainingsstand nur, wenn aktuelle Daten angebunden sind.",
+          "en": "Recency: models only know events after their training cut-off if current data is connected.",
+          "it": "Attualita: i modelli conoscono eventi successivi al training solo se collegati a dati aggiornati.",
+          "fr": "Actualite : les modeles ne connaissent les evenements posterieurs a leur entrainement que si des donnees a jour sont connectees."
+        },
+        {
+          "de": "Urheberrecht und Vertraulichkeit: Herkunft von Trainings- und Eingabedaten sowie Rechte an Ergebnissen klaeren.",
+          "en": "Copyright and confidentiality: clarify the provenance of training and input data and the rights to outputs.",
+          "it": "Diritto d'autore e riservatezza: chiarire la provenienza dei dati di addestramento e input e i diritti sugli output.",
+          "fr": "Droit d'auteur et confidentialite : clarifier la provenance des donnees d'entrainement et d'entree et les droits sur les sorties."
+        },
+        {
+          "de": "Reproduzierbarkeit: gleiche Eingabe kann unterschiedliche Ausgaben liefern; das erschwert Audits ohne feste Einstellungen.",
+          "en": "Reproducibility: the same input can yield different outputs, which complicates audits without fixed settings.",
+          "it": "Riproducibilita: lo stesso input puo dare output diversi, complicando gli audit senza impostazioni fisse.",
+          "fr": "Reproductibilite : une meme entree peut donner des sorties differentes, ce qui complique les audits sans parametres fixes."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Verantwortungsvoller Einsatz aus Schweizer Sicht",
+        "en": "Responsible Use from a Swiss Perspective",
+        "it": "Uso responsabile in ottica svizzera",
+        "fr": "Usage responsable au regard suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "In der Schweiz gilt fuer Personendaten das revidierte Datenschutzgesetz (revDSG, auch nFADP), beaufsichtigt vom EDOEB. Wer generative KI mit Personendaten nutzt, sollte Zweck, Rechtsgrundlage, Datenminimierung und Transparenz klaeren und pruefen, wo die Verarbeitung stattfindet. Unternehmen mit EU-Bezug beruehrt zusaetzlich der EU AI Act.",
+          "en": "In Switzerland, personal data is governed by the revised Data Protection Act (revDSG, also nFADP), supervised by the FDPIC (EDOEB). Anyone using generative AI with personal data should clarify purpose, legal basis, data minimisation and transparency, and check where processing takes place. Organisations with EU exposure are additionally affected by the EU AI Act.",
+          "it": "In Svizzera i dati personali sono regolati dalla legge sulla protezione dei dati riveduta (revDSG, o nFADP), vigilata dall'IFPDT (EDOEB). Chi usa l'IA generativa con dati personali dovrebbe chiarire finalita, base giuridica, minimizzazione e trasparenza e verificare dove avviene il trattamento. Le organizzazioni con esposizione UE sono inoltre toccate dall'AI Act europeo.",
+          "fr": "En Suisse, les donnees personnelles relevent de la loi revisee sur la protection des donnees (revDSG, ou nLPD), sous la surveillance du PFPDT (EDOEB). Quiconque utilise l'IA generative avec des donnees personnelles devrait clarifier finalite, base legale, minimisation et transparence et verifier ou se deroule le traitement. Les organisations exposees a l'UE sont en outre concernees par l'AI Act europeen."
+        },
+        {
+          "de": "Praktisch bewaehrt sich ein Human-in-the-Loop: Menschen pruefen Ergebnisse vor Veroffentlichung oder Entscheidung. Klare Richtlinien, geeignete Vertraege mit Anbietern und Schulung der Mitarbeitenden senken Risiken, ohne den Nutzen zu verlieren.",
+          "en": "In practice, a human-in-the-loop works well: people review outputs before publication or decisions. Clear policies, suitable vendor contracts and staff training reduce risk without giving up the value.",
+          "it": "Nella pratica funziona bene un human-in-the-loop: le persone verificano gli output prima della pubblicazione o della decisione. Policy chiare, contratti adeguati con i fornitori e formazione del personale riducono i rischi senza perdere valore.",
+          "fr": "En pratique, un human-in-the-loop fonctionne bien : des personnes verifient les sorties avant publication ou decision. Des politiques claires, des contrats fournisseurs adaptes et la formation des collaborateurs reduisent le risque sans sacrifier la valeur."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist generative KI einfach erklaert?",
+        "en": "What is generative AI in simple terms?",
+        "it": "Cos'e l'IA generativa in parole semplici?",
+        "fr": "Qu'est-ce que l'IA generative simplement ?"
+      },
+      "a": {
+        "de": "Generative KI ist Software, die aus einer Eingabe neue Inhalte erzeugt, etwa Text, Bilder, Audio oder Code. Sie hat aus sehr vielen Beispielen Muster gelernt und setzt daraus eine plausible, neue Ausgabe zusammen, statt nur vorhandene Daten zu bewerten.",
+        "en": "Generative AI is software that creates new content from an input, such as text, images, audio or code. It has learned patterns from many examples and assembles a plausible new output, rather than only scoring existing data.",
+        "it": "L'IA generativa e un software che crea nuovi contenuti da un input, come testo, immagini, audio o codice. Ha appreso schemi da molti esempi e compone un output nuovo e plausibile, invece di limitarsi a valutare dati esistenti.",
+        "fr": "L'IA generative est un logiciel qui cree du contenu nouveau a partir d'une entree : texte, images, audio ou code. Elle a appris des motifs sur de nombreux exemples et assemble une sortie nouvelle et plausible, au lieu de seulement evaluer des donnees existantes."
+      }
+    },
+    {
+      "q": {
+        "de": "Worin unterscheidet sich generative von praediktiver KI?",
+        "en": "How does generative AI differ from predictive AI?",
+        "it": "In cosa differisce l'IA generativa da quella predittiva?",
+        "fr": "En quoi l'IA generative differe-t-elle de l'IA predictive ?"
+      },
+      "a": {
+        "de": "Praediktive KI sagt Werte voraus oder ordnet Daten Kategorien zu, etwa Betrug ja/nein. Generative KI erzeugt dagegen neue Inhalte. Praediktive Modelle bewerten Bestehendes, generative Modelle schaffen Neues; oft werden beide kombiniert.",
+        "en": "Predictive AI forecasts values or assigns data to categories, e.g. fraud yes/no. Generative AI instead creates new content. Predictive models score what exists; generative models create something new, and the two are often combined.",
+        "it": "L'IA predittiva prevede valori o assegna i dati a categorie, ad es. frode si/no. L'IA generativa invece crea nuovi contenuti. I modelli predittivi valutano l'esistente, quelli generativi creano il nuovo; spesso si combinano.",
+        "fr": "L'IA predictive prevoit des valeurs ou classe les donnees, par ex. fraude oui/non. L'IA generative, elle, cree du contenu nouveau. Les modeles predictifs evaluent l'existant, les generatifs creent du nouveau, et on les combine souvent."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Inhalte kann generative KI erstellen?",
+        "en": "What content can generative AI create?",
+        "it": "Quali contenuti puo creare l'IA generativa?",
+        "fr": "Quels contenus l'IA generative peut-elle creer ?"
+      },
+      "a": {
+        "de": "Text, Bilder, Audio, Video und Programmcode. Multimodale Modelle verbinden Formate, zum Beispiel eine Textantwort auf ein Bild. In Unternehmen dienen die Ergebnisse meist als Entwuerfe, die ein Mensch prueft und finalisiert.",
+        "en": "Text, images, audio, video and program code. Multimodal models combine formats, for example a text answer about an image. In companies, outputs usually serve as drafts that a human reviews and finalises.",
+        "it": "Testo, immagini, audio, video e codice. I modelli multimodali combinano i formati, ad esempio una risposta testuale su un'immagine. In azienda gli output servono di solito come bozze che una persona verifica e finalizza.",
+        "fr": "Texte, images, audio, video et code. Les modeles multimodaux combinent les formats, par exemple une reponse texte sur une image. En entreprise, les sorties servent en general de brouillons qu'un humain verifie et finalise."
+      }
+    },
+    {
+      "q": {
+        "de": "Was sind Halluzinationen bei generativer KI?",
+        "en": "What are hallucinations in generative AI?",
+        "it": "Cosa sono le allucinazioni nell'IA generativa?",
+        "fr": "Que sont les hallucinations en IA generative ?"
+      },
+      "a": {
+        "de": "Als Halluzination bezeichnet man plausibel klingende, aber falsche oder erfundene Ausgaben. Weil Modelle Wahrscheinlichkeiten berechnen und nicht -wissen-, muessen Fakten, Zahlen und Zitate immer gegen verlaessliche Quellen geprueft werden.",
+        "en": "A hallucination is a plausible-sounding but false or fabricated output. Because models compute probabilities rather than -know-, facts, figures and quotes must always be verified against reliable sources.",
+        "it": "Un'allucinazione e un output plausibile ma falso o inventato. Poiche i modelli calcolano probabilita e non -sanno-, fatti, numeri e citazioni vanno sempre verificati su fonti affidabili.",
+        "fr": "Une hallucination est une sortie credible mais fausse ou inventee. Comme les modeles calculent des probabilites et ne -savent- pas, les faits, chiffres et citations doivent toujours etre verifies via des sources fiables."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist der Einsatz generativer KI in der Schweiz datenschutzkonform?",
+        "en": "Is using generative AI compliant with Swiss data protection?",
+        "it": "L'uso dell'IA generativa e conforme alla protezione dati svizzera?",
+        "fr": "L'usage de l'IA generative est-il conforme a la protection des donnees suisse ?"
+      },
+      "a": {
+        "de": "Er kann es sein, wenn das revDSG (nFADP) eingehalten wird. Klaeren Sie Zweck, Rechtsgrundlage, Datenminimierung, Transparenz und den Verarbeitungsort. Der EDOEB ist die Aufsicht; bei EU-Bezug ist zusaetzlich der EU AI Act relevant. Eine pauschale Ja-oder-Nein-Antwort gibt es nicht.",
+        "en": "It can be, if the revDSG (nFADP) is respected. Clarify purpose, legal basis, data minimisation, transparency and where processing happens. The FDPIC (EDOEB) supervises; with EU exposure the EU AI Act also applies. There is no blanket yes-or-no answer.",
+        "it": "Puo esserlo, se si rispetta la revDSG (nFADP). Chiarite finalita, base giuridica, minimizzazione, trasparenza e luogo del trattamento. L'IFPDT (EDOEB) vigila; con esposizione UE si applica anche l'AI Act. Non esiste una risposta si o no generale.",
+        "fr": "Cela peut l'etre si la revDSG (nLPD) est respectee. Clarifiez finalite, base legale, minimisation, transparence et lieu de traitement. Le PFPDT (EDOEB) supervise ; en cas d'exposition UE, l'AI Act s'applique aussi. Il n'y a pas de reponse oui ou non universelle."
+      }
+    },
+    {
+      "q": {
+        "de": "Braucht generative KI immer eine menschliche Kontrolle?",
+        "en": "Does generative AI always need human oversight?",
+        "it": "L'IA generativa richiede sempre supervisione umana?",
+        "fr": "L'IA generative necessite-t-elle toujours une supervision humaine ?"
+      },
+      "a": {
+        "de": "Fuer verlaessliche und heikle Aufgaben ja. Ein Human-in-the-Loop prueft Ergebnisse vor Veroffentlichung oder Entscheidung. So bleiben Qualitaet, Fakten und Verantwortung gesichert, waehrend die KI Routine beschleunigt.",
+        "en": "For reliable or sensitive tasks, yes. A human-in-the-loop reviews outputs before publication or decisions. This keeps quality, facts and accountability secured while AI speeds up routine work.",
+        "it": "Per compiti affidabili o delicati, si. Un human-in-the-loop verifica gli output prima della pubblicazione o della decisione. Cosi qualita, fatti e responsabilita restano garantiti mentre l'IA accelera la routine.",
+        "fr": "Pour les taches fiables ou sensibles, oui. Un human-in-the-loop verifie les sorties avant publication ou decision. Ainsi qualite, faits et responsabilite restent assures pendant que l'IA accelere la routine."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Generative KI",
+    "Praediktive KI",
+    "Foundation Model",
+    "Large Language Model (LLM)",
+    "Transformer",
+    "Diffusionsmodell",
+    "Prompt",
+    "Token",
+    "Halluzination",
+    "Multimodalitaet",
+    "Retrieval-Augmented Generation",
+    "Machine Learning",
+    "revDSG / nFADP",
+    "EDOEB",
+    "EU AI Act",
+    "Human-in-the-Loop"
+  ]
+}

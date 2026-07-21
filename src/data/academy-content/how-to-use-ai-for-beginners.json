@@ -1,0 +1,384 @@
+{
+  "id": "how-to-use-ai-for-beginners",
+  "cluster": "foundations",
+  "type": "spoke",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "ki-fuer-anfaenger-einstieg",
+    "en": "ai-for-beginners-getting-started",
+    "it": "ia-per-principianti-come-iniziare",
+    "fr": "ia-pour-debutants-comment-commencer"
+  },
+  "title": {
+    "de": "KI für Anfänger: Praktischer Einstieg 2026 | Weissmann AI",
+    "en": "AI for Beginners: A Practical Starter Guide | Weissmann AI",
+    "it": "IA per principianti: la guida pratica d'avvio | Weissmann AI",
+    "fr": "IA pour débutants : le guide pratique de départ | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI für Anfänger einfach erklärt: erste praktische Anwendungen, sichere Gewohnheiten nach revDSG, häufige Fehler und ein konkreter Plan für die erste Woche.",
+    "en": "AI for beginners made simple: first practical uses, safe habits, common mistakes to avoid and a concrete first-week plan for individuals and SMEs.",
+    "it": "L'IA per principianti spiegata semplice: primi usi pratici, abitudini sicure, errori da evitare e un piano concreto per la prima settimana.",
+    "fr": "L'IA pour débutants expliquée simplement : premiers usages pratiques, habitudes sûres, erreurs à éviter et un plan concret pour la première semaine."
+  },
+  "kicker": {
+    "de": "Grundlagen",
+    "en": "Foundations",
+    "it": "Fondamenti",
+    "fr": "Fondamentaux"
+  },
+  "h1": {
+    "de": "KI für Anfänger: der praktische Einstieg ohne Vorwissen",
+    "en": "AI for beginners: a practical start with no prior knowledge",
+    "it": "IA per principianti: come iniziare in modo pratico senza basi",
+    "fr": "L'IA pour débutants : bien commencer, sans connaissances préalables"
+  },
+  "answerFirst": {
+    "de": "KI für Anfänger beginnt nicht mit Technik, sondern mit einer klaren Aufgabe: Wählen Sie eine wiederkehrende Tätigkeit wie E-Mails, Texte oder Recherche und testen Sie einen KI-Assistenten daran. Prüfen Sie jede Ausgabe kritisch, geben Sie keine sensiblen oder personenbezogenen Daten ein und beachten Sie das revDSG. So bauen Sie in einer Woche echte Kompetenz auf, ohne Vorwissen und ohne unnötiges Risiko.",
+    "en": "AI for beginners starts not with technology but with a clear task: pick a recurring activity such as email, writing or research and test an AI assistant on it. Review every output critically, never enter sensitive or personal data, and respect Swiss data-protection law. In one week you can build real, usable skill, without prior knowledge and without taking unnecessary risks.",
+    "it": "L'IA per principianti non parte dalla tecnologia ma da un compito chiaro: scegliete un'attività ricorrente come e-mail, testi o ricerca e provateci un assistente IA. Verificate ogni risposta con spirito critico, non inserite mai dati sensibili o personali e rispettate la legge svizzera sulla protezione dei dati. In una settimana costruite competenze reali, senza basi e senza rischi inutili.",
+    "fr": "L'IA pour débutants ne commence pas par la technique mais par une tâche claire : choisissez une activité récurrente comme les e-mails, la rédaction ou la recherche et testez-y un assistant IA. Vérifiez chaque réponse d'un œil critique, n'entrez jamais de données sensibles ou personnelles et respectez le droit suisse de la protection des données. En une semaine, vous acquérez une vraie compétence, sans prérequis et sans risque inutile."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was KI für Einsteiger konkret bedeutet",
+        "en": "What using AI actually means for beginners",
+        "it": "Cosa significa davvero usare l'IA per chi inizia",
+        "fr": "Ce que signifie concrètement utiliser l'IA quand on débute"
+      },
+      "paragraphs": [
+        {
+          "de": "Für den Einstieg müssen Sie nicht verstehen, wie ein KI-Modell im Inneren funktioniert. Praktisch bedeutet KI heute vor allem eines: Sie schreiben eine Anweisung in normaler Sprache in ein Textfeld und erhalten in Sekunden einen Entwurf, eine Zusammenfassung, eine Übersetzung oder eine Erklärung. Diese Werkzeuge heissen generative KI oder Sprachmodelle; bekannte Beispiele sind ChatGPT, Claude, Microsoft Copilot und Google Gemini.",
+          "en": "To get started you do not need to understand how an AI model works inside. In practice, AI today mostly means one thing: you type an instruction in plain language into a text box and, within seconds, receive a draft, a summary, a translation or an explanation. These tools are called generative AI or language models; well-known examples include ChatGPT, Claude, Microsoft Copilot and Google Gemini.",
+          "it": "Per iniziare non serve capire come funziona un modello di IA al suo interno. In pratica, oggi l'IA significa soprattutto una cosa: scrivete un'istruzione in linguaggio normale in un campo di testo e ricevete in pochi secondi una bozza, un riassunto, una traduzione o una spiegazione. Questi strumenti si chiamano IA generativa o modelli linguistici; esempi noti sono ChatGPT, Claude, Microsoft Copilot e Google Gemini.",
+          "fr": "Pour commencer, vous n'avez pas besoin de comprendre le fonctionnement interne d'un modèle d'IA. En pratique, l'IA signifie aujourd'hui surtout une chose : vous tapez une consigne en langage courant dans un champ de texte et recevez en quelques secondes un brouillon, un résumé, une traduction ou une explication. Ces outils s'appellent IA générative ou modèles de langage ; ChatGPT, Claude, Microsoft Copilot et Google Gemini en sont des exemples connus."
+        },
+        {
+          "de": "Wichtig ist die richtige Erwartung: KI ist ein schneller, geduldiger Assistent, kein unfehlbares Orakel. Sie liefert einen guten ersten Entwurf, den Sie prüfen und veredeln. Wer so denkt, spart sofort Zeit und vermeidet gleichzeitig die typischen Anfängerfehler.",
+          "en": "The right expectation matters: AI is a fast, patient assistant, not an infallible oracle. It produces a good first draft that you review and refine. Thinking this way saves time immediately while avoiding the classic beginner mistakes.",
+          "it": "Conta avere l'aspettativa giusta: l'IA è un assistente rapido e paziente, non un oracolo infallibile. Produce una buona prima bozza che voi verificate e rifinite. Ragionare così fa risparmiare tempo subito ed evita gli errori tipici di chi inizia.",
+          "fr": "La bonne attente est essentielle : l'IA est un assistant rapide et patient, pas un oracle infaillible. Elle produit un bon premier brouillon que vous vérifiez et affinez. Raisonner ainsi fait gagner du temps immédiatement tout en évitant les erreurs classiques du débutant."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die ersten praktischen Anwendungen",
+        "en": "Your first practical uses",
+        "it": "I primi usi pratici",
+        "fr": "Vos premiers usages pratiques"
+      },
+      "paragraphs": [
+        {
+          "de": "Beginnen Sie mit Aufgaben, bei denen ein Fehler leicht zu erkennen und leicht zu korrigieren ist. Für Einzelpersonen und KMU haben sich diese Einstiege bewährt:",
+          "en": "Start with tasks where a mistake is easy to spot and easy to correct. For individuals and SMEs, these entry points work well:",
+          "it": "Iniziate con compiti in cui un errore è facile da notare e da correggere. Per persone singole e PMI, questi punti di partenza funzionano bene:",
+          "fr": "Commencez par des tâches où une erreur est facile à repérer et à corriger. Pour les particuliers et les PME, ces points de départ fonctionnent bien :"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "E-Mails und Antworten formulieren, kürzen oder im Ton anpassen (freundlich, sachlich, verbindlich).",
+          "en": "Draft, shorten or re-tone emails and replies (friendly, factual, firm).",
+          "it": "Scrivere, accorciare o cambiare il tono di e-mail e risposte (cordiale, sobrio, deciso).",
+          "fr": "Rédiger, raccourcir ou changer le ton d'e-mails et de réponses (cordial, factuel, ferme)."
+        },
+        {
+          "de": "Lange Dokumente, Protokolle oder Artikel in klare Zusammenfassungen bringen.",
+          "en": "Turn long documents, minutes or articles into clear summaries.",
+          "it": "Trasformare documenti lunghi, verbali o articoli in riassunti chiari.",
+          "fr": "Transformer de longs documents, comptes rendus ou articles en résumés clairs."
+        },
+        {
+          "de": "Ideen sammeln: Namen, Gliederungen, Social-Media-Beiträge, Angebotstexte als Ausgangspunkt.",
+          "en": "Brainstorm: names, outlines, social posts, quote wording as a starting point.",
+          "it": "Fare brainstorming: nomi, scalette, post social, testi di offerta come punto di partenza.",
+          "fr": "Générer des idées : noms, plans, posts pour les réseaux, textes de devis comme point de départ."
+        },
+        {
+          "de": "Übersetzen und lokalisieren zwischen Deutsch, Französisch, Italienisch und Englisch, danach von einer Person prüfen lassen.",
+          "en": "Translate and localise between German, French, Italian and English, then have a person check it.",
+          "it": "Tradurre e localizzare tra tedesco, francese, italiano e inglese, poi far controllare da una persona.",
+          "fr": "Traduire et localiser entre l'allemand, le français, l'italien et l'anglais, puis faire relire par une personne."
+        },
+        {
+          "de": "Komplexe Themen erklären lassen ('Erkläre mir das einfach') oder eine Tabelle bzw. Checkliste strukturieren.",
+          "en": "Get complex topics explained ('explain this simply') or structure a table or checklist.",
+          "it": "Farsi spiegare temi complessi ('spiegamelo in modo semplice') o strutturare una tabella o checklist.",
+          "fr": "Faire expliquer des sujets complexes (« explique-moi simplement ») ou structurer un tableau ou une checklist."
+        },
+        {
+          "de": "KMU-spezifisch: Stelleninserate, FAQ-Antworten, interne Anleitungen oder erste Entwürfe für Offerten vorbereiten.",
+          "en": "SME-specific: prepare job ads, FAQ answers, internal how-tos or first drafts of quotes.",
+          "it": "Specifico per PMI: preparare annunci di lavoro, risposte FAQ, istruzioni interne o prime bozze di offerte.",
+          "fr": "Spécifique PME : préparer des offres d'emploi, réponses FAQ, modes d'emploi internes ou premiers brouillons de devis."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Sichere Gewohnheiten von Anfang an",
+        "en": "Safe habits from day one",
+        "it": "Abitudini sicure fin dal primo giorno",
+        "fr": "Des habitudes sûres dès le premier jour"
+      },
+      "paragraphs": [
+        {
+          "de": "Gute Gewohnheiten schützen Sie vor den beiden grössten Risiken: falschen Inhalten und Datenschutzverletzungen. In der Schweiz gilt das revidierte Datenschutzgesetz (revDSG/nFADP), überwacht durch den EDÖB. Grundregel: Was Sie einem KI-Werkzeug geben, kann zur Verarbeitung an einen Anbieter fliessen, oft ausserhalb der Schweiz. Behandeln Sie die Eingabe deshalb wie eine Postkarte, nicht wie einen versiegelten Brief.",
+          "en": "Good habits protect you from the two biggest risks: wrong content and data-protection breaches. In Switzerland the revised data protection act (revDSG/nFADP) applies, overseen by the FDPIC (EDÖB). Core rule: whatever you give an AI tool may be processed by a provider, often outside Switzerland. So treat your input like a postcard, not a sealed letter.",
+          "it": "Le buone abitudini vi proteggono dai due rischi maggiori: contenuti errati e violazioni della protezione dei dati. In Svizzera si applica la legge riveduta sulla protezione dei dati (revDSG/nFADP), vigilata dall'IFPDT (EDÖB). Regola di base: ciò che date a uno strumento IA può essere trattato da un fornitore, spesso fuori dalla Svizzera. Trattate quindi l'input come una cartolina, non come una lettera sigillata.",
+          "fr": "De bonnes habitudes vous protègent des deux plus grands risques : les contenus erronés et les atteintes à la protection des données. En Suisse s'applique la loi révisée sur la protection des données (revDSG/nFADP), surveillée par le PFPDT (EDÖB). Règle de base : ce que vous donnez à un outil d'IA peut être traité par un fournisseur, souvent hors de Suisse. Traitez donc votre saisie comme une carte postale, pas comme une lettre scellée."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Keine Kundennamen, Gesundheits-, Personal- oder Finanzdaten eingeben; anonymisieren oder durch Platzhalter ersetzen.",
+          "en": "Never enter customer names, health, HR or financial data; anonymise or use placeholders.",
+          "it": "Non inserire nomi di clienti né dati sanitari, del personale o finanziari; anonimizzare o usare segnaposto.",
+          "fr": "N'entrez jamais de noms de clients ni de données de santé, RH ou financières ; anonymisez ou utilisez des espaces réservés."
+        },
+        {
+          "de": "Jede Ausgabe faktisch prüfen: Zahlen, Namen, Zitate und Rechtliches gegenkontrollieren, denn KI kann überzeugend Falsches erfinden (Halluzination).",
+          "en": "Fact-check every output: verify numbers, names, quotes and legal points, because AI can invent convincing errors (hallucination).",
+          "it": "Verificare i fatti di ogni risposta: numeri, nomi, citazioni e aspetti legali, perché l'IA può inventare errori convincenti (allucinazione).",
+          "fr": "Vérifiez les faits de chaque réponse : chiffres, noms, citations et points juridiques, car l'IA peut inventer des erreurs convaincantes (hallucination)."
+        },
+        {
+          "de": "In den Kontoeinstellungen prüfen, ob Ihre Eingaben zum Training genutzt werden, und diese Option wo möglich deaktivieren.",
+          "en": "Check in account settings whether your inputs are used for training, and turn that off where possible.",
+          "it": "Controllare nelle impostazioni dell'account se i vostri input vengono usati per l'addestramento e disattivare l'opzione dove possibile.",
+          "fr": "Vérifiez dans les paramètres du compte si vos saisies servent à l'entraînement et désactivez cette option si possible."
+        },
+        {
+          "de": "KI-Unterstützung dort kennzeichnen, wo Transparenz erwartet wird, und die inhaltliche Verantwortung immer bei einem Menschen belassen.",
+          "en": "Disclose AI assistance where transparency is expected, and always keep human accountability for the content.",
+          "it": "Segnalare l'uso dell'IA dove ci si aspetta trasparenza e mantenere sempre la responsabilità dei contenuti in capo a una persona.",
+          "fr": "Signalez l'usage de l'IA là où la transparence est attendue et gardez toujours la responsabilité du contenu chez une personne."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Was Sie am Anfang vermeiden sollten",
+        "en": "What to avoid at the start",
+        "it": "Cosa evitare all'inizio",
+        "fr": "Ce qu'il faut éviter au début"
+      },
+      "bullets": [
+        {
+          "de": "Blindes Vertrauen: Antworten ungeprüft weiterleiten oder veröffentlichen.",
+          "en": "Blind trust: forwarding or publishing answers without checking.",
+          "it": "Fiducia cieca: inoltrare o pubblicare risposte senza verificarle.",
+          "fr": "Confiance aveugle : transférer ou publier des réponses sans les vérifier."
+        },
+        {
+          "de": "Vage Eingaben: 'Schreib etwas Gutes' liefert Mittelmass. Nennen Sie Ziel, Zielgruppe, Länge und Ton.",
+          "en": "Vague prompts: 'write something good' yields mediocrity. State the goal, audience, length and tone.",
+          "it": "Richieste vaghe: 'scrivi qualcosa di buono' dà risultati mediocri. Indicate obiettivo, pubblico, lunghezza e tono.",
+          "fr": "Consignes vagues : « écris quelque chose de bien » donne du médiocre. Précisez l'objectif, le public, la longueur et le ton."
+        },
+        {
+          "de": "Zu viele Werkzeuge gleichzeitig: erst ein Tool beherrschen, dann erweitern.",
+          "en": "Too many tools at once: master one tool first, then expand.",
+          "it": "Troppi strumenti insieme: prima padroneggiate uno strumento, poi ampliate.",
+          "fr": "Trop d'outils à la fois : maîtrisez d'abord un outil, puis élargissez."
+        },
+        {
+          "de": "Sensible Daten teilen (siehe revDSG) oder KI für rechtsverbindliche, medizinische oder finanzielle Endentscheide einsetzen.",
+          "en": "Sharing sensitive data (see revDSG) or using AI for legally binding, medical or financial final decisions.",
+          "it": "Condividere dati sensibili (vedi revDSG) o usare l'IA per decisioni finali legalmente vincolanti, mediche o finanziarie.",
+          "fr": "Partager des données sensibles (voir revDSG) ou utiliser l'IA pour des décisions finales juridiquement contraignantes, médicales ou financières."
+        },
+        {
+          "de": "Kostenpflichtige Abos kaufen, bevor die Gratisversion die eigenen Aufgaben abgedeckt hat.",
+          "en": "Buying paid subscriptions before the free version has covered your actual tasks.",
+          "it": "Acquistare abbonamenti a pagamento prima che la versione gratuita abbia coperto i vostri compiti reali.",
+          "fr": "Acheter des abonnements payants avant que la version gratuite ait couvert vos tâches réelles."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Ihr einfacher Plan für die erste Woche",
+        "en": "Your simple first-week plan",
+        "it": "Il vostro semplice piano per la prima settimana",
+        "fr": "Votre plan simple pour la première semaine"
+      },
+      "paragraphs": [
+        {
+          "de": "Rechnen Sie mit 15 bis 30 Minuten pro Tag. Ziel ist nicht Perfektion, sondern Routine an echten Aufgaben.",
+          "en": "Plan for 15 to 30 minutes a day. The goal is not perfection but routine on real tasks.",
+          "it": "Prevedete da 15 a 30 minuti al giorno. L'obiettivo non è la perfezione ma la routine su compiti reali.",
+          "fr": "Comptez 15 à 30 minutes par jour. L'objectif n'est pas la perfection mais la routine sur des tâches réelles."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Tag 1: Ein Gratis-Konto anlegen und die KI drei echte Fragen aus Ihrem Alltag beantworten lassen.",
+          "en": "Day 1: Create one free account and ask the AI three real questions from your daily work.",
+          "it": "Giorno 1: create un account gratuito e fate rispondere l'IA a tre domande reali del vostro quotidiano.",
+          "fr": "Jour 1 : créez un compte gratuit et posez à l'IA trois vraies questions de votre quotidien."
+        },
+        {
+          "de": "Tag 2: Eine reale E-Mail entwerfen lassen und im Ton dreimal variieren (kurz, formell, herzlich).",
+          "en": "Day 2: Draft one real email and vary the tone three ways (short, formal, warm).",
+          "it": "Giorno 2: fate scrivere una e-mail reale e variatene il tono in tre modi (breve, formale, cordiale).",
+          "fr": "Jour 2 : faites rédiger un vrai e-mail et variez le ton de trois façons (court, formel, chaleureux)."
+        },
+        {
+          "de": "Tag 3: Ein langes Dokument einfügen und eine Zusammenfassung mit fünf Kernpunkten anfordern.",
+          "en": "Day 3: Paste a long document and request a summary with five key points.",
+          "it": "Giorno 3: incollate un documento lungo e chiedete un riassunto con cinque punti chiave.",
+          "fr": "Jour 3 : collez un long document et demandez un résumé en cinq points clés."
+        },
+        {
+          "de": "Tag 4: Kontext üben: Rolle, Ziel und Format vorgeben ('Du bist Texter, schreibe 3 Vorschläge, je 20 Wörter').",
+          "en": "Day 4: Practise context: give a role, goal and format ('You are a copywriter, write 3 options, 20 words each').",
+          "it": "Giorno 4: esercitatevi con il contesto: ruolo, obiettivo e formato ('Sei un copywriter, scrivi 3 proposte da 20 parole').",
+          "fr": "Jour 4 : entraînez-vous au contexte : rôle, objectif et format (« Tu es rédacteur, écris 3 propositions de 20 mots »)."
+        },
+        {
+          "de": "Tag 5: Eine Antwort bewusst gegenprüfen und einen Faktenfehler suchen, um ein Gefühl für Grenzen zu bekommen.",
+          "en": "Day 5: Deliberately fact-check one answer and hunt for a factual error to sense the limits.",
+          "it": "Giorno 5: verificate di proposito una risposta e cercate un errore fattuale per capire i limiti.",
+          "fr": "Jour 5 : vérifiez délibérément une réponse et cherchez une erreur factuelle pour percevoir les limites."
+        },
+        {
+          "de": "Tag 6-7: Zwei bewährte Prompts für wiederkehrende Aufgaben speichern und mit dem Team oder der Familie teilen.",
+          "en": "Days 6-7: Save two proven prompts for recurring tasks and share them with your team or family.",
+          "it": "Giorni 6-7: salvate due prompt collaudati per compiti ricorrenti e condivideteli con il team o la famiglia.",
+          "fr": "Jours 6-7 : enregistrez deux prompts éprouvés pour des tâches récurrentes et partagez-les avec votre équipe ou votre famille."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Welches Werkzeug zuerst und wie es weitergeht",
+        "en": "Which tool first and where to go next",
+        "it": "Quale strumento per primo e come proseguire",
+        "fr": "Quel outil en premier et comment continuer"
+      },
+      "paragraphs": [
+        {
+          "de": "Für die meisten Einsteiger reicht ein universeller Chat-Assistent in der Gratisversion. Wählen Sie nach drei praktischen Kriterien: Sprachqualität in Deutsch, Französisch und Italienisch, klare Datenschutzangaben und eine Oberfläche, mit der Sie gern arbeiten. Wer bereits Microsoft 365 oder Google Workspace nutzt, findet mit Copilot oder Gemini einen nahtlosen Einstieg direkt in den bekannten Programmen.",
+          "en": "For most beginners, a general-purpose chat assistant on the free tier is enough. Choose on three practical criteria: language quality in German, French and Italian, clear data-protection information, and an interface you enjoy using. If you already use Microsoft 365 or Google Workspace, Copilot or Gemini offer a seamless start right inside familiar apps.",
+          "it": "Per la maggior parte dei principianti basta un assistente di chat generico nella versione gratuita. Scegliete in base a tre criteri pratici: qualità linguistica in tedesco, francese e italiano, informazioni chiare sulla protezione dei dati e un'interfaccia con cui vi trovate bene. Se usate già Microsoft 365 o Google Workspace, Copilot o Gemini offrono un avvio integrato nelle app note.",
+          "fr": "Pour la plupart des débutants, un assistant de chat généraliste en version gratuite suffit. Choisissez selon trois critères pratiques : la qualité linguistique en allemand, français et italien, des informations claires sur la protection des données et une interface qui vous plaît. Si vous utilisez déjà Microsoft 365 ou Google Workspace, Copilot ou Gemini offrent un démarrage fluide au sein d'applications familières."
+        },
+        {
+          "de": "Sobald die Grundlagen sitzen, lohnt sich der nächste Schritt: bessere Prompts schreiben, für KMU eine kurze interne KI-Richtlinie festlegen und pro Team klären, welche Daten erlaubt sind. So wird aus ersten Versuchen ein verlässlicher, sicherer Teil Ihres Arbeitsalltags.",
+          "en": "Once the basics stick, take the next step: write better prompts, for SMEs set a short internal AI policy, and clarify per team which data is allowed. That turns first experiments into a reliable, safe part of your working day.",
+          "it": "Una volta assimilate le basi, fate il passo successivo: scrivere prompt migliori, per le PMI definire una breve policy interna sull'IA e chiarire per ogni team quali dati sono ammessi. Così i primi tentativi diventano una parte affidabile e sicura della vostra giornata lavorativa.",
+          "fr": "Une fois les bases acquises, passez à l'étape suivante : écrire de meilleurs prompts, pour les PME définir une courte politique interne sur l'IA et clarifier par équipe quelles données sont autorisées. Vos premiers essais deviennent alors une partie fiable et sûre de votre quotidien professionnel."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Braucht man Programmierkenntnisse, um KI zu nutzen?",
+        "en": "Do you need coding skills to use AI?",
+        "it": "Servono competenze di programmazione per usare l'IA?",
+        "fr": "Faut-il savoir programmer pour utiliser l'IA ?"
+      },
+      "a": {
+        "de": "Nein. Moderne KI-Assistenten werden in normaler Sprache bedient. Sie schreiben Ihre Anweisung so, wie Sie sie einer hilfsbereiten Person erklären würden. Wichtiger als Technikwissen ist, klar zu formulieren, was Sie wollen, und die Antwort kritisch zu prüfen.",
+        "en": "No. Modern AI assistants are operated in plain language. You write your instruction the way you would explain it to a helpful person. Clear phrasing of what you want, and critically checking the answer, matter more than technical knowledge.",
+        "it": "No. Gli assistenti IA moderni si usano in linguaggio normale. Scrivete l'istruzione come la spieghereste a una persona disponibile. Formulare con chiarezza ciò che volete e verificare la risposta conta più delle conoscenze tecniche.",
+        "fr": "Non. Les assistants IA modernes s'utilisent en langage courant. Vous écrivez votre consigne comme vous l'expliqueriez à une personne serviable. Formuler clairement ce que vous voulez et vérifier la réponse compte davantage que les connaissances techniques."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist die Nutzung von KI in der Schweiz kostenlos möglich?",
+        "en": "Can you use AI for free in Switzerland?",
+        "it": "Si può usare l'IA gratuitamente in Svizzera?",
+        "fr": "Peut-on utiliser l'IA gratuitement en Suisse ?"
+      },
+      "a": {
+        "de": "Ja. Die grossen Assistenten bieten brauchbare Gratisversionen, die für den Einstieg ausreichen. Kostenpflichtige Abos lohnen sich erst, wenn Sie an Grenzen stossen, etwa bei Umfang, Geschwindigkeit oder speziellen Funktionen. Kaufen Sie erst, wenn die Gratisversion Ihre Aufgaben nachweislich nicht mehr deckt.",
+        "en": "Yes. The major assistants offer usable free versions that are enough to get started. Paid plans only pay off once you hit limits, such as volume, speed or special features. Buy only when the free version can demonstrably no longer cover your tasks.",
+        "it": "Sì. I principali assistenti offrono versioni gratuite valide, sufficienti per iniziare. Gli abbonamenti a pagamento convengono solo quando raggiungete dei limiti, per esempio volume, velocità o funzioni speciali. Acquistate solo quando la versione gratuita non copre più i vostri compiti.",
+        "fr": "Oui. Les principaux assistants proposent des versions gratuites utilisables, suffisantes pour débuter. Les abonnements payants ne se justifient que lorsque vous atteignez des limites, comme le volume, la vitesse ou des fonctions spéciales. N'achetez que lorsque la version gratuite ne couvre manifestement plus vos tâches."
+      }
+    },
+    {
+      "q": {
+        "de": "Darf ich Kundendaten oder vertrauliche Informationen eingeben?",
+        "en": "May I enter customer data or confidential information?",
+        "it": "Posso inserire dati dei clienti o informazioni riservate?",
+        "fr": "Puis-je saisir des données clients ou des informations confidentielles ?"
+      },
+      "a": {
+        "de": "Grundsätzlich nein. Nach dem revidierten Datenschutzgesetz (revDSG) sind Sie für personenbezogene Daten verantwortlich, und Eingaben können ausserhalb der Schweiz verarbeitet werden. Anonymisieren Sie Inhalte oder nutzen Sie Platzhalter. Für sensible Anwendungen im KMU braucht es geprüfte, vertragliche Lösungen und eine interne Richtlinie.",
+        "en": "In principle no. Under the revised data protection act (revDSG) you are responsible for personal data, and inputs may be processed outside Switzerland. Anonymise content or use placeholders. Sensitive SME use cases require vetted, contractual solutions and an internal policy.",
+        "it": "In linea di principio no. Secondo la legge riveduta sulla protezione dei dati (revDSG) siete responsabili dei dati personali e gli input possono essere trattati fuori dalla Svizzera. Anonimizzate i contenuti o usate segnaposto. Gli usi sensibili nelle PMI richiedono soluzioni contrattuali verificate e una policy interna.",
+        "fr": "En principe non. Selon la loi révisée sur la protection des données (revDSG), vous êtes responsable des données personnelles et les saisies peuvent être traitées hors de Suisse. Anonymisez les contenus ou utilisez des espaces réservés. Les usages sensibles en PME exigent des solutions contractuelles vérifiées et une politique interne."
+      }
+    },
+    {
+      "q": {
+        "de": "Warum erfindet die KI manchmal falsche Angaben?",
+        "en": "Why does AI sometimes make things up?",
+        "it": "Perché l'IA a volte inventa informazioni sbagliate?",
+        "fr": "Pourquoi l'IA invente-t-elle parfois de fausses informations ?"
+      },
+      "a": {
+        "de": "Sprachmodelle sagen das wahrscheinlichste nächste Wort voraus; sie prüfen keine Wahrheit. Deshalb können sie flüssige, aber falsche Aussagen erzeugen, sogenannte Halluzinationen. Behandeln Sie jede Ausgabe als Entwurf und kontrollieren Sie Zahlen, Namen, Zitate und rechtliche Aussagen an verlässlichen Quellen.",
+        "en": "Language models predict the most likely next word; they do not verify truth. That is why they can produce fluent but false statements, called hallucinations. Treat every output as a draft and check numbers, names, quotes and legal statements against reliable sources.",
+        "it": "I modelli linguistici prevedono la parola successiva più probabile; non verificano la verità. Per questo possono produrre affermazioni fluenti ma false, dette allucinazioni. Trattate ogni risposta come una bozza e controllate numeri, nomi, citazioni e affermazioni legali su fonti affidabili.",
+        "fr": "Les modèles de langage prédisent le mot suivant le plus probable ; ils ne vérifient pas la vérité. C'est pourquoi ils peuvent produire des affirmations fluides mais fausses, appelées hallucinations. Traitez chaque réponse comme un brouillon et vérifiez chiffres, noms, citations et affirmations juridiques auprès de sources fiables."
+      }
+    },
+    {
+      "q": {
+        "de": "Welcher KI-Assistent ist für Anfänger am besten?",
+        "en": "Which AI assistant is best for beginners?",
+        "it": "Quale assistente IA è il migliore per i principianti?",
+        "fr": "Quel assistant IA est le meilleur pour les débutants ?"
+      },
+      "a": {
+        "de": "Es gibt keinen einzigen Sieger. Für den Start eignet sich jeder universelle Assistent wie ChatGPT, Claude, Copilot oder Gemini in der Gratisversion. Entscheiden Sie nach Sprachqualität in Ihren Landessprachen, Datenschutz-Transparenz und Bedienkomfort. Wer Microsoft 365 oder Google Workspace nutzt, profitiert von der Integration in vertraute Programme.",
+        "en": "There is no single winner. To start, any general assistant such as ChatGPT, Claude, Copilot or Gemini on the free tier works. Decide by language quality in your national languages, data-protection transparency and ease of use. Microsoft 365 or Google Workspace users benefit from integration in familiar apps.",
+        "it": "Non esiste un unico vincitore. Per iniziare va bene qualsiasi assistente generico come ChatGPT, Claude, Copilot o Gemini nella versione gratuita. Decidete in base a qualità linguistica nelle vostre lingue nazionali, trasparenza sulla protezione dei dati e facilità d'uso. Chi usa Microsoft 365 o Google Workspace beneficia dell'integrazione nelle app note.",
+        "fr": "Il n'y a pas de vainqueur unique. Pour débuter, tout assistant généraliste comme ChatGPT, Claude, Copilot ou Gemini en version gratuite convient. Décidez selon la qualité linguistique dans vos langues nationales, la transparence sur la protection des données et la facilité d'usage. Les utilisateurs de Microsoft 365 ou Google Workspace profitent de l'intégration dans des applications familières."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie schreibe ich einen guten Prompt?",
+        "en": "How do I write a good prompt?",
+        "it": "Come scrivo un buon prompt?",
+        "fr": "Comment écrire un bon prompt ?"
+      },
+      "a": {
+        "de": "Geben Sie Kontext statt nur eines Stichworts. Ein guter Prompt nennt Rolle, Ziel, Zielgruppe, gewünschtes Format und Länge, zum Beispiel: 'Formuliere als Kundendienst eine freundliche Absage, maximal 80 Wörter, mit einem konkreten Alternativvorschlag.' Fügen Sie ein kurzes Beispiel hinzu und verbessern Sie das Ergebnis in einem zweiten Schritt.",
+        "en": "Give context, not just a keyword. A good prompt states the role, goal, audience, desired format and length, for example: 'As customer service, write a friendly rejection, max 80 words, with one concrete alternative.' Add a short example and refine the result in a second step.",
+        "it": "Date contesto, non solo una parola chiave. Un buon prompt indica ruolo, obiettivo, pubblico, formato desiderato e lunghezza, ad esempio: 'Come servizio clienti, scrivi un rifiuto cortese, massimo 80 parole, con una proposta alternativa concreta.' Aggiungete un breve esempio e migliorate il risultato in un secondo passaggio.",
+        "fr": "Donnez du contexte, pas seulement un mot-clé. Un bon prompt précise le rôle, l'objectif, le public, le format voulu et la longueur, par exemple : « En tant que service client, rédige un refus courtois, 80 mots maximum, avec une proposition alternative concrète. » Ajoutez un court exemple et affinez le résultat en une deuxième étape."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Generative KI",
+    "Large Language Model",
+    "Prompt",
+    "ChatGPT",
+    "Claude",
+    "Microsoft Copilot",
+    "Google Gemini",
+    "Perplexity",
+    "revDSG",
+    "nFADP",
+    "EDÖB",
+    "Halluzination",
+    "Datenschutz",
+    "KMU",
+    "Microsoft 365",
+    "Google Workspace"
+  ]
+}

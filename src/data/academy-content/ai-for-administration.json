@@ -1,0 +1,375 @@
+{
+  "id": "ai-for-administration",
+  "cluster": "functions",
+  "type": "spoke",
+  "relatedServices": [
+    "automation",
+    "agents"
+  ],
+  "slug": {
+    "de": "ki-bueroarbeit-administration",
+    "en": "ai-office-administration",
+    "it": "ia-lavoro-ufficio-amministrazione",
+    "fr": "ia-travail-bureau-administration"
+  },
+  "title": {
+    "de": "KI in Buroarbeit und Administration nutzen | Weissmann AI",
+    "en": "Using AI for Office Work and Administration | Weissmann AI",
+    "it": "IA per lavoro d'ufficio e amministrazione | Weissmann AI",
+    "fr": "IA pour le travail de bureau et l'administration | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie KI Buroarbeit entlastet: E-Mails, Termine, Dateneingabe, Vorlagen. Praktische Zeitgewinne mit menschlicher Kontrolle, revDSG-konform, fur KMU in der Schweiz.",
+    "en": "How AI eases office work: emails, scheduling, data entry, templates. Practical time savings with human oversight, revDSG-aware, for Swiss and DACH teams.",
+    "it": "Come l'IA alleggerisce il lavoro d'ufficio: email, appuntamenti, inserimento dati, modelli. Risparmi concreti con controllo umano, conforme alla revDSG.",
+    "fr": "Comment l'IA allege le travail de bureau: e-mails, agenda, saisie, modeles. Gains de temps concrets avec supervision humaine, conforme a la nLPD suisse."
+  },
+  "kicker": {
+    "de": "KI-Funktionen fur den Buroalltag",
+    "en": "AI functions for everyday office work",
+    "it": "Funzioni IA per l'ufficio quotidiano",
+    "fr": "Fonctions d'IA pour le bureau au quotidien"
+  },
+  "h1": {
+    "de": "KI in der Buroarbeit und Administration: praktische Zeitgewinne mit menschlicher Kontrolle",
+    "en": "AI in Office Work and Administration: practical time savings with human oversight",
+    "it": "IA nel lavoro d'ufficio e nell'amministrazione: risparmi di tempo concreti con supervisione umana",
+    "fr": "L'IA dans le travail de bureau et l'administration: des gains de temps concrets avec supervision humaine"
+  },
+  "answerFirst": {
+    "de": "KI unterstutzt Buroarbeit dort, wo Aufgaben wiederkehren und textlastig sind: E-Mails entwerfen und zusammenfassen, Termine koordinieren, Daten aus Belegen erfassen und Vorlagen fullen. Der grosste Nutzen entsteht mit klaren Prompts, gepflegten Vorlagen und menschlicher Endkontrolle vor dem Versand. In der Schweiz gilt: personenbezogene Daten revDSG-konform behandeln, Anbieter und Speicherort prufen. KI beschleunigt Entwurfe, ersetzt aber weder Verantwortung noch Freigabe.",
+    "en": "AI helps office work where tasks are repetitive and text-heavy: drafting and summarising emails, coordinating meetings, capturing data from documents and filling templates. The biggest gains come from clear prompts, maintained templates and a human final check before anything is sent. In Switzerland, treat personal data in line with the revDSG and vet the provider and storage location. AI speeds up drafts but never replaces accountability or sign-off.",
+    "it": "L'IA aiuta il lavoro d'ufficio dove i compiti sono ripetitivi e ricchi di testo: redigere e riassumere email, coordinare appuntamenti, estrarre dati dai documenti e compilare modelli. I vantaggi maggiori derivano da prompt chiari, modelli aggiornati e un controllo umano finale prima dell'invio. In Svizzera i dati personali vanno trattati secondo la revDSG, verificando fornitore e luogo di archiviazione. L'IA accelera le bozze ma non sostituisce la responsabilita.",
+    "fr": "L'IA aide le travail de bureau la ou les taches sont repetitives et textuelles: rediger et resumer des e-mails, coordonner des rendez-vous, extraire des donnees de documents et remplir des modeles. Les meilleurs gains viennent de consignes claires, de modeles a jour et d'un controle humain avant tout envoi. En Suisse, traitez les donnees personnelles selon la nLPD et verifiez le prestataire et le lieu de stockage. L'IA accelere les brouillons sans remplacer la responsabilite."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Wo KI im Buro wirklich Zeit spart",
+        "en": "Where AI genuinely saves time in the office",
+        "it": "Dove l'IA fa davvero risparmiare tempo in ufficio",
+        "fr": "Ou l'IA fait vraiment gagner du temps au bureau"
+      },
+      "paragraphs": [
+        {
+          "de": "Nicht jede Aufgabe eignet sich fur KI. Am grossten ist der Nutzen bei wiederkehrenden, textlastigen oder strukturierten Tatigkeiten, bei denen ein Mensch das Ergebnis ohnehin gegenliest. Punktuelle Kreativentscheide, heikle Verhandlungen oder rechtsverbindliche Zusagen bleiben Chefsache.",
+          "en": "Not every task suits AI. The benefit is largest for repetitive, text-heavy or structured activities where a human reviews the result anyway. One-off creative decisions, sensitive negotiations or legally binding commitments stay with people.",
+          "it": "Non ogni compito e adatto all'IA. Il vantaggio e massimo per attivita ripetitive, testuali o strutturate in cui una persona rilegge comunque il risultato. Decisioni creative puntuali, trattative delicate o impegni giuridicamente vincolanti restano alle persone.",
+          "fr": "Toutes les taches ne conviennent pas a l'IA. Le benefice est maximal pour les activites repetitives, textuelles ou structurees dont un humain relit de toute facon le resultat. Les decisions creatives ponctuelles, les negociations sensibles ou les engagements juridiques restent humains."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "E-Mails: Entwurfe, hofliche Antworten, Zusammenfassungen langer Threads, Ubersetzungen in die vier Landessprachen.",
+          "en": "Emails: drafts, polite replies, summaries of long threads, translations into multiple languages.",
+          "it": "Email: bozze, risposte cortesi, riassunti di thread lunghi, traduzioni in piu lingue.",
+          "fr": "E-mails: brouillons, reponses polies, resumes de longs fils, traductions en plusieurs langues."
+        },
+        {
+          "de": "Terminplanung: Vorschlage aus Verfugbarkeiten, Einladungstexte, Nachfass-Nachrichten, Agenda- und Protokollentwurfe.",
+          "en": "Scheduling: proposals from availability, invitation wording, follow-up messages, agenda and minutes drafts.",
+          "it": "Pianificazione: proposte dalle disponibilita, testi di invito, solleciti, bozze di agenda e verbali.",
+          "fr": "Agenda: propositions selon les disponibilites, textes d'invitation, relances, projets d'ordre du jour et de proces-verbaux."
+        },
+        {
+          "de": "Dateneingabe: Felder aus Rechnungen, Belegen oder Formularen per OCR und KI vorbefullen, dann prufen.",
+          "en": "Data entry: pre-filling fields from invoices, receipts or forms via OCR and AI, then verifying.",
+          "it": "Inserimento dati: precompilare campi da fatture, ricevute o moduli tramite OCR e IA, poi verificare.",
+          "fr": "Saisie de donnees: preremplir des champs depuis factures, recus ou formulaires via OCR et IA, puis verifier."
+        },
+        {
+          "de": "Vorlagen: standardisierte Schreiben, Offerten-Geruste, Checklisten und Textbausteine schnell anpassen.",
+          "en": "Templates: quickly adapting standard letters, quote skeletons, checklists and text blocks.",
+          "it": "Modelli: adattare rapidamente lettere standard, strutture di offerta, checklist e blocchi di testo.",
+          "fr": "Modeles: adapter rapidement des lettres types, des trames de devis, des checklists et des blocs de texte."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "In vier Schritten praktisch starten",
+        "en": "Getting started practically in four steps",
+        "it": "Iniziare in pratica in quattro passi",
+        "fr": "Demarrer concretement en quatre etapes"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein sinnvoller Einstieg braucht keine grosse Software-Einfuhrung. Wahlen Sie einen klar abgegrenzten Anwendungsfall, messen Sie den Zeitgewinn und weiten Sie erst danach aus.",
+          "en": "A sensible start needs no major software rollout. Pick one clearly bounded use case, measure the time saved, and only then expand.",
+          "it": "Un avvio sensato non richiede una grande implementazione software. Scegliete un caso d'uso ben delimitato, misurate il tempo risparmiato e solo dopo ampliate.",
+          "fr": "Un bon depart ne necessite pas de grand deploiement logiciel. Choisissez un cas d'usage bien delimite, mesurez le temps gagne, puis seulement etendez."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "1. Einen repetitiven Vorgang auswahlen (z. B. Antwort auf Standardanfragen) und den heutigen Aufwand notieren.",
+          "en": "1. Pick one repetitive process (e.g. replies to standard requests) and note today's effort.",
+          "it": "1. Scegliete un processo ripetitivo (es. risposte a richieste standard) e annotate lo sforzo attuale.",
+          "fr": "1. Choisissez un processus repetitif (ex. reponses aux demandes standard) et notez l'effort actuel."
+        },
+        {
+          "de": "2. Eine gute Vorlage und einen klaren Prompt mit Kontext, Ton und Grenzen schreiben.",
+          "en": "2. Write a good template and a clear prompt with context, tone and boundaries.",
+          "it": "2. Scrivete un buon modello e un prompt chiaro con contesto, tono e limiti.",
+          "fr": "2. Redigez un bon modele et une consigne claire avec contexte, ton et limites."
+        },
+        {
+          "de": "3. Zwei Wochen testen, Ergebnisse immer gegenlesen, Prompt und Vorlage nachscharfen.",
+          "en": "3. Test for two weeks, always review outputs, refine prompt and template.",
+          "it": "3. Testate per due settimane, rileggete sempre gli output, affinate prompt e modello.",
+          "fr": "3. Testez pendant deux semaines, relisez toujours les resultats, affinez consigne et modele."
+        },
+        {
+          "de": "4. Erst bei belegtem Nutzen auf weitere Aufgaben oder Teammitglieder ausweiten.",
+          "en": "4. Expand to further tasks or colleagues only once the benefit is proven.",
+          "it": "4. Estendete ad altri compiti o colleghi solo a beneficio dimostrato.",
+          "fr": "4. N'etendez a d'autres taches ou collegues qu'une fois le benefice prouve."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Menschliche Kontrolle als Qualitatssicherung",
+        "en": "Human oversight as quality assurance",
+        "it": "La supervisione umana come garanzia di qualita",
+        "fr": "La supervision humaine comme assurance qualite"
+      },
+      "paragraphs": [
+        {
+          "de": "KI liefert plausible Entwurfe, keine gepruften Fakten. Sie kann Namen, Zahlen oder Fristen falsch ubernehmen (sogenannte Halluzinationen) und den Ton verfehlen. Das Prinzip Human-in-the-Loop bedeutet: Ein Mensch liest, korrigiert und gibt frei, bevor etwas das Haus verlasst.",
+          "en": "AI produces plausible drafts, not verified facts. It can get names, numbers or deadlines wrong (so-called hallucinations) and miss the tone. The human-in-the-loop principle means a person reads, corrects and approves before anything leaves the office.",
+          "it": "L'IA produce bozze plausibili, non fatti verificati. Puo sbagliare nomi, numeri o scadenze (le cosiddette allucinazioni) e mancare il tono. Il principio human-in-the-loop significa che una persona legge, corregge e approva prima che qualcosa esca.",
+          "fr": "L'IA produit des brouillons plausibles, pas des faits verifies. Elle peut se tromper de noms, de chiffres ou d'echeances (les hallucinations) et manquer le ton. Le principe human-in-the-loop signifie qu'une personne lit, corrige et valide avant tout envoi."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Immer gegenlesen: Zahlen, Namen, Betrage in CHF, Fristen und rechtliche Aussagen prufen.",
+          "en": "Always review: check numbers, names, CHF amounts, deadlines and legal statements.",
+          "it": "Rileggere sempre: verificare numeri, nomi, importi in CHF, scadenze e affermazioni legali.",
+          "fr": "Toujours relire: verifier chiffres, noms, montants en CHF, echeances et mentions juridiques."
+        },
+        {
+          "de": "Verantwortung bleibt beim Menschen: KI ist Assistenz, nicht Unterschrift.",
+          "en": "Accountability stays human: AI is assistance, not a signature.",
+          "it": "La responsabilita resta umana: l'IA e un supporto, non una firma.",
+          "fr": "La responsabilite reste humaine: l'IA est une aide, pas une signature."
+        },
+        {
+          "de": "Kein blindes Automatisieren heikler Vorgange wie Kundigungen, Mahnungen oder Vertrage.",
+          "en": "No blind automation of sensitive processes such as terminations, reminders or contracts.",
+          "it": "Nessuna automazione cieca di processi delicati come disdette, solleciti o contratti.",
+          "fr": "Pas d'automatisation aveugle de processus sensibles comme resiliations, rappels ou contrats."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz in der Schweiz: revDSG richtig beachten",
+        "en": "Data protection in Switzerland: applying the revDSG correctly",
+        "it": "Protezione dei dati in Svizzera: applicare correttamente la revDSG",
+        "fr": "Protection des donnees en Suisse: appliquer correctement la nLPD"
+      },
+      "paragraphs": [
+        {
+          "de": "Buroarbeit bedeutet fast immer Umgang mit Personendaten. In der Schweiz gilt das revidierte Datenschutzgesetz (revDSG); Aufsichtsbehorde ist der EDOEB. Vor dem Einsatz eines KI-Dienstes klaren Sie, welche Daten verarbeitet werden, wo sie gespeichert sind und ob Eingaben zum Training genutzt werden. Fur besonders schutzenswerte Daten braucht es besondere Vorsicht und gegebenenfalls eine Datenschutz-Folgenabschatzung.",
+          "en": "Office work almost always involves personal data. In Switzerland the revised Data Protection Act (revDSG) applies, supervised by the FDPIC (EDOEB). Before using an AI service, clarify which data is processed, where it is stored and whether inputs are used for training. Particularly sensitive data requires extra caution and, where relevant, a data protection impact assessment.",
+          "it": "Il lavoro d'ufficio comporta quasi sempre dati personali. In Svizzera si applica la legge sulla protezione dei dati riveduta (revDSG), con vigilanza dell'IFPDT (EDOEB). Prima di usare un servizio IA, chiarite quali dati vengono trattati, dove sono archiviati e se gli input servono all'addestramento. I dati particolarmente degni di protezione richiedono cautela e, se del caso, una valutazione d'impatto.",
+          "fr": "Le travail de bureau implique presque toujours des donnees personnelles. En Suisse s'applique la loi revisee sur la protection des donnees (nLPD), sous la surveillance du PFPDT (EDOEB). Avant d'utiliser un service d'IA, clarifiez quelles donnees sont traitees, ou elles sont stockees et si les saisies servent a l'entrainement. Les donnees sensibles exigent une prudence accrue et, le cas echeant, une analyse d'impact."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Anbieter, Speicherort und Auftragsverarbeitungsvertrag prufen; keine Kundendaten in ungeprufte Gratis-Tools kopieren.",
+          "en": "Vet provider, storage location and data processing agreement; never paste customer data into unvetted free tools.",
+          "it": "Verificare fornitore, luogo di archiviazione e contratto di trattamento; mai incollare dati dei clienti in tool gratuiti non verificati.",
+          "fr": "Verifier prestataire, lieu de stockage et contrat de sous-traitance; ne jamais coller de donnees clients dans des outils gratuits non verifies."
+        },
+        {
+          "de": "Wo moglich Daten minimieren, pseudonymisieren oder anonymisieren, bevor sie in die KI gelangen.",
+          "en": "Where possible minimise, pseudonymise or anonymise data before it reaches the AI.",
+          "it": "Ove possibile ridurre, pseudonimizzare o anonimizzare i dati prima di inviarli all'IA.",
+          "fr": "Lorsque possible, minimiser, pseudonymiser ou anonymiser les donnees avant l'IA."
+        },
+        {
+          "de": "Transparenz gegenuber Betroffenen: Einsatz von KI dort dokumentieren, wo er relevant ist.",
+          "en": "Transparency towards data subjects: document AI use where it is relevant.",
+          "it": "Trasparenza verso gli interessati: documentare l'uso dell'IA dove rilevante.",
+          "fr": "Transparence envers les personnes concernees: documenter l'usage de l'IA la ou c'est pertinent."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Werkzeuge einordnen statt vergleichen",
+        "en": "Positioning tools rather than ranking them",
+        "it": "Inquadrare gli strumenti invece di classificarli",
+        "fr": "Situer les outils plutot que les classer"
+      },
+      "paragraphs": [
+        {
+          "de": "Viele Buros nutzen bereits KI, oft ohne es zu merken, weil sie in bestehende Software eingebaut ist. Statt einem einzelnen Anbieter zu folgen, lohnt es sich, nach Kategorie zu denken und die eigene Datenschutz- und Integrationslage zu berucksichtigen.",
+          "en": "Many offices already use AI, often without noticing, because it is built into existing software. Rather than following a single vendor, it helps to think by category and consider your own data protection and integration situation.",
+          "it": "Molti uffici usano gia l'IA, spesso senza accorgersene, perche integrata nel software esistente. Invece di seguire un singolo fornitore, conviene ragionare per categoria e considerare la propria situazione di protezione dati e integrazione.",
+          "fr": "De nombreux bureaux utilisent deja l'IA, souvent sans le savoir, car elle est integree aux logiciels existants. Plutot que de suivre un seul fournisseur, mieux vaut raisonner par categorie et tenir compte de sa propre situation de protection des donnees et d'integration."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Integrierte Assistenten in Office- und E-Mail-Suiten (z. B. in Microsoft 365 oder Google Workspace).",
+          "en": "Assistants built into office and email suites (e.g. in Microsoft 365 or Google Workspace).",
+          "it": "Assistenti integrati in suite per ufficio ed email (es. in Microsoft 365 o Google Workspace).",
+          "fr": "Assistants integres aux suites bureautiques et e-mail (ex. Microsoft 365 ou Google Workspace)."
+        },
+        {
+          "de": "Eigenstandige Chat-Assistenten fur Entwurfe und Zusammenfassungen (z. B. ChatGPT, Claude, Gemini).",
+          "en": "Standalone chat assistants for drafts and summaries (e.g. ChatGPT, Claude, Gemini).",
+          "it": "Assistenti di chat autonomi per bozze e riassunti (es. ChatGPT, Claude, Gemini).",
+          "fr": "Assistants de chat autonomes pour brouillons et resumes (ex. ChatGPT, Claude, Gemini)."
+        },
+        {
+          "de": "Spezialisierte Werkzeuge fur OCR, Belegerfassung und Workflow-Automatisierung.",
+          "en": "Specialised tools for OCR, document capture and workflow automation.",
+          "it": "Strumenti specializzati per OCR, acquisizione documenti e automazione dei flussi.",
+          "fr": "Outils specialises pour l'OCR, la capture de documents et l'automatisation des flux."
+        },
+        {
+          "de": "Kriterien: Datenstandort, revDSG-Konformitat, Integration in bestehende Systeme, Kosten in CHF, Bedienbarkeit.",
+          "en": "Criteria: data location, revDSG compliance, integration with existing systems, cost in CHF, usability.",
+          "it": "Criteri: ubicazione dei dati, conformita revDSG, integrazione con i sistemi esistenti, costi in CHF, usabilita.",
+          "fr": "Criteres: localisation des donnees, conformite nLPD, integration aux systemes existants, cout en CHF, ergonomie."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Haufige Fehler vermeiden",
+        "en": "Avoiding common mistakes",
+        "it": "Evitare gli errori piu comuni",
+        "fr": "Eviter les erreurs frequentes"
+      },
+      "bullets": [
+        {
+          "de": "Alles auf einmal automatisieren wollen, statt mit einem klaren Anwendungsfall zu beginnen.",
+          "en": "Trying to automate everything at once instead of starting with one clear use case.",
+          "it": "Voler automatizzare tutto insieme invece di iniziare con un caso d'uso chiaro.",
+          "fr": "Vouloir tout automatiser d'un coup au lieu de commencer par un cas d'usage clair."
+        },
+        {
+          "de": "Ergebnisse ungepruft versenden und so Fehler in Zahlen oder Ton weitergeben.",
+          "en": "Sending outputs unchecked and passing on errors in numbers or tone.",
+          "it": "Inviare output non verificati, propagando errori in numeri o tono.",
+          "fr": "Envoyer des resultats non verifies et propager des erreurs de chiffres ou de ton."
+        },
+        {
+          "de": "Sensible Personendaten in ungeprufte oder kostenlose Dienste eingeben.",
+          "en": "Entering sensitive personal data into unvetted or free services.",
+          "it": "Inserire dati personali sensibili in servizi non verificati o gratuiti.",
+          "fr": "Saisir des donnees personnelles sensibles dans des services non verifies ou gratuits."
+        },
+        {
+          "de": "Vage Prompts ohne Kontext nutzen und dann uber generische Ergebnisse enttauscht sein.",
+          "en": "Using vague prompts without context and then being disappointed by generic results.",
+          "it": "Usare prompt vaghi senza contesto e poi deludersi per risultati generici.",
+          "fr": "Utiliser des consignes vagues sans contexte puis etre decu par des resultats generiques."
+        },
+        {
+          "de": "Den Zeitgewinn nie messen und darum nicht wissen, ob sich der Einsatz lohnt.",
+          "en": "Never measuring the time saved and therefore not knowing whether it pays off.",
+          "it": "Non misurare mai il tempo risparmiato e quindi non sapere se conviene.",
+          "fr": "Ne jamais mesurer le temps gagne et donc ignorer si cela vaut la peine."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Welche Buroaufgaben lassen sich mit KI am schnellsten entlasten?",
+        "en": "Which office tasks can AI relieve the fastest?",
+        "it": "Quali compiti d'ufficio l'IA puo alleggerire piu velocemente?",
+        "fr": "Quelles taches de bureau l'IA peut-elle alleger le plus vite?"
+      },
+      "a": {
+        "de": "Am schnellsten wirken textlastige und wiederkehrende Aufgaben: E-Mail-Entwurfe und Antworten, Zusammenfassungen langer Threads oder Dokumente, Terminkoordination samt Einladungs- und Nachfasstexten, das Vorbefullen von Vorlagen sowie das Erfassen von Daten aus Belegen. Diese lassen sich mit klarem Prompt und Vorlage sofort testen, wobei ein Mensch das Ergebnis vor dem Versand pruft.",
+        "en": "Text-heavy, repetitive tasks act fastest: email drafts and replies, summaries of long threads or documents, meeting coordination with invitation and follow-up wording, pre-filling templates and capturing data from receipts. These can be tested immediately with a clear prompt and template, while a human checks the result before sending.",
+        "it": "I compiti testuali e ripetitivi agiscono piu in fretta: bozze e risposte email, riassunti di thread o documenti lunghi, coordinamento di appuntamenti con testi di invito e sollecito, precompilazione di modelli ed estrazione di dati dalle ricevute. Si testano subito con prompt e modello chiari, mentre una persona verifica il risultato prima dell'invio.",
+        "fr": "Les taches textuelles et repetitives agissent le plus vite: brouillons et reponses d'e-mails, resumes de longs fils ou documents, coordination de rendez-vous avec invitations et relances, preremplissage de modeles et extraction de donnees des recus. Elles se testent immediatement avec une consigne et un modele clairs, un humain verifiant le resultat avant l'envoi."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist der Einsatz von KI im Buro in der Schweiz datenschutzkonform?",
+        "en": "Is using AI in the office data-protection compliant in Switzerland?",
+        "it": "L'uso dell'IA in ufficio e conforme alla protezione dati in Svizzera?",
+        "fr": "L'usage de l'IA au bureau est-il conforme a la protection des donnees en Suisse?"
+      },
+      "a": {
+        "de": "Er kann konform sein, wenn Sie das revDSG beachten. Klaren Sie, welche Personendaten verarbeitet werden, wo sie gespeichert sind und ob Eingaben zum Training genutzt werden. Prufen Sie Anbieter und Auftragsverarbeitungsvertrag, minimieren oder anonymisieren Sie Daten wo moglich und dokumentieren Sie den Einsatz. Aufsichtsbehorde ist der EDOEB; bei heiklen Verarbeitungen kann eine Datenschutz-Folgenabschatzung notig sein.",
+        "en": "It can be compliant if you observe the revDSG. Clarify which personal data is processed, where it is stored and whether inputs are used for training. Vet the provider and data processing agreement, minimise or anonymise data where possible and document the use. The supervisory authority is the FDPIC (EDOEB); sensitive processing may require a data protection impact assessment.",
+        "it": "Puo esserlo se rispettate la revDSG. Chiarite quali dati personali vengono trattati, dove sono archiviati e se gli input servono all'addestramento. Verificate fornitore e contratto di trattamento, riducete o anonimizzate i dati ove possibile e documentate l'uso. L'autorita di vigilanza e l'IFPDT (EDOEB); trattamenti delicati possono richiedere una valutazione d'impatto.",
+        "fr": "Cela peut l'etre si vous respectez la nLPD. Clarifiez quelles donnees personnelles sont traitees, ou elles sont stockees et si les saisies servent a l'entrainement. Verifiez le prestataire et le contrat de sous-traitance, minimisez ou anonymisez les donnees si possible et documentez l'usage. L'autorite est le PFPDT (EDOEB); un traitement sensible peut exiger une analyse d'impact."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie viel menschliche Kontrolle ist wirklich notig?",
+        "en": "How much human oversight is really needed?",
+        "it": "Quanta supervisione umana serve davvero?",
+        "fr": "Combien de supervision humaine faut-il vraiment?"
+      },
+      "a": {
+        "de": "Genug, um Fehler vor dem Versand zu erkennen. KI erzeugt plausible, aber nicht garantiert korrekte Texte und kann Zahlen, Namen oder Fristen verwechseln. Fur Routineantworten reicht ein kurzes Gegenlesen; fur rechtlich oder finanziell relevante Inhalte braucht es eine sorgfaltige Freigabe. Die Verantwortung bleibt immer beim Menschen, nicht beim Werkzeug.",
+        "en": "Enough to catch errors before sending. AI produces plausible but not guaranteed-correct text and can mix up numbers, names or deadlines. Routine replies need a quick review; legally or financially relevant content needs careful sign-off. Accountability always stays with the human, not the tool.",
+        "it": "Abbastanza da individuare errori prima dell'invio. L'IA produce testi plausibili ma non garantiti e puo confondere numeri, nomi o scadenze. Per risposte di routine basta una rilettura rapida; per contenuti rilevanti a livello legale o finanziario serve un'approvazione accurata. La responsabilita resta sempre della persona, non dello strumento.",
+        "fr": "Assez pour detecter les erreurs avant l'envoi. L'IA produit des textes plausibles mais non garantis et peut confondre chiffres, noms ou echeances. Les reponses de routine demandent une relecture rapide; un contenu juridique ou financier exige une validation soignee. La responsabilite reste toujours humaine, pas celle de l'outil."
+      }
+    },
+    {
+      "q": {
+        "de": "Brauche ich neue Software oder reicht, was wir schon haben?",
+        "en": "Do I need new software or is what we have enough?",
+        "it": "Serve nuovo software o basta cio che abbiamo?",
+        "fr": "Faut-il un nouveau logiciel ou ce que nous avons suffit-il?"
+      },
+      "a": {
+        "de": "Oft reicht vorhandene Software, denn KI-Assistenten sind zunehmend in Office- und E-Mail-Suiten integriert. Beginnen Sie mit dem, was Sie bereits nutzen, und erganzen Sie erst bei belegtem Bedarf spezialisierte Werkzeuge, etwa fur OCR oder Workflow-Automatisierung. Entscheidend sind Datenstandort, revDSG-Konformitat, Integration und Kosten in CHF, nicht die Marke.",
+        "en": "Existing software is often enough, since AI assistants are increasingly built into office and email suites. Start with what you already use and add specialised tools, such as for OCR or workflow automation, only when a proven need appears. What matters is data location, revDSG compliance, integration and cost in CHF, not the brand.",
+        "it": "Spesso basta il software esistente, poiche gli assistenti IA sono sempre piu integrati nelle suite per ufficio ed email. Iniziate da cio che gia usate e aggiungete strumenti specializzati, come per OCR o automazione, solo a fronte di un bisogno dimostrato. Contano ubicazione dei dati, conformita revDSG, integrazione e costi in CHF, non la marca.",
+        "fr": "Le logiciel existant suffit souvent, car les assistants d'IA sont de plus en plus integres aux suites bureautiques et e-mail. Commencez par ce que vous utilisez deja et n'ajoutez des outils specialises, comme pour l'OCR ou l'automatisation, qu'en cas de besoin avere. Ce qui compte: localisation des donnees, conformite nLPD, integration et cout en CHF, pas la marque."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie schreibe ich einen guten Prompt fur Buroaufgaben?",
+        "en": "How do I write a good prompt for office tasks?",
+        "it": "Come scrivo un buon prompt per compiti d'ufficio?",
+        "fr": "Comment rediger une bonne consigne pour des taches de bureau?"
+      },
+      "a": {
+        "de": "Geben Sie Kontext, Ziel, Ton und Grenzen an. Nennen Sie die Rolle (etwa hoflicher Kundendienst), das gewunschte Format, die Sprache und wichtige Fakten wie Namen, Daten oder Betrage in CHF. Bitten Sie um einen Entwurf, den Sie danach prufen, und halten Sie bewahrte Prompts als Vorlagen fest, damit das Team konsistent und effizient arbeitet.",
+        "en": "Give context, goal, tone and boundaries. State the role (e.g. polite customer service), the desired format, the language and key facts such as names, dates or CHF amounts. Ask for a draft you will then review, and save proven prompts as templates so the team works consistently and efficiently.",
+        "it": "Indicate contesto, obiettivo, tono e limiti. Precisate il ruolo (es. servizio clienti cortese), il formato desiderato, la lingua e fatti chiave come nomi, date o importi in CHF. Chiedete una bozza da verificare e salvate i prompt collaudati come modelli, cosi il team lavora in modo coerente ed efficiente.",
+        "fr": "Donnez contexte, objectif, ton et limites. Precisez le role (ex. service client courtois), le format souhaite, la langue et les faits cles comme noms, dates ou montants en CHF. Demandez un brouillon a relire ensuite, et conservez les consignes eprouvees comme modeles pour que l'equipe travaille de facon coherente et efficace."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Kunstliche Intelligenz",
+    "Buroarbeit",
+    "Administration",
+    "revDSG",
+    "nFADP",
+    "EDOEB",
+    "E-Mail-Automatisierung",
+    "Terminplanung",
+    "Dateneingabe",
+    "Vorlagen",
+    "Human-in-the-Loop",
+    "OCR",
+    "Workflow-Automatisierung",
+    "Microsoft 365",
+    "ChatGPT",
+    "KMU"
+  ]
+}

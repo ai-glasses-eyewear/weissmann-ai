@@ -1,0 +1,336 @@
+{
+  "id": "pillar-foundations",
+  "cluster": "foundations",
+  "type": "pillar",
+  "relatedServices": [
+    "consulting"
+  ],
+  "slug": {
+    "de": "was-ist-kuenstliche-intelligenz",
+    "en": "what-is-artificial-intelligence",
+    "it": "cosa-e-intelligenza-artificiale",
+    "fr": "qu-est-ce-que-intelligence-artificielle"
+  },
+  "title": {
+    "de": "Was ist Künstliche Intelligenz? Grundlagen | Weissmann AI",
+    "en": "What Is Artificial Intelligence? A Clear Guide | Weissmann AI",
+    "it": "Cos'è l'Intelligenza Artificiale? Guida base | Weissmann AI",
+    "fr": "Qu'est-ce que l'Intelligence Artificielle ? | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Was ist Künstliche Intelligenz (KI)? Klare Definition, die wichtigsten Arten, wie KI funktioniert und wo sie Unternehmen nützt – mit Schweizer Perspektive.",
+    "en": "What is Artificial Intelligence (AI)? A clear definition, the main types, how AI works and where it helps businesses - with a Swiss perspective.",
+    "it": "Cos'è l'Intelligenza Artificiale (IA)? Definizione chiara, i tipi principali, come funziona e dove aiuta le imprese, con prospettiva svizzera.",
+    "fr": "Qu'est-ce que l'Intelligence Artificielle (IA) ? Definition claire, les grands types, son fonctionnement et ses usages en entreprise, avec un regard suisse."
+  },
+  "kicker": {
+    "de": "Grundlagen der KI",
+    "en": "AI Foundations",
+    "it": "Fondamenti dell'IA",
+    "fr": "Les bases de l'IA"
+  },
+  "h1": {
+    "de": "Was ist Künstliche Intelligenz (KI)? Der verständliche Einstieg",
+    "en": "What Is Artificial Intelligence (AI)? The Clear Beginner's Guide",
+    "it": "Cos'è l'Intelligenza Artificiale (IA)? La guida chiara per iniziare",
+    "fr": "Qu'est-ce que l'Intelligence Artificielle (IA) ? Le guide clair pour débuter"
+  },
+  "answerFirst": {
+    "de": "Künstliche Intelligenz (KI) bezeichnet Computersysteme, die Aufgaben lösen, die üblicherweise menschliche Intelligenz erfordern – etwa Sprache verstehen, Muster erkennen oder Entscheidungen treffen. Moderne KI beruht meist auf maschinellem Lernen: Statt fester Regeln lernen Modelle aus grossen Datenmengen. Man unterscheidet schwache KI für einzelne Aufgaben von der noch hypothetischen starken KI. Für Unternehmen ist KI heute vor allem ein praktisches Werkzeug zur Automatisierung, Analyse und Texterstellung.",
+    "en": "Artificial Intelligence (AI) refers to computer systems that perform tasks normally requiring human intelligence - such as understanding language, recognising patterns or making decisions. Modern AI relies mostly on machine learning: instead of fixed rules, models learn from large amounts of data. We distinguish narrow AI, built for single tasks, from the still-hypothetical general AI. For businesses today, AI is above all a practical tool for automation, analysis and content creation.",
+    "it": "L'Intelligenza Artificiale (IA) indica i sistemi informatici che svolgono compiti che di norma richiedono intelligenza umana: comprendere il linguaggio, riconoscere schemi o prendere decisioni. L'IA moderna si basa soprattutto sul machine learning: invece di regole fisse, i modelli imparano da grandi quantità di dati. Si distingue l'IA debole, per singoli compiti, dall'IA forte, ancora ipotetica. Per le imprese oggi l'IA è soprattutto uno strumento pratico di automazione, analisi e creazione di contenuti.",
+    "fr": "L'Intelligence Artificielle (IA) désigne les systèmes informatiques capables d'accomplir des tâches exigeant normalement l'intelligence humaine : comprendre le langage, reconnaître des motifs ou décider. L'IA moderne repose surtout sur l'apprentissage automatique : au lieu de règles figées, les modèles apprennent à partir de grandes quantités de données. On distingue l'IA faible, dédiée à une tâche, de l'IA forte, encore hypothétique. Pour les entreprises, l'IA est aujourd'hui surtout un outil pratique d'automatisation, d'analyse et de création de contenu."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was ist KI? Eine klare Definition",
+        "en": "What is AI? A clear definition",
+        "it": "Cos'è l'IA? Una definizione chiara",
+        "fr": "Qu'est-ce que l'IA ? Une definition claire"
+      },
+      "paragraphs": [
+        {
+          "de": "Künstliche Intelligenz ist ein Teilgebiet der Informatik, das Systeme entwickelt, um Aufgaben zu erledigen, die man gemeinhin mit menschlicher Intelligenz verbindet: wahrnehmen, schlussfolgern, lernen, Sprache verarbeiten und handeln. Der Begriff wurde 1956 auf der Dartmouth-Konferenz geprägt. Wichtig ist: KI ist ein Sammelbegriff und kein einzelnes Produkt – er reicht vom Spam-Filter im Postfach über die Routenberechnung im Navi bis zu generativen Chatbots.",
+          "en": "Artificial intelligence is a branch of computer science that builds systems to carry out tasks we usually associate with human intelligence: perceiving, reasoning, learning, processing language and acting. The term was coined in 1956 at the Dartmouth workshop. The key point: AI is an umbrella term, not a single product - it ranges from the spam filter in your inbox and route planning in a satnav to generative chatbots.",
+          "it": "L'intelligenza artificiale è una branca dell'informatica che costruisce sistemi capaci di svolgere compiti che di solito associamo all'intelligenza umana: percepire, ragionare, apprendere, elaborare il linguaggio e agire. Il termine nasce nel 1956 al convegno di Dartmouth. Il punto chiave: l'IA è un termine ombrello, non un singolo prodotto: va dal filtro antispam della posta al calcolo del percorso nel navigatore, fino ai chatbot generativi.",
+          "fr": "L'intelligence artificielle est une branche de l'informatique qui conçoit des systèmes capables d'accomplir des tâches que l'on associe habituellement à l'intelligence humaine : percevoir, raisonner, apprendre, traiter le langage et agir. Le terme a été forgé en 1956 lors de la conférence de Dartmouth. L'essentiel : l'IA est un terme générique, pas un produit unique - du filtre antispam au calcul d'itinéraire du GPS jusqu'aux chatbots generatifs."
+        },
+        {
+          "de": "Entscheidend ist die Abgrenzung dreier verschachtelter Begriffe. Künstliche Intelligenz ist der Oberbegriff. Maschinelles Lernen (ML) ist ein Teilbereich davon, bei dem Systeme aus Daten lernen, statt fest programmiert zu werden. Deep Learning ist wiederum ein Teilbereich des ML, der auf vielschichtigen neuronalen Netzen beruht und heute die meisten spektakulären Fortschritte antreibt – von Bilderkennung bis zu Sprachmodellen.",
+          "en": "It helps to separate three nested terms. Artificial intelligence is the umbrella. Machine learning (ML) is a subset in which systems learn from data instead of being hard-coded. Deep learning is in turn a subset of ML, based on multi-layered neural networks, and drives most of today's headline advances - from image recognition to language models.",
+          "it": "Conviene distinguere tre termini annidati. L'intelligenza artificiale è il contenitore. Il machine learning (ML) ne è un sottoinsieme in cui i sistemi imparano dai dati anziché essere programmati a mano. Il deep learning è a sua volta un sottoinsieme del ML, basato su reti neurali a più strati, e alimenta gran parte dei progressi più eclatanti odierni, dal riconoscimento delle immagini ai modelli linguistici.",
+          "fr": "Il faut distinguer trois termes imbriqués. L'intelligence artificielle est le cadre général. L'apprentissage automatique (ML) en est un sous-ensemble où les systèmes apprennent à partir de données au lieu d'être programmés à la main. L'apprentissage profond (deep learning) est lui-même un sous-ensemble du ML, fondé sur des réseaux de neurones multicouches, et porte l'essentiel des avancées marquantes actuelles, de la reconnaissance d'images aux modèles de langage."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die wichtigsten Arten von KI",
+        "en": "The main types of AI",
+        "it": "I principali tipi di IA",
+        "fr": "Les principaux types d'IA"
+      },
+      "paragraphs": [
+        {
+          "de": "KI lässt sich auf zwei Achsen ordnen: nach Leistungsfähigkeit (wie breit sie einsetzbar ist) und nach Methode (wie sie gebaut wird).",
+          "en": "AI can be organised along two axes: by capability (how broadly it can be used) and by method (how it is built).",
+          "it": "L'IA si può ordinare su due assi: per capacità (quanto è ampio il suo impiego) e per metodo (come è costruita).",
+          "fr": "On peut classer l'IA selon deux axes : la capacité (son étendue d'usage) et la méthode (sa construction)."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Schwache KI (Narrow AI / ANI): auf eine klar umrissene Aufgabe spezialisiert – Übersetzung, Gesichtserkennung, Produktempfehlung. Alle heute real existierende KI, auch ChatGPT, gehört hierher.",
+          "en": "Narrow AI (ANI): specialised in one well-defined task - translation, face recognition, product recommendation. All AI that exists today, including ChatGPT, belongs here.",
+          "it": "IA debole (Narrow AI / ANI): specializzata in un compito ben definito, come traduzione, riconoscimento facciale, raccomandazione di prodotti. Tutta l'IA oggi esistente, ChatGPT compreso, appartiene a questa categoria.",
+          "fr": "IA faible (Narrow AI / ANI) : specialisee dans une tâche precise - traduction, reconnaissance faciale, recommandation de produits. Toute l'IA existante aujourd'hui, y compris ChatGPT, en releve."
+        },
+        {
+          "de": "Starke KI (General AI / AGI): eine hypothetische KI, die beliebige geistige Aufgaben auf menschlichem Niveau bewältigt. Sie existiert nicht und ist keine unmittelbare Realität.",
+          "en": "General AI (AGI): a hypothetical AI able to handle any intellectual task at human level. It does not exist and is not an immediate reality.",
+          "it": "IA forte (General AI / AGI): un'IA ipotetica capace di affrontare qualsiasi compito intellettuale a livello umano. Non esiste e non è una realtà imminente.",
+          "fr": "IA forte (AGI) : une IA hypothetique capable d'accomplir n'importe quelle tâche intellectuelle au niveau humain. Elle n'existe pas et n'est pas une realite immediate."
+        },
+        {
+          "de": "Symbolische KI (regelbasiert): explizit programmierte Regeln und Wissensbasen (\"Wenn-Dann\"). Stark bei nachvollziehbarer Logik, schwach bei unscharfen Mustern.",
+          "en": "Symbolic AI (rule-based): explicitly programmed rules and knowledge bases (\"if-then\"). Strong at transparent logic, weak at fuzzy patterns.",
+          "it": "IA simbolica (basata su regole): regole e basi di conoscenza programmate esplicitamente (\"se-allora\"). Forte nella logica trasparente, debole con schemi sfumati.",
+          "fr": "IA symbolique (à base de règles) : règles et bases de connaissances programmees explicitement (\"si-alors\"). Solide en logique transparente, faible sur les motifs flous."
+        },
+        {
+          "de": "Maschinelles Lernen: lernt Muster aus Daten – überwacht (mit Beispielen), unüberwacht (ohne Labels) oder verstärkend (durch Belohnung). Dominierender Ansatz der heutigen KI.",
+          "en": "Machine learning: learns patterns from data - supervised (with examples), unsupervised (no labels) or reinforcement (via reward). The dominant approach in today's AI.",
+          "it": "Machine learning: apprende schemi dai dati, in modo supervisionato (con esempi), non supervisionato (senza etichette) o per rinforzo (tramite ricompensa). È l'approccio dominante dell'IA odierna.",
+          "fr": "Apprentissage automatique : apprend des motifs à partir de donnees - supervise (avec exemples), non supervise (sans etiquettes) ou par renforcement (via recompense). Approche dominante de l'IA actuelle."
+        },
+        {
+          "de": "Generative KI: erzeugt neue Inhalte – Text, Bild, Code, Audio. Grosse Sprachmodelle (LLMs) wie GPT oder Claude sind das bekannteste Beispiel und der Grund für den KI-Boom seit 2022.",
+          "en": "Generative AI: produces new content - text, images, code, audio. Large language models (LLMs) such as GPT or Claude are the best-known example and the reason for the AI boom since 2022.",
+          "it": "IA generativa: crea nuovi contenuti, testo, immagini, codice, audio. I grandi modelli linguistici (LLM) come GPT o Claude sono l'esempio più noto e la ragione del boom dell'IA dal 2022.",
+          "fr": "IA generative : produit de nouveaux contenus - texte, images, code, audio. Les grands modèles de langage (LLM) comme GPT ou Claude en sont l'exemple le plus connu et la cause de l'essor de l'IA depuis 2022."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wie funktioniert KI? Daten, Training, Vorhersage",
+        "en": "How does AI work? Data, training, prediction",
+        "it": "Come funziona l'IA? Dati, addestramento, previsione",
+        "fr": "Comment fonctionne l'IA ? Donnees, entraînement, prediction"
+      },
+      "paragraphs": [
+        {
+          "de": "Moderne KI-Systeme werden nicht Schritt für Schritt programmiert, sondern trainiert. Ein Modell ist im Kern eine mathematische Funktion mit Millionen bis Milliarden anpassbarer Parameter. Beim Training erhält es viele Beispiele, vergleicht seine Ausgabe mit dem gewünschten Ergebnis und justiert die Parameter, bis der Fehler klein ist. Danach kann das trainierte Modell auf neue, ungesehene Eingaben reagieren – diesen Schritt nennt man Inferenz.",
+          "en": "Modern AI systems are not programmed step by step but trained. At its core a model is a mathematical function with millions to billions of adjustable parameters. During training it sees many examples, compares its output with the desired result and adjusts the parameters until the error is small. The trained model can then respond to new, unseen inputs - a step called inference.",
+          "it": "I sistemi di IA moderni non vengono programmati passo passo, ma addestrati. Nel suo nucleo un modello è una funzione matematica con milioni o miliardi di parametri regolabili. Durante l'addestramento riceve molti esempi, confronta la propria risposta con il risultato desiderato e regola i parametri finché l'errore è piccolo. Il modello addestrato può poi reagire a input nuovi e mai visti: questo passaggio si chiama inferenza.",
+          "fr": "Les systèmes d'IA modernes ne sont pas programmes pas à pas, mais entraînes. Un modèle est au fond une fonction mathematique dotee de millions, voire de milliards de paramètres ajustables. Pendant l'entraînement, il reçoit de nombreux exemples, compare sa sortie au resultat attendu et ajuste les paramètres jusqu'à ce que l'erreur soit faible. Le modèle entraîne peut ensuite reagir à des entrees nouvelles et inedites : cette etape s'appelle l'inference."
+        },
+        {
+          "de": "Bei grossen Sprachmodellen funktioniert das Prinzip verblüffend einfach: Das Modell lernt aus riesigen Textmengen, das jeweils wahrscheinlichste nächste Wort vorherzusagen. Aus dieser Fähigkeit entstehen erstaunlich flüssige Antworten. Genau daraus folgt aber auch die wichtigste Grenze: Das Modell versteht Bedeutung nicht wie ein Mensch, sondern rechnet mit Wahrscheinlichkeiten – deshalb kann es überzeugend klingen und trotzdem falsch liegen.",
+          "en": "For large language models the principle is strikingly simple: the model learns from vast amounts of text to predict the most likely next word. That ability produces remarkably fluent answers. But it also explains the main limitation: the model does not understand meaning as a human does; it computes probabilities - which is why it can sound convincing yet be wrong.",
+          "it": "Per i grandi modelli linguistici il principio è sorprendentemente semplice: il modello impara da enormi quantità di testo a prevedere la parola successiva più probabile. Da questa capacità nascono risposte notevolmente fluide. Ma da qui deriva anche il limite principale: il modello non comprende il significato come un essere umano, calcola probabilità, ed è per questo che può suonare convincente pur essendo errato.",
+          "fr": "Pour les grands modèles de langage, le principe est etonnamment simple : le modèle apprend, à partir d'immenses volumes de texte, à predire le mot suivant le plus probable. De cette capacite naissent des reponses remarquablement fluides. Mais c'est aussi la principale limite : le modèle ne comprend pas le sens comme un humain, il calcule des probabilites, d'où le fait qu'il puisse paraître convaincant tout en se trompant."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wo KI Unternehmen konkret hilft",
+        "en": "Where AI concretely helps businesses",
+        "it": "Dove l'IA aiuta concretamente le imprese",
+        "fr": "Où l'IA aide concrètement les entreprises"
+      },
+      "paragraphs": [
+        {
+          "de": "Für die meisten Organisationen liegt der Wert von KI nicht in Zukunftsvisionen, sondern in konkreter Entlastung heute. Sinnvolle Einstiegsfelder haben klar messbaren Nutzen, tolerieren gelegentliche Fehler und lassen menschliche Kontrolle zu.",
+          "en": "For most organisations the value of AI lies not in future visions but in concrete relief today. Sensible entry points have clearly measurable benefits, tolerate occasional errors and allow human oversight.",
+          "it": "Per la maggior parte delle organizzazioni il valore dell'IA non sta nelle visioni future, ma nel sollievo concreto di oggi. I punti di ingresso sensati hanno benefici misurabili, tollerano errori occasionali e mantengono il controllo umano.",
+          "fr": "Pour la plupart des organisations, la valeur de l'IA ne reside pas dans des visions d'avenir, mais dans un allègement concret dès aujourd'hui. Les bons points de depart offrent un benefice mesurable, tolèrent des erreurs occasionnelles et gardent un contrôle humain."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kundenservice: Entwürfe für Antworten, Zusammenfassung von Tickets, Chatbots für häufige Fragen – mit menschlicher Freigabe.",
+          "en": "Customer service: draft replies, ticket summaries, chatbots for common questions - with human sign-off.",
+          "it": "Servizio clienti: bozze di risposta, riepilogo dei ticket, chatbot per le domande frequenti, con approvazione umana.",
+          "fr": "Service client : brouillons de reponses, resumes de tickets, chatbots pour les questions frequentes - avec validation humaine."
+        },
+        {
+          "de": "Marketing und Content: Erstübersetzungen, Textvarianten, Recherche-Zusammenfassungen, Ideenfindung.",
+          "en": "Marketing and content: first-draft translations, text variants, research summaries, ideation.",
+          "it": "Marketing e contenuti: prime traduzioni, varianti di testo, sintesi di ricerche, generazione di idee.",
+          "fr": "Marketing et contenu : premières traductions, variantes de textes, syntheses de recherche, generation d'idees."
+        },
+        {
+          "de": "Wissensarbeit: Dokumente durchsuchen und zusammenfassen, Protokolle erstellen, Tabellen strukturieren.",
+          "en": "Knowledge work: search and summarise documents, generate minutes, structure spreadsheets.",
+          "it": "Lavoro di conoscenza: cercare e riassumere documenti, redigere verbali, strutturare tabelle.",
+          "fr": "Travail de la connaissance : rechercher et resumer des documents, rediger des comptes rendus, structurer des tableaux."
+        },
+        {
+          "de": "Prozesse und Daten: Muster in Verkaufs- oder Sensordaten erkennen, Prognosen, Qualitätskontrolle per Bilderkennung.",
+          "en": "Processes and data: spot patterns in sales or sensor data, forecasting, quality control via image recognition.",
+          "it": "Processi e dati: riconoscere schemi nei dati di vendita o dei sensori, previsioni, controllo qualità tramite riconoscimento immagini.",
+          "fr": "Processus et donnees : deceler des motifs dans les donnees de vente ou de capteurs, previsions, contrôle qualite par reconnaissance d'images."
+        },
+        {
+          "de": "Softwareentwicklung: Code-Vorschläge, Fehlersuche und Dokumentation beschleunigen die Arbeit von Entwicklerteams.",
+          "en": "Software development: code suggestions, debugging and documentation speed up developer teams.",
+          "it": "Sviluppo software: suggerimenti di codice, debug e documentazione accelerano il lavoro dei team di sviluppo.",
+          "fr": "Developpement logiciel : suggestions de code, debogage et documentation accelèrent le travail des equipes."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Grenzen, Risiken und verantwortungsvolle KI",
+        "en": "Limits, risks and responsible AI",
+        "it": "Limiti, rischi e IA responsabile",
+        "fr": "Limites, risques et IA responsable"
+      },
+      "paragraphs": [
+        {
+          "de": "KI ist mächtig, aber nicht unfehlbar. Sprachmodelle können \"halluzinieren\", also plausibel klingende, aber falsche Aussagen erzeugen. Modelle übernehmen Verzerrungen (Bias) aus ihren Trainingsdaten, ihr Wissen hat einen Stichtag, und sie liefern keine garantierte Quelle. Deshalb gehört zu jedem produktiven Einsatz eine menschliche Kontrolle bei wichtigen Entscheidungen sowie eine Prüfung der Ergebnisse auf Fakten.",
+          "en": "AI is powerful but not infallible. Language models can \"hallucinate\", producing plausible-sounding but false statements. Models inherit bias from their training data, their knowledge has a cut-off date, and they offer no guaranteed source. Every production use therefore needs human oversight for important decisions and fact-checking of outputs.",
+          "it": "L'IA è potente ma non infallibile. I modelli linguistici possono \"allucinare\", cioè generare affermazioni plausibili ma false. I modelli ereditano distorsioni (bias) dai dati di addestramento, la loro conoscenza ha una data limite e non forniscono una fonte garantita. Ogni uso in produzione richiede quindi controllo umano nelle decisioni importanti e verifica dei risultati sui fatti.",
+          "fr": "L'IA est puissante mais pas infaillible. Les modèles de langage peuvent \"halluciner\", produisant des affirmations plausibles mais fausses. Les modèles heritent de biais issus de leurs donnees d'entraînement, leur savoir a une date limite et ils n'offrent aucune source garantie. Tout usage en production exige donc un contrôle humain pour les decisions importantes et une verification factuelle des resultats."
+        },
+        {
+          "de": "In der Schweiz gilt für den Umgang mit Personendaten das revidierte Datenschutzgesetz (revDSG), überwacht durch den EDÖB – nicht die europäische DSGVO. Wer KI mit Kundendaten nutzt, sollte prüfen, wo Daten verarbeitet werden, keine sensiblen Informationen unbedacht in öffentliche Tools eingeben und die EU-KI-Verordnung (EU AI Act) im Blick behalten, sobald Produkte in den EU-Markt gehen. Datensparsamkeit und klare interne Richtlinien sind der pragmatische Schweizer Weg.",
+          "en": "In Switzerland, handling personal data is governed by the revised Data Protection Act (revDSG), supervised by the FDPIC (EDÖB) - not the EU's GDPR. Anyone using AI with customer data should check where data is processed, avoid entering sensitive information into public tools, and keep the EU AI Act in view once products reach the EU market. Data minimisation and clear internal guidelines are the pragmatic Swiss path.",
+          "it": "In Svizzera il trattamento dei dati personali è disciplinato dalla legge sulla protezione dei dati riveduta (revDSG), vigilata dall'IFPDT (EDÖB), non dal GDPR europeo. Chi usa l'IA con dati dei clienti dovrebbe verificare dove vengono elaborati i dati, evitare di inserire informazioni sensibili in strumenti pubblici e tenere d'occhio il regolamento europeo sull'IA (EU AI Act) quando i prodotti entrano nel mercato UE. Minimizzazione dei dati e linee guida interne chiare sono la via svizzera pragmatica.",
+          "fr": "En Suisse, le traitement des donnees personnelles relève de la loi revisee sur la protection des donnees (revDSG), surveillee par le PFPDT (EDÖB), et non du RGPD europeen. Quiconque utilise l'IA avec des donnees clients devrait verifier où elles sont traitees, eviter de saisir des informations sensibles dans des outils publics et garder à l'esprit le règlement europeen sur l'IA (EU AI Act) dès qu'un produit vise le marche de l'UE. La minimisation des donnees et des directives internes claires sont la voie suisse pragmatique."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Erste Schritte mit KI – und wie es weitergeht",
+        "en": "Getting started with AI - and what comes next",
+        "it": "Primi passi con l'IA e come proseguire",
+        "fr": "Premiers pas avec l'IA et la suite"
+      },
+      "paragraphs": [
+        {
+          "de": "Der beste Einstieg ist klein, konkret und wenig riskant. Wählen Sie eine wiederkehrende, nervige Aufgabe mit niedrigem Schadenspotenzial, testen Sie ein etabliertes Werkzeug an echten Beispielen und vergleichen Sie das Ergebnis mit Ihrer bisherigen Arbeitsweise. Legen Sie früh einfache Regeln fest: Welche Daten dürfen hinein, wer prüft die Ergebnisse, wie wird KI-Unterstützung gekennzeichnet.",
+          "en": "The best start is small, concrete and low-risk. Pick a recurring, tedious task with little downside, test an established tool on real examples, and compare the result with your current way of working. Set simple rules early: what data may go in, who checks the output, how AI assistance is labelled.",
+          "it": "Il modo migliore per iniziare è piccolo, concreto e a basso rischio. Scegliete un compito ripetitivo e noioso con scarse conseguenze, provate uno strumento consolidato su esempi reali e confrontate il risultato con il vostro modo di lavorare attuale. Fissate presto regole semplici: quali dati inserire, chi verifica i risultati, come segnalare l'uso dell'IA.",
+          "fr": "Le meilleur depart est modeste, concret et peu risque. Choisissez une tâche repetitive et fastidieuse à faible enjeu, testez un outil etabli sur des exemples reels et comparez le resultat à votre façon de travailler actuelle. Fixez tôt des règles simples : quelles donnees peuvent entrer, qui verifie les resultats, comment signaler l'aide de l'IA."
+        },
+        {
+          "de": "Von hier aus vertiefen Sie einzelne Themen: die Unterschiede zwischen maschinellem Lernen und Deep Learning, wie generative KI und grosse Sprachmodelle im Detail arbeiten, das Formulieren guter Anweisungen (Prompting) sowie Datenschutz und Governance im Schweizer Kontext. Diese Grundlagenseite ist der Ausgangspunkt – die vertiefenden Beiträge bauen darauf auf.",
+          "en": "From here you can go deeper into individual topics: the difference between machine learning and deep learning, how generative AI and large language models work in detail, writing good instructions (prompting), and data protection and governance in the Swiss context. This foundations page is the starting point - the in-depth articles build on it.",
+          "it": "Da qui potete approfondire singoli temi: la differenza tra machine learning e deep learning, come funzionano nel dettaglio l'IA generativa e i grandi modelli linguistici, la scrittura di buone istruzioni (prompting) e la protezione dei dati e la governance nel contesto svizzero. Questa pagina di fondamenti è il punto di partenza: gli approfondimenti vi si basano.",
+          "fr": "À partir de là, vous pouvez approfondir des sujets precis : la difference entre apprentissage automatique et apprentissage profond, le fonctionnement detaille de l'IA generative et des grands modèles de langage, la redaction de bonnes instructions (prompting), ainsi que la protection des donnees et la gouvernance dans le contexte suisse. Cette page de fondamentaux est le point de depart : les articles approfondis s'appuient dessus."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist Künstliche Intelligenz einfach erklärt?",
+        "en": "What is artificial intelligence in simple terms?",
+        "it": "Cos'è l'intelligenza artificiale spiegata in modo semplice?",
+        "fr": "Qu'est-ce que l'intelligence artificielle expliquee simplement ?"
+      },
+      "a": {
+        "de": "KI sind Computersysteme, die Aufgaben erledigen, für die man sonst menschliche Intelligenz braucht – etwa Texte verstehen, Bilder erkennen oder Empfehlungen geben. Statt fest programmiert zu werden, lernen moderne KI-Systeme aus Beispielen und Daten und wenden das Gelernte auf neue Situationen an.",
+        "en": "AI is computer systems that carry out tasks normally needing human intelligence - such as understanding text, recognising images or giving recommendations. Instead of being hard-coded, modern AI systems learn from examples and data and apply what they learned to new situations.",
+        "it": "L'IA è costituita da sistemi informatici che svolgono compiti che di norma richiedono intelligenza umana, come comprendere testi, riconoscere immagini o dare consigli. Anziché essere programmati a mano, i sistemi di IA moderni imparano da esempi e dati e applicano quanto appreso a situazioni nuove.",
+        "fr": "L'IA regroupe des systèmes informatiques qui accomplissent des tâches necessitant normalement l'intelligence humaine : comprendre un texte, reconnaître des images ou formuler des recommandations. Plutôt que d'être programmes à la main, les systèmes d'IA modernes apprennent à partir d'exemples et de donnees, puis appliquent cet acquis à des situations nouvelles."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen KI, maschinellem Lernen und Deep Learning?",
+        "en": "What is the difference between AI, machine learning and deep learning?",
+        "it": "Qual è la differenza tra IA, machine learning e deep learning?",
+        "fr": "Quelle difference entre IA, apprentissage automatique et apprentissage profond ?"
+      },
+      "a": {
+        "de": "Die drei Begriffe sind ineinander verschachtelt. KI ist der Oberbegriff für intelligentes Verhalten von Maschinen. Maschinelles Lernen ist ein Teilbereich der KI, bei dem Systeme aus Daten lernen. Deep Learning ist wiederum ein Teilbereich des maschinellen Lernens, der auf vielschichtigen neuronalen Netzen beruht.",
+        "en": "The three terms are nested. AI is the umbrella term for intelligent machine behaviour. Machine learning is a subset of AI in which systems learn from data. Deep learning is in turn a subset of machine learning, based on multi-layered neural networks.",
+        "it": "I tre termini sono annidati. L'IA è il termine generale per il comportamento intelligente delle macchine. Il machine learning è un sottoinsieme dell'IA in cui i sistemi imparano dai dati. Il deep learning è a sua volta un sottoinsieme del machine learning, basato su reti neurali a più strati.",
+        "fr": "Les trois termes sont imbriques. L'IA est le terme general pour le comportement intelligent des machines. L'apprentissage automatique est un sous-ensemble de l'IA où les systèmes apprennent des donnees. L'apprentissage profond est lui-même un sous-ensemble de l'apprentissage automatique, fonde sur des reseaux de neurones multicouches."
+      }
+    },
+    {
+      "q": {
+        "de": "Gibt es bereits eine starke KI (AGI)?",
+        "en": "Does strong AI (AGI) already exist?",
+        "it": "Esiste già un'IA forte (AGI)?",
+        "fr": "L'IA forte (AGI) existe-t-elle deja ?"
+      },
+      "a": {
+        "de": "Nein. Alle heute eingesetzten Systeme sind schwache KI, spezialisiert auf bestimmte Aufgaben – auch leistungsfähige Chatbots. Eine starke KI, die beliebige geistige Aufgaben auf menschlichem Niveau löst, ist bislang hypothetisch. Der Zeithorizont dafür ist unter Fachleuten umstritten.",
+        "en": "No. All systems in use today are narrow AI, specialised in specific tasks - including powerful chatbots. A strong AI able to solve any intellectual task at human level remains hypothetical, and its timeline is disputed among experts.",
+        "it": "No. Tutti i sistemi oggi in uso sono IA debole, specializzata in compiti specifici, chatbot potenti compresi. Un'IA forte capace di risolvere qualsiasi compito intellettuale a livello umano resta ipotetica e i tempi sono controversi tra gli esperti.",
+        "fr": "Non. Tous les systèmes utilises aujourd'hui sont des IA faibles, specialisees dans des tâches precises, y compris les chatbots performants. Une IA forte capable de resoudre n'importe quelle tâche intellectuelle au niveau humain reste hypothetique, et son echeance fait debat parmi les experts."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist ChatGPT eine Künstliche Intelligenz?",
+        "en": "Is ChatGPT an artificial intelligence?",
+        "it": "ChatGPT è un'intelligenza artificiale?",
+        "fr": "ChatGPT est-il une intelligence artificielle ?"
+      },
+      "a": {
+        "de": "Ja. ChatGPT ist eine Anwendung generativer KI, die auf einem grossen Sprachmodell beruht. Solche Modelle sagen das jeweils wahrscheinlichste nächste Wort voraus und erzeugen so flüssige Texte. Es handelt sich um schwache, spezialisierte KI – nicht um ein System mit menschlichem Verständnis.",
+        "en": "Yes. ChatGPT is a generative AI application built on a large language model. Such models predict the most likely next word and thereby produce fluent text. It is narrow, specialised AI - not a system with human understanding.",
+        "it": "Sì. ChatGPT è un'applicazione di IA generativa basata su un grande modello linguistico. Questi modelli prevedono la parola successiva più probabile e generano così testi fluidi. È IA debole e specializzata, non un sistema con comprensione umana.",
+        "fr": "Oui. ChatGPT est une application d'IA generative reposant sur un grand modèle de langage. Ces modèles predisent le mot suivant le plus probable et produisent ainsi des textes fluides. Il s'agit d'une IA faible et specialisee, non d'un système doue de comprehension humaine."
+      }
+    },
+    {
+      "q": {
+        "de": "Worauf müssen Schweizer Unternehmen beim KI-Einsatz achten?",
+        "en": "What must Swiss companies watch out for when using AI?",
+        "it": "A cosa devono fare attenzione le imprese svizzere usando l'IA?",
+        "fr": "À quoi les entreprises suisses doivent-elles veiller avec l'IA ?"
+      },
+      "a": {
+        "de": "Massgeblich ist das revidierte Datenschutzgesetz (revDSG), überwacht durch den EDÖB, nicht die DSGVO. Prüfen Sie, wo Daten verarbeitet werden, geben Sie keine sensiblen Personendaten unbedacht in öffentliche Tools ein und behalten Sie den EU AI Act im Blick, wenn Sie den EU-Markt bedienen. Klare interne Richtlinien und menschliche Kontrolle sind entscheidend.",
+        "en": "The revised Data Protection Act (revDSG), supervised by the FDPIC (EDÖB), applies - not the GDPR. Check where data is processed, avoid entering sensitive personal data into public tools, and keep the EU AI Act in view if you serve the EU market. Clear internal guidelines and human oversight are decisive.",
+        "it": "Vale la legge riveduta sulla protezione dei dati (revDSG), vigilata dall'IFPDT (EDÖB), non il GDPR. Verificate dove vengono elaborati i dati, evitate di inserire dati personali sensibili in strumenti pubblici e tenete d'occhio l'EU AI Act se servite il mercato UE. Linee guida interne chiare e controllo umano sono decisivi.",
+        "fr": "C'est la loi revisee sur la protection des donnees (revDSG), surveillee par le PFPDT (EDÖB), qui s'applique, et non le RGPD. Verifiez où les donnees sont traitees, evitez de saisir des donnees personnelles sensibles dans des outils publics et gardez l'EU AI Act à l'esprit si vous visez le marche de l'UE. Des directives internes claires et un contrôle humain sont determinants."
+      }
+    },
+    {
+      "q": {
+        "de": "Warum liegen KI-Systeme manchmal falsch?",
+        "en": "Why do AI systems sometimes get things wrong?",
+        "it": "Perché i sistemi di IA a volte sbagliano?",
+        "fr": "Pourquoi les systèmes d'IA se trompent-ils parfois ?"
+      },
+      "a": {
+        "de": "Weil sie mit Wahrscheinlichkeiten arbeiten statt mit echtem Verständnis. Sprachmodelle können plausibel klingende, aber falsche Aussagen erzeugen (\"Halluzinationen\"), übernehmen Verzerrungen aus Trainingsdaten und haben einen Wissensstichtag. Deshalb sollten wichtige Ergebnisse immer von Menschen geprüft und bei Fakten gegengecheckt werden.",
+        "en": "Because they work with probabilities rather than genuine understanding. Language models can produce plausible-sounding but false statements (\"hallucinations\"), inherit bias from training data and have a knowledge cut-off. Important outputs should therefore always be reviewed by people and fact-checked.",
+        "it": "Perché lavorano con probabilità anziché con vera comprensione. I modelli linguistici possono produrre affermazioni plausibili ma false (\"allucinazioni\"), ereditano distorsioni dai dati di addestramento e hanno una data limite della conoscenza. Per questo i risultati importanti vanno sempre verificati da persone e controllati sui fatti.",
+        "fr": "Parce qu'ils fonctionnent avec des probabilites plutôt qu'avec une veritable comprehension. Les modèles de langage peuvent produire des affirmations plausibles mais fausses (\"hallucinations\"), heritent de biais des donnees d'entraînement et ont une date limite de connaissance. Les resultats importants doivent donc toujours être verifies par des humains et recoupes avec les faits."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Künstliche Intelligenz",
+    "Maschinelles Lernen",
+    "Deep Learning",
+    "Neuronale Netze",
+    "Generative KI",
+    "Grosse Sprachmodelle (LLM)",
+    "Schwache KI (ANI)",
+    "Starke KI (AGI)",
+    "Symbolische KI",
+    "Überwachtes Lernen",
+    "Bestärkendes Lernen",
+    "Trainingsdaten",
+    "Inferenz",
+    "Dartmouth-Konferenz",
+    "revDSG",
+    "EU AI Act",
+    "EDÖB",
+    "ChatGPT"
+  ]
+}
