@@ -1,0 +1,391 @@
+{
+  "id": "ai-for-smes-getting-started",
+  "cluster": "business-smes",
+  "type": "spoke",
+  "slug": {
+    "de": "ki-fuer-kmu-einstieg",
+    "en": "ai-for-smes-getting-started",
+    "it": "ia-per-pmi-come-iniziare",
+    "fr": "ia-pour-pme-demarrer"
+  },
+  "relatedServices": [
+    "consulting"
+  ],
+  "title": {
+    "de": "KI für KMU: Einstieg, Use Cases & 90-Tage-Plan | Weissmann AI",
+    "en": "AI for SMEs: Getting Started in 90 Days | Weissmann AI",
+    "it": "IA per PMI: come iniziare in 90 giorni | Weissmann AI",
+    "fr": "IA pour PME: bien démarrer en 90 jours | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Praktischer KI-Einstieg für Schweizer KMU: risikoarme Startpunkte, erste realistische Use Cases, ein 90-Tage-Plan und revDSG-konformes Vorgehen.",
+    "en": "A practical AI start for Swiss SMEs: low-risk entry points, first realistic use cases, a 90-day plan and a revFADP-compliant approach.",
+    "it": "Avvio pratico dell'IA per le PMI svizzere: punti di partenza a basso rischio, primi casi d'uso e un piano a 90 giorni conforme alla nLPD.",
+    "fr": "Démarrage IA concret pour PME suisses: points d'entrée à faible risque, premiers cas d'usage et un plan à 90 jours conforme à la nLPD."
+  },
+  "kicker": {
+    "de": "KI für Business & KMU",
+    "en": "AI for Business & SMEs",
+    "it": "IA per business e PMI",
+    "fr": "IA pour les entreprises et PME"
+  },
+  "h1": {
+    "de": "KI für KMU: der Einstieg – erste Use Cases und ein 90-Tage-Plan",
+    "en": "AI for SMEs: getting started – first use cases and a 90-day plan",
+    "it": "IA per le PMI: come iniziare – primi casi d'uso e un piano a 90 giorni",
+    "fr": "IA pour PME: bien démarrer – premiers cas d'usage et un plan à 90 jours"
+  },
+  "answerFirst": {
+    "de": "KI-Einstieg für ein KMU heisst: klein, konkret und risikoarm starten – nicht mit einer grossen Strategie, sondern mit ein bis zwei echten Anwendungsfällen. Wählen Sie repetitive, textlastige Aufgaben ohne heikle Personendaten, testen Sie in einem 90-Tage-Pilot mit klaren Zielen und klären Sie vorab revDSG-Konformität und Verantwortlichkeiten. Messen Sie Zeitersparnis und Qualität, bevor Sie skalieren.",
+    "en": "Getting started with AI as an SME means starting small, concrete and low-risk – not with a grand strategy, but with one or two real use cases. Pick repetitive, text-heavy tasks that involve no sensitive personal data, run a 90-day pilot with clear goals, clarify revFADP (nFADP) compliance and responsibilities upfront, and measure time saved and quality before you scale.",
+    "it": "Iniziare con l'IA in una PMI significa partire in piccolo, in modo concreto e a basso rischio: non con una grande strategia, ma con uno o due casi d'uso reali. Scegliete attività ripetitive e testuali senza dati personali degni di particolare protezione, avviate un pilota di 90 giorni con obiettivi chiari, chiarite prima conformità alla nLPD e responsabilità, e misurate tempo risparmiato e qualità prima di scalare.",
+    "fr": "Démarrer l'IA dans une PME, c'est commencer petit, concret et à faible risque: pas avec une grande stratégie, mais avec un ou deux cas d'usage réels. Choisissez des tâches répétitives et textuelles sans données personnelles sensibles, lancez un pilote de 90 jours avec des objectifs clairs, clarifiez d'abord la conformité à la nLPD et les responsabilités, puis mesurez le temps gagné et la qualité avant de passer à l'échelle."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was «KI-Einstieg» für ein KMU wirklich bedeutet",
+        "en": "What \"getting started with AI\" really means for an SME",
+        "it": "Cosa significa davvero «iniziare con l'IA» per una PMI",
+        "fr": "Ce que «démarrer l'IA» signifie vraiment pour une PME"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Einstieg in KI ist kein IT-Grossprojekt und keine Frage der Firmengrösse. Für die meisten Schweizer KMU beginnt er dort, wo Mitarbeitende ohnehin schon Zeit mit wiederkehrenden, sprachlichen Aufgaben verlieren: E-Mails, Offerten, Protokolle, Übersetzungen, Recherchen. Generative KI ist heute vor allem ein Werkzeug, das Texte, Entwürfe und Zusammenfassungen erzeugt – schnell, aber nicht fehlerfrei. Genau deshalb ist der richtige Einstieg klein und kontrolliert, nicht gross und riskant.",
+          "en": "Getting started with AI is not a large IT project, nor a question of company size. For most Swiss SMEs it begins exactly where staff already lose time on recurring, language-based tasks: emails, quotes, minutes, translations, research. Today's generative AI is above all a tool that produces text, drafts and summaries – fast, but not error-free. That is precisely why the right entry point is small and controlled, not big and risky.",
+          "it": "Iniziare con l'IA non è un grande progetto informatico né una questione di dimensioni aziendali. Per la maggior parte delle PMI svizzere comincia proprio dove il personale già perde tempo in attività ricorrenti e linguistiche: e-mail, offerte, verbali, traduzioni, ricerche. L'IA generativa di oggi è soprattutto uno strumento che produce testi, bozze e sintesi: veloce, ma non privo di errori. Per questo il punto di partenza giusto è piccolo e controllato, non grande e rischioso.",
+          "fr": "Démarrer l'IA n'est pas un grand projet informatique ni une question de taille d'entreprise. Pour la plupart des PME suisses, cela commence là où les collaborateurs perdent déjà du temps sur des tâches récurrentes et rédactionnelles: e-mails, offres, procès-verbaux, traductions, recherches. L'IA générative d'aujourd'hui est avant tout un outil qui produit des textes, des brouillons et des résumés: rapide, mais pas exempt d'erreurs. C'est précisément pourquoi le bon point de départ est petit et contrôlé, pas grand et risqué."
+        },
+        {
+          "de": "Ein realistischer Anspruch für die ersten Monate: nicht «das Unternehmen transformieren», sondern zwei bis drei Aufgaben pro Woche pro Person spürbar schneller und in gleicher oder besserer Qualität erledigen. Wer so einsteigt, sammelt Erfahrung, Vertrauen und belastbare Zahlen – die Grundlage für alles Weitere.",
+          "en": "A realistic ambition for the first few months is not to \"transform the company\", but to complete two or three tasks per person per week noticeably faster and at the same or better quality. Starting this way builds experience, trust and reliable numbers – the foundation for everything that follows.",
+          "it": "Un'ambizione realistica per i primi mesi non è «trasformare l'azienda», ma svolgere due o tre attività a persona alla settimana in modo sensibilmente più rapido e con pari o migliore qualità. Iniziare così crea esperienza, fiducia e numeri affidabili: la base per tutto il resto.",
+          "fr": "Une ambition réaliste pour les premiers mois n'est pas de «transformer l'entreprise», mais d'accomplir deux ou trois tâches par personne et par semaine nettement plus vite, à qualité égale ou supérieure. Démarrer ainsi crée de l'expérience, de la confiance et des chiffres fiables: la base de tout le reste."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Risikoarme Startpunkte: wo Sie ohne grosses Risiko beginnen",
+        "en": "Low-risk starting points: where to begin without big exposure",
+        "it": "Punti di partenza a basso rischio: da dove cominciare senza esporsi",
+        "fr": "Points d'entrée à faible risque: où commencer sans grande exposition"
+      },
+      "paragraphs": [
+        {
+          "de": "Nicht jeder Anwendungsfall eignet sich gleich gut für den Anfang. Gut geeignet sind Aufgaben, bei denen ein Mensch das Ergebnis ohnehin prüft, Fehler nicht sofort teuer werden und keine besonders schützenswerten Personendaten im Spiel sind. Die folgenden Kriterien helfen bei der Auswahl:",
+          "en": "Not every use case is equally suited to the beginning. Good candidates are tasks where a human reviews the result anyway, where mistakes are not immediately costly, and where no sensitive personal data is involved. The following criteria help with selection:",
+          "it": "Non tutti i casi d'uso sono ugualmente adatti all'inizio. Sono buoni candidati le attività in cui una persona rivede comunque il risultato, in cui gli errori non sono subito costosi e in cui non entrano in gioco dati personali degni di particolare protezione. I criteri seguenti aiutano nella scelta:",
+          "fr": "Tous les cas d'usage ne conviennent pas également pour débuter. De bons candidats sont les tâches où un humain relit de toute façon le résultat, où les erreurs ne coûtent pas cher immédiatement et où aucune donnée personnelle sensible n'est en jeu. Les critères suivants aident au choix:"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Mensch bleibt in der Schleife: Ein Ergebnis wird immer von einer Fachperson geprüft, bevor es das Haus verlässt.",
+          "en": "Human in the loop: a result is always checked by a qualified person before it leaves the company.",
+          "it": "Persona nel processo: un risultato è sempre verificato da un esperto prima di uscire dall'azienda.",
+          "fr": "Humain dans la boucle: un résultat est toujours vérifié par une personne compétente avant de quitter l'entreprise."
+        },
+        {
+          "de": "Geringe Fehlerkosten: Ein missglückter Entwurf kostet Minuten, nicht Kunden oder Compliance-Verstösse.",
+          "en": "Low cost of error: a failed draft costs minutes, not customers or compliance breaches.",
+          "it": "Basso costo dell'errore: una bozza mal riuscita costa minuti, non clienti o violazioni di conformità.",
+          "fr": "Faible coût de l'erreur: un brouillon raté coûte des minutes, pas des clients ni des manquements de conformité."
+        },
+        {
+          "de": "Keine heiklen Daten: Zum Start ohne Gesundheits-, Bewerber- oder Finanzdaten und ohne vertrauliche Verträge arbeiten.",
+          "en": "No sensitive data: start without health, applicant or financial data and without confidential contracts.",
+          "it": "Nessun dato delicato: iniziare senza dati sanitari, di candidati o finanziari e senza contratti riservati.",
+          "fr": "Aucune donnée sensible: démarrer sans données de santé, de candidats ou financières, et sans contrats confidentiels."
+        },
+        {
+          "de": "Hohe Frequenz: Aufgaben, die täglich oder wöchentlich anfallen, liefern schnell messbaren Nutzen.",
+          "en": "High frequency: tasks that recur daily or weekly deliver measurable value quickly.",
+          "it": "Alta frequenza: attività quotidiane o settimanali producono un valore misurabile in fretta.",
+          "fr": "Fréquence élevée: des tâches quotidiennes ou hebdomadaires apportent rapidement une valeur mesurable."
+        },
+        {
+          "de": "Klar bewertbares Ergebnis: Sie erkennen sofort, ob der Output gut ist – etwa bei einer Zusammenfassung oder Übersetzung.",
+          "en": "Easily judged output: you can immediately tell whether the result is good – for example a summary or translation.",
+          "it": "Risultato facilmente valutabile: si capisce subito se l'output è buono, ad esempio una sintesi o una traduzione.",
+          "fr": "Résultat facilement évaluable: on voit immédiatement si le résultat est bon – par exemple un résumé ou une traduction."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Erste realistische Use Cases nach Funktion",
+        "en": "First realistic use cases by function",
+        "it": "Primi casi d'uso realistici per funzione",
+        "fr": "Premiers cas d'usage réalistes par fonction"
+      },
+      "paragraphs": [
+        {
+          "de": "Die stärksten Einstiegs-Use-Cases sind branchenübergreifend ähnlich, weil überall dieselben sprachlichen Routineaufgaben anfallen. Die folgenden Beispiele sind illustrativ und bewusst niederschwellig – sie lassen sich meist mit bereits vorhandenen Werkzeugen (etwa einem geschäftlich lizenzierten KI-Assistenten) umsetzen:",
+          "en": "The strongest entry-level use cases look similar across industries, because the same routine language tasks arise everywhere. The following examples are illustrative and deliberately low-threshold – they can usually be implemented with tools you already have (such as a business-licensed AI assistant):",
+          "it": "I casi d'uso iniziali più efficaci sono simili tra i settori, perché ovunque ricorrono le stesse attività linguistiche di routine. Gli esempi seguenti sono illustrativi e volutamente accessibili: di solito si realizzano con strumenti già disponibili (ad esempio un assistente IA con licenza aziendale):",
+          "fr": "Les cas d'usage de départ les plus solides se ressemblent d'un secteur à l'autre, car les mêmes tâches linguistiques de routine reviennent partout. Les exemples suivants sont illustratifs et volontairement accessibles: ils se mettent généralement en œuvre avec des outils déjà disponibles (par exemple un assistant IA sous licence professionnelle):"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kommunikation: E-Mail- und Offert-Entwürfe, Antwortvorschläge auf Anfragen, Übersetzungen DE/EN/FR/IT – immer mit menschlicher Endkontrolle.",
+          "en": "Communication: draft emails and quotes, suggested replies to enquiries, translations across DE/EN/FR/IT – always with a human final check.",
+          "it": "Comunicazione: bozze di e-mail e offerte, proposte di risposta alle richieste, traduzioni DE/EN/FR/IT, sempre con controllo umano finale.",
+          "fr": "Communication: brouillons d'e-mails et d'offres, propositions de réponses aux demandes, traductions DE/EN/FR/IT, toujours avec un contrôle humain final."
+        },
+        {
+          "de": "Wissen & Dokumente: Lange Dokumente, Protokolle oder Sitzungsnotizen zusammenfassen und in Aufgaben überführen.",
+          "en": "Knowledge & documents: summarise long documents, minutes or meeting notes and turn them into action items.",
+          "it": "Conoscenza e documenti: riassumere documenti lunghi, verbali o note di riunione e trasformarli in attività.",
+          "fr": "Connaissance et documents: résumer de longs documents, procès-verbaux ou notes de réunion et les transformer en tâches."
+        },
+        {
+          "de": "Marketing & Content: Erste Entwürfe für Blogbeiträge, Produkttexte oder Social-Media-Posts, die intern verfeinert werden.",
+          "en": "Marketing & content: first drafts for blog posts, product copy or social media posts, refined internally.",
+          "it": "Marketing e contenuti: prime bozze di articoli, testi di prodotto o post social, rifinite internamente.",
+          "fr": "Marketing et contenu: premiers jets d'articles, de textes produits ou de posts sur les réseaux sociaux, affinés en interne."
+        },
+        {
+          "de": "Vertrieb & Support: Häufige Kundenfragen strukturiert beantworten, FAQ pflegen, Gesprächsnotizen aufbereiten.",
+          "en": "Sales & support: answer common customer questions in a structured way, maintain FAQs, tidy up call notes.",
+          "it": "Vendite e assistenza: rispondere in modo strutturato alle domande frequenti, curare le FAQ, sistemare le note delle chiamate.",
+          "fr": "Ventes et support: répondre de façon structurée aux questions fréquentes, tenir à jour la FAQ, mettre au propre les notes d'appel."
+        },
+        {
+          "de": "Analyse light: Tabellen und Feedback sichten, Muster und offene Punkte herausarbeiten – als Vorarbeit, nicht als Entscheidungsersatz.",
+          "en": "Light analysis: review tables and feedback, surface patterns and open questions – as preparation, not as a substitute for decisions.",
+          "it": "Analisi leggera: esaminare tabelle e feedback, evidenziare schemi e punti aperti, come preparazione e non come sostituto delle decisioni.",
+          "fr": "Analyse légère: passer en revue tableaux et retours, faire ressortir tendances et points ouverts – en préparation, pas en remplacement des décisions."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Der 90-Tage-Plan: von der Neugier zum belegten Nutzen",
+        "en": "The 90-day plan: from curiosity to proven value",
+        "it": "Il piano a 90 giorni: dalla curiosità al valore dimostrato",
+        "fr": "Le plan à 90 jours: de la curiosité à la valeur prouvée"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein klarer Zeitrahmen verhindert, dass der KI-Einstieg im Unverbindlichen versandet. Drei Phasen à 30 Tage haben sich bewährt: erst verstehen und Regeln setzen, dann in einem engen Pilot testen, dann entscheiden und sauber ausrollen.",
+          "en": "A clear time frame stops an AI start from fizzling out into vague experimentation. Three 30-day phases work well: first understand and set rules, then test in a tight pilot, then decide and roll out cleanly.",
+          "it": "Un orizzonte temporale chiaro evita che l'avvio dell'IA si perda nel vago. Tre fasi da 30 giorni funzionano bene: prima capire e fissare le regole, poi testare in un pilota ristretto, infine decidere e distribuire in modo ordinato.",
+          "fr": "Un cadre temporel clair empêche le démarrage IA de se diluer dans l'expérimentation floue. Trois phases de 30 jours fonctionnent bien: d'abord comprendre et fixer des règles, puis tester dans un pilote restreint, enfin décider et déployer proprement."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Tag 1–30 – Grundlagen: Zwei bis drei Use Cases auswählen, eine kurze Nutzungsrichtlinie schreiben (was darf rein, was nicht), einen geschäftlichen Zugang mit Datenschutzgarantien wählen, 3–5 Pilotpersonen bestimmen und den Ist-Zustand messen (Zeitaufwand heute).",
+          "en": "Days 1–30 – Foundations: pick two or three use cases, write a short usage policy (what may go in, what may not), choose business-grade access with data-protection guarantees, name 3–5 pilot users, and measure the baseline (time spent today).",
+          "it": "Giorni 1–30 – Basi: scegliere due o tre casi d'uso, scrivere una breve politica d'uso (cosa si può inserire e cosa no), optare per un accesso aziendale con garanzie di protezione dei dati, individuare 3–5 utenti pilota e misurare la situazione attuale (tempo impiegato oggi).",
+          "fr": "Jours 1–30 – Fondations: choisir deux ou trois cas d'usage, rédiger une courte charte d'utilisation (ce qui peut entrer ou non), opter pour un accès professionnel avec garanties de protection des données, désigner 3–5 utilisateurs pilotes et mesurer l'état actuel (temps passé aujourd'hui)."
+        },
+        {
+          "de": "Tag 31–60 – Pilot: Im Alltag testen, gute Prompts und Vorlagen sammeln, wöchentlich kurz austauschen (was klappt, was nicht), Ergebnisse dokumentieren. Ziel ist Lernen, nicht Perfektion.",
+          "en": "Days 31–60 – Pilot: test in daily work, collect good prompts and templates, hold a short weekly exchange (what works, what doesn't), document results. The goal is learning, not perfection.",
+          "it": "Giorni 31–60 – Pilota: testare nel lavoro quotidiano, raccogliere buoni prompt e modelli, fare un breve confronto settimanale (cosa funziona e cosa no), documentare i risultati. L'obiettivo è imparare, non la perfezione.",
+          "fr": "Jours 31–60 – Pilote: tester au quotidien, collecter de bons prompts et modèles, tenir un court échange hebdomadaire (ce qui marche ou non), documenter les résultats. L'objectif est d'apprendre, pas la perfection."
+        },
+        {
+          "de": "Tag 61–90 – Entscheiden & Ausrollen: Zeitersparnis und Qualität gegen den Ist-Zustand halten, erfolgreiche Use Cases als Standard festhalten, kurze Schulung für das Team, Verantwortlichkeiten und nächste zwei Use Cases definieren.",
+          "en": "Days 61–90 – Decide & roll out: compare time saved and quality against the baseline, lock in successful use cases as standard, run a short team training, and define responsibilities and the next two use cases.",
+          "it": "Giorni 61–90 – Decidere e distribuire: confrontare tempo risparmiato e qualità con la situazione iniziale, consolidare come standard i casi d'uso riusciti, tenere una breve formazione per il team e definire responsabilità e i prossimi due casi d'uso.",
+          "fr": "Jours 61–90 – Décider et déployer: comparer temps gagné et qualité à l'état initial, ancrer comme standard les cas d'usage réussis, organiser une courte formation d'équipe et définir les responsabilités et les deux prochains cas d'usage."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Datenschutz und Schweizer Perspektive: revDSG von Anfang an",
+        "en": "Data protection and the Swiss angle: revFADP from day one",
+        "it": "Protezione dei dati e prospettiva svizzera: nLPD fin dall'inizio",
+        "fr": "Protection des données et perspective suisse: nLPD dès le départ"
+      },
+      "paragraphs": [
+        {
+          "de": "Für Schweizer KMU gilt das revidierte Datenschutzgesetz (revDSG, auch nDSG). Es verlangt unter anderem, dass Sie wissen, welche Personendaten Sie bearbeiten, dass eine Bearbeitung verhältnismässig und transparent ist und dass bei Auslagerung an Dienstleister die Bearbeitung vertraglich geregelt bleibt. Werden Personendaten ins Ausland übermittelt – bei Cloud-KI die Regel –, braucht es ein angemessenes Schutzniveau oder geeignete Garantien. Der EDÖB ist die zuständige Aufsichtsbehörde.",
+          "en": "Swiss SMEs fall under the revised Data Protection Act (revFADP, also nFADP). Among other things it requires you to know which personal data you process, to keep processing proportionate and transparent, and to govern any outsourcing to service providers by contract. When personal data is transferred abroad – the norm with cloud AI – you need an adequate level of protection or appropriate safeguards. The FDPIC (EDÖB) is the competent supervisory authority.",
+          "it": "Le PMI svizzere rientrano nella legge riveduta sulla protezione dei dati (nLPD). Tra l'altro impone di sapere quali dati personali trattate, di mantenere il trattamento proporzionato e trasparente e di disciplinare per contratto ogni esternalizzazione ai fornitori. Quando i dati personali sono trasferiti all'estero – la norma con l'IA in cloud – serve un livello di protezione adeguato o garanzie appropriate. L'IFPDT è l'autorità di vigilanza competente.",
+          "fr": "Les PME suisses relèvent de la loi révisée sur la protection des données (nLPD). Elle exige notamment de savoir quelles données personnelles vous traitez, de garder le traitement proportionné et transparent, et d'encadrer par contrat toute externalisation vers des prestataires. Lorsque des données personnelles sont transférées à l'étranger – la règle avec l'IA en nuage –, il faut un niveau de protection adéquat ou des garanties appropriées. Le PFPDT est l'autorité de surveillance compétente."
+        },
+        {
+          "de": "Praktisch heisst das: Nutzen Sie geschäftliche KI-Angebote, bei denen Ihre Eingaben nicht zum Training verwendet werden, geben Sie zum Start keine besonders schützenswerten Daten ein, und halten Sie in Ihrer Nutzungsrichtlinie fest, was erlaubt ist. Diese Hinweise ersetzen keine Rechtsberatung – bei heiklen Bearbeitungen lohnt sich eine fachliche Abklärung.",
+          "en": "In practice: use business AI offerings where your inputs are not used for training, avoid entering sensitive data at the start, and record what is allowed in your usage policy. These notes are not legal advice – for sensitive processing, a professional review is worthwhile.",
+          "it": "In pratica: usate offerte IA aziendali in cui i vostri input non sono usati per l'addestramento, evitate di inserire dati degni di particolare protezione all'inizio e stabilite nella politica d'uso cosa è consentito. Queste indicazioni non sostituiscono una consulenza legale: per trattamenti delicati conviene una verifica professionale.",
+          "fr": "En pratique: utilisez des offres IA professionnelles où vos saisies ne servent pas à l'entraînement, évitez d'entrer des données sensibles au départ et consignez dans votre charte ce qui est autorisé. Ces indications ne remplacent pas un conseil juridique: pour des traitements sensibles, une vérification professionnelle s'impose."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Kosten und ROI richtig einschätzen – ohne Zahlenspielereien",
+        "en": "Judging cost and ROI correctly – without number games",
+        "it": "Valutare correttamente costi e ROI, senza giochi di cifre",
+        "fr": "Évaluer correctement coûts et ROI, sans jeux de chiffres"
+      },
+      "paragraphs": [
+        {
+          "de": "Die reinen Lizenzkosten pro Nutzer sind bei Einstiegs-Use-Cases meist überschaubar. Die relevanten Kosten liegen woanders: in der Einführungszeit, in Schulung und im Aufbau guter Vorlagen sowie in der Qualitätssicherung. Rechnen Sie den Nutzen ehrlich: eingesparte Minuten pro Aufgabe mal Häufigkeit mal Anzahl Personen – abzüglich der Zeit für Prüfung und Nachbearbeitung. Ein Use Case, der pro Woche wenige Stunden spart und verlässlich funktioniert, ist mehr wert als zehn beeindruckende Demos, die niemand nutzt.",
+          "en": "For entry-level use cases, per-user licence costs are usually modest. The costs that matter lie elsewhere: onboarding time, training, building good templates, and quality assurance. Calculate the benefit honestly: minutes saved per task times frequency times number of people – minus the time for review and rework. A use case that reliably saves a few hours a week is worth more than ten impressive demos nobody uses.",
+          "it": "Per i casi d'uso iniziali, i costi di licenza per utente sono di solito contenuti. I costi che contano stanno altrove: tempo di adozione, formazione, creazione di buoni modelli e controllo qualità. Calcolate il beneficio con onestà: minuti risparmiati per attività per frequenza per numero di persone, meno il tempo di verifica e rilavorazione. Un caso d'uso che fa risparmiare poche ore a settimana in modo affidabile vale più di dieci demo spettacolari che nessuno usa.",
+          "fr": "Pour les cas d'usage de départ, les coûts de licence par utilisateur sont généralement modestes. Les coûts qui comptent sont ailleurs: temps d'adoption, formation, création de bons modèles et assurance qualité. Calculez le bénéfice honnêtement: minutes gagnées par tâche multipliées par la fréquence et le nombre de personnes, moins le temps de relecture et de reprise. Un cas d'usage qui fait gagner quelques heures par semaine de façon fiable vaut mieux que dix démos impressionnantes que personne n'utilise."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler beim KI-Einstieg – und wie Sie sie vermeiden",
+        "en": "Common mistakes when starting with AI – and how to avoid them",
+        "it": "Errori frequenti nell'avvio dell'IA e come evitarli",
+        "fr": "Erreurs fréquentes au démarrage de l'IA et comment les éviter"
+      },
+      "bullets": [
+        {
+          "de": "Zu gross starten: Eine Konzern-KI-Strategie vor dem ersten Praxistest. Besser: ein kleiner Pilot, echte Zahlen, dann skalieren.",
+          "en": "Starting too big: an enterprise AI strategy before the first real test. Better: a small pilot, real numbers, then scale.",
+          "it": "Partire troppo in grande: una strategia IA da grande gruppo prima del primo test reale. Meglio: un piccolo pilota, numeri veri, poi scalare.",
+          "fr": "Démarrer trop grand: une stratégie IA de groupe avant le premier test réel. Mieux: un petit pilote, des chiffres réels, puis passer à l'échelle."
+        },
+        {
+          "de": "Ergebnisse blind vertrauen: KI erfindet plausibel klingende Fehler. Ohne menschliche Endkontrolle wird das teuer.",
+          "en": "Blindly trusting output: AI invents plausible-sounding errors. Without a human final check, that gets expensive.",
+          "it": "Fidarsi ciecamente dell'output: l'IA inventa errori dal suono plausibile. Senza controllo umano finale diventa costoso.",
+          "fr": "Faire aveuglément confiance au résultat: l'IA invente des erreurs plausibles. Sans contrôle humain final, cela coûte cher."
+        },
+        {
+          "de": "Datenschutz nachträglich: heikle Daten in ein Consumer-Tool tippen und erst später Fragen stellen. Regeln gehören an den Anfang.",
+          "en": "Data protection as an afterthought: typing sensitive data into a consumer tool and asking questions later. Rules belong at the start.",
+          "it": "Protezione dei dati come ripensamento: digitare dati delicati in uno strumento consumer e porsi domande dopo. Le regole vanno all'inizio.",
+          "fr": "Protection des données après coup: taper des données sensibles dans un outil grand public et se poser des questions ensuite. Les règles vont au début."
+        },
+        {
+          "de": "Keine Messung: Ohne Ist-Zustand lässt sich der Nutzen nicht belegen – und der Pilot verpufft im Gefühl.",
+          "en": "No measurement: without a baseline you cannot prove value – and the pilot evaporates into gut feeling.",
+          "it": "Nessuna misurazione: senza una situazione di partenza non si può dimostrare il valore e il pilota svanisce nel «mi sembra».",
+          "fr": "Aucune mesure: sans état initial, impossible de prouver la valeur – et le pilote se dissout dans le ressenti."
+        },
+        {
+          "de": "Team vergessen: Werkzeug einführen, aber nicht erklären. Kurze Schulung und geteilte Vorlagen entscheiden über die Akzeptanz.",
+          "en": "Forgetting the team: rolling out a tool without explaining it. A short training and shared templates decide adoption.",
+          "it": "Dimenticare il team: introdurre uno strumento senza spiegarlo. Una breve formazione e modelli condivisi decidono l'adozione.",
+          "fr": "Oublier l'équipe: déployer un outil sans l'expliquer. Une courte formation et des modèles partagés déterminent l'adoption."
+        },
+        {
+          "de": "Alles selbst automatisieren wollen: Zum Start reicht assistierende KI. Vollautomatische Abläufe brauchen mehr Reife und Kontrolle.",
+          "en": "Trying to automate everything at once: assistive AI is enough to start. Fully automated flows need more maturity and control.",
+          "it": "Voler automatizzare tutto subito: all'inizio basta un'IA di assistenza. I flussi completamente automatici richiedono più maturità e controllo.",
+          "fr": "Vouloir tout automatiser d'emblée: une IA d'assistance suffit pour débuter. Les flux entièrement automatisés exigent plus de maturité et de contrôle."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Womit sollte ein KMU beim KI-Einstieg konkret beginnen?",
+        "en": "What exactly should an SME start with when adopting AI?",
+        "it": "Con cosa dovrebbe iniziare concretamente una PMI con l'IA?",
+        "fr": "Par quoi une PME devrait-elle concrètement commencer avec l'IA?"
+      },
+      "a": {
+        "de": "Mit ein bis zwei textlastigen Alltagsaufgaben, die häufig anfallen und von einer Fachperson ohnehin geprüft werden – etwa E-Mail- und Offert-Entwürfe, Zusammenfassungen oder Übersetzungen. Verwenden Sie einen geschäftlich lizenzierten KI-Assistenten, verzichten Sie zum Start auf heikle Daten und messen Sie den heutigen Zeitaufwand als Vergleichsbasis.",
+        "en": "With one or two frequent, text-heavy everyday tasks that a professional reviews anyway – such as draft emails and quotes, summaries or translations. Use a business-licensed AI assistant, avoid sensitive data at the start, and measure today's time spent as a baseline.",
+        "it": "Con una o due attività quotidiane e testuali frequenti, che un professionista rivede comunque, come bozze di e-mail e offerte, sintesi o traduzioni. Usate un assistente IA con licenza aziendale, evitate dati delicati all'inizio e misurate il tempo attuale come base di confronto.",
+        "fr": "Par une ou deux tâches quotidiennes fréquentes et rédactionnelles qu'un professionnel relit de toute façon – brouillons d'e-mails et d'offres, résumés ou traductions. Utilisez un assistant IA sous licence professionnelle, évitez les données sensibles au départ et mesurez le temps actuel comme base de comparaison."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist ChatGPT oder ein anderer Cloud-Dienst mit dem revDSG vereinbar?",
+        "en": "Is ChatGPT or another cloud service compatible with the revFADP?",
+        "it": "ChatGPT o un altro servizio cloud è compatibile con la nLPD?",
+        "fr": "ChatGPT ou un autre service cloud est-il compatible avec la nLPD?"
+      },
+      "a": {
+        "de": "Grundsätzlich ja, wenn Sie ein Geschäftsangebot nutzen, bei dem Eingaben nicht zum Training verwendet werden, die Bearbeitung vertraglich geregelt ist und für die Übermittlung ins Ausland geeignete Garantien bestehen. Zum Start keine besonders schützenswerten Personendaten eingeben. Bei heiklen Bearbeitungen ist eine fachliche oder rechtliche Abklärung ratsam; zuständige Aufsicht ist der EDÖB.",
+        "en": "In principle yes, if you use a business offering where inputs are not used for training, processing is governed by contract, and appropriate safeguards exist for transfers abroad. Do not enter sensitive personal data at the start. For sensitive processing, a professional or legal review is advisable; the FDPIC (EDÖB) is the supervisory authority.",
+        "it": "In linea di principio sì, se usate un'offerta aziendale in cui gli input non servono all'addestramento, il trattamento è regolato per contratto ed esistono garanzie adeguate per i trasferimenti all'estero. All'inizio non inserite dati personali degni di particolare protezione. Per trattamenti delicati è consigliata una verifica professionale o legale; l'autorità di vigilanza è l'IFPDT.",
+        "fr": "En principe oui, si vous utilisez une offre professionnelle où les saisies ne servent pas à l'entraînement, où le traitement est encadré par contrat et où des garanties appropriées existent pour les transferts à l'étranger. N'entrez pas de données personnelles sensibles au départ. Pour des traitements sensibles, une vérification professionnelle ou juridique est conseillée; l'autorité de surveillance est le PFPDT."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie viel kostet der KI-Einstieg für ein KMU?",
+        "en": "How much does getting started with AI cost an SME?",
+        "it": "Quanto costa a una PMI iniziare con l'IA?",
+        "fr": "Combien coûte le démarrage de l'IA pour une PME?"
+      },
+      "a": {
+        "de": "Die Lizenzkosten pro Nutzer sind bei Einstiegs-Use-Cases meist gering; entscheidend sind Einführungszeit, Schulung, gute Vorlagen und Qualitätssicherung. Rechnen Sie den Nutzen als eingesparte Zeit pro Aufgabe mal Häufigkeit mal Personen, abzüglich Prüfaufwand. Konkrete Preise hängen vom Anbieter und Umfang ab – starten Sie klein und lassen Sie den Pilot die Zahlen liefern.",
+        "en": "For entry-level use cases, per-user licence costs are usually low; what matters is onboarding time, training, good templates and quality assurance. Calculate the benefit as time saved per task times frequency times people, minus review effort. Concrete prices depend on provider and scope – start small and let the pilot produce the numbers.",
+        "it": "Per i casi d'uso iniziali i costi di licenza per utente sono di solito bassi; contano tempo di adozione, formazione, buoni modelli e controllo qualità. Calcolate il beneficio come tempo risparmiato per attività per frequenza per persone, meno l'impegno di verifica. I prezzi concreti dipendono da fornitore e portata: iniziate in piccolo e lasciate che sia il pilota a fornire i numeri.",
+        "fr": "Pour les cas d'usage de départ, les coûts de licence par utilisateur sont généralement faibles; ce qui compte, c'est le temps d'adoption, la formation, de bons modèles et l'assurance qualité. Calculez le bénéfice comme le temps gagné par tâche multiplié par la fréquence et le nombre de personnes, moins l'effort de relecture. Les prix concrets dépendent du fournisseur et du périmètre: commencez petit et laissez le pilote produire les chiffres."
+      }
+    },
+    {
+      "q": {
+        "de": "Braucht mein KMU eigene KI-Entwickler oder Data Scientists?",
+        "en": "Does my SME need its own AI developers or data scientists?",
+        "it": "La mia PMI ha bisogno di sviluppatori IA o data scientist propri?",
+        "fr": "Ma PME a-t-elle besoin de ses propres développeurs IA ou data scientists?"
+      },
+      "a": {
+        "de": "Für den Einstieg nein. Die ersten Use Cases lassen sich mit fertigen KI-Assistenten und guten Vorlagen umsetzen, ohne Programmierung. Wichtiger als technisches Spezialwissen sind eine verantwortliche Person, klare Regeln und die Bereitschaft, Ergebnisse zu prüfen. Spezialisiertere Lösungen (etwa mit eigenen Firmendaten) sind ein späterer Schritt, wenn die Grundlagen sitzen.",
+        "en": "Not for getting started. The first use cases can be delivered with off-the-shelf AI assistants and good templates, no coding required. More important than deep technical expertise are a responsible owner, clear rules and the willingness to review results. More specialised solutions (for example using your own company data) are a later step, once the basics are in place.",
+        "it": "Per iniziare, no. I primi casi d'uso si realizzano con assistenti IA già pronti e buoni modelli, senza programmazione. Più delle competenze tecniche specialistiche contano una persona responsabile, regole chiare e la disponibilità a verificare i risultati. Soluzioni più specialistiche (ad esempio con i dati aziendali) sono un passo successivo, quando le basi sono solide.",
+        "fr": "Pour débuter, non. Les premiers cas d'usage se réalisent avec des assistants IA prêts à l'emploi et de bons modèles, sans programmation. Plus que l'expertise technique, ce qui compte, c'est une personne responsable, des règles claires et la volonté de relire les résultats. Des solutions plus spécialisées (par exemple avec vos propres données) viennent plus tard, une fois les bases posées."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie messe ich, ob der KI-Pilot erfolgreich war?",
+        "en": "How do I measure whether the AI pilot was a success?",
+        "it": "Come misuro se il pilota IA ha avuto successo?",
+        "fr": "Comment mesurer si le pilote IA a été un succès?"
+      },
+      "a": {
+        "de": "Vergleichen Sie den Ist-Zustand vor dem Pilot mit den Ergebnissen danach: eingesparte Zeit pro Aufgabe, gleichbleibende oder bessere Qualität, Akzeptanz im Team und Aufwand für Prüfung und Nachbearbeitung. Ein Use Case ist erfolgreich, wenn er verlässlich Zeit spart, ohne die Qualität zu senken, und die Mitarbeitenden ihn freiwillig weiter nutzen.",
+        "en": "Compare the baseline before the pilot with the results afterwards: time saved per task, equal or better quality, team adoption, and the effort for review and rework. A use case is a success if it reliably saves time without lowering quality and staff keep using it voluntarily.",
+        "it": "Confrontate la situazione prima del pilota con i risultati successivi: tempo risparmiato per attività, qualità pari o migliore, adozione nel team e impegno per verifica e rilavorazione. Un caso d'uso ha successo se fa risparmiare tempo in modo affidabile senza abbassare la qualità e se il personale continua a usarlo spontaneamente.",
+        "fr": "Comparez l'état initial avant le pilote aux résultats obtenus ensuite: temps gagné par tâche, qualité égale ou supérieure, adoption par l'équipe et effort de relecture et de reprise. Un cas d'usage réussit s'il fait gagner du temps de façon fiable sans baisser la qualité et si les collaborateurs continuent à l'utiliser spontanément."
+      }
+    },
+    {
+      "q": {
+        "de": "Was tun, wenn die KI falsche oder erfundene Antworten liefert?",
+        "en": "What should I do if the AI gives wrong or made-up answers?",
+        "it": "Cosa fare se l'IA fornisce risposte errate o inventate?",
+        "fr": "Que faire si l'IA donne des réponses fausses ou inventées?"
+      },
+      "a": {
+        "de": "Damit rechnen und dagegen vorsorgen: KI kann plausibel klingende Fehler erzeugen. Halten Sie die menschliche Endkontrolle für alles fest, was das Haus verlässt, geben Sie im Prompt Kontext und Quellen mit, und nutzen Sie KI zum Start für Entwürfe statt für endgültige Entscheidungen. Für faktenkritische Aufgaben braucht es überprüfbare Quellen und klare Zuständigkeiten.",
+        "en": "Expect it and plan for it: AI can produce plausible-sounding errors. Keep a human final check for anything that leaves the company, provide context and sources in the prompt, and use AI for drafts rather than final decisions at the start. Fact-critical tasks need verifiable sources and clear ownership.",
+        "it": "Mettetelo in conto e prevenitelo: l'IA può produrre errori dal suono plausibile. Mantenete il controllo umano finale su tutto ciò che esce dall'azienda, fornite contesto e fonti nel prompt e usate l'IA per le bozze anziché per le decisioni definitive all'inizio. Le attività critiche sui fatti richiedono fonti verificabili e responsabilità chiare.",
+        "fr": "Anticipez-le et prévenez-le: l'IA peut produire des erreurs plausibles. Maintenez un contrôle humain final sur tout ce qui quitte l'entreprise, fournissez contexte et sources dans le prompt, et utilisez l'IA pour des brouillons plutôt que pour des décisions finales au départ. Les tâches critiques sur les faits exigent des sources vérifiables et des responsabilités claires."
+      }
+    }
+  ],
+  "keyEntities": [
+    "KI für KMU",
+    "revDSG",
+    "nDSG",
+    "nFADP",
+    "EDÖB",
+    "KMU",
+    "ChatGPT",
+    "Microsoft Copilot",
+    "Use Case",
+    "Pilotprojekt",
+    "90-Tage-Plan",
+    "Prompt",
+    "ROI",
+    "Datenschutz",
+    "Human-in-the-Loop",
+    "KI-Governance",
+    "Automatisierung",
+    "CHF",
+    "Schweiz"
+  ]
+}

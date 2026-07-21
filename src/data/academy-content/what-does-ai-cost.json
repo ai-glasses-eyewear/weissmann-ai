@@ -1,0 +1,476 @@
+{
+  "id": "what-does-ai-cost",
+  "cluster": "business-smes",
+  "type": "spoke",
+  "slug": {
+    "de": "was-kostet-ki",
+    "en": "what-does-ai-cost",
+    "it": "quanto-costa-l-ia",
+    "fr": "combien-coute-l-ia"
+  },
+  "relatedServices": [
+    "consulting"
+  ],
+  "title": {
+    "de": "Was kostet KI im KMU? Die Kostenstruktur | Weissmann AI",
+    "en": "What Does AI Cost for an SME? Cost Structure | Weissmann AI",
+    "it": "Quanto costa l'IA per una PMI? I costi | Weissmann AI",
+    "fr": "Combien coûte l'IA pour une PME ? Les coûts | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Was kostet KI wirklich? Einmalige vs. wiederkehrende Kosten, Lizenz vs. Eigenbau, versteckte Posten und wie Schweizer KMU ein realistisches Budget rechnen.",
+    "en": "What does AI really cost? One-time vs recurring costs, licence vs custom build, hidden items and how Swiss SMEs build a realistic budget.",
+    "it": "Quanto costa davvero l'IA? Costi una tantum e ricorrenti, licenza o sviluppo, voci nascoste e come una PMI svizzera fa un budget realistico.",
+    "fr": "Combien coûte vraiment l'IA ? Coûts uniques et récurrents, licence ou sur-mesure, postes cachés et budget réaliste pour une PME suisse."
+  },
+  "kicker": {
+    "de": "KI für Business & KMU",
+    "en": "AI for Business & SMEs",
+    "it": "IA per aziende e PMI",
+    "fr": "IA pour entreprises et PME"
+  },
+  "h1": {
+    "de": "Was kostet KI? Die Kostenstruktur für KMU verständlich erklärt",
+    "en": "What Does AI Cost? The Cost Structure Explained for SMEs",
+    "it": "Quanto costa l'IA? La struttura dei costi spiegata alle PMI",
+    "fr": "Combien coûte l'IA ? La structure des coûts expliquée aux PME"
+  },
+  "answerFirst": {
+    "de": "Was KI kostet, lässt sich nicht als fixer Preis beantworten, sondern nur als Kostenstruktur: einmalige Aufwände (Konzept, Integration, Schulung) plus wiederkehrende Kosten (Lizenzen, Nutzung, Wartung, Betrieb). Fertige SaaS-Tools starten günstig und skalieren pro Nutzer und Verbrauch; Eigenentwicklungen kosten vorab mehr, dafür oft weniger laufend. Für Schweizer KMU entscheiden versteckte Posten – Datenpflege, Change-Management, revDSG-Konformität – häufig stärker über den Gesamtpreis als die reine Lizenzgebühr.",
+    "en": "What AI costs cannot be answered as a fixed price, only as a cost structure: one-time effort (concept, integration, training) plus recurring costs (licences, usage, maintenance, operations). Ready-made SaaS tools start cheap and scale per user and consumption; custom builds cost more upfront but often less to run. For Swiss SMEs, hidden items – data upkeep, change management, revFADP compliance – frequently shape the total price more than the licence fee itself.",
+    "it": "Quanto costa l'IA non si risponde con un prezzo fisso, ma con una struttura di costi: spese una tantum (concetto, integrazione, formazione) più costi ricorrenti (licenze, utilizzo, manutenzione, esercizio). Gli strumenti SaaS pronti costano poco all'inizio e crescono per utente e consumo; lo sviluppo su misura costa di più all'inizio ma spesso meno da gestire. Per una PMI svizzera, le voci nascoste – dati, change management, conformità nLPD – pesano spesso più della licenza.",
+    "fr": "Ce que coûte l'IA ne se résume pas à un prix fixe, mais à une structure de coûts : dépenses uniques (concept, intégration, formation) et coûts récurrents (licences, usage, maintenance, exploitation). Les outils SaaS prêts à l'emploi démarrent bon marché et évoluent par utilisateur et par consommation ; le sur-mesure coûte plus au départ mais souvent moins à l'usage. Pour une PME suisse, les postes cachés – données, conduite du changement, conformité nLPD – pèsent souvent plus que la licence."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Warum es keinen \"KI-Preis\" gibt – nur eine Kostenstruktur",
+        "en": "Why There Is No \"AI Price\" – Only a Cost Structure",
+        "it": "Perché non esiste un \"prezzo dell'IA\", ma solo una struttura di costi",
+        "fr": "Pourquoi il n'existe pas de \"prix de l'IA\", mais une structure de coûts"
+      },
+      "paragraphs": [
+        {
+          "de": "Die Frage \"Was kostet KI?\" ist so präzise wie \"Was kostet ein Fahrzeug?\". Die Antwort hängt vollständig davon ab, was Sie lösen wollen, wie viel Sie selbst beitragen und wie lange Sie es betreiben. Seriös lässt sich KI daher nicht als Preisschild beantworten, sondern nur als Kostenstruktur: eine überschaubare Zahl von Kostenblöcken, die bei jedem Projekt auftauchen – in unterschiedlicher Gewichtung.",
+          "en": "Asking \"What does AI cost?\" is as precise as asking \"What does a vehicle cost?\". The answer depends entirely on what you want to solve, how much you contribute yourself and how long you run it. So AI cannot honestly be answered with a price tag, only as a cost structure: a manageable set of cost blocks that appear in every project – with varying weight.",
+          "it": "Chiedere \"quanto costa l'IA?\" è preciso quanto chiedere \"quanto costa un veicolo?\". La risposta dipende interamente da cosa volete risolvere, da quanto contribuite voi stessi e da quanto a lungo lo usate. Quindi l'IA non si può onestamente ridurre a un cartellino del prezzo, ma solo a una struttura di costi: un numero gestibile di blocchi che compaiono in ogni progetto, con pesi diversi.",
+          "fr": "Demander \"combien coûte l'IA ?\" est aussi précis que demander \"combien coûte un véhicule ?\". La réponse dépend entièrement de ce que vous voulez résoudre, de ce que vous apportez vous-même et de la durée d'exploitation. L'IA ne se résume donc pas honnêtement à une étiquette de prix, mais à une structure de coûts : un nombre limité de postes qui reviennent dans chaque projet, avec des poids variables."
+        },
+        {
+          "de": "Für ein KMU ist genau das die gute Nachricht: Wer die Kostenblöcke kennt, kann jedes Angebot einordnen, versteckte Posten erkennen und ein belastbares Budget rechnen – unabhängig davon, ob am Ende ein 30-Franken-Abo oder ein Projekt über mehrere Monate steht. Die folgenden Abschnitte zerlegen KI-Kosten in ihre Bestandteile und zeigen, worauf Sie beim Budgetieren achten.",
+          "en": "For an SME that is precisely the good news: once you know the cost blocks, you can assess any quote, spot hidden items and build a defensible budget – whether the outcome is a CHF 30 subscription or a project spanning several months. The sections below break AI costs into their components and show what to watch when budgeting.",
+          "it": "Per una PMI è proprio questa la buona notizia: conoscendo i blocchi di costo potete valutare qualsiasi offerta, individuare le voci nascoste e costruire un budget solido, che si tratti di un abbonamento da 30 franchi o di un progetto di più mesi. Le sezioni seguenti scompongono i costi dell'IA nei loro componenti e mostrano a cosa fare attenzione.",
+          "fr": "Pour une PME, c'est justement une bonne nouvelle : en connaissant les postes de coûts, vous pouvez évaluer n'importe quelle offre, repérer les postes cachés et bâtir un budget solide, qu'il s'agisse d'un abonnement à 30 francs ou d'un projet de plusieurs mois. Les sections suivantes décomposent les coûts de l'IA et montrent à quoi veiller."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Einmalige vs. wiederkehrende Kosten",
+        "en": "One-Time vs Recurring Costs",
+        "it": "Costi una tantum e costi ricorrenti",
+        "fr": "Coûts uniques et coûts récurrents"
+      },
+      "paragraphs": [
+        {
+          "de": "Der wichtigste Schnitt verläuft zwischen einmaligen Investitionen und laufenden Kosten. Einmalige Kosten fallen an, um KI überhaupt einsatzfähig zu machen; wiederkehrende Kosten entstehen, solange Sie sie nutzen. Viele KMU sehen nur den ersten Block – und werden von den laufenden Kosten überrascht. Rechnen Sie deshalb immer auf drei Jahre (Total Cost of Ownership), nicht nur auf den Startpreis.",
+          "en": "The most important line runs between one-time investments and ongoing costs. One-time costs make AI usable in the first place; recurring costs arise for as long as you use it. Many SMEs see only the first block – and are surprised by the running costs. Always calculate over three years (total cost of ownership), not just the entry price.",
+          "it": "La distinzione più importante è tra investimenti una tantum e costi correnti. I costi una tantum servono a rendere l'IA utilizzabile; i costi ricorrenti sorgono finché la usate. Molte PMI vedono solo il primo blocco e vengono sorprese dai costi correnti. Calcolate sempre su tre anni (costo totale di proprietà), non solo il prezzo d'ingresso.",
+          "fr": "La distinction majeure sépare les investissements uniques des coûts continus. Les coûts uniques rendent l'IA utilisable ; les coûts récurrents durent tant que vous l'utilisez. Beaucoup de PME ne voient que le premier bloc et sont surprises par les frais courants. Calculez toujours sur trois ans (coût total de possession), pas seulement le prix d'entrée."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Einmalig: Anwendungsfall-Analyse, Konzept und Auswahl der Tools",
+          "en": "One-time: use-case analysis, concept and tool selection",
+          "it": "Una tantum: analisi del caso d'uso, concetto e scelta degli strumenti",
+          "fr": "Unique : analyse du cas d'usage, concept et choix des outils"
+        },
+        {
+          "de": "Einmalig: Integration in bestehende Systeme (CRM, ERP, Website)",
+          "en": "One-time: integration into existing systems (CRM, ERP, website)",
+          "it": "Una tantum: integrazione nei sistemi esistenti (CRM, ERP, sito web)",
+          "fr": "Unique : intégration aux systèmes existants (CRM, ERP, site web)"
+        },
+        {
+          "de": "Einmalig: Aufbereiten und Bereinigen der eigenen Daten",
+          "en": "One-time: preparing and cleaning your own data",
+          "it": "Una tantum: preparazione e pulizia dei propri dati",
+          "fr": "Unique : préparation et nettoyage de vos propres données"
+        },
+        {
+          "de": "Einmalig: Schulung der Mitarbeitenden und Einführungsbegleitung",
+          "en": "One-time: staff training and rollout support",
+          "it": "Una tantum: formazione del personale e accompagnamento all'avvio",
+          "fr": "Unique : formation du personnel et accompagnement au lancement"
+        },
+        {
+          "de": "Wiederkehrend: Lizenz- bzw. Abogebühren pro Nutzer oder Team",
+          "en": "Recurring: licence or subscription fees per user or team",
+          "it": "Ricorrente: canoni di licenza o abbonamento per utente o team",
+          "fr": "Récurrent : licences ou abonnements par utilisateur ou équipe"
+        },
+        {
+          "de": "Wiederkehrend: nutzungsabhängige Kosten (Tokens, API-Aufrufe, Rechenzeit)",
+          "en": "Recurring: usage-based costs (tokens, API calls, compute)",
+          "it": "Ricorrente: costi a consumo (token, chiamate API, elaborazione)",
+          "fr": "Récurrent : coûts à l'usage (tokens, appels API, calcul)"
+        },
+        {
+          "de": "Wiederkehrend: Wartung, Updates, Monitoring und Support",
+          "en": "Recurring: maintenance, updates, monitoring and support",
+          "it": "Ricorrente: manutenzione, aggiornamenti, monitoraggio e supporto",
+          "fr": "Récurrent : maintenance, mises à jour, supervision et support"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Lizenz oder Eigenentwicklung – die zentrale Weichenstellung",
+        "en": "Licence or Custom Build – the Central Decision",
+        "it": "Licenza o sviluppo su misura: la scelta centrale",
+        "fr": "Licence ou sur-mesure : la décision centrale"
+      },
+      "paragraphs": [
+        {
+          "de": "Der grösste Kostenhebel ist die Frage: fertiges Produkt kaufen oder etwas Eigenes bauen? Beide Wege sind legitim, aber ihr Kostenprofil ist gegensätzlich. Ein Standard-SaaS-Tool (etwa ein KI-Assistent, ein Transkriptionsdienst oder eine Chatbot-Plattform) hat kaum Startkosten, dafür planbare monatliche Gebühren – Sie mieten die Fähigkeit. Eine Eigenentwicklung oder tiefe Integration verlagert das Gewicht nach vorn: hohe einmalige Kosten, dafür Kontrolle, Passgenauigkeit und tendenziell tiefere Grenzkosten pro Nutzung.",
+          "en": "The biggest cost lever is the question: buy a finished product or build your own? Both paths are legitimate, but their cost profiles are opposite. A standard SaaS tool (an AI assistant, a transcription service, a chatbot platform) has almost no start-up cost but predictable monthly fees – you rent the capability. A custom build or deep integration shifts the weight forward: high one-time cost, in return for control, fit and generally lower marginal cost per use.",
+          "it": "La leva di costo maggiore è la domanda: comprare un prodotto pronto o costruirne uno proprio? Entrambe le vie sono legittime, ma i profili di costo sono opposti. Uno strumento SaaS standard (un assistente IA, un servizio di trascrizione, una piattaforma di chatbot) ha costi d'avvio quasi nulli ma canoni mensili prevedibili: noleggiate la capacità. Uno sviluppo su misura o un'integrazione profonda sposta il peso all'inizio: alto costo una tantum, in cambio di controllo, aderenza e costo marginale d'uso più basso.",
+          "fr": "Le principal levier de coût est la question : acheter un produit fini ou construire le sien ? Les deux voies sont légitimes, mais leurs profils de coûts sont opposés. Un outil SaaS standard (assistant IA, service de transcription, plateforme de chatbot) n'a presque pas de coût de départ mais des frais mensuels prévisibles : vous louez la capacité. Un développement sur-mesure ou une intégration profonde déplace le poids vers l'amont : coût unique élevé, en échange de contrôle, d'adéquation et d'un coût marginal d'usage plus bas."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Fertige Lizenz sinnvoll, wenn: Standardaufgabe, schneller Start, kleines Team, unklarer Nutzen (erst testen)",
+          "en": "Off-the-shelf licence makes sense when: standard task, fast start, small team, unclear value (test first)",
+          "it": "La licenza pronta conviene se: compito standard, avvio rapido, team piccolo, beneficio incerto (prima testare)",
+          "fr": "La licence prête convient si : tâche standard, démarrage rapide, petite équipe, valeur incertaine (tester d'abord)"
+        },
+        {
+          "de": "Eigenentwicklung sinnvoll, wenn: einzigartiger Prozess, sensible Daten, hohes Volumen, langfristige Kernfunktion",
+          "en": "Custom build makes sense when: unique process, sensitive data, high volume, long-term core function",
+          "it": "Lo sviluppo su misura conviene se: processo unico, dati sensibili, volumi elevati, funzione core di lungo termine",
+          "fr": "Le sur-mesure convient si : processus unique, données sensibles, gros volumes, fonction cœur de long terme"
+        },
+        {
+          "de": "Häufig am günstigsten: mit Standard-Tools starten, erst bei bewiesenem Nutzen individualisieren",
+          "en": "Often cheapest: start with standard tools, customise only once value is proven",
+          "it": "Spesso il più economico: partire con strumenti standard e personalizzare solo dopo aver dimostrato il valore",
+          "fr": "Souvent le moins cher : démarrer avec des outils standard et personnaliser une fois la valeur prouvée"
+        },
+        {
+          "de": "Vorsicht Lock-in: prüfen, wie teuer ein späterer Wechsel oder Datenexport wird",
+          "en": "Watch lock-in: check how expensive a later switch or data export becomes",
+          "it": "Attenzione al lock-in: verificate quanto costerà un cambio o un export dati futuro",
+          "fr": "Attention au verrouillage : vérifiez le coût d'un changement ou export de données ultérieur"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Versteckte Kosten, die KMU regelmässig unterschätzen",
+        "en": "Hidden Costs SMEs Regularly Underestimate",
+        "it": "Costi nascosti che le PMI sottovalutano spesso",
+        "fr": "Coûts cachés que les PME sous-estiment souvent"
+      },
+      "paragraphs": [
+        {
+          "de": "Die Lizenzgebühr steht im Angebot – die teuersten Posten oft nicht. Der Löwenanteil des Aufwands liegt selten im Werkzeug selbst, sondern darin, es sauber in den Alltag zu bringen und dort zu halten. Kalkulieren Sie diese Posten von Anfang an ein, statt sie später als Überraschung zu erleben.",
+          "en": "The licence fee is in the quote – the most expensive items often are not. The bulk of the effort rarely sits in the tool itself, but in embedding it cleanly into daily work and keeping it there. Budget these items from the start rather than meeting them later as a surprise.",
+          "it": "Il canone è nell'offerta; le voci più care spesso no. La maggior parte dello sforzo raramente sta nello strumento, ma nel calarlo bene nel lavoro quotidiano e mantenerlo. Mettete a budget queste voci fin dall'inizio invece di scoprirle dopo.",
+          "fr": "La licence figure dans le devis ; les postes les plus chers, souvent non. L'essentiel de l'effort réside rarement dans l'outil, mais dans son intégration propre au quotidien et son maintien. Budgétez ces postes dès le départ plutôt que de les découvrir ensuite."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Datenarbeit: Sammeln, Strukturieren, Bereinigen und Pflegen der Daten, mit denen die KI arbeitet",
+          "en": "Data work: collecting, structuring, cleaning and maintaining the data the AI works with",
+          "it": "Lavoro sui dati: raccogliere, strutturare, pulire e mantenere i dati con cui lavora l'IA",
+          "fr": "Travail sur les données : collecter, structurer, nettoyer et entretenir les données de l'IA"
+        },
+        {
+          "de": "Change-Management: Zeit der Mitarbeitenden fürs Lernen, Widerstände, Produktivitätsdelle am Anfang",
+          "en": "Change management: staff time to learn, resistance, an early productivity dip",
+          "it": "Change management: tempo del personale per imparare, resistenze, calo iniziale di produttività",
+          "fr": "Conduite du changement : temps d'apprentissage, résistances, baisse de productivité initiale"
+        },
+        {
+          "de": "Qualitätssicherung: menschliche Kontrolle der KI-Ergebnisse, Korrekturen, Feedbackschleifen",
+          "en": "Quality assurance: human review of AI outputs, corrections, feedback loops",
+          "it": "Controllo qualità: revisione umana degli output IA, correzioni, cicli di feedback",
+          "fr": "Assurance qualité : contrôle humain des résultats, corrections, boucles de retour"
+        },
+        {
+          "de": "Integration und Schnittstellen: Anbindung an bestehende Software ist selten kostenlos",
+          "en": "Integration and interfaces: connecting to existing software is rarely free",
+          "it": "Integrazione e interfacce: collegarsi al software esistente è raramente gratuito",
+          "fr": "Intégration et interfaces : la connexion au logiciel existant est rarement gratuite"
+        },
+        {
+          "de": "Compliance und Recht: revDSG-Prüfung, Datenschutz-Folgenabschätzung, Verträge mit Anbietern",
+          "en": "Compliance and legal: revFADP review, data protection impact assessment, vendor contracts",
+          "it": "Conformità e aspetti legali: verifica nLPD, valutazione d'impatto, contratti con i fornitori",
+          "fr": "Conformité et juridique : contrôle nLPD, analyse d'impact, contrats fournisseurs"
+        },
+        {
+          "de": "Skalierung: Kosten steigen mit Nutzung – erfolgreiche Pilotprojekte werden im Rollout teurer",
+          "en": "Scaling: costs rise with usage – successful pilots get more expensive at rollout",
+          "it": "Scalabilità: i costi crescono con l'uso; i piloti di successo costano di più nel rollout",
+          "fr": "Passage à l'échelle : les coûts croissent avec l'usage ; un pilote réussi coûte plus au déploiement"
+        },
+        {
+          "de": "Ausstieg: Aufwand für Datenexport, Migration und Einarbeitung in ein Nachfolgesystem",
+          "en": "Exit: effort for data export, migration and onboarding to a successor system",
+          "it": "Uscita: sforzo per export dati, migrazione e avvio di un sistema successore",
+          "fr": "Sortie : effort d'export des données, migration et prise en main d'un système successeur"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "ROI realistisch rechnen statt hoffen",
+        "en": "Calculating ROI Realistically, Not Hoping",
+        "it": "Calcolare il ROI in modo realistico, non sperarlo",
+        "fr": "Calculer le ROI de façon réaliste, sans espérer"
+      },
+      "paragraphs": [
+        {
+          "de": "Kosten ergeben nur im Verhältnis zum Nutzen Sinn. Der Return on Investment einer KI-Anwendung entsteht meist aus eingesparter Zeit, vermiedenen Fehlern, schnellerer Reaktion oder zusätzlicher Kapazität ohne Neueinstellung. Rechnen Sie konservativ: Schätzen Sie den messbaren Nutzen pro Monat, ziehen Sie alle laufenden Kosten ab und prüfen Sie, nach wie vielen Monaten die einmalige Investition gedeckt ist. Liegt die Amortisation jenseits von zwölf bis achtzehn Monaten, lohnt ein kritischer Blick.",
+          "en": "Costs only make sense against value. The return on investment of an AI application usually comes from time saved, errors avoided, faster response or added capacity without new hires. Calculate conservatively: estimate the measurable monthly value, subtract all running costs and check after how many months the one-time investment is recovered. If payback lies beyond twelve to eighteen months, a critical look is warranted.",
+          "it": "I costi hanno senso solo rispetto al valore. Il ritorno sull'investimento di un'applicazione IA nasce di solito da tempo risparmiato, errori evitati, risposte più rapide o capacità aggiuntiva senza nuove assunzioni. Calcolate in modo prudente: stimate il valore mensile misurabile, sottraete tutti i costi correnti e verificate dopo quanti mesi si recupera l'investimento iniziale. Se il rientro supera i dodici-diciotto mesi, serve uno sguardo critico.",
+          "fr": "Les coûts n'ont de sens que face à la valeur. Le retour sur investissement d'une application IA provient généralement du temps gagné, des erreurs évitées, d'une réactivité accrue ou d'une capacité supplémentaire sans embauche. Calculez prudemment : estimez la valeur mensuelle mesurable, retranchez tous les coûts courants et vérifiez après combien de mois l'investissement unique est amorti. Au-delà de douze à dix-huit mois, un regard critique s'impose."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Nutzen quantifizieren: Stunden pro Woche mal internem Stundensatz, plus vermiedene Fehlerkosten",
+          "en": "Quantify value: hours per week times internal hourly rate, plus avoided error costs",
+          "it": "Quantificare il valore: ore a settimana per costo orario interno, più costi degli errori evitati",
+          "fr": "Quantifier la valeur : heures par semaine × taux horaire interne, plus coûts d'erreurs évités"
+        },
+        {
+          "de": "Klein starten: ein klar messbarer Anwendungsfall als Pilot, bevor breit investiert wird",
+          "en": "Start small: one clearly measurable use case as a pilot before investing broadly",
+          "it": "Partire in piccolo: un caso d'uso chiaramente misurabile come pilota prima di investire in grande",
+          "fr": "Commencer petit : un cas d'usage clairement mesurable en pilote avant d'investir largement"
+        },
+        {
+          "de": "Nicht-monetären Nutzen benennen, aber getrennt führen: Qualität, Tempo, Mitarbeiterzufriedenheit",
+          "en": "Name non-monetary value but keep it separate: quality, speed, employee satisfaction",
+          "it": "Nominare il valore non monetario ma tenerlo separato: qualità, velocità, soddisfazione del personale",
+          "fr": "Nommer la valeur non monétaire mais la garder à part : qualité, rapidité, satisfaction des équipes"
+        },
+        {
+          "de": "Puffer einplanen: erste Schätzungen sind meist zu optimistisch – rechnen Sie mit Lernkurve",
+          "en": "Add a buffer: first estimates are usually too optimistic – plan for a learning curve",
+          "it": "Prevedere un margine: le prime stime sono di solito troppo ottimistiche; mettete in conto una curva di apprendimento",
+          "fr": "Prévoir une marge : les premières estimations sont souvent trop optimistes ; anticipez une courbe d'apprentissage"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "In sieben Schritten zum realistischen KI-Budget",
+        "en": "A Realistic AI Budget in Seven Steps",
+        "it": "Un budget IA realistico in sette passi",
+        "fr": "Un budget IA réaliste en sept étapes"
+      },
+      "bullets": [
+        {
+          "de": "1. Problem zuerst: Welchen konkreten Prozess oder Engpass soll KI verbessern?",
+          "en": "1. Problem first: which concrete process or bottleneck should AI improve?",
+          "it": "1. Prima il problema: quale processo o collo di bottiglia concreto deve migliorare l'IA?",
+          "fr": "1. Le problème d'abord : quel processus ou goulet concret l'IA doit-elle améliorer ?"
+        },
+        {
+          "de": "2. Aktuelle Kosten des Ist-Zustands beziffern (Zeit, Fehler, entgangener Umsatz)",
+          "en": "2. Quantify today's cost of the status quo (time, errors, lost revenue)",
+          "it": "2. Quantificare il costo attuale dello stato di fatto (tempo, errori, ricavi persi)",
+          "fr": "2. Chiffrer le coût actuel de l'existant (temps, erreurs, chiffre d'affaires perdu)"
+        },
+        {
+          "de": "3. Standardlösung vs. Eigenbau bewerten – für den gewählten Anwendungsfall",
+          "en": "3. Assess off-the-shelf vs custom build – for the chosen use case",
+          "it": "3. Valutare soluzione standard o su misura per il caso d'uso scelto",
+          "fr": "3. Évaluer solution standard ou sur-mesure pour le cas d'usage retenu"
+        },
+        {
+          "de": "4. Beide Kostenblöcke schätzen: einmalig und wiederkehrend, auf drei Jahre",
+          "en": "4. Estimate both cost blocks: one-time and recurring, over three years",
+          "it": "4. Stimare entrambi i blocchi di costo: una tantum e ricorrenti, su tre anni",
+          "fr": "4. Estimer les deux blocs : coûts uniques et récurrents, sur trois ans"
+        },
+        {
+          "de": "5. Versteckte Posten addieren: Daten, Schulung, Integration, QS, Compliance",
+          "en": "5. Add hidden items: data, training, integration, QA, compliance",
+          "it": "5. Aggiungere le voci nascoste: dati, formazione, integrazione, QA, conformità",
+          "fr": "5. Ajouter les postes cachés : données, formation, intégration, QA, conformité"
+        },
+        {
+          "de": "6. Amortisation prüfen: Nutzen pro Monat gegen Gesamtkosten stellen",
+          "en": "6. Check payback: weigh monthly value against total cost",
+          "it": "6. Verificare l'ammortamento: valore mensile contro costo totale",
+          "fr": "6. Vérifier l'amortissement : valeur mensuelle face au coût total"
+        },
+        {
+          "de": "7. Als Pilot budgetieren, messen, dann über Ausweitung entscheiden",
+          "en": "7. Budget as a pilot, measure, then decide on expansion",
+          "it": "7. Mettere a budget come pilota, misurare, poi decidere l'estensione",
+          "fr": "7. Budgéter en pilote, mesurer, puis décider de l'extension"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Perspektive: revDSG, Datenstandort und CHF",
+        "en": "Swiss Perspective: revFADP, Data Location and CHF",
+        "it": "Prospettiva svizzera: nLPD, ubicazione dei dati e CHF",
+        "fr": "Perspective suisse : nLPD, localisation des données et CHF"
+      },
+      "paragraphs": [
+        {
+          "de": "Für Schweizer KMU hat KI eine eigene Kostendimension: Datenschutz und Datenstandort. Wer Personendaten durch KI verarbeitet, unterliegt dem revidierten Datenschutzgesetz (revDSG/nFADP), beaufsichtigt durch den EDÖB. Das verursacht reale Kosten – etwa für die Prüfung, ob ein Anbieter Daten ausserhalb der Schweiz oder der EU verarbeitet, für Auftragsbearbeitungsverträge und in heiklen Fällen für eine Datenschutz-Folgenabschätzung. Diese Posten sind kein Luxus, sondern Teil der Grundkalkulation.",
+          "en": "For Swiss SMEs, AI has its own cost dimension: data protection and data location. Anyone processing personal data through AI falls under the revised Data Protection Act (revFADP/nFADP), supervised by the FDPIC. This creates real costs – for instance to check whether a provider processes data outside Switzerland or the EU, for data processing agreements and, in sensitive cases, for a data protection impact assessment. These items are not a luxury but part of the base calculation.",
+          "it": "Per le PMI svizzere l'IA ha una dimensione di costo propria: protezione dei dati e loro ubicazione. Chi tratta dati personali tramite IA rientra nella legge riveduta (nLPD), vigilata dall'IFPDT. Ciò genera costi reali: verificare se un fornitore tratta i dati fuori dalla Svizzera o dall'UE, contratti di responsabile del trattamento e, nei casi delicati, una valutazione d'impatto sulla protezione dei dati. Non sono un lusso, ma parte del calcolo di base.",
+          "fr": "Pour les PME suisses, l'IA a sa propre dimension de coût : protection et localisation des données. Quiconque traite des données personnelles via l'IA relève de la loi révisée (nLPD), surveillée par le PFPDT. Cela engendre des coûts réels : vérifier si un fournisseur traite les données hors de Suisse ou de l'UE, contrats de sous-traitance et, dans les cas sensibles, une analyse d'impact. Ces postes ne sont pas un luxe, mais font partie du calcul de base."
+        },
+        {
+          "de": "Ebenfalls schweizspezifisch: Preise ausländischer Anbieter werden meist in US-Dollar oder Euro fakturiert. Wechselkurs, Fremdwährungsgebühren und die Mehrwertsteuer auf Bezüge aus dem Ausland gehören in die CHF-Kalkulation. Wer diese Details früh berücksichtigt, vermeidet Budgetabweichungen und trifft eine Entscheidung, die auch der Aufsicht standhält.",
+          "en": "Also Switzerland-specific: prices from foreign providers are usually billed in US dollars or euros. Exchange rate, foreign-currency fees and VAT on services from abroad belong in the CHF calculation. Accounting for these details early avoids budget deviations and leads to a decision that also holds up to the regulator.",
+          "it": "Anch'esso specifico per la Svizzera: i prezzi dei fornitori esteri sono di solito fatturati in dollari o euro. Tasso di cambio, commissioni in valuta estera e IVA sulle prestazioni dall'estero vanno inseriti nel calcolo in CHF. Considerare per tempo questi dettagli evita scostamenti di budget e porta a una decisione che regge anche di fronte all'autorità.",
+          "fr": "Autre spécificité suisse : les prix des fournisseurs étrangers sont souvent facturés en dollars ou en euros. Taux de change, frais de devise et TVA sur les prestations de l'étranger doivent figurer dans le calcul en CHF. Anticiper ces détails évite les écarts de budget et conduit à une décision qui tient aussi devant l'autorité."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Datenstandort klären: Wo werden Ihre Daten gespeichert und verarbeitet?",
+          "en": "Clarify data location: where is your data stored and processed?",
+          "it": "Chiarire l'ubicazione dei dati: dove sono archiviati ed elaborati?",
+          "fr": "Clarifier la localisation : où vos données sont-elles stockées et traitées ?"
+        },
+        {
+          "de": "Auftragsbearbeitungsvertrag und revDSG-Konformität des Anbieters prüfen",
+          "en": "Check the provider's data processing agreement and revFADP compliance",
+          "it": "Verificare il contratto di trattamento e la conformità nLPD del fornitore",
+          "fr": "Vérifier le contrat de sous-traitance et la conformité nLPD du fournisseur"
+        },
+        {
+          "de": "Fremdwährung, Kursrisiko und MWST-Bezugsteuer in CHF einrechnen",
+          "en": "Factor foreign currency, exchange risk and import VAT into CHF",
+          "it": "Includere valuta estera, rischio di cambio e IVA sull'importazione in CHF",
+          "fr": "Intégrer devise, risque de change et TVA à l'importation en CHF"
+        },
+        {
+          "de": "Sensible Daten (Gesundheit, Bewerbungen) besonders vorsichtig behandeln – ggf. Folgenabschätzung",
+          "en": "Handle sensitive data (health, job applications) with extra care – impact assessment if needed",
+          "it": "Trattare i dati sensibili (salute, candidature) con cautela extra, se necessario con valutazione d'impatto",
+          "fr": "Traiter les données sensibles (santé, candidatures) avec un soin particulier – analyse d'impact si nécessaire"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was kostet KI für ein kleines Unternehmen im Minimum?",
+        "en": "What is the minimum AI costs for a small business?",
+        "it": "Qual è il costo minimo dell'IA per una piccola impresa?",
+        "fr": "Quel est le coût minimal de l'IA pour une petite entreprise ?"
+      },
+      "a": {
+        "de": "Der Einstieg kann sehr niedrig sein: Viele KI-Assistenten und Fachtools sind als monatliches Abo pro Nutzer verfügbar, oft im zweistelligen Frankenbereich. Damit lassen sich Texte, Recherchen oder Zusammenfassungen sofort produktiv nutzen. Entscheidend ist aber nicht die Abogebühr, sondern der Gesamtaufwand inklusive Schulung und Einführung. Starten Sie mit einem klar abgegrenzten Anwendungsfall, messen Sie den Nutzen und erweitern Sie erst dann.",
+        "en": "Entry can be very low: many AI assistants and specialist tools are available as a monthly per-user subscription, often in the low double-digit franc range. That lets you use writing, research or summarising productively at once. What matters, though, is not the subscription fee but the total effort including training and rollout. Start with a tightly scoped use case, measure the value and only then expand.",
+        "it": "L'ingresso può essere molto basso: molti assistenti IA e strumenti specialistici sono disponibili come abbonamento mensile per utente, spesso di poche decine di franchi. Così potete usare subito scrittura, ricerca o sintesi in modo produttivo. Ciò che conta però non è il canone, ma lo sforzo totale compresi formazione e avvio. Partite da un caso d'uso ben delimitato, misurate il valore e solo dopo ampliate.",
+        "fr": "L'entrée peut être très basse : beaucoup d'assistants IA et d'outils spécialisés existent en abonnement mensuel par utilisateur, souvent quelques dizaines de francs. Vous pouvez ainsi rédiger, rechercher ou résumer de façon productive immédiatement. L'essentiel n'est toutefois pas l'abonnement mais l'effort total, formation et déploiement compris. Commencez par un cas d'usage bien délimité, mesurez la valeur, puis étendez."
+      }
+    },
+    {
+      "q": {
+        "de": "Warum kann niemand einen festen Preis für KI nennen?",
+        "en": "Why can nobody name a fixed price for AI?",
+        "it": "Perché nessuno può indicare un prezzo fisso per l'IA?",
+        "fr": "Pourquoi personne ne peut donner un prix fixe pour l'IA ?"
+      },
+      "a": {
+        "de": "Weil KI kein Produkt mit einem Preis ist, sondern eine Fähigkeit, die sich auf sehr unterschiedliche Aufgaben anwenden lässt. Der Preis hängt vom Anwendungsfall, dem Umfang, der Integrationstiefe, dem Datenvolumen und der Betriebsdauer ab. Seriöse Anbieter beantworten die Frage deshalb mit einer Kostenstruktur und einer Schätzung für Ihren konkreten Fall – nicht mit einer Pauschalzahl. Ein fixer Preis ohne Kenntnis Ihres Vorhabens wäre unseriös.",
+        "en": "Because AI is not a product with a price but a capability applied to very different tasks. The price depends on the use case, scope, depth of integration, data volume and how long you run it. Reputable providers therefore answer with a cost structure and an estimate for your specific case – not a flat number. A fixed price without knowing your project would be dishonest.",
+        "it": "Perché l'IA non è un prodotto con un prezzo, ma una capacità applicabile a compiti molto diversi. Il prezzo dipende dal caso d'uso, dall'ampiezza, dalla profondità di integrazione, dal volume di dati e dalla durata d'esercizio. I fornitori seri rispondono quindi con una struttura di costi e una stima per il vostro caso concreto, non con una cifra forfettaria. Un prezzo fisso senza conoscere il progetto sarebbe poco serio.",
+        "fr": "Parce que l'IA n'est pas un produit avec un prix, mais une capacité appliquée à des tâches très diverses. Le prix dépend du cas d'usage, de l'ampleur, de la profondeur d'intégration, du volume de données et de la durée d'exploitation. Les prestataires sérieux répondent donc par une structure de coûts et une estimation pour votre cas précis, pas par un montant forfaitaire. Un prix fixe sans connaître votre projet serait malhonnête."
+      }
+    },
+    {
+      "q": {
+        "de": "Was sind die häufigsten versteckten KI-Kosten?",
+        "en": "What are the most common hidden AI costs?",
+        "it": "Quali sono i costi nascosti più comuni dell'IA?",
+        "fr": "Quels sont les coûts cachés les plus fréquents de l'IA ?"
+      },
+      "a": {
+        "de": "Am häufigsten unterschätzt werden vier Posten: die Aufbereitung und Pflege der eigenen Daten, die Zeit der Mitarbeitenden für Lernen und Umstellung, die menschliche Qualitätskontrolle der KI-Ergebnisse sowie die Integration in bestehende Systeme. Dazu kommen laufende, nutzungsabhängige Kosten, die mit dem Erfolg steigen. Wer diese Blöcke von Beginn an einplant, erlebt keine böse Überraschung, wenn aus dem Pilotprojekt ein produktiver Dauerbetrieb wird.",
+        "en": "Four items are most often underestimated: preparing and maintaining your own data, staff time for learning and change, human quality control of AI outputs, and integration into existing systems. Add ongoing, usage-based costs that grow with success. Budgeting these blocks from the start avoids a nasty surprise when a pilot becomes productive day-to-day operation.",
+        "it": "Quattro voci sono le più sottovalutate: la preparazione e manutenzione dei propri dati, il tempo del personale per imparare e cambiare, il controllo qualità umano degli output IA e l'integrazione nei sistemi esistenti. Si aggiungono costi correnti a consumo che crescono con il successo. Mettere a budget questi blocchi fin dall'inizio evita brutte sorprese quando il pilota diventa esercizio quotidiano.",
+        "fr": "Quatre postes sont les plus sous-estimés : la préparation et l'entretien de vos données, le temps du personnel pour apprendre et changer, le contrôle qualité humain des résultats, et l'intégration aux systèmes existants. S'y ajoutent des coûts récurrents à l'usage qui croissent avec le succès. Budgéter ces blocs dès le départ évite les mauvaises surprises quand un pilote devient une exploitation quotidienne."
+      }
+    },
+    {
+      "q": {
+        "de": "Lohnt sich eine Eigenentwicklung oder reicht ein fertiges Tool?",
+        "en": "Is a custom build worth it, or does a ready-made tool suffice?",
+        "it": "Conviene lo sviluppo su misura o basta uno strumento pronto?",
+        "fr": "Le sur-mesure en vaut-il la peine ou un outil prêt suffit-il ?"
+      },
+      "a": {
+        "de": "Für die meisten KMU ist der günstigste Weg, mit fertigen Standard-Tools zu starten und erst dann individuell zu entwickeln, wenn der Nutzen bewiesen ist und der Prozess wirklich einzigartig oder datensensibel ist. Fertige Lösungen haben kaum Startkosten und lassen sich schnell testen. Eine Eigenentwicklung lohnt sich, wenn hohe Volumen, Wettbewerbsvorteil oder besondere Datenschutzanforderungen die höheren Anfangskosten rechtfertigen.",
+        "en": "For most SMEs the cheapest path is to start with ready-made standard tools and only build custom once value is proven and the process is genuinely unique or data-sensitive. Off-the-shelf solutions have almost no start-up cost and can be tested quickly. A custom build pays off when high volume, competitive advantage or special data protection needs justify the higher upfront cost.",
+        "it": "Per la maggior parte delle PMI la via più economica è partire con strumenti standard pronti e sviluppare su misura solo quando il valore è dimostrato e il processo è davvero unico o sensibile per i dati. Le soluzioni pronte hanno costi d'avvio quasi nulli e si testano in fretta. Lo sviluppo su misura conviene quando volumi elevati, vantaggio competitivo o esigenze particolari di protezione dati giustificano il maggior costo iniziale.",
+        "fr": "Pour la plupart des PME, la voie la moins chère est de démarrer avec des outils standard prêts à l'emploi et de ne développer sur-mesure qu'une fois la valeur prouvée et si le processus est vraiment unique ou sensible. Les solutions prêtes n'ont presque pas de coût de départ et se testent vite. Le sur-mesure se justifie quand des volumes élevés, un avantage concurrentiel ou des exigences de protection des données couvrent le surcoût initial."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie berechne ich den ROI einer KI-Investition?",
+        "en": "How do I calculate the ROI of an AI investment?",
+        "it": "Come calcolo il ROI di un investimento in IA?",
+        "fr": "Comment calculer le ROI d'un investissement IA ?"
+      },
+      "a": {
+        "de": "Schätzen Sie zuerst den messbaren monatlichen Nutzen: eingesparte Arbeitsstunden mal internem Stundensatz, plus vermiedene Fehlerkosten und zusätzlicher Umsatz. Ziehen Sie davon alle wiederkehrenden Kosten ab. Teilen Sie die einmalige Investition durch den monatlichen Nettonutzen – das ergibt die Amortisationszeit in Monaten. Rechnen Sie konservativ und planen Sie eine Lernkurve ein. Eine Amortisation innerhalb von rund zwölf Monaten gilt als sehr solide.",
+        "en": "First estimate the measurable monthly value: work hours saved times internal hourly rate, plus avoided error costs and added revenue. Subtract all recurring costs. Divide the one-time investment by the monthly net value – that gives payback time in months. Calculate conservatively and plan for a learning curve. Payback within roughly twelve months is considered very solid.",
+        "it": "Stimate prima il valore mensile misurabile: ore di lavoro risparmiate per il costo orario interno, più costi degli errori evitati e ricavi aggiuntivi. Sottraete tutti i costi ricorrenti. Dividete l'investimento una tantum per il valore netto mensile: ottenete il tempo di rientro in mesi. Calcolate con prudenza e prevedete una curva di apprendimento. Un rientro entro circa dodici mesi è considerato molto solido.",
+        "fr": "Estimez d'abord la valeur mensuelle mesurable : heures de travail gagnées × taux horaire interne, plus coûts d'erreurs évités et chiffre d'affaires supplémentaire. Retranchez tous les coûts récurrents. Divisez l'investissement unique par la valeur nette mensuelle : vous obtenez le délai d'amortissement en mois. Calculez prudemment et prévoyez une courbe d'apprentissage. Un amortissement en douze mois environ est considéré comme très solide."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche schweizspezifischen Kosten muss ich bei KI beachten?",
+        "en": "Which Switzerland-specific costs must I consider with AI?",
+        "it": "Quali costi specifici svizzeri devo considerare con l'IA?",
+        "fr": "Quels coûts spécifiques suisses dois-je considérer avec l'IA ?"
+      },
+      "a": {
+        "de": "Zwei Bereiche sind zentral. Erstens Datenschutz: Verarbeiten Sie Personendaten, gilt das revDSG (nFADP) unter Aufsicht des EDÖB – klären Sie Datenstandort, Auftragsbearbeitungsvertrag und bei sensiblen Daten eine Folgenabschätzung. Zweitens Währung: Viele Anbieter fakturieren in USD oder EUR, deshalb gehören Wechselkurs, Fremdwährungsgebühren und die MWST-Bezugsteuer auf Auslandsleistungen in Ihre CHF-Kalkulation. Beides früh einplanen schützt vor Budgetabweichungen und rechtlichen Risiken.",
+        "en": "Two areas are central. First, data protection: if you process personal data, the revFADP (nFADP) applies under FDPIC oversight – clarify data location, the data processing agreement and, for sensitive data, an impact assessment. Second, currency: many providers bill in USD or EUR, so exchange rate, foreign-currency fees and import VAT on foreign services belong in your CHF calculation. Planning both early protects against budget deviations and legal risk.",
+        "it": "Due aree sono centrali. Primo, protezione dei dati: se trattate dati personali si applica la nLPD sotto la vigilanza dell'IFPDT: chiarite ubicazione dei dati, contratto di trattamento e, per i dati sensibili, una valutazione d'impatto. Secondo, valuta: molti fornitori fatturano in USD o EUR, quindi tasso di cambio, commissioni in valuta e IVA sull'importazione di prestazioni estere vanno nel calcolo in CHF. Pianificare entrambi per tempo protegge da scostamenti di budget e rischi legali.",
+        "fr": "Deux domaines sont essentiels. D'abord la protection des données : si vous traitez des données personnelles, la nLPD s'applique sous la surveillance du PFPDT – clarifiez la localisation, le contrat de sous-traitance et, pour les données sensibles, une analyse d'impact. Ensuite la devise : beaucoup de fournisseurs facturent en USD ou EUR, donc taux de change, frais de devise et TVA à l'importation sur les prestations étrangères entrent dans votre calcul en CHF. Anticiper les deux protège des écarts de budget et des risques juridiques."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Künstliche Intelligenz",
+    "KMU",
+    "Kostenstruktur",
+    "Total Cost of Ownership",
+    "einmalige Kosten",
+    "wiederkehrende Kosten",
+    "SaaS-Lizenz",
+    "Eigenentwicklung",
+    "versteckte Kosten",
+    "Return on Investment",
+    "revDSG / nFADP",
+    "EDÖB",
+    "Datenschutz-Folgenabschätzung",
+    "Datenstandort",
+    "Change-Management",
+    "CHF"
+  ]
+}

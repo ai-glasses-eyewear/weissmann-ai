@@ -1,0 +1,424 @@
+{
+  "id": "common-ai-mistakes-smes",
+  "cluster": "business-smes",
+  "type": "spoke",
+  "slug": {
+    "de": "haeufige-ki-fehler",
+    "en": "common-ai-mistakes",
+    "it": "errori-comuni-ia",
+    "fr": "erreurs-frequentes-ia"
+  },
+  "relatedServices": [
+    "consulting"
+  ],
+  "title": {
+    "de": "KI-Fehler in Unternehmen: 5 Fallen vermeiden | Weissmann AI",
+    "en": "AI Mistakes Companies Make: 5 Traps to Avoid | Weissmann AI",
+    "it": "Errori con l'IA nelle aziende: 5 trappole | Weissmann AI",
+    "fr": "Erreurs d'IA en entreprise : 5 pièges à éviter | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Die 5 häufigsten KI-Fehler von KMU – Hype, fehlender Use Case, schlechte Daten, keine Kontrolle, Compliance – und wie Sie sie mit einem pragmatischen Fahrplan vermeiden.",
+    "en": "The 5 most common AI mistakes SMEs make – hype, no use case, poor data, no oversight, compliance – and how to avoid them with a pragmatic roadmap.",
+    "it": "I 5 errori più comuni delle PMI con l'IA – hype, nessun caso d'uso, dati scadenti, controllo, compliance – e come evitarli con un piano pratico.",
+    "fr": "Les 5 erreurs d'IA les plus fréquentes des PME – hype, absence de cas d'usage, données, contrôle, conformité – et comment les éviter."
+  },
+  "kicker": {
+    "de": "KI für KMU",
+    "en": "AI for SMEs",
+    "it": "IA per le PMI",
+    "fr": "IA pour les PME"
+  },
+  "h1": {
+    "de": "Die häufigsten KI-Fehler in Unternehmen – und wie Sie sie vermeiden",
+    "en": "The Most Common AI Mistakes Companies Make – and How to Avoid Them",
+    "it": "Gli errori più comuni delle aziende con l'IA – e come evitarli",
+    "fr": "Les erreurs d'IA les plus fréquentes en entreprise – et comment les éviter"
+  },
+  "answerFirst": {
+    "de": "KI-Projekte scheitern in KMU selten an der Technik, sondern an fünf typischen Fehlern: dem Hype folgen statt ein echtes Problem zu lösen, kein klar definierter Anwendungsfall, mangelhafte Datenqualität, fehlende menschliche Kontrolle und übersehene Compliance-Pflichten. Wer klein startet, den Nutzen misst, Daten pflegt, Ergebnisse prüft und das revidierte Datenschutzgesetz (revDSG) beachtet, vermeidet teure Umwege und schafft messbaren, nachhaltigen Mehrwert statt Enttäuschung.",
+    "en": "AI projects in SMEs rarely fail because of the technology – they fail because of five recurring mistakes: chasing hype instead of solving a real problem, having no clearly defined use case, ignoring data quality, lacking human oversight, and overlooking compliance duties. Companies that start small, measure the benefit, maintain their data, review outputs, and respect Switzerland's revised data-protection law (revDSG) avoid costly detours and create measurable, lasting value.",
+    "it": "I progetti di IA nelle PMI raramente falliscono per la tecnologia: falliscono per cinque errori ricorrenti: inseguire l'hype invece di risolvere un problema reale, non avere un caso d'uso chiaro, ignorare la qualità dei dati, mancare di supervisione umana e trascurare gli obblighi di conformità. Chi parte in piccolo, misura il beneficio, cura i dati, verifica i risultati e rispetta la legge svizzera sulla protezione dei dati (revDSG) evita costose deviazioni.",
+    "fr": "Les projets d'IA dans les PME échouent rarement à cause de la technologie, mais à cause de cinq erreurs récurrentes : suivre le hype au lieu de résoudre un vrai problème, absence de cas d'usage clair, données de mauvaise qualité, manque de supervision humaine et angles morts de conformité. Démarrer petit, mesurer le bénéfice, entretenir ses données, contrôler les résultats et respecter la loi suisse (nLPD/revDSG) évite des détours coûteux."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Warum KI-Projekte in KMU scheitern",
+        "en": "Why AI Projects Fail in SMEs",
+        "it": "Perché i progetti di IA falliscono nelle PMI",
+        "fr": "Pourquoi les projets d'IA échouent dans les PME"
+      },
+      "paragraphs": [
+        {
+          "de": "Die gute Nachricht zuerst: Die meisten gescheiterten KI-Vorhaben scheitern nicht an schlechter Technologie, sondern an vermeidbaren Entscheidungen davor und daneben. Moderne Sprachmodelle und KI-Werkzeuge funktionieren für viele KMU-Aufgaben erstaunlich gut. Das Problem liegt fast immer im Rahmen: unklare Ziele, ungepflegte Daten, kein Prozess für die Ergebnisprüfung und blinde Flecken bei Datenschutz und Verantwortung.",
+          "en": "The good news first: most failed AI initiatives do not fail because of bad technology, but because of avoidable decisions made before and around it. Modern language models and AI tools work surprisingly well for many SME tasks. The problem almost always lies in the setup: unclear goals, unmaintained data, no process for reviewing outputs, and blind spots around data protection and accountability.",
+          "it": "Prima la buona notizia: la maggior parte delle iniziative di IA fallite non fallisce per una cattiva tecnologia, ma per decisioni evitabili prese prima e attorno ad essa. I moderni modelli linguistici e gli strumenti di IA funzionano sorprendentemente bene per molti compiti delle PMI. Il problema sta quasi sempre nell'impostazione: obiettivi poco chiari, dati non curati, nessun processo di verifica dei risultati e punti ciechi su protezione dei dati e responsabilità.",
+          "fr": "La bonne nouvelle d'abord : la plupart des projets d'IA qui échouent ne le font pas à cause d'une mauvaise technologie, mais à cause de décisions évitables prises en amont et autour. Les modèles de langage et outils d'IA modernes fonctionnent étonnamment bien pour de nombreuses tâches de PME. Le problème réside presque toujours dans le cadrage : objectifs flous, données négligées, absence de contrôle des résultats et angles morts en matière de protection des données et de responsabilité."
+        },
+        {
+          "de": "Für ein KMU sind die Folgen konkret: verlorene Zeit, verbranntes Budget, frustrierte Mitarbeitende und – im schlimmsten Fall – ein Datenschutzvorfall. Die folgenden fünf Fehler tauchen in der Praxis immer wieder auf. Wer sie kennt, spart sich die teuersten Lektionen und kann KI dort einsetzen, wo sie wirklich Wert schafft.",
+          "en": "For an SME the consequences are concrete: lost time, burned budget, frustrated staff and – in the worst case – a data-protection incident. The following five mistakes appear again and again in practice. Knowing them saves you the most expensive lessons and lets you deploy AI where it genuinely creates value.",
+          "it": "Per una PMI le conseguenze sono concrete: tempo perso, budget bruciato, personale frustrato e – nel caso peggiore – un incidente di protezione dei dati. I cinque errori seguenti si ripresentano continuamente nella pratica. Conoscerli vi risparmia le lezioni più costose e vi permette di usare l'IA dove crea davvero valore.",
+          "fr": "Pour une PME, les conséquences sont concrètes : temps perdu, budget gaspillé, collaborateurs frustrés et, dans le pire des cas, un incident de protection des données. Les cinq erreurs suivantes reviennent sans cesse en pratique. Les connaître vous épargne les leçons les plus coûteuses et vous permet de déployer l'IA là où elle crée réellement de la valeur."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Fehler 1 & 2: Dem Hype folgen statt einem klaren Anwendungsfall",
+        "en": "Mistakes 1 & 2: Chasing Hype Instead of a Clear Use Case",
+        "it": "Errori 1 e 2: Inseguire l'hype invece di un caso d'uso chiaro",
+        "fr": "Erreurs 1 et 2 : Suivre le hype plutôt qu'un cas d'usage clair"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Klassiker: «Wir müssen jetzt auch etwas mit KI machen.» Diese Motivation führt zu Werkzeugen auf der Suche nach einem Problem. Ein Chatbot, weil alle einen haben; ein KI-Feature, weil es im Marketing gut klingt. Ohne klar benannten Anwendungsfall fehlt der Massstab, an dem sich Erfolg messen liesse – und das Projekt versandet.",
+          "en": "The classic: \"We need to do something with AI too, now.\" This motivation produces tools in search of a problem. A chatbot because everyone has one; an AI feature because it sounds good in marketing. Without a clearly named use case there is no yardstick to measure success against – and the project quietly stalls.",
+          "it": "Il classico: «Dobbiamo fare anche noi qualcosa con l'IA, subito.» Questa motivazione produce strumenti in cerca di un problema. Un chatbot perché tutti ne hanno uno; una funzione IA perché suona bene nel marketing. Senza un caso d'uso chiaramente definito manca il metro con cui misurare il successo, e il progetto si arena.",
+          "fr": "Le classique : « Nous devons faire quelque chose avec l'IA, nous aussi, maintenant. » Cette motivation produit des outils à la recherche d'un problème. Un chatbot parce que tout le monde en a un ; une fonction IA parce que cela sonne bien en marketing. Sans cas d'usage clairement nommé, il n'existe aucun étalon pour mesurer le succès, et le projet s'enlise."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "So vermeiden Sie es: Beginnen Sie mit einem konkreten, wiederkehrenden Problem – nicht mit der Technologie.",
+          "en": "How to avoid it: Start with a concrete, recurring problem – not with the technology.",
+          "it": "Come evitarlo: Partite da un problema concreto e ricorrente, non dalla tecnologia.",
+          "fr": "Comment l'éviter : Partez d'un problème concret et récurrent, pas de la technologie."
+        },
+        {
+          "de": "Formulieren Sie den Nutzen messbar: «Angebote in 30 statt 90 Minuten erstellen», nicht «KI einführen».",
+          "en": "State the benefit measurably: \"produce quotes in 30 instead of 90 minutes\", not \"introduce AI\".",
+          "it": "Formulate il beneficio in modo misurabile: «preparare offerte in 30 anziché 90 minuti», non «introdurre l'IA».",
+          "fr": "Formulez le bénéfice de façon mesurable : « établir des devis en 30 au lieu de 90 minutes », pas « introduire l'IA »."
+        },
+        {
+          "de": "Wählen Sie einen Anwendungsfall mit hoher Häufigkeit, klarer Datenlage und niedrigem Risiko für den Start.",
+          "en": "Pick a use case with high frequency, clear data and low risk to start with.",
+          "it": "Scegliete un caso d'uso ad alta frequenza, con dati chiari e basso rischio per iniziare.",
+          "fr": "Choisissez pour commencer un cas d'usage à forte fréquence, aux données claires et à faible risque."
+        },
+        {
+          "de": "Testen Sie mit einem kleinen Proof of Concept, bevor Sie investieren – Lernen ist billiger als Ausrollen.",
+          "en": "Test with a small proof of concept before investing – learning is cheaper than rolling out.",
+          "it": "Testate con un piccolo proof of concept prima di investire: imparare costa meno che distribuire.",
+          "fr": "Testez avec une petite preuve de concept avant d'investir : apprendre coûte moins cher que déployer."
+        },
+        {
+          "de": "Definieren Sie vorab, woran Sie Erfolg oder Abbruch erkennen (Zeit, Qualität, Kosten, Zufriedenheit).",
+          "en": "Define upfront how you will recognise success or a stop (time, quality, cost, satisfaction).",
+          "it": "Definite in anticipo come riconoscerete il successo o lo stop (tempo, qualità, costi, soddisfazione).",
+          "fr": "Définissez à l'avance comment vous reconnaîtrez le succès ou l'arrêt (temps, qualité, coût, satisfaction)."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Fehler 3: Datenqualität ignorieren",
+        "en": "Mistake 3: Ignoring Data Quality",
+        "it": "Errore 3: Ignorare la qualità dei dati",
+        "fr": "Erreur 3 : Ignorer la qualité des données"
+      },
+      "paragraphs": [
+        {
+          "de": "KI ist nur so gut wie die Daten, mit denen sie arbeitet. Veraltete Preislisten, widersprüchliche Kundendaten in drei Systemen, unstrukturierte PDFs ohne Struktur – daraus entstehen selbstbewusst klingende, aber falsche Antworten. Gerade bei KMU ist «Garbage in, Garbage out» der stille Killer vieler Pilotprojekte: Die Technik funktioniert, aber die Grundlage stimmt nicht.",
+          "en": "AI is only as good as the data it works with. Outdated price lists, contradictory customer records across three systems, unstructured PDFs with no structure – these produce confident-sounding but wrong answers. In SMEs especially, \"garbage in, garbage out\" is the silent killer of many pilots: the technology works, but the foundation is flawed.",
+          "it": "L'IA vale solo quanto i dati con cui lavora. Listini prezzi obsoleti, dati clienti contraddittori su tre sistemi, PDF non strutturati: da qui nascono risposte che suonano sicure ma sono sbagliate. Nelle PMI in particolare, «garbage in, garbage out» è il killer silenzioso di molti progetti pilota: la tecnologia funziona, ma le fondamenta sono difettose.",
+          "fr": "L'IA ne vaut que les données avec lesquelles elle travaille. Des tarifs obsolètes, des données clients contradictoires dans trois systèmes, des PDF sans structure : voilà comment naissent des réponses assurées mais fausses. Dans les PME surtout, « garbage in, garbage out » est le tueur silencieux de nombreux pilotes : la technologie fonctionne, mais la base est défaillante."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Prüfen Sie vor dem Projekt: Sind die relevanten Daten aktuell, vollständig, konsistent und auffindbar?",
+          "en": "Check before the project: are the relevant data current, complete, consistent and findable?",
+          "it": "Verificate prima del progetto: i dati rilevanti sono aggiornati, completi, coerenti e reperibili?",
+          "fr": "Vérifiez avant le projet : les données pertinentes sont-elles à jour, complètes, cohérentes et trouvables ?"
+        },
+        {
+          "de": "Räumen Sie Doppelspurigkeiten und Widersprüche auf, bevor Sie eine KI darauf loslassen.",
+          "en": "Clean up duplication and contradictions before letting an AI loose on them.",
+          "it": "Eliminate duplicazioni e contraddizioni prima di lanciarci sopra un'IA.",
+          "fr": "Éliminez doublons et contradictions avant de lâcher une IA dessus."
+        },
+        {
+          "de": "Definieren Sie eine einzige verlässliche Quelle («single source of truth») pro Datentyp.",
+          "en": "Define a single source of truth per data type.",
+          "it": "Definite un'unica fonte affidabile («single source of truth») per tipo di dato.",
+          "fr": "Définissez une source unique de vérité par type de donnée."
+        },
+        {
+          "de": "Klein anfangen: Ein sauberer, begrenzter Datensatz schlägt einen grossen, chaotischen.",
+          "en": "Start small: one clean, limited dataset beats a large, chaotic one.",
+          "it": "Iniziate in piccolo: un set di dati pulito e limitato batte uno grande e caotico.",
+          "fr": "Commencez petit : un jeu de données propre et limité vaut mieux qu'un grand et chaotique."
+        },
+        {
+          "de": "Datenpflege ist kein Einmalprojekt, sondern ein laufender Prozess mit klarer Verantwortlichkeit.",
+          "en": "Data maintenance is not a one-off project but an ongoing process with clear ownership.",
+          "it": "La cura dei dati non è un progetto una tantum ma un processo continuo con responsabilità chiara.",
+          "fr": "L'entretien des données n'est pas un projet ponctuel mais un processus continu avec une responsabilité claire."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Fehler 4: Keine menschliche Kontrolle",
+        "en": "Mistake 4: No Human Oversight",
+        "it": "Errore 4: Nessuna supervisione umana",
+        "fr": "Erreur 4 : Aucune supervision humaine"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Modelle können «halluzinieren» – also plausibel klingende, aber falsche Aussagen erzeugen. Wer generierte Angebote, Verträge, medizinische oder rechtliche Aussagen ungeprüft übernimmt, riskiert Fehler, die teuer oder rufschädigend werden. Vollautomatisierung ohne Kontrolle ist bei KMU selten sinnvoll; das Ziel ist Assistenz, die geprüft wird – nicht Ersatz ohne Aufsicht.",
+          "en": "AI models can \"hallucinate\" – produce plausible-sounding but false statements. Adopting generated quotes, contracts, or medical or legal statements unchecked risks errors that become expensive or reputation-damaging. Full automation without oversight rarely makes sense for SMEs; the goal is assistance that gets reviewed – not replacement without supervision.",
+          "it": "I modelli di IA possono «allucinare», cioè produrre affermazioni plausibili ma false. Adottare senza verifica offerte, contratti o dichiarazioni mediche o legali generate rischia errori che diventano costosi o dannosi per la reputazione. La piena automazione senza controllo raramente ha senso per le PMI; l'obiettivo è un'assistenza verificata, non una sostituzione senza supervisione.",
+          "fr": "Les modèles d'IA peuvent « halluciner », c'est-à-dire produire des affirmations plausibles mais fausses. Reprendre sans contrôle des devis, contrats ou avis médicaux ou juridiques générés expose à des erreurs coûteuses ou dommageables pour la réputation. L'automatisation totale sans supervision a rarement du sens pour une PME ; l'objectif est une assistance contrôlée, pas un remplacement sans surveillance."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Legen Sie fest, welche Ergebnisse ein Mensch vor Verwendung freigibt (Human-in-the-Loop).",
+          "en": "Define which outputs a human approves before use (human-in-the-loop).",
+          "it": "Stabilite quali risultati un umano approva prima dell'uso (human-in-the-loop).",
+          "fr": "Définissez quels résultats un humain valide avant usage (human-in-the-loop)."
+        },
+        {
+          "de": "Je höher das Risiko (Recht, Finanzen, Gesundheit), desto strenger die Prüfpflicht.",
+          "en": "The higher the risk (legal, financial, health), the stricter the review requirement.",
+          "it": "Più alto è il rischio (legale, finanziario, salute), più rigoroso il controllo richiesto.",
+          "fr": "Plus le risque est élevé (juridique, financier, santé), plus le contrôle doit être strict."
+        },
+        {
+          "de": "Schulen Sie Mitarbeitende, KI-Ergebnisse kritisch zu hinterfragen statt blind zu vertrauen.",
+          "en": "Train staff to question AI outputs critically rather than trust them blindly.",
+          "it": "Formate il personale a mettere in discussione i risultati dell'IA invece di fidarsi ciecamente.",
+          "fr": "Formez le personnel à questionner les résultats de l'IA plutôt qu'à leur faire aveuglément confiance."
+        },
+        {
+          "de": "Halten Sie fest, wer für einen KI-gestützten Output verantwortlich ist – die Verantwortung bleibt beim Menschen.",
+          "en": "Record who is accountable for an AI-assisted output – responsibility stays with people.",
+          "it": "Stabilite chi è responsabile di un output assistito dall'IA: la responsabilità resta umana.",
+          "fr": "Consignez qui est responsable d'un résultat assisté par IA : la responsabilité reste humaine."
+        },
+        {
+          "de": "Kennzeichnen Sie intern, welche Inhalte KI-generiert sind, um Transparenz und Nachvollziehbarkeit zu sichern.",
+          "en": "Flag internally which content is AI-generated to ensure transparency and traceability.",
+          "it": "Segnalate internamente quali contenuti sono generati dall'IA per garantire trasparenza e tracciabilità.",
+          "fr": "Signalez en interne quels contenus sont générés par IA pour garantir transparence et traçabilité."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Fehler 5: Compliance-Blindspots (revDSG/nFADP)",
+        "en": "Mistake 5: Compliance Blind Spots (revDSG/nFADP)",
+        "it": "Errore 5: Punti ciechi di conformità (revDSG/nLPD)",
+        "fr": "Erreur 5 : Angles morts de conformité (nLPD/revDSG)"
+      },
+      "paragraphs": [
+        {
+          "de": "Viele KMU geben Kunden- oder Personendaten in KI-Tools ein, ohne zu klären, wo diese verarbeitet und gespeichert werden. In der Schweiz gilt seit September 2023 das revidierte Datenschutzgesetz (revDSG). Personendaten dürfen nicht unbedacht an Dienste ausserhalb geeigneter rechtlicher Rahmen übermittelt werden, und für gewisse risikoreiche Verarbeitungen kann eine Datenschutz-Folgenabschätzung nötig sein. Die Aufsichtsbehörde ist der EDÖB.",
+          "en": "Many SMEs feed customer or personal data into AI tools without clarifying where it is processed and stored. In Switzerland the revised Data Protection Act (revDSG/nFADP) has applied since September 2023. Personal data must not be carelessly transferred to services outside suitable legal frameworks, and certain high-risk processing may require a data-protection impact assessment. The supervisory authority is the FDPIC (EDÖB).",
+          "it": "Molte PMI inseriscono dati di clienti o personali negli strumenti di IA senza chiarire dove vengono elaborati e conservati. In Svizzera dal settembre 2023 si applica la legge riveduta sulla protezione dei dati (revDSG/nLPD). I dati personali non vanno trasferiti con leggerezza a servizi al di fuori di quadri giuridici adeguati, e per certi trattamenti ad alto rischio può servire una valutazione d'impatto. L'autorità di vigilanza è l'IFPDT (EDÖB).",
+          "fr": "De nombreuses PME saisissent des données clients ou personnelles dans des outils d'IA sans clarifier où elles sont traitées et stockées. En Suisse, la loi révisée sur la protection des données (nLPD/revDSG) s'applique depuis septembre 2023. Les données personnelles ne doivent pas être transférées sans précaution vers des services hors cadre juridique approprié, et certains traitements à risque peuvent nécessiter une analyse d'impact. L'autorité de surveillance est le PFPDT (EDÖB)."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Klären Sie vor der Nutzung: Wo werden die Daten verarbeitet und gespeichert, und wer hat Zugriff?",
+          "en": "Clarify before use: where are the data processed and stored, and who has access?",
+          "it": "Chiarite prima dell'uso: dove vengono elaborati e conservati i dati e chi vi ha accesso?",
+          "fr": "Clarifiez avant usage : où les données sont-elles traitées et stockées, et qui y a accès ?"
+        },
+        {
+          "de": "Geben Sie keine Personendaten oder Geschäftsgeheimnisse in kostenlose Consumer-Tools ohne geklärten Rahmen ein.",
+          "en": "Never enter personal data or trade secrets into free consumer tools without a clarified framework.",
+          "it": "Non inserite dati personali o segreti aziendali in strumenti consumer gratuiti senza un quadro chiaro.",
+          "fr": "N'entrez jamais de données personnelles ou de secrets d'affaires dans des outils grand public gratuits sans cadre clarifié."
+        },
+        {
+          "de": "Prüfen Sie, ob Anbieter einen Auftragsverarbeitungsvertrag und geeignete Garantien bieten.",
+          "en": "Check whether providers offer a data-processing agreement and adequate safeguards.",
+          "it": "Verificate se i fornitori offrono un contratto di trattamento e garanzie adeguate.",
+          "fr": "Vérifiez si les fournisseurs offrent un contrat de sous-traitance et des garanties adéquates."
+        },
+        {
+          "de": "Bei risikoreicher Verarbeitung: Datenschutz-Folgenabschätzung durchführen und dokumentieren.",
+          "en": "For high-risk processing: conduct and document a data-protection impact assessment.",
+          "it": "Per trattamenti ad alto rischio: eseguite e documentate una valutazione d'impatto.",
+          "fr": "Pour les traitements à risque : réalisez et documentez une analyse d'impact."
+        },
+        {
+          "de": "Erstellen Sie eine einfache interne KI-Richtlinie: Was ist erlaubt, was nicht, wer entscheidet.",
+          "en": "Create a simple internal AI policy: what is allowed, what is not, who decides.",
+          "it": "Create una semplice policy interna sull'IA: cosa è permesso, cosa no, chi decide.",
+          "fr": "Rédigez une politique IA interne simple : ce qui est autorisé, ce qui ne l'est pas, qui décide."
+        },
+        {
+          "de": "Bei Rechtsfragen im Einzelfall Fachberatung beiziehen – dieser Artikel ersetzt keine Rechtsberatung.",
+          "en": "Seek specialist advice for specific legal questions – this article is not legal advice.",
+          "it": "Per questioni legali specifiche rivolgetevi a un consulente: questo articolo non è consulenza legale.",
+          "fr": "Pour des questions juridiques précises, consultez un spécialiste : cet article ne constitue pas un conseil juridique."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Der pragmatische Fahrplan: KI-Fehler systematisch vermeiden",
+        "en": "The Pragmatic Roadmap: Avoiding AI Mistakes Systematically",
+        "it": "Il piano pragmatico: evitare gli errori dell'IA in modo sistematico",
+        "fr": "La feuille de route pragmatique : éviter les erreurs d'IA méthodiquement"
+      },
+      "paragraphs": [
+        {
+          "de": "Die fünf Fehler haben eine gemeinsame Lösung: Disziplin statt Aktionismus. Statt gross zu planen, starten Sie klein, lernen schnell und skalieren nur, was nachweislich funktioniert. So denken Sie auch über die Kosten richtig nach: Nicht «Was kostet das Tool?», sondern «Welchen wiederkehrenden Aufwand spart es, und übersteigt der Nutzen die Gesamtkosten aus Lizenzen, Einführung, Datenpflege und Kontrolle?»",
+          "en": "The five mistakes share one cure: discipline over frenzy. Instead of planning big, start small, learn fast and only scale what demonstrably works. This is also the right way to think about cost: not \"what does the tool cost?\" but \"what recurring effort does it save, and does the benefit exceed the total cost of licences, rollout, data maintenance and oversight?\"",
+          "it": "I cinque errori condividono una cura: disciplina invece di frenesia. Anziché pianificare in grande, partite in piccolo, imparate in fretta e scalate solo ciò che funziona in modo dimostrabile. È anche il modo giusto di ragionare sui costi: non «quanto costa lo strumento?», ma «quale sforzo ricorrente fa risparmiare e il beneficio supera il costo totale di licenze, introduzione, cura dei dati e controllo?»",
+          "fr": "Les cinq erreurs partagent un même remède : la discipline plutôt que l'agitation. Au lieu de planifier grand, démarrez petit, apprenez vite et ne déployez que ce qui fonctionne de façon démontrée. C'est aussi la bonne manière de raisonner sur les coûts : non pas « combien coûte l'outil ? », mais « quel effort récurrent fait-il économiser, et le bénéfice dépasse-t-il le coût total des licences, du déploiement, de l'entretien des données et du contrôle ? »"
+        }
+      ],
+      "bullets": [
+        {
+          "de": "1. Problem zuerst: ein konkreter, häufiger, gut abgegrenzter Anwendungsfall.",
+          "en": "1. Problem first: one concrete, frequent, well-scoped use case.",
+          "it": "1. Prima il problema: un caso d'uso concreto, frequente e ben delimitato.",
+          "fr": "1. Le problème d'abord : un cas d'usage concret, fréquent et bien délimité."
+        },
+        {
+          "de": "2. Daten prüfen: aktuell, konsistent, auffindbar – sonst zuerst aufräumen.",
+          "en": "2. Check the data: current, consistent, findable – otherwise clean up first.",
+          "it": "2. Verificare i dati: aggiornati, coerenti, reperibili, altrimenti ripulire prima.",
+          "fr": "2. Vérifier les données : à jour, cohérentes, trouvables, sinon nettoyer d'abord."
+        },
+        {
+          "de": "3. Klein testen: Proof of Concept mit vorab definierten Erfolgskriterien.",
+          "en": "3. Test small: proof of concept with success criteria defined in advance.",
+          "it": "3. Testare in piccolo: proof of concept con criteri di successo definiti prima.",
+          "fr": "3. Tester petit : preuve de concept avec critères de succès définis à l'avance."
+        },
+        {
+          "de": "4. Kontrolle einbauen: Human-in-the-Loop und klare Verantwortlichkeit.",
+          "en": "4. Build in control: human-in-the-loop and clear accountability.",
+          "it": "4. Integrare il controllo: human-in-the-loop e responsabilità chiara.",
+          "fr": "4. Intégrer le contrôle : human-in-the-loop et responsabilité claire."
+        },
+        {
+          "de": "5. Compliance klären: revDSG, Datenstandort, interne KI-Richtlinie.",
+          "en": "5. Clarify compliance: revDSG, data location, internal AI policy.",
+          "it": "5. Chiarire la conformità: revDSG, localizzazione dei dati, policy IA interna.",
+          "fr": "5. Clarifier la conformité : nLPD/revDSG, localisation des données, politique IA interne."
+        },
+        {
+          "de": "6. Messen und entscheiden: skalieren, anpassen oder stoppen – auf Basis von Zahlen, nicht Gefühl.",
+          "en": "6. Measure and decide: scale, adjust or stop – based on numbers, not gut feeling.",
+          "it": "6. Misurare e decidere: scalare, adattare o fermare, sulla base di numeri, non sensazioni.",
+          "fr": "6. Mesurer et décider : déployer, ajuster ou arrêter, sur la base de chiffres, non d'un ressenti."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der häufigste KI-Fehler in KMU?",
+        "en": "What is the most common AI mistake in SMEs?",
+        "it": "Qual è l'errore di IA più comune nelle PMI?",
+        "fr": "Quelle est l'erreur d'IA la plus fréquente dans les PME ?"
+      },
+      "a": {
+        "de": "Der häufigste Fehler ist, KI ohne klaren Anwendungsfall einzuführen – getrieben vom Hype statt von einem echten Problem. Ohne messbares Ziel fehlt der Massstab für Erfolg, und das Projekt versandet. Beginnen Sie deshalb immer mit einer konkreten, häufigen Aufgabe und einem definierten Nutzen, bevor Sie ein Werkzeug auswählen.",
+        "en": "The most common mistake is introducing AI without a clear use case – driven by hype rather than a real problem. Without a measurable goal there is no yardstick for success, and the project stalls. Always start with a concrete, frequent task and a defined benefit before selecting a tool.",
+        "it": "L'errore più comune è introdurre l'IA senza un caso d'uso chiaro, spinti dall'hype anziché da un problema reale. Senza un obiettivo misurabile manca il metro del successo e il progetto si arena. Partite sempre da un compito concreto e frequente e da un beneficio definito prima di scegliere uno strumento.",
+        "fr": "L'erreur la plus fréquente est d'introduire l'IA sans cas d'usage clair, poussé par le hype plutôt que par un vrai problème. Sans objectif mesurable, aucun étalon de succès n'existe et le projet s'enlise. Partez toujours d'une tâche concrète et fréquente et d'un bénéfice défini avant de choisir un outil."
+      }
+    },
+    {
+      "q": {
+        "de": "Warum ist Datenqualität für KI so wichtig?",
+        "en": "Why is data quality so important for AI?",
+        "it": "Perché la qualità dei dati è così importante per l'IA?",
+        "fr": "Pourquoi la qualité des données est-elle si importante pour l'IA ?"
+      },
+      "a": {
+        "de": "KI verarbeitet Ihre Daten – sind diese veraltet, widersprüchlich oder unstrukturiert, entstehen selbstbewusst klingende, aber falsche Ergebnisse («Garbage in, Garbage out»). Für KMU lohnt es sich, vor jedem KI-Projekt einen sauberen, begrenzten Datensatz mit einer verlässlichen Quelle pro Datentyp zu schaffen. Ein kleiner, gepflegter Datenbestand liefert bessere Resultate als ein grosser, chaotischer.",
+        "en": "AI processes your data – if it is outdated, contradictory or unstructured, you get confident-sounding but wrong results (\"garbage in, garbage out\"). For SMEs it pays to create a clean, limited dataset with one reliable source per data type before any AI project. A small, well-maintained set delivers better results than a large, chaotic one.",
+        "it": "L'IA elabora i vostri dati: se sono obsoleti, contraddittori o non strutturati, otterrete risultati che suonano sicuri ma sono sbagliati («garbage in, garbage out»). Per le PMI conviene creare un set di dati pulito e limitato, con una fonte affidabile per tipo di dato, prima di ogni progetto. Un set piccolo e curato dà risultati migliori di uno grande e caotico.",
+        "fr": "L'IA traite vos données : si elles sont obsolètes, contradictoires ou non structurées, vous obtenez des résultats assurés mais faux (« garbage in, garbage out »). Pour une PME, il vaut la peine de créer un jeu de données propre et limité, avec une source fiable par type de donnée, avant tout projet. Un petit ensemble bien entretenu donne de meilleurs résultats qu'un grand ensemble chaotique."
+      }
+    },
+    {
+      "q": {
+        "de": "Darf ich Kundendaten in KI-Tools wie ChatGPT eingeben?",
+        "en": "May I enter customer data into AI tools like ChatGPT?",
+        "it": "Posso inserire dati dei clienti in strumenti come ChatGPT?",
+        "fr": "Puis-je saisir des données clients dans des outils comme ChatGPT ?"
+      },
+      "a": {
+        "de": "Nur mit Vorsicht. In der Schweiz gilt das revDSG: Personendaten dürfen nicht unbedacht an Dienste ohne geeigneten rechtlichen Rahmen übermittelt werden. Klären Sie vorher Datenstandort, Zugriff und Vertragsgrundlage, verzichten Sie bei kostenlosen Consumer-Tools auf Personendaten und Geschäftsgeheimnisse, und ziehen Sie im Einzelfall Fachberatung bei. Dieser Text ersetzt keine Rechtsberatung.",
+        "en": "Only with caution. Switzerland's revDSG applies: personal data must not be carelessly transferred to services without a suitable legal framework. Clarify data location, access and contractual basis first, avoid entering personal data or trade secrets into free consumer tools, and seek specialist advice case by case. This text is not legal advice.",
+        "it": "Solo con cautela. In Svizzera si applica il revDSG: i dati personali non vanno trasferiti con leggerezza a servizi privi di un quadro giuridico adeguato. Chiarite prima localizzazione dei dati, accessi e base contrattuale, evitate dati personali e segreti aziendali negli strumenti consumer gratuiti e rivolgetevi caso per caso a un consulente. Questo testo non è consulenza legale.",
+        "fr": "Avec prudence seulement. En Suisse s'applique la nLPD/revDSG : les données personnelles ne doivent pas être transférées sans précaution vers des services sans cadre juridique approprié. Clarifiez d'abord la localisation des données, les accès et la base contractuelle, évitez données personnelles et secrets d'affaires dans les outils gratuits, et consultez un spécialiste au cas par cas. Ce texte n'est pas un conseil juridique."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie viel menschliche Kontrolle braucht KI im Betrieb?",
+        "en": "How much human oversight does AI need in operations?",
+        "it": "Quanta supervisione umana serve all'IA in azienda?",
+        "fr": "Quelle supervision humaine l'IA requiert-elle en exploitation ?"
+      },
+      "a": {
+        "de": "So viel, wie das Risiko verlangt. Da KI-Modelle plausibel klingende Fehler («Halluzinationen») erzeugen können, sollten Ergebnisse mit rechtlicher, finanzieller oder gesundheitlicher Tragweite immer von einem Menschen freigegeben werden. Bewährt hat sich das Human-in-the-Loop-Prinzip: KI liefert Vorschläge, Mitarbeitende prüfen und verantworten sie. Die Verantwortung bleibt stets beim Menschen.",
+        "en": "As much as the risk demands. Because AI models can produce plausible-sounding errors (\"hallucinations\"), outputs with legal, financial or health implications should always be approved by a human. The human-in-the-loop principle works well: AI provides suggestions, staff review and own them. Responsibility always stays with people.",
+        "it": "Quanta ne richiede il rischio. Poiché i modelli di IA possono produrre errori plausibili («allucinazioni»), i risultati con implicazioni legali, finanziarie o sanitarie vanno sempre approvati da un umano. Funziona bene il principio human-in-the-loop: l'IA propone, il personale verifica e se ne assume la responsabilità. La responsabilità resta sempre umana.",
+        "fr": "Autant que le risque l'exige. Comme les modèles d'IA peuvent produire des erreurs plausibles (« hallucinations »), les résultats à portée juridique, financière ou sanitaire doivent toujours être validés par un humain. Le principe human-in-the-loop fonctionne bien : l'IA propose, les collaborateurs contrôlent et assument. La responsabilité reste toujours humaine."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie fange ich am besten an, ohne teure Fehler zu machen?",
+        "en": "How do I best get started without making costly mistakes?",
+        "it": "Come iniziare al meglio senza commettere errori costosi?",
+        "fr": "Comment bien démarrer sans commettre d'erreurs coûteuses ?"
+      },
+      "a": {
+        "de": "Starten Sie mit einem kleinen Proof of Concept: ein konkreter Anwendungsfall, saubere Daten, vorab definierte Erfolgskriterien und eingebaute menschliche Kontrolle. Messen Sie das Ergebnis, bevor Sie investieren – Lernen ist billiger als Ausrollen. Skalieren Sie nur, was nachweislich Zeit, Kosten oder Qualität verbessert, und klären Sie parallel die Compliance nach revDSG.",
+        "en": "Start with a small proof of concept: one concrete use case, clean data, success criteria defined in advance, and built-in human oversight. Measure the result before investing – learning is cheaper than rolling out. Only scale what demonstrably improves time, cost or quality, and clarify revDSG compliance in parallel.",
+        "it": "Partite da un piccolo proof of concept: un caso d'uso concreto, dati puliti, criteri di successo definiti prima e controllo umano integrato. Misurate il risultato prima di investire: imparare costa meno che distribuire. Scalate solo ciò che migliora in modo dimostrabile tempo, costi o qualità, e in parallelo chiarite la conformità al revDSG.",
+        "fr": "Démarrez par une petite preuve de concept : un cas d'usage concret, des données propres, des critères de succès définis à l'avance et un contrôle humain intégré. Mesurez le résultat avant d'investir : apprendre coûte moins cher que déployer. Ne déployez que ce qui améliore de façon démontrée le temps, le coût ou la qualité, et clarifiez en parallèle la conformité nLPD/revDSG."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist «Schatten-KI» und warum ist sie ein Risiko?",
+        "en": "What is \"shadow AI\" and why is it a risk?",
+        "it": "Cos'è la «shadow AI» e perché è un rischio?",
+        "fr": "Qu'est-ce que le « shadow AI » et pourquoi est-ce un risque ?"
+      },
+      "a": {
+        "de": "Schatten-KI bezeichnet Mitarbeitende, die eigenständig KI-Tools nutzen, ohne dass das Unternehmen davon weiss oder es geregelt hat. Das Risiko: unkontrollierter Abfluss von Personen- oder Geschäftsdaten, Compliance-Verstösse und uneinheitliche Qualität. Die Lösung ist keine Verbotskultur, sondern eine einfache, klare interne KI-Richtlinie plus freigegebene, sichere Werkzeuge, damit gute Nutzung im Rahmen möglich ist.",
+        "en": "Shadow AI refers to employees using AI tools on their own, without the company knowing or having any rules. The risk: uncontrolled leakage of personal or business data, compliance breaches and inconsistent quality. The answer is not a culture of bans but a simple, clear internal AI policy plus approved, secure tools, so good usage can happen within a framework.",
+        "it": "La shadow AI indica dipendenti che usano strumenti di IA in autonomia, senza che l'azienda lo sappia o l'abbia regolato. Il rischio: fuga incontrollata di dati personali o aziendali, violazioni di conformità e qualità disomogenea. La soluzione non è una cultura del divieto, ma una policy IA interna semplice e chiara più strumenti approvati e sicuri, perché il buon uso avvenga entro un quadro.",
+        "fr": "Le shadow AI désigne des collaborateurs utilisant des outils d'IA de leur propre chef, sans que l'entreprise le sache ou l'ait encadré. Le risque : fuite incontrôlée de données personnelles ou d'affaires, manquements de conformité et qualité inégale. La réponse n'est pas une culture de l'interdiction, mais une politique IA interne simple et claire, plus des outils approuvés et sûrs, pour que le bon usage se fasse dans un cadre."
+      }
+    }
+  ],
+  "keyEntities": [
+    "revDSG",
+    "nFADP",
+    "EDÖB",
+    "KMU",
+    "Anwendungsfall",
+    "Datenqualität",
+    "Human-in-the-Loop",
+    "Halluzination",
+    "Proof of Concept",
+    "KI-Governance",
+    "ROI",
+    "Datenschutz-Folgenabschätzung",
+    "Schatten-KI",
+    "KI-Richtlinie",
+    "Single Source of Truth",
+    "Change Management"
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "id": "how-to-measure-ai-roi",
+  "cluster": "business-smes",
+  "type": "spoke",
+  "slug": {
+    "de": "ki-roi-messen",
+    "en": "how-to-measure-ai-roi",
+    "it": "misurare-il-roi-dell-ia",
+    "fr": "mesurer-le-roi-de-l-ia"
+  },
+  "relatedServices": [
+    "consulting"
+  ],
+  "title": {
+    "de": "KI-ROI messen: Kosten, Nutzen, Methode | Weissmann AI",
+    "en": "How to Measure AI ROI: Cost & Value | Weissmann AI",
+    "it": "Misurare il ROI dell'IA: costi e valore | Weissmann AI",
+    "fr": "Mesurer le ROI de l'IA : coûts et valeur | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI-ROI messen für KMU: Kostenstruktur (Setup, Lizenzen, Wartung), Nutzentreiber und eine einfache ROI-Formel – praxisnah und ehrlich, ohne erfundene Zahlen.",
+    "en": "Measure AI ROI as an SME: cost structure (setup, licences, maintenance), value drivers and a simple ROI formula – practical and honest, with no invented numbers.",
+    "it": "Misurare il ROI dell'IA per le PMI: struttura dei costi (setup, licenze, manutenzione), driver di valore e una formula semplice, senza numeri inventati.",
+    "fr": "Mesurer le ROI de l'IA pour les PME : structure des coûts (mise en place, licences, maintenance), leviers de valeur et une formule simple, sans chiffres inventés."
+  },
+  "kicker": {
+    "de": "KI für Unternehmen & KMU",
+    "en": "AI for Business & SMEs",
+    "it": "IA per aziende e PMI",
+    "fr": "IA pour entreprises et PME"
+  },
+  "h1": {
+    "de": "KI-ROI messen: So bewerten KMU den Return ihrer KI-Projekte",
+    "en": "How to Measure AI ROI: A Practical Method for SMEs",
+    "it": "Misurare il ROI dell'IA: un metodo pratico per le PMI",
+    "fr": "Mesurer le ROI de l'IA : une méthode pratique pour les PME"
+  },
+  "answerFirst": {
+    "de": "Den KI-ROI messen Sie, indem Sie den quantifizierten Nutzen – eingesparte Zeit, zusätzlicher Umsatz, weniger Fehler – den vollen Kosten gegenüberstellen. Die Formel lautet: ROI = (Nutzen − Kosten) / Kosten. Erfassen Sie alle Kosten über zwölf Monate – Setup, Lizenzen und Wartung –, rechnen Sie den Nutzen konservativ in Franken um, ergänzen Sie die Amortisationszeit und messen Sie nach dem Start echte Ist-Werte statt Schätzungen.",
+    "en": "You measure AI ROI by comparing the quantified value it creates – time saved, revenue captured, fewer errors – against its full cost. The formula is: ROI = (value − cost) / cost. Capture every cost over twelve months – setup, licences and maintenance – convert the value into francs conservatively, add the payback period, and after go-live track real actuals instead of estimates.",
+    "it": "Il ROI dell'IA si misura confrontando il valore quantificato che genera – tempo risparmiato, ricavi aggiuntivi, meno errori – con il costo totale. La formula è: ROI = (valore − costo) / costo. Rilevate tutti i costi su dodici mesi – setup, licenze e manutenzione –, convertite il valore in franchi in modo prudente, aggiungete il tempo di ammortamento e, dopo l'avvio, monitorate dati reali invece di stime.",
+    "fr": "Vous mesurez le ROI de l'IA en comparant la valeur quantifiée qu'elle crée – temps gagné, chiffre d'affaires capté, moins d'erreurs – à son coût total. La formule est : ROI = (valeur − coût) / coût. Recensez tous les coûts sur douze mois – mise en place, licences et maintenance –, convertissez la valeur en francs prudemment, ajoutez le délai de rentabilité et, après le lancement, suivez des données réelles plutôt que des estimations."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was ist der KI-ROI – und warum ihn viele KMU falsch berechnen",
+        "en": "What AI ROI Is – and Why Many SMEs Get It Wrong",
+        "it": "Che cos'è il ROI dell'IA e perché molte PMI lo calcolano male",
+        "fr": "Qu'est-ce que le ROI de l'IA et pourquoi beaucoup de PME le calculent mal"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Return on Investment (ROI) einer KI-Initiative misst, wie viel Wert sie im Verhältnis zu ihren Gesamtkosten schafft. Die Grundformel ist einfach: ROI = (Nutzen − Kosten) / Kosten, ausgedrückt in Prozent. Ein ROI von 100 Prozent bedeutet, dass sich die Investition einmal zurückverdient und zusätzlich denselben Betrag erwirtschaftet hat.",
+          "en": "The return on investment (ROI) of an AI initiative measures how much value it creates relative to its total cost. The base formula is simple: ROI = (value − cost) / cost, expressed as a percentage. An ROI of 100 percent means the investment paid for itself once and generated the same amount again on top.",
+          "it": "Il ritorno sull'investimento (ROI) di un'iniziativa di IA misura quanto valore genera rispetto al costo totale. La formula di base è semplice: ROI = (valore − costo) / costo, espresso in percentuale. Un ROI del 100 percento significa che l'investimento si è ripagato una volta e ha generato lo stesso importo in più.",
+          "fr": "Le retour sur investissement (ROI) d'une initiative d'IA mesure la valeur qu'elle crée par rapport à son coût total. La formule de base est simple : ROI = (valeur − coût) / coût, exprimé en pourcentage. Un ROI de 100 pour cent signifie que l'investissement s'est remboursé une fois et a généré le même montant en plus."
+        },
+        {
+          "de": "Der Fehler liegt selten in der Formel, sondern in den Zahlen, die man einsetzt. Viele KMU zählen nur die Lizenzkosten, blenden Setup und Wartung aus und bewerten den Nutzen zu optimistisch. Wer den ROI ehrlich messen will, braucht eine vollständige Kostenbasis, einen dokumentierten Ausgangszustand (Baseline) und konservativ quantifizierte Nutzenwerte.",
+          "en": "The error rarely lies in the formula, but in the numbers you put into it. Many SMEs count only the licence fees, ignore setup and maintenance, and value the benefits too optimistically. Measuring ROI honestly requires a complete cost base, a documented starting point (baseline) and conservatively quantified benefits.",
+          "it": "L'errore raramente sta nella formula, ma nei numeri che vi si inseriscono. Molte PMI contano solo i costi di licenza, ignorano setup e manutenzione e valutano i benefici in modo troppo ottimistico. Misurare il ROI onestamente richiede una base di costi completa, un punto di partenza documentato (baseline) e benefici quantificati in modo prudente.",
+          "fr": "L'erreur se situe rarement dans la formule, mais dans les chiffres qu'on y insère. Beaucoup de PME ne comptent que les frais de licence, ignorent la mise en place et la maintenance et évaluent les bénéfices avec trop d'optimisme. Mesurer le ROI honnêtement exige une base de coûts complète, un point de départ documenté (baseline) et des bénéfices quantifiés prudemment."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die Kostenstruktur: Setup, Lizenzen und Wartung",
+        "en": "The Cost Structure: Setup, Licences and Maintenance",
+        "it": "La struttura dei costi: setup, licenze e manutenzione",
+        "fr": "La structure des coûts : mise en place, licences et maintenance"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Kosten fallen in drei Blöcke. Nur wer alle drei erfasst, kommt zu einem belastbaren ROI. Rechnen Sie mit einem Zeithorizont von zwölf Monaten (Total Cost of Ownership), damit einmalige und laufende Kosten vergleichbar werden.",
+          "en": "AI costs fall into three blocks. Only by capturing all three do you get a reliable ROI. Use a twelve-month horizon (total cost of ownership) so that one-off and recurring costs become comparable.",
+          "it": "I costi dell'IA si dividono in tre blocchi. Solo rilevandoli tutti e tre si ottiene un ROI attendibile. Usate un orizzonte di dodici mesi (total cost of ownership) affinché costi una tantum e ricorrenti diventino confrontabili.",
+          "fr": "Les coûts de l'IA se répartissent en trois blocs. Ce n'est qu'en recensant les trois que vous obtenez un ROI fiable. Utilisez un horizon de douze mois (coût total de possession) pour rendre comparables les coûts ponctuels et récurrents."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Setup (einmalig): Bedarfsanalyse, Datenaufbereitung, Integration in bestehende Systeme, Konfiguration, Testing und Schulung – oft der grösste unterschätzte Posten.",
+          "en": "Setup (one-off): needs analysis, data preparation, integration with existing systems, configuration, testing and training – often the most underestimated item.",
+          "it": "Setup (una tantum): analisi dei fabbisogni, preparazione dei dati, integrazione con i sistemi esistenti, configurazione, test e formazione – spesso la voce più sottovalutata.",
+          "fr": "Mise en place (ponctuelle) : analyse des besoins, préparation des données, intégration aux systèmes existants, configuration, tests et formation – souvent le poste le plus sous-estimé."
+        },
+        {
+          "de": "Lizenzen (laufend): Abonnements pro Nutzer, nutzungsbasierte Gebühren oder API-Kosten nach Token-Verbrauch. Bei generativer KI können die Kosten mit der Nutzung stark schwanken.",
+          "en": "Licences (recurring): per-user subscriptions, usage-based fees or API costs by token consumption. With generative AI, costs can fluctuate strongly with usage.",
+          "it": "Licenze (ricorrenti): abbonamenti per utente, tariffe a consumo o costi API in base ai token. Con l'IA generativa i costi possono variare molto con l'utilizzo.",
+          "fr": "Licences (récurrentes) : abonnements par utilisateur, frais à l'usage ou coûts d'API selon la consommation de jetons. Avec l'IA générative, les coûts peuvent fortement varier selon l'usage."
+        },
+        {
+          "de": "Wartung (laufend): Monitoring, Prompt- und Modellpflege, Aktualisierungen, erneutes Training, Qualitätskontrolle und Governance.",
+          "en": "Maintenance (recurring): monitoring, prompt and model upkeep, updates, retraining, quality control and governance.",
+          "it": "Manutenzione (ricorrente): monitoraggio, cura di prompt e modelli, aggiornamenti, riaddestramento, controllo qualità e governance.",
+          "fr": "Maintenance (récurrente) : monitoring, entretien des prompts et des modèles, mises à jour, réentraînement, contrôle qualité et gouvernance."
+        },
+        {
+          "de": "Interne Zeit: die Stunden Ihrer Mitarbeitenden für Einführung, Betreuung und Änderungsmanagement – zu einem realistischen Vollkostensatz bewertet.",
+          "en": "Internal time: the hours your staff spend on rollout, support and change management – valued at a realistic fully loaded cost rate.",
+          "it": "Tempo interno: le ore del personale per introduzione, supporto e gestione del cambiamento – valorizzate a un costo pieno realistico.",
+          "fr": "Temps interne : les heures de vos collaborateurs pour le déploiement, l'accompagnement et la conduite du changement – valorisées à un coût complet réaliste."
+        },
+        {
+          "de": "Risiko- und Compliance-Kosten: Datenschutz-Prüfung, Dokumentation und allfällige Anpassungen nach revDSG.",
+          "en": "Risk and compliance costs: data-protection review, documentation and any adjustments required under the revDSG.",
+          "it": "Costi di rischio e compliance: verifica sulla protezione dei dati, documentazione ed eventuali adeguamenti secondo la revDSG.",
+          "fr": "Coûts de risque et de conformité : contrôle de la protection des données, documentation et adaptations éventuelles selon la revDSG."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die Nutzentreiber: Zeit, Umsatz, Fehler und Risiko",
+        "en": "The Value Drivers: Time, Revenue, Errors and Risk",
+        "it": "I driver di valore: tempo, ricavi, errori e rischio",
+        "fr": "Les leviers de valeur : temps, chiffre d'affaires, erreurs et risque"
+      },
+      "paragraphs": [
+        {
+          "de": "Nutzen entsteht auf vier Wegen. Trennen Sie dabei harte, kassenwirksame Effekte (weniger Ausgaben, mehr Umsatz) von weichen Effekten (Zufriedenheit, Entlastung). Beide zählen, aber nur harte Effekte gehören ohne Abschlag in die ROI-Rechnung.",
+          "en": "Value arises in four ways. Separate hard, cash-effective impacts (lower spend, higher revenue) from soft impacts (satisfaction, relief). Both matter, but only hard impacts belong in the ROI calculation without a discount.",
+          "it": "Il valore nasce in quattro modi. Distinguete gli effetti concreti e monetizzabili (meno spese, più ricavi) da quelli soft (soddisfazione, alleggerimento). Entrambi contano, ma solo gli effetti concreti entrano nel calcolo del ROI senza sconti.",
+          "fr": "La valeur naît de quatre façons. Distinguez les effets concrets et monétisables (moins de dépenses, plus de recettes) des effets diffus (satisfaction, allègement). Les deux comptent, mais seuls les effets concrets entrent dans le calcul du ROI sans décote."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Eingesparte Zeit: automatisierte oder beschleunigte Aufgaben. Wert = gesparte Stunden × Vollkostensatz. Nur real umgewidmete oder abgebaute Zeit ist kassenwirksam.",
+          "en": "Time saved: automated or accelerated tasks. Value = hours saved × fully loaded cost rate. Only time genuinely reallocated or removed is cash-effective.",
+          "it": "Tempo risparmiato: attività automatizzate o accelerate. Valore = ore risparmiate × costo pieno. Solo il tempo effettivamente riallocato o eliminato è monetizzabile.",
+          "fr": "Temps gagné : tâches automatisées ou accélérées. Valeur = heures gagnées × coût complet. Seul le temps réellement réaffecté ou supprimé est monétisable."
+        },
+        {
+          "de": "Zusätzlicher Umsatz: schnellere Angebote, höhere Abschlussquoten, bessere Erreichbarkeit im Kundendienst, weniger verlorene Anfragen.",
+          "en": "Revenue captured: faster quotes, higher close rates, better service availability, fewer lost enquiries.",
+          "it": "Ricavi aggiuntivi: preventivi più rapidi, tassi di chiusura più alti, migliore reperibilità del servizio, meno richieste perse.",
+          "fr": "Chiffre d'affaires capté : devis plus rapides, meilleurs taux de conclusion, meilleure disponibilité du service, moins de demandes perdues."
+        },
+        {
+          "de": "Weniger Fehler: reduzierte Nacharbeit, Reklamationen, Retouren oder Bussen durch höhere Qualität und Konsistenz.",
+          "en": "Fewer errors: reduced rework, complaints, returns or fines thanks to higher quality and consistency.",
+          "it": "Meno errori: minori rilavorazioni, reclami, resi o sanzioni grazie a qualità e coerenza più elevate.",
+          "fr": "Moins d'erreurs : reprises, réclamations, retours ou amendes réduits grâce à une qualité et une cohérence accrues."
+        },
+        {
+          "de": "Reduziertes Risiko: bessere Nachvollziehbarkeit, weniger Compliance-Verstösse, geringere Abhängigkeit von einzelnen Personen.",
+          "en": "Reduced risk: better traceability, fewer compliance breaches, less dependence on individual people.",
+          "it": "Rischio ridotto: migliore tracciabilità, meno violazioni di compliance, minore dipendenza da singole persone.",
+          "fr": "Risque réduit : meilleure traçabilité, moins de manquements de conformité, moindre dépendance à des personnes clés."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Eine einfache ROI-Methode in fünf Schritten",
+        "en": "A Simple ROI Method in Five Steps",
+        "it": "Un metodo semplice per il ROI in cinque passi",
+        "fr": "Une méthode de ROI simple en cinq étapes"
+      },
+      "bullets": [
+        {
+          "de": "1. Anwendungsfall und Baseline definieren: Was genau soll die KI verbessern? Messen Sie den Ist-Zustand (Zeit, Kosten, Fehlerquote), bevor Sie starten.",
+          "en": "1. Define the use case and baseline: what exactly should the AI improve? Measure the current state (time, cost, error rate) before you start.",
+          "it": "1. Definire il caso d'uso e la baseline: cosa deve migliorare esattamente l'IA? Misurate lo stato attuale (tempo, costi, tasso di errore) prima di partire.",
+          "fr": "1. Définir le cas d'usage et la baseline : qu'est-ce que l'IA doit précisément améliorer ? Mesurez l'état actuel (temps, coûts, taux d'erreur) avant de démarrer."
+        },
+        {
+          "de": "2. Gesamtkosten über zwölf Monate schätzen: Setup + Lizenzen + Wartung + interne Zeit + Compliance.",
+          "en": "2. Estimate total cost over twelve months: setup + licences + maintenance + internal time + compliance.",
+          "it": "2. Stimare il costo totale su dodici mesi: setup + licenze + manutenzione + tempo interno + compliance.",
+          "fr": "2. Estimer le coût total sur douze mois : mise en place + licences + maintenance + temps interne + conformité."
+        },
+        {
+          "de": "3. Nutzen konservativ quantifizieren: in Franken umrechnen, weiche Effekte separat ausweisen, Adoptionsrate berücksichtigen (nicht jeder nutzt das Tool zu 100 Prozent).",
+          "en": "3. Quantify value conservatively: convert to francs, report soft effects separately, factor in the adoption rate (not everyone uses the tool 100 percent).",
+          "it": "3. Quantificare il valore in modo prudente: convertire in franchi, indicare a parte gli effetti soft, considerare il tasso di adozione (non tutti usano lo strumento al 100 percento).",
+          "fr": "3. Quantifier la valeur prudemment : convertir en francs, présenter séparément les effets diffus, tenir compte du taux d'adoption (tout le monde n'utilise pas l'outil à 100 pour cent)."
+        },
+        {
+          "de": "4. ROI und Amortisationszeit berechnen: ROI = (Nutzen − Kosten) / Kosten. Amortisationszeit = Kosten / monatlicher Nettonutzen.",
+          "en": "4. Calculate ROI and payback period: ROI = (value − cost) / cost. Payback = cost / monthly net benefit.",
+          "it": "4. Calcolare ROI e tempo di ammortamento: ROI = (valore − costo) / costo. Ammortamento = costo / beneficio netto mensile.",
+          "fr": "4. Calculer le ROI et le délai de rentabilité : ROI = (valeur − coût) / coût. Délai = coût / bénéfice net mensuel."
+        },
+        {
+          "de": "5. Ist-Werte nachverfolgen: Ersetzen Sie Schätzungen nach drei bis sechs Monaten durch echte Messwerte und entscheiden Sie über Ausbau oder Stopp.",
+          "en": "5. Track actuals: after three to six months, replace estimates with real measurements and decide whether to scale up or stop.",
+          "it": "5. Monitorare i dati reali: dopo tre-sei mesi sostituite le stime con misure reali e decidete se ampliare o fermare.",
+          "fr": "5. Suivre les données réelles : après trois à six mois, remplacez les estimations par des mesures réelles et décidez d'étendre ou d'arrêter."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler beim Messen des KI-ROI",
+        "en": "Common Mistakes When Measuring AI ROI",
+        "it": "Errori frequenti nel misurare il ROI dell'IA",
+        "fr": "Erreurs fréquentes dans la mesure du ROI de l'IA"
+      },
+      "bullets": [
+        {
+          "de": "Nur Lizenzkosten zählen und Setup sowie Wartung ausblenden.",
+          "en": "Counting only licence costs while ignoring setup and maintenance.",
+          "it": "Contare solo i costi di licenza ignorando setup e manutenzione.",
+          "fr": "Ne compter que les licences en ignorant la mise en place et la maintenance."
+        },
+        {
+          "de": "Keine Baseline: Ohne Ausgangswert lässt sich keine Verbesserung belegen.",
+          "en": "No baseline: without a starting value you cannot prove any improvement.",
+          "it": "Nessuna baseline: senza un valore di partenza non si può dimostrare alcun miglioramento.",
+          "fr": "Pas de baseline : sans valeur de départ, aucune amélioration ne peut être prouvée."
+        },
+        {
+          "de": "Weiche Einsparungen als Bargeld verbuchen: '20 Prozent schneller' ist nur dann Geld, wenn die Zeit tatsächlich anders genutzt oder abgebaut wird.",
+          "en": "Booking soft savings as cash: '20 percent faster' is only money if the time is genuinely reused or removed.",
+          "it": "Contabilizzare risparmi soft come contanti: '20 percento più veloce' è denaro solo se il tempo viene davvero riutilizzato o eliminato.",
+          "fr": "Comptabiliser des économies diffuses comme du cash : '20 pour cent plus vite' n'est de l'argent que si le temps est réellement réutilisé ou supprimé."
+        },
+        {
+          "de": "Adoption überschätzen: Ein Pilot mit Idealnutzung skaliert selten unverändert.",
+          "en": "Overestimating adoption: a pilot with ideal usage rarely scales unchanged.",
+          "it": "Sovrastimare l'adozione: un pilota con utilizzo ideale raramente scala invariato.",
+          "fr": "Surestimer l'adoption : un pilote à usage idéal passe rarement à l'échelle sans changement."
+        },
+        {
+          "de": "Einmaligen Pilotwert auf den Dauerbetrieb hochrechnen.",
+          "en": "Extrapolating a one-off pilot value to permanent operation.",
+          "it": "Estrapolare il valore di un pilota una tantum al funzionamento continuo.",
+          "fr": "Extrapoler la valeur d'un pilote ponctuel à l'exploitation continue."
+        },
+        {
+          "de": "Risiko und Compliance ignorieren – gerade bei personenbezogenen Daten.",
+          "en": "Ignoring risk and compliance – especially with personal data.",
+          "it": "Ignorare rischio e compliance – soprattutto con i dati personali.",
+          "fr": "Ignorer le risque et la conformité – surtout avec des données personnelles."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Perspektive: revDSG, Franken und Governance",
+        "en": "The Swiss Perspective: revDSG, Francs and Governance",
+        "it": "Prospettiva svizzera: revDSG, franchi e governance",
+        "fr": "Perspective suisse : revDSG, francs et gouvernance"
+      },
+      "paragraphs": [
+        {
+          "de": "Für Schweizer KMU gehört die Compliance in die Kostenrechnung – nicht als Bremse, sondern als Teil der ehrlichen TCO. Verarbeitet Ihre KI Personendaten, verlangt das revDSG (revidiertes Datenschutzgesetz, in Kraft seit 1. September 2023) unter anderem Transparenz, ein Bearbeitungsverzeichnis und je nach Risiko eine Datenschutz-Folgenabschätzung. Der EDÖB ist die zuständige Aufsichtsbehörde.",
+          "en": "For Swiss SMEs, compliance belongs in the cost calculation – not as a brake, but as part of an honest TCO. If your AI processes personal data, the revDSG (revised Data Protection Act, in force since 1 September 2023) requires, among other things, transparency, a record of processing activities and, depending on risk, a data-protection impact assessment. The EDÖB is the supervisory authority.",
+          "it": "Per le PMI svizzere la compliance rientra nel calcolo dei costi – non come freno, ma come parte di un TCO onesto. Se la vostra IA tratta dati personali, la revDSG (legge sulla protezione dei dati riveduta, in vigore dal 1° settembre 2023) richiede tra l'altro trasparenza, un registro dei trattamenti e, in base al rischio, una valutazione d'impatto sulla protezione dei dati. L'IFPDT (EDÖB) è l'autorità di vigilanza.",
+          "fr": "Pour les PME suisses, la conformité fait partie du calcul des coûts – non comme un frein, mais comme un élément d'un TCO honnête. Si votre IA traite des données personnelles, la revDSG (loi révisée sur la protection des données, en vigueur depuis le 1er septembre 2023) exige notamment la transparence, un registre des activités de traitement et, selon le risque, une analyse d'impact. Le PFPDT (EDÖB) est l'autorité de surveillance."
+        },
+        {
+          "de": "Rechnen Sie alle Werte in Franken und beziehen Sie Datenstandort, Auftragsverarbeitung und Vertragslage der Anbieter ein. Diese Punkte sind keine reinen Kosten: Gute Governance senkt Risiko und stärkt das Vertrauen von Kundschaft und Mitarbeitenden – ein Nutzen, der sich langfristig auszahlt.",
+          "en": "Calculate every figure in francs and factor in data location, data processing agreements and the providers' contractual terms. These points are not pure cost: good governance lowers risk and strengthens the trust of customers and staff – a benefit that pays off over the long term.",
+          "it": "Calcolate ogni valore in franchi e includete l'ubicazione dei dati, i contratti di trattamento e le condizioni contrattuali dei fornitori. Questi aspetti non sono solo costo: una buona governance riduce il rischio e rafforza la fiducia di clienti e collaboratori – un beneficio che ripaga nel lungo periodo.",
+          "fr": "Calculez chaque valeur en francs et intégrez la localisation des données, les contrats de sous-traitance et les conditions contractuelles des fournisseurs. Ces points ne sont pas de purs coûts : une bonne gouvernance réduit le risque et renforce la confiance des clients et des collaborateurs – un bénéfice payant sur le long terme."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Wie lautet die einfachste Formel für den KI-ROI?",
+        "en": "What is the simplest formula for AI ROI?",
+        "it": "Qual è la formula più semplice per il ROI dell'IA?",
+        "fr": "Quelle est la formule la plus simple du ROI de l'IA ?"
+      },
+      "a": {
+        "de": "ROI = (Nutzen − Kosten) / Kosten, ausgedrückt in Prozent. Der Nutzen umfasst eingesparte Zeit, zusätzlichen Umsatz und vermiedene Fehler in Franken; die Kosten umfassen Setup, Lizenzen und Wartung über denselben Zeitraum. Ergänzen Sie die Amortisationszeit = Kosten geteilt durch monatlichen Nettonutzen.",
+        "en": "ROI = (value − cost) / cost, expressed as a percentage. Value covers time saved, revenue captured and errors avoided in francs; cost covers setup, licences and maintenance over the same period. Add the payback period = cost divided by monthly net benefit.",
+        "it": "ROI = (valore − costo) / costo, in percentuale. Il valore comprende tempo risparmiato, ricavi aggiuntivi ed errori evitati in franchi; il costo comprende setup, licenze e manutenzione nello stesso periodo. Aggiungete il tempo di ammortamento = costo diviso il beneficio netto mensile.",
+        "fr": "ROI = (valeur − coût) / coût, en pourcentage. La valeur couvre le temps gagné, le chiffre d'affaires capté et les erreurs évitées en francs ; le coût couvre la mise en place, les licences et la maintenance sur la même période. Ajoutez le délai de rentabilité = coût divisé par le bénéfice net mensuel."
+      }
+    },
+    {
+      "q": {
+        "de": "Über welchen Zeitraum sollte ich den KI-ROI berechnen?",
+        "en": "Over what period should I calculate AI ROI?",
+        "it": "Su quale periodo dovrei calcolare il ROI dell'IA?",
+        "fr": "Sur quelle période dois-je calculer le ROI de l'IA ?"
+      },
+      "a": {
+        "de": "Zwölf Monate sind ein guter Standard: Sie machen einmalige Setup-Kosten und laufende Lizenz- und Wartungskosten vergleichbar. Bei grösseren Investitionen kann ein Horizont von 24 bis 36 Monaten sinnvoll sein. Wichtig ist, denselben Zeitraum für Kosten und Nutzen zu verwenden.",
+        "en": "Twelve months is a good default: it makes one-off setup costs comparable with recurring licence and maintenance costs. For larger investments, a 24- to 36-month horizon can make sense. The key is to use the same period for both costs and value.",
+        "it": "Dodici mesi sono un buon standard: rendono confrontabili i costi di setup una tantum con licenze e manutenzione ricorrenti. Per investimenti maggiori può avere senso un orizzonte di 24-36 mesi. L'importante è usare lo stesso periodo per costi e valore.",
+        "fr": "Douze mois constituent une bonne base : ils rendent comparables les coûts de mise en place ponctuels et les coûts récurrents de licences et de maintenance. Pour des investissements plus lourds, un horizon de 24 à 36 mois peut être pertinent. L'essentiel est d'utiliser la même période pour les coûts et la valeur."
+      }
+    },
+    {
+      "q": {
+        "de": "Zählt eingesparte Zeit wirklich als ROI?",
+        "en": "Does time saved really count as ROI?",
+        "it": "Il tempo risparmiato conta davvero come ROI?",
+        "fr": "Le temps gagné compte-t-il vraiment comme ROI ?"
+      },
+      "a": {
+        "de": "Nur bedingt. Eingesparte Zeit wird erst kassenwirksam, wenn sie tatsächlich für wertschöpfende Aufgaben genutzt oder abgebaut wird. Zehn gesparte Minuten, die im Alltag verpuffen, erhöhen den ROI nicht. Bewerten Sie umgewidmete Stunden mit einem realistischen Vollkostensatz und weisen Sie rein qualitative Entlastung separat aus.",
+        "en": "Only conditionally. Time saved becomes cash-effective only if it is genuinely used for value-adding work or removed. Ten saved minutes that dissipate in daily routine do not raise ROI. Value reallocated hours at a realistic fully loaded rate and report purely qualitative relief separately.",
+        "it": "Solo in parte. Il tempo risparmiato diventa monetizzabile solo se viene davvero usato per attività a valore aggiunto o eliminato. Dieci minuti risparmiati che si disperdono nella routine non aumentano il ROI. Valorizzate le ore riallocate a un costo pieno realistico e indicate a parte l'alleggerimento puramente qualitativo.",
+        "fr": "Seulement en partie. Le temps gagné ne devient monétisable que s'il est réellement consacré à des tâches à valeur ajoutée ou supprimé. Dix minutes gagnées qui se dissipent dans le quotidien n'augmentent pas le ROI. Valorisez les heures réaffectées à un coût complet réaliste et présentez séparément l'allègement purement qualitatif."
+      }
+    },
+    {
+      "q": {
+        "de": "Was kostet KI wirklich – nur die Lizenz?",
+        "en": "What does AI really cost – just the licence?",
+        "it": "Quanto costa davvero l'IA – solo la licenza?",
+        "fr": "Combien coûte vraiment l'IA – seulement la licence ?"
+      },
+      "a": {
+        "de": "Nein. Die Lizenz ist oft nur ein Teil. Hinzu kommen einmalige Setup-Kosten (Analyse, Datenaufbereitung, Integration, Schulung), laufende Wartung (Monitoring, Pflege, Updates) sowie interne Zeit und Compliance-Aufwand. Bei nutzungsbasierten Modellen können die Kosten zudem mit der Nutzung steigen. Erfassen Sie alle Blöcke als Total Cost of Ownership.",
+        "en": "No. The licence is often only one part. Add one-off setup costs (analysis, data preparation, integration, training), ongoing maintenance (monitoring, upkeep, updates), plus internal time and compliance effort. With usage-based models, costs can also rise with usage. Capture every block as total cost of ownership.",
+        "it": "No. La licenza è spesso solo una parte. Si aggiungono costi di setup una tantum (analisi, preparazione dati, integrazione, formazione), manutenzione continua (monitoraggio, cura, aggiornamenti), oltre a tempo interno e sforzo di compliance. Con modelli a consumo i costi possono anche crescere con l'utilizzo. Rilevate tutti i blocchi come total cost of ownership.",
+        "fr": "Non. La licence n'est souvent qu'une partie. S'y ajoutent les coûts de mise en place ponctuels (analyse, préparation des données, intégration, formation), la maintenance continue (monitoring, entretien, mises à jour), ainsi que le temps interne et l'effort de conformité. Avec des modèles à l'usage, les coûts peuvent aussi croître avec l'utilisation. Recensez tous les blocs comme coût total de possession."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie berücksichtige ich den Datenschutz in der ROI-Rechnung?",
+        "en": "How do I account for data protection in the ROI calculation?",
+        "it": "Come considero la protezione dei dati nel calcolo del ROI?",
+        "fr": "Comment tenir compte de la protection des données dans le calcul du ROI ?"
+      },
+      "a": {
+        "de": "Führen Sie Datenschutz auf beiden Seiten. Als Kosten: Prüfung, Dokumentation, Bearbeitungsverzeichnis und je nach Risiko eine Datenschutz-Folgenabschätzung nach revDSG. Als Nutzen: reduziertes Risiko von Bussen und Reputationsschäden sowie höheres Vertrauen. Der EDÖB ist die zuständige Aufsichtsbehörde in der Schweiz.",
+        "en": "Include data protection on both sides. As cost: review, documentation, record of processing activities and, depending on risk, a data-protection impact assessment under the revDSG. As value: reduced risk of fines and reputational damage, plus greater trust. The EDÖB is the supervisory authority in Switzerland.",
+        "it": "Inserite la protezione dei dati su entrambi i lati. Come costo: verifica, documentazione, registro dei trattamenti e, in base al rischio, una valutazione d'impatto secondo la revDSG. Come valore: minor rischio di sanzioni e danni reputazionali, oltre a maggiore fiducia. L'IFPDT (EDÖB) è l'autorità di vigilanza in Svizzera.",
+        "fr": "Intégrez la protection des données des deux côtés. En coût : contrôle, documentation, registre des traitements et, selon le risque, une analyse d'impact selon la revDSG. En valeur : risque réduit d'amendes et d'atteinte à la réputation, ainsi qu'une confiance accrue. Le PFPDT (EDÖB) est l'autorité de surveillance en Suisse."
+      }
+    },
+    {
+      "q": {
+        "de": "Ab wann lohnt sich ein KI-Projekt?",
+        "en": "When is an AI project worth it?",
+        "it": "Quando conviene un progetto di IA?",
+        "fr": "Quand un projet d'IA est-il rentable ?"
+      },
+      "a": {
+        "de": "Ein Projekt lohnt sich, wenn der jährliche Nettonutzen die Gesamtkosten übersteigt und die Amortisationszeit zu Ihrem Planungshorizont passt. Beginnen Sie mit einem klar abgegrenzten Anwendungsfall, messen Sie eine Baseline und entscheiden Sie nach drei bis sechs Monaten anhand echter Ist-Werte über Ausbau oder Stopp – nicht anhand der ursprünglichen Schätzung.",
+        "en": "A project is worth it when the annual net benefit exceeds total cost and the payback period fits your planning horizon. Start with a clearly scoped use case, measure a baseline, and after three to six months decide on scaling or stopping based on real actuals – not on the original estimate.",
+        "it": "Un progetto conviene quando il beneficio netto annuo supera il costo totale e il tempo di ammortamento è compatibile con il vostro orizzonte di pianificazione. Partite da un caso d'uso ben delimitato, misurate una baseline e dopo tre-sei mesi decidete se ampliare o fermare in base a dati reali – non alla stima iniziale.",
+        "fr": "Un projet est rentable lorsque le bénéfice net annuel dépasse le coût total et que le délai de rentabilité correspond à votre horizon de planification. Commencez par un cas d'usage bien délimité, mesurez une baseline et, après trois à six mois, décidez d'étendre ou d'arrêter sur la base de données réelles – et non de l'estimation initiale."
+      }
+    }
+  ],
+  "keyEntities": [
+    "ROI (Return on Investment)",
+    "Total Cost of Ownership (TCO)",
+    "Amortisationszeit / Payback Period",
+    "Baseline",
+    "Setup-Kosten",
+    "Lizenzkosten",
+    "Wartungskosten",
+    "Nutzentreiber / Value Drivers",
+    "Vollkostensatz",
+    "Adoptionsrate",
+    "Generative KI",
+    "revDSG / nFADP",
+    "EDÖB",
+    "Datenschutz-Folgenabschätzung",
+    "KMU",
+    "CHF"
+  ]
+}

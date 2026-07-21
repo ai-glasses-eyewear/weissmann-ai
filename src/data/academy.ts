@@ -52,7 +52,7 @@ export const CLUSTERS: AcademyCluster[] = [
     tagline: { de: 'Was KI ist, wie sie funktioniert und wie man sie versteht.', en: 'What AI is, how it works and how to understand it.', it: 'Cos’è l’AI, come funziona e come capirla.', fr: 'Ce qu’est l’IA, comment elle fonctionne et comment la comprendre.' },
   },
   {
-    id: 'business-smes', order: 2, status: 'draft',
+    id: 'business-smes', order: 2, status: 'live',
     slug: { de: 'ki-fuer-unternehmen', en: 'ai-for-business', it: 'ai-per-le-imprese', fr: 'ia-pour-entreprises' },
     name: { de: 'KI für Unternehmen & KMU', en: 'AI for Business & SMEs', it: 'AI per aziende e PMI', fr: 'IA pour entreprises et PME' },
     tagline: { de: 'Praktische KI-Anwendung, Implementierung und ROI für Schweizer KMU.', en: 'Practical AI adoption, implementation and ROI for Swiss SMEs.', it: 'Adozione pratica dell’AI, implementazione e ROI per le PMI svizzere.', fr: 'Adoption pratique de l’IA, mise en œuvre et ROI pour les PME suisses.' },

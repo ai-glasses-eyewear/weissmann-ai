@@ -1,0 +1,421 @@
+{
+  "id": "build-vs-buy-ai",
+  "cluster": "business-smes",
+  "type": "spoke",
+  "slug": {
+    "de": "ki-selbst-bauen-oder-kaufen",
+    "en": "build-vs-buy-ai",
+    "it": "ia-sviluppare-o-acquistare",
+    "fr": "ia-developper-ou-acheter"
+  },
+  "relatedServices": [
+    "consulting",
+    "integrations"
+  ],
+  "title": {
+    "de": "KI selbst bauen oder kaufen? Der KMU-Entscheid | Weissmann AI",
+    "en": "Build vs Buy vs Partner for AI: The SME Guide | Weissmann AI",
+    "it": "IA: costruire, comprare o affidarsi a un partner | Weissmann AI",
+    "fr": "IA : construire, acheter ou déléguer en PME | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI selbst bauen, kaufen oder mit einem Partner umsetzen? Entscheidungs-Framework, Kostenstruktur und Risiken für Schweizer KMU – praxisnah und ehrlich erklärt.",
+    "en": "Should your SME build, buy, or partner for AI? A decision framework, cost structure, and risks for Swiss SMEs — explained practically and honestly.",
+    "it": "La tua PMI dovrebbe costruire, comprare o affidarsi a un partner per l'IA? Framework decisionale, struttura dei costi e rischi per le PMI svizzere.",
+    "fr": "Votre PME doit-elle construire, acheter ou s'associer pour l'IA ? Cadre de décision, structure des coûts et risques pour les PME suisses."
+  },
+  "kicker": {
+    "de": "KI für Unternehmen & KMU",
+    "en": "AI for Business & SMEs",
+    "it": "IA per le imprese e le PMI",
+    "fr": "IA pour les entreprises et les PME"
+  },
+  "h1": {
+    "de": "KI selbst bauen, kaufen oder mit einem Partner umsetzen?",
+    "en": "Build, buy, or partner for AI: which path fits your SME?",
+    "it": "Costruire, comprare o affidarsi a un partner per l'IA?",
+    "fr": "IA : construire, acheter ou s'associer à un partenaire ?"
+  },
+  "answerFirst": {
+    "de": "KI selbst bauen, kaufen oder mit einem Partner umsetzen? Für die meisten Schweizer KMU ist Kaufen (Standardsoftware mit KI) der schnellste, günstigste Start, Bauen lohnt sich nur bei echtem Wettbewerbsvorteil und eigenem Team, und ein Partner überbrückt fehlendes Know-how bei individuellen Lösungen. Entscheidend sind Differenzierung, Datenhoheit, Total Cost of Ownership und die Fähigkeit, die Lösung langfristig zu betreiben.",
+    "en": "Should you build AI in-house, buy off-the-shelf, or work with a partner? For most Swiss SMEs, buying (standard software with AI) is the fastest, cheapest start; building pays off only for a genuine competitive advantage with your own team; and a partner bridges missing know-how for custom solutions. The decisive factors are differentiation, data sovereignty, total cost of ownership, and your ability to operate the solution long-term.",
+    "it": "Sviluppare l'IA internamente, acquistare una soluzione pronta o affidarsi a un partner? Per la maggior parte delle PMI svizzere comprare (software standard con IA) è l'avvio più rapido ed economico; costruire conviene solo per un reale vantaggio competitivo con un team proprio; un partner colma il know-how mancante per soluzioni su misura. Determinanti sono differenziazione, sovranità sui dati, costo totale di proprietà e capacità di gestire la soluzione nel tempo.",
+    "fr": "Développer l'IA en interne, acheter une solution prête à l'emploi ou faire appel à un partenaire ? Pour la plupart des PME suisses, acheter (un logiciel standard doté d'IA) est le démarrage le plus rapide et économique ; construire ne se justifie que pour un véritable avantage concurrentiel avec une équipe dédiée ; un partenaire comble le savoir-faire manquant pour des solutions sur mesure. Les facteurs décisifs : différenciation, souveraineté des données, coût total de possession et capacité à exploiter la solution dans la durée."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Build, Buy oder Partner: die drei Wege kurz erklärt",
+        "en": "Build, buy, or partner: the three paths in brief",
+        "it": "Costruire, comprare o partner: i tre percorsi in breve",
+        "fr": "Construire, acheter ou partenaire : les trois voies en bref"
+      },
+      "paragraphs": [
+        {
+          "de": "Bei jeder KI-Initiative stehen Schweizer KMU vor derselben Grundfrage: Setzen wir auf fertige Software, entwickeln wir selbst, oder holen wir einen Umsetzungspartner an Bord? Die drei Wege schliessen sich nicht aus – viele erfolgreiche Lösungen kombinieren sie. Wichtig ist, die Optionen sauber zu trennen, bevor man über Budget spricht.",
+          "en": "Every AI initiative confronts Swiss SMEs with the same basic question: do we adopt ready-made software, develop our own, or bring in an implementation partner? The three paths are not mutually exclusive — many successful solutions combine them. The key is to separate the options cleanly before you talk budget.",
+          "it": "Ogni iniziativa di IA pone alle PMI svizzere la stessa domanda di fondo: adottiamo un software pronto, sviluppiamo internamente o coinvolgiamo un partner di implementazione? I tre percorsi non si escludono a vicenda — molte soluzioni di successo li combinano. L'importante è distinguere bene le opzioni prima di parlare di budget.",
+          "fr": "Chaque initiative d'IA confronte les PME suisses à la même question de fond : adoptons-nous un logiciel tout prêt, développons-nous en interne ou faisons-nous appel à un partenaire d'implémentation ? Les trois voies ne s'excluent pas — de nombreuses solutions réussies les combinent. L'essentiel est de bien distinguer les options avant de parler budget."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kaufen (Buy): Fertige KI-Funktionen in Standardsoftware oder SaaS – etwa KI im CRM, in der Office-Suite oder als spezialisiertes Tool. Schnell startklar, niedrige Einstiegskosten, geringe Differenzierung.",
+          "en": "Buy: Ready-made AI features inside standard software or SaaS — AI in your CRM, office suite, or a specialised tool. Fast to launch, low entry cost, little differentiation.",
+          "it": "Comprare: funzioni di IA già pronte in software standard o SaaS — IA nel CRM, nella suite office o in uno strumento specializzato. Rapido da avviare, basso costo iniziale, scarsa differenziazione.",
+          "fr": "Acheter : des fonctions d'IA prêtes à l'emploi dans un logiciel standard ou en SaaS — IA dans votre CRM, votre suite bureautique ou un outil spécialisé. Rapide à lancer, faible coût d'entrée, peu de différenciation."
+        },
+        {
+          "de": "Selbst bauen (Build): Eine massgeschneiderte Lösung mit eigenem Team entwickeln und betreiben. Volle Kontrolle und Datenhoheit, aber hoher Aufwand, seltenes Know-how und dauerhafte Betriebsverantwortung.",
+          "en": "Build: Develop and operate a bespoke solution with your own team. Full control and data sovereignty, but high effort, scarce expertise, and permanent operating responsibility.",
+          "it": "Costruire: sviluppare e gestire una soluzione su misura con un team proprio. Pieno controllo e sovranità sui dati, ma impegno elevato, competenze rare e responsabilità operativa permanente.",
+          "fr": "Construire : développer et exploiter une solution sur mesure avec sa propre équipe. Contrôle total et souveraineté des données, mais effort élevé, compétences rares et responsabilité d'exploitation permanente."
+        },
+        {
+          "de": "Mit Partner umsetzen (Partner): Ein externer Dienstleister baut oder integriert eine individuelle Lösung. Schneller als reines Eigenbauen und Zugang zu Expertise – aber Fragen zu Wissenstransfer, IP und Abhängigkeit.",
+          "en": "Partner: An external provider builds or integrates a custom solution. Faster than building alone and gives access to expertise — but raises questions of knowledge transfer, IP, and dependency.",
+          "it": "Partner: un fornitore esterno costruisce o integra una soluzione su misura. Più veloce del fai-da-te e dà accesso alle competenze — ma solleva questioni di trasferimento di conoscenza, proprietà intellettuale e dipendenza.",
+          "fr": "Partenaire : un prestataire externe construit ou intègre une solution sur mesure. Plus rapide que le seul développement interne et donne accès à l'expertise — mais soulève des questions de transfert de savoir, de propriété intellectuelle et de dépendance."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wann sich Kaufen, Bauen oder ein Partner lohnt",
+        "en": "When buying, building, or a partner makes sense",
+        "it": "Quando conviene comprare, costruire o un partner",
+        "fr": "Quand acheter, construire ou choisir un partenaire"
+      },
+      "paragraphs": [
+        {
+          "de": "Die Leitfrage ist nicht «Was ist am günstigsten?», sondern «Ist dieser Anwendungsfall ein Wettbewerbsvorteil oder eine Commodity?». Alles, was viele Firmen gleich brauchen – Protokolle zusammenfassen, E-Mails entwerfen, Dokumente durchsuchen – kauft man. Was Ihr Geschäft einzigartig macht und auf Ihren Daten beruht, ist ein Kandidat fürs Bauen oder für einen Partner.",
+          "en": "The guiding question is not «what is cheapest?» but «is this use case a competitive advantage or a commodity?». Anything many companies need in the same way — summarising minutes, drafting emails, searching documents — you buy. What makes your business unique and relies on your own data is a candidate for building or a partner.",
+          "it": "La domanda guida non è «cosa costa meno?» ma «questo caso d'uso è un vantaggio competitivo o una commodity?». Tutto ciò che molte aziende usano allo stesso modo — riassumere verbali, redigere e-mail, cercare nei documenti — si compra. Ciò che rende unica la vostra impresa e si basa sui vostri dati è candidato per costruire o per un partner.",
+          "fr": "La question directrice n'est pas «qu'est-ce qui coûte le moins cher ?» mais «ce cas d'usage est-il un avantage concurrentiel ou une commodité ?». Tout ce dont beaucoup d'entreprises ont besoin de la même façon — résumer des procès-verbaux, rédiger des e-mails, chercher dans des documents — s'achète. Ce qui rend votre entreprise unique et repose sur vos données est candidat à la construction ou à un partenaire."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kaufen, wenn: der Anwendungsfall Standard ist, es bewährte Anbieter gibt, Time-to-Value zählt und keine hochsensiblen Daten das Haus verlassen müssen.",
+          "en": "Buy when: the use case is standard, proven vendors exist, time-to-value matters, and no highly sensitive data has to leave your house.",
+          "it": "Comprare quando: il caso d'uso è standard, esistono fornitori affidabili, conta il time-to-value e nessun dato altamente sensibile deve uscire dall'azienda.",
+          "fr": "Acheter quand : le cas d'usage est standard, des fournisseurs éprouvés existent, le time-to-value compte et aucune donnée très sensible ne doit quitter l'entreprise."
+        },
+        {
+          "de": "Bauen, wenn: die Lösung echte Differenzierung schafft, auf proprietären Daten beruht, Sie ein KI-/Entwicklungsteam halten können und langfristig betreiben wollen.",
+          "en": "Build when: the solution creates real differentiation, relies on proprietary data, you can retain an AI/development team, and you intend to operate it long-term.",
+          "it": "Costruire quando: la soluzione crea una reale differenziazione, si basa su dati proprietari, potete mantenere un team di IA/sviluppo e volete gestirla nel tempo.",
+          "fr": "Construire quand : la solution crée une réelle différenciation, repose sur des données propriétaires, vous pouvez retenir une équipe IA/développement et comptez l'exploiter dans la durée."
+        },
+        {
+          "de": "Partner, wenn: Sie eine individuelle Lösung brauchen, aber das Know-how (noch) fehlt oder der Aufbau eines eigenen Teams sich nicht rechnet – mit klarem Wissenstransfer als Ziel.",
+          "en": "Partner when: you need a custom solution but lack the know-how (for now), or building an in-house team does not pay off — with clear knowledge transfer as the goal.",
+          "it": "Partner quando: serve una soluzione su misura ma manca (per ora) il know-how, oppure creare un team interno non è conveniente — con un chiaro trasferimento di conoscenza come obiettivo.",
+          "fr": "Partenaire quand : vous avez besoin d'une solution sur mesure mais le savoir-faire manque (pour l'instant), ou constituer une équipe interne n'est pas rentable — avec un transfert de savoir clair comme objectif."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Total Cost of Ownership: die wahren Kosten jeder Option",
+        "en": "Total cost of ownership: the real cost of each option",
+        "it": "Costo totale di proprietà: il costo reale di ogni opzione",
+        "fr": "Coût total de possession : le vrai coût de chaque option"
+      },
+      "paragraphs": [
+        {
+          "de": "Der Kaufpreis oder das Projektangebot ist nur die Spitze des Eisbergs. Rechnen Sie über den gesamten Lebenszyklus – Aufbau, Betrieb, Wartung, Modell-Updates und Ausstieg. Eine scheinbar teure Lösung kann über drei Jahre günstiger sein, wenn Betrieb und Pflege niedrig bleiben.",
+          "en": "The purchase price or project quote is only the tip of the iceberg. Calculate across the full lifecycle — setup, operation, maintenance, model updates, and exit. A seemingly expensive solution can be cheaper over three years if running and upkeep costs stay low.",
+          "it": "Il prezzo d'acquisto o l'offerta di progetto è solo la punta dell'iceberg. Calcolate sull'intero ciclo di vita — avvio, esercizio, manutenzione, aggiornamenti dei modelli e uscita. Una soluzione apparentemente costosa può risultare più economica su tre anni se esercizio e manutenzione restano bassi.",
+          "fr": "Le prix d'achat ou le devis de projet n'est que la partie émergée de l'iceberg. Calculez sur tout le cycle de vie — mise en place, exploitation, maintenance, mises à jour des modèles et sortie. Une solution en apparence coûteuse peut revenir moins cher sur trois ans si l'exploitation et l'entretien restent faibles."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kaufen: planbare Betriebskosten (Abo pro Nutzer/Nutzung), minimaler Einstieg, kaum Wartungsaufwand – aber laufende Kosten skalieren mit der Nutzung, und der Anbieter bestimmt Preis und Roadmap.",
+          "en": "Buy: predictable operating costs (subscription per user/usage), minimal entry, little maintenance — but recurring costs scale with usage, and the vendor sets price and roadmap.",
+          "it": "Comprare: costi d'esercizio prevedibili (abbonamento per utente/utilizzo), avvio minimo, poca manutenzione — ma i costi ricorrenti crescono con l'uso e il fornitore decide prezzo e roadmap.",
+          "fr": "Acheter : coûts d'exploitation prévisibles (abonnement par utilisateur/usage), entrée minimale, peu de maintenance — mais les coûts récurrents croissent avec l'usage et le fournisseur fixe le prix et la feuille de route."
+        },
+        {
+          "de": "Bauen: hohe Anfangsinvestition (Talente, Infrastruktur, Datenaufbereitung), plus dauerhafte Kosten für Betrieb, Monitoring und Modellpflege (MLOps). Der Betrieb wird oft unterschätzt.",
+          "en": "Build: high upfront investment (talent, infrastructure, data preparation), plus permanent costs for operation, monitoring, and model upkeep (MLOps). Operation is often underestimated.",
+          "it": "Costruire: investimento iniziale elevato (talenti, infrastruttura, preparazione dei dati), più costi permanenti per esercizio, monitoraggio e manutenzione dei modelli (MLOps). L'esercizio è spesso sottovalutato.",
+          "fr": "Construire : investissement initial élevé (talents, infrastructure, préparation des données), plus des coûts permanents d'exploitation, de supervision et d'entretien des modèles (MLOps). L'exploitation est souvent sous-estimée."
+        },
+        {
+          "de": "Partner: Projektkosten plus Betriebs- oder Wartungsvertrag. Achten Sie auf IP-Eigentum, das Betriebsmodell nach Go-live und die Kosten möglicher Anpassungen.",
+          "en": "Partner: project cost plus an operating or maintenance agreement. Watch IP ownership, the operating model after go-live, and the cost of future changes.",
+          "it": "Partner: costo di progetto più un contratto di esercizio o manutenzione. Attenzione alla proprietà intellettuale, al modello operativo dopo il go-live e al costo delle modifiche future.",
+          "fr": "Partenaire : coût de projet plus un contrat d'exploitation ou de maintenance. Surveillez la propriété intellectuelle, le modèle d'exploitation après la mise en production et le coût des évolutions futures."
+        },
+        {
+          "de": "Immer mitrechnen: interne Zeit, Datenaufbereitung, Change Management und Schulung – diese versteckten Posten treffen alle drei Wege.",
+          "en": "Always count: internal time, data preparation, change management, and training — these hidden items hit all three paths.",
+          "it": "Da conteggiare sempre: tempo interno, preparazione dei dati, gestione del cambiamento e formazione — queste voci nascoste riguardano tutti e tre i percorsi.",
+          "fr": "À compter toujours : temps interne, préparation des données, conduite du changement et formation — ces postes cachés touchent les trois voies."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Risiken realistisch bewerten: Daten, Abhängigkeit, Betrieb",
+        "en": "Assessing risk realistically: data, dependency, operation",
+        "it": "Valutare i rischi in modo realistico: dati, dipendenza, esercizio",
+        "fr": "Évaluer les risques de façon réaliste : données, dépendance, exploitation"
+      },
+      "paragraphs": [
+        {
+          "de": "Jeder Weg trägt eigene Risiken. Für Schweizer KMU steht der Datenschutz nach revDSG (nFADP) im Zentrum: Wo werden Daten verarbeitet, wer hat Zugriff, und ist ein Auftragsbearbeitungsvertrag vorhanden? Klären Sie das früh, nicht erst beim Go-live.",
+          "en": "Every path carries its own risks. For Swiss SMEs, data protection under the revised FADP (revDSG/nFADP) is central: where is data processed, who has access, and is a data-processing agreement in place? Clarify this early, not at go-live.",
+          "it": "Ogni percorso comporta rischi propri. Per le PMI svizzere è centrale la protezione dei dati secondo la revLPD (nLPD): dove vengono trattati i dati, chi vi ha accesso ed esiste un contratto di trattamento dei dati? Chiaritelo per tempo, non al go-live.",
+          "fr": "Chaque voie porte ses propres risques. Pour les PME suisses, la protection des données selon la nLPD (LPD révisée) est centrale : où les données sont-elles traitées, qui y a accès et existe-t-il un contrat de sous-traitance des données ? Clarifiez-le tôt, pas à la mise en production."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kaufen: Vendor Lock-in, Datenabfluss zu Drittanbietern (oft ausserhalb der Schweiz/EU), Abhängigkeit von Preis- und Roadmap-Entscheidungen des Anbieters.",
+          "en": "Buy: vendor lock-in, data flowing to third parties (often outside Switzerland/EU), dependence on the vendor's price and roadmap decisions.",
+          "it": "Comprare: dipendenza dal fornitore (lock-in), trasferimento di dati a terzi (spesso fuori da Svizzera/UE), dipendenza dalle decisioni di prezzo e roadmap del fornitore.",
+          "fr": "Acheter : dépendance au fournisseur (verrouillage), transfert de données à des tiers (souvent hors de Suisse/UE), dépendance aux décisions de prix et de feuille de route du fournisseur."
+        },
+        {
+          "de": "Bauen: Schlüsselpersonen-Risiko (was, wenn die Fachkraft geht?), technische Schuld, Sicherheits- und Betriebsverantwortung liegen vollständig bei Ihnen.",
+          "en": "Build: key-person risk (what if your specialist leaves?), technical debt, and full responsibility for security and operations.",
+          "it": "Costruire: rischio legato alle persone chiave (e se lo specialista se ne va?), debito tecnico, piena responsabilità per sicurezza ed esercizio.",
+          "fr": "Construire : risque lié aux personnes clés (que se passe-t-il si votre spécialiste part ?), dette technique, responsabilité totale de la sécurité et de l'exploitation."
+        },
+        {
+          "de": "Partner: Abhängigkeit vom Dienstleister, unklarer Wissenstransfer, IP- und Exit-Fragen. Ohne sauberen Vertrag droht ein «goldener Käfig».",
+          "en": "Partner: dependence on the provider, unclear knowledge transfer, IP and exit questions. Without a solid contract you risk a «golden cage».",
+          "it": "Partner: dipendenza dal fornitore, trasferimento di conoscenza poco chiaro, questioni di proprietà intellettuale e di uscita. Senza un contratto solido si rischia una «gabbia dorata».",
+          "fr": "Partenaire : dépendance au prestataire, transfert de savoir flou, questions de propriété intellectuelle et de sortie. Sans contrat solide, risque de «cage dorée»."
+        },
+        {
+          "de": "Datenschutz übergreifend: Datenresidenz, Auftragsbearbeitungsvertrag, Zweckbindung und Transparenz gegenüber Betroffenen – die Verantwortung bleibt immer bei Ihnen als KMU.",
+          "en": "Data protection throughout: data residency, a data-processing agreement, purpose limitation, and transparency towards data subjects — accountability always stays with you as the SME.",
+          "it": "Protezione dei dati trasversale: residenza dei dati, contratto di trattamento, limitazione della finalità e trasparenza verso gli interessati — la responsabilità resta sempre vostra come PMI.",
+          "fr": "Protection des données transversale : résidence des données, contrat de sous-traitance, limitation de la finalité et transparence envers les personnes concernées — la responsabilité reste toujours la vôtre en tant que PME."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Entscheidungs-Framework: sieben Fragen vor dem Budget",
+        "en": "A decision framework: seven questions before the budget",
+        "it": "Un framework decisionale: sette domande prima del budget",
+        "fr": "Un cadre de décision : sept questions avant le budget"
+      },
+      "paragraphs": [
+        {
+          "de": "Beantworten Sie diese Fragen, bevor Sie sich festlegen. Sie führen fast automatisch zur passenden Option – und oft zu einer Kombination.",
+          "en": "Answer these questions before you commit. They lead almost automatically to the right option — and often to a combination.",
+          "it": "Rispondete a queste domande prima di decidere. Portano quasi automaticamente all'opzione giusta — e spesso a una combinazione.",
+          "fr": "Répondez à ces questions avant de vous engager. Elles mènent presque automatiquement à la bonne option — et souvent à une combinaison."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "1. Differenzierung: Ist der Anwendungsfall ein Wettbewerbsvorteil oder Commodity? Commodity → kaufen.",
+          "en": "1. Differentiation: is the use case a competitive advantage or a commodity? Commodity → buy.",
+          "it": "1. Differenziazione: il caso d'uso è un vantaggio competitivo o una commodity? Commodity → comprare.",
+          "fr": "1. Différenciation : le cas d'usage est-il un avantage concurrentiel ou une commodité ? Commodité → acheter."
+        },
+        {
+          "de": "2. Daten: Beruht die Lösung auf Ihren proprietären Daten, und haben Sie die Rechte und die Qualität dafür?",
+          "en": "2. Data: does the solution rely on your proprietary data, and do you have the rights and the quality for it?",
+          "it": "2. Dati: la soluzione si basa sui vostri dati proprietari e ne avete i diritti e la qualità?",
+          "fr": "2. Données : la solution repose-t-elle sur vos données propriétaires, et en avez-vous les droits et la qualité ?"
+        },
+        {
+          "de": "3. Sensibilität: Wie heikel sind die Daten (revDSG, Berufsgeheimnis)? Je heikler, desto wichtiger sind Datenresidenz und Kontrolle.",
+          "en": "3. Sensitivity: how sensitive is the data (revDSG, professional secrecy)? The more sensitive, the more data residency and control matter.",
+          "it": "3. Sensibilità: quanto sono sensibili i dati (revLPD, segreto professionale)? Più sono sensibili, più contano residenza dei dati e controllo.",
+          "fr": "3. Sensibilité : quelle est la sensibilité des données (nLPD, secret professionnel) ? Plus elles sont sensibles, plus la résidence des données et le contrôle comptent."
+        },
+        {
+          "de": "4. Talent: Können Sie das nötige Know-how aufbauen und halten – oder wäre es nach dem Projekt verwaist?",
+          "en": "4. Talent: can you build and retain the needed expertise — or would it be orphaned after the project?",
+          "it": "4. Talenti: potete acquisire e mantenere le competenze necessarie — o resterebbero orfane dopo il progetto?",
+          "fr": "4. Talents : pouvez-vous acquérir et retenir les compétences nécessaires — ou seraient-elles orphelines après le projet ?"
+        },
+        {
+          "de": "5. Time-to-Value: Brauchen Sie Ergebnisse in Wochen (kaufen) oder ist ein längerer Aufbau vertretbar?",
+          "en": "5. Time-to-value: do you need results in weeks (buy), or is a longer build acceptable?",
+          "it": "5. Time-to-value: servono risultati in settimane (comprare) o è accettabile uno sviluppo più lungo?",
+          "fr": "5. Time-to-value : avez-vous besoin de résultats en quelques semaines (acheter) ou un développement plus long est-il acceptable ?"
+        },
+        {
+          "de": "6. Total Cost of Ownership: Was kostet die Lösung über drei Jahre inklusive Betrieb, nicht nur der Einstieg?",
+          "en": "6. Total cost of ownership: what does the solution cost over three years including operation, not just entry?",
+          "it": "6. Costo totale di proprietà: quanto costa la soluzione su tre anni, esercizio incluso, non solo l'avvio?",
+          "fr": "6. Coût total de possession : combien coûte la solution sur trois ans, exploitation comprise, et pas seulement l'entrée ?"
+        },
+        {
+          "de": "7. Ausstieg: Wie einfach kommen Sie wieder raus – Datenexport, IP-Rechte, Anbieterwechsel?",
+          "en": "7. Exit: how easily can you get out — data export, IP rights, switching vendors?",
+          "it": "7. Uscita: quanto è facile uscirne — esportazione dei dati, diritti di proprietà intellettuale, cambio di fornitore?",
+          "fr": "7. Sortie : avec quelle facilité pouvez-vous en sortir — export des données, droits de propriété intellectuelle, changement de fournisseur ?"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler und der pragmatische Schweizer Weg",
+        "en": "Common mistakes and the pragmatic Swiss path",
+        "it": "Errori frequenti e la via svizzera pragmatica",
+        "fr": "Erreurs fréquentes et la voie suisse pragmatique"
+      },
+      "paragraphs": [
+        {
+          "de": "Die meisten gescheiterten KI-Projekte scheitern nicht an der Technik, sondern an der Weichenstellung. Der realistische Weg für die meisten KMU ist hybrid: Standardaufgaben kaufen, ein bis zwei differenzierende Fälle mit einem Partner starten und Kompetenz schrittweise intern aufbauen. Beginnen Sie mit einem kleinen, messbaren Proof of Concept statt einer Grossinvestition.",
+          "en": "Most failed AI projects fail not on technology but on the initial choice. The realistic path for most SMEs is hybrid: buy standard tasks, start one or two differentiating cases with a partner, and build competence internally step by step. Begin with a small, measurable proof of concept rather than a large investment.",
+          "it": "La maggior parte dei progetti di IA falliti non fallisce per la tecnologia, ma per la scelta iniziale. La via realistica per la maggior parte delle PMI è ibrida: comprare i compiti standard, avviare uno o due casi differenzianti con un partner e costruire competenza internamente passo dopo passo. Iniziate con un proof of concept piccolo e misurabile invece di un grande investimento.",
+          "fr": "La plupart des projets d'IA échouent non pas à cause de la technologie, mais à cause du choix initial. La voie réaliste pour la plupart des PME est hybride : acheter les tâches standard, lancer un ou deux cas différenciants avec un partenaire et bâtir la compétence en interne pas à pas. Commencez par une preuve de concept petite et mesurable plutôt que par un gros investissement."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Commodity selbst bauen: Standardfunktionen nachzuprogrammieren verbrennt Budget ohne Differenzierung.",
+          "en": "Building a commodity: re-coding standard features burns budget without differentiation.",
+          "it": "Costruire una commodity: riprogrammare funzioni standard brucia budget senza differenziazione.",
+          "fr": "Construire une commodité : reprogrammer des fonctions standard consomme le budget sans différenciation."
+        },
+        {
+          "de": "Kaufen ohne Integration: Ein Tool ohne Daten- und Prozessstrategie bleibt Insellösung ohne Nutzen.",
+          "en": "Buying without integration: a tool with no data and process strategy stays a useless island.",
+          "it": "Comprare senza integrazione: uno strumento senza strategia di dati e processi resta un'isola inutile.",
+          "fr": "Acheter sans intégration : un outil sans stratégie de données ni de processus reste un îlot inutile."
+        },
+        {
+          "de": "Partner ohne Wissenstransfer und Exit-Klausel: führt zur Dauerabhängigkeit.",
+          "en": "Partnering without knowledge transfer and an exit clause: leads to permanent dependency.",
+          "it": "Partner senza trasferimento di conoscenza e clausola di uscita: porta a dipendenza permanente.",
+          "fr": "Partenaire sans transfert de savoir ni clause de sortie : mène à une dépendance permanente."
+        },
+        {
+          "de": "TCO ignorieren: Betrieb, Monitoring und Modellpflege werden fast immer unterschätzt.",
+          "en": "Ignoring TCO: operation, monitoring, and model upkeep are almost always underestimated.",
+          "it": "Ignorare il costo totale di proprietà: esercizio, monitoraggio e manutenzione dei modelli sono quasi sempre sottovalutati.",
+          "fr": "Ignorer le coût total de possession : exploitation, supervision et entretien des modèles sont presque toujours sous-estimés."
+        },
+        {
+          "de": "Kein Erfolgskriterium: Ohne messbares Ziel lässt sich keine Option ehrlich bewerten.",
+          "en": "No success criterion: without a measurable goal, no option can be honestly evaluated.",
+          "it": "Nessun criterio di successo: senza un obiettivo misurabile nessuna opzione è valutabile onestamente.",
+          "fr": "Aucun critère de succès : sans objectif mesurable, aucune option ne peut être évaluée honnêtement."
+        },
+        {
+          "de": "Zu gross starten: Ein fokussierter Proof of Concept senkt Risiko und schafft eine Lernkurve.",
+          "en": "Starting too big: a focused proof of concept lowers risk and builds a learning curve.",
+          "it": "Partire troppo in grande: un proof of concept mirato riduce il rischio e crea apprendimento.",
+          "fr": "Démarrer trop grand : une preuve de concept ciblée réduit le risque et crée un apprentissage."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Sollte ein KMU KI eher kaufen oder selbst bauen?",
+        "en": "Should an SME buy or build AI?",
+        "it": "Una PMI dovrebbe comprare o costruire l'IA?",
+        "fr": "Une PME devrait-elle acheter ou construire son IA ?"
+      },
+      "a": {
+        "de": "Für die meisten Schweizer KMU ist Kaufen der richtige Start: Standardsoftware mit KI liefert schnell Nutzen bei niedrigen, planbaren Kosten. Selbst bauen lohnt sich nur, wenn die Lösung einen echten Wettbewerbsvorteil schafft, auf Ihren eigenen Daten beruht und Sie ein Team halten können, das sie langfristig betreibt.",
+        "en": "For most Swiss SMEs, buying is the right start: standard software with AI delivers value quickly at low, predictable cost. Building only pays off when the solution creates a real competitive advantage, relies on your own data, and you can retain a team to operate it long-term.",
+        "it": "Per la maggior parte delle PMI svizzere comprare è l'avvio giusto: il software standard con IA porta valore rapidamente a costi bassi e prevedibili. Costruire conviene solo quando la soluzione crea un reale vantaggio competitivo, si basa sui vostri dati e potete mantenere un team che la gestisca nel tempo.",
+        "fr": "Pour la plupart des PME suisses, acheter est le bon départ : un logiciel standard doté d'IA apporte de la valeur rapidement, à un coût faible et prévisible. Construire ne se justifie que si la solution crée un réel avantage concurrentiel, repose sur vos propres données et que vous pouvez retenir une équipe pour l'exploiter dans la durée."
+      }
+    },
+    {
+      "q": {
+        "de": "Wann lohnt es sich, KI selbst zu bauen?",
+        "en": "When is it worth building AI in-house?",
+        "it": "Quando conviene costruire l'IA internamente?",
+        "fr": "Quand vaut-il la peine de construire l'IA en interne ?"
+      },
+      "a": {
+        "de": "Wenn der Anwendungsfall Ihr Geschäft differenziert, auf proprietären Daten beruht, kein passendes Fertigprodukt existiert und Sie das nötige Know-how aufbauen und halten können. Rechnen Sie den Betrieb (Monitoring, Modellpflege, Sicherheit) über mehrere Jahre mit – nicht nur die Entwicklung.",
+        "en": "When the use case differentiates your business, relies on proprietary data, has no suitable off-the-shelf product, and you can build and retain the needed know-how. Budget for operation (monitoring, model upkeep, security) over several years — not just development.",
+        "it": "Quando il caso d'uso differenzia la vostra impresa, si basa su dati proprietari, non esiste un prodotto pronto adatto e potete acquisire e mantenere il know-how necessario. Mettete a budget l'esercizio (monitoraggio, manutenzione dei modelli, sicurezza) su più anni — non solo lo sviluppo.",
+        "fr": "Lorsque le cas d'usage différencie votre entreprise, repose sur des données propriétaires, qu'aucun produit tout prêt adapté n'existe et que vous pouvez acquérir et retenir le savoir-faire nécessaire. Budgétez l'exploitation (supervision, entretien des modèles, sécurité) sur plusieurs années — pas seulement le développement."
+      }
+    },
+    {
+      "q": {
+        "de": "Was kostet eine eigene KI-Lösung?",
+        "en": "What does a custom AI solution cost?",
+        "it": "Quanto costa una soluzione di IA su misura?",
+        "fr": "Combien coûte une solution d'IA sur mesure ?"
+      },
+      "a": {
+        "de": "Seriös lässt sich das nur pro Fall beziffern. Denken Sie in Kostenstruktur statt Pauschalpreis: einmalige Entwicklung (Talent, Datenaufbereitung, Infrastruktur) plus laufender Betrieb (Hosting, Monitoring, Modell-Updates, Support). Der Betrieb macht über den Lebenszyklus oft den grösseren Teil aus und wird häufig unterschätzt.",
+        "en": "It can only be costed honestly per case. Think in cost structure rather than a flat price: one-off development (talent, data preparation, infrastructure) plus ongoing operation (hosting, monitoring, model updates, support). Over the lifecycle, operation is often the larger share — and the most underestimated.",
+        "it": "Si può quantificare seriamente solo caso per caso. Ragionate in termini di struttura dei costi anziché di prezzo forfettario: sviluppo una tantum (talenti, preparazione dei dati, infrastruttura) più esercizio continuo (hosting, monitoraggio, aggiornamenti dei modelli, supporto). Sul ciclo di vita l'esercizio è spesso la parte maggiore — e la più sottovalutata.",
+        "fr": "On ne peut le chiffrer sérieusement qu'au cas par cas. Raisonnez en structure de coûts plutôt qu'en prix forfaitaire : développement ponctuel (talents, préparation des données, infrastructure) plus exploitation continue (hébergement, supervision, mises à jour des modèles, support). Sur le cycle de vie, l'exploitation est souvent la part la plus importante — et la plus sous-estimée."
+      }
+    },
+    {
+      "q": {
+        "de": "Woran erkenne ich einen guten Umsetzungspartner?",
+        "en": "How do I recognise a good implementation partner?",
+        "it": "Come riconosco un buon partner di implementazione?",
+        "fr": "Comment reconnaître un bon partenaire d'implémentation ?"
+      },
+      "a": {
+        "de": "An Transparenz bei Kosten und Grenzen, an einem klaren Plan für Wissenstransfer, an Ihrem Eigentum am Ergebnis (IP und Daten) und an einer fairen Exit-Möglichkeit. Ein guter Partner macht Sie schrittweise unabhängiger, nicht dauerhaft abhängig – und kennt die Schweizer Datenschutzanforderungen.",
+        "en": "By transparency about costs and limits, a clear plan for knowledge transfer, your ownership of the result (IP and data), and a fair exit option. A good partner makes you gradually more independent, not permanently dependent — and knows Swiss data-protection requirements.",
+        "it": "Dalla trasparenza su costi e limiti, da un piano chiaro per il trasferimento di conoscenza, dalla vostra proprietà del risultato (IP e dati) e da una possibilità di uscita equa. Un buon partner vi rende gradualmente più indipendenti, non dipendenti in modo permanente — e conosce i requisiti svizzeri di protezione dei dati.",
+        "fr": "À sa transparence sur les coûts et les limites, à un plan clair de transfert de savoir, à votre propriété du résultat (PI et données) et à une possibilité de sortie équitable. Un bon partenaire vous rend progressivement plus indépendant, pas dépendant en permanence — et connaît les exigences suisses de protection des données."
+      }
+    },
+    {
+      "q": {
+        "de": "Was bedeutet das revDSG für die Entscheidung?",
+        "en": "What does the revDSG mean for the decision?",
+        "it": "Cosa significa la revLPD per la decisione?",
+        "fr": "Que signifie la nLPD pour la décision ?"
+      },
+      "a": {
+        "de": "Das revidierte Datenschutzgesetz (revDSG/nFADP) verlangt, dass Sie wissen, wo und durch wen Personendaten verarbeitet werden. Bei gekauften Cloud-Tools brauchen Sie einen Auftragsbearbeitungsvertrag und Klarheit zur Datenresidenz. Bei heiklen Daten sprechen Datenhoheit und Kontrolle eher für eine selbst betriebene oder Schweiz-gehostete Lösung. Die Verantwortung bleibt immer bei Ihnen.",
+        "en": "The revised Data Protection Act (revDSG/nFADP) requires you to know where and by whom personal data is processed. For bought cloud tools you need a data-processing agreement and clarity on data residency. For sensitive data, data sovereignty and control argue for a self-operated or Swiss-hosted solution. Accountability always stays with you.",
+        "it": "La legge riveduta sulla protezione dei dati (revLPD/nLPD) richiede di sapere dove e da chi vengono trattati i dati personali. Per gli strumenti cloud acquistati servono un contratto di trattamento dei dati e chiarezza sulla residenza dei dati. Per dati sensibili, sovranità e controllo depongono a favore di una soluzione gestita internamente o ospitata in Svizzera. La responsabilità resta sempre vostra.",
+        "fr": "La loi révisée sur la protection des données (nLPD/LPD révisée) exige de savoir où et par qui les données personnelles sont traitées. Pour les outils cloud achetés, il vous faut un contrat de sous-traitance et de la clarté sur la résidence des données. Pour des données sensibles, la souveraineté et le contrôle plaident pour une solution exploitée en interne ou hébergée en Suisse. La responsabilité reste toujours la vôtre."
+      }
+    },
+    {
+      "q": {
+        "de": "Kann man die drei Wege kombinieren?",
+        "en": "Can the three paths be combined?",
+        "it": "Si possono combinare i tre percorsi?",
+        "fr": "Peut-on combiner les trois voies ?"
+      },
+      "a": {
+        "de": "Ja – und das ist für KMU meist der beste Weg. Kaufen Sie Standardaufgaben, setzen Sie ein bis zwei differenzierende Fälle mit einem Partner um und bauen Sie intern schrittweise Kompetenz auf. So verbinden Sie schnellen Nutzen mit langfristiger Unabhängigkeit.",
+        "en": "Yes — and for SMEs that is usually the best route. Buy standard tasks, implement one or two differentiating cases with a partner, and build competence internally step by step. This combines fast value with long-term independence.",
+        "it": "Sì — e per le PMI è di solito la via migliore. Comprate i compiti standard, realizzate uno o due casi differenzianti con un partner e costruite competenza internamente passo dopo passo. Così unite valore rapido e indipendenza a lungo termine.",
+        "fr": "Oui — et pour les PME c'est généralement la meilleure voie. Achetez les tâches standard, réalisez un ou deux cas différenciants avec un partenaire et bâtissez la compétence en interne pas à pas. Vous combinez ainsi valeur rapide et indépendance à long terme."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Build vs Buy",
+    "Make-or-Buy",
+    "Total Cost of Ownership",
+    "SaaS",
+    "Vendor Lock-in",
+    "revDSG",
+    "nFADP / nLPD",
+    "EDÖB",
+    "MLOps",
+    "Proof of Concept",
+    "Datenhoheit",
+    "Datenresidenz Schweiz",
+    "Auftragsbearbeitungsvertrag",
+    "KI-Implementierung",
+    "KMU / PME",
+    "KI-Strategie"
+  ]
+}

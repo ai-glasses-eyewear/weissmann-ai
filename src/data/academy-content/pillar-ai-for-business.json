@@ -1,0 +1,234 @@
+{
+  "id": "pillar-ai-for-business",
+  "cluster": "business-smes",
+  "type": "pillar",
+  "slug": { "de": "ki-fuer-unternehmen", "en": "ai-for-business", "it": "ai-per-le-imprese", "fr": "ia-pour-entreprises" },
+  "relatedServices": ["consulting", "automation", "phone-assistant"],
+  "title": {
+    "de": "KI für Unternehmen & KMU: der praktische Leitfaden | Weissmann AI",
+    "en": "AI for Business & SMEs: the Practical Guide | Weissmann AI",
+    "it": "IA per aziende e PMI: la guida pratica | Weissmann AI",
+    "fr": "IA pour entreprises et PME : le guide pratique | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie Schweizer KMU Künstliche Intelligenz praktisch, sicher und wirtschaftlich einführen: Wertquellen, Einstieg, ROI, Risiken und revDSG – mit weiterführenden Leitfäden.",
+    "en": "How Swiss SMEs adopt AI practically, safely and economically: where value comes from, how to start, ROI, risks and revDSG – with in-depth guides.",
+    "it": "Come le PMI svizzere adottano l'IA in modo pratico, sicuro ed economico: fonti di valore, avvio, ROI, rischi e nLPD – con guide di approfondimento.",
+    "fr": "Comment les PME suisses adoptent l'IA de façon pratique, sûre et rentable : sources de valeur, démarrage, ROI, risques et nLPD – avec des guides détaillés."
+  },
+  "kicker": {
+    "de": "KI für Business & KMU",
+    "en": "AI for Business & SMEs",
+    "it": "IA per business e PMI",
+    "fr": "IA pour les entreprises et PME"
+  },
+  "h1": {
+    "de": "KI für Unternehmen: wie Schweizer KMU Künstliche Intelligenz erfolgreich einführen",
+    "en": "AI for business: how Swiss SMEs adopt artificial intelligence successfully",
+    "it": "IA per le aziende: come le PMI svizzere adottano l'intelligenza artificiale con successo",
+    "fr": "L'IA pour les entreprises : comment les PME suisses adoptent l'intelligence artificielle avec succès"
+  },
+  "answerFirst": {
+    "de": "KI für Unternehmen bedeutet, Künstliche Intelligenz gezielt für konkrete Aufgaben einzusetzen – nicht als Grossprojekt, sondern als Werkzeug. Erfolgreiche KMU starten klein und risikoarm mit ein bis zwei echten Anwendungsfällen, messen Zeitersparnis und Qualität, klären revDSG und Verantwortlichkeiten und skalieren erst, was nachweislich funktioniert. Entscheidend sind ein klarer Nutzen, saubere Daten und menschliche Kontrolle – nicht die neueste Technologie.",
+    "en": "AI for business means applying artificial intelligence deliberately to concrete tasks – not as a grand project, but as a tool. Successful SMEs start small and low-risk with one or two real use cases, measure time saved and quality, clarify revDSG and responsibilities, and scale only what demonstrably works. What matters is clear value, clean data and human oversight – not the newest technology.",
+    "it": "IA per le aziende significa applicare l'intelligenza artificiale in modo mirato a compiti concreti – non come grande progetto, ma come strumento. Le PMI di successo iniziano in piccolo e a basso rischio con uno o due casi d'uso reali, misurano tempo risparmiato e qualità, chiariscono la nLPD e le responsabilità, e scalano solo ciò che funziona davvero. Contano valore chiaro, dati puliti e controllo umano – non la tecnologia più recente.",
+    "fr": "L'IA pour les entreprises consiste à appliquer l'intelligence artificielle de façon ciblée à des tâches concrètes – pas comme un grand projet, mais comme un outil. Les PME qui réussissent commencent petit et à faible risque avec un ou deux cas d'usage réels, mesurent le temps gagné et la qualité, clarifient la nLPD et les responsabilités, et ne mettent à l'échelle que ce qui fonctionne réellement. Ce qui compte : une valeur claire, des données propres et une supervision humaine – pas la technologie la plus récente."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Wo KI im Unternehmen echten Wert schafft",
+        "en": "Where AI creates real value in a business",
+        "it": "Dove l'IA crea valore reale in azienda",
+        "fr": "Où l'IA crée une valeur réelle en entreprise"
+      },
+      "paragraphs": [
+        {
+          "de": "KI schafft Wert vor allem dort, wo heute Zeit in wiederkehrenden, sprachlichen oder datenintensiven Aufgaben verloren geht. Für die meisten KMU liegen die ersten Gewinne nicht in spektakulären Anwendungen, sondern in der Entlastung des Alltags: Anfragen beantworten, Texte und Offerten entwerfen, Daten erfassen und weiterleiten, Anrufe annehmen.",
+          "en": "AI creates value above all where time is lost today on recurring, language-based or data-heavy tasks. For most SMEs, the first gains are not in spectacular applications but in relieving everyday work: answering enquiries, drafting text and quotes, capturing and routing data, taking calls.",
+          "it": "L'IA crea valore soprattutto dove oggi si perde tempo in attività ricorrenti, linguistiche o ad alta intensità di dati. Per la maggior parte delle PMI i primi guadagni non stanno in applicazioni spettacolari, ma nell'alleggerire il lavoro quotidiano: rispondere alle richieste, redigere testi e offerte, raccogliere e inoltrare dati, rispondere alle chiamate.",
+          "fr": "L'IA crée de la valeur avant tout là où l'on perd aujourd'hui du temps sur des tâches récurrentes, rédactionnelles ou intensives en données. Pour la plupart des PME, les premiers gains ne sont pas dans des applications spectaculaires mais dans l'allègement du quotidien : répondre aux demandes, rédiger textes et offres, saisir et transmettre des données, prendre les appels."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kundenkontakt: Anrufe und Anfragen rund um die Uhr beantworten, Termine buchen (siehe KI-Telefonassistent).",
+          "en": "Customer contact: answer calls and enquiries around the clock, book appointments (see AI phone assistant).",
+          "it": "Contatto con i clienti: rispondere a chiamate e richieste 24 ore su 24, prenotare appuntamenti (vedi assistente telefonico IA).",
+          "fr": "Contact client : répondre aux appels et demandes 24h/24, prendre des rendez-vous (voir assistant téléphonique IA)."
+        },
+        {
+          "de": "Texte & Wissen: Entwürfe, Zusammenfassungen und Übersetzungen schneller erstellen – mit menschlicher Prüfung.",
+          "en": "Text & knowledge: produce drafts, summaries and translations faster – with human review.",
+          "it": "Testi e conoscenza: produrre bozze, sintesi e traduzioni più velocemente – con revisione umana.",
+          "fr": "Texte & savoir : produire brouillons, résumés et traductions plus vite – avec relecture humaine."
+        },
+        {
+          "de": "Abläufe: wiederkehrende Prozesse automatisieren, Daten zwischen Systemen synchronisieren (siehe KI-Automatisierung).",
+          "en": "Operations: automate recurring processes, sync data between systems (see AI automation).",
+          "it": "Processi: automatizzare i flussi ricorrenti, sincronizzare i dati tra i sistemi (vedi automazione IA).",
+          "fr": "Opérations : automatiser les processus récurrents, synchroniser les données entre systèmes (voir automatisation IA)."
+        },
+        {
+          "de": "Sichtbarkeit: in Google und in KI-Antwortmaschinen gefunden werden (siehe SEO und GEO).",
+          "en": "Visibility: get found in Google and in AI answer engines (see SEO and GEO).",
+          "it": "Visibilità: farsi trovare su Google e nei motori di risposta IA (vedi SEO e GEO).",
+          "fr": "Visibilité : être trouvé sur Google et dans les moteurs de réponse IA (voir SEO et GEO)."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Klein starten: der risikoarme Einstieg",
+        "en": "Start small: the low-risk entry",
+        "it": "Iniziare in piccolo: l'avvio a basso rischio",
+        "fr": "Commencer petit : le démarrage à faible risque"
+      },
+      "paragraphs": [
+        {
+          "de": "Der beste Einstieg ist ein einzelner, gut abgegrenzter Anwendungsfall mit klarem Nutzen und geringem Risiko – eine Aufgabe, deren Ergebnis ohnehin ein Mensch prüft und bei der keine besonders schützenswerten Personendaten im Spiel sind. Ein 90-Tage-Pilot mit messbaren Zielen zeigt schnell, ob sich der Aufwand lohnt, bevor grössere Investitionen anstehen. So entstehen Erfahrung, Vertrauen und belastbare Zahlen statt teurer Fehlentscheidungen.",
+          "en": "The best entry point is a single, well-scoped use case with clear value and low risk – a task whose output a human reviews anyway and that involves no sensitive personal data. A 90-day pilot with measurable goals quickly shows whether the effort pays off before larger investments are made. This builds experience, trust and reliable numbers instead of costly wrong decisions.",
+          "it": "Il punto di partenza migliore è un singolo caso d'uso ben delimitato, con valore chiaro e rischio basso – un'attività il cui risultato viene comunque rivisto da una persona e che non coinvolge dati personali degni di particolare protezione. Un pilota di 90 giorni con obiettivi misurabili mostra in fretta se lo sforzo conviene, prima di investimenti maggiori. Così si creano esperienza, fiducia e numeri affidabili invece di decisioni sbagliate e costose.",
+          "fr": "Le meilleur point de départ est un cas d'usage unique et bien délimité, à valeur claire et faible risque – une tâche dont un humain relit de toute façon le résultat et qui n'implique aucune donnée personnelle sensible. Un pilote de 90 jours avec des objectifs mesurables montre vite si l'effort en vaut la peine, avant tout investissement plus important. Cela crée de l'expérience, de la confiance et des chiffres fiables plutôt que des décisions coûteuses."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Kosten und ROI richtig denken",
+        "en": "Thinking about cost and ROI correctly",
+        "it": "Pensare correttamente a costi e ROI",
+        "fr": "Bien penser le coût et le ROI"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Kosten bestehen aus einmaligen Aufwänden (Einrichtung, Integration) und laufenden Kosten (Lizenzen, Nutzung, Wartung). Der Nutzen entsteht durch gesparte Zeit, zusätzlich gewonnene Anfragen und weniger Fehler. Ein einfacher ROI-Gedanke genügt für den Start: Was kostet die Lösung pro Monat, und welchen messbaren Wert liefert sie im gleichen Zeitraum? Preise stammen bei Weissmann AI immer aus einer transparenten Konfiguration – wir erfinden keine Zahlen und geben keine Garantien.",
+          "en": "AI costs consist of one-time effort (setup, integration) and recurring costs (licences, usage, maintenance). Value comes from time saved, additional enquiries captured and fewer errors. A simple ROI logic is enough to start: what does the solution cost per month, and what measurable value does it deliver in the same period? At Weissmann AI, prices always come from a transparent configuration – we never invent figures and give no guarantees.",
+          "it": "I costi dell'IA si compongono di oneri una tantum (configurazione, integrazione) e costi ricorrenti (licenze, utilizzo, manutenzione). Il valore nasce dal tempo risparmiato, dalle richieste in più acquisite e dai minori errori. Una semplice logica di ROI basta per iniziare: quanto costa la soluzione al mese e quale valore misurabile fornisce nello stesso periodo? In Weissmann AI i prezzi derivano sempre da una configurazione trasparente – non inventiamo cifre e non diamo garanzie.",
+          "fr": "Les coûts de l'IA se composent de charges ponctuelles (configuration, intégration) et de coûts récurrents (licences, usage, maintenance). La valeur provient du temps gagné, des demandes supplémentaires captées et des erreurs évitées. Une logique de ROI simple suffit pour débuter : combien la solution coûte-t-elle par mois, et quelle valeur mesurable apporte-t-elle sur la même période ? Chez Weissmann AI, les prix proviennent toujours d'une configuration transparente – nous n'inventons aucun chiffre et ne donnons aucune garantie."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Risiken, Verantwortung und der Schweizer Rahmen",
+        "en": "Risks, responsibility and the Swiss framework",
+        "it": "Rischi, responsabilità e il quadro svizzero",
+        "fr": "Risques, responsabilité et le cadre suisse"
+      },
+      "paragraphs": [
+        {
+          "de": "KI ersetzt kein Urteilsvermögen. Generative Modelle können überzeugend klingen und dennoch falsch liegen (Halluzination), deshalb braucht es menschliche Kontrolle bei allem, was zählt. In der Schweiz gilt das revidierte Datenschutzgesetz (revDSG): Personendaten müssen zweckgebunden, transparent und sicher bearbeitet werden, besonders schützenswerte Daten mit erhöhter Sorgfalt. Wer international tätig ist, sollte zusätzlich die extraterritoriale Reichweite des EU AI Act prüfen. Klare Verantwortlichkeiten und dokumentierte Regeln schaffen Vertrauen – bei Kundschaft wie Aufsicht.",
+          "en": "AI does not replace judgement. Generative models can sound convincing yet be wrong (hallucination), so human oversight is needed for anything that matters. In Switzerland the revised Data Protection Act (revDSG) applies: personal data must be processed for a defined purpose, transparently and securely, with extra care for sensitive data. Those operating internationally should also check the extraterritorial reach of the EU AI Act. Clear responsibilities and documented rules build trust – with customers and regulators alike.",
+          "it": "L'IA non sostituisce il giudizio. I modelli generativi possono sembrare convincenti e tuttavia sbagliare (allucinazione), perciò serve il controllo umano su tutto ciò che conta. In Svizzera si applica la legge riveduta sulla protezione dei dati (nLPD): i dati personali vanno trattati per uno scopo definito, in modo trasparente e sicuro, con cura particolare per i dati sensibili. Chi opera a livello internazionale dovrebbe verificare anche la portata extraterritoriale dell'EU AI Act. Responsabilità chiare e regole documentate creano fiducia – nei clienti come nelle autorità.",
+          "fr": "L'IA ne remplace pas le jugement. Les modèles génératifs peuvent sembler convaincants tout en se trompant (hallucination) ; une supervision humaine est donc nécessaire pour tout ce qui compte. En Suisse s'applique la loi révisée sur la protection des données (nLPD) : les données personnelles doivent être traitées dans un but défini, de façon transparente et sûre, avec un soin particulier pour les données sensibles. Ceux qui opèrent à l'international devraient aussi vérifier la portée extraterritoriale de l'EU AI Act. Des responsabilités claires et des règles documentées créent la confiance – auprès des clients comme des autorités."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Vertiefen: Leitfäden dieses Themenbereichs",
+        "en": "Go deeper: guides in this topic area",
+        "it": "Approfondire: guide di quest'area tematica",
+        "fr": "Approfondir : les guides de ce domaine"
+      },
+      "paragraphs": [
+        {
+          "de": "Dieser Überblick ist der Ausgangspunkt. Die einzelnen Leitfäden zeigen konkret, wie Sie starten, den ROI messen, Ihre KI-Reife beurteilen, typische Fehler vermeiden und zwischen Eigenbau und Kauf entscheiden – jeweils mit praktischen Schritten und Schweizer Bezug.",
+          "en": "This overview is the starting point. The individual guides show concretely how to start, measure ROI, assess your AI readiness, avoid common mistakes and decide between building and buying – each with practical steps and a Swiss lens.",
+          "it": "Questa panoramica è il punto di partenza. Le singole guide mostrano concretamente come iniziare, misurare il ROI, valutare la maturità IA, evitare gli errori tipici e scegliere tra sviluppare e acquistare – ognuna con passi pratici e prospettiva svizzera.",
+          "fr": "Cet aperçu est le point de départ. Les guides détaillés montrent concrètement comment démarrer, mesurer le ROI, évaluer votre maturité IA, éviter les erreurs fréquentes et choisir entre développer et acheter – chacun avec des étapes pratiques et une perspective suisse."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Lohnt sich KI auch für kleine Unternehmen?",
+        "en": "Is AI worth it for small businesses too?",
+        "it": "L'IA conviene anche alle piccole imprese?",
+        "fr": "L'IA en vaut-elle la peine pour les petites entreprises ?"
+      },
+      "a": {
+        "de": "Ja, oft gerade dort. Kleine Teams gewinnen am meisten, wenn wiederkehrende Aufgaben schneller werden. Entscheidend ist ein klar abgegrenzter Anwendungsfall mit messbarem Nutzen, nicht die Unternehmensgrösse.",
+        "en": "Yes, often precisely there. Small teams gain the most when recurring tasks get faster. What matters is a well-scoped use case with measurable value, not company size.",
+        "it": "Sì, spesso proprio lì. I piccoli team guadagnano di più quando le attività ricorrenti diventano più veloci. Conta un caso d'uso ben delimitato con valore misurabile, non la dimensione aziendale.",
+        "fr": "Oui, souvent justement là. Les petites équipes gagnent le plus quand les tâches récurrentes s'accélèrent. Ce qui compte, c'est un cas d'usage bien délimité à valeur mesurable, pas la taille de l'entreprise."
+      }
+    },
+    {
+      "q": {
+        "de": "Wo sollte ein KMU mit KI anfangen?",
+        "en": "Where should an SME start with AI?",
+        "it": "Da dove dovrebbe iniziare una PMI con l'IA?",
+        "fr": "Par où une PME devrait-elle commencer avec l'IA ?"
+      },
+      "a": {
+        "de": "Mit einer einzelnen, risikoarmen Aufgabe, deren Ergebnis ohnehin geprüft wird – etwa Entwürfe, Anrufannahme oder Datenerfassung. Ein 90-Tage-Pilot mit klaren Zielen liefert die Grundlage für die nächste Entscheidung.",
+        "en": "With a single, low-risk task whose output is reviewed anyway – such as drafts, call handling or data capture. A 90-day pilot with clear goals provides the basis for the next decision.",
+        "it": "Con una singola attività a basso rischio il cui risultato viene comunque rivisto – ad esempio bozze, gestione chiamate o raccolta dati. Un pilota di 90 giorni con obiettivi chiari fornisce la base per la decisione successiva.",
+        "fr": "Par une tâche unique à faible risque dont le résultat est de toute façon relu – brouillons, prise d'appels ou saisie de données. Un pilote de 90 jours à objectifs clairs fournit la base de la décision suivante."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist KI mit dem Schweizer Datenschutz vereinbar?",
+        "en": "Is AI compatible with Swiss data protection?",
+        "it": "L'IA è compatibile con la protezione dei dati svizzera?",
+        "fr": "L'IA est-elle compatible avec la protection des données suisse ?"
+      },
+      "a": {
+        "de": "Ja, wenn sie sorgfältig eingesetzt wird. Das revDSG verlangt Zweckbindung, Transparenz und Sicherheit; besonders schützenswerte Daten brauchen erhöhte Sorgfalt. Verantwortlichkeiten und Datenflüsse sollten vor dem Einsatz geklärt werden.",
+        "en": "Yes, when used carefully. The revDSG requires purpose limitation, transparency and security; sensitive data needs extra care. Responsibilities and data flows should be clarified before deployment.",
+        "it": "Sì, se usata con attenzione. La nLPD richiede limitazione della finalità, trasparenza e sicurezza; i dati sensibili richiedono cura particolare. Responsabilità e flussi di dati vanno chiariti prima dell'uso.",
+        "fr": "Oui, si elle est utilisée avec soin. La nLPD exige la limitation des finalités, la transparence et la sécurité ; les données sensibles demandent un soin particulier. Responsabilités et flux de données doivent être clarifiés avant le déploiement."
+      }
+    },
+    {
+      "q": {
+        "de": "Ersetzt KI Mitarbeitende?",
+        "en": "Does AI replace employees?",
+        "it": "L'IA sostituisce i dipendenti?",
+        "fr": "L'IA remplace-t-elle les employés ?"
+      },
+      "a": {
+        "de": "In der Praxis übernimmt KI vor allem Routine und schafft Freiraum für wertvollere Arbeit. Urteilsvermögen, Beziehung und Verantwortung bleiben beim Menschen – KI ist ein Werkzeug, kein Ersatz für Fachwissen.",
+        "en": "In practice, AI mainly takes over routine and frees people for more valuable work. Judgement, relationships and responsibility stay with humans – AI is a tool, not a substitute for expertise.",
+        "it": "In pratica l'IA si occupa soprattutto della routine e libera tempo per lavoro di maggior valore. Giudizio, relazione e responsabilità restano alle persone – l'IA è uno strumento, non un sostituto delle competenze.",
+        "fr": "En pratique, l'IA prend surtout en charge la routine et libère du temps pour un travail à plus forte valeur. Jugement, relation et responsabilité restent humains – l'IA est un outil, pas un substitut à l'expertise."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie messe ich, ob sich KI lohnt?",
+        "en": "How do I measure whether AI is worth it?",
+        "it": "Come misuro se l'IA conviene?",
+        "fr": "Comment mesurer si l'IA en vaut la peine ?"
+      },
+      "a": {
+        "de": "Vergleichen Sie die monatlichen Kosten der Lösung mit dem messbaren Nutzen im gleichen Zeitraum: gesparte Stunden, zusätzlich beantwortete Anfragen, weniger Fehler. Beginnen Sie einfach und verfeinern Sie mit echten Daten aus dem Pilot.",
+        "en": "Compare the monthly cost of the solution with the measurable value in the same period: hours saved, additional enquiries answered, fewer errors. Start simple and refine with real data from the pilot.",
+        "it": "Confrontate il costo mensile della soluzione con il valore misurabile nello stesso periodo: ore risparmiate, richieste in più gestite, meno errori. Iniziate in modo semplice e affinate con i dati reali del pilota.",
+        "fr": "Comparez le coût mensuel de la solution à la valeur mesurable sur la même période : heures gagnées, demandes supplémentaires traitées, erreurs évitées. Commencez simplement et affinez avec les données réelles du pilote."
+      }
+    }
+  ],
+  "keyEntities": [
+    "Künstliche Intelligenz",
+    "KMU",
+    "Generative KI",
+    "Machine Learning",
+    "Automatisierung",
+    "KI-Agent",
+    "KI-Telefonassistent",
+    "ROI",
+    "revDSG",
+    "EU AI Act",
+    "Halluzination",
+    "Pilotprojekt",
+    "Datenschutz",
+    "Schweiz",
+    "Digitalisierung"
+  ]
+}

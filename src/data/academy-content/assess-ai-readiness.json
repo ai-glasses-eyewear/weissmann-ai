@@ -1,0 +1,476 @@
+{
+  "id": "assess-ai-readiness",
+  "cluster": "business-smes",
+  "type": "spoke",
+  "slug": {
+    "de": "ki-readiness-beurteilen",
+    "en": "assess-ai-readiness",
+    "it": "valutare-la-maturita-ia",
+    "fr": "evaluer-la-maturite-ia"
+  },
+  "relatedServices": [
+    "consulting"
+  ],
+  "title": {
+    "de": "KI-Readiness beurteilen: der KMU-Selbstcheck | Weissmann AI",
+    "en": "Assessing AI Readiness: An SME Self-Check | Weissmann AI",
+    "it": "Valutare la prontezza all'IA: check-up PMI | Weissmann AI",
+    "fr": "Évaluer la maturité IA: auto-diagnostic PME | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI-Readiness beurteilen: Selbstcheck für Schweizer KMU zu Daten, Prozessen, Kompetenzen und Governance – mit Checkliste, Reifegraden und revDSG-Bezug.",
+    "en": "Assess your company's AI readiness: a self-check for Swiss SMEs covering data, processes, skills and governance, with a checklist, maturity levels and revDSG.",
+    "it": "Valuta la prontezza all'IA della tua PMI svizzera: dati, processi, competenze e governance, con checklist, livelli di maturità e riferimento alla nLPD.",
+    "fr": "Évaluez la maturité IA de votre PME suisse: données, processus, compétences et gouvernance, avec check-list, niveaux de maturité et référence à la nLPD."
+  },
+  "kicker": {
+    "de": "KI für KMU",
+    "en": "AI for SMEs",
+    "it": "IA per le PMI",
+    "fr": "IA pour les PME"
+  },
+  "h1": {
+    "de": "KI-Readiness beurteilen: der Selbstcheck für Schweizer KMU",
+    "en": "Assessing AI Readiness: A Self-Check for Swiss SMEs",
+    "it": "Valutare la prontezza all'IA: l'auto-check per le PMI svizzere",
+    "fr": "Évaluer la maturité IA: l'auto-diagnostic pour les PME suisses"
+  },
+  "answerFirst": {
+    "de": "KI-Readiness beurteilen bedeutet, systematisch zu prüfen, ob Ihr Unternehmen bereit ist, künstliche Intelligenz nutzbringend einzusetzen. Bewertet werden vier Dimensionen: Datenqualität und -verfügbarkeit, Prozessreife, Kompetenzen der Mitarbeitenden und Governance inklusive Datenschutz. Ein strukturierter Selbstcheck deckt Lücken auf, priorisiert Massnahmen und verhindert teure Fehlinvestitionen. Für Schweizer KMU zählt zusätzlich die Einhaltung des revidierten Datenschutzgesetzes (revDSG).",
+    "en": "Assessing AI readiness means systematically checking whether your company is ready to use artificial intelligence profitably. Four dimensions are evaluated: data quality and availability, process maturity, employee skills, and governance including data protection. A structured self-check reveals gaps, prioritises measures and prevents costly misinvestments. For Swiss SMEs, compliance with the revised Data Protection Act (revDSG/nFADP) matters too.",
+    "it": "Valutare la prontezza all'IA significa verificare in modo sistematico se la tua azienda è pronta a usare l'intelligenza artificiale in modo redditizio. Si esaminano quattro dimensioni: qualità e disponibilità dei dati, maturità dei processi, competenze delle persone e governance, incluso il trattamento dei dati. Un auto-check strutturato individua le lacune, definisce le priorità ed evita investimenti sbagliati e costosi. Per le PMI svizzere conta anche il rispetto della nLPD.",
+    "fr": "Évaluer la maturité IA consiste à vérifier méthodiquement si votre entreprise est prête à utiliser l'intelligence artificielle de façon rentable. Quatre dimensions sont examinées: qualité et disponibilité des données, maturité des processus, compétences des collaborateurs et gouvernance, protection des données comprise. Un auto-diagnostic structuré révèle les lacunes, hiérarchise les actions et évite des investissements coûteux et inutiles. Pour les PME suisses, le respect de la nLPD compte également."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "Was heisst KI-Readiness – und warum ein Selbstcheck?",
+        "en": "What is AI readiness – and why a self-check?",
+        "it": "Cos'è la prontezza all'IA e perché un auto-check?",
+        "fr": "Qu'est-ce que la maturité IA et pourquoi un auto-diagnostic?"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Readiness beschreibt den Reifegrad, mit dem ein Unternehmen künstliche Intelligenz wertschöpfend einführen und betreiben kann. Sie beantwortet nicht die Frage «Welches Tool kaufen wir?», sondern «Sind unsere Daten, Prozesse, Menschen und Regeln so weit, dass KI überhaupt einen Nutzen stiftet?». Wer diese Grundlage überspringt, bezahlt sie später mit gescheiterten Pilotprojekten.",
+          "en": "AI readiness describes the maturity with which a company can introduce and operate artificial intelligence in a value-adding way. It does not answer the question 'Which tool should we buy?' but 'Are our data, processes, people and rules ready enough for AI to deliver any benefit at all?'. Skip this foundation and you pay for it later with failed pilot projects.",
+          "it": "La prontezza all'IA descrive il grado di maturità con cui un'azienda può introdurre e gestire l'intelligenza artificiale creando valore. Non risponde alla domanda «quale strumento comprare?», ma «i nostri dati, processi, persone e regole sono pronti al punto che l'IA porti davvero un beneficio?». Chi salta queste basi le paga poi con progetti pilota falliti.",
+          "fr": "La maturité IA décrit le degré avec lequel une entreprise peut introduire et exploiter l'intelligence artificielle en créant de la valeur. Elle ne répond pas à la question «quel outil acheter?», mais «nos données, processus, personnes et règles sont-ils prêts pour que l'IA apporte un réel bénéfice?». Sauter cette base se paie plus tard par des projets pilotes qui échouent."
+        },
+        {
+          "de": "Ein Selbstcheck macht die Beurteilung strukturiert und wiederholbar. Statt Bauchgefühl liefert er eine ehrliche Standortbestimmung entlang klar definierter Dimensionen – als Basis für Priorisierung, Budget und einen realistischen Fahrplan. Für Schweizer KMU ist das besonders wertvoll, weil Ressourcen knapp sind und jede Fehlinvestition spürbar wiegt.",
+          "en": "A self-check makes the assessment structured and repeatable. Instead of gut feeling, it gives an honest snapshot along clearly defined dimensions – a basis for prioritisation, budget and a realistic roadmap. This is especially valuable for Swiss SMEs, where resources are tight and every misinvestment is keenly felt.",
+          "it": "Un auto-check rende la valutazione strutturata e ripetibile. Al posto dell'istinto offre una fotografia onesta lungo dimensioni ben definite: una base per priorità, budget e una roadmap realistica. Per le PMI svizzere è particolarmente prezioso, perché le risorse sono limitate e ogni investimento sbagliato pesa in modo tangibile.",
+          "fr": "Un auto-diagnostic rend l'évaluation structurée et reproductible. Au lieu de l'intuition, il offre un état des lieux honnête selon des dimensions clairement définies: une base pour la priorisation, le budget et une feuille de route réaliste. C'est précieux pour les PME suisses, où les ressources sont limitées et où chaque mauvais investissement se ressent."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die vier Dimensionen der KI-Readiness",
+        "en": "The four dimensions of AI readiness",
+        "it": "Le quattro dimensioni della prontezza all'IA",
+        "fr": "Les quatre dimensions de la maturité IA"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Readiness lässt sich auf vier Dimensionen herunterbrechen. Jede ist notwendig, keine allein genügt. Schwächelt eine Dimension, bremst sie die anderen: Schlechte Daten machen selbst das beste Modell wertlos, fehlende Kompetenz lässt gute Tools ungenutzt.",
+          "en": "AI readiness breaks down into four dimensions. Each is necessary, none alone is sufficient. If one dimension is weak, it slows the others: poor data makes even the best model worthless, and missing skills leave good tools unused.",
+          "it": "La prontezza all'IA si scompone in quattro dimensioni. Ognuna è necessaria, nessuna da sola basta. Se una dimensione è debole, frena le altre: dati scadenti rendono inutile anche il modello migliore e la mancanza di competenze lascia inutilizzati buoni strumenti.",
+          "fr": "La maturité IA se décompose en quatre dimensions. Chacune est nécessaire, aucune ne suffit seule. Si une dimension est faible, elle freine les autres: de mauvaises données rendent inutile même le meilleur modèle, et le manque de compétences laisse de bons outils inexploités."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Daten: Verfügbarkeit, Qualität, Struktur und rechtssichere Nutzbarkeit Ihrer Datenbestände – der Rohstoff jeder KI-Anwendung.",
+          "en": "Data: availability, quality, structure and legally sound usability of your data – the raw material of every AI application.",
+          "it": "Dati: disponibilità, qualità, struttura e utilizzabilità giuridicamente sicura del vostro patrimonio informativo, la materia prima di ogni applicazione IA.",
+          "fr": "Données: disponibilité, qualité, structure et utilisation juridiquement sûre de vos données, la matière première de toute application IA."
+        },
+        {
+          "de": "Prozesse: Wie klar, dokumentiert und standardisiert Ihre Abläufe sind. KI unterstützt und automatisiert Prozesse – chaotische Abläufe werden dadurch nicht besser, sondern schneller chaotisch.",
+          "en": "Processes: how clear, documented and standardised your workflows are. AI supports and automates processes – chaotic workflows don't get better, they just get chaotic faster.",
+          "it": "Processi: quanto sono chiari, documentati e standardizzati i vostri flussi. L'IA supporta e automatizza i processi: flussi caotici non migliorano, diventano solo caotici più in fretta.",
+          "fr": "Processus: à quel point vos flux sont clairs, documentés et standardisés. L'IA soutient et automatise les processus: des flux chaotiques ne s'améliorent pas, ils deviennent chaotiques plus vite."
+        },
+        {
+          "de": "Kompetenzen: Wissen, Erfahrung und Offenheit der Mitarbeitenden sowie Zugang zu technischem Know-how, intern oder über Partner.",
+          "en": "Skills: the knowledge, experience and openness of your people, plus access to technical know-how, internally or via partners.",
+          "it": "Competenze: conoscenze, esperienza e apertura delle persone, oltre all'accesso al know-how tecnico, interno o tramite partner.",
+          "fr": "Compétences: savoir, expérience et ouverture des collaborateurs, ainsi que l'accès au savoir-faire technique, en interne ou via des partenaires."
+        },
+        {
+          "de": "Governance: Verantwortlichkeiten, Datenschutz, Sicherheit und Regeln für den verantwortungsvollen Einsatz – vom revDSG bis zur internen KI-Richtlinie.",
+          "en": "Governance: responsibilities, data protection, security and rules for responsible use – from the revDSG to an internal AI policy.",
+          "it": "Governance: responsabilità, protezione dei dati, sicurezza e regole per un uso responsabile, dalla nLPD alla direttiva interna sull'IA.",
+          "fr": "Gouvernance: responsabilités, protection des données, sécurité et règles d'un usage responsable, de la nLPD à une charte IA interne."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Der KMU-Selbstcheck: Checkliste in vier Blöcken",
+        "en": "The SME self-check: a checklist in four blocks",
+        "it": "L'auto-check per PMI: checklist in quattro blocchi",
+        "fr": "L'auto-diagnostic PME: une check-list en quatre blocs"
+      },
+      "paragraphs": [
+        {
+          "de": "Beantworten Sie jede Frage mit Ja, teilweise oder Nein. Häufen sich «Nein» in einem Block, liegt dort Ihr Engpass. Nutzen Sie die Liste als Gesprächsleitfaden im Team, nicht als Prüfung zum Abhaken.",
+          "en": "Answer each question with yes, partly or no. If 'no' answers cluster in one block, that's where your bottleneck is. Use the list as a team conversation guide, not a box-ticking exam.",
+          "it": "Rispondete a ogni domanda con sì, in parte o no. Se i «no» si concentrano in un blocco, lì c'è il vostro collo di bottiglia. Usate la lista come guida alla discussione in team, non come esame da spuntare.",
+          "fr": "Répondez à chaque question par oui, en partie ou non. Si les «non» se concentrent dans un bloc, votre goulot d'étranglement est là. Utilisez la liste comme guide de discussion en équipe, pas comme un examen à cocher."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Daten: Wissen wir, welche Daten wir besitzen, wo sie liegen und wem sie gehören?",
+          "en": "Data: do we know which data we hold, where it sits and who owns it?",
+          "it": "Dati: sappiamo quali dati possediamo, dove si trovano e a chi appartengono?",
+          "fr": "Données: savons-nous quelles données nous détenons, où elles se trouvent et à qui elles appartiennent?"
+        },
+        {
+          "de": "Daten: Sind zentrale Daten digital, aktuell und in ausreichender Qualität (wenige Dubletten, Lücken, Fehler) verfügbar?",
+          "en": "Data: are key data digital, up to date and of sufficient quality (few duplicates, gaps or errors)?",
+          "it": "Dati: i dati chiave sono digitali, aggiornati e di qualità sufficiente (pochi duplicati, lacune, errori)?",
+          "fr": "Données: les données clés sont-elles numériques, à jour et de qualité suffisante (peu de doublons, lacunes, erreurs)?"
+        },
+        {
+          "de": "Daten: Dürfen wir diese Daten für den geplanten Zweck rechtlich nutzen (revDSG, Verträge, Einwilligungen)?",
+          "en": "Data: are we legally allowed to use this data for the intended purpose (revDSG, contracts, consents)?",
+          "it": "Dati: possiamo usare legalmente questi dati per lo scopo previsto (nLPD, contratti, consensi)?",
+          "fr": "Données: avons-nous le droit d'utiliser ces données pour l'usage prévu (nLPD, contrats, consentements)?"
+        },
+        {
+          "de": "Prozesse: Sind die Prozesse, die wir mit KI verbessern wollen, dokumentiert und einigermassen standardisiert?",
+          "en": "Processes: are the processes we want to improve with AI documented and reasonably standardised?",
+          "it": "Processi: i processi che vogliamo migliorare con l'IA sono documentati e ragionevolmente standardizzati?",
+          "fr": "Processus: les processus que nous voulons améliorer avec l'IA sont-ils documentés et raisonnablement standardisés?"
+        },
+        {
+          "de": "Prozesse: Haben wir einen konkreten, messbaren Anwendungsfall mit klarem Nutzen statt «irgendwas mit KI»?",
+          "en": "Processes: do we have a concrete, measurable use case with clear value rather than 'something with AI'?",
+          "it": "Processi: abbiamo un caso d'uso concreto e misurabile con un valore chiaro, invece di «qualcosa con l'IA»?",
+          "fr": "Processus: avons-nous un cas d'usage concret et mesurable à valeur claire, plutôt que «quelque chose avec l'IA»?"
+        },
+        {
+          "de": "Kompetenzen: Gibt es eine verantwortliche Person und ein Zeitbudget für das Thema?",
+          "en": "Skills: is there a responsible person and a time budget for the topic?",
+          "it": "Competenze: c'è una persona responsabile e un budget di tempo per il tema?",
+          "fr": "Compétences: y a-t-il une personne responsable et un budget-temps pour le sujet?"
+        },
+        {
+          "de": "Kompetenzen: Sind die Mitarbeitenden grundsätzlich offen, und haben wir Zugang zum nötigen Know-how (intern oder über Partner)?",
+          "en": "Skills: are employees broadly open, and do we have access to the necessary know-how (internally or via partners)?",
+          "it": "Competenze: le persone sono in linea di massima aperte e abbiamo accesso al know-how necessario (interno o tramite partner)?",
+          "fr": "Compétences: les collaborateurs sont-ils globalement ouverts et avons-nous accès au savoir-faire nécessaire (interne ou via partenaires)?"
+        },
+        {
+          "de": "Governance: Existiert eine einfache KI-Richtlinie (was ist erlaubt, welche Tools, welche Daten dürfen hinein)?",
+          "en": "Governance: is there a simple AI policy (what is allowed, which tools, which data may be used)?",
+          "it": "Governance: esiste una direttiva IA semplice (cosa è consentito, quali strumenti, quali dati si possono usare)?",
+          "fr": "Gouvernance: existe-t-il une charte IA simple (ce qui est permis, quels outils, quelles données peuvent être utilisées)?"
+        },
+        {
+          "de": "Governance: Sind Datenschutz und Informationssicherheit geklärt, inklusive Umgang mit Cloud-Diensten und Anbietern ausserhalb der Schweiz/EU?",
+          "en": "Governance: are data protection and information security clarified, including the use of cloud services and providers outside Switzerland/the EU?",
+          "it": "Governance: protezione dei dati e sicurezza delle informazioni sono chiarite, incluso l'uso di servizi cloud e fornitori fuori da Svizzera/UE?",
+          "fr": "Gouvernance: la protection des données et la sécurité de l'information sont-elles clarifiées, y compris l'usage de services cloud et de fournisseurs hors Suisse/UE?"
+        },
+        {
+          "de": "Governance: Ist geregelt, wer KI-Ergebnisse prüft, bevor sie Kundinnen und Kunden oder Behörden erreichen?",
+          "en": "Governance: is it defined who reviews AI outputs before they reach customers or authorities?",
+          "it": "Governance: è stabilito chi verifica i risultati dell'IA prima che raggiungano clienti o autorità?",
+          "fr": "Gouvernance: est-il défini qui vérifie les résultats de l'IA avant qu'ils n'atteignent les clients ou les autorités?"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Vom Score zur Entscheidung: Reifegrade einordnen",
+        "en": "From score to decision: interpreting maturity levels",
+        "it": "Dal punteggio alla decisione: interpretare i livelli di maturità",
+        "fr": "Du score à la décision: interpréter les niveaux de maturité"
+      },
+      "paragraphs": [
+        {
+          "de": "Zählen Sie Ihre «Ja»-Antworten grob zusammen und ordnen Sie sich einem Reifegrad zu. Wichtig ist nicht die exakte Punktzahl, sondern das ehrliche Muster – und wo der grösste Hebel liegt.",
+          "en": "Roughly total up your 'yes' answers and place yourself on a maturity level. What matters is not the exact score but the honest pattern – and where your biggest lever lies.",
+          "it": "Sommate a grandi linee le risposte «sì» e collocatevi in un livello di maturità. Non conta il punteggio esatto, ma lo schema onesto e dove si trova la leva maggiore.",
+          "fr": "Additionnez grossièrement vos réponses «oui» et situez-vous sur un niveau de maturité. Ce qui compte n'est pas le score exact mais le schéma honnête – et où se situe votre plus grand levier."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Einsteigend: viele «Nein», Daten und Prozesse unklar. Empfehlung: Grundlagen schaffen – Daten aufräumen, einen einfachen Use Case definieren, statt gleich zu automatisieren.",
+          "en": "Starting out: many 'no' answers, data and processes unclear. Recommendation: build the basics – clean up data, define a simple use case, rather than automating straight away.",
+          "it": "Iniziale: molti «no», dati e processi poco chiari. Consiglio: creare le basi, riordinare i dati, definire un caso d'uso semplice invece di automatizzare subito.",
+          "fr": "Débutant: beaucoup de «non», données et processus flous. Recommandation: poser les bases – nettoyer les données, définir un cas d'usage simple plutôt qu'automatiser d'emblée."
+        },
+        {
+          "de": "Aufbauend: Grundlagen stehen, erste Experimente laufen. Empfehlung: einen fokussierten Piloten mit klarem KPI umsetzen und daraus lernen.",
+          "en": "Building: the basics are in place, first experiments are running. Recommendation: run a focused pilot with a clear KPI and learn from it.",
+          "it": "In crescita: le basi ci sono, i primi esperimenti sono avviati. Consiglio: realizzare un pilota mirato con un KPI chiaro e imparare da esso.",
+          "fr": "En construction: les bases sont posées, les premières expériences tournent. Recommandation: mener un pilote ciblé avec un KPI clair et en tirer des leçons."
+        },
+        {
+          "de": "Fortgeschritten: Daten, Prozesse und Governance greifen ineinander. Empfehlung: skalieren, standardisieren und KI in bestehende Abläufe integrieren.",
+          "en": "Advanced: data, processes and governance mesh together. Recommendation: scale, standardise and integrate AI into existing workflows.",
+          "it": "Avanzato: dati, processi e governance si integrano. Consiglio: scalare, standardizzare e integrare l'IA nei flussi esistenti.",
+          "fr": "Avancé: données, processus et gouvernance s'articulent. Recommandation: passer à l'échelle, standardiser et intégrer l'IA aux flux existants."
+        },
+        {
+          "de": "Wiederholen Sie den Selbstcheck halbjährlich: KI-Readiness ist kein einmaliger Status, sondern verändert sich mit Daten, Team und Regulierung.",
+          "en": "Repeat the self-check every six months: AI readiness is not a one-off status but shifts with your data, team and regulation.",
+          "it": "Ripetete l'auto-check ogni sei mesi: la prontezza all'IA non è uno stato fisso, ma cambia con dati, team e normativa.",
+          "fr": "Répétez l'auto-diagnostic tous les six mois: la maturité IA n'est pas un statut figé, elle évolue avec vos données, votre équipe et la réglementation."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Häufige Fehler bei der Beurteilung",
+        "en": "Common mistakes in the assessment",
+        "it": "Errori frequenti nella valutazione",
+        "fr": "Erreurs fréquentes dans l'évaluation"
+      },
+      "bullets": [
+        {
+          "de": "Mit der Technologie statt mit dem Problem beginnen: Tools kaufen, bevor der Nutzen klar ist.",
+          "en": "Starting with the technology instead of the problem: buying tools before the value is clear.",
+          "it": "Partire dalla tecnologia invece che dal problema: comprare strumenti prima che il valore sia chiaro.",
+          "fr": "Commencer par la technologie plutôt que par le problème: acheter des outils avant que la valeur soit claire."
+        },
+        {
+          "de": "Datenqualität überschätzen: «Wir haben viele Daten» ist nicht dasselbe wie nutzbare, saubere, erlaubte Daten.",
+          "en": "Overestimating data quality: 'we have lots of data' is not the same as usable, clean, permitted data.",
+          "it": "Sopravvalutare la qualità dei dati: «abbiamo molti dati» non equivale a dati utilizzabili, puliti e consentiti.",
+          "fr": "Surestimer la qualité des données: «nous avons beaucoup de données» n'est pas la même chose que des données exploitables, propres et autorisées."
+        },
+        {
+          "de": "Den Menschen vergessen: ohne Akzeptanz, Schulung und klare Verantwortung bleibt jede Lösung liegen.",
+          "en": "Forgetting people: without acceptance, training and clear ownership, any solution stalls.",
+          "it": "Dimenticare le persone: senza accettazione, formazione e responsabilità chiare qualsiasi soluzione si arena.",
+          "fr": "Oublier les personnes: sans adhésion, formation et responsabilité claire, toute solution s'enlise."
+        },
+        {
+          "de": "Governance als Bremse missverstehen statt als Ermöglicher – klare Regeln beschleunigen Entscheidungen.",
+          "en": "Misreading governance as a brake rather than an enabler – clear rules speed up decisions.",
+          "it": "Interpretare la governance come un freno invece che come un abilitatore: regole chiare accelerano le decisioni.",
+          "fr": "Voir la gouvernance comme un frein plutôt qu'un facilitateur – des règles claires accélèrent les décisions."
+        },
+        {
+          "de": "Einmalig beurteilen und nie wieder: Readiness veraltet, sobald sich Daten, Team oder Regulierung ändern.",
+          "en": "Assessing once and never again: readiness ages as soon as data, team or regulation change.",
+          "it": "Valutare una volta e mai più: la prontezza invecchia appena cambiano dati, team o normativa.",
+          "fr": "Évaluer une seule fois: la maturité vieillit dès que les données, l'équipe ou la réglementation changent."
+        },
+        {
+          "de": "Zu gross starten: ein überambitioniertes Erstprojekt bindet Budget und tötet die Motivation bei Rückschlägen.",
+          "en": "Starting too big: an over-ambitious first project ties up budget and kills motivation when setbacks hit.",
+          "it": "Iniziare troppo in grande: un primo progetto troppo ambizioso blocca il budget e uccide la motivazione ai primi intoppi.",
+          "fr": "Démarrer trop grand: un premier projet trop ambitieux immobilise le budget et tue la motivation en cas de revers."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Schweizer Perspektive: revDSG, EDÖB und Kostenstruktur",
+        "en": "Swiss perspective: revDSG, FDPIC and cost structure",
+        "it": "Prospettiva svizzera: nLPD, IFPDT e struttura dei costi",
+        "fr": "Perspective suisse: nLPD, PFPDT et structure des coûts"
+      },
+      "paragraphs": [
+        {
+          "de": "Für Schweizer KMU ist Datenschutz Teil der Readiness, nicht ein Anhang. Massgeblich ist das revidierte Datenschutzgesetz (revDSG), überwacht durch den EDÖB – nicht die europäische Regulierung, auch wenn diese bei EU-Kundschaft zusätzlich greifen kann. Wer Personendaten in KI-Systeme gibt, sollte Bearbeitungszweck, Rechtsgrundlage und bei hohem Risiko eine Datenschutz-Folgenabschätzung prüfen.",
+          "en": "For Swiss SMEs, data protection is part of readiness, not an afterthought. What applies is the revised Data Protection Act (revDSG/nFADP), overseen by the FDPIC – not EU regulation, though that can apply additionally for EU customers. Anyone feeding personal data into AI systems should check the processing purpose, legal basis and, for high risk, a data protection impact assessment.",
+          "it": "Per le PMI svizzere la protezione dei dati è parte della prontezza, non un'appendice. Vale la legge sulla protezione dei dati revisionata (nLPD), sorvegliata dall'IFPDT, non la normativa UE, anche se questa può applicarsi in aggiunta con clientela UE. Chi inserisce dati personali in sistemi IA dovrebbe verificare finalità del trattamento, base giuridica e, in caso di rischio elevato, una valutazione d'impatto sulla protezione dei dati.",
+          "fr": "Pour les PME suisses, la protection des données fait partie de la maturité, pas d'un ajout. C'est la loi révisée sur la protection des données (nLPD) qui s'applique, surveillée par le PFPDT – pas la réglementation UE, même si celle-ci peut s'ajouter pour une clientèle UE. Qui introduit des données personnelles dans des systèmes IA devrait vérifier la finalité du traitement, la base légale et, en cas de risque élevé, une analyse d'impact relative à la protection des données."
+        },
+        {
+          "de": "Denken Sie bei den Kosten in Strukturen statt in einer einzigen Zahl: einmalige Aufwände (Datenaufbereitung, Einführung, Schulung) und laufende Kosten (Lizenzen, Betrieb, Pflege, interne Zeit). Der ROI entsteht selten aus dem Tool allein, sondern aus eingespartem Aufwand oder besseren Entscheidungen – rechnen Sie ihn pro Use Case in CHF und mit realistischen, nicht euphorischen Annahmen.",
+          "en": "Think about cost in terms of structure rather than a single figure: one-off efforts (data preparation, rollout, training) and ongoing costs (licences, operation, maintenance, internal time). ROI rarely comes from the tool alone but from effort saved or better decisions – calculate it per use case in CHF and with realistic, not euphoric, assumptions.",
+          "it": "Ragionate sui costi in termini di struttura, non di una singola cifra: spese una tantum (preparazione dei dati, introduzione, formazione) e costi ricorrenti (licenze, esercizio, manutenzione, tempo interno). Il ROI raramente nasce dal solo strumento, ma dal lavoro risparmiato o da decisioni migliori: calcolatelo per caso d'uso in CHF e con ipotesi realistiche, non euforiche.",
+          "fr": "Pensez les coûts en structure plutôt qu'en un seul chiffre: dépenses ponctuelles (préparation des données, déploiement, formation) et coûts récurrents (licences, exploitation, maintenance, temps interne). Le ROI vient rarement de l'outil seul, mais du travail économisé ou de meilleures décisions – calculez-le par cas d'usage en CHF, avec des hypothèses réalistes et non euphoriques."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Kennen wir Bearbeitungszweck und Rechtsgrundlage für jede Nutzung von Personendaten?",
+          "en": "Do we know the processing purpose and legal basis for every use of personal data?",
+          "it": "Conosciamo la finalità del trattamento e la base giuridica per ogni uso di dati personali?",
+          "fr": "Connaissons-nous la finalité du traitement et la base légale pour chaque usage de données personnelles?"
+        },
+        {
+          "de": "Wissen wir, wo unsere KI-Anbieter Daten speichern und verarbeiten (Schweiz, EU, USA)?",
+          "en": "Do we know where our AI providers store and process data (Switzerland, EU, US)?",
+          "it": "Sappiamo dove i nostri fornitori di IA archiviano e trattano i dati (Svizzera, UE, USA)?",
+          "fr": "Savons-nous où nos fournisseurs d'IA stockent et traitent les données (Suisse, UE, États-Unis)?"
+        },
+        {
+          "de": "Ist bei risikoreicher Bearbeitung eine Datenschutz-Folgenabschätzung vorgesehen?",
+          "en": "Is a data protection impact assessment planned for high-risk processing?",
+          "it": "È prevista una valutazione d'impatto per i trattamenti ad alto rischio?",
+          "fr": "Une analyse d'impact est-elle prévue pour les traitements à haut risque?"
+        },
+        {
+          "de": "Können wir Betroffenenrechte wie Auskunft und Löschung auch bei KI-gestützten Prozessen erfüllen?",
+          "en": "Can we honour data subject rights such as access and deletion even in AI-supported processes?",
+          "it": "Possiamo garantire i diritti degli interessati come accesso e cancellazione anche nei processi supportati dall'IA?",
+          "fr": "Pouvons-nous garantir les droits des personnes concernées (accès, effacement) même dans des processus assistés par IA?"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Von der Beurteilung zur Roadmap",
+        "en": "From assessment to roadmap",
+        "it": "Dalla valutazione alla roadmap",
+        "fr": "De l'évaluation à la feuille de route"
+      },
+      "paragraphs": [
+        {
+          "de": "Eine Beurteilung ist nur so viel wert wie das, was daraus folgt. Übersetzen Sie Ihre Ergebnisse in wenige, priorisierte Schritte statt in einen langen Wunschzettel.",
+          "en": "An assessment is only worth what follows from it. Translate your results into a few prioritised steps rather than a long wish list.",
+          "it": "Una valutazione vale solo per ciò che ne consegue. Traducete i risultati in pochi passi prioritari, non in una lunga lista dei desideri.",
+          "fr": "Une évaluation ne vaut que par ce qui en découle. Traduisez vos résultats en quelques étapes prioritaires plutôt qu'en une longue liste de souhaits."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Grössten Engpass zuerst schliessen – meist Daten oder ein klar definierter Use Case.",
+          "en": "Close the biggest bottleneck first – usually data or a clearly defined use case.",
+          "it": "Chiudere prima il collo di bottiglia maggiore, di solito i dati o un caso d'uso ben definito.",
+          "fr": "Combler d'abord le plus gros goulot d'étranglement – souvent les données ou un cas d'usage bien défini."
+        },
+        {
+          "de": "Einen kleinen, messbaren Piloten wählen (rund 8–12 Wochen) mit definiertem Erfolgskriterium.",
+          "en": "Choose a small, measurable pilot (around 8–12 weeks) with a defined success criterion.",
+          "it": "Scegliere un pilota piccolo e misurabile (circa 8–12 settimane) con un criterio di successo definito.",
+          "fr": "Choisir un pilote petit et mesurable (environ 8 à 12 semaines) avec un critère de succès défini."
+        },
+        {
+          "de": "Eine verantwortliche Person und ein realistisches Zeitbudget festlegen.",
+          "en": "Assign a responsible person and a realistic time budget.",
+          "it": "Definire una persona responsabile e un budget di tempo realistico.",
+          "fr": "Désigner une personne responsable et un budget-temps réaliste."
+        },
+        {
+          "de": "Eine einseitige KI-Richtlinie schreiben, bevor Tools breit eingesetzt werden.",
+          "en": "Write a one-page AI policy before tools are rolled out widely.",
+          "it": "Redigere una direttiva IA di una pagina prima di diffondere gli strumenti.",
+          "fr": "Rédiger une charte IA d'une page avant de déployer largement les outils."
+        },
+        {
+          "de": "Ergebnisse dokumentieren, den Selbstcheck halbjährlich wiederholen und die Roadmap anpassen.",
+          "en": "Document results, repeat the self-check every six months and adjust the roadmap.",
+          "it": "Documentare i risultati, ripetere l'auto-check ogni sei mesi e aggiornare la roadmap.",
+          "fr": "Documenter les résultats, répéter l'auto-diagnostic tous les six mois et ajuster la feuille de route."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen KI-Readiness und digitaler Reife?",
+        "en": "What is the difference between AI readiness and digital maturity?",
+        "it": "Qual è la differenza tra prontezza all'IA e maturità digitale?",
+        "fr": "Quelle est la différence entre maturité IA et maturité numérique?"
+      },
+      "a": {
+        "de": "Digitale Reife beschreibt allgemein, wie gut ein Unternehmen digitale Werkzeuge und Prozesse nutzt. KI-Readiness ist enger und anspruchsvoller: Sie prüft zusätzlich, ob Daten in nutzbarer Qualität vorliegen, Prozesse für Automatisierung geeignet sind und Governance für den KI-Einsatz existiert. Digitale Reife ist meist die Voraussetzung, KI-Readiness der nächste Schritt darauf.",
+        "en": "Digital maturity broadly describes how well a company uses digital tools and processes. AI readiness is narrower and more demanding: it also checks whether data is of usable quality, processes suit automation and governance for AI use exists. Digital maturity is usually the prerequisite; AI readiness is the next step built on it.",
+        "it": "La maturità digitale descrive in generale quanto bene un'azienda usa strumenti e processi digitali. La prontezza all'IA è più ristretta ed esigente: verifica anche se i dati hanno una qualità utilizzabile, se i processi si prestano all'automazione e se esiste una governance per l'IA. La maturità digitale è di solito il presupposto, la prontezza all'IA il passo successivo.",
+        "fr": "La maturité numérique décrit globalement la façon dont une entreprise utilise outils et processus numériques. La maturité IA est plus étroite et plus exigeante: elle vérifie aussi si les données ont une qualité exploitable, si les processus se prêtent à l'automatisation et si une gouvernance IA existe. La maturité numérique est souvent le prérequis, la maturité IA l'étape suivante."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie lange dauert eine KI-Readiness-Beurteilung?",
+        "en": "How long does an AI readiness assessment take?",
+        "it": "Quanto dura una valutazione della prontezza all'IA?",
+        "fr": "Combien de temps dure une évaluation de la maturité IA?"
+      },
+      "a": {
+        "de": "Ein erster Selbstcheck mit der Checkliste ist in wenigen Stunden machbar, idealerweise im Team-Workshop. Eine fundierte Beurteilung inklusive Datensichtung und Priorisierung dauert je nach Grösse und Komplexität einige Tage bis wenige Wochen. Entscheidend ist nicht die Dauer, sondern dass die richtigen Personen aus Fach, IT und Leitung ehrlich mitwirken.",
+        "en": "A first self-check with the checklist is doable in a few hours, ideally in a team workshop. A thorough assessment including a data review and prioritisation takes a few days to a couple of weeks depending on size and complexity. What matters is not the duration but that the right people from operations, IT and management contribute honestly.",
+        "it": "Un primo auto-check con la checklist è fattibile in poche ore, idealmente in un workshop di team. Una valutazione approfondita con analisi dei dati e definizione delle priorità richiede da alcuni giorni a poche settimane, secondo dimensione e complessità. Conta non la durata, ma che le persone giuste di operatività, IT e direzione contribuiscano con onestà.",
+        "fr": "Un premier auto-diagnostic avec la check-list se fait en quelques heures, idéalement en atelier d'équipe. Une évaluation approfondie avec revue des données et priorisation prend de quelques jours à quelques semaines selon la taille et la complexité. L'essentiel n'est pas la durée, mais que les bonnes personnes du métier, de l'IT et de la direction contribuent honnêtement."
+      }
+    },
+    {
+      "q": {
+        "de": "Brauchen wir perfekte Daten, bevor wir mit KI starten?",
+        "en": "Do we need perfect data before starting with AI?",
+        "it": "Servono dati perfetti prima di iniziare con l'IA?",
+        "fr": "Faut-il des données parfaites avant de démarrer avec l'IA?"
+      },
+      "a": {
+        "de": "Nein. Perfekte Daten gibt es kaum, und Warten darauf verhindert jeden Fortschritt. Sie brauchen für den konkreten Anwendungsfall ausreichend gute, aktuelle und rechtlich nutzbare Daten – nicht für das ganze Unternehmen auf einmal. Ein sinnvoller Weg ist, den ersten Use Case bewusst dort zu wählen, wo die Datenlage bereits solide ist.",
+        "en": "No. Perfect data barely exists, and waiting for it prevents any progress. For the specific use case you need data that is good enough, current and legally usable – not for the whole company at once. A sensible approach is to deliberately choose your first use case where the data situation is already solid.",
+        "it": "No. I dati perfetti quasi non esistono e aspettarli blocca ogni progresso. Per il caso d'uso concreto servono dati sufficientemente buoni, aggiornati e utilizzabili legalmente, non per tutta l'azienda in una volta. Una via sensata è scegliere il primo caso d'uso dove i dati sono già solidi.",
+        "fr": "Non. Les données parfaites n'existent quasiment pas, et les attendre bloque tout progrès. Pour le cas d'usage précis, il faut des données suffisamment bonnes, actuelles et exploitables légalement – pas pour toute l'entreprise d'un coup. Une approche sensée est de choisir son premier cas d'usage là où les données sont déjà solides."
+      }
+    },
+    {
+      "q": {
+        "de": "Wer sollte im KMU an der Beurteilung beteiligt sein?",
+        "en": "Who should be involved in the assessment at an SME?",
+        "it": "Chi dovrebbe partecipare alla valutazione in una PMI?",
+        "fr": "Qui devrait participer à l'évaluation dans une PME?"
+      },
+      "a": {
+        "de": "Idealerweise ein kleines, gemischtes Team: eine Person aus der Geschäftsleitung (Prioritäten, Budget), jemand aus dem betroffenen Fachbereich (Prozesswissen), IT oder ein IT-Partner (Daten, Sicherheit) und die für Datenschutz zuständige Person. In kleinen Betrieben können das dieselben zwei bis drei Personen sein. Wichtig ist die Mischung aus Fach-, Technik- und Entscheidungsperspektive.",
+        "en": "Ideally a small, mixed team: someone from management (priorities, budget), someone from the affected department (process knowledge), IT or an IT partner (data, security) and the person responsible for data protection. In small firms these may be the same two or three people. What matters is the mix of business, technical and decision-making perspectives.",
+        "it": "Idealmente un piccolo team misto: una persona della direzione (priorità, budget), una del reparto interessato (conoscenza dei processi), l'IT o un partner IT (dati, sicurezza) e il responsabile della protezione dei dati. Nelle piccole imprese possono essere le stesse due o tre persone. Conta il mix di prospettiva operativa, tecnica e decisionale.",
+        "fr": "Idéalement une petite équipe mixte: une personne de la direction (priorités, budget), une du service concerné (connaissance des processus), l'IT ou un partenaire IT (données, sécurité) et le responsable de la protection des données. Dans les petites structures, ce peuvent être les deux ou trois mêmes personnes. L'essentiel est le mélange des perspectives métier, technique et décisionnelle."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie sollten wir grob über die Kosten und den ROI von KI denken?",
+        "en": "How should we roughly think about the cost and ROI of AI?",
+        "it": "Come dovremmo ragionare a grandi linee su costi e ROI dell'IA?",
+        "fr": "Comment penser globalement le coût et le ROI de l'IA?"
+      },
+      "a": {
+        "de": "Trennen Sie einmalige Aufwände (Datenaufbereitung, Einführung, Schulung) von laufenden Kosten (Lizenzen, Betrieb, Pflege, interne Zeit). Schätzen Sie den Nutzen pro Anwendungsfall konkret in CHF – etwa eingesparte Stunden oder vermiedene Fehler – und rechnen Sie mit vorsichtigen Annahmen. Seriöse Zahlen hängen stark vom Einzelfall ab; misstrauen Sie pauschalen Renditeversprechen.",
+        "en": "Separate one-off efforts (data preparation, rollout, training) from ongoing costs (licences, operation, maintenance, internal time). Estimate the benefit per use case concretely in CHF – such as hours saved or errors avoided – and use cautious assumptions. Sound figures depend heavily on the individual case; be sceptical of blanket return promises.",
+        "it": "Separate le spese una tantum (preparazione dati, introduzione, formazione) dai costi ricorrenti (licenze, esercizio, manutenzione, tempo interno). Stimate il beneficio per caso d'uso concretamente in CHF, ad esempio ore risparmiate o errori evitati, con ipotesi prudenti. Cifre serie dipendono molto dal singolo caso: diffidate delle promesse di rendimento generiche.",
+        "fr": "Séparez les dépenses ponctuelles (préparation des données, déploiement, formation) des coûts récurrents (licences, exploitation, maintenance, temps interne). Estimez le bénéfice par cas d'usage concrètement en CHF – heures économisées ou erreurs évitées – avec des hypothèses prudentes. Des chiffres sérieux dépendent fortement du cas; méfiez-vous des promesses de rendement générales."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie berücksichtigt die Beurteilung das revDSG?",
+        "en": "How does the assessment account for the revDSG?",
+        "it": "Come tiene conto della nLPD la valutazione?",
+        "fr": "Comment l'évaluation tient-elle compte de la nLPD?"
+      },
+      "a": {
+        "de": "Datenschutz ist eine der vier Dimensionen. Prüfen Sie für jede geplante KI-Nutzung mit Personendaten Bearbeitungszweck und Rechtsgrundlage nach revDSG, klären Sie, wo Anbieter Daten speichern, und sehen Sie bei hohem Risiko eine Datenschutz-Folgenabschätzung vor. Stellen Sie zudem sicher, dass Betroffenenrechte wie Auskunft und Löschung auch in KI-gestützten Prozessen erfüllbar bleiben. Bei Unsicherheit hilft der EDÖB mit Leitfäden.",
+        "en": "Data protection is one of the four dimensions. For every planned AI use involving personal data, check the processing purpose and legal basis under the revDSG, clarify where providers store data, and plan a data protection impact assessment for high risk. Also ensure data subject rights such as access and deletion remain achievable in AI-supported processes. When unsure, the FDPIC offers guidance.",
+        "it": "La protezione dei dati è una delle quattro dimensioni. Per ogni uso pianificato dell'IA con dati personali verificate finalità e base giuridica secondo la nLPD, chiarite dove i fornitori archiviano i dati e prevedete una valutazione d'impatto in caso di rischio elevato. Assicuratevi inoltre che i diritti degli interessati, come accesso e cancellazione, restino esercitabili nei processi con IA. In caso di dubbio l'IFPDT offre linee guida.",
+        "fr": "La protection des données est l'une des quatre dimensions. Pour chaque usage d'IA prévu avec des données personnelles, vérifiez la finalité et la base légale selon la nLPD, clarifiez où les fournisseurs stockent les données et prévoyez une analyse d'impact en cas de risque élevé. Assurez-vous aussi que les droits des personnes (accès, effacement) restent applicables dans les processus assistés par IA. En cas de doute, le PFPDT propose des guides."
+      }
+    }
+  ],
+  "keyEntities": [
+    "KI-Readiness",
+    "Künstliche Intelligenz",
+    "KMU",
+    "Datenqualität",
+    "Data Governance",
+    "Prozessreife",
+    "Change Management",
+    "revDSG / nFADP",
+    "EDÖB",
+    "Datenschutz-Folgenabschätzung",
+    "ROI",
+    "Reifegradmodell",
+    "KI-Governance",
+    "KI-Richtlinie",
+    "Schweiz",
+    "Weissmann AI Academy"
+  ]
+}
