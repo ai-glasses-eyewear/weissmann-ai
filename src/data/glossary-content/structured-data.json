@@ -1,0 +1,34 @@
+{
+  "id": "structured-data",
+  "slug": {
+    "de": "structured-data",
+    "en": "structured-data",
+    "it": "structured-data",
+    "fr": "structured-data"
+  },
+  "term": {
+    "de": "Strukturierte Daten (Schema.org)",
+    "en": "Structured Data (Schema.org)",
+    "it": "Dati strutturati (Schema.org)",
+    "fr": "Données structurées (Schema.org)"
+  },
+  "definition": {
+    "de": "Strukturierte Daten sind maschinenlesbare Auszeichnungen im Vokabular von Schema.org, die einer Webseite hinzugefügt werden, damit Suchmaschinen Inhalte verstehen und als Rich Results darstellen können.",
+    "en": "Structured data is machine-readable markup, using the Schema.org vocabulary, added to a web page so search engines can understand its content and display rich results.",
+    "it": "I dati strutturati sono marcature leggibili dalle macchine, basate sul vocabolario Schema.org, aggiunte a una pagina web affinché i motori di ricerca ne comprendano i contenuti e mostrino rich result.",
+    "fr": "Les données structurées sont un balisage lisible par les machines, fondé sur le vocabulaire Schema.org, ajouté à une page pour que les moteurs comprennent son contenu et affichent des résultats enrichis."
+  },
+  "extended": {
+    "de": "Üblich ist das Format JSON-LD, etwa für Produkte, Bewertungen, Öffnungszeiten oder FAQ. Für KMU verbessert es die Darstellung in der Suche und erleichtert KI-Systemen die korrekte Interpretation der Inhalte.",
+    "en": "JSON-LD is the common format, for example for products, reviews, opening hours or FAQs. For SMEs it improves search appearance and helps AI systems interpret content correctly.",
+    "it": "Il formato comune è JSON-LD, ad esempio per prodotti, recensioni, orari o FAQ. Per le PMI migliora la presentazione nella ricerca e aiuta i sistemi IA a interpretare correttamente i contenuti.",
+    "fr": "Le format courant est le JSON-LD, par exemple pour produits, avis, horaires ou FAQ. Pour les PME, il améliore l'affichage dans la recherche et aide les systèmes IA à interpréter correctement le contenu."
+  },
+  "relatedTerms": [],
+  "relatedServices": [
+    "geo"
+  ],
+  "relatedArticles": [
+    "structured-data-for-ai-search"
+  ]
+}

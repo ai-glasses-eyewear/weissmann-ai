@@ -1,0 +1,34 @@
+{
+  "id": "llm",
+  "slug": {
+    "de": "large-language-model",
+    "en": "large-language-model",
+    "it": "large-language-model",
+    "fr": "large-language-model"
+  },
+  "term": {
+    "de": "Large Language Model (LLM)",
+    "en": "Large Language Model (LLM)",
+    "it": "Large Language Model (LLM)",
+    "fr": "Grand modèle de langage (LLM)"
+  },
+  "definition": {
+    "de": "Ein Large Language Model ist ein auf sehr grossen Textmengen trainiertes KI-Modell, das das jeweils nächste Token vorhersagt und so Sprache versteht und erzeugt.",
+    "en": "A Large Language Model is an AI model trained on very large amounts of text that predicts the next token and thereby understands and generates language.",
+    "it": "Un Large Language Model è un modello di IA addestrato su enormi quantità di testo che prevede il token successivo e in questo modo comprende e genera linguaggio.",
+    "fr": "Un grand modèle de langage est un modèle d'IA entraîné sur de très grandes quantités de texte qui prédit le token suivant et, de ce fait, comprend et génère du langage."
+  },
+  "extended": {
+    "de": "LLMs wie die Modelle hinter ChatGPT oder Claude beruhen auf der Transformer-Architektur und können zusammenfassen, übersetzen, Texte entwerfen oder Fragen beantworten. Sie geben plausible, aber nicht garantiert korrekte Antworten, weshalb bei sensiblen Aufgaben eine menschliche Prüfung nötig bleibt.",
+    "en": "LLMs such as the models behind ChatGPT or Claude are built on the transformer architecture and can summarise, translate, draft text or answer questions. They produce plausible but not guaranteed-correct answers, so sensitive tasks still require human review.",
+    "it": "Gli LLM come i modelli dietro ChatGPT o Claude si basano sull'architettura transformer e sanno riassumere, tradurre, redigere testi o rispondere a domande. Forniscono risposte plausibili ma non garantite corrette, perciò i compiti sensibili richiedono comunque una verifica umana.",
+    "fr": "Les LLM comme les modèles derrière ChatGPT ou Claude reposent sur l'architecture transformer et savent résumer, traduire, rédiger ou répondre à des questions. Ils fournissent des réponses plausibles mais pas garanties exactes ; les tâches sensibles exigent donc toujours une relecture humaine."
+  },
+  "relatedTerms": [
+    "transformer",
+    "token",
+    "generative-ai"
+  ],
+  "relatedServices": [],
+  "relatedArticles": []
+}

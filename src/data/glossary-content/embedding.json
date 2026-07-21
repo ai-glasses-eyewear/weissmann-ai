@@ -1,0 +1,30 @@
+{
+  "id": "embedding",
+  "slug": {
+    "de": "embedding",
+    "en": "embedding",
+    "it": "embedding",
+    "fr": "embedding"
+  },
+  "term": {
+    "de": "Embedding (Vektor)",
+    "en": "Embedding (vector)",
+    "it": "Embedding (vettore)",
+    "fr": "Embedding (vecteur)"
+  },
+  "definition": {
+    "de": "Ein Embedding ist die Darstellung von Daten wie Wörtern, Sätzen oder Bildern als Zahlenvektor, in dem inhaltlich ähnliche Elemente nahe beieinander liegen.",
+    "en": "An embedding is a representation of data such as words, sentences or images as a vector of numbers in which semantically similar items lie close together.",
+    "it": "Un embedding è la rappresentazione di dati come parole, frasi o immagini sotto forma di vettore di numeri in cui gli elementi semanticamente simili si trovano vicini tra loro.",
+    "fr": "Un embedding est la représentation de données comme des mots, des phrases ou des images sous forme de vecteur de nombres dans lequel les éléments sémantiquement proches sont situés à faible distance."
+  },
+  "extended": {
+    "de": "Weil Ähnlichkeit als geometrische Nähe messbar wird, bilden Embeddings die Grundlage für semantische Suche, Empfehlungen und Retrieval-Augmented Generation. Schweizer KMU können damit ihre eigenen Dokumente durchsuchbar machen, sollten die Vektordaten aber datenschutzkonform und möglichst in der Schweiz oder EU speichern.",
+    "en": "Because similarity becomes measurable as geometric closeness, embeddings underpin semantic search, recommendations and retrieval-augmented generation. Swiss SMEs can use them to make their own documents searchable, but should store the vector data compliantly and preferably in Switzerland or the EU.",
+    "it": "Poiché la somiglianza diventa misurabile come vicinanza geometrica, gli embedding sono alla base di ricerca semantica, raccomandazioni e retrieval-augmented generation. Le PMI svizzere possono renderne ricercabili i propri documenti, ma dovrebbero conservare i dati vettoriali in modo conforme e preferibilmente in Svizzera o nell'UE.",
+    "fr": "Comme la similarité devient mesurable en tant que proximité géométrique, les embeddings sont au cœur de la recherche sémantique, des recommandations et de la génération augmentée par récupération (RAG). Les PME suisses peuvent ainsi rendre leurs propres documents interrogeables, mais devraient stocker les données vectorielles de manière conforme et de préférence en Suisse ou dans l'UE."
+  },
+  "relatedTerms": [],
+  "relatedServices": [],
+  "relatedArticles": []
+}

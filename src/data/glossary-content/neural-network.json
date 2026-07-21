@@ -1,0 +1,30 @@
+{
+  "id": "neural-network",
+  "slug": {
+    "de": "neural-network",
+    "en": "neural-network",
+    "it": "neural-network",
+    "fr": "neural-network"
+  },
+  "term": {
+    "de": "Neuronales Netz",
+    "en": "Neural Network",
+    "it": "Rete neurale",
+    "fr": "Réseau de neurones"
+  },
+  "definition": {
+    "de": "Ein neuronales Netz ist ein Rechenmodell aus verbundenen Knoten («Neuronen») in Schichten, das Eingaben über gewichtete Verbindungen verarbeitet und diese Gewichte während des Trainings anpasst, um Aufgaben zu lösen.",
+    "en": "A neural network is a computational model of connected nodes (\"neurons\") arranged in layers that processes inputs through weighted connections and adjusts those weights during training to perform tasks.",
+    "it": "Una rete neurale è un modello di calcolo composto da nodi connessi («neuroni») disposti in strati, che elabora gli input tramite connessioni pesate e ne regola i pesi durante l'addestramento per svolgere compiti.",
+    "fr": "Un réseau de neurones est un modèle de calcul fait de nœuds connectés (« neurones ») disposés en couches, qui traite les entrées via des connexions pondérées et ajuste ces poids pendant l'entraînement pour accomplir des tâches."
+  },
+  "extended": {
+    "de": "Der Name ist vom Gehirn inspiriert, das Modell bleibt aber eine mathematische Vereinfachung. Beim Training werden die Gewichte schrittweise so verändert, dass die Fehler zwischen Vorhersage und gewünschtem Ergebnis kleiner werden.",
+    "en": "The name is inspired by the brain, but the model remains a mathematical simplification. During training the weights are gradually adjusted so that the errors between prediction and desired output shrink.",
+    "it": "Il nome si ispira al cervello, ma il modello resta una semplificazione matematica. Durante l'addestramento i pesi vengono modificati gradualmente affinché l'errore tra previsione e risultato desiderato diminuisca.",
+    "fr": "Le nom s'inspire du cerveau, mais le modèle reste une simplification mathématique. Lors de l'entraînement, les poids sont ajustés progressivement pour réduire l'écart entre la prédiction et le résultat souhaité."
+  },
+  "relatedTerms": [],
+  "relatedServices": [],
+  "relatedArticles": []
+}

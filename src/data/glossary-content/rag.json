@@ -1,0 +1,39 @@
+{
+  "id": "rag",
+  "slug": {
+    "de": "retrieval-augmented-generation",
+    "en": "retrieval-augmented-generation",
+    "it": "retrieval-augmented-generation",
+    "fr": "retrieval-augmented-generation"
+  },
+  "term": {
+    "de": "Retrieval-Augmented Generation (RAG)",
+    "en": "Retrieval-Augmented Generation (RAG)",
+    "it": "Retrieval-Augmented Generation (RAG)",
+    "fr": "Retrieval-Augmented Generation (RAG)"
+  },
+  "definition": {
+    "de": "Retrieval-Augmented Generation (RAG) ist ein Verfahren, bei dem ein Sprachmodell vor der Antwort relevante Dokumente aus einer externen Wissensquelle abruft und seine Ausgabe darauf stützt.",
+    "en": "Retrieval-Augmented Generation (RAG) is a method in which a language model retrieves relevant documents from an external knowledge source before answering and grounds its output on them.",
+    "it": "La Retrieval-Augmented Generation (RAG) è un metodo in cui un modello linguistico recupera documenti pertinenti da una fonte di conoscenza esterna prima di rispondere e fonda su di essi la propria risposta.",
+    "fr": "La génération augmentée par récupération (RAG) est une méthode où un modèle de langage récupère des documents pertinents dans une source de connaissances externe avant de répondre et fonde sa réponse sur ceux-ci."
+  },
+  "extended": {
+    "de": "RAG verankert Antworten in geprüften Quellen, reduziert Halluzinationen und hält Wissen aktuell, ohne das Modell neu zu trainieren. Für Schweizer KMU macht es das eigene Handbuch, Verträge oder Produktdaten sicher abfragbar.",
+    "en": "RAG grounds answers in vetted sources, reduces hallucinations and keeps knowledge current without retraining the model. For Swiss SMEs it makes their own manuals, contracts or product data securely queryable.",
+    "it": "La RAG ancora le risposte a fonti verificate, riduce le allucinazioni e mantiene aggiornata la conoscenza senza riaddestrare il modello. Per le PMI svizzere rende interrogabili in sicurezza manuali, contratti o dati di prodotto.",
+    "fr": "La RAG ancre les réponses dans des sources vérifiées, réduit les hallucinations et maintient les connaissances à jour sans réentraîner le modèle. Pour les PME suisses, elle rend interrogeables en toute sécurité manuels, contrats ou données produits."
+  },
+  "relatedTerms": [
+    "llm",
+    "hallucination",
+    "embedding"
+  ],
+  "relatedServices": [
+    "agents",
+    "integrations"
+  ],
+  "relatedArticles": [
+    "rag-and-knowledge-bases"
+  ]
+}

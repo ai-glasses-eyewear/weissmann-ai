@@ -1,0 +1,34 @@
+{
+  "id": "local-ai",
+  "slug": {
+    "de": "local-ai",
+    "en": "local-ai",
+    "it": "local-ai",
+    "fr": "local-ai"
+  },
+  "term": {
+    "de": "Lokale KI (On-Device / Self-Hosted)",
+    "en": "Local AI (on-device / self-hosted)",
+    "it": "IA locale (on-device / self-hosted)",
+    "fr": "IA locale (sur l'appareil / auto-hébergée)"
+  },
+  "definition": {
+    "de": "Lokale KI bezeichnet den Betrieb von KI-Modellen auf dem eigenen Gerät oder der eigenen Infrastruktur statt in einer fremden Cloud, sodass die Daten lokal bleiben.",
+    "en": "Local AI refers to running AI models on your own device or infrastructure instead of a third-party cloud, so that data stays local.",
+    "it": "L'IA locale indica l'esecuzione di modelli di IA sul proprio dispositivo o sulla propria infrastruttura anziché su un cloud di terzi, così che i dati restino locali.",
+    "fr": "L'IA locale désigne l'exécution de modèles d'IA sur son propre appareil ou sa propre infrastructure plutôt que dans un cloud tiers, afin que les données restent locales."
+  },
+  "extended": {
+    "de": "Der Ansatz stärkt Datenschutz und Kontrolle und funktioniert auch offline, verlangt aber eigene Rechenleistung. Für Schweizer KMU erleichtert er den revDSG-konformen Umgang mit sensiblen Daten.",
+    "en": "The approach strengthens privacy and control and works offline, but requires your own computing power. For Swiss SMEs it eases revDSG-compliant handling of sensitive data.",
+    "it": "L'approccio rafforza privacy e controllo e funziona anche offline, ma richiede potenza di calcolo propria. Per le PMI svizzere agevola una gestione dei dati sensibili conforme alla nLPD.",
+    "fr": "Cette approche renforce la confidentialité et le contrôle et fonctionne hors ligne, mais exige sa propre puissance de calcul. Pour les PME suisses, elle facilite un traitement des données sensibles conforme à la nLPD."
+  },
+  "relatedTerms": [
+    "open-source-ai"
+  ],
+  "relatedServices": [
+    "integrations"
+  ],
+  "relatedArticles": []
+}

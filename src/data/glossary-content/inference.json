@@ -1,0 +1,33 @@
+{
+  "id": "inference",
+  "slug": {
+    "de": "inference",
+    "en": "inference",
+    "it": "inference",
+    "fr": "inference"
+  },
+  "term": {
+    "de": "Inferenz (KI)",
+    "en": "Inference (AI)",
+    "it": "Inferenza (IA)",
+    "fr": "Inférence (IA)"
+  },
+  "definition": {
+    "de": "Inferenz bezeichnet den Vorgang, ein bereits trainiertes KI-Modell auf neue Eingaben anzuwenden, um eine Ausgabe wie eine Vorhersage oder generierten Text zu erzeugen – im Gegensatz zum Training.",
+    "en": "Inference is the process of applying a trained AI model to new input to produce an output such as a prediction or generated text — as opposed to training.",
+    "it": "L'inferenza è il processo di applicare un modello di IA già addestrato a nuovi input per produrre un output, come una previsione o testo generato, in contrapposizione all'addestramento.",
+    "fr": "L'inférence est le processus consistant à appliquer un modèle d'IA déjà entraîné à de nouvelles entrées pour produire une sortie, comme une prédiction ou du texte généré, par opposition à l'entraînement."
+  },
+  "extended": {
+    "de": "Jede Anfrage an ein KI-System löst Inferenz aus und verursacht die laufenden Betriebskosten. Ihre Geschwindigkeit und ihr Ressourcenbedarf bestimmen, ob ein Modell in der Cloud oder lokal sinnvoll läuft.",
+    "en": "Every request to an AI system triggers inference and drives its ongoing running costs. Its speed and resource demands determine whether a model runs sensibly in the cloud or locally.",
+    "it": "Ogni richiesta a un sistema di IA attiva l'inferenza e determina i costi operativi correnti. La sua velocità e il fabbisogno di risorse decidono se un modello convenga nel cloud o in locale.",
+    "fr": "Chaque requête à un système d'IA déclenche une inférence et génère les coûts d'exploitation courants. Sa vitesse et ses besoins en ressources déterminent si un modèle tourne mieux dans le cloud ou en local."
+  },
+  "relatedTerms": [
+    "llm",
+    "fine-tuning"
+  ],
+  "relatedServices": [],
+  "relatedArticles": []
+}

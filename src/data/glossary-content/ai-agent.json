@@ -1,0 +1,37 @@
+{
+  "id": "ai-agent",
+  "slug": {
+    "de": "ai-agent",
+    "en": "ai-agent",
+    "it": "ai-agent",
+    "fr": "ai-agent"
+  },
+  "term": {
+    "de": "KI-Agent",
+    "en": "AI Agent",
+    "it": "Agente IA",
+    "fr": "Agent IA"
+  },
+  "definition": {
+    "de": "Ein KI-Agent ist ein System, das ein Sprachmodell nutzt, um ein Ziel eigenständig in Teilschritte zu zerlegen, Werkzeuge oder APIs aufzurufen und Aufgaben ohne ständige menschliche Steuerung auszuführen.",
+    "en": "An AI agent is a system that uses a language model to autonomously break a goal into steps, call tools or APIs, and complete multi-step tasks without constant human direction.",
+    "it": "Un agente IA è un sistema che usa un modello linguistico per scomporre autonomamente un obiettivo in passaggi, richiamare strumenti o API e portare a termine compiti senza guida umana continua.",
+    "fr": "Un agent IA est un système qui utilise un modèle de langage pour décomposer de façon autonome un objectif en étapes, appeler des outils ou API et accomplir des tâches sans pilotage humain constant."
+  },
+  "extended": {
+    "de": "Anders als ein einzelner Chatbot-Aufruf plant ein Agent iterativ, prüft Zwischenergebnisse und korrigiert sich. Für Schweizer KMU eignen sich Agenten etwa, um Offerten vorzubereiten, Daten aus mehreren Systemen zusammenzuführen oder wiederkehrende Recherchen zu übernehmen.",
+    "en": "Unlike a single chatbot reply, an agent plans iteratively, checks intermediate results and self-corrects. For Swiss SMEs, agents can prepare quotes, consolidate data across systems, or handle recurring research tasks end to end.",
+    "it": "A differenza di una singola risposta di chatbot, un agente pianifica in modo iterativo, verifica i risultati intermedi e si autocorregge. Per le PMI svizzere può preparare offerte, unificare dati tra sistemi o svolgere ricerche ricorrenti.",
+    "fr": "Contrairement à une simple réponse de chatbot, un agent planifie de façon itérative, vérifie les résultats intermédiaires et se corrige. Pour les PME suisses, il peut préparer des devis, consolider des données ou mener des recherches récurrentes."
+  },
+  "relatedTerms": [
+    "automation",
+    "conversational-ai"
+  ],
+  "relatedServices": [
+    "agents"
+  ],
+  "relatedArticles": [
+    "what-is-an-ai-agent"
+  ]
+}

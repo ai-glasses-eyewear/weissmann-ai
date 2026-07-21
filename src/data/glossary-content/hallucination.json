@@ -1,0 +1,33 @@
+{
+  "id": "hallucination",
+  "slug": {
+    "de": "hallucination",
+    "en": "hallucination",
+    "it": "hallucination",
+    "fr": "hallucination"
+  },
+  "term": {
+    "de": "Halluzination (KI)",
+    "en": "Hallucination (AI)",
+    "it": "Allucinazione (IA)",
+    "fr": "Hallucination (IA)"
+  },
+  "definition": {
+    "de": "Eine Halluzination ist eine von einem KI-Modell erzeugte Aussage, die flüssig und plausibel klingt, aber faktisch falsch, erfunden oder nicht durch die Quellen gedeckt ist.",
+    "en": "A hallucination is a statement produced by an AI model that sounds fluent and plausible but is factually wrong, fabricated or unsupported by the sources.",
+    "it": "Un'allucinazione è un'affermazione prodotta da un modello di IA che suona fluida e plausibile ma è di fatto errata, inventata o non supportata dalle fonti.",
+    "fr": "Une hallucination est une affirmation produite par un modèle d'IA qui paraît fluide et plausible mais est factuellement fausse, inventée ou non étayée par les sources."
+  },
+  "extended": {
+    "de": "Halluzinationen entstehen, weil Sprachmodelle das wahrscheinlichste nächste Token vorhersagen und nicht zwischen wahr und falsch prüfen. Gegenmassnahmen sind das Verankern der Antworten in geprüften Quellen (etwa via RAG), Quellenangaben und eine menschliche Kontrolle vor geschäftskritischer Verwendung.",
+    "en": "Hallucinations arise because language models predict the most likely next token rather than checking truth. Countermeasures include grounding answers in verified sources (for example via RAG), requiring citations and a human check before business-critical use.",
+    "it": "Le allucinazioni nascono perché i modelli linguistici prevedono il token successivo più probabile invece di verificare la verità. Le contromisure includono ancorare le risposte a fonti verificate (ad esempio tramite RAG), richiedere citazioni e un controllo umano prima di un uso critico per il business.",
+    "fr": "Les hallucinations surviennent parce que les modèles de langage prédisent le token suivant le plus probable au lieu de vérifier la vérité. Les parades incluent l'ancrage des réponses dans des sources vérifiées (par exemple via le RAG), l'exigence de citations et un contrôle humain avant tout usage critique."
+  },
+  "relatedTerms": [
+    "llm",
+    "rag"
+  ],
+  "relatedServices": [],
+  "relatedArticles": []
+}

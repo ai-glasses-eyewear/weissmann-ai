@@ -11,7 +11,9 @@ import { HOME_PATHS, pillarHome, urlFor, type LocalePaths } from '../data/routes
 import { liveServices, servicePaths } from '../data/services';
 import { liveIndustries, industryPaths } from '../data/industries';
 import { liveClusters, clusterPaths, pillarOf, spokesOf, articlePaths } from '../data/academy';
+import { hasGlossary, glossaryHubPaths, termPaths, GLOSSARY } from '../data/glossary';
 import { liveResources, resourcePaths } from '../data/resources';
+import { liveCompanyPages, companyPagePaths } from '../data/company';
 
 /** Legacy same-slug page (identical path in every locale) as LocalePaths. */
 const sameSlug = (path: string): LocalePaths => ({ de: path, en: path, it: path, fr: path });
@@ -21,6 +23,10 @@ function academyPages(): LocalePaths[] {
   for (const cl of liveClusters()) {
     pages.push(clusterPaths(cl)); // cluster pillar page
     for (const sp of spokesOf(cl.id)) pages.push(articlePaths(sp));
+  }
+  if (hasGlossary()) {
+    pages.push(glossaryHubPaths());
+    for (const term of GLOSSARY) pages.push(termPaths(term));
   }
   return pages;
 }
@@ -35,6 +41,7 @@ function indexablePages(): LocalePaths[] {
     ...academyPages(),
     pillarHome('resources'),
     ...liveResources().map(resourcePaths),
+    ...liveCompanyPages().map(companyPagePaths),
     sameSlug('/preise/'),
     sameSlug('/ueber-uns/'),
     sameSlug('/kontakt/'),

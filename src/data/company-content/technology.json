@@ -1,0 +1,52 @@
+{
+  "id": "technology",
+  "title": {
+    "de": "Technologie: unser Stack & Ansatz | Weissmann AI",
+    "en": "Technology: our stack & approach | Weissmann AI",
+    "it": "Tecnologia: il nostro stack e approccio | Weissmann AI",
+    "fr": "Technologie : notre stack et approche | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Wie Weissmann AI baut: schnelle statische Websites, saubere Architektur, strukturierte Daten, mehrsprachig und messbar – Technologie im Dienst von Ergebnissen.",
+    "en": "How Weissmann AI builds: fast static websites, clean architecture, structured data, multilingual and measurable – technology in service of results.",
+    "it": "Come costruisce Weissmann AI: siti statici veloci, architettura pulita, dati strutturati, multilingue e misurabili – la tecnologia al servizio dei risultati.",
+    "fr": "Comment Weissmann AI construit : sites statiques rapides, architecture propre, données structurées, multilingue et mesurable – la technologie au service des résultats."
+  },
+  "kicker": { "de": "Technologie", "en": "Technology", "it": "Tecnologia", "fr": "Technologie" },
+  "h1": {
+    "de": "Unsere Technologie: schnell, sicher und auf Ergebnisse ausgerichtet",
+    "en": "Our technology: fast, secure and built for results",
+    "it": "La nostra tecnologia: veloce, sicura e orientata ai risultati",
+    "fr": "Notre technologie : rapide, sûre et orientée résultats"
+  },
+  "intro": {
+    "de": "Technologie ist für uns kein Selbstzweck, sondern Mittel zum Ziel: schnelle, sichere und gut auffindbare Lösungen, die messbar wirken. Wir setzen auf einen modernen, statischen Stack, saubere Architektur und strukturierte Daten – damit Websites in Google und in KI-Antwortmaschinen gleichermassen verstanden werden.",
+    "en": "For us technology is never an end in itself but a means to an end: fast, secure, discoverable solutions that measurably work. We rely on a modern static stack, clean architecture and structured data – so websites are understood by Google and AI answer engines alike.",
+    "it": "Per noi la tecnologia non è mai fine a sé stessa, ma un mezzo: soluzioni veloci, sicure e reperibili che funzionano in modo misurabile. Puntiamo su uno stack statico moderno, un'architettura pulita e dati strutturati – così i siti sono compresi sia da Google sia dai motori di risposta AI.",
+    "fr": "Pour nous, la technologie n'est jamais une fin en soi mais un moyen : des solutions rapides, sûres et trouvables qui fonctionnent de façon mesurable. Nous misons sur un stack statique moderne, une architecture propre et des données structurées – afin que les sites soient compris par Google comme par les moteurs de réponse IA."
+  },
+  "sections": [
+    {
+      "heading": { "de": "Ein moderner, statischer Stack", "en": "A modern, static stack", "it": "Uno stack statico moderno", "fr": "Un stack statique moderne" },
+      "paragraphs": [
+        { "de": "Wir bauen Websites vorgerendert und statisch aus. Das bedeutet: kurze Ladezeiten, hohe Sicherheit (keine angreifbare Server-Logik im Betrieb) und geringe Wartung. Genau diese Website läuft auf einem solchen Aufbau – schnell, mehrsprachig und über eine zentrale Konfiguration gesteuert.", "en": "We build websites pre-rendered and static. That means short load times, high security (no attackable server logic at runtime) and low maintenance. This very website runs on such a setup – fast, multilingual and driven by a central configuration.", "it": "Costruiamo siti pre-renderizzati e statici. Questo significa tempi di caricamento brevi, alta sicurezza (nessuna logica server attaccabile in esercizio) e bassa manutenzione. Questo stesso sito gira su un'architettura simile – veloce, multilingue e gestita da una configurazione centrale.", "fr": "Nous construisons des sites pré-rendus et statiques. Cela signifie des temps de chargement courts, une sécurité élevée (aucune logique serveur attaquable en production) et peu de maintenance. Ce site même fonctionne sur une telle architecture – rapide, multilingue et piloté par une configuration centrale." }
+      ],
+      "bullets": [
+        { "de": "Performance & Core Web Vitals: vorgerenderte Seiten mit minimalem JavaScript.", "en": "Performance & Core Web Vitals: pre-rendered pages with minimal JavaScript.", "it": "Prestazioni e Core Web Vitals: pagine pre-renderizzate con JavaScript minimo.", "fr": "Performance & Core Web Vitals : pages pré-rendues avec un JavaScript minimal." },
+        { "de": "Mehrsprachigkeit von Grund auf: Deutsch, Englisch, Französisch, Italienisch mit sauberem hreflang.", "en": "Multilingual by design: German, English, French, Italian with clean hreflang.", "it": "Multilingue per progettazione: tedesco, inglese, francese, italiano con hreflang pulito.", "fr": "Multilingue par conception : allemand, anglais, français, italien avec un hreflang propre." },
+        { "de": "Strukturierte Daten (Schema.org) auf jeder Seite – für Google und KI-Assistenten.", "en": "Structured data (Schema.org) on every page – for Google and AI assistants.", "it": "Dati strutturati (Schema.org) su ogni pagina – per Google e gli assistenti AI.", "fr": "Données structurées (Schema.org) sur chaque page – pour Google et les assistants IA." },
+        { "de": "Zentrale Konfiguration: Preise, Inhalte und Struktur aus einer Quelle, ohne Widersprüche.", "en": "Central configuration: prices, content and structure from one source, without contradictions.", "it": "Configurazione centrale: prezzi, contenuti e struttura da un'unica fonte, senza contraddizioni.", "fr": "Configuration centrale : prix, contenus et structure depuis une seule source, sans contradictions." }
+      ]
+    },
+    {
+      "heading": { "de": "KI im Betrieb – transparent und kostenbewusst", "en": "AI in operation – transparent and cost-aware", "it": "AI in esercizio – trasparente e attenta ai costi", "fr": "L'IA en exploitation – transparente et attentive aux coûts" },
+      "paragraphs": [
+        { "de": "Für Sprach- und Chatlösungen kombinieren wir moderne Sprachmodelle mit klaren Regeln und menschlicher Weiterleitung. Wir gestalten Architekturen so, dass sich einzelne Bausteine – etwa das Sprachmodell – später austauschen lassen, ohne die Oberfläche neu zu bauen. Wo eine Aufgabe ohne laufende KI-Kosten lösbar ist, lösen wir sie ohne laufende KI-Kosten.", "en": "For voice and chat solutions we combine modern language models with clear rules and human hand-off. We design architectures so individual building blocks – such as the language model – can be swapped later without rebuilding the interface. Where a task can be solved without recurring AI costs, we solve it without recurring AI costs.", "it": "Per le soluzioni vocali e di chat combiniamo modelli linguistici moderni con regole chiare e passaggio a un operatore umano. Progettiamo architetture in cui singoli componenti – come il modello linguistico – possono essere sostituiti in seguito senza ricostruire l'interfaccia. Dove un compito è risolvibile senza costi AI ricorrenti, lo risolviamo senza costi AI ricorrenti.", "fr": "Pour les solutions vocales et de chat, nous combinons des modèles de langage modernes avec des règles claires et un transfert vers un humain. Nous concevons des architectures où certains composants – comme le modèle de langage – peuvent être remplacés plus tard sans reconstruire l'interface. Là où une tâche peut être résolue sans coûts d'IA récurrents, nous la résolvons sans coûts d'IA récurrents." }
+      ]
+    }
+  ],
+  "faq": [
+    { "q": { "de": "Warum statische Websites statt eines klassischen CMS?", "en": "Why static websites instead of a classic CMS?", "it": "Perché siti statici invece di un CMS classico?", "fr": "Pourquoi des sites statiques plutôt qu'un CMS classique ?" }, "a": { "de": "Weil sie schneller, sicherer und wartungsärmer sind. Weniger bewegliche Teile im Betrieb bedeuten weniger Angriffsfläche und stabile Performance – ohne auf Redaktion oder Mehrsprachigkeit zu verzichten.", "en": "Because they are faster, more secure and lower-maintenance. Fewer moving parts at runtime means less attack surface and stable performance – without giving up editing or multilingual support.", "it": "Perché sono più veloci, più sicuri e con minore manutenzione. Meno parti mobili in esercizio significano minore superficie d'attacco e prestazioni stabili – senza rinunciare a redazione o multilingua.", "fr": "Parce qu'ils sont plus rapides, plus sûrs et moins coûteux à maintenir. Moins de parties mobiles en production, c'est moins de surface d'attaque et des performances stables – sans renoncer à l'édition ni au multilingue." } },
+    { "q": { "de": "Sind wir an eine bestimmte KI gebunden?", "en": "Are we locked into a specific AI?", "it": "Siamo legati a una specifica AI?", "fr": "Sommes-nous liés à une IA spécifique ?" }, "a": { "de": "Nein. Wir bauen so, dass sich Modelle und Anbieter wechseln lassen. So bleiben Sie flexibel, wenn sich Technologie, Preise oder Anforderungen ändern.", "en": "No. We build so that models and providers can be changed. That keeps you flexible when technology, prices or requirements change.", "it": "No. Costruiamo in modo che modelli e fornitori possano essere cambiati. Così restate flessibili quando cambiano tecnologia, prezzi o requisiti.", "fr": "Non. Nous construisons de sorte que les modèles et fournisseurs puissent être changés. Vous restez ainsi flexibles quand la technologie, les prix ou les besoins évoluent." } }
+  ]
+}

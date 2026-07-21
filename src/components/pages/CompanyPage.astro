@@ -1,0 +1,123 @@
+---
+/**
+ * CompanyPage — reusable template for the Company/trust pages (Methodology,
+ * Technology, Data Security). Answer-first hero, optional HowTo process steps,
+ * body sections, optional FAQ, CTA. AboutPage + BreadcrumbList (+ HowTo +
+ * FAQPage) schema. Content from company.ts (company-content/*.json).
+ */
+import { SITE, localeUrl, HTML_LANG, type Locale } from '../../data/site';
+import { type LocalePaths, urlFor } from '../../data/routes';
+import { type CompanyPageDef, type CompanyContent, companyPagePaths } from '../../data/company';
+import { breadcrumbs, faqPage } from '../../data/schema';
+import { t } from '../../i18n/ui';
+import Layout from '../../layouts/Layout.astro';
+
+interface Props { locale: Locale; localePaths: LocalePaths; page: CompanyPageDef; content: CompanyContent }
+const { locale, localePaths, page, content } = Astro.props;
+
+const pre = locale === 'de' ? '' : `/${locale}`;
+const contactHref = `${pre}/kontakt/`;
+const crumbHome = { de: 'Startseite', en: 'Home', it: 'Home', fr: 'Accueil' }[locale];
+const ctaLabel = { de: 'Projekt besprechen', en: 'Discuss your project', it: 'Parliamo del progetto', fr: 'Discuter du projet' }[locale];
+
+const schema: object[] = [
+  {
+    '@type': 'AboutPage',
+    name: content.h1[locale],
+    description: content.metaDescription[locale],
+    url: urlFor(locale, localePaths),
+    inLanguage: HTML_LANG[locale],
+    isPartOf: { '@id': `${SITE.domain}/#website` },
+    about: { '@id': `${SITE.domain}/#organization` },
+  },
+  breadcrumbs(locale, [
+    { name: crumbHome, path: '/' },
+    { name: page.name[locale], path: localePaths[locale] },
+  ]),
+];
+if (content.howToSteps?.length) {
+  schema.push({
+    '@type': 'HowTo',
+    name: content.h1[locale],
+    description: content.intro[locale],
+    step: content.howToSteps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.name[locale], text: s.text[locale] })),
+  });
+}
+if (content.faq?.length) {
+  schema.push(faqPage(content.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))));
+}
+---
+<Layout locale={locale} localePaths={localePaths} title={content.title[locale]} description={content.metaDescription[locale]} schema={schema}>
+  <nav class="crumbs container" aria-label="Breadcrumb">
+    <a href={`${pre}/`}>{crumbHome}</a><span aria-hidden="true">›</span><span>{page.name[locale]}</span>
+  </nav>
+
+  <header class="co-head container">
+    <p class="kicker">{content.kicker[locale]}</p>
+    <h1>{content.h1[locale]}</h1>
+    <p class="co-intro">{content.intro[locale]}</p>
+  </header>
+
+  {content.howToSteps && content.howToSteps.length > 0 && (
+    <ol class="container co-steps">
+      {content.howToSteps.map((s, i) => (
+        <li class="co-step">
+          <span class="co-step__num">{i + 1}</span>
+          <div><h2>{s.name[locale]}</h2><p>{s.text[locale]}</p></div>
+        </li>
+      ))}
+    </ol>
+  )}
+
+  {content.sections.map((s) => (
+    <section class="container co-section">
+      <h2>{s.heading[locale]}</h2>
+      {s.paragraphs?.map((p) => <p>{p[locale]}</p>)}
+      {s.bullets && s.bullets.length > 0 && (
+        <ul>{s.bullets.map((b) => <li>{b[locale]}</li>)}</ul>
+      )}
+    </section>
+  ))}
+
+  {content.faq && content.faq.length > 0 && (
+    <section class="container co-faq">
+      <h2>{locale === 'de' ? 'Häufige Fragen' : locale === 'it' ? 'Domande frequenti' : locale === 'fr' ? 'Questions fréquentes' : 'Frequently asked questions'}</h2>
+      <div class="faq-list">
+        {content.faq.map((f) => (
+          <details class="faq-item"><summary>{f.q[locale]}</summary><p>{f.a[locale]}</p></details>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="container co-cta">
+    <a class="btn btn--primary" href={contactHref} data-track="request_demo">{ctaLabel}</a>
+  </section>
+</Layout>
+
+<style>
+  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); }
+  .crumbs a { color: var(--ink-mute); }
+  .crumbs a:hover { color: var(--ink); }
+  .co-head { padding-top: var(--space-5); padding-bottom: var(--space-5); max-width: 52rem; }
+  .co-head h1 { font-size: var(--fs-700); line-height: 1.08; margin: 0.4rem 0 1rem; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
+  .co-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 48rem; }
+  .co-steps { list-style: none; padding: 0 var(--space-4); max-width: 52rem; display: flex; flex-direction: column; gap: var(--space-4); margin-bottom: var(--space-5); }
+  .co-step { display: flex; gap: var(--space-4); align-items: flex-start; }
+  .co-step__num { flex: none; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 700; }
+  .co-step h2 { font-size: var(--fs-500); margin: 0 0 0.3rem; }
+  .co-step p { margin: 0; color: var(--ink-soft); }
+  .co-section { max-width: 52rem; padding-bottom: var(--space-5); }
+  .co-section h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
+  .co-section p { color: var(--ink-soft); margin-bottom: var(--space-3); line-height: 1.7; }
+  .co-section ul { display: flex; flex-direction: column; gap: 0.5rem; padding-left: 1.1rem; margin-bottom: var(--space-3); }
+  .co-section li { color: var(--ink-soft); }
+  .co-faq { max-width: 52rem; padding-bottom: var(--space-5); }
+  .co-faq h2 { font-size: var(--fs-500); margin-bottom: var(--space-4); }
+  .faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
+  .faq-item { border: 1px solid var(--line); border-radius: 12px; padding: var(--space-3) var(--space-4); background: var(--paper); }
+  .faq-item summary { font-weight: 600; cursor: pointer; }
+  .faq-item p { margin: 0.6rem 0 0; color: var(--ink-soft); }
+  .co-cta { padding: var(--space-5) var(--space-4) var(--space-7); }
+</style>

@@ -7,6 +7,7 @@
 import { SITE, localeUrl, type Locale } from '../../data/site';
 import { type LocalePaths, urlFor, relFor } from '../../data/routes';
 import { orderedClusters, clusterPaths, pillarOf } from '../../data/academy';
+import { hasGlossary, glossaryHubPaths, GLOSSARY } from '../../data/glossary';
 import Layout from '../../layouts/Layout.astro';
 
 interface Props {
@@ -24,6 +25,15 @@ const COPY: Record<Locale, { title: string; h1: string; kicker: string; intro: s
 const c = COPY[locale];
 const clusters = orderedClusters();
 const pre = locale === 'de' ? '' : `/${locale}`;
+
+const glossaryLabel: Record<Locale, { title: string; text: string }> = {
+  de: { title: 'KI-Glossar', text: `${GLOSSARY.length} klare Definitionen der wichtigsten KI-Begriffe – zum Nachschlagen und Verlinken.` },
+  en: { title: 'AI Glossary', text: `${GLOSSARY.length} clear definitions of the key AI terms – to look up and link to.` },
+  it: { title: 'Glossario AI', text: `${GLOSSARY.length} definizioni chiare dei principali termini di AI – da consultare e collegare.` },
+  fr: { title: 'Glossaire IA', text: `${GLOSSARY.length} définitions claires des termes clés de l'IA – à consulter et à citer.` },
+};
+const gl = glossaryLabel[locale];
+const glossHref = hasGlossary() ? relFor(locale, glossaryHubPaths()) : null;
 
 const schema = [
   {
@@ -50,6 +60,15 @@ const schema = [
     <h1>{c.h1}</h1>
     <p class="hub-intro">{c.intro}</p>
   </header>
+  {glossHref && (
+    <div class="container">
+      <a class="gloss-feature" href={glossHref}>
+        <span class="gloss-feature__label">{gl.title}</span>
+        <span class="gloss-feature__text">{gl.text}</span>
+        <span class="gloss-feature__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  )}
   <div class="container hub-grid">
     {clusters.map((cl) => {
       const live = cl.status === 'live' && !!pillarOf(cl.id);
@@ -69,7 +88,13 @@ const schema = [
   .hub-head h1 { font-size: var(--fs-700); line-height: 1.05; margin: 0.4rem 0 1rem; }
   .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
   .hub-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 52rem; }
+  .gloss-feature { display: flex; align-items: center; gap: var(--space-3); border: 1px solid var(--line); border-radius: 14px; padding: var(--space-4) var(--space-5); background: color-mix(in srgb, var(--accent) 5%, var(--paper)); margin-bottom: var(--space-5); }
+  .gloss-feature:hover { border-color: var(--accent); text-decoration: none; }
+  .gloss-feature__label { font-weight: 700; color: var(--ink); font-size: var(--fs-500); }
+  .gloss-feature__text { color: var(--ink-soft); font-size: var(--fs-300); flex: 1; }
+  .gloss-feature__arrow { color: var(--accent); font-size: var(--fs-500); }
   .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: var(--space-4); padding-bottom: var(--space-7); }
+  @media (max-width: 640px) { .gloss-feature { flex-direction: column; align-items: flex-start; } }
   .cl-card { position: relative; border: 1px solid var(--line); border-radius: 14px; padding: var(--space-5); background: var(--paper); display: block; }
   .cl-card h2 { font-size: var(--fs-500); margin: 0 0 0.4rem; color: var(--ink); }
   .cl-card p { margin: 0; color: var(--ink-soft); font-size: var(--fs-300); }

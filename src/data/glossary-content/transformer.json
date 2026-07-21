@@ -1,0 +1,33 @@
+{
+  "id": "transformer",
+  "slug": {
+    "de": "transformer",
+    "en": "transformer",
+    "it": "transformer",
+    "fr": "transformer"
+  },
+  "term": {
+    "de": "Transformer (Architektur)",
+    "en": "Transformer (architecture)",
+    "it": "Transformer (architettura)",
+    "fr": "Transformer (architecture)"
+  },
+  "definition": {
+    "de": "Der Transformer ist eine 2017 vorgestellte neuronale Netzarchitektur, die mit einem Aufmerksamkeitsmechanismus (Attention) die Beziehungen zwischen allen Elementen einer Sequenz gewichtet und so moderne Sprachmodelle ermöglicht.",
+    "en": "The transformer is a neural network architecture introduced in 2017 that uses an attention mechanism to weigh the relationships between all elements of a sequence, enabling modern language models.",
+    "it": "Il transformer è un'architettura di rete neurale presentata nel 2017 che, tramite un meccanismo di attenzione (attention), pesa le relazioni tra tutti gli elementi di una sequenza, rendendo possibili i moderni modelli linguistici.",
+    "fr": "Le transformer est une architecture de réseau de neurones présentée en 2017 qui, au moyen d'un mécanisme d'attention, pondère les relations entre tous les éléments d'une séquence, rendant possibles les modèles de langage modernes."
+  },
+  "extended": {
+    "de": "Dank Attention kann das Modell den Kontext eines Wortes über den ganzen Text hinweg berücksichtigen und die Verarbeitung stark parallelisieren. Diese Architektur bildet die Grundlage nahezu aller heutigen LLMs; das «GPT» in ChatGPT steht für «Generative Pre-trained Transformer».",
+    "en": "Thanks to attention, the model can consider a word's context across the whole text and parallelise processing heavily. This architecture underpins nearly all of today's LLMs; the \"GPT\" in ChatGPT stands for \"Generative Pre-trained Transformer\".",
+    "it": "Grazie all'attention, il modello può considerare il contesto di una parola nell'intero testo e parallelizzare fortemente l'elaborazione. Questa architettura è alla base di quasi tutti gli LLM odierni; la «GPT» in ChatGPT sta per «Generative Pre-trained Transformer».",
+    "fr": "Grâce à l'attention, le modèle peut tenir compte du contexte d'un mot sur tout le texte et paralléliser fortement le traitement. Cette architecture est au cœur de presque tous les LLM actuels ; le « GPT » de ChatGPT signifie « Generative Pre-trained Transformer »."
+  },
+  "relatedTerms": [
+    "llm",
+    "neural-network"
+  ],
+  "relatedServices": [],
+  "relatedArticles": []
+}

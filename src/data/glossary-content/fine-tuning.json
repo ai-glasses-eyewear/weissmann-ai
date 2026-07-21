@@ -1,0 +1,33 @@
+{
+  "id": "fine-tuning",
+  "slug": {
+    "de": "fine-tuning",
+    "en": "fine-tuning",
+    "it": "fine-tuning",
+    "fr": "fine-tuning"
+  },
+  "term": {
+    "de": "Fine-Tuning",
+    "en": "Fine-Tuning",
+    "it": "Fine-Tuning",
+    "fr": "Fine-Tuning"
+  },
+  "definition": {
+    "de": "Fine-Tuning ist das gezielte Weitertrainieren eines bereits vortrainierten KI-Modells mit einem kleineren, aufgaben- oder domänenspezifischen Datensatz, um sein Verhalten für einen bestimmten Zweck anzupassen.",
+    "en": "Fine-tuning is the targeted further training of an already pretrained AI model on a smaller, task- or domain-specific dataset to adapt its behaviour for a particular purpose.",
+    "it": "Il fine-tuning è l'ulteriore addestramento mirato di un modello di IA già preaddestrato su un dataset più piccolo, specifico per un compito o dominio, per adattarne il comportamento a uno scopo preciso.",
+    "fr": "Le fine-tuning est le réentraînement ciblé d'un modèle d'IA déjà préentraîné sur un jeu de données plus restreint, spécifique à une tâche ou un domaine, afin d'adapter son comportement à un usage précis."
+  },
+  "extended": {
+    "de": "Fine-Tuning prägt Stil, Format oder Fachwissen dauerhaft ins Modell ein, verlangt aber Trainingsdaten und Aufwand. Für viele Schweizer KMU ist RAG oder gutes Prompting zunächst kostengünstiger; Fine-Tuning lohnt sich bei stabilen, wiederkehrenden Spezialaufgaben.",
+    "en": "Fine-tuning permanently bakes style, format or expertise into the model but requires training data and effort. For many Swiss SMEs, RAG or good prompting is initially cheaper; fine-tuning pays off for stable, recurring specialised tasks.",
+    "it": "Il fine-tuning incorpora in modo permanente stile, formato o competenza nel modello, ma richiede dati di addestramento e impegno. Per molte PMI svizzere la RAG o un buon prompting è inizialmente più economico; il fine-tuning conviene per compiti specialistici stabili e ricorrenti.",
+    "fr": "Le fine-tuning inscrit durablement style, format ou expertise dans le modèle, mais exige des données d'entraînement et des efforts. Pour beaucoup de PME suisses, la RAG ou un bon prompting est d'abord moins coûteux ; le fine-tuning se justifie pour des tâches spécialisées stables et récurrentes."
+  },
+  "relatedTerms": [
+    "llm",
+    "inference"
+  ],
+  "relatedServices": [],
+  "relatedArticles": []
+}
