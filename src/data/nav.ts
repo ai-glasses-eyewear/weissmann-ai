@@ -20,7 +20,7 @@ export const PILLAR_LIVE: Record<Pillar, boolean> = {
   services: true,
   industries: true,
   academy: true,
-  resources: false,
+  resources: true,
 };
 
 const PILLAR_KEY: Record<Pillar, string> = {

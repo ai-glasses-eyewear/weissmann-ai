@@ -1,0 +1,189 @@
+---
+/**
+ * Phone-assistant ROI calculator — a first-party interactive product under
+ * Resources. Wraps the accessible MissedCallsCalculator island with framing,
+ * transparent methodology, a conversion path to the AI Phone Assistant service
+ * and SoftwareApplication + FAQPage + BreadcrumbList schema. Client-side only,
+ * no data leaves the browser (zero recurring cost, privacy-friendly).
+ */
+import { SITE, type Locale } from '../../data/site';
+import { type LocalePaths, pillarHome, urlFor, relFor } from '../../data/routes';
+import { getService, servicePaths } from '../../data/services';
+import { breadcrumbs, faqPage } from '../../data/schema';
+import { t } from '../../i18n/ui';
+import MissedCallsCalculator from '../MissedCallsCalculator.astro';
+import Layout from '../../layouts/Layout.astro';
+
+interface Props {
+  locale: Locale;
+  localePaths: LocalePaths;
+}
+const { locale, localePaths } = Astro.props;
+
+const C: Record<Locale, {
+  title: string; metaDescription: string; kicker: string; h1: string; lead: string;
+  whatTitle: string; what: string; faq: { q: string; a: string }[]; ctaTitle: string; ctaText: string; ctaBtn: string;
+  crumbHome: string; crumbRes: string; toolName: string;
+}> = {
+  de: {
+    title: 'ROI-Rechner: Was kosten verpasste Anrufe? | Weissmann AI',
+    metaDescription: 'Kostenloser Rechner: Schätzen Sie in 30 Sekunden Ihren monatlichen Umsatzverlust durch verpasste Anrufe. Transparente Methodik, keine Anmeldung, Daten bleiben im Browser.',
+    kicker: 'Kostenloses Tool',
+    h1: 'Was kosten Sie verpasste Anrufe?',
+    lead: 'Jeder unbeantwortete Anruf kann eine verlorene Buchung sein. Dieser Rechner schätzt Ihren monatlichen Umsatzverlust anhand von drei einfachen Angaben – transparent nachvollziehbar und ohne Anmeldung. Die Berechnung läuft vollständig in Ihrem Browser.',
+    whatTitle: 'Was Sie gegen verpasste Anrufe tun können',
+    what: 'Verpasste Anrufe entstehen meist ausserhalb der Öffnungszeiten, in Stosszeiten oder wenn das Team beim Kunden ist. Ein KI-Telefonassistent nimmt diese Anrufe an, beantwortet Standardfragen, bucht Termine und leitet Wichtiges an Ihr Team weiter – rund um die Uhr und mehrsprachig. So wird aus einem verpassten Anruf eine beantwortete Anfrage.',
+    faq: [
+      { q: 'Wie wird der Verlust berechnet?', a: 'Anrufe pro Tag × Anteil verpasster Anrufe × durchschnittlicher Buchungswert × 30 Tage. Eine bewusst einfache Schätzung – nicht jede verpasste Anfrage wäre zu einer Buchung geworden.' },
+      { q: 'Werden meine Eingaben gespeichert?', a: 'Nein. Die Berechnung läuft vollständig in Ihrem Browser; es werden keine Eingaben an einen Server übermittelt oder gespeichert.' },
+      { q: 'Sind die Zahlen garantiert?', a: 'Nein – es ist eine Schätzung zur Orientierung, keine Garantie. Ihre tatsächlichen Werte hängen von Ihrer Branche und Ihrem Geschäft ab.' },
+    ],
+    ctaTitle: 'Verpasste Anrufe in beantwortete Anfragen verwandeln',
+    ctaText: 'Sehen Sie, wie ein KI-Telefonassistent für Ihr Unternehmen funktioniert.',
+    ctaBtn: 'KI-Telefonassistent ansehen',
+    crumbHome: 'Startseite', crumbRes: 'Ressourcen', toolName: 'ROI-Rechner verpasste Anrufe',
+  },
+  en: {
+    title: 'ROI Calculator: What Do Missed Calls Cost? | Weissmann AI',
+    metaDescription: 'Free calculator: estimate your monthly revenue loss from missed calls in 30 seconds. Transparent methodology, no sign-up, data stays in your browser.',
+    kicker: 'Free tool',
+    h1: 'What are missed calls costing you?',
+    lead: 'Every unanswered call can be a lost booking. This calculator estimates your monthly revenue loss from three simple inputs – transparently, with no sign-up. The calculation runs entirely in your browser.',
+    whatTitle: 'What you can do about missed calls',
+    what: 'Missed calls usually happen after hours, at peak times, or when the team is serving customers. An AI phone assistant answers those calls, handles standard questions, books appointments and routes what matters to your team – around the clock and multilingual. A missed call becomes an answered enquiry.',
+    faq: [
+      { q: 'How is the loss calculated?', a: 'Calls per day × share of missed calls × average booking value × 30 days. A deliberately simple estimate – not every missed enquiry would have become a booking.' },
+      { q: 'Are my inputs stored?', a: 'No. The calculation runs entirely in your browser; nothing is sent to or stored on a server.' },
+      { q: 'Are the numbers guaranteed?', a: 'No – it is an estimate for orientation, not a guarantee. Your real figures depend on your industry and business.' },
+    ],
+    ctaTitle: 'Turn missed calls into answered enquiries',
+    ctaText: 'See how an AI phone assistant works for your business.',
+    ctaBtn: 'Explore the AI Phone Assistant',
+    crumbHome: 'Home', crumbRes: 'Resources', toolName: 'Missed-calls ROI calculator',
+  },
+  it: {
+    title: 'Calcolatore ROI: quanto costano le chiamate perse? | Weissmann AI',
+    metaDescription: 'Calcolatore gratuito: stimate in 30 secondi la perdita di fatturato mensile per chiamate perse. Metodo trasparente, senza registrazione, dati nel browser.',
+    kicker: 'Strumento gratuito',
+    h1: 'Quanto vi costano le chiamate perse?',
+    lead: 'Ogni chiamata senza risposta può essere una prenotazione persa. Questo calcolatore stima la perdita di fatturato mensile a partire da tre semplici dati – in modo trasparente e senza registrazione. Il calcolo avviene interamente nel vostro browser.',
+    whatTitle: 'Cosa potete fare contro le chiamate perse',
+    what: 'Le chiamate perse avvengono di solito fuori orario, nei momenti di punta o quando il team serve i clienti. Un assistente telefonico AI risponde a queste chiamate, gestisce le domande standard, prenota appuntamenti e inoltra ciò che conta al team – 24 ore su 24 e in più lingue. Una chiamata persa diventa una richiesta gestita.',
+    faq: [
+      { q: 'Come si calcola la perdita?', a: 'Chiamate al giorno × percentuale di chiamate perse × valore medio di prenotazione × 30 giorni. Una stima volutamente semplice – non ogni richiesta persa sarebbe diventata una prenotazione.' },
+      { q: 'I miei dati vengono salvati?', a: 'No. Il calcolo avviene interamente nel vostro browser; nulla viene inviato o salvato su un server.' },
+      { q: 'I numeri sono garantiti?', a: 'No – è una stima orientativa, non una garanzia. I valori reali dipendono dal vostro settore e dalla vostra attività.' },
+    ],
+    ctaTitle: 'Trasformare le chiamate perse in richieste gestite',
+    ctaText: 'Scoprite come funziona un assistente telefonico AI per la vostra azienda.',
+    ctaBtn: 'Scopri l’assistente telefonico AI',
+    crumbHome: 'Home', crumbRes: 'Risorse', toolName: 'Calcolatore ROI chiamate perse',
+  },
+  fr: {
+    title: 'Calculateur ROI : combien coûtent les appels manqués ? | Weissmann AI',
+    metaDescription: 'Calculateur gratuit : estimez en 30 secondes votre perte de chiffre d’affaires mensuelle due aux appels manqués. Méthode transparente, sans inscription, données dans le navigateur.',
+    kicker: 'Outil gratuit',
+    h1: 'Combien vous coûtent les appels manqués ?',
+    lead: 'Chaque appel sans réponse peut être une réservation perdue. Ce calculateur estime votre perte de chiffre d’affaires mensuelle à partir de trois données simples – de façon transparente et sans inscription. Le calcul s’effectue entièrement dans votre navigateur.',
+    whatTitle: 'Que faire contre les appels manqués',
+    what: 'Les appels manqués surviennent généralement hors des heures d’ouverture, aux heures de pointe ou quand l’équipe sert les clients. Un assistant téléphonique IA répond à ces appels, gère les questions standard, prend les rendez-vous et transmet l’essentiel à votre équipe – 24h/24 et en plusieurs langues. Un appel manqué devient une demande traitée.',
+    faq: [
+      { q: 'Comment la perte est-elle calculée ?', a: 'Appels par jour × pourcentage d’appels manqués × valeur moyenne de réservation × 30 jours. Une estimation volontairement simple – toute demande manquée ne serait pas devenue une réservation.' },
+      { q: 'Mes données sont-elles enregistrées ?', a: 'Non. Le calcul s’effectue entièrement dans votre navigateur ; rien n’est envoyé ni stocké sur un serveur.' },
+      { q: 'Les chiffres sont-ils garantis ?', a: 'Non – c’est une estimation indicative, pas une garantie. Vos chiffres réels dépendent de votre secteur et de votre activité.' },
+    ],
+    ctaTitle: 'Transformer les appels manqués en demandes traitées',
+    ctaText: 'Découvrez comment un assistant téléphonique IA fonctionne pour votre entreprise.',
+    ctaBtn: 'Découvrir l’assistant téléphonique IA',
+    crumbHome: 'Accueil', crumbRes: 'Ressources', toolName: 'Calculateur ROI appels manqués',
+  },
+};
+const c = C[locale];
+const pre = locale === 'de' ? '' : `/${locale}`;
+const resHub = pillarHome('resources');
+const phone = getService('phone-assistant');
+const phoneHref = phone ? relFor(locale, servicePaths(phone)) : `${pre}/kontakt/`;
+
+const schema = [
+  {
+    '@type': 'SoftwareApplication',
+    name: c.toolName,
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    url: urlFor(locale, localePaths),
+    offers: { '@type': 'Offer', price: 0, priceCurrency: 'CHF' },
+    provider: { '@id': `${SITE.domain}/#organization` },
+  },
+  breadcrumbs(locale, [
+    { name: c.crumbHome, path: '/' },
+    { name: c.crumbRes, path: resHub[locale] },
+    { name: c.toolName, path: localePaths[locale] },
+  ]),
+  faqPage(c.faq),
+];
+---
+<Layout locale={locale} localePaths={localePaths} title={c.title} description={c.metaDescription} schema={schema}>
+  <nav class="crumbs container" aria-label="Breadcrumb">
+    <a href={`${pre}/`}>{c.crumbHome}</a><span aria-hidden="true">›</span>
+    <a href={relFor(locale, resHub)}>{c.crumbRes}</a><span aria-hidden="true">›</span>
+    <span>{c.toolName}</span>
+  </nav>
+
+  <header class="tool-head container">
+    <p class="kicker">{c.kicker}</p>
+    <h1>{c.h1}</h1>
+    <p class="tool-lead">{c.lead}</p>
+  </header>
+
+  <div class="container tool-calc">
+    <MissedCallsCalculator locale={locale} />
+  </div>
+
+  <section class="container tool-what">
+    <h2>{c.whatTitle}</h2>
+    <p>{c.what}</p>
+    <a class="btn btn--ghost" href={phoneHref}>{c.ctaBtn} →</a>
+  </section>
+
+  <section class="container tool-faq">
+    <h2>{locale === 'de' ? 'Häufige Fragen' : locale === 'it' ? 'Domande frequenti' : locale === 'fr' ? 'Questions fréquentes' : 'Frequently asked questions'}</h2>
+    <div class="faq-list">
+      {c.faq.map((f) => (
+        <details class="faq-item"><summary>{f.q}</summary><p>{f.a}</p></details>
+      ))}
+    </div>
+  </section>
+
+  <section class="container tool-cta">
+    <h2>{c.ctaTitle}</h2>
+    <p>{c.ctaText}</p>
+    <div class="tool-cta-row">
+      <a class="btn btn--primary" href={phoneHref} data-track="request_demo">{c.ctaBtn}</a>
+      <a class="btn btn--ghost" href={SITE.whatsapp} rel="nofollow" data-track="whatsapp">{t(locale, 'cta.whatsapp')}</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); flex-wrap: wrap; }
+  .crumbs a { color: var(--ink-mute); }
+  .crumbs a:hover { color: var(--ink); }
+  .tool-head { padding-top: var(--space-5); padding-bottom: var(--space-4); max-width: 52rem; }
+  .tool-head h1 { font-size: var(--fs-700); line-height: 1.06; margin: 0.4rem 0 1rem; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
+  .tool-lead { font-size: var(--fs-400); color: var(--ink-soft); max-width: 48rem; }
+  .tool-calc { padding-bottom: var(--space-5); max-width: 52rem; }
+  .tool-what { max-width: 52rem; padding-bottom: var(--space-5); }
+  .tool-what h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
+  .tool-what p { color: var(--ink-soft); margin-bottom: var(--space-4); line-height: 1.7; }
+  .tool-faq { max-width: 52rem; padding-bottom: var(--space-5); }
+  .tool-faq h2 { font-size: var(--fs-500); margin-bottom: var(--space-4); }
+  .faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
+  .faq-item { border: 1px solid var(--line); border-radius: 12px; padding: var(--space-3) var(--space-4); background: var(--paper); }
+  .faq-item summary { font-weight: 600; cursor: pointer; }
+  .faq-item p { margin: 0.6rem 0 0; color: var(--ink-soft); }
+  .tool-cta { text-align: center; padding: var(--space-7) var(--space-4); margin-bottom: var(--space-7); border-top: 1px solid var(--line); }
+  .tool-cta h2 { font-size: var(--fs-600); margin-bottom: 0.6rem; }
+  .tool-cta p { color: var(--ink-soft); max-width: 40rem; margin: 0 auto var(--space-4); }
+  .tool-cta-row { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+</style>

@@ -1,0 +1,70 @@
+---
+/**
+ * Resources hub (/ressourcen/, /en/resources/, …) — first-party tools,
+ * checklists, templates and datasets. Registry-driven (resources.ts); live
+ * resources link out, upcoming ones show a subtle marker.
+ */
+import { SITE, localeUrl, type Locale } from '../../data/site';
+import { type LocalePaths, urlFor, relFor } from '../../data/routes';
+import { orderedResources, resourcePaths, type ResourceType } from '../../data/resources';
+import Layout from '../../layouts/Layout.astro';
+
+interface Props { locale: Locale; localePaths: LocalePaths }
+const { locale, localePaths } = Astro.props;
+
+const COPY: Record<Locale, { title: string; h1: string; kicker: string; intro: string; soon: string; open: string; crumbHome: string; crumbHere: string; types: Record<ResourceType, string> }> = {
+  de: { title: 'Ressourcen: KI-Tools, Rechner & Checklisten | Weissmann AI', h1: 'Ressourcen', kicker: 'Kostenlos & nützlich', intro: 'Praktische Werkzeuge, die Ihnen sofort helfen: Rechner, Checklisten und Vorlagen rund um den Einsatz von KI im Unternehmen. Kostenlos, ohne Anmeldung, direkt nutzbar.', soon: 'In Vorbereitung', open: 'Öffnen', crumbHome: 'Startseite', crumbHere: 'Ressourcen', types: { calculator: 'Rechner', checklist: 'Checklisten', template: 'Vorlagen', guide: 'Leitfäden', dataset: 'Datensätze' } },
+  en: { title: 'Resources: AI Tools, Calculators & Checklists | Weissmann AI', h1: 'Resources', kicker: 'Free & useful', intro: 'Practical tools that help you right away: calculators, checklists and templates for adopting AI in your business. Free, no sign-up, ready to use.', soon: 'Coming soon', open: 'Open', crumbHome: 'Home', crumbHere: 'Resources', types: { calculator: 'Calculators', checklist: 'Checklists', template: 'Templates', guide: 'Guides', dataset: 'Datasets' } },
+  it: { title: 'Risorse: strumenti AI, calcolatori e checklist | Weissmann AI', h1: 'Risorse', kicker: 'Gratis e utili', intro: 'Strumenti pratici che vi aiutano subito: calcolatori, checklist e modelli per adottare l’AI in azienda. Gratis, senza registrazione, pronti all’uso.', soon: 'In preparazione', open: 'Apri', crumbHome: 'Home', crumbHere: 'Risorse', types: { calculator: 'Calcolatori', checklist: 'Checklist', template: 'Modelli', guide: 'Guide', dataset: 'Dataset' } },
+  fr: { title: 'Ressources : outils IA, calculateurs et checklists | Weissmann AI', h1: 'Ressources', kicker: 'Gratuit & utile', intro: 'Des outils pratiques qui vous aident immédiatement : calculateurs, checklists et modèles pour adopter l’IA dans votre entreprise. Gratuits, sans inscription, prêts à l’emploi.', soon: 'En préparation', open: 'Ouvrir', crumbHome: 'Accueil', crumbHere: 'Ressources', types: { calculator: 'Calculateurs', checklist: 'Checklists', template: 'Modèles', guide: 'Guides', dataset: 'Jeux de données' } },
+};
+const c = COPY[locale];
+const resources = orderedResources();
+const pre = locale === 'de' ? '' : `/${locale}`;
+
+const schema = [
+  { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: c.crumbHome, item: localeUrl(locale, '/') },
+    { '@type': 'ListItem', position: 2, name: c.crumbHere, item: urlFor(locale, localePaths) },
+  ] },
+  { '@type': 'CollectionPage', name: `${SITE.name} — ${c.h1}`, url: urlFor(locale, localePaths), isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.domain } },
+];
+---
+<Layout locale={locale} localePaths={localePaths} title={c.title} description={c.intro} schema={schema}>
+  <nav class="crumbs container" aria-label="Breadcrumb">
+    <a href={`${pre}/`}>{c.crumbHome}</a><span aria-hidden="true">›</span><span>{c.crumbHere}</span>
+  </nav>
+  <header class="hub-head container">
+    <p class="kicker">{c.kicker}</p>
+    <h1>{c.h1}</h1>
+    <p class="hub-intro">{c.intro}</p>
+  </header>
+  <div class="container hub-grid">
+    {resources.map((r) => {
+      const live = r.status === 'live';
+      const href = relFor(locale, resourcePaths(r));
+      return live
+        ? <a class="res-card" href={href}><span class="res-type">{c.types[r.type]}</span><h2>{r.name[locale]}</h2><p>{r.tagline[locale]}</p><span class="res-open">{c.open} →</span></a>
+        : <article class="res-card res-card--soon"><span class="res-type">{c.types[r.type]}</span><h2>{r.name[locale]}</h2><p>{r.tagline[locale]}</p><span class="res-soon">{c.soon}</span></article>;
+    })}
+  </div>
+</Layout>
+
+<style>
+  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); }
+  .crumbs a { color: var(--ink-mute); }
+  .crumbs a:hover { color: var(--ink); }
+  .hub-head { padding-top: var(--space-5); padding-bottom: var(--space-5); max-width: 60rem; }
+  .hub-head h1 { font-size: var(--fs-700); line-height: 1.05; margin: 0.4rem 0 1rem; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
+  .hub-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 52rem; }
+  .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: var(--space-4); padding-bottom: var(--space-7); }
+  .res-card { position: relative; border: 1px solid var(--line); border-radius: 14px; padding: var(--space-5); background: var(--paper); display: block; }
+  .res-type { display: inline-block; font-size: var(--fs-200); text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
+  .res-card h2 { font-size: var(--fs-500); margin: 0 0 0.4rem; color: var(--ink); }
+  .res-card p { margin: 0; color: var(--ink-soft); font-size: var(--fs-300); }
+  a.res-card:hover { border-color: var(--accent); text-decoration: none; }
+  .res-open { display: inline-block; margin-top: 0.7rem; color: var(--accent); font-weight: 600; font-size: var(--fs-300); }
+  .res-card--soon { opacity: 0.7; }
+  .res-soon { display: inline-block; margin-top: 0.7rem; font-size: var(--fs-200); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-mute); border: 1px solid var(--line); border-radius: 999px; padding: 0.2rem 0.7rem; }
+</style>
