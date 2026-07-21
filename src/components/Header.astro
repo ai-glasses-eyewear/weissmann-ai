@@ -6,6 +6,7 @@
  */
 import { LOCALES, localePrefix, type Locale } from '../data/site';
 import type { LocalePaths } from '../data/routes';
+import { pillarNav, companyNav, pricingHref } from '../data/nav';
 import { t } from '../i18n/ui';
 
 interface Props {
@@ -24,12 +25,10 @@ const lp: LocalePaths | null = localePaths ?? (path ? { de: path, en: path, it: 
 const switchTarget = (l: Locale): string =>
   availableLocales.includes(l) && lp ? `${localePrefix(l)}${lp[l]}` : `${localePrefix(l)}/`;
 
-const nav = [
-  { key: 'nav.solutions', href: `${p}/ki-telefonassistent/` },
-  { key: 'nav.pricing', href: `${p}/preise/` },
-  { key: 'nav.about', href: `${p}/ueber-uns/` },
-  { key: 'nav.contact', href: `${p}/kontakt/` },
-];
+// Six-pillar primary nav (only live pillars) + company links + pricing utility.
+const nav = [...pillarNav(locale), ...companyNav(locale)];
+const priceHref = pricingHref(locale);
+const currentHref = lp ? `${p}${lp[locale]}` : `${p}/`;
 
 const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'FR' };
 ---
@@ -42,13 +41,14 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
 
     <nav class="site-header__nav" aria-label="Hauptnavigation">
       {nav.map((item) => (
-        <a href={item.href} aria-current={path === item.href.replace(p, '') ? 'page' : undefined}>
-          {t(locale, item.key)}
+        <a href={item.href} aria-current={item.href === currentHref ? 'page' : undefined}>
+          {item.label}
         </a>
       ))}
     </nav>
 
     <div class="site-header__actions">
+      <a class="site-header__price" href={priceHref}>{t(locale, 'nav.pricing')}</a>
       <nav class="lang-switch" aria-label={t(locale, 'lang.switch')}>
         {LOCALES.map((l) => {
           return l === locale
@@ -67,8 +67,9 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
       </summary>
       <div class="site-header__mobile-panel">
         {nav.map((item) => (
-          <a href={item.href}>{t(locale, item.key)}</a>
+          <a href={item.href}>{item.label}</a>
         ))}
+        <a href={priceHref}>{t(locale, 'nav.pricing')}</a>
         <a class="btn btn--primary" href={`${p}/kontakt/`} data-track="request_demo">{t(locale, 'nav.cta')}</a>
         <div class="lang-switch lang-switch--mobile">
           {LOCALES.map((l) =>
@@ -116,6 +117,8 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
   .site-header__nav a[aria-current='page'] { color: var(--accent); }
   .site-header__actions { display: none; align-items: center; gap: var(--space-3); margin-left: auto; }
   .site-header__cta { padding: 0.55rem 1.15rem; font-size: var(--fs-300); }
+  .site-header__price { color: var(--ink-soft); font-weight: 500; font-size: var(--fs-300); }
+  .site-header__price:hover { color: var(--ink); text-decoration: none; }
   .lang-switch { display: flex; gap: 0.6rem; font-size: var(--fs-300); }
   .lang-switch a { color: var(--ink-mute); }
   .lang-switch a:hover { color: var(--ink); text-decoration: none; }

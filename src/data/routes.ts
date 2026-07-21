@@ -80,6 +80,11 @@ export function urlFor(locale: Locale, lp: LocalePaths): string {
   return `${SITE.domain}${localePrefix(locale)}${lp[locale]}`;
 }
 
+/** Root-relative URL for one locale of a page (for in-page href attributes). */
+export function relFor(locale: Locale, lp: LocalePaths): string {
+  return `${localePrefix(locale)}${lp[locale]}`;
+}
+
 /**
  * The Astro getStaticPaths `path` param for one locale of a page: the full
  * path INCLUDING the locale prefix, with no leading/trailing slash.
