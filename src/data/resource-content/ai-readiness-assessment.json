@@ -1,0 +1,329 @@
+{
+  "id": "ai-readiness-assessment",
+  "title": {
+    "de": "KI-Readiness-Assessment für Schweizer KMU | Weissmann AI",
+    "en": "AI Readiness Assessment for a Swiss SME | Weissmann AI",
+    "it": "Valutazione della maturità IA per PMI svizzere | Weissmann AI",
+    "fr": "Évaluation de la maturité IA pour PME suisses | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Ehrliche Ja/Nein-Checkliste, mit der Schweizer KMU ihre KI-Reife prüfen: Ziele, Daten, Prozesse, Kompetenzen und Governance nach revDSG.",
+    "en": "An honest yes/no checklist for Swiss SMEs to gauge AI readiness: goals, data, processes, skills and governance under the revised FADP.",
+    "it": "Checklist sì/no onesta per PMI svizzere: valuta la maturità IA su obiettivi, dati, processi, competenze e governance secondo la nLPD.",
+    "fr": "Checklist oui/non honnête pour PME suisses : évaluez la maturité IA sur objectifs, données, processus, compétences et gouvernance (nLPD)."
+  },
+  "kicker": {
+    "de": "KI-Reifegrad",
+    "en": "AI Maturity",
+    "it": "Maturità IA",
+    "fr": "Maturité IA"
+  },
+  "h1": {
+    "de": "Ist Ihr KMU bereit für KI? Das ehrliche Readiness-Assessment",
+    "en": "Is Your SME Ready for AI? The Honest Readiness Assessment",
+    "it": "La vostra PMI è pronta per l'IA? La valutazione onesta della maturità",
+    "fr": "Votre PME est-elle prête pour l'IA ? L'évaluation honnête de maturité"
+  },
+  "intro": {
+    "de": "Diese Checkliste hilft Ihnen, vor dem ersten KI-Projekt ehrlich einzuschätzen, wo Ihr Unternehmen wirklich steht. Gehen Sie jeden Punkt durch und haken Sie nur ab, was heute tatsächlich zutrifft, nicht was Sie sich wünschen. Offene Punkte sind keine Schwäche, sondern Ihre konkrete To-do-Liste vor dem Start.",
+    "en": "This checklist helps you honestly assess where your business really stands before your first AI project. Go through each item and only tick what is actually true today, not what you hope for. Unchecked boxes are not a weakness; they are your concrete to-do list before you begin.",
+    "it": "Questa checklist vi aiuta a valutare con onestà dove si trova davvero la vostra azienda prima del primo progetto di IA. Esaminate ogni punto e spuntate solo ciò che è vero oggi, non ciò che sperate. Le caselle non spuntate non sono un difetto: sono la vostra lista di cose da fare prima di iniziare.",
+    "fr": "Cette checklist vous aide à évaluer honnêtement où en est réellement votre entreprise avant votre premier projet IA. Parcourez chaque point et ne cochez que ce qui est vrai aujourd'hui, pas ce que vous espérez. Les cases non cochées ne sont pas une faiblesse : elles constituent votre liste de tâches concrète avant de commencer."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "1. Geschäftsziele & Anwendungsfälle",
+        "en": "1. Business Goals & Use Cases",
+        "it": "1. Obiettivi aziendali e casi d'uso",
+        "fr": "1. Objectifs métier et cas d'usage"
+      },
+      "items": [
+        {
+          "de": "Wir haben ein konkretes Geschäftsproblem benannt, das KI lösen soll (nicht nur \"wir wollen KI machen\").",
+          "en": "We have named a concrete business problem AI should solve (not just \"we want to do AI\").",
+          "it": "Abbiamo individuato un problema aziendale concreto che l'IA dovrebbe risolvere (non solo \"vogliamo fare IA\").",
+          "fr": "Nous avons nommé un problème métier concret que l'IA doit résoudre (pas seulement \"faire de l'IA\")."
+        },
+        {
+          "de": "Für den ersten Anwendungsfall ist messbar, was Erfolg bedeutet (Zeit, Kosten, Qualität).",
+          "en": "For the first use case, we can measure what success means (time, cost, quality).",
+          "it": "Per il primo caso d'uso sappiamo misurare cosa significa successo (tempo, costi, qualità).",
+          "fr": "Pour le premier cas d'usage, nous savons mesurer ce qu'est le succès (temps, coûts, qualité)."
+        },
+        {
+          "de": "Wir haben abgeschätzt, welchen Nutzen der Anwendungsfall realistisch bringt.",
+          "en": "We have estimated the realistic benefit the use case would deliver.",
+          "it": "Abbiamo stimato il beneficio realistico che il caso d'uso porterebbe.",
+          "fr": "Nous avons estimé le bénéfice réaliste qu'apporterait le cas d'usage."
+        },
+        {
+          "de": "Es gibt eine verantwortliche Person, die das Projekt vorantreibt und Entscheide trifft.",
+          "en": "There is an accountable person who drives the project and makes decisions.",
+          "it": "Esiste una persona responsabile che guida il progetto e prende le decisioni.",
+          "fr": "Une personne responsable pilote le projet et prend les décisions."
+        },
+        {
+          "de": "Der Anwendungsfall passt zur Unternehmensstrategie und nicht nur zum aktuellen Hype.",
+          "en": "The use case fits our business strategy, not just the current hype.",
+          "it": "Il caso d'uso è coerente con la strategia aziendale e non solo con l'hype del momento.",
+          "fr": "Le cas d'usage s'inscrit dans notre stratégie, pas seulement dans la tendance du moment."
+        },
+        {
+          "de": "Wir starten bewusst mit einem kleinen Pilotprojekt statt mit einem Grossvorhaben.",
+          "en": "We deliberately start with a small pilot rather than a large-scale rollout.",
+          "it": "Iniziamo volutamente con un piccolo progetto pilota anziché con un'implementazione su larga scala.",
+          "fr": "Nous démarrons volontairement par un petit pilote plutôt que par un déploiement à grande échelle."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "2. Datenreife & Datenqualität",
+        "en": "2. Data Readiness & Quality",
+        "it": "2. Maturità e qualità dei dati",
+        "fr": "2. Maturité et qualité des données"
+      },
+      "items": [
+        {
+          "de": "Die für den Anwendungsfall nötigen Daten existieren und sind zugänglich.",
+          "en": "The data needed for the use case exists and is accessible.",
+          "it": "I dati necessari per il caso d'uso esistono e sono accessibili.",
+          "fr": "Les données nécessaires au cas d'usage existent et sont accessibles."
+        },
+        {
+          "de": "Wir wissen, wo unsere Daten liegen und wer dafür verantwortlich ist.",
+          "en": "We know where our data lives and who is responsible for it.",
+          "it": "Sappiamo dove risiedono i nostri dati e chi ne è responsabile.",
+          "fr": "Nous savons où résident nos données et qui en est responsable."
+        },
+        {
+          "de": "Die Daten sind ausreichend aktuell, vollständig und konsistent für den geplanten Zweck.",
+          "en": "The data is sufficiently current, complete and consistent for the intended purpose.",
+          "it": "I dati sono sufficientemente aggiornati, completi e coerenti per lo scopo previsto.",
+          "fr": "Les données sont suffisamment à jour, complètes et cohérentes pour l'usage prévu."
+        },
+        {
+          "de": "Wir wissen, ob und welche Personendaten in den Datensätzen enthalten sind.",
+          "en": "We know whether and which personal data the datasets contain.",
+          "it": "Sappiamo se e quali dati personali contengono i set di dati.",
+          "fr": "Nous savons si et quelles données personnelles contiennent les jeux de données."
+        },
+        {
+          "de": "Der Zugriff auf sensible Daten ist geregelt und dokumentiert.",
+          "en": "Access to sensitive data is governed and documented.",
+          "it": "L'accesso ai dati sensibili è regolato e documentato.",
+          "fr": "L'accès aux données sensibles est encadré et documenté."
+        },
+        {
+          "de": "Wir könnten die Datenherkunft im Zweifel nachvollziehen und belegen.",
+          "en": "We could trace and document where our data came from if asked.",
+          "it": "In caso di dubbio potremmo ricostruire e documentare la provenienza dei dati.",
+          "fr": "En cas de doute, nous pourrions retracer et documenter l'origine des données."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "3. Prozesse & Integration",
+        "en": "3. Processes & Integration",
+        "it": "3. Processi e integrazione",
+        "fr": "3. Processus et intégration"
+      },
+      "items": [
+        {
+          "de": "Der Prozess, den KI unterstützen soll, ist heute dokumentiert und verstanden.",
+          "en": "The process AI should support is documented and understood today.",
+          "it": "Il processo che l'IA dovrebbe supportare è oggi documentato e compreso.",
+          "fr": "Le processus que l'IA doit soutenir est aujourd'hui documenté et compris."
+        },
+        {
+          "de": "Wir wissen, in welche bestehenden Systeme oder Tools die KI-Lösung eingebunden werden muss.",
+          "en": "We know which existing systems or tools the AI solution must connect to.",
+          "it": "Sappiamo a quali sistemi o strumenti esistenti la soluzione IA deve collegarsi.",
+          "fr": "Nous savons à quels systèmes ou outils existants la solution IA doit se connecter."
+        },
+        {
+          "de": "Es ist geklärt, wer die KI-Ergebnisse im Arbeitsalltag tatsächlich nutzt.",
+          "en": "It is clear who will actually use the AI outputs in daily work.",
+          "it": "È chiaro chi utilizzerà davvero i risultati dell'IA nel lavoro quotidiano.",
+          "fr": "Il est clair qui utilisera réellement les résultats de l'IA au quotidien."
+        },
+        {
+          "de": "Wir haben einen definierten Schritt, in dem ein Mensch KI-Ergebnisse prüft.",
+          "en": "We have a defined step where a human reviews AI outputs.",
+          "it": "Abbiamo una fase definita in cui una persona verifica i risultati dell'IA.",
+          "fr": "Nous avons une étape définie où un humain vérifie les résultats de l'IA."
+        },
+        {
+          "de": "Es ist bedacht, was passiert, wenn die KI ausfällt oder falsch liegt.",
+          "en": "We have thought through what happens if the AI fails or is wrong.",
+          "it": "Abbiamo considerato cosa succede se l'IA si guasta o sbaglia.",
+          "fr": "Nous avons anticipé ce qui se passe si l'IA tombe en panne ou se trompe."
+        },
+        {
+          "de": "Die IT-Infrastruktur (Zugänge, Sicherheit, Kapazität) reicht für den Betrieb aus.",
+          "en": "Our IT infrastructure (access, security, capacity) is sufficient to run it.",
+          "it": "La nostra infrastruttura IT (accessi, sicurezza, capacità) è sufficiente per l'esercizio.",
+          "fr": "Notre infrastructure IT (accès, sécurité, capacité) suffit pour l'exploitation."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "4. Kompetenzen & Change-Management",
+        "en": "4. Skills & Change Management",
+        "it": "4. Competenze e gestione del cambiamento",
+        "fr": "4. Compétences et conduite du changement"
+      },
+      "items": [
+        {
+          "de": "Im Team ist grundlegendes Verständnis vorhanden, was KI kann und was nicht.",
+          "en": "The team has a basic understanding of what AI can and cannot do.",
+          "it": "Il team ha una comprensione di base di ciò che l'IA può e non può fare.",
+          "fr": "L'équipe comprend les bases de ce que l'IA peut et ne peut pas faire."
+        },
+        {
+          "de": "Wir haben internes oder externes Know-how, um die Lösung zu betreuen.",
+          "en": "We have internal or external know-how to maintain the solution.",
+          "it": "Disponiamo di know-how interno o esterno per gestire la soluzione.",
+          "fr": "Nous disposons du savoir-faire interne ou externe pour maintenir la solution."
+        },
+        {
+          "de": "Die betroffenen Mitarbeitenden wurden früh einbezogen und nicht vor vollendete Tatsachen gestellt.",
+          "en": "Affected employees were involved early, not presented with a fait accompli.",
+          "it": "I collaboratori interessati sono stati coinvolti presto, non messi di fronte al fatto compiuto.",
+          "fr": "Les collaborateurs concernés ont été impliqués tôt, non mis devant le fait accompli."
+        },
+        {
+          "de": "Es gibt einen Plan, wie Mitarbeitende geschult und begleitet werden.",
+          "en": "There is a plan for how staff will be trained and supported.",
+          "it": "Esiste un piano su come formare e accompagnare il personale.",
+          "fr": "Un plan prévoit comment le personnel sera formé et accompagné."
+        },
+        {
+          "de": "Die Führung steht sichtbar hinter dem Vorhaben und stellt Zeit dafür bereit.",
+          "en": "Leadership visibly backs the initiative and allocates time for it.",
+          "it": "La direzione sostiene visibilmente l'iniziativa e le dedica del tempo.",
+          "fr": "La direction soutient visiblement l'initiative et y consacre du temps."
+        },
+        {
+          "de": "Wir haben klare Nutzungsregeln, wie Mitarbeitende KI-Tools verwenden dürfen.",
+          "en": "We have clear rules for how employees may use AI tools.",
+          "it": "Abbiamo regole chiare su come i collaboratori possono usare gli strumenti di IA.",
+          "fr": "Nous avons des règles claires sur l'usage des outils d'IA par les collaborateurs."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "5. Governance, Risiko & revDSG",
+        "en": "5. Governance, Risk & the Revised FADP",
+        "it": "5. Governance, rischio e nLPD",
+        "fr": "5. Gouvernance, risque et nLPD"
+      },
+      "items": [
+        {
+          "de": "Wir haben geprüft, ob das Vorhaben Personendaten bearbeitet und ob das revDSG anwendbar ist.",
+          "en": "We have checked whether the project processes personal data and whether the revised FADP applies.",
+          "it": "Abbiamo verificato se il progetto tratta dati personali e se si applica la nLPD.",
+          "fr": "Nous avons vérifié si le projet traite des données personnelles et si la nLPD s'applique."
+        },
+        {
+          "de": "Bei möglichen hohen Risiken haben wir eine Datenschutz-Folgenabschätzung (DSFA) angedacht.",
+          "en": "Where high risks are possible, we have considered a data protection impact assessment (DPIA).",
+          "it": "In presenza di possibili rischi elevati abbiamo previsto una valutazione d'impatto sulla protezione dei dati (DPIA).",
+          "fr": "En cas de risques élevés possibles, nous avons envisagé une analyse d'impact relative à la protection des données (AIPD)."
+        },
+        {
+          "de": "Wir wissen, ob Daten ins Ausland fliessen, und haben die Zulässigkeit geklärt.",
+          "en": "We know whether data flows abroad and have clarified whether that is permissible.",
+          "it": "Sappiamo se i dati vengono trasferiti all'estero e ne abbiamo chiarito l'ammissibilità.",
+          "fr": "Nous savons si des données sont transférées à l'étranger et en avons clarifié la licéité."
+        },
+        {
+          "de": "Wir haben geprüft, ob der EU AI Act für uns relevant ist (z. B. Kunden oder Nutzung in der EU).",
+          "en": "We have checked whether the EU AI Act is relevant to us (e.g. EU customers or usage).",
+          "it": "Abbiamo verificato se l'EU AI Act è rilevante per noi (es. clienti o utilizzo nell'UE).",
+          "fr": "Nous avons vérifié si le règlement européen sur l'IA nous concerne (p. ex. clients ou usage dans l'UE)."
+        },
+        {
+          "de": "Wir wissen, welche Anbieter unsere Daten verarbeiten, und haben deren Bedingungen geprüft.",
+          "en": "We know which providers process our data and have reviewed their terms.",
+          "it": "Sappiamo quali fornitori trattano i nostri dati e ne abbiamo esaminato le condizioni.",
+          "fr": "Nous savons quels prestataires traitent nos données et avons examiné leurs conditions."
+        },
+        {
+          "de": "Rollen und Verantwortlichkeiten für KI-Entscheide und Fehler sind festgelegt.",
+          "en": "Roles and responsibilities for AI decisions and errors are defined.",
+          "it": "Ruoli e responsabilità per le decisioni e gli errori dell'IA sono definiti.",
+          "fr": "Les rôles et responsabilités pour les décisions et erreurs liées à l'IA sont définis."
+        },
+        {
+          "de": "Bei rechtlichen Unsicherheiten holen wir fachkundige oder juristische Beratung ein.",
+          "en": "Where legal uncertainty exists, we seek expert or legal advice.",
+          "it": "In caso di incertezza giuridica ci rivolgiamo a una consulenza esperta o legale.",
+          "fr": "En cas d'incertitude juridique, nous consultons un expert ou un juriste."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ab wie vielen Häkchen ist unser KMU \"KI-bereit\"?",
+        "en": "How many ticks make our SME \"AI-ready\"?",
+        "it": "Quante caselle spuntate rendono la nostra PMI \"pronta per l'IA\"?",
+        "fr": "Combien de cases cochées rendent notre PME \"prête pour l'IA\" ?"
+      },
+      "a": {
+        "de": "Es gibt keine feste Punktzahl. Die Checkliste ist ein Diagnose-, kein Prüfungsinstrument: Offene Punkte in den Bereichen Ziele, Daten und Governance sollten Sie vor dem Start schliessen, während einzelne Lücken bei Kompetenzen oft parallel zum Pilotprojekt bearbeitet werden können. Nutzen Sie die unbeantworteten Punkte als Roadmap.",
+        "en": "There is no fixed score. This is a diagnostic tool, not an exam: gaps in goals, data and governance should be closed before you start, while some skills gaps can often be addressed alongside a pilot. Use the unchecked items as your roadmap.",
+        "it": "Non esiste un punteggio fisso. È uno strumento diagnostico, non un esame: le lacune su obiettivi, dati e governance andrebbero colmate prima di iniziare, mentre alcune lacune di competenze possono spesso essere affrontate in parallelo al pilota. Usate le voci non spuntate come roadmap.",
+        "fr": "Il n'existe pas de score fixe. C'est un outil de diagnostic, pas un examen : les lacunes sur les objectifs, les données et la gouvernance doivent être comblées avant de commencer, tandis que certaines lacunes de compétences peuvent souvent être traitées en parallèle du pilote. Utilisez les points non cochés comme feuille de route."
+      }
+    },
+    {
+      "q": {
+        "de": "Ersetzt diese Checkliste eine rechtliche Prüfung nach revDSG?",
+        "en": "Does this checklist replace a legal review under the revised FADP?",
+        "it": "Questa checklist sostituisce una verifica legale secondo la nLPD?",
+        "fr": "Cette checklist remplace-t-elle un examen juridique selon la nLPD ?"
+      },
+      "a": {
+        "de": "Nein. Sie liefert praktische Orientierung, keine Rechtsberatung, und das Abhaken garantiert keine Konformität. Ob und wie das revidierte Datenschutzgesetz (revDSG/nFADP) oder der EU AI Act auf Ihren Fall zutreffen, klären Sie im Zweifel mit einer fachkundigen Datenschutz- oder Rechtsberatung. Informationen des EDÖB sind ein guter Ausgangspunkt.",
+        "en": "No. It offers practical orientation, not legal advice, and ticking the boxes does not guarantee compliance. Whether and how the revised Federal Act on Data Protection (revFADP/nFADP) or the EU AI Act apply to your case should, if in doubt, be clarified with qualified data-protection or legal counsel. Guidance from the FDPIC is a good starting point.",
+        "it": "No. Offre un orientamento pratico, non una consulenza legale, e spuntare le caselle non garantisce la conformità. Se e come la legge federale riveduta sulla protezione dei dati (nLPD) o l'EU AI Act si applichino al vostro caso va chiarito, in caso di dubbio, con una consulenza qualificata in materia di protezione dei dati o legale. Le indicazioni dell'IFPDT sono un buon punto di partenza.",
+        "fr": "Non. Elle offre une orientation pratique, pas un conseil juridique, et cocher les cases ne garantit pas la conformité. La question de savoir si et comment la loi fédérale révisée sur la protection des données (nLPD) ou le règlement européen sur l'IA s'appliquent à votre cas doit, en cas de doute, être clarifiée avec un conseil qualifié en protection des données ou juridique. Les indications du PFPDT sont un bon point de départ."
+      }
+    },
+    {
+      "q": {
+        "de": "Wir bearbeiten keine sensiblen Personendaten. Ist der revDSG-Teil trotzdem relevant?",
+        "en": "We don't process sensitive personal data. Is the FADP section still relevant?",
+        "it": "Non trattiamo dati personali sensibili. La sezione sulla nLPD è comunque rilevante?",
+        "fr": "Nous ne traitons pas de données personnelles sensibles. La section nLPD reste-t-elle pertinente ?"
+      },
+      "a": {
+        "de": "Ja, meist schon. Das revDSG gilt für die Bearbeitung von Personendaten allgemein, nicht nur für besonders schützenswerte Daten. Schon Kunden-, Mitarbeitenden- oder Lieferantendaten fallen darunter. Prüfen Sie deshalb auch bei scheinbar harmlosen Anwendungsfällen, welche Personendaten die KI tatsächlich verarbeitet.",
+        "en": "Yes, usually. The revised FADP applies to the processing of personal data in general, not only to particularly sensitive data. Customer, employee or supplier data already counts. So even for seemingly harmless use cases, check which personal data the AI actually processes.",
+        "it": "Sì, di solito. La nLPD si applica al trattamento di dati personali in generale, non solo ai dati particolarmente degni di protezione. Già i dati di clienti, collaboratori o fornitori rientrano nell'ambito. Anche per casi d'uso apparentemente innocui, verificate quali dati personali l'IA tratta effettivamente.",
+        "fr": "Oui, en général. La nLPD s'applique au traitement de données personnelles en général, pas seulement aux données sensibles. Les données de clients, de collaborateurs ou de fournisseurs entrent déjà dans le champ. Même pour des cas d'usage apparemment anodins, vérifiez quelles données personnelles l'IA traite réellement."
+      }
+    },
+    {
+      "q": {
+        "de": "Was tun wir mit den offenen Punkten nach dem Assessment?",
+        "en": "What do we do with the unchecked items after the assessment?",
+        "it": "Cosa facciamo con le voci non spuntate dopo la valutazione?",
+        "fr": "Que faisons-nous des points non cochés après l'évaluation ?"
+      },
+      "a": {
+        "de": "Priorisieren Sie sie. Blockierende Lücken, etwa fehlende Datenzugänge oder ungeklärte Datenschutzfragen, gehören vor den Projektstart. Weniger kritische Punkte, wie zusätzliche Schulungen, planen Sie begleitend ein. Starten Sie dann mit einem eng abgegrenzten Pilotprojekt, sammeln Sie Erfahrung und wiederholen Sie das Assessment vor der nächsten Ausbaustufe.",
+        "en": "Prioritise them. Blocking gaps, such as missing data access or unresolved data-protection questions, belong before the project starts. Less critical items, like additional training, can be scheduled alongside. Then launch a tightly scoped pilot, gather experience and repeat the assessment before scaling up.",
+        "it": "Datene priorità. Le lacune bloccanti, come l'assenza di accesso ai dati o questioni di protezione dei dati irrisolte, vanno affrontate prima di avviare il progetto. Le voci meno critiche, come formazione aggiuntiva, si pianificano in parallelo. Poi avviate un pilota ben delimitato, raccogliete esperienza e ripetete la valutazione prima di crescere.",
+        "fr": "Priorisez-les. Les lacunes bloquantes, comme l'absence d'accès aux données ou des questions de protection des données non résolues, doivent être traitées avant le lancement. Les points moins critiques, comme une formation complémentaire, se planifient en parallèle. Lancez ensuite un pilote bien délimité, capitalisez l'expérience et refaites l'évaluation avant de passer à l'échelle."
+      }
+    }
+  ]
+}

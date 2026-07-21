@@ -44,7 +44,7 @@ export const RESOURCES: ResourceDef[] = [
   },
   {
     id: 'ai-readiness-assessment',
-    type: 'checklist', order: 2, status: 'draft',
+    type: 'checklist', order: 2, status: 'live',
     slug: { de: 'ki-readiness-check', en: 'ai-readiness-assessment', it: 'valutazione-maturita-ai', fr: 'evaluation-maturite-ia' },
     name: { de: 'KI-Readiness-Check', en: 'AI Readiness Assessment', it: 'Valutazione di maturità AI', fr: 'Évaluation de maturité IA' },
     tagline: { de: 'Wie bereit ist Ihr Unternehmen für KI? Ein strukturierter Selbst-Check.', en: 'How ready is your business for AI? A structured self-assessment.', it: 'Quanto è pronta la vostra azienda per l’AI? Un’autovalutazione strutturata.', fr: 'Votre entreprise est-elle prête pour l’IA ? Une auto-évaluation structurée.' },
@@ -52,7 +52,7 @@ export const RESOURCES: ResourceDef[] = [
   },
   {
     id: 'revdsg-ai-checklist',
-    type: 'checklist', order: 3, status: 'draft',
+    type: 'checklist', order: 3, status: 'live',
     slug: { de: 'revdsg-ki-checkliste', en: 'revdsg-ai-checklist', it: 'checklist-ai-nlpd', fr: 'checklist-ia-nlpd' },
     name: { de: 'revDSG & EU AI Act Checkliste', en: 'revDSG & EU AI Act Checklist', it: 'Checklist nLPD & EU AI Act', fr: 'Checklist nLPD & EU AI Act' },
     tagline: { de: 'Die wichtigsten Datenschutz- und Compliance-Punkte beim KI-Einsatz in der Schweiz.', en: 'The key data-protection and compliance points when using AI in Switzerland.', it: 'I punti chiave di protezione dati e compliance nell’uso dell’AI in Svizzera.', fr: 'Les points clés de protection des données et de conformité lors de l’usage de l’IA en Suisse.' },
@@ -60,7 +60,7 @@ export const RESOURCES: ResourceDef[] = [
   },
   {
     id: 'geo-audit-checklist',
-    type: 'checklist', order: 4, status: 'draft',
+    type: 'checklist', order: 4, status: 'live',
     slug: { de: 'geo-audit-checkliste', en: 'geo-audit-checklist', it: 'checklist-audit-geo', fr: 'checklist-audit-geo' },
     name: { de: 'GEO-Audit-Checkliste', en: 'GEO Audit Checklist', it: 'Checklist audit GEO', fr: 'Checklist d’audit GEO' },
     tagline: { de: 'Prüfen Sie, wie sichtbar Ihre Website für KI-Antwortmaschinen ist.', en: 'Check how visible your website is to AI answer engines.', it: 'Verificate quanto è visibile il vostro sito ai motori di risposta AI.', fr: 'Vérifiez la visibilité de votre site pour les moteurs de réponse IA.' },

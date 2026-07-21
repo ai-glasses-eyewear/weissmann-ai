@@ -1,0 +1,323 @@
+{
+  "id": "geo-audit-checklist",
+  "title": {
+    "de": "GEO-Audit-Checkliste: sichtbar für KI-Antworten | Weissmann AI",
+    "en": "GEO Audit Checklist: Be Visible to AI Answers | Weissmann AI",
+    "it": "Checklist audit GEO: visibile alle risposte IA | Weissmann AI",
+    "fr": "Checklist audit GEO : visible dans les réponses IA | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Praktische GEO-Audit-Checkliste: Prüfen Sie Schritt für Schritt, wie gut Ihre Website in KI-Antwortmaschinen wie ChatGPT, Perplexity und Gemini sichtbar ist.",
+    "en": "A practical GEO audit checklist to check, step by step, how visible your website is inside AI answer engines like ChatGPT, Perplexity and Gemini.",
+    "it": "Checklist pratica per l'audit GEO: verifica passo dopo passo quanto il tuo sito è visibile nei motori di risposta IA come ChatGPT, Perplexity e Gemini.",
+    "fr": "Checklist pratique d'audit GEO pour vérifier, étape par étape, la visibilité de votre site dans les moteurs de réponse IA comme ChatGPT, Perplexity et Gemini."
+  },
+  "kicker": {
+    "de": "KI-Sichtbarkeit & GEO",
+    "en": "AI Visibility & GEO",
+    "it": "Visibilità IA e GEO",
+    "fr": "Visibilité IA & GEO"
+  },
+  "h1": {
+    "de": "GEO-Audit-Checkliste: Wie sichtbar ist Ihre Website für KI-Antwortmaschinen?",
+    "en": "GEO Audit Checklist: How Visible Is Your Website to AI Answer Engines?",
+    "it": "Checklist audit GEO: quanto è visibile il tuo sito ai motori di risposta IA?",
+    "fr": "Checklist audit GEO : quelle est la visibilité de votre site pour les moteurs de réponse IA ?"
+  },
+  "intro": {
+    "de": "Diese Checkliste hilft Ihnen zu prüfen, wie gut Ihre Website von generativen KI-Antwortmaschinen (ChatGPT, Perplexity, Google AI Overviews, Gemini) gefunden, verstanden und zitiert wird. Arbeiten Sie die Punkte Abschnitt für Abschnitt ab und haken Sie jeden ab, den Sie belegen können; offene Punkte sind Ihre Prioritätenliste. GEO ergänzt klassisches SEO, ersetzt es aber nicht.",
+    "en": "This checklist helps you assess how well generative AI answer engines (ChatGPT, Perplexity, Google AI Overviews, Gemini) find, understand and cite your website. Work through it section by section, ticking off every item you can verify; the open items become your priority list. GEO complements classic SEO rather than replacing it.",
+    "it": "Questa checklist ti aiuta a valutare quanto i motori di risposta IA generativa (ChatGPT, Perplexity, Google AI Overviews, Gemini) trovano, comprendono e citano il tuo sito. Affrontala sezione per sezione, spuntando ogni voce che puoi verificare; le voci aperte diventano la tua lista di priorità. La GEO integra la SEO classica, non la sostituisce.",
+    "fr": "Cette checklist vous aide à évaluer dans quelle mesure les moteurs de réponse IA générative (ChatGPT, Perplexity, Google AI Overviews, Gemini) trouvent, comprennent et citent votre site. Parcourez-la section par section en cochant chaque point vérifiable ; les points ouverts deviennent votre liste de priorités. Le GEO complète le SEO classique sans le remplacer."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "1. Antwort-first: Inhalte & Struktur",
+        "en": "1. Answer-First: Content & Structure",
+        "it": "1. Answer-first: contenuti e struttura",
+        "fr": "1. Answer-first : contenu et structure"
+      },
+      "items": [
+        {
+          "de": "Jede Kernseite beantwortet eine konkrete Frage direkt im ersten Absatz (40-60 Wörter).",
+          "en": "Every core page answers a concrete question directly in the opening paragraph (40-60 words).",
+          "it": "Ogni pagina chiave risponde a una domanda concreta già nel primo paragrafo (40-60 parole).",
+          "fr": "Chaque page clé répond à une question concrète dès le premier paragraphe (40-60 mots)."
+        },
+        {
+          "de": "Überschriften (H2/H3) sind als echte Fragen oder klare Aussagen formuliert, nicht als Schlagwörter.",
+          "en": "Headings (H2/H3) are phrased as real questions or clear statements, not keyword fragments.",
+          "it": "I titoli (H2/H3) sono formulati come vere domande o affermazioni chiare, non come parole chiave.",
+          "fr": "Les titres (H2/H3) sont formulés comme de vraies questions ou affirmations claires, pas comme des mots-clés."
+        },
+        {
+          "de": "Kernaussagen stehen in kurzen, in sich geschlossenen Absätzen, die zitierbar sind.",
+          "en": "Key statements sit in short, self-contained paragraphs that can be quoted standalone.",
+          "it": "Le affermazioni chiave stanno in paragrafi brevi e autosufficienti, citabili singolarmente.",
+          "fr": "Les affirmations clés tiennent dans des paragraphes courts et autonomes, citables tels quels."
+        },
+        {
+          "de": "Listen, Tabellen und Definitionen fassen komplexe Punkte scanbar zusammen.",
+          "en": "Lists, tables and definitions summarise complex points in a scannable form.",
+          "it": "Elenchi, tabelle e definizioni riassumono i punti complessi in forma leggibile a colpo d'occhio.",
+          "fr": "Listes, tableaux et définitions résument les points complexes de façon lisible en un coup d'œil."
+        },
+        {
+          "de": "Fachbegriffe werden beim ersten Vorkommen kurz erklärt (kein ungeklärter Jargon).",
+          "en": "Technical terms are briefly defined on first use (no unexplained jargon).",
+          "it": "I termini tecnici sono spiegati brevemente alla prima occorrenza (niente gergo non chiarito).",
+          "fr": "Les termes techniques sont brièvement définis à la première occurrence (pas de jargon non expliqué)."
+        },
+        {
+          "de": "Eine FAQ-Sektion deckt die realen Folgefragen Ihrer Zielgruppe ab.",
+          "en": "An FAQ section covers the real follow-up questions your audience asks.",
+          "it": "Una sezione FAQ copre le reali domande successive del tuo pubblico.",
+          "fr": "Une section FAQ couvre les vraies questions complémentaires de votre audience."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "2. Strukturierte Daten & Schema",
+        "en": "2. Structured Data & Schema",
+        "it": "2. Dati strutturati e schema",
+        "fr": "2. Données structurées & schéma"
+      },
+      "items": [
+        {
+          "de": "Relevante Schema.org-Typen (Organization, Article, FAQPage, Product) sind als JSON-LD eingebunden.",
+          "en": "Relevant Schema.org types (Organization, Article, FAQPage, Product) are implemented as JSON-LD.",
+          "it": "I tipi Schema.org pertinenti (Organization, Article, FAQPage, Product) sono implementati in JSON-LD.",
+          "fr": "Les types Schema.org pertinents (Organization, Article, FAQPage, Product) sont implémentés en JSON-LD."
+        },
+        {
+          "de": "Das Markup wird mit dem Rich-Results-Test oder dem Schema-Validator geprüft (keine Fehler).",
+          "en": "The markup is validated with the Rich Results Test or Schema validator (no errors).",
+          "it": "Il markup è validato con il Rich Results Test o il validatore Schema (nessun errore).",
+          "fr": "Le balisage est validé avec le test des résultats enrichis ou le validateur Schema (sans erreur)."
+        },
+        {
+          "de": "Schema-Angaben stimmen mit dem sichtbaren Seiteninhalt überein (keine irreführenden Daten).",
+          "en": "Schema values match the visible page content (no misleading or hidden data).",
+          "it": "I valori dello schema corrispondono al contenuto visibile della pagina (nessun dato ingannevole).",
+          "fr": "Les valeurs du schéma correspondent au contenu visible de la page (aucune donnée trompeuse)."
+        },
+        {
+          "de": "Autor, Veröffentlichungs- und Aktualisierungsdatum sind strukturiert ausgezeichnet.",
+          "en": "Author, publish date and last-updated date are marked up in a structured way.",
+          "it": "Autore, data di pubblicazione e di aggiornamento sono contrassegnati in modo strutturato.",
+          "fr": "L'auteur, la date de publication et de mise à jour sont balisés de façon structurée."
+        },
+        {
+          "de": "Titel, Meta-Description und OpenGraph-Felder sind pro Seite eindeutig und beschreibend.",
+          "en": "Title, meta description and OpenGraph fields are unique and descriptive per page.",
+          "it": "Titolo, meta description e campi OpenGraph sono unici e descrittivi per ogni pagina.",
+          "fr": "Titre, méta-description et champs OpenGraph sont uniques et descriptifs pour chaque page."
+        },
+        {
+          "de": "Eine gepflegte XML-Sitemap listet alle relevanten Seiten mit aktuellen lastmod-Daten.",
+          "en": "A maintained XML sitemap lists all relevant pages with current lastmod dates.",
+          "it": "Una sitemap XML aggiornata elenca tutte le pagine rilevanti con date lastmod correnti.",
+          "fr": "Un sitemap XML à jour liste toutes les pages pertinentes avec des dates lastmod actuelles."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "3. Entitäten-Klarheit & Autorität (E-E-A-T)",
+        "en": "3. Entity Clarity & Authority (E-E-A-T)",
+        "it": "3. Chiarezza dell'entità e autorità (E-E-A-T)",
+        "fr": "3. Clarté de l'entité & autorité (E-E-A-T)"
+      },
+      "items": [
+        {
+          "de": "Ihre Organisation ist mit konsistentem Namen, Zweck und Standort klar als Entität erkennbar.",
+          "en": "Your organisation is clearly identifiable as an entity with consistent name, purpose and location.",
+          "it": "La tua organizzazione è chiaramente identificabile come entità con nome, scopo e sede coerenti.",
+          "fr": "Votre organisation est clairement identifiable comme entité avec un nom, un objet et un lieu cohérents."
+        },
+        {
+          "de": "Beiträge nennen einen echten Autor mit Kurzbio, Qualifikation und Profilseite.",
+          "en": "Content names a real author with a short bio, credentials and a profile page.",
+          "it": "I contenuti indicano un autore reale con breve bio, qualifiche e pagina profilo.",
+          "fr": "Le contenu mentionne un auteur réel avec une courte bio, des qualifications et une page profil."
+        },
+        {
+          "de": "Belege für Erfahrung sind sichtbar: Fallbeispiele, Zahlen aus eigener Praxis, Referenzen.",
+          "en": "Evidence of experience is visible: case examples, first-hand figures, references.",
+          "it": "Le prove di esperienza sono visibili: casi concreti, dati di prima mano, referenze.",
+          "fr": "Les preuves d'expérience sont visibles : cas concrets, chiffres de première main, références."
+        },
+        {
+          "de": "Name, Adresse und Kontaktdaten sind über Website, Impressum und externe Profile konsistent.",
+          "en": "Name, address and contact details are consistent across site, imprint and external profiles.",
+          "it": "Nome, indirizzo e contatti sono coerenti tra sito, note legali e profili esterni.",
+          "fr": "Nom, adresse et coordonnées sont cohérents entre le site, les mentions légales et les profils externes."
+        },
+        {
+          "de": "Die Marke wird von unabhängigen, glaubwürdigen Quellen erwähnt oder verlinkt.",
+          "en": "The brand is mentioned or linked by independent, credible third-party sources.",
+          "it": "Il brand è menzionato o linkato da fonti terze indipendenti e credibili.",
+          "fr": "La marque est mentionnée ou citée par des sources tierces indépendantes et crédibles."
+        },
+        {
+          "de": "Ein aktuelles Impressum und eine Datenschutzerklärung (revDSG/nFADP-konform) sind verlinkt.",
+          "en": "A current legal notice and a privacy policy (aligned with revFADP/nFADP) are linked.",
+          "it": "Note legali aggiornate e un'informativa privacy (in linea con revFADP/nFADP) sono collegate.",
+          "fr": "Des mentions légales à jour et une politique de confidentialité (conforme à la nLPD/nFADP) sont liées."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "4. Technischer Zugang für KI-Crawler",
+        "en": "4. Technical Access for AI Crawlers",
+        "it": "4. Accesso tecnico per i crawler IA",
+        "fr": "4. Accès technique pour les crawlers IA"
+      },
+      "items": [
+        {
+          "de": "robots.txt erlaubt (oder blockiert bewusst) KI-Crawler wie GPTBot, PerplexityBot, Google-Extended, ClaudeBot.",
+          "en": "robots.txt intentionally allows (or blocks) AI crawlers such as GPTBot, PerplexityBot, Google-Extended, ClaudeBot.",
+          "it": "Il robots.txt consente (o blocca) intenzionalmente crawler IA come GPTBot, PerplexityBot, Google-Extended, ClaudeBot.",
+          "fr": "Le robots.txt autorise (ou bloque) délibérément les crawlers IA comme GPTBot, PerplexityBot, Google-Extended, ClaudeBot."
+        },
+        {
+          "de": "Die Entscheidung, KI-Crawler zuzulassen oder auszuschliessen, ist bewusst getroffen und dokumentiert.",
+          "en": "The decision to allow or exclude AI crawlers is made deliberately and documented.",
+          "it": "La decisione di consentire o escludere i crawler IA è presa consapevolmente e documentata.",
+          "fr": "La décision d'autoriser ou d'exclure les crawlers IA est prise délibérément et documentée."
+        },
+        {
+          "de": "Kerninhalte sind serverseitig als Text verfügbar (nicht nur per JavaScript nachgeladen).",
+          "en": "Core content is available as server-rendered text (not only loaded via JavaScript).",
+          "it": "I contenuti principali sono disponibili come testo lato server (non solo caricati via JavaScript).",
+          "fr": "Le contenu principal est disponible en texte rendu côté serveur (pas uniquement chargé via JavaScript)."
+        },
+        {
+          "de": "Eine optionale llms.txt weist auf Ihre wichtigsten Inhalte hin; ihre Wirkung wird noch nicht breit unterstützt.",
+          "en": "An optional llms.txt points to your key content; note its adoption is not yet widely supported.",
+          "it": "Un file llms.txt opzionale segnala i contenuti chiave; nota che l'adozione non è ancora ampiamente supportata.",
+          "fr": "Un fichier llms.txt optionnel indique vos contenus clés ; son adoption n'est pas encore largement prise en charge."
+        },
+        {
+          "de": "Seiten laden schnell, sind mobil nutzbar und liefern korrekte HTTP-Statuscodes.",
+          "en": "Pages load fast, are mobile-friendly and return correct HTTP status codes.",
+          "it": "Le pagine si caricano velocemente, sono mobile-friendly e restituiscono codici di stato HTTP corretti.",
+          "fr": "Les pages se chargent vite, sont adaptées au mobile et renvoient des codes de statut HTTP corrects."
+        },
+        {
+          "de": "Canonical-Tags und saubere Weiterleitungen verhindern doppelte oder verwaiste URLs.",
+          "en": "Canonical tags and clean redirects prevent duplicate or orphaned URLs.",
+          "it": "Tag canonical e redirect puliti evitano URL duplicati o orfani.",
+          "fr": "Les balises canoniques et des redirections propres évitent les URL dupliquées ou orphelines."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "5. Aktualität, Quellen & Nachweis",
+        "en": "5. Freshness, Sourcing & Evidence",
+        "it": "5. Aggiornamento, fonti e prove",
+        "fr": "5. Fraîcheur, sources & preuves"
+      },
+      "items": [
+        {
+          "de": "Wichtige Seiten zeigen ein sichtbares Datum der letzten Überprüfung oder Aktualisierung.",
+          "en": "Important pages show a visible last-reviewed or last-updated date.",
+          "it": "Le pagine importanti mostrano una data visibile di ultima revisione o aggiornamento.",
+          "fr": "Les pages importantes affichent une date visible de dernière révision ou mise à jour."
+        },
+        {
+          "de": "Zahlen, Daten und Behauptungen sind mit einer nachprüfbaren Primärquelle verlinkt.",
+          "en": "Figures, dates and claims are linked to a verifiable primary source.",
+          "it": "Numeri, date e affermazioni sono collegati a una fonte primaria verificabile.",
+          "fr": "Chiffres, dates et affirmations renvoient à une source primaire vérifiable."
+        },
+        {
+          "de": "Veraltete Inhalte werden regelmässig überprüft und aktualisiert oder klar als historisch markiert.",
+          "en": "Outdated content is reviewed on a schedule and updated or clearly marked as historical.",
+          "it": "I contenuti obsoleti sono revisionati con regolarità e aggiornati o chiaramente marcati come storici.",
+          "fr": "Le contenu obsolète est revu régulièrement et mis à jour ou clairement marqué comme historique."
+        },
+        {
+          "de": "Aussagen zu Recht, Gesundheit oder Finanzen verweisen auf Fachpersonen und aktuelle Rechtsstände.",
+          "en": "Legal, health or financial statements point to professionals and current legal positions.",
+          "it": "Le affermazioni legali, sanitarie o finanziarie rimandano a professionisti e alla normativa vigente.",
+          "fr": "Les affirmations juridiques, de santé ou financières renvoient à des professionnels et au droit en vigueur."
+        },
+        {
+          "de": "Der genannte Rechtsrahmen ist korrekt (Schweiz: revDSG/nFADP, EDOEB; EU: EU AI Act, DSGVO).",
+          "en": "Any legal framework cited is accurate (Switzerland: revFADP/nFADP, FDPIC; EU: EU AI Act, GDPR).",
+          "it": "Il quadro giuridico citato è corretto (Svizzera: revFADP/nFADP, IFPDT; UE: EU AI Act, GDPR).",
+          "fr": "Tout cadre juridique cité est exact (Suisse : nLPD/nFADP, PFPDT ; UE : EU AI Act, RGPD)."
+        },
+        {
+          "de": "Sie beobachten stichprobenartig, ob und wie KI-Antwortmaschinen Ihre Inhalte zitieren.",
+          "en": "You spot-check whether and how AI answer engines cite your content.",
+          "it": "Verifichi a campione se e come i motori di risposta IA citano i tuoi contenuti.",
+          "fr": "Vous vérifiez par sondage si et comment les moteurs de réponse IA citent votre contenu."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist GEO und worin unterscheidet es sich von SEO?",
+        "en": "What is GEO and how does it differ from SEO?",
+        "it": "Che cos'è la GEO e in cosa si differenzia dalla SEO?",
+        "fr": "Qu'est-ce que le GEO et en quoi diffère-t-il du SEO ?"
+      },
+      "a": {
+        "de": "GEO (Generative Engine Optimization) optimiert Inhalte dafür, von KI-Antwortmaschinen wie ChatGPT, Perplexity oder Google AI Overviews verstanden und zitiert zu werden. SEO zielt auf klassische Suchrankings; GEO zielt darauf, Teil der generierten Antwort zu sein. Beide bauen auf denselben Grundlagen auf, deshalb ergänzt GEO Ihr SEO, statt es zu ersetzen.",
+        "en": "GEO (Generative Engine Optimization) optimises content to be understood and cited by AI answer engines such as ChatGPT, Perplexity or Google AI Overviews. SEO targets classic search rankings; GEO aims to be part of the generated answer. Both rest on the same foundations, so GEO complements your SEO rather than replacing it.",
+        "it": "La GEO (Generative Engine Optimization) ottimizza i contenuti per essere compresi e citati dai motori di risposta IA come ChatGPT, Perplexity o Google AI Overviews. La SEO punta ai ranking di ricerca classici; la GEO mira a far parte della risposta generata. Poggiano sulle stesse basi, quindi la GEO integra la SEO invece di sostituirla.",
+        "fr": "Le GEO (Generative Engine Optimization) optimise le contenu pour être compris et cité par les moteurs de réponse IA comme ChatGPT, Perplexity ou Google AI Overviews. Le SEO vise les classements de recherche classiques ; le GEO vise à faire partie de la réponse générée. Les deux reposent sur les mêmes bases, donc le GEO complète votre SEO au lieu de le remplacer."
+      }
+    },
+    {
+      "q": {
+        "de": "Sollte ich KI-Crawler in der robots.txt zulassen oder blockieren?",
+        "en": "Should I allow or block AI crawlers in robots.txt?",
+        "it": "Dovrei consentire o bloccare i crawler IA nel robots.txt?",
+        "fr": "Dois-je autoriser ou bloquer les crawlers IA dans le robots.txt ?"
+      },
+      "a": {
+        "de": "Das hängt von Ihrem Ziel ab: Wollen Sie in KI-Antworten sichtbar sein, müssen die entsprechenden Crawler zugreifen dürfen. Wollen Sie Ihre Inhalte nicht als Trainings- oder Antwortmaterial hergeben, können Sie sie ausschliessen. Treffen Sie die Entscheidung bewusst, dokumentieren Sie sie, und beachten Sie, dass sich robots.txt-Direktiven nicht immer erzwingen lassen.",
+        "en": "It depends on your goal: to be visible in AI answers, the relevant crawlers need access. If you do not want your content used as training or answer material, you can exclude them. Make the choice deliberately, document it, and note that robots.txt directives cannot always be enforced.",
+        "it": "Dipende dal tuo obiettivo: per essere visibile nelle risposte IA, i crawler pertinenti devono poter accedere. Se non vuoi che i tuoi contenuti siano usati come materiale di addestramento o risposta, puoi escluderli. Decidi consapevolmente, documenta la scelta e ricorda che le direttive robots.txt non sono sempre applicabili.",
+        "fr": "Cela dépend de votre objectif : pour être visible dans les réponses IA, les crawlers concernés doivent pouvoir accéder au site. Si vous ne voulez pas que votre contenu serve de matériel d'entraînement ou de réponse, vous pouvez les exclure. Décidez délibérément, documentez le choix, et notez que les directives robots.txt ne sont pas toujours applicables."
+      }
+    },
+    {
+      "q": {
+        "de": "Braucht meine Website eine llms.txt-Datei?",
+        "en": "Does my website need an llms.txt file?",
+        "it": "Il mio sito ha bisogno di un file llms.txt?",
+        "fr": "Mon site a-t-il besoin d'un fichier llms.txt ?"
+      },
+      "a": {
+        "de": "llms.txt ist ein vorgeschlagener Standard, der KI-Systemen die wichtigsten Inhalte einer Website bündelt. Er ist optional und wird noch nicht breit unterstützt, kann aber schaden nicht und gehört zu einem vollständigen GEO-Setup. Priorisieren Sie zuerst saubere Struktur, Schema und Zugänglichkeit; llms.txt ist eine Ergänzung, kein Ersatz dafür.",
+        "en": "llms.txt is a proposed standard that bundles a site's most important content for AI systems. It is optional and not yet widely supported, but it does no harm and fits a complete GEO setup. Prioritise clean structure, schema and accessibility first; llms.txt is an add-on, not a substitute for those.",
+        "it": "llms.txt è uno standard proposto che raccoglie i contenuti più importanti di un sito per i sistemi IA. È opzionale e non ancora ampiamente supportato, ma non fa danni e completa un setup GEO. Dai priorità prima a struttura pulita, schema e accessibilità; llms.txt è un'aggiunta, non un sostituto.",
+        "fr": "llms.txt est une norme proposée qui regroupe les contenus les plus importants d'un site pour les systèmes IA. Il est optionnel et pas encore largement pris en charge, mais il ne nuit pas et complète une configuration GEO. Priorisez d'abord une structure propre, le schéma et l'accessibilité ; llms.txt est un complément, pas un substitut."
+      }
+    },
+    {
+      "q": {
+        "de": "Ersetzt diese Checkliste eine rechtliche Prüfung meiner Website?",
+        "en": "Does this checklist replace a legal review of my website?",
+        "it": "Questa checklist sostituisce una verifica legale del mio sito?",
+        "fr": "Cette checklist remplace-t-elle un examen juridique de mon site ?"
+      },
+      "a": {
+        "de": "Nein. Diese Checkliste bietet praktische Orientierung zur KI-Sichtbarkeit, keine Rechtsberatung, und das Abhaken der Punkte garantiert keine Konformität. Für Datenschutz, Impressum und KI-relevante Pflichten (Schweiz: revDSG/nFADP, EDOEB; EU: EU AI Act) lassen Sie Ihre Website durch qualifizierte Fachpersonen prüfen.",
+        "en": "No. This checklist offers practical guidance on AI visibility, not legal advice, and ticking the items does not guarantee compliance. For data protection, legal notice and AI-relevant duties (Switzerland: revFADP/nFADP, FDPIC; EU: EU AI Act), have your website reviewed by qualified professionals.",
+        "it": "No. Questa checklist offre orientamento pratico sulla visibilità IA, non consulenza legale, e spuntare le voci non garantisce la conformità. Per protezione dei dati, note legali e obblighi rilevanti per l'IA (Svizzera: revFADP/nFADP, IFPDT; UE: EU AI Act), fai esaminare il sito da professionisti qualificati.",
+        "fr": "Non. Cette checklist offre des repères pratiques sur la visibilité IA, pas un conseil juridique, et cocher les points ne garantit pas la conformité. Pour la protection des données, les mentions légales et les obligations liées à l'IA (Suisse : nLPD/nFADP, PFPDT ; UE : EU AI Act), faites examiner votre site par des professionnels qualifiés."
+      }
+    }
+  ]
+}

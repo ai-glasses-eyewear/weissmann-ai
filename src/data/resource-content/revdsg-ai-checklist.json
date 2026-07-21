@@ -1,0 +1,323 @@
+{
+  "id": "revdsg-ai-checklist",
+  "title": {
+    "de": "revDSG & EU AI Act: KI-Compliance-Checkliste | Weissmann AI",
+    "en": "nFADP & EU AI Act: AI Compliance Checklist | Weissmann AI",
+    "it": "nLPD ed EU AI Act: checklist conformità IA | Weissmann AI",
+    "fr": "nLPD et EU AI Act : checklist conformité IA | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Praktische Checkliste für den KI-Einsatz in Schweizer Unternehmen: Rechtsgrundlage, Datenschutz nach revDSG, EU-AI-Act-Transparenz, Sicherheit und Dokumentation.",
+    "en": "Practical checklist for using AI in Swiss businesses: lawful basis, nFADP data protection, EU AI Act transparency, security and documentation.",
+    "it": "Checklist pratica per usare l'IA nelle aziende svizzere: base giuridica, protezione dati nLPD, trasparenza EU AI Act, sicurezza e documentazione.",
+    "fr": "Checklist pratique pour l'IA en entreprise suisse : base légale, protection des données nLPD, transparence EU AI Act, sécurité et documentation."
+  },
+  "kicker": {
+    "de": "Compliance-Checkliste",
+    "en": "Compliance checklist",
+    "it": "Checklist di conformità",
+    "fr": "Checklist de conformité"
+  },
+  "h1": {
+    "de": "KI im Unternehmen: revDSG- & EU-AI-Act-Checkliste",
+    "en": "AI in Business: nFADP & EU AI Act Checklist",
+    "it": "IA in azienda: checklist nLPD ed EU AI Act",
+    "fr": "IA en entreprise : checklist nLPD et EU AI Act"
+  },
+  "intro": {
+    "de": "Diese Checkliste hilft Ihnen, den Einsatz von KI in Ihrem Schweizer Unternehmen entlang von revDSG (nFADP) und EU AI Act strukturiert zu prüfen. Arbeiten Sie die Punkte pro KI-Anwendung durch und dokumentieren Sie Ihre Entscheide. Sie ist ein Bildungswerkzeug und ersetzt keine Rechtsberatung – ziehen Sie bei Unsicherheiten Fachpersonen bei.",
+    "en": "This checklist helps you review the use of AI in your Swiss business against the revised FADP (nFADP) and the EU AI Act in a structured way. Work through the points for each AI use case and document your decisions. It is an educational tool and does not replace legal advice – consult professionals when in doubt.",
+    "it": "Questa checklist ti aiuta a valutare in modo strutturato l'uso dell'IA nella tua azienda svizzera rispetto alla nLPD e all'EU AI Act. Applica i punti a ogni caso d'uso dell'IA e documenta le tue decisioni. È uno strumento formativo e non sostituisce la consulenza legale: in caso di dubbi rivolgiti a professionisti.",
+    "fr": "Cette checklist vous aide à évaluer de manière structurée l'usage de l'IA dans votre entreprise suisse au regard de la nLPD et de l'EU AI Act. Passez en revue chaque cas d'usage de l'IA et documentez vos décisions. C'est un outil pédagogique qui ne remplace pas un conseil juridique : consultez des professionnels en cas de doute."
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "1. Rechtsgrundlage & Transparenz",
+        "en": "1. Lawful basis & transparency",
+        "it": "1. Base giuridica e trasparenza",
+        "fr": "1. Base légale et transparence"
+      },
+      "items": [
+        {
+          "de": "Zweck jeder KI-Anwendung schriftlich festhalten",
+          "en": "Document the purpose of each AI use case in writing",
+          "it": "Documenta per iscritto la finalità di ogni caso d'uso dell'IA",
+          "fr": "Documenter par écrit la finalité de chaque cas d'usage de l'IA"
+        },
+        {
+          "de": "Rechtsgrundlage der Datenbearbeitung klären (z. B. Vertrag, Einwilligung, überwiegendes Interesse)",
+          "en": "Clarify the lawful basis for processing (e.g. contract, consent, overriding interest)",
+          "it": "Chiarisci la base giuridica del trattamento (es. contratto, consenso, interesse preponderante)",
+          "fr": "Clarifier la base légale du traitement (p. ex. contrat, consentement, intérêt prépondérant)"
+        },
+        {
+          "de": "Datenschutzerklärung um die KI-Nutzung ergänzen (verständlich und aktuell)",
+          "en": "Update the privacy notice to cover AI use (clear and current)",
+          "it": "Aggiorna l'informativa privacy includendo l'uso dell'IA (chiara e aggiornata)",
+          "fr": "Compléter la déclaration de protection des données sur l'usage de l'IA (claire et à jour)"
+        },
+        {
+          "de": "Betroffene über Bearbeitungszweck und -umfang informieren (Art. 19 revDSG)",
+          "en": "Inform data subjects about the purpose and scope of processing (Art. 19 nFADP)",
+          "it": "Informa gli interessati su finalità e portata del trattamento (art. 19 nLPD)",
+          "fr": "Informer les personnes concernées de la finalité et de l'étendue du traitement (art. 19 nLPD)"
+        },
+        {
+          "de": "Datenminimierung prüfen: nur wirklich nötige Daten in KI-Tools einspeisen",
+          "en": "Apply data minimisation: feed only the data that is truly necessary into AI tools",
+          "it": "Applica la minimizzazione dei dati: inserisci nell'IA solo i dati davvero necessari",
+          "fr": "Appliquer la minimisation des données : ne fournir aux outils d'IA que les données réellement nécessaires"
+        },
+        {
+          "de": "Bearbeitungsverzeichnis um die KI-Anwendungen erweitern",
+          "en": "Add the AI use cases to your record of processing activities",
+          "it": "Aggiungi i casi d'uso dell'IA al registro delle attività di trattamento",
+          "fr": "Ajouter les cas d'usage de l'IA au registre des activités de traitement"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "2. Personen- & besonders schützenswerte Daten",
+        "en": "2. Personal & sensitive data handling",
+        "it": "2. Dati personali e degni di particolare protezione",
+        "fr": "2. Données personnelles et sensibles"
+      },
+      "items": [
+        {
+          "de": "Besonders schützenswerte Daten identifizieren (z. B. Gesundheit, Religion, Biometrie)",
+          "en": "Identify sensitive personal data (e.g. health, religion, biometrics)",
+          "it": "Individua i dati degni di particolare protezione (es. salute, religione, biometria)",
+          "fr": "Identifier les données sensibles (p. ex. santé, religion, biométrie)"
+        },
+        {
+          "de": "Prüfen, ob Prompts oder Uploads Personendaten Dritter enthalten",
+          "en": "Check whether prompts or uploads contain personal data of third parties",
+          "it": "Verifica se prompt o caricamenti contengono dati personali di terzi",
+          "fr": "Vérifier si les prompts ou fichiers importés contiennent des données de tiers"
+        },
+        {
+          "de": "Auftragsbearbeitungsvertrag (AVV) mit KI-Anbietern abschliessen",
+          "en": "Put a data processing agreement (DPA) in place with AI providers",
+          "it": "Stipula un contratto di responsabile del trattamento con i fornitori di IA",
+          "fr": "Conclure un contrat de sous-traitance avec les fournisseurs d'IA"
+        },
+        {
+          "de": "Datenstandort und Bekanntgabe ins Ausland klären (angemessenes Schutzniveau)",
+          "en": "Clarify data location and any transfer abroad (adequate level of protection)",
+          "it": "Chiarisci l'ubicazione dei dati e l'eventuale trasferimento all'estero (livello di protezione adeguato)",
+          "fr": "Clarifier la localisation des données et tout transfert à l'étranger (niveau de protection adéquat)"
+        },
+        {
+          "de": "Aufbewahrungs- und Löschfristen für KI-Ein- und -Ausgaben definieren",
+          "en": "Define retention and deletion periods for AI inputs and outputs",
+          "it": "Definisci periodi di conservazione e cancellazione per input e output dell'IA",
+          "fr": "Définir des durées de conservation et de suppression pour les entrées et sorties de l'IA"
+        },
+        {
+          "de": "Keine besonders schützenswerten Daten ohne geeignete Rechtsgrundlage einspeisen",
+          "en": "Do not feed in sensitive personal data without an appropriate lawful basis",
+          "it": "Non inserire dati degni di particolare protezione senza una base giuridica adeguata",
+          "fr": "Ne pas saisir de données sensibles sans base légale appropriée"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "3. KI-Transparenz & Offenlegung (EU AI Act Art. 50)",
+        "en": "3. AI transparency & disclosure (EU AI Act Art. 50)",
+        "it": "3. Trasparenza e informativa sull'IA (EU AI Act art. 50)",
+        "fr": "3. Transparence et information sur l'IA (EU AI Act art. 50)"
+      },
+      "items": [
+        {
+          "de": "Kennzeichnen, wenn Nutzer direkt mit einer KI interagieren (z. B. Chatbot)",
+          "en": "Disclose when users interact directly with an AI (e.g. a chatbot)",
+          "it": "Segnala quando gli utenti interagiscono direttamente con un'IA (es. chatbot)",
+          "fr": "Signaler lorsque les utilisateurs interagissent directement avec une IA (p. ex. chatbot)"
+        },
+        {
+          "de": "KI-generierte oder -bearbeitete Inhalte als solche markieren (wo möglich maschinenlesbar)",
+          "en": "Mark AI-generated or AI-edited content as such (machine-readable where feasible)",
+          "it": "Contrassegna i contenuti generati o modificati dall'IA (leggibili dalle macchine ove possibile)",
+          "fr": "Marquer les contenus générés ou modifiés par l'IA (lisibles par machine si possible)"
+        },
+        {
+          "de": "Synthetische Medien und Deepfakes klar offenlegen",
+          "en": "Clearly disclose synthetic media and deepfakes",
+          "it": "Segnala chiaramente contenuti sintetici e deepfake",
+          "fr": "Divulguer clairement les médias synthétiques et les deepfakes"
+        },
+        {
+          "de": "Prüfen, ob der EU AI Act für Ihr Angebot gilt (EU-Nutzer, Marktzugang)",
+          "en": "Check whether the EU AI Act applies to your offering (EU users, market access)",
+          "it": "Verifica se l'EU AI Act si applica alla tua offerta (utenti UE, accesso al mercato)",
+          "fr": "Vérifier si l'EU AI Act s'applique à votre offre (utilisateurs UE, accès au marché)"
+        },
+        {
+          "de": "Risikoklasse der KI-Anwendung grob einordnen",
+          "en": "Roughly classify the risk category of the AI use case",
+          "it": "Classifica in modo indicativo la categoria di rischio del caso d'uso",
+          "fr": "Situer approximativement la catégorie de risque du cas d'usage"
+        },
+        {
+          "de": "Verbotene Praktiken (z. B. manipulatives Verhalten) ausschliessen",
+          "en": "Rule out prohibited practices (e.g. manipulative behaviour)",
+          "it": "Escludi le pratiche vietate (es. comportamenti manipolativi)",
+          "fr": "Exclure les pratiques interdites (p. ex. comportements manipulateurs)"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "4. Sicherheit & Meldeprozess",
+        "en": "4. Security & breach process",
+        "it": "4. Sicurezza e processo di notifica",
+        "fr": "4. Sécurité et processus de notification"
+      },
+      "items": [
+        {
+          "de": "Zugriff auf KI-Tools rollenbasiert einschränken",
+          "en": "Restrict access to AI tools on a role-based basis",
+          "it": "Limita l'accesso agli strumenti di IA in base ai ruoli",
+          "fr": "Restreindre l'accès aux outils d'IA selon les rôles"
+        },
+        {
+          "de": "Angemessene technische und organisatorische Massnahmen dokumentieren",
+          "en": "Document appropriate technical and organisational measures",
+          "it": "Documenta misure tecniche e organizzative adeguate",
+          "fr": "Documenter des mesures techniques et organisationnelles appropriées"
+        },
+        {
+          "de": "Meldeprozess für Datensicherheitsverletzungen festlegen (Meldung an EDÖB so rasch als möglich)",
+          "en": "Establish a breach-reporting process (notify the FDPIC as soon as possible)",
+          "it": "Definisci un processo di notifica delle violazioni (comunicazione all'IFPDT il prima possibile)",
+          "fr": "Définir un processus de notification des violations (annonce au PFPDT dans les meilleurs délais)"
+        },
+        {
+          "de": "Verantwortliche Person und internen Meldeweg benennen",
+          "en": "Name a responsible person and an internal reporting channel",
+          "it": "Nomina una persona responsabile e un canale interno di segnalazione",
+          "fr": "Désigner une personne responsable et un canal de signalement interne"
+        },
+        {
+          "de": "Mitarbeitende zum sicheren KI-Einsatz schulen",
+          "en": "Train staff on the safe use of AI",
+          "it": "Forma il personale sull'uso sicuro dell'IA",
+          "fr": "Former le personnel à un usage sûr de l'IA"
+        },
+        {
+          "de": "Umgang mit Fehlern und Halluzinationen sowie menschliche Kontrolle regeln",
+          "en": "Define how to handle errors and hallucinations, and ensure human oversight",
+          "it": "Regola la gestione di errori e allucinazioni e la supervisione umana",
+          "fr": "Encadrer la gestion des erreurs et hallucinations et la supervision humaine"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "5. Dokumentation & Verantwortlichkeiten",
+        "en": "5. Documentation & responsibilities",
+        "it": "5. Documentazione e responsabilità",
+        "fr": "5. Documentation et responsabilités"
+      },
+      "items": [
+        {
+          "de": "Verantwortlichkeiten für die KI-Governance festlegen",
+          "en": "Define responsibilities for AI governance",
+          "it": "Definisci le responsabilità per la governance dell'IA",
+          "fr": "Définir les responsabilités de la gouvernance de l'IA"
+        },
+        {
+          "de": "Prüfen, ob eine Datenschutz-Folgenabschätzung (DSFA) nötig ist (Art. 22 revDSG)",
+          "en": "Check whether a data protection impact assessment (DPIA) is required (Art. 22 nFADP)",
+          "it": "Verifica se serve una valutazione d'impatto sulla protezione dei dati (art. 22 nLPD)",
+          "fr": "Vérifier si une analyse d'impact (AIPD) est nécessaire (art. 22 nLPD)"
+        },
+        {
+          "de": "Verträge, Entscheide und Prüfungen zentral ablegen",
+          "en": "Store contracts, decisions and assessments in a central place",
+          "it": "Archivia contratti, decisioni e valutazioni in un luogo centrale",
+          "fr": "Centraliser contrats, décisions et évaluations"
+        },
+        {
+          "de": "Regelmässige Überprüfung und Aktualisierung terminieren",
+          "en": "Schedule regular review and updates",
+          "it": "Pianifica revisioni e aggiornamenti periodici",
+          "fr": "Planifier des revues et mises à jour régulières"
+        },
+        {
+          "de": "Anbieter-Dokumentation (Sicherheit, Trainingsdaten) einholen und archivieren",
+          "en": "Obtain and archive provider documentation (security, training data)",
+          "it": "Richiedi e archivia la documentazione del fornitore (sicurezza, dati di addestramento)",
+          "fr": "Obtenir et archiver la documentation du fournisseur (sécurité, données d'entraînement)"
+        },
+        {
+          "de": "Rechtliche Prüfung durch eine Fachperson vor dem produktiven Einsatz einplanen",
+          "en": "Plan a legal review by a professional before going into production",
+          "it": "Prevedi una revisione legale da parte di un professionista prima dell'uso in produzione",
+          "fr": "Prévoir une revue juridique par un professionnel avant la mise en production"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ist die DSGVO für mein Schweizer Unternehmen relevant?",
+        "en": "Does the GDPR apply to my Swiss business?",
+        "it": "Il GDPR riguarda la mia azienda svizzera?",
+        "fr": "Le RGPD concerne-t-il mon entreprise suisse ?"
+      },
+      "a": {
+        "de": "Für Bearbeitungen in der Schweiz gilt das revDSG (nFADP). Die EU-DSGVO kann zusätzlich greifen, wenn Sie Personen in der EU Waren oder Dienstleistungen anbieten oder deren Verhalten beobachten. Klären Sie den Geltungsbereich mit einer Fachperson.",
+        "en": "Processing in Switzerland is governed by the revised FADP (nFADP). The EU GDPR may apply on top if you offer goods or services to people in the EU or monitor their behaviour. Clarify the scope with a professional.",
+        "it": "I trattamenti in Svizzera sono regolati dalla nLPD. Il GDPR dell'UE può applicarsi in aggiunta se offri beni o servizi a persone nell'UE o ne monitori il comportamento. Chiarisci l'ambito con un professionista.",
+        "fr": "Les traitements en Suisse relèvent de la nLPD. Le RGPD de l'UE peut s'appliquer en plus si vous proposez des biens ou services à des personnes dans l'UE ou surveillez leur comportement. Clarifiez le champ d'application avec un professionnel."
+      }
+    },
+    {
+      "q": {
+        "de": "Gilt der EU AI Act auch für Schweizer Firmen?",
+        "en": "Does the EU AI Act also apply to Swiss companies?",
+        "it": "L'EU AI Act si applica anche alle aziende svizzere?",
+        "fr": "L'EU AI Act s'applique-t-il aussi aux entreprises suisses ?"
+      },
+      "a": {
+        "de": "Er kann gelten, wenn Ihre KI-Systeme in der EU genutzt werden oder deren Ergebnisse dort verwendet werden. Prüfen Sie Marktzugang und Nutzerkreis; klären Sie den Geltungsbereich im Zweifel rechtlich ab.",
+        "en": "It can apply if your AI systems are used in the EU or their outputs are used there. Review your market access and user base; when in doubt, clarify the scope legally.",
+        "it": "Può applicarsi se i tuoi sistemi di IA sono usati nell'UE o i loro risultati vi sono utilizzati. Valuta accesso al mercato e utenti; in caso di dubbio, chiarisci l'ambito a livello legale.",
+        "fr": "Il peut s'appliquer si vos systèmes d'IA sont utilisés dans l'UE ou si leurs résultats y sont exploités. Examinez l'accès au marché et vos utilisateurs ; en cas de doute, clarifiez le champ d'application sur le plan juridique."
+      }
+    },
+    {
+      "q": {
+        "de": "Garantiert diese Checkliste die Compliance?",
+        "en": "Does this checklist guarantee compliance?",
+        "it": "Questa checklist garantisce la conformità?",
+        "fr": "Cette checklist garantit-elle la conformité ?"
+      },
+      "a": {
+        "de": "Nein. Sie ist ein Bildungs- und Orientierungswerkzeug und ersetzt keine Rechtsberatung. Ihre konkrete Situation braucht eine individuelle Beurteilung durch qualifizierte Fachpersonen.",
+        "en": "No. It is an educational and orientation tool and does not replace legal advice. Your specific situation needs an individual assessment by qualified professionals.",
+        "it": "No. È uno strumento formativo e di orientamento e non sostituisce la consulenza legale. La tua situazione specifica richiede una valutazione individuale da parte di professionisti qualificati.",
+        "fr": "Non. C'est un outil pédagogique et d'orientation qui ne remplace pas un conseil juridique. Votre situation précise nécessite une évaluation individuelle par des professionnels qualifiés."
+      }
+    },
+    {
+      "q": {
+        "de": "Muss ich KI-generierte Inhalte immer kennzeichnen?",
+        "en": "Do I always have to label AI-generated content?",
+        "it": "Devo sempre etichettare i contenuti generati dall'IA?",
+        "fr": "Dois-je toujours signaler les contenus générés par l'IA ?"
+      },
+      "a": {
+        "de": "Der EU AI Act (Art. 50) verlangt Transparenz etwa bei Chatbots und synthetischen Medien. Auch ohne EU-Bezug schafft eine Kennzeichnung Vertrauen. Prüfen Sie die für Sie konkret geltenden Pflichten.",
+        "en": "The EU AI Act (Art. 50) requires transparency for things like chatbots and synthetic media. Even without an EU nexus, labelling builds trust. Check which obligations actually apply to you.",
+        "it": "L'EU AI Act (art. 50) richiede trasparenza ad esempio per chatbot e contenuti sintetici. Anche senza collegamento con l'UE, l'etichettatura crea fiducia. Verifica gli obblighi che ti riguardano concretamente.",
+        "fr": "L'EU AI Act (art. 50) exige de la transparence, par exemple pour les chatbots et les médias synthétiques. Même sans lien avec l'UE, le signalement renforce la confiance. Vérifiez les obligations qui vous concernent réellement."
+      }
+    }
+  ]
+}
