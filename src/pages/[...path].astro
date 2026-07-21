@@ -14,10 +14,13 @@ import { liveServices, servicePaths, type ServiceDef } from '../data/services';
 import { getServiceContent, type ServiceContent } from '../data/service-content';
 import { liveIndustries, industryPaths, type IndustryDef } from '../data/industries';
 import { getIndustryContent, type IndustryContent } from '../data/industry-content';
+import { liveClusters, clusterPaths, pillarOf, spokesOf, articlePaths, type AcademyArticle, type AcademyCluster } from '../data/academy';
 import ServicesHubPage from '../components/pages/ServicesHubPage.astro';
 import ServicePage from '../components/pages/ServicePage.astro';
 import IndustriesHubPage from '../components/pages/IndustriesHubPage.astro';
 import IndustryPage from '../components/pages/IndustryPage.astro';
+import AcademyHubPage from '../components/pages/AcademyHubPage.astro';
+import AcademyArticlePage from '../components/pages/AcademyArticlePage.astro';
 
 export function getStaticPaths() {
   const out: Array<{ params: { path: string }; props: Record<string, unknown> }> = [];
@@ -66,6 +69,38 @@ export function getStaticPaths() {
     }
   }
 
+  // AI Academy hub (/ki-academy/, /en/ai-academy/, /it/ai-academy/, /fr/academie-ia/)
+  const academyHub = pillarHome('academy');
+  for (const l of LOCALES) {
+    out.push({
+      params: { path: routeParam(l, academyHub) },
+      props: { type: 'academy-hub', locale: l, localePaths: academyHub },
+    });
+  }
+
+  // Academy cluster pillars (at the cluster path) + spokes (nested), live clusters only
+  for (const cl of liveClusters()) {
+    const pillar = pillarOf(cl.id);
+    if (pillar) {
+      const cp = clusterPaths(cl);
+      for (const l of LOCALES) {
+        out.push({
+          params: { path: routeParam(l, cp) },
+          props: { type: 'academy-article', locale: l, localePaths: cp, article: pillar, cluster: cl },
+        });
+      }
+    }
+    for (const sp of spokesOf(cl.id)) {
+      const ap = articlePaths(sp);
+      for (const l of LOCALES) {
+        out.push({
+          params: { path: routeParam(l, ap) },
+          props: { type: 'academy-article', locale: l, localePaths: ap, article: sp, cluster: cl },
+        });
+      }
+    }
+  }
+
   return out;
 }
 
@@ -76,9 +111,10 @@ const props = Astro.props as {
   service?: ServiceDef;
   content?: ServiceContent;
   industry?: IndustryDef;
-  industryContent?: IndustryContent;
+  article?: AcademyArticle;
+  cluster?: AcademyCluster;
 };
-const { type, locale, localePaths, service, content, industry } = props;
+const { type, locale, localePaths, service, content, industry, article, cluster } = props;
 const industryContent = props.content as unknown as IndustryContent | undefined;
 ---
 {type === 'services-hub' && <ServicesHubPage locale={locale} localePaths={localePaths} />}
@@ -88,4 +124,8 @@ const industryContent = props.content as unknown as IndustryContent | undefined;
 {type === 'industries-hub' && <IndustriesHubPage locale={locale} localePaths={localePaths} />}
 {type === 'industry' && industry && industryContent && (
   <IndustryPage locale={locale} localePaths={localePaths} industry={industry} content={industryContent} />
+)}
+{type === 'academy-hub' && <AcademyHubPage locale={locale} localePaths={localePaths} />}
+{type === 'academy-article' && article && cluster && (
+  <AcademyArticlePage locale={locale} localePaths={localePaths} article={article} cluster={cluster} />
 )}

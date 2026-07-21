@@ -1,0 +1,80 @@
+---
+/**
+ * AI Academy hub (/ki-academy/, /en/ai-academy/, …) — the knowledge-platform
+ * index. Registry-driven (academy.ts): lists the 9 topical clusters; live
+ * clusters (those with a published pillar) link to their cluster page.
+ */
+import { SITE, localeUrl, type Locale } from '../../data/site';
+import { type LocalePaths, urlFor, relFor } from '../../data/routes';
+import { orderedClusters, clusterPaths, pillarOf } from '../../data/academy';
+import Layout from '../../layouts/Layout.astro';
+
+interface Props {
+  locale: Locale;
+  localePaths: LocalePaths;
+}
+const { locale, localePaths } = Astro.props;
+
+const COPY: Record<Locale, { title: string; h1: string; kicker: string; intro: string; soon: string; crumbHome: string; crumbHere: string }> = {
+  de: { title: 'AI Academy: KI verständlich erklärt | Weissmann AI', h1: 'AI Academy', kicker: 'Wissen', intro: 'Praktisches, verständliches Wissen über Künstliche Intelligenz – von Grundlagen über Agenten und Automatisierung bis zu Datenschutz, SEO und GEO. Antwortorientiert, faktenbasiert und aus Schweizer Perspektive.', soon: 'In Vorbereitung', crumbHome: 'Startseite', crumbHere: 'AI Academy' },
+  en: { title: 'AI Academy: AI Explained Clearly | Weissmann AI', h1: 'AI Academy', kicker: 'Knowledge', intro: 'Practical, clear knowledge about artificial intelligence – from foundations through agents and automation to data protection, SEO and GEO. Answer-first, fact-based and from a Swiss perspective.', soon: 'Coming soon', crumbHome: 'Home', crumbHere: 'AI Academy' },
+  it: { title: 'AI Academy: l’AI spiegata con chiarezza | Weissmann AI', h1: 'AI Academy', kicker: 'Conoscenza', intro: 'Conoscenza pratica e chiara sull’intelligenza artificiale – dai fondamenti ad agenti e automazione, fino a protezione dei dati, SEO e GEO. Orientata alle risposte, basata sui fatti e in prospettiva svizzera.', soon: 'In preparazione', crumbHome: 'Home', crumbHere: 'AI Academy' },
+  fr: { title: 'AI Academy : l’IA expliquée clairement | Weissmann AI', h1: 'AI Academy', kicker: 'Savoir', intro: 'Un savoir pratique et clair sur l’intelligence artificielle – des fondamentaux aux agents et à l’automatisation, jusqu’à la protection des données, le SEO et le GEO. Orienté réponses, factuel et dans une perspective suisse.', soon: 'En préparation', crumbHome: 'Accueil', crumbHere: 'AI Academy' },
+};
+const c = COPY[locale];
+const clusters = orderedClusters();
+const pre = locale === 'de' ? '' : `/${locale}`;
+
+const schema = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: c.crumbHome, item: localeUrl(locale, '/') },
+      { '@type': 'ListItem', position: 2, name: c.crumbHere, item: urlFor(locale, localePaths) },
+    ],
+  },
+  {
+    '@type': 'CollectionPage',
+    name: `${SITE.name} — AI Academy`,
+    url: urlFor(locale, localePaths),
+    isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.domain },
+  },
+];
+---
+<Layout locale={locale} localePaths={localePaths} title={c.title} description={c.intro} schema={schema}>
+  <nav class="crumbs container" aria-label="Breadcrumb">
+    <a href={`${pre}/`}>{c.crumbHome}</a><span aria-hidden="true">›</span><span>{c.crumbHere}</span>
+  </nav>
+  <header class="hub-head container">
+    <p class="kicker">{c.kicker}</p>
+    <h1>{c.h1}</h1>
+    <p class="hub-intro">{c.intro}</p>
+  </header>
+  <div class="container hub-grid">
+    {clusters.map((cl) => {
+      const live = cl.status === 'live' && !!pillarOf(cl.id);
+      const href = relFor(locale, clusterPaths(cl));
+      return live
+        ? <a class="cl-card" href={href}><h2>{cl.name[locale]}</h2><p>{cl.tagline[locale]}</p><span class="cl-card__arrow">→</span></a>
+        : <article class="cl-card cl-card--soon"><h2>{cl.name[locale]}</h2><p>{cl.tagline[locale]}</p><span class="cl-card__soon">{c.soon}</span></article>;
+    })}
+  </div>
+</Layout>
+
+<style>
+  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); }
+  .crumbs a { color: var(--ink-mute); }
+  .crumbs a:hover { color: var(--ink); }
+  .hub-head { padding-top: var(--space-5); padding-bottom: var(--space-5); max-width: 60rem; }
+  .hub-head h1 { font-size: var(--fs-700); line-height: 1.05; margin: 0.4rem 0 1rem; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
+  .hub-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 52rem; }
+  .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: var(--space-4); padding-bottom: var(--space-7); }
+  .cl-card { position: relative; border: 1px solid var(--line); border-radius: 14px; padding: var(--space-5); background: var(--paper); display: block; }
+  .cl-card h2 { font-size: var(--fs-500); margin: 0 0 0.4rem; color: var(--ink); }
+  .cl-card p { margin: 0; color: var(--ink-soft); font-size: var(--fs-300); }
+  a.cl-card:hover { border-color: var(--accent); text-decoration: none; }
+  .cl-card__arrow { position: absolute; top: var(--space-4); right: var(--space-4); color: var(--accent); }
+  .cl-card--soon { opacity: 0.7; }
+  .cl-card__soon { display: inline-block; margin-top: 0.7rem; font-size: var(--fs-200); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-mute); border: 1px solid var(--line); border-radius: 999px; padding: 0.2rem 0.7rem; }
+</style>
