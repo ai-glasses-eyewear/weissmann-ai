@@ -1,0 +1,1063 @@
+[
+  {
+    "lens": "SEO & TOPICAL AUTHORITY FIRST. Every decision below is optimized so each service page becomes the single canonical, most-authoritative URL for its head keyword cluster, the whole domain accrues topical authority through silos + a large informational Academy, and the service×industry long-tail is captured without thin/duplicate pages. Where SEO trades off against other concerns, ranking + authority + non-cannibalization win.",
+    "endorsesUserStructure": true,
+    "topLevelNav": [
+      {
+        "label": "Home",
+        "purpose": "Introduces the ECOSYSTEM only; routes users to dedicated silos. Never a services dump. Carries Organization/WebSite schema + sitelinks searchbox.",
+        "children": []
+      },
+      {
+        "label": "Services (Leistungen / KI-Lösungen)",
+        "purpose": "Mega-menu + a real hub pillar page at /leistungen/. Groups the 9 services by function so the grouping itself communicates non-overlap. The hub is THE page for 'KI-Lösungen für KMU'.",
+        "children": [
+          "AI Phone Assistant",
+          "AI Websites (Web Development)",
+          "SEO",
+          "GEO",
+          "Google Ads",
+          "AI Automation",
+          "AI Agents",
+          "AI Consulting",
+          "AI Integrations"
+        ]
+      },
+      {
+        "label": "Industries (Branchen)",
+        "purpose": "Mega-menu + hub pillar at /branchen/. Each industry is a demand-aggregation page linking down to the relevant service×industry matrix pages.",
+        "children": [
+          "Healthcare",
+          "Restaurants",
+          "Hotels",
+          "Retail",
+          "Real Estate",
+          "Insurance",
+          "Professional Services",
+          "Beauty & Wellness",
+          "Manufacturing",
+          "Construction",
+          "Logistics",
+          "Education",
+          "Finance",
+          "E-commerce"
+        ]
+      },
+      {
+        "label": "Resources (Ressourcen)",
+        "purpose": "Informational authority engine. Hosts the AI Academy (9 clusters) plus Glossary, Guides, Comparisons, Case Studies, Templates, Calculators, Downloads, News/Insights. Drives topical breadth + internal links into money pages.",
+        "children": [
+          "AI Academy",
+          "AI Glossary",
+          "Guides",
+          "Comparisons",
+          "Case Studies",
+          "Templates",
+          "Calculators",
+          "Downloads",
+          "News & Insights"
+        ]
+      },
+      {
+        "label": "Company (Unternehmen)",
+        "purpose": "NAV cluster only — a trust/entity grouping, NOT a URL container. Its pages live flat at root because they do not form a ranking silo and flat preserves existing /ueber-uns/ and /kontakt/.",
+        "children": [
+          "About",
+          "Methodology",
+          "Technology",
+          "Privacy & Security",
+          "Contact"
+        ]
+      }
+    ],
+    "keyDivergences": [
+      {
+        "decision": "Flat root service URLs vs siloed (Critical Decision 1)",
+        "userVersion": "Existing precedent puts a flagship service flat at root: /ki-telefonassistent/ (while /leistungen/ai-websites/ is already siloed — the codebase is internally inconsistent).",
+        "proposedVersion": "ALL services siloed under a localized 'services' segment with a real hub pillar: /leistungen/{service}/. Migrate /ki-telefonassistent/ → /leistungen/ki-telefonassistent/ with a permanent 301.",
+        "rationale": "At a target of hundreds of pages, a hub-and-spoke silo concentrates topical authority and internal PageRank far better than a flat root namespace, is self-documenting, and gives AI assistants a clean breadcrumb/path signal of topical relationships. Consistency also removes the current split-brain. The one flat page is early enough that a single 301 costs almost nothing versus the compounding authority benefit."
+      },
+      {
+        "decision": "URL segment language (Critical Decision 4)",
+        "userVersion": "Current implementation reuses GERMAN slugs under every locale (e.g. /en/leistungen/ai-websites/, /en/ueber-uns/, /it/preise/).",
+        "proposedVersion": "Fully LOCALIZED slugs per language driven by a central slug registry (e.g. /services/ai-web-development/, /servizi/sviluppo-siti-web-ai/, /secteurs/sante/). German-only legal pages may localize last (low ranking value).",
+        "rationale": "Keyword-in-URL in the target language is a real ranking + click signal and a UX/trust signal per locale; German slugs on English/French pages leak relevance and look untranslated. The site is still small, so the 301 + hreflang-map cost is minimal now and grows expensive later. Requires a routes registry so hreflang and the language switcher resolve localized paths."
+      },
+      {
+        "decision": "Company pages as a URL silo vs flat",
+        "userVersion": "Owner groups About/Methodology/Technology/Privacy/Contact under a 'COMPANY' bucket, which reads as a /company/ (or /unternehmen/) container.",
+        "proposedVersion": "Keep COMPANY as a navigation cluster but publish its pages FLAT at root: /ueber-uns/, /methodik/, /technologie/, /kontakt/, /datenschutz/.",
+        "rationale": "Entity/trust pages are not a keyword silo and gain nothing from nesting; flat root maximizes their authority, keeps existing /ueber-uns/ and /kontakt/ intact (no migration), and the nav grouping still communicates the hierarchy to users."
+      },
+      {
+        "decision": "Service×Industry matrix nesting direction (Critical Decision 2)",
+        "userVersion": "Not specified — owner only asks that the matrix scale without thin/duplicate pages.",
+        "proposedVersion": "Matrix pages live SERVICE-primary: /leistungen/{service}/{industry}/ as the single canonical, published only past a uniqueness gate. Industry hubs link to them but never host a duplicate copy.",
+        "rationale": "The commercial head term is service-led ('KI-Telefonassistent Zahnarzt'), so the service silo should own the canonical; a single canonical location prevents the same page existing under both /leistungen/ and /branchen/ (self-duplication). Industry hubs still get their cluster via bidirectional links, not copies."
+      }
+    ],
+    "urlScheme": [
+      {
+        "pageType": "Homepage",
+        "de": "/",
+        "en": "/en/",
+        "it": "/it/",
+        "fr": "/fr/",
+        "notes": "Ecosystem intro only. x-default → /. Organization + WebSite schema."
+      },
+      {
+        "pageType": "Services hub (pillar)",
+        "de": "/leistungen/",
+        "en": "/services/",
+        "it": "/servizi/",
+        "fr": "/services/",
+        "notes": "Real optimized pillar targeting 'KI-Lösungen/AI solutions for SMEs Switzerland'. Links to all 9 services. CollectionPage + ItemList schema."
+      },
+      {
+        "pageType": "Service: AI Phone Assistant",
+        "de": "/leistungen/ki-telefonassistent/",
+        "en": "/services/ai-phone-assistant/",
+        "it": "/servizi/assistente-telefonico-ai/",
+        "fr": "/services/standardiste-telephonique-ia/",
+        "notes": "301 from existing root /ki-telefonassistent/. Flagship money page."
+      },
+      {
+        "pageType": "Service: AI Websites / Web Development",
+        "de": "/leistungen/ki-webentwicklung/",
+        "en": "/services/ai-web-development/",
+        "it": "/servizi/sviluppo-siti-web-ai/",
+        "fr": "/services/developpement-web-ia/",
+        "notes": "301 from existing /leistungen/ai-websites/. German head term 'Webentwicklung' carries volume."
+      },
+      {
+        "pageType": "Service: SEO",
+        "de": "/leistungen/seo/",
+        "en": "/services/seo/",
+        "it": "/servizi/seo/",
+        "fr": "/services/seo/",
+        "notes": "Global term kept identical across locales; title/H1 localize ('SEO Agentur Zürich' etc.)."
+      },
+      {
+        "pageType": "Service: GEO",
+        "de": "/leistungen/geo-generative-engine-optimization/",
+        "en": "/services/generative-engine-optimization/",
+        "it": "/servizi/generative-engine-optimization/",
+        "fr": "/services/generative-engine-optimization/",
+        "notes": "Full slug disambiguates GEO from 'geographic'. This is the flagship differentiator page — owns the emerging GEO category."
+      },
+      {
+        "pageType": "Service: Google Ads",
+        "de": "/leistungen/google-ads/",
+        "en": "/services/google-ads/",
+        "it": "/servizi/google-ads/",
+        "fr": "/services/google-ads/",
+        "notes": "Brand term, identical slug all locales."
+      },
+      {
+        "pageType": "Service: AI Automation",
+        "de": "/leistungen/ki-automatisierung/",
+        "en": "/services/ai-automation/",
+        "it": "/servizi/automazione-ai/",
+        "fr": "/services/automatisation-ia/",
+        "notes": "Scope: deterministic workflow automation — see serviceDifferentiation."
+      },
+      {
+        "pageType": "Service: AI Agents",
+        "de": "/leistungen/ki-agenten/",
+        "en": "/services/ai-agents/",
+        "it": "/servizi/agenti-ai/",
+        "fr": "/services/agents-ia/",
+        "notes": "Scope: autonomous model-driven agents — distinct from Automation."
+      },
+      {
+        "pageType": "Service: AI Consulting",
+        "de": "/leistungen/ki-beratung/",
+        "en": "/services/ai-consulting/",
+        "it": "/servizi/consulenza-ai/",
+        "fr": "/services/conseil-ia/",
+        "notes": "Advisory/strategy only, no build. Highest commercial-intent for 'KI-Beratung Zürich'."
+      },
+      {
+        "pageType": "Service: AI Integrations",
+        "de": "/leistungen/ki-integration/",
+        "en": "/services/ai-integrations/",
+        "it": "/servizi/integrazioni-ai/",
+        "fr": "/services/integrations-ia/",
+        "notes": "Connectivity/plumbing layer — distinct from Automation/Agents."
+      },
+      {
+        "pageType": "Industries hub (pillar)",
+        "de": "/branchen/",
+        "en": "/industries/",
+        "it": "/settori/",
+        "fr": "/secteurs/",
+        "notes": "Pillar listing all 14 industries. CollectionPage schema."
+      },
+      {
+        "pageType": "Industry page (pattern)",
+        "de": "/branchen/{branche}/",
+        "en": "/industries/{industry}/",
+        "it": "/settori/{settore}/",
+        "fr": "/secteurs/{secteur}/",
+        "notes": "Demand-aggregation hub; links to every relevant service×industry matrix page + relevant Academy industry-cluster pages."
+      },
+      {
+        "pageType": "Industry slugs (the 14)",
+        "de": "gesundheitswesen · gastronomie · hotellerie · einzelhandel · immobilien · versicherungen · dienstleister · beauty-wellness · industrie · baugewerbe · logistik · bildung · finanzwesen · e-commerce",
+        "en": "healthcare · restaurants · hotels · retail · real-estate · insurance · professional-services · beauty-wellness · manufacturing · construction · logistics · education · finance · e-commerce",
+        "it": "sanita · ristoranti · hotel · commercio-al-dettaglio · immobiliare · assicurazioni · servizi-professionali · bellezza-benessere · produzione · edilizia · logistica · istruzione · finanza · e-commerce",
+        "fr": "sante · restaurants · hotellerie · commerce-de-detail · immobilier · assurance · services-professionnels · beaute-bien-etre · industrie · construction · logistique · education · finance · e-commerce",
+        "notes": "Clinics fold into healthcare; law firms into professional-services (301 any synonym variants to these canonicals)."
+      },
+      {
+        "pageType": "Service×Industry matrix (pattern)",
+        "de": "/leistungen/{service}/{branche}/",
+        "en": "/services/{service}/{industry}/",
+        "it": "/servizi/{service}/{settore}/",
+        "fr": "/services/{service}/{secteur}/",
+        "notes": "e.g. /leistungen/ki-telefonassistent/zahnarztpraxis/. SINGLE canonical; published only past uniqueness gate. Sub-industries (zahnarztpraxis) allowed as the leaf where demand justifies."
+      },
+      {
+        "pageType": "Resources hub",
+        "de": "/ressourcen/",
+        "en": "/resources/",
+        "it": "/risorse/",
+        "fr": "/ressources/",
+        "notes": "Parent for Academy + all informational asset types."
+      },
+      {
+        "pageType": "AI Academy hub (pillar)",
+        "de": "/ressourcen/ki-academy/",
+        "en": "/resources/ai-academy/",
+        "it": "/risorse/ai-academy/",
+        "fr": "/ressources/academie-ia/",
+        "notes": "Top of the informational pyramid; links to all 9 clusters. Learning/Course-style schema optional."
+      },
+      {
+        "pageType": "Academy cluster (pattern, 9)",
+        "de": "/ressourcen/ki-academy/{cluster}/",
+        "en": "/resources/ai-academy/{cluster}/",
+        "it": "/risorse/ai-academy/{cluster}/",
+        "fr": "/ressources/academie-ia/{cluster}/",
+        "notes": "Clusters: grundlagen-glossar, kmu-business, agenten-automatisierung-voice-chatbots, modelle-anbieter, lokal-open-source, vertrauen-sicherheit-datenschutz-regulierung, marketing-seo-geo, branchen, funktionen. Each is an informational pillar."
+      },
+      {
+        "pageType": "Glossary index + term (pattern)",
+        "de": "/ressourcen/ki-glossar/ · /ressourcen/ki-glossar/{begriff}/",
+        "en": "/resources/ai-glossary/ · /resources/ai-glossary/{term}/",
+        "it": "/risorse/glossario-ai/ · …/{termine}/",
+        "fr": "/ressources/glossaire-ia/ · …/{terme}/",
+        "notes": "DefinedTerm/DefinedTermSet schema; each term self-canonicals; term pages link up to the relevant Academy cluster."
+      },
+      {
+        "pageType": "Guides / Comparisons / Case Studies / Templates / Calculators / Downloads / News",
+        "de": "/ressourcen/ratgeber/ · /vergleiche/ · /referenzen/ · /vorlagen/ · /rechner/ · /downloads/ · /insights/",
+        "en": "/resources/guides/ · /comparisons/ · /case-studies/ · /templates/ · /calculators/ · /downloads/ · /insights/",
+        "it": "/risorse/guide/ · /confronti/ · /casi-studio/ · /modelli/ · /calcolatori/ · /download/ · /insights/",
+        "fr": "/ressources/guides/ · /comparatifs/ · /etudes-de-cas/ · /modeles/ · /calculateurs/ · /telechargements/ · /insights/",
+        "notes": "All nest under the resources segment. Case Studies use real data only (NEEDS VERIFICATION until provided). Calculators/Templates are strong link-magnets + conversion assets."
+      },
+      {
+        "pageType": "Company: About",
+        "de": "/ueber-uns/",
+        "en": "/en/about/",
+        "it": "/it/chi-siamo/",
+        "fr": "/fr/a-propos/",
+        "notes": "Flat at root (no /company/ container). Person schema for both founders + Organization sameAs."
+      },
+      {
+        "pageType": "Company: Methodology / Technology",
+        "de": "/methodik/ · /technologie/",
+        "en": "/en/methodology/ · /en/technology/",
+        "it": "/it/metodologia/ · /it/tecnologia/",
+        "fr": "/fr/methodologie/ · /fr/technologie/",
+        "notes": "Trust/E-E-A-T pages; internally link to services + Academy to reinforce expertise."
+      },
+      {
+        "pageType": "Company: Contact",
+        "de": "/kontakt/",
+        "en": "/en/contact/",
+        "it": "/it/contatto/",
+        "fr": "/fr/contact/",
+        "notes": "Existing page; LocalBusiness/ContactPoint schema, NAP from site.ts."
+      },
+      {
+        "pageType": "Legal: Privacy / Terms / Imprint / Thank-you",
+        "de": "/datenschutz/ · /agb/ · /impressum/ · /danke/",
+        "en": "/en/privacy/ · /en/terms/ · /en/imprint/ · /en/thank-you/",
+        "it": "/it/privacy/ · /it/termini/ · /it/note-legali/ · /it/grazie/",
+        "fr": "/fr/confidentialite/ · /fr/cgv/ · /fr/mentions-legales/ · /fr/merci/",
+        "notes": "noindex the thank-you pages; legal pages localize last (lowest ranking priority). LEGAL_ENTITY fields stay null placeholders until confirmed."
+      }
+    ],
+    "servicePageModel": "Every service page is the single authoritative URL for its topic and ships a mandatory template so no page is thin: (1) unique keyword-mapped H1 + unique title/meta description; (2) hero with one primary commercial keyword + locale/geo modifier ('… Zürich / Schweiz'); (3) problem→solution narrative unique to the service; (4) 'How it works' / methodology block; (5) 'Industries we serve' block linking DOWN to the published service×industry matrix pages (this is the internal-link engine for the long-tail); (6) real, verifiable case studies OR a clearly marked NEEDS VERIFICATION placeholder — never invented; (7) transparent pricing/next-step block linking to /preise/; (8) unique FAQ (5–8 Q&A) rendered as FAQPage schema; (9) a 'Learn the fundamentals' contextual link to the matching Academy informational pillar (passes authority, signals topical relation, avoids cannibalization); (10) unique CTA (demo/contact). Schema stack per page: Service + FAQPage + BreadcrumbList (+ Offer only when a real price exists). Keyword contract: each service page owns commercial-intent modifiers (Agentur, Anbieter, Kosten, für [Branche], Zürich) and must NOT target the informational head query that belongs to its Academy pillar.",
+    "serviceDifferentiation": [
+      {
+        "service": "AI Consulting",
+        "scope": "Advisory & strategy only: AI readiness assessment, use-case discovery, feasibility, roadmap, governance, vendor/build decisions. Deliverable = a decision/plan (workshops, audits, roadmaps). No system is built here.",
+        "distinctFrom": "Sits BEFORE the other three — it decides WHAT to build; Automation/Agents/Integrations then build it. Buyer question: 'What should we do with AI?'"
+      },
+      {
+        "service": "AI Automation",
+        "scope": "Building deterministic, rule/trigger-based workflows that remove repetitive manual work using no-code/low-code + scripts (Make/n8n/Zapier-class, document processing, data sync, RPA-lite). Deliverable = automated pipelines.",
+        "distinctFrom": "Deterministic process logic (fixed rules), NOT autonomous decisioning. Buyer question: 'Automate this repetitive process.'"
+      },
+      {
+        "service": "AI Agents",
+        "scope": "Building autonomous / semi-autonomous LLM-driven agents that reason, use tools, and act with delegated autonomy (support agents, research agents, chat/voice agents beyond the phone assistant). Deliverable = a decision-making agent.",
+        "distinctFrom": "Model-driven autonomy vs Automation's fixed rules. The AI Phone Assistant is a productized, pre-built voice agent; AI Agents is the custom-agent build service. Buyer question: 'Build an AI that decides & acts for us.'"
+      },
+      {
+        "service": "AI Integrations",
+        "scope": "The connectivity/plumbing layer: wiring AI + models into the client's existing stack via APIs, CRM/ERP, data pipelines, model/vendor connectors, embedding AI into existing software/products. Deliverable = AI capabilities wired into existing systems.",
+        "distinctFrom": "Provides the connections that Automations and Agents run on; it moves/connects data rather than defining process logic (Automation) or autonomous behavior (Agents). Buyer question: 'Connect AI to our existing systems.'"
+      }
+    ],
+    "industriesModel": "Each of the 14 industries gets a hub pillar at /branchen/{industry}/ that is a genuine demand-aggregation page (industry-specific pain points, applicable services, outcomes, real proof or NEEDS VERIFICATION), NOT a service duplicate. The industry hub links DOWN to every published service×industry matrix page relevant to it, and laterally to the Academy 'branchen' cluster page for that vertical (informational). Sub-industries (e.g. dental practices, physiotherapy under Healthcare) are handled as leaf matrix pages under the SERVICE silo, never as parallel industry hubs, to avoid a combinatorial explosion of near-duplicate hubs. Industry hubs carry CollectionPage + BreadcrumbList schema and are the cross-silo bridge that turns the service silos and the industry taxonomy into one interlinked graph.",
+    "serviceIndustryMatrix": "Structure: service-primary, single canonical at /leistungen/{service}/{industry}/ (e.g. /leistungen/ki-telefonassistent/zahnarztpraxis/). This is the scalable long-tail authority play ('KI-Telefonassistent für Zahnarztpraxen') without thin/duplicate pages, governed by four rules: (1) UNIQUENESS GATE — a combo gets its own URL only when it clears a content-depth threshold (~800–1000 words of genuinely industry-specific pain points, use cases, example workflows/scripts, industry-relevant integrations, industry FAQ, and real proof). Below the gate, the combo is served as a SECTION on the parent service page's 'Industries we serve' block, not as its own URL — this is the primary thin-content defense. (2) SINGLE CANONICAL — the page exists in exactly one place (service silo); the industry hub links to it but never hosts a copy. (3) SYNONYM DISCIPLINE — one canonical term per language ('zahnarztpraxis' not also 'zahnarzt'/'dentist'); variants 301 to the canonical. (4) BIDIRECTIONAL LINKING — each matrix page links UP to its service pillar and its industry hub, and is listed on both; a matrix page is never orphaned. Schema: Service (with areaServed/audience) + FAQPage + BreadcrumbList. Roll out demand-first (start with proven verticals like healthcare/gastronomy for the phone assistant), not all 9×14 at once.",
+    "resourcesModel": "Resources is the informational authority engine under /ressourcen/. It hosts: the AI Academy (hub + 9 topical clusters — foundations/glossary, business & SMEs, agents/automation/voice/chatbots, models & vendors, local/open-source, trust/security/privacy/regulation, marketing/seo/geo, industries, functions), plus Glossary (DefinedTermSet), Guides, Comparisons, Case Studies, Templates, Calculators, Downloads, and News/Insights. Its SEO job is threefold: (1) build domain-wide topical authority through informational breadth+depth that lifts the commercial silos; (2) capture informational/'was ist/how-to/vs' queries the money pages must NOT target; (3) act as an internal-link reservoir that funnels contextual authority + qualified readers into the matching service pages. Every informational page carries a contextual CTA to its commercial counterpart. Calculators and Templates double as link-magnets and mid-funnel conversion assets.",
+    "academyServiceRelationship": "Anti-cannibalization is enforced by INTENT SEPARATION + a one-keyword-one-URL contract. Academy pillars own INFORMATIONAL intent ('Was ist ein KI-Agent?', 'Automatisierung vs. Agenten', 'GEO erklärt', definitions, how-tos, comparisons); service pages own COMMERCIAL/transactional intent ('KI-Agenten entwickeln lassen', 'KI-Beratung Zürich', 'Anbieter/Agentur/Kosten/für [Branche]'). Because these are genuinely different query intents, both can rank without competing, and NO head keyword is ever assigned to two URLs — the keyword-to-URL map is the binding contract. Canonicalization: each page self-canonicals; cross-canonical is deliberately avoided by never letting two pages target the same query (design out the conflict rather than patch it). Cross-linking is reciprocal: Academy pillar → 'Want us to build/run this?' link to the commercial service; service page → 'Learn the fundamentals' link to the Academy pillar. This passes authority both directions and gives Google/AI assistants an explicit informational↔commercial topical relationship, so the Academy's authority compounds onto the money pages instead of splitting rankings with them.",
+    "companyModel": "COMPANY is a navigation cluster, not a URL silo — its pages live flat at root (/ueber-uns/, /methodik/, /technologie/, /kontakt/, plus legal /datenschutz/, /agb/, /impressum/). Purpose is E-E-A-T / entity trust, not keyword ranking: About carries Person schema for Giovanna Carpi (CEO) and Nicola Mössner with sameAs to their real profiles, plus Organization schema (NAP from site.ts: Technoparkstrasse 6, 8005 Zürich — never the obsolete Culmannstrasse address, never Podomedics, never eyewear). Methodology and Technology are the credibility pages that services and Academy link to for authority. LEGAL_ENTITY fields (registered name, legal form, UID) stay as visible 'pending legal confirmation' placeholders until the business supplies them — never invented.",
+    "crossLinkingModel": "A deliberate hub-and-spoke graph with mandatory link directions, all driven by page metadata (see taxonomy) so links are generated, auditable, and never orphaned: (1) Services hub ↔ each service page (down + up). (2) Service page → its published matrix pages (down) and matrix page → its service pillar (up). (3) Industries hub ↔ each industry page; industry page → its relevant matrix pages; matrix page → its industry hub (so every matrix page has ≥2 inbound links, from both its service and its industry). (4) Service page ↔ matching Academy pillar (commercial↔informational bridge). (5) Academy hub ↔ clusters ↔ glossary terms/guides; glossary terms link up to their cluster and out to the relevant service. (6) Footer carries the full service + industry + top-Academy link set on every page as a safety net. (7) A 'related pages' module on each page is populated from shared taxonomy tags. Rule: exact-match/descriptive anchor text toward the canonical target; no page ships with <2 internal inbound links (CI check). Breadcrumbs (BreadcrumbList schema) mirror the canonical path on every page.",
+    "taxonomy": "Central routes/registry (extend site.ts with a routes map) is the single source of truth and the backbone for slugs, hreflang, linking, and orphan detection. Every page declares metadata: pageType (home|services-hub|service|industries-hub|industry|matrix|resources-hub|academy-hub|academy-cluster|glossary-index|glossary-term|guide|comparison|case-study|template|calculator|download|news|company|legal), slug map {de,en,it,fr} (localized), primaryKeyword, intent (commercial|transactional|informational), silo (owning service and/or industry and/or academy-cluster), and relation arrays relatedServices[] / relatedIndustries[] / relatedAcademy[]. This metadata deterministically generates: localized URLs, reciprocal hreflang (+x-default=de root), breadcrumbs, the related-pages module, footer link sets, the sitemap, and the internal-link/orphan audit. The keyword-to-URL map (one head keyword → exactly one canonical URL, tagged by intent) is stored here too and is the enforcement point against cannibalization.",
+    "scalabilityNotes": "Designed for hundreds of pages without decay: (1) Silos + localized-slug registry mean new pages are declared as data, not hand-wired, and inherit linking/breadcrumbs/hreflang automatically. (2) The uniqueness gate on matrix pages is the structural brake on thin content — combos below threshold render as sections, not URLs, so the page count grows only where real content/demand exists. (3) One-canonical-per-combo + synonym-301 discipline prevents duplicate-path bloat. (4) Orphan prevention is automated (CI fails any indexable page with <2 inbound internal links; footer + related-module are the safety nets). (5) hreflang is generated from the registry, so adding a locale or page can't silently break reciprocity. (6) Sitemap is generated from the registry with lastmod; IndexNow key already present for fast discovery. (7) Roll out demand-first per silo (proven verticals first) rather than pre-generating the full 9×14 matrix. Risk to watch as scale grows: crawl budget + internal PageRank dilution — mitigate by keeping the money pages ≤3 clicks from root and pruning/consolidating underperforming matrix pages.",
+    "conversionNotes": "SEO-first but conversion-aware: every service and matrix page ends in a unique CTA (demo/contact) with the existing 'Demo anfordern / Request a demo' nav CTA persistent. Calculators and Templates in Resources are mid-funnel capture that also earn links. Academy pages carry a soft contextual CTA to the commercial counterpart so informational traffic is funneled, not wasted. Pricing lives at /preise/ and is linked from every service page; only real prices from pricing.ts are shown (no invented figures). Phone/WhatsApp/contact from site.ts appear site-wide. Thank-you (/danke/) pages are noindex and fire the existing GA4 (G-3L30SCGWGT) conversion events. Trust signals (founders' Person schema, methodology/technology pages, real case studies) support conversion and E-E-A-T simultaneously.",
+    "risks": [
+      "Migrating /ki-telefonassistent/ to the silo and localizing all slugs requires disciplined 301s + updated hreflang; a missed redirect or non-reciprocal hreflang would leak the very authority the migration is meant to concentrate. Ship the routes registry + redirect map together, verify in staging.",
+      "24h JS-cache caveat on Netlify (per deploy workflow memory) can delay validation of routing/redirect changes — plan verification windows.",
+      "Service×industry matrix is the biggest thin-content / helpful-content risk; if the uniqueness gate is not enforced editorially it degrades into swap-the-noun pages and can drag the whole domain. The gate must be a hard rule, not a guideline.",
+      "Academy vs service cannibalization will silently occur if anyone assigns the same head keyword to both; the keyword-to-URL map must be enforced at content-brief time.",
+      "GEO/SEO and Automation/Agents/Integrations scopes overlap in buyers' minds; if page copy blurs the serviceDifferentiation boundaries the pages will compete with each other for the same queries.",
+      "Localized legal-slug changes (impressum→mentions-legales etc.) touch pages that may be referenced externally; localize legal last and keep German aliases 301'd.",
+      "Never introduce forbidden entities (Podomedics, Culmannstrasse 39/8006, eyewear) in any migrated or generated page."
+    ],
+    "confirmationsNeeded": [
+      "Approve the two structural migrations: (a) all services siloed under localized /leistungen|/services|/servizi/ with 301 from /ki-telefonassistent/, and (b) full slug localization per language via a central routes registry — both are divergences from the current implementation.",
+      "Confirm real case studies / customers per service and per priority matrix combo, or they render as NEEDS VERIFICATION (nothing invented).",
+      "Confirm which service×industry combinations have genuine demand + content to publish first (recommend starting with AI Phone Assistant × healthcare and × gastronomy).",
+      "Provide LEGAL_ENTITY data (registered name, legal form, UID) to replace the pending-confirmation placeholders on legal pages.",
+      "Confirm the GEO slug choice (/…/generative-engine-optimization/ vs a shorter /geo/) — recommend the full slug for disambiguation.",
+      "Confirm final localized labels/slugs for a few ambiguous terms (e.g. AI Websites → de ki-webentwicklung; Manufacturing → de industrie vs produktion; News → Insights) before wiring the registry.",
+      "Confirm real prices in pricing.ts before any Offer schema or price is displayed on service pages."
+    ]
+  },
+  {
+    "lens": "GEO / AI-discoverability & entity model first. Every IA decision is optimized so that ChatGPT, Claude, Gemini, Perplexity and Google AI Overviews can (a) unambiguously resolve each Weissmann AI entity, (b) attach it to the correct parent (Organization -> Service -> Service-for-Industry; Academy -> Pillar -> Term), and (c) lift a clean, attributable answer snippet. The organizing spine is a machine-readable entity graph expressed identically in three redundant channels — URL path hierarchy, breadcrumb/Schema.org JSON-LD, and llms.txt enumeration — so no crawler or LLM has to guess relationships. Human SEO/UX/conversion are fully served, but where a tradeoff exists it is resolved in favor of citeability and entity disambiguation.",
+    "endorsesUserStructure": true,
+    "topLevelNav": [
+      {
+        "label": "Home",
+        "purpose": "Entity root. Introduces the Weissmann AI ECOSYSTEM and routes to dedicated pages; never a services dump. Hosts Organization + WebSite + LocalBusiness schema and the primary sameAs cluster. Answer-first hero (40-60 word citeable summary of who/what/where).",
+        "children": []
+      },
+      {
+        "label": "Services (Leistungen)",
+        "purpose": "Commercial silo. A ServiceCollection/OfferCatalog hub at /leistungen/ that is itself an entity (ItemList of Service child pages). Every service is a dedicated authoritative page; the hub links all of them and all Service-x-Industry children.",
+        "children": [
+          "AI Phone Assistant",
+          "AI Websites",
+          "SEO",
+          "GEO",
+          "Google Ads",
+          "AI Automation",
+          "AI Agents",
+          "AI Consulting",
+          "AI Integrations"
+        ]
+      },
+      {
+        "label": "Industries (Branchen)",
+        "purpose": "Demand-side collection. Each industry hub is a CollectionPage that curates the relevant Service-for-Industry matrix pages plus industry-specific proof. Cross-links into Academy industry cluster for informational intent.",
+        "children": [
+          "Healthcare",
+          "Restaurants",
+          "Hotels",
+          "Retail",
+          "Real Estate",
+          "Insurance",
+          "Professional Services",
+          "Beauty & Wellness",
+          "Manufacturing",
+          "Construction",
+          "Logistics",
+          "Education",
+          "Finance",
+          "E-commerce"
+        ]
+      },
+      {
+        "label": "Resources (Ressourcen)",
+        "purpose": "Informational authority layer. Hosts the AI Academy knowledge hub plus supporting content types. Targets informational intent only; feeds commercial Services via contextual cross-links, never competes on transactional queries.",
+        "children": [
+          "AI Academy",
+          "AI Glossary",
+          "Guides",
+          "Comparisons",
+          "Case Studies",
+          "Templates",
+          "Calculators",
+          "Downloads",
+          "News & Insights"
+        ]
+      },
+      {
+        "label": "Company (Unternehmen)",
+        "purpose": "Trust / E-E-A-T entity layer. Establishes the Organization and Person (founder) entities, methodology, tech stack and security posture that both users and AI cite as authority signals. Landing page is About.",
+        "children": [
+          "About Weissmann AI",
+          "Methodology",
+          "Technology",
+          "Privacy & Security",
+          "Contact"
+        ]
+      }
+    ],
+    "keyDivergences": [
+      {
+        "decision": "Flat root-level service URLs vs siloed under /leistungen/",
+        "userVersion": "Precedent is flat root (/ki-telefonassistent/ lives at root today); repo is currently inconsistent (ai-websites already sits under /leistungen/ai-websites/).",
+        "proposedVersion": "Silo ALL services under the localized Services segment (/leistungen/ki-telefonassistent/, /leistungen/ai-websites/, etc.) with a co-existing Services INDEX hub at /leistungen/. 301-redirect the legacy /ki-telefonassistent/ to its siloed URL and update the self-canonical.",
+        "rationale": "At the target scale (services + industries + academy + resources all competing for the root namespace), a flat root makes entity type ambiguous: is /seo/ a service, an industry, or a glossary term? Path hierarchy is a primary signal LLMs and crawlers use to infer isPartOf/hasPart. Siloing lets /leistungen/ be a real ServiceCollection entity whose BreadcrumbList and OfferCatalog JSON-LD deterministically declare parent-child relationships, consolidating topical authority on the service entity. The ~negligible 2026 root-ranking edge does not justify entity ambiguity across hundreds of pages. A 301 fully preserves the legacy page's accrued equity and citations."
+      },
+      {
+        "decision": "Localization of the Services/section path segments",
+        "userVersion": "Current repo uses the German token 'leistungen' as the folder in every language (/en/leistungen/…, /fr/leistungen/…).",
+        "proposedVersion": "Localize every section segment per language (services/servizi/services; branchen/industries/settori/secteurs; ressourcen/resources/risorse/ressources), maintained in a central slug map beside site.ts and rendered into hreflang.",
+        "rationale": "A German section token inside English/Italian/French URLs weakens keyword-URL match and reads as mis-localized to both users and AI parsers judging language-page coherence. A central slug map keeps trailingSlash + hreflang reciprocity intact while making each locale's URL a clean topical/entity signal in its own language."
+      },
+      {
+        "decision": "Service-x-Industry matrix nesting (service-first vs industry-first)",
+        "userVersion": "Not specified in the brief (left as open critical decision #2).",
+        "proposedVersion": "Nest matrix pages under the SERVICE silo (/leistungen/{service}/{industry}/) as the canonical home, with a reciprocal link (not a second canonical) from the industry hub.",
+        "rationale": "The service is the monetizable, schema-bearing Service+Offer entity; the industry is a qualifier/audience. Housing the matrix under the service consolidates the long-tail pages' authority onto the service entity and gives one unambiguous canonical parent, while the industry hub still surfaces them for demand-side discovery."
+      },
+      {
+        "decision": "Company 'Privacy & Security' vs legal 'Datenschutz'",
+        "userVersion": "Company section lists 'Privacy & Security'; a legal /datenschutz/ page already exists.",
+        "proposedVersion": "Keep them as two distinct entities: a marketing/trust Privacy & Security page under Company (WebPage, E-E-A-T signal, links to sub-processors, data residency, security posture) and the existing legal /datenschutz/ (privacy policy) in the legal cluster.",
+        "rationale": "They serve different intents and schema roles: one is a citeable trust-authority asset, the other a compliance document. Merging them dilutes both; separating prevents the legal page from cannibalizing 'AI data security'-style informational queries."
+      },
+      {
+        "decision": "Position of the AI Phone Assistant relative to AI Agents",
+        "userVersion": "AI Phone Assistant and AI Agents are listed as sibling services.",
+        "proposedVersion": "Keep AI Phone Assistant as its own flagship Service page (it is a concrete, productized offering with published pricing), but explicitly model it in schema and copy as a specialized INSTANCE of the AI Agents category (voice agent), with a disambiguation block cross-linking the two.",
+        "rationale": "Prevents the generic AI Agents page and the specific Phone Assistant page from cannibalizing each other, and gives LLMs an explicit 'the phone assistant is a type of AI agent' relationship rather than leaving them to conflate two overlapping entities."
+      }
+    ],
+    "urlScheme": [
+      {
+        "pageType": "Home",
+        "de": "/",
+        "en": "/en/",
+        "it": "/it/",
+        "fr": "/fr/",
+        "notes": "German at root; /en//it//fr/ prefixes. Organization + WebSite(SearchAction) + LocalBusiness schema; x-default -> de."
+      },
+      {
+        "pageType": "Services hub (index)",
+        "de": "/leistungen/",
+        "en": "/en/services/",
+        "it": "/it/servizi/",
+        "fr": "/fr/services/",
+        "notes": "ServiceCollection / OfferCatalog ItemList; links every service + top matrix pages. Localize the segment (currently 'leistungen' in all langs)."
+      },
+      {
+        "pageType": "Service: AI Phone Assistant",
+        "de": "/leistungen/ki-telefonassistent/",
+        "en": "/en/services/ai-phone-assistant/",
+        "it": "/it/servizi/assistente-telefonico-ai/",
+        "fr": "/fr/services/assistant-telephonique-ia/",
+        "notes": "301 from legacy root /ki-telefonassistent/. Service + Offer (confirmed pricing) + FAQPage + BreadcrumbList; schema notes it isSubTypeOf the AI Agents/voice-agent category."
+      },
+      {
+        "pageType": "Service: AI Websites",
+        "de": "/leistungen/ai-websites/",
+        "en": "/en/services/ai-websites/",
+        "it": "/it/servizi/siti-web-ai/",
+        "fr": "/fr/services/sites-web-ia/",
+        "notes": "DE slug kept as live 'ai-websites' for continuity; localize others. Service + Offer + FAQPage."
+      },
+      {
+        "pageType": "Service: SEO",
+        "de": "/leistungen/seo/",
+        "en": "/en/services/seo/",
+        "it": "/it/servizi/seo/",
+        "fr": "/fr/services/seo/",
+        "notes": "'seo' is a universal token; language disambiguation carried by the localized parent segment + hreflang."
+      },
+      {
+        "pageType": "Service: GEO",
+        "de": "/leistungen/geo/",
+        "en": "/en/services/geo/",
+        "it": "/it/servizi/geo/",
+        "fr": "/fr/services/geo/",
+        "notes": "Generative Engine Optimization. Answer-first, defines GEO as a DefinedTerm and links the Academy marketing-seo-geo pillar."
+      },
+      {
+        "pageType": "Service: Google Ads",
+        "de": "/leistungen/google-ads/",
+        "en": "/en/services/google-ads/",
+        "it": "/it/servizi/google-ads/",
+        "fr": "/fr/services/google-ads/",
+        "notes": "Brand token kept across langs. Copy states ad budget is billed separately (already in llms.txt facts)."
+      },
+      {
+        "pageType": "Service: AI Automation",
+        "de": "/leistungen/ki-automatisierung/",
+        "en": "/en/services/ai-automation/",
+        "it": "/it/servizi/automazione-ai/",
+        "fr": "/fr/services/automatisation-ia/",
+        "notes": "serviceType='Workflow automation'. Disambiguation block vs Agents/Integrations/Consulting."
+      },
+      {
+        "pageType": "Service: AI Agents",
+        "de": "/leistungen/ki-agenten/",
+        "en": "/en/services/ai-agents/",
+        "it": "/it/servizi/agenti-ai/",
+        "fr": "/fr/services/agents-ia/",
+        "notes": "serviceType='Autonomous AI agents'. Phone Assistant declared as a concrete instance/subtype."
+      },
+      {
+        "pageType": "Service: AI Consulting",
+        "de": "/leistungen/ki-beratung/",
+        "en": "/en/services/ai-consulting/",
+        "it": "/it/servizi/consulenza-ai/",
+        "fr": "/fr/services/conseil-ia/",
+        "notes": "serviceType='Advisory'. Positioned as the diagnostic entry point that routes to build services."
+      },
+      {
+        "pageType": "Service: AI Integrations",
+        "de": "/leistungen/ki-integrationen/",
+        "en": "/en/services/ai-integrations/",
+        "it": "/it/servizi/integrazioni-ai/",
+        "fr": "/fr/services/integrations-ia/",
+        "notes": "serviceType='System integration'. The plumbing layer; disambiguated from Automation/Agents."
+      },
+      {
+        "pageType": "Service x Industry matrix",
+        "de": "/leistungen/ki-telefonassistent/zahnarztpraxen/",
+        "en": "/en/services/ai-phone-assistant/dental-clinics/",
+        "it": "/it/servizi/assistente-telefonico-ai/studi-dentistici/",
+        "fr": "/fr/services/assistant-telephonique-ia/cabinets-dentaires/",
+        "notes": "Pattern /{service}/{industry}/. Self-canonical; isPartOf both service and industry; published only when unique industry content exists (real case study OR unique FAQ+stats)."
+      },
+      {
+        "pageType": "Industries hub",
+        "de": "/branchen/",
+        "en": "/en/industries/",
+        "it": "/it/settori/",
+        "fr": "/fr/secteurs/",
+        "notes": "CollectionPage / ItemList of industry hubs."
+      },
+      {
+        "pageType": "Industry page",
+        "de": "/branchen/gesundheitswesen/",
+        "en": "/en/industries/healthcare/",
+        "it": "/it/settori/sanita/",
+        "fr": "/fr/secteurs/sante/",
+        "notes": "Example (Healthcare). Curates the Service-x-Industry pages for this vertical + industry proof; Clinics and Law Firms fold in as sub-audiences (Healthcare / Professional Services)."
+      },
+      {
+        "pageType": "Resources hub",
+        "de": "/ressourcen/",
+        "en": "/en/resources/",
+        "it": "/it/risorse/",
+        "fr": "/fr/ressources/",
+        "notes": "CollectionPage indexing Academy + all resource types."
+      },
+      {
+        "pageType": "AI Academy hub",
+        "de": "/ressourcen/ki-academy/",
+        "en": "/en/resources/ai-academy/",
+        "it": "/it/risorse/ai-academy/",
+        "fr": "/fr/ressources/ai-academy/",
+        "notes": "Knowledge-hub landing; ItemList of the 9 topical cluster pillars. Nests under Resources per brief."
+      },
+      {
+        "pageType": "Academy pillar (cluster)",
+        "de": "/ressourcen/ki-academy/marketing-seo-geo/",
+        "en": "/en/resources/ai-academy/marketing-seo-geo/",
+        "it": "/it/risorse/ai-academy/marketing-seo-geo/",
+        "fr": "/fr/ressources/ai-academy/marketing-seo-geo/",
+        "notes": "One of 9 pillars (foundations, ai-for-business, agents-automation, models-vendors, local-open-source-ai, trust-security, marketing-seo-geo, industries, business-functions). Article + FAQPage; author = Person(Giovanna Carpi) for E-E-A-T."
+      },
+      {
+        "pageType": "AI Glossary term",
+        "de": "/ressourcen/ki-glossar/geo/",
+        "en": "/en/resources/ai-glossary/geo/",
+        "it": "/it/risorse/glossario-ai/geo/",
+        "fr": "/fr/ressources/glossaire-ia/geo/",
+        "notes": "DefinedTerm within a DefinedTermSet; answer-first 1-2 sentence definition = the citeable snippet."
+      },
+      {
+        "pageType": "Guides / Comparisons / Case Studies / Templates / Calculators / Downloads",
+        "de": "/ressourcen/ratgeber/ , /ressourcen/vergleiche/ , /ressourcen/fallstudien/ , /ressourcen/vorlagen/ , /ressourcen/rechner/ , /ressourcen/downloads/",
+        "en": "/en/resources/guides/ , /comparisons/ , /case-studies/ , /templates/ , /calculators/ , /downloads/",
+        "it": "/it/risorse/guide/ , /confronti/ , /casi-studio/ , /modelli/ , /calcolatori/ , /download/",
+        "fr": "/fr/ressources/guides/ , /comparatifs/ , /etudes-de-cas/ , /modeles/ , /calculateurs/ , /telechargements/",
+        "notes": "Resource sub-collections. Case Studies use real references only (Article/CreativeWork); flag as NEEDS VERIFICATION until supplied."
+      },
+      {
+        "pageType": "News & Insights",
+        "de": "/ressourcen/insights/",
+        "en": "/en/resources/insights/",
+        "it": "/it/risorse/insights/",
+        "fr": "/fr/ressources/insights/",
+        "notes": "Blog collection; Article schema, author Person, freshness signal for GEO."
+      },
+      {
+        "pageType": "Company: About / Methodology / Technology / Privacy & Security / Contact",
+        "de": "/ueber-uns/ , /methode/ , /technologie/ , /datenschutz-sicherheit/ , /kontakt/",
+        "en": "/en/about/ , /methodology/ , /technology/ , /privacy-security/ , /contact/",
+        "it": "/it/chi-siamo/ , /metodo/ , /tecnologia/ , /privacy-sicurezza/ , /contatti/",
+        "fr": "/fr/a-propos/ , /methodologie/ , /technologie/ , /confidentialite-securite/ , /contact/",
+        "notes": "About = Organization + Person graph (founders, sameAs). Contact = ContactPage + LocalBusiness NAP. Privacy & Security is distinct from the legal /datenschutz/."
+      },
+      {
+        "pageType": "Legal (existing) + machine files",
+        "de": "/impressum/ , /datenschutz/ , /agb/ , /llms.txt , /robots.txt",
+        "en": "/en/impressum/ , /en/datenschutz/ , /en/agb/",
+        "it": "/it/impressum/ , /it/datenschutz/ , /it/agb/",
+        "fr": "/fr/impressum/ , /fr/datenschutz/ , /fr/agb/",
+        "notes": "Keep existing legal routes untouched. llms.txt/robots.txt live at root (single, cross-locale); extend llms.txt to enumerate all hubs and add an llms-full.txt."
+      }
+    ],
+    "servicePageModel": "Every service is ONE dedicated page = one Service entity, never merged. Fixed answer-first template: (1) H1 = exact service name + qualifier; (2) 40-60 word direct-answer summary block immediately under H1 (the snippet AI Overviews/Perplexity lift and attribute); (3) what it is / who it's for / honest limits (the 'ehrliche Grenzen' pattern already used on ki-telefonassistent builds trust and citeability); (4) how it works; (5) packages & pricing from pricing.ts only (never invented); (6) real case studies (NEEDS VERIFICATION placeholder until supplied); (7) a disambiguation block ('How this differs from [sibling service]') that explicitly links the overlapping siblings so LLMs never conflate entities; (8) unique FAQ authored as natural questions (FAQPage schema); (9) unique CTA; (10) contextual cross-links up to the Services hub, sideways to relevant Service-x-Industry pages, and out to the matching Academy pillar. Schema per service page: Service (with serviceType, provider->Organization, areaServed=CH/Zurich, offers->Offer) + FAQPage + BreadcrumbList, all self-canonical. The Services INDEX hub co-exists and is the OfferCatalog/ItemList entity that binds them.",
+    "serviceDifferentiation": [
+      {
+        "service": "AI Consulting",
+        "scope": "Advisory and strategy only, no build: AI-readiness assessment, opportunity mapping, feasibility, roadmap, governance, team training. Deliverable = knowledge, strategy, a prioritized roadmap. It is the diagnostic front door that routes clients into the build services.",
+        "distinctFrom": "Unlike Automation/Agents/Integrations it ships no running software; it decides WHAT to build and whether to build."
+      },
+      {
+        "service": "AI Automation",
+        "scope": "Deterministic, trigger/rule-based workflow and process automation that connects existing tools to remove manual work (n8n/Make/Zapier-style orchestration, document processing, data syncs, notifications). Deliverable = running automated workflows that fire on defined triggers.",
+        "distinctFrom": "Unlike AI Agents it does not reason or exercise judgment (it follows fixed rules). Unlike Integrations it orchestrates a WORKFLOW across tools rather than wiring one system/model into another."
+      },
+      {
+        "service": "AI Agents",
+        "scope": "Autonomous, LLM-reasoning agents that make decisions, choose tools and handle multi-step tasks with judgment (customer-facing assistants that take actions, internal copilots, agentic workflows). Deliverable = an agent that reasons and acts. The AI Phone Assistant is the flagship productized instance (a voice agent).",
+        "distinctFrom": "Unlike Automation it is non-deterministic and reasons rather than following fixed rules. Unlike Consulting it is a built, operating system, not advice."
+      },
+      {
+        "service": "AI Integrations",
+        "scope": "Wiring AI capabilities/models into the client's EXISTING systems and software: API integrations, embedding models into CRM/ERP/product, custom endpoints, connectors. The plumbing/connectivity layer. Deliverable = an AI capability live inside existing infrastructure.",
+        "distinctFrom": "Unlike Automation it connects systems/models (system-to-system plumbing) rather than orchestrating a business workflow. Unlike Agents it delivers connectivity/capability, not autonomous decision-making."
+      }
+    ],
+    "industriesModel": "Each of the 14 industries is a hub page (CollectionPage) that is demand-side, not a duplicate of any service. An industry hub: opens with an answer-first summary of how Weissmann AI serves that vertical in Switzerland; curates and links the Service-x-Industry matrix pages that exist for it; carries industry-specific proof (real case studies -> NEEDS VERIFICATION until supplied), pain points, and an industry FAQ; and cross-links to the Academy industries cluster for informational intent. Clinics fold into Healthcare and Law Firms into Professional Services as named sub-audiences (rendered via schema Audience, not as separate top-level industries) so their long-tail queries are captured without a parallel taxonomy. Schema: CollectionPage + ItemList + BreadcrumbList; the hub references the Organization as provider and declares areaServed. Industry hubs never carry Offer/pricing (that lives on service and matrix pages) to keep the commercial entity singular.",
+    "serviceIndustryMatrix": "Structure: /leistungen/{service}/{industry}/ (e.g. AI phone assistant for dental clinics), canonical home under the SERVICE silo, with a reciprocal link from the industry hub (never a second canonical). This is a curated-programmatic play, NOT auto-generated N-by-M: a matrix page is published only when it clears a content-completeness gate -- it must contain at least one genuinely unique block (a real industry case study, OR industry-specific FAQ + statistics + workflow), never just a find-and-replace of the parent service page. This is the single biggest thin/duplicate-content and cannibalization risk at scale, so the gate is mandatory. Each matrix page: unique H1 ('[Service] for [Industry]'), answer-first summary, Service schema with audience/areaServed set to the industry, FAQPage, BreadcrumbList (Home > Services > Service > Industry). isPartOf points to the parent Service; a mentions/about edge points to the Industry hub. Pages that cannot meet the gate stay unbuilt and the query is instead served by the industry hub, preventing an orphan/thin sprawl. Roll out matrix pages by demand priority (highest-intent service x highest-value vertical first) rather than exhaustively.",
+    "resourcesModel": "Resources is the informational-intent authority layer and the home of the AI Academy (per brief, Academy nests under Resources). The hub (CollectionPage) indexes: AI Academy (9-cluster knowledge hub), AI Glossary (DefinedTermSet of DefinedTerm entities, each an answer-first definition = prime citeable snippet), Guides (how-to Articles), Comparisons (X-vs-Y tables, the format LLMs quote most), Case Studies (real only, NEEDS VERIFICATION), Templates, Calculators (interactive lead magnets, e.g. ROI/automation-savings), Downloads, and News & Insights (freshness signal, Article + Person author). Every resource page is self-canonical, answer-first, authored by a named Person (Giovanna Carpi / Nicola Mössner) to carry E-E-A-T, and enumerated in llms.txt. Resource pages target informational queries and link DOWN to commercial services via contextual CTAs; they never carry Offer schema.",
+    "academyServiceRelationship": "Anti-cannibalization is by INTENT separation, enforced structurally. Commercial Service pages (under /leistungen/) target transactional/commercial-intent queries ('KI-Telefonassistent Preise', 'KI-Telefonassistent für Zahnärzte') and carry Service+Offer+FAQ schema with CTA-first layout. Academy pillars and glossary terms (under /ressourcen/ki-academy/) target informational-intent queries ('Was ist ein KI-Telefonassistent?', 'Wie funktioniert ein KI-Agent?') and carry Article/DefinedTerm+FAQ schema with an educational, answer-first layout. Because they answer different query intents they do not compete. Enforcement rules: (1) distinct H1 and title patterns per intent (commercial = product+benefit+CTA framing; informational = question/definition framing); (2) both pages are always SELF-canonical -- never cross-canonicalize, because they are legitimately different entities/intents; (3) reciprocal contextual cross-links -- Academy -> Service ('ready to implement? see the service') and Service -> Academy ('learn the fundamentals') -- which also lets an LLM traverse from concept to provider and cite Weissmann as both the explainer and the vendor; (4) the same overlapping-terms disambiguation block appears in the Academy agents/automation cluster, mirroring the service pages, so machine understanding of the four build-service entities is consistent across the commercial and informational halves of the site.",
+    "companyModel": "Company is the E-E-A-T / trust entity layer and the anchor of the Weissmann entity graph. About Weissmann AI (/ueber-uns/) is the landing page and renders the full graph: Organization (NAP from site.ts: Technoparkstrasse 6, 8005 Zürich) with founder/employee edges to two Person entities (Giovanna Carpi -> Founder & CEO, sameAs LinkedIn; Nicola Mössner -> Co-founder Strategy & PR), and sameAs to X, Instagram, Facebook, LinkedIn (company) -- extend with Zefix/Handelsregister, Google Business Profile and Wikidata once available (NEEDS VERIFICATION). Methodology page reifies the named 7-step Weissmann AI Method (Discover, Analyze, Plan, Implement, Launch, Measure, Optimize) as a citeable, branded HowTo/process entity. Technology page documents the stack (a trust + disambiguation asset). Privacy & Security is a marketing trust page (data residency, sub-processors, security posture) kept separate from the legal /datenschutz/ policy. Contact is ContactPage + LocalBusiness with the single canonical NAP. Legal entity fields (registeredName/legalForm/UID) stay null placeholders until confirmed -- never invented.",
+    "crossLinkingModel": "Hub-and-spoke with reciprocal edges, expressed in three redundant channels so no page is orphaned and every entity relationship is machine-legible. (1) URL path hierarchy encodes parent-child. (2) Schema.org/JSON-LD: BreadcrumbList on every page; hub pages carry ItemList/OfferCatalog with hasPart; child pages carry isPartOf; services carry provider->Organization; matrix pages carry isPartOf(service)+about(industry); Academy pages carry author(Person)+about(DefinedTerm). (3) On-page contextual links: services <-> their matrix pages <-> industry hubs; services <-> Academy pillars (intent-separated); glossary terms <-> the pillar and the service that operationalizes the concept. Global mega-menu exposes Services/Industries/Resources/Company groupings (every top service, industry and resource type is one click from anywhere). Every page also appears in the XML sitemap, an HTML sitemap, and the enumerated llms.txt. Orphan prevention rule: no page ships unless it is reachable from (a) the mega-menu or its hub, (b) breadcrumbs, and (c) at least one contextual in-body link from a related page. hreflang: every page emits a reciprocal de/en/it/fr + x-default(de) cluster generated from the central localized-slug map, keeping trailingSlash-always consistent.",
+    "taxonomy": "Two orthogonal commercial axes plus one informational axis, kept in separate namespaces. Axis A = SERVICE (what we do): 9 Service entities under /leistungen/. Axis B = INDUSTRY (who we serve): 14 CollectionPage hubs under /branchen/. Their intersection = the Service-x-Industry matrix (/leistungen/{service}/{industry}/), gated for uniqueness. Axis C = KNOWLEDGE (what we explain): the AI Academy's 9 topical clusters (foundations/glossary, business & SMEs, agents-automation-voice-chatbots, models & vendors, local/open-source, trust-security-privacy-regulation, marketing-seo-geo, industries, functions) plus glossary DefinedTerms, all under /ressourcen/. A term (e.g. 'KI-Agent') exists exactly once as each type: a Service entity (commercial), a DefinedTerm (definitional), and an Academy pillar section (educational) -- disambiguated by intent, schema type and URL namespace, so the same concept is covered three ways without duplication. Sub-audiences (Clinics, Law Firms) are schema Audiences under a parent industry, not separate taxonomy nodes.",
+    "scalabilityNotes": "Designed for hundreds of pages. (1) Central config drives everything: extend the site.ts pattern with a slugs.ts localized-slug map (page-type -> {de,en,it,fr}) and data-driven services[]/industries[]/clusters[] arrays, so a new page is a data entry, not hand-built routing -- and hreflang/breadcrumbs/schema render automatically, structurally preventing orphans and hreflang drift. (2) Matrix growth is demand-prioritized and gated, not exhaustive N-by-M, so thin content cannot sprawl. (3) One shared answer-first template per page type keeps 100+ pages structurally consistent for both users and parsers. (4) Namespaced silos (/leistungen//branchen//ressourcen/) keep the root uncluttered as page count grows. (5) llms.txt enumerates hubs and links an llms-full.txt; regenerate both from the same config on every build so the AI-facing map never goes stale. (6) 24h JS-cache caveat and Netlify deploy exclusions (.git/.claude) from the existing workflow are respected. Watch item: mega-menu must degrade gracefully as Industries grows -- group by sector rather than listing all 14 flat.",
+    "conversionNotes": "Conversion is preserved while optimizing for citeability. Each Service and Service-x-Industry page is CTA-first (demo/consultation request, phone +41 78 345 97 88, WhatsApp) with pricing transparency from pricing.ts building trust. The answer-first summary blocks double as the AI-citeable snippet AND the human value proposition. Informational Academy/Resource pages convert via contextual 'ready to implement?' links down to the matching service plus lead magnets (Calculators, Templates, Downloads) that capture intent earlier in the funnel. AI Consulting is positioned as the low-friction diagnostic entry point that routes to higher-value build engagements. Honest-limits sections (proven on the phone-assistant page) reduce bad-fit leads and raise trust/citeability simultaneously. Every CTA path preserves the existing GA4 property (G-3L30SCGWGT, loaded once) and existing begin_checkout/Stripe tracking.",
+    "risks": [
+      "Migrating /ki-telefonassistent/ from root to /leistungen/ki-telefonassistent/ risks a temporary dip and stale LLM citations if the 301 + canonical update + llms.txt update + sitemap update are not shipped together; must be a single coordinated change.",
+      "Service-x-Industry matrix is the primary thin/duplicate-content danger; without strict enforcement of the uniqueness gate it can trigger quality suppression and dilute the service entities.",
+      "Localizing section segments (leistungen->services/servizi/…) changes live URLs already indexed in the current repo (en/it/fr use 'leistungen'); requires 301s and hreflang regeneration or it creates duplicate/broken clusters.",
+      "Case studies, customers, integrations and certifications are all currently unknown; publishing matrix/industry pages that lean on proof risks either empty pages or the temptation to invent -- both harmful. Gate on real content.",
+      "Allowing AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended) maximizes GEO citeability but is a strategic tradeoff the owner must consciously accept in robots.txt.",
+      "Four-language sync policy means every new page type multiplies into 4; under-resourcing translation creates partial hreflang clusters that harm all four locales.",
+      "Mega-menu with 9 services + 14 industries + 9 resource types can overwhelm; poor grouping hurts UX and crawl focus.",
+      "OneDrive git-corruption history: this IA assumes the repo is moved out of OneDrive before large-scale page generation to avoid another loss."
+    ],
+    "confirmationsNeeded": [
+      "Approve siloing all services under a localized /leistungen/ segment with a 301 from the legacy root /ki-telefonassistent/ (Decision 1).",
+      "Approve localizing section segments per language (services/servizi/secteurs/branchen/…) and 301-ing the current 'leistungen'-in-all-langs URLs.",
+      "Confirm legal entity data (registered name, legal form, UID) so About/legal schema can move off placeholders.",
+      "Provide real case studies / references (which industries, which services) before any Service-x-Industry or Industry page relying on proof is published -- otherwise NEEDS VERIFICATION.",
+      "Confirm the actual list of supported integrations/tools for the AI Integrations and AI Automation pages (none may be invented).",
+      "Decide robots.txt policy for AI crawlers (GPTBot/ClaudeBot/PerplexityBot/Google-Extended) -- recommend allow for GEO.",
+      "Confirm authoritative sameAs targets to add: Zefix/Handelsregister entry, Google Business Profile URL, Wikidata QID (if any).",
+      "Confirm final Academy slug token (ki-academy vs ai-academy per language) and whether any of the 9 clusters launch first vs all together under the four-language sync policy.",
+      "Confirm which Service-x-Industry combinations are launch priorities (demand ranking) so the matrix rolls out by value, not exhaustively.",
+      "Confirm the AI Websites DE slug stays 'ai-websites' (live) vs migrating to 'ki-websites'."
+    ]
+  },
+  {
+    "lens": "UX, conversion and long-term scalability/governance first. The IA is optimized so a human moves cleanly from ecosystem (home) to a single-goal service/industry page to a conversion, with minimal cognitive load, while the structure scales to hundreds of pages (service x industry, Academy) without decay — every page generated from single-source registries, every leaf reachable from a hub, orphans and thin/duplicate pages blocked at build time.",
+    "endorsesUserStructure": true,
+    "topLevelNav": [
+      {
+        "label": "Leistungen (Services)",
+        "purpose": "Mega-menu to the 9 dedicated service pages, curated into 3 groups (Build / Grow / Advise) plus an 'Alle Leistungen' link to the /leistungen/ hub. This is the primary commercial entry point.",
+        "children": [
+          "AI Phone Assistant",
+          "Website Development (AI Websites)",
+          "SEO",
+          "GEO",
+          "Google Ads",
+          "AI Automation",
+          "AI Agents",
+          "AI Consulting",
+          "AI Integrations",
+          "Alle Leistungen (hub)"
+        ]
+      },
+      {
+        "label": "Branchen (Industries)",
+        "purpose": "Mega-menu of demand-side sector hubs grouped by cluster; each hub frames sector pains and links to relevant services + service x industry combos. Not duplicated service copy.",
+        "children": [
+          "Healthcare (Clinics folded in)",
+          "Restaurants",
+          "Hotels",
+          "Retail",
+          "Real Estate",
+          "Insurance",
+          "Professional Services (Law firms folded in)",
+          "Beauty & Wellness",
+          "Manufacturing",
+          "Construction",
+          "Logistics",
+          "Education",
+          "Finance",
+          "E-commerce",
+          "Alle Branchen (hub)"
+        ]
+      },
+      {
+        "label": "Ressourcen (Resources)",
+        "purpose": "Mega-menu grouped Learn / Tools / Proof; hosts the informational AI Academy plus typed libraries. Feeds top-of-funnel and GEO/topical authority.",
+        "children": [
+          "AI Academy",
+          "AI Glossary",
+          "Guides",
+          "Comparisons",
+          "Case Studies",
+          "Templates",
+          "Calculators",
+          "Insights (News)"
+        ]
+      },
+      {
+        "label": "Unternehmen (Company)",
+        "purpose": "Light dropdown (not a mega-menu) carrying E-E-A-T / trust signals for SEO+GEO.",
+        "children": [
+          "About Weissmann AI",
+          "Methodology",
+          "Technology",
+          "Privacy & Security",
+          "Contact"
+        ]
+      },
+      {
+        "label": "Preise (Pricing)",
+        "purpose": "Utility text link kept in the header for high-intent buyers; no children. Sits beside the persistent Contact/Demo CTA button and language switcher.",
+        "children": []
+      }
+    ],
+    "keyDivergences": [
+      {
+        "decision": "Service URL model (Critical Decision 1)",
+        "userVersion": "Flat root-level service URLs, following the live /ki-telefonassistent/ precedent.",
+        "proposedVersion": "Siloed /leistungen/{service}/ for ALL services (localized per language); the legacy root /ki-telefonassistent/ is 301-redirected into the silo, and a /leistungen/ services INDEX hub co-exists.",
+        "rationale": "At hundreds of pages, siloing gives URL-derived breadcrumbs, clean topical silos, unambiguous namespace, and structural orphan-prevention. Subfolders rank equivalently to root in modern Google; a 301 preserves ~all equity of the one legacy page while consolidating the model. Flat root URLs collide and lose hierarchy signals at scale. Note: /leistungen/ai-websites/ is already correctly siloed, so this only regularizes the one legacy exception."
+      },
+      {
+        "decision": "Downloads as a Resources category (Critical Decision touching Resources taxonomy)",
+        "userVersion": "Downloads is one of nine top-level Resources categories.",
+        "proposedVersion": "Downloads is a cross-cutting library VIEW/filter over the real asset types (Templates, Guides, Whitepapers), not its own content silo.",
+        "rationale": "A separate 'Downloads' hub duplicates the Templates/Guides hubs and creates a thin, cannibalizing index. The asset type is the real entity; 'downloadable' is an attribute. Removing it prevents duplicate-content governance debt."
+      },
+      {
+        "decision": "Service x Industry placement (Critical Decision 2)",
+        "userVersion": "Not specified in the brief.",
+        "proposedVersion": "Combo pages nest under the SERVICE silo (/leistungen/{service}/fuer-{industry}/), are cross-linked from the industry hub, and are published only behind a substance gate.",
+        "rationale": "The buyer intent is service-led, so the service stays the topical/money-page parent. Dual reachability (from service + from industry) eliminates orphans and densifies internal linking. The substance gate stops programmatic thin/duplicate pages."
+      },
+      {
+        "decision": "Localized URL segments (Critical Decision 4)",
+        "userVersion": "Current localized folders (/en/, /it/, /fr/) reuse the German slugs (e.g. /en/leistungen/, /en/preise/, /en/ki-telefonassistent/).",
+        "proposedVersion": "Fully localized path segments per language (services/servizi/services, branchen/industries/settori/secteurs, preise/pricing/prezzi/tarifs, etc.), delivered with a 301 map from the old reused-slug URLs.",
+        "rationale": "Per-locale keyword-in-URL match and native UX/trust in each market; reused German slugs in EN/IT/FR pages read as untranslated and weaken relevance. Must ship with a redirect map and updated hreflang to avoid transient dips."
+      },
+      {
+        "decision": "Primary nav shape for Company & Pricing (Critical Decision 5)",
+        "userVersion": "HOME > SERVICES > INDUSTRIES > RESOURCES > COMPANY, with Pricing as its own nav item (current header).",
+        "proposedVersion": "Four mega/section items (Leistungen, Branchen, Ressourcen, Unternehmen) with Company as a light dropdown, plus Pricing demoted to a utility text link beside a persistent Contact/Demo CTA.",
+        "rationale": "Keeps the primary nav to four low-cognitive-load sections that scale, while preserving high-intent Pricing access and a single always-visible conversion CTA. Company rarely needs a mega-menu, so it stays lightweight."
+      }
+    ],
+    "urlScheme": [
+      {
+        "pageType": "Home",
+        "de": "/",
+        "en": "/en/",
+        "it": "/it/",
+        "fr": "/fr/",
+        "notes": "German at root (prefixDefaultLocale:false). hreflang cluster of all 4 + x-default -> German root."
+      },
+      {
+        "pageType": "Services hub (index)",
+        "de": "/leistungen/",
+        "en": "/en/services/",
+        "it": "/it/servizi/",
+        "fr": "/fr/services/",
+        "notes": "Ecosystem hub, co-exists with home; groups 9 services Build/Grow/Advise; ranks for 'AI services Zurich'. Currently missing an index.astro at /leistungen/ (orphan risk) — must be added."
+      },
+      {
+        "pageType": "Service page",
+        "de": "/leistungen/{service}/",
+        "en": "/en/services/{service}/",
+        "it": "/it/servizi/{service}/",
+        "fr": "/fr/services/{service}/",
+        "notes": "Example: ki-telefonassistent / ai-phone-assistant / assistente-telefonico-ai / assistant-telephonique-ia. Full 9-slug table in servicePageModel."
+      },
+      {
+        "pageType": "Service x Industry combo",
+        "de": "/leistungen/{service}/fuer-{industry}/",
+        "en": "/en/services/{service}/for-{industry}/",
+        "it": "/it/servizi/{service}/per-{industry}/",
+        "fr": "/fr/services/{service}/pour-{industry}/",
+        "notes": "Published only behind substance gate; below gate it lives as an anchored section on the parent, not a standalone URL."
+      },
+      {
+        "pageType": "Industries hub",
+        "de": "/branchen/",
+        "en": "/en/industries/",
+        "it": "/it/settori/",
+        "fr": "/fr/secteurs/",
+        "notes": "Lists all 14 sector hubs grouped by cluster."
+      },
+      {
+        "pageType": "Industry page",
+        "de": "/branchen/{industry}/",
+        "en": "/en/industries/{industry}/",
+        "it": "/it/settori/{industry}/",
+        "fr": "/fr/secteurs/{industry}/",
+        "notes": "Example: gesundheitswesen / healthcare / sanita / sante. Clinics -> Healthcare, Law firms -> Professional Services as sub-sections, not top-level."
+      },
+      {
+        "pageType": "Resources hub",
+        "de": "/ressourcen/",
+        "en": "/en/resources/",
+        "it": "/it/risorse/",
+        "fr": "/fr/ressources/",
+        "notes": "Routes to typed libraries; hosts the AI Academy."
+      },
+      {
+        "pageType": "AI Academy hub",
+        "de": "/ressourcen/ki-academy/",
+        "en": "/en/resources/ai-academy/",
+        "it": "/it/risorse/ai-academy/",
+        "fr": "/fr/ressources/ai-academy/",
+        "notes": "Informational knowledge hub; 9 topical pillars nest beneath."
+      },
+      {
+        "pageType": "Academy pillar",
+        "de": "/ressourcen/ki-academy/{pillar}/",
+        "en": "/en/resources/ai-academy/{pillar}/",
+        "it": "/it/risorse/ai-academy/{pillar}/",
+        "fr": "/fr/ressources/ai-academy/{pillar}/",
+        "notes": "Informational pillar hub; Article/FAQ schema; no pricing."
+      },
+      {
+        "pageType": "Academy article",
+        "de": "/ressourcen/ki-academy/{pillar}/{article}/",
+        "en": "/en/resources/ai-academy/{pillar}/{article}/",
+        "it": "/it/risorse/ai-academy/{pillar}/{article}/",
+        "fr": "/fr/ressources/ai-academy/{pillar}/{article}/",
+        "notes": "Deep informational leaf; contextual CTA to matching commercial service."
+      },
+      {
+        "pageType": "AI Glossary hub",
+        "de": "/ressourcen/ki-glossar/",
+        "en": "/en/resources/ai-glossary/",
+        "it": "/it/risorse/glossario-ai/",
+        "fr": "/fr/ressources/glossaire-ia/",
+        "notes": "DefinedTermSet schema."
+      },
+      {
+        "pageType": "Glossary term",
+        "de": "/ressourcen/ki-glossar/{term}/",
+        "en": "/en/resources/ai-glossary/{term}/",
+        "it": "/it/risorse/glossario-ai/{term}/",
+        "fr": "/fr/ressources/glossaire-ia/{term}/",
+        "notes": "DefinedTerm; strong GEO/AI-citation surface."
+      },
+      {
+        "pageType": "Guides",
+        "de": "/ressourcen/leitfaeden/",
+        "en": "/en/resources/guides/",
+        "it": "/it/risorse/guide/",
+        "fr": "/fr/ressources/guides/",
+        "notes": "Long-form informational."
+      },
+      {
+        "pageType": "Comparisons",
+        "de": "/ressourcen/vergleiche/",
+        "en": "/en/resources/comparisons/",
+        "it": "/it/risorse/confronti/",
+        "fr": "/fr/ressources/comparatifs/",
+        "notes": "'X vs Y' informational intent; keeps comparison queries off commercial pages."
+      },
+      {
+        "pageType": "Case Studies",
+        "de": "/ressourcen/fallstudien/",
+        "en": "/en/resources/case-studies/",
+        "it": "/it/risorse/case-study/",
+        "fr": "/fr/ressources/etudes-de-cas/",
+        "notes": "Only REAL case studies; reused as proof modules across service/industry/combo pages."
+      },
+      {
+        "pageType": "Templates",
+        "de": "/ressourcen/vorlagen/",
+        "en": "/en/resources/templates/",
+        "it": "/it/risorse/modelli/",
+        "fr": "/fr/ressources/modeles/",
+        "notes": "Downloadable assets surfaced here (Downloads is a filter view, not a separate hub)."
+      },
+      {
+        "pageType": "Calculators",
+        "de": "/ressourcen/rechner/",
+        "en": "/en/resources/calculators/",
+        "it": "/it/risorse/calcolatori/",
+        "fr": "/fr/ressources/calculateurs/",
+        "notes": "e.g. existing MissedCallsCalculator; strong conversion assist for service pages."
+      },
+      {
+        "pageType": "Insights (News)",
+        "de": "/ressourcen/insights/",
+        "en": "/en/resources/insights/",
+        "it": "/it/risorse/insights/",
+        "fr": "/fr/ressources/actualites/",
+        "notes": "Blog/news; freshness + topical breadth."
+      },
+      {
+        "pageType": "About (Company)",
+        "de": "/ueber-uns/",
+        "en": "/en/about/",
+        "it": "/it/chi-siamo/",
+        "fr": "/fr/a-propos/",
+        "notes": "Founders Person schema (Giovanna Carpi, Nicola Moessner) from site.ts."
+      },
+      {
+        "pageType": "Methodology",
+        "de": "/methodik/",
+        "en": "/en/methodology/",
+        "it": "/it/metodologia/",
+        "fr": "/fr/methodologie/",
+        "notes": "E-E-A-T signal."
+      },
+      {
+        "pageType": "Technology",
+        "de": "/technologie/",
+        "en": "/en/technology/",
+        "it": "/it/tecnologia/",
+        "fr": "/fr/technologie/",
+        "notes": "Stack/trust signal."
+      },
+      {
+        "pageType": "Privacy & Security (trust)",
+        "de": "/datensicherheit/",
+        "en": "/en/privacy-security/",
+        "it": "/it/privacy-sicurezza/",
+        "fr": "/fr/confidentialite-securite/",
+        "notes": "Trust/marketing page — DISTINCT from the legal Datenschutz policy below."
+      },
+      {
+        "pageType": "Contact",
+        "de": "/kontakt/",
+        "en": "/en/contact/",
+        "it": "/it/contatti/",
+        "fr": "/fr/contact/",
+        "notes": "Primary conversion; LocalBusiness/NAP from site.ts (Technoparkstrasse 6, 8005 Zurich)."
+      },
+      {
+        "pageType": "Pricing",
+        "de": "/preise/",
+        "en": "/en/pricing/",
+        "it": "/it/prezzi/",
+        "fr": "/fr/tarifs/",
+        "notes": "Currently /en/preise/ etc. reuse the German slug — rename with 301 map."
+      },
+      {
+        "pageType": "Impressum (legal)",
+        "de": "/impressum/",
+        "en": "/en/imprint/",
+        "it": "/it/note-legali/",
+        "fr": "/fr/mentions-legales/",
+        "notes": "Footer-only; legalEntity fields still null in site.ts — render placeholder, do not invent."
+      },
+      {
+        "pageType": "Datenschutz (legal policy)",
+        "de": "/datenschutz/",
+        "en": "/en/privacy/",
+        "it": "/it/privacy/",
+        "fr": "/fr/confidentialite/",
+        "notes": "Footer-only legal policy."
+      },
+      {
+        "pageType": "AGB (legal)",
+        "de": "/agb/",
+        "en": "/en/terms/",
+        "it": "/it/termini/",
+        "fr": "/fr/cgv/",
+        "notes": "Footer-only."
+      },
+      {
+        "pageType": "Thank you",
+        "de": "/danke/",
+        "en": "/en/thank-you/",
+        "it": "/it/grazie/",
+        "fr": "/fr/merci/",
+        "notes": "Conversion confirmation; GA4 event surface."
+      }
+    ],
+    "servicePageModel": "Each of the 9 services is a dedicated, siloed page at /{services-segment}/{service}/ generated from a services registry entry. Mandatory uniqueness per service: unique H1 (commercial + local qualifier), unique meta/OG, unique schema (Service + Offer + FAQPage + BreadcrumbList + LocalBusiness ref), unique FAQ, at least one REAL case study (gated — never invented), a single primary conversion goal (Kontakt/Demo CTA repeated at hero, mid, and end + sticky mobile CTA), a pricing anchor or 'request quote', and a registry-driven Related block (sibling services in the same group + top industries + matching Academy pillar + relevant case studies). A Services INDEX hub at /{services-segment}/ co-exists with the homepage: it presents the 9 services grouped Build / Grow / Advise, ranks for head 'AI services Zurich/Switzerland' terms, and distributes link equity so no service is orphaned. The homepage introduces the ecosystem and routes to this hub + curated top-service cards — it never lists all services inline. Migration: 301 the legacy root /ki-telefonassistent/ into /leistungen/ki-telefonassistent/; /leistungen/ai-websites/ is already correct. Full localized service slug table (de | en | it | fr): AI Phone Assistant = ki-telefonassistent | ai-phone-assistant | assistente-telefonico-ai | assistant-telephonique-ia; AI Websites = ai-websites (grandfathered; recommend ki-websites) | ai-websites | siti-web-ai | sites-web-ia; SEO = seo | seo | seo | seo; GEO = geo | geo | geo | geo (H1/intent disambiguates from geography; consider generative-engine-optimierung as alias); Google Ads = google-ads | google-ads | google-ads | google-ads; AI Automation = ki-automatisierung | ai-automation | automazione-ai | automatisation-ia; AI Agents = ki-agenten | ai-agents | agenti-ai | agents-ia; AI Consulting = ki-beratung | ai-consulting | consulenza-ai | conseil-ia; AI Integrations = ki-integrationen | ai-integrations | integrazioni-ai | integrations-ia.",
+    "serviceDifferentiation": [
+      {
+        "service": "AI Consulting",
+        "scope": "Advisory only — decides WHAT and WHY. AI opportunity audits, readiness assessments, roadmaps, use-case prioritization, governance, ROI/business-case work, team training. Sells direction and thinking; produces no shipped software.",
+        "distinctFrom": "Unlike Automation/Agents/Integrations, it does not build or deploy. It is the strategy layer that scopes the other three."
+      },
+      {
+        "service": "AI Automation",
+        "scope": "Deterministic, rule/trigger-based process automation — no-code/low-code pipelines, document processing, data flows, RPA-style task elimination. Sells 'remove repetitive manual work' via defined workflows.",
+        "distinctFrom": "Unlike Agents, the logic is fixed rules, not autonomous reasoning. Unlike Integrations, the value is the workflow logic itself, not merely connecting two systems. Unlike Consulting, it ships running automations."
+      },
+      {
+        "service": "AI Agents",
+        "scope": "Autonomous / semi-autonomous LLM-driven systems that reason, decide, use tools and converse — the AI Phone Assistant is one packaged flavor; also chatbots, voice agents, research/task agents. Sells 'software that acts and decides.'",
+        "distinctFrom": "Unlike Automation, the core is reasoning/autonomy rather than fixed rules. Unlike Integrations, it is the 'brain', not the wiring. The AI Phone Assistant remains its own commercial landing page but is scoped as an Agent variant."
+      },
+      {
+        "service": "AI Integrations",
+        "scope": "Connective tissue — wiring AI and systems into the client's existing stack: CRM/ERP/calendar/telephony/APIs, data plumbing, embedding models into current tools, auth and eventing. Sells 'make it work inside your systems.'",
+        "distinctFrom": "Unlike Agents, it is the wiring not the brain. Unlike Automation, it moves/connects rather than owning the workflow logic. Unlike Consulting, it implements. Often sold as the enabling layer beneath an Agent or Automation engagement."
+      }
+    ],
+    "industriesModel": "Industries are demand-side lenses, not duplicated service copy. /{industries-segment}/ is a hub listing all 14 sectors grouped by cluster; each /{industries-segment}/{industry}/ page is a sector hub that (1) frames that sector's specific pains, (2) links to the relevant services, (3) links to its published service x industry combos, (4) surfaces sector-specific REAL case studies and FAQ. Schema: CollectionPage/Service + FAQPage + BreadcrumbList. Consolidation per brief: Clinics fold into Healthcare and Law Firms fold into Professional Services as in-page sections/anchors, never separate top-level hubs. All 14 launch behind the same substance gate and a priority order (phased publish), so an industry page ships only when it has genuinely sector-specific content, not a templated shell. Localized industry slugs (de | en | it | fr): Healthcare = gesundheitswesen | healthcare | sanita | sante; Restaurants = gastronomie | restaurants | ristoranti | restaurants; Hotels = hotellerie | hotels | hotel | hotellerie; Retail = einzelhandel | retail | retail | commerce-de-detail; Real Estate = immobilien | real-estate | immobiliare | immobilier; Insurance = versicherungen | insurance | assicurazioni | assurances; Professional Services = dienstleister | professional-services | servizi-professionali | services-professionnels; Beauty & Wellness = beauty-wellness | beauty-wellness | beauty-wellness | beaute-bien-etre; Manufacturing = produktion | manufacturing | produzione | industrie; Construction = bau | construction | edilizia | construction; Logistics = logistik | logistics | logistica | logistique; Education = bildung | education | istruzione | education; Finance = finanzen | finance | finanza | finance; E-commerce = e-commerce | e-commerce | e-commerce | e-commerce.",
+    "serviceIndustryMatrix": "The long-tail authority play lives UNDER the service silo as combo children: /{services}/{service}/{for-prefix}-{industry}/ (fuer-/for-/per-/pour-). Each combo is reachable from BOTH its parent service page (its 'industries we serve' block) AND the industry hub (its 'services for this sector' block) — dual reachability guarantees zero orphans and dense contextual linking. Anti-thin governance via a substance gate: a standalone combo URL is published only when it clears at least one of (a) a REAL named case study, (b) a genuinely unique dataset/ROI/benchmark, or (c) materially industry-specific content (sector pains, required integrations, compliance, workflow) — never programmatic mad-libs. Combos that cannot clear the gate remain as an anchored section on the parent service or industry page (still indexable, no thin URL). A matrix registry data file tracks every service x industry cell with status (live / backlog / section-only) plus a required-unique-fields checklist; CI blocks publishing any combo lacking the required unique fields or a real proof source. This caps the theoretical 9x14 sprawl to only substantive pages while still capturing 'X for Y' queries.",
+    "resourcesModel": "/{resources-segment}/ is a hub that routes to typed libraries, each with its own index (orphan prevention) and consistent schema: AI Academy (informational knowledge hub, 9 pillars -> pillars -> articles, Article/FAQ), AI Glossary (DefinedTermSet + term pages — a prime GEO/AI-citation surface), Guides (long-form), Comparisons ('X vs Y', keeps comparison intent off commercial pages), Case Studies (only real proof, reused as modules across service/industry/combo pages), Templates (downloadable assets), Calculators (e.g. the existing MissedCallsCalculator — strong conversion assist), Insights/News (freshness + breadth). Divergence: Downloads is NOT a separate content silo but a cross-cutting library VIEW/filter over Templates/Guides/Whitepapers, avoiding a thin duplicate hub. The Academy's 9 clusters (foundations/glossary, business & SMEs, agents-automation-voice-chatbots, models & vendors, local/open-source, trust-security-privacy-regulation, marketing-seo-geo, industries, functions) nest as pillars under the Academy hub.",
+    "academyServiceRelationship": "Cannibalization is prevented by INTENT SEPARATION, not canonicalization. Academy pages target informational intent ('what is / how does / X vs Y'), carry Article/FAQ/DefinedTerm schema, and have no pricing/commercial CTA in the primary content. Service pages target commercial/transactional + local intent ('implement / cost / Zurich / Switzerland'), carry Service/Offer/LocalBusiness schema, and are conversion-optimized. Because the two target different queries they are not duplicates, so each stays self-canonical — there is NO cross-canonical between them. A single-owner keyword map (in the registry) assigns every target query to exactly one page (service OR academy); if two pages begin ranking for the same query the map names the canonical target and the other de-optimizes and links to it. Cross-linking forms a hub-and-spoke topical cluster: each Academy pillar links out to its matching commercial service ('ready to implement? -> AI Agents / AI Automation service'), passing equity to the money page; each service page links to its Academy pillar under 'how it works / learn more', satisfying research-stage users and building the cluster. Concretely, the Academy agents/automation/voice/chatbots cluster is the informational counterpart to the AI Agents + AI Automation + AI Phone Assistant services; the marketing-seo-geo cluster pairs with the SEO/GEO/Google Ads services.",
+    "companyModel": "Company is a lightweight dropdown (not a mega-menu) carrying E-E-A-T and GEO trust signals: About Weissmann AI (/ueber-uns/ with founder Person schema for Giovanna Carpi and Nicola Moessner, sourced from site.ts), Methodology, Technology, and Privacy & Security. Privacy & Security here is a TRUST/marketing page (de: datensicherheit) and is deliberately distinct from the legal Datenschutz policy page. Contact (/kontakt/) is both a Company item and the primary conversion surface, rendering LocalBusiness/NAP (Technoparkstrasse 6, 8005 Zurich) and phone/WhatsApp from site.ts. Legal pages (Impressum, Datenschutz, AGB) are footer-only, excluded from the main nav; Impressum renders the null legalEntity fields as visible 'pending legal confirmation' placeholders — never invented.",
+    "crossLinkingModel": "Deterministic and registry-driven so orphans are structurally impossible. Every leaf renders a Related block from data: service -> sibling services in the same group + top relevant industries + matching Academy pillar + relevant case studies; industry -> its services + published combos + sector case studies; academy article -> pillar siblings + a single commercial CTA to the matching service; glossary term -> related terms + relevant service. Breadcrumbs derive directly from the URL silo (BreadcrumbList schema on every non-home page) — this is a core reason the siloed URL model is chosen. Hub pages link DOWN to all their children; every child links UP to its hub. The footer is curated (top services, top industries, key resources, company, legal) — never exhaustive — to keep cognitive load flat as the page count grows. Because navigation, mega-menus, hubs, breadcrumbs, hreflang clusters, XML+HTML sitemaps and Related blocks all render from the same registries, there is no manual list to drift out of sync.",
+    "taxonomy": "Single-source registries drive everything: services.ts, industries.ts, matrix.ts (service x industry cells + publish status + unique-field checklist), academy.ts (pillars + articles), glossary.ts, caseStudies.ts, resources.ts. Each entry carries: localized slug per locale (de/en/it/fr), parent, page type, schema type, keyword-intent owner (commercial vs informational), related IDs, and publish status (live / backlog / section-only). Nav, curated mega-menus, hub indexes, breadcrumbs, hreflang cluster, sitemaps and Related-links all derive from these registries — extending the existing site.ts single-source-of-truth pattern. Enforced invariant: a page cannot ship unless all four locale slugs are present (honoring the four-language sync policy), preventing hreflang holes.",
+    "scalabilityNotes": "Scales to hundreds of pages without decay via: (1) data-driven page generation from registries — humans edit data, not nav markup; (2) a build-time governance gate — orphan check (every route linked from >=1 other page and present in sitemap), broken-link check, and hreflang-completeness check all fail CI; (3) the substance gate + matrix registry cap service x industry sprawl to substantive pages only; (4) curated mega-menus that stay a fixed size (grouped, with 'see all' hub links) so nav cognitive load is flat regardless of total pages; (5) phased publish by priority order; (6) breadcrumbs/hreflang/sitemaps auto-derived so they never drift. Governance role is 'review the registry', not 'hand-maintain the menu'. The four-language-sync invariant blocks partial launches that would create hreflang gaps.",
+    "conversionNotes": "Journey: Home introduces the ecosystem and routes to the /leistungen/ hub + curated top-service cards (no service dump on home). Each service page is single-goal — Kontakt/Demo CTA repeated at hero, mid and end, sticky mobile CTA, an ROI calculator where relevant (e.g. MissedCallsCalculator on the phone assistant), a real case study as proof, and a pricing anchor or 'request quote'. Industry and combo pages inherit the same CTA localized to the sector. Preise stays in the utility nav for high-intent buyers, and a persistent Contact CTA button sits in the header on every page. Academy pages carry one soft commercial CTA to convert researchers into the matching service. Phone/WhatsApp from site.ts appear on every conversion surface. Preserve GA4 (G-3L30SCGWGT, loaded once) with request_demo and begin_checkout events; /danke/ is the confirmation surface.",
+    "risks": [
+      "Migrating the legacy root /ki-telefonassistent/ to the silo and renaming reused German slugs in /en//it//fr/ (e.g. preise->pricing/prezzi/tarifs) risks a temporary ranking dip if the 301 map and hreflang are not perfectly reciprocal.",
+      "The service x industry matrix can spawn thin/duplicate pages if the substance gate and matrix registry checks are not enforced in CI.",
+      "Mega-menus can raise cognitive load and mobile complexity if not kept curated and grouped.",
+      "The GEO service slug 'geo' is ambiguous with geography and needs a disambiguating H1/intent (or a generative-engine-optimization alias).",
+      "German AI-prefix inconsistency (grandfathered ai-websites vs ki-* elsewhere) risks an incoherent brand slug pattern.",
+      "Academy/service cannibalization can re-emerge if the single-owner keyword map is not maintained as content grows.",
+      "The four-language sync burden grows with page count; any partial launch creates hreflang holes, so the sync gate must hold.",
+      "/leistungen/ currently has no index.astro (only ai-websites beneath it) — a live orphan/404 hub that must be created before scaling."
+    ],
+    "confirmationsNeeded": [
+      "Which service x industry combos have REAL, named case studies today — none may be invented; combos without proof stay as sections, not standalone URLs.",
+      "Approve 301-redirecting the legacy /ki-telefonassistent/ into /leistungen/ki-telefonassistent/ vs keeping it at root (SEO risk tolerance).",
+      "Approve the localized-slug rename of existing pages (preise/leistungen/ueber-uns etc. in EN/IT/FR) plus the full 301 map.",
+      "Legal entity data (registeredName / legalForm / UID) is still null in site.ts — required before Impressum can render real data.",
+      "Confirm the public naming/slug for the GEO service (geo vs an explicit generative-engine-optimization alias).",
+      "Confirm the launch priority order for the 14 industries (phased rollout).",
+      "Confirm the German AI-prefix standard (ki- vs ai-) and whether to migrate the grandfathered ai-websites slug.",
+      "Confirm real pricing exists for services beyond the phone assistant/websites, or whether they use 'request a quote' (never invent prices)."
+    ]
+  }
+]
