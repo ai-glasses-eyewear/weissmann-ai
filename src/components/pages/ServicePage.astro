@@ -98,7 +98,7 @@ function priceDisplay(id: string): string {
     <section class="container svc-section">
       <h2>{s.heading[locale]}</h2>
       {s.paragraphs?.map((p) => <p>{p[locale]}</p>)}
-      {s.bullets && (
+      {s.bullets && s.bullets.length > 0 && (
         <ul class="svc-bullets">
           {s.bullets.map((b) => <li>{b[locale]}</li>)}
         </ul>

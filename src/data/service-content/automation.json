@@ -1,0 +1,286 @@
+{
+  "id": "automation",
+  "pricingIds": [],
+  "title": {
+    "de": "KI-Automatisierung für Schweizer Unternehmen | Weissmann AI",
+    "en": "AI Automation for Swiss Businesses | Weissmann AI",
+    "it": "Automazione IA per aziende svizzere | Weissmann AI",
+    "fr": "Automatisation IA pour entreprises suisses | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "KI-Automatisierung von Weissmann AI: deterministische Workflows für Dokumentenverarbeitung, Datenabgleich und Benachrichtigungen. revDSG-konform, in Zürich gebaut.",
+    "en": "AI automation by Weissmann AI: deterministic workflows for document processing, data sync and notifications. nFADP-aligned, built in Zurich.",
+    "it": "Automazione IA di Weissmann AI: flussi deterministici per elaborazione documenti, sincronizzazione dati e notifiche. Conforme alla nLPD, sviluppata a Zurigo.",
+    "fr": "Automatisation IA par Weissmann AI : flux déterministes pour le traitement documentaire, la synchronisation et les notifications. Conforme nLPD, conçue à Zurich."
+  },
+  "kicker": {
+    "de": "KI-Automatisierung",
+    "en": "AI Automation",
+    "it": "Automazione IA",
+    "fr": "Automatisation IA"
+  },
+  "h1": {
+    "de": "KI-Automatisierung für Schweizer KMU",
+    "en": "AI Automation for Swiss SMEs",
+    "it": "Automazione IA per le PMI svizzere",
+    "fr": "Automatisation IA pour les PME suisses"
+  },
+  "answerFirst": {
+    "de": "KI-Automatisierung verbindet regelbasierte Workflows mit KI, um wiederkehrende Aufgaben wie Dokumentenverarbeitung, Datenabgleich und Benachrichtigungen ohne manuelles Zutun auszuführen. Weissmann AI baut mit Plattformen wie Make, n8n und Zapier deterministische, nachvollziehbare Pipelines, die zuverlässig auslösen, Systeme verbinden und Ihr Team von repetitiver Routinearbeit entlasten.",
+    "en": "AI automation combines rule-based workflows with AI to run recurring tasks such as document processing, data sync and notifications without manual effort. Weissmann AI builds deterministic, auditable pipelines on platforms like Make, n8n and Zapier that trigger reliably, connect systems and free your team from repetitive routine work.",
+    "it": "L'automazione IA unisce flussi basati su regole e IA per eseguire attività ricorrenti come elaborazione documenti, sincronizzazione dati e notifiche senza intervento manuale. Weissmann AI costruisce pipeline deterministiche e tracciabili su piattaforme come Make, n8n e Zapier, che si attivano in modo affidabile, collegano i sistemi e liberano il team dal lavoro ripetitivo.",
+    "fr": "L'automatisation IA combine des flux basés sur des règles et l'IA pour exécuter des tâches récurrentes comme le traitement documentaire, la synchronisation et les notifications sans intervention manuelle. Weissmann AI construit des pipelines déterministes et traçables sur des plateformes comme Make, n8n et Zapier, qui se déclenchent de façon fiable, relient les systèmes et libèrent votre équipe."
+  },
+  "benefits": [
+    {
+      "title": {
+        "de": "Weniger manuelle Routine",
+        "en": "Less manual routine",
+        "it": "Meno lavoro manuale ripetitivo",
+        "fr": "Moins de tâches manuelles répétitives"
+      },
+      "text": {
+        "de": "Wiederkehrende Aufgaben wie Dateneingabe, Abgleich und Weiterleitung laufen automatisch. Ihr Team gewinnt Zeit für Arbeit, die tatsächlich Urteilsvermögen erfordert.",
+        "en": "Recurring tasks such as data entry, reconciliation and routing run automatically, freeing your team for work that genuinely needs human judgement.",
+        "it": "Attività ricorrenti come inserimento dati, riconciliazione e smistamento vengono eseguite automaticamente, liberando il team per il lavoro che richiede davvero giudizio.",
+        "fr": "Les tâches récurrentes comme la saisie, le rapprochement et le routage s'exécutent automatiquement, libérant votre équipe pour le travail qui exige un vrai jugement."
+      }
+    },
+    {
+      "title": {
+        "de": "Deterministisch und nachvollziehbar",
+        "en": "Deterministic and auditable",
+        "it": "Deterministica e tracciabile",
+        "fr": "Déterministe et traçable"
+      },
+      "text": {
+        "de": "Jeder Workflow folgt festen Regeln und Auslösern. Ergebnisse sind vorhersehbar, protokolliert und jederzeit prüfbar – keine Blackbox.",
+        "en": "Every workflow follows fixed rules and triggers. Results are predictable, logged and auditable at any time – no black box.",
+        "it": "Ogni flusso segue regole e trigger definiti. I risultati sono prevedibili, registrati e verificabili in qualsiasi momento, senza scatole nere.",
+        "fr": "Chaque flux suit des règles et des déclencheurs définis. Les résultats sont prévisibles, journalisés et vérifiables à tout moment, sans boîte noire."
+      }
+    },
+    {
+      "title": {
+        "de": "Schweizer Datenschutz by Design",
+        "en": "Swiss data protection by design",
+        "it": "Protezione dati svizzera by design",
+        "fr": "Protection des données suisse dès la conception"
+      },
+      "text": {
+        "de": "Wir bauen Pipelines im Einklang mit dem revDSG/nFADP und den Vorgaben des EDÖB – mit klarer Datenhaltung und Kontrolle darüber, wohin Daten fliessen.",
+        "en": "We build pipelines in line with the revised FADP (nFADP) and FDPIC guidance – with clear data residency and control over where data flows.",
+        "it": "Costruiamo pipeline conformi alla nuova legge sulla protezione dei dati (nLPD) e alle indicazioni dell'IFPDT, con chiara collocazione dei dati e controllo sui flussi.",
+        "fr": "Nous construisons des pipelines conformes à la nLPD (nouvelle LPD) et aux directives du PFPDT, avec une localisation claire des données et le contrôle de leurs flux."
+      }
+    },
+    {
+      "title": {
+        "de": "Schnell live, modular erweiterbar",
+        "en": "Live fast, modular to extend",
+        "it": "Attiva rapidamente, estensibile in modo modulare",
+        "fr": "En production vite, extensible par modules"
+      },
+      "text": {
+        "de": "Mit Plattformen wie Make, n8n und Zapier gehen erste Automationen schnell produktiv und lassen sich Schritt für Schritt um weitere Prozesse ergänzen.",
+        "en": "With platforms like Make, n8n and Zapier, first automations go live quickly and can be extended process by process.",
+        "it": "Con piattaforme come Make, n8n e Zapier le prime automazioni vanno in produzione rapidamente e si ampliano processo dopo processo.",
+        "fr": "Avec des plateformes comme Make, n8n et Zapier, les premières automatisations sont opérationnelles rapidement et s'étendent processus après processus."
+      }
+    }
+  ],
+  "sections": [
+    {
+      "heading": {
+        "de": "Was KI-Automatisierung umfasst",
+        "en": "What AI automation covers",
+        "it": "Cosa comprende l'automazione IA",
+        "fr": "Ce que couvre l'automatisation IA"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Automatisierung deckt regelbasierte, auslösergesteuerte Abläufe ab, die ohne ständiges manuelles Eingreifen zuverlässig laufen. Der Fokus liegt auf klar definierten Prozessen mit vorhersehbaren Ein- und Ausgaben.",
+          "en": "AI automation covers rule-based, trigger-driven processes that run reliably without constant manual intervention. The focus is on clearly defined processes with predictable inputs and outputs.",
+          "it": "L'automazione IA copre processi basati su regole e trigger che funzionano in modo affidabile senza continuo intervento manuale. L'attenzione è su processi ben definiti con input e output prevedibili.",
+          "fr": "L'automatisation IA couvre des processus basés sur des règles et des déclencheurs qui fonctionnent de façon fiable sans intervention manuelle constante. L'accent est mis sur des processus bien définis, aux entrées et sorties prévisibles."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Dokumentenverarbeitung: Rechnungen, Formulare und PDFs auslesen, kategorisieren und ablegen",
+          "en": "Document processing: read, classify and file invoices, forms and PDFs",
+          "it": "Elaborazione documenti: lettura, classificazione e archiviazione di fatture, moduli e PDF",
+          "fr": "Traitement documentaire : lecture, classification et archivage de factures, formulaires et PDF"
+        },
+        {
+          "de": "Datenabgleich und -synchronisation zwischen CRM, ERP, Buchhaltung und Tabellen",
+          "en": "Data reconciliation and sync across CRM, ERP, accounting and spreadsheets",
+          "it": "Riconciliazione e sincronizzazione dei dati tra CRM, ERP, contabilità e fogli di calcolo",
+          "fr": "Rapprochement et synchronisation des données entre CRM, ERP, comptabilité et tableurs"
+        },
+        {
+          "de": "Benachrichtigungen und Eskalationen per E-Mail, Chat oder Ticket-System",
+          "en": "Notifications and escalations via email, chat or ticketing systems",
+          "it": "Notifiche ed escalation via e-mail, chat o sistemi di ticketing",
+          "fr": "Notifications et escalades par e-mail, chat ou système de tickets"
+        },
+        {
+          "de": "RPA-lite: strukturierte, wiederkehrende Klick- und Kopierabläufe ersetzen",
+          "en": "RPA-lite: replacing structured, repetitive click-and-copy routines",
+          "it": "RPA-lite: sostituzione di routine ripetitive e strutturate di clic e copia",
+          "fr": "RPA-lite : remplacement des routines répétitives et structurées de clic-copier"
+        },
+        {
+          "de": "Trigger-basierte Workflows, die bei einem Ereignis automatisch die nächsten Schritte anstossen",
+          "en": "Trigger-based workflows that automatically start the next steps on an event",
+          "it": "Flussi basati su trigger che avviano automaticamente i passi successivi al verificarsi di un evento",
+          "fr": "Flux déclenchés par événement qui lancent automatiquement les étapes suivantes"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "So gehen wir vor",
+        "en": "How we work",
+        "it": "Come lavoriamo",
+        "fr": "Comment nous procédons"
+      },
+      "paragraphs": [
+        {
+          "de": "Am Anfang steht die Analyse Ihrer bestehenden Abläufe: Wo entsteht wiederkehrende Handarbeit, welche Systeme sind beteiligt und wo sind Regeln eindeutig genug für eine Automatisierung? Daraus entsteht ein konkreter Automatisierungsplan.",
+          "en": "It starts with analysing your existing processes: where does recurring manual work arise, which systems are involved, and where are the rules clear enough to automate? This produces a concrete automation plan.",
+          "it": "Si parte dall'analisi dei processi esistenti: dove nasce il lavoro manuale ricorrente, quali sistemi sono coinvolti e dove le regole sono abbastanza chiare da automatizzare? Ne deriva un piano di automazione concreto.",
+          "fr": "Tout commence par l'analyse de vos processus existants : où naît le travail manuel récurrent, quels systèmes sont concernés et où les règles sont-elles assez claires pour automatiser ? Il en résulte un plan d'automatisation concret."
+        },
+        {
+          "de": "Anschliessend bauen wir die Pipelines, testen sie mit echten Fällen und übergeben sie mit Monitoring und Dokumentation. Sie erhalten laufende Workflows, die wir bei Bedarf pflegen und schrittweise erweitern.",
+          "en": "We then build the pipelines, test them against real cases and hand them over with monitoring and documentation. You get running workflows that we maintain and extend step by step as needed.",
+          "it": "Costruiamo poi le pipeline, le testiamo su casi reali e le consegniamo con monitoraggio e documentazione. Ottenete flussi operativi che manteniamo ed estendiamo passo dopo passo quando serve.",
+          "fr": "Nous construisons ensuite les pipelines, les testons sur des cas réels et les livrons avec supervision et documentation. Vous obtenez des flux opérationnels que nous maintenons et étendons progressivement selon les besoins."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Für wen sich das eignet",
+        "en": "Who it's for",
+        "it": "A chi si rivolge",
+        "fr": "À qui cela s'adresse"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Automatisierung eignet sich für Schweizer KMU und Teams mit hohem Anteil an wiederkehrender, regelbasierter Arbeit – etwa in Finanzen, Administration, Kundenservice oder Auftragsabwicklung. Wenn ein Prozess klar beschreibbar ist und oft genug vorkommt, ist er ein guter Kandidat.",
+          "en": "AI automation suits Swiss SMEs and teams with a high share of recurring, rule-based work – for example in finance, administration, customer service or order processing. If a process can be clearly described and occurs often enough, it is a good candidate.",
+          "it": "L'automazione IA è adatta alle PMI svizzere e ai team con un'alta quota di lavoro ricorrente e basato su regole – ad esempio in finanza, amministrazione, servizio clienti o gestione ordini. Se un processo è descrivibile con chiarezza e ricorre abbastanza spesso, è un buon candidato.",
+          "fr": "L'automatisation IA convient aux PME suisses et aux équipes ayant une forte part de travail récurrent et fondé sur des règles – par exemple en finance, administration, service client ou traitement des commandes. Si un processus peut être décrit clairement et se répète assez souvent, c'est un bon candidat."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Viele Medienbrüche: Daten werden manuell von einem System ins nächste übertragen",
+          "en": "Many media breaks: data copied manually from one system to the next",
+          "it": "Molti passaggi manuali: i dati vengono trasferiti a mano da un sistema all'altro",
+          "fr": "Nombreuses ruptures de support : données recopiées à la main d'un système à l'autre"
+        },
+        {
+          "de": "Klare Regeln, aber hohes Volumen: die gleiche Entscheidung immer wieder",
+          "en": "Clear rules but high volume: the same decision over and over",
+          "it": "Regole chiare ma volumi elevati: la stessa decisione ripetuta di continuo",
+          "fr": "Règles claires mais volume élevé : la même décision répétée sans cesse"
+        },
+        {
+          "de": "Fehleranfällige Copy-Paste-Aufgaben mit knappen Fristen",
+          "en": "Error-prone copy-paste tasks under tight deadlines",
+          "it": "Attività di copia-incolla soggette a errori e con scadenze strette",
+          "fr": "Tâches de copier-coller sujettes aux erreurs et sous délais serrés"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist KI-Automatisierung?",
+        "en": "What is AI automation?",
+        "it": "Cos'è l'automazione IA?",
+        "fr": "Qu'est-ce que l'automatisation IA ?"
+      },
+      "a": {
+        "de": "KI-Automatisierung ist die regel- und auslöserbasierte Automatisierung wiederkehrender Arbeitsabläufe – etwa Dokumentenverarbeitung, Datenabgleich und Benachrichtigungen. Sie liefert laufende, deterministische Pipelines, die Systeme verbinden und manuelle Routinearbeit ersetzen, ohne dass die Software eigenständig Entscheidungen trifft.",
+        "en": "AI automation is the rule- and trigger-based automation of recurring workflows – such as document processing, data sync and notifications. It delivers running, deterministic pipelines that connect systems and replace manual routine work, without the software making autonomous decisions.",
+        "it": "L'automazione IA è l'automazione basata su regole e trigger dei flussi ricorrenti – come elaborazione documenti, sincronizzazione dati e notifiche. Fornisce pipeline operative e deterministiche che collegano i sistemi e sostituiscono il lavoro manuale, senza che il software prenda decisioni autonome.",
+        "fr": "L'automatisation IA est l'automatisation, basée sur des règles et des déclencheurs, de flux récurrents – traitement documentaire, synchronisation des données, notifications. Elle fournit des pipelines opérationnels et déterministes qui relient les systèmes et remplacent le travail manuel, sans que le logiciel prenne de décisions autonomes."
+      }
+    },
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen KI-Automatisierung und KI-Agenten?",
+        "en": "What is the difference between AI automation and AI agents?",
+        "it": "Qual è la differenza tra automazione IA e agenti IA?",
+        "fr": "Quelle est la différence entre automatisation IA et agents IA ?"
+      },
+      "a": {
+        "de": "KI-Automatisierung folgt festen Regeln und Auslösern: gleicher Input, gleicher Ablauf, vorhersehbares Ergebnis. KI-Agenten hingegen sind autonome Systeme, die schlussfolgern, Werkzeuge wählen und selbst entscheiden, was als Nächstes zu tun ist. Für klar definierte, wiederholbare Prozesse ist Automatisierung robuster; für offene Aufgaben mit Urteilsvermögen sind Agenten der richtige Ansatz.",
+        "en": "AI automation follows fixed rules and triggers: same input, same flow, predictable result. AI agents, by contrast, are autonomous systems that reason, choose tools and decide what to do next. For clearly defined, repeatable processes automation is more robust; for open-ended tasks requiring judgement, agents are the right approach.",
+        "it": "L'automazione IA segue regole e trigger fissi: stesso input, stesso flusso, risultato prevedibile. Gli agenti IA, invece, sono sistemi autonomi che ragionano, scelgono strumenti e decidono cosa fare dopo. Per processi ben definiti e ripetibili l'automazione è più robusta; per compiti aperti che richiedono giudizio sono più adatti gli agenti.",
+        "fr": "L'automatisation IA suit des règles et déclencheurs fixes : même entrée, même flux, résultat prévisible. Les agents IA, eux, sont des systèmes autonomes qui raisonnent, choisissent des outils et décident de la suite. Pour des processus bien définis et répétables, l'automatisation est plus robuste ; pour des tâches ouvertes exigeant du jugement, les agents sont l'approche adaptée."
+      }
+    },
+    {
+      "q": {
+        "de": "Mit welchen Tools setzen Sie KI-Automatisierung um?",
+        "en": "Which tools do you use for AI automation?",
+        "it": "Quali strumenti usate per l'automazione IA?",
+        "fr": "Quels outils utilisez-vous pour l'automatisation IA ?"
+      },
+      "a": {
+        "de": "Wir arbeiten plattformunabhängig und wählen das Werkzeug passend zum Prozess – häufig Make, n8n oder Zapier für die Orchestrierung, ergänzt um APIs Ihrer bestehenden Systeme wie CRM, ERP oder Buchhaltung. n8n lässt sich bei Bedarf auch selbst hosten, wenn Daten im Haus bleiben sollen.",
+        "en": "We work platform-agnostically and pick the tool to fit the process – often Make, n8n or Zapier for orchestration, combined with the APIs of your existing systems such as CRM, ERP or accounting. n8n can also be self-hosted when data should stay in-house.",
+        "it": "Lavoriamo in modo indipendente dalla piattaforma e scegliamo lo strumento adatto al processo – spesso Make, n8n o Zapier per l'orchestrazione, insieme alle API dei vostri sistemi esistenti come CRM, ERP o contabilità. All'occorrenza n8n può essere self-hosted, se i dati devono restare in casa.",
+        "fr": "Nous travaillons indépendamment de la plateforme et choisissons l'outil adapté au processus – souvent Make, n8n ou Zapier pour l'orchestration, combinés aux API de vos systèmes existants (CRM, ERP, comptabilité). n8n peut aussi être auto-hébergé si les données doivent rester en interne."
+      }
+    },
+    {
+      "q": {
+        "de": "Ist KI-Automatisierung mit dem Schweizer Datenschutz vereinbar?",
+        "en": "Is AI automation compatible with Swiss data protection?",
+        "it": "L'automazione IA è compatibile con la protezione dei dati svizzera?",
+        "fr": "L'automatisation IA est-elle compatible avec la protection des données suisse ?"
+      },
+      "a": {
+        "de": "Ja. Wir gestalten Automationen im Einklang mit dem revidierten Datenschutzgesetz (revDSG/nFADP) und den Empfehlungen des EDÖB. Dazu gehören eine bewusste Wahl der Datenhaltung, sparsamer Umgang mit Personendaten und klare Nachvollziehbarkeit, welche Daten wohin fliessen. Wo nötig, lassen sich Komponenten in der Schweiz oder EU betreiben.",
+        "en": "Yes. We design automations in line with the revised Federal Act on Data Protection (nFADP) and the FDPIC's recommendations. This includes deliberate data-residency choices, data minimisation for personal data and clear traceability of where data flows. Where needed, components can run in Switzerland or the EU.",
+        "it": "Sì. Progettiamo le automazioni in linea con la nuova legge sulla protezione dei dati (nLPD) e le raccomandazioni dell'IFPDT. Questo include scelte consapevoli sulla collocazione dei dati, minimizzazione dei dati personali e chiara tracciabilità dei flussi. Ove necessario, i componenti possono operare in Svizzera o nell'UE.",
+        "fr": "Oui. Nous concevons les automatisations conformément à la nouvelle loi sur la protection des données (nLPD) et aux recommandations du PFPDT. Cela inclut des choix réfléchis de localisation, la minimisation des données personnelles et une traçabilité claire des flux. Au besoin, des composants peuvent être exploités en Suisse ou dans l'UE."
+      }
+    },
+    {
+      "q": {
+        "de": "Was kostet KI-Automatisierung?",
+        "en": "What does AI automation cost?",
+        "it": "Quanto costa l'automazione IA?",
+        "fr": "Combien coûte l'automatisation IA ?"
+      },
+      "a": {
+        "de": "Für KI-Automatisierung gibt es kein festes Standardpaket, da Umfang und Komplexität stark vom jeweiligen Prozess und den beteiligten Systemen abhängen. Nach einem kurzen Erstgespräch analysieren wir Ihren Anwendungsfall und erstellen ein individuelles Angebot mit klar umrissenem Umfang.",
+        "en": "There is no fixed standard package for AI automation, as scope and complexity depend heavily on the specific process and the systems involved. After a short initial call we analyse your use case and prepare a tailored proposal with a clearly defined scope.",
+        "it": "Non esiste un pacchetto standard fisso per l'automazione IA, poiché portata e complessità dipendono molto dal processo specifico e dai sistemi coinvolti. Dopo un breve primo colloquio analizziamo il vostro caso d'uso e prepariamo un'offerta su misura con un perimetro chiaramente definito.",
+        "fr": "Il n'existe pas de forfait standard fixe pour l'automatisation IA, car l'ampleur et la complexité dépendent fortement du processus et des systèmes concernés. Après un bref premier échange, nous analysons votre cas d'usage et établissons une offre sur mesure au périmètre clairement défini."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie schnell ist eine Automatisierung produktiv?",
+        "en": "How quickly is an automation live?",
+        "it": "In quanto tempo un'automazione è operativa?",
+        "fr": "En combien de temps une automatisation est-elle opérationnelle ?"
+      },
+      "a": {
+        "de": "Einfache, klar abgegrenzte Workflows lassen sich oft innerhalb weniger Wochen produktiv schalten. Umfangreichere Vorhaben mit mehreren Systemen und Ausnahmefällen brauchen entsprechend länger. Wir beginnen bewusst mit einem klar abgegrenzten ersten Prozess und erweitern von dort aus.",
+        "en": "Simple, clearly scoped workflows can often go live within a few weeks. Larger efforts spanning multiple systems and edge cases take correspondingly longer. We deliberately start with one clearly scoped process and extend from there.",
+        "it": "Flussi semplici e ben delimitati possono spesso andare in produzione nel giro di poche settimane. Progetti più ampi, con più sistemi e casi eccezionali, richiedono di conseguenza più tempo. Iniziamo volutamente con un primo processo ben delimitato e ampliamo da lì.",
+        "fr": "Des flux simples et bien délimités peuvent souvent être opérationnels en quelques semaines. Les projets plus vastes, couvrant plusieurs systèmes et cas particuliers, demandent davantage de temps. Nous commençons volontairement par un premier processus bien délimité, puis étendons à partir de là."
+      }
+    }
+  ]
+}

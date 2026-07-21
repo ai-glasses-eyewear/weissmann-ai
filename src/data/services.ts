@@ -65,7 +65,7 @@ export const SERVICES: ServiceDef[] = [
     id: 'websites',
     group: 'build',
     order: 2,
-    status: 'draft',
+    status: 'live',
     slug: { de: 'ki-webentwicklung', en: 'ai-web-development', it: 'sviluppo-siti-web-ai', fr: 'developpement-web-ia' },
     name: { de: 'KI-Webentwicklung', en: 'AI Web Development', it: 'Sviluppo siti web AI', fr: 'Développement web IA' },
     tagline: {
@@ -84,7 +84,7 @@ export const SERVICES: ServiceDef[] = [
     id: 'seo',
     group: 'grow',
     order: 3,
-    status: 'draft',
+    status: 'live',
     slug: { de: 'seo', en: 'seo', it: 'seo', fr: 'seo' },
     name: { de: 'SEO', en: 'SEO', it: 'SEO', fr: 'SEO' },
     tagline: {
@@ -103,7 +103,7 @@ export const SERVICES: ServiceDef[] = [
     id: 'geo',
     group: 'grow',
     order: 4,
-    status: 'draft',
+    status: 'live',
     slug: { de: 'generative-engine-optimization', en: 'generative-engine-optimization', it: 'generative-engine-optimization', fr: 'generative-engine-optimization' },
     name: { de: 'GEO', en: 'GEO', it: 'GEO', fr: 'GEO' },
     tagline: {
@@ -122,7 +122,7 @@ export const SERVICES: ServiceDef[] = [
     id: 'google-ads',
     group: 'grow',
     order: 5,
-    status: 'draft',
+    status: 'live',
     slug: { de: 'google-ads', en: 'google-ads', it: 'google-ads', fr: 'google-ads' },
     name: { de: 'Google Ads', en: 'Google Ads', it: 'Google Ads', fr: 'Google Ads' },
     tagline: {
@@ -141,7 +141,7 @@ export const SERVICES: ServiceDef[] = [
     id: 'automation',
     group: 'build',
     order: 6,
-    status: 'draft',
+    status: 'live',
     slug: { de: 'ki-automatisierung', en: 'ai-automation', it: 'automazione-ai', fr: 'automatisation-ia' },
     name: { de: 'KI-Automatisierung', en: 'AI Automation', it: 'Automazione AI', fr: 'Automatisation IA' },
     tagline: {
@@ -160,7 +160,7 @@ export const SERVICES: ServiceDef[] = [
     id: 'agents',
     group: 'build',
     order: 7,
-    status: 'draft',
+    status: 'live',
     slug: { de: 'ki-agenten', en: 'ai-agents', it: 'agenti-ai', fr: 'agents-ia' },
     name: { de: 'KI-Agenten', en: 'AI Agents', it: 'Agenti AI', fr: 'Agents IA' },
     tagline: {
@@ -179,7 +179,7 @@ export const SERVICES: ServiceDef[] = [
     id: 'consulting',
     group: 'advise',
     order: 8,
-    status: 'draft',
+    status: 'live',
     slug: { de: 'ki-beratung', en: 'ai-consulting', it: 'consulenza-ai', fr: 'conseil-ia' },
     name: { de: 'KI-Beratung', en: 'AI Consulting', it: 'Consulenza AI', fr: 'Conseil IA' },
     tagline: {
@@ -198,7 +198,7 @@ export const SERVICES: ServiceDef[] = [
     id: 'integrations',
     group: 'build',
     order: 9,
-    status: 'draft',
+    status: 'live',
     slug: { de: 'ki-integrationen', en: 'ai-integrations', it: 'integrazioni-ai', fr: 'integrations-ia' },
     name: { de: 'KI-Integrationen', en: 'AI Integrations', it: 'Integrazioni AI', fr: 'Intégrations IA' },
     tagline: {

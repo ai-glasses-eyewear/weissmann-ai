@@ -1,0 +1,79 @@
+---
+/**
+ * Industries hub (/branchen/, /en/industries/, …) — the sector pillar index.
+ * Registry-driven (industries.ts); only live industries link out.
+ */
+import { SITE, localeUrl, type Locale } from '../../data/site';
+import { type LocalePaths, urlFor } from '../../data/routes';
+import { orderedIndustries, industryPaths } from '../../data/industries';
+import Layout from '../../layouts/Layout.astro';
+
+interface Props {
+  locale: Locale;
+  localePaths: LocalePaths;
+}
+const { locale, localePaths } = Astro.props;
+
+const COPY: Record<Locale, { title: string; h1: string; kicker: string; intro: string; soon: string; crumbHome: string; crumbHere: string }> = {
+  de: { title: 'KI-Lösungen nach Branche | Weissmann AI', h1: 'KI für Ihre Branche', kicker: 'Branchen', intro: 'Jede Branche hat eigene Abläufe, Anrufe und Kundenerwartungen. Wir zeigen pro Sektor, wo praktische KI konkret Zeit spart, Anfragen beantwortet und Wachstum ermöglicht.', soon: 'Seite folgt', crumbHome: 'Startseite', crumbHere: 'Branchen' },
+  en: { title: 'AI Solutions by Industry | Weissmann AI', h1: 'AI for your industry', kicker: 'Industries', intro: 'Every sector has its own workflows, calls and customer expectations. For each one we show where practical AI concretely saves time, answers enquiries and enables growth.', soon: 'Coming soon', crumbHome: 'Home', crumbHere: 'Industries' },
+  it: { title: 'Soluzioni AI per settore | Weissmann AI', h1: 'AI per il vostro settore', kicker: 'Settori', intro: 'Ogni settore ha i propri processi, chiamate e aspettative dei clienti. Per ciascuno mostriamo dove l’AI pratica fa risparmiare tempo, risponde alle richieste e abilita la crescita.', soon: 'In arrivo', crumbHome: 'Home', crumbHere: 'Settori' },
+  fr: { title: 'Solutions IA par secteur | Weissmann AI', h1: 'L’IA pour votre secteur', kicker: 'Secteurs', intro: 'Chaque secteur a ses propres processus, appels et attentes clients. Pour chacun, nous montrons où l’IA pratique fait gagner du temps, répond aux demandes et permet la croissance.', soon: 'Bientôt disponible', crumbHome: 'Accueil', crumbHere: 'Secteurs' },
+};
+const c = COPY[locale];
+const industries = orderedIndustries();
+const pre = locale === 'de' ? '' : `/${locale}`;
+
+const schema = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: c.crumbHome, item: localeUrl(locale, '/') },
+      { '@type': 'ListItem', position: 2, name: c.crumbHere, item: urlFor(locale, localePaths) },
+    ],
+  },
+  {
+    '@type': 'CollectionPage',
+    name: c.h1,
+    url: urlFor(locale, localePaths),
+    isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.domain },
+  },
+];
+---
+<Layout locale={locale} localePaths={localePaths} title={c.title} description={c.intro} schema={schema}>
+  <nav class="crumbs container" aria-label="Breadcrumb">
+    <a href={`${pre}/`}>{c.crumbHome}</a><span aria-hidden="true">›</span><span>{c.crumbHere}</span>
+  </nav>
+  <header class="hub-head container">
+    <p class="kicker">{c.kicker}</p>
+    <h1>{c.h1}</h1>
+    <p class="hub-intro">{c.intro}</p>
+  </header>
+  <div class="container hub-grid">
+    {industries.map((ind) => {
+      const live = ind.status === 'live';
+      const href = urlFor(locale, industryPaths(ind)).replace(SITE.domain, '');
+      return live
+        ? <a class="ind-card" href={href}><h2>{ind.name[locale]}</h2><p>{ind.tagline[locale]}</p><span class="ind-card__arrow">→</span></a>
+        : <article class="ind-card ind-card--soon"><h2>{ind.name[locale]}</h2><p>{ind.tagline[locale]}</p><span class="ind-card__soon">{c.soon}</span></article>;
+    })}
+  </div>
+</Layout>
+
+<style>
+  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); }
+  .crumbs a { color: var(--ink-mute); }
+  .crumbs a:hover { color: var(--ink); }
+  .hub-head { padding-top: var(--space-5); padding-bottom: var(--space-5); max-width: 60rem; }
+  .hub-head h1 { font-size: var(--fs-700); line-height: 1.05; margin: 0.4rem 0 1rem; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
+  .hub-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 52rem; }
+  .hub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: var(--space-4); padding-bottom: var(--space-7); }
+  .ind-card { position: relative; border: 1px solid var(--line); border-radius: 14px; padding: var(--space-4); background: var(--paper); display: block; }
+  .ind-card h2 { font-size: var(--fs-400); margin: 0 0 0.35rem; color: var(--ink); }
+  .ind-card p { margin: 0; color: var(--ink-soft); font-size: var(--fs-300); }
+  a.ind-card:hover { border-color: var(--accent); text-decoration: none; }
+  .ind-card__arrow { position: absolute; top: var(--space-4); right: var(--space-4); color: var(--accent); }
+  .ind-card--soon { opacity: 0.72; }
+  .ind-card__soon { display: inline-block; margin-top: 0.6rem; font-size: var(--fs-200); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-mute); border: 1px solid var(--line); border-radius: 999px; padding: 0.2rem 0.7rem; }
+</style>

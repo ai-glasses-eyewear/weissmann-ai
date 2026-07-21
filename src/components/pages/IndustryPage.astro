@@ -1,0 +1,176 @@
+---
+/**
+ * IndustryPage — reusable template for every sector landing page
+ * (docs/architecture/MASTER-PAGE-MAP.md §4). Renders from industries.ts
+ * (identity + related services) + industry-content.ts (copy). Structure:
+ * answer-first hero, sector challenges, AI opportunities, relevant services
+ * (links to live service pages), illustrative examples, FAQ, CTA + schema.
+ */
+import { SITE, type Locale } from '../../data/site';
+import { type LocalePaths, pillarHome, urlFor } from '../../data/routes';
+import { type IndustryDef, industryPaths } from '../../data/industries';
+import type { IndustryContent } from '../../data/industry-content';
+import { getService, servicePaths } from '../../data/services';
+import { breadcrumbs, faqPage, webPage } from '../../data/schema';
+import { t } from '../../i18n/ui';
+import Layout from '../../layouts/Layout.astro';
+
+interface Props {
+  locale: Locale;
+  localePaths: LocalePaths;
+  industry: IndustryDef;
+  content: IndustryContent;
+}
+const { locale, localePaths, industry, content } = Astro.props;
+
+const LBL: Record<Locale, { short: string; challenges: string; opportunities: string; services: string; faq: string; ctaTitle: string; ctaText: string }> = {
+  de: { short: 'Kurzantwort', challenges: 'Herausforderungen der Branche', opportunities: 'Wo KI ansetzt', services: 'Passende Leistungen', faq: 'Häufige Fragen', ctaTitle: 'KI für Ihre Branche – konkret', ctaText: 'In einem kurzen Gespräch zeigen wir, welcher Baustein in Ihrer Branche den grössten Unterschied macht.' },
+  en: { short: 'In short', challenges: 'Sector challenges', opportunities: 'Where AI helps', services: 'Relevant services', faq: 'Frequently asked questions', ctaTitle: 'AI for your industry – concretely', ctaText: 'In a short call we show which building block makes the biggest difference in your sector.' },
+  it: { short: 'In breve', challenges: 'Sfide del settore', opportunities: 'Dove interviene l’AI', services: 'Servizi pertinenti', faq: 'Domande frequenti', ctaTitle: 'AI per il vostro settore – concretamente', ctaText: 'In una breve chiamata mostriamo quale tassello fa la differenza maggiore nel vostro settore.' },
+  fr: { short: 'En bref', challenges: 'Défis du secteur', opportunities: 'Là où l’IA intervient', services: 'Services pertinents', faq: 'Questions fréquentes', ctaTitle: 'L’IA pour votre secteur – concrètement', ctaText: 'En un court appel, nous montrons quel module fait la plus grande différence dans votre secteur.' },
+};
+const lbl = LBL[locale];
+
+const pre = locale === 'de' ? '' : `/${locale}`;
+const contactHref = `${pre}/kontakt/`;
+const hubPaths = pillarHome('industries');
+
+// Related services that are actually published (never link to unbuilt pages).
+const relServices = industry.relatedServices
+  .map((id) => getService(id))
+  .filter((s): s is NonNullable<typeof s> => !!s && s.status === 'live');
+
+const crumbName = { de: 'Startseite', en: 'Home', it: 'Home', fr: 'Accueil' }[locale];
+const indCrumb = { de: 'Branchen', en: 'Industries', it: 'Settori', fr: 'Secteurs' }[locale];
+
+const schema = [
+  webPage(locale, localePaths[locale], content.h1[locale], content.metaDescription[locale]),
+  breadcrumbs(locale, [
+    { name: crumbName, path: '/' },
+    { name: indCrumb, path: hubPaths[locale] },
+    { name: industry.name[locale], path: localePaths[locale] },
+  ]),
+  faqPage(content.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))),
+];
+---
+<Layout locale={locale} localePaths={localePaths} title={content.title[locale]} description={content.metaDescription[locale]} schema={schema}>
+  <nav class="crumbs container" aria-label="Breadcrumb">
+    <a href={`${pre}/`}>{crumbName}</a><span aria-hidden="true">›</span>
+    <a href={urlFor(locale, hubPaths).replace(SITE.domain, '')}>{indCrumb}</a><span aria-hidden="true">›</span>
+    <span>{industry.name[locale]}</span>
+  </nav>
+
+  <header class="ind-hero container">
+    <p class="kicker">{content.kicker[locale]}</p>
+    <h1>{content.h1[locale]}</h1>
+    <aside class="tldr" aria-label={lbl.short}>
+      <span class="tldr__label">{lbl.short}</span>
+      <p>{content.answerFirst[locale]}</p>
+    </aside>
+    <div class="ind-cta-row">
+      <a class="btn btn--primary" href={contactHref} data-track="request_demo">{t(locale, 'cta.demo')}</a>
+    </div>
+  </header>
+
+  <section class="container ind-two-col">
+    <div class="ind-challenges">
+      <h2>{lbl.challenges}</h2>
+      <ul>
+        {content.challenges.map((ch) => <li>{ch[locale]}</li>)}
+      </ul>
+    </div>
+    <div class="ind-opps">
+      <h2>{lbl.opportunities}</h2>
+      <div class="opp-grid">
+        {content.opportunities.map((o) => (
+          <article class="opp">
+            <h3>{o.title[locale]}</h3>
+            <p>{o.text[locale]}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {content.sections.map((s) => (
+    <section class="container ind-section">
+      <h2>{s.heading[locale]}</h2>
+      {s.paragraphs?.map((p) => <p>{p[locale]}</p>)}
+      {s.bullets && s.bullets.length > 0 && (
+        <ul class="ind-bullets">{s.bullets.map((b) => <li>{b[locale]}</li>)}</ul>
+      )}
+    </section>
+  ))}
+
+  {relServices.length > 0 && (
+    <section class="container ind-services">
+      <h2>{lbl.services}</h2>
+      <div class="svc-grid">
+        {relServices.map((s) => (
+          <a class="svc-link" href={urlFor(locale, servicePaths(s)).replace(SITE.domain, '')}>
+            <h3>{s.name[locale]}</h3>
+            <p>{s.tagline[locale]}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="container ind-faq">
+    <h2>{lbl.faq}</h2>
+    <div class="faq-list">
+      {content.faq.map((f) => (
+        <details class="faq-item">
+          <summary>{f.q[locale]}</summary>
+          <p>{f.a[locale]}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="container ind-cta">
+    <h2>{lbl.ctaTitle}</h2>
+    <p>{lbl.ctaText}</p>
+    <a class="btn btn--primary" href={contactHref} data-track="request_demo">{t(locale, 'nav.cta')}</a>
+  </section>
+</Layout>
+
+<style>
+  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); flex-wrap: wrap; }
+  .crumbs a { color: var(--ink-mute); }
+  .crumbs a:hover { color: var(--ink); }
+  .ind-hero { padding-top: var(--space-5); padding-bottom: var(--space-6); max-width: 60rem; }
+  .ind-hero h1 { font-size: var(--fs-700); line-height: 1.06; margin: 0.4rem 0 1rem; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
+  .tldr { border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); border-radius: 0 12px 12px 0; padding: var(--space-4); }
+  .tldr__label { text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--fs-200); color: var(--accent); font-weight: 700; }
+  .tldr p { margin: 0.4rem 0 0; color: var(--ink); font-size: var(--fs-400); }
+  .ind-cta-row { margin-top: var(--space-4); }
+  .ind-two-col { display: grid; grid-template-columns: 1fr; gap: var(--space-6); padding-bottom: var(--space-5); }
+  .ind-challenges h2, .ind-opps h2, .ind-section h2, .ind-services h2, .ind-faq h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
+  .ind-challenges ul { display: flex; flex-direction: column; gap: 0.6rem; padding-left: 1.1rem; }
+  .ind-challenges li { color: var(--ink-soft); }
+  .opp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--space-3); }
+  .opp { border: 1px solid var(--line); border-radius: 12px; padding: var(--space-4); background: var(--paper); }
+  .opp h3 { font-size: var(--fs-400); margin: 0 0 0.3rem; }
+  .opp p { margin: 0; color: var(--ink-soft); font-size: var(--fs-300); }
+  .ind-section { max-width: 56rem; padding-bottom: var(--space-5); }
+  .ind-section p { color: var(--ink-soft); margin-bottom: var(--space-3); }
+  .ind-bullets { display: flex; flex-direction: column; gap: 0.6rem; padding-left: 1.1rem; }
+  .ind-bullets li { color: var(--ink-soft); }
+  .ind-services { padding-bottom: var(--space-5); }
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--space-4); }
+  .svc-link { border: 1px solid var(--line); border-radius: 14px; padding: var(--space-4); background: var(--paper); display: block; }
+  .svc-link:hover { border-color: var(--accent); text-decoration: none; }
+  .svc-link h3 { font-size: var(--fs-400); margin: 0 0 0.3rem; color: var(--ink); }
+  .svc-link p { margin: 0; color: var(--ink-soft); font-size: var(--fs-300); }
+  .ind-faq { max-width: 54rem; padding-bottom: var(--space-6); }
+  .faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
+  .faq-item { border: 1px solid var(--line); border-radius: 12px; padding: var(--space-3) var(--space-4); background: var(--paper); }
+  .faq-item summary { font-weight: 600; cursor: pointer; }
+  .faq-item p { margin: 0.6rem 0 0; color: var(--ink-soft); }
+  .ind-cta { text-align: center; padding: var(--space-7) var(--space-4); margin-bottom: var(--space-7); border-top: 1px solid var(--line); }
+  .ind-cta h2 { font-size: var(--fs-600); margin-bottom: 0.6rem; }
+  .ind-cta p { color: var(--ink-soft); max-width: 40rem; margin: 0 auto var(--space-4); }
+  @media (min-width: 800px) { .ind-two-col { grid-template-columns: 1fr 1.3fr; } }
+</style>

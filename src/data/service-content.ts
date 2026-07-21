@@ -210,6 +210,15 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
   },
 };
 
+// Additional service content authored as JSON data files (one per service).
+// The JSON shape matches ServiceContent exactly (LocaleMap = {de,en,it,fr}),
+// so new services drop in as data with no code change.
+const generated = import.meta.glob<{ default: ServiceContent }>('./service-content/*.json', { eager: true });
+for (const mod of Object.values(generated)) {
+  const c = mod.default;
+  if (c && c.id) SERVICE_CONTENT[c.id] = c;
+}
+
 export function getServiceContent(id: string): ServiceContent | undefined {
   return SERVICE_CONTENT[id];
 }

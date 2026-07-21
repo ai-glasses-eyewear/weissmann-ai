@@ -1,0 +1,280 @@
+{
+  "id": "agents",
+  "title": {
+    "de": "KI-Agenten entwickeln in der Schweiz | Weissmann AI",
+    "en": "AI Agent Development for Swiss Business | Weissmann AI",
+    "it": "Sviluppo di agenti IA in Svizzera | Weissmann AI",
+    "fr": "Développement d'agents IA en Suisse | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "Autonome KI-Agenten, die eigenständig recherchieren, Werkzeuge nutzen und handeln. Entwicklung, Governance und Betrieb aus Zürich – revDSG-konform.",
+    "en": "Autonomous AI agents that reason, use tools and act. Custom agent development, governance and operations from Zurich – nFADP-compliant.",
+    "it": "Agenti IA autonomi che ragionano, usano strumenti e agiscono. Sviluppo, governance e gestione da Zurigo, conformi alla nLPD.",
+    "fr": "Des agents IA autonomes qui raisonnent, utilisent des outils et agissent. Développement, gouvernance et exploitation depuis Zurich, conformes à la nLPD."
+  },
+  "kicker": {
+    "de": "KI-Agenten",
+    "en": "AI Agents",
+    "it": "Agenti IA",
+    "fr": "Agents IA"
+  },
+  "h1": {
+    "de": "KI-Agenten entwickeln für Schweizer Unternehmen",
+    "en": "AI Agent Development for Swiss Companies",
+    "it": "Sviluppo di agenti IA per le aziende svizzere",
+    "fr": "Développement d'agents IA pour les entreprises suisses"
+  },
+  "answerFirst": {
+    "de": "KI-Agenten sind autonome oder teilautonome LLM-Systeme, die Aufgaben eigenständig planen, Werkzeuge und Datenquellen nutzen und im Rahmen definierter Befugnisse handeln. Weissmann AI entwickelt solche Agenten für Support, Recherche, Chat und Sprache in Zürich – mit klaren Leitplanken, revDSG-konformer Datenhaltung und menschlicher Kontrolle über kritische Entscheidungen.",
+    "en": "AI agents are autonomous or semi-autonomous LLM systems that plan tasks on their own, use tools and data sources, and act within defined permissions. Weissmann AI builds such agents for support, research, chat and voice in Zurich – with clear guardrails, nFADP-compliant data handling and human control over critical decisions.",
+    "it": "Gli agenti IA sono sistemi LLM autonomi o semi-autonomi che pianificano da soli le attività, utilizzano strumenti e fonti di dati e agiscono entro autorizzazioni definite. Weissmann AI sviluppa questi agenti per assistenza, ricerca, chat e voce a Zurigo, con regole chiare, gestione dei dati conforme alla nLPD e controllo umano sulle decisioni critiche.",
+    "fr": "Les agents IA sont des systèmes LLM autonomes ou semi-autonomes qui planifient des tâches, utilisent des outils et des sources de données et agissent dans le cadre d'autorisations définies. Weissmann AI développe ces agents pour le support, la recherche, le chat et la voix à Zurich, avec des garde-fous clairs, un traitement des données conforme à la nLPD et un contrôle humain sur les décisions critiques."
+  },
+  "benefits": [
+    {
+      "title": {
+        "de": "Delegierte Autonomie mit Leitplanken",
+        "en": "Delegated autonomy with guardrails",
+        "it": "Autonomia delegata con regole chiare",
+        "fr": "Autonomie déléguée avec des garde-fous"
+      },
+      "text": {
+        "de": "Ein KI-Agent trifft Entscheidungen und führt mehrstufige Aufgaben selbstständig aus – aber nur innerhalb der Befugnisse, Regeln und Freigabeschwellen, die wir gemeinsam festlegen.",
+        "en": "An AI agent makes decisions and completes multi-step tasks on its own – but only within the permissions, rules and approval thresholds we define together.",
+        "it": "Un agente IA prende decisioni ed esegue attività in più fasi in autonomia, ma solo entro le autorizzazioni, le regole e le soglie di approvazione definite insieme.",
+        "fr": "Un agent IA prend des décisions et exécute des tâches en plusieurs étapes de façon autonome, mais uniquement dans le cadre des autorisations, règles et seuils de validation définis ensemble."
+      }
+    },
+    {
+      "title": {
+        "de": "Werkzeuge statt nur Antworten",
+        "en": "Tools, not just answers",
+        "it": "Strumenti, non solo risposte",
+        "fr": "Des outils, pas seulement des réponses"
+      },
+      "text": {
+        "de": "Agenten nutzen Werkzeuge, APIs und Datenquellen: Sie suchen, lesen Systeme aus, schreiben zurück und lösen Aufgaben – statt nur Text zu generieren.",
+        "en": "Agents use tools, APIs and data sources: they search, read from systems, write back and complete tasks – instead of only generating text.",
+        "it": "Gli agenti usano strumenti, API e fonti di dati: cercano, leggono dai sistemi, scrivono e completano le attività, invece di limitarsi a generare testo.",
+        "fr": "Les agents utilisent des outils, des API et des sources de données : ils recherchent, lisent les systèmes, y écrivent et accomplissent des tâches, au lieu de se contenter de générer du texte."
+      }
+    },
+    {
+      "title": {
+        "de": "revDSG-konform und nachvollziehbar",
+        "en": "nFADP-compliant and auditable",
+        "it": "Conforme alla nLPD e verificabile",
+        "fr": "Conforme à la nLPD et auditable"
+      },
+      "text": {
+        "de": "Datenhaltung in der Schweiz oder EU, protokollierte Aktionen und auditierbare Entscheidungswege – im Einklang mit dem revDSG und den Vorgaben des EDÖB.",
+        "en": "Data hosted in Switzerland or the EU, logged actions and auditable decision paths – aligned with the nFADP and FDPIC guidance.",
+        "it": "Dati ospitati in Svizzera o nell'UE, azioni registrate e percorsi decisionali verificabili, in linea con la nLPD e le indicazioni dell'IFPDT.",
+        "fr": "Données hébergées en Suisse ou dans l'UE, actions journalisées et parcours décisionnels auditables, conformément à la nLPD et aux recommandations du PFPDT."
+      }
+    },
+    {
+      "title": {
+        "de": "Mensch behält die Kontrolle",
+        "en": "Humans stay in control",
+        "it": "L'essere umano mantiene il controllo",
+        "fr": "L'humain garde le contrôle"
+      },
+      "text": {
+        "de": "Kritische Schritte laufen über definierte Human-in-the-Loop-Freigaben. Der Agent handelt selbstständig, wo es sicher ist, und fragt nach, wo es zählt.",
+        "en": "Critical steps run through defined human-in-the-loop approvals. The agent acts on its own where it is safe, and checks in where it matters.",
+        "it": "I passaggi critici richiedono approvazioni human-in-the-loop definite. L'agente agisce da solo dove è sicuro e chiede conferma dove conta.",
+        "fr": "Les étapes critiques passent par des validations human-in-the-loop définies. L'agent agit seul là où c'est sûr et sollicite un accord là où cela compte."
+      }
+    }
+  ],
+  "sections": [
+    {
+      "heading": {
+        "de": "Was ein KI-Agent umfasst",
+        "en": "What an AI agent includes",
+        "it": "Cosa comprende un agente IA",
+        "fr": "Ce qu'inclut un agent IA"
+      },
+      "paragraphs": [
+        {
+          "de": "Ein KI-Agent ist mehr als ein Chatbot: Er zerlegt eine Aufgabe in Schritte, wählt passende Werkzeuge, prüft Zwischenergebnisse und handelt, bis das Ziel erreicht ist. Wir liefern einen einsatzfähigen, entscheidungsfähigen Agenten – kein Skript und kein blosses Prompt-Template.",
+          "en": "An AI agent is more than a chatbot: it breaks a task into steps, chooses the right tools, checks intermediate results and acts until the goal is reached. We deliver a working, decision-making agent – not a script and not just a prompt template.",
+          "it": "Un agente IA è più di un chatbot: scompone un'attività in passaggi, sceglie gli strumenti adatti, verifica i risultati intermedi e agisce fino al raggiungimento dell'obiettivo. Consegniamo un agente operativo e capace di decidere, non uno script né un semplice template di prompt.",
+          "fr": "Un agent IA est plus qu'un chatbot : il décompose une tâche en étapes, choisit les bons outils, vérifie les résultats intermédiaires et agit jusqu'à atteindre l'objectif. Nous livrons un agent opérationnel et capable de décider, pas un script ni un simple modèle de prompt."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Support-Agenten, die Anfragen verstehen, in Systemen nachschlagen und Fälle lösen oder sauber eskalieren",
+          "en": "Support agents that understand requests, look things up in systems and resolve or cleanly escalate cases",
+          "it": "Agenti di assistenza che comprendono le richieste, consultano i sistemi e risolvono o inoltrano correttamente i casi",
+          "fr": "Des agents de support qui comprennent les demandes, consultent les systèmes et résolvent ou escaladent proprement les cas"
+        },
+        {
+          "de": "Recherche-Agenten, die Quellen durchsuchen, Ergebnisse abgleichen und strukturierte Zusammenfassungen liefern",
+          "en": "Research agents that search sources, cross-check results and deliver structured summaries",
+          "it": "Agenti di ricerca che esaminano le fonti, confrontano i risultati e forniscono sintesi strutturate",
+          "fr": "Des agents de recherche qui parcourent les sources, recoupent les résultats et livrent des synthèses structurées"
+        },
+        {
+          "de": "Chat- und Voice-Agenten – der AI Phone Assistant ist unsere produktisierte Sprachvariante",
+          "en": "Chat and voice agents – the AI Phone Assistant is our productized voice variant",
+          "it": "Agenti di chat e voce: l'AI Phone Assistant è la nostra variante vocale a catalogo",
+          "fr": "Des agents de chat et vocaux – l'AI Phone Assistant est notre variante vocale packagée"
+        },
+        {
+          "de": "Werkzeug-Anbindung an CRM, ERP, Wissensdatenbanken und interne APIs",
+          "en": "Tool connections to CRM, ERP, knowledge bases and internal APIs",
+          "it": "Collegamento a strumenti come CRM, ERP, knowledge base e API interne",
+          "fr": "Connexion aux outils : CRM, ERP, bases de connaissances et API internes"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wie wir Agenten entwickeln und betreiben",
+        "en": "How we build and run agents",
+        "it": "Come sviluppiamo e gestiamo gli agenti",
+        "fr": "Comment nous développons et exploitons les agents"
+      },
+      "paragraphs": [
+        {
+          "de": "Wir starten mit einem klar umrissenen Anwendungsfall statt mit einer Technologie. Gemeinsam definieren wir Ziel, Befugnisse, Werkzeuge und Freigabeschwellen, bauen den Agenten iterativ auf, testen ihn gegen reale Fälle und begleiten den Betrieb mit Monitoring und Feinschliff.",
+          "en": "We start with a clearly scoped use case rather than a technology. Together we define the goal, permissions, tools and approval thresholds, build the agent iteratively, test it against real cases and support operations with monitoring and refinement.",
+          "it": "Partiamo da un caso d'uso ben delimitato, non da una tecnologia. Definiamo insieme obiettivo, autorizzazioni, strumenti e soglie di approvazione, costruiamo l'agente in modo iterativo, lo testiamo su casi reali e accompagniamo l'esercizio con monitoraggio e ottimizzazione.",
+          "fr": "Nous partons d'un cas d'usage clairement délimité, pas d'une technologie. Ensemble, nous définissons l'objectif, les autorisations, les outils et les seuils de validation, construisons l'agent de façon itérative, le testons sur des cas réels et accompagnons l'exploitation avec supervision et ajustements."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Use-Case-Definition mit Zielen, Grenzen und Erfolgskriterien",
+          "en": "Use-case definition with goals, limits and success criteria",
+          "it": "Definizione del caso d'uso con obiettivi, limiti e criteri di successo",
+          "fr": "Définition du cas d'usage avec objectifs, limites et critères de réussite"
+        },
+        {
+          "de": "Auswahl von Modell, Werkzeugen und Wissensquellen – anbieterunabhängig",
+          "en": "Selection of model, tools and knowledge sources – vendor-independent",
+          "it": "Scelta di modello, strumenti e fonti di conoscenza, indipendente dal fornitore",
+          "fr": "Choix du modèle, des outils et des sources de connaissances, indépendant du fournisseur"
+        },
+        {
+          "de": "Leitplanken, Rechte und Human-in-the-Loop-Freigaben",
+          "en": "Guardrails, permissions and human-in-the-loop approvals",
+          "it": "Regole, autorizzazioni e approvazioni human-in-the-loop",
+          "fr": "Garde-fous, autorisations et validations human-in-the-loop"
+        },
+        {
+          "de": "Tests gegen reale Fälle, danach Monitoring, Logging und Weiterentwicklung",
+          "en": "Testing against real cases, then monitoring, logging and ongoing improvement",
+          "it": "Test su casi reali, poi monitoraggio, logging e sviluppo continuo",
+          "fr": "Tests sur des cas réels, puis supervision, journalisation et amélioration continue"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Für wen sich KI-Agenten eignen",
+        "en": "Who AI agents are for",
+        "it": "Per chi sono adatti gli agenti IA",
+        "fr": "À qui s'adressent les agents IA"
+      },
+      "paragraphs": [
+        {
+          "de": "KI-Agenten lohnen sich dort, wo wiederkehrende Aufgaben Urteilsvermögen, mehrere Systeme und Entscheidungen erfordern – zu viel für eine starre Automation, zu volumig für ein reines Team. Typisch sind Kundenservice, Innendienst, Recherche und Triage in KMU und grösseren Organisationen in der Schweiz und im DACH-Raum.",
+          "en": "AI agents pay off where recurring tasks require judgement, multiple systems and decisions – too much for rigid automation, too high-volume for a team alone. Typical fits are customer service, back office, research and triage in SMEs and larger organisations across Switzerland and the DACH region.",
+          "it": "Gli agenti IA convengono dove attività ricorrenti richiedono capacità di giudizio, più sistemi e decisioni: troppo per un'automazione rigida, troppo voluminose per il solo team. Ambiti tipici sono assistenza clienti, back office, ricerca e triage in PMI e organizzazioni più grandi in Svizzera e nell'area DACH.",
+          "fr": "Les agents IA sont rentables lorsque des tâches récurrentes exigent du discernement, plusieurs systèmes et des décisions : trop pour une automatisation rigide, trop volumineuses pour une équipe seule. On les retrouve typiquement dans le service client, le back-office, la recherche et le triage, au sein de PME et de grandes organisations en Suisse et dans la région DACH."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Was ist der Unterschied zwischen KI-Agenten und KI-Automation?",
+        "en": "What is the difference between AI agents and AI automation?",
+        "it": "Qual è la differenza tra agenti IA e automazione IA?",
+        "fr": "Quelle est la différence entre agents IA et automatisation IA ?"
+      },
+      "a": {
+        "de": "KI-Automation führt feste, regelbasierte Abläufe deterministisch aus – gleiche Eingabe, gleicher Weg (z. B. Make, n8n, Zapier, Dokumentenverarbeitung). Ein KI-Agent hingegen entscheidet selbst, plant Schritte und wählt Werkzeuge situativ. Faustregel: klarer, stabiler Prozess → Automation; nötiges Urteilsvermögen und Variabilität → Agent.",
+        "en": "AI automation runs fixed, rule-based workflows deterministically – same input, same path (e.g. Make, n8n, Zapier, document processing). An AI agent, by contrast, decides for itself, plans steps and chooses tools as the situation requires. Rule of thumb: a clear, stable process → automation; needed judgement and variability → agent.",
+        "it": "L'automazione IA esegue flussi fissi e basati su regole in modo deterministico: stesso input, stesso percorso (ad es. Make, n8n, Zapier, elaborazione documenti). Un agente IA, invece, decide da sé, pianifica i passaggi e sceglie gli strumenti a seconda della situazione. Regola pratica: processo chiaro e stabile → automazione; giudizio e variabilità necessari → agente.",
+        "fr": "L'automatisation IA exécute des flux fixes et fondés sur des règles de manière déterministe : même entrée, même chemin (p. ex. Make, n8n, Zapier, traitement de documents). Un agent IA, lui, décide de lui-même, planifie les étapes et choisit les outils selon la situation. Règle générale : processus clair et stable → automatisation ; discernement et variabilité requis → agent."
+      }
+    },
+    {
+      "q": {
+        "de": "Was hat der AI Phone Assistant mit KI-Agenten zu tun?",
+        "en": "How does the AI Phone Assistant relate to AI agents?",
+        "it": "Che rapporto c'è tra l'AI Phone Assistant e gli agenti IA?",
+        "fr": "Quel est le lien entre l'AI Phone Assistant et les agents IA ?"
+      },
+      "a": {
+        "de": "Der AI Phone Assistant ist unsere produktisierte Sprach-Variante eines KI-Agenten: ein Agent, der Anrufe entgegennimmt, versteht, in Systemen nachschlägt und Aufgaben erledigt. Dieselbe Agenten-Architektur nutzen wir auch für Chat, Support und Recherche.",
+        "en": "The AI Phone Assistant is our productized voice variant of an AI agent: an agent that answers calls, understands them, looks things up in systems and completes tasks. We use the same agent architecture for chat, support and research as well.",
+        "it": "L'AI Phone Assistant è la nostra variante vocale a catalogo di un agente IA: un agente che risponde alle chiamate, le comprende, consulta i sistemi e svolge le attività. La stessa architettura ad agenti la usiamo anche per chat, assistenza e ricerca.",
+        "fr": "L'AI Phone Assistant est notre variante vocale packagée d'un agent IA : un agent qui prend les appels, les comprend, consulte les systèmes et exécute des tâches. Nous utilisons la même architecture d'agents pour le chat, le support et la recherche."
+      }
+    },
+    {
+      "q": {
+        "de": "Wie viel Autonomie erhält ein KI-Agent?",
+        "en": "How much autonomy does an AI agent get?",
+        "it": "Quanta autonomia riceve un agente IA?",
+        "fr": "Quel niveau d'autonomie reçoit un agent IA ?"
+      },
+      "a": {
+        "de": "Genau so viel, wie Sie festlegen. Wir definieren pro Aufgabe Befugnisse, erlaubte Werkzeuge und Freigabeschwellen. Unkritische Schritte laufen selbstständig, kritische Aktionen – etwa verbindliche Zusagen oder Zahlungen – erfordern eine menschliche Freigabe (Human-in-the-Loop).",
+        "en": "Exactly as much as you define. Per task we set permissions, allowed tools and approval thresholds. Non-critical steps run on their own; critical actions – such as binding commitments or payments – require a human approval (human-in-the-loop).",
+        "it": "Esattamente quella che stabilite voi. Per ogni attività definiamo autorizzazioni, strumenti consentiti e soglie di approvazione. I passaggi non critici avvengono in autonomia; le azioni critiche, come impegni vincolanti o pagamenti, richiedono un'approvazione umana (human-in-the-loop).",
+        "fr": "Exactement celui que vous définissez. Pour chaque tâche, nous fixons les autorisations, les outils permis et les seuils de validation. Les étapes non critiques se déroulent seules ; les actions critiques, comme des engagements contraignants ou des paiements, exigent une validation humaine (human-in-the-loop)."
+      }
+    },
+    {
+      "q": {
+        "de": "Sind KI-Agenten revDSG-konform einsetzbar?",
+        "en": "Can AI agents be used in an nFADP-compliant way?",
+        "it": "Gli agenti IA sono utilizzabili in conformità alla nLPD?",
+        "fr": "Les agents IA peuvent-ils être utilisés conformément à la nLPD ?"
+      },
+      "a": {
+        "de": "Ja. Wir hosten Daten in der Schweiz oder der EU, protokollieren Agenten-Aktionen und gestalten Entscheidungswege nachvollziehbar. Umfang der Datenbearbeitung, Rechtsgrundlagen und allfällige Bekanntgaben klären wir im Rahmen des revDSG und der Empfehlungen des EDÖB – bei Bedarf mit Ihrer Datenschutzverantwortung.",
+        "en": "Yes. We host data in Switzerland or the EU, log agent actions and keep decision paths traceable. Scope of processing, legal bases and any disclosures are clarified in line with the nFADP and FDPIC guidance – together with your data protection function where needed.",
+        "it": "Sì. Ospitiamo i dati in Svizzera o nell'UE, registriamo le azioni degli agenti e manteniamo tracciabili i percorsi decisionali. Ambito del trattamento, basi giuridiche ed eventuali comunicazioni vengono chiariti secondo la nLPD e le indicazioni dell'IFPDT, se necessario con la vostra funzione privacy.",
+        "fr": "Oui. Nous hébergeons les données en Suisse ou dans l'UE, journalisons les actions des agents et gardons les parcours décisionnels traçables. La portée du traitement, les bases légales et d'éventuelles communications sont clarifiées selon la nLPD et les recommandations du PFPDT, avec votre fonction de protection des données si nécessaire."
+      }
+    },
+    {
+      "q": {
+        "de": "Was kostet die Entwicklung eines KI-Agenten?",
+        "en": "What does developing an AI agent cost?",
+        "it": "Quanto costa sviluppare un agente IA?",
+        "fr": "Combien coûte le développement d'un agent IA ?"
+      },
+      "a": {
+        "de": "KI-Agenten hängen stark vom Anwendungsfall ab, deshalb arbeiten wir hier ohne Fixpreis. Nach einem kurzen Erstgespräch erhalten Sie eine individuelle Offerte auf Basis von Umfang, Werkzeug-Anbindungen und gewünschter Autonomie.",
+        "en": "AI agents depend heavily on the use case, so we work here without a fixed price. After a short initial call you receive an individual proposal based on scope, tool integrations and the level of autonomy you want.",
+        "it": "Gli agenti IA dipendono molto dal caso d'uso, perciò qui lavoriamo senza prezzo fisso. Dopo un breve colloquio iniziale ricevete un'offerta personalizzata in base a portata, integrazioni con gli strumenti e livello di autonomia desiderato.",
+        "fr": "Les agents IA dépendent fortement du cas d'usage, c'est pourquoi nous travaillons ici sans prix fixe. Après un bref premier entretien, vous recevez une offre individuelle basée sur le périmètre, les intégrations d'outils et le niveau d'autonomie souhaité."
+      }
+    },
+    {
+      "q": {
+        "de": "Welche Modelle und Systeme nutzt ihr für KI-Agenten?",
+        "en": "Which models and systems do you use for AI agents?",
+        "it": "Quali modelli e sistemi usate per gli agenti IA?",
+        "fr": "Quels modèles et systèmes utilisez-vous pour les agents IA ?"
+      },
+      "a": {
+        "de": "Wir arbeiten anbieterunabhängig und wählen Modell, Werkzeuge und Wissensquellen passend zum Anwendungsfall – nicht umgekehrt. So verbinden wir Agenten über die passende Integrationsebene mit Ihren bestehenden Systemen (CRM, ERP, Wissensdatenbanken) und bleiben bei Bedarf wechselfähig.",
+        "en": "We work vendor-independently and choose the model, tools and knowledge sources to fit the use case – not the other way round. This lets us connect agents to your existing systems (CRM, ERP, knowledge bases) via the right integration layer and stay switchable when needed.",
+        "it": "Lavoriamo in modo indipendente dal fornitore e scegliamo modello, strumenti e fonti di conoscenza in base al caso d'uso, non viceversa. Così colleghiamo gli agenti ai vostri sistemi esistenti (CRM, ERP, knowledge base) tramite il giusto livello di integrazione, restando all'occorrenza sostituibili.",
+        "fr": "Nous travaillons de façon indépendante des fournisseurs et choisissons le modèle, les outils et les sources de connaissances selon le cas d'usage, et non l'inverse. Nous connectons ainsi les agents à vos systèmes existants (CRM, ERP, bases de connaissances) via la bonne couche d'intégration, en restant interchangeables si besoin."
+      }
+    }
+  ],
+  "pricingIds": []
+}
