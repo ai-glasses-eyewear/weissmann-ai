@@ -1,31 +1,42 @@
 /**
- * XML sitemap for all indexable pages across the four locales, with
- * xhtml:link hreflang alternates. Noindex pages (danke, legal drafts, 404)
- * are deliberately excluded.
+ * XML sitemap — registry-driven. Enumerates every indexable page (home, the
+ * Services + Industries hubs, all live service + industry pages, and the core
+ * company/pricing pages) across the four locales with localized URLs and
+ * xhtml:link hreflang alternates (x-default → English). Noindex pages (danke,
+ * legal drafts, 404) and legacy duplicate URLs are deliberately excluded.
  */
 import type { APIRoute } from 'astro';
-import { SITE, LOCALES, localePrefix } from '../data/site';
+import { SITE, LOCALES } from '../data/site';
+import { HOME_PATHS, pillarHome, urlFor, type LocalePaths } from '../data/routes';
+import { liveServices, servicePaths } from '../data/services';
+import { liveIndustries, industryPaths } from '../data/industries';
 
-const INDEXABLE_PATHS = [
-  '/',
-  '/ki-telefonassistent/',
-  '/leistungen/ai-websites/',
-  '/preise/',
-  '/ueber-uns/',
-  '/kontakt/',
-];
+/** Legacy same-slug page (identical path in every locale) as LocalePaths. */
+const sameSlug = (path: string): LocalePaths => ({ de: path, en: path, it: path, fr: path });
+
+function indexablePages(): LocalePaths[] {
+  return [
+    HOME_PATHS,
+    pillarHome('services'),
+    ...liveServices().map(servicePaths),
+    pillarHome('industries'),
+    ...liveIndustries().map(industryPaths),
+    sameSlug('/preise/'),
+    sameSlug('/ueber-uns/'),
+    sameSlug('/kontakt/'),
+  ];
+}
 
 export const GET: APIRoute = () => {
-  const urls = INDEXABLE_PATHS.flatMap((path) =>
+  const urls = indexablePages().flatMap((lp) =>
     LOCALES.map((locale) => {
-      const loc = `${SITE.domain}${localePrefix(locale)}${path}`;
+      const loc = urlFor(locale, lp);
       const alternates = LOCALES.map(
-        (l) =>
-          `    <xhtml:link rel="alternate" hreflang="${l === 'de' ? 'de-CH' : l}" href="${SITE.domain}${localePrefix(l)}${path}"/>`
+        (l) => `    <xhtml:link rel="alternate" hreflang="${l === 'de' ? 'de-CH' : l}" href="${urlFor(l, lp)}"/>`,
       ).join('\n');
-      const xdefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE.domain}${path}"/>`;
+      const xdefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${urlFor('en', lp)}"/>`;
       return `  <url>\n    <loc>${loc}</loc>\n${alternates}\n${xdefault}\n  </url>`;
-    })
+    }),
   );
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -35,3 +46,6 @@ ${urls.join('\n')}
 `;
   return new Response(xml, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
 };
+
+// Keep a reference to SITE so the domain stays the single source of truth.
+void SITE;
