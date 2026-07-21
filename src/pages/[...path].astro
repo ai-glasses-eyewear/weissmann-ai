@@ -10,7 +10,10 @@
  */
 import { LOCALES, type Locale } from '../data/site';
 import { pillarHome, routeParam, type LocalePaths } from '../data/routes';
+import { liveServices, servicePaths, type ServiceDef } from '../data/services';
+import { getServiceContent, type ServiceContent } from '../data/service-content';
 import ServicesHubPage from '../components/pages/ServicesHubPage.astro';
+import ServicePage from '../components/pages/ServicePage.astro';
 
 export function getStaticPaths() {
   const out: Array<{ params: { path: string }; props: Record<string, unknown> }> = [];
@@ -24,13 +27,32 @@ export function getStaticPaths() {
     });
   }
 
+  // Dedicated service pages (live services only)
+  for (const s of liveServices()) {
+    const content = getServiceContent(s.id);
+    if (!content) continue; // never publish a service page without its content
+    const sp = servicePaths(s);
+    for (const l of LOCALES) {
+      out.push({
+        params: { path: routeParam(l, sp) },
+        props: { type: 'service', locale: l, localePaths: sp, service: s, content },
+      });
+    }
+  }
+
   return out;
 }
 
-const { type, locale, localePaths } = Astro.props as {
+const props = Astro.props as {
   type: string;
   locale: Locale;
   localePaths: LocalePaths;
+  service?: ServiceDef;
+  content?: ServiceContent;
 };
+const { type, locale, localePaths, service, content } = props;
 ---
 {type === 'services-hub' && <ServicesHubPage locale={locale} localePaths={localePaths} />}
+{type === 'service' && service && content && (
+  <ServicePage locale={locale} localePaths={localePaths} service={service} content={content} />
+)}

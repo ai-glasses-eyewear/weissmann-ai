@@ -46,7 +46,7 @@ export const SERVICES: ServiceDef[] = [
     id: 'phone-assistant',
     group: 'build',
     order: 1,
-    status: 'draft',
+    status: 'live',
     slug: { de: 'ki-telefonassistent', en: 'ai-phone-assistant', it: 'assistente-telefonico-ai', fr: 'assistant-telephonique-ia' },
     name: { de: 'KI-Telefonassistent', en: 'AI Phone Assistant', it: 'Assistente telefonico AI', fr: 'Assistant téléphonique IA' },
     tagline: {
