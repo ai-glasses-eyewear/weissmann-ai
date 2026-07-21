@@ -87,14 +87,12 @@ export const CLUSTERS: AcademyCluster[] = [
     name: { de: 'KI-Marketing, SEO & GEO', en: 'AI Marketing, SEO & GEO', it: 'AI marketing, SEO e GEO', fr: 'Marketing IA, SEO et GEO' },
     tagline: { de: 'Sichtbar werden in Google und in KI-Antwortmaschinen.', en: 'Getting found in Google and in AI answer engines.', it: 'Farsi trovare su Google e nei motori di risposta AI.', fr: 'Se faire trouver sur Google et dans les moteurs de réponse IA.' },
   },
+  // Note: an Academy "AI by Industry" cluster is intentionally NOT built — the
+  // 16 dedicated commercial Industry pages (/branchen/) already serve per-sector
+  // AI content; a parallel informational cluster would duplicate them and risk
+  // keyword cannibalization. Sector depth lives under the Industries pillar.
   {
-    id: 'industries', order: 8, status: 'draft',
-    slug: { de: 'ki-nach-branche', en: 'ai-by-industry', it: 'ai-per-settore', fr: 'ia-par-secteur' },
-    name: { de: 'KI nach Branche', en: 'AI by Industry', it: 'AI per settore', fr: 'IA par secteur' },
-    tagline: { de: 'Wie KI in einzelnen Branchen konkret eingesetzt wird.', en: 'How AI is concretely applied in specific industries.', it: 'Come l’AI viene applicata concretamente nei singoli settori.', fr: 'Comment l’IA s’applique concrètement dans chaque secteur.' },
-  },
-  {
-    id: 'functions', order: 9, status: 'draft',
+    id: 'functions', order: 8, status: 'draft',
     slug: { de: 'ki-nach-funktion', en: 'ai-by-function', it: 'ai-per-funzione', fr: 'ia-par-fonction' },
     name: { de: 'KI nach Funktion', en: 'AI by Function', it: 'AI per funzione', fr: 'IA par fonction' },
     tagline: { de: 'KI in Vertrieb, Support, HR, Finanzen und mehr.', en: 'AI in sales, support, HR, finance and more.', it: 'AI in vendite, supporto, HR, finanza e altro.', fr: 'L’IA dans les ventes, le support, les RH, la finance et plus.' },

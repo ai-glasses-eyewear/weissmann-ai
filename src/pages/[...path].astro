@@ -15,7 +15,8 @@ import { getServiceContent, type ServiceContent } from '../data/service-content'
 import { liveIndustries, industryPaths, type IndustryDef } from '../data/industries';
 import { getIndustryContent, type IndustryContent } from '../data/industry-content';
 import { liveClusters, clusterPaths, pillarOf, spokesOf, articlePaths, type AcademyArticle, type AcademyCluster } from '../data/academy';
-import { liveResources, resourcePaths } from '../data/resources';
+import { liveResources, resourcePaths, type ResourceDef } from '../data/resources';
+import { getChecklistContent, type ChecklistContent } from '../data/resource-content';
 import { hasGlossary, glossaryHubPaths, termPaths, GLOSSARY, type GlossaryTerm } from '../data/glossary';
 import { liveCompanyPages, companyPagePaths, getCompanyContent, type CompanyPageDef, type CompanyContent } from '../data/company';
 import ServicesHubPage from '../components/pages/ServicesHubPage.astro';
@@ -26,6 +27,7 @@ import AcademyHubPage from '../components/pages/AcademyHubPage.astro';
 import AcademyArticlePage from '../components/pages/AcademyArticlePage.astro';
 import ResourcesHubPage from '../components/pages/ResourcesHubPage.astro';
 import PhoneRoiCalculatorPage from '../components/pages/PhoneRoiCalculatorPage.astro';
+import ChecklistResourcePage from '../components/pages/ChecklistResourcePage.astro';
 import GlossaryHubPage from '../components/pages/GlossaryHubPage.astro';
 import GlossaryTermPage from '../components/pages/GlossaryTermPage.astro';
 import CompanyPage from '../components/pages/CompanyPage.astro';
@@ -135,11 +137,22 @@ export function getStaticPaths() {
   // Live resource pages (each renders its dedicated product component)
   for (const r of liveResources()) {
     const rp = resourcePaths(r);
-    for (const l of LOCALES) {
-      out.push({
-        params: { path: routeParam(l, rp) },
-        props: { type: 'resource', locale: l, localePaths: rp, resourceId: r.id },
-      });
+    if (r.type === 'checklist') {
+      const cc = getChecklistContent(r.id);
+      if (!cc) continue; // never publish a checklist without its content
+      for (const l of LOCALES) {
+        out.push({
+          params: { path: routeParam(l, rp) },
+          props: { type: 'resource-checklist', locale: l, localePaths: rp, resource: r, checklist: cc },
+        });
+      }
+    } else {
+      for (const l of LOCALES) {
+        out.push({
+          params: { path: routeParam(l, rp) },
+          props: { type: 'resource', locale: l, localePaths: rp, resourceId: r.id },
+        });
+      }
     }
   }
 
@@ -172,8 +185,10 @@ const props = Astro.props as {
   term?: GlossaryTerm;
   companyPage?: CompanyPageDef;
   companyContent?: CompanyContent;
+  resource?: ResourceDef;
+  checklist?: ChecklistContent;
 };
-const { type, locale, localePaths, service, content, industry, article, cluster, resourceId, term, companyPage, companyContent } = props;
+const { type, locale, localePaths, service, content, industry, article, cluster, resourceId, term, companyPage, companyContent, resource, checklist } = props;
 const industryContent = props.content as unknown as IndustryContent | undefined;
 ---
 {type === 'services-hub' && <ServicesHubPage locale={locale} localePaths={localePaths} />}
@@ -191,6 +206,9 @@ const industryContent = props.content as unknown as IndustryContent | undefined;
 {type === 'resources-hub' && <ResourcesHubPage locale={locale} localePaths={localePaths} />}
 {type === 'resource' && resourceId === 'phone-roi-calculator' && (
   <PhoneRoiCalculatorPage locale={locale} localePaths={localePaths} />
+)}
+{type === 'resource-checklist' && resource && checklist && (
+  <ChecklistResourcePage locale={locale} localePaths={localePaths} resource={resource} content={checklist} />
 )}
 {type === 'glossary-hub' && <GlossaryHubPage locale={locale} localePaths={localePaths} />}
 {type === 'glossary-term' && term && (

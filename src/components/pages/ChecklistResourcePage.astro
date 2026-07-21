@@ -1,0 +1,159 @@
+---
+/**
+ * ChecklistResourcePage — a first-party interactive checklist product (readiness
+ * assessment, compliance checklist, GEO audit). Native, accessible checkboxes
+ * with a live progress counter and print/save-as-PDF; client-side only. Renders
+ * from resources.ts + resource-content.ts. BreadcrumbList + ItemList + FAQPage
+ * schema, and a conversion path to the related service.
+ */
+import { SITE, type Locale } from '../../data/site';
+import { type LocalePaths, pillarHome, urlFor, relFor } from '../../data/routes';
+import { type ResourceDef, resourcePaths } from '../../data/resources';
+import { type ChecklistContent, countItems } from '../../data/resource-content';
+import { getService, servicePaths } from '../../data/services';
+import { breadcrumbs, faqPage } from '../../data/schema';
+import { t } from '../../i18n/ui';
+import Layout from '../../layouts/Layout.astro';
+
+interface Props { locale: Locale; localePaths: LocalePaths; resource: ResourceDef; content: ChecklistContent }
+const { locale, localePaths, resource, content } = Astro.props;
+
+const LBL: Record<Locale, { short: string; print: string; progress: string; faq: string; done: string; crumbHome: string; crumbRes: string; ctaTitle: string }> = {
+  de: { short: 'Kostenlos', print: 'Drucken / als PDF speichern', progress: 'Fortschritt', faq: 'Häufige Fragen', done: 'erledigt', crumbHome: 'Startseite', crumbRes: 'Ressourcen', ctaTitle: 'Unterstützung bei der Umsetzung?' },
+  en: { short: 'Free', print: 'Print / save as PDF', progress: 'Progress', faq: 'Frequently asked questions', done: 'done', crumbHome: 'Home', crumbRes: 'Resources', ctaTitle: 'Want help implementing this?' },
+  it: { short: 'Gratis', print: 'Stampa / salva come PDF', progress: 'Progresso', faq: 'Domande frequenti', done: 'completati', crumbHome: 'Home', crumbRes: 'Risorse', ctaTitle: 'Serve aiuto nell’attuazione?' },
+  fr: { short: 'Gratuit', print: 'Imprimer / enregistrer en PDF', progress: 'Progression', faq: 'Questions fréquentes', done: 'faits', crumbHome: 'Accueil', crumbRes: 'Ressources', ctaTitle: 'Besoin d’aide pour la mise en œuvre ?' },
+};
+const lbl = LBL[locale];
+const pre = locale === 'de' ? '' : `/${locale}`;
+const contactHref = `${pre}/kontakt/`;
+const resHub = pillarHome('resources');
+const total = countItems(content);
+
+const relServices = (resource.relatedServices ?? []).map((id) => getService(id)).filter((s): s is NonNullable<typeof s> => !!s && s.status === 'live');
+
+const schema = [
+  breadcrumbs(locale, [
+    { name: lbl.crumbHome, path: '/' },
+    { name: lbl.crumbRes, path: resHub[locale] },
+    { name: resource.name[locale], path: localePaths[locale] },
+  ]),
+  {
+    '@type': 'ItemList',
+    name: content.h1[locale],
+    numberOfItems: total,
+    itemListElement: content.sections.flatMap((s) => s.items).map((it, i) => ({ '@type': 'ListItem', position: i + 1, name: it[locale] })),
+  },
+  ...(content.faq?.length ? [faqPage(content.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] })))] : []),
+];
+
+let idx = 0;
+---
+<Layout locale={locale} localePaths={localePaths} title={content.title[locale]} description={content.metaDescription[locale]} schema={schema}>
+  <nav class="crumbs container" aria-label="Breadcrumb">
+    <a href={`${pre}/`}>{lbl.crumbHome}</a><span aria-hidden="true">›</span>
+    <a href={relFor(locale, resHub)}>{lbl.crumbRes}</a><span aria-hidden="true">›</span>
+    <span>{resource.name[locale]}</span>
+  </nav>
+
+  <header class="cl-head container">
+    <p class="kicker">{lbl.short}</p>
+    <h1>{content.h1[locale]}</h1>
+    <p class="cl-intro">{content.intro[locale]}</p>
+    <div class="cl-bar">
+      <p class="cl-progress" data-cl-progress aria-live="polite">{lbl.progress}: <strong data-cl-count>0</strong> / {total} {lbl.done}</p>
+      <button type="button" class="btn btn--ghost" data-cl-print>{lbl.print}</button>
+    </div>
+  </header>
+
+  <div class="container cl-body" data-checklist>
+    {content.sections.map((s) => (
+      <section class="cl-section">
+        <h2>{s.heading[locale]}</h2>
+        <ul class="cl-list">
+          {s.items.map((it) => {
+            idx++;
+            const cid = `cl-${idx}`;
+            return (
+              <li class="cl-item">
+                <input type="checkbox" id={cid} data-cl-box />
+                <label for={cid}>{it[locale]}</label>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
+  </div>
+
+  {content.faq && content.faq.length > 0 && (
+    <section class="container cl-faq">
+      <h2>{lbl.faq}</h2>
+      <div class="faq-list">
+        {content.faq.map((f) => (
+          <details class="faq-item"><summary>{f.q[locale]}</summary><p>{f.a[locale]}</p></details>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {relServices.length > 0 && (
+    <section class="container cl-cta">
+      <h2>{lbl.ctaTitle}</h2>
+      <div class="cl-cta-row">
+        {relServices.map((s) => (
+          <a class="btn btn--primary" href={relFor(locale, servicePaths(s))} data-track="request_demo">{s.name[locale]} →</a>
+        ))}
+        <a class="btn btn--ghost" href={contactHref} data-track="request_demo">{t(locale, 'nav.cta')}</a>
+      </div>
+    </section>
+  )}
+</Layout>
+
+<style>
+  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); flex-wrap: wrap; }
+  .crumbs a { color: var(--ink-mute); }
+  .crumbs a:hover { color: var(--ink); }
+  .cl-head { padding-top: var(--space-5); padding-bottom: var(--space-4); max-width: 52rem; }
+  .cl-head h1 { font-size: var(--fs-700); line-height: 1.08; margin: 0.4rem 0 1rem; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
+  .cl-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 48rem; }
+  .cl-bar { display: flex; gap: var(--space-3); align-items: center; justify-content: space-between; flex-wrap: wrap; margin-top: var(--space-4); border-top: 1px solid var(--line); padding-top: var(--space-3); }
+  .cl-progress { margin: 0; color: var(--ink-soft); font-size: var(--fs-300); }
+  .cl-progress strong { color: var(--accent); }
+  .cl-body { max-width: 52rem; padding-bottom: var(--space-5); }
+  .cl-section { margin-bottom: var(--space-5); }
+  .cl-section h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
+  .cl-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .cl-item { display: flex; gap: 0.7rem; align-items: flex-start; border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 0.9rem; background: var(--paper); }
+  .cl-item input { margin-top: 0.2rem; width: 1.1rem; height: 1.1rem; accent-color: var(--accent); flex: none; }
+  .cl-item label { color: var(--ink-soft); cursor: pointer; }
+  .cl-item input:checked + label { color: var(--ink-mute); text-decoration: line-through; }
+  .cl-faq { max-width: 52rem; padding-bottom: var(--space-5); }
+  .cl-faq h2 { font-size: var(--fs-500); margin-bottom: var(--space-4); }
+  .faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
+  .faq-item { border: 1px solid var(--line); border-radius: 12px; padding: var(--space-3) var(--space-4); background: var(--paper); }
+  .faq-item summary { font-weight: 600; cursor: pointer; }
+  .faq-item p { margin: 0.6rem 0 0; color: var(--ink-soft); }
+  .cl-cta { padding: var(--space-6) var(--space-4) var(--space-7); border-top: 1px solid var(--line); max-width: 52rem; }
+  .cl-cta h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
+  .cl-cta-row { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  @media print { .crumbs, .cl-bar, .cl-cta, .site-header, .site-footer { display: none !important; } }
+</style>
+
+<script is:inline>
+  (function () {
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('[data-cl-box]'));
+    var count = document.querySelector('[data-cl-count]');
+    if (boxes.length && count) {
+      var update = function () {
+        var n = boxes.filter(function (b) { return b.checked; }).length;
+        count.textContent = String(n);
+        if (n > 0 && window.wmEvent) window.wmEvent('checklist_progress', { checked: n, total: boxes.length });
+      };
+      boxes.forEach(function (b) { b.addEventListener('change', update); });
+    }
+    var printBtn = document.querySelector('[data-cl-print]');
+    if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+  })();
+</script>
