@@ -106,19 +106,19 @@ export function buildChatKB(): ChatKB {
       answer: {
         de: [
           `${priceLine('phone-starter', 'de')} · ${priceLine('phone-premium', 'de')} · ${getPackage('phone-enterprise').name.de}: ${onRequest.de}. ${vat.de}`,
-          'Wichtig: Starter und Premium laufen als 12-Monatsvertrag, ohne Setup-Gebühr.',
+          'Wichtig: Starter und Medium laufen als 12-Monatsvertrag, ohne Setup-Gebühr.',
         ],
         en: [
           `${priceLine('phone-starter', 'en')} · ${priceLine('phone-premium', 'en')} · ${getPackage('phone-enterprise').name.en}: ${onRequest.en}. ${vat.en}`,
-          'Note: Starter and Premium run as a 12-month contract, with no setup fee.',
+          'Note: Starter and Medium run as a 12-month contract, with no setup fee.',
         ],
         it: [
           `${priceLine('phone-starter', 'it')} · ${priceLine('phone-premium', 'it')} · ${getPackage('phone-enterprise').name.it}: ${onRequest.it}. ${vat.it}`,
-          'Nota: Starter e Premium prevedono un contratto di 12 mesi, senza costi di attivazione.',
+          'Nota: Starter e Medium prevedono un contratto di 12 mesi, senza costi di attivazione.',
         ],
         fr: [
           `${priceLine('phone-starter', 'fr')} · ${priceLine('phone-premium', 'fr')} · ${getPackage('phone-enterprise').name.fr}: ${onRequest.fr}. ${vat.fr}`,
-          'À noter : Starter et Premium fonctionnent avec un contrat de 12 mois, sans frais d’installation.',
+          'À noter : Starter et Medium fonctionnent avec un contrat de 12 mois, sans frais d’installation.',
         ],
       },
       chips: [
@@ -130,10 +130,10 @@ export function buildChatKB(): ChatKB {
     'phone-minutes': {
       service: 'phone-agent',
       answer: {
-        de: ['Starter: 1500 Minuten/Monat, danach CHF 0.30/Min. Premium: 3500 Minuten/Monat, danach CHF 0.25/Min.'],
-        en: ['Starter: 1,500 minutes/month, then CHF 0.30/min. Premium: 3,500 minutes/month, then CHF 0.25/min.'],
-        it: ['Starter: 1500 minuti/mese, poi CHF 0.30/min. Premium: 3500 minuti/mese, poi CHF 0.25/min.'],
-        fr: ['Starter : 1500 minutes/mois, puis CHF 0.30/min. Premium : 3500 minutes/mois, puis CHF 0.25/min.'],
+        de: ['Starter: 1500 Minuten/Monat, danach CHF 0.30/Min. Medium: 3500 Minuten/Monat, danach CHF 0.25/Min.'],
+        en: ['Starter: 1,500 minutes/month, then CHF 0.30/min. Medium: 3,500 minutes/month, then CHF 0.25/min.'],
+        it: ['Starter: 1500 minuti/mese, poi CHF 0.30/min. Medium: 3500 minuti/mese, poi CHF 0.25/min.'],
+        fr: ['Starter : 1500 minutes/mois, puis CHF 0.30/min. Medium : 3500 minutes/mois, puis CHF 0.25/min.'],
       },
       chips: [C('phone', 'Zurück', 'Back', 'Indietro', 'Retour'), human],
     },

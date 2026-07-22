@@ -40,8 +40,10 @@ const FORBIDDEN = [
   /8001\s*Z(ü|u|&#252;|&uuml;)rich/i,
   /CHF\s*590\b/,
   /\b590\s*CHF\b/,
+  // "eyewear" stays forbidden to catch accidental brand leakage; "Even Realities"
+  // is now an owner-sanctioned cross-promotion (the AI Smart Glasses section that
+  // links to ai-eyewear.ch), so it is intentionally no longer blocked.
   /eyewear/i,
-  /even\s*realities/i,
 ];
 
 const ALLOWED_PATTERNS = [
@@ -51,7 +53,8 @@ const ALLOWED_PATTERNS = [
 const scrubAllowed = (text) => ALLOWED_PATTERNS.reduce((t, re) => t.replace(re, ''), text);
 const VERIFIED_STRIPE = [
   'https://buy.stripe.com/00w00b0V818UcT646g1sQ01',
-  'https://buy.stripe.com/3cI00bgU6dVG5qEbyI1sQ02',
+  // Phone Medium (formerly Premium) reprice to CHF 499 (2026-07-22) removed the
+  // old CHF 990 link; re-add a new CHF 499 Payment Link here once it exists.
 ];
 
 // Legacy pages being deprecated (superseded by siloed URLs); excluded from the

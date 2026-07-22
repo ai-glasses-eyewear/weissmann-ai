@@ -34,7 +34,9 @@ const allSrc = pricingSrc + '\n' + siteSrc;
 // 1. Verified Stripe links — exactly these, nowhere else, never altered.
 const VERIFIED_LINKS = [
   'https://buy.stripe.com/00w00b0V818UcT646g1sQ01', // Phone Starter CHF 350/mo
-  'https://buy.stripe.com/3cI00bgU6dVG5qEbyI1sQ02', // Phone Premium CHF 990/mo
+  // Phone Medium (formerly Premium) is consult-only since the 2026-07-22 reprice
+  // to CHF 499; its old CHF 990 link was removed. Add a new CHF 499 Payment Link
+  // here (and in pricing.ts) once the business supplies it.
 ];
 const foundLinks = pricingSrc.match(/https:\/\/buy\.stripe\.com\/[A-Za-z0-9]+/g) ?? [];
 for (const link of foundLinks) {
