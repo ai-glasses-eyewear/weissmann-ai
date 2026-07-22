@@ -10,7 +10,7 @@ import Faq from '../Faq.astro';
 import { localePrefix, type Locale } from '../../data/site';
 import { t } from '../../i18n/ui';
 import { PACKAGES } from '../../data/pricing';
-import { organization, webPage, breadcrumbs, faqPage, allPackageServices } from '../../data/schema';
+import { webPage, breadcrumbs, faqPage, allPackageServices } from '../../data/schema';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -124,7 +124,6 @@ const c = C[locale];
 const order: Array<keyof typeof c.groups> = ['phone-agent', 'website', 'seo', 'geo', 'ads'];
 
 const schema = [
-  organization(locale),
   webPage(locale, PATH, c.metaTitle, c.metaDesc),
   breadcrumbs(locale, [
     { name: t(locale, 'breadcrumb.home'), path: '/' },

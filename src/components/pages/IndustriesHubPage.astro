@@ -42,7 +42,7 @@ const schema = [
 ];
 ---
 <Layout locale={locale} localePaths={localePaths} title={c.title} description={c.intro} schema={schema}>
-  <Breadcrumbs items={[
+  <Breadcrumbs locale={locale} items={[
     { name: c.crumbHome, href: `${pre}/` },
     { name: c.crumbHere },
   ]} />

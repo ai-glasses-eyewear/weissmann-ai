@@ -7,7 +7,7 @@ import Layout from '../../layouts/Layout.astro';
 import MethodTimeline from '../MethodTimeline.astro';
 import { SITE, localePrefix, type Locale } from '../../data/site';
 import { t } from '../../i18n/ui';
-import { organization, webPage, breadcrumbs } from '../../data/schema';
+import { webPage, breadcrumbs } from '../../data/schema';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -111,7 +111,6 @@ const C: Record<Locale, any> = {
 const c = C[locale];
 
 const schema = [
-  organization(locale),
   webPage(locale, PATH, c.metaTitle, c.metaDesc),
   breadcrumbs(locale, [
     { name: t(locale, 'breadcrumb.home'), path: '/' },

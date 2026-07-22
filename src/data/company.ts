@@ -65,4 +65,3 @@ export function getCompanyContent(id: string): CompanyContent | undefined {
 }
 export const liveCompanyPages = (): CompanyPageDef[] =>
   COMPANY_PAGES.filter((c) => c.status === 'live' && COMPANY_CONTENT[c.id]).sort((a, b) => a.order - b.order);
-export const orderedCompanyPages = (): CompanyPageDef[] => [...COMPANY_PAGES].sort((a, b) => a.order - b.order);

@@ -70,7 +70,7 @@ const C: Record<Locale, any> = {
   de: {
     metaTitle: 'Weissmann AI | Praktische KI und digitales Wachstum für Unternehmen',
     metaDesc:
-      'Weissmann AI entwickelt die digitale Infrastruktur, mit der Unternehmen wachsen: Website, SEO & GEO, Google Ads, KI-Agenten, Automatisierung und Messung – als ein integriertes System aus Zürich.',
+      'Weissmann AI baut die digitale Infrastruktur für Ihr Wachstum: Website, SEO & GEO, Google Ads, KI-Agenten und Automatisierung – ein System aus Zürich.',
     heroEyebrow: 'Praktische KI für Unternehmen',
     heroTitle: 'Wir bauen das System, mit dem Ihr Unternehmen wächst.',
     heroText:
@@ -135,7 +135,7 @@ const C: Record<Locale, any> = {
   en: {
     metaTitle: 'Weissmann AI | Practical AI and digital growth for businesses',
     metaDesc:
-      'Weissmann AI builds the digital infrastructure businesses grow on: website, SEO & GEO, Google Ads, AI agents, automation and measurement — as one integrated system from Zurich.',
+      'Weissmann AI builds the digital infrastructure businesses grow on: website, SEO & GEO, Google Ads, AI agents and automation — one system from Zurich.',
     heroEyebrow: 'Practical AI for businesses',
     heroTitle: 'We build the system your business grows on.',
     heroText:
@@ -200,7 +200,7 @@ const C: Record<Locale, any> = {
   it: {
     metaTitle: 'Weissmann AI | AI pratica e crescita digitale per le aziende',
     metaDesc:
-      'Weissmann AI costruisce l’infrastruttura digitale su cui crescono le aziende: sito web, SEO e GEO, Google Ads, agenti AI, automazione e misurazione — come un sistema integrato, da Zurigo.',
+      'Weissmann AI costruisce l’infrastruttura digitale per la crescita: sito web, SEO e GEO, Google Ads, agenti AI e automazione — un sistema da Zurigo.',
     heroEyebrow: 'AI pratica per le aziende',
     heroTitle: 'Costruiamo il sistema su cui cresce la vostra azienda.',
     heroText:
@@ -265,7 +265,7 @@ const C: Record<Locale, any> = {
   fr: {
     metaTitle: 'Weissmann AI | IA pratique et croissance digitale pour les entreprises',
     metaDesc:
-      'Weissmann AI construit l’infrastructure digitale qui fait croître les entreprises : site web, SEO et GEO, Google Ads, agents IA, automatisation et mesure — comme un système intégré, depuis Zurich.',
+      'Weissmann AI construit l’infrastructure digitale de votre croissance : site web, SEO et GEO, Google Ads, agents IA et automatisation, depuis Zurich.',
     heroEyebrow: 'IA pratique pour les entreprises',
     heroTitle: 'Nous construisons le système qui fait croître votre entreprise.',
     heroText:
@@ -377,7 +377,7 @@ const websiteStarter = getPackage('website-starter');
         <p>{c.systemText}</p>
       </div>
 
-      <p class="growthwords" aria-label={c.systemEyebrow}>
+      <p class="growthwords">
         {c.growthWords.map((w: string, i: number) => (
           <>
             <span class="growthwords__word">{w}</span>
@@ -394,7 +394,7 @@ const websiteStarter = getPackage('website-starter');
               <h3><a href={linkFor(i)} data-track="service_view">{s.title}</a></h3>
               <p>{s.text}</p>
             </div>
-            <a class="system__link" href={linkFor(i)} data-track="service_view" aria-label={s.title}>→</a>
+            <a class="system__link" href={linkFor(i)} tabindex="-1" aria-hidden="true">→</a>
           </li>
         ))}
       </ol>

@@ -51,7 +51,7 @@ const schema = [
 let idx = 0;
 ---
 <Layout locale={locale} localePaths={localePaths} title={content.title[locale]} description={content.metaDescription[locale]} schema={schema}>
-  <Breadcrumbs items={[
+  <Breadcrumbs locale={locale} items={[
     { name: lbl.crumbHome, href: `${pre}/` },
     { name: lbl.crumbRes, href: relFor(locale, resHub) },
     { name: resource.name[locale] },

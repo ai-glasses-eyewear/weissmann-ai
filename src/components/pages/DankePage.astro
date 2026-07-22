@@ -7,12 +7,16 @@
  */
 import Layout from '../../layouts/Layout.astro';
 import { SITE, localePrefix, type Locale } from '../../data/site';
+import { relFor } from '../../data/routes';
+import { getService, servicePaths } from '../../data/services';
 import { t } from '../../i18n/ui';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const p = localePrefix(locale);
 const PATH = '/danke/';
+// Link the canonical service page, not the legacy /ki-telefonassistent/ URL.
+const phoneHref = relFor(locale, servicePaths(getService('phone-assistant')!));
 
 const C: Record<Locale, any> = {
   de: {
@@ -22,7 +26,7 @@ const C: Record<Locale, any> = {
     text: 'Wir melden uns innerhalb eines Arbeitstags persönlich bei Ihnen. Wenn es eilt, erreichen Sie uns direkt:',
     nextTitle: 'In der Zwischenzeit',
     next: [
-      { text: 'Hören Sie, wie der KI-Telefonassistent klingt', href: '/ki-telefonassistent/' },
+      { text: 'Hören Sie, wie der KI-Telefonassistent klingt', href: phoneHref },
       { text: 'Sehen Sie unsere transparenten Preise an', href: '/preise/' },
     ],
   },
@@ -33,7 +37,7 @@ const C: Record<Locale, any> = {
     text: 'We’ll get back to you personally within one business day. If it’s urgent, reach us directly:',
     nextTitle: 'In the meantime',
     next: [
-      { text: 'Hear what the AI phone agent sounds like', href: '/ki-telefonassistent/' },
+      { text: 'Hear what the AI phone agent sounds like', href: phoneHref },
       { text: 'Review our transparent pricing', href: '/preise/' },
     ],
   },
@@ -44,7 +48,7 @@ const C: Record<Locale, any> = {
     text: 'Vi risponderemo personalmente entro un giorno lavorativo. Se è urgente, contattateci direttamente:',
     nextTitle: 'Nel frattempo',
     next: [
-      { text: 'Ascoltate come suona l’assistente telefonico AI', href: '/ki-telefonassistent/' },
+      { text: 'Ascoltate come suona l’assistente telefonico AI', href: phoneHref },
       { text: 'Consultate i nostri prezzi trasparenti', href: '/preise/' },
     ],
   },
@@ -55,7 +59,7 @@ const C: Record<Locale, any> = {
     text: 'Nous vous répondrons personnellement sous un jour ouvrable. En cas d’urgence, contactez-nous directement :',
     nextTitle: 'En attendant',
     next: [
-      { text: 'Écoutez comment sonne l’agent téléphonique IA', href: '/ki-telefonassistent/' },
+      { text: 'Écoutez comment sonne l’agent téléphonique IA', href: phoneHref },
       { text: 'Consultez nos tarifs transparents', href: '/preise/' },
     ],
   },

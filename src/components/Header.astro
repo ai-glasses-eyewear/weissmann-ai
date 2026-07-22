@@ -39,7 +39,7 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
       <img src="/logo-weissmann-dark.png" alt="Weissmann AI" width="185" height="80" loading="eager" decoding="async" />
     </a>
 
-    <nav class="site-header__nav" aria-label="Hauptnavigation">
+    <nav class="site-header__nav" aria-label={locale === 'de' ? 'Hauptnavigation' : locale === 'fr' ? 'Navigation principale' : locale === 'it' ? 'Navigazione principale' : 'Main navigation'}>
       {nav.map((item) => (
         <a href={item.href} aria-current={item.href === currentHref ? 'page' : undefined}>
           {item.label}

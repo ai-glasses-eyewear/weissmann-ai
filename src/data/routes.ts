@@ -95,17 +95,3 @@ export function relFor(locale: Locale, lp: LocalePaths): string {
 export function routeParam(locale: Locale, lp: LocalePaths): string {
   return `${localePrefix(locale)}${lp[locale]}`.replace(/^\/+/, '').replace(/\/+$/, '');
 }
-
-/** hreflang alternates for a page: [{ hreflang, href }] for all locales + x-default. */
-export function hreflangAlternates(
-  lp: LocalePaths,
-  available: Locale[] = [...LOCALES],
-): Array<{ hreflang: string; href: string }> {
-  const alts = available.map((l) => ({
-    hreflang: l === 'de' ? 'de-CH' : l,
-    href: urlFor(l, lp),
-  }));
-  // x-default → English (docs/architecture: strongest for global AI-citation reach).
-  alts.push({ hreflang: 'x-default', href: urlFor('en', lp) });
-  return alts;
-}

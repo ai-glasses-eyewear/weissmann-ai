@@ -1,5 +1,5 @@
 /**
- * Weissmann AI — primary navigation config (six-pillar IA).
+ * Weissmann AI — primary navigation config (four live content pillars).
  *
  * Pillars appear in the nav only when their hub is published (PILLAR_LIVE),
  * so navigation never links to an unbuilt section. Flip a flag to true when a

@@ -124,7 +124,7 @@ const schema = [
 ];
 ---
 <Layout locale={locale} localePaths={localePaths} title={c.title} description={c.metaDescription} schema={schema}>
-  <Breadcrumbs items={[
+  <Breadcrumbs locale={locale} items={[
     { name: c.crumbHome, href: `${pre}/` },
     { name: c.crumbRes, href: relFor(locale, resHub) },
     { name: c.toolName },

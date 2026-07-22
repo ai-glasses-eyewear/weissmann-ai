@@ -81,7 +81,7 @@ function priceDisplay(id: string): string {
 }
 ---
 <Layout locale={locale} localePaths={localePaths} title={content.title[locale]} description={content.metaDescription[locale]} schema={schema}>
-  <Breadcrumbs items={[
+  <Breadcrumbs locale={locale} items={[
     { name: crumbName, href: `${pre}/` },
     { name: svcCrumb, href: urlFor(locale, hubPaths).replace(SITE.domain, '') },
     { name: service.name[locale] },

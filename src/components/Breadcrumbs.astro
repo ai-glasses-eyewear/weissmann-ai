@@ -5,11 +5,13 @@
  * schema.breadcrumbs() for the matching BreadcrumbList JSON-LD. The last item
  * is the current page and must omit `href`.
  */
+import type { Locale } from '../data/site';
 interface Crumb { name: string; href?: string }
-interface Props { items: Crumb[] }
-const { items } = Astro.props;
+interface Props { items: Crumb[]; locale?: Locale }
+const { items, locale = 'en' } = Astro.props;
+const navLabel = locale === 'de' ? 'Brotkrümelnavigation' : locale === 'fr' ? 'Fil d’Ariane' : locale === 'it' ? 'Percorso di navigazione' : 'Breadcrumb';
 ---
-<nav class="crumbs container" aria-label="Breadcrumb">
+<nav class="crumbs container" aria-label={navLabel}>
   <ol>
     {items.map((c, i) => (
       <li>

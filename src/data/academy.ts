@@ -111,9 +111,6 @@ export function getCluster(id: string): AcademyCluster | undefined {
 export function clusterPaths(c: AcademyCluster): LocalePaths {
   return underPillar('academy', c.slug);
 }
-export function articlesByCluster(clusterId: string): AcademyArticle[] {
-  return ARTICLES.filter((a) => a.cluster === clusterId);
-}
 export function pillarOf(clusterId: string): AcademyArticle | undefined {
   return ARTICLES.find((a) => a.cluster === clusterId && a.type === 'pillar');
 }

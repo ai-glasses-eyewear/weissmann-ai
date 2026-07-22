@@ -54,8 +54,10 @@ export const UI: Record<Locale, Dict> = {
     'form.website': 'Aktuelle Website (optional)',
     'form.language': 'Bevorzugte Sprache',
     'form.message': 'Nachricht',
-    'form.consent':
-      'Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden. Hinweise in der Datenschutzerklärung.',
+    'form.consentPre':
+      'Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden. Hinweise in der ',
+    'form.consentPolicy': 'Datenschutzerklärung',
+    'form.consentPost': '.',
     'form.submit': 'Anfrage senden',
     'form.select': 'Bitte wählen',
 
@@ -126,8 +128,10 @@ export const UI: Record<Locale, Dict> = {
     'form.website': 'Current website (optional)',
     'form.language': 'Preferred language',
     'form.message': 'Message',
-    'form.consent':
-      'I agree that my details may be stored to process my enquiry. See our privacy policy for details.',
+    'form.consentPre':
+      'I agree that my details may be stored to process my enquiry. See our ',
+    'form.consentPolicy': 'privacy policy',
+    'form.consentPost': ' for details.',
     'form.submit': 'Send enquiry',
     'form.select': 'Please select',
 
@@ -198,8 +202,10 @@ export const UI: Record<Locale, Dict> = {
     'form.website': 'Sito web attuale (facoltativo)',
     'form.language': 'Lingua preferita',
     'form.message': 'Messaggio',
-    'form.consent':
-      'Acconsento alla memorizzazione dei miei dati per l’elaborazione della mia richiesta. Dettagli nell’informativa sulla privacy.',
+    'form.consentPre':
+      'Acconsento alla memorizzazione dei miei dati per l’elaborazione della mia richiesta. Dettagli nell’',
+    'form.consentPolicy': 'informativa sulla privacy',
+    'form.consentPost': '.',
     'form.submit': 'Invia richiesta',
     'form.select': 'Selezionare',
 
@@ -270,8 +276,10 @@ export const UI: Record<Locale, Dict> = {
     'form.website': 'Site web actuel (facultatif)',
     'form.language': 'Langue préférée',
     'form.message': 'Message',
-    'form.consent':
-      'J’accepte que mes données soient enregistrées pour le traitement de ma demande. Détails dans la déclaration de confidentialité.',
+    'form.consentPre':
+      'J’accepte que mes données soient enregistrées pour le traitement de ma demande. Détails dans la ',
+    'form.consentPolicy': 'déclaration de confidentialité',
+    'form.consentPost': '.',
     'form.submit': 'Envoyer la demande',
     'form.select': 'Veuillez choisir',
 

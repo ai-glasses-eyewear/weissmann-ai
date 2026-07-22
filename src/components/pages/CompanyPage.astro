@@ -49,7 +49,7 @@ if (content.faq?.length) {
 }
 ---
 <Layout locale={locale} localePaths={localePaths} title={content.title[locale]} description={content.metaDescription[locale]} schema={schema}>
-  <Breadcrumbs items={[
+  <Breadcrumbs locale={locale} items={[
     { name: crumbHome, href: `${pre}/` },
     { name: page.name[locale] },
   ]} />

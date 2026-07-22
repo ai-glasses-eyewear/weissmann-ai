@@ -56,10 +56,10 @@ const t = (k: string) => kb.ui[locale][k];
       </header>
       <div class="wa__body" data-wa-body aria-live="polite"></div>
       <form class="wa__input" data-wa-form>
-        <input type="text" data-wa-text autocomplete="off" />
+        <input type="text" data-wa-text autocomplete="off" aria-label={t('inputPlaceholder')} />
         <button type="submit" class="wa__send" aria-label={t('send')}>&#8593;</button>
       </form>
-      <p class="wa__foot"><span data-wa-foot></span> · <a href={`${p}/datenschutz/`}>Datenschutz</a></p>
+      <p class="wa__foot"><span data-wa-foot></span> · <a href={`${p}/datenschutz/`}>{t('privacy')}</a></p>
     </section>
   </template>
 </div>
@@ -257,7 +257,7 @@ const t = (k: string) => kb.ui[locale][k];
       const card = document.createElement('div'); card.className = 'wa__handover';
       const q = defaultSummary();
       card.innerHTML = '<div class="wa__handover-title">' + ui.humanTitle + '</div><p>' + ui.humanIntro + '</p><p style="margin-top:.4rem">' + ui.availability + '</p>';
-      const ta = document.createElement('textarea'); ta.className = 'wa__summary'; ta.value = q; ta.setAttribute('aria-label', 'Summary');
+      const ta = document.createElement('textarea'); ta.className = 'wa__summary'; ta.value = q; ta.setAttribute('aria-label', KB.ui[locale].summaryLabel);
       card.appendChild(ta);
       const row = document.createElement('div'); row.className = 'wa__handover-row';
       const go = document.createElement('a'); go.className = 'wa__btn wa__btn--wa'; go.textContent = ui.approve; go.target = '_blank'; go.rel = 'noopener';
@@ -283,7 +283,7 @@ const t = (k: string) => kb.ui[locale][k];
     }
 
     function openPanel() {
-      if (panel) { panel.style.display = 'flex'; root.setAttribute('data-open', ''); return; }
+      if (panel) { panel.style.display = 'flex'; root.setAttribute('data-open', ''); panel.querySelector('[data-wa-text]').focus(); return; }
       const tpl = root.querySelector('[data-wa-template]');
       panel = tpl.content.firstElementChild.cloneNode(true);
       root.appendChild(panel);
@@ -293,12 +293,15 @@ const t = (k: string) => kb.ui[locale][k];
       const langSel = panel.querySelector('[data-wa-lang]'); langSel.value = locale;
       langSel.addEventListener('change', () => { locale = langSel.value; root.setAttribute('data-locale', locale); applyStaticText(); greet(); });
       panel.querySelector('[data-wa-close]').addEventListener('click', closePanel);
+      // Escape closes the dialog (and returns focus to the launcher via closePanel).
+      panel.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.preventDefault(); closePanel(); } });
       const form = panel.querySelector('[data-wa-form]');
       const input = panel.querySelector('[data-wa-text]');
       applyStaticText();
       form.addEventListener('submit', (e) => { e.preventDefault(); const v = input.value.trim(); if (!v) return; input.value = ''; handleFreeText(v); });
       ev('chat_open');
       greet();
+      input.focus(); // move focus into the dialog for keyboard/AT users
     }
     function applyStaticText() {
       if (!panel) return;
@@ -306,8 +309,14 @@ const t = (k: string) => kb.ui[locale][k];
       panel.querySelector('.wa__disclosure').textContent = KB.ui[locale].disclosure;
       panel.querySelector('[data-wa-text]').placeholder = KB.ui[locale].inputPlaceholder;
       panel.querySelector('[data-wa-foot]').textContent = KB.ui[locale].foot;
+      const priv = panel.querySelector('.wa__foot a'); if (priv) priv.textContent = KB.ui[locale].privacy;
     }
-    function closePanel() { if (panel) panel.style.display = 'none'; root.removeAttribute('data-open'); ev('chat_close'); }
+    function closePanel() {
+      if (panel) panel.style.display = 'none';
+      root.removeAttribute('data-open');
+      ev('chat_close');
+      launcher.focus(); // return focus to the trigger that opened the dialog
+    }
 
     // Progressive enhancement: turn the contact link into the chat toggle
     const launcher = root.querySelector('[data-wa-launcher]');

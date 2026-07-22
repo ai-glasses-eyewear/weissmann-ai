@@ -303,7 +303,7 @@ export function buildChatKB(): ChatKB {
       humanIntro: 'Ich bereite eine kurze Nachricht vor – Sie prüfen sie, bevor WhatsApp sich öffnet. Gesendet wird nichts automatisch.',
       approve: 'Auf WhatsApp fortsetzen', edit: 'Anpassen', cancel: 'Weiter im Chat',
       availability: 'Ich kann nicht sagen, wann genau jemand antwortet – das Team meldet sich so schnell wie möglich.',
-      foot: 'Weissmann Assistant', restart: 'Neu starten',
+      foot: 'Weissmann Assistant', restart: 'Neu starten', privacy: 'Datenschutz', summaryLabel: 'Zusammenfassung',
     },
     en: {
       launcher: 'Chat with Weissmann', title: 'Weissmann Assistant',
@@ -314,7 +314,7 @@ export function buildChatKB(): ChatKB {
       humanIntro: 'I’ll draft a short message — you can review it before WhatsApp opens. Nothing is sent automatically.',
       approve: 'Continue on WhatsApp', edit: 'Edit', cancel: 'Stay in chat',
       availability: 'I can’t say exactly when someone will reply — the team will get back to you as soon as possible.',
-      foot: 'Weissmann Assistant', restart: 'Start over',
+      foot: 'Weissmann Assistant', restart: 'Start over', privacy: 'Privacy', summaryLabel: 'Summary',
     },
     it: {
       launcher: 'Chatta con Weissmann', title: 'Weissmann Assistant',
@@ -325,7 +325,7 @@ export function buildChatKB(): ChatKB {
       humanIntro: 'Preparo un breve messaggio — potrà controllarlo prima che WhatsApp si apra. Nulla viene inviato automaticamente.',
       approve: 'Continua su WhatsApp', edit: 'Modifica', cancel: 'Resta in chat',
       availability: 'Non posso dire esattamente quando qualcuno risponderà — il team la ricontatterà il prima possibile.',
-      foot: 'Weissmann Assistant', restart: 'Ricomincia',
+      foot: 'Weissmann Assistant', restart: 'Ricomincia', privacy: 'Privacy', summaryLabel: 'Riepilogo',
     },
     fr: {
       launcher: 'Discutez avec Weissmann', title: 'Weissmann Assistant',
@@ -336,7 +336,7 @@ export function buildChatKB(): ChatKB {
       humanIntro: 'Je prépare un court message — vous pourrez le vérifier avant l’ouverture de WhatsApp. Rien n’est envoyé automatiquement.',
       approve: 'Continuer sur WhatsApp', edit: 'Modifier', cancel: 'Rester dans le chat',
       availability: 'Je ne peux pas dire exactement quand quelqu’un répondra — l’équipe vous répondra dès que possible.',
-      foot: 'Weissmann Assistant', restart: 'Recommencer',
+      foot: 'Weissmann Assistant', restart: 'Recommencer', privacy: 'Protection des données', summaryLabel: 'Résumé',
     },
   };
 

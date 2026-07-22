@@ -10,7 +10,7 @@ import { localePrefix, localeUrl, type Locale } from '../../data/site';
 import { t } from '../../i18n/ui';
 import { getPackage } from '../../data/pricing';
 import { getService, servicePaths } from '../../data/services';
-import { organization, webPage, breadcrumbs, faqPage, serviceWithOffer } from '../../data/schema';
+import { webPage, breadcrumbs, faqPage, serviceWithOffer } from '../../data/schema';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -209,7 +209,6 @@ const premium = getPackage('phone-premium');
 const enterprise = getPackage('phone-enterprise');
 
 const schema = [
-  organization(locale),
   webPage(locale, PATH, c.metaTitle, c.metaDesc),
   breadcrumbs(locale, [
     { name: t(locale, 'breadcrumb.home'), path: '/' },

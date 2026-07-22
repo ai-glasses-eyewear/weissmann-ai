@@ -55,7 +55,7 @@ const schema = [
 ];
 ---
 <Layout locale={locale} localePaths={localePaths} title={content.title[locale]} description={content.metaDescription[locale]} schema={schema}>
-  <Breadcrumbs items={[
+  <Breadcrumbs locale={locale} items={[
     { name: crumbName, href: `${pre}/` },
     { name: indCrumb, href: urlFor(locale, hubPaths).replace(SITE.domain, '') },
     { name: industry.name[locale] },

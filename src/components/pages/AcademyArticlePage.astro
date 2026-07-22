@@ -89,7 +89,7 @@ const schema = [
 ];
 ---
 <Layout locale={locale} localePaths={localePaths} title={article.title[locale]} description={article.metaDescription[locale]} schema={schema}>
-  <Breadcrumbs items={[
+  <Breadcrumbs locale={locale} items={[
     { name: crumbHome, href: `${pre}/` },
     { name: lbl.academy, href: relFor(locale, academyHub) },
     ...(isPillar

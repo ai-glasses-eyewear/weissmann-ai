@@ -68,13 +68,13 @@ export function getStaticPaths() {
 
   // Dedicated industry pages (live industries only)
   for (const ind of liveIndustries()) {
-    const content = getIndustryContent(ind.id);
-    if (!content) continue;
+    const industryContent = getIndustryContent(ind.id);
+    if (!industryContent) continue;
     const ip = industryPaths(ind);
     for (const l of LOCALES) {
       out.push({
         params: { path: routeParam(l, ip) },
-        props: { type: 'industry', locale: l, localePaths: ip, industry: ind, content },
+        props: { type: 'industry', locale: l, localePaths: ip, industry: ind, industryContent },
       });
     }
   }
@@ -146,7 +146,9 @@ export function getStaticPaths() {
           props: { type: 'resource-checklist', locale: l, localePaths: rp, resource: r, checklist: cc },
         });
       }
-    } else {
+    } else if (r.id === 'phone-roi-calculator') {
+      // Only emit non-checklist resources that have a matching template; any
+      // other live resource id would otherwise render a blank page.
       for (const l of LOCALES) {
         out.push({
           params: { path: routeParam(l, rp) },
@@ -187,9 +189,9 @@ const props = Astro.props as {
   companyContent?: CompanyContent;
   resource?: ResourceDef;
   checklist?: ChecklistContent;
+  industryContent?: IndustryContent;
 };
-const { type, locale, localePaths, service, content, industry, article, cluster, resourceId, term, companyPage, companyContent, resource, checklist } = props;
-const industryContent = props.content as unknown as IndustryContent | undefined;
+const { type, locale, localePaths, service, content, industry, article, cluster, resourceId, term, companyPage, companyContent, resource, checklist, industryContent } = props;
 ---
 {type === 'services-hub' && <ServicesHubPage locale={locale} localePaths={localePaths} />}
 {type === 'service' && service && content && (

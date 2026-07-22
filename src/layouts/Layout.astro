@@ -53,9 +53,14 @@ const canonical = canonicalOverride ?? localeUrl(locale, lp[locale]);
 const ogImage = `${SITE.domain}/og-default.png`;
 
 // Keep meta descriptions within the ~160-char SERP display budget (trim at a
-// word boundary). Page content is unaffected; only the meta tag is shortened.
+// word boundary and add an ellipsis so the snippet reads as intentional rather
+// than cut mid-phrase). Page content is unaffected; only the meta tag changes.
 const metaDescription =
-  description.length > 160 ? description.slice(0, 158).replace(/\s+\S*$/, '').trim() : description;
+  description.length > 160 ? description.slice(0, 157).replace(/\s+\S*$/, '').trim() + '…' : description;
+
+// x-default should target a page that actually exists: prefer English, but fall
+// back to the first available locale (e.g. the de-only 404 page).
+const xDefaultLocale = availableLocales.includes('en') ? 'en' : availableLocales[0];
 
 // Every page carries the Organization + WebSite entity (defined once here), so
 // the @id references in page-level schema (publisher/provider/about) resolve and
@@ -84,7 +89,7 @@ const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
         {availableLocales.map((l) => (
           <link rel="alternate" hreflang={l === 'de' ? 'de-CH' : l} href={localeUrl(l, lp[l])} />
         ))}
-        <link rel="alternate" hreflang="x-default" href={localeUrl('en', lp.en)} />
+        <link rel="alternate" hreflang="x-default" href={localeUrl(xDefaultLocale, lp[xDefaultLocale])} />
       </>
     )}
 
