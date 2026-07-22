@@ -8,6 +8,7 @@ import { SITE, localeUrl, type Locale } from '../../data/site';
 import { type LocalePaths, urlFor, relFor } from '../../data/routes';
 import { orderedResources, resourcePaths, type ResourceType } from '../../data/resources';
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
 
 interface Props { locale: Locale; localePaths: LocalePaths }
 const { locale, localePaths } = Astro.props;
@@ -31,9 +32,10 @@ const schema = [
 ];
 ---
 <Layout locale={locale} localePaths={localePaths} title={c.title} description={c.intro} schema={schema}>
-  <nav class="crumbs container" aria-label="Breadcrumb">
-    <a href={`${pre}/`}>{c.crumbHome}</a><span aria-hidden="true">›</span><span>{c.crumbHere}</span>
-  </nav>
+  <Breadcrumbs items={[
+    { name: c.crumbHome, href: `${pre}/` },
+    { name: c.crumbHere },
+  ]} />
   <header class="hub-head container">
     <p class="kicker">{c.kicker}</p>
     <h1>{c.h1}</h1>
@@ -51,9 +53,6 @@ const schema = [
 </Layout>
 
 <style>
-  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); }
-  .crumbs a { color: var(--ink-mute); }
-  .crumbs a:hover { color: var(--ink); }
   .hub-head { padding-top: var(--space-5); padding-bottom: var(--space-5); max-width: 60rem; }
   .hub-head h1 { font-size: var(--fs-700); line-height: 1.05; margin: 0.4rem 0 1rem; }
   .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }

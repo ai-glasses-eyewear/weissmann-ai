@@ -16,6 +16,7 @@ import { getPackage, formatPrice } from '../../data/pricing';
 import { breadcrumbs, faqPage, serviceWithOffer, webPage } from '../../data/schema';
 import { t } from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
 
 interface Props {
   locale: Locale;
@@ -80,11 +81,11 @@ function priceDisplay(id: string): string {
 }
 ---
 <Layout locale={locale} localePaths={localePaths} title={content.title[locale]} description={content.metaDescription[locale]} schema={schema}>
-  <nav class="crumbs container" aria-label="Breadcrumb">
-    <a href={`${pre}/`}>{crumbName}</a><span aria-hidden="true">›</span>
-    <a href={urlFor(locale, hubPaths).replace(SITE.domain, '')}>{svcCrumb}</a><span aria-hidden="true">›</span>
-    <span>{service.name[locale]}</span>
-  </nav>
+  <Breadcrumbs items={[
+    { name: crumbName, href: `${pre}/` },
+    { name: svcCrumb, href: urlFor(locale, hubPaths).replace(SITE.domain, '') },
+    { name: service.name[locale] },
+  ]} />
 
   <header class="svc-hero container">
     <p class="kicker">{content.kicker[locale]}</p>
@@ -196,9 +197,6 @@ function priceDisplay(id: string): string {
 </Layout>
 
 <style>
-  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); flex-wrap: wrap; }
-  .crumbs a { color: var(--ink-mute); }
-  .crumbs a:hover { color: var(--ink); }
   .svc-hero { padding-top: var(--space-5); padding-bottom: var(--space-6); max-width: 62rem; }
   .svc-hero h1 { font-size: var(--fs-700); line-height: 1.05; margin: 0.4rem 0 1rem; }
   .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }

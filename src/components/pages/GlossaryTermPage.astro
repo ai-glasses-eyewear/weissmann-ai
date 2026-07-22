@@ -13,6 +13,7 @@ import { ARTICLES, articlePaths } from '../../data/academy';
 import { breadcrumbs } from '../../data/schema';
 import { t } from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
 
 interface Props { locale: Locale; localePaths: LocalePaths; term: GlossaryTerm }
 const { locale, localePaths, term } = Astro.props;
@@ -54,12 +55,12 @@ const schema = [
 ];
 ---
 <Layout locale={locale} localePaths={localePaths} title={title} description={term.definition[locale]} schema={schema}>
-  <nav class="crumbs container" aria-label="Breadcrumb">
-    <a href={`${pre}/`}>{crumbHome}</a><span aria-hidden="true">›</span>
-    <a href={relFor(locale, academyHub)}>{lbl.academy}</a><span aria-hidden="true">›</span>
-    <a href={relFor(locale, gloss)}>{lbl.glossary}</a><span aria-hidden="true">›</span>
-    <span>{term.term[locale]}</span>
-  </nav>
+  <Breadcrumbs items={[
+    { name: crumbHome, href: `${pre}/` },
+    { name: lbl.academy, href: relFor(locale, academyHub) },
+    { name: lbl.glossary, href: relFor(locale, gloss) },
+    { name: term.term[locale] },
+  ]} />
 
   <article class="term container">
     <p class="kicker">{lbl.def}</p>
@@ -101,9 +102,6 @@ const schema = [
 </Layout>
 
 <style>
-  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); flex-wrap: wrap; }
-  .crumbs a { color: var(--ink-mute); }
-  .crumbs a:hover { color: var(--ink); }
   .term { max-width: 46rem; padding-top: var(--space-5); padding-bottom: var(--space-7); }
   .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
   .term h1 { font-size: var(--fs-700); margin: 0.4rem 0 1rem; }

@@ -13,6 +13,7 @@ import { breadcrumbs, faqPage } from '../../data/schema';
 import { t } from '../../i18n/ui';
 import MissedCallsCalculator from '../MissedCallsCalculator.astro';
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
 
 interface Props {
   locale: Locale;
@@ -123,11 +124,11 @@ const schema = [
 ];
 ---
 <Layout locale={locale} localePaths={localePaths} title={c.title} description={c.metaDescription} schema={schema}>
-  <nav class="crumbs container" aria-label="Breadcrumb">
-    <a href={`${pre}/`}>{c.crumbHome}</a><span aria-hidden="true">›</span>
-    <a href={relFor(locale, resHub)}>{c.crumbRes}</a><span aria-hidden="true">›</span>
-    <span>{c.toolName}</span>
-  </nav>
+  <Breadcrumbs items={[
+    { name: c.crumbHome, href: `${pre}/` },
+    { name: c.crumbRes, href: relFor(locale, resHub) },
+    { name: c.toolName },
+  ]} />
 
   <header class="tool-head container">
     <p class="kicker">{c.kicker}</p>
@@ -165,9 +166,6 @@ const schema = [
 </Layout>
 
 <style>
-  .crumbs { display: flex; gap: 0.5rem; align-items: center; font-size: var(--fs-200); color: var(--ink-mute); padding-top: var(--space-5); flex-wrap: wrap; }
-  .crumbs a { color: var(--ink-mute); }
-  .crumbs a:hover { color: var(--ink); }
   .tool-head { padding-top: var(--space-5); padding-bottom: var(--space-4); max-width: 52rem; }
   .tool-head h1 { font-size: var(--fs-700); line-height: 1.06; margin: 0.4rem 0 1rem; }
   .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
