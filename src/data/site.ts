@@ -28,6 +28,9 @@ export const SITE = {
 
   phone: '+41783459788',
   phoneDisplay: '+41 78 345 97 88',
+  /** Fonio-connected multilingual AI phone agent — the public "call our AI live" demo line. */
+  aiPhone: '+41565391867',
+  aiPhoneDisplay: '+41 56 539 18 67',
   email: 'info@weissmann.ai',
   whatsapp:
     'https://wa.me/41783459788?text=Hello%20I%20am%20interested%20in%20learning%20more%20about%20your%20service',

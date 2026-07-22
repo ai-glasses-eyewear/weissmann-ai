@@ -13,7 +13,8 @@ import MissedCallsCalculator from '../MissedCallsCalculator.astro';
 import Faq from '../Faq.astro';
 import PricingCard from '../PricingCard.astro';
 import WeissmannAssistant from '../WeissmannAssistant.astro';
-import { localePrefix, type Locale } from '../../data/site';
+import Icon from '../Icon.astro';
+import { SITE, localePrefix, type Locale } from '../../data/site';
 import { pillarHome, relFor } from '../../data/routes';
 import { getService, servicePaths } from '../../data/services';
 import { t } from '../../i18n/ui';
@@ -66,17 +67,170 @@ const ECO: Record<Locale, { eyebrow: string; title: string; text: string; items:
 };
 const eco = ECO[locale];
 
+// The 6-step product journey — "show, don't tell" (icons fixed across locales).
+const FLOW_ICONS = ['phone', 'bot', 'calendar-check', 'calendar', 'message', 'users'] as const;
+const GLASSES_ICONS = ['translate', 'captions', 'sparkle', 'users', 'accessibility', 'briefcase', 'bolt'] as const;
+const HERO_CHIPS: Record<Locale, string[]> = {
+  de: ['Antwortet in Sekunden', '24/7 · 365 Tage', 'DE · EN · FR · IT', 'Daten in der Schweiz/EU'],
+  en: ['Answers in seconds', '24/7 · 365 days', 'DE · EN · FR · IT', 'Data in Switzerland/EU'],
+  it: ['Risponde in pochi secondi', '24/7 · 365 giorni', 'DE · EN · FR · IT', 'Dati in Svizzera/UE'],
+  fr: ['Répond en quelques secondes', '24/7 · 365 jours', 'DE · EN · FR · IT', 'Données en Suisse/UE'],
+};
+const FLOW: Record<Locale, { eyebrow: string; title: string; text: string; steps: Array<{ label: string; text: string }> }> = {
+  de: { eyebrow: 'So funktioniert es', title: 'Vom verpassten Anruf zum gebuchten Kunden – automatisch.', text: 'Ein durchgehender Ablauf. Kein verpasster Umsatz, keine Handarbeit – Ihr Team bleibt ungestört produktiv.', steps: [
+    { label: 'Der Anruf kommt herein', text: 'Ein Kunde ruft an – zu jeder Zeit, auch abends, am Wochenende und an Feiertagen.' },
+    { label: 'Die KI nimmt natürlich ab', text: 'Freundliche, echte Stimme – in der Sprache Ihrer Kundschaft, ohne Roboterpausen.' },
+    { label: 'Der Termin wird gebucht', text: 'Verfügbarkeit geprüft, Wunschzeit bestätigt, Kontaktdaten erfasst.' },
+    { label: 'Ihr Kalender aktualisiert sich', text: 'Der Termin landet direkt in Ihrem bestehenden Buchungssystem.' },
+    { label: 'Zusammenfassung per WhatsApp', text: 'Sie erhalten sofort eine kompakte Notiz zu jedem Anruf – per WhatsApp oder E-Mail.' },
+    { label: 'Ihr Team arbeitet weiter', text: 'Keine Unterbrechung, kein verpasster Anruf. Nur bei Bedarf wird an Menschen übergeben.' },
+  ] },
+  en: { eyebrow: 'How it works', title: 'From missed call to booked customer — automatically.', text: 'One seamless flow. No lost revenue, no manual work — your team stays productive and undisturbed.', steps: [
+    { label: 'The call comes in', text: 'A customer calls — any hour, evenings, weekends and holidays included.' },
+    { label: 'The AI answers naturally', text: 'A warm, real voice — in your customer’s language, with no robotic pauses.' },
+    { label: 'The appointment is booked', text: 'Availability checked, preferred time confirmed, contact details captured.' },
+    { label: 'Your calendar updates', text: 'The booking lands directly in your existing scheduling system.' },
+    { label: 'A WhatsApp summary arrives', text: 'You instantly get a concise note on every call — by WhatsApp or email.' },
+    { label: 'Your staff keeps working', text: 'No interruption, no missed call. Humans step in only when it truly matters.' },
+  ] },
+  it: { eyebrow: 'Come funziona', title: 'Dalla chiamata persa al cliente prenotato — automaticamente.', text: 'Un flusso unico e continuo. Nessun fatturato perso, nessun lavoro manuale — il vostro team resta produttivo e indisturbato.', steps: [
+    { label: 'Arriva la chiamata', text: 'Un cliente chiama — a qualsiasi ora, sera, weekend e festivi inclusi.' },
+    { label: 'L’AI risponde in modo naturale', text: 'Voce reale e cordiale — nella lingua del cliente, senza pause robotiche.' },
+    { label: 'L’appuntamento è prenotato', text: 'Disponibilità verificata, orario confermato, contatti registrati.' },
+    { label: 'Il calendario si aggiorna', text: 'La prenotazione entra direttamente nel vostro sistema esistente.' },
+    { label: 'Riepilogo via WhatsApp', text: 'Ricevete subito una nota sintetica su ogni chiamata — via WhatsApp o e-mail.' },
+    { label: 'Il team continua a lavorare', text: 'Nessuna interruzione, nessuna chiamata persa. Le persone intervengono solo se serve.' },
+  ] },
+  fr: { eyebrow: 'Comment ça marche', title: 'De l’appel manqué au client réservé — automatiquement.', text: 'Un flux unique et continu. Aucun revenu perdu, aucun travail manuel — votre équipe reste productive et tranquille.', steps: [
+    { label: 'L’appel arrive', text: 'Un client appelle — à toute heure, soirs, week-ends et jours fériés inclus.' },
+    { label: 'L’IA répond naturellement', text: 'Une voix réelle et chaleureuse — dans la langue du client, sans pauses robotiques.' },
+    { label: 'Le rendez-vous est réservé', text: 'Disponibilité vérifiée, horaire confirmé, coordonnées enregistrées.' },
+    { label: 'Votre agenda se met à jour', text: 'La réservation arrive directement dans votre système existant.' },
+    { label: 'Un résumé arrive par WhatsApp', text: 'Vous recevez aussitôt une note concise sur chaque appel — par WhatsApp ou e-mail.' },
+    { label: 'Votre équipe continue', text: 'Aucune interruption, aucun appel manqué. L’humain intervient seulement si nécessaire.' },
+  ] },
+};
+const flow = FLOW[locale];
+const heroChips = HERO_CHIPS[locale];
+const TRUST_ICONS = ['shield', 'globe', 'users', 'check'] as const;
+// Trust & Swiss-compliance cluster — every claim below is truthful (no invented certs).
+const TRUST: Record<Locale, { eyebrow: string; title: string; text: string; pillars: Array<{ icon: string; label: string; text: string }> }> = {
+  de: { eyebrow: 'Vertrauen & Sicherheit', title: 'Gebaut für Schweizer Ansprüche.', text: 'Alles, was ein Schweizer Unternehmen braucht, um einer neuen Technologie zu vertrauen – ohne Kompromisse.', pillars: [
+    { icon: 'shield', label: 'Schweizer Unternehmen', text: 'Sitz in Zürich – ansprechbar und verantwortlich, kein anonymer Anbieter.' },
+    { icon: 'globe', label: 'Daten in der Schweiz/EU', text: 'Ihre Anrufdaten bleiben in der Schweiz oder der EU – nDSG- und DSGVO-konform.' },
+    { icon: 'transfer', label: 'Transparent & Übergabe an Menschen', text: 'Anrufende erreichen jederzeit einen Menschen – und erfahren, dass sie mit einer KI sprechen.' },
+    { icon: 'bolt', label: 'Keine Setup-Gebühr', text: 'Ohne Einrichtungsgebühr, typischerweise in wenigen Tagen live, monatlich kündbar.' },
+    { icon: 'users', label: 'Betreut, kein Self-Service', text: 'Wir konfigurieren, überwachen und verbessern laufend – Sie sind nie allein mit einem Tool.' },
+    { icon: 'clock', label: 'Antwort innert 1 Werktag', text: 'Fragen? Ein echter Mensch meldet sich innerhalb eines Arbeitstags.' },
+  ] },
+  en: { eyebrow: 'Trust & security', title: 'Built for Swiss standards.', text: 'Everything a Swiss business needs to trust a new technology — with no compromises.', pillars: [
+    { icon: 'shield', label: 'A Swiss company', text: 'Based in Zurich — reachable and accountable, not an anonymous vendor.' },
+    { icon: 'globe', label: 'Data in Switzerland/EU', text: 'Your call data stays in Switzerland or the EU — nDSG- and GDPR-aligned.' },
+    { icon: 'transfer', label: 'Transparent & human handover', text: 'Callers can always reach a human — and are told they’re speaking with an AI.' },
+    { icon: 'bolt', label: 'No setup fee', text: 'No setup fee, typically live within a few days, monthly-cancellable.' },
+    { icon: 'users', label: 'Managed, not self-service', text: 'We configure, monitor and continuously improve it — you’re never alone with a tool.' },
+    { icon: 'clock', label: 'Reply within 1 business day', text: 'Questions? A real person gets back to you within one working day.' },
+  ] },
+  it: { eyebrow: 'Fiducia & sicurezza', title: 'Costruito per gli standard svizzeri.', text: 'Tutto ciò di cui un’azienda svizzera ha bisogno per fidarsi di una nuova tecnologia — senza compromessi.', pillars: [
+    { icon: 'shield', label: 'Un’azienda svizzera', text: 'Sede a Zurigo — raggiungibile e responsabile, non un fornitore anonimo.' },
+    { icon: 'globe', label: 'Dati in Svizzera/UE', text: 'I dati delle chiamate restano in Svizzera o nell’UE — conformi a nLPD e GDPR.' },
+    { icon: 'transfer', label: 'Trasparenza & passaggio a persone', text: 'I chiamanti raggiungono sempre una persona — e sanno di parlare con un’AI.' },
+    { icon: 'bolt', label: 'Nessun costo di attivazione', text: 'Nessun costo di setup, tipicamente attivo in pochi giorni, disdicibile mensilmente.' },
+    { icon: 'users', label: 'Gestito, non self-service', text: 'Configuriamo, monitoriamo e miglioriamo di continuo — non siete mai soli con uno strumento.' },
+    { icon: 'clock', label: 'Risposta entro 1 giorno lavorativo', text: 'Domande? Una persona reale vi risponde entro un giorno lavorativo.' },
+  ] },
+  fr: { eyebrow: 'Confiance & sécurité', title: 'Conçu pour les exigences suisses.', text: 'Tout ce dont une entreprise suisse a besoin pour faire confiance à une nouvelle technologie — sans compromis.', pillars: [
+    { icon: 'shield', label: 'Une entreprise suisse', text: 'Basée à Zurich — joignable et responsable, pas un fournisseur anonyme.' },
+    { icon: 'globe', label: 'Données en Suisse/UE', text: 'Les données d’appel restent en Suisse ou dans l’UE — conformes nLPD et RGPD.' },
+    { icon: 'transfer', label: 'Transparence & transfert humain', text: 'Les appelants joignent toujours un humain — et savent qu’ils parlent à une IA.' },
+    { icon: 'bolt', label: 'Sans frais d’installation', text: 'Aucun frais de mise en place, généralement actif en quelques jours, résiliable mensuellement.' },
+    { icon: 'users', label: 'Géré, pas en self-service', text: 'Nous configurons, surveillons et améliorons en continu — jamais seul avec un outil.' },
+    { icon: 'clock', label: 'Réponse sous 1 jour ouvré', text: 'Des questions ? Une personne réelle vous répond sous un jour ouvré.' },
+  ] },
+};
+const trust = TRUST[locale];
+// Comparison table — every value is truthful and framed fairly (col 0 = Weissmann).
+const COMPARE: Record<Locale, { eyebrow: string; title: string; text: string; cols: string[]; rows: Array<{ label: string; cells: Array<boolean | string> }> }> = {
+  de: {
+    eyebrow: 'Der Vergleich', title: 'Warum ein KI-Telefonassistent – statt der Alternativen.',
+    text: 'Ehrlich verglichen mit den üblichen Wegen, eingehende Anrufe zu behandeln.',
+    cols: ['Weissmann KI-Assistent', 'Combox / Voicemail', 'Neue Empfangskraft', 'Verpasste Anrufe'],
+    rows: [
+      { label: 'Nimmt jeden Anruf an – 24/7', cells: [true, false, 'Nur Bürozeiten', false] },
+      { label: 'Bucht Termine & aktualisiert den Kalender', cells: [true, false, true, false] },
+      { label: 'Spricht DE · EN · FR · IT', cells: [true, false, 'Begrenzt', false] },
+      { label: 'Antwortet in Sekunden, nie in der Warteschleife', cells: [true, false, 'Wenn frei', false] },
+      { label: 'Qualifiziert Leads & sendet Zusammenfassungen', cells: [true, false, 'Manuell', false] },
+      { label: 'Typische monatliche Kosten', cells: ['ab CHF 350', 'Tief – aber verlorene Kunden', "CHF 4'000–6'000+", 'Verlorener Umsatz'] },
+    ],
+  },
+  en: {
+    eyebrow: 'The comparison', title: 'Why an AI phone agent – instead of the alternatives.',
+    text: 'Compared honestly with the usual ways of handling inbound calls.',
+    cols: ['Weissmann AI agent', 'Voicemail', 'New receptionist', 'Missed calls'],
+    rows: [
+      { label: 'Answers every call – 24/7', cells: [true, false, 'Business hours only', false] },
+      { label: 'Books appointments & updates the calendar', cells: [true, false, true, false] },
+      { label: 'Speaks DE · EN · FR · IT', cells: [true, false, 'Limited', false] },
+      { label: 'Answers in seconds, never on hold', cells: [true, false, 'If available', false] },
+      { label: 'Qualifies leads & sends summaries', cells: [true, false, 'Manual', false] },
+      { label: 'Typical monthly cost', cells: ['from CHF 350', 'Low – but lost customers', 'CHF 4,000–6,000+', 'Lost revenue'] },
+    ],
+  },
+  it: {
+    eyebrow: 'Il confronto', title: 'Perché un assistente telefonico AI – invece delle alternative.',
+    text: 'Confrontato onestamente con i soliti modi di gestire le chiamate in entrata.',
+    cols: ['Assistente AI Weissmann', 'Segreteria vocale', 'Nuova receptionist', 'Chiamate perse'],
+    rows: [
+      { label: 'Risponde a ogni chiamata – 24/7', cells: [true, false, 'Solo orario d’ufficio', false] },
+      { label: 'Prenota appuntamenti & aggiorna il calendario', cells: [true, false, true, false] },
+      { label: 'Parla DE · EN · FR · IT', cells: [true, false, 'Limitato', false] },
+      { label: 'Risponde in secondi, mai in attesa', cells: [true, false, 'Se disponibile', false] },
+      { label: 'Qualifica i lead & invia riepiloghi', cells: [true, false, 'Manuale', false] },
+      { label: 'Costo mensile tipico', cells: ['da CHF 350', 'Basso – ma clienti persi', "CHF 4'000–6'000+", 'Fatturato perso'] },
+    ],
+  },
+  fr: {
+    eyebrow: 'Le comparatif', title: 'Pourquoi un agent téléphonique IA – plutôt que les alternatives.',
+    text: 'Comparé honnêtement aux façons habituelles de gérer les appels entrants.',
+    cols: ['Agent IA Weissmann', 'Messagerie vocale', 'Nouvelle réceptionniste', 'Appels manqués'],
+    rows: [
+      { label: 'Répond à chaque appel – 24/7', cells: [true, false, 'Heures de bureau', false] },
+      { label: 'Réserve les rendez-vous & met à jour l’agenda', cells: [true, false, true, false] },
+      { label: 'Parle DE · EN · FR · IT', cells: [true, false, 'Limité', false] },
+      { label: 'Répond en secondes, jamais en attente', cells: [true, false, 'Si disponible', false] },
+      { label: 'Qualifie les leads & envoie des résumés', cells: [true, false, 'Manuel', false] },
+      { label: 'Coût mensuel typique', cells: ['dès CHF 350', 'Faible – mais clients perdus', "CHF 4'000–6'000+", 'Revenus perdus'] },
+    ],
+  },
+};
+const compare = COMPARE[locale];
+// Live click-to-call — a real call to the Fonio multilingual agent (SITE.aiPhone).
+const LIVECALL: Record<Locale, { eyebrow: string; title: string; text: string; cta: string; note: string; hintLabel: string; hint: string }> = {
+  de: { eyebrow: 'Live · Jetzt ausprobieren', title: 'Sprechen Sie jetzt mit unserer KI.', text: 'Rufen Sie an und erleben Sie den Weissmann KI-Telefonassistenten in Aktion – er antwortet in Sekunden, auf Deutsch, Englisch, Französisch oder Italienisch.', cta: 'Jetzt anrufen', note: 'Sie sprechen mit unserem echten KI-Assistenten – kostenlos und unverbindlich.', hintLabel: 'Tipp:', hint: 'Sagen Sie „Ich möchte einen Termin buchen.“' },
+  en: { eyebrow: 'Live · Try it now', title: 'Talk to our AI right now.', text: 'Call and experience the Weissmann AI phone agent in action – it answers in seconds, in German, English, French or Italian.', cta: 'Call now', note: 'You’ll be speaking with our real AI assistant – free and no obligation.', hintLabel: 'Tip:', hint: 'Say “I’d like to book an appointment.”' },
+  it: { eyebrow: 'Live · Prova ora', title: 'Parla subito con la nostra AI.', text: 'Chiama e prova l’assistente telefonico AI di Weissmann in azione – risponde in pochi secondi, in tedesco, inglese, francese o italiano.', cta: 'Chiama ora', note: 'Parlerai con il nostro vero assistente AI – gratis e senza impegno.', hintLabel: 'Suggerimento:', hint: 'Di’ «Vorrei prenotare un appuntamento.»' },
+  fr: { eyebrow: 'Live · Essayez maintenant', title: 'Parlez à notre IA dès maintenant.', text: 'Appelez et découvrez l’agent téléphonique IA de Weissmann en action – il répond en quelques secondes, en allemand, anglais, français ou italien.', cta: 'Appeler maintenant', note: 'Vous parlerez à notre véritable assistant IA – gratuit et sans engagement.', hintLabel: 'Astuce :', hint: 'Dites « Je voudrais prendre rendez-vous. »' },
+};
+const lc = LIVECALL[locale];
+
 const C: Record<Locale, any> = {
   de: {
     metaTitle: 'Weissmann AI | Praktische KI und digitales Wachstum für Unternehmen',
     metaDesc:
       'Weissmann AI baut die digitale Infrastruktur für Ihr Wachstum: Website, SEO & GEO, Google Ads, KI-Agenten und Automatisierung – ein System aus Zürich.',
-    heroEyebrow: 'Praktische KI für Unternehmen',
-    heroTitle: 'Wir bauen das System, mit dem Ihr Unternehmen wächst.',
+    heroEyebrow: 'KI-Telefonassistent · Schweiz',
+    heroTitle: 'Kein verpasster Anruf. Kein verlorener Kunde.',
     heroText:
-      'Websites, Sichtbarkeit, Werbung, KI-Agenten und Automatisierung — als ein integriertes Wachstumssystem. Modular starten, komplett skalieren.',
-    heroPrimary: 'Projekt besprechen',
-    heroSecondary: 'System entdecken',
+      'Der Weissmann KI-Telefonassistent nimmt jeden Anruf entgegen – 24/7, bucht Termine, qualifiziert Anfragen und übergibt an Ihr Team, wenn es zählt. Ein Baustein eines kompletten KI-Wachstumssystems, gebaut und betreut in Zürich.',
+    heroPrimary: 'Demo anfordern',
+    heroSecondary: 'Live anhören',
+    mock: {
+      status: 'Eingehender Anruf · nimmt an',
+      caller: '„Guten Tag, haben Sie heute Abend einen Tisch für vier?“',
+      ai: '„Sehr gerne – 19:30 Uhr ginge. Auf welchen Namen darf ich buchen?“',
+      booked: 'Gebucht · Heute 19:30',
+    },
     trustStatement: 'Praktische KI, in Zürich umgesetzt.',
     trustFacts: [
       'Sitz in Zürich',
@@ -151,12 +305,18 @@ const C: Record<Locale, any> = {
     metaTitle: 'Weissmann AI | Practical AI and digital growth for businesses',
     metaDesc:
       'Weissmann AI builds the digital infrastructure businesses grow on: website, SEO & GEO, Google Ads, AI agents and automation — one system from Zurich.',
-    heroEyebrow: 'Practical AI for businesses',
-    heroTitle: 'We build the system your business grows on.',
+    heroEyebrow: 'AI phone agent · Switzerland',
+    heroTitle: 'No missed call. No lost customer.',
     heroText:
-      'Websites, visibility, advertising, AI agents and automation — as one integrated growth system. Start modular, scale complete.',
-    heroPrimary: 'Discuss your project',
-    heroSecondary: 'Explore the system',
+      'The Weissmann AI phone agent answers every call 24/7 — books appointments, qualifies leads and hands over to your team when it matters. One building block of a complete AI growth system, built and managed in Zurich.',
+    heroPrimary: 'Request a demo',
+    heroSecondary: 'Hear it live',
+    mock: {
+      status: 'Incoming call · answering',
+      caller: '“Hi, do you have a table for four tonight?”',
+      ai: '“Of course — I can seat you at 7:30pm. May I take your name?”',
+      booked: 'Booked · Today 19:30',
+    },
     trustStatement: 'Practical AI, implemented in Zurich.',
     trustFacts: [
       'Based in Zurich',
@@ -231,12 +391,18 @@ const C: Record<Locale, any> = {
     metaTitle: 'Weissmann AI | AI pratica e crescita digitale per le aziende',
     metaDesc:
       'Weissmann AI costruisce l’infrastruttura digitale per la crescita: sito web, SEO e GEO, Google Ads, agenti AI e automazione — un sistema da Zurigo.',
-    heroEyebrow: 'AI pratica per le aziende',
-    heroTitle: 'Costruiamo il sistema su cui cresce la vostra azienda.',
+    heroEyebrow: 'Assistente telefonico AI · Svizzera',
+    heroTitle: 'Nessuna chiamata persa. Nessun cliente perso.',
     heroText:
-      'Siti web, visibilità, pubblicità, agenti AI e automazione — come un sistema di crescita integrato. Iniziate in modo modulare, scalate al completo.',
-    heroPrimary: 'Parliamo del progetto',
-    heroSecondary: 'Scoprite il sistema',
+      'L’assistente telefonico Weissmann AI risponde a ogni chiamata 24/7 – prenota appuntamenti, qualifica le richieste e passa al vostro team quando serve. Un componente di un sistema di crescita AI completo, realizzato e gestito a Zurigo.',
+    heroPrimary: 'Richiedi una demo',
+    heroSecondary: 'Ascolta dal vivo',
+    mock: {
+      status: 'Chiamata in arrivo · risponde',
+      caller: '«Buonasera, avete un tavolo per quattro?»',
+      ai: '«Certo – posso prenotarvi alle 19:30. Il nome, prego?»',
+      booked: 'Prenotato · Oggi 19:30',
+    },
     trustStatement: 'AI pratica, implementata a Zurigo.',
     trustFacts: [
       'Sede a Zurigo',
@@ -311,12 +477,18 @@ const C: Record<Locale, any> = {
     metaTitle: 'Weissmann AI | IA pratique et croissance digitale pour les entreprises',
     metaDesc:
       'Weissmann AI construit l’infrastructure digitale de votre croissance : site web, SEO et GEO, Google Ads, agents IA et automatisation, depuis Zurich.',
-    heroEyebrow: 'IA pratique pour les entreprises',
-    heroTitle: 'Nous construisons le système qui fait croître votre entreprise.',
+    heroEyebrow: 'Agent téléphonique IA · Suisse',
+    heroTitle: 'Aucun appel manqué. Aucun client perdu.',
     heroText:
-      'Sites web, visibilité, publicité, agents IA et automatisation — comme un système de croissance intégré. Commencez modulaire, évoluez vers le système complet.',
-    heroPrimary: 'Discuter de votre projet',
-    heroSecondary: 'Découvrir le système',
+      'L’agent téléphonique Weissmann AI répond à chaque appel 24/7 – réserve des rendez-vous, qualifie les demandes et transfère à votre équipe quand il le faut. Un composant d’un système de croissance IA complet, conçu et géré à Zurich.',
+    heroPrimary: 'Demander une démo',
+    heroSecondary: 'Écouter en direct',
+    mock: {
+      status: 'Appel entrant · réponse',
+      caller: '« Bonsoir, avez-vous une table pour quatre ce soir ? »',
+      ai: '« Bien sûr – je peux réserver à 19h30. À quel nom ? »',
+      booked: 'Réservé · Ce soir 19:30',
+    },
     trustStatement: 'L’IA pratique, implémentée à Zurich.',
     trustFacts: [
       'Basé à Zurich',
@@ -405,15 +577,58 @@ const websiteStarter = getPackage('website-starter');
 ---
 
 <Layout locale={locale} path="/" title={c.metaTitle} description={c.metaDesc} schema={schema}>
-  <!-- ── 2. Hero ──────────────────────────────────────────── -->
-  <section class="hero">
+  <!-- ── 2. Hero — premium dark, animated phone device ─────── -->
+  <section class="hero hero--dark">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <span class="eyebrow eyebrow--light">{c.heroEyebrow}</span>
+        <h1 class="hero__title">{c.heroTitle}</h1>
+        <p class="hero__text">{c.heroText}</p>
+        <div class="hero__actions">
+          <a class="btn btn--accent" href={`${p}/kontakt/`} data-track="book_consultation">{c.heroPrimary}</a>
+          <a class="btn btn--ondark" href="#demo" data-track="demo_scroll">{c.heroSecondary}</a>
+        </div>
+        <ul class="hero__chips">
+          {heroChips.map((chip: string) => <li><Icon name="check" size={15} />{chip}</li>)}
+        </ul>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="device">
+          <span class="device__notch"></span>
+          <figure class="callcard">
+            <figcaption class="callcard__bar">
+              <span class="callcard__live"><span class="callcard__pulse"></span>{c.mock.status}</span>
+              <span class="callcard__time">00:12</span>
+            </figcaption>
+            <div class="callcard__thread">
+              <p class="bubble bubble--caller">{c.mock.caller}</p>
+              <p class="bubble bubble--ai">{c.mock.ai}</p>
+              <div class="callcard__wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="callcard__foot">
+              <span class="callcard__badge"><Icon name="calendar-check" size={17} /></span>
+              <span>{c.mock.booked}</span>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Live click-to-call: talk to the real AI now ──────── -->
+  <section class="section livecall">
     <div class="container">
-      <span class="eyebrow">{c.heroEyebrow}</span>
-      <h1 class="hero__title">{c.heroTitle}</h1>
-      <p class="hero__text">{c.heroText}</p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href={`${p}/kontakt/`} data-track="book_consultation">{c.heroPrimary}</a>
-        <a class="btn btn--secondary" href="#system">{c.heroSecondary}</a>
+      <div class="livecall__inner reveal">
+        <span class="livecall__pulse" aria-hidden="true"><Icon name="phone" size={24} /></span>
+        <span class="eyebrow">{lc.eyebrow}</span>
+        <h2>{lc.title}</h2>
+        <p class="livecall__text">{lc.text}</p>
+        <a class="btn btn--accent livecall__cta" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live">
+          <Icon name="phone" size={20} />{lc.cta} · {SITE.aiPhoneDisplay}
+        </a>
+        <p class="livecall__hint"><strong>{lc.hintLabel}</strong> {lc.hint}</p>
+        <p class="livecall__note">{lc.note}</p>
       </div>
     </div>
   </section>
@@ -423,8 +638,29 @@ const websiteStarter = getPackage('website-starter');
     <div class="container">
       <p class="truststrip__statement">{c.trustStatement}</p>
       <ul class="truststrip__facts">
-        {c.trustFacts.map((f: string) => <li>{f}</li>)}
+        {c.trustFacts.map((f: string, i: number) => <li><Icon name={TRUST_ICONS[i]} size={16} />{f}</li>)}
       </ul>
+    </div>
+  </section>
+
+  <!-- ── How the AI phone agent works — 4-step call flow ──── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{flow.eyebrow}</span>
+        <h2>{flow.title}</h2>
+        <p>{flow.text}</p>
+      </div>
+      <ol class="callflow">
+        {flow.steps.map((s, i) => (
+          <li class="callflow__step reveal" style={`--i:${i}`}>
+            <span class="callflow__icon"><Icon name={FLOW_ICONS[i]} size={22} /></span>
+            <span class="callflow__n">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.label}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
@@ -533,6 +769,61 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
+  <!-- ── Comparison table ─────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{compare.eyebrow}</span>
+        <h2>{compare.title}</h2>
+        <p>{compare.text}</p>
+      </div>
+      <div class="cmp-wrap reveal">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <td class="cmp__corner"></td>
+              {compare.cols.map((col, i) => <th scope="col" class={i === 0 ? 'cmp__win' : ''}>{col}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {compare.rows.map((row) => (
+              <tr>
+                <th scope="row">{row.label}</th>
+                {row.cells.map((cell, i) => (
+                  <td class={i === 0 ? 'cmp__win' : ''}>
+                    {typeof cell === 'boolean'
+                      ? (cell ? <Icon name="check" size={18} class="cmp__yes" title="Ja" /> : <span class="cmp__no" aria-label="Nein">—</span>)
+                      : <span>{cell}</span>}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Trust & Swiss compliance cluster ─────────────────── -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{trust.eyebrow}</span>
+        <h2>{trust.title}</h2>
+        <p>{trust.text}</p>
+      </div>
+      <div class="trustgrid">
+        {trust.pillars.map((pl, i) => (
+          <div class="trustpillar reveal" style={`--i:${i}`}>
+            <span class="feat-icon"><Icon name={pl.icon} size={22} /></span>
+            <h3>{pl.label}</h3>
+            <p>{pl.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- ── 11. Pricing overview ─────────────────────────────── -->
   <section class="section">
     <div class="container">
@@ -562,8 +853,9 @@ const websiteStarter = getPackage('website-starter');
         <p>{c.glasses.lead}</p>
       </div>
       <div class="glasses-grid">
-        {c.glasses.features.map((f: any) => (
-          <div class="glasses-feature">
+        {c.glasses.features.map((f: any, i: number) => (
+          <div class="glasses-feature reveal">
+            <span class="glasses-feature__icon"><Icon name={GLASSES_ICONS[i]} size={22} /></span>
             <h3>{f.label}</h3>
             <p>{f.text}</p>
           </div>
@@ -599,17 +891,111 @@ const websiteStarter = getPackage('website-starter');
 </Layout>
 
 <style>
-  /* ── Hero: typographic, no effects ────────────────────── */
-  .hero { padding-block: clamp(4.5rem, 12vh, 8rem) var(--space-6); }
-  .hero__title { max-width: 18ch; }
-  .hero__text {
-    max-width: 38rem;
-    margin-top: var(--space-4);
-    font-size: var(--fs-500);
-    color: var(--ink-mute);
-    line-height: 1.7;
+  /* ── Hero: premium dark section with animated phone device ── */
+  .hero { padding-block: 0; }
+  .hero--dark {
+    position: relative;
+    background: radial-gradient(125% 130% at 82% 0%, #1c2a4a 0%, #0f1729 55%, #0b1018 100%);
+    color: #b9c2d6;
+    padding-block: clamp(3.25rem, 8vh, 6rem);
+    overflow: clip;
   }
+  .hero__glow { position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(42% 55% at 78% 20%, rgba(96,138,235,0.24), transparent 72%); }
+  .hero__grid { position: relative; display: grid; gap: var(--space-5); align-items: center; }
+  @media (min-width: 900px) { .hero__grid { grid-template-columns: 1.02fr 0.98fr; gap: var(--space-6); } }
+  .eyebrow--light { color: #8fa6d8; }
+  .hero--dark .hero__title {
+    color: #fff;
+    font-size: clamp(2.5rem, 1.3rem + 4.6vw, 4.5rem);
+    max-width: 15ch; letter-spacing: -0.03em; line-height: 1.02;
+  }
+  .hero__text { max-width: 40rem; margin-top: var(--space-4); font-size: var(--fs-500); color: #aab5cc; line-height: 1.6; }
   .hero__actions { display: flex; gap: var(--space-3); margin-top: var(--space-5); flex-wrap: wrap; }
+  .btn--accent { background: #4f7cf0; color: #fff; box-shadow: 0 12px 30px -6px rgba(79,124,240,0.45); }
+  .btn--accent:hover { background: #6c92f6; }
+  .btn--ondark { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.22); }
+  .btn--ondark:hover { border-color: #fff; background: rgba(255,255,255,0.12); }
+  .hero__chips { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: flex; flex-wrap: wrap; gap: 0.55rem 1.15rem; font-size: var(--fs-300); color: #9fb0d0; }
+  .hero__chips li { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .hero__chips .wi { color: #6fe3a4; }
+
+  /* Phone device holding the live-call illustration */
+  .hero__visual { justify-self: center; width: 100%; max-width: 21rem; }
+  .device { position: relative; border-radius: 40px; padding: 0.5rem; background: linear-gradient(160deg, #3a445e, #1a2236); box-shadow: 0 46px 80px -26px rgba(0,0,0,0.7); animation: floaty 6.5s ease-in-out infinite; }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+  .device__notch { position: absolute; top: 0.5rem; left: 50%; transform: translateX(-50%); width: 32%; height: 1rem; background: #1a2236; border-radius: 0 0 12px 12px; z-index: 3; }
+  .device .callcard { border-radius: 32px; border: none; box-shadow: none; }
+  .callcard { margin: 0; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--paper); overflow: hidden; }
+  .callcard__bar { display: flex; align-items: center; justify-content: space-between; padding: 1.15rem 1.1rem 0.7rem; background: var(--accent); color: #fff; font-size: var(--fs-200); font-weight: 600; letter-spacing: 0.02em; }
+  .callcard__live { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .callcard__pulse { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #7fe3a4; animation: callpulse 1.8s ease-out infinite; }
+  @keyframes callpulse { 0% { box-shadow: 0 0 0 0 rgba(127,227,164,0.55); } 70% { box-shadow: 0 0 0 0.5rem rgba(127,227,164,0); } 100% { box-shadow: 0 0 0 0 rgba(127,227,164,0); } }
+  .callcard__time { font-variant-numeric: tabular-nums; opacity: 0.9; }
+  .callcard__thread { padding: 1.15rem 1.15rem 0.6rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .bubble { max-width: 90%; padding: 0.6rem 0.85rem; border-radius: 12px; font-size: var(--fs-300); line-height: 1.45; margin: 0; }
+  .bubble--caller { align-self: flex-start; background: var(--paper-soft); color: var(--ink-soft); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
+  .bubble--ai { align-self: flex-end; background: var(--accent-soft); color: var(--ink); border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent); border-bottom-right-radius: 4px; }
+  .callcard__wave { display: flex; align-items: flex-end; gap: 0.28rem; align-self: flex-end; height: 1.5rem; padding: 0 0.2rem 0.3rem; }
+  .callcard__wave span { width: 0.2rem; border-radius: 2px; background: var(--accent); height: 40%; opacity: 0.7; animation: cardwave 1s ease-in-out infinite; }
+  .callcard__wave span:nth-child(2){ animation-delay: .12s } .callcard__wave span:nth-child(3){ animation-delay: .24s }
+  .callcard__wave span:nth-child(4){ animation-delay: .36s } .callcard__wave span:nth-child(5){ animation-delay: .48s }
+  .callcard__wave span:nth-child(6){ animation-delay: .6s } .callcard__wave span:nth-child(7){ animation-delay: .72s }
+  @keyframes cardwave { 0%,100% { height: 28%; } 50% { height: 100%; } }
+  .callcard__foot { display: flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.15rem; border-top: 1px solid var(--line); background: var(--paper-soft); font-size: var(--fs-300); font-weight: 600; color: var(--ink); }
+  .callcard__badge { display: inline-grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); }
+
+  /* Call-flow "how it works" */
+  .callflow { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); grid-template-columns: 1fr; counter-reset: step; }
+  @media (min-width: 560px) { .callflow { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .callflow { grid-template-columns: repeat(3, 1fr); } }
+  .callflow__step { position: relative; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-4); background: var(--paper); transition: border-color 0.2s ease; }
+  .callflow__step:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+  .callflow__icon { display: inline-grid; place-items: center; width: 2.7rem; height: 2.7rem; border-radius: 12px; background: var(--accent-soft); color: var(--accent); margin-bottom: var(--space-3); }
+  .callflow__n { position: absolute; top: var(--space-4); right: var(--space-4); font-size: var(--fs-200); font-weight: 700; color: var(--ink-mute); font-variant-numeric: tabular-nums; letter-spacing: 0.05em; }
+  .callflow__step h3 { font-size: var(--fs-500); margin-bottom: 0.35rem; }
+  .callflow__step p { color: var(--ink-mute); font-size: var(--fs-300); margin: 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .callflow__step.reveal { transition-delay: calc(var(--i, 0) * 80ms); }
+  }
+
+  /* Glasses feature icon */
+  .glasses-feature__icon { display: inline-grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 11px; background: var(--accent-soft); color: var(--accent); margin-bottom: var(--space-3); }
+
+  /* Trust & Swiss compliance cluster */
+  .trustgrid { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+  @media (min-width: 560px) { .trustgrid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .trustgrid { grid-template-columns: repeat(3, 1fr); } }
+  .trustpillar { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-4); background: var(--paper); }
+  .trustpillar h3 { font-size: var(--fs-500); margin-bottom: 0.35rem; }
+  .trustpillar p { color: var(--ink-mute); font-size: var(--fs-300); margin: 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .trustpillar.reveal { transition-delay: calc(var(--i, 0) * 70ms); }
+  }
+
+  /* Comparison table */
+  .cmp-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg); }
+  .cmp { border-collapse: collapse; width: 100%; min-width: 42rem; }
+  .cmp th, .cmp td { padding: 0.85rem 1rem; text-align: center; border-bottom: 1px solid var(--line); font-size: var(--fs-300); }
+  .cmp thead th { font-weight: 700; color: var(--ink); vertical-align: bottom; }
+  .cmp tbody th[scope="row"] { text-align: left; font-weight: 500; color: var(--ink-soft); min-width: 16rem; }
+  .cmp__corner { border-bottom: 1px solid var(--line); background: transparent; }
+  .cmp tbody tr:last-child td, .cmp tbody tr:last-child th { border-bottom: none; }
+  .cmp__win { background: var(--accent-soft); color: var(--ink); }
+  .cmp thead th.cmp__win { font-weight: 800; border-radius: 10px 10px 0 0; }
+  .cmp tbody tr:last-child td.cmp__win { border-radius: 0 0 10px 10px; font-weight: 700; }
+  .cmp__yes { color: #1a9d5a; display: inline-block; vertical-align: middle; }
+  .cmp__no { color: var(--ink-mute); }
+
+  /* Live click-to-call widget */
+  .livecall__inner { text-align: center; max-width: 46rem; margin-inline: auto; border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); background: var(--accent-soft); border-radius: var(--radius-lg); padding: var(--space-6) var(--space-4); }
+  .livecall__pulse { width: 3.4rem; height: 3.4rem; border-radius: 50%; background: var(--accent); color: #fff; display: inline-grid; place-items: center; margin-bottom: var(--space-3); animation: ring 2s ease-in-out infinite; }
+  @keyframes ring { 0%,100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); } 50% { box-shadow: 0 0 0 0.85rem transparent; } }
+  .livecall h2 { font-size: var(--fs-800); }
+  .livecall__text { max-width: 40rem; margin: var(--space-3) auto 0; color: var(--ink-soft); font-size: var(--fs-500); }
+  .livecall__cta { font-size: var(--fs-500); padding: 0.9rem 1.7rem; margin-top: var(--space-4); gap: 0.6rem; }
+  .livecall__hint { margin-top: var(--space-4); color: var(--ink-soft); }
+  .livecall__note { margin-top: var(--space-2); font-size: var(--fs-200); color: var(--ink-mute); }
 
   /* ── Trust strip ──────────────────────────────────────── */
   .truststrip {
@@ -632,13 +1018,16 @@ const websiteStarter = getPackage('website-starter');
   .truststrip__facts {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2) var(--space-4);
+    gap: var(--space-3) var(--space-5);
     list-style: none;
     margin: 0;
     padding: 0;
     font-size: var(--fs-300);
-    color: var(--ink-mute);
+    color: var(--ink-soft);
+    font-weight: 500;
   }
+  .truststrip__facts li { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .truststrip__facts .wi { color: var(--accent); }
 
   /* ── Growth words progression ─────────────────────────── */
   .growthwords {

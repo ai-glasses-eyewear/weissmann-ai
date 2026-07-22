@@ -14,9 +14,11 @@ interface Props {
 }
 const { pkg, locale, highlight = false } = Astro.props;
 const p = localePrefix(locale);
+const POPULAR: Record<Locale, string> = { de: 'Beliebteste', en: 'Most popular', it: 'Più scelto', fr: 'Le plus choisi' };
 ---
 
 <article class={`card pricing-card ${highlight ? 'card--raised pricing-card--highlight' : ''}`}>
+  {highlight && <span class="pricing-card__badge">{POPULAR[locale]}</span>}
   <h3>{pkg.name[locale]}</h3>
   <p class="pricing-card__price">
     {pkg.price === null ? (
@@ -63,8 +65,9 @@ const p = localePrefix(locale);
 </article>
 
 <style>
-  .pricing-card { display: flex; flex-direction: column; }
-  .pricing-card--highlight { border: 1.5px solid var(--line-strong); }
+  .pricing-card { display: flex; flex-direction: column; position: relative; }
+  .pricing-card--highlight { border: 1.5px solid var(--accent); }
+  .pricing-card__badge { position: absolute; top: -0.75rem; left: var(--space-4); background: var(--accent); color: #fff; font-size: var(--fs-200); font-weight: 700; padding: 0.28rem 0.75rem; border-radius: 999px; letter-spacing: 0.02em; }
   .pricing-card__price { margin-top: var(--space-2); color: var(--ink); }
   .pricing-card__amount { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
   .pricing-card__amount--custom { font-size: 1.35rem; }

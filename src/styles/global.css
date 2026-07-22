@@ -316,6 +316,15 @@ th { color: var(--ink); font-size: var(--fs-300); }
 }
 .chip:hover { border-color: var(--accent); color: var(--ink); text-decoration: none; }
 
+/* Feature icon chip — accent-tinted square used on feature cards across templates */
+.feat-icon {
+  display: inline-grid; place-items: center;
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 11px;
+  background: var(--accent-soft); color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+
 /* Utility */
 .center { text-align: center; }
 .mt-3 { margin-top: var(--space-3); }
@@ -334,6 +343,15 @@ th { color: var(--ink); font-size: var(--fs-300); }
   padding: 0.6rem 1rem; z-index: 100; border-radius: 0 0 8px 0;
 }
 .skip-link:focus { left: 0; }
+
+/* ── Scroll reveal — progressive enhancement. Content is visible by default;
+   JS arms (.reveal--armed) then reveals (.is-in) only when motion is allowed,
+   so no-JS and reduced-motion users always see everything. ── */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { transition: opacity 0.55s ease, transform 0.55s ease; }
+  .reveal--armed { opacity: 0; transform: translateY(14px); }
+  .reveal.is-in { opacity: 1; transform: none; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
