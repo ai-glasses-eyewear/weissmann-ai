@@ -113,11 +113,19 @@ for (const file of walk(dist)) {
 
     const isNoindex = /name="robots"\s+content="noindex/i.test(text);
     const is404 = url === '/404/' || rel === '404.html';
+    const canonicalHref = text.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i)?.[1];
+    const canonicalPath = canonicalHref ? norm(canonicalHref.replace(/^https?:\/\/[^/]+/, '')) : null;
+    // A page whose canonical points to a different URL is an intentional
+    // duplicate (e.g. a legacy URL deferring to a registry page); it correctly
+    // omits the hreflang cluster and is not an indexable target of its own.
+    const isCrossCanonical = canonicalPath && canonicalPath !== url;
     if (!isNoindex && !is404) {
-      indexable.add(url);
-      if (!/<link[^>]+rel="canonical"/i.test(text)) errors.push(`${rel}: missing rel=canonical.`);
-      if (!/hreflang="de-CH"/i.test(text)) errors.push(`${rel}: missing hreflang de-CH.`);
-      if (!/hreflang="x-default"/i.test(text)) errors.push(`${rel}: missing hreflang x-default.`);
+      if (!canonicalHref) errors.push(`${rel}: missing rel=canonical.`);
+      if (!isCrossCanonical) {
+        indexable.add(url);
+        if (!/hreflang="de-CH"/i.test(text)) errors.push(`${rel}: missing hreflang de-CH.`);
+        if (!/hreflang="x-default"/i.test(text)) errors.push(`${rel}: missing hreflang x-default.`);
+      }
     }
 
     // Collect internal link targets (root-relative hrefs only).

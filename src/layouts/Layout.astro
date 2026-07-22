@@ -35,14 +35,21 @@ interface Props {
   availableLocales?: Locale[];
   schema?: object[];
   noindex?: boolean;
+  /**
+   * Absolute canonical URL override. Set on legacy/duplicate pages that should
+   * defer their ranking signals to a registry page at a different URL. When
+   * provided, hreflang alternates are suppressed (the canonical cluster owns
+   * the language graph).
+   */
+  canonical?: string;
 }
 
-const { locale, path, localePaths, title, description, availableLocales = [...LOCALES], schema = [], noindex = false } = Astro.props;
+const { locale, path, localePaths, title, description, availableLocales = [...LOCALES], schema = [], noindex = false, canonical: canonicalOverride } = Astro.props;
 
 // Unify: a per-locale path map, whether the page passed localePaths or a single path.
 const lp: LocalePaths = localePaths ?? { de: path!, en: path!, it: path!, fr: path! };
 
-const canonical = localeUrl(locale, lp[locale]);
+const canonical = canonicalOverride ?? localeUrl(locale, lp[locale]);
 const ogImage = `${SITE.domain}/og-default.png`;
 
 // Keep meta descriptions within the ~160-char SERP display budget (trim at a
@@ -72,10 +79,14 @@ const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
     <meta name="description" content={metaDescription} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
-    {availableLocales.map((l) => (
-      <link rel="alternate" hreflang={l === 'de' ? 'de-CH' : l} href={localeUrl(l, lp[l])} />
-    ))}
-    <link rel="alternate" hreflang="x-default" href={localeUrl('en', lp.en)} />
+    {!canonicalOverride && (
+      <>
+        {availableLocales.map((l) => (
+          <link rel="alternate" hreflang={l === 'de' ? 'de-CH' : l} href={localeUrl(l, lp[l])} />
+        ))}
+        <link rel="alternate" hreflang="x-default" href={localeUrl('en', lp.en)} />
+      </>
+    )}
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.name} />

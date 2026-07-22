@@ -34,7 +34,10 @@ const relServices = (term.relatedServices ?? []).map((id) => getService(id)).fil
 const relArticles = (term.relatedArticles ?? []).map((id) => ARTICLES.find((a) => a.id === id)).filter((a): a is NonNullable<typeof a> => !!a);
 
 const crumbHome = { de: 'Startseite', en: 'Home', it: 'Home', fr: 'Accueil' }[locale];
-const title = `${term.term[locale]} — ${lbl.def} | Weissmann AI`;
+// Keep the "— Definition" signal for short terms, but drop it when it would
+// push the title past the ~65-char SERP budget (long legal/expanded terms).
+const withDef = `${term.term[locale]} — ${lbl.def}`;
+const title = `${withDef.length <= 50 ? withDef : term.term[locale]} | Weissmann AI`;
 
 const schema = [
   {

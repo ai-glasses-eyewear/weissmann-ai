@@ -43,6 +43,7 @@
 
   --accent: #c51a2e;             /* Swiss red — labels, links, active states ONLY */
   --accent-ink: #a01324;
+  --accent-soft: #fbeced;        /* light accent tint — highlighted cards/callouts */
 
   --btn-bg: #111111;             /* CTAs are confident black, not accent-colored */
   --btn-bg-hover: #2b2b2b;
@@ -86,6 +87,7 @@
 
   --accent: #1f2a44;             /* deep ink blue */
   --accent-ink: #16203a;
+  --accent-soft: #eef1f7;        /* light accent tint — highlighted cards/callouts */
 
   --btn-bg: #1f2a44;
   --btn-bg-hover: #2a3a5e;

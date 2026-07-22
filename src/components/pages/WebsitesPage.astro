@@ -6,15 +6,19 @@
 import Layout from '../../layouts/Layout.astro';
 import PricingCard from '../PricingCard.astro';
 import Faq from '../Faq.astro';
-import { localePrefix, type Locale } from '../../data/site';
+import { localePrefix, localeUrl, type Locale } from '../../data/site';
 import { t } from '../../i18n/ui';
 import { getPackage } from '../../data/pricing';
+import { getService, servicePaths } from '../../data/services';
 import { organization, webPage, breadcrumbs, faqPage, serviceWithOffer } from '../../data/schema';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const p = localePrefix(locale);
 const PATH = '/leistungen/ai-websites/';
+// This is a legacy URL kept live for inbound links; the registry-driven web
+// development service is the canonical page, so defer ranking signals to it.
+const canonicalUrl = localeUrl(locale, servicePaths(getService('websites')!)[locale]);
 
 const C: Record<Locale, any> = {
   de: {
@@ -153,7 +157,7 @@ const schema = [
 ];
 ---
 
-<Layout locale={locale} path={PATH} title={c.metaTitle} description={c.metaDesc} schema={schema}>
+<Layout locale={locale} path={PATH} canonical={canonicalUrl} title={c.metaTitle} description={c.metaDesc} schema={schema}>
   <section class="section">
     <div class="container">
       <span class="eyebrow">AI Websites</span>
