@@ -1,6 +1,6 @@
 # Weissmann AI — Netlify configuration
-# Production context deploys only after explicit approval (DNS cutover from
-# the legacy Webflow site is a separate, gated step).
+# Production live on Netlify since 2026-07-22 (migrated from Webflow hosting).
+# GitHub `master` auto-deploys here; Webflow is retained only as a DNS rollback.
 
 [build]
   command = "npm run build"
