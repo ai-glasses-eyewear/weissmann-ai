@@ -16,13 +16,13 @@
     "de": "KI selbst hosten: Hardware, Skills & Nutzen | Weissmann AI",
     "en": "Self-Hosting AI Models: Hardware, Skills, ROI | Weissmann AI",
     "it": "Ospitare l'IA in proprio: hardware e ROI | Weissmann AI",
-    "fr": "Heberger l'IA en interne : ce qu'il faut | Weissmann AI"
+    "fr": "Héberger l'IA en interne : ce qu'il faut | Weissmann AI"
   },
   "metaDescription": {
-    "de": "KI selbst hosten heisst, offene LLM auf eigener Infrastruktur zu betreiben. Hardware, Skills, Kosten, Vor- und Nachteile - und wann es sich fuer KMU lohnt.",
+    "de": "KI selbst hosten heisst, offene LLM auf eigener Infrastruktur zu betreiben. Hardware, Skills, Kosten, Vor- und Nachteile - und wann es sich für KMU lohnt.",
     "en": "Self-hosting AI means running open-weight LLMs on your own infrastructure. Hardware, skills, costs, pros and cons - and when it pays off for an SME.",
     "it": "Ospitare l'IA in proprio significa eseguire LLM open-weight sulla propria infrastruttura. Hardware, competenze, costi, pro e contro e quando conviene a una PMI.",
-    "fr": "Heberger l'IA en interne, c'est faire tourner des LLM open-weight sur sa propre infrastructure. Materiel, competences, couts, avantages et rentabilite."
+    "fr": "Héberger l'IA en interne, c'est faire tourner des LLM open-weight sur sa propre infrastructure. Matériel, compétences, coûts, avantages et rentabilité."
   },
   "kicker": {
     "de": "Lokal & Open Source",
@@ -34,13 +34,13 @@
     "de": "KI selbst hosten: Was es braucht und wann es sich lohnt",
     "en": "Self-hosting AI models: what it takes and when it pays off",
     "it": "Ospitare l'IA in proprio: cosa serve e quando conviene",
-    "fr": "Heberger l'IA en interne : ce qu'il faut et quand c'est rentable"
+    "fr": "Héberger l'IA en interne : ce qu'il faut et quand c'est rentable"
   },
   "answerFirst": {
-    "de": "KI selbst hosten heisst, offene Modelle (Open Weights) auf eigener Infrastruktur zu betreiben - lokale Workstation, On-Premises-Server oder isolierte Private Cloud - statt eine Anbieter-API zu nutzen. Das bringt KMU Datensouveraenitaet und bei hohem Volumen planbare Kosten, verlangt aber GPU-Hardware, Engineering-Know-how und laufenden Betrieb. Es lohnt sich vor allem bei sensiblen Daten, konstanter Last oder strengen Compliance-Anforderungen.",
+    "de": "KI selbst hosten heisst, offene Modelle (Open Weights) auf eigener Infrastruktur zu betreiben - lokale Workstation, On-Premises-Server oder isolierte Private Cloud - statt eine Anbieter-API zu nutzen. Das bringt KMU Datensouveränität und bei hohem Volumen planbare Kosten, verlangt aber GPU-Hardware, Engineering-Know-how und laufenden Betrieb. Es lohnt sich vor allem bei sensiblen Daten, konstanter Last oder strengen Compliance-Anforderungen.",
     "en": "Self-hosting AI means running open-weight models on infrastructure you control - a local workstation, an on-premises server, or an isolated private cloud - instead of calling a provider's API. It gives SMEs data sovereignty and predictable costs at high volume, but demands GPU hardware, engineering skills and ongoing operations. It is worth it mainly for sensitive data, steady workloads or strict compliance needs.",
-    "it": "Ospitare l'IA in proprio significa eseguire modelli open-weight su un'infrastruttura che si controlla - workstation locale, server on-premises o private cloud isolata - invece di chiamare l'API di un fornitore. Offre alle PMI sovranita dei dati e costi prevedibili con volumi elevati, ma richiede hardware GPU, competenze ingegneristiche e gestione continua. Conviene soprattutto con dati sensibili, carichi costanti o requisiti di conformita stringenti.",
-    "fr": "Heberger l'IA en interne, c'est faire tourner des modeles open-weight sur une infrastructure que vous controlez - poste local, serveur on-premises ou cloud prive isole - plutot que d'appeler l'API d'un fournisseur. Cela apporte aux PME la souverainete des donnees et des couts previsibles a fort volume, mais exige du materiel GPU, des competences d'ingenierie et une exploitation continue. C'est rentable surtout pour des donnees sensibles, une charge stable ou une conformite stricte."
+    "it": "Ospitare l'IA in proprio significa eseguire modelli open-weight su un'infrastruttura che si controlla - workstation locale, server on-premises o private cloud isolata - invece di chiamare l'API di un fornitore. Offre alle PMI sovranità dei dati e costi prevedibili con volumi elevati, ma richiede hardware GPU, competenze ingegneristiche e gestione continua. Conviene soprattutto con dati sensibili, carichi costanti o requisiti di conformità stringenti.",
+    "fr": "Héberger l'IA en interne, c'est faire tourner des modèles open-weight sur une infrastructure que vous contrôlez - poste local, serveur on-premises ou cloud privé isolé - plutôt que d'appeler l'API d'un fournisseur. Cela apporte aux PME la souveraineté des données et des coûts prévisibles à fort volume, mais exige du matériel GPU, des compétences d'ingénierie et une exploitation continue. C'est rentable surtout pour des données sensibles, une charge stable ou une conformité stricte."
   },
   "sections": [
     {
@@ -48,40 +48,40 @@
         "de": "Was heisst \"KI selbst hosten\"?",
         "en": "What \"self-hosting AI\" actually means",
         "it": "Cosa significa \"ospitare l'IA in proprio\"",
-        "fr": "Ce que signifie \"heberger l'IA en interne\""
+        "fr": "Ce que signifie \"héberger l'IA en interne\""
       },
       "paragraphs": [
         {
           "de": "KI selbst hosten bedeutet, das Modell auf einer Infrastruktur zu betreiben, die Sie kontrollieren, statt Ihre Prompts an eine fremde API wie jene von OpenAI oder Anthropic zu senden. Selbst hostbar sind sogenannte Open-Weight-Modelle: Ihre trainierten Parameter stehen zum Download bereit (Llama, Mistral, Qwen, Gemma, DeepSeek und das Schweizer Apertus). Sie laden die Gewichte herunter und stellen sie selbst bereit.",
           "en": "Self-hosting AI means running the model on infrastructure you govern instead of sending your prompts to a third-party API such as OpenAI's or Anthropic's. The models you can self-host are \"open-weight\" models: their trained parameters are published for download (Llama, Mistral, Qwen, Gemma, DeepSeek and Switzerland's Apertus). You download the weights and serve them yourself.",
           "it": "Ospitare l'IA in proprio significa eseguire il modello su un'infrastruttura che governi, invece di inviare i prompt a un'API di terzi come quella di OpenAI o Anthropic. I modelli ospitabili in proprio sono i cosiddetti open-weight: i loro parametri addestrati sono scaricabili (Llama, Mistral, Qwen, Gemma, DeepSeek e lo svizzero Apertus). Scarichi i pesi e li esegui tu stesso.",
-          "fr": "Heberger l'IA en interne, c'est faire tourner le modele sur une infrastructure que vous maitrisez, au lieu d'envoyer vos prompts a une API tierce comme celle d'OpenAI ou d'Anthropic. Les modeles hebergeables sont dits \"open-weight\" : leurs parametres entraines sont telechargeables (Llama, Mistral, Qwen, Gemma, DeepSeek et le suisse Apertus). Vous telechargez les poids et les servez vous-meme."
+          "fr": "Héberger l'IA en interne, c'est faire tourner le modèle sur une infrastructure que vous maîtrisez, au lieu d'envoyer vos prompts à une API tierce comme celle d'OpenAI ou d'Anthropic. Les modèles hébergeables sont dits \"open-weight\" : leurs paramètres entraînés sont téléchargeables (Llama, Mistral, Qwen, Gemma, DeepSeek et le suisse Apertus). Vous téléchargez les poids et les servez vous-même."
         },
         {
           "de": "Selbst hosten ist ein Spektrum, keine einzelne Entscheidung:",
           "en": "Self-hosting is a spectrum, not a single choice:",
-          "it": "Ospitare in proprio e uno spettro, non una scelta unica:",
-          "fr": "L'hebergement interne est un spectre, pas un choix unique :"
+          "it": "Ospitare in proprio è uno spettro, non una scelta unica:",
+          "fr": "L'hébergement interne est un spectre, pas un choix unique :"
         }
       ],
       "bullets": [
         {
-          "de": "Lokales Geraet: ein Laptop oder eine Workstation mit Ollama oder LM Studio - ideal fuer Prototyping und Einzelnutzer-Aufgaben.",
+          "de": "Lokales Gerät: ein Laptop oder eine Workstation mit Ollama oder LM Studio - ideal für Prototyping und Einzelnutzer-Aufgaben.",
           "en": "Local device: a laptop or workstation running Ollama or LM Studio - ideal for prototyping and single-user tasks.",
-          "it": "Dispositivo locale: un laptop o una workstation con Ollama o LM Studio - ideale per prototipazione e attivita mono-utente.",
-          "fr": "Appareil local : un ordinateur portable ou une station de travail avec Ollama ou LM Studio - ideal pour le prototypage et un usage mono-utilisateur."
+          "it": "Dispositivo locale: un laptop o una workstation con Ollama o LM Studio - ideale per prototipazione e attività mono-utente.",
+          "fr": "Appareil local : un ordinateur portable ou une station de travail avec Ollama ou LM Studio - idéal pour le prototypage et un usage mono-utilisateur."
         },
         {
-          "de": "On-Premises-Server: eine GPU-Maschine im eigenen Buero oder Rechenzentrum - die Daten verlassen das Haus nie.",
+          "de": "On-Premises-Server: eine GPU-Maschine im eigenen Büro oder Rechenzentrum - die Daten verlassen das Haus nie.",
           "en": "On-premises server: a GPU machine in your own office or data centre - data never leaves the building.",
           "it": "Server on-premises: una macchina GPU nel proprio ufficio o data center - i dati non lasciano mai l'edificio.",
-          "fr": "Serveur on-premises : une machine GPU dans vos locaux ou votre centre de donnees - les donnees ne quittent jamais le batiment."
+          "fr": "Serveur on-premises : une machine GPU dans vos locaux ou votre centre de données - les données ne quittent jamais le bâtiment."
         },
         {
           "de": "Private/dedizierte Cloud: gemietete, aber isolierte GPU-Instanzen (z. B. ein dediziertes VPC) - Sie kontrollieren die Umgebung, ohne Hardware zu besitzen.",
           "en": "Private/dedicated cloud: rented but isolated GPU instances (e.g., a dedicated VPC) - you control the environment without owning hardware.",
           "it": "Cloud privato/dedicato: istanze GPU affittate ma isolate (es. un VPC dedicato) - controlli l'ambiente senza possedere hardware.",
-          "fr": "Cloud prive/dedie : des instances GPU louees mais isolees (ex. un VPC dedie) - vous maitrisez l'environnement sans posseder de materiel."
+          "fr": "Cloud privé/dédié : des instances GPU louées mais isolées (ex. un VPC dédié) - vous maîtrisez l'environnement sans posséder de matériel."
         }
       ]
     },
@@ -90,22 +90,22 @@
         "de": "Was es an Hardware braucht",
         "en": "What it takes: the hardware",
         "it": "Cosa serve: l'hardware",
-        "fr": "Ce qu'il faut : le materiel"
+        "fr": "Ce qu'il faut : le matériel"
       },
       "paragraphs": [
         {
-          "de": "Der Flaschenhals ist der VRAM, der Videospeicher der GPU. Er muss das Modell samt Kontext aufnehmen. Groessere Modelle und laengerer Kontext brauchen mehr VRAM. Quantisierung - das Komprimieren der Gewichte auf 4 oder 8 Bit - senkt den Bedarf drastisch bei nur moderatem Qualitaetsverlust. Als grobe Faustregeln:",
+          "de": "Der Flaschenhals ist der VRAM, der Videospeicher der GPU. Er muss das Modell samt Kontext aufnehmen. Grössere Modelle und längerer Kontext brauchen mehr VRAM. Quantisierung - das Komprimieren der Gewichte auf 4 oder 8 Bit - senkt den Bedarf drastisch bei nur moderatem Qualitätsverlust. Als grobe Faustregeln:",
           "en": "The bottleneck is VRAM, the GPU's video memory, which must hold the model plus its context. Bigger models and longer context need more VRAM. Quantization - compressing the weights to 4-bit or 8-bit - cuts requirements dramatically with only modest quality loss. As rough rules of thumb:",
-          "it": "Il collo di bottiglia e la VRAM, la memoria video della GPU, che deve contenere il modello e il suo contesto. Modelli piu grandi e contesti piu lunghi richiedono piu VRAM. La quantizzazione - comprimere i pesi a 4 o 8 bit - riduce drasticamente i requisiti con una perdita di qualita modesta. Come regole indicative:",
-          "fr": "Le goulet d'etranglement est la VRAM, la memoire video du GPU, qui doit contenir le modele et son contexte. Des modeles plus grands et un contexte plus long exigent plus de VRAM. La quantification - compresser les poids en 4 ou 8 bits - reduit fortement les besoins pour une perte de qualite modeste. En regles empiriques :"
+          "it": "Il collo di bottiglia è la VRAM, la memoria video della GPU, che deve contenere il modello e il suo contesto. Modelli più grandi e contesti più lunghi richiedono più VRAM. La quantizzazione - comprimere i pesi a 4 o 8 bit - riduce drasticamente i requisiti con una perdita di qualità modesta. Come regole indicative:",
+          "fr": "Le goulet d'étranglement est la VRAM, la mémoire vidéo du GPU, qui doit contenir le modèle et son contexte. Des modèles plus grands et un contexte plus long exigent plus de VRAM. La quantification - compresser les poids en 4 ou 8 bits - réduit fortement les besoins pour une perte de qualité modeste. En règles empiriques :"
         }
       ],
       "bullets": [
         {
-          "de": "Klein (3-8 Mrd. Parameter), 4-Bit: ~4-8 GB VRAM - laeuft auf einer Consumer-GPU oder einem modernen Apple-Silicon-Mac; gut fuer Chat, Zusammenfassung, RAG.",
+          "de": "Klein (3-8 Mrd. Parameter), 4-Bit: ~4-8 GB VRAM - läuft auf einer Consumer-GPU oder einem modernen Apple-Silicon-Mac; gut für Chat, Zusammenfassung, RAG.",
           "en": "Small (3-8B params), 4-bit: ~4-8 GB VRAM - runs on a consumer GPU or a modern Apple Silicon Mac; good for chat, summarization, RAG.",
           "it": "Piccolo (3-8 mld di parametri), 4-bit: ~4-8 GB VRAM - gira su una GPU consumer o un Mac Apple Silicon moderno; buono per chat, riassunti, RAG.",
-          "fr": "Petit (3-8 Mds de parametres), 4 bits : ~4-8 Go VRAM - tourne sur un GPU grand public ou un Mac Apple Silicon recent ; bon pour chat, resume, RAG."
+          "fr": "Petit (3-8 Mds de paramètres), 4 bits : ~4-8 Go VRAM - tourne sur un GPU grand public ou un Mac Apple Silicon récent ; bon pour chat, résumé, RAG."
         },
         {
           "de": "Mittel (12-34 Mrd.), 4-Bit: ~10-24 GB VRAM - eine High-End-Consumer-GPU (z. B. 24 GB) oder eine Workstation-Karte.",
@@ -114,16 +114,16 @@
           "fr": "Moyen (12-34 Mds), 4 bits : ~10-24 Go VRAM - un GPU grand public haut de gamme (ex. 24 Go) ou une carte station de travail."
         },
         {
-          "de": "Gross (70 Mrd.), 4-Bit: ~40+ GB VRAM - professionelle GPUs oder Multi-GPU; deutlich naeher an Spitzenqualitaet.",
+          "de": "Gross (70 Mrd.), 4-Bit: ~40+ GB VRAM - professionelle GPUs oder Multi-GPU; deutlich näher an Spitzenqualität.",
           "en": "Large (70B), 4-bit: ~40+ GB VRAM - professional GPUs or multi-GPU; noticeably closer to frontier quality.",
-          "it": "Grande (70 mld), 4-bit: ~40+ GB VRAM - GPU professionali o multi-GPU; sensibilmente piu vicino alla qualita di frontiera.",
-          "fr": "Grand (70 Mds), 4 bits : ~40+ Go VRAM - GPU professionnels ou multi-GPU ; nettement plus proche de la qualite de pointe."
+          "it": "Grande (70 mld), 4-bit: ~40+ GB VRAM - GPU professionali o multi-GPU; sensibilmente più vicino alla qualità di frontiera.",
+          "fr": "Grand (70 Mds), 4 bits : ~40+ Go VRAM - GPU professionnels ou multi-GPU ; nettement plus proche de la qualité de pointe."
         },
         {
           "de": "Frontier-Open (100 Mrd.+/MoE): mehrere Rechenzentrums-GPUs - meist nur in der Private Cloud sinnvoll.",
           "en": "Frontier open (100B+/MoE): multiple data-centre GPUs - usually only justified in a private cloud.",
-          "it": "Frontiera open (100 mld+/MoE): piu GPU da data center - di solito giustificabile solo in cloud privato.",
-          "fr": "Frontiere open (100 Mds+/MoE) : plusieurs GPU de centre de donnees - rarement justifie hors cloud prive."
+          "it": "Frontiera open (100 mld+/MoE): più GPU da data center - di solito giustificabile solo in cloud privato.",
+          "fr": "Frontière open (100 Mds+/MoE) : plusieurs GPU de centre de données - rarement justifié hors cloud privé."
         }
       ]
     },
@@ -132,25 +132,25 @@
         "de": "Software und Skills",
         "en": "The software stack and the skills",
         "it": "Stack software e competenze",
-        "fr": "La pile logicielle et les competences"
+        "fr": "La pile logicielle et les compétences"
       },
       "paragraphs": [
         {
-          "de": "Neben der GPU gilt: Parallelitaet vervielfacht alles - zehn gleichzeitige Nutzer brauchen weit mehr als einer. Rechnen Sie CPU, RAM, schnellen Speicher, Strom und Kuehlung ein. NVIDIA (CUDA) dominiert; Apple Silicon mit Unified Memory ist fuer lokale Einzelnutzung exzellent; AMD holt auf, hat aber ein kleineres Oekosystem.",
+          "de": "Neben der GPU gilt: Parallelität vervielfacht alles - zehn gleichzeitige Nutzer brauchen weit mehr als einer. Rechnen Sie CPU, RAM, schnellen Speicher, Strom und Kühlung ein. NVIDIA (CUDA) dominiert; Apple Silicon mit Unified Memory ist für lokale Einzelnutzung exzellent; AMD holt auf, hat aber ein kleineres Ökosystem.",
           "en": "Beyond the GPU: concurrency multiplies everything - ten simultaneous users need far more than one. Factor in CPU, RAM, fast storage, electricity and cooling. NVIDIA (CUDA) dominates; Apple Silicon with unified memory is excellent for local single-user work; AMD is catching up but has a smaller ecosystem.",
-          "it": "Oltre alla GPU: la concorrenza moltiplica tutto - dieci utenti simultanei richiedono molto piu di uno. Considera CPU, RAM, storage veloce, elettricita e raffreddamento. NVIDIA (CUDA) domina; Apple Silicon con memoria unificata e eccellente per l'uso locale mono-utente; AMD sta recuperando ma ha un ecosistema piu piccolo.",
-          "fr": "Au-dela du GPU : la concurrence multiplie tout - dix utilisateurs simultanes exigent bien plus qu'un seul. Comptez le CPU, la RAM, un stockage rapide, l'electricite et le refroidissement. NVIDIA (CUDA) domine ; Apple Silicon a memoire unifiee est excellent pour un usage local mono-utilisateur ; AMD progresse mais a un ecosysteme plus restreint."
+          "it": "Oltre alla GPU: la concorrenza moltiplica tutto - dieci utenti simultanei richiedono molto più di uno. Considera CPU, RAM, storage veloce, elettricità e raffreddamento. NVIDIA (CUDA) domina; Apple Silicon con memoria unificata è eccellente per l'uso locale mono-utente; AMD sta recuperando ma ha un ecosistema più piccolo.",
+          "fr": "Au-delà du GPU : la concurrence multiplie tout - dix utilisateurs simultanés exigent bien plus qu'un seul. Comptez le CPU, la RAM, un stockage rapide, l'électricité et le refroidissement. NVIDIA (CUDA) domine ; Apple Silicon à mémoire unifiée est excellent pour un usage local mono-utilisateur ; AMD progresse mais a un écosystème plus restreint."
         },
         {
-          "de": "Die Tools sind gereift. Fuer den Einstieg buendeln Ollama und LM Studio alles in ein nahezu Ein-Klick-Erlebnis. Fuer den Produktivbetrieb bieten vLLM und Hugging Face TGI Batching, hoeheren Durchsatz und eine OpenAI-kompatible API, sodass sich Ihre Anwendungen kaum aendern. llama.cpp bildet die Basis vieler Tools und laeuft auch auf bescheidener Hardware effizient.",
+          "de": "Die Tools sind gereift. Für den Einstieg bündeln Ollama und LM Studio alles in ein nahezu Ein-Klick-Erlebnis. Für den Produktivbetrieb bieten vLLM und Hugging Face TGI Batching, höheren Durchsatz und eine OpenAI-kompatible API, sodass sich Ihre Anwendungen kaum ändern. llama.cpp bildet die Basis vieler Tools und läuft auch auf bescheidener Hardware effizient.",
           "en": "The tooling has matured. To get started, Ollama and LM Studio wrap everything into a near one-click experience. For production, vLLM and Hugging Face TGI add batching, higher throughput and an OpenAI-compatible API so your apps barely change. llama.cpp underpins many of these and runs efficiently even on modest hardware.",
-          "it": "Gli strumenti sono maturi. Per iniziare, Ollama e LM Studio racchiudono tutto in un'esperienza quasi a un clic. Per la produzione, vLLM e Hugging Face TGI aggiungono batching, throughput piu alto e un'API compatibile con OpenAI, cosi le tue app cambiano poco. llama.cpp e alla base di molti di questi e gira in modo efficiente anche su hardware modesto.",
-          "fr": "L'outillage a muri. Pour debuter, Ollama et LM Studio regroupent tout en une experience quasi en un clic. Pour la production, vLLM et Hugging Face TGI ajoutent le batching, un debit superieur et une API compatible OpenAI, de sorte que vos applications changent a peine. llama.cpp est le socle de beaucoup d'entre eux et tourne efficacement meme sur du materiel modeste."
+          "it": "Gli strumenti sono maturi. Per iniziare, Ollama e LM Studio racchiudono tutto in un'esperienza quasi a un clic. Per la produzione, vLLM e Hugging Face TGI aggiungono batching, throughput più alto e un'API compatibile con OpenAI, così le tue app cambiano poco. llama.cpp è alla base di molti di questi e gira in modo efficiente anche su hardware modesto.",
+          "fr": "L'outillage a mûri. Pour débuter, Ollama et LM Studio regroupent tout en une expérience quasi en un clic. Pour la production, vLLM et Hugging Face TGI ajoutent le batching, un débit supérieur et une API compatible OpenAI, de sorte que vos applications changent à peine. llama.cpp est le socle de beaucoup d'entre eux et tourne efficacement même sur du matériel modeste."
         },
         {
           "de": "Der schwierigere Teil ist der Betrieb, nicht die Installation. Jemand muss:",
           "en": "The harder part is operations, not installation. Someone must:",
-          "it": "La parte piu difficile e la gestione, non l'installazione. Qualcuno deve:",
+          "it": "La parte più difficile è la gestione, non l'installazione. Qualcuno deve:",
           "fr": "Le plus dur est l'exploitation, pas l'installation. Quelqu'un doit :"
         }
       ],
@@ -159,31 +159,31 @@
           "de": "Linux, GPU-Treiber und CUDA-Versionen verwalten",
           "en": "Manage Linux, GPU drivers and CUDA versions",
           "it": "Gestire Linux, driver GPU e versioni CUDA",
-          "fr": "Gerer Linux, les pilotes GPU et les versions de CUDA"
+          "fr": "Gérer Linux, les pilotes GPU et les versions de CUDA"
         },
         {
-          "de": "das Modell zuverlaessig bereitstellen, Latenz und Verfuegbarkeit ueberwachen und Skalierung handhaben",
+          "de": "das Modell zuverlässig bereitstellen, Latenz und Verfügbarkeit überwachen und Skalierung handhaben",
           "en": "serve the model reliably, monitor latency and uptime, and handle scaling",
           "it": "servire il modello in modo affidabile, monitorare latenza e uptime e gestire lo scaling",
-          "fr": "servir le modele de maniere fiable, surveiller la latence et la disponibilite, et gerer la montee en charge"
+          "fr": "servir le modèle de manière fiable, surveiller la latence et la disponibilité, et gérer la montée en charge"
         },
         {
-          "de": "Sicherheit patchen, Zugriffe kontrollieren und einen Audit-Trail fuehren",
+          "de": "Sicherheit patchen, Zugriffe kontrollieren und einen Audit-Trail führen",
           "en": "patch security, control access, and keep an audit trail",
           "it": "applicare patch di sicurezza, controllare gli accessi e mantenere un audit trail",
-          "fr": "appliquer les correctifs de securite, controler les acces et tenir une piste d'audit"
+          "fr": "appliquer les correctifs de sécurité, contrôler les accès et tenir une piste d'audit"
         },
         {
-          "de": "Modelle bewerten und tauschen, sobald bessere erscheinen (das offene Oekosystem bewegt sich schnell)",
+          "de": "Modelle bewerten und tauschen, sobald bessere erscheinen (das offene Ökosystem bewegt sich schnell)",
           "en": "evaluate and swap models as better ones ship (the open ecosystem moves fast)",
           "it": "valutare e sostituire i modelli quando ne escono di migliori (l'ecosistema aperto si muove in fretta)",
-          "fr": "evaluer et remplacer les modeles des que de meilleurs paraissent (l'ecosysteme ouvert avance vite)"
+          "fr": "évaluer et remplacer les modèles dès que de meilleurs paraissent (l'écosystème ouvert avance vite)"
         },
         {
-          "de": "die eigentliche Wertschoepfungsschicht bauen: RAG, Prompts, Guardrails, Integration",
+          "de": "die eigentliche Wertschöpfungsschicht bauen: RAG, Prompts, Guardrails, Integration",
           "en": "build the actual value layer: RAG, prompts, guardrails, integration",
           "it": "costruire il vero strato di valore: RAG, prompt, guardrail, integrazione",
-          "fr": "construire la vraie couche de valeur : RAG, prompts, garde-fous, integration"
+          "fr": "construire la vraie couche de valeur : RAG, prompts, garde-fous, intégration"
         }
       ]
     },
@@ -192,20 +192,20 @@
         "de": "Kosten: Self-Hosting vs. API",
         "en": "Cost: self-hosted vs. API",
         "it": "Costi: in proprio vs. API",
-        "fr": "Cout : interne vs. API"
+        "fr": "Coût : interne vs. API"
       },
       "paragraphs": [
         {
-          "de": "Realistisch braucht ein KMU mindestens eine faehige Engineering-Person oder einen externen Partner; den laufenden Aufwand zu unterschaetzen ist der haeufigste Grund, warum Self-Hosting-Projekte enttaeuschen. Die Oekonomie haengt an Volumen und Auslastung. Eine API rechnet pro Token ab: keine Vorabkosten, sofort skalierbar, Sie zahlen nur die tatsaechliche Nutzung. Self-Hosting verlagert die Kosten nach vorn: Sie kaufen oder mieten GPUs und zahlen Strom, Kuehlung und - der groesste versteckte Posten - Engineering-Zeit, ob die GPU nun ausgelastet ist oder leerlaeuft.",
+          "de": "Realistisch braucht ein KMU mindestens eine fähige Engineering-Person oder einen externen Partner; den laufenden Aufwand zu unterschätzen ist der häufigste Grund, warum Self-Hosting-Projekte enttäuschen. Die Ökonomie hängt an Volumen und Auslastung. Eine API rechnet pro Token ab: keine Vorabkosten, sofort skalierbar, Sie zahlen nur die tatsächliche Nutzung. Self-Hosting verlagert die Kosten nach vorn: Sie kaufen oder mieten GPUs und zahlen Strom, Kühlung und - der grösste versteckte Posten - Engineering-Zeit, ob die GPU nun ausgelastet ist oder leerläuft.",
           "en": "Realistically an SME needs at least one capable engineer or an external partner; underestimating this ongoing effort is the most common reason self-hosting projects disappoint. The economics hinge on volume and utilization. An API charges per token: zero upfront, scales instantly, you pay only for what you use. Self-hosting front-loads cost: you buy or rent GPUs and pay for electricity, cooling and - the biggest hidden item - engineering time, whether the GPU is busy or idle.",
-          "it": "Realisticamente una PMI ha bisogno di almeno un ingegnere capace o di un partner esterno; sottovalutare questo sforzo continuo e il motivo piu comune per cui i progetti in proprio deludono. L'economia dipende da volume e utilizzo. Un'API addebita per token: nessun costo iniziale, scala all'istante, paghi solo cio che usi. L'hosting in proprio anticipa i costi: compri o affitti GPU e paghi elettricita, raffreddamento e - la voce nascosta piu grande - il tempo di ingegneria, che la GPU sia occupata o inattiva.",
-          "fr": "En pratique, une PME a besoin d'au moins un ingenieur competent ou d'un partenaire externe ; sous-estimer cet effort continu est la cause la plus frequente de deception. L'economie depend du volume et du taux d'utilisation. Une API facture au token : aucun cout initial, mise a l'echelle immediate, vous ne payez que ce que vous consommez. L'hebergement interne concentre les couts en amont : vous achetez ou louez des GPU et payez l'electricite, le refroidissement et - le poste cache le plus lourd - le temps d'ingenierie, que le GPU soit occupe ou inactif."
+          "it": "Realisticamente una PMI ha bisogno di almeno un ingegnere capace o di un partner esterno; sottovalutare questo sforzo continuo è il motivo più comune per cui i progetti in proprio deludono. L'economia dipende da volume e utilizzo. Un'API addebita per token: nessun costo iniziale, scala all'istante, paghi solo ciò che usi. L'hosting in proprio anticipa i costi: compri o affitti GPU e paghi elettricità, raffreddamento e - la voce nascosta più grande - il tempo di ingegneria, che la GPU sia occupata o inattiva.",
+          "fr": "En pratique, une PME a besoin d'au moins un ingénieur compétent ou d'un partenaire externe ; sous-estimer cet effort continu est la cause la plus fréquente de déception. L'économie dépend du volume et du taux d'utilisation. Une API facture au token : aucun coût initial, mise à l'échelle immédiate, vous ne payez que ce que vous consommez. L'hébergement interne concentre les coûts en amont : vous achetez ou louez des GPU et payez l'électricité, le refroidissement et - le poste caché le plus lourd - le temps d'ingénierie, que le GPU soit occupé ou inactif."
         },
         {
-          "de": "Der Break-even spricht fuer Self-Hosting, wenn die Auslastung hoch und konstant ist - ein stark ausgelasteter Dauerbetrieb amortisiert die Fixkosten. Bei niedrigem oder schwankendem Volumen macht eine leerlaufende GPU die API guenstiger. Modellieren Sie das ehrlich, inklusive Personalzeit, bevor Sie Hardware kaufen. Kurzvergleich:",
+          "de": "Der Break-even spricht für Self-Hosting, wenn die Auslastung hoch und konstant ist - ein stark ausgelasteter Dauerbetrieb amortisiert die Fixkosten. Bei niedrigem oder schwankendem Volumen macht eine leerlaufende GPU die API günstiger. Modellieren Sie das ehrlich, inklusive Personalzeit, bevor Sie Hardware kaufen. Kurzvergleich:",
           "en": "The break-even favours self-hosting when utilization is high and steady - a busy, always-on workload amortizes the fixed cost. For low or spiky volume, an idle GPU makes APIs cheaper. Model this honestly, including staff time, before buying hardware. Quick comparison:",
-          "it": "Il punto di pareggio favorisce l'hosting in proprio quando l'utilizzo e alto e costante - un carico sempre attivo ammortizza i costi fissi. Con volumi bassi o irregolari, una GPU inattiva rende l'API piu economica. Modella tutto onestamente, incluso il tempo del personale, prima di comprare hardware. Confronto rapido:",
-          "fr": "Le seuil de rentabilite favorise l'interne quand l'utilisation est elevee et reguliere - une charge continue amortit les couts fixes. Pour un volume faible ou irregulier, un GPU inactif rend l'API moins chere. Modelisez cela honnetement, temps de personnel inclus, avant d'acheter du materiel. Comparaison rapide :"
+          "it": "Il punto di pareggio favorisce l'hosting in proprio quando l'utilizzo è alto e costante - un carico sempre attivo ammortizza i costi fissi. Con volumi bassi o irregolari, una GPU inattiva rende l'API più economica. Modella tutto onestamente, incluso il tempo del personale, prima di comprare hardware. Confronto rapido:",
+          "fr": "Le seuil de rentabilité favorise l'interne quand l'utilisation est élevée et régulière - une charge continue amortit les coûts fixes. Pour un volume faible ou irrégulier, un GPU inactif rend l'API moins chère. Modélisez cela honnêtement, temps de personnel inclus, avant d'acheter du matériel. Comparaison rapide :"
         }
       ],
       "bullets": [
@@ -213,25 +213,25 @@
           "de": "Anfangskosten: API keine; Self-Hosting hoch (Hardware) oder moderat (Miete)",
           "en": "Upfront cost: API none; self-hosted high (hardware) or moderate (rented)",
           "it": "Costo iniziale: API nessuno; in proprio alto (hardware) o moderato (affitto)",
-          "fr": "Cout initial : API nul ; interne eleve (materiel) ou modere (location)"
+          "fr": "Coût initial : API nul ; interne élevé (matériel) ou modéré (location)"
         },
         {
           "de": "Grenzkosten pro Anfrage: API pro Token; Self-Hosting nahezu null im Betrieb",
           "en": "Marginal cost per request: API per-token; self-hosted near zero once running",
           "it": "Costo marginale per richiesta: API per token; in proprio quasi nullo a regime",
-          "fr": "Cout marginal par requete : API au token ; interne quasi nul une fois en service"
+          "fr": "Coût marginal par requête : API au token ; interne quasi nul une fois en service"
         },
         {
           "de": "Skalierung: API elastisch; Self-Hosting durch Ihre Hardware begrenzt",
           "en": "Scaling: API elastic; self-hosted limited by your hardware",
           "it": "Scaling: API elastico; in proprio limitato dal tuo hardware",
-          "fr": "Mise a l'echelle : API elastique ; interne limite par votre materiel"
+          "fr": "Mise à l'échelle : API élastique ; interne limité par votre matériel"
         },
         {
-          "de": "Leerlaufkosten: API null; Self-Hosting Sie zahlen unabhaengig von der Nutzung",
+          "de": "Leerlaufkosten: API null; Self-Hosting Sie zahlen unabhängig von der Nutzung",
           "en": "Idle cost: API zero; self-hosted you pay regardless of use",
-          "it": "Costo di inattivita: API zero; in proprio paghi comunque",
-          "fr": "Cout a vide : API nul ; interne vous payez quel que soit l'usage"
+          "it": "Costo di inattività: API zero; in proprio paghi comunque",
+          "fr": "Coût à vide : API nul ; interne vous payez quel que soit l'usage"
         },
         {
           "de": "Betriebsaufwand: API minimal; Self-Hosting erheblich",
@@ -246,56 +246,56 @@
         "de": "Vorteile und Nachteile auf einen Blick",
         "en": "Pros and cons at a glance",
         "it": "Pro e contro in sintesi",
-        "fr": "Avantages et inconvenients en un coup d'oeil"
+        "fr": "Avantages et inconvénients en un coup d'oeil"
       },
       "bullets": [
         {
-          "de": "Vorteil - Datensouveraenitaet: Prompts und Dokumente verlassen Ihre Kontrolle nie; entscheidend bei sensiblen Daten.",
+          "de": "Vorteil - Datensouveränität: Prompts und Dokumente verlassen Ihre Kontrolle nie; entscheidend bei sensiblen Daten.",
           "en": "Pro - Data sovereignty: prompts and documents never leave your control; decisive for sensitive data.",
-          "it": "Pro - Sovranita dei dati: prompt e documenti non escono mai dal tuo controllo; decisivo per i dati sensibili.",
-          "fr": "Avantage - Souverainete des donnees : prompts et documents ne quittent jamais votre controle ; decisif pour les donnees sensibles."
+          "it": "Pro - Sovranità dei dati: prompt e documenti non escono mai dal tuo controllo; decisivo per i dati sensibili.",
+          "fr": "Avantage - Souveraineté des données : prompts et documents ne quittent jamais votre contrôle ; décisif pour les données sensibles."
         },
         {
           "de": "Vorteil - Planbare Kosten im grossen Massstab: kein Pro-Token-Konto, sobald die Hardware abbezahlt ist.",
           "en": "Pro - Predictable cost at scale: no per-token bill once the hardware is paid off.",
           "it": "Pro - Costi prevedibili su larga scala: nessuna bolletta per token una volta ripagato l'hardware.",
-          "fr": "Avantage - Cout previsible a grande echelle : plus de facture au token une fois le materiel amorti."
+          "fr": "Avantage - Coût prévisible à grande échelle : plus de facture au token une fois le matériel amorti."
         },
         {
-          "de": "Vorteil - Unabhaengigkeit: kein Vendor-Lock-in, keine ueberraschenden Preis- oder Richtlinienaenderungen, funktioniert offline/air-gapped.",
+          "de": "Vorteil - Unabhängigkeit: kein Vendor-Lock-in, keine überraschenden Preis- oder Richtlinienänderungen, funktioniert offline/air-gapped.",
           "en": "Pro - Independence: no vendor lock-in, no surprise price or policy changes, works offline/air-gapped.",
           "it": "Pro - Indipendenza: nessun lock-in, nessun cambio a sorpresa di prezzi o policy, funziona offline/air-gapped.",
-          "fr": "Avantage - Independance : pas de verrouillage fournisseur, pas de changement surprise de prix ou de regles, fonctionne hors ligne/isole."
+          "fr": "Avantage - Indépendance : pas de verrouillage fournisseur, pas de changement surprise de prix ou de règles, fonctionne hors ligne/isolé."
         },
         {
-          "de": "Vorteil - Kontrolle: exakte Modellversion waehlen, anpassen und feinjustieren (Fine-Tuning), Latenz steuern.",
+          "de": "Vorteil - Kontrolle: exakte Modellversion wählen, anpassen und feinjustieren (Fine-Tuning), Latenz steuern.",
           "en": "Pro - Control: choose the exact model version, customize and fine-tune, tune latency.",
           "it": "Pro - Controllo: scegli la versione esatta del modello, personalizzi e fai fine-tuning, regoli la latenza.",
-          "fr": "Avantage - Controle : choisir la version exacte du modele, personnaliser et affiner (fine-tuning), regler la latence."
+          "fr": "Avantage - Contrôle : choisir la version exacte du modèle, personnaliser et affiner (fine-tuning), régler la latence."
         },
         {
           "de": "Nachteil - Kapital und Betrieb: Hardwareausgaben plus kontinuierliches Engineering.",
           "en": "Con - Capital and operations: hardware spend plus continuous engineering.",
-          "it": "Contro - Capitale e gestione: spesa hardware piu ingegneria continua.",
-          "fr": "Inconvenient - Capital et exploitation : depense materielle plus ingenierie continue."
+          "it": "Contro - Capitale e gestione: spesa hardware più ingegneria continua.",
+          "fr": "Inconvénient - Capital et exploitation : dépense matérielle plus ingénierie continue."
         },
         {
-          "de": "Nachteil - Qualitaetsluecke: Die besten offenen Modelle liegen bei harten Reasoning-Aufgaben hinter den fuehrenden proprietaeren - der Abstand schrumpft jedoch.",
+          "de": "Nachteil - Qualitätslücke: Die besten offenen Modelle liegen bei harten Reasoning-Aufgaben hinter den führenden proprietären - der Abstand schrumpft jedoch.",
           "en": "Con - Quality gap: the best open models trail the top proprietary ones on hard reasoning - though the gap is narrowing.",
-          "it": "Contro - Divario di qualita: i migliori modelli aperti restano dietro ai migliori proprietari nel ragionamento difficile - ma il divario si riduce.",
-          "fr": "Inconvenient - Ecart de qualite : les meilleurs modeles ouverts restent derriere les meilleurs proprietaires sur le raisonnement difficile - mais l'ecart se reduit."
+          "it": "Contro - Divario di qualità: i migliori modelli aperti restano dietro ai migliori proprietari nel ragionamento difficile - ma il divario si riduce.",
+          "fr": "Inconvénient - Écart de qualité : les meilleurs modèles ouverts restent derrière les meilleurs propriétaires sur le raisonnement difficile - mais l'écart se réduit."
         },
         {
-          "de": "Nachteil - Skalierungsreibung und volle Verantwortung: Nachfragespitzen sind schwer abzufedern; Sicherheit, Verfuegbarkeit und Compliance liegen ganz bei Ihnen, inklusive des staendigen Nachziehens neuer Modelle.",
+          "de": "Nachteil - Skalierungsreibung und volle Verantwortung: Nachfragespitzen sind schwer abzufedern; Sicherheit, Verfügbarkeit und Compliance liegen ganz bei Ihnen, inklusive des ständigen Nachziehens neuer Modelle.",
           "en": "Con - Scaling friction and full responsibility: demand spikes are hard to absorb; security, uptime and compliance are entirely yours, including the treadmill of adopting new models.",
-          "it": "Contro - Attrito di scaling e piena responsabilita: i picchi di domanda sono difficili da assorbire; sicurezza, uptime e conformita sono interamente tuoi, compreso il continuo adottare nuovi modelli.",
-          "fr": "Inconvenient - Frictions de mise a l'echelle et pleine responsabilite : les pics de demande sont durs a absorber ; securite, disponibilite et conformite vous incombent entierement, y compris l'adoption continue de nouveaux modeles."
+          "it": "Contro - Attrito di scaling e piena responsabilità: i picchi di domanda sono difficili da assorbire; sicurezza, uptime e conformità sono interamente tuoi, compreso il continuo adottare nuovi modelli.",
+          "fr": "Inconvénient - Frictions de mise à l'échelle et pleine responsabilité : les pics de demande sont durs à absorber ; sécurité, disponibilité et conformité vous incombent entièrement, y compris l'adoption continue de nouveaux modèles."
         }
       ]
     },
     {
       "heading": {
-        "de": "Wann lohnt es sich fuer ein KMU?",
+        "de": "Wann lohnt es sich für ein KMU?",
         "en": "When is it worth it for an SME?",
         "it": "Quando conviene a una PMI?",
         "fr": "Quand est-ce rentable pour une PME ?"
@@ -304,46 +304,46 @@
         {
           "de": "Self-Hosting ergibt am meisten Sinn, wenn mindestens einer dieser Punkte zutrifft:",
           "en": "Self-hosting makes most sense when at least one of these is true:",
-          "it": "Ospitare in proprio ha senso soprattutto se almeno una di queste condizioni e vera:",
-          "fr": "L'hebergement interne a le plus de sens si au moins l'un de ces points est vrai :"
+          "it": "Ospitare in proprio ha senso soprattutto se almeno una di queste condizioni è vera:",
+          "fr": "L'hébergement interne a le plus de sens si au moins l'un de ces points est vrai :"
         },
         {
-          "de": "Meist lohnt es sich nicht, wenn das Volumen niedrig oder unvorhersehbar ist, wenn Sie das staerkstmoegliche Reasoning brauchen oder wenn Betriebskapazitaet fehlt - dann dient eine konforme API oder eine Private-Cloud-Bereitstellung (z. B. eine Schweizer/EU-Region eines Anbieters oder ein isoliertes VPC) oft besser. Viele KMU landen bei einem hybriden Ansatz: kleine, hochvolumige, sensible Aufgaben selbst hosten, die schwierigsten per API loesen.",
+          "de": "Meist lohnt es sich nicht, wenn das Volumen niedrig oder unvorhersehbar ist, wenn Sie das stärkstmögliche Reasoning brauchen oder wenn Betriebskapazität fehlt - dann dient eine konforme API oder eine Private-Cloud-Bereitstellung (z. B. eine Schweizer/EU-Region eines Anbieters oder ein isoliertes VPC) oft besser. Viele KMU landen bei einem hybriden Ansatz: kleine, hochvolumige, sensible Aufgaben selbst hosten, die schwierigsten per API lösen.",
           "en": "It is usually not worth it when volume is low or unpredictable, when you need the strongest possible reasoning, or when you have no operations capacity - then a compliant API or a private-cloud deployment (e.g., a provider's Swiss/EU region or an isolated VPC) often serves better. Many SMEs land on a hybrid: self-host small, high-volume, sensitive tasks; call an API for the hardest ones.",
-          "it": "Di solito non conviene quando il volume e basso o imprevedibile, quando serve il ragionamento piu potente possibile o quando manca capacita operativa - allora un'API conforme o un deployment in cloud privato (es. una regione svizzera/UE di un fornitore o un VPC isolato) spesso e piu adatto. Molte PMI arrivano a un approccio ibrido: ospitare in proprio i compiti piccoli, ad alto volume e sensibili; usare un'API per i piu difficili.",
-          "fr": "Ce n'est generalement pas rentable quand le volume est faible ou imprevisible, quand il faut le raisonnement le plus puissant possible, ou quand la capacite d'exploitation manque - alors une API conforme ou un deploiement en cloud prive (ex. une region suisse/UE d'un fournisseur ou un VPC isole) convient souvent mieux. Beaucoup de PME optent pour l'hybride : heberger en interne les taches petites, a fort volume et sensibles ; appeler une API pour les plus difficiles."
+          "it": "Di solito non conviene quando il volume è basso o imprevedibile, quando serve il ragionamento più potente possibile o quando manca capacità operativa - allora un'API conforme o un deployment in cloud privato (es. una regione svizzera/UE di un fornitore o un VPC isolato) spesso è più adatto. Molte PMI arrivano a un approccio ibrido: ospitare in proprio i compiti piccoli, ad alto volume e sensibili; usare un'API per i più difficili.",
+          "fr": "Ce n'est généralement pas rentable quand le volume est faible ou imprévisible, quand il faut le raisonnement le plus puissant possible, ou quand la capacité d'exploitation manque - alors une API conforme ou un déploiement en cloud privé (ex. une région suisse/UE d'un fournisseur ou un VPC isolé) convient souvent mieux. Beaucoup de PME optent pour l'hybride : héberger en interne les tâches petites, à fort volume et sensibles ; appeler une API pour les plus difficiles."
         },
         {
-          "de": "Zwei Schweizer Hinweise. Erstens macht Self-Hosting Sie nicht per se konform - das revDSG, die EDOEB-Leitlinien und der extraterritoriale EU AI Act gelten fuer Ihre KI-Nutzung unabhaengig davon, wo sie laeuft; Self-Hosting beseitigt vor allem das Problem grenzueberschreitender Datentransfers. Zweitens gibt es mit Apertus nun ein vollstaendig offenes grosses Sprachmodell von ETH Zuerich, EPFL und CSCS - eine beachtenswerte Option, wenn Transparenz und Schweizer Herkunft zaehlen.",
+          "de": "Zwei Schweizer Hinweise. Erstens macht Self-Hosting Sie nicht per se konform - das revDSG, die EDÖB-Leitlinien und der extraterritoriale EU AI Act gelten für Ihre KI-Nutzung unabhängig davon, wo sie läuft; Self-Hosting beseitigt vor allem das Problem grenzüberschreitender Datentransfers. Zweitens gibt es mit Apertus nun ein vollständig offenes grosses Sprachmodell von ETH Zürich, EPFL und CSCS - eine beachtenswerte Option, wenn Transparenz und Schweizer Herkunft zählen.",
           "en": "Two Swiss-relevant points. First, self-hosting does not by itself make you compliant - the revDSG, EDOEB guidance and the extraterritorial EU AI Act apply to your AI use regardless of where it runs; self-hosting mainly removes the cross-border data-transfer problem. Second, Switzerland now has Apertus, a fully open large language model from ETH Zurich, EPFL and CSCS - a notable option when transparency and Swiss provenance matter.",
-          "it": "Due punti rilevanti per la Svizzera. Primo, l'hosting in proprio non ti rende di per se conforme - la revDSG, le linee guida dell'IFPDT e l'extraterritoriale EU AI Act si applicano al tuo uso dell'IA indipendentemente da dove gira; l'hosting in proprio elimina soprattutto il problema dei trasferimenti transfrontalieri di dati. Secondo, la Svizzera ha ora Apertus, un modello linguistico di grandi dimensioni completamente aperto di ETH Zurigo, EPFL e CSCS - un'opzione notevole quando contano trasparenza e provenienza svizzera.",
-          "fr": "Deux points propres a la Suisse. D'abord, l'hebergement interne ne vous rend pas conforme en soi - la revDSG, les orientations du PFPDT et l'extraterritorial EU AI Act s'appliquent a votre usage de l'IA quel que soit le lieu d'execution ; l'hebergement interne supprime surtout le probleme des transferts transfrontaliers de donnees. Ensuite, la Suisse dispose desormais d'Apertus, un grand modele de langage entierement ouvert de l'ETH Zurich, de l'EPFL et du CSCS - une option notable quand la transparence et la provenance suisse comptent."
+          "it": "Due punti rilevanti per la Svizzera. Primo, l'hosting in proprio non ti rende di per sé conforme - la revDSG, le linee guida dell'IFPDT e l'extraterritoriale EU AI Act si applicano al tuo uso dell'IA indipendentemente da dove gira; l'hosting in proprio elimina soprattutto il problema dei trasferimenti transfrontalieri di dati. Secondo, la Svizzera ha ora Apertus, un modello linguistico di grandi dimensioni completamente aperto di ETH Zurigo, EPFL e CSCS - un'opzione notevole quando contano trasparenza e provenienza svizzera.",
+          "fr": "Deux points propres à la Suisse. D'abord, l'hébergement interne ne vous rend pas conforme en soi - la revDSG, les orientations du PFPDT et l'extraterritorial EU AI Act s'appliquent à votre usage de l'IA quel que soit le lieu d'exécution ; l'hébergement interne supprime surtout le problème des transferts transfrontaliers de données. Ensuite, la Suisse dispose désormais d'Apertus, un grand modèle de langage entièrement ouvert de l'ETH Zurich, de l'EPFL et du CSCS - une option notable quand la transparence et la provenance suisse comptent."
         }
       ],
       "bullets": [
         {
-          "de": "Sie verarbeiten sensible oder regulierte Daten (Gesundheit, Recht, Finanzen, HR), bei denen Daten im Haus die revDSG/nDSG-Konformitaet und das Kundenvertrauen erleichtern.",
+          "de": "Sie verarbeiten sensible oder regulierte Daten (Gesundheit, Recht, Finanzen, HR), bei denen Daten im Haus die revDSG/nDSG-Konformität und das Kundenvertrauen erleichtern.",
           "en": "You process sensitive or regulated data (health, legal, financial, HR) where keeping data in-house simplifies revDSG/nFADP compliance and client trust.",
-          "it": "Tratti dati sensibili o regolamentati (sanita, legale, finanza, HR) dove tenere i dati in casa semplifica la conformita alla revDSG/nLPD e la fiducia dei clienti.",
-          "fr": "Vous traitez des donnees sensibles ou reglementees (sante, juridique, finance, RH) ou garder les donnees en interne simplifie la conformite a la revDSG/nLPD et la confiance des clients."
+          "it": "Tratti dati sensibili o regolamentati (sanità, legale, finanza, HR) dove tenere i dati in casa semplifica la conformità alla revDSG/nLPD e la fiducia dei clienti.",
+          "fr": "Vous traitez des données sensibles ou réglementées (santé, juridique, finance, RH) où garder les données en interne simplifie la conformité à la revDSG/nLPD et la confiance des clients."
         },
         {
           "de": "Das Volumen ist hoch und konstant genug, um Hardware zu amortisieren.",
           "en": "Volume is high and steady enough to amortize hardware.",
-          "it": "Il volume e abbastanza alto e costante da ammortizzare l'hardware.",
-          "fr": "Le volume est assez eleve et regulier pour amortir le materiel."
+          "it": "Il volume è abbastanza alto e costante da ammortizzare l'hardware.",
+          "fr": "Le volume est assez élevé et régulier pour amortir le matériel."
         },
         {
           "de": "Sie brauchen Offline-Betrieb, garantierte Latenz oder air-gapped Umgebungen.",
           "en": "You need offline operation, guaranteed latency, or air-gapped environments.",
           "it": "Hai bisogno di funzionamento offline, latenza garantita o ambienti air-gapped.",
-          "fr": "Vous avez besoin d'un fonctionnement hors ligne, d'une latence garantie ou d'environnements isoles."
+          "fr": "Vous avez besoin d'un fonctionnement hors ligne, d'une latence garantie ou d'environnements isolés."
         },
         {
-          "de": "Sie verfuegen bereits ueber solide IT-/Engineering-Faehigkeiten oder einen verlaesslichen Partner.",
+          "de": "Sie verfügen bereits über solide IT-/Engineering-Fähigkeiten oder einen verlässlichen Partner.",
           "en": "You already have solid IT/engineering capability or a trusted partner.",
-          "it": "Disponi gia di solide capacita IT/ingegneristiche o di un partner affidabile.",
-          "fr": "Vous disposez deja de solides competences IT/ingenierie ou d'un partenaire de confiance."
+          "it": "Disponi già di solide capacità IT/ingegneristiche o di un partner affidabile.",
+          "fr": "Vous disposez déjà de solides compétences IT/ingénierie ou d'un partenaire de confiance."
         }
       ]
     },
@@ -358,32 +358,32 @@
         {
           "de": "Mit einem lokalen Pilot starten: Ollama mit einem kleinen offenen Modell auf einer Workstation betreiben und eine Woche an echten Aufgaben testen.",
           "en": "Start with a local pilot: run Ollama with a small open model on one workstation and test it on real tasks for a week.",
-          "it": "Parti con un pilota locale: esegui Ollama con un piccolo modello aperto su una workstation e testalo su attivita reali per una settimana.",
-          "fr": "Commencez par un pilote local : lancez Ollama avec un petit modele ouvert sur une station de travail et testez-le sur des taches reelles pendant une semaine."
+          "it": "Parti con un pilota locale: esegui Ollama con un piccolo modello aperto su una workstation e testalo su attività reali per una settimana.",
+          "fr": "Commencez par un pilote local : lancez Ollama avec un petit modèle ouvert sur une station de travail et testez-le sur des tâches réelles pendant une semaine."
         },
         {
-          "de": "Ehrlich messen: Qualitaet fuer Ihren Use Case, erwartetes Monatsvolumen und noetige Latenz.",
+          "de": "Ehrlich messen: Qualität für Ihren Use Case, erwartetes Monatsvolumen und nötige Latenz.",
           "en": "Measure honestly: quality against your use case, expected monthly volume, and required latency.",
-          "it": "Misura onestamente: qualita rispetto al tuo caso d'uso, volume mensile atteso e latenza richiesta.",
-          "fr": "Mesurez honnetement : qualite selon votre cas d'usage, volume mensuel attendu et latence requise."
+          "it": "Misura onestamente: qualità rispetto al tuo caso d'uso, volume mensile atteso e latenza richiesta.",
+          "fr": "Mesurez honnêtement : qualité selon votre cas d'usage, volume mensuel attendu et latence requise."
         },
         {
           "de": "Gesamtkosten vergleichen: Hardware plus Personalzeit gegen eine gleichwertige API-Rechnung.",
           "en": "Compare total cost: hardware plus staff time versus an equivalent API bill.",
-          "it": "Confronta il costo totale: hardware piu tempo del personale rispetto a una bolletta API equivalente.",
-          "fr": "Comparez le cout total : materiel plus temps de personnel face a une facture API equivalente."
+          "it": "Confronta il costo totale: hardware più tempo del personale rispetto a una bolletta API equivalente.",
+          "fr": "Comparez le coût total : matériel plus temps de personnel face à une facture API équivalente."
         },
         {
-          "de": "Die Stufe waehlen: lokal, on-prem, Private Cloud - oder hybrid.",
+          "de": "Die Stufe wählen: lokal, on-prem, Private Cloud - oder hybrid.",
           "en": "Decide the tier: local, on-prem, private cloud - or hybrid.",
           "it": "Scegli il livello: locale, on-prem, cloud privato - o ibrido.",
-          "fr": "Choisissez le niveau : local, on-prem, cloud prive - ou hybride."
+          "fr": "Choisissez le niveau : local, on-prem, cloud privé - ou hybride."
         },
         {
-          "de": "In die Wertschoepfungsschicht investieren (RAG, Integration, Guardrails) - sie zaehlt mehr als das reine Modell.",
+          "de": "In die Wertschöpfungsschicht investieren (RAG, Integration, Guardrails) - sie zählt mehr als das reine Modell.",
           "en": "Invest in the value layer (RAG, integration, guardrails), which matters more than the raw model.",
-          "it": "Investi nello strato di valore (RAG, integrazione, guardrail), che conta piu del modello grezzo.",
-          "fr": "Investissez dans la couche de valeur (RAG, integration, garde-fous), qui compte plus que le modele brut."
+          "it": "Investi nello strato di valore (RAG, integrazione, guardrail), che conta più del modello grezzo.",
+          "fr": "Investissez dans la couche de valeur (RAG, intégration, garde-fous), qui compte plus que le modèle brut."
         }
       ]
     }
@@ -394,13 +394,13 @@
         "de": "Braucht man zwingend eine teure GPU, um KI selbst zu hosten?",
         "en": "Do I really need an expensive GPU to self-host AI?",
         "it": "Serve per forza una GPU costosa per ospitare l'IA in proprio?",
-        "fr": "Faut-il vraiment un GPU couteux pour heberger l'IA en interne ?"
+        "fr": "Faut-il vraiment un GPU coûteux pour héberger l'IA en interne ?"
       },
       "a": {
-        "de": "Nein, nicht fuer den Start. Ein kleines offenes Modell in 4-Bit laeuft auf einer guten Consumer-GPU (rund 8 GB VRAM) oder einem modernen Apple-Silicon-Mac und reicht fuer Chat, Zusammenfassung und RAG fuer wenige Nutzer. Teure Profi-GPUs werden erst fuer grosse Modelle oder viele gleichzeitige Nutzer noetig.",
+        "de": "Nein, nicht für den Start. Ein kleines offenes Modell in 4-Bit läuft auf einer guten Consumer-GPU (rund 8 GB VRAM) oder einem modernen Apple-Silicon-Mac und reicht für Chat, Zusammenfassung und RAG für wenige Nutzer. Teure Profi-GPUs werden erst für grosse Modelle oder viele gleichzeitige Nutzer nötig.",
         "en": "No, not to start. A small open model quantized to 4-bit runs on a good consumer GPU (around 8 GB VRAM) or a modern Apple Silicon Mac, which is enough for chat, summarization and RAG for a few users. Expensive professional GPUs only become necessary for large models or many concurrent users.",
         "it": "No, non per iniziare. Un piccolo modello aperto quantizzato a 4-bit gira su una buona GPU consumer (circa 8 GB VRAM) o un Mac Apple Silicon moderno, sufficiente per chat, riassunti e RAG per pochi utenti. Le costose GPU professionali servono solo per modelli grandi o molti utenti simultanei.",
-        "fr": "Non, pas pour debuter. Un petit modele ouvert quantifie en 4 bits tourne sur un bon GPU grand public (environ 8 Go VRAM) ou un Mac Apple Silicon recent, ce qui suffit pour chat, resume et RAG pour quelques utilisateurs. Les GPU professionnels couteux ne s'imposent que pour de grands modeles ou de nombreux utilisateurs simultanes."
+        "fr": "Non, pas pour débuter. Un petit modèle ouvert quantifié en 4 bits tourne sur un bon GPU grand public (environ 8 Go VRAM) ou un Mac Apple Silicon récent, ce qui suffit pour chat, résumé et RAG pour quelques utilisateurs. Les GPU professionnels coûteux ne s'imposent que pour de grands modèles ou de nombreux utilisateurs simultanés."
       }
     },
     {
@@ -408,55 +408,55 @@
         "de": "Macht Self-Hosting meine KI automatisch revDSG-konform?",
         "en": "Does self-hosting automatically make my AI revDSG-compliant?",
         "it": "Ospitare in proprio rende automaticamente la mia IA conforme alla revDSG?",
-        "fr": "L'hebergement interne rend-il automatiquement mon IA conforme a la revDSG ?"
+        "fr": "L'hébergement interne rend-il automatiquement mon IA conforme à la revDSG ?"
       },
       "a": {
-        "de": "Nein. Self-Hosting haelt Daten im Haus und beseitigt das Risiko grenzueberschreitender Transfers, was hilft - aber Konformitaet haengt davon ab, wie Sie Personendaten insgesamt behandeln. revDSG/nDSG, EDOEB-Leitlinien und der EU AI Act gelten weiterhin. Self-Hosting ist ein starker Baustein, keine Konformitaetsgarantie.",
+        "de": "Nein. Self-Hosting hält Daten im Haus und beseitigt das Risiko grenzüberschreitender Transfers, was hilft - aber Konformität hängt davon ab, wie Sie Personendaten insgesamt behandeln. revDSG/nDSG, EDÖB-Leitlinien und der EU AI Act gelten weiterhin. Self-Hosting ist ein starker Baustein, keine Konformitätsgarantie.",
         "en": "No. Self-hosting keeps data in-house and removes cross-border transfer risk, which helps - but compliance depends on how you handle personal data overall. The revDSG/nFADP, EDOEB guidance and the EU AI Act still apply. Self-hosting is a strong building block, not a compliance guarantee.",
-        "it": "No. Ospitare in proprio tiene i dati in casa ed elimina il rischio di trasferimenti transfrontalieri, il che aiuta - ma la conformita dipende da come tratti i dati personali nel complesso. revDSG/nLPD, linee guida dell'IFPDT ed EU AI Act restano applicabili. E un tassello importante, non una garanzia di conformita.",
-        "fr": "Non. L'hebergement interne garde les donnees sur place et supprime le risque de transfert transfrontalier, ce qui aide - mais la conformite depend de votre traitement global des donnees personnelles. La revDSG/nLPD, les orientations du PFPDT et l'EU AI Act restent applicables. C'est une brique solide, pas une garantie de conformite."
+        "it": "No. Ospitare in proprio tiene i dati in casa ed elimina il rischio di trasferimenti transfrontalieri, il che aiuta - ma la conformità dipende da come tratti i dati personali nel complesso. revDSG/nLPD, linee guida dell'IFPDT ed EU AI Act restano applicabili. È un tassello importante, non una garanzia di conformità.",
+        "fr": "Non. L'hébergement interne garde les données sur place et supprime le risque de transfert transfrontalier, ce qui aide - mais la conformité dépend de votre traitement global des données personnelles. La revDSG/nLPD, les orientations du PFPDT et l'EU AI Act restent applicables. C'est une brique solide, pas une garantie de conformité."
       }
     },
     {
       "q": {
         "de": "Was ist der Unterschied zwischen Open Source und Open Weights?",
         "en": "What is the difference between open source and open weights?",
-        "it": "Qual e la differenza tra open source e open weights?",
-        "fr": "Quelle est la difference entre open source et open weights ?"
+        "it": "Qual è la differenza tra open source e open weights?",
+        "fr": "Quelle est la différence entre open source et open weights ?"
       },
       "a": {
-        "de": "\"Open Weights\" bedeutet, die trainierten Parameter sind herunterladbar und Sie koennen das Modell selbst betreiben; Trainingsdaten und volles Rezept muessen nicht offengelegt sein. \"Open Source\" im strengen Sinn veroeffentlicht zusaetzlich Code und oft Daten unter einer offenen Lizenz. Die meisten selbst hostbaren Modelle (Llama, Mistral) sind Open Weights; Apertus ist ein vollstaendig offenes Beispiel.",
+        "de": "\"Open Weights\" bedeutet, die trainierten Parameter sind herunterladbar und Sie können das Modell selbst betreiben; Trainingsdaten und volles Rezept müssen nicht offengelegt sein. \"Open Source\" im strengen Sinn veröffentlicht zusätzlich Code und oft Daten unter einer offenen Lizenz. Die meisten selbst hostbaren Modelle (Llama, Mistral) sind Open Weights; Apertus ist ein vollständig offenes Beispiel.",
         "en": "\"Open weights\" means the trained parameters are downloadable and you can run the model yourself; the training data and full recipe may not be public. \"Open source\" in the strict sense additionally publishes code and often data under an open licence. Most self-hostable models (Llama, Mistral) are open-weight; Apertus is a fully open example.",
-        "it": "\"Open weights\" significa che i parametri addestrati sono scaricabili e puoi eseguire il modello tu stesso; i dati di addestramento e la ricetta completa possono non essere pubblici. \"Open source\" in senso stretto pubblica anche il codice e spesso i dati sotto licenza aperta. La maggior parte dei modelli ospitabili (Llama, Mistral) e open-weight; Apertus e un esempio completamente aperto.",
-        "fr": "\"Open weights\" signifie que les parametres entraines sont telechargeables et que vous pouvez executer le modele vous-meme ; les donnees d'entrainement et la recette complete peuvent ne pas etre publiques. \"Open source\" au sens strict publie en plus le code et souvent les donnees sous licence ouverte. La plupart des modeles hebergeables (Llama, Mistral) sont open-weight ; Apertus est un exemple entierement ouvert."
+        "it": "\"Open weights\" significa che i parametri addestrati sono scaricabili e puoi eseguire il modello tu stesso; i dati di addestramento e la ricetta completa possono non essere pubblici. \"Open source\" in senso stretto pubblica anche il codice e spesso i dati sotto licenza aperta. La maggior parte dei modelli ospitabili (Llama, Mistral) è open-weight; Apertus è un esempio completamente aperto.",
+        "fr": "\"Open weights\" signifie que les paramètres entraînés sont téléchargeables et que vous pouvez exécuter le modèle vous-même ; les données d'entraînement et la recette complète peuvent ne pas être publiques. \"Open source\" au sens strict publie en plus le code et souvent les données sous licence ouverte. La plupart des modèles hébergeables (Llama, Mistral) sont open-weight ; Apertus est un exemple entièrement ouvert."
       }
     },
     {
       "q": {
-        "de": "Welche offenen Modelle eignen sich fuer ein KMU?",
+        "de": "Welche offenen Modelle eignen sich für ein KMU?",
         "en": "Which open models are suitable for an SME?",
         "it": "Quali modelli aperti sono adatti a una PMI?",
-        "fr": "Quels modeles ouverts conviennent a une PME ?"
+        "fr": "Quels modèles ouverts conviennent à une PME ?"
       },
       "a": {
-        "de": "Beliebte, leistungsfaehige Familien sind Llama, Mistral, Qwen, Gemma und DeepSeek sowie das Schweizer Apertus. Waehlen Sie nach Aufgabe, Sprachabdeckung (wichtig fuer DE/FR/IT), zur Hardware passender Groesse und Lizenzbedingungen. Testen Sie zwei bis drei an Ihren eigenen Daten, statt sich allein auf Benchmarks zu verlassen.",
+        "de": "Beliebte, leistungsfähige Familien sind Llama, Mistral, Qwen, Gemma und DeepSeek sowie das Schweizer Apertus. Wählen Sie nach Aufgabe, Sprachabdeckung (wichtig für DE/FR/IT), zur Hardware passender Grösse und Lizenzbedingungen. Testen Sie zwei bis drei an Ihren eigenen Daten, statt sich allein auf Benchmarks zu verlassen.",
         "en": "Popular, capable families include Llama, Mistral, Qwen, Gemma and DeepSeek, plus Switzerland's Apertus. Choose by task, language coverage (important for DE/FR/IT), a size that fits your hardware, and licence terms. Test two or three on your own data rather than trusting benchmarks alone.",
-        "it": "Famiglie diffuse e capaci includono Llama, Mistral, Qwen, Gemma e DeepSeek, oltre allo svizzero Apertus. Scegli in base al compito, alla copertura linguistica (importante per DE/FR/IT), a una dimensione adatta al tuo hardware e ai termini di licenza. Testane due o tre sui tuoi dati anziche fidarti solo dei benchmark.",
-        "fr": "Parmi les familles populaires et performantes : Llama, Mistral, Qwen, Gemma et DeepSeek, ainsi que le suisse Apertus. Choisissez selon la tache, la couverture linguistique (important pour DE/FR/IT), une taille adaptee a votre materiel et les conditions de licence. Testez-en deux ou trois sur vos propres donnees plutot que de vous fier aux seuls benchmarks."
+        "it": "Famiglie diffuse e capaci includono Llama, Mistral, Qwen, Gemma e DeepSeek, oltre allo svizzero Apertus. Scegli in base al compito, alla copertura linguistica (importante per DE/FR/IT), a una dimensione adatta al tuo hardware e ai termini di licenza. Testane due o tre sui tuoi dati anziché fidarti solo dei benchmark.",
+        "fr": "Parmi les familles populaires et performantes : Llama, Mistral, Qwen, Gemma et DeepSeek, ainsi que le suisse Apertus. Choisissez selon la tâche, la couverture linguistique (important pour DE/FR/IT), une taille adaptée à votre matériel et les conditions de licence. Testez-en deux ou trois sur vos propres données plutôt que de vous fier aux seuls benchmarks."
       }
     },
     {
       "q": {
         "de": "Ist Self-Hosting dasselbe wie Azure OpenAI oder eine Schweizer Cloud-Region?",
         "en": "Is self-hosting the same as Azure OpenAI or a Swiss cloud region?",
-        "it": "Ospitare in proprio e come usare Azure OpenAI o una regione cloud svizzera?",
-        "fr": "L'hebergement interne, est-ce comme Azure OpenAI ou une region cloud suisse ?"
+        "it": "Ospitare in proprio è come usare Azure OpenAI o una regione cloud svizzera?",
+        "fr": "L'hébergement interne, est-ce comme Azure OpenAI ou une région cloud suisse ?"
       },
       "a": {
         "de": "Nicht ganz. Das sind Managed-/Private-Cloud-Optionen: Der Anbieter betreibt das Modell weiterhin, aber in einer definierten Region oder isolierten Umgebung. Echtes Self-Hosting heisst, offene Modelle auf einer von Ihnen kontrollierten Infrastruktur zu betreiben. Private Cloud ist ein Mittelweg - weniger Betriebsaufwand, weniger absolute Kontrolle.",
         "en": "Not quite. Those are managed/private-cloud options: the provider still runs the model, but in a defined region or isolated tenancy. True self-hosting means you run open-weight models on infrastructure you control. Private cloud is a middle ground - less operational burden, less absolute control.",
-        "it": "Non proprio. Quelle sono opzioni managed/cloud privato: il fornitore esegue ancora il modello, ma in una regione definita o in un tenant isolato. Il vero hosting in proprio significa eseguire modelli open-weight su un'infrastruttura che controlli. Il cloud privato e una via di mezzo - meno onere operativo, meno controllo assoluto.",
-        "fr": "Pas tout a fait. Ce sont des options managees/cloud prive : le fournisseur execute toujours le modele, mais dans une region definie ou un tenant isole. Le vrai hebergement interne consiste a executer des modeles open-weight sur une infrastructure que vous controlez. Le cloud prive est un entre-deux - moins de charge operationnelle, moins de controle absolu."
+        "it": "Non proprio. Quelle sono opzioni managed/cloud privato: il fornitore esegue ancora il modello, ma in una regione definita o in un tenant isolato. Il vero hosting in proprio significa eseguire modelli open-weight su un'infrastruttura che controlli. Il cloud privato è una via di mezzo - meno onere operativo, meno controllo assoluto.",
+        "fr": "Pas tout à fait. Ce sont des options managées/cloud privé : le fournisseur exécute toujours le modèle, mais dans une région définie ou un tenant isolé. Le vrai hébergement interne consiste à exécuter des modèles open-weight sur une infrastructure que vous contrôlez. Le cloud privé est un entre-deux - moins de charge opérationnelle, moins de contrôle absolu."
       }
     },
     {
@@ -467,10 +467,10 @@
         "fr": "Le fine-tuning en vaut-il la peine, ou le RAG suffit-il ?"
       },
       "a": {
-        "de": "Fuer die meisten KMU liefert RAG (Retrieval-Augmented Generation) - dem Modell zur Laufzeit Ihre Dokumente mitgeben - mehr Nutzen bei geringerem Aufwand als Fine-Tuning. Fine-Tuning hilft bei festem Stil, Format oder eng umrissenen Fachaufgaben. Starten Sie mit einem guten Basismodell plus RAG; Fine-Tuning erst erwaegen, wenn RAG nicht ausreicht.",
+        "de": "Für die meisten KMU liefert RAG (Retrieval-Augmented Generation) - dem Modell zur Laufzeit Ihre Dokumente mitgeben - mehr Nutzen bei geringerem Aufwand als Fine-Tuning. Fine-Tuning hilft bei festem Stil, Format oder eng umrissenen Fachaufgaben. Starten Sie mit einem guten Basismodell plus RAG; Fine-Tuning erst erwägen, wenn RAG nicht ausreicht.",
         "en": "For most SMEs, retrieval-augmented generation (RAG) - feeding the model your documents at query time - delivers more value for less effort than fine-tuning. Fine-tuning helps for fixed style, format or narrow domain tasks. Start with a good base model plus RAG; consider fine-tuning only if RAG falls short.",
-        "it": "Per la maggior parte delle PMI, il RAG (retrieval-augmented generation) - fornire i tuoi documenti al modello al momento della query - offre piu valore con meno sforzo del fine-tuning. Il fine-tuning aiuta per stile fisso, formato o compiti di dominio ristretto. Parti da un buon modello base con RAG; valuta il fine-tuning solo se il RAG non basta.",
-        "fr": "Pour la plupart des PME, le RAG (generation augmentee par recuperation) - fournir vos documents au modele au moment de la requete - apporte plus de valeur pour moins d'effort que le fine-tuning. Le fine-tuning aide pour un style fixe, un format ou des taches de domaine restreint. Partez d'un bon modele de base avec RAG ; n'envisagez le fine-tuning que si le RAG ne suffit pas."
+        "it": "Per la maggior parte delle PMI, il RAG (retrieval-augmented generation) - fornire i tuoi documenti al modello al momento della query - offre più valore con meno sforzo del fine-tuning. Il fine-tuning aiuta per stile fisso, formato o compiti di dominio ristretto. Parti da un buon modello base con RAG; valuta il fine-tuning solo se il RAG non basta.",
+        "fr": "Pour la plupart des PME, le RAG (génération augmentée par récupération) - fournir vos documents au modèle au moment de la requête - apporte plus de valeur pour moins d'effort que le fine-tuning. Le fine-tuning aide pour un style fixe, un format ou des tâches de domaine restreint. Partez d'un bon modèle de base avec RAG ; n'envisagez le fine-tuning que si le RAG ne suffit pas."
       }
     }
   ],

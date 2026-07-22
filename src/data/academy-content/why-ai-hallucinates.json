@@ -14,14 +14,14 @@
   "title": {
     "de": "Warum halluziniert KI? Ursachen und Abhilfe | Weissmann AI",
     "en": "Why Does AI Hallucinate? Causes and Fixes | Weissmann AI",
-    "it": "Perche l'IA allucina? Cause e rimedi | Weissmann AI",
+    "it": "Perché l'IA allucina? Cause e rimedi | Weissmann AI",
     "fr": "Pourquoi l'IA hallucine-t-elle ? Causes | Weissmann AI"
   },
   "metaDescription": {
     "de": "Warum halluziniert KI? Der Mechanismus hinter selbstbewusst falschen Antworten, wann er auftritt und wie Sie ihn mit Grounding, RAG und Verifikation senken.",
     "en": "Why does AI hallucinate? The mechanism behind confident wrong answers, when it strikes, and how to cut it with grounding, RAG and verification.",
-    "it": "Perche l'IA allucina? Il meccanismo delle risposte sicure ma errate, quando accade e come ridurlo con grounding, RAG e verifica.",
-    "fr": "Pourquoi l'IA hallucine-t-elle ? Le mecanisme des reponses fausses mais sures, quand il survient et comment le reduire (grounding, RAG)."
+    "it": "Perché l'IA allucina? Il meccanismo delle risposte sicure ma errate, quando accade e come ridurlo con grounding, RAG e verifica.",
+    "fr": "Pourquoi l'IA hallucine-t-elle ? Le mécanisme des réponses fausses mais sûres, quand il survient et comment le réduire (grounding, RAG)."
   },
   "kicker": {
     "de": "KI-Grundlagen",
@@ -32,29 +32,29 @@
   "h1": {
     "de": "Warum halluziniert KI - und wie Sie es reduzieren",
     "en": "Why AI Hallucinates - and How to Reduce It",
-    "it": "Perche l'IA allucina - e come ridurlo",
-    "fr": "Pourquoi l'IA hallucine - et comment le reduire"
+    "it": "Perché l'IA allucina - e come ridurlo",
+    "fr": "Pourquoi l'IA hallucine - et comment le réduire"
   },
   "answerFirst": {
-    "de": "KI halluziniert, weil grosse Sprachmodelle keine Fakten nachschlagen, sondern das statistisch wahrscheinlichste nachste Wort vorhersagen. Fehlt gesichertes Wissen, erzeugen sie trotzdem eine flussige, selbstbewusste Antwort - manchmal frei erfunden. Verstarkt wird das durch Trainings- und Benchmark-Anreize, die Raten uber ein ehrliches 'Ich weiss es nicht' stellen. Reduzieren lasst sich das durch Grounding, RAG, Quellenzwang und systematische Verifikation der Ausgaben.",
+    "de": "KI halluziniert, weil grosse Sprachmodelle keine Fakten nachschlagen, sondern das statistisch wahrscheinlichste nächste Wort vorhersagen. Fehlt gesichertes Wissen, erzeugen sie trotzdem eine flüssige, selbstbewusste Antwort - manchmal frei erfunden. Verstärkt wird das durch Trainings- und Benchmark-Anreize, die Raten über ein ehrliches 'Ich weiss es nicht' stellen. Reduzieren lässt sich das durch Grounding, RAG, Quellenzwang und systematische Verifikation der Ausgaben.",
     "en": "AI hallucinates because large language models do not look facts up; they predict the statistically most likely next word. When solid knowledge is missing, they still produce a fluent, confident answer - sometimes entirely invented. The effect is amplified by training and benchmark incentives that reward guessing over an honest 'I don't know.' You can reduce it with grounding, RAG, source-only prompting and systematic verification of outputs.",
-    "it": "L'IA allucina perche i grandi modelli linguistici non consultano fatti, ma prevedono la parola successiva statisticamente piu probabile. Se manca una conoscenza solida, producono comunque una risposta fluente e sicura, a volte del tutto inventata. L'effetto e amplificato da incentivi di addestramento e benchmark che premiano il tirare a indovinare invece di un onesto 'non lo so'. Si riduce con grounding, RAG, vincolo alle fonti e verifica sistematica.",
-    "fr": "L'IA hallucine parce que les grands modeles de langage ne consultent pas des faits : ils predisent le mot suivant le plus probable statistiquement. Faute de savoir fiable, ils produisent tout de meme une reponse fluide et assuree, parfois entierement inventee. Le phenomene est amplifie par des incitations d'entrainement et de benchmark qui recompensent la devinette plutot qu'un honnete 'je ne sais pas'. On le reduit par le grounding, le RAG et la verification."
+    "it": "L'IA allucina perché i grandi modelli linguistici non consultano fatti, ma prevedono la parola successiva statisticamente più probabile. Se manca una conoscenza solida, producono comunque una risposta fluente e sicura, a volte del tutto inventata. L'effetto è amplificato da incentivi di addestramento e benchmark che premiano il tirare a indovinare invece di un onesto 'non lo so'. Si riduce con grounding, RAG, vincolo alle fonti e verifica sistematica.",
+    "fr": "L'IA hallucine parce que les grands modèles de langage ne consultent pas des faits : ils prédisent le mot suivant le plus probable statistiquement. Faute de savoir fiable, ils produisent tout de même une réponse fluide et assurée, parfois entièrement inventée. Le phénomène est amplifié par des incitations d'entraînement et de benchmark qui récompensent la devinette plutôt qu'un honnête 'je ne sais pas'. On le réduit par le grounding, le RAG et la vérification."
   },
   "sections": [
     {
       "heading": {
         "de": "Was eine KI-Halluzination genau ist",
         "en": "What an AI Hallucination Actually Is",
-        "it": "Che cos'e davvero un'allucinazione dell'IA",
-        "fr": "Ce qu'est reellement une hallucination de l'IA"
+        "it": "Che cos'è davvero un'allucinazione dell'IA",
+        "fr": "Ce qu'est réellement une hallucination de l'IA"
       },
       "paragraphs": [
         {
-          "de": "Eine Halluzination ist eine Ausgabe, die flussig, plausibel und selbstbewusst klingt, aber sachlich falsch oder frei erfunden ist. Das Modell 'lugt' dabei nicht im menschlichen Sinn - es hat keine Absicht und kein Bewusstsein dafur, dass etwas falsch ist. Der Begriff ist eine Metapher: Das System erzeugt Inhalte, die keine Entsprechung in den Trainingsdaten oder der Realitat haben.",
+          "de": "Eine Halluzination ist eine Ausgabe, die flüssig, plausibel und selbstbewusst klingt, aber sachlich falsch oder frei erfunden ist. Das Modell 'lügt' dabei nicht im menschlichen Sinn - es hat keine Absicht und kein Bewusstsein dafür, dass etwas falsch ist. Der Begriff ist eine Metapher: Das System erzeugt Inhalte, die keine Entsprechung in den Trainingsdaten oder der Realität haben.",
           "en": "A hallucination is an output that sounds fluent, plausible and confident but is factually wrong or entirely fabricated. The model is not 'lying' in the human sense - it has no intent and no awareness that something is false. The term is a metaphor: the system generates content with no counterpart in its training data or in reality.",
-          "it": "Un'allucinazione e un output fluente, plausibile e sicuro, ma di fatto errato o del tutto inventato. Il modello non 'mente' in senso umano: non ha intenzione ne consapevolezza che qualcosa sia falso. Il termine e una metafora: il sistema genera contenuti senza corrispondenza nei dati di addestramento o nella realta.",
-          "fr": "Une hallucination est une sortie fluide, plausible et assuree, mais factuellement fausse ou entierement inventee. Le modele ne 'ment' pas au sens humain : il n'a ni intention ni conscience qu'une chose soit fausse. Le terme est une metaphore : le systeme produit un contenu sans equivalent dans ses donnees d'entrainement ni dans la realite."
+          "it": "Un'allucinazione è un output fluente, plausibile e sicuro, ma di fatto errato o del tutto inventato. Il modello non 'mente' in senso umano: non ha intenzione né consapevolezza che qualcosa sia falso. Il termine è una metafora: il sistema genera contenuti senza corrispondenza nei dati di addestramento o nella realtà.",
+          "fr": "Une hallucination est une sortie fluide, plausible et assurée, mais factuellement fausse ou entièrement inventée. Le modèle ne 'ment' pas au sens humain : il n'a ni intention ni conscience qu'une chose soit fausse. Le terme est une métaphore : le système produit un contenu sans équivalent dans ses données d'entraînement ni dans la réalité."
         }
       ],
       "bullets": [
@@ -62,19 +62,19 @@
           "de": "Erfundene Fakten: Namen, Daten, Zahlen oder Ereignisse, die es nie gab.",
           "en": "Fabricated facts: names, dates, figures or events that never existed.",
           "it": "Fatti inventati: nomi, date, cifre o eventi mai esistiti.",
-          "fr": "Faits inventes : noms, dates, chiffres ou evenements inexistants."
+          "fr": "Faits inventés : noms, dates, chiffres ou événements inexistants."
         },
         {
           "de": "Falsche Quellen: nicht existierende Studien, Urteile oder URLs mit echt wirkenden Titeln.",
           "en": "False sources: non-existent studies, rulings or URLs with real-looking titles.",
           "it": "Fonti false: studi, sentenze o URL inesistenti con titoli dall'aria autentica.",
-          "fr": "Fausses sources : etudes, arrets ou URL inexistants aux titres credibles."
+          "fr": "Fausses sources : études, arrêts ou URL inexistants aux titres crédibles."
         },
         {
           "de": "Vermischung: korrekte Fragmente, die zu einer falschen Gesamtaussage kombiniert werden.",
           "en": "Conflation: correct fragments combined into a wrong overall statement.",
           "it": "Confusione: frammenti corretti combinati in un'affermazione complessiva errata.",
-          "fr": "Amalgame : fragments exacts combines en une affirmation globale fausse."
+          "fr": "Amalgame : fragments exacts combinés en une affirmation globale fausse."
         }
       ]
     },
@@ -83,20 +83,20 @@
         "de": "Der Mechanismus: Vorhersage statt Wissen",
         "en": "The Mechanism: Prediction, Not Knowledge",
         "it": "Il meccanismo: previsione, non conoscenza",
-        "fr": "Le mecanisme : prediction, pas connaissance"
+        "fr": "Le mécanisme : prédiction, pas connaissance"
       },
       "paragraphs": [
         {
-          "de": "Ein Sprachmodell speichert keine Faktendatenbank. Es lernt aus riesigen Textmengen, welches Wort auf welches folgt, und berechnet bei jeder Anfrage die wahrscheinlichste Fortsetzung - Token fur Token. Wahrheit ist dabei kein Kriterium: Das Modell optimiert Plausibilitat, nicht Korrektheit. Solange richtige und falsche Antworten gleich flussig klingen, kann es beide mit derselben Uberzeugung produzieren.",
+          "de": "Ein Sprachmodell speichert keine Faktendatenbank. Es lernt aus riesigen Textmengen, welches Wort auf welches folgt, und berechnet bei jeder Anfrage die wahrscheinlichste Fortsetzung - Token für Token. Wahrheit ist dabei kein Kriterium: Das Modell optimiert Plausibilität, nicht Korrektheit. Solange richtige und falsche Antworten gleich flüssig klingen, kann es beide mit derselben Überzeugung produzieren.",
           "en": "A language model stores no database of facts. It learns from vast amounts of text which word tends to follow which, and for each request it computes the most likely continuation - token by token. Truth is not a criterion: the model optimises for plausibility, not correctness. As long as right and wrong answers sound equally fluent, it can produce both with the same conviction.",
-          "it": "Un modello linguistico non memorizza un database di fatti. Impara da enormi quantita di testo quale parola tende a seguirne un'altra e, a ogni richiesta, calcola la continuazione piu probabile, token dopo token. La verita non e un criterio: il modello ottimizza la plausibilita, non la correttezza. Finche risposte giuste ed errate suonano ugualmente fluide, puo produrle entrambe con la stessa sicurezza.",
-          "fr": "Un modele de langage ne stocke aucune base de faits. Il apprend, sur d'immenses corpus, quel mot tend a suivre quel autre, et calcule pour chaque requete la continuation la plus probable, jeton apres jeton. La verite n'est pas un critere : le modele optimise la plausibilite, pas l'exactitude. Tant que reponses justes et fausses sonnent aussi fluides, il peut produire les deux avec la meme assurance."
+          "it": "Un modello linguistico non memorizza un database di fatti. Impara da enormi quantità di testo quale parola tende a seguirne un'altra e, a ogni richiesta, calcola la continuazione più probabile, token dopo token. La verità non è un criterio: il modello ottimizza la plausibilità, non la correttezza. Finché risposte giuste ed errate suonano ugualmente fluide, può produrle entrambe con la stessa sicurezza.",
+          "fr": "Un modèle de langage ne stocke aucune base de faits. Il apprend, sur d'immenses corpus, quel mot tend à suivre quel autre, et calcule pour chaque requête la continuation la plus probable, jeton après jeton. La vérité n'est pas un critère : le modèle optimise la plausibilité, pas l'exactitude. Tant que réponses justes et fausses sonnent aussi fluides, il peut produire les deux avec la même assurance."
         },
         {
-          "de": "Hinzu kommt: Generieren ist schwerer als Erkennen. Ein Modell kann oft beurteilen, ob eine vorgelegte Aussage stimmt, scheitert aber daran, dieselbe Information aus dem Nichts korrekt zu erzeugen. Bei seltenen Fakten mit vielen moglichen Auspragungen - einem exakten Datum, einer prazisen Zahl - ist die Wahrscheinlichkeit, den einen richtigen Wert zu treffen, entsprechend gering.",
+          "de": "Hinzu kommt: Generieren ist schwerer als Erkennen. Ein Modell kann oft beurteilen, ob eine vorgelegte Aussage stimmt, scheitert aber daran, dieselbe Information aus dem Nichts korrekt zu erzeugen. Bei seltenen Fakten mit vielen möglichen Ausprägungen - einem exakten Datum, einer präzisen Zahl - ist die Wahrscheinlichkeit, den einen richtigen Wert zu treffen, entsprechend gering.",
           "en": "On top of that, generating is harder than recognising. A model can often judge whether a given statement is true, yet fail to produce the same information correctly from scratch. For rare facts with many possible values - an exact date, a precise number - the probability of hitting the single correct value is correspondingly low.",
-          "it": "Inoltre, generare e piu difficile che riconoscere. Un modello spesso sa giudicare se un'affermazione data e vera, ma non riesce a produrre correttamente la stessa informazione da zero. Per fatti rari con molti valori possibili - una data esatta, un numero preciso - la probabilita di azzeccare l'unico valore corretto e di conseguenza bassa.",
-          "fr": "De plus, generer est plus difficile que reconnaitre. Un modele sait souvent juger si une affirmation donnee est vraie, mais echoue a produire correctement la meme information a partir de rien. Pour des faits rares aux nombreuses valeurs possibles - une date exacte, un nombre precis - la probabilite d'atteindre l'unique valeur correcte est d'autant plus faible."
+          "it": "Inoltre, generare è più difficile che riconoscere. Un modello spesso sa giudicare se un'affermazione data è vera, ma non riesce a produrre correttamente la stessa informazione da zero. Per fatti rari con molti valori possibili - una data esatta, un numero preciso - la probabilità di azzeccare l'unico valore corretto è di conseguenza bassa.",
+          "fr": "De plus, générer est plus difficile que reconnaître. Un modèle sait souvent juger si une affirmation donnée est vraie, mais échoue à produire correctement la même information à partir de rien. Pour des faits rares aux nombreuses valeurs possibles - une date exacte, un nombre précis - la probabilité d'atteindre l'unique valeur correcte est d'autant plus faible."
         }
       ]
     },
@@ -104,21 +104,21 @@
       "heading": {
         "de": "Warum Training und Bewertung das Raten belohnen",
         "en": "Why Training and Evaluation Reward Guessing",
-        "it": "Perche addestramento e valutazione premiano il tirare a indovinare",
-        "fr": "Pourquoi l'entrainement et l'evaluation recompensent la devinette"
+        "it": "Perché addestramento e valutazione premiano il tirare a indovinare",
+        "fr": "Pourquoi l'entraînement et l'évaluation récompensent la devinette"
       },
       "paragraphs": [
         {
-          "de": "Halluzinationen sind nicht nur ein technischer Zufall, sondern teils anerzogen. Eine viel beachtete Analyse von OpenAI-Forschenden (Kalai, Nachum, Vempala, Zhang, September 2025) argumentiert, dass gangige Benchmarks Modelle wie Prufungskandidaten behandeln: Eine geratene Antwort kann Punkte bringen, ein ehrliches 'Ich weiss es nicht' bringt sicher null. Unter solchen Anreizen lohnt sich Raten - und genau das trainieren wir den Modellen an.",
+          "de": "Halluzinationen sind nicht nur ein technischer Zufall, sondern teils anerzogen. Eine viel beachtete Analyse von OpenAI-Forschenden (Kalai, Nachum, Vempala, Zhang, September 2025) argumentiert, dass gängige Benchmarks Modelle wie Prüfungskandidaten behandeln: Eine geratene Antwort kann Punkte bringen, ein ehrliches 'Ich weiss es nicht' bringt sicher null. Unter solchen Anreizen lohnt sich Raten - und genau das trainieren wir den Modellen an.",
           "en": "Hallucinations are not purely a technical accident; they are partly taught. A widely noted analysis by OpenAI researchers (Kalai, Nachum, Vempala, Zhang, September 2025) argues that common benchmarks treat models like exam candidates: a guessed answer may score points, whereas an honest 'I don't know' scores a guaranteed zero. Under such incentives guessing pays off - and that is exactly what we train models to do.",
-          "it": "Le allucinazioni non sono solo un incidente tecnico: in parte sono indotte. Un'analisi molto discussa di ricercatori di OpenAI (Kalai, Nachum, Vempala, Zhang, settembre 2025) sostiene che i benchmark comuni trattano i modelli come candidati a un esame: una risposta tirata a indovinare puo fare punti, mentre un onesto 'non lo so' vale zero sicuro. Con questi incentivi indovinare conviene - ed e proprio cio che insegniamo ai modelli.",
-          "fr": "Les hallucinations ne sont pas un pur accident technique : elles sont en partie apprises. Une analyse tres remarquee de chercheurs d'OpenAI (Kalai, Nachum, Vempala, Zhang, septembre 2025) soutient que les benchmarks courants traitent les modeles comme des candidats a un examen : une reponse devinee peut rapporter des points, alors qu'un honnete 'je ne sais pas' vaut zero a coup sur. Sous de telles incitations, deviner est payant - et c'est precisement ce que nous apprenons aux modeles."
+          "it": "Le allucinazioni non sono solo un incidente tecnico: in parte sono indotte. Un'analisi molto discussa di ricercatori di OpenAI (Kalai, Nachum, Vempala, Zhang, settembre 2025) sostiene che i benchmark comuni trattano i modelli come candidati a un esame: una risposta tirata a indovinare può fare punti, mentre un onesto 'non lo so' vale zero sicuro. Con questi incentivi indovinare conviene - ed è proprio ciò che insegniamo ai modelli.",
+          "fr": "Les hallucinations ne sont pas un pur accident technique : elles sont en partie apprises. Une analyse très remarquée de chercheurs d'OpenAI (Kalai, Nachum, Vempala, Zhang, septembre 2025) soutient que les benchmarks courants traitent les modèles comme des candidats à un examen : une réponse devinée peut rapporter des points, alors qu'un honnête 'je ne sais pas' vaut zéro à coup sûr. Sous de telles incitations, deviner est payant - et c'est précisément ce que nous apprenons aux modèles."
         },
         {
-          "de": "Die praktische Konsequenz: Solange Ranglisten Zuversicht belohnen und Zuruckhaltung bestrafen, bleiben selbstbewusste Fehler ein systematisches Nebenprodukt. Ein Teil der Losung ist deshalb kein neues Modell, sondern eine bessere Bewertung, die kalibrierte Unsicherheit und Enthaltung wieder wertschatzt.",
+          "de": "Die praktische Konsequenz: Solange Ranglisten Zuversicht belohnen und Zurückhaltung bestrafen, bleiben selbstbewusste Fehler ein systematisches Nebenprodukt. Ein Teil der Lösung ist deshalb kein neues Modell, sondern eine bessere Bewertung, die kalibrierte Unsicherheit und Enthaltung wieder wertschätzt.",
           "en": "The practical upshot: as long as leaderboards reward confidence and penalise restraint, confident errors remain a systematic by-product. Part of the fix is therefore not a new model but better evaluation that once again values calibrated uncertainty and abstention.",
-          "it": "La conseguenza pratica: finche le classifiche premiano la sicurezza e penalizzano la prudenza, gli errori sicuri restano un sottoprodotto sistematico. Parte della soluzione, quindi, non e un nuovo modello ma una valutazione migliore che torni a valorizzare l'incertezza calibrata e l'astensione.",
-          "fr": "Consequence pratique : tant que les classements recompensent l'assurance et penalisent la retenue, les erreurs assurees restent un sous-produit systematique. Une partie de la solution n'est donc pas un nouveau modele mais une meilleure evaluation qui revalorise l'incertitude calibree et l'abstention."
+          "it": "La conseguenza pratica: finché le classifiche premiano la sicurezza e penalizzano la prudenza, gli errori sicuri restano un sottoprodotto sistematico. Parte della soluzione, quindi, non è un nuovo modello ma una valutazione migliore che torni a valorizzare l'incertezza calibrata e l'astensione.",
+          "fr": "Conséquence pratique : tant que les classements récompensent l'assurance et pénalisent la retenue, les erreurs assurées restent un sous-produit systématique. Une partie de la solution n'est donc pas un nouveau modèle mais une meilleure évaluation qui revalorise l'incertitude calibrée et l'abstention."
         }
       ]
     },
@@ -126,45 +126,45 @@
       "heading": {
         "de": "Wann Halluzinationen besonders wahrscheinlich sind",
         "en": "When Hallucinations Are Especially Likely",
-        "it": "Quando le allucinazioni sono piu probabili",
+        "it": "Quando le allucinazioni sono più probabili",
         "fr": "Quand les hallucinations sont les plus probables"
       },
       "bullets": [
         {
-          "de": "Seltenes Nischenwissen: Fakten, die in den Trainingsdaten kaum vorkamen (Long-Tail-Entitaten, lokale Details).",
+          "de": "Seltenes Nischenwissen: Fakten, die in den Trainingsdaten kaum vorkamen (Long-Tail-Entitäten, lokale Details).",
           "en": "Rare niche knowledge: facts that barely appeared in the training data (long-tail entities, local details).",
-          "it": "Conoscenza di nicchia rara: fatti quasi assenti nei dati di addestramento (entita a coda lunga, dettagli locali).",
-          "fr": "Savoir de niche rare : faits quasi absents des donnees d'entrainement (entites de longue traine, details locaux)."
+          "it": "Conoscenza di nicchia rara: fatti quasi assenti nei dati di addestramento (entità a coda lunga, dettagli locali).",
+          "fr": "Savoir de niche rare : faits quasi absents des données d'entraînement (entités de longue traîne, détails locaux)."
         },
         {
-          "de": "Prazise Angaben: exakte Zahlen, Zitate, Rechtsnormen, DOIs oder Quellenangaben.",
+          "de": "Präzise Angaben: exakte Zahlen, Zitate, Rechtsnormen, DOIs oder Quellenangaben.",
           "en": "Precise details: exact numbers, quotations, legal provisions, DOIs or citations.",
           "it": "Dettagli precisi: numeri esatti, citazioni, norme giuridiche, DOI o riferimenti bibliografici.",
-          "fr": "Details precis : nombres exacts, citations, dispositions legales, DOI ou references."
+          "fr": "Détails précis : nombres exacts, citations, dispositions légales, DOI ou références."
         },
         {
-          "de": "Aktualitat: Ereignisse nach dem Wissensstichtag des Modells ohne Anbindung an aktuelle Quellen.",
+          "de": "Aktualität: Ereignisse nach dem Wissensstichtag des Modells ohne Anbindung an aktuelle Quellen.",
           "en": "Recency: events after the model's knowledge cut-off with no connection to live sources.",
-          "it": "Attualita: eventi successivi alla data di taglio delle conoscenze del modello, senza collegamento a fonti aggiornate.",
-          "fr": "Actualite : evenements posterieurs a la date de coupure du modele, sans lien vers des sources a jour."
+          "it": "Attualità: eventi successivi alla data di taglio delle conoscenze del modello, senza collegamento a fonti aggiornate.",
+          "fr": "Actualité : événements postérieurs à la date de coupure du modèle, sans lien vers des sources à jour."
         },
         {
-          "de": "Mehrdeutige oder suggestive Prompts, die eine falsche Pramisse als gegeben voraussetzen.",
+          "de": "Mehrdeutige oder suggestive Prompts, die eine falsche Prämisse als gegeben voraussetzen.",
           "en": "Ambiguous or leading prompts that take a false premise for granted.",
           "it": "Prompt ambigui o suggestivi che danno per scontata una premessa falsa.",
-          "fr": "Invites ambigues ou orientees tenant pour acquise une premisse fausse."
+          "fr": "Invites ambigues ou orientées tenant pour acquise une prémisse fausse."
         },
         {
-          "de": "Lange Ketten von Schlussfolgerungen, bei denen sich fruhe Fehler fortpflanzen.",
+          "de": "Lange Ketten von Schlussfolgerungen, bei denen sich frühe Fehler fortpflanzen.",
           "en": "Long chains of reasoning in which early errors propagate.",
           "it": "Lunghe catene di ragionamento in cui gli errori iniziali si propagano.",
-          "fr": "Longues chaines de raisonnement ou les erreurs initiales se propagent."
+          "fr": "Longues chaînes de raisonnement où les erreurs initiales se propagent."
         },
         {
-          "de": "Hohe 'Temperatur': kreativere, zufalligere Ausgaben erhohen das Risiko gegenuber faktischen Aufgaben.",
+          "de": "Hohe 'Temperatur': kreativere, zufälligere Ausgaben erhöhen das Risiko gegenüber faktischen Aufgaben.",
           "en": "High 'temperature': more creative, more random outputs raise the risk on factual tasks.",
-          "it": "'Temperatura' alta: output piu creativi e casuali aumentano il rischio nei compiti fattuali.",
-          "fr": "'Temperature' elevee : des sorties plus creatives et aleatoires accroissent le risque sur les taches factuelles."
+          "it": "'Temperatura' alta: output più creativi e casuali aumentano il rischio nei compiti fattuali.",
+          "fr": "'Température' élevée : des sorties plus créatives et aléatoires accroissent le risque sur les tâches factuelles."
         }
       ]
     },
@@ -173,14 +173,14 @@
         "de": "Halluzinationen reduzieren: Grounding, RAG, Verifikation",
         "en": "Reducing Hallucinations: Grounding, RAG, Verification",
         "it": "Ridurre le allucinazioni: grounding, RAG, verifica",
-        "fr": "Reduire les hallucinations : grounding, RAG, verification"
+        "fr": "Réduire les hallucinations : grounding, RAG, vérification"
       },
       "paragraphs": [
         {
-          "de": "Es gibt kein Modell, das nie halluziniert - aber ein geschichteter Ansatz senkt das Risiko drastisch. Jede Massnahme adressiert eine andere Fehlerklasse; kombiniert wirken sie am besten. Beginnen Sie mit Grounding und Enthaltung, die den grossten Teil der Fehler mit geringem Aufwand entfernen, und erganzen Sie Verifikation dort, wo eine falsche Antwort teuer ist.",
+          "de": "Es gibt kein Modell, das nie halluziniert - aber ein geschichteter Ansatz senkt das Risiko drastisch. Jede Massnahme adressiert eine andere Fehlerklasse; kombiniert wirken sie am besten. Beginnen Sie mit Grounding und Enthaltung, die den grössten Teil der Fehler mit geringem Aufwand entfernen, und ergänzen Sie Verifikation dort, wo eine falsche Antwort teuer ist.",
           "en": "No model never hallucinates - but a layered approach cuts the risk sharply. Each measure addresses a different class of error; combined, they work best. Start with grounding and abstention, which remove the largest share of errors for the least effort, and add verification where a wrong answer is expensive.",
           "it": "Non esiste un modello che non allucini mai, ma un approccio a livelli riduce nettamente il rischio. Ogni misura affronta una classe di errore diversa; combinate funzionano meglio. Iniziate con grounding e astensione, che eliminano la quota maggiore di errori con il minimo sforzo, e aggiungete la verifica dove una risposta errata costa cara.",
-          "fr": "Aucun modele n'hallucine jamais, mais une approche par couches reduit fortement le risque. Chaque mesure traite une classe d'erreur differente ; combinees, elles sont les plus efficaces. Commencez par le grounding et l'abstention, qui suppriment la plus grande part des erreurs a moindre effort, et ajoutez la verification la ou une reponse fausse coute cher."
+          "fr": "Aucun modèle n'hallucine jamais, mais une approche par couches réduit fortement le risque. Chaque mesure traite une classe d'erreur différente ; combinées, elles sont les plus efficaces. Commencez par le grounding et l'abstention, qui suppriment la plus grande part des erreurs à moindre effort, et ajoutez la vérification là où une réponse fausse coûte cher."
         }
       ],
       "bullets": [
@@ -188,37 +188,37 @@
           "de": "Grounding / RAG: Relevante Dokumente in den Kontext holen und das Modell anweisen, ausschliesslich daraus zu antworten und Quellen zu zitieren.",
           "en": "Grounding / RAG: pull relevant documents into the context and instruct the model to answer only from them and cite sources.",
           "it": "Grounding / RAG: portare i documenti pertinenti nel contesto e istruire il modello a rispondere solo da essi e a citare le fonti.",
-          "fr": "Grounding / RAG : injecter les documents pertinents dans le contexte et demander au modele de repondre uniquement a partir d'eux, avec citation des sources."
+          "fr": "Grounding / RAG : injecter les documents pertinents dans le contexte et demander au modèle de répondre uniquement à partir d'eux, avec citation des sources."
         },
         {
           "de": "Enthaltung erlauben: explizit gestatten, 'Ich weiss es nicht' zu sagen, statt eine Antwort zu erzwingen.",
           "en": "Allow abstention: explicitly permit 'I don't know' instead of forcing an answer.",
           "it": "Consentire l'astensione: permettere esplicitamente 'non lo so' invece di forzare una risposta.",
-          "fr": "Autoriser l'abstention : permettre explicitement 'je ne sais pas' au lieu de forcer une reponse."
+          "fr": "Autoriser l'abstention : permettre explicitement 'je ne sais pas' au lieu de forcer une réponse."
         },
         {
-          "de": "Verifikation: kritische Ausgaben gegen Quellen prufen - per zweitem Modell, Chain-of-Verification oder menschlicher Kontrolle.",
+          "de": "Verifikation: kritische Ausgaben gegen Quellen prüfen - per zweitem Modell, Chain-of-Verification oder menschlicher Kontrolle.",
           "en": "Verification: check critical outputs against sources - via a second model, chain-of-verification or human review.",
           "it": "Verifica: controllare gli output critici rispetto alle fonti - con un secondo modello, chain-of-verification o revisione umana.",
-          "fr": "Verification : confronter les sorties critiques aux sources - via un second modele, chain-of-verification ou revue humaine."
+          "fr": "Vérification : confronter les sorties critiques aux sources - via un second modèle, chain-of-verification ou revue humaine."
         },
         {
           "de": "Constrained Output: strukturierte Formate, Auswahllisten oder Schemata, die freies Erfinden erschweren.",
           "en": "Constrained output: structured formats, pick-lists or schemas that make free invention harder.",
-          "it": "Output vincolato: formati strutturati, elenchi predefiniti o schemi che rendono piu difficile l'invenzione libera.",
-          "fr": "Sortie contrainte : formats structures, listes fermees ou schemas qui compliquent l'invention libre."
+          "it": "Output vincolato: formati strutturati, elenchi predefiniti o schemi che rendono più difficile l'invenzione libera.",
+          "fr": "Sortie contrainte : formats structurés, listes fermées ou schémas qui compliquent l'invention libre."
         },
         {
-          "de": "Niedrigere Temperatur und praziser Prompt fur faktische Aufgaben; klare Rolle, Kontext und Format vorgeben.",
+          "de": "Niedrigere Temperatur und präziser Prompt für faktische Aufgaben; klare Rolle, Kontext und Format vorgeben.",
           "en": "Lower temperature and precise prompting for factual tasks; give a clear role, context and format.",
-          "it": "Temperatura piu bassa e prompt preciso per compiti fattuali; definire ruolo, contesto e formato chiari.",
-          "fr": "Temperature plus basse et invite precise pour les taches factuelles ; donner role, contexte et format clairs."
+          "it": "Temperatura più bassa e prompt preciso per compiti fattuali; definire ruolo, contesto e formato chiari.",
+          "fr": "Température plus basse et invite précise pour les tâches factuelles ; donner rôle, contexte et format clairs."
         },
         {
-          "de": "Datenqualitat: die Wissensbasis kuratieren, aktuell halten und thematisch ordnen - schlechte Quellen erzeugen schlechte Antworten.",
+          "de": "Datenqualität: die Wissensbasis kuratieren, aktuell halten und thematisch ordnen - schlechte Quellen erzeugen schlechte Antworten.",
           "en": "Data quality: curate, update and organise the knowledge base by topic - poor sources produce poor answers.",
-          "it": "Qualita dei dati: curare, aggiornare e organizzare per argomento la base di conoscenza - fonti scadenti generano risposte scadenti.",
-          "fr": "Qualite des donnees : curer, mettre a jour et organiser la base de connaissances par theme - de mauvaises sources donnent de mauvaises reponses."
+          "it": "Qualità dei dati: curare, aggiornare e organizzare per argomento la base di conoscenza - fonti scadenti generano risposte scadenti.",
+          "fr": "Qualité des données : curer, mettre à jour et organiser la base de connaissances par thème - de mauvaises sources donnent de mauvaises réponses."
         }
       ]
     },
@@ -227,20 +227,20 @@
         "de": "Der Schweizer Blick: KI in regulierten Kontexten",
         "en": "The Swiss Angle: AI in Regulated Contexts",
         "it": "La prospettiva svizzera: IA in contesti regolati",
-        "fr": "L'angle suisse : l'IA en contextes reglementes"
+        "fr": "L'angle suisse : l'IA en contextes réglementés"
       },
       "paragraphs": [
         {
-          "de": "In der Schweiz und im DACH-Raum werden KI-Ausgaben zunehmend in sensiblen Bereichen genutzt - Recht, Gesundheit, Finanzen, Verwaltung. Hier ist eine Halluzination kein Schonheitsfehler, sondern ein Haftungs- und Compliance-Risiko. Wer Personendaten verarbeitet, bleibt nach dem revidierten Datenschutzgesetz (revDSG) verantwortlich; der EDOEB erwartet nachvollziehbare, korrekte Prozesse. Eine erfundene Rechtsnorm oder Diagnose ist im Zweifel nicht der Fehler der KI, sondern der Organisation, die sie ungeprüft ubernimmt.",
+          "de": "In der Schweiz und im DACH-Raum werden KI-Ausgaben zunehmend in sensiblen Bereichen genutzt - Recht, Gesundheit, Finanzen, Verwaltung. Hier ist eine Halluzination kein Schönheitsfehler, sondern ein Haftungs- und Compliance-Risiko. Wer Personendaten verarbeitet, bleibt nach dem revidierten Datenschutzgesetz (revDSG) verantwortlich; der EDÖB erwartet nachvollziehbare, korrekte Prozesse. Eine erfundene Rechtsnorm oder Diagnose ist im Zweifel nicht der Fehler der KI, sondern der Organisation, die sie ungeprüft übernimmt.",
           "en": "In Switzerland and the wider DACH region, AI outputs are increasingly used in sensitive domains - law, health, finance, public administration. Here a hallucination is not a cosmetic flaw but a liability and compliance risk. Anyone processing personal data remains accountable under the revised Data Protection Act (revDSG); the FDPIC expects traceable, accurate processes. An invented legal provision or diagnosis is, in case of doubt, not the AI's fault but that of the organisation that adopts it unchecked.",
-          "it": "In Svizzera e nell'area DACH gli output dell'IA sono sempre piu usati in ambiti sensibili - diritto, sanita, finanza, pubblica amministrazione. Qui un'allucinazione non e un difetto estetico ma un rischio di responsabilita e conformita. Chi tratta dati personali resta responsabile ai sensi della legge sulla protezione dei dati riveduta (revDSG); l'IFPDT si attende processi tracciabili e corretti. Una norma o una diagnosi inventata, nel dubbio, non e colpa dell'IA ma dell'organizzazione che la adotta senza verifica.",
-          "fr": "En Suisse et dans l'espace DACH, les sorties de l'IA servent de plus en plus dans des domaines sensibles - droit, sante, finance, administration. Une hallucination n'y est pas un defaut cosmetique mais un risque de responsabilite et de conformite. Quiconque traite des donnees personnelles reste responsable au titre de la loi revisee sur la protection des donnees (nLPD / revDSG) ; le PFPDT attend des processus tracables et exacts. Une disposition legale ou un diagnostic invente n'est, en cas de doute, pas la faute de l'IA mais de l'organisation qui l'adopte sans controle."
+          "it": "In Svizzera e nell'area DACH gli output dell'IA sono sempre più usati in ambiti sensibili - diritto, sanità, finanza, pubblica amministrazione. Qui un'allucinazione non è un difetto estetico ma un rischio di responsabilità e conformità. Chi tratta dati personali resta responsabile ai sensi della legge sulla protezione dei dati riveduta (revDSG); l'IFPDT si attende processi tracciabili e corretti. Una norma o una diagnosi inventata, nel dubbio, non è colpa dell'IA ma dell'organizzazione che la adotta senza verifica.",
+          "fr": "En Suisse et dans l'espace DACH, les sorties de l'IA servent de plus en plus dans des domaines sensibles - droit, santé, finance, administration. Une hallucination n'y est pas un défaut cosmétique mais un risque de responsabilité et de conformité. Quiconque traite des données personnelles reste responsable au titre de la loi révisée sur la protection des données (nLPD / revDSG) ; le PFPDT attend des processus traçables et exacts. Une disposition légale ou un diagnostic inventé n'est, en cas de doute, pas la faute de l'IA mais de l'organisation qui l'adopte sans contrôle."
         },
         {
-          "de": "Praktische Konsequenz: KI-Ausgaben in regulierten Prozessen immer mit menschlicher Freigabe (Human-in-the-Loop), dokumentierten Quellen und klaren Zustandigkeiten koppeln. Behandeln Sie das Modell als schnellen, aber unzuverlassigen Assistenten - nicht als Quelle der Wahrheit.",
+          "de": "Praktische Konsequenz: KI-Ausgaben in regulierten Prozessen immer mit menschlicher Freigabe (Human-in-the-Loop), dokumentierten Quellen und klaren Zuständigkeiten koppeln. Behandeln Sie das Modell als schnellen, aber unzuverlässigen Assistenten - nicht als Quelle der Wahrheit.",
           "en": "Practical upshot: in regulated processes, always pair AI outputs with human sign-off (human-in-the-loop), documented sources and clear responsibilities. Treat the model as a fast but unreliable assistant - not as a source of truth.",
-          "it": "Conseguenza pratica: nei processi regolati, abbinare sempre gli output dell'IA a un'approvazione umana (human-in-the-loop), fonti documentate e responsabilita chiare. Trattare il modello come un assistente veloce ma inaffidabile, non come fonte di verita.",
-          "fr": "Consequence pratique : dans les processus reglementes, associez toujours les sorties de l'IA a une validation humaine (human-in-the-loop), des sources documentees et des responsabilites claires. Traitez le modele comme un assistant rapide mais peu fiable, non comme une source de verite."
+          "it": "Conseguenza pratica: nei processi regolati, abbinare sempre gli output dell'IA a un'approvazione umana (human-in-the-loop), fonti documentate e responsabilità chiare. Trattare il modello come un assistente veloce ma inaffidabile, non come fonte di verità.",
+          "fr": "Conséquence pratique : dans les processus réglementés, associez toujours les sorties de l'IA à une validation humaine (human-in-the-loop), des sources documentées et des responsabilités claires. Traitez le modèle comme un assistant rapide mais peu fiable, non comme une source de vérité."
         }
       ]
     }
@@ -248,30 +248,30 @@
   "faq": [
     {
       "q": {
-        "de": "Kann man Halluzinationen vollstandig verhindern?",
+        "de": "Kann man Halluzinationen vollständig verhindern?",
         "en": "Can hallucinations be prevented entirely?",
         "it": "Si possono eliminare del tutto le allucinazioni?",
-        "fr": "Peut-on empecher totalement les hallucinations ?"
+        "fr": "Peut-on empêcher totalement les hallucinations ?"
       },
       "a": {
-        "de": "Nein. Weil das Erzeugen von Text auf Wahrscheinlichkeiten beruht, lasst sich das Risiko nicht auf null senken. Mit Grounding, RAG, erlaubter Enthaltung und Verifikation lasst es sich aber stark reduzieren und in kritischen Fallen abfangen.",
+        "de": "Nein. Weil das Erzeugen von Text auf Wahrscheinlichkeiten beruht, lässt sich das Risiko nicht auf null senken. Mit Grounding, RAG, erlaubter Enthaltung und Verifikation lässt es sich aber stark reduzieren und in kritischen Fällen abfangen.",
         "en": "No. Because text generation is probability-based, the risk cannot be reduced to zero. With grounding, RAG, permitted abstention and verification, however, it can be cut sharply and caught in critical cases.",
-        "it": "No. Poiche la generazione di testo si basa su probabilita, il rischio non si azzera. Con grounding, RAG, astensione consentita e verifica, tuttavia, si riduce fortemente e si intercetta nei casi critici.",
-        "fr": "Non. La generation de texte reposant sur des probabilites, le risque ne peut tomber a zero. Avec le grounding, le RAG, l'abstention autorisee et la verification, il se reduit fortement et se rattrape dans les cas critiques."
+        "it": "No. Poiché la generazione di testo si basa su probabilità, il rischio non si azzera. Con grounding, RAG, astensione consentita e verifica, tuttavia, si riduce fortemente e si intercetta nei casi critici.",
+        "fr": "Non. La génération de texte reposant sur des probabilités, le risque ne peut tomber à zéro. Avec le grounding, le RAG, l'abstention autorisée et la vérification, il se réduit fortement et se rattrape dans les cas critiques."
       }
     },
     {
       "q": {
         "de": "Bedeutet eine selbstbewusste Antwort, dass sie stimmt?",
         "en": "Does a confident answer mean it is correct?",
-        "it": "Una risposta sicura significa che e corretta?",
-        "fr": "Une reponse assuree signifie-t-elle qu'elle est correcte ?"
+        "it": "Una risposta sicura significa che è corretta?",
+        "fr": "Une réponse assurée signifie-t-elle qu'elle est correcte ?"
       },
       "a": {
-        "de": "Nein. Zuversicht und Korrektheit sind entkoppelt. Das Modell formuliert richtige und falsche Aussagen gleich flussig; der selbstbewusste Ton ist kein Wahrheitssignal. Prufen Sie faktische Aussagen immer an einer verlasslichen Quelle.",
+        "de": "Nein. Zuversicht und Korrektheit sind entkoppelt. Das Modell formuliert richtige und falsche Aussagen gleich flüssig; der selbstbewusste Ton ist kein Wahrheitssignal. Prüfen Sie faktische Aussagen immer an einer verlässlichen Quelle.",
         "en": "No. Confidence and correctness are decoupled. The model phrases right and wrong statements equally fluently; a confident tone is no signal of truth. Always check factual claims against a reliable source.",
-        "it": "No. Sicurezza e correttezza sono scollegate. Il modello formula affermazioni giuste ed errate con la stessa fluidita; il tono sicuro non e segnale di verita. Verificate sempre le affermazioni fattuali su una fonte affidabile.",
-        "fr": "Non. Assurance et exactitude sont decouplees. Le modele formule aussi fluidement le vrai et le faux ; un ton assure n'est pas un signe de verite. Verifiez toujours les affirmations factuelles a une source fiable."
+        "it": "No. Sicurezza e correttezza sono scollegate. Il modello formula affermazioni giuste ed errate con la stessa fluidità; il tono sicuro non è segnale di verità. Verificate sempre le affermazioni fattuali su una fonte affidabile.",
+        "fr": "Non. Assurance et exactitude sont découplées. Le modèle formule aussi fluidement le vrai et le faux ; un ton assuré n'est pas un signe de vérité. Vérifiez toujours les affirmations factuelles à une source fiable."
       }
     },
     {
@@ -279,55 +279,55 @@
         "de": "Hilft RAG (Retrieval-Augmented Generation) wirklich?",
         "en": "Does RAG (retrieval-augmented generation) really help?",
         "it": "Il RAG (retrieval-augmented generation) aiuta davvero?",
-        "fr": "Le RAG (generation augmentee par recuperation) aide-t-il vraiment ?"
+        "fr": "Le RAG (génération augmentée par récupération) aide-t-il vraiment ?"
       },
       "a": {
         "de": "Ja, gegen wissensbasierte Fehler ist es die wirksamste Einzelmassnahme, weil es echte Quellen in den Kontext bringt. Aber es garantiert nichts: Das Modell kann Quellen falsch lesen oder abschweifen. Kombinieren Sie RAG mit Quellenzwang, engem Kontext und Verifikation.",
         "en": "Yes - against knowledge-based errors it is the single most effective measure, because it brings real sources into the context. But it guarantees nothing: the model can misread sources or stray. Combine RAG with source-only prompting, a tight context and verification.",
-        "it": "Si: contro gli errori basati sulla conoscenza e la singola misura piu efficace, perche porta fonti reali nel contesto. Ma non garantisce nulla: il modello puo leggere male le fonti o divagare. Combinate il RAG con vincolo alle fonti, contesto ristretto e verifica.",
-        "fr": "Oui : contre les erreurs de connaissance, c'est la mesure unique la plus efficace, car elle amene de vraies sources dans le contexte. Mais elle ne garantit rien : le modele peut mal lire les sources ou devier. Associez le RAG au cantonnement aux sources, a un contexte restreint et a la verification."
+        "it": "Sì: contro gli errori basati sulla conoscenza è la singola misura più efficace, perché porta fonti reali nel contesto. Ma non garantisce nulla: il modello può leggere male le fonti o divagare. Combinate il RAG con vincolo alle fonti, contesto ristretto e verifica.",
+        "fr": "Oui : contre les erreurs de connaissance, c'est la mesure unique la plus efficace, car elle amène de vraies sources dans le contexte. Mais elle ne garantit rien : le modèle peut mal lire les sources ou dévier. Associez le RAG au cantonnement aux sources, à un contexte restreint et à la vérification."
       }
     },
     {
       "q": {
         "de": "Warum erfindet KI ganze Quellen und Studien?",
         "en": "Why does AI invent whole sources and studies?",
-        "it": "Perche l'IA inventa intere fonti e studi?",
-        "fr": "Pourquoi l'IA invente-t-elle des sources et des etudes entieres ?"
+        "it": "Perché l'IA inventa intere fonti e studi?",
+        "fr": "Pourquoi l'IA invente-t-elle des sources et des études entières ?"
       },
       "a": {
-        "de": "Weil sie das Muster einer Quellenangabe gelernt hat, nicht deren realen Inhalt. Fehlt eine echte Referenz, fullt sie die Lucke mit einem plausibel klingenden Titel, Autor und Jahr - formal korrekt, aber ohne Entsprechung in der Realitat. Zitate immer verifizieren.",
+        "de": "Weil sie das Muster einer Quellenangabe gelernt hat, nicht deren realen Inhalt. Fehlt eine echte Referenz, füllt sie die Lücke mit einem plausibel klingenden Titel, Autor und Jahr - formal korrekt, aber ohne Entsprechung in der Realität. Zitate immer verifizieren.",
         "en": "Because it has learned the pattern of a citation, not its real content. Lacking a genuine reference, it fills the gap with a plausible-sounding title, author and year - formally correct, but with no counterpart in reality. Always verify citations.",
-        "it": "Perche ha imparato lo schema di una citazione, non il suo contenuto reale. In assenza di un riferimento autentico, riempie il vuoto con titolo, autore e anno dall'aria plausibile - formalmente corretti, ma senza corrispondenza nella realta. Verificate sempre le citazioni.",
-        "fr": "Parce qu'elle a appris la forme d'une reference, non son contenu reel. Faute de reference authentique, elle comble le vide par un titre, un auteur et une annee credibles - formellement corrects, mais sans equivalent reel. Verifiez toujours les citations."
+        "it": "Perché ha imparato lo schema di una citazione, non il suo contenuto reale. In assenza di un riferimento autentico, riempie il vuoto con titolo, autore e anno dall'aria plausibile - formalmente corretti, ma senza corrispondenza nella realtà. Verificate sempre le citazioni.",
+        "fr": "Parce qu'elle a appris la forme d'une référence, non son contenu réel. Faute de référence authentique, elle comble le vide par un titre, un auteur et une année crédibles - formellement corrects, mais sans équivalent réel. Vérifiez toujours les citations."
       }
     },
     {
       "q": {
-        "de": "Sind neuere oder grossere Modelle immun?",
+        "de": "Sind neuere oder grössere Modelle immun?",
         "en": "Are newer or larger models immune?",
-        "it": "I modelli piu recenti o piu grandi sono immuni?",
-        "fr": "Les modeles plus recents ou plus grands sont-ils immunises ?"
+        "it": "I modelli più recenti o più grandi sono immuni?",
+        "fr": "Les modèles plus récents ou plus grands sont-ils immunisés ?"
       },
       "a": {
-        "de": "Nein. Grossere Modelle halluzinieren bei Allgemeinwissen seltener, aber das Grundproblem bleibt, weil es im Vorhersageprinzip und in den Bewertungsanreizen liegt. Verlassen Sie sich auf Prozesse (Grounding, Verifikation), nicht allein auf die Modellgrosse.",
+        "de": "Nein. Grössere Modelle halluzinieren bei Allgemeinwissen seltener, aber das Grundproblem bleibt, weil es im Vorhersageprinzip und in den Bewertungsanreizen liegt. Verlassen Sie sich auf Prozesse (Grounding, Verifikation), nicht allein auf die Modellgrösse.",
         "en": "No. Larger models hallucinate less on general knowledge, but the core problem remains because it lies in the prediction principle and in evaluation incentives. Rely on processes (grounding, verification), not on model size alone.",
-        "it": "No. I modelli piu grandi allucinano meno sulle conoscenze generali, ma il problema di fondo resta, perche risiede nel principio di previsione e negli incentivi di valutazione. Affidatevi ai processi (grounding, verifica), non solo alla dimensione del modello.",
-        "fr": "Non. Les grands modeles hallucinent moins sur le savoir general, mais le probleme de fond demeure car il tient au principe de prediction et aux incitations d'evaluation. Fiez-vous aux processus (grounding, verification), pas a la seule taille du modele."
+        "it": "No. I modelli più grandi allucinano meno sulle conoscenze generali, ma il problema di fondo resta, perché risiede nel principio di previsione e negli incentivi di valutazione. Affidatevi ai processi (grounding, verifica), non solo alla dimensione del modello.",
+        "fr": "Non. Les grands modèles hallucinent moins sur le savoir général, mais le problème de fond demeure car il tient au principe de prédiction et aux incitations d'évaluation. Fiez-vous aux processus (grounding, vérification), pas à la seule taille du modèle."
       }
     },
     {
       "q": {
         "de": "Was ist der schnellste Schutz im Arbeitsalltag?",
         "en": "What is the fastest safeguard in daily work?",
-        "it": "Qual e la protezione piu rapida nel lavoro quotidiano?",
+        "it": "Qual è la protezione più rapida nel lavoro quotidiano?",
         "fr": "Quelle est la protection la plus rapide au quotidien ?"
       },
       "a": {
-        "de": "Zwei Reflexe: die KI um Quellen bitten und diese selbst prufen, und explizit erlauben, 'Ich weiss es nicht' zu sagen. Fur alles, was Konsequenzen hat, gilt Human-in-the-Loop - eine Person gibt frei, bevor die Ausgabe verwendet wird.",
+        "de": "Zwei Reflexe: die KI um Quellen bitten und diese selbst prüfen, und explizit erlauben, 'Ich weiss es nicht' zu sagen. Für alles, was Konsequenzen hat, gilt Human-in-the-Loop - eine Person gibt frei, bevor die Ausgabe verwendet wird.",
         "en": "Two reflexes: ask the AI for sources and check them yourself, and explicitly allow it to say 'I don't know.' For anything with consequences, apply human-in-the-loop - a person signs off before the output is used.",
-        "it": "Due riflessi: chiedere le fonti all'IA e verificarle di persona, e permettere esplicitamente di dire 'non lo so'. Per tutto cio che ha conseguenze vale l'human-in-the-loop: una persona approva prima che l'output venga usato.",
-        "fr": "Deux reflexes : demander ses sources a l'IA et les verifier soi-meme, et l'autoriser explicitement a dire 'je ne sais pas'. Pour tout ce qui a des consequences, appliquez le human-in-the-loop : une personne valide avant l'usage de la sortie."
+        "it": "Due riflessi: chiedere le fonti all'IA e verificarle di persona, e permettere esplicitamente di dire 'non lo so'. Per tutto ciò che ha conseguenze vale l'human-in-the-loop: una persona approva prima che l'output venga usato.",
+        "fr": "Deux réflexes : demander ses sources à l'IA et les vérifier soi-même, et l'autoriser explicitement à dire 'je ne sais pas'. Pour tout ce qui a des conséquences, appliquez le human-in-the-loop : une personne valide avant l'usage de la sortie."
       }
     }
   ],

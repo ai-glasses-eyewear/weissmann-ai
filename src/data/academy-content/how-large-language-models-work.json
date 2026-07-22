@@ -15,13 +15,13 @@
     "de": "Wie funktionieren Large Language Models? | Weissmann AI",
     "en": "How Large Language Models Work: Clear Guide | Weissmann AI",
     "it": "Come funzionano i Large Language Model | Weissmann AI",
-    "fr": "Comment fonctionnent les grands modeles de langage | Weissmann AI"
+    "fr": "Comment fonctionnent les grands modèles de langage | Weissmann AI"
   },
   "metaDescription": {
-    "de": "Verstaendlich erklaert: Wie Large Language Models mit Tokens, Next-Token-Prediction, Transformern und Attention arbeiten und warum sie halluzinieren.",
+    "de": "Verständlich erklärt: Wie Large Language Models mit Tokens, Next-Token-Prediction, Transformern und Attention arbeiten und warum sie halluzinieren.",
     "en": "A clear, correct explanation of how large language models use tokens, next-token prediction, transformers and attention, and why they hallucinate.",
-    "it": "Spiegazione chiara e corretta di come i Large Language Model usano token, previsione del token, transformer e attention, e perche allucinano.",
-    "fr": "Explication claire et exacte du fonctionnement des LLM: tokens, prediction du prochain token, transformers, attention et pourquoi ils hallucinent."
+    "it": "Spiegazione chiara e corretta di come i Large Language Model usano token, previsione del token, transformer e attention, e perché allucinano.",
+    "fr": "Explication claire et exacte du fonctionnement des LLM: tokens, prédiction du prochain token, transformers, attention et pourquoi ils hallucinent."
   },
   "kicker": {
     "de": "KI-Grundlagen",
@@ -33,34 +33,34 @@
     "de": "Wie funktionieren Large Language Models (LLMs)?",
     "en": "How Do Large Language Models (LLMs) Work?",
     "it": "Come funzionano i Large Language Model (LLM)?",
-    "fr": "Comment fonctionnent les grands modeles de langage (LLM)?"
+    "fr": "Comment fonctionnent les grands modèles de langage (LLM)?"
   },
   "answerFirst": {
-    "de": "Ein Large Language Model (LLM) ist ein neuronales Netz, das aus dem vorangehenden Text jeweils das naechste Token, einen Wortbaustein, vorhersagt. Ueber die Transformer-Architektur und einen Mechanismus namens Attention verwandelt es riesige Textmengen in statistische Muster. Es besitzt keine Faktendatenbank und kein Verstaendnis von Wahrheit. Genau deshalb kann es fluessige, aber falsche Antworten erzeugen, die man Halluzinationen nennt.",
+    "de": "Ein Large Language Model (LLM) ist ein neuronales Netz, das aus dem vorangehenden Text jeweils das nächste Token, einen Wortbaustein, vorhersagt. Über die Transformer-Architektur und einen Mechanismus namens Attention verwandelt es riesige Textmengen in statistische Muster. Es besitzt keine Faktendatenbank und kein Verständnis von Wahrheit. Genau deshalb kann es flüssige, aber falsche Antworten erzeugen, die man Halluzinationen nennt.",
     "en": "A large language model (LLM) is a neural network trained to predict the next token, a word fragment, from the text that precedes it. Through the transformer architecture and a mechanism called attention, it turns vast amounts of text into statistical patterns. It has no fact database and no concept of truth. That is precisely why it can produce fluent yet false answers, known as hallucinations.",
-    "it": "Un Large Language Model (LLM) e una rete neurale addestrata a prevedere il token successivo, un frammento di parola, a partire dal testo che lo precede. Tramite l'architettura transformer e un meccanismo chiamato attention, trasforma enormi quantita di testo in pattern statistici. Non possiede un database di fatti ne un concetto di verita. Proprio per questo puo produrre risposte fluide ma false, dette allucinazioni.",
-    "fr": "Un grand modele de langage (LLM) est un reseau de neurones entraine a predire le prochain token, un fragment de mot, a partir du texte qui precede. Grace a l'architecture transformer et a un mecanisme appele attention, il transforme d'immenses volumes de texte en motifs statistiques. Il ne possede ni base de faits ni notion de verite. C'est precisement pourquoi il peut produire des reponses fluides mais fausses, appelees hallucinations."
+    "it": "Un Large Language Model (LLM) è una rete neurale addestrata a prevedere il token successivo, un frammento di parola, a partire dal testo che lo precede. Tramite l'architettura transformer e un meccanismo chiamato attention, trasforma enormi quantità di testo in pattern statistici. Non possiede un database di fatti né un concetto di verità. Proprio per questo può produrre risposte fluide ma false, dette allucinazioni.",
+    "fr": "Un grand modèle de langage (LLM) est un réseau de neurones entraîné à prédire le prochain token, un fragment de mot, à partir du texte qui précède. Grâce à l'architecture transformer et à un mécanisme appelé attention, il transforme d'immenses volumes de texte en motifs statistiques. Il ne possède ni base de faits ni notion de vérité. C'est précisément pourquoi il peut produire des réponses fluides mais fausses, appelées hallucinations."
   },
   "sections": [
     {
       "heading": {
         "de": "Was ein Large Language Model wirklich ist",
         "en": "What a Large Language Model Really Is",
-        "it": "Cos'e davvero un Large Language Model",
-        "fr": "Ce qu'est vraiment un grand modele de langage"
+        "it": "Cos'è davvero un Large Language Model",
+        "fr": "Ce qu'est vraiment un grand modèle de langage"
       },
       "paragraphs": [
         {
-          "de": "Ein LLM ist kein Nachschlagewerk und keine Suchmaschine, sondern ein Wahrscheinlichkeitsmodell fuer Sprache. Bekannte Beispiele sind GPT (OpenAI), Claude (Anthropic), Gemini (Google) und Llama (Meta). Alle beruhen auf demselben Prinzip: Sie berechnen, welche Wortbausteine mit hoher Wahrscheinlichkeit auf einen gegebenen Text folgen.",
+          "de": "Ein LLM ist kein Nachschlagewerk und keine Suchmaschine, sondern ein Wahrscheinlichkeitsmodell für Sprache. Bekannte Beispiele sind GPT (OpenAI), Claude (Anthropic), Gemini (Google) und Llama (Meta). Alle beruhen auf demselben Prinzip: Sie berechnen, welche Wortbausteine mit hoher Wahrscheinlichkeit auf einen gegebenen Text folgen.",
           "en": "An LLM is not a reference work or a search engine but a probability model of language. Well-known examples include GPT (OpenAI), Claude (Anthropic), Gemini (Google) and Llama (Meta). They all rest on the same principle: they compute which word fragments most likely follow a given piece of text.",
-          "it": "Un LLM non e un'opera di consultazione ne un motore di ricerca, ma un modello probabilistico del linguaggio. Esempi noti sono GPT (OpenAI), Claude (Anthropic), Gemini (Google) e Llama (Meta). Tutti si basano sullo stesso principio: calcolano quali frammenti di parola seguono con maggiore probabilita un testo dato.",
-          "fr": "Un LLM n'est ni un ouvrage de reference ni un moteur de recherche, mais un modele probabiliste du langage. Parmi les exemples connus figurent GPT (OpenAI), Claude (Anthropic), Gemini (Google) et Llama (Meta). Tous reposent sur le meme principe: calculer quels fragments de mots suivent le plus probablement un texte donne."
+          "it": "Un LLM non è un'opera di consultazione né un motore di ricerca, ma un modello probabilistico del linguaggio. Esempi noti sono GPT (OpenAI), Claude (Anthropic), Gemini (Google) e Llama (Meta). Tutti si basano sullo stesso principio: calcolano quali frammenti di parola seguono con maggiore probabilità un testo dato.",
+          "fr": "Un LLM n'est ni un ouvrage de référence ni un moteur de recherche, mais un modèle probabiliste du langage. Parmi les exemples connus figurent GPT (OpenAI), Claude (Anthropic), Gemini (Google) et Llama (Meta). Tous reposent sur le même principe: calculer quels fragments de mots suivent le plus probablement un texte donné."
         },
         {
-          "de": "Ein Modell entsteht in zwei Phasen. Im Pretraining lernt es aus sehr grossen Textmengen allgemeine Sprachmuster. Danach wird es im Fine-Tuning und ueber Verfahren wie RLHF (Reinforcement Learning from Human Feedback) darauf ausgerichtet, hilfreich, sicher und dem Gespraech angemessen zu antworten. Das Wissen steckt dabei nicht in einer Datenbank, sondern in Milliarden trainierter Parameter.",
+          "de": "Ein Modell entsteht in zwei Phasen. Im Pretraining lernt es aus sehr grossen Textmengen allgemeine Sprachmuster. Danach wird es im Fine-Tuning und über Verfahren wie RLHF (Reinforcement Learning from Human Feedback) darauf ausgerichtet, hilfreich, sicher und dem Gespräch angemessen zu antworten. Das Wissen steckt dabei nicht in einer Datenbank, sondern in Milliarden trainierter Parameter.",
           "en": "A model is created in two phases. During pretraining it learns general language patterns from very large amounts of text. It is then shaped through fine-tuning and methods such as RLHF (reinforcement learning from human feedback) to answer helpfully, safely and appropriately to the conversation. The knowledge does not sit in a database but in billions of trained parameters.",
-          "it": "Un modello nasce in due fasi. Nel pretraining apprende pattern linguistici generali da enormi quantita di testo. Viene poi orientato tramite il fine-tuning e metodi come l'RLHF (reinforcement learning from human feedback) a rispondere in modo utile, sicuro e adeguato alla conversazione. La conoscenza non risiede in un database, ma in miliardi di parametri addestrati.",
-          "fr": "Un modele naisse en deux phases. Lors du preentrainement, il apprend des motifs linguistiques generaux a partir de tres grands volumes de texte. Il est ensuite oriente par le fine-tuning et des methodes comme le RLHF (apprentissage par renforcement a partir de retours humains) pour repondre de maniere utile, sure et adaptee a la conversation. La connaissance ne reside pas dans une base de donnees, mais dans des milliards de parametres entraines."
+          "it": "Un modello nasce in due fasi. Nel pretraining apprende pattern linguistici generali da enormi quantità di testo. Viene poi orientato tramite il fine-tuning e metodi come l'RLHF (reinforcement learning from human feedback) a rispondere in modo utile, sicuro e adeguato alla conversazione. La conoscenza non risiede in un database, ma in miliardi di parametri addestrati.",
+          "fr": "Un modèle naisse en deux phases. Lors du préentraînement, il apprend des motifs linguistiques généraux à partir de très grands volumes de texte. Il est ensuite orienté par le fine-tuning et des méthodes comme le RLHF (apprentissage par renforcement à partir de retours humains) pour répondre de manière utile, sûre et adaptée à la conversation. La connaissance ne réside pas dans une base de données, mais dans des milliards de paramètres entraînés."
         }
       ]
     },
@@ -73,52 +73,52 @@
       },
       "paragraphs": [
         {
-          "de": "Ein LLM verarbeitet keine Buchstaben oder ganzen Woerter direkt, sondern Tokens: kleine Text-Einheiten, oft Wortteile. Ein Tokenizer zerlegt den Eingabetext in solche Bausteine und ordnet jedem eine Zahl zu. Jede Zahl wird dann in einen Vektor (ein Embedding) uebersetzt, mit dem das Netz rechnen kann.",
+          "de": "Ein LLM verarbeitet keine Buchstaben oder ganzen Wörter direkt, sondern Tokens: kleine Text-Einheiten, oft Wortteile. Ein Tokenizer zerlegt den Eingabetext in solche Bausteine und ordnet jedem eine Zahl zu. Jede Zahl wird dann in einen Vektor (ein Embedding) übersetzt, mit dem das Netz rechnen kann.",
           "en": "An LLM does not process letters or whole words directly but tokens: small units of text, often word fragments. A tokenizer splits the input into these building blocks and assigns each a number. Each number is then translated into a vector (an embedding) that the network can compute with.",
-          "it": "Un LLM non elabora direttamente lettere o parole intere, ma token: piccole unita di testo, spesso frammenti di parola. Un tokenizer scompone l'input in questi mattoni e assegna a ciascuno un numero. Ogni numero viene poi tradotto in un vettore (un embedding) con cui la rete puo calcolare.",
-          "fr": "Un LLM ne traite pas directement des lettres ou des mots entiers, mais des tokens: de petites unites de texte, souvent des fragments de mots. Un tokenizer decoupe l'entree en ces briques et attribue a chacune un nombre. Chaque nombre est ensuite traduit en un vecteur (un embedding) avec lequel le reseau peut calculer."
+          "it": "Un LLM non elabora direttamente lettere o parole intere, ma token: piccole unità di testo, spesso frammenti di parola. Un tokenizer scompone l'input in questi mattoni e assegna a ciascuno un numero. Ogni numero viene poi tradotto in un vettore (un embedding) con cui la rete può calcolare.",
+          "fr": "Un LLM ne traite pas directement des lettres ou des mots entiers, mais des tokens: de petites unités de texte, souvent des fragments de mots. Un tokenizer découpe l'entrée en ces briques et attribue à chacune un nombre. Chaque nombre est ensuite traduit en un vecteur (un embedding) avec lequel le réseau peut calculer."
         }
       ],
       "bullets": [
         {
-          "de": "Als grobe Faustregel entspricht ein Token im Englischen etwa vier Zeichen; im Deutschen faellt es wegen langer Komposita oft etwas anders aus.",
+          "de": "Als grobe Faustregel entspricht ein Token im Englischen etwa vier Zeichen; im Deutschen fällt es wegen langer Komposita oft etwas anders aus.",
           "en": "As a rough rule of thumb, one token corresponds to roughly four characters in English; in German it often differs because of long compound words.",
           "it": "Come regola empirica approssimativa, in inglese un token corrisponde a circa quattro caratteri; in tedesco varia spesso a causa dei lunghi composti.",
-          "fr": "En regle generale approximative, un token correspond a environ quatre caracteres en anglais; en allemand cela varie souvent en raison des longs mots composes."
+          "fr": "En règle générale approximative, un token correspond à environ quatre caractères en anglais; en allemand cela varie souvent en raison des longs mots composés."
         },
         {
-          "de": "Seltene Woerter, Zahlen und Code werden in mehrere Tokens zerlegt, haeufige Woerter oft in ein einziges.",
+          "de": "Seltene Wörter, Zahlen und Code werden in mehrere Tokens zerlegt, häufige Wörter oft in ein einziges.",
           "en": "Rare words, numbers and code are split into several tokens, while common words are often a single token.",
-          "it": "Parole rare, numeri e codice vengono suddivisi in piu token, mentre le parole comuni spesso ne occupano uno solo.",
-          "fr": "Les mots rares, les nombres et le code sont decoupes en plusieurs tokens, tandis que les mots courants tiennent souvent en un seul."
+          "it": "Parole rare, numeri e codice vengono suddivisi in più token, mentre le parole comuni spesso ne occupano uno solo.",
+          "fr": "Les mots rares, les nombres et le code sont découpés en plusieurs tokens, tandis que les mots courants tiennent souvent en un seul."
         },
         {
-          "de": "Kosten und Limits kommerzieller Modelle werden fast immer in Tokens abgerechnet, nicht in Woertern.",
+          "de": "Kosten und Limits kommerzieller Modelle werden fast immer in Tokens abgerechnet, nicht in Wörtern.",
           "en": "Costs and limits of commercial models are almost always billed in tokens, not words.",
           "it": "Costi e limiti dei modelli commerciali sono quasi sempre conteggiati in token, non in parole.",
-          "fr": "Les couts et limites des modeles commerciaux sont presque toujours factures en tokens, pas en mots."
+          "fr": "Les coûts et limites des modèles commerciaux sont presque toujours facturés en tokens, pas en mots."
         }
       ]
     },
     {
       "heading": {
-        "de": "Next-Token-Prediction: das Herzstueck",
+        "de": "Next-Token-Prediction: das Herzstück",
         "en": "Next-Token Prediction: The Core Mechanism",
         "it": "Previsione del token successivo: il cuore del sistema",
-        "fr": "Prediction du prochain token: le mecanisme central"
+        "fr": "Prédiction du prochain token: le mécanisme central"
       },
       "paragraphs": [
         {
-          "de": "Im Kern tut ein LLM nur eines: Es berechnet fuer den bisherigen Text eine Wahrscheinlichkeitsverteilung ueber alle moeglichen naechsten Tokens und waehlt eines davon aus. Dieses Token wird angehaengt, und der ganze Vorgang wiederholt sich Token fuer Token. Man nennt das autoregressive Generierung: Der Text entsteht Schritt fuer Schritt, immer auf Basis des bereits Geschriebenen.",
+          "de": "Im Kern tut ein LLM nur eines: Es berechnet für den bisherigen Text eine Wahrscheinlichkeitsverteilung über alle möglichen nächsten Tokens und wählt eines davon aus. Dieses Token wird angehängt, und der ganze Vorgang wiederholt sich Token für Token. Man nennt das autoregressive Generierung: Der Text entsteht Schritt für Schritt, immer auf Basis des bereits Geschriebenen.",
           "en": "At its core an LLM does just one thing: for the text so far it computes a probability distribution over all possible next tokens and picks one. That token is appended, and the whole process repeats token by token. This is called autoregressive generation: the text is produced step by step, always based on what has already been written.",
-          "it": "Nella sua essenza un LLM fa una cosa sola: per il testo prodotto finora calcola una distribuzione di probabilita su tutti i possibili token successivi e ne sceglie uno. Quel token viene aggiunto e l'intero processo si ripete token dopo token. Si chiama generazione autoregressiva: il testo nasce passo dopo passo, sempre in base a cio che e gia stato scritto.",
-          "fr": "Dans son principe, un LLM ne fait qu'une chose: pour le texte deja produit, il calcule une distribution de probabilite sur tous les tokens suivants possibles et en choisit un. Ce token est ajoute, et tout le processus se repete token par token. On appelle cela la generation autoregressive: le texte se construit pas a pas, toujours sur la base de ce qui est deja ecrit."
+          "it": "Nella sua essenza un LLM fa una cosa sola: per il testo prodotto finora calcola una distribuzione di probabilità su tutti i possibili token successivi e ne sceglie uno. Quel token viene aggiunto e l'intero processo si ripete token dopo token. Si chiama generazione autoregressiva: il testo nasce passo dopo passo, sempre in base a ciò che è già stato scritto.",
+          "fr": "Dans son principe, un LLM ne fait qu'une chose: pour le texte déjà produit, il calcule une distribution de probabilité sur tous les tokens suivants possibles et en choisit un. Ce token est ajouté, et tout le processus se répète token par token. On appelle cela la génération autoregressive: le texte se construit pas à pas, toujours sur la base de ce qui est déjà écrit."
         },
         {
-          "de": "Ein Parameter namens Temperature steuert, wie stark das Modell vom wahrscheinlichsten Token abweicht. Niedrige Werte liefern vorhersehbare, faktennahe Antworten; hoehere Werte foerdern Vielfalt und Kreativitaet, erhoehen aber das Risiko fuer Fehler. Trainiert wird das Modell, indem es auf Milliarden Textstellen seine Vorhersage mit dem tatsaechlich naechsten Token vergleicht und seine Parameter minimal anpasst.",
+          "de": "Ein Parameter namens Temperature steuert, wie stark das Modell vom wahrscheinlichsten Token abweicht. Niedrige Werte liefern vorhersehbare, faktennahe Antworten; höhere Werte fördern Vielfalt und Kreativität, erhöhen aber das Risiko für Fehler. Trainiert wird das Modell, indem es auf Milliarden Textstellen seine Vorhersage mit dem tatsächlich nächsten Token vergleicht und seine Parameter minimal anpasst.",
           "en": "A parameter called temperature controls how far the model strays from the most likely token. Low values give predictable, fact-oriented answers; higher values encourage variety and creativity but raise the risk of errors. The model is trained by comparing its prediction with the actual next token across billions of text passages and adjusting its parameters slightly.",
-          "it": "Un parametro chiamato temperature controlla quanto il modello si discosta dal token piu probabile. Valori bassi producono risposte prevedibili e aderenti ai fatti; valori piu alti favoriscono varieta e creativita ma aumentano il rischio di errori. Il modello viene addestrato confrontando la propria previsione con il token effettivamente successivo su miliardi di passaggi di testo e regolando minimamente i propri parametri.",
-          "fr": "Un parametre appele temperature controle a quel point le modele s'eloigne du token le plus probable. Des valeurs basses donnent des reponses previsibles et factuelles; des valeurs plus elevees favorisent la variete et la creativite mais augmentent le risque d'erreurs. Le modele est entraine en comparant sa prediction au token reellement suivant sur des milliards de passages de texte et en ajustant legerement ses parametres."
+          "it": "Un parametro chiamato temperature controlla quanto il modello si discosta dal token più probabile. Valori bassi producono risposte prevedibili e aderenti ai fatti; valori più alti favoriscono varietà e creatività ma aumentano il rischio di errori. Il modello viene addestrato confrontando la propria previsione con il token effettivamente successivo su miliardi di passaggi di testo e regolando minimamente i propri parametri.",
+          "fr": "Un paramètre appelé temperature contrôle à quel point le modèle s'éloigne du token le plus probable. Des valeurs basses donnent des réponses prévisibles et factuelles; des valeurs plus élevées favorisent la variété et la créativité mais augmentent le risque d'erreurs. Le modèle est entraîné en comparant sa prédiction au token réellement suivant sur des milliards de passages de texte et en ajustant légèrement ses paramètres."
         }
       ]
     },
@@ -131,38 +131,38 @@
       },
       "paragraphs": [
         {
-          "de": "Fast alle heutigen LLMs beruhen auf dem Transformer, der 2017 im Aufsatz Attention Is All You Need vorgestellt wurde. Sein entscheidender Baustein ist der Attention-Mechanismus, genauer Self-Attention: Fuer jedes Token bewertet das Modell, wie relevant alle anderen Tokens im Kontext dafuer sind, und gewichtet sie entsprechend.",
+          "de": "Fast alle heutigen LLMs beruhen auf dem Transformer, der 2017 im Aufsatz Attention Is All You Need vorgestellt wurde. Sein entscheidender Baustein ist der Attention-Mechanismus, genauer Self-Attention: Für jedes Token bewertet das Modell, wie relevant alle anderen Tokens im Kontext dafür sind, und gewichtet sie entsprechend.",
           "en": "Almost all of today's LLMs are based on the transformer, introduced in the 2017 paper Attention Is All You Need. Its decisive component is the attention mechanism, more precisely self-attention: for each token the model assesses how relevant every other token in the context is and weights them accordingly.",
-          "it": "Quasi tutti i LLM attuali si basano sul transformer, presentato nel 2017 nell'articolo Attention Is All You Need. Il suo componente decisivo e il meccanismo di attention, piu precisamente la self-attention: per ogni token il modello valuta quanto siano rilevanti tutti gli altri token del contesto e li pondera di conseguenza.",
-          "fr": "Presque tous les LLM actuels reposent sur le transformer, presente en 2017 dans l'article Attention Is All You Need. Son composant decisif est le mecanisme d'attention, plus precisement la self-attention: pour chaque token, le modele evalue la pertinence de tous les autres tokens du contexte et les pondere en consequence."
+          "it": "Quasi tutti i LLM attuali si basano sul transformer, presentato nel 2017 nell'articolo Attention Is All You Need. Il suo componente decisivo è il meccanismo di attention, più precisamente la self-attention: per ogni token il modello valuta quanto siano rilevanti tutti gli altri token del contesto e li pondera di conseguenza.",
+          "fr": "Presque tous les LLM actuels reposent sur le transformer, présenté en 2017 dans l'article Attention Is All You Need. Son composant décisif est le mécanisme d'attention, plus précisément la self-attention: pour chaque token, le modèle évalue la pertinence de tous les autres tokens du contexte et les pondère en conséquence."
         },
         {
-          "de": "So kann das Modell den kontextabhaengigen Sinn erfassen: Im Satz Die Bank am Fluss meint Bank etwas anderes als in Geld auf der Bank. Viele solcher Attention-Schichten uebereinander, kombiniert mit den in Milliarden Parametern gespeicherten Gewichten, erlauben es, komplexe Zusammenhaenge abzubilden. Weil Attention parallel rechnet, lassen sich Modelle effizient auf riesigen Datenmengen trainieren.",
+          "de": "So kann das Modell den kontextabhängigen Sinn erfassen: Im Satz Die Bank am Fluss meint Bank etwas anderes als in Geld auf der Bank. Viele solcher Attention-Schichten übereinander, kombiniert mit den in Milliarden Parametern gespeicherten Gewichten, erlauben es, komplexe Zusammenhänge abzubilden. Weil Attention parallel rechnet, lassen sich Modelle effizient auf riesigen Datenmengen trainieren.",
           "en": "This lets the model capture context-dependent meaning: in the bank of the river, bank means something different from money in the bank. Many such attention layers stacked on top of each other, combined with the weights stored in billions of parameters, allow complex relationships to be modelled. Because attention computes in parallel, models can be trained efficiently on huge amounts of data.",
-          "it": "Cosi il modello coglie il significato dipendente dal contesto: in la riva della banca, banca significa qualcosa di diverso rispetto a soldi in banca. Molti di questi strati di attention impilati, combinati con i pesi memorizzati in miliardi di parametri, permettono di rappresentare relazioni complesse. Poiche l'attention calcola in parallelo, i modelli possono essere addestrati in modo efficiente su enormi quantita di dati.",
-          "fr": "Ainsi le modele saisit le sens dependant du contexte: dans la banque de la riviere, banque signifie autre chose que argent a la banque. De nombreuses couches d'attention empilees, combinees aux poids stockes dans des milliards de parametres, permettent de modeliser des relations complexes. Comme l'attention calcule en parallele, les modeles peuvent etre entraines efficacement sur d'enormes volumes de donnees."
+          "it": "Così il modello coglie il significato dipendente dal contesto: in la riva della banca, banca significa qualcosa di diverso rispetto a soldi in banca. Molti di questi strati di attention impilati, combinati con i pesi memorizzati in miliardi di parametri, permettono di rappresentare relazioni complesse. Poiché l'attention calcola in parallelo, i modelli possono essere addestrati in modo efficiente su enormi quantità di dati.",
+          "fr": "Ainsi le modèle saisit le sens dépendant du contexte: dans la banque de la rivière, banque signifie autre chose que argent à la banque. De nombreuses couches d'attention empilées, combinées aux poids stockés dans des milliards de paramètres, permettent de modéliser des relations complexes. Comme l'attention calcule en parallèle, les modèles peuvent être entraînés efficacement sur d'énormes volumes de données."
         }
       ]
     },
     {
       "heading": {
-        "de": "Das Kontextfenster: das Kurzzeitgedaechtnis",
+        "de": "Das Kontextfenster: das Kurzzeitgedächtnis",
         "en": "The Context Window: Short-Term Memory",
         "it": "La finestra di contesto: la memoria a breve termine",
-        "fr": "La fenetre de contexte: la memoire a court terme"
+        "fr": "La fenêtre de contexte: la mémoire à court terme"
       },
       "paragraphs": [
         {
-          "de": "Das Kontextfenster ist die maximale Menge an Tokens, die ein Modell auf einmal beruecksichtigen kann. Systemanweisung, Ihre Eingabe, hochgeladene Dokumente und die bisherige Antwort muessen alle hineinpassen. Ist das Fenster voll, faellt aelterer Text weg, und das Modell verliert diese Information.",
+          "de": "Das Kontextfenster ist die maximale Menge an Tokens, die ein Modell auf einmal berücksichtigen kann. Systemanweisung, Ihre Eingabe, hochgeladene Dokumente und die bisherige Antwort müssen alle hineinpassen. Ist das Fenster voll, fällt älterer Text weg, und das Modell verliert diese Information.",
           "en": "The context window is the maximum amount of tokens a model can consider at once. The system instruction, your input, uploaded documents and the answer so far must all fit inside it. Once the window is full, older text drops out and the model loses that information.",
-          "it": "La finestra di contesto e la quantita massima di token che un modello puo considerare in una sola volta. L'istruzione di sistema, il tuo input, i documenti caricati e la risposta prodotta finora devono starci tutti dentro. Quando la finestra e piena, il testo piu vecchio viene scartato e il modello perde quell'informazione.",
-          "fr": "La fenetre de contexte est la quantite maximale de tokens qu'un modele peut prendre en compte en une seule fois. L'instruction systeme, votre saisie, les documents televerses et la reponse en cours doivent tous y tenir. Lorsque la fenetre est pleine, le texte le plus ancien disparait et le modele perd cette information."
+          "it": "La finestra di contesto è la quantità massima di token che un modello può considerare in una sola volta. L'istruzione di sistema, il tuo input, i documenti caricati e la risposta prodotta finora devono starci tutti dentro. Quando la finestra è piena, il testo più vecchio viene scartato e il modello perde quell'informazione.",
+          "fr": "La fenêtre de contexte est la quantité maximale de tokens qu'un modèle peut prendre en compte en une seule fois. L'instruction système, votre saisie, les documents téléversés et la réponse en cours doivent tous y tenir. Lorsque la fenêtre est pleine, le texte le plus ancien disparaît et le modèle perd cette information."
         },
         {
-          "de": "Wichtig: Ein LLM hat von sich aus kein dauerhaftes Gedaechtnis ueber einzelne Sitzungen hinaus. Was es in einem neuen Chat wissen soll, muss erneut mitgeliefert werden. Sehr lange Kontexte erhoehen zudem Rechenaufwand und Kosten, und relevante Details in der Mitte langer Eingaben werden manchmal schlechter beachtet als solche am Anfang oder Ende.",
+          "de": "Wichtig: Ein LLM hat von sich aus kein dauerhaftes Gedächtnis über einzelne Sitzungen hinaus. Was es in einem neuen Chat wissen soll, muss erneut mitgeliefert werden. Sehr lange Kontexte erhöhen zudem Rechenaufwand und Kosten, und relevante Details in der Mitte langer Eingaben werden manchmal schlechter beachtet als solche am Anfang oder Ende.",
           "en": "Importantly, an LLM has no persistent memory of its own beyond a single session. Whatever it should know in a new chat must be supplied again. Very long contexts also increase compute and cost, and relevant details in the middle of long inputs are sometimes attended to less well than those at the start or end.",
-          "it": "E importante: di per se un LLM non ha memoria persistente oltre la singola sessione. Cio che deve sapere in una nuova chat va fornito di nuovo. Contesti molto lunghi aumentano inoltre calcolo e costi, e i dettagli rilevanti al centro di input lunghi vengono talvolta considerati meno di quelli all'inizio o alla fine.",
-          "fr": "Point important: un LLM n'a pas de memoire persistante propre au-dela d'une seule session. Ce qu'il doit savoir dans une nouvelle conversation doit etre fourni a nouveau. Des contextes tres longs augmentent aussi le calcul et le cout, et les details pertinents au milieu de longues entrees sont parfois moins bien pris en compte que ceux du debut ou de la fin."
+          "it": "È importante: di per sé un LLM non ha memoria persistente oltre la singola sessione. Ciò che deve sapere in una nuova chat va fornito di nuovo. Contesti molto lunghi aumentano inoltre calcolo e costi, e i dettagli rilevanti al centro di input lunghi vengono talvolta considerati meno di quelli all'inizio o alla fine.",
+          "fr": "Point important: un LLM n'a pas de mémoire persistante propre au-delà d'une seule session. Ce qu'il doit savoir dans une nouvelle conversation doit être fourni à nouveau. Des contextes très longs augmentent aussi le calcul et le coût, et les détails pertinents au milieu de longues entrées sont parfois moins bien pris en compte que ceux du début ou de la fin."
         }
       ]
     },
@@ -170,63 +170,63 @@
       "heading": {
         "de": "Warum LLMs halluzinieren",
         "en": "Why LLMs Hallucinate",
-        "it": "Perche i LLM allucinano",
+        "it": "Perché i LLM allucinano",
         "fr": "Pourquoi les LLM hallucinent"
       },
       "paragraphs": [
         {
-          "de": "Eine Halluzination ist eine fluessig formulierte, aber sachlich falsche oder erfundene Aussage. Sie entsteht nicht aus einem Fehler, sondern aus dem Grundprinzip: Das Modell erzeugt plausibel klingenden Text, es ruft keine geprueften Fakten ab. Klingt eine falsche Fortsetzung sprachlich wahrscheinlich, kann sie ebenso ueberzeugend formuliert sein wie eine richtige.",
+          "de": "Eine Halluzination ist eine flüssig formulierte, aber sachlich falsche oder erfundene Aussage. Sie entsteht nicht aus einem Fehler, sondern aus dem Grundprinzip: Das Modell erzeugt plausibel klingenden Text, es ruft keine geprüften Fakten ab. Klingt eine falsche Fortsetzung sprachlich wahrscheinlich, kann sie ebenso überzeugend formuliert sein wie eine richtige.",
           "en": "A hallucination is a fluently phrased but factually wrong or invented statement. It does not stem from a malfunction but from the core principle: the model generates plausible-sounding text, it does not retrieve verified facts. If a false continuation is linguistically likely, it can be phrased just as convincingly as a correct one.",
-          "it": "Un'allucinazione e un'affermazione formulata in modo fluido ma factualmente errata o inventata. Non deriva da un malfunzionamento, ma dal principio di fondo: il modello genera testo che suona plausibile, non recupera fatti verificati. Se una continuazione errata e linguisticamente probabile, puo essere formulata in modo altrettanto convincente di una corretta.",
-          "fr": "Une hallucination est une affirmation formulee avec fluidite mais factuellement fausse ou inventee. Elle ne provient pas d'un dysfonctionnement mais du principe de base: le modele genere un texte qui semble plausible, il ne recupere pas de faits verifies. Si une suite erronee est linguistiquement probable, elle peut etre formulee de maniere aussi convaincante qu'une suite correcte."
+          "it": "Un'allucinazione è un'affermazione formulata in modo fluido ma factualmente errata o inventata. Non deriva da un malfunzionamento, ma dal principio di fondo: il modello genera testo che suona plausibile, non recupera fatti verificati. Se una continuazione errata è linguisticamente probabile, può essere formulata in modo altrettanto convincente di una corretta.",
+          "fr": "Une hallucination est une affirmation formulée avec fluidité mais factuellement fausse ou inventée. Elle ne provient pas d'un dysfonctionnement mais du principe de base: le modèle génère un texte qui semble plausible, il ne récupère pas de faits vérifiés. Si une suite erronée est linguistiquement probable, elle peut être formulée de manière aussi convaincante qu'une suite correcte."
         }
       ],
       "bullets": [
         {
-          "de": "Wissensluecken: Zu einem Thema gab es im Training zu wenig oder widerspruechliches Material.",
+          "de": "Wissenslücken: Zu einem Thema gab es im Training zu wenig oder widersprüchliches Material.",
           "en": "Knowledge gaps: the training data contained too little or contradictory material on a topic.",
           "it": "Lacune di conoscenza: nei dati di addestramento c'era materiale scarso o contraddittorio su un tema.",
-          "fr": "Lacunes de connaissance: les donnees d'entrainement contenaient trop peu de matiere ou des elements contradictoires sur un sujet."
+          "fr": "Lacunes de connaissance: les données d'entraînement contenaient trop peu de matière ou des éléments contradictoires sur un sujet."
         },
         {
           "de": "Wissensstichtag (Cutoff): Ereignisse nach dem Trainingsende sind dem Modell unbekannt.",
           "en": "Knowledge cutoff: events after the training date are unknown to the model.",
           "it": "Data limite della conoscenza (cutoff): gli eventi successivi alla fine dell'addestramento sono ignoti al modello.",
-          "fr": "Date limite des connaissances (cutoff): les evenements posterieurs a la fin de l'entrainement sont inconnus du modele."
+          "fr": "Date limite des connaissances (cutoff): les événements postérieurs à la fin de l'entraînement sont inconnus du modèle."
         },
         {
-          "de": "Mehrdeutige Fragen und der Anreiz, moeglichst immer eine Antwort zu liefern statt Unsicherheit zu benennen.",
+          "de": "Mehrdeutige Fragen und der Anreiz, möglichst immer eine Antwort zu liefern statt Unsicherheit zu benennen.",
           "en": "Ambiguous questions and the incentive to always provide an answer rather than flag uncertainty.",
           "it": "Domande ambigue e l'incentivo a fornire sempre una risposta invece di segnalare l'incertezza.",
-          "fr": "Questions ambigues et incitation a toujours fournir une reponse plutot qu'a signaler l'incertitude."
+          "fr": "Questions ambigues et incitation à toujours fournir une réponse plutôt qu'à signaler l'incertitude."
         },
         {
-          "de": "Gegenmittel: Retrieval-Augmented Generation (RAG) mit verlaesslichen Quellen, das Verlangen von Belegen, niedrigere Temperature und konsequente menschliche Pruefung.",
+          "de": "Gegenmittel: Retrieval-Augmented Generation (RAG) mit verlässlichen Quellen, das Verlangen von Belegen, niedrigere Temperature und konsequente menschliche Prüfung.",
           "en": "Countermeasures: retrieval-augmented generation (RAG) with reliable sources, requesting citations, lower temperature and consistent human verification.",
-          "it": "Contromisure: retrieval-augmented generation (RAG) con fonti affidabili, richiesta di citazioni, temperature piu bassa e verifica umana costante.",
-          "fr": "Parades: la generation augmentee par recuperation (RAG) avec des sources fiables, la demande de sources, une temperature plus basse et une verification humaine systematique."
+          "it": "Contromisure: retrieval-augmented generation (RAG) con fonti affidabili, richiesta di citazioni, temperature più bassa e verifica umana costante.",
+          "fr": "Parades: la génération augmentée par récupération (RAG) avec des sources fiables, la demande de sources, une temperature plus basse et une vérification humaine systématique."
         }
       ]
     },
     {
       "heading": {
-        "de": "Was das fuer den Einsatz in der Praxis bedeutet",
+        "de": "Was das für den Einsatz in der Praxis bedeutet",
         "en": "What This Means for Practical Use",
         "it": "Cosa significa per l'uso pratico",
         "fr": "Ce que cela implique pour un usage pratique"
       },
       "paragraphs": [
         {
-          "de": "Wer versteht, wie LLMs funktionieren, nutzt sie richtig: als leistungsstarke Assistenten fuer Entwuerfe, Zusammenfassungen und Ideen, nicht als letzte Instanz fuer Fakten. Wichtige Aussagen, Zahlen, Zitate und rechtliche Angaben gehoeren immer gegengeprueft. Ein Mensch bleibt fuer das Ergebnis verantwortlich.",
+          "de": "Wer versteht, wie LLMs funktionieren, nutzt sie richtig: als leistungsstarke Assistenten für Entwürfe, Zusammenfassungen und Ideen, nicht als letzte Instanz für Fakten. Wichtige Aussagen, Zahlen, Zitate und rechtliche Angaben gehören immer gegengeprüft. Ein Mensch bleibt für das Ergebnis verantwortlich.",
           "en": "Understanding how LLMs work means using them correctly: as powerful assistants for drafts, summaries and ideas, not as the final authority on facts. Important statements, figures, quotes and legal details should always be verified. A human remains responsible for the result.",
-          "it": "Capire come funzionano i LLM significa usarli correttamente: come potenti assistenti per bozze, sintesi e idee, non come autorita finale sui fatti. Affermazioni importanti, cifre, citazioni e dettagli legali vanno sempre verificati. La responsabilita del risultato resta di una persona.",
-          "fr": "Comprendre le fonctionnement des LLM, c'est les utiliser correctement: comme de puissants assistants pour des brouillons, des syntheses et des idees, non comme autorite finale sur les faits. Les affirmations importantes, chiffres, citations et details juridiques doivent toujours etre verifies. Un humain reste responsable du resultat."
+          "it": "Capire come funzionano i LLM significa usarli correttamente: come potenti assistenti per bozze, sintesi e idee, non come autorità finale sui fatti. Affermazioni importanti, cifre, citazioni e dettagli legali vanno sempre verificati. La responsabilità del risultato resta di una persona.",
+          "fr": "Comprendre le fonctionnement des LLM, c'est les utiliser correctement: comme de puissants assistants pour des brouillons, des synthèses et des idées, non comme autorité finale sur les faits. Les affirmations importantes, chiffres, citations et détails juridiques doivent toujours être vérifiés. Un humain reste responsable du résultat."
         },
         {
-          "de": "Fuer Unternehmen in der Schweiz kommt der Datenschutz hinzu. Vor der Eingabe von Personendaten oder Geschaeftsgeheimnissen in ein KI-Tool sind das revidierte Datenschutzgesetz (revDSG) und der Bearbeitungsort der Daten zu pruefen; der EDOEB ist die zustaendige Aufsichtsbehoerde. Klare interne Richtlinien und die Wahl geeigneter, moeglichst in der Schweiz oder EU gehosteter Dienste schaffen Vertrauen.",
+          "de": "Für Unternehmen in der Schweiz kommt der Datenschutz hinzu. Vor der Eingabe von Personendaten oder Geschäftsgeheimnissen in ein KI-Tool sind das revidierte Datenschutzgesetz (revDSG) und der Bearbeitungsort der Daten zu prüfen; der EDÖB ist die zuständige Aufsichtsbehörde. Klare interne Richtlinien und die Wahl geeigneter, möglichst in der Schweiz oder EU gehosteter Dienste schaffen Vertrauen.",
           "en": "For companies in Switzerland, data protection is added to this. Before entering personal data or trade secrets into an AI tool, check the revised Data Protection Act (revDSG) and where the data is processed; the FDPIC (EDOEB) is the competent supervisory authority. Clear internal policies and the choice of suitable services, ideally hosted in Switzerland or the EU, build trust.",
-          "it": "Per le aziende in Svizzera si aggiunge la protezione dei dati. Prima di inserire dati personali o segreti aziendali in uno strumento di IA vanno verificati la legge riveduta sulla protezione dei dati (revDSG) e il luogo di trattamento; l'IFPDT (EDOEB) e l'autorita di vigilanza competente. Politiche interne chiare e la scelta di servizi adeguati, preferibilmente ospitati in Svizzera o nell'UE, creano fiducia.",
-          "fr": "Pour les entreprises en Suisse s'ajoute la protection des donnees. Avant de saisir des donnees personnelles ou des secrets d'affaires dans un outil d'IA, il faut verifier la loi revisee sur la protection des donnees (revDSG) et le lieu de traitement; le PFPDT (EDOEB) est l'autorite de surveillance competente. Des directives internes claires et le choix de services adaptes, idealement heberges en Suisse ou dans l'UE, instaurent la confiance."
+          "it": "Per le aziende in Svizzera si aggiunge la protezione dei dati. Prima di inserire dati personali o segreti aziendali in uno strumento di IA vanno verificati la legge riveduta sulla protezione dei dati (revDSG) e il luogo di trattamento; l'IFPDT (EDOEB) è l'autorità di vigilanza competente. Politiche interne chiare e la scelta di servizi adeguati, preferibilmente ospitati in Svizzera o nell'UE, creano fiducia.",
+          "fr": "Pour les entreprises en Suisse s'ajoute la protection des données. Avant de saisir des données personnelles ou des secrets d'affaires dans un outil d'IA, il faut vérifier la loi révisée sur la protection des données (revDSG) et le lieu de traitement; le PFPDT (EDOEB) est l'autorité de surveillance compétente. Des directives internes claires et le choix de services adaptés, idéalement hébergés en Suisse ou dans l'UE, instaurent la confiance."
         }
       ]
     }
@@ -236,56 +236,56 @@
       "q": {
         "de": "Versteht ein LLM, was es sagt?",
         "en": "Does an LLM understand what it is saying?",
-        "it": "Un LLM capisce cio che dice?",
+        "it": "Un LLM capisce ciò che dice?",
         "fr": "Un LLM comprend-il ce qu'il dit?"
       },
       "a": {
-        "de": "Nicht im menschlichen Sinn. Ein LLM erkennt und reproduziert statistische Sprachmuster ausserordentlich gut, hat aber kein Bewusstsein, keine Absicht und kein Modell von Wahrheit. Es sagt voraus, welcher Text plausibel ist, nicht, was tatsaechlich stimmt.",
+        "de": "Nicht im menschlichen Sinn. Ein LLM erkennt und reproduziert statistische Sprachmuster ausserordentlich gut, hat aber kein Bewusstsein, keine Absicht und kein Modell von Wahrheit. Es sagt voraus, welcher Text plausibel ist, nicht, was tatsächlich stimmt.",
         "en": "Not in the human sense. An LLM recognises and reproduces statistical language patterns extremely well, but it has no consciousness, no intent and no model of truth. It predicts which text is plausible, not what is actually correct.",
-        "it": "Non in senso umano. Un LLM riconosce e riproduce estremamente bene pattern linguistici statistici, ma non ha coscienza, intenzione ne un modello di verita. Prevede quale testo e plausibile, non cio che e effettivamente corretto.",
-        "fr": "Pas au sens humain. Un LLM reconnait et reproduit tres bien des motifs linguistiques statistiques, mais il n'a ni conscience, ni intention, ni modele de verite. Il predit quel texte est plausible, pas ce qui est reellement exact."
+        "it": "Non in senso umano. Un LLM riconosce e riproduce estremamente bene pattern linguistici statistici, ma non ha coscienza, intenzione né un modello di verità. Prevede quale testo è plausibile, non ciò che è effettivamente corretto.",
+        "fr": "Pas au sens humain. Un LLM reconnaît et reproduit très bien des motifs linguistiques statistiques, mais il n'a ni conscience, ni intention, ni modèle de vérité. Il prédit quel texte est plausible, pas ce qui est réellement exact."
       }
     },
     {
       "q": {
         "de": "Was ist der Unterschied zwischen einem LLM und einer Suchmaschine?",
         "en": "What is the difference between an LLM and a search engine?",
-        "it": "Qual e la differenza tra un LLM e un motore di ricerca?",
-        "fr": "Quelle est la difference entre un LLM et un moteur de recherche?"
+        "it": "Qual è la differenza tra un LLM e un motore di ricerca?",
+        "fr": "Quelle est la différence entre un LLM et un moteur de recherche?"
       },
       "a": {
-        "de": "Eine Suchmaschine findet vorhandene Dokumente und verweist auf Quellen. Ein LLM generiert neuen Text aus gelernten Mustern und liefert von sich aus keine ueberpruefbaren Fundstellen. Erst Zusatzverfahren wie RAG verbinden ein Modell mit konkreten, zitierbaren Quellen.",
+        "de": "Eine Suchmaschine findet vorhandene Dokumente und verweist auf Quellen. Ein LLM generiert neuen Text aus gelernten Mustern und liefert von sich aus keine überprüfbaren Fundstellen. Erst Zusatzverfahren wie RAG verbinden ein Modell mit konkreten, zitierbaren Quellen.",
         "en": "A search engine finds existing documents and points to sources. An LLM generates new text from learned patterns and, on its own, provides no verifiable references. Only add-on methods such as RAG connect a model to concrete, citable sources.",
         "it": "Un motore di ricerca trova documenti esistenti e rimanda alle fonti. Un LLM genera nuovo testo da pattern appresi e, da solo, non fornisce riferimenti verificabili. Solo metodi aggiuntivi come il RAG collegano un modello a fonti concrete e citabili.",
-        "fr": "Un moteur de recherche trouve des documents existants et renvoie a des sources. Un LLM genere un nouveau texte a partir de motifs appris et ne fournit, seul, aucune reference verifiable. Seules des methodes complementaires comme le RAG relient un modele a des sources concretes et citables."
+        "fr": "Un moteur de recherche trouve des documents existants et renvoie à des sources. Un LLM génère un nouveau texte à partir de motifs appris et ne fournit, seul, aucune référence vérifiable. Seules des méthodes complémentaires comme le RAG relient un modèle à des sources concrètes et citables."
       }
     },
     {
       "q": {
         "de": "Was ist ein Token genau?",
         "en": "What exactly is a token?",
-        "it": "Cos'e esattamente un token?",
+        "it": "Cos'è esattamente un token?",
         "fr": "Qu'est-ce qu'un token exactement?"
       },
       "a": {
-        "de": "Ein Token ist die kleinste Verarbeitungseinheit eines LLM, meist ein Wortteil, manchmal ein ganzes Wort oder ein Zeichen. Der Tokenizer zerlegt Text in Tokens und wandelt sie in Zahlen um. Modelllimits und Kosten werden in Tokens gemessen, nicht in Woertern.",
+        "de": "Ein Token ist die kleinste Verarbeitungseinheit eines LLM, meist ein Wortteil, manchmal ein ganzes Wort oder ein Zeichen. Der Tokenizer zerlegt Text in Tokens und wandelt sie in Zahlen um. Modelllimits und Kosten werden in Tokens gemessen, nicht in Wörtern.",
         "en": "A token is the smallest processing unit of an LLM, usually a word fragment, sometimes a whole word or a character. The tokenizer splits text into tokens and turns them into numbers. Model limits and costs are measured in tokens, not words.",
-        "it": "Un token e la piu piccola unita di elaborazione di un LLM, di solito un frammento di parola, a volte una parola intera o un carattere. Il tokenizer scompone il testo in token e li converte in numeri. Limiti e costi dei modelli si misurano in token, non in parole.",
-        "fr": "Un token est la plus petite unite de traitement d'un LLM, generalement un fragment de mot, parfois un mot entier ou un caractere. Le tokenizer decoupe le texte en tokens et les convertit en nombres. Les limites et les couts des modeles se mesurent en tokens, pas en mots."
+        "it": "Un token è la più piccola unità di elaborazione di un LLM, di solito un frammento di parola, a volte una parola intera o un carattere. Il tokenizer scompone il testo in token e li converte in numeri. Limiti e costi dei modelli si misurano in token, non in parole.",
+        "fr": "Un token est la plus petite unité de traitement d'un LLM, généralement un fragment de mot, parfois un mot entier ou un caractère. Le tokenizer découpe le texte en tokens et les convertit en nombres. Les limites et les coûts des modèles se mesurent en tokens, pas en mots."
       }
     },
     {
       "q": {
         "de": "Wie gross ist ein Kontextfenster?",
         "en": "How large is a context window?",
-        "it": "Quanto e grande una finestra di contesto?",
-        "fr": "Quelle est la taille d'une fenetre de contexte?"
+        "it": "Quanto è grande una finestra di contesto?",
+        "fr": "Quelle est la taille d'une fenêtre de contexte?"
       },
       "a": {
-        "de": "Das haengt vom Modell ab und reicht von einigen Tausend bis zu mehreren Hunderttausend Tokens; die konkreten Werte aendern sich mit jeder Generation. Entscheidend ist: Alles, was das Modell in einer Antwort beruecksichtigen soll, muss in dieses Fenster passen.",
+        "de": "Das hängt vom Modell ab und reicht von einigen Tausend bis zu mehreren Hunderttausend Tokens; die konkreten Werte ändern sich mit jeder Generation. Entscheidend ist: Alles, was das Modell in einer Antwort berücksichtigen soll, muss in dieses Fenster passen.",
         "en": "It depends on the model and ranges from a few thousand to several hundred thousand tokens; the concrete figures change with each generation. What matters is that everything the model should consider for an answer must fit inside this window.",
-        "it": "Dipende dal modello e va da qualche migliaio a diverse centinaia di migliaia di token; i valori concreti cambiano a ogni generazione. Cio che conta e che tutto cio che il modello deve considerare per una risposta deve stare in questa finestra.",
-        "fr": "Cela depend du modele et va de quelques milliers a plusieurs centaines de milliers de tokens; les valeurs concretes changent a chaque generation. L'essentiel est que tout ce que le modele doit prendre en compte pour une reponse tienne dans cette fenetre."
+        "it": "Dipende dal modello e va da qualche migliaio a diverse centinaia di migliaia di token; i valori concreti cambiano a ogni generazione. Ciò che conta è che tutto ciò che il modello deve considerare per una risposta deve stare in questa finestra.",
+        "fr": "Cela dépend du modèle et va de quelques milliers à plusieurs centaines de milliers de tokens; les valeurs concrètes changent à chaque génération. L'essentiel est que tout ce que le modèle doit prendre en compte pour une réponse tienne dans cette fenêtre."
       }
     },
     {
@@ -293,13 +293,13 @@
         "de": "Kann man Halluzinationen ganz verhindern?",
         "en": "Can hallucinations be prevented entirely?",
         "it": "Si possono evitare del tutto le allucinazioni?",
-        "fr": "Peut-on empecher totalement les hallucinations?"
+        "fr": "Peut-on empêcher totalement les hallucinations?"
       },
       "a": {
-        "de": "Vollstaendig ausschliessen laesst sie sich derzeit nicht, weil sie im Funktionsprinzip angelegt sind. Man kann sie aber deutlich reduzieren: durch Anbindung an gepruefte Quellen (RAG), praezise Prompts, das Erlauben von Ich weiss es nicht, niedrigere Temperature und menschliche Kontrolle.",
+        "de": "Vollständig ausschliessen lässt sie sich derzeit nicht, weil sie im Funktionsprinzip angelegt sind. Man kann sie aber deutlich reduzieren: durch Anbindung an geprüfte Quellen (RAG), präzise Prompts, das Erlauben von Ich weiss es nicht, niedrigere Temperature und menschliche Kontrolle.",
         "en": "They cannot currently be ruled out entirely because they are inherent to how the model works. But they can be markedly reduced: by grounding in verified sources (RAG), precise prompts, allowing I don't know, lower temperature and human oversight.",
-        "it": "Al momento non si possono escludere del tutto, perche sono insite nel principio di funzionamento. Si possono pero ridurre nettamente: ancorandosi a fonti verificate (RAG), con prompt precisi, consentendo il Non lo so, con temperature piu bassa e controllo umano.",
-        "fr": "On ne peut actuellement pas les exclure totalement, car elles sont inherentes au fonctionnement du modele. On peut toutefois nettement les reduire: en s'appuyant sur des sources verifiees (RAG), des prompts precis, en autorisant le Je ne sais pas, une temperature plus basse et une supervision humaine."
+        "it": "Al momento non si possono escludere del tutto, perché sono insite nel principio di funzionamento. Si possono però ridurre nettamente: ancorandosi a fonti verificate (RAG), con prompt precisi, consentendo il Non lo so, con temperature più bassa e controllo umano.",
+        "fr": "On ne peut actuellement pas les exclure totalement, car elles sont inhérentes au fonctionnement du modèle. On peut toutefois nettement les réduire: en s'appuyant sur des sources vérifiées (RAG), des prompts précis, en autorisant le Je ne sais pas, une temperature plus basse et une supervision humaine."
       }
     },
     {
@@ -307,13 +307,13 @@
         "de": "Sind LLM-Antworten in der Schweiz datenschutzkonform?",
         "en": "Are LLM answers data-protection compliant in Switzerland?",
         "it": "Le risposte dei LLM sono conformi alla protezione dei dati in Svizzera?",
-        "fr": "Les reponses des LLM sont-elles conformes a la protection des donnees en Suisse?"
+        "fr": "Les réponses des LLM sont-elles conformes à la protection des données en Suisse?"
       },
       "a": {
-        "de": "Das haengt nicht vom Modell ab, sondern von Ihrer Nutzung. Massgeblich sind das revDSG, der Bearbeitungsort und der Anbietervertrag. Personendaten und Geschaeftsgeheimnisse nur nach Pruefung eingeben; der EDOEB ist die zustaendige Aufsichtsbehoerde. Interne Richtlinien und geeignete Hosting-Optionen sind empfehlenswert.",
+        "de": "Das hängt nicht vom Modell ab, sondern von Ihrer Nutzung. Massgeblich sind das revDSG, der Bearbeitungsort und der Anbietervertrag. Personendaten und Geschäftsgeheimnisse nur nach Prüfung eingeben; der EDÖB ist die zuständige Aufsichtsbehörde. Interne Richtlinien und geeignete Hosting-Optionen sind empfehlenswert.",
         "en": "That depends not on the model but on how you use it. What matters is the revDSG, the place of processing and the provider contract. Enter personal data and trade secrets only after review; the FDPIC (EDOEB) is the competent supervisory authority. Internal policies and suitable hosting options are advisable.",
-        "it": "Non dipende dal modello, ma da come lo si usa. Contano il revDSG, il luogo di trattamento e il contratto con il fornitore. Inserire dati personali e segreti aziendali solo dopo verifica; l'IFPDT (EDOEB) e l'autorita di vigilanza competente. Sono consigliabili politiche interne e opzioni di hosting adeguate.",
-        "fr": "Cela depend non du modele mais de votre usage. Ce qui compte, c'est le revDSG, le lieu de traitement et le contrat avec le fournisseur. Ne saisir des donnees personnelles et des secrets d'affaires qu'apres verification; le PFPDT (EDOEB) est l'autorite de surveillance competente. Des directives internes et des options d'hebergement adaptees sont recommandees."
+        "it": "Non dipende dal modello, ma da come lo si usa. Contano il revDSG, il luogo di trattamento e il contratto con il fornitore. Inserire dati personali e segreti aziendali solo dopo verifica; l'IFPDT (EDOEB) è l'autorità di vigilanza competente. Sono consigliabili politiche interne e opzioni di hosting adeguate.",
+        "fr": "Cela dépend non du modèle mais de votre usage. Ce qui compte, c'est le revDSG, le lieu de traitement et le contrat avec le fournisseur. Ne saisir des données personnelles et des secrets d'affaires qu'après vérification; le PFPDT (EDOEB) est l'autorité de surveillance compétente. Des directives internes et des options d'hébergement adaptées sont recommandées."
       }
     }
   ],
