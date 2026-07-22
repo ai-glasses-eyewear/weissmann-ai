@@ -221,6 +221,39 @@ const AUTHORITY: Record<Locale, { eyebrow: string; title: string; text: string; 
   fr: { eyebrow: 'Les personnes derrière', title: 'Parlez aux fondateurs — pas à un call center.', text: 'Weissmann AI est dirigée par des personnes à Zurich que vous pouvez vraiment joindre. Accompagnement personnel, responsabilité claire, vrais interlocuteurs.', founders: [{ name: 'Giovanna Carpi', role: 'Fondatrice & CEO', initials: 'GC' }, { name: 'Nicola Mössner', role: 'Stratégie & Partenariats', initials: 'NM' }], processTitle: 'Opérationnel en quelques jours', steps: ['Un premier entretien sans engagement — besoins et faisabilité.', 'Mise en place — voix, base de connaissances, processus.', 'Test en conditions réelles avec votre équipe — puis le vrai lancement.', 'Accompagnement et optimisation continus — amélioration mesurable.'] },
 };
 const authority = AUTHORITY[locale];
+// "Try it for your industry" — example use cases tied to the live call number.
+const SCENARIO_ICONS = ['calendar-check', 'clock', 'sparkle', 'globe', 'briefcase'] as const;
+const SCENARIOS: Record<Locale, { eyebrow: string; title: string; text: string; cta: string; items: Array<{ name: string; does: string; phrase: string }> }> = {
+  de: { eyebrow: 'Für Ihre Branche', title: 'So arbeitet die KI in Ihrem Unternehmen.', text: 'Rufen Sie die Live-Nummer an und sagen Sie den Satz für Ihre Branche – die KI erledigt es in Sekunden.', cta: 'Anrufen und ausprobieren', items: [
+    { name: 'Restaurants', does: 'Nimmt Tischreservierungen entgegen, erfasst Personenzahl und Zeit.', phrase: '„Ein Tisch für vier heute Abend um 19:30.“' },
+    { name: 'Arztpraxen', does: 'Vergibt Termine und beantwortet Standardfragen.', phrase: '„Ich möchte nächste Woche einen Kontrolltermin.“' },
+    { name: 'Salons & Beauty', does: 'Bucht Behandlungen und verwaltet den Kalender.', phrase: '„Kann ich am Freitagnachmittag einen Haarschnitt haben?“' },
+    { name: 'Hotels', does: 'Bearbeitet Reservierungen und Gästefragen – in jeder Sprache.', phrase: '„Haben Sie dieses Wochenende ein Doppelzimmer?“' },
+    { name: 'Handwerk & Dienstleistung', does: 'Qualifiziert Anfragen und bucht Rückrufe.', phrase: '„Ich brauche einen Sanitär – wann kann jemand kommen?“' },
+  ] },
+  en: { eyebrow: 'For your industry', title: 'See how the AI works in your business.', text: 'Call the live number and say the phrase for your industry – the AI handles it in seconds.', cta: 'Call and try it', items: [
+    { name: 'Restaurants', does: 'Takes table reservations, notes party size and time.', phrase: '“A table for four tonight at 7:30.”' },
+    { name: 'Medical practices', does: 'Schedules appointments and answers routine questions.', phrase: '“I’d like to book a check-up next week.”' },
+    { name: 'Salons & beauty', does: 'Books treatments and manages the calendar.', phrase: '“Can I get a haircut on Friday afternoon?”' },
+    { name: 'Hotels', does: 'Handles reservations and guest questions – in any language.', phrase: '“Do you have a double room this weekend?”' },
+    { name: 'Trades & services', does: 'Qualifies enquiries and books call-backs.', phrase: '“I need a plumber – when can someone come?”' },
+  ] },
+  it: { eyebrow: 'Per il vostro settore', title: 'Come lavora l’AI nella vostra azienda.', text: 'Chiamate il numero live e dite la frase per il vostro settore – l’AI la gestisce in pochi secondi.', cta: 'Chiama e prova', items: [
+    { name: 'Ristoranti', does: 'Prende prenotazioni, registra numero di persone e orario.', phrase: '«Un tavolo per quattro stasera alle 19:30.»' },
+    { name: 'Studi medici', does: 'Fissa appuntamenti e risponde a domande di routine.', phrase: '«Vorrei un controllo la prossima settimana.»' },
+    { name: 'Saloni & beauty', does: 'Prenota trattamenti e gestisce il calendario.', phrase: '«Posso avere un taglio venerdì pomeriggio?»' },
+    { name: 'Hotel', does: 'Gestisce prenotazioni e domande degli ospiti – in ogni lingua.', phrase: '«Avete una camera doppia questo weekend?»' },
+    { name: 'Artigiani & servizi', does: 'Qualifica le richieste e prenota richiami.', phrase: '«Mi serve un idraulico – quando può venire qualcuno?»' },
+  ] },
+  fr: { eyebrow: 'Pour votre secteur', title: 'Comment l’IA travaille dans votre entreprise.', text: 'Appelez le numéro en direct et dites la phrase pour votre secteur – l’IA s’en occupe en quelques secondes.', cta: 'Appeler et essayer', items: [
+    { name: 'Restaurants', does: 'Prend les réservations, note le nombre de couverts et l’heure.', phrase: '« Une table pour quatre ce soir à 19h30. »' },
+    { name: 'Cabinets médicaux', does: 'Fixe les rendez-vous et répond aux questions courantes.', phrase: '« Je voudrais un contrôle la semaine prochaine. »' },
+    { name: 'Salons & beauté', does: 'Réserve les prestations et gère l’agenda.', phrase: '« Puis-je avoir une coupe vendredi après-midi ? »' },
+    { name: 'Hôtels', does: 'Gère les réservations et les questions des clients – dans toutes les langues.', phrase: '« Avez-vous une chambre double ce week-end ? »' },
+    { name: 'Artisans & services', does: 'Qualifie les demandes et planifie les rappels.', phrase: '« J’ai besoin d’un plombier – quand peut-on venir ? »' },
+  ] },
+};
+const scen = SCENARIOS[locale];
 
 const C: Record<Locale, any> = {
   de: {
@@ -672,6 +705,29 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
+  <!-- ── Try it for your industry (ties to the live call) ──── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{scen.eyebrow}</span>
+        <h2>{scen.title}</h2>
+        <p>{scen.text}</p>
+      </div>
+      <div class="scenarios">
+        {scen.items.map((it, i) => (
+          <div class="scenario reveal" style={`--i:${i}`}>
+            <div class="scenario__name"><span class="feat-icon"><Icon name={SCENARIO_ICONS[i]} size={20} /></span>{it.name}</div>
+            <p class="scenario__does">{it.does}</p>
+            <p class="scenario__try">{it.phrase}</p>
+          </div>
+        ))}
+      </div>
+      <p class="center mt-5">
+        <a class="btn btn--primary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{scen.cta} · {SITE.aiPhoneDisplay}</a>
+      </p>
+    </div>
+  </section>
+
   <!-- ── 4. Six modules — one system ──────────────────────── -->
   <section class="section" id="system">
     <div class="container">
@@ -1041,6 +1097,17 @@ const websiteStarter = getPackage('website-starter');
   .process__steps li { display: flex; gap: var(--space-3); align-items: baseline; color: var(--ink-soft); border-top: 1px solid var(--line); padding-block: var(--space-3); }
   .process__steps li:first-child { border-top: none; padding-top: 0; }
   .process__n { flex: none; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent); font-size: var(--fs-300); min-width: 1.8rem; }
+
+  /* Scenario cards (try it for your industry) */
+  .scenarios { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+  @media (min-width: 560px) { .scenarios { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .scenarios { grid-template-columns: repeat(3, 1fr); } }
+  .scenario { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-4); background: var(--paper); }
+  .scenario__name { display: flex; align-items: center; gap: 0.6rem; font-size: var(--fs-500); font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+  .scenario__name .feat-icon { width: 2.1rem; height: 2.1rem; margin: 0; }
+  .scenario__does { color: var(--ink-mute); font-size: var(--fs-300); margin: 0 0 var(--space-3); }
+  .scenario__try { font-size: var(--fs-300); color: var(--ink); border-left: 3px solid var(--accent); padding-left: 0.7rem; font-style: italic; margin: 0; }
+  @media (prefers-reduced-motion: no-preference) { .scenario.reveal { transition-delay: calc(var(--i, 0) * 60ms); } }
 
   /* ── Trust strip ──────────────────────────────────────── */
   .truststrip {
