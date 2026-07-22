@@ -7,7 +7,6 @@
  */
 import Layout from '../../layouts/Layout.astro';
 import { SITE, localePrefix, type Locale } from '../../data/site';
-import { relFor } from '../../data/routes';
 import { getService, servicePaths } from '../../data/services';
 import { t } from '../../i18n/ui';
 
@@ -15,8 +14,9 @@ interface Props { locale: Locale }
 const { locale } = Astro.props;
 const p = localePrefix(locale);
 const PATH = '/danke/';
-// Link the canonical service page, not the legacy /ki-telefonassistent/ URL.
-const phoneHref = relFor(locale, servicePaths(getService('phone-assistant')!));
+// Canonical service page (locale-independent path; the template prepends `p`).
+// Links here instead of the legacy /ki-telefonassistent/ URL.
+const phoneHref = servicePaths(getService('phone-assistant')!)[locale];
 
 const C: Record<Locale, any> = {
   de: {
