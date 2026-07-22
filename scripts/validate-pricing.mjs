@@ -33,10 +33,8 @@ const allSrc = pricingSrc + '\n' + siteSrc;
 
 // 1. Verified Stripe links — exactly these, nowhere else, never altered.
 const VERIFIED_LINKS = [
-  'https://buy.stripe.com/00w00b0V818UcT646g1sQ01', // Phone Starter CHF 350/mo
-  // Phone Medium (formerly Premium) is consult-only since the 2026-07-22 reprice
-  // to CHF 499; its old CHF 990 link was removed. Add a new CHF 499 Payment Link
-  // here (and in pricing.ts) once the business supplies it.
+  'https://buy.stripe.com/28EcMX47k9Fq5qE9qA1sQ03', // Phone Starter CHF 350/mo
+  'https://buy.stripe.com/aFa4gr5bocRC06k1Y81sQ04', // Phone Premium CHF 590/mo
 ];
 const foundLinks = pricingSrc.match(/https:\/\/buy\.stripe\.com\/[A-Za-z0-9]+/g) ?? [];
 for (const link of foundLinks) {
@@ -50,10 +48,6 @@ for (const link of VERIFIED_LINKS) {
   }
 }
 
-// 2. Forbidden stale price: 590 must never appear as a price anywhere.
-if (/\b590\b/.test(allSrc)) {
-  errors.push('Stale price "590" found in config — Starter is CHF 350.');
-}
 
 // 3. Forbidden legacy address tokens and unrelated-entity names.
 const FORBIDDEN = ['Culmannstr', '8006 Z', 'Podomedics', 'CHE-324.165.596'];

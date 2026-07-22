@@ -6,10 +6,9 @@
  * records. scripts/validate-pricing.mjs enforces consistency at build time.
  *
  * Rules (approved 2026-07-20):
- * - Phone Agent Starter keeps its verified Stripe link. Medium (formerly
- *   Premium) was repriced to CHF 499 on 2026-07-22; its old CHF 990 Stripe
- *   link was removed, so Medium is consult-only until the business supplies a
- *   new CHF 499 Payment Link.
+ * - Phone Agent Starter (CHF 350) and Premium (CHF 590) use verified Stripe
+ *   Payment Links created 2026-07-23. The earlier links (Starter charged
+ *   CHF 590, Premium CHF 990) were mispriced vs. the site and are retired.
  * - Starter price is CHF 350 (the stale CHF 590 must never reappear).
  * - New packages (websites, SEO, GEO, Ads) have approved prices but NO
  *   Stripe links yet — links are created only via authenticated Stripe
@@ -108,7 +107,7 @@ export const PACKAGES: PricingPackage[] = [
       it: ['Nessun costo di attivazione', 'Contratto di 12 mesi'],
       fr: ['Sans frais d’installation', 'Contrat de 12 mois'],
     },
-    stripeLink: 'https://buy.stripe.com/00w00b0V818UcT646g1sQ01',
+    stripeLink: 'https://buy.stripe.com/28EcMX47k9Fq5qE9qA1sQ03',
     ctaType: 'stripe',
     schemaOffer: true,
   },
@@ -116,12 +115,12 @@ export const PACKAGES: PricingPackage[] = [
     id: 'phone-premium',
     category: 'phone-agent',
     name: {
-      de: 'KI-Telefonassistent Medium',
-      en: 'AI Phone Agent Medium',
-      it: 'Assistente telefonico AI Medium',
-      fr: 'Agent téléphonique IA Medium',
+      de: 'KI-Telefonassistent Premium',
+      en: 'AI Phone Agent Premium',
+      it: 'Assistente telefonico AI Premium',
+      fr: 'Agent téléphonique IA Premium',
     },
-    price: 499,
+    price: 590,
     currency: 'CHF',
     interval: 'month',
     isFrom: false,
@@ -167,11 +166,8 @@ export const PACKAGES: PricingPackage[] = [
       it: ['Nessun costo di attivazione', 'Contratto di 12 mesi'],
       fr: ['Sans frais d’installation', 'Contrat de 12 mois'],
     },
-    // Repriced to CHF 499 (2026-07-22): the old CHF 990 Stripe link was removed
-    // so no one is charged 990 under a 499 label. Consult CTA until a new
-    // CHF 499 Payment Link is supplied by the business.
-    stripeLink: null,
-    ctaType: 'consult',
+    stripeLink: 'https://buy.stripe.com/aFa4gr5bocRC06k1Y81sQ04',
+    ctaType: 'stripe',
     schemaOffer: true,
   },
   {
