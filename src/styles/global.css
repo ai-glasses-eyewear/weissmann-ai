@@ -280,14 +280,14 @@ th, td { text-align: left; padding: 0.7rem 0.9rem; border-bottom: 1px solid var(
 th { color: var(--ink); font-size: var(--fs-300); }
 
 /* ── Shared page primitives (one definition for all templates) ── */
-.page-kicker {
-  display: inline-block;
+/* Canonical page kicker (small accent label above H1s) — one definition for all
+   templates; markup uses class="kicker". */
+.kicker {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: var(--fs-200);
-  font-weight: 600;
   color: var(--accent);
-  margin-bottom: var(--space-2);
+  font-weight: 600;
 }
 /* Answer-first TL;DR callout — the passage AI engines lift and cite */
 .tldr {

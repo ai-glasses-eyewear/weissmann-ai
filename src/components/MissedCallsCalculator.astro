@@ -7,8 +7,9 @@
  */
 import type { Locale } from '../data/site';
 
-interface Props { locale: Locale }
-const { locale } = Astro.props;
+interface Props { locale: Locale; headingLevel?: 'h2' | 'h3' }
+const { locale, headingLevel = 'h3' } = Astro.props;
+const Heading = headingLevel;
 
 const L: Record<Locale, Record<string, string>> = {
   de: {
@@ -56,7 +57,7 @@ const s = L[locale];
 ---
 
 <div class="calc card card--raised">
-  <h3>{s.title}</h3>
+  <Heading>{s.title}</Heading>
   <form class="calc__form" data-calc>
     <div class="field">
       <label for="calc-calls">{s.calls}</label>

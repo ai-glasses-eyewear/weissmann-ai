@@ -12,11 +12,13 @@ import { type ServiceDef, servicePaths } from '../../data/services';
 import type { ServiceContent } from '../../data/service-content';
 import { getIndustry, industryPaths } from '../../data/industries';
 import { getCluster, clusterPaths, pillarOf } from '../../data/academy';
-import { getPackage, formatPrice } from '../../data/pricing';
+import { getPackage } from '../../data/pricing';
 import { breadcrumbs, faqPage, serviceWithOffer, webPage } from '../../data/schema';
 import { t } from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
+import Faq from '../Faq.astro';
+import PricingCard from '../PricingCard.astro';
 
 interface Props {
   locale: Locale;
@@ -71,14 +73,6 @@ const schema = [
   faqPage(content.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))),
   ...packages.filter((p) => p.schemaOffer).map((p) => serviceWithOffer(locale, p, localePaths[locale])),
 ];
-
-function priceDisplay(id: string): string {
-  const p = getPackage(id);
-  if (p.price === null) return lbl.onRequest;
-  const amount = formatPrice(p.price);
-  const withFrom = p.isFrom ? `${t(locale, 'price.from')} ${amount}` : amount;
-  return p.interval === 'month' ? `${withFrom} / ${t(locale, 'price.month')}` : `${withFrom} · ${t(locale, 'price.once')}`;
-}
 ---
 <Layout locale={locale} localePaths={localePaths} title={content.title[locale]} description={content.metaDescription[locale]} schema={schema}>
   <Breadcrumbs locale={locale} items={[
@@ -128,22 +122,7 @@ function priceDisplay(id: string): string {
     <section class="container svc-pricing" id="preise">
       <h2>{lbl.pricing}</h2>
       <div class="price-grid">
-        {packages.map((p) => (
-          <article class="price-card">
-            <h3>{p.name[locale]}</h3>
-            <p class="price-card__price">{priceDisplay(p.id)}</p>
-            <p class="price-card__desc">{p.description[locale]}</p>
-            <ul>
-              {p.features[locale].slice(0, 4).map((f) => <li>{f}</li>)}
-            </ul>
-            <ul class="price-card__disc">
-              {p.disclosures[locale].map((d) => <li>{d}</li>)}
-            </ul>
-            {p.ctaType === 'stripe' && p.stripeLink
-              ? <a class="btn btn--primary" href={p.stripeLink} rel="nofollow" data-track="checkout">{t(locale, 'cta.buy')}</a>
-              : <a class="btn btn--ghost" href={contactHref} data-track="request_demo">{t(locale, 'cta.consultation')}</a>}
-          </article>
-        ))}
+        {packages.map((p) => <PricingCard pkg={p} locale={locale} />)}
       </div>
       <p class="price-note">{t(locale, 'price.vatNote')} · <a href={pricingHref}>{t(locale, 'cta.allPricing')}</a></p>
     </section>
@@ -151,14 +130,7 @@ function priceDisplay(id: string): string {
 
   <section class="container svc-faq">
     <h2>{lbl.faq}</h2>
-    <div class="faq-list">
-      {content.faq.map((f) => (
-        <details class="faq-item">
-          <summary>{f.q[locale]}</summary>
-          <p>{f.a[locale]}</p>
-        </details>
-      ))}
-    </div>
+    <Faq items={content.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))} />
   </section>
 
   {(relIndustries.length > 0 || relClusters.length > 0) && (
@@ -199,7 +171,6 @@ function priceDisplay(id: string): string {
 <style>
   .svc-hero { padding-top: var(--space-5); padding-bottom: var(--space-6); max-width: 62rem; }
   .svc-hero h1 { font-size: var(--fs-700); line-height: 1.05; margin: 0.4rem 0 1rem; }
-  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
   .svc-lead { font-size: var(--fs-400); color: var(--ink-soft); max-width: 48rem; }
   .svc-cta-row { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-4); }
   .svc-cta-row--center { justify-content: center; }
@@ -219,22 +190,9 @@ function priceDisplay(id: string): string {
   .svc-pricing { padding: var(--space-6) var(--space-4); }
   .svc-pricing > h2 { font-size: var(--fs-600); margin-bottom: var(--space-4); }
   .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: var(--space-4); }
-  .price-card { border: 1px solid var(--line); border-radius: 16px; padding: var(--space-5); background: var(--paper); display: flex; flex-direction: column; gap: 0.6rem; }
-  .price-card h3 { font-size: var(--fs-500); margin: 0; }
-  .price-card__price { font-size: var(--fs-500); font-weight: 700; color: var(--accent); margin: 0; }
-  .price-card__desc { color: var(--ink-soft); font-size: var(--fs-300); margin: 0; }
-  .price-card ul { list-style: none; padding: 0; margin: 0.4rem 0; display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
-  .price-card li { position: relative; padding-left: 1.3rem; font-size: var(--fs-300); color: var(--ink-soft); }
-  .price-card li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
-  .price-card__disc li { font-size: var(--fs-200); color: var(--ink-mute); }
-  .price-card__disc li::before { content: "·"; }
   .price-note { font-size: var(--fs-200); color: var(--ink-mute); margin-top: var(--space-4); }
   .svc-faq { padding-bottom: var(--space-6); max-width: 54rem; }
   .svc-faq > h2 { font-size: var(--fs-600); margin-bottom: var(--space-4); }
-  .faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
-  .faq-item { border: 1px solid var(--line); border-radius: 12px; padding: var(--space-3) var(--space-4); background: var(--paper); }
-  .faq-item summary { font-weight: 600; cursor: pointer; }
-  .faq-item p { margin: 0.6rem 0 0; color: var(--ink-soft); }
   .svc-links { display: grid; gap: var(--space-5); padding-bottom: var(--space-6); max-width: 60rem; }
   .svc-links__group h2 { font-size: var(--fs-400); margin-bottom: var(--space-3); }
   .chip-row { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }

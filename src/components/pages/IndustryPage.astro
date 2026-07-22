@@ -15,6 +15,7 @@ import { breadcrumbs, faqPage, webPage } from '../../data/schema';
 import { t } from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
+import Faq from '../Faq.astro';
 
 interface Props {
   locale: Locale;
@@ -119,14 +120,7 @@ const schema = [
 
   <section class="container ind-faq">
     <h2>{lbl.faq}</h2>
-    <div class="faq-list">
-      {content.faq.map((f) => (
-        <details class="faq-item">
-          <summary>{f.q[locale]}</summary>
-          <p>{f.a[locale]}</p>
-        </details>
-      ))}
-    </div>
+    <Faq items={content.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))} />
   </section>
 
   <section class="container ind-cta">
@@ -139,7 +133,6 @@ const schema = [
 <style>
   .ind-hero { padding-top: var(--space-5); padding-bottom: var(--space-6); max-width: 60rem; }
   .ind-hero h1 { font-size: var(--fs-700); line-height: 1.06; margin: 0.4rem 0 1rem; }
-  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
   .tldr { border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); border-radius: 0 12px 12px 0; padding: var(--space-4); }
   .tldr__label { text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--fs-200); color: var(--accent); font-weight: 700; }
   .tldr p { margin: 0.4rem 0 0; color: var(--ink); font-size: var(--fs-400); }
@@ -163,10 +156,6 @@ const schema = [
   .svc-link h3 { font-size: var(--fs-400); margin: 0 0 0.3rem; color: var(--ink); }
   .svc-link p { margin: 0; color: var(--ink-soft); font-size: var(--fs-300); }
   .ind-faq { max-width: 54rem; padding-bottom: var(--space-6); }
-  .faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
-  .faq-item { border: 1px solid var(--line); border-radius: 12px; padding: var(--space-3) var(--space-4); background: var(--paper); }
-  .faq-item summary { font-weight: 600; cursor: pointer; }
-  .faq-item p { margin: 0.6rem 0 0; color: var(--ink-soft); }
   .ind-cta { text-align: center; padding: var(--space-7) var(--space-4); margin-bottom: var(--space-7); border-top: 1px solid var(--line); }
   .ind-cta h2 { font-size: var(--fs-600); margin-bottom: 0.6rem; }
   .ind-cta p { color: var(--ink-soft); max-width: 40rem; margin: 0 auto var(--space-4); }

@@ -15,6 +15,7 @@ import { breadcrumbs, faqPage } from '../../data/schema';
 import { t } from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
+import Faq from '../Faq.astro';
 
 interface Props { locale: Locale; localePaths: LocalePaths; resource: ResourceDef; content: ChecklistContent }
 const { locale, localePaths, resource, content } = Astro.props;
@@ -90,11 +91,7 @@ let idx = 0;
   {content.faq && content.faq.length > 0 && (
     <section class="container cl-faq">
       <h2>{lbl.faq}</h2>
-      <div class="faq-list">
-        {content.faq.map((f) => (
-          <details class="faq-item"><summary>{f.q[locale]}</summary><p>{f.a[locale]}</p></details>
-        ))}
-      </div>
+      <Faq items={content.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))} />
     </section>
   )}
 
@@ -114,7 +111,6 @@ let idx = 0;
 <style>
   .cl-head { padding-top: var(--space-5); padding-bottom: var(--space-4); max-width: 52rem; }
   .cl-head h1 { font-size: var(--fs-700); line-height: 1.08; margin: 0.4rem 0 1rem; }
-  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
   .cl-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 48rem; }
   .cl-bar { display: flex; gap: var(--space-3); align-items: center; justify-content: space-between; flex-wrap: wrap; margin-top: var(--space-4); border-top: 1px solid var(--line); padding-top: var(--space-3); }
   .cl-progress { margin: 0; color: var(--ink-soft); font-size: var(--fs-300); }
@@ -129,10 +125,6 @@ let idx = 0;
   .cl-item input:checked + label { color: var(--ink-mute); text-decoration: line-through; }
   .cl-faq { max-width: 52rem; padding-bottom: var(--space-5); }
   .cl-faq h2 { font-size: var(--fs-500); margin-bottom: var(--space-4); }
-  .faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
-  .faq-item { border: 1px solid var(--line); border-radius: 12px; padding: var(--space-3) var(--space-4); background: var(--paper); }
-  .faq-item summary { font-weight: 600; cursor: pointer; }
-  .faq-item p { margin: 0.6rem 0 0; color: var(--ink-soft); }
   .cl-cta { padding: var(--space-6) var(--space-4) var(--space-7); border-top: 1px solid var(--line); max-width: 52rem; }
   .cl-cta h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
   .cl-cta-row { display: flex; gap: var(--space-3); flex-wrap: wrap; }

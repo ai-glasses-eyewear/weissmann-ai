@@ -15,6 +15,7 @@ import { breadcrumbs, faqPage, CONTENT_DATE } from '../../data/schema';
 import { t } from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
+import Faq from '../Faq.astro';
 
 interface Props {
   locale: Locale;
@@ -136,14 +137,7 @@ const schema = [
 
     <section class="container ac-faq">
       <h2>{lbl.faq}</h2>
-      <div class="faq-list">
-        {article.faq.map((f) => (
-          <details class="faq-item">
-            <summary>{f.q[locale]}</summary>
-            <p>{f.a[locale]}</p>
-          </details>
-        ))}
-      </div>
+      <Faq items={article.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))} />
     </section>
 
     {relServices.length > 0 && (
@@ -184,7 +178,6 @@ const schema = [
 <style>
   .ac-head { padding-top: var(--space-5); padding-bottom: var(--space-5); max-width: 52rem; }
   .ac-head h1 { font-size: var(--fs-700); line-height: 1.08; margin: 0.4rem 0 0.6rem; }
-  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--fs-200); color: var(--accent); font-weight: 600; }
   .ac-byline { font-size: var(--fs-200); color: var(--ink-mute); margin-bottom: var(--space-4); }
   .tldr { border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); border-radius: 0 12px 12px 0; padding: var(--space-4); }
   .tldr__label { text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--fs-200); color: var(--accent); font-weight: 700; }
@@ -203,10 +196,6 @@ const schema = [
   .ac-spoke h3, .ac-rel h3 { font-size: var(--fs-400); margin: 0 0 0.35rem; color: var(--ink); }
   .ac-spoke p, .ac-rel p { margin: 0; color: var(--ink-soft); font-size: var(--fs-300); }
   .ac-faq { max-width: 52rem; padding-top: var(--space-4); padding-bottom: var(--space-5); }
-  .faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
-  .faq-item { border: 1px solid var(--line); border-radius: 12px; padding: var(--space-3) var(--space-4); background: var(--paper); }
-  .faq-item summary { font-weight: 600; cursor: pointer; }
-  .faq-item p { margin: 0.6rem 0 0; color: var(--ink-soft); }
   .ac-terms { max-width: 52rem; padding-top: var(--space-2); padding-bottom: var(--space-4); }
   .ac-terms h2 { font-size: var(--fs-300); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-mute); margin-bottom: var(--space-3); }
   .ac-term-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
