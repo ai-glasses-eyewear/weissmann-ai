@@ -213,6 +213,14 @@ const LIVECALL: Record<Locale, { eyebrow: string; title: string; text: string; c
   fr: { eyebrow: 'Live · Essayez maintenant', title: 'Parlez à notre IA dès maintenant.', text: 'Appelez et découvrez l’agent téléphonique IA de Weissmann en action – il répond en quelques secondes, en allemand, anglais, français ou italien.', cta: 'Appeler maintenant', note: 'Vous parlerez à notre véritable assistant IA – gratuit et sans engagement.', hintLabel: 'Astuce :', hint: 'Dites « Je voudrais prendre rendez-vous. »' },
 };
 const lc = LIVECALL[locale];
+// Authority: real founders (names/roles are public) + transparent process. Photos: owner to add.
+const AUTHORITY: Record<Locale, { eyebrow: string; title: string; text: string; founders: Array<{ name: string; role: string; initials: string }>; processTitle: string; steps: string[] }> = {
+  de: { eyebrow: 'Wer dahinter steht', title: 'Sprechen Sie mit den Gründern – nicht mit einem Callcenter.', text: 'Weissmann AI wird von Menschen in Zürich geführt, die Sie erreichen. Persönliche Betreuung, klare Verantwortung, echte Ansprechpartner.', founders: [{ name: 'Giovanna Carpi', role: 'Gründerin & CEO', initials: 'GC' }, { name: 'Nicola Mössner', role: 'Strategie & Partnerschaften', initials: 'NM' }], processTitle: 'In wenigen Tagen live', steps: ['Unverbindliches Erstgespräch – wir klären Bedarf und Machbarkeit.', 'Einrichtung & Konfiguration – Stimme, Wissensbasis, Abläufe.', 'Live-Test mit Ihrem Team – dann der echte Start.', 'Laufende Betreuung & Optimierung – messbar besser.'] },
+  en: { eyebrow: 'The people behind it', title: 'Talk to the founders — not a call center.', text: 'Weissmann AI is run by people in Zurich you can actually reach. Personal support, clear accountability, real contacts.', founders: [{ name: 'Giovanna Carpi', role: 'Founder & CEO', initials: 'GC' }, { name: 'Nicola Mössner', role: 'Strategy & Partnerships', initials: 'NM' }], processTitle: 'Live within days', steps: ['A no-obligation first call — we clarify needs and feasibility.', 'Setup & configuration — voice, knowledge base, workflows.', 'Live test with your team — then the real launch.', 'Ongoing support & optimization — measurably better.'] },
+  it: { eyebrow: 'Chi c’è dietro', title: 'Parlate con i fondatori — non con un call center.', text: 'Weissmann AI è guidata da persone a Zurigo che potete davvero raggiungere. Supporto personale, responsabilità chiara, contatti reali.', founders: [{ name: 'Giovanna Carpi', role: 'Fondatrice & CEO', initials: 'GC' }, { name: 'Nicola Mössner', role: 'Strategia & Partnership', initials: 'NM' }], processTitle: 'Attivo in pochi giorni', steps: ['Un primo colloquio senza impegno — chiariamo esigenze e fattibilità.', 'Configurazione — voce, base di conoscenza, processi.', 'Test dal vivo con il vostro team — poi l’avvio reale.', 'Assistenza e ottimizzazione continue — miglioramento misurabile.'] },
+  fr: { eyebrow: 'Les personnes derrière', title: 'Parlez aux fondateurs — pas à un call center.', text: 'Weissmann AI est dirigée par des personnes à Zurich que vous pouvez vraiment joindre. Accompagnement personnel, responsabilité claire, vrais interlocuteurs.', founders: [{ name: 'Giovanna Carpi', role: 'Fondatrice & CEO', initials: 'GC' }, { name: 'Nicola Mössner', role: 'Stratégie & Partenariats', initials: 'NM' }], processTitle: 'Opérationnel en quelques jours', steps: ['Un premier entretien sans engagement — besoins et faisabilité.', 'Mise en place — voix, base de connaissances, processus.', 'Test en conditions réelles avec votre équipe — puis le vrai lancement.', 'Accompagnement et optimisation continus — amélioration mesurable.'] },
+};
+const authority = AUTHORITY[locale];
 
 const C: Record<Locale, any> = {
   de: {
@@ -867,6 +875,36 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
+  <!-- ── Authority: founders + transparent process ────────── -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{authority.eyebrow}</span>
+        <h2>{authority.title}</h2>
+        <p>{authority.text}</p>
+      </div>
+      <div class="founders reveal">
+        {authority.founders.map((f) => (
+          <div class="founder">
+            <span class="founder__avatar" aria-hidden="true">{f.initials}</span>
+            <div>
+              <h3>{f.name}</h3>
+              <p>{f.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="process reveal">
+        <h3 class="process__title">{authority.processTitle}</h3>
+        <ol class="process__steps">
+          {authority.steps.map((s, i) => (
+            <li><span class="process__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><span>{s}</span></li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
   <!-- ── 13. FAQ ──────────────────────────────────────────── -->
   <section class="section section--alt">
     <div class="container">
@@ -996,6 +1034,19 @@ const websiteStarter = getPackage('website-starter');
   .livecall__cta { font-size: var(--fs-500); padding: 0.9rem 1.7rem; margin-top: var(--space-4); gap: 0.6rem; }
   .livecall__hint { margin-top: var(--space-4); color: var(--ink-soft); }
   .livecall__note { margin-top: var(--space-2); font-size: var(--fs-200); color: var(--ink-mute); }
+
+  /* Authority: founders + process */
+  .founders { display: grid; gap: var(--space-4); grid-template-columns: 1fr; max-width: 46rem; }
+  @media (min-width: 560px) { .founders { grid-template-columns: 1fr 1fr; } }
+  .founder { display: flex; align-items: center; gap: var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-4); background: var(--paper); }
+  .founder__avatar { flex: none; width: 3rem; height: 3rem; border-radius: 50%; background: var(--accent); color: #fff; display: inline-grid; place-items: center; font-weight: 700; letter-spacing: 0.02em; }
+  .founder h3 { font-size: var(--fs-500); margin: 0; }
+  .founder p { margin: 0; color: var(--ink-mute); font-size: var(--fs-300); }
+  .process { margin-top: var(--space-5); }
+  .process__title { font-size: var(--fs-600); margin-bottom: var(--space-4); }
+  .process__steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; max-width: 52rem; }
+  .process__steps li { display: flex; gap: var(--space-3); align-items: baseline; color: var(--ink-soft); border-top: 1px solid var(--line); padding-block: var(--space-3); }
+  .process__n { flex: none; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent); font-size: var(--fs-300); min-width: 1.8rem; }
 
   /* ── Trust strip ──────────────────────────────────────── */
   .truststrip {
