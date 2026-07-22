@@ -7,9 +7,11 @@
  * answer-first hero, benefits, body, transparent pricing, FAQ, CTA + full schema.
  */
 import { SITE, localeUrl, type Locale } from '../../data/site';
-import { type LocalePaths, pillarHome, urlFor } from '../../data/routes';
+import { type LocalePaths, pillarHome, urlFor, relFor } from '../../data/routes';
 import { type ServiceDef, servicePaths } from '../../data/services';
 import type { ServiceContent } from '../../data/service-content';
+import { getIndustry, industryPaths } from '../../data/industries';
+import { getCluster, clusterPaths, pillarOf } from '../../data/academy';
 import { getPackage, formatPrice } from '../../data/pricing';
 import { breadcrumbs, faqPage, serviceWithOffer, webPage } from '../../data/schema';
 import { t } from '../../i18n/ui';
@@ -39,6 +41,21 @@ const hubPaths = pillarHome('services');
 const selfUrl = urlFor(locale, localePaths);
 
 const packages = content.pricingIds.map((id) => getPackage(id));
+
+// Internal-link the service to its industries + informational Academy cluster
+// (data already on the ServiceDef) — only to published targets.
+const relIndustries = (service.relatedIndustries ?? [])
+  .map((id) => getIndustry(id))
+  .filter((i): i is NonNullable<typeof i> => !!i && i.status === 'live');
+const relClusters = (service.relatedAcademy ?? [])
+  .map((id) => getCluster(id))
+  .filter((c): c is NonNullable<typeof c> => !!c && c.status === 'live' && !!pillarOf(c.id));
+const relLabels = {
+  de: { industries: 'Für welche Branchen', learn: 'Verstehen: in der AI Academy' },
+  en: { industries: 'Industries we serve', learn: 'Understand it: in the AI Academy' },
+  it: { industries: 'Per quali settori', learn: 'Approfondire: nell’AI Academy' },
+  fr: { industries: 'Pour quels secteurs', learn: 'Comprendre : dans l’AI Academy' },
+}[locale];
 
 const crumbName = { de: 'Startseite', en: 'Home', it: 'Home', fr: 'Accueil' }[locale];
 const svcCrumb = { de: 'Leistungen', en: 'Services', it: 'Servizi', fr: 'Services' }[locale];
@@ -143,6 +160,31 @@ function priceDisplay(id: string): string {
     </div>
   </section>
 
+  {(relIndustries.length > 0 || relClusters.length > 0) && (
+    <section class="container svc-links">
+      {relIndustries.length > 0 && (
+        <div class="svc-links__group">
+          <h2>{relLabels.industries}</h2>
+          <ul class="chip-row">
+            {relIndustries.map((i) => (
+              <li><a class="chip" href={relFor(locale, industryPaths(i))}>{i.name[locale]}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {relClusters.length > 0 && (
+        <div class="svc-links__group">
+          <h2>{relLabels.learn}</h2>
+          <ul class="chip-row">
+            {relClusters.map((c) => (
+              <li><a class="chip" href={relFor(locale, clusterPaths(c))}>{c.name[locale]}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
+  )}
+
   <section class="container svc-cta">
     <h2>{lbl.ctaTitle}</h2>
     <p>{lbl.ctaText}</p>
@@ -195,6 +237,9 @@ function priceDisplay(id: string): string {
   .faq-item { border: 1px solid var(--line); border-radius: 12px; padding: var(--space-3) var(--space-4); background: var(--paper); }
   .faq-item summary { font-weight: 600; cursor: pointer; }
   .faq-item p { margin: 0.6rem 0 0; color: var(--ink-soft); }
+  .svc-links { display: grid; gap: var(--space-5); padding-bottom: var(--space-6); max-width: 60rem; }
+  .svc-links__group h2 { font-size: var(--fs-400); margin-bottom: var(--space-3); }
+  .chip-row { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .svc-cta { text-align: center; padding: var(--space-7) var(--space-4); margin-bottom: var(--space-7); border-top: 1px solid var(--line); }
   .svc-cta h2 { font-size: var(--fs-600); margin-bottom: 0.6rem; }
   .svc-cta p { color: var(--ink-soft); max-width: 40rem; margin: 0 auto var(--space-4); }
