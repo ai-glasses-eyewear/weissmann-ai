@@ -22,10 +22,10 @@
     "de": "Wie KI im Kundenservice Chat, Voice, Ticket-Triage und Antwortentwürfe unterstützt: Nutzen, Grenzen, Human-Handoff und Schweizer Datenschutz nach revDSG.",
     "en": "How AI supports customer service across chat, voice, ticket triage and reply drafting: benefits, limits, the human-handoff principle and Swiss data protection.",
     "it": "Come l'IA supporta il servizio clienti tra chat, voce, triage dei ticket e bozze di risposta: vantaggi, limiti, handoff umano e privacy svizzera.",
-    "fr": "Comment l'IA soutient le service client : chat, voix, tri des tickets, brouillons de reponses. Avantages, limites, transfert humain et protection des donnees suisse."
+    "fr": "Comment l'IA soutient le service client : chat, voix, tri des tickets, brouillons de réponses. Avantages, limites, transfert humain et protection des données suisse."
   },
   "kicker": {
-    "de": "KI-Funktionen fuer Unternehmen",
+    "de": "KI-Funktionen für Unternehmen",
     "en": "AI functions for business",
     "it": "Funzioni IA per le aziende",
     "fr": "Fonctions IA pour l'entreprise"
@@ -34,13 +34,13 @@
     "de": "KI im Kundenservice: Was sie leistet, wo ihre Grenzen liegen",
     "en": "AI in Customer Support: What It Does and Where It Stops",
     "it": "IA nel servizio clienti: cosa fa e dove si ferma",
-    "fr": "L'IA au service client : ce qu'elle fait et ou elle s'arrete"
+    "fr": "L'IA au service client : ce qu'elle fait et où elle s'arrête"
   },
   "answerFirst": {
-    "de": "KI im Kundenservice automatisiert wiederkehrende Anfragen ueber Chat- und Voice-Assistenten, priorisiert Tickets, schlaegt Antwortentwuerfe vor und haelt Wissensdatenbanken aktuell. Sie entlastet Teams bei Routinefaellen und verkuerzt Wartezeiten, ersetzt aber keine Menschen: komplexe, emotionale oder rechtlich heikle Faelle brauchen eine klare Uebergabe. Entscheidend sind saubere Daten, ein definiertes Human-Handoff-Prinzip und Schweizer Datenschutz nach revDSG.",
+    "de": "KI im Kundenservice automatisiert wiederkehrende Anfragen über Chat- und Voice-Assistenten, priorisiert Tickets, schlägt Antwortentwürfe vor und hält Wissensdatenbanken aktuell. Sie entlastet Teams bei Routinefällen und verkürzt Wartezeiten, ersetzt aber keine Menschen: komplexe, emotionale oder rechtlich heikle Fälle brauchen eine klare Übergabe. Entscheidend sind saubere Daten, ein definiertes Human-Handoff-Prinzip und Schweizer Datenschutz nach revDSG.",
     "en": "AI in customer support automates recurring requests through chat and voice assistants, prioritises tickets, drafts replies for agents and keeps knowledge bases current. It relieves teams of routine work and shortens wait times, but it does not replace people: complex, emotional or legally sensitive cases need a clear handoff. Success depends on clean data, a defined human-handoff principle and Swiss data protection under the revDSG.",
-    "it": "L'IA nel servizio clienti automatizza le richieste ricorrenti tramite assistenti chat e vocali, assegna priorita ai ticket, propone bozze di risposta e mantiene aggiornate le knowledge base. Alleggerisce i team dai casi di routine e riduce i tempi di attesa, ma non sostituisce le persone: i casi complessi, emotivi o legalmente delicati richiedono un passaggio chiaro all'operatore. Servono dati puliti, un principio di handoff definito e la protezione dei dati svizzera secondo la revDSG.",
-    "fr": "L'IA au service client automatise les demandes recurrentes via des assistants chat et vocaux, priorise les tickets, propose des brouillons de reponses et tient a jour les bases de connaissances. Elle allege les equipes des taches de routine et reduit les temps d'attente, mais ne remplace pas les humains : les cas complexes, emotionnels ou juridiquement sensibles exigent un transfert clair. Le succes repose sur des donnees propres, un principe de transfert humain defini et la protection des donnees suisse selon la revDSG."
+    "it": "L'IA nel servizio clienti automatizza le richieste ricorrenti tramite assistenti chat e vocali, assegna priorità ai ticket, propone bozze di risposta e mantiene aggiornate le knowledge base. Alleggerisce i team dai casi di routine e riduce i tempi di attesa, ma non sostituisce le persone: i casi complessi, emotivi o legalmente delicati richiedono un passaggio chiaro all'operatore. Servono dati puliti, un principio di handoff definito e la protezione dei dati svizzera secondo la revDSG.",
+    "fr": "L'IA au service client automatise les demandes récurrentes via des assistants chat et vocaux, priorise les tickets, propose des brouillons de réponses et tient à jour les bases de connaissances. Elle allège les équipes des tâches de routine et réduit les temps d'attente, mais ne remplace pas les humains : les cas complexes, émotionnels ou juridiquement sensibles exigent un transfert clair. Le succès repose sur des données propres, un principe de transfert humain défini et la protection des données suisse selon la revDSG."
   },
   "sections": [
     {
@@ -48,20 +48,20 @@
         "de": "Was KI im Kundenservice wirklich leistet",
         "en": "What AI actually does in customer support",
         "it": "Cosa fa davvero l'IA nel servizio clienti",
-        "fr": "Ce que l'IA fait reellement au service client"
+        "fr": "Ce que l'IA fait réellement au service client"
       },
       "paragraphs": [
         {
-          "de": "KI im Kundenservice ist kein einzelnes Produkt, sondern eine Schicht aus Werkzeugen, die entlang der Kontaktstrecke ansetzen: bevor eine Anfrage einen Menschen erreicht, waehrend der Bearbeitung und danach in der Nachbereitung. Moderne Systeme kombinieren grosse Sprachmodelle mit dem eigenen Wissen eines Unternehmens (Retrieval-Augmented Generation), sodass Antworten auf realen Handbuechern, AGB und Produktdaten beruhen statt auf frei erfundenem Text.",
+          "de": "KI im Kundenservice ist kein einzelnes Produkt, sondern eine Schicht aus Werkzeugen, die entlang der Kontaktstrecke ansetzen: bevor eine Anfrage einen Menschen erreicht, während der Bearbeitung und danach in der Nachbereitung. Moderne Systeme kombinieren grosse Sprachmodelle mit dem eigenen Wissen eines Unternehmens (Retrieval-Augmented Generation), sodass Antworten auf realen Handbüchern, AGB und Produktdaten beruhen statt auf frei erfundenem Text.",
           "en": "AI in customer support is not a single product but a layer of tools that act along the contact journey: before a request reaches a human, during handling and afterwards in wrap-up. Modern systems combine large language models with a company's own knowledge (retrieval-augmented generation), so answers rest on real manuals, terms and product data rather than invented text.",
-          "it": "L'IA nel servizio clienti non e un singolo prodotto ma uno strato di strumenti che agiscono lungo il percorso di contatto: prima che una richiesta raggiunga un operatore, durante la gestione e dopo, nella fase di chiusura. I sistemi moderni combinano grandi modelli linguistici con il sapere aziendale (retrieval-augmented generation), cosi le risposte poggiano su manuali, condizioni e dati di prodotto reali invece che su testo inventato.",
-          "fr": "L'IA au service client n'est pas un produit unique mais une couche d'outils qui interviennent tout au long du parcours de contact : avant qu'une demande n'atteigne un humain, pendant le traitement et ensuite lors de la cloture. Les systemes modernes combinent de grands modeles de langage avec le savoir propre de l'entreprise (retrieval-augmented generation), de sorte que les reponses reposent sur des manuels, des conditions et des donnees produit reels plutot que sur du texte invente."
+          "it": "L'IA nel servizio clienti non è un singolo prodotto ma uno strato di strumenti che agiscono lungo il percorso di contatto: prima che una richiesta raggiunga un operatore, durante la gestione e dopo, nella fase di chiusura. I sistemi moderni combinano grandi modelli linguistici con il sapere aziendale (retrieval-augmented generation), così le risposte poggiano su manuali, condizioni e dati di prodotto reali invece che su testo inventato.",
+          "fr": "L'IA au service client n'est pas un produit unique mais une couche d'outils qui interviennent tout au long du parcours de contact : avant qu'une demande n'atteigne un humain, pendant le traitement et ensuite lors de la clôture. Les systèmes modernes combinent de grands modèles de langage avec le savoir propre de l'entreprise (retrieval-augmented generation), de sorte que les réponses reposent sur des manuels, des conditions et des données produit réels plutôt que sur du texte inventé."
         },
         {
-          "de": "Der praktische Nutzen entsteht dort, wo Volumen und Wiederholung hoch sind: Statusabfragen, Passwort-Themen, Oeffnungszeiten, Retouren oder immer gleiche Produktfragen. Diese Faelle binden Zeit, ohne besonderes Fingerspitzengefuehl zu verlangen. Genau hier verschiebt KI die Arbeit vom Suchen und Tippen hin zum Pruefen und Entscheiden.",
+          "de": "Der praktische Nutzen entsteht dort, wo Volumen und Wiederholung hoch sind: Statusabfragen, Passwort-Themen, Öffnungszeiten, Retouren oder immer gleiche Produktfragen. Diese Fälle binden Zeit, ohne besonderes Fingerspitzengefühl zu verlangen. Genau hier verschiebt KI die Arbeit vom Suchen und Tippen hin zum Prüfen und Entscheiden.",
           "en": "The practical value appears where volume and repetition are high: status checks, password topics, opening hours, returns or the same recurring product questions. These cases consume time without demanding special sensitivity. This is exactly where AI shifts the work from searching and typing towards reviewing and deciding.",
-          "it": "Il valore pratico emerge dove volume e ripetizione sono alti: verifiche di stato, temi legati alle password, orari di apertura, resi o le stesse domande ricorrenti sui prodotti. Questi casi consumano tempo senza richiedere particolare sensibilita. Proprio qui l'IA sposta il lavoro dalla ricerca e digitazione verso la verifica e la decisione.",
-          "fr": "La valeur pratique apparait la ou le volume et la repetition sont eleves : verifications de statut, questions de mot de passe, horaires, retours ou les memes questions produit recurrentes. Ces cas consomment du temps sans exiger de sensibilite particuliere. C'est precisement la que l'IA deplace le travail de la recherche et de la saisie vers la verification et la decision."
+          "it": "Il valore pratico emerge dove volume e ripetizione sono alti: verifiche di stato, temi legati alle password, orari di apertura, resi o le stesse domande ricorrenti sui prodotti. Questi casi consumano tempo senza richiedere particolare sensibilità. Proprio qui l'IA sposta il lavoro dalla ricerca e digitazione verso la verifica e la decisione.",
+          "fr": "La valeur pratique apparaît là où le volume et la répétition sont élevés : vérifications de statut, questions de mot de passe, horaires, retours ou les mêmes questions produit récurrentes. Ces cas consomment du temps sans exiger de sensibilité particulière. C'est précisément là que l'IA déplace le travail de la recherche et de la saisie vers la vérification et la décision."
         }
       ]
     },
@@ -74,64 +74,64 @@
       },
       "bullets": [
         {
-          "de": "Chat- und Voice-Assistenten: Sie beantworten haeufige Fragen rund um die Uhr, fuehren durch einfache Prozesse (Terminbuchung, Adressaenderung) und leiten bei Bedarf an Mitarbeitende weiter. Sprachassistenten uebernehmen zunehmend die erste Telefonebene.",
+          "de": "Chat- und Voice-Assistenten: Sie beantworten häufige Fragen rund um die Uhr, führen durch einfache Prozesse (Terminbuchung, Adressänderung) und leiten bei Bedarf an Mitarbeitende weiter. Sprachassistenten übernehmen zunehmend die erste Telefonebene.",
           "en": "Chat and voice assistants: they answer common questions around the clock, guide users through simple processes (booking, address changes) and route to staff when needed. Voice assistants increasingly handle the first phone tier.",
-          "it": "Assistenti chat e vocali: rispondono alle domande frequenti 24 ore su 24, guidano attraverso processi semplici (prenotazioni, cambi di indirizzo) e inoltrano agli operatori se necessario. Gli assistenti vocali gestiscono sempre piu il primo livello telefonico.",
-          "fr": "Assistants chat et vocaux : ils repondent aux questions courantes en continu, guident les utilisateurs dans des processus simples (rendez-vous, changement d'adresse) et transferent vers un agent si necessaire. Les assistants vocaux prennent de plus en plus en charge le premier niveau telephonique."
+          "it": "Assistenti chat e vocali: rispondono alle domande frequenti 24 ore su 24, guidano attraverso processi semplici (prenotazioni, cambi di indirizzo) e inoltrano agli operatori se necessario. Gli assistenti vocali gestiscono sempre più il primo livello telefonico.",
+          "fr": "Assistants chat et vocaux : ils répondent aux questions courantes en continu, guident les utilisateurs dans des processus simples (rendez-vous, changement d'adresse) et transfèrent vers un agent si nécessaire. Les assistants vocaux prennent de plus en plus en charge le premier niveau téléphonique."
         },
         {
-          "de": "Ticket-Triage: KI klassifiziert eingehende Anfragen nach Thema, Dringlichkeit und Sprache, erkennt Stimmung und leitet an das richtige Team weiter. Das verkuerzt Liegezeiten und verhindert, dass kritische Faelle untergehen.",
+          "de": "Ticket-Triage: KI klassifiziert eingehende Anfragen nach Thema, Dringlichkeit und Sprache, erkennt Stimmung und leitet an das richtige Team weiter. Das verkürzt Liegezeiten und verhindert, dass kritische Fälle untergehen.",
           "en": "Ticket triage: AI classifies incoming requests by topic, urgency and language, detects sentiment and routes to the right team. This shortens idle time and stops critical cases from slipping through.",
           "it": "Triage dei ticket: l'IA classifica le richieste in arrivo per argomento, urgenza e lingua, riconosce il tono e le indirizza al team giusto. Questo riduce i tempi di attesa ed evita che i casi critici passino inosservati.",
-          "fr": "Tri des tickets : l'IA classe les demandes entrantes par sujet, urgence et langue, detecte le ton et les oriente vers la bonne equipe. Cela reduit les temps d'attente et evite que les cas critiques passent inapercus."
+          "fr": "Tri des tickets : l'IA classe les demandes entrantes par sujet, urgence et langue, détecte le ton et les oriente vers la bonne équipe. Cela réduit les temps d'attente et évite que les cas critiques passent inaperçus."
         },
         {
-          "de": "Antwortentwuerfe: Statt selbst zu formulieren, erhalten Mitarbeitende einen kontextbezogenen Vorschlag, den sie pruefen, kuerzen und freigeben. Das senkt die Bearbeitungszeit und haelt Tonalitaet sowie Fachbegriffe konsistent, auch ueber vier Landessprachen hinweg.",
+          "de": "Antwortentwürfe: Statt selbst zu formulieren, erhalten Mitarbeitende einen kontextbezogenen Vorschlag, den sie prüfen, kürzen und freigeben. Das senkt die Bearbeitungszeit und hält Tonalität sowie Fachbegriffe konsistent, auch über vier Landessprachen hinweg.",
           "en": "Reply drafting: instead of writing from scratch, agents get a context-aware suggestion to review, trim and approve. This lowers handling time and keeps tone and terminology consistent, even across four national languages.",
           "it": "Bozze di risposta: invece di scrivere da zero, gli operatori ricevono un suggerimento contestuale da verificare, accorciare e approvare. Questo riduce il tempo di gestione e mantiene tono e terminologia coerenti, anche tra quattro lingue nazionali.",
-          "fr": "Brouillons de reponses : au lieu de rediger de zero, les agents recoivent une suggestion contextualisee a verifier, raccourcir et valider. Cela reduit le temps de traitement et maintient le ton et la terminologie coherents, meme sur quatre langues nationales."
+          "fr": "Brouillons de réponses : au lieu de rédiger de zéro, les agents reçoivent une suggestion contextualisée à vérifier, raccourcir et valider. Cela réduit le temps de traitement et maintient le ton et la terminologie cohérents, même sur quatre langues nationales."
         },
         {
-          "de": "Wissensdatenbanken: KI hilft, Artikel zu schreiben, Luecken aus wiederkehrenden Fragen zu erkennen und veraltete Inhalte zu markieren. Eine gepflegte Wissensbasis ist zugleich die Grundlage, auf der alle anderen Funktionen verlaesslich antworten.",
+          "de": "Wissensdatenbanken: KI hilft, Artikel zu schreiben, Lücken aus wiederkehrenden Fragen zu erkennen und veraltete Inhalte zu markieren. Eine gepflegte Wissensbasis ist zugleich die Grundlage, auf der alle anderen Funktionen verlässlich antworten.",
           "en": "Knowledge bases: AI helps write articles, spot gaps from recurring questions and flag outdated content. A well-maintained knowledge base is also the foundation on which every other function answers reliably.",
-          "it": "Knowledge base: l'IA aiuta a scrivere articoli, individuare lacune dalle domande ricorrenti e segnalare contenuti obsoleti. Una knowledge base curata e anche la base su cui tutte le altre funzioni rispondono in modo affidabile.",
-          "fr": "Bases de connaissances : l'IA aide a rediger des articles, a reperer les lacunes a partir des questions recurrentes et a signaler les contenus obsoletes. Une base bien entretenue est aussi le socle sur lequel toutes les autres fonctions repondent de maniere fiable."
+          "it": "Knowledge base: l'IA aiuta a scrivere articoli, individuare lacune dalle domande ricorrenti e segnalare contenuti obsoleti. Una knowledge base curata è anche la base su cui tutte le altre funzioni rispondono in modo affidabile.",
+          "fr": "Bases de connaissances : l'IA aide à rédiger des articles, à repérer les lacunes à partir des questions récurrentes et à signaler les contenus obsolètes. Une base bien entretenue est aussi le socle sur lequel toutes les autres fonctions répondent de manière fiable."
         }
       ]
     },
     {
       "heading": {
-        "de": "Nutzen und Grenzen im Ueberblick",
+        "de": "Nutzen und Grenzen im Überblick",
         "en": "Benefits and limits at a glance",
         "it": "Vantaggi e limiti in sintesi",
         "fr": "Avantages et limites en un coup d'oeil"
       },
       "paragraphs": [
         {
-          "de": "Der Nutzen ist real, aber nicht unbegrenzt. KI glaenzt bei Skalierung, Verfuegbarkeit und Konsistenz. Sie stoesst dort an Grenzen, wo Urteilsvermoegen, Empathie, Verantwortung oder rechtliche Verbindlichkeit gefragt sind. Wer beide Seiten kennt, plant realistisch statt euphorisch.",
+          "de": "Der Nutzen ist real, aber nicht unbegrenzt. KI glänzt bei Skalierung, Verfügbarkeit und Konsistenz. Sie stösst dort an Grenzen, wo Urteilsvermögen, Empathie, Verantwortung oder rechtliche Verbindlichkeit gefragt sind. Wer beide Seiten kennt, plant realistisch statt euphorisch.",
           "en": "The value is real but not unlimited. AI excels at scale, availability and consistency. It reaches its limits where judgement, empathy, accountability or legal commitment are required. Knowing both sides means planning realistically instead of euphorically.",
-          "it": "Il valore e reale ma non illimitato. L'IA eccelle in scalabilita, disponibilita e coerenza. Trova i suoi limiti dove servono giudizio, empatia, responsabilita o vincoli legali. Conoscere entrambi i lati significa pianificare in modo realistico anziche euforico.",
-          "fr": "La valeur est reelle mais pas illimitee. L'IA excelle en matiere d'echelle, de disponibilite et de coherence. Elle atteint ses limites la ou le jugement, l'empathie, la responsabilite ou l'engagement juridique sont requis. Connaitre les deux facettes, c'est planifier de maniere realiste plutot qu'euphorique."
+          "it": "Il valore è reale ma non illimitato. L'IA eccelle in scalabilità, disponibilità e coerenza. Trova i suoi limiti dove servono giudizio, empatia, responsabilità o vincoli legali. Conoscere entrambi i lati significa pianificare in modo realistico anziché euforico.",
+          "fr": "La valeur est réelle mais pas illimitée. L'IA excelle en matière d'échelle, de disponibilité et de cohérence. Elle atteint ses limites là où le jugement, l'empathie, la responsabilité ou l'engagement juridique sont requis. Connaître les deux facettes, c'est planifier de manière réaliste plutôt qu'euphorique."
         }
       ],
       "bullets": [
         {
-          "de": "Staerken: 24/7-Erreichbarkeit, kuerzere Wartezeiten, gleichbleibende Qualitaet, Mehrsprachigkeit, Entlastung von Routinearbeit, bessere Auswertbarkeit von Kontaktdaten.",
+          "de": "Stärken: 24/7-Erreichbarkeit, kürzere Wartezeiten, gleichbleibende Qualität, Mehrsprachigkeit, Entlastung von Routinearbeit, bessere Auswertbarkeit von Kontaktdaten.",
           "en": "Strengths: 24/7 availability, shorter wait times, consistent quality, multilingualism, relief from routine work, better analysis of contact data.",
-          "it": "Punti di forza: disponibilita 24/7, tempi di attesa piu brevi, qualita costante, multilinguismo, sgravio dal lavoro di routine, migliore analisi dei dati di contatto.",
-          "fr": "Forces : disponibilite 24/7, temps d'attente reduits, qualite constante, multilinguisme, allegement des taches de routine, meilleure analyse des donnees de contact."
+          "it": "Punti di forza: disponibilità 24/7, tempi di attesa più brevi, qualità costante, multilinguismo, sgravio dal lavoro di routine, migliore analisi dei dati di contatto.",
+          "fr": "Forces : disponibilité 24/7, temps d'attente réduits, qualité constante, multilinguisme, allègement des tâches de routine, meilleure analyse des données de contact."
         },
         {
-          "de": "Grenzen: Risiko erfundener Antworten (Halluzinationen) ohne saubere Wissensbasis, Schwierigkeiten bei Mehrdeutigkeit und Ironie, fehlende echte Empathie, Verantwortungsfrage bei Fehlern, Abhaengigkeit von Datenqualitaet.",
+          "de": "Grenzen: Risiko erfundener Antworten (Halluzinationen) ohne saubere Wissensbasis, Schwierigkeiten bei Mehrdeutigkeit und Ironie, fehlende echte Empathie, Verantwortungsfrage bei Fehlern, Abhängigkeit von Datenqualität.",
           "en": "Limits: risk of invented answers (hallucinations) without a clean knowledge base, trouble with ambiguity and irony, no genuine empathy, accountability questions when errors occur, dependence on data quality.",
-          "it": "Limiti: rischio di risposte inventate (allucinazioni) senza una knowledge base pulita, difficolta con ambiguita e ironia, assenza di vera empatia, questione di responsabilita in caso di errori, dipendenza dalla qualita dei dati.",
-          "fr": "Limites : risque de reponses inventees (hallucinations) sans base de connaissances propre, difficultes face a l'ambiguite et a l'ironie, absence d'empathie reelle, question de responsabilite en cas d'erreur, dependance a la qualite des donnees."
+          "it": "Limiti: rischio di risposte inventate (allucinazioni) senza una knowledge base pulita, difficoltà con ambiguità e ironia, assenza di vera empatia, questione di responsabilità in caso di errori, dipendenza dalla qualità dei dati.",
+          "fr": "Limites : risque de réponses inventées (hallucinations) sans base de connaissances propre, difficultés face à l'ambiguïté et à l'ironie, absence d'empathie réelle, question de responsabilité en cas d'erreur, dépendance à la qualité des données."
         },
         {
-          "de": "Fehleinsatz vermeiden: Beschwerden mit hoher Emotion, Kuendigungen, Rechts- und Gesundheitsthemen sowie Ausnahmefaelle gehoeren fruehzeitig in menschliche Hand.",
+          "de": "Fehleinsatz vermeiden: Beschwerden mit hoher Emotion, Kündigungen, Rechts- und Gesundheitsthemen sowie Ausnahmefälle gehören frühzeitig in menschliche Hand.",
           "en": "Avoid misuse: highly emotional complaints, cancellations, legal and health topics as well as exceptional cases belong in human hands early.",
-          "it": "Evitare l'uso improprio: reclami molto emotivi, disdette, temi legali e sanitari nonche i casi eccezionali vanno affidati presto a una persona.",
-          "fr": "Eviter le mauvais usage : les reclamations tres emotionnelles, les resiliations, les sujets juridiques et de sante ainsi que les cas exceptionnels doivent revenir tot a un humain."
+          "it": "Evitare l'uso improprio: reclami molto emotivi, disdette, temi legali e sanitari nonché i casi eccezionali vanno affidati presto a una persona.",
+          "fr": "Éviter le mauvais usage : les réclamations très émotionnelles, les résiliations, les sujets juridiques et de santé ainsi que les cas exceptionnels doivent revenir tôt à un humain."
         }
       ]
     },
@@ -144,16 +144,16 @@
       },
       "paragraphs": [
         {
-          "de": "Der wichtigste Baustein eines guten KI-Kundenservice ist die geregelte Uebergabe an den Menschen. Das Ziel ist nicht, moeglichst viele Faelle vollautomatisch abzuschliessen, sondern jeden Fall am richtigen Ort zu loesen. Ein Assistent, der Grenzen kennt und rechtzeitig weiterleitet, schafft mehr Vertrauen als einer, der alles selbst beantworten will.",
+          "de": "Der wichtigste Baustein eines guten KI-Kundenservice ist die geregelte Übergabe an den Menschen. Das Ziel ist nicht, möglichst viele Fälle vollautomatisch abzuschliessen, sondern jeden Fall am richtigen Ort zu lösen. Ein Assistent, der Grenzen kennt und rechtzeitig weiterleitet, schafft mehr Vertrauen als einer, der alles selbst beantworten will.",
           "en": "The most important building block of good AI customer support is the governed handoff to a human. The goal is not to close as many cases as possible fully automatically, but to solve each case in the right place. An assistant that knows its limits and escalates in time builds more trust than one that tries to answer everything itself.",
-          "it": "L'elemento piu importante di un buon servizio clienti con IA e il passaggio regolato a una persona. L'obiettivo non e chiudere il maggior numero di casi in modo totalmente automatico, ma risolvere ogni caso nel posto giusto. Un assistente che conosce i propri limiti ed effettua l'escalation in tempo genera piu fiducia di uno che vuole rispondere a tutto da solo.",
-          "fr": "L'element le plus important d'un bon service client avec IA est le transfert encadre vers un humain. L'objectif n'est pas de cloturer le plus de cas possible de facon entierement automatique, mais de resoudre chaque cas au bon endroit. Un assistant qui connait ses limites et transfere a temps inspire plus de confiance qu'un autre qui veut tout traiter seul."
+          "it": "L'elemento più importante di un buon servizio clienti con IA è il passaggio regolato a una persona. L'obiettivo non è chiudere il maggior numero di casi in modo totalmente automatico, ma risolvere ogni caso nel posto giusto. Un assistente che conosce i propri limiti ed effettua l'escalation in tempo genera più fiducia di uno che vuole rispondere a tutto da solo.",
+          "fr": "L'élément le plus important d'un bon service client avec IA est le transfert encadré vers un humain. L'objectif n'est pas de clôturer le plus de cas possible de façon entièrement automatique, mais de résoudre chaque cas au bon endroit. Un assistant qui connaît ses limites et transfère à temps inspire plus de confiance qu'un autre qui veut tout traiter seul."
         },
         {
-          "de": "Gute Uebergaben folgen klaren Ausloesern: niedrige Antwortsicherheit, erkannte Emotion oder Beschwerde, sensible Themen, wiederholtes Nachfragen oder ein ausdruecklicher Kundenwunsch nach einer Person. Beim Wechsel muss der gesamte Kontext mitwandern, damit die Kundin ihr Anliegen nicht erneut schildern muss. Transparenz gehoert dazu: Menschen sollten wissen, ob sie mit einer KI oder einer Person sprechen.",
+          "de": "Gute Übergaben folgen klaren Auslösern: niedrige Antwortsicherheit, erkannte Emotion oder Beschwerde, sensible Themen, wiederholtes Nachfragen oder ein ausdrücklicher Kundenwunsch nach einer Person. Beim Wechsel muss der gesamte Kontext mitwandern, damit die Kundin ihr Anliegen nicht erneut schildern muss. Transparenz gehört dazu: Menschen sollten wissen, ob sie mit einer KI oder einer Person sprechen.",
           "en": "Good handoffs follow clear triggers: low answer confidence, detected emotion or complaint, sensitive topics, repeated re-asking or an explicit request for a person. On switching, the full context must travel along so the customer does not have to explain the issue again. Transparency is part of it: people should know whether they are talking to an AI or a person.",
-          "it": "Un buon handoff segue trigger chiari: bassa sicurezza della risposta, emozione o reclamo rilevati, temi sensibili, richieste ripetute o una richiesta esplicita di parlare con una persona. Al passaggio, l'intero contesto deve seguire, cosi il cliente non deve rispiegare il problema. La trasparenza fa parte del gioco: le persone devono sapere se parlano con un'IA o con un operatore.",
-          "fr": "Un bon transfert suit des declencheurs clairs : faible confiance dans la reponse, emotion ou reclamation detectee, sujets sensibles, questions repetees ou demande explicite de parler a une personne. Lors du passage, tout le contexte doit suivre pour que le client n'ait pas a reexpliquer sa demande. La transparence en fait partie : les gens doivent savoir s'ils parlent a une IA ou a une personne."
+          "it": "Un buon handoff segue trigger chiari: bassa sicurezza della risposta, emozione o reclamo rilevati, temi sensibili, richieste ripetute o una richiesta esplicita di parlare con una persona. Al passaggio, l'intero contesto deve seguire, così il cliente non deve rispiegare il problema. La trasparenza fa parte del gioco: le persone devono sapere se parlano con un'IA o con un operatore.",
+          "fr": "Un bon transfert suit des déclencheurs clairs : faible confiance dans la réponse, émotion ou réclamation détectée, sujets sensibles, questions répétées ou demande explicite de parler à une personne. Lors du passage, tout le contexte doit suivre pour que le client n'ait pas à réexpliquer sa demande. La transparence en fait partie : les gens doivent savoir s'ils parlent à une IA ou à une personne."
         }
       ]
     },
@@ -162,60 +162,60 @@
         "de": "Datenschutz und Compliance in der Schweiz",
         "en": "Data protection and compliance in Switzerland",
         "it": "Protezione dei dati e compliance in Svizzera",
-        "fr": "Protection des donnees et conformite en Suisse"
+        "fr": "Protection des données et conformité en Suisse"
       },
       "paragraphs": [
         {
-          "de": "Kundenservice verarbeitet fast immer Personendaten. In der Schweiz gilt das revidierte Datenschutzgesetz (revDSG); Aufsichtsbehoerde ist der EDOEB. Wer KI einsetzt, sollte Zweck und Rechtsgrundlage der Verarbeitung klaeren, Datenminimierung beachten und pruefen, wo Daten gespeichert und verarbeitet werden, insbesondere bei Cloud- und US-Anbietern. Bearbeiten Dritte die Daten, braucht es einen Auftragsverarbeitungsvertrag.",
+          "de": "Kundenservice verarbeitet fast immer Personendaten. In der Schweiz gilt das revidierte Datenschutzgesetz (revDSG); Aufsichtsbehörde ist der EDÖB. Wer KI einsetzt, sollte Zweck und Rechtsgrundlage der Verarbeitung klären, Datenminimierung beachten und prüfen, wo Daten gespeichert und verarbeitet werden, insbesondere bei Cloud- und US-Anbietern. Bearbeiten Dritte die Daten, braucht es einen Auftragsverarbeitungsvertrag.",
           "en": "Customer support almost always processes personal data. In Switzerland the revised Data Protection Act (revDSG) applies; the supervisory authority is the FDPIC (EDOEB). Anyone deploying AI should clarify the purpose and legal basis of processing, observe data minimisation and check where data is stored and processed, especially with cloud and US providers. Where third parties process the data, a data-processing agreement is required.",
-          "it": "Il servizio clienti tratta quasi sempre dati personali. In Svizzera si applica la legge sulla protezione dei dati riveduta (revDSG); l'autorita di vigilanza e l'IFPDT (EDOEB). Chi usa l'IA dovrebbe chiarire finalita e base giuridica del trattamento, rispettare la minimizzazione dei dati e verificare dove i dati sono archiviati e trattati, in particolare con fornitori cloud e statunitensi. Se terzi trattano i dati, serve un contratto di responsabile del trattamento.",
-          "fr": "Le service client traite presque toujours des donnees personnelles. En Suisse s'applique la loi revisee sur la protection des donnees (revDSG) ; l'autorite de surveillance est le PFPDT (EDOEB). Quiconque deploie l'IA devrait clarifier la finalite et la base juridique du traitement, respecter la minimisation des donnees et verifier ou les donnees sont stockees et traitees, en particulier chez les fournisseurs cloud et americains. Si des tiers traitent les donnees, un contrat de sous-traitance est requis."
+          "it": "Il servizio clienti tratta quasi sempre dati personali. In Svizzera si applica la legge sulla protezione dei dati riveduta (revDSG); l'autorità di vigilanza è l'IFPDT (EDÖB). Chi usa l'IA dovrebbe chiarire finalità e base giuridica del trattamento, rispettare la minimizzazione dei dati e verificare dove i dati sono archiviati e trattati, in particolare con fornitori cloud e statunitensi. Se terzi trattano i dati, serve un contratto di responsabile del trattamento.",
+          "fr": "Le service client traite presque toujours des données personnelles. En Suisse s'applique la loi révisée sur la protection des données (revDSG) ; l'autorité de surveillance est le PFPDT (EDÖB). Quiconque déploie l'IA devrait clarifier la finalité et la base juridique du traitement, respecter la minimisation des données et vérifier où les données sont stockées et traitées, en particulier chez les fournisseurs cloud et américains. Si des tiers traitent les données, un contrat de sous-traitance est requis."
         },
         {
-          "de": "Praktisch heisst das: keine sensiblen Daten unnoetig an Modelle geben, Aufbewahrungsfristen definieren, Transparenz gegenueber Kundinnen und Kunden herstellen und automatisierte Einzelentscheide mit erheblicher Wirkung mit einer menschlichen Ueberpruefung absichern. Wer den EU-Markt bedient, beruecksichtigt zusaetzlich DSGVO und den EU AI Act.",
+          "de": "Praktisch heisst das: keine sensiblen Daten unnötig an Modelle geben, Aufbewahrungsfristen definieren, Transparenz gegenüber Kundinnen und Kunden herstellen und automatisierte Einzelentscheide mit erheblicher Wirkung mit einer menschlichen Überprüfung absichern. Wer den EU-Markt bedient, berücksichtigt zusätzlich DSGVO und den EU AI Act.",
           "en": "In practice: do not feed sensitive data to models unnecessarily, define retention periods, create transparency towards customers, and safeguard automated individual decisions with significant effects through human review. Anyone serving the EU market additionally considers the GDPR and the EU AI Act.",
-          "it": "In pratica: non fornire dati sensibili ai modelli senza necessita, definire i periodi di conservazione, garantire trasparenza verso i clienti e tutelare le decisioni individuali automatizzate con effetti rilevanti tramite una verifica umana. Chi serve il mercato UE considera inoltre il GDPR e l'EU AI Act.",
-          "fr": "En pratique : ne pas transmettre de donnees sensibles aux modeles sans necessite, definir des durees de conservation, assurer la transparence envers les clients et securiser les decisions individuelles automatisees a effet important par une verification humaine. Quiconque sert le marche de l'UE tient en outre compte du RGPD et de l'EU AI Act."
+          "it": "In pratica: non fornire dati sensibili ai modelli senza necessità, definire i periodi di conservazione, garantire trasparenza verso i clienti e tutelare le decisioni individuali automatizzate con effetti rilevanti tramite una verifica umana. Chi serve il mercato UE considera inoltre il GDPR e l'EU AI Act.",
+          "fr": "En pratique : ne pas transmettre de données sensibles aux modèles sans nécessité, définir des durées de conservation, assurer la transparence envers les clients et sécuriser les décisions individuelles automatisées à effet important par une vérification humaine. Quiconque sert le marché de l'UE tient en outre compte du RGPD et de l'EU AI Act."
         }
       ]
     },
     {
       "heading": {
-        "de": "Einfuehrung Schritt fuer Schritt",
+        "de": "Einführung Schritt für Schritt",
         "en": "Implementation step by step",
         "it": "Introduzione passo dopo passo",
-        "fr": "Mise en oeuvre etape par etape"
+        "fr": "Mise en oeuvre étape par étape"
       },
       "bullets": [
         {
-          "de": "Anfragen analysieren: Die haeufigsten 20 bis 30 Kontaktgruende erfassen und danach sortieren, welche sich sicher automatisieren lassen und welche nicht.",
+          "de": "Anfragen analysieren: Die häufigsten 20 bis 30 Kontaktgründe erfassen und danach sortieren, welche sich sicher automatisieren lassen und welche nicht.",
           "en": "Analyse requests: capture the 20 to 30 most frequent contact reasons and sort which can be safely automated and which cannot.",
-          "it": "Analizzare le richieste: rilevare i 20-30 motivi di contatto piu frequenti e distinguere quali possono essere automatizzati con sicurezza e quali no.",
-          "fr": "Analyser les demandes : recenser les 20 a 30 motifs de contact les plus frequents et trier ceux qui peuvent etre automatises en toute securite et les autres."
+          "it": "Analizzare le richieste: rilevare i 20-30 motivi di contatto più frequenti e distinguere quali possono essere automatizzati con sicurezza e quali no.",
+          "fr": "Analyser les demandes : recenser les 20 à 30 motifs de contact les plus fréquents et trier ceux qui peuvent être automatisés en toute sécurité et les autres."
         },
         {
-          "de": "Wissensbasis aufraeumen: Aktuelle, widerspruchsfreie Inhalte sind die Voraussetzung fuer verlaessliche Antworten. Ohne sie halluziniert jedes Modell.",
+          "de": "Wissensbasis aufräumen: Aktuelle, widerspruchsfreie Inhalte sind die Voraussetzung für verlässliche Antworten. Ohne sie halluziniert jedes Modell.",
           "en": "Clean the knowledge base: current, contradiction-free content is the precondition for reliable answers. Without it, any model hallucinates.",
           "it": "Pulire la knowledge base: contenuti aggiornati e privi di contraddizioni sono il presupposto per risposte affidabili. Senza, qualsiasi modello allucina.",
-          "fr": "Nettoyer la base de connaissances : un contenu a jour et sans contradiction est la condition de reponses fiables. Sans cela, tout modele hallucine."
+          "fr": "Nettoyer la base de connaissances : un contenu à jour et sans contradiction est la condition de réponses fiables. Sans cela, tout modèle hallucine."
         },
         {
-          "de": "Klein starten, messen: Mit einem klar abgegrenzten Anwendungsfall beginnen, Kennzahlen wie Loesungsquote, Uebergaberate und Zufriedenheit verfolgen und iterativ ausweiten.",
+          "de": "Klein starten, messen: Mit einem klar abgegrenzten Anwendungsfall beginnen, Kennzahlen wie Lösungsquote, Übergaberate und Zufriedenheit verfolgen und iterativ ausweiten.",
           "en": "Start small, measure: begin with a clearly scoped use case, track metrics such as resolution rate, handoff rate and satisfaction, and expand iteratively.",
           "it": "Iniziare in piccolo, misurare: partire da un caso d'uso ben delimitato, monitorare metriche come tasso di risoluzione, tasso di handoff e soddisfazione, ed espandere in modo iterativo.",
-          "fr": "Commencer petit, mesurer : demarrer avec un cas d'usage bien delimite, suivre des indicateurs comme le taux de resolution, le taux de transfert et la satisfaction, puis etendre de maniere iterative."
+          "fr": "Commencer petit, mesurer : démarrer avec un cas d'usage bien délimité, suivre des indicateurs comme le taux de résolution, le taux de transfert et la satisfaction, puis étendre de manière itérative."
         },
         {
-          "de": "Handoff und Kontrolle festlegen: Eskalationsregeln, menschliche Freigabe bei heiklen Faellen und regelmaessige Stichproben der KI-Antworten von Anfang an verankern.",
+          "de": "Handoff und Kontrolle festlegen: Eskalationsregeln, menschliche Freigabe bei heiklen Fällen und regelmässige Stichproben der KI-Antworten von Anfang an verankern.",
           "en": "Define handoff and control: anchor escalation rules, human approval for sensitive cases and regular spot-checks of AI answers from the start.",
           "it": "Definire handoff e controllo: fissare fin dall'inizio regole di escalation, approvazione umana per i casi delicati e controlli a campione periodici delle risposte dell'IA.",
-          "fr": "Definir le transfert et le controle : ancrer des le depart des regles d'escalade, une validation humaine pour les cas sensibles et des controles par sondage reguliers des reponses de l'IA."
+          "fr": "Définir le transfert et le contrôle : ancrer dès le départ des règles d'escalade, une validation humaine pour les cas sensibles et des contrôles par sondage réguliers des réponses de l'IA."
         },
         {
           "de": "Team einbinden: Mitarbeitende schulen, Feedback-Schleifen einrichten und die KI als Assistenz positionieren, die Routinen abnimmt statt Stellen zu ersetzen.",
           "en": "Involve the team: train staff, set up feedback loops and position AI as an assistant that removes routine work rather than replacing jobs.",
           "it": "Coinvolgere il team: formare il personale, creare cicli di feedback e posizionare l'IA come un'assistenza che elimina la routine invece di sostituire posti di lavoro.",
-          "fr": "Impliquer l'equipe : former le personnel, mettre en place des boucles de retour et positionner l'IA comme une assistance qui supprime la routine plutot qu'elle ne remplace des postes."
+          "fr": "Impliquer l'équipe : former le personnel, mettre en place des boucles de retour et positionner l'IA comme une assistance qui supprime la routine plutôt qu'elle ne remplace des postes."
         }
       ]
     }
@@ -229,10 +229,10 @@
         "fr": "L'IA remplace-t-elle le personnel du service client ?"
       },
       "a": {
-        "de": "Nein. KI uebernimmt Routine und Vorarbeit, damit sich Mitarbeitende auf komplexe, emotionale und wertschoepfende Faelle konzentrieren koennen. Der belastbarste Ansatz ist Assistenz: Die KI schlaegt vor, priorisiert und uebergibt, die Verantwortung fuer heikle Entscheidungen bleibt beim Menschen.",
+        "de": "Nein. KI übernimmt Routine und Vorarbeit, damit sich Mitarbeitende auf komplexe, emotionale und wertschöpfende Fälle konzentrieren können. Der belastbarste Ansatz ist Assistenz: Die KI schlägt vor, priorisiert und übergibt, die Verantwortung für heikle Entscheidungen bleibt beim Menschen.",
         "en": "No. AI takes over routine and preparatory work so staff can focus on complex, emotional and high-value cases. The most robust approach is assistance: AI suggests, prioritises and hands off, while responsibility for sensitive decisions stays with people.",
-        "it": "No. L'IA si occupa della routine e del lavoro preparatorio, cosi il personale puo concentrarsi su casi complessi, emotivi e a valore aggiunto. L'approccio piu solido e l'assistenza: l'IA propone, assegna priorita e passa la mano, mentre la responsabilita delle decisioni delicate resta alle persone.",
-        "fr": "Non. L'IA prend en charge la routine et le travail preparatoire afin que le personnel se concentre sur les cas complexes, emotionnels et a forte valeur. L'approche la plus solide est l'assistance : l'IA propose, priorise et transfere, tandis que la responsabilite des decisions sensibles reste humaine."
+        "it": "No. L'IA si occupa della routine e del lavoro preparatorio, così il personale può concentrarsi su casi complessi, emotivi e a valore aggiunto. L'approccio più solido è l'assistenza: l'IA propone, assegna priorità e passa la mano, mentre la responsabilità delle decisioni delicate resta alle persone.",
+        "fr": "Non. L'IA prend en charge la routine et le travail préparatoire afin que le personnel se concentre sur les cas complexes, émotionnels et à forte valeur. L'approche la plus solide est l'assistance : l'IA propose, priorise et transfère, tandis que la responsabilité des décisions sensibles reste humaine."
       }
     },
     {
@@ -240,13 +240,13 @@
         "de": "Wie verhindert man falsche oder erfundene Antworten?",
         "en": "How do you prevent wrong or invented answers?",
         "it": "Come si evitano risposte errate o inventate?",
-        "fr": "Comment eviter les reponses fausses ou inventees ?"
+        "fr": "Comment éviter les réponses fausses ou inventées ?"
       },
       "a": {
-        "de": "Durch eine gepflegte Wissensbasis und Retrieval-Augmented Generation, bei der Antworten an geprueften Quellen verankert werden. Zusaetzlich helfen Vertrauensschwellen fuer die Uebergabe, das Anzeigen von Quellen, klare Grenzen fuer erlaubte Themen und regelmaessige Stichproben durch das Team.",
+        "de": "Durch eine gepflegte Wissensbasis und Retrieval-Augmented Generation, bei der Antworten an geprüften Quellen verankert werden. Zusätzlich helfen Vertrauensschwellen für die Übergabe, das Anzeigen von Quellen, klare Grenzen für erlaubte Themen und regelmässige Stichproben durch das Team.",
         "en": "Through a well-maintained knowledge base and retrieval-augmented generation that anchors answers in verified sources. Confidence thresholds for handoff, showing sources, clear boundaries for allowed topics and regular spot-checks by the team help further.",
         "it": "Con una knowledge base curata e la retrieval-augmented generation, che ancora le risposte a fonti verificate. Aiutano inoltre soglie di confidenza per l'handoff, l'indicazione delle fonti, limiti chiari sugli argomenti ammessi e controlli a campione regolari da parte del team.",
-        "fr": "Grace a une base de connaissances bien entretenue et a la retrieval-augmented generation qui ancre les reponses dans des sources verifiees. Des seuils de confiance pour le transfert, l'affichage des sources, des limites claires sur les sujets autorises et des controles reguliers par l'equipe y contribuent."
+        "fr": "Grâce à une base de connaissances bien entretenue et à la retrieval-augmented generation qui ancre les réponses dans des sources vérifiées. Des seuils de confiance pour le transfert, l'affichage des sources, des limites claires sur les sujets autorisés et des contrôles réguliers par l'équipe y contribuent."
       }
     },
     {
@@ -254,13 +254,13 @@
         "de": "Muss ich Kundinnen und Kunden sagen, dass eine KI antwortet?",
         "en": "Do I have to tell customers an AI is responding?",
         "it": "Devo dire ai clienti che risponde un'IA?",
-        "fr": "Dois-je informer les clients qu'une IA repond ?"
+        "fr": "Dois-je informer les clients qu'une IA répond ?"
       },
       "a": {
-        "de": "Transparenz ist empfehlenswert und schafft Vertrauen. Menschen sollten erkennen koennen, ob sie mit einem Assistenten oder einer Person sprechen, und jederzeit eine menschliche Ansprechperson erreichen koennen. Wer den EU-Markt bedient, sollte zusaetzlich die Transparenzpflichten des EU AI Act pruefen.",
+        "de": "Transparenz ist empfehlenswert und schafft Vertrauen. Menschen sollten erkennen können, ob sie mit einem Assistenten oder einer Person sprechen, und jederzeit eine menschliche Ansprechperson erreichen können. Wer den EU-Markt bedient, sollte zusätzlich die Transparenzpflichten des EU AI Act prüfen.",
         "en": "Transparency is advisable and builds trust. People should be able to tell whether they are talking to an assistant or a person and reach a human contact at any time. Anyone serving the EU market should additionally check the transparency duties of the EU AI Act.",
-        "it": "La trasparenza e consigliabile e crea fiducia. Le persone devono poter capire se parlano con un assistente o con un operatore e raggiungere un contatto umano in qualsiasi momento. Chi serve il mercato UE dovrebbe inoltre verificare gli obblighi di trasparenza dell'EU AI Act.",
-        "fr": "La transparence est recommandee et renforce la confiance. Les gens doivent pouvoir savoir s'ils parlent a un assistant ou a une personne et joindre un contact humain a tout moment. Quiconque sert le marche de l'UE devrait en outre verifier les obligations de transparence de l'EU AI Act."
+        "it": "La trasparenza è consigliabile e crea fiducia. Le persone devono poter capire se parlano con un assistente o con un operatore e raggiungere un contatto umano in qualsiasi momento. Chi serve il mercato UE dovrebbe inoltre verificare gli obblighi di trasparenza dell'EU AI Act.",
+        "fr": "La transparence est recommandée et renforce la confiance. Les gens doivent pouvoir savoir s'ils parlent à un assistant ou à une personne et joindre un contact humain à tout moment. Quiconque sert le marché de l'UE devrait en outre vérifier les obligations de transparence de l'EU AI Act."
       }
     },
     {
@@ -271,38 +271,38 @@
         "fr": "Quels indicateurs montrent si l'IA fonctionne au service client ?"
       },
       "a": {
-        "de": "Aussagekraeftig sind Loesungsquote ohne Uebergabe, Uebergaberate, durchschnittliche Bearbeitungs- und Wartezeit, Kundenzufriedenheit (CSAT) sowie die Fehler- und Korrekturquote der Antworten. Wichtig ist, Qualitaet nicht der reinen Automatisierungsquote zu opfern: Eine rechtzeitige Uebergabe ist ein Erfolg, kein Versagen.",
+        "de": "Aussagekräftig sind Lösungsquote ohne Übergabe, Übergaberate, durchschnittliche Bearbeitungs- und Wartezeit, Kundenzufriedenheit (CSAT) sowie die Fehler- und Korrekturquote der Antworten. Wichtig ist, Qualität nicht der reinen Automatisierungsquote zu opfern: Eine rechtzeitige Übergabe ist ein Erfolg, kein Versagen.",
         "en": "Meaningful metrics include resolution rate without handoff, handoff rate, average handling and wait time, customer satisfaction (CSAT) and the error and correction rate of answers. Importantly, do not sacrifice quality to a pure automation rate: a timely handoff is a success, not a failure.",
-        "it": "Sono significativi il tasso di risoluzione senza handoff, il tasso di handoff, il tempo medio di gestione e attesa, la soddisfazione del cliente (CSAT) e il tasso di errore e correzione delle risposte. E importante non sacrificare la qualita al puro tasso di automazione: un handoff tempestivo e un successo, non un fallimento.",
-        "fr": "Sont pertinents le taux de resolution sans transfert, le taux de transfert, le temps moyen de traitement et d'attente, la satisfaction client (CSAT) et le taux d'erreur et de correction des reponses. Il ne faut pas sacrifier la qualite au seul taux d'automatisation : un transfert opportun est une reussite, pas un echec."
+        "it": "Sono significativi il tasso di risoluzione senza handoff, il tasso di handoff, il tempo medio di gestione e attesa, la soddisfazione del cliente (CSAT) e il tasso di errore e correzione delle risposte. È importante non sacrificare la qualità al puro tasso di automazione: un handoff tempestivo è un successo, non un fallimento.",
+        "fr": "Sont pertinents le taux de résolution sans transfert, le taux de transfert, le temps moyen de traitement et d'attente, la satisfaction client (CSAT) et le taux d'erreur et de correction des réponses. Il ne faut pas sacrifier la qualité au seul taux d'automatisation : un transfert opportun est une réussite, pas un échec."
       }
     },
     {
       "q": {
-        "de": "Ist KI im Kundenservice auch fuer KMU geeignet?",
+        "de": "Ist KI im Kundenservice auch für KMU geeignet?",
         "en": "Is AI in customer support suitable for SMEs too?",
-        "it": "L'IA nel servizio clienti e adatta anche alle PMI?",
+        "it": "L'IA nel servizio clienti è adatta anche alle PMI?",
         "fr": "L'IA au service client convient-elle aussi aux PME ?"
       },
       "a": {
-        "de": "Ja. Gerade kleinere Teams profitieren von Entlastung bei Routinefragen und von Mehrsprachigkeit. Der Einstieg gelingt am besten klein und klar abgegrenzt, etwa mit einem Assistenten fuer die haeufigsten Fragen oder Antwortentwuerfen im Posteingang, statt sofort alles automatisieren zu wollen.",
+        "de": "Ja. Gerade kleinere Teams profitieren von Entlastung bei Routinefragen und von Mehrsprachigkeit. Der Einstieg gelingt am besten klein und klar abgegrenzt, etwa mit einem Assistenten für die häufigsten Fragen oder Antwortentwürfen im Posteingang, statt sofort alles automatisieren zu wollen.",
         "en": "Yes. Smaller teams in particular benefit from relief on routine questions and from multilingualism. The best start is small and clearly scoped, for example an assistant for the most common questions or reply drafts in the inbox, rather than trying to automate everything at once.",
-        "it": "Si. Proprio i team piu piccoli traggono vantaggio dallo sgravio sulle domande di routine e dal multilinguismo. L'avvio migliore e piccolo e ben delimitato, ad esempio un assistente per le domande piu frequenti o bozze di risposta nella casella, invece di voler automatizzare subito tutto.",
-        "fr": "Oui. Les petites equipes en particulier profitent de l'allegement sur les questions de routine et du multilinguisme. Le meilleur depart est modeste et bien delimite, par exemple un assistant pour les questions les plus courantes ou des brouillons de reponses dans la boite, plutot que de vouloir tout automatiser d'emblee."
+        "it": "Sì. Proprio i team più piccoli traggono vantaggio dallo sgravio sulle domande di routine e dal multilinguismo. L'avvio migliore è piccolo e ben delimitato, ad esempio un assistente per le domande più frequenti o bozze di risposta nella casella, invece di voler automatizzare subito tutto.",
+        "fr": "Oui. Les petites équipes en particulier profitent de l'allègement sur les questions de routine et du multilinguisme. Le meilleur départ est modeste et bien délimité, par exemple un assistant pour les questions les plus courantes ou des brouillons de réponses dans la boîte, plutôt que de vouloir tout automatiser d'emblée."
       }
     },
     {
       "q": {
-        "de": "Welche Faelle sollte KI niemals allein abschliessen?",
+        "de": "Welche Fälle sollte KI niemals allein abschliessen?",
         "en": "Which cases should AI never close on its own?",
         "it": "Quali casi l'IA non dovrebbe mai chiudere da sola?",
-        "fr": "Quels cas l'IA ne devrait-elle jamais cloturer seule ?"
+        "fr": "Quels cas l'IA ne devrait-elle jamais clôturer seule ?"
       },
       "a": {
-        "de": "Stark emotionale Beschwerden, Kuendigungen, Streit- und Haftungsfaelle, Gesundheits- und Rechtsfragen sowie Situationen mit erheblichen finanziellen Folgen. Auch bei geringer Antwortsicherheit oder ausdruecklichem Kundenwunsch nach einer Person gilt: uebergeben. Diese Ausloeser sollten fest in den Prozess eingebaut sein.",
+        "de": "Stark emotionale Beschwerden, Kündigungen, Streit- und Haftungsfälle, Gesundheits- und Rechtsfragen sowie Situationen mit erheblichen finanziellen Folgen. Auch bei geringer Antwortsicherheit oder ausdrücklichem Kundenwunsch nach einer Person gilt: übergeben. Diese Auslöser sollten fest in den Prozess eingebaut sein.",
         "en": "Highly emotional complaints, cancellations, disputes and liability cases, health and legal questions and situations with significant financial consequences. Also, with low answer confidence or an explicit request for a person: hand off. These triggers should be built firmly into the process.",
-        "it": "Reclami molto emotivi, disdette, contenziosi e casi di responsabilita, questioni sanitarie e legali e situazioni con conseguenze finanziarie rilevanti. Anche con bassa sicurezza della risposta o richiesta esplicita di una persona: passare la mano. Questi trigger vanno integrati stabilmente nel processo.",
-        "fr": "Reclamations tres emotionnelles, resiliations, litiges et cas de responsabilite, questions de sante et juridiques et situations aux consequences financieres importantes. De meme, en cas de faible confiance ou de demande explicite d'une personne : transferer. Ces declencheurs doivent etre solidement integres au processus."
+        "it": "Reclami molto emotivi, disdette, contenziosi e casi di responsabilità, questioni sanitarie e legali e situazioni con conseguenze finanziarie rilevanti. Anche con bassa sicurezza della risposta o richiesta esplicita di una persona: passare la mano. Questi trigger vanno integrati stabilmente nel processo.",
+        "fr": "Réclamations très émotionnelles, résiliations, litiges et cas de responsabilité, questions de santé et juridiques et situations aux conséquences financières importantes. De même, en cas de faible confiance ou de demande explicite d'une personne : transférer. Ces déclencheurs doivent être solidement intégrés au processus."
       }
     }
   ],
@@ -316,7 +316,7 @@
     "Human-Handoff",
     "Grosse Sprachmodelle",
     "revDSG",
-    "EDOEB",
+    "EDÖB",
     "DSGVO",
     "EU AI Act",
     "CSAT",

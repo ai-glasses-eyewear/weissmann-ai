@@ -45,6 +45,11 @@ const lp: LocalePaths = localePaths ?? { de: path!, en: path!, it: path!, fr: pa
 const canonical = localeUrl(locale, lp[locale]);
 const ogImage = `${SITE.domain}/og-default.png`;
 
+// Keep meta descriptions within the ~160-char SERP display budget (trim at a
+// word boundary). Page content is unaffected; only the meta tag is shortened.
+const metaDescription =
+  description.length > 160 ? description.slice(0, 158).replace(/\s+\S*$/, '').trim() : description;
+
 // Every page carries the Organization + WebSite entity (defined once here), so
 // the @id references in page-level schema (publisher/provider/about) resolve and
 // the entity graph is present site-wide for search engines and AI assistants.
@@ -64,7 +69,7 @@ const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
     {availableLocales.map((l) => (
@@ -75,12 +80,12 @@ const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={ogImage} />
 
     <meta name="google-site-verification" content={SITE.tracking.googleSiteVerification} />

@@ -10,12 +10,33 @@ import { PACKAGES, type PricingPackage } from './pricing';
 
 const ORG_ID = `${SITE.domain}/#organization`;
 
+/**
+ * Content release/review date — a truthful freshness floor used for Article
+ * dates and sitemap <lastmod>. Update when content is substantively reviewed.
+ */
+export const CONTENT_DATE = '2026-07-21';
+
+const ORG_DESCRIPTION: Record<Locale, string> = {
+  de: 'Weissmann AI ist eine Agentur für praktische Künstliche Intelligenz und digitales Wachstum in Zürich. Wir bauen KI-Telefonassistenten, Websites, Sichtbarkeit (SEO/GEO) und Automatisierung für Schweizer Unternehmen.',
+  en: 'Weissmann AI is a practical-AI implementation and digital-growth agency in Zurich, Switzerland, building AI phone assistants, websites, visibility (SEO/GEO) and automation for businesses.',
+  it: 'Weissmann AI è un’agenzia di intelligenza artificiale pratica e crescita digitale a Zurigo. Realizziamo assistenti telefonici AI, siti web, visibilità (SEO/GEO) e automazione per le aziende svizzere.',
+  fr: 'Weissmann AI est une agence d’intelligence artificielle pratique et de croissance digitale à Zurich. Nous construisons des assistants téléphoniques IA, des sites web, de la visibilité (SEO/GEO) et de l’automatisation.',
+};
+
 export function organization(locale: Locale) {
   return {
     '@type': 'Organization',
     '@id': ORG_ID,
     name: SITE.name,
     url: SITE.domain,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE.domain}/logo-weissmann.png`,
+      width: 370,
+      height: 160,
+    },
+    image: `${SITE.domain}/og-default.png`,
+    description: ORG_DESCRIPTION[locale],
     email: SITE.email,
     telephone: SITE.phone,
     address: {
@@ -25,6 +46,18 @@ export function organization(locale: Locale) {
       addressLocality: SITE.address.city,
       addressCountry: SITE.address.countryCode,
     },
+    areaServed: { '@type': 'Country', name: 'Switzerland' },
+    knowsAbout: [
+      'Artificial intelligence',
+      'AI phone assistants',
+      'Conversational AI',
+      'AI automation',
+      'AI agents',
+      'Search engine optimization',
+      'Generative engine optimization',
+      'AI for small and medium businesses',
+      'AI implementation',
+    ],
     sameAs: Object.values(SITE.social),
     founder: SITE.founders.map((f) => ({
       '@type': 'Person',

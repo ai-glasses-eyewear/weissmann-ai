@@ -16,13 +16,13 @@
     "de": "Beste Open Source LLMs: Modelle & Auswahl | Weissmann AI",
     "en": "Best Open Source LLMs: Models & How to Choose | Weissmann AI",
     "it": "Migliori LLM open source: modelli e scelta | Weissmann AI",
-    "fr": "Meilleurs LLM open source : modeles et choix | Weissmann AI"
+    "fr": "Meilleurs LLM open source : modèles et choix | Weissmann AI"
   },
   "metaDescription": {
-    "de": "Open-Source- und Open-Weight-LLMs im Ueberblick: Llama, Mistral, Qwen, Apertus & Co. So waegen Sie Lizenz, Sprache, Hardware und Datenschutz richtig ab.",
+    "de": "Open-Source- und Open-Weight-LLMs im Überblick: Llama, Mistral, Qwen, Apertus & Co. So wägen Sie Lizenz, Sprache, Hardware und Datenschutz richtig ab.",
     "en": "A neutral guide to open-source and open-weight LLMs: Llama, Mistral, Qwen, Apertus and more, plus how to choose by licence, language, hardware and privacy.",
     "it": "Guida neutrale agli LLM open source e open weight: Llama, Mistral, Qwen, Apertus e altri, e come scegliere per licenza, lingua, hardware e privacy.",
-    "fr": "Guide neutre des LLM open source et open weight : Llama, Mistral, Qwen, Apertus et autres, et comment choisir selon licence, langue, materiel et RGPD."
+    "fr": "Guide neutre des LLM open source et open weight : Llama, Mistral, Qwen, Apertus et autres, et comment choisir selon licence, langue, matériel et RGPD."
   },
   "kicker": {
     "de": "Open-Source-KI",
@@ -31,16 +31,16 @@
     "fr": "IA open source"
   },
   "h1": {
-    "de": "Was sind die besten Open Source LLMs - und wie waehlt man aus?",
+    "de": "Was sind die besten Open Source LLMs - und wie wählt man aus?",
     "en": "What Are the Best Open Source LLMs - and How Do You Choose?",
     "it": "Quali sono i migliori LLM open source e come sceglierli?",
     "fr": "Quels sont les meilleurs LLM open source et comment choisir ?"
   },
   "answerFirst": {
-    "de": "Open-Source- und Open-Weight-LLMs sind Sprachmodelle, deren Gewichte Sie herunterladen, lokal betreiben und anpassen koennen - anders als geschlossene APIs. Bekannte Familien sind Llama (Meta), Mistral, Qwen, DeepSeek, Gemma, Phi sowie das Schweizer Apertus. Ein einziges bestes Modell gibt es nicht: Waehlen Sie nach Anwendungsfall, Sprachqualitaet, Lizenz, Hardware und Datenschutz. Offene Gewichte ermoeglichen On-Premise-Betrieb und Datenhoheit unter dem revDSG.",
+    "de": "Open-Source- und Open-Weight-LLMs sind Sprachmodelle, deren Gewichte Sie herunterladen, lokal betreiben und anpassen können - anders als geschlossene APIs. Bekannte Familien sind Llama (Meta), Mistral, Qwen, DeepSeek, Gemma, Phi sowie das Schweizer Apertus. Ein einziges bestes Modell gibt es nicht: Wählen Sie nach Anwendungsfall, Sprachqualität, Lizenz, Hardware und Datenschutz. Offene Gewichte ermöglichen On-Premise-Betrieb und Datenhoheit unter dem revDSG.",
     "en": "Open-source and open-weight LLMs are language models whose weights you can download, run locally and adapt - unlike closed APIs. Well-known families include Llama (Meta), Mistral, Qwen, DeepSeek, Gemma, Phi and the Swiss Apertus. There is no single best model: choose by use case, language quality, licence, hardware and data protection. Open weights enable on-premise operation and data sovereignty under the Swiss revDSG.",
-    "it": "Gli LLM open source e open weight sono modelli linguistici i cui pesi si possono scaricare, eseguire in locale e adattare, a differenza delle API chiuse. Tra le famiglie note: Llama (Meta), Mistral, Qwen, DeepSeek, Gemma, Phi e lo svizzero Apertus. Non esiste un unico modello migliore: si sceglie per caso d'uso, qualita linguistica, licenza, hardware e privacy. I pesi aperti permettono l'uso on-premise e la sovranita dei dati.",
-    "fr": "Les LLM open source et open weight sont des modeles dont on peut telecharger les poids, les executer localement et les adapter, contrairement aux API fermees. Familles connues : Llama (Meta), Mistral, Qwen, DeepSeek, Gemma, Phi et le suisse Apertus. Il n'existe pas un seul meilleur modele : on choisit selon l'usage, la qualite linguistique, la licence, le materiel et la protection des donnees. Les poids ouverts permettent un usage sur site et la souverainete des donnees."
+    "it": "Gli LLM open source e open weight sono modelli linguistici i cui pesi si possono scaricare, eseguire in locale e adattare, a differenza delle API chiuse. Tra le famiglie note: Llama (Meta), Mistral, Qwen, DeepSeek, Gemma, Phi e lo svizzero Apertus. Non esiste un unico modello migliore: si sceglie per caso d'uso, qualità linguistica, licenza, hardware e privacy. I pesi aperti permettono l'uso on-premise e la sovranità dei dati.",
+    "fr": "Les LLM open source et open weight sont des modèles dont on peut télécharger les poids, les exécuter localement et les adapter, contrairement aux API fermées. Familles connues : Llama (Meta), Mistral, Qwen, DeepSeek, Gemma, Phi et le suisse Apertus. Il n'existe pas un seul meilleur modèle : on choisit selon l'usage, la qualité linguistique, la licence, le matériel et la protection des données. Les poids ouverts permettent un usage sur site et la souveraineté des données."
   },
   "sections": [
     {
@@ -52,88 +52,88 @@
       },
       "paragraphs": [
         {
-          "de": "Viele als Open Source vermarktete Modelle geben nur die trainierten Gewichte frei, nicht aber Trainingsdaten und Trainingscode. Praeziser spricht man dann von Open-Weight-Modellen: Sie koennen sie herunterladen, ausfuehren und feinjustieren, aber nicht vollstaendig reproduzieren. Echte, OSI-konforme Offenheit mit offenen Daten und Code ist seltener.",
+          "de": "Viele als Open Source vermarktete Modelle geben nur die trainierten Gewichte frei, nicht aber Trainingsdaten und Trainingscode. Präziser spricht man dann von Open-Weight-Modellen: Sie können sie herunterladen, ausführen und feinjustieren, aber nicht vollständig reproduzieren. Echte, OSI-konforme Offenheit mit offenen Daten und Code ist seltener.",
           "en": "Many models marketed as open source only release the trained weights, not the training data or code. The more precise term is open-weight: you can download, run and fine-tune them, but not fully reproduce them. Truly open, OSI-conformant releases with open data and code are rarer.",
-          "it": "Molti modelli presentati come open source rilasciano solo i pesi addestrati, non i dati e il codice di training. Il termine piu preciso e open weight: si possono scaricare, eseguire e ottimizzare, ma non riprodurre del tutto. La vera apertura conforme OSI, con dati e codice aperti, e piu rara.",
-          "fr": "Beaucoup de modeles dits open source ne publient que les poids entraines, pas les donnees ni le code d'entrainement. Le terme exact est open weight : on peut les telecharger, les executer et les affiner, mais pas les reproduire entierement. Une ouverture reellement conforme OSI, avec donnees et code ouverts, est plus rare."
+          "it": "Molti modelli presentati come open source rilasciano solo i pesi addestrati, non i dati e il codice di training. Il termine più preciso è open weight: si possono scaricare, eseguire e ottimizzare, ma non riprodurre del tutto. La vera apertura conforme OSI, con dati e codice aperti, è più rara.",
+          "fr": "Beaucoup de modèles dits open source ne publient que les poids entraînés, pas les données ni le code d'entraînement. Le terme exact est open weight : on peut les télécharger, les exécuter et les affiner, mais pas les reproduire entièrement. Une ouverture réellement conforme OSI, avec données et code ouverts, est plus rare."
         },
         {
-          "de": "Fuer die Praxis zaehlt vor allem die Lizenz. Sie entscheidet, ob Sie ein Modell kommerziell nutzen, weitergeben und die Ausgaben verwenden duerfen. Offene Gewichte sind der Schluessel zu Datenhoheit und lokalem Betrieb - unabhaengig davon, wie vollstaendig offen der Rest des Modells ist.",
+          "de": "Für die Praxis zählt vor allem die Lizenz. Sie entscheidet, ob Sie ein Modell kommerziell nutzen, weitergeben und die Ausgaben verwenden dürfen. Offene Gewichte sind der Schlüssel zu Datenhoheit und lokalem Betrieb - unabhängig davon, wie vollständig offen der Rest des Modells ist.",
           "en": "In practice, the licence matters most. It determines whether you may use a model commercially, redistribute it and use its outputs. Open weights are the key to data sovereignty and local operation - regardless of how fully open the rest of the model is.",
-          "it": "Nella pratica conta soprattutto la licenza. Determina se puoi usare un modello commercialmente, ridistribuirlo e sfruttarne gli output. I pesi aperti sono la chiave della sovranita dei dati e dell'uso locale, a prescindere da quanto sia aperto il resto del modello.",
-          "fr": "En pratique, la licence prime. Elle determine si vous pouvez utiliser un modele commercialement, le redistribuer et exploiter ses sorties. Les poids ouverts sont la cle de la souverainete des donnees et de l'usage local, quelle que soit l'ouverture du reste du modele."
+          "it": "Nella pratica conta soprattutto la licenza. Determina se puoi usare un modello commercialmente, ridistribuirlo e sfruttarne gli output. I pesi aperti sono la chiave della sovranità dei dati e dell'uso locale, a prescindere da quanto sia aperto il resto del modello.",
+          "fr": "En pratique, la licence prime. Elle détermine si vous pouvez utiliser un modèle commercialement, le redistribuer et exploiter ses sorties. Les poids ouverts sont la clé de la souveraineté des données et de l'usage local, quelle que soit l'ouverture du reste du modèle."
         }
       ]
     },
     {
       "heading": {
-        "de": "Die wichtigsten offenen Modellfamilien im Ueberblick",
+        "de": "Die wichtigsten offenen Modellfamilien im Überblick",
         "en": "The Most Notable Open Model Families",
         "it": "Le principali famiglie di modelli aperti",
-        "fr": "Les principales familles de modeles ouverts"
+        "fr": "Les principales familles de modèles ouverts"
       },
       "paragraphs": [
         {
-          "de": "Die folgende Uebersicht ordnet bekannte Familien ein. Faehigkeiten und Versionen aendern sich schnell - pruefen Sie stets die aktuelle Generation und Lizenz beim Anbieter.",
+          "de": "Die folgende Übersicht ordnet bekannte Familien ein. Fähigkeiten und Versionen ändern sich schnell - prüfen Sie stets die aktuelle Generation und Lizenz beim Anbieter.",
           "en": "The overview below places well-known families in context. Capabilities and versions change quickly - always check the current generation and licence with the provider.",
-          "it": "La panoramica seguente inquadra famiglie note. Capacita e versioni cambiano in fretta: verifica sempre generazione e licenza attuali presso il fornitore.",
-          "fr": "L'apercu ci-dessous situe des familles connues. Les capacites et versions evoluent vite : verifiez toujours la generation et la licence actuelles chez le fournisseur."
+          "it": "La panoramica seguente inquadra famiglie note. Capacità e versioni cambiano in fretta: verifica sempre generazione e licenza attuali presso il fornitore.",
+          "fr": "L'aperçu ci-dessous situe des familles connues. Les capacités et versions évoluent vite : vérifiez toujours la génération et la licence actuelles chez le fournisseur."
         }
       ],
       "bullets": [
         {
-          "de": "Llama (Meta): grosses Oekosystem, Open-Weight mit eigener Community-Lizenz und Nutzungsbedingungen - kein klassisches Open Source.",
+          "de": "Llama (Meta): grosses Ökosystem, Open-Weight mit eigener Community-Lizenz und Nutzungsbedingungen - kein klassisches Open Source.",
           "en": "Llama (Meta): large ecosystem, open-weight under a custom community licence with usage conditions - not classic open source.",
           "it": "Llama (Meta): ecosistema ampio, open weight con licenza community propria e condizioni d'uso, non open source classico.",
-          "fr": "Llama (Meta) : vaste ecosysteme, open weight sous licence communautaire propre avec conditions d'usage, pas de l'open source classique."
+          "fr": "Llama (Meta) : vaste écosystème, open weight sous licence communautaire propre avec conditions d'usage, pas de l'open source classique."
         },
         {
-          "de": "Mistral / Mixtral (Mistral AI, Frankreich): mehrere Modelle unter Apache 2.0, europaeischer Anbieter, teils Mixture-of-Experts-Architektur.",
+          "de": "Mistral / Mixtral (Mistral AI, Frankreich): mehrere Modelle unter Apache 2.0, europäischer Anbieter, teils Mixture-of-Experts-Architektur.",
           "en": "Mistral / Mixtral (Mistral AI, France): several models under Apache 2.0, a European provider, some using a Mixture-of-Experts architecture.",
           "it": "Mistral / Mixtral (Mistral AI, Francia): diversi modelli con licenza Apache 2.0, fornitore europeo, alcuni con architettura Mixture-of-Experts.",
-          "fr": "Mistral / Mixtral (Mistral AI, France) : plusieurs modeles sous Apache 2.0, fournisseur europeen, certains en architecture Mixture-of-Experts."
+          "fr": "Mistral / Mixtral (Mistral AI, France) : plusieurs modèles sous Apache 2.0, fournisseur européen, certains en architecture Mixture-of-Experts."
         },
         {
-          "de": "Qwen (Alibaba): breites Groessenspektrum, viele Varianten unter Apache 2.0, meist starke Mehrsprachigkeit.",
+          "de": "Qwen (Alibaba): breites Grössenspektrum, viele Varianten unter Apache 2.0, meist starke Mehrsprachigkeit.",
           "en": "Qwen (Alibaba): a broad range of sizes, many variants under Apache 2.0, generally strong multilingual coverage.",
           "it": "Qwen (Alibaba): ampia gamma di dimensioni, molte varianti con Apache 2.0, in genere buona copertura multilingue.",
-          "fr": "Qwen (Alibaba) : large gamme de tailles, nombreuses variantes sous Apache 2.0, couverture multilingue generalement solide."
+          "fr": "Qwen (Alibaba) : large gamme de tailles, nombreuses variantes sous Apache 2.0, couverture multilingue généralement solide."
         },
         {
           "de": "DeepSeek: Gewichte teils unter MIT-Lizenz, mit auf Schlussfolgern ausgerichteten Varianten.",
           "en": "DeepSeek: weights partly under the MIT licence, with variants geared toward reasoning.",
           "it": "DeepSeek: pesi in parte con licenza MIT, con varianti orientate al ragionamento.",
-          "fr": "DeepSeek : poids en partie sous licence MIT, avec des variantes orientees raisonnement."
+          "fr": "DeepSeek : poids en partie sous licence MIT, avec des variantes orientées raisonnement."
         },
         {
           "de": "Gemma (Google): kompakte, effiziente Modelle als Open-Weight unter eigener Gemma-Lizenz.",
           "en": "Gemma (Google): compact, efficient open-weight models under Google's own Gemma licence.",
           "it": "Gemma (Google): modelli compatti ed efficienti, open weight con licenza Gemma propria.",
-          "fr": "Gemma (Google) : modeles compacts et efficaces, open weight sous licence Gemma propre."
+          "fr": "Gemma (Google) : modèles compacts et efficaces, open weight sous licence Gemma propre."
         },
         {
-          "de": "Phi (Microsoft): kleine Modelle unter MIT-Lizenz, oft stark im Verhaeltnis zur Groesse.",
+          "de": "Phi (Microsoft): kleine Modelle unter MIT-Lizenz, oft stark im Verhältnis zur Grösse.",
           "en": "Phi (Microsoft): small models under the MIT licence, often strong for their size.",
           "it": "Phi (Microsoft): modelli piccoli con licenza MIT, spesso validi rispetto alle dimensioni.",
-          "fr": "Phi (Microsoft) : petits modeles sous licence MIT, souvent performants pour leur taille."
+          "fr": "Phi (Microsoft) : petits modèles sous licence MIT, souvent performants pour leur taille."
         },
         {
-          "de": "OLMo (Allen Institute for AI): vollstaendig offen inklusive Trainingsdaten, unter Apache 2.0 - ein Referenzpunkt fuer echte Offenheit.",
+          "de": "OLMo (Allen Institute for AI): vollständig offen inklusive Trainingsdaten, unter Apache 2.0 - ein Referenzpunkt für echte Offenheit.",
           "en": "OLMo (Allen Institute for AI): fully open including training data, under Apache 2.0 - a reference point for genuine openness.",
           "it": "OLMo (Allen Institute for AI): completamente aperto, dati di training inclusi, con Apache 2.0, riferimento per l'apertura reale.",
-          "fr": "OLMo (Allen Institute for AI) : entierement ouvert, donnees d'entrainement comprises, sous Apache 2.0, une reference d'ouverture reelle."
+          "fr": "OLMo (Allen Institute for AI) : entièrement ouvert, données d'entraînement comprises, sous Apache 2.0, une référence d'ouverture réelle."
         },
         {
-          "de": "Apertus (ETH Zuerich, EPFL, CSCS): das vollstaendig offene, mehrsprachige Schweizer Modell - mehr dazu weiter unten.",
+          "de": "Apertus (ETH Zürich, EPFL, CSCS): das vollständig offene, mehrsprachige Schweizer Modell - mehr dazu weiter unten.",
           "en": "Apertus (ETH Zurich, EPFL, CSCS): the fully open, multilingual Swiss model - more on this below.",
-          "it": "Apertus (ETH Zurigo, EPFL, CSCS): il modello svizzero completamente aperto e multilingue, di cui parliamo piu avanti.",
-          "fr": "Apertus (ETH Zurich, EPFL, CSCS) : le modele suisse entierement ouvert et multilingue, detaille plus bas."
+          "it": "Apertus (ETH Zurigo, EPFL, CSCS): il modello svizzero completamente aperto e multilingue, di cui parliamo più avanti.",
+          "fr": "Apertus (ETH Zurich, EPFL, CSCS) : le modèle suisse entièrement ouvert et multilingue, détaillé plus bas."
         },
         {
           "de": "Weitere: Falcon (TII), Command (Cohere), GLM (Zhipu) und laufend neue Modelle erweitern das Feld.",
           "en": "Others: Falcon (TII), Command (Cohere), GLM (Zhipu) and a steady stream of new models keep expanding the field.",
           "it": "Altri: Falcon (TII), Command (Cohere), GLM (Zhipu) e un flusso costante di nuovi modelli ampliano il panorama.",
-          "fr": "Autres : Falcon (TII), Command (Cohere), GLM (Zhipu) et un flux constant de nouveaux modeles elargissent le champ."
+          "fr": "Autres : Falcon (TII), Command (Cohere), GLM (Zhipu) et un flux constant de nouveaux modèles élargissent le champ."
         }
       ]
     },
@@ -146,10 +146,10 @@
       },
       "paragraphs": [
         {
-          "de": "Der Begriff Open Source wird uneinheitlich verwendet. Pruefen Sie vor dem produktiven Einsatz immer den konkreten Lizenztext - besonders bei kommerzieller Nutzung.",
+          "de": "Der Begriff Open Source wird uneinheitlich verwendet. Prüfen Sie vor dem produktiven Einsatz immer den konkreten Lizenztext - besonders bei kommerzieller Nutzung.",
           "en": "The term open source is used inconsistently. Before any production use, always check the specific licence text - especially for commercial deployment.",
-          "it": "Il termine open source e usato in modo incoerente. Prima di ogni uso in produzione, verifica sempre il testo di licenza specifico, soprattutto per l'uso commerciale.",
-          "fr": "Le terme open source est employe de facon inconstante. Avant tout usage en production, verifiez toujours le texte de licence precis, surtout pour un usage commercial."
+          "it": "Il termine open source è usato in modo incoerente. Prima di ogni uso in produzione, verifica sempre il testo di licenza specifico, soprattutto per l'uso commerciale.",
+          "fr": "Le terme open source est employé de façon inconstante. Avant tout usage en production, vérifiez toujours le texte de licence précis, surtout pour un usage commercial."
         }
       ],
       "bullets": [
@@ -157,22 +157,22 @@
           "de": "Permissive OSI-Lizenzen (Apache 2.0, MIT): breite kommerzielle Nutzung, Weitergabe und Anpassung meist erlaubt.",
           "en": "Permissive OSI licences (Apache 2.0, MIT): broad commercial use, redistribution and adaptation are usually allowed.",
           "it": "Licenze OSI permissive (Apache 2.0, MIT): uso commerciale ampio, ridistribuzione e modifica di norma consentiti.",
-          "fr": "Licences OSI permissives (Apache 2.0, MIT) : usage commercial large, redistribution et adaptation generalement autorises."
+          "fr": "Licences OSI permissives (Apache 2.0, MIT) : usage commercial large, redistribution et adaptation généralement autorisés."
         },
         {
-          "de": "Eigene Community-/Open-Weight-Lizenzen (z. B. Llama, Gemma): Nutzung erlaubt, aber mit Bedingungen und teils Nutzungsbeschraenkungen.",
+          "de": "Eigene Community-/Open-Weight-Lizenzen (z. B. Llama, Gemma): Nutzung erlaubt, aber mit Bedingungen und teils Nutzungsbeschränkungen.",
           "en": "Custom community/open-weight licences (e.g. Llama, Gemma): use is allowed but with conditions and some usage restrictions.",
           "it": "Licenze community/open weight proprietarie (es. Llama, Gemma): uso consentito ma con condizioni e alcune limitazioni.",
-          "fr": "Licences communautaires/open weight propres (ex. Llama, Gemma) : usage autorise mais assorti de conditions et de restrictions."
+          "fr": "Licences communautaires/open weight propres (ex. Llama, Gemma) : usage autorisé mais assorti de conditions et de restrictions."
         },
         {
           "de": "Reine Forschungslizenzen: keine kommerzielle Nutzung erlaubt.",
           "en": "Research-only licences: no commercial use permitted.",
           "it": "Licenze solo per ricerca: nessun uso commerciale consentito.",
-          "fr": "Licences reservees a la recherche : aucun usage commercial autorise."
+          "fr": "Licences réservées à la recherche : aucun usage commercial autorisé."
         },
         {
-          "de": "Immer klaeren: kommerzielle Nutzung, Weitergabe, Rechte an den Ausgaben, Namensnennung und Marken.",
+          "de": "Immer klären: kommerzielle Nutzung, Weitergabe, Rechte an den Ausgaben, Namensnennung und Marken.",
           "en": "Always clarify: commercial use, redistribution, rights to the outputs, attribution and trademarks.",
           "it": "Chiarire sempre: uso commerciale, ridistribuzione, diritti sugli output, attribuzione e marchi.",
           "fr": "Toujours clarifier : usage commercial, redistribution, droits sur les sorties, attribution et marques."
@@ -181,23 +181,23 @@
           "de": "Offene Gewichte bedeuten nicht offene Trainingsdaten - beides ist getrennt zu bewerten.",
           "en": "Open weights do not mean open training data - the two must be assessed separately.",
           "it": "Pesi aperti non significa dati di training aperti: vanno valutati separatamente.",
-          "fr": "Des poids ouverts ne signifient pas des donnees d'entrainement ouvertes : a evaluer separement."
+          "fr": "Des poids ouverts ne signifient pas des données d'entraînement ouvertes : à évaluer séparément."
         }
       ]
     },
     {
       "heading": {
-        "de": "Wie Sie das richtige Modell waehlen",
+        "de": "Wie Sie das richtige Modell wählen",
         "en": "How to Choose the Right Model",
         "it": "Come scegliere il modello giusto",
-        "fr": "Comment choisir le bon modele"
+        "fr": "Comment choisir le bon modèle"
       },
       "paragraphs": [
         {
           "de": "Statt nach dem vermeintlich besten Modell zu suchen, sollten Sie vom Anwendungsfall her denken. Diese Kriterien helfen bei einer fundierten, neutralen Auswahl.",
           "en": "Instead of hunting for the supposedly best model, start from the use case. The following criteria support a sound, neutral choice.",
           "it": "Invece di cercare il presunto modello migliore, parti dal caso d'uso. Questi criteri aiutano una scelta solida e neutrale.",
-          "fr": "Plutot que de chercher le pretendu meilleur modele, partez de l'usage. Ces criteres aident a un choix solide et neutre."
+          "fr": "Plutôt que de chercher le prétendu meilleur modèle, partez de l'usage. Ces critères aident à un choix solide et neutre."
         }
       ],
       "bullets": [
@@ -205,43 +205,43 @@
           "de": "Anwendungsfall: Chat, Programmierung, Extraktion, Zusammenfassung oder RAG stellen unterschiedliche Anforderungen.",
           "en": "Use case: chat, coding, extraction, summarisation or RAG each place different demands on a model.",
           "it": "Caso d'uso: chat, programmazione, estrazione, riassunto o RAG pongono esigenze diverse.",
-          "fr": "Usage : chat, code, extraction, resume ou RAG imposent des exigences differentes."
+          "fr": "Usage : chat, code, extraction, résumé ou RAG imposent des exigences différentes."
         },
         {
-          "de": "Sprachqualitaet: pruefen Sie Deutsch, Franzoesisch, Italienisch und bei Bedarf Schweizerdeutsch anhand eigener Beispiele.",
+          "de": "Sprachqualität: prüfen Sie Deutsch, Französisch, Italienisch und bei Bedarf Schweizerdeutsch anhand eigener Beispiele.",
           "en": "Language quality: test German, French, Italian and, if needed, Swiss German with your own examples.",
-          "it": "Qualita linguistica: verifica tedesco, francese, italiano e, se serve, svizzero-tedesco con esempi tuoi.",
-          "fr": "Qualite linguistique : testez l'allemand, le francais, l'italien et, au besoin, le suisse-allemand avec vos exemples."
+          "it": "Qualità linguistica: verifica tedesco, francese, italiano e, se serve, svizzero-tedesco con esempi tuoi.",
+          "fr": "Qualité linguistique : testez l'allemand, le français, l'italien et, au besoin, le suisse-allemand avec vos exemples."
         },
         {
-          "de": "Modellgroesse und Hardware: groessere Modelle brauchen mehr VRAM; Quantisierung senkt den Bedarf.",
+          "de": "Modellgrösse und Hardware: grössere Modelle brauchen mehr VRAM; Quantisierung senkt den Bedarf.",
           "en": "Model size and hardware: larger models need more VRAM; quantisation lowers the requirement.",
-          "it": "Dimensione del modello e hardware: i modelli grandi richiedono piu VRAM; la quantizzazione riduce il fabbisogno.",
-          "fr": "Taille du modele et materiel : les grands modeles exigent plus de VRAM ; la quantification reduit le besoin."
+          "it": "Dimensione del modello e hardware: i modelli grandi richiedono più VRAM; la quantizzazione riduce il fabbisogno.",
+          "fr": "Taille du modèle et matériel : les grands modèles exigent plus de VRAM ; la quantification réduit le besoin."
         },
         {
-          "de": "Lizenz und kommerzielle Bedingungen: passen sie zu Ihrem Geschaeftsmodell?",
+          "de": "Lizenz und kommerzielle Bedingungen: passen sie zu Ihrem Geschäftsmodell?",
           "en": "Licence and commercial terms: do they fit your business model?",
           "it": "Licenza e condizioni commerciali: sono compatibili con il tuo modello di business?",
-          "fr": "Licence et conditions commerciales : conviennent-elles a votre modele economique ?"
+          "fr": "Licence et conditions commerciales : conviennent-elles à votre modèle économique ?"
         },
         {
-          "de": "Betrieb: lokal/On-Premise fuer Datenhoheit oder verwaltetes Hosting fuer weniger Aufwand.",
+          "de": "Betrieb: lokal/On-Premise für Datenhoheit oder verwaltetes Hosting für weniger Aufwand.",
           "en": "Operation: local/on-premise for data sovereignty, or managed hosting for less overhead.",
-          "it": "Esercizio: locale/on-premise per la sovranita dei dati, oppure hosting gestito per meno oneri.",
-          "fr": "Exploitation : local/sur site pour la souverainete, ou hebergement gere pour moins de charge."
+          "it": "Esercizio: locale/on-premise per la sovranità dei dati, oppure hosting gestito per meno oneri.",
+          "fr": "Exploitation : local/sur site pour la souveraineté, ou hébergement géré pour moins de charge."
         },
         {
-          "de": "Anpassbarkeit: Moeglichkeit zu Fine-Tuning, Prompting und Werkzeug-Anbindung.",
+          "de": "Anpassbarkeit: Möglichkeit zu Fine-Tuning, Prompting und Werkzeug-Anbindung.",
           "en": "Adaptability: room for fine-tuning, prompting and tool integration.",
-          "it": "Adattabilita: possibilita di fine-tuning, prompting e integrazione di strumenti.",
-          "fr": "Adaptabilite : possibilite de fine-tuning, de prompting et d'integration d'outils."
+          "it": "Adattabilità: possibilità di fine-tuning, prompting e integrazione di strumenti.",
+          "fr": "Adaptabilité : possibilité de fine-tuning, de prompting et d'intégration d'outils."
         },
         {
           "de": "Governance und Pflege: Update-Kadenz, Sicherheit, Dokumentation und Community-Support.",
           "en": "Governance and maintenance: update cadence, safety, documentation and community support.",
           "it": "Governance e manutenzione: cadenza degli aggiornamenti, sicurezza, documentazione e supporto della community.",
-          "fr": "Gouvernance et maintenance : rythme des mises a jour, securite, documentation et support communautaire."
+          "fr": "Gouvernance et maintenance : rythme des mises à jour, sécurité, documentation et support communautaire."
         }
       ]
     },
@@ -250,14 +250,14 @@
         "de": "Lokal betreiben: Hardware, Werkzeuge und Datenschutz",
         "en": "Running Locally: Hardware, Tools and Data Protection",
         "it": "Esecuzione in locale: hardware, strumenti e privacy",
-        "fr": "Executer en local : materiel, outils et protection des donnees"
+        "fr": "Exécuter en local : matériel, outils et protection des données"
       },
       "paragraphs": [
         {
-          "de": "Ein zentraler Vorteil offener Gewichte ist der lokale Betrieb. Kleine, quantisierte Modelle laufen bereits auf einem gut ausgestatteten Laptop; groessere Modelle brauchen eine GPU oder einen Server.",
+          "de": "Ein zentraler Vorteil offener Gewichte ist der lokale Betrieb. Kleine, quantisierte Modelle laufen bereits auf einem gut ausgestatteten Laptop; grössere Modelle brauchen eine GPU oder einen Server.",
           "en": "A core advantage of open weights is local operation. Small, quantised models already run on a well-equipped laptop; larger models need a GPU or a server.",
-          "it": "Un vantaggio chiave dei pesi aperti e l'esecuzione locale. Modelli piccoli e quantizzati girano gia su un buon portatile; quelli grandi richiedono una GPU o un server.",
-          "fr": "Un atout majeur des poids ouverts est l'execution locale. Les petits modeles quantifies tournent deja sur un bon portable ; les grands exigent un GPU ou un serveur."
+          "it": "Un vantaggio chiave dei pesi aperti è l'esecuzione locale. Modelli piccoli e quantizzati girano già su un buon portatile; quelli grandi richiedono una GPU o un server.",
+          "fr": "Un atout majeur des poids ouverts est l'exécution locale. Les petits modèles quantifiés tournent déjà sur un bon portable ; les grands exigent un GPU ou un serveur."
         }
       ],
       "bullets": [
@@ -265,61 +265,61 @@
           "de": "Werkzeuge: Ollama, llama.cpp, LM Studio, vLLM und die Hugging-Face-Bibliotheken erleichtern Download und Betrieb.",
           "en": "Tools: Ollama, llama.cpp, LM Studio, vLLM and the Hugging Face libraries simplify download and operation.",
           "it": "Strumenti: Ollama, llama.cpp, LM Studio, vLLM e le librerie Hugging Face semplificano download ed esecuzione.",
-          "fr": "Outils : Ollama, llama.cpp, LM Studio, vLLM et les bibliotheques Hugging Face simplifient telechargement et execution."
+          "fr": "Outils : Ollama, llama.cpp, LM Studio, vLLM et les bibliothèques Hugging Face simplifient téléchargement et exécution."
         },
         {
-          "de": "Quantisierung (etwa 4-bit, GGUF-Format) reduziert Speicherbedarf bei meist geringem Qualitaetsverlust.",
+          "de": "Quantisierung (etwa 4-bit, GGUF-Format) reduziert Speicherbedarf bei meist geringem Qualitätsverlust.",
           "en": "Quantisation (e.g. 4-bit, GGUF format) reduces memory needs with usually modest quality loss.",
-          "it": "La quantizzazione (es. 4-bit, formato GGUF) riduce la memoria con perdita di qualita di solito contenuta.",
-          "fr": "La quantification (par ex. 4 bits, format GGUF) reduit la memoire avec une perte de qualite generalement faible."
+          "it": "La quantizzazione (es. 4-bit, formato GGUF) riduce la memoria con perdita di qualità di solito contenuta.",
+          "fr": "La quantification (par ex. 4 bits, format GGUF) réduit la mémoire avec une perte de qualité généralement faible."
         },
         {
-          "de": "Datenhoheit: Bei lokalem Betrieb verlassen die Daten Ihre Infrastruktur nicht - ein starkes Argument fuer den Schutz sensibler Informationen.",
+          "de": "Datenhoheit: Bei lokalem Betrieb verlassen die Daten Ihre Infrastruktur nicht - ein starkes Argument für den Schutz sensibler Informationen.",
           "en": "Data sovereignty: with local operation, data never leaves your infrastructure - a strong argument for protecting sensitive information.",
-          "it": "Sovranita dei dati: in locale i dati non lasciano la tua infrastruttura, un argomento forte per proteggere informazioni sensibili.",
-          "fr": "Souverainete des donnees : en local, les donnees ne quittent jamais votre infrastructure, un argument fort pour proteger les informations sensibles."
+          "it": "Sovranità dei dati: in locale i dati non lasciano la tua infrastruttura, un argomento forte per proteggere informazioni sensibili.",
+          "fr": "Souveraineté des données : en local, les données ne quittent jamais votre infrastructure, un argument fort pour protéger les informations sensibles."
         },
         {
-          "de": "Compliance: On-Premise oder Schweizer Hosting erleichtert die Einhaltung des revDSG, da keine unnoetige Uebermittlung ins Ausland erfolgt.",
+          "de": "Compliance: On-Premise oder Schweizer Hosting erleichtert die Einhaltung des revDSG, da keine unnötige Übermittlung ins Ausland erfolgt.",
           "en": "Compliance: on-premise or Swiss hosting eases revDSG compliance, since no unnecessary transfer abroad takes place.",
           "it": "Compliance: on-premise o hosting svizzero facilita il rispetto del revDSG, evitando trasferimenti non necessari all'estero.",
-          "fr": "Conformite : l'hebergement sur site ou en Suisse facilite le respect de la revDSG, sans transfert inutile a l'etranger."
+          "fr": "Conformité : l'hébergement sur site ou en Suisse facilite le respect de la revDSG, sans transfert inutile à l'étranger."
         }
       ]
     },
     {
       "heading": {
-        "de": "Schweizer und europaeische Perspektive",
+        "de": "Schweizer und europäische Perspektive",
         "en": "The Swiss and European Perspective",
         "it": "La prospettiva svizzera ed europea",
-        "fr": "La perspective suisse et europeenne"
+        "fr": "La perspective suisse et européenne"
       },
       "paragraphs": [
         {
-          "de": "Mit Apertus existiert ein vollstaendig offenes, mehrsprachiges Sprachmodell aus der Schweiz, entwickelt von ETH Zuerich, EPFL und dem Supercomputing-Zentrum CSCS und auf dem Alps-Supercomputer trainiert. Es steht fuer digitale Souveraenitaet und Transparenz - Gewichte, Trainingsdaten und Methodik sind offengelegt.",
+          "de": "Mit Apertus existiert ein vollständig offenes, mehrsprachiges Sprachmodell aus der Schweiz, entwickelt von ETH Zürich, EPFL und dem Supercomputing-Zentrum CSCS und auf dem Alps-Supercomputer trainiert. Es steht für digitale Souveränität und Transparenz - Gewichte, Trainingsdaten und Methodik sind offengelegt.",
           "en": "Apertus is a fully open, multilingual language model from Switzerland, developed by ETH Zurich, EPFL and the CSCS supercomputing centre and trained on the Alps supercomputer. It stands for digital sovereignty and transparency - weights, training data and methodology are disclosed.",
-          "it": "Apertus e un modello linguistico completamente aperto e multilingue dalla Svizzera, sviluppato da ETH Zurigo, EPFL e dal centro di supercalcolo CSCS e addestrato sul supercomputer Alps. Rappresenta sovranita digitale e trasparenza: pesi, dati di training e metodologia sono resi pubblici.",
-          "fr": "Apertus est un modele de langue entierement ouvert et multilingue issu de Suisse, developpe par l'ETH Zurich, l'EPFL et le centre de calcul CSCS, entraine sur le supercalculateur Alps. Il incarne la souverainete numerique et la transparence : poids, donnees d'entrainement et methodologie sont divulgues."
+          "it": "Apertus è un modello linguistico completamente aperto e multilingue dalla Svizzera, sviluppato da ETH Zurigo, EPFL e dal centro di supercalcolo CSCS e addestrato sul supercomputer Alps. Rappresenta sovranità digitale e trasparenza: pesi, dati di training e metodologia sono resi pubblici.",
+          "fr": "Apertus est un modèle de langue entièrement ouvert et multilingue issu de Suisse, développé par l'ETH Zurich, l'EPFL et le centre de calcul CSCS, entraîné sur le supercalculateur Alps. Il incarne la souveraineté numérique et la transparence : poids, données d'entraînement et méthodologie sont divulgués."
         }
       ],
       "bullets": [
         {
-          "de": "EU AI Act: Fuer frei lizenzierte, quelloffene GPAI-Modelle gelten Erleichterungen, aber nicht bei systemischem Risiko; Pflichten wie eine Zusammenfassung der Trainingsdaten und die Achtung des Urheberrechts bleiben bestehen. Der Rechtsakt wirkt extraterritorial.",
+          "de": "EU AI Act: Für frei lizenzierte, quelloffene GPAI-Modelle gelten Erleichterungen, aber nicht bei systemischem Risiko; Pflichten wie eine Zusammenfassung der Trainingsdaten und die Achtung des Urheberrechts bleiben bestehen. Der Rechtsakt wirkt extraterritorial.",
           "en": "EU AI Act: freely licensed, open-source GPAI models get some relief, but not where systemic risk applies; duties such as a training-data summary and respecting copyright remain. The act applies extraterritorially.",
           "it": "EU AI Act: i modelli GPAI open source con licenza libera godono di alcune agevolazioni, ma non in caso di rischio sistemico; restano obblighi come il riepilogo dei dati di training e il rispetto del copyright. La norma ha effetto extraterritoriale.",
-          "fr": "EU AI Act : les modeles GPAI open source sous licence libre beneficient d'allegements, sauf en cas de risque systemique ; des obligations subsistent, comme un resume des donnees d'entrainement et le respect du droit d'auteur. Le texte a une portee extraterritoriale."
+          "fr": "EU AI Act : les modèles GPAI open source sous licence libre bénéficient d'allégements, sauf en cas de risque systémique ; des obligations subsistent, comme un résumé des données d'entraînement et le respect du droit d'auteur. Le texte a une portée extraterritoriale."
         },
         {
-          "de": "revDSG und EDOEB: Offene Gewichte helfen, Personendaten in der Schweiz zu halten und Bearbeitungen transparent zu dokumentieren.",
+          "de": "revDSG und EDÖB: Offene Gewichte helfen, Personendaten in der Schweiz zu halten und Bearbeitungen transparent zu dokumentieren.",
           "en": "revDSG and the EDOEB: open weights help keep personal data in Switzerland and document processing transparently.",
           "it": "revDSG ed EDOEB: i pesi aperti aiutano a mantenere i dati personali in Svizzera e a documentare i trattamenti in modo trasparente.",
-          "fr": "revDSG et PFPDT : les poids ouverts aident a conserver les donnees personnelles en Suisse et a documenter les traitements de facon transparente."
+          "fr": "revDSG et PFPDT : les poids ouverts aident à conserver les données personnelles en Suisse et à documenter les traitements de façon transparente."
         },
         {
-          "de": "Anbieterunabhaengigkeit: Offene Modelle verringern Lock-in-Risiken und erhoehen die Kontrolle ueber Roadmap und Kosten.",
+          "de": "Anbieterunabhängigkeit: Offene Modelle verringern Lock-in-Risiken und erhöhen die Kontrolle über Roadmap und Kosten.",
           "en": "Vendor independence: open models reduce lock-in risk and increase control over roadmap and costs.",
           "it": "Indipendenza dai fornitori: i modelli aperti riducono il rischio di lock-in e aumentano il controllo su roadmap e costi.",
-          "fr": "Independance vis-a-vis des fournisseurs : les modeles ouverts reduisent le risque de verrouillage et renforcent le controle sur la feuille de route et les couts."
+          "fr": "Indépendance vis-à-vis des fournisseurs : les modèles ouverts réduisent le risque de verrouillage et renforcent le contrôle sur la feuille de route et les coûts."
         }
       ]
     }
@@ -329,28 +329,28 @@
       "q": {
         "de": "Was ist der Unterschied zwischen Open Source und Open Weight bei LLMs?",
         "en": "What is the difference between open source and open weight LLMs?",
-        "it": "Qual e la differenza tra LLM open source e open weight?",
-        "fr": "Quelle est la difference entre LLM open source et open weight ?"
+        "it": "Qual è la differenza tra LLM open source e open weight?",
+        "fr": "Quelle est la différence entre LLM open source et open weight ?"
       },
       "a": {
-        "de": "Open Weight bedeutet, dass die trainierten Gewichte frei verfuegbar sind - Sie koennen das Modell herunterladen, ausfuehren und anpassen. Vollstaendig Open Source umfasst zusaetzlich offene Trainingsdaten und Code, sodass sich das Modell reproduzieren laesst. Viele bekannte Modelle sind Open Weight, aber nicht vollstaendig quelloffen.",
+        "de": "Open Weight bedeutet, dass die trainierten Gewichte frei verfügbar sind - Sie können das Modell herunterladen, ausführen und anpassen. Vollständig Open Source umfasst zusätzlich offene Trainingsdaten und Code, sodass sich das Modell reproduzieren lässt. Viele bekannte Modelle sind Open Weight, aber nicht vollständig quelloffen.",
         "en": "Open weight means the trained weights are freely available - you can download, run and adapt the model. Fully open source additionally includes open training data and code, so the model can be reproduced. Many well-known models are open weight but not fully open source.",
-        "it": "Open weight significa che i pesi addestrati sono liberamente disponibili: puoi scaricare, eseguire e adattare il modello. Il pieno open source include anche dati di training e codice aperti, cosi da poter riprodurre il modello. Molti modelli noti sono open weight ma non pienamente open source.",
-        "fr": "Open weight signifie que les poids entraines sont librement disponibles : on peut telecharger, executer et adapter le modele. Le plein open source ajoute donnees d'entrainement et code ouverts, permettant de reproduire le modele. Beaucoup de modeles connus sont open weight mais pas pleinement open source."
+        "it": "Open weight significa che i pesi addestrati sono liberamente disponibili: puoi scaricare, eseguire e adattare il modello. Il pieno open source include anche dati di training e codice aperti, così da poter riprodurre il modello. Molti modelli noti sono open weight ma non pienamente open source.",
+        "fr": "Open weight signifie que les poids entraînés sont librement disponibles : on peut télécharger, exécuter et adapter le modèle. Le plein open source ajoute données d'entraînement et code ouverts, permettant de reproduire le modèle. Beaucoup de modèles connus sont open weight mais pas pleinement open source."
       }
     },
     {
       "q": {
         "de": "Welches ist das beste Open Source LLM?",
         "en": "Which is the best open source LLM?",
-        "it": "Qual e il miglior LLM open source?",
+        "it": "Qual è il miglior LLM open source?",
         "fr": "Quel est le meilleur LLM open source ?"
       },
       "a": {
-        "de": "Es gibt kein pauschal bestes Modell. Die richtige Wahl haengt vom Anwendungsfall, der Sprachqualitaet fuer Ihre Sprachen, der Lizenz, der verfuegbaren Hardware und Ihren Datenschutzanforderungen ab. Testen Sie zwei bis drei Kandidaten mit eigenen, realistischen Beispielen statt sich auf allgemeine Ranglisten zu verlassen.",
+        "de": "Es gibt kein pauschal bestes Modell. Die richtige Wahl hängt vom Anwendungsfall, der Sprachqualität für Ihre Sprachen, der Lizenz, der verfügbaren Hardware und Ihren Datenschutzanforderungen ab. Testen Sie zwei bis drei Kandidaten mit eigenen, realistischen Beispielen statt sich auf allgemeine Ranglisten zu verlassen.",
         "en": "There is no universally best model. The right choice depends on your use case, language quality for your languages, licence, available hardware and data-protection needs. Test two or three candidates with your own realistic examples rather than relying on general rankings.",
-        "it": "Non esiste un modello migliore in assoluto. La scelta giusta dipende dal caso d'uso, dalla qualita linguistica per le tue lingue, dalla licenza, dall'hardware disponibile e dalle esigenze di privacy. Prova due o tre candidati con esempi reali tuoi, invece di affidarti a classifiche generiche.",
-        "fr": "Il n'existe pas de meilleur modele universel. Le bon choix depend de l'usage, de la qualite linguistique pour vos langues, de la licence, du materiel disponible et de vos besoins de protection des donnees. Testez deux ou trois candidats avec vos propres exemples realistes plutot que de vous fier a des classements generaux."
+        "it": "Non esiste un modello migliore in assoluto. La scelta giusta dipende dal caso d'uso, dalla qualità linguistica per le tue lingue, dalla licenza, dall'hardware disponibile e dalle esigenze di privacy. Prova due o tre candidati con esempi reali tuoi, invece di affidarti a classifiche generiche.",
+        "fr": "Il n'existe pas de meilleur modèle universel. Le bon choix dépend de l'usage, de la qualité linguistique pour vos langues, de la licence, du matériel disponible et de vos besoins de protection des données. Testez deux ou trois candidats avec vos propres exemples réalistes plutôt que de vous fier à des classements généraux."
       }
     },
     {
@@ -358,13 +358,13 @@
         "de": "Darf ich Open-Source-LLMs kommerziell nutzen?",
         "en": "Can I use open-source LLMs commercially?",
         "it": "Posso usare gli LLM open source a fini commerciali?",
-        "fr": "Puis-je utiliser des LLM open source a des fins commerciales ?"
+        "fr": "Puis-je utiliser des LLM open source à des fins commerciales ?"
       },
       "a": {
-        "de": "Das haengt von der Lizenz ab. Modelle unter Apache 2.0 oder MIT erlauben in der Regel breite kommerzielle Nutzung. Eigene Community-Lizenzen (etwa bei Llama oder Gemma) erlauben kommerzielle Nutzung meist ebenfalls, jedoch mit Bedingungen. Reine Forschungslizenzen schliessen kommerzielle Nutzung aus. Pruefen Sie stets den konkreten Lizenztext.",
+        "de": "Das hängt von der Lizenz ab. Modelle unter Apache 2.0 oder MIT erlauben in der Regel breite kommerzielle Nutzung. Eigene Community-Lizenzen (etwa bei Llama oder Gemma) erlauben kommerzielle Nutzung meist ebenfalls, jedoch mit Bedingungen. Reine Forschungslizenzen schliessen kommerzielle Nutzung aus. Prüfen Sie stets den konkreten Lizenztext.",
         "en": "It depends on the licence. Models under Apache 2.0 or MIT generally allow broad commercial use. Custom community licences (such as Llama or Gemma) usually also allow commercial use, but with conditions. Research-only licences exclude commercial use. Always check the specific licence text.",
         "it": "Dipende dalla licenza. I modelli con Apache 2.0 o MIT consentono in genere un ampio uso commerciale. Le licenze community proprietarie (come Llama o Gemma) di solito consentono l'uso commerciale ma con condizioni. Le licenze solo per ricerca lo escludono. Verifica sempre il testo di licenza specifico.",
-        "fr": "Cela depend de la licence. Les modeles sous Apache 2.0 ou MIT autorisent generalement un large usage commercial. Les licences communautaires propres (comme Llama ou Gemma) l'autorisent souvent aussi, mais sous conditions. Les licences reservees a la recherche l'excluent. Verifiez toujours le texte de licence precis."
+        "fr": "Cela dépend de la licence. Les modèles sous Apache 2.0 ou MIT autorisent généralement un large usage commercial. Les licences communautaires propres (comme Llama ou Gemma) l'autorisent souvent aussi, mais sous conditions. Les licences réservées à la recherche l'excluent. Vérifiez toujours le texte de licence précis."
       }
     },
     {
@@ -372,13 +372,13 @@
         "de": "Welche Hardware brauche ich, um ein LLM lokal zu betreiben?",
         "en": "What hardware do I need to run an LLM locally?",
         "it": "Quale hardware serve per eseguire un LLM in locale?",
-        "fr": "Quel materiel faut-il pour executer un LLM en local ?"
+        "fr": "Quel matériel faut-il pour exécuter un LLM en local ?"
       },
       "a": {
-        "de": "Kleine, quantisierte Modelle laufen bereits auf einem gut ausgestatteten Laptop mit ausreichend Arbeitsspeicher. Mittlere und grosse Modelle profitieren stark von einer GPU mit genuegend VRAM oder von einem Server. Quantisierung senkt den Speicherbedarf deutlich; Werkzeuge wie Ollama oder LM Studio erleichtern den Einstieg.",
+        "de": "Kleine, quantisierte Modelle laufen bereits auf einem gut ausgestatteten Laptop mit ausreichend Arbeitsspeicher. Mittlere und grosse Modelle profitieren stark von einer GPU mit genügend VRAM oder von einem Server. Quantisierung senkt den Speicherbedarf deutlich; Werkzeuge wie Ollama oder LM Studio erleichtern den Einstieg.",
         "en": "Small, quantised models already run on a well-equipped laptop with enough RAM. Medium and large models benefit greatly from a GPU with sufficient VRAM or from a server. Quantisation cuts memory needs significantly; tools like Ollama or LM Studio make getting started easier.",
-        "it": "I modelli piccoli e quantizzati girano gia su un buon portatile con RAM sufficiente. I modelli medi e grandi traggono grande beneficio da una GPU con VRAM adeguata o da un server. La quantizzazione riduce molto la memoria richiesta; strumenti come Ollama o LM Studio semplificano l'avvio.",
-        "fr": "Les petits modeles quantifies tournent deja sur un bon portable dote de suffisamment de RAM. Les modeles moyens et grands profitent nettement d'un GPU a VRAM suffisante ou d'un serveur. La quantification reduit fortement les besoins memoire ; des outils comme Ollama ou LM Studio facilitent la prise en main."
+        "it": "I modelli piccoli e quantizzati girano già su un buon portatile con RAM sufficiente. I modelli medi e grandi traggono grande beneficio da una GPU con VRAM adeguata o da un server. La quantizzazione riduce molto la memoria richiesta; strumenti come Ollama o LM Studio semplificano l'avvio.",
+        "fr": "Les petits modèles quantifiés tournent déjà sur un bon portable doté de suffisamment de RAM. Les modèles moyens et grands profitent nettement d'un GPU à VRAM suffisante ou d'un serveur. La quantification réduit fortement les besoins mémoire ; des outils comme Ollama ou LM Studio facilitent la prise en main."
       }
     },
     {
@@ -389,10 +389,10 @@
         "fr": "Les LLM ouverts sont-ils compatibles avec l'EU AI Act et la revDSG ?"
       },
       "a": {
-        "de": "Offene Modelle sind grundsaetzlich vereinbar, entbinden aber nicht von den Pflichten. Der EU AI Act sieht fuer frei lizenzierte, quelloffene GPAI-Modelle Erleichterungen vor, jedoch nicht bei systemischem Risiko; eine Zusammenfassung der Trainingsdaten und die Achtung des Urheberrechts bleiben verlangt. Unter dem revDSG ist der lokale Betrieb ein Vorteil, da Personendaten in der Schweiz bleiben koennen.",
+        "de": "Offene Modelle sind grundsätzlich vereinbar, entbinden aber nicht von den Pflichten. Der EU AI Act sieht für frei lizenzierte, quelloffene GPAI-Modelle Erleichterungen vor, jedoch nicht bei systemischem Risiko; eine Zusammenfassung der Trainingsdaten und die Achtung des Urheberrechts bleiben verlangt. Unter dem revDSG ist der lokale Betrieb ein Vorteil, da Personendaten in der Schweiz bleiben können.",
         "en": "Open models are broadly compatible but do not remove the obligations. The EU AI Act offers relief for freely licensed, open-source GPAI models, though not where systemic risk applies; a training-data summary and respect for copyright remain required. Under the revDSG, local operation is an advantage, as personal data can stay in Switzerland.",
-        "it": "I modelli aperti sono in linea di massima compatibili, ma non eliminano gli obblighi. L'EU AI Act prevede agevolazioni per i modelli GPAI open source con licenza libera, salvo in caso di rischio sistemico; restano richiesti il riepilogo dei dati di training e il rispetto del copyright. Sotto il revDSG, l'uso locale e un vantaggio, poiche i dati personali possono restare in Svizzera.",
-        "fr": "Les modeles ouverts sont globalement compatibles mais ne suppriment pas les obligations. L'EU AI Act prevoit des allegements pour les modeles GPAI open source sous licence libre, sauf en cas de risque systemique ; un resume des donnees d'entrainement et le respect du droit d'auteur restent exiges. Sous la revDSG, l'execution locale est un atout, car les donnees personnelles peuvent rester en Suisse."
+        "it": "I modelli aperti sono in linea di massima compatibili, ma non eliminano gli obblighi. L'EU AI Act prevede agevolazioni per i modelli GPAI open source con licenza libera, salvo in caso di rischio sistemico; restano richiesti il riepilogo dei dati di training e il rispetto del copyright. Sotto il revDSG, l'uso locale è un vantaggio, poiché i dati personali possono restare in Svizzera.",
+        "fr": "Les modèles ouverts sont globalement compatibles mais ne suppriment pas les obligations. L'EU AI Act prévoit des allégements pour les modèles GPAI open source sous licence libre, sauf en cas de risque systémique ; un résumé des données d'entraînement et le respect du droit d'auteur restent exigés. Sous la revDSG, l'exécution locale est un atout, car les données personnelles peuvent rester en Suisse."
       }
     },
     {
@@ -403,10 +403,10 @@
         "fr": "Existe-t-il un LLM open source suisse ?"
       },
       "a": {
-        "de": "Ja. Apertus ist ein vollstaendig offenes, mehrsprachiges Sprachmodell aus der Schweiz, entwickelt von ETH Zuerich, EPFL und dem Supercomputing-Zentrum CSCS und auf dem Alps-Supercomputer trainiert. Gewichte, Trainingsdaten und Methodik sind offengelegt, was es zu einem Referenzpunkt fuer digitale Souveraenitaet und Transparenz macht.",
+        "de": "Ja. Apertus ist ein vollständig offenes, mehrsprachiges Sprachmodell aus der Schweiz, entwickelt von ETH Zürich, EPFL und dem Supercomputing-Zentrum CSCS und auf dem Alps-Supercomputer trainiert. Gewichte, Trainingsdaten und Methodik sind offengelegt, was es zu einem Referenzpunkt für digitale Souveränität und Transparenz macht.",
         "en": "Yes. Apertus is a fully open, multilingual language model from Switzerland, developed by ETH Zurich, EPFL and the CSCS supercomputing centre and trained on the Alps supercomputer. Weights, training data and methodology are disclosed, making it a reference point for digital sovereignty and transparency.",
-        "it": "Si. Apertus e un modello linguistico completamente aperto e multilingue dalla Svizzera, sviluppato da ETH Zurigo, EPFL e dal centro di supercalcolo CSCS e addestrato sul supercomputer Alps. Pesi, dati di training e metodologia sono pubblici, il che lo rende un riferimento per sovranita digitale e trasparenza.",
-        "fr": "Oui. Apertus est un modele de langue entierement ouvert et multilingue issu de Suisse, developpe par l'ETH Zurich, l'EPFL et le centre de calcul CSCS, entraine sur le supercalculateur Alps. Poids, donnees d'entrainement et methodologie sont divulgues, ce qui en fait une reference de souverainete numerique et de transparence."
+        "it": "Sì. Apertus è un modello linguistico completamente aperto e multilingue dalla Svizzera, sviluppato da ETH Zurigo, EPFL e dal centro di supercalcolo CSCS e addestrato sul supercomputer Alps. Pesi, dati di training e metodologia sono pubblici, il che lo rende un riferimento per sovranità digitale e trasparenza.",
+        "fr": "Oui. Apertus est un modèle de langue entièrement ouvert et multilingue issu de Suisse, développé par l'ETH Zurich, l'EPFL et le centre de calcul CSCS, entraîné sur le supercalculateur Alps. Poids, données d'entraînement et méthodologie sont divulgués, ce qui en fait une référence de souveraineté numérique et de transparence."
       }
     }
   ],
@@ -420,7 +420,7 @@
     "OLMo (Allen Institute for AI)",
     "Falcon (TII)",
     "Apertus",
-    "ETH Zuerich",
+    "ETH Zürich",
     "EPFL",
     "CSCS",
     "Ollama",

@@ -15,31 +15,31 @@
     "de": "KI und Datenschutz im Unternehmen: Leitfaden | Weissmann AI",
     "en": "AI and Data Privacy for Businesses: Guide | Weissmann AI",
     "it": "IA e privacy dei dati in azienda: guida | Weissmann AI",
-    "fr": "IA et protection des donnees en entreprise | Weissmann AI"
+    "fr": "IA et protection des données en entreprise | Weissmann AI"
   },
   "metaDescription": {
-    "de": "Welche personenbezogenen Daten fliessen bei KI wohin? Datenminimierung, Einwilligung, Anbieterwahl und revDSG-konforme KI-Nutzung im Unternehmen praxisnah erklaert.",
+    "de": "Welche personenbezogenen Daten fliessen bei KI wohin? Datenminimierung, Einwilligung, Anbieterwahl und revDSG-konforme KI-Nutzung im Unternehmen praxisnah erklärt.",
     "en": "Which personal data flows where when you use AI? Data minimisation, consent, provider choice and compliant AI use in business, explained with a Swiss lens.",
     "it": "Quali dati personali finiscono dove con l'IA? Minimizzazione, consenso, scelta del fornitore e uso conforme dell'IA in azienda, con prospettiva svizzera.",
-    "fr": "Quelles donnees personnelles vont ou avec l'IA? Minimisation, consentement, choix du fournisseur et usage conforme de l'IA en entreprise, angle suisse."
+    "fr": "Quelles données personnelles vont où avec l'IA? Minimisation, consentement, choix du fournisseur et usage conforme de l'IA en entreprise, angle suisse."
   },
   "kicker": {
     "de": "Vertrauen, Sicherheit & Regulierung",
     "en": "Trust, Security & Regulation",
     "it": "Fiducia, sicurezza e regolamentazione",
-    "fr": "Confiance, securite et regulation"
+    "fr": "Confiance, sécurité et régulation"
   },
   "h1": {
     "de": "KI und Datenschutz im Unternehmen: Welche Daten fliessen wohin, und wie bleibt der Einsatz konform?",
     "en": "AI and data privacy for businesses: which data flows where, and how do you stay compliant?",
     "it": "IA e privacy dei dati in azienda: quali dati vanno dove e come restare conformi?",
-    "fr": "IA et protection des donnees en entreprise: quelles donnees vont ou, et comment rester conforme?"
+    "fr": "IA et protection des données en entreprise: quelles données vont où, et comment rester conforme?"
   },
   "answerFirst": {
-    "de": "Beim KI-Einsatz verlassen personenbezogene Daten das Unternehmen meist ueber Prompts, Uploads und angebundene Systeme und landen bei einem Anbieter, oft im Ausland. Datenschutzkonform wird das durch drei Schritte: nur wirklich noetige Daten uebermitteln (Minimierung), eine tragfaehige Rechtsgrundlage nach revDSG sichern und einen Anbieter mit Auftragsverarbeitungsvertrag, klarer Datenhaltung und Zero-Data-Retention waehlen.",
+    "de": "Beim KI-Einsatz verlassen personenbezogene Daten das Unternehmen meist über Prompts, Uploads und angebundene Systeme und landen bei einem Anbieter, oft im Ausland. Datenschutzkonform wird das durch drei Schritte: nur wirklich nötige Daten übermitteln (Minimierung), eine tragfähige Rechtsgrundlage nach revDSG sichern und einen Anbieter mit Auftragsverarbeitungsvertrag, klarer Datenhaltung und Zero-Data-Retention wählen.",
     "en": "When you use AI, personal data usually leaves the company through prompts, uploads and connected systems, landing with a provider that is often abroad. Compliance rests on three moves: send only the data you truly need (minimisation), secure a valid legal basis under the revised FADP, and pick a provider with a data-processing agreement, transparent data location and zero data retention.",
-    "it": "Usando l'IA, i dati personali escono dall'azienda tramite prompt, upload e sistemi collegati e finiscono presso un fornitore, spesso all'estero. La conformita poggia su tre mosse: inviare solo i dati davvero necessari (minimizzazione), garantire una base giuridica valida secondo la nuova LPD e scegliere un fornitore con contratto di trattamento, ubicazione dei dati chiara e zero conservazione.",
-    "fr": "Avec l'IA, les donnees personnelles quittent l'entreprise via les prompts, les envois et les systemes connectes, pour aboutir chez un fournisseur souvent a l'etranger. La conformite repose sur trois gestes: n'envoyer que les donnees necessaires (minimisation), securiser une base legale valable selon la nLPD, et choisir un fournisseur avec contrat de sous-traitance, localisation claire et zero retention."
+    "it": "Usando l'IA, i dati personali escono dall'azienda tramite prompt, upload e sistemi collegati e finiscono presso un fornitore, spesso all'estero. La conformità poggia su tre mosse: inviare solo i dati davvero necessari (minimizzazione), garantire una base giuridica valida secondo la nuova LPD e scegliere un fornitore con contratto di trattamento, ubicazione dei dati chiara e zero conservazione.",
+    "fr": "Avec l'IA, les données personnelles quittent l'entreprise via les prompts, les envois et les systèmes connectés, pour aboutir chez un fournisseur souvent à l'étranger. La conformité repose sur trois gestes: n'envoyer que les données nécessaires (minimisation), sécuriser une base légale valable selon la nLPD, et choisir un fournisseur avec contrat de sous-traitance, localisation claire et zero retention."
   },
   "sections": [
     {
@@ -47,14 +47,14 @@
         "de": "Welche personenbezogenen Daten fliessen bei KI-Nutzung wohin?",
         "en": "Which personal data flows where when you use AI?",
         "it": "Quali dati personali vanno dove quando si usa l'IA?",
-        "fr": "Quelles donnees personnelles vont ou lorsqu'on utilise l'IA?"
+        "fr": "Quelles données personnelles vont où lorsqu'on utilise l'IA?"
       },
       "paragraphs": [
         {
-          "de": "Bevor man Regeln setzt, muss man die Datenfluesse kennen. Bei generativer KI verlassen Daten das Unternehmen an mehreren Stellen: im Prompt selbst (etwa ein Kundenmail, das man zusammenfassen laesst), in hochgeladenen Dateien, ueber Schnittstellen zu CRM oder Ticketsystem und ueber sogenannte Sub-Prozessoren, die der Anbieter im Hintergrund nutzt. Jeder dieser Kanaele kann personenbezogene Daten enthalten, oft ohne dass es den Mitarbeitenden bewusst ist.",
+          "de": "Bevor man Regeln setzt, muss man die Datenflüsse kennen. Bei generativer KI verlassen Daten das Unternehmen an mehreren Stellen: im Prompt selbst (etwa ein Kundenmail, das man zusammenfassen lässt), in hochgeladenen Dateien, über Schnittstellen zu CRM oder Ticketsystem und über sogenannte Sub-Prozessoren, die der Anbieter im Hintergrund nutzt. Jeder dieser Kanäle kann personenbezogene Daten enthalten, oft ohne dass es den Mitarbeitenden bewusst ist.",
           "en": "Before setting rules you must understand the data flows. With generative AI, data leaves the company at several points: in the prompt itself (for example a customer email you ask it to summarise), in uploaded files, through connections to your CRM or ticketing system, and through the sub-processors the provider uses in the background. Every one of these channels can carry personal data, often without the employee realising it.",
-          "it": "Prima di fissare regole occorre conoscere i flussi. Con l'IA generativa i dati escono dall'azienda in piu punti: nel prompt stesso (ad esempio un'email cliente da riassumere), nei file caricati, tramite i collegamenti a CRM o sistema di ticketing e tramite i sub-responsabili che il fornitore usa in background. Ognuno di questi canali puo contenere dati personali, spesso senza che il collaboratore se ne accorga.",
-          "fr": "Avant de fixer des regles, il faut comprendre les flux. Avec l'IA generative, les donnees quittent l'entreprise en plusieurs points: dans le prompt lui-meme (par exemple un courriel client a resumer), dans les fichiers envoyes, via les connexions au CRM ou a l'outil de tickets, et via les sous-traitants que le fournisseur utilise en arriere-plan. Chacun de ces canaux peut transporter des donnees personnelles, souvent a l'insu du collaborateur."
+          "it": "Prima di fissare regole occorre conoscere i flussi. Con l'IA generativa i dati escono dall'azienda in più punti: nel prompt stesso (ad esempio un'email cliente da riassumere), nei file caricati, tramite i collegamenti a CRM o sistema di ticketing e tramite i sub-responsabili che il fornitore usa in background. Ognuno di questi canali può contenere dati personali, spesso senza che il collaboratore se ne accorga.",
+          "fr": "Avant de fixer des règles, il faut comprendre les flux. Avec l'IA générative, les données quittent l'entreprise en plusieurs points: dans le prompt lui-même (par exemple un courriel client à résumer), dans les fichiers envoyés, via les connexions au CRM ou à l'outil de tickets, et via les sous-traitants que le fournisseur utilise en arrière-plan. Chacun de ces canaux peut transporter des données personnelles, souvent à l'insu du collaborateur."
         }
       ],
       "bullets": [
@@ -62,31 +62,31 @@
           "de": "Prompt-Inhalte: Namen, E-Mails, Vertragsdaten, Gesundheits- oder Bewerbungsangaben, die im Text mitgeschickt werden.",
           "en": "Prompt content: names, emails, contract details, health or applicant information sent along in the text.",
           "it": "Contenuto del prompt: nomi, email, dati contrattuali, informazioni sanitarie o di candidatura inseriti nel testo.",
-          "fr": "Contenu du prompt: noms, courriels, donnees contractuelles, informations de sante ou de candidature glissees dans le texte."
+          "fr": "Contenu du prompt: noms, courriels, données contractuelles, informations de santé ou de candidature glissées dans le texte."
         },
         {
-          "de": "Uploads: Dokumente, Tabellen und Bilder, die haeufig mehr Personendaten enthalten als der eigentliche Prompt.",
+          "de": "Uploads: Dokumente, Tabellen und Bilder, die häufig mehr Personendaten enthalten als der eigentliche Prompt.",
           "en": "Uploads: documents, spreadsheets and images, which often hold more personal data than the prompt itself.",
-          "it": "Upload: documenti, fogli di calcolo e immagini, spesso con piu dati personali del prompt stesso.",
-          "fr": "Envois: documents, tableurs et images, qui contiennent souvent plus de donnees que le prompt."
+          "it": "Upload: documenti, fogli di calcolo e immagini, spesso con più dati personali del prompt stesso.",
+          "fr": "Envois: documents, tableurs et images, qui contiennent souvent plus de données que le prompt."
         },
         {
-          "de": "Systemanbindungen: Agenten und Integrationen, die selbststaendig auf Mailbox, CRM oder Dateiablage zugreifen.",
+          "de": "Systemanbindungen: Agenten und Integrationen, die selbstständig auf Mailbox, CRM oder Dateiablage zugreifen.",
           "en": "System connections: agents and integrations that autonomously reach into mailbox, CRM or file storage.",
           "it": "Collegamenti di sistema: agenti e integrazioni che accedono in autonomia a mailbox, CRM o archivi.",
-          "fr": "Connexions systeme: agents et integrations qui accedent seuls a la messagerie, au CRM ou au stockage."
+          "fr": "Connexions système: agents et intégrations qui accèdent seuls à la messagerie, au CRM ou au stockage."
         },
         {
-          "de": "Metadaten und Logs: IP-Adressen, Nutzerkennungen und Zeitstempel, die der Anbieter zur Betriebsfuehrung speichert.",
+          "de": "Metadaten und Logs: IP-Adressen, Nutzerkennungen und Zeitstempel, die der Anbieter zur Betriebsführung speichert.",
           "en": "Metadata and logs: IP addresses, user IDs and timestamps that the provider stores to run the service.",
           "it": "Metadati e log: indirizzi IP, identificativi utente e timestamp conservati dal fornitore per il servizio.",
-          "fr": "Metadonnees et journaux: adresses IP, identifiants et horodatages que le fournisseur conserve pour le service."
+          "fr": "Métadonnées et journaux: adresses IP, identifiants et horodatages que le fournisseur conserve pour le service."
         },
         {
-          "de": "Trainingsnutzung: bei Consumer-Konten koennen Eingaben zur Modellverbesserung verwendet werden, bei Business-Tarifen meist nicht.",
+          "de": "Trainingsnutzung: bei Consumer-Konten können Eingaben zur Modellverbesserung verwendet werden, bei Business-Tarifen meist nicht.",
           "en": "Training use: with consumer accounts inputs may be used to improve the model; with business tiers usually not.",
           "it": "Uso per il training: con account consumer gli input possono servire a migliorare il modello; nei piani business di norma no.",
-          "fr": "Usage pour l'entrainement: avec un compte grand public, les saisies peuvent servir a ameliorer le modele; en offre entreprise, en general non."
+          "fr": "Usage pour l'entraînement: avec un compte grand public, les saisies peuvent servir à améliorer le modèle; en offre entreprise, en général non."
         }
       ]
     },
@@ -95,20 +95,20 @@
         "de": "Rechtsgrundlagen: revDSG, EU AI Act und Einwilligung",
         "en": "Legal basis: revised FADP, EU AI Act and consent",
         "it": "Base giuridica: nuova LPD, EU AI Act e consenso",
-        "fr": "Base legale: nLPD, EU AI Act et consentement"
+        "fr": "Base légale: nLPD, EU AI Act et consentement"
       },
       "paragraphs": [
         {
-          "de": "In der Schweiz gilt seit dem 1. September 2023 das revidierte Datenschutzgesetz (revDSG). Es verlangt fuer jede Bearbeitung von Personendaten eine Rechtfertigung: Einwilligung, Vertragserfuellung, ein ueberwiegendes berechtigtes Interesse oder eine gesetzliche Grundlage. Eine pauschale Einwilligung fuer alles ist heikel; besser sind eng definierte Zwecke. Beschaeftigt ein Unternehmen einen KI-Anbieter, ist dieser in der Regel Auftragsbearbeiter, was einen Auftragsbearbeitungsvertrag (AVV) und technische wie organisatorische Massnahmen voraussetzt.",
+          "de": "In der Schweiz gilt seit dem 1. September 2023 das revidierte Datenschutzgesetz (revDSG). Es verlangt für jede Bearbeitung von Personendaten eine Rechtfertigung: Einwilligung, Vertragserfüllung, ein überwiegendes berechtigtes Interesse oder eine gesetzliche Grundlage. Eine pauschale Einwilligung für alles ist heikel; besser sind eng definierte Zwecke. Beschäftigt ein Unternehmen einen KI-Anbieter, ist dieser in der Regel Auftragsbearbeiter, was einen Auftragsbearbeitungsvertrag (AVV) und technische wie organisatorische Massnahmen voraussetzt.",
           "en": "In Switzerland the revised Federal Act on Data Protection (revFADP/nFADP) has applied since 1 September 2023. It requires a justification for every processing of personal data: consent, performance of a contract, an overriding legitimate interest or a statutory basis. A blanket consent for everything is fragile; narrowly defined purposes are better. When a company engages an AI provider, that provider is usually a processor, which requires a data-processing agreement and technical and organisational measures.",
-          "it": "In Svizzera dal 1 settembre 2023 si applica la legge riveduta sulla protezione dei dati (nLPD). Ogni trattamento di dati personali necessita di una giustificazione: consenso, esecuzione di un contratto, un interesse legittimo preponderante o una base legale. Un consenso generico per tutto e fragile; meglio finalita definite in modo stretto. Se un'azienda ingaggia un fornitore di IA, questi e di norma responsabile del trattamento, il che richiede un contratto e misure tecniche e organizzative.",
-          "fr": "En Suisse, la loi revisee sur la protection des donnees (nLPD) s'applique depuis le 1er septembre 2023. Tout traitement de donnees personnelles exige une justification: consentement, execution d'un contrat, interet legitime preponderant ou base legale. Un consentement global pour tout est fragile; des finalites etroitement definies valent mieux. Lorsqu'une entreprise mandate un fournisseur d'IA, celui-ci est en general sous-traitant, ce qui impose un contrat et des mesures techniques et organisationnelles."
+          "it": "In Svizzera dal 1 settembre 2023 si applica la legge riveduta sulla protezione dei dati (nLPD). Ogni trattamento di dati personali necessita di una giustificazione: consenso, esecuzione di un contratto, un interesse legittimo preponderante o una base legale. Un consenso generico per tutto è fragile; meglio finalità definite in modo stretto. Se un'azienda ingaggia un fornitore di IA, questi è di norma responsabile del trattamento, il che richiede un contratto e misure tecniche e organizzative.",
+          "fr": "En Suisse, la loi révisée sur la protection des données (nLPD) s'applique depuis le 1er septembre 2023. Tout traitement de données personnelles exige une justification: consentement, exécution d'un contrat, intérêt légitime prépondérant ou base légale. Un consentement global pour tout est fragile; des finalités étroitement définies valent mieux. Lorsqu'une entreprise mandate un fournisseur d'IA, celui-ci est en général sous-traitant, ce qui impose un contrat et des mesures techniques et organisationnelles."
         },
         {
-          "de": "Wer Kunden oder Beschaeftigte in der EU betrifft, faellt zusaetzlich unter die DSGVO, und der EU AI Act wirkt extraterritorial: Er stuft KI-Systeme nach Risiko ein und verbietet einzelne Praktiken ganz. Datenschutz und KI-Regulierung greifen also ineinander. Bei besonders schuetzenswerten Daten oder umfangreichem Profiling kann eine Datenschutz-Folgenabschaetzung (DSFA) noetig werden, bevor ein KI-Prozess produktiv geht.",
+          "de": "Wer Kunden oder Beschäftigte in der EU betrifft, fällt zusätzlich unter die DSGVO, und der EU AI Act wirkt extraterritorial: Er stuft KI-Systeme nach Risiko ein und verbietet einzelne Praktiken ganz. Datenschutz und KI-Regulierung greifen also ineinander. Bei besonders schützenswerten Daten oder umfangreichem Profiling kann eine Datenschutz-Folgenabschätzung (DSFA) nötig werden, bevor ein KI-Prozess produktiv geht.",
           "en": "If you affect customers or staff in the EU, the GDPR applies on top, and the EU AI Act reaches extraterritorially: it classifies AI systems by risk and bans some practices outright. Data protection and AI regulation therefore interlock. For sensitive data or large-scale profiling, a Data Protection Impact Assessment (DPIA) may be required before an AI process goes live.",
-          "it": "Se sono coinvolti clienti o dipendenti nell'UE si aggiunge il GDPR, e l'EU AI Act ha portata extraterritoriale: classifica i sistemi di IA per rischio e vieta del tutto alcune pratiche. Protezione dei dati e regolazione dell'IA si intrecciano. Per dati sensibili o profilazione su larga scala puo servire una valutazione d'impatto (DPIA) prima di mettere in produzione un processo di IA.",
-          "fr": "Si vous touchez des clients ou des employes dans l'UE, le RGPD s'ajoute, et l'EU AI Act a une portee extraterritoriale: il classe les systemes d'IA par risque et interdit purement certaines pratiques. Protection des donnees et regulation de l'IA s'imbriquent donc. Pour des donnees sensibles ou un profilage a grande echelle, une analyse d'impact (AIPD) peut etre requise avant la mise en production."
+          "it": "Se sono coinvolti clienti o dipendenti nell'UE si aggiunge il GDPR, e l'EU AI Act ha portata extraterritoriale: classifica i sistemi di IA per rischio e vieta del tutto alcune pratiche. Protezione dei dati e regolazione dell'IA si intrecciano. Per dati sensibili o profilazione su larga scala può servire una valutazione d'impatto (DPIA) prima di mettere in produzione un processo di IA.",
+          "fr": "Si vous touchez des clients ou des employés dans l'UE, le RGPD s'ajoute, et l'EU AI Act a une portée extraterritoriale: il classe les systèmes d'IA par risque et interdit purement certaines pratiques. Protection des données et régulation de l'IA s'imbriquent donc. Pour des données sensibles ou un profilage à grande échelle, une analyse d'impact (AIPD) peut être requise avant la mise en production."
         }
       ]
     },
@@ -116,89 +116,89 @@
       "heading": {
         "de": "Datenminimierung: der wirksamste Hebel",
         "en": "Data minimisation: the most effective lever",
-        "it": "Minimizzazione dei dati: la leva piu efficace",
-        "fr": "Minimisation des donnees: le levier le plus efficace"
+        "it": "Minimizzazione dei dati: la leva più efficace",
+        "fr": "Minimisation des données: le levier le plus efficace"
       },
       "paragraphs": [
         {
-          "de": "Der beste Datenschutz ist, Daten gar nicht erst zu uebermitteln. Datenminimierung bedeutet, pro Anwendungsfall zu pruefen, welche Personendaten ein Modell wirklich braucht, um die Aufgabe zu loesen. Oft ist die Antwort: keine. Ein Vertragsentwurf laesst sich mit Platzhaltern statt echten Namen formulieren, eine Auswertung mit aggregierten statt individuellen Datensaetzen. Pseudonymisierung und Anonymisierung senken das Risiko, bevor Daten das Haus verlassen.",
+          "de": "Der beste Datenschutz ist, Daten gar nicht erst zu übermitteln. Datenminimierung bedeutet, pro Anwendungsfall zu prüfen, welche Personendaten ein Modell wirklich braucht, um die Aufgabe zu lösen. Oft ist die Antwort: keine. Ein Vertragsentwurf lässt sich mit Platzhaltern statt echten Namen formulieren, eine Auswertung mit aggregierten statt individuellen Datensätzen. Pseudonymisierung und Anonymisierung senken das Risiko, bevor Daten das Haus verlassen.",
           "en": "The best data protection is not sending data at all. Data minimisation means checking, per use case, which personal data a model genuinely needs to do the job. Often the answer is: none. A draft contract can use placeholders instead of real names, an analysis can run on aggregated rather than individual records. Pseudonymisation and anonymisation cut the risk before data ever leaves the building.",
-          "it": "La migliore protezione e non inviare affatto i dati. Minimizzare significa verificare, per ogni caso d'uso, quali dati personali servono davvero al modello. Spesso la risposta e: nessuno. Una bozza di contratto puo usare segnaposto invece di nomi reali, un'analisi puo girare su dati aggregati anziche individuali. Pseudonimizzazione e anonimizzazione riducono il rischio prima che i dati escano.",
-          "fr": "La meilleure protection est de ne pas envoyer les donnees. Minimiser, c'est verifier, cas d'usage par cas d'usage, quelles donnees personnelles le modele a vraiment besoin. Souvent la reponse est: aucune. Un projet de contrat peut utiliser des marqueurs plutot que de vrais noms, une analyse peut porter sur des donnees agregees plutot qu'individuelles. Pseudonymisation et anonymisation reduisent le risque avant que les donnees ne sortent."
+          "it": "La migliore protezione è non inviare affatto i dati. Minimizzare significa verificare, per ogni caso d'uso, quali dati personali servono davvero al modello. Spesso la risposta è: nessuno. Una bozza di contratto può usare segnaposto invece di nomi reali, un'analisi può girare su dati aggregati anziché individuali. Pseudonimizzazione e anonimizzazione riducono il rischio prima che i dati escano.",
+          "fr": "La meilleure protection est de ne pas envoyer les données. Minimiser, c'est vérifier, cas d'usage par cas d'usage, quelles données personnelles le modèle a vraiment besoin. Souvent la réponse est: aucune. Un projet de contrat peut utiliser des marqueurs plutôt que de vrais noms, une analyse peut porter sur des données agrégées plutôt qu'individuelles. Pseudonymisation et anonymisation réduisent le risque avant que les données ne sortent."
         }
       ],
       "bullets": [
         {
-          "de": "Zweckbindung: pro Use Case festlegen, welche Felder noetig sind, und alles andere weglassen.",
+          "de": "Zweckbindung: pro Use Case festlegen, welche Felder nötig sind, und alles andere weglassen.",
           "en": "Purpose limitation: define per use case which fields are needed, and leave out the rest.",
-          "it": "Limitazione della finalita: definire per ogni caso quali campi servono e omettere il resto.",
-          "fr": "Limitation des finalites: definir par cas quels champs sont necessaires et retirer le reste."
+          "it": "Limitazione della finalità: definire per ogni caso quali campi servono e omettere il resto.",
+          "fr": "Limitation des finalités: définir par cas quels champs sont nécessaires et retirer le reste."
         },
         {
           "de": "Maskierung: Namen, Kundennummern und Adressen vor dem Prompt durch Platzhalter ersetzen.",
           "en": "Masking: replace names, customer numbers and addresses with placeholders before prompting.",
           "it": "Mascheramento: sostituire nomi, codici cliente e indirizzi con segnaposto prima del prompt.",
-          "fr": "Masquage: remplacer noms, numeros clients et adresses par des marqueurs avant le prompt."
+          "fr": "Masquage: remplacer noms, numéros clients et adresses par des marqueurs avant le prompt."
         },
         {
           "de": "Aufbewahrung begrenzen: kurze Speicherfristen und Zero-Data-Retention beim Anbieter aktivieren.",
           "en": "Limit retention: enable short storage periods and zero data retention at the provider.",
           "it": "Limitare la conservazione: attivare periodi brevi e zero retention presso il fornitore.",
-          "fr": "Limiter la conservation: activer des durees courtes et le zero retention chez le fournisseur."
+          "fr": "Limiter la conservation: activer des durées courtes et le zero retention chez le fournisseur."
         },
         {
           "de": "Keine Sonderdaten ohne Freigabe: Gesundheits-, Bewerbungs- oder Strafdaten nur nach klarer Governance-Entscheidung.",
           "en": "No special data without sign-off: health, applicant or criminal data only after a clear governance decision.",
           "it": "Niente dati particolari senza autorizzazione: dati sanitari, di candidatura o penali solo dopo una decisione di governance.",
-          "fr": "Pas de donnees sensibles sans validation: donnees de sante, de candidature ou penales seulement apres decision de gouvernance."
+          "fr": "Pas de données sensibles sans validation: données de santé, de candidature ou pénales seulement après décision de gouvernance."
         }
       ]
     },
     {
       "heading": {
-        "de": "Anbieterwahl: worauf Unternehmen achten muessen",
+        "de": "Anbieterwahl: worauf Unternehmen achten müssen",
         "en": "Choosing a provider: what businesses must check",
         "it": "Scelta del fornitore: cosa verificare",
-        "fr": "Choix du fournisseur: ce qu'il faut verifier"
+        "fr": "Choix du fournisseur: ce qu'il faut vérifier"
       },
       "paragraphs": [
         {
-          "de": "Nicht jeder KI-Dienst eignet sich fuer Personendaten. Entscheidend ist weniger die Modellqualitaet als die vertragliche und technische Ausgestaltung. Ein seri009ser Anbieter macht transparent, wo Daten verarbeitet werden, ob sie zum Training genutzt werden und wie lange sie liegen. Fuer Transfers in die USA existiert seit dem 15. September 2024 das Swiss-U.S. Data Privacy Framework als anerkannter Uebermittlungsmechanismus; alternativ braucht es Standardvertragsklauseln und eine Transfer-Folgenabschaetzung.",
+          "de": "Nicht jeder KI-Dienst eignet sich für Personendaten. Entscheidend ist weniger die Modellqualität als die vertragliche und technische Ausgestaltung. Ein seriöser Anbieter macht transparent, wo Daten verarbeitet werden, ob sie zum Training genutzt werden und wie lange sie liegen. Für Transfers in die USA existiert seit dem 15. September 2024 das Swiss-U.S. Data Privacy Framework als anerkannter Übermittlungsmechanismus; alternativ braucht es Standardvertragsklauseln und eine Transfer-Folgenabschätzung.",
           "en": "Not every AI service is fit for personal data. What matters is less the model quality than the contractual and technical setup. A serious provider is transparent about where data is processed, whether it is used for training and how long it is retained. For transfers to the US, the Swiss-U.S. Data Privacy Framework has served as a recognised transfer mechanism since 15 September 2024; otherwise you need Standard Contractual Clauses and a transfer impact assessment.",
-          "it": "Non ogni servizio di IA e adatto ai dati personali. Conta meno la qualita del modello e piu l'assetto contrattuale e tecnico. Un fornitore serio e trasparente su dove tratta i dati, se li usa per il training e per quanto li conserva. Per i trasferimenti verso gli USA, dal 15 settembre 2024 il Swiss-U.S. Data Privacy Framework e un meccanismo riconosciuto; in alternativa servono clausole contrattuali tipo e una valutazione del trasferimento.",
-          "fr": "Tout service d'IA n'est pas apte aux donnees personnelles. Ce qui compte, c'est moins la qualite du modele que le cadre contractuel et technique. Un fournisseur serieux est transparent sur le lieu de traitement, l'usage pour l'entrainement et la duree de conservation. Pour les transferts vers les Etats-Unis, le Swiss-U.S. Data Privacy Framework sert de mecanisme reconnu depuis le 15 septembre 2024; sinon, il faut des clauses contractuelles types et une analyse de transfert."
+          "it": "Non ogni servizio di IA è adatto ai dati personali. Conta meno la qualità del modello e più l'assetto contrattuale e tecnico. Un fornitore serio è trasparente su dove tratta i dati, se li usa per il training e per quanto li conserva. Per i trasferimenti verso gli USA, dal 15 settembre 2024 il Swiss-U.S. Data Privacy Framework è un meccanismo riconosciuto; in alternativa servono clausole contrattuali tipo e una valutazione del trasferimento.",
+          "fr": "Tout service d'IA n'est pas apte aux données personnelles. Ce qui compte, c'est moins la qualité du modèle que le cadre contractuel et technique. Un fournisseur sérieux est transparent sur le lieu de traitement, l'usage pour l'entraînement et la durée de conservation. Pour les transferts vers les États-Unis, le Swiss-U.S. Data Privacy Framework sert de mécanisme reconnu depuis le 15 septembre 2024; sinon, il faut des clauses contractuelles types et une analyse de transfert."
         }
       ],
       "bullets": [
         {
-          "de": "Auftragsbearbeitungsvertrag (AVV) mit klaren Weisungsrechten, Loeschpflichten und Meldung von Verletzungen.",
+          "de": "Auftragsbearbeitungsvertrag (AVV) mit klaren Weisungsrechten, Löschpflichten und Meldung von Verletzungen.",
           "en": "Data-processing agreement with clear instruction rights, deletion duties and breach notification.",
           "it": "Contratto di trattamento con diritti di istruzione chiari, obblighi di cancellazione e notifica delle violazioni.",
           "fr": "Contrat de sous-traitance avec droits d'instruction clairs, obligations de suppression et notification des violations."
         },
         {
-          "de": "Datenstandort und Sub-Prozessoren offengelegt; idealerweise Verarbeitung in der Schweiz oder EU waehlbar.",
+          "de": "Datenstandort und Sub-Prozessoren offengelegt; idealerweise Verarbeitung in der Schweiz oder EU wählbar.",
           "en": "Data location and sub-processors disclosed; ideally processing in Switzerland or the EU can be selected.",
           "it": "Ubicazione dei dati e sub-responsabili dichiarati; idealmente trattamento selezionabile in Svizzera o UE.",
-          "fr": "Localisation des donnees et sous-traitants divulgues; idealement traitement selectionnable en Suisse ou dans l'UE."
+          "fr": "Localisation des données et sous-traitants divulgués; idéalement traitement sélectionnable en Suisse ou dans l'UE."
         },
         {
           "de": "Trainingsausschluss und Zero-Data-Retention vertraglich zugesichert, nicht nur als Einstellung.",
           "en": "Training opt-out and zero data retention guaranteed by contract, not just as a setting.",
           "it": "Esclusione dal training e zero retention garantite per contratto, non solo come impostazione.",
-          "fr": "Exclusion de l'entrainement et zero retention garantis par contrat, pas seulement en reglage."
+          "fr": "Exclusion de l'entraînement et zero retention garantis par contrat, pas seulement en réglage."
         },
         {
-          "de": "Sicherheitsnachweise wie ISO 27001 oder SOC 2, Verschluesselung und rollenbasierte Zugriffe.",
+          "de": "Sicherheitsnachweise wie ISO 27001 oder SOC 2, Verschlüsselung und rollenbasierte Zugriffe.",
           "en": "Security evidence such as ISO 27001 or SOC 2, encryption and role-based access.",
           "it": "Prove di sicurezza come ISO 27001 o SOC 2, cifratura e accessi basati sui ruoli.",
-          "fr": "Preuves de securite comme ISO 27001 ou SOC 2, chiffrement et acces base sur les roles."
+          "fr": "Preuves de sécurité comme ISO 27001 ou SOC 2, chiffrement et accès basé sur les rôles."
         },
         {
-          "de": "Auditierbarkeit: Protokolle und Exportmoeglichkeiten, um Nachweise gegenueber dem EDOEB zu erbringen.",
+          "de": "Auditierbarkeit: Protokolle und Exportmöglichkeiten, um Nachweise gegenüber dem EDÖB zu erbringen.",
           "en": "Auditability: logs and export options to provide evidence to the EDOEB.",
-          "it": "Verificabilita: log ed esportazioni per fornire prove all'IFPDT.",
-          "fr": "Auditabilite: journaux et exports pour fournir des preuves au PFPDT."
+          "it": "Verificabilità: log ed esportazioni per fornire prove all'IFPDT.",
+          "fr": "Auditabilité: journaux et exports pour fournir des preuves au PFPDT."
         }
       ]
     },
@@ -207,30 +207,30 @@
         "de": "Governance: von der Einzelentscheidung zur Regel",
         "en": "Governance: from one-off decisions to rules",
         "it": "Governance: dalla decisione singola alla regola",
-        "fr": "Gouvernance: de la decision ponctuelle a la regle"
+        "fr": "Gouvernance: de la décision ponctuelle à la règle"
       },
       "paragraphs": [
         {
-          "de": "Datenschutz bei KI scheitert selten an der Technik und meist an fehlenden Regeln im Alltag. Sinnvoll ist eine kurze, verstaendliche KI-Richtlinie, die sagt, welche Tools erlaubt sind, welche Datenklassen nie in einen Prompt gehoeren und wer bei Zweifeln entscheidet. Ein Verzeichnis der KI-Anwendungen (analog zum Bearbeitungsverzeichnis) schafft Uebersicht und erfuellt Rechenschaftspflichten. Schulung schlaegt Verbote: Mitarbeitende, die Datenfluesse verstehen, treffen bessere Entscheidungen als solche, die Schatten-KI heimlich nutzen.",
+          "de": "Datenschutz bei KI scheitert selten an der Technik und meist an fehlenden Regeln im Alltag. Sinnvoll ist eine kurze, verständliche KI-Richtlinie, die sagt, welche Tools erlaubt sind, welche Datenklassen nie in einen Prompt gehören und wer bei Zweifeln entscheidet. Ein Verzeichnis der KI-Anwendungen (analog zum Bearbeitungsverzeichnis) schafft Übersicht und erfüllt Rechenschaftspflichten. Schulung schlägt Verbote: Mitarbeitende, die Datenflüsse verstehen, treffen bessere Entscheidungen als solche, die Schatten-KI heimlich nutzen.",
           "en": "AI data protection rarely fails on technology and usually on missing everyday rules. A short, readable AI policy helps: which tools are allowed, which data classes never belong in a prompt, and who decides in case of doubt. A register of AI applications (mirroring the record of processing) creates oversight and meets accountability duties. Training beats bans: staff who understand data flows make better calls than those quietly using shadow AI.",
-          "it": "La protezione dei dati con l'IA raramente fallisce per la tecnica, di solito per l'assenza di regole quotidiane. Serve una policy breve e leggibile: quali strumenti sono ammessi, quali categorie di dati non vanno mai in un prompt e chi decide nei casi dubbi. Un registro delle applicazioni di IA (come il registro dei trattamenti) da visione e soddisfa la responsabilizzazione. La formazione batte i divieti: chi capisce i flussi decide meglio di chi usa la shadow IA di nascosto.",
-          "fr": "La protection des donnees avec l'IA echoue rarement sur la technique et souvent sur l'absence de regles quotidiennes. Une charte IA courte et lisible aide: quels outils sont autorises, quelles categories de donnees ne vont jamais dans un prompt, et qui tranche en cas de doute. Un registre des applications d'IA (a l'image du registre des traitements) donne de la visibilite et remplit le devoir de rendre compte. La formation vaut mieux que l'interdiction: qui comprend les flux decide mieux que qui utilise en cachette une IA fantome."
+          "it": "La protezione dei dati con l'IA raramente fallisce per la tecnica, di solito per l'assenza di regole quotidiane. Serve una policy breve e leggibile: quali strumenti sono ammessi, quali categorie di dati non vanno mai in un prompt e chi decide nei casi dubbi. Un registro delle applicazioni di IA (come il registro dei trattamenti) dà visione e soddisfa la responsabilizzazione. La formazione batte i divieti: chi capisce i flussi decide meglio di chi usa la shadow IA di nascosto.",
+          "fr": "La protection des données avec l'IA échoue rarement sur la technique et souvent sur l'absence de règles quotidiennes. Une charte IA courte et lisible aide: quels outils sont autorisés, quelles catégories de données ne vont jamais dans un prompt, et qui tranche en cas de doute. Un registre des applications d'IA (à l'image du registre des traitements) donne de la visibilité et remplit le devoir de rendre compte. La formation vaut mieux que l'interdiction: qui comprend les flux décide mieux que qui utilise en cachette une IA fantôme."
         }
       ]
     },
     {
       "heading": {
-        "de": "Schweizer Perspektive: Datenstandort und Souveraenitaet",
+        "de": "Schweizer Perspektive: Datenstandort und Souveränität",
         "en": "Swiss perspective: data location and sovereignty",
-        "it": "Prospettiva svizzera: ubicazione dei dati e sovranita",
-        "fr": "Perspective suisse: localisation et souverainete"
+        "it": "Prospettiva svizzera: ubicazione dei dati e sovranità",
+        "fr": "Perspective suisse: localisation et souveraineté"
       },
       "paragraphs": [
         {
-          "de": "Fuer viele Schweizer Unternehmen ist nicht nur die Rechtskonformitaet, sondern auch die digitale Souveraenitaet ein Argument. Die Wahl eines Anbieters mit Verarbeitung in der Schweiz oder EU reduziert Transferrisiken und erleichtert die Kommunikation gegenueber Kunden. Auf Modellebene entstehen Alternativen wie Apertus, ein offenes, in der Schweiz an ETH Zuerich und EPFL entwickeltes Sprachmodell, das transparente und lokal betreibbare KI foerdern will. Wo Daten besonders sensibel sind, koennen offene Modelle im eigenen oder Schweizer Rechenzentrum eine datensparsame Option sein.",
+          "de": "Für viele Schweizer Unternehmen ist nicht nur die Rechtskonformität, sondern auch die digitale Souveränität ein Argument. Die Wahl eines Anbieters mit Verarbeitung in der Schweiz oder EU reduziert Transferrisiken und erleichtert die Kommunikation gegenüber Kunden. Auf Modellebene entstehen Alternativen wie Apertus, ein offenes, in der Schweiz an ETH Zürich und EPFL entwickeltes Sprachmodell, das transparente und lokal betreibbare KI fördern will. Wo Daten besonders sensibel sind, können offene Modelle im eigenen oder Schweizer Rechenzentrum eine datensparsame Option sein.",
           "en": "For many Swiss companies the argument is not only legal compliance but digital sovereignty. Choosing a provider that processes in Switzerland or the EU reduces transfer risk and eases communication with customers. At the model level, alternatives are emerging such as Apertus, an open language model developed in Switzerland at ETH Zurich and EPFL that aims to advance transparent, locally operable AI. Where data is especially sensitive, open models in your own or a Swiss data centre can be a data-frugal option.",
-          "it": "Per molte aziende svizzere l'argomento non e solo la conformita ma la sovranita digitale. Scegliere un fornitore che tratta in Svizzera o nell'UE riduce il rischio di trasferimento e facilita la comunicazione con i clienti. A livello di modelli emergono alternative come Apertus, un modello linguistico aperto sviluppato in Svizzera all'ETH di Zurigo e all'EPFL, che punta a un'IA trasparente e gestibile in locale. Dove i dati sono molto sensibili, i modelli aperti in un data center proprio o svizzero possono essere un'opzione parsimoniosa.",
-          "fr": "Pour beaucoup d'entreprises suisses, l'argument n'est pas seulement la conformite mais la souverainete numerique. Choisir un fournisseur qui traite en Suisse ou dans l'UE reduit le risque de transfert et facilite la communication avec les clients. Au niveau des modeles, des alternatives emergent comme Apertus, un modele de langage ouvert developpe en Suisse a l'ETH Zurich et a l'EPFL, qui vise une IA transparente et exploitable localement. Quand les donnees sont tres sensibles, des modeles ouverts dans son propre centre ou un centre suisse peuvent etre une option sobre en donnees."
+          "it": "Per molte aziende svizzere l'argomento non è solo la conformità ma la sovranità digitale. Scegliere un fornitore che tratta in Svizzera o nell'UE riduce il rischio di trasferimento e facilita la comunicazione con i clienti. A livello di modelli emergono alternative come Apertus, un modello linguistico aperto sviluppato in Svizzera all'ETH di Zurigo e all'EPFL, che punta a un'IA trasparente e gestibile in locale. Dove i dati sono molto sensibili, i modelli aperti in un data center proprio o svizzero possono essere un'opzione parsimoniosa.",
+          "fr": "Pour beaucoup d'entreprises suisses, l'argument n'est pas seulement la conformité mais la souveraineté numérique. Choisir un fournisseur qui traite en Suisse ou dans l'UE réduit le risque de transfert et facilite la communication avec les clients. Au niveau des modèles, des alternatives émergent comme Apertus, un modèle de langage ouvert développé en Suisse à l'ETH Zurich et à l'EPFL, qui vise une IA transparente et exploitable localement. Quand les données sont très sensibles, des modèles ouverts dans son propre centre ou un centre suisse peuvent être une option sobre en données."
         }
       ]
     }
@@ -238,44 +238,44 @@
   "faq": [
     {
       "q": {
-        "de": "Duerfen Mitarbeitende Kundendaten in ChatGPT oder aehnliche Tools eingeben?",
+        "de": "Dürfen Mitarbeitende Kundendaten in ChatGPT oder ähnliche Tools eingeben?",
         "en": "May employees enter customer data into ChatGPT or similar tools?",
         "it": "I dipendenti possono inserire dati dei clienti in ChatGPT o strumenti simili?",
-        "fr": "Les employes peuvent-ils saisir des donnees clients dans ChatGPT ou des outils similaires?"
+        "fr": "Les employés peuvent-ils saisir des données clients dans ChatGPT ou des outils similaires?"
       },
       "a": {
-        "de": "Nur unter Bedingungen. Personendaten gehoeren nicht in kostenlose Consumer-Konten, deren Eingaben zum Training genutzt werden koennten. Zulaessig wird es mit einem Business- oder Enterprise-Tarif, Auftragsbearbeitungsvertrag, Trainingsausschluss und einer Rechtsgrundlage nach revDSG. Idealerweise werden die Daten vorher minimiert oder maskiert.",
+        "de": "Nur unter Bedingungen. Personendaten gehören nicht in kostenlose Consumer-Konten, deren Eingaben zum Training genutzt werden könnten. Zulässig wird es mit einem Business- oder Enterprise-Tarif, Auftragsbearbeitungsvertrag, Trainingsausschluss und einer Rechtsgrundlage nach revDSG. Idealerweise werden die Daten vorher minimiert oder maskiert.",
         "en": "Only under conditions. Personal data does not belong in free consumer accounts whose inputs may be used for training. It becomes permissible with a business or enterprise tier, a data-processing agreement, training opt-out and a legal basis under the revised FADP. Ideally the data is minimised or masked first.",
         "it": "Solo a determinate condizioni. I dati personali non vanno negli account consumer gratuiti, i cui input potrebbero servire al training. Diventa ammissibile con un piano business o enterprise, un contratto di trattamento, esclusione dal training e una base giuridica secondo la nLPD. Idealmente i dati vanno prima minimizzati o mascherati.",
-        "fr": "Seulement sous conditions. Les donnees personnelles n'ont pas leur place dans les comptes grand public gratuits, dont les saisies peuvent servir a l'entrainement. Cela devient admissible avec une offre entreprise, un contrat de sous-traitance, l'exclusion de l'entrainement et une base legale selon la nLPD. Idealement, les donnees sont d'abord minimisees ou masquees."
+        "fr": "Seulement sous conditions. Les données personnelles n'ont pas leur place dans les comptes grand public gratuits, dont les saisies peuvent servir à l'entraînement. Cela devient admissible avec une offre entreprise, un contrat de sous-traitance, l'exclusion de l'entraînement et une base légale selon la nLPD. Idéalement, les données sont d'abord minimisées ou masquées."
       }
     },
     {
       "q": {
-        "de": "Was ist der Unterschied zwischen revDSG und DSGVO fuer KI-Projekte?",
+        "de": "Was ist der Unterschied zwischen revDSG und DSGVO für KI-Projekte?",
         "en": "What is the difference between the revised FADP and the GDPR for AI projects?",
-        "it": "Che differenza c'e tra nLPD e GDPR per i progetti di IA?",
-        "fr": "Quelle difference entre la nLPD et le RGPD pour les projets d'IA?"
+        "it": "Che differenza c'è tra nLPD e GDPR per i progetti di IA?",
+        "fr": "Quelle différence entre la nLPD et le RGPD pour les projets d'IA?"
       },
       "a": {
-        "de": "Das revDSG ist das massgebliche Schweizer Gesetz; die DSGVO ist EU-Recht, das aber auch Schweizer Firmen trifft, sobald sie Personen in der EU bearbeiten. Beide verlangen Rechtsgrundlage, Transparenz und Sicherheit, unterscheiden sich aber in Details wie Bussenhoehe und einzelnen Pflichten. Fuer Schweizer Recht spricht man von revDSG oder nDSG, nie von DSGVO.",
+        "de": "Das revDSG ist das massgebliche Schweizer Gesetz; die DSGVO ist EU-Recht, das aber auch Schweizer Firmen trifft, sobald sie Personen in der EU bearbeiten. Beide verlangen Rechtsgrundlage, Transparenz und Sicherheit, unterscheiden sich aber in Details wie Bussenhöhe und einzelnen Pflichten. Für Schweizer Recht spricht man von revDSG oder nDSG, nie von DSGVO.",
         "en": "The revised FADP is the governing Swiss law; the GDPR is EU law that also reaches Swiss firms once they process people in the EU. Both require a legal basis, transparency and security but differ in details such as fine levels and specific duties. For Swiss law you refer to the revFADP/nFADP, never the GDPR.",
-        "it": "La nLPD e la legge svizzera di riferimento; il GDPR e diritto UE che raggiunge anche le aziende svizzere quando trattano persone nell'UE. Entrambi richiedono base giuridica, trasparenza e sicurezza, ma differiscono in dettagli come l'entita delle sanzioni e alcuni obblighi. Per il diritto svizzero si parla di nLPD, mai di GDPR.",
-        "fr": "La nLPD est la loi suisse applicable; le RGPD est un droit de l'UE qui atteint aussi les entreprises suisses des qu'elles traitent des personnes dans l'UE. Les deux exigent base legale, transparence et securite, mais different sur des points comme le montant des amendes et certaines obligations. Pour le droit suisse, on parle de nLPD, jamais de RGPD."
+        "it": "La nLPD è la legge svizzera di riferimento; il GDPR è diritto UE che raggiunge anche le aziende svizzere quando trattano persone nell'UE. Entrambi richiedono base giuridica, trasparenza e sicurezza, ma differiscono in dettagli come l'entità delle sanzioni e alcuni obblighi. Per il diritto svizzero si parla di nLPD, mai di GDPR.",
+        "fr": "La nLPD est la loi suisse applicable; le RGPD est un droit de l'UE qui atteint aussi les entreprises suisses dès qu'elles traitent des personnes dans l'UE. Les deux exigent base légale, transparence et sécurité, mais diffèrent sur des points comme le montant des amendes et certaines obligations. Pour le droit suisse, on parle de nLPD, jamais de RGPD."
       }
     },
     {
       "q": {
-        "de": "Wann brauche ich eine Datenschutz-Folgenabschaetzung fuer eine KI-Anwendung?",
+        "de": "Wann brauche ich eine Datenschutz-Folgenabschätzung für eine KI-Anwendung?",
         "en": "When do I need a Data Protection Impact Assessment for an AI application?",
         "it": "Quando serve una valutazione d'impatto per un'applicazione di IA?",
         "fr": "Quand faut-il une analyse d'impact pour une application d'IA?"
       },
       "a": {
-        "de": "Eine DSFA ist noetig, wenn eine Bearbeitung voraussichtlich ein hohes Risiko fuer die Persoenlichkeit oder Grundrechte bringt, etwa bei umfangreichem Profiling, systematischer Ueberwachung oder der Bearbeitung besonders schuetzenswerter Daten in grossem Umfang. Bei automatisierten Entscheidungen mit Rechtsfolgen ist sie oft angezeigt. Im Zweifel dokumentiert man die Pruefung, um die Rechenschaftspflicht zu erfuellen.",
+        "de": "Eine DSFA ist nötig, wenn eine Bearbeitung voraussichtlich ein hohes Risiko für die Persönlichkeit oder Grundrechte bringt, etwa bei umfangreichem Profiling, systematischer Überwachung oder der Bearbeitung besonders schützenswerter Daten in grossem Umfang. Bei automatisierten Entscheidungen mit Rechtsfolgen ist sie oft angezeigt. Im Zweifel dokumentiert man die Prüfung, um die Rechenschaftspflicht zu erfüllen.",
         "en": "A DPIA is needed when a processing is likely to bring a high risk to personality or fundamental rights, for example large-scale profiling, systematic monitoring or processing sensitive data at scale. For automated decisions with legal effects it is often advisable. When in doubt, document the assessment to meet accountability duties.",
-        "it": "La DPIA serve quando un trattamento comporta probabilmente un rischio elevato per la personalita o i diritti fondamentali, ad esempio profilazione estesa, sorveglianza sistematica o trattamento di dati sensibili su larga scala. Per decisioni automatizzate con effetti giuridici e spesso opportuna. Nel dubbio si documenta la verifica per adempiere alla responsabilizzazione.",
-        "fr": "Une AIPD est necessaire lorsqu'un traitement est susceptible d'entrainer un risque eleve pour la personnalite ou les droits fondamentaux, par exemple un profilage etendu, une surveillance systematique ou le traitement de donnees sensibles a grande echelle. Pour des decisions automatisees a effets juridiques, elle est souvent indiquee. En cas de doute, on documente l'analyse pour remplir le devoir de rendre compte."
+        "it": "La DPIA serve quando un trattamento comporta probabilmente un rischio elevato per la personalità o i diritti fondamentali, ad esempio profilazione estesa, sorveglianza sistematica o trattamento di dati sensibili su larga scala. Per decisioni automatizzate con effetti giuridici è spesso opportuna. Nel dubbio si documenta la verifica per adempiere alla responsabilizzazione.",
+        "fr": "Une AIPD est nécessaire lorsqu'un traitement est susceptible d'entraîner un risque élevé pour la personnalité ou les droits fondamentaux, par exemple un profilage étendu, une surveillance systématique ou le traitement de données sensibles à grande échelle. Pour des décisions automatisées à effets juridiques, elle est souvent indiquée. En cas de doute, on documente l'analyse pour remplir le devoir de rendre compte."
       }
     },
     {
@@ -283,27 +283,27 @@
         "de": "Werden meine Eingaben zum Training des KI-Modells verwendet?",
         "en": "Are my inputs used to train the AI model?",
         "it": "I miei input vengono usati per addestrare il modello?",
-        "fr": "Mes saisies servent-elles a entrainer le modele?"
+        "fr": "Mes saisies servent-elles à entraîner le modèle?"
       },
       "a": {
-        "de": "Das haengt vom Tarif ab. Bei vielen kostenlosen Consumer-Angeboten koennen Eingaben zur Modellverbesserung genutzt werden, sofern man nicht widerspricht. Business- und Enterprise-Tarife schliessen dies in der Regel vertraglich aus. Pruefen Sie die aktuellen Bedingungen des Anbieters und lassen Sie den Trainingsausschluss im Auftragsbearbeitungsvertrag festhalten.",
+        "de": "Das hängt vom Tarif ab. Bei vielen kostenlosen Consumer-Angeboten können Eingaben zur Modellverbesserung genutzt werden, sofern man nicht widerspricht. Business- und Enterprise-Tarife schliessen dies in der Regel vertraglich aus. Prüfen Sie die aktuellen Bedingungen des Anbieters und lassen Sie den Trainingsausschluss im Auftragsbearbeitungsvertrag festhalten.",
         "en": "It depends on the tier. Many free consumer offerings may use inputs to improve the model unless you opt out. Business and enterprise tiers usually exclude this by contract. Check the provider's current terms and have the training opt-out fixed in the data-processing agreement.",
         "it": "Dipende dal piano. Molte offerte consumer gratuite possono usare gli input per migliorare il modello salvo opposizione. I piani business ed enterprise di norma lo escludono per contratto. Verificate le condizioni attuali del fornitore e fate mettere per iscritto l'esclusione dal training nel contratto di trattamento.",
-        "fr": "Cela depend de l'offre. De nombreuses offres grand public gratuites peuvent utiliser les saisies pour ameliorer le modele sauf opposition. Les offres entreprise l'excluent en general par contrat. Verifiez les conditions actuelles du fournisseur et faites inscrire l'exclusion de l'entrainement dans le contrat de sous-traitance."
+        "fr": "Cela dépend de l'offre. De nombreuses offres grand public gratuites peuvent utiliser les saisies pour améliorer le modèle sauf opposition. Les offres entreprise l'excluent en général par contrat. Vérifiez les conditions actuelles du fournisseur et faites inscrire l'exclusion de l'entraînement dans le contrat de sous-traitance."
       }
     },
     {
       "q": {
         "de": "Ist es datenschutzkonform, wenn ein KI-Anbieter Daten in den USA verarbeitet?",
         "en": "Is it compliant if an AI provider processes data in the US?",
-        "it": "E conforme se un fornitore di IA tratta i dati negli USA?",
-        "fr": "Est-il conforme qu'un fournisseur d'IA traite des donnees aux Etats-Unis?"
+        "it": "È conforme se un fornitore di IA tratta i dati negli USA?",
+        "fr": "Est-il conforme qu'un fournisseur d'IA traite des données aux États-Unis?"
       },
       "a": {
-        "de": "Es kann konform sein. Seit dem 15. September 2024 anerkennt die Schweiz das Swiss-U.S. Data Privacy Framework: Ist der US-Anbieter darunter zertifiziert, gilt ein angemessenes Schutzniveau. Andernfalls braucht es geeignete Garantien wie Standardvertragsklauseln plus eine Transfer-Folgenabschaetzung. Datenstandort in der Schweiz oder EU bleibt die risikoaermste Variante.",
+        "de": "Es kann konform sein. Seit dem 15. September 2024 anerkennt die Schweiz das Swiss-U.S. Data Privacy Framework: Ist der US-Anbieter darunter zertifiziert, gilt ein angemessenes Schutzniveau. Andernfalls braucht es geeignete Garantien wie Standardvertragsklauseln plus eine Transfer-Folgenabschätzung. Datenstandort in der Schweiz oder EU bleibt die risikoärmste Variante.",
         "en": "It can be. Since 15 September 2024 Switzerland recognises the Swiss-U.S. Data Privacy Framework: if the US provider is certified under it, an adequate level of protection applies. Otherwise you need appropriate safeguards such as Standard Contractual Clauses plus a transfer impact assessment. A data location in Switzerland or the EU remains the lowest-risk option.",
-        "it": "Puo esserlo. Dal 15 settembre 2024 la Svizzera riconosce il Swiss-U.S. Data Privacy Framework: se il fornitore statunitense e certificato, si applica un livello adeguato di protezione. Altrimenti servono garanzie adeguate come le clausole contrattuali tipo piu una valutazione del trasferimento. L'ubicazione in Svizzera o nell'UE resta l'opzione a minor rischio.",
-        "fr": "Cela peut l'etre. Depuis le 15 septembre 2024, la Suisse reconnait le Swiss-U.S. Data Privacy Framework: si le fournisseur americain y est certifie, un niveau de protection adequat s'applique. Sinon, il faut des garanties appropriees comme les clauses contractuelles types et une analyse de transfert. Une localisation en Suisse ou dans l'UE reste l'option la moins risquee."
+        "it": "Può esserlo. Dal 15 settembre 2024 la Svizzera riconosce il Swiss-U.S. Data Privacy Framework: se il fornitore statunitense è certificato, si applica un livello adeguato di protezione. Altrimenti servono garanzie adeguate come le clausole contrattuali tipo più una valutazione del trasferimento. L'ubicazione in Svizzera o nell'UE resta l'opzione a minor rischio.",
+        "fr": "Cela peut l'être. Depuis le 15 septembre 2024, la Suisse reconnaît le Swiss-U.S. Data Privacy Framework: si le fournisseur américain y est certifié, un niveau de protection adéquat s'applique. Sinon, il faut des garanties appropriées comme les clauses contractuelles types et une analyse de transfert. Une localisation en Suisse ou dans l'UE reste l'option la moins risquée."
       }
     },
     {
@@ -311,23 +311,23 @@
         "de": "Wie verhindere ich Schatten-KI im Unternehmen?",
         "en": "How do I prevent shadow AI in the company?",
         "it": "Come evito la shadow IA in azienda?",
-        "fr": "Comment eviter l'IA fantome dans l'entreprise?"
+        "fr": "Comment éviter l'IA fantôme dans l'entreprise?"
       },
       "a": {
-        "de": "Verbote allein treiben die Nutzung in den Untergrund. Wirksamer sind freigegebene, sichere Tools, eine klare KI-Richtlinie und Schulung, damit Mitarbeitende Datenfluesse verstehen. Bieten Sie eine konforme Standardloesung an, die den Alltag erleichtert, und benennen Sie eine Anlaufstelle fuer neue Anwendungsfaelle. Sichtbarkeit und ein einfacher Freigabeprozess senken den Anreiz, heimlich unsichere Dienste zu nutzen.",
+        "de": "Verbote allein treiben die Nutzung in den Untergrund. Wirksamer sind freigegebene, sichere Tools, eine klare KI-Richtlinie und Schulung, damit Mitarbeitende Datenflüsse verstehen. Bieten Sie eine konforme Standardlösung an, die den Alltag erleichtert, und benennen Sie eine Anlaufstelle für neue Anwendungsfälle. Sichtbarkeit und ein einfacher Freigabeprozess senken den Anreiz, heimlich unsichere Dienste zu nutzen.",
         "en": "Bans alone push usage underground. More effective are approved, secure tools, a clear AI policy and training so staff understand data flows. Offer a compliant default solution that makes daily work easier, and name a contact point for new use cases. Visibility and a simple approval process cut the incentive to quietly use unsafe services.",
-        "it": "I soli divieti spingono l'uso in clandestinita. Piu efficaci sono strumenti approvati e sicuri, una policy chiara e formazione affinche i collaboratori capiscano i flussi. Offrite una soluzione standard conforme che faciliti il lavoro e indicate un punto di contatto per nuovi casi d'uso. Visibilita e un processo di autorizzazione semplice riducono l'incentivo a usare di nascosto servizi non sicuri.",
-        "fr": "Les seules interdictions poussent l'usage dans la clandestinite. Plus efficaces: des outils approuves et surs, une charte claire et de la formation pour que les employes comprennent les flux. Offrez une solution standard conforme qui facilite le quotidien et designez un point de contact pour les nouveaux cas. La visibilite et un processus d'autorisation simple reduisent l'incitation a utiliser en cachette des services non surs."
+        "it": "I soli divieti spingono l'uso in clandestinità. Più efficaci sono strumenti approvati e sicuri, una policy chiara e formazione affinché i collaboratori capiscano i flussi. Offrite una soluzione standard conforme che faciliti il lavoro e indicate un punto di contatto per nuovi casi d'uso. Visibilità e un processo di autorizzazione semplice riducono l'incentivo a usare di nascosto servizi non sicuri.",
+        "fr": "Les seules interdictions poussent l'usage dans la clandestinité. Plus efficaces: des outils approuvés et sûrs, une charte claire et de la formation pour que les employés comprennent les flux. Offrez une solution standard conforme qui facilite le quotidien et désignez un point de contact pour les nouveaux cas. La visibilité et un processus d'autorisation simple réduisent l'incitation à utiliser en cachette des services non sûrs."
       }
     }
   ],
   "keyEntities": [
     "revidiertes Datenschutzgesetz (revDSG / nDSG)",
-    "EDOEB",
+    "EDÖB",
     "EU AI Act",
     "DSGVO / GDPR",
     "Auftragsbearbeitungsvertrag (AVV)",
-    "Datenschutz-Folgenabschaetzung (DSFA)",
+    "Datenschutz-Folgenabschätzung (DSFA)",
     "Datenminimierung",
     "Pseudonymisierung",
     "Zero-Data-Retention",
@@ -335,7 +335,7 @@
     "Standardvertragsklauseln (SCC)",
     "Sub-Prozessoren",
     "Apertus",
-    "ETH Zuerich",
+    "ETH Zürich",
     "EPFL",
     "ISO 27001 / SOC 2"
   ]

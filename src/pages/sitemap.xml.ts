@@ -6,11 +6,12 @@
  * legal drafts, 404) and legacy duplicate URLs are deliberately excluded.
  */
 import type { APIRoute } from 'astro';
-import { SITE, LOCALES } from '../data/site';
+import { LOCALES } from '../data/site';
 import { HOME_PATHS, pillarHome, urlFor, type LocalePaths } from '../data/routes';
+import { CONTENT_DATE } from '../data/schema';
 import { liveServices, servicePaths } from '../data/services';
 import { liveIndustries, industryPaths } from '../data/industries';
-import { liveClusters, clusterPaths, pillarOf, spokesOf, articlePaths } from '../data/academy';
+import { liveClusters, clusterPaths, spokesOf, articlePaths } from '../data/academy';
 import { hasGlossary, glossaryHubPaths, termPaths, GLOSSARY } from '../data/glossary';
 import { liveResources, resourcePaths } from '../data/resources';
 import { liveCompanyPages, companyPagePaths } from '../data/company';
@@ -47,8 +48,6 @@ function indexablePages(): LocalePaths[] {
     sameSlug('/kontakt/'),
   ];
 }
-// pillarOf is imported for parity with academy article listing; referenced to keep the import used.
-void pillarOf;
 
 export const GET: APIRoute = () => {
   const urls = indexablePages().flatMap((lp) =>
@@ -58,7 +57,7 @@ export const GET: APIRoute = () => {
         (l) => `    <xhtml:link rel="alternate" hreflang="${l === 'de' ? 'de-CH' : l}" href="${urlFor(l, lp)}"/>`,
       ).join('\n');
       const xdefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${urlFor('en', lp)}"/>`;
-      return `  <url>\n    <loc>${loc}</loc>\n${alternates}\n${xdefault}\n  </url>`;
+      return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${CONTENT_DATE}</lastmod>\n${alternates}\n${xdefault}\n  </url>`;
     }),
   );
 
@@ -69,6 +68,3 @@ ${urls.join('\n')}
 `;
   return new Response(xml, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
 };
-
-// Keep a reference to SITE so the domain stays the single source of truth.
-void SITE;

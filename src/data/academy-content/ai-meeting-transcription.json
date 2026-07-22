@@ -16,13 +16,13 @@
     "de": "KI-Meeting-Protokoll & Transkription: der Leitfaden | Weissmann AI",
     "en": "AI Meeting Notes & Transcription: the Full Guide | Weissmann AI",
     "it": "Verbali di riunione con IA: trascrizione e note | Weissmann AI",
-    "fr": "Comptes rendus de reunion par IA : le guide | Weissmann AI"
+    "fr": "Comptes rendus de réunion par IA : le guide | Weissmann AI"
   },
   "metaDescription": {
     "de": "Wie KI-Meeting-Assistenten transkribieren, Protokolle und Action Items erstellen - inklusive Genauigkeitsgrenzen und Einwilligung nach revDSG.",
     "en": "How AI meeting assistants transcribe, write notes and extract action items - plus accuracy limits and recording consent under Swiss revDSG.",
     "it": "Come gli assistenti IA trascrivono, redigono verbali ed estraggono action item - limiti di accuratezza e consenso secondo la revDSG.",
-    "fr": "Comment les assistants IA transcrivent, redigent des comptes rendus et extraient les actions - limites et consentement selon la revDSG."
+    "fr": "Comment les assistants IA transcrivent, rédigent des comptes rendus et extraient les actions - limites et consentement selon la revDSG."
   },
   "kicker": {
     "de": "KI im Arbeitsalltag",
@@ -34,13 +34,13 @@
     "de": "KI-Meeting-Assistenten: Protokoll, Transkription und Action Items",
     "en": "AI Meeting Assistants: Transcription, Notes and Action Items",
     "it": "Assistenti IA per riunioni: trascrizione, note e action item",
-    "fr": "Assistants de reunion IA : transcription, notes et actions"
+    "fr": "Assistants de réunion IA : transcription, notes et actions"
   },
   "answerFirst": {
-    "de": "Ein KI-Meeting-Assistent transkribiert Gespraeche automatisch, fasst sie zu einem Protokoll zusammen und leitet Aufgaben mit Zustaendigen und Fristen ab. Die Transkription ist bei klarer Sprache stark, verliert aber bei Dialekt wie Schweizerdeutsch, Fachjargon und Nebengeraeuschen an Genauigkeit. In der Schweiz gilt: Aufnahmen nur mit Einwilligung aller Teilnehmenden, transparent nach revDSG, und Zusammenfassungen immer gegenpruefen.",
+    "de": "Ein KI-Meeting-Assistent transkribiert Gespräche automatisch, fasst sie zu einem Protokoll zusammen und leitet Aufgaben mit Zuständigen und Fristen ab. Die Transkription ist bei klarer Sprache stark, verliert aber bei Dialekt wie Schweizerdeutsch, Fachjargon und Nebengeräuschen an Genauigkeit. In der Schweiz gilt: Aufnahmen nur mit Einwilligung aller Teilnehmenden, transparent nach revDSG, und Zusammenfassungen immer gegenprüfen.",
     "en": "An AI meeting assistant automatically transcribes conversations, condenses them into notes and extracts action items with owners and deadlines. Transcription is strong for clear speech but loses accuracy with dialects like Swiss German, jargon and background noise. In Switzerland, record only with every participant's consent, stay transparent under revDSG, and always review AI summaries before you rely on them.",
-    "it": "Un assistente IA per riunioni trascrive automaticamente le conversazioni, le sintetizza in un verbale ed estrae action item con responsabili e scadenze. La trascrizione e accurata con parlato chiaro, ma perde qualita con dialetti come lo svizzero tedesco, gergo e rumori. In Svizzera si registra solo con il consenso di tutti i partecipanti, in modo trasparente secondo la revDSG, verificando sempre le sintesi.",
-    "fr": "Un assistant de reunion IA transcrit automatiquement les echanges, les condense en compte rendu et extrait les actions avec responsables et echeances. La transcription est solide pour une parole claire mais perd en precision avec les dialectes comme le suisse allemand, le jargon et le bruit. En Suisse, n'enregistrez qu'avec le consentement de chacun, en toute transparence selon la revDSG, et verifiez toujours les syntheses."
+    "it": "Un assistente IA per riunioni trascrive automaticamente le conversazioni, le sintetizza in un verbale ed estrae action item con responsabili e scadenze. La trascrizione è accurata con parlato chiaro, ma perde qualità con dialetti come lo svizzero tedesco, gergo e rumori. In Svizzera si registra solo con il consenso di tutti i partecipanti, in modo trasparente secondo la revDSG, verificando sempre le sintesi.",
+    "fr": "Un assistant de réunion IA transcrit automatiquement les échanges, les condense en compte rendu et extrait les actions avec responsables et échéances. La transcription est solide pour une parole claire mais perd en précision avec les dialectes comme le suisse allemand, le jargon et le bruit. En Suisse, n'enregistrez qu'avec le consentement de chacun, en toute transparence selon la revDSG, et vérifiez toujours les synthèses."
   },
   "sections": [
     {
@@ -48,20 +48,20 @@
         "de": "Was ein KI-Meeting-Assistent wirklich macht",
         "en": "What an AI meeting assistant actually does",
         "it": "Cosa fa davvero un assistente IA per riunioni",
-        "fr": "Ce que fait vraiment un assistant de reunion IA"
+        "fr": "Ce que fait vraiment un assistant de réunion IA"
       },
       "paragraphs": [
         {
-          "de": "Ein KI-Meeting-Protokoll entsteht in mehreren Schritten. Zuerst wandelt eine automatische Spracherkennung (ASR) das gesprochene Wort in Text um. Eine Sprecher-Trennung (Diarization) ordnet Aussagen den einzelnen Personen zu. Anschliessend verdichtet ein Sprachmodell (LLM) das Transkript zu einer Zusammenfassung und extrahiert Entscheidungen sowie Action Items mit Zustaendigen und Fristen.",
+          "de": "Ein KI-Meeting-Protokoll entsteht in mehreren Schritten. Zuerst wandelt eine automatische Spracherkennung (ASR) das gesprochene Wort in Text um. Eine Sprecher-Trennung (Diarization) ordnet Aussagen den einzelnen Personen zu. Anschliessend verdichtet ein Sprachmodell (LLM) das Transkript zu einer Zusammenfassung und extrahiert Entscheidungen sowie Action Items mit Zuständigen und Fristen.",
           "en": "An AI meeting record is produced in several steps. First, automatic speech recognition (ASR) turns spoken words into text. Speaker diarization attributes statements to individual people. A language model (LLM) then condenses the transcript into a summary and extracts decisions plus action items with owners and deadlines.",
-          "it": "Un verbale generato dall'IA nasce in piu fasi. Prima il riconoscimento vocale automatico (ASR) converte il parlato in testo. La diarizzazione attribuisce le frasi ai singoli partecipanti. Poi un modello linguistico (LLM) sintetizza la trascrizione ed estrae decisioni e action item con responsabili e scadenze.",
-          "fr": "Un compte rendu genere par IA passe par plusieurs etapes. D'abord, la reconnaissance vocale automatique (ASR) convertit la parole en texte. La diarisation attribue les propos a chaque personne. Un modele de langage (LLM) condense ensuite la transcription et en extrait decisions et actions avec responsables et echeances."
+          "it": "Un verbale generato dall'IA nasce in più fasi. Prima il riconoscimento vocale automatico (ASR) converte il parlato in testo. La diarizzazione attribuisce le frasi ai singoli partecipanti. Poi un modello linguistico (LLM) sintetizza la trascrizione ed estrae decisioni e action item con responsabili e scadenze.",
+          "fr": "Un compte rendu généré par IA passe par plusieurs étapes. D'abord, la reconnaissance vocale automatique (ASR) convertit la parole en texte. La diarisation attribue les propos à chaque personne. Un modèle de langage (LLM) condense ensuite la transcription et en extrait décisions et actions avec responsables et échéances."
         },
         {
-          "de": "Die meisten Werkzeuge klinken sich direkt in Microsoft Teams, Zoom oder Google Meet ein oder nehmen ueber ein Mikrofon vor Ort auf. Der Nutzen ist real: weniger manuelles Mitschreiben, durchsuchbare Archive und schnellere Nachbereitung. Entscheidend ist aber, das Ergebnis als Entwurf zu verstehen, nicht als fertiges, rechtsverbindliches Protokoll.",
+          "de": "Die meisten Werkzeuge klinken sich direkt in Microsoft Teams, Zoom oder Google Meet ein oder nehmen über ein Mikrofon vor Ort auf. Der Nutzen ist real: weniger manuelles Mitschreiben, durchsuchbare Archive und schnellere Nachbereitung. Entscheidend ist aber, das Ergebnis als Entwurf zu verstehen, nicht als fertiges, rechtsverbindliches Protokoll.",
           "en": "Most tools plug directly into Microsoft Teams, Zoom or Google Meet, or record on-site through a microphone. The benefit is real: less manual note-taking, searchable archives and faster follow-up. The key is to treat the output as a draft, not a finished, legally binding record.",
-          "it": "La maggior parte degli strumenti si integra direttamente con Microsoft Teams, Zoom o Google Meet, oppure registra in sala tramite microfono. Il vantaggio e concreto: meno appunti manuali, archivi ricercabili e follow-up piu rapidi. La chiave e trattare l'output come una bozza, non come un verbale definitivo e giuridicamente vincolante.",
-          "fr": "La plupart des outils s'integrent directement a Microsoft Teams, Zoom ou Google Meet, ou enregistrent sur place via un micro. Le benefice est reel : moins de prise de notes, des archives cherchables et un suivi plus rapide. L'essentiel est de considerer le resultat comme un brouillon, pas comme un compte rendu final et juridiquement contraignant."
+          "it": "La maggior parte degli strumenti si integra direttamente con Microsoft Teams, Zoom o Google Meet, oppure registra in sala tramite microfono. Il vantaggio è concreto: meno appunti manuali, archivi ricercabili e follow-up più rapidi. La chiave è trattare l'output come una bozza, non come un verbale definitivo e giuridicamente vincolante.",
+          "fr": "La plupart des outils s'intègrent directement à Microsoft Teams, Zoom ou Google Meet, ou enregistrent sur place via un micro. Le bénéfice est réel : moins de prise de notes, des archives cherchables et un suivi plus rapide. L'essentiel est de considérer le résultat comme un brouillon, pas comme un compte rendu final et juridiquement contraignant."
         }
       ]
     },
@@ -70,39 +70,39 @@
         "de": "Transkription: Genauigkeit und ihre Grenzen",
         "en": "Transcription: accuracy and its limits",
         "it": "Trascrizione: accuratezza e limiti",
-        "fr": "Transcription : precision et limites"
+        "fr": "Transcription : précision et limites"
       },
       "paragraphs": [
         {
-          "de": "Die Qualitaet einer Transkription wird oft ueber die Wortfehlerrate (Word Error Rate) gemessen. Bei klarer, hochdeutscher oder englischer Standardsprache, gutem Mikrofon und wenig Ueberlappung sind moderne Systeme sehr stark. Die Fehlerrate steigt jedoch spuerbar, sobald reale Meeting-Bedingungen dazukommen. Verlassen Sie sich nie blind auf Zahlen, Namen oder Zitate aus einem Roh-Transkript.",
+          "de": "Die Qualität einer Transkription wird oft über die Wortfehlerrate (Word Error Rate) gemessen. Bei klarer, hochdeutscher oder englischer Standardsprache, gutem Mikrofon und wenig Überlappung sind moderne Systeme sehr stark. Die Fehlerrate steigt jedoch spürbar, sobald reale Meeting-Bedingungen dazukommen. Verlassen Sie sich nie blind auf Zahlen, Namen oder Zitate aus einem Roh-Transkript.",
           "en": "Transcription quality is often measured by word error rate. With clear standard German or English, a good microphone and little overlap, modern systems are very strong. Error rates rise noticeably once real meeting conditions appear. Never blindly trust figures, names or quotes taken from a raw transcript.",
-          "it": "La qualita di una trascrizione si misura spesso con il word error rate. Con tedesco o inglese standard chiaro, buon microfono e poche sovrapposizioni, i sistemi moderni sono molto validi. Il tasso di errore cresce sensibilmente in condizioni reali di riunione. Non fidarsi mai ciecamente di cifre, nomi o citazioni tratte da una trascrizione grezza.",
-          "fr": "La qualite d'une transcription se mesure souvent par le taux d'erreur sur les mots. Avec un allemand ou un anglais standard clair, un bon micro et peu de chevauchements, les systemes modernes sont tres performants. Le taux d'erreur augmente nettement en conditions reelles. Ne faites jamais confiance aveuglement aux chiffres, noms ou citations d'une transcription brute."
+          "it": "La qualità di una trascrizione si misura spesso con il word error rate. Con tedesco o inglese standard chiaro, buon microfono e poche sovrapposizioni, i sistemi moderni sono molto validi. Il tasso di errore cresce sensibilmente in condizioni reali di riunione. Non fidarsi mai ciecamente di cifre, nomi o citazioni tratte da una trascrizione grezza.",
+          "fr": "La qualité d'une transcription se mesure souvent par le taux d'erreur sur les mots. Avec un allemand ou un anglais standard clair, un bon micro et peu de chevauchements, les systèmes modernes sont très performants. Le taux d'erreur augmente nettement en conditions réelles. Ne faites jamais confiance aveuglément aux chiffres, noms ou citations d'une transcription brute."
         }
       ],
       "bullets": [
         {
-          "de": "Schweizerdeutsch: Dialekt wird oft schlechter erkannt als Standarddeutsch - viele Systeme transkribieren Mundart nur naeherungsweise oder uebersetzen sie ungenau ins Hochdeutsche.",
+          "de": "Schweizerdeutsch: Dialekt wird oft schlechter erkannt als Standarddeutsch - viele Systeme transkribieren Mundart nur näherungsweise oder übersetzen sie ungenau ins Hochdeutsche.",
           "en": "Swiss German: dialect is often recognised worse than standard German - many systems only approximate Mundart or translate it inaccurately into High German.",
           "it": "Svizzero tedesco: il dialetto viene riconosciuto peggio del tedesco standard - molti sistemi rendono la Mundart solo in modo approssimativo.",
-          "fr": "Suisse allemand : le dialecte est souvent moins bien reconnu que l'allemand standard - beaucoup de systemes ne rendent le Mundart que de facon approximative."
+          "fr": "Suisse allemand : le dialecte est souvent moins bien reconnu que l'allemand standard - beaucoup de systèmes ne rendent le Mundart que de façon approximative."
         },
         {
-          "de": "Fachjargon, Produktnamen und Abkuerzungen fuehren zu Verwechslungen, wenn kein individuelles Vokabular hinterlegt ist.",
+          "de": "Fachjargon, Produktnamen und Abkürzungen führen zu Verwechslungen, wenn kein individuelles Vokabular hinterlegt ist.",
           "en": "Jargon, product names and acronyms cause mix-ups unless a custom vocabulary is configured.",
-          "it": "Gergo, nomi di prodotto e sigle generano errori se non e configurato un vocabolario personalizzato.",
-          "fr": "Le jargon, les noms de produits et les sigles provoquent des confusions sans vocabulaire personnalise."
+          "it": "Gergo, nomi di prodotto e sigle generano errori se non è configurato un vocabolario personalizzato.",
+          "fr": "Le jargon, les noms de produits et les sigles provoquent des confusions sans vocabulaire personnalisé."
         },
         {
-          "de": "Ueberlappende Stimmen, schlechte Verbindung und Hintergrundlaerm senken die Genauigkeit deutlich.",
+          "de": "Überlappende Stimmen, schlechte Verbindung und Hintergrundlärm senken die Genauigkeit deutlich.",
           "en": "Overlapping voices, poor connections and background noise clearly reduce accuracy.",
           "it": "Voci sovrapposte, connessioni scadenti e rumore riducono nettamente l'accuratezza.",
-          "fr": "Les voix qui se chevauchent, une mauvaise connexion et le bruit reduisent nettement la precision."
+          "fr": "Les voix qui se chevauchent, une mauvaise connexion et le bruit réduisent nettement la précision."
         },
         {
-          "de": "Sprecher-Zuordnung ist fehleranfaellig, wenn sich mehrere Personen ein Mikrofon teilen oder aehnlich klingen.",
+          "de": "Sprecher-Zuordnung ist fehleranfällig, wenn sich mehrere Personen ein Mikrofon teilen oder ähnlich klingen.",
           "en": "Speaker attribution is error-prone when several people share one microphone or sound alike.",
-          "it": "L'attribuzione dei parlanti e soggetta a errori quando piu persone condividono un microfono o hanno voci simili.",
+          "it": "L'attribuzione dei parlanti è soggetta a errori quando più persone condividono un microfono o hanno voci simili.",
           "fr": "L'attribution des locuteurs est fragile quand plusieurs personnes partagent un micro ou se ressemblent."
         }
       ]
@@ -116,16 +116,16 @@
       },
       "paragraphs": [
         {
-          "de": "Die Zusammenfassung ist der wertvollste, aber auch heikelste Schritt. Ein Sprachmodell entscheidet, was wichtig ist, formuliert Entscheidungen neu und leitet Aufgaben ab. Dabei koennen Halluzinationen entstehen: Das Modell erfindet plausibel klingende Details, ordnet Aussagen der falschen Person zu oder setzt eine Frist, die nie genannt wurde. Solche Fehler sind gefaehrlich, weil das Protokoll professionell und korrekt aussieht.",
+          "de": "Die Zusammenfassung ist der wertvollste, aber auch heikelste Schritt. Ein Sprachmodell entscheidet, was wichtig ist, formuliert Entscheidungen neu und leitet Aufgaben ab. Dabei können Halluzinationen entstehen: Das Modell erfindet plausibel klingende Details, ordnet Aussagen der falschen Person zu oder setzt eine Frist, die nie genannt wurde. Solche Fehler sind gefährlich, weil das Protokoll professionell und korrekt aussieht.",
           "en": "The summary is the most valuable but also the trickiest step. A language model decides what matters, rephrases decisions and derives tasks. This is where hallucinations appear: the model invents plausible-sounding details, attributes statements to the wrong person or sets a deadline that was never mentioned. Such errors are dangerous because the notes look professional and correct.",
-          "it": "La sintesi e il passaggio piu prezioso ma anche piu delicato. Un modello linguistico decide cosa conta, riformula le decisioni e ricava i compiti. Qui compaiono le allucinazioni: il modello inventa dettagli plausibili, attribuisce frasi alla persona sbagliata o fissa una scadenza mai citata. Errori pericolosi, perche il verbale sembra professionale e corretto.",
-          "fr": "La synthese est l'etape la plus utile mais aussi la plus delicate. Un modele de langage decide de ce qui compte, reformule les decisions et en deduit les taches. C'est la qu'apparaissent les hallucinations : le modele invente des details plausibles, attribue des propos a la mauvaise personne ou fixe une echeance jamais evoquee. Ces erreurs sont dangereuses car le compte rendu parait professionnel et exact."
+          "it": "La sintesi è il passaggio più prezioso ma anche più delicato. Un modello linguistico decide cosa conta, riformula le decisioni e ricava i compiti. Qui compaiono le allucinazioni: il modello inventa dettagli plausibili, attribuisce frasi alla persona sbagliata o fissa una scadenza mai citata. Errori pericolosi, perché il verbale sembra professionale e corretto.",
+          "fr": "La synthèse est l'étape la plus utile mais aussi la plus délicate. Un modèle de langage décide de ce qui compte, reformule les décisions et en déduit les tâches. C'est là qu'apparaissent les hallucinations : le modèle invente des détails plausibles, attribue des propos à la mauvaise personne ou fixe une échéance jamais évoquée. Ces erreurs sont dangereuses car le compte rendu paraît professionnel et exact."
         },
         {
-          "de": "Behandeln Sie das KI-Protokoll deshalb wie einen Entwurf eines Praktikanten: nuetzlich, aber pruefungsbeduerftig. Kontrollieren Sie vor dem Versand gezielt Entscheidungen, Zustaendigkeiten, Zahlen und Termine gegen das Transkript oder die eigene Erinnerung. Ein kurzer menschlicher Review-Schritt entscheidet ueber Vertrauen und Rechtssicherheit.",
+          "de": "Behandeln Sie das KI-Protokoll deshalb wie einen Entwurf eines Praktikanten: nützlich, aber prüfungsbedürftig. Kontrollieren Sie vor dem Versand gezielt Entscheidungen, Zuständigkeiten, Zahlen und Termine gegen das Transkript oder die eigene Erinnerung. Ein kurzer menschlicher Review-Schritt entscheidet über Vertrauen und Rechtssicherheit.",
           "en": "So treat the AI notes like an intern's draft: useful but in need of review. Before sending, deliberately check decisions, ownership, numbers and dates against the transcript or your own memory. A short human review step is what turns the output into something trustworthy.",
-          "it": "Trattate quindi il verbale IA come la bozza di uno stagista: utile ma da verificare. Prima dell'invio, controllate deliberatamente decisioni, responsabilita, numeri e date rispetto alla trascrizione o alla memoria. Un breve passaggio di revisione umana fa la differenza in termini di affidabilita.",
-          "fr": "Traitez donc le compte rendu IA comme le brouillon d'un stagiaire : utile mais a verifier. Avant l'envoi, controlez sciemment decisions, responsabilites, chiffres et dates par rapport a la transcription ou a votre souvenir. Une breve relecture humaine fait toute la difference en matiere de confiance."
+          "it": "Trattate quindi il verbale IA come la bozza di uno stagista: utile ma da verificare. Prima dell'invio, controllate deliberatamente decisioni, responsabilità, numeri e date rispetto alla trascrizione o alla memoria. Un breve passaggio di revisione umana fa la differenza in termini di affidabilità.",
+          "fr": "Traitez donc le compte rendu IA comme le brouillon d'un stagiaire : utile mais à vérifier. Avant l'envoi, contrôlez sciemment décisions, responsabilités, chiffres et dates par rapport à la transcription ou à votre souvenir. Une brève relecture humaine fait toute la différence en matière de confiance."
         }
       ]
     },
@@ -138,52 +138,52 @@
       },
       "paragraphs": [
         {
-          "de": "In der Schweiz ist das heimliche Aufzeichnen eines nicht oeffentlichen Gespraechs ein Strafrechtsthema: Das Strafgesetzbuch stellt das Aufnehmen fremder, nicht oeffentlicher Gespraeche ohne Einwilligung unter Strafe. Ein KI-Meeting-Assistent zeichnet praktisch immer auf - also braucht es die informierte Zustimmung aller Teilnehmenden, bevor die Aufnahme startet. Ein Hinweis ganz am Anfang plus eine echte Widerspruchsmoeglichkeit sind Pflicht, nicht Kuer.",
+          "de": "In der Schweiz ist das heimliche Aufzeichnen eines nicht öffentlichen Gesprächs ein Strafrechtsthema: Das Strafgesetzbuch stellt das Aufnehmen fremder, nicht öffentlicher Gespräche ohne Einwilligung unter Strafe. Ein KI-Meeting-Assistent zeichnet praktisch immer auf - also braucht es die informierte Zustimmung aller Teilnehmenden, bevor die Aufnahme startet. Ein Hinweis ganz am Anfang plus eine echte Widerspruchsmöglichkeit sind Pflicht, nicht Kür.",
           "en": "In Switzerland, secretly recording a non-public conversation is a criminal matter: the Criminal Code penalises recording other people's private conversations without consent. An AI meeting assistant essentially always records - so you need the informed consent of every participant before recording starts. A clear notice at the very beginning plus a genuine way to object are mandatory, not optional.",
-          "it": "In Svizzera registrare di nascosto una conversazione non pubblica e materia penale: il Codice penale punisce la registrazione di conversazioni altrui non pubbliche senza consenso. Un assistente IA di fatto registra sempre - serve quindi il consenso informato di tutti i partecipanti prima dell'avvio. Un avviso all'inizio e una reale possibilita di opporsi sono obbligatori, non facoltativi.",
-          "fr": "En Suisse, enregistrer secretement une conversation non publique releve du penal : le Code penal sanctionne l'enregistrement des conversations privees d'autrui sans consentement. Un assistant IA enregistre quasi toujours - il faut donc le consentement eclaire de chaque participant avant de lancer l'enregistrement. Un avis en tout debut de reunion et une reelle possibilite de s'opposer sont obligatoires, pas optionnels."
+          "it": "In Svizzera registrare di nascosto una conversazione non pubblica è materia penale: il Codice penale punisce la registrazione di conversazioni altrui non pubbliche senza consenso. Un assistente IA di fatto registra sempre - serve quindi il consenso informato di tutti i partecipanti prima dell'avvio. Un avviso all'inizio e una reale possibilità di opporsi sono obbligatori, non facoltativi.",
+          "fr": "En Suisse, enregistrer secrètement une conversation non publique relève du pénal : le Code pénal sanctionne l'enregistrement des conversations privées d'autrui sans consentement. Un assistant IA enregistre quasi toujours - il faut donc le consentement éclairé de chaque participant avant de lancer l'enregistrement. Un avis en tout début de réunion et une réelle possibilité de s'opposer sont obligatoires, pas optionnels."
         }
       ],
       "bullets": [
         {
-          "de": "Transparenz: Nach revDSG muessen Betroffene wissen, dass und wozu bearbeitet wird, und wer der Anbieter ist.",
+          "de": "Transparenz: Nach revDSG müssen Betroffene wissen, dass und wozu bearbeitet wird, und wer der Anbieter ist.",
           "en": "Transparency: under revDSG, people must know that and why their data is processed, and who the provider is.",
-          "it": "Trasparenza: secondo la revDSG gli interessati devono sapere che e perche i dati sono trattati e chi e il fornitore.",
-          "fr": "Transparence : selon la revDSG, les personnes doivent savoir que et pourquoi leurs donnees sont traitees et qui est le prestataire."
+          "it": "Trasparenza: secondo la revDSG gli interessati devono sapere che e perché i dati sono trattati e chi è il fornitore.",
+          "fr": "Transparence : selon la revDSG, les personnes doivent savoir que et pourquoi leurs données sont traitées et qui est le prestataire."
         },
         {
           "de": "Auftragsbearbeitung: Der Tool-Anbieter ist meist Auftragsbearbeiter - ein Vertrag nach revDSG (Art. 9) ist erforderlich.",
           "en": "Processing on behalf: the tool vendor is usually a processor - a data processing agreement under revDSG (Art. 9) is required.",
-          "it": "Responsabile del trattamento: il fornitore e di norma un incaricato - serve un contratto secondo la revDSG (art. 9).",
-          "fr": "Sous-traitance : le fournisseur est generalement sous-traitant - un contrat selon la revDSG (art. 9) est requis."
+          "it": "Responsabile del trattamento: il fornitore è di norma un incaricato - serve un contratto secondo la revDSG (art. 9).",
+          "fr": "Sous-traitance : le fournisseur est généralement sous-traitant - un contrat selon la revDSG (art. 9) est requis."
         },
         {
           "de": "Auslandtransfer: Bei US-Cloud-Anbietern braucht es geeignete Garantien (z. B. Standardvertragsklauseln oder das Swiss-U.S. Data Privacy Framework).",
           "en": "Cross-border transfer: US cloud providers require adequate safeguards (e.g. standard contractual clauses or the Swiss-U.S. Data Privacy Framework).",
           "it": "Trasferimento all'estero: i fornitori cloud USA richiedono garanzie adeguate (es. clausole contrattuali standard o il Swiss-U.S. Data Privacy Framework).",
-          "fr": "Transfert a l'etranger : les fournisseurs cloud americains exigent des garanties adequates (clauses contractuelles types ou Swiss-U.S. Data Privacy Framework)."
+          "fr": "Transfert à l'étranger : les fournisseurs cloud américains exigent des garanties adéquates (clauses contractuelles types ou Swiss-U.S. Data Privacy Framework)."
         },
         {
-          "de": "Sensible Themen: Fuer heikle Personendaten oder Hochrisiko-Bearbeitungen kann eine Datenschutz-Folgenabschaetzung noetig sein; der EDOEB ist die zustaendige Aufsicht.",
+          "de": "Sensible Themen: Für heikle Personendaten oder Hochrisiko-Bearbeitungen kann eine Datenschutz-Folgenabschätzung nötig sein; der EDÖB ist die zuständige Aufsicht.",
           "en": "Sensitive topics: high-risk processing or sensitive personal data may require a data protection impact assessment; the EDOEB is the supervisory authority.",
-          "it": "Temi sensibili: dati personali degni di particolare protezione o trattamenti ad alto rischio possono richiedere una valutazione d'impatto; l'autorita di controllo e l'EDOEB.",
-          "fr": "Sujets sensibles : les traitements a haut risque ou les donnees sensibles peuvent exiger une analyse d'impact ; l'autorite de controle est le PFPDT (EDOEB)."
+          "it": "Temi sensibili: dati personali degni di particolare protezione o trattamenti ad alto rischio possono richiedere una valutazione d'impatto; l'autorità di controllo è l'EDÖB.",
+          "fr": "Sujets sensibles : les traitements à haut risque ou les données sensibles peuvent exiger une analyse d'impact ; l'autorité de contrôle est le PFPDT (EDÖB)."
         }
       ]
     },
     {
       "heading": {
-        "de": "Auswahl und Einfuehrung im Unternehmen",
+        "de": "Auswahl und Einführung im Unternehmen",
         "en": "Choosing and rolling out a tool",
         "it": "Scelta e introduzione in azienda",
-        "fr": "Choisir et deployer un outil"
+        "fr": "Choisir et déployer un outil"
       },
       "paragraphs": [
         {
-          "de": "Bevor ein Team einen Meeting-Assistenten breit einsetzt, lohnt sich eine schlanke Governance. Klaeren Sie Datenstandort und Aufbewahrung, definieren Sie, welche Meetings tabu sind (etwa Personalgespraeche, Rechtsberatung, Betriebsrat), und legen Sie fest, wer Aufnahmen loeschen darf. Eine kurze interne Richtlinie plus ein Standard-Einwilligungssatz zu Sitzungsbeginn schaffen Klarheit fuer alle.",
+          "de": "Bevor ein Team einen Meeting-Assistenten breit einsetzt, lohnt sich eine schlanke Governance. Klären Sie Datenstandort und Aufbewahrung, definieren Sie, welche Meetings tabu sind (etwa Personalgespräche, Rechtsberatung, Betriebsrat), und legen Sie fest, wer Aufnahmen löschen darf. Eine kurze interne Richtlinie plus ein Standard-Einwilligungssatz zu Sitzungsbeginn schaffen Klarheit für alle.",
           "en": "Before a team adopts a meeting assistant broadly, lightweight governance pays off. Clarify data location and retention, define which meetings are off-limits (e.g. HR talks, legal advice, works-council matters) and decide who may delete recordings. A short internal policy plus a standard consent line at the start of each meeting creates clarity for everyone.",
-          "it": "Prima di adottare su larga scala un assistente per riunioni conviene una governance snella. Chiarite ubicazione e conservazione dei dati, definite quali riunioni sono off-limits (colloqui HR, consulenze legali, rappresentanza dei lavoratori) e chi puo cancellare le registrazioni. Una breve policy interna e una frase di consenso standard a inizio riunione danno chiarezza a tutti.",
-          "fr": "Avant un deploiement large, une gouvernance legere est payante. Clarifiez la localisation et la conservation des donnees, definissez les reunions interdites (entretiens RH, conseil juridique, representation du personnel) et qui peut supprimer les enregistrements. Une courte politique interne et une phrase de consentement type en debut de reunion apportent de la clarte a tous."
+          "it": "Prima di adottare su larga scala un assistente per riunioni conviene una governance snella. Chiarite ubicazione e conservazione dei dati, definite quali riunioni sono off-limits (colloqui HR, consulenze legali, rappresentanza dei lavoratori) e chi può cancellare le registrazioni. Una breve policy interna e una frase di consenso standard a inizio riunione danno chiarezza a tutti.",
+          "fr": "Avant un déploiement large, une gouvernance légère est payante. Clarifiez la localisation et la conservation des données, définissez les réunions interdites (entretiens RH, conseil juridique, représentation du personnel) et qui peut supprimer les enregistrements. Une courte politique interne et une phrase de consentement type en début de réunion apportent de la clarté à tous."
         }
       ],
       "bullets": [
@@ -191,25 +191,25 @@
           "de": "Datenresidenz: Wo werden Audio, Transkript und Zusammenfassung gespeichert und wie lange?",
           "en": "Data residency: where are audio, transcript and summary stored, and for how long?",
           "it": "Residenza dei dati: dove sono conservati audio, trascrizione e sintesi, e per quanto?",
-          "fr": "Residence des donnees : ou sont stockes audio, transcription et synthese, et combien de temps ?"
+          "fr": "Résidence des données : où sont stockés audio, transcription et synthèse, et combien de temps ?"
         },
         {
-          "de": "Trainingsnutzung: Werden Inhalte zum Modelltraining verwendet? Wenn moeglich, deaktivieren.",
+          "de": "Trainingsnutzung: Werden Inhalte zum Modelltraining verwendet? Wenn möglich, deaktivieren.",
           "en": "Training use: is content used to train models? Disable it where possible.",
           "it": "Uso per addestramento: i contenuti alimentano l'addestramento dei modelli? Disattivare se possibile.",
-          "fr": "Usage pour l'entrainement : les contenus servent-ils a entrainer les modeles ? Desactiver si possible."
+          "fr": "Usage pour l'entraînement : les contenus servent-ils à entraîner les modèles ? Désactiver si possible."
         },
         {
           "de": "Zugriffsrechte: Wer sieht Protokolle, und lassen sich einzelne Personen oder Meetings ausschliessen?",
           "en": "Access rights: who can see notes, and can individuals or meetings be excluded?",
           "it": "Diritti di accesso: chi vede i verbali e si possono escludere singole persone o riunioni?",
-          "fr": "Droits d'acces : qui voit les comptes rendus, et peut-on exclure des personnes ou des reunions ?"
+          "fr": "Droits d'accès : qui voit les comptes rendus, et peut-on exclure des personnes ou des réunions ?"
         },
         {
           "de": "Sprachen und Dialekt: Testen Sie das Tool mit Ihren realen Sprachen inklusive Schweizerdeutsch, bevor Sie sich festlegen.",
           "en": "Languages and dialect: test the tool with your real languages, including Swiss German, before committing.",
           "it": "Lingue e dialetto: testate lo strumento con le vostre lingue reali, incluso lo svizzero tedesco, prima di decidere.",
-          "fr": "Langues et dialecte : testez l'outil avec vos langues reelles, y compris le suisse allemand, avant de vous engager."
+          "fr": "Langues et dialecte : testez l'outil avec vos langues réelles, y compris le suisse allemand, avant de vous engager."
         }
       ]
     }
@@ -220,27 +220,27 @@
         "de": "Sind KI-Meeting-Protokolle in der Schweiz erlaubt?",
         "en": "Are AI meeting notes legal in Switzerland?",
         "it": "I verbali di riunione con IA sono leciti in Svizzera?",
-        "fr": "Les comptes rendus de reunion par IA sont-ils legaux en Suisse ?"
+        "fr": "Les comptes rendus de réunion par IA sont-ils légaux en Suisse ?"
       },
       "a": {
-        "de": "Ja, sofern alle Teilnehmenden vor Beginn informiert einwilligen und die Bearbeitung transparent nach revDSG erfolgt. Heimliche Aufnahmen nicht oeffentlicher Gespraeche sind strafbar. Mit klarer Ankuendigung, Widerspruchsmoeglichkeit und einem Vertrag mit dem Anbieter ist der Einsatz zulaessig.",
+        "de": "Ja, sofern alle Teilnehmenden vor Beginn informiert einwilligen und die Bearbeitung transparent nach revDSG erfolgt. Heimliche Aufnahmen nicht öffentlicher Gespräche sind strafbar. Mit klarer Ankündigung, Widerspruchsmöglichkeit und einem Vertrag mit dem Anbieter ist der Einsatz zulässig.",
         "en": "Yes, provided every participant gives informed consent before the meeting starts and processing is transparent under revDSG. Secretly recording non-public conversations is a criminal offence. With a clear announcement, an opt-out and a contract with the provider, the use is permitted.",
-        "it": "Si, purche tutti i partecipanti diano un consenso informato prima dell'inizio e il trattamento sia trasparente secondo la revDSG. Registrare di nascosto conversazioni non pubbliche e reato. Con annuncio chiaro, possibilita di opposizione e contratto col fornitore, l'uso e ammesso.",
-        "fr": "Oui, a condition que chaque participant consente de maniere eclairee avant le debut et que le traitement soit transparent selon la revDSG. Enregistrer secretement des conversations non publiques est penalement reprehensible. Avec une annonce claire, une possibilite d'opposition et un contrat avec le prestataire, l'usage est autorise."
+        "it": "Sì, purché tutti i partecipanti diano un consenso informato prima dell'inizio e il trattamento sia trasparente secondo la revDSG. Registrare di nascosto conversazioni non pubbliche è reato. Con annuncio chiaro, possibilità di opposizione e contratto col fornitore, l'uso è ammesso.",
+        "fr": "Oui, à condition que chaque participant consente de manière éclairée avant le début et que le traitement soit transparent selon la revDSG. Enregistrer secrètement des conversations non publiques est pénalement répréhensible. Avec une annonce claire, une possibilité d'opposition et un contrat avec le prestataire, l'usage est autorisé."
       }
     },
     {
       "q": {
         "de": "Wie genau ist die KI-Transkription?",
         "en": "How accurate is AI transcription?",
-        "it": "Quanto e accurata la trascrizione IA?",
-        "fr": "Quelle est la precision de la transcription IA ?"
+        "it": "Quanto è accurata la trascrizione IA?",
+        "fr": "Quelle est la précision de la transcription IA ?"
       },
       "a": {
-        "de": "Bei klarer Standardsprache, gutem Mikrofon und wenig Ueberlappung ist sie sehr gut. Genauigkeit sinkt bei Dialekt, Fachjargon, mehreren gleichzeitig Sprechenden und Nebengeraeuschen. Zahlen, Namen und Zitate sollten immer gegengeprueft werden.",
+        "de": "Bei klarer Standardsprache, gutem Mikrofon und wenig Überlappung ist sie sehr gut. Genauigkeit sinkt bei Dialekt, Fachjargon, mehreren gleichzeitig Sprechenden und Nebengeräuschen. Zahlen, Namen und Zitate sollten immer gegengeprüft werden.",
         "en": "With clear standard speech, a good microphone and little overlap it is very good. Accuracy drops with dialect, jargon, several people speaking at once and background noise. Figures, names and quotes should always be double-checked.",
-        "it": "Con parlato standard chiaro, buon microfono e poche sovrapposizioni e ottima. L'accuratezza cala con dialetto, gergo, piu persone che parlano insieme e rumore. Cifre, nomi e citazioni vanno sempre verificati.",
-        "fr": "Avec une parole standard claire, un bon micro et peu de chevauchements, elle est tres bonne. La precision baisse avec le dialecte, le jargon, plusieurs personnes parlant en meme temps et le bruit. Chiffres, noms et citations doivent toujours etre verifies."
+        "it": "Con parlato standard chiaro, buon microfono e poche sovrapposizioni è ottima. L'accuratezza cala con dialetto, gergo, più persone che parlano insieme e rumore. Cifre, nomi e citazioni vanno sempre verificati.",
+        "fr": "Avec une parole standard claire, un bon micro et peu de chevauchements, elle est très bonne. La précision baisse avec le dialecte, le jargon, plusieurs personnes parlant en même temps et le bruit. Chiffres, noms et citations doivent toujours être vérifiés."
       }
     },
     {
@@ -251,10 +251,10 @@
         "fr": "Cela fonctionne-t-il avec le suisse allemand ?"
       },
       "a": {
-        "de": "Nur eingeschraenkt. Viele Systeme sind auf Hochdeutsch trainiert und erkennen Mundart schlechter oder uebersetzen sie ungenau ins Hochdeutsche. Testen Sie jedes Tool mit echten Schweizerdeutsch-Aufnahmen, bevor Sie es fest einsetzen.",
+        "de": "Nur eingeschränkt. Viele Systeme sind auf Hochdeutsch trainiert und erkennen Mundart schlechter oder übersetzen sie ungenau ins Hochdeutsche. Testen Sie jedes Tool mit echten Schweizerdeutsch-Aufnahmen, bevor Sie es fest einsetzen.",
         "en": "Only to a limited extent. Many systems are trained on High German and recognise Mundart less well or translate it inaccurately into High German. Test any tool with real Swiss-German audio before relying on it.",
         "it": "Solo in parte. Molti sistemi sono addestrati sul tedesco standard e riconoscono peggio la Mundart o la traducono in modo impreciso. Testate ogni strumento con audio reale in svizzero tedesco prima di adottarlo.",
-        "fr": "De maniere limitee seulement. Beaucoup de systemes sont entraines sur l'allemand standard et reconnaissent moins bien le Mundart ou le traduisent imprecisement. Testez chaque outil avec de l'audio reel en suisse allemand avant de vous y fier."
+        "fr": "De manière limitée seulement. Beaucoup de systèmes sont entraînés sur l'allemand standard et reconnaissent moins bien le Mundart ou le traduisent imprécisément. Testez chaque outil avec de l'audio réel en suisse allemand avant de vous y fier."
       }
     },
     {
@@ -262,13 +262,13 @@
         "de": "Darf ich ein Meeting ohne Zustimmung aufzeichnen?",
         "en": "May I record a meeting without consent?",
         "it": "Posso registrare una riunione senza consenso?",
-        "fr": "Puis-je enregistrer une reunion sans consentement ?"
+        "fr": "Puis-je enregistrer une réunion sans consentement ?"
       },
       "a": {
-        "de": "Nein. Das heimliche Aufzeichnen nicht oeffentlicher Gespraeche ist in der Schweiz strafbar, auch als Teilnehmender. Holen Sie vor dem Start die Zustimmung aller ein und bieten Sie eine echte Moeglichkeit, der Aufnahme zu widersprechen.",
+        "de": "Nein. Das heimliche Aufzeichnen nicht öffentlicher Gespräche ist in der Schweiz strafbar, auch als Teilnehmender. Holen Sie vor dem Start die Zustimmung aller ein und bieten Sie eine echte Möglichkeit, der Aufnahme zu widersprechen.",
         "en": "No. Secretly recording non-public conversations is a criminal offence in Switzerland, even as a participant. Obtain everyone's consent before starting and offer a genuine way to object to the recording.",
-        "it": "No. Registrare di nascosto conversazioni non pubbliche e reato in Svizzera, anche da partecipante. Ottenete il consenso di tutti prima di iniziare e offrite una reale possibilita di opporsi alla registrazione.",
-        "fr": "Non. Enregistrer secretement des conversations non publiques est penalement reprehensible en Suisse, meme en tant que participant. Obtenez le consentement de chacun avant de commencer et offrez une reelle possibilite de s'opposer."
+        "it": "No. Registrare di nascosto conversazioni non pubbliche è reato in Svizzera, anche da partecipante. Ottenete il consenso di tutti prima di iniziare e offrite una reale possibilità di opporsi alla registrazione.",
+        "fr": "Non. Enregistrer secrètement des conversations non publiques est pénalement répréhensible en Suisse, même en tant que participant. Obtenez le consentement de chacun avant de commencer et offrez une réelle possibilité de s'opposer."
       }
     },
     {
@@ -276,41 +276,41 @@
         "de": "Wo werden meine Meeting-Daten gespeichert?",
         "en": "Where is my meeting data stored?",
         "it": "Dove vengono conservati i dati della riunione?",
-        "fr": "Ou sont stockees les donnees de ma reunion ?"
+        "fr": "Où sont stockées les données de ma réunion ?"
       },
       "a": {
-        "de": "Das haengt vom Anbieter ab - haeufig in Cloud-Rechenzentren, teils ausserhalb der Schweiz oder EU. Klaeren Sie Speicherort, Aufbewahrungsdauer und Auslandtransfer, schliessen Sie einen Auftragsbearbeitungsvertrag nach revDSG und deaktivieren Sie wenn moeglich die Nutzung fuer Modelltraining.",
+        "de": "Das hängt vom Anbieter ab - häufig in Cloud-Rechenzentren, teils ausserhalb der Schweiz oder EU. Klären Sie Speicherort, Aufbewahrungsdauer und Auslandtransfer, schliessen Sie einen Auftragsbearbeitungsvertrag nach revDSG und deaktivieren Sie wenn möglich die Nutzung für Modelltraining.",
         "en": "It depends on the provider - often cloud data centres, sometimes outside Switzerland or the EU. Clarify storage location, retention and cross-border transfer, sign a data processing agreement under revDSG and disable use for model training where possible.",
         "it": "Dipende dal fornitore - spesso data center cloud, a volte fuori da Svizzera o UE. Chiarite ubicazione, conservazione e trasferimenti all'estero, firmate un contratto di trattamento secondo la revDSG e disattivate, se possibile, l'uso per l'addestramento.",
-        "fr": "Cela depend du prestataire - souvent des centres de donnees cloud, parfois hors de Suisse ou de l'UE. Clarifiez le lieu de stockage, la conservation et les transferts, signez un contrat de sous-traitance selon la revDSG et desactivez si possible l'usage pour l'entrainement."
+        "fr": "Cela dépend du prestataire - souvent des centres de données cloud, parfois hors de Suisse ou de l'UE. Clarifiez le lieu de stockage, la conservation et les transferts, signez un contrat de sous-traitance selon la revDSG et désactivez si possible l'usage pour l'entraînement."
       }
     },
     {
       "q": {
         "de": "Kann die KI vertrauliche Meetings verarbeiten?",
         "en": "Can AI process confidential meetings?",
-        "it": "L'IA puo elaborare riunioni riservate?",
-        "fr": "L'IA peut-elle traiter des reunions confidentielles ?"
+        "it": "L'IA può elaborare riunioni riservate?",
+        "fr": "L'IA peut-elle traiter des réunions confidentielles ?"
       },
       "a": {
-        "de": "Technisch ja, aber oft nicht ratsam. Fuer heikle Themen wie Personalgespraeche, Gesundheitsdaten oder Rechtsberatung sollten Sie auf automatische Aufnahmen verzichten oder streng abgesicherte Loesungen mit Datenschutz-Folgenabschaetzung nutzen. Legen Sie tabu-Meetings vorab in einer Richtlinie fest.",
+        "de": "Technisch ja, aber oft nicht ratsam. Für heikle Themen wie Personalgespräche, Gesundheitsdaten oder Rechtsberatung sollten Sie auf automatische Aufnahmen verzichten oder streng abgesicherte Lösungen mit Datenschutz-Folgenabschätzung nutzen. Legen Sie tabu-Meetings vorab in einer Richtlinie fest.",
         "en": "Technically yes, but often unwise. For sensitive topics such as HR talks, health data or legal advice, avoid automatic recording or use tightly controlled solutions with a data protection impact assessment. Define off-limits meetings in advance in a policy.",
-        "it": "Tecnicamente si, ma spesso sconsigliabile. Per temi sensibili come colloqui HR, dati sanitari o consulenza legale, evitate la registrazione automatica o usate soluzioni rigorosamente controllate con valutazione d'impatto. Definite in anticipo le riunioni off-limits in una policy.",
-        "fr": "Techniquement oui, mais souvent deconseille. Pour les sujets sensibles comme les entretiens RH, les donnees de sante ou le conseil juridique, evitez l'enregistrement automatique ou utilisez des solutions strictement encadrees avec analyse d'impact. Definissez a l'avance les reunions interdites dans une politique."
+        "it": "Tecnicamente sì, ma spesso sconsigliabile. Per temi sensibili come colloqui HR, dati sanitari o consulenza legale, evitate la registrazione automatica o usate soluzioni rigorosamente controllate con valutazione d'impatto. Definite in anticipo le riunioni off-limits in una policy.",
+        "fr": "Techniquement oui, mais souvent déconseillé. Pour les sujets sensibles comme les entretiens RH, les données de santé ou le conseil juridique, évitez l'enregistrement automatique ou utilisez des solutions strictement encadrées avec analyse d'impact. Définissez à l'avance les réunions interdites dans une politique."
       }
     }
   ],
   "keyEntities": [
     "revDSG (nDSG)",
     "nFADP",
-    "EDOEB",
+    "EDÖB",
     "Automatische Spracherkennung (ASR)",
     "Speaker Diarization",
     "Word Error Rate",
     "Large Language Model (LLM)",
     "Halluzination",
     "Auftragsbearbeitung",
-    "Datenschutz-Folgenabschaetzung",
+    "Datenschutz-Folgenabschätzung",
     "Schweizerdeutsch (Mundart)",
     "Microsoft Teams",
     "Zoom",
