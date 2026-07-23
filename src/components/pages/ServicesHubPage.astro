@@ -22,6 +22,7 @@ const COPY: Record<Locale, {
   title: string; h1: string; kicker: string; intro: string;
   groups: Record<ServiceGroup, string>; soon: string; view: string;
   crumbHome: string; crumbHere: string; ctaTitle: string; ctaText: string; ctaBtn: string;
+  gl: { kicker: string; title: string; text: string; btn: string; feats: string[] };
 }> = {
   de: {
     title: 'KI-Lösungen & Leistungen | Weissmann AI',
@@ -32,6 +33,7 @@ const COPY: Record<Locale, {
     soon: 'Seite folgt', view: 'Mehr erfahren',
     crumbHome: 'Startseite', crumbHere: 'Leistungen',
     ctaTitle: 'Nicht sicher, wo Sie anfangen sollen?', ctaText: 'In einem kurzen Gespräch finden wir den Baustein mit dem grössten Hebel für Ihr Unternehmen.', ctaBtn: 'Projekt besprechen',
+    gl: { kicker: 'Ökosystem-Erweiterung', title: 'KI-Brillen für die Arbeit', text: 'Über das Telefon hinaus: Even Realities Smart Glasses bringen Live-Übersetzung, Live-Untertitel und einen diskreten KI-Assistenten direkt in Ihr Sichtfeld — für Meetings, Barrierefreiheit und internationales Geschäft.', btn: 'KI-Brillen entdecken', feats: ['Live-Übersetzung', 'Live-Untertitel', 'Diskreter KI-Assistent'] },
   },
   en: {
     title: 'AI Solutions & Services | Weissmann AI',
@@ -42,6 +44,7 @@ const COPY: Record<Locale, {
     soon: 'Coming soon', view: 'Learn more',
     crumbHome: 'Home', crumbHere: 'Services',
     ctaTitle: 'Not sure where to start?', ctaText: 'In a short call we find the building block with the biggest leverage for your business.', ctaBtn: 'Discuss your project',
+    gl: { kicker: 'Ecosystem extension', title: 'AI glasses for work', text: 'Beyond the phone: Even Realities smart glasses put live translation, live captions and a discreet AI assistant right in your field of view — built for meetings, accessibility and international business.', btn: 'Explore AI glasses', feats: ['Live translation', 'Live captions', 'Discreet AI assistant'] },
   },
   it: {
     title: 'Soluzioni e servizi AI | Weissmann AI',
@@ -52,6 +55,7 @@ const COPY: Record<Locale, {
     soon: 'In arrivo', view: 'Scopri di più',
     crumbHome: 'Home', crumbHere: 'Servizi',
     ctaTitle: 'Non sapete da dove iniziare?', ctaText: 'In una breve chiamata individuiamo il tassello con la leva maggiore per la vostra azienda.', ctaBtn: 'Parliamo del progetto',
+    gl: { kicker: 'Estensione dell’ecosistema', title: 'Occhiali AI per il lavoro', text: 'Oltre il telefono: gli smart glasses Even Realities portano traduzione dal vivo, sottotitoli in tempo reale e un assistente AI discreto direttamente nel vostro campo visivo — per riunioni, accessibilità e business internazionale.', btn: 'Scopri gli occhiali AI', feats: ['Traduzione dal vivo', 'Sottotitoli in tempo reale', 'Assistente AI discreto'] },
   },
   fr: {
     title: 'Solutions et services IA | Weissmann AI',
@@ -62,6 +66,7 @@ const COPY: Record<Locale, {
     soon: 'Bientôt disponible', view: 'En savoir plus',
     crumbHome: 'Accueil', crumbHere: 'Services',
     ctaTitle: 'Vous ne savez pas par où commencer ?', ctaText: 'En un court appel, nous identifions le module au plus fort levier pour votre entreprise.', ctaBtn: 'Discuter du projet',
+    gl: { kicker: 'Extension de l’écosystème', title: 'Lunettes IA pour le travail', text: 'Au-delà du téléphone : les smart glasses Even Realities offrent traduction en direct, sous-titres en temps réel et un assistant IA discret directement dans votre champ de vision — pour les réunions, l’accessibilité et le business international.', btn: 'Découvrir les lunettes IA', feats: ['Traduction en direct', 'Sous-titres en temps réel', 'Assistant IA discret'] },
   },
 };
 const c = COPY[locale];
@@ -124,6 +129,23 @@ const schema = [
     ))}
   </div>
 
+  <section class="container glasses-showcase">
+    <div class="gl-card">
+      <figure class="gl-media">
+        <img src="/smart-glasses.webp" width="2000" height="2000" alt={c.gl.title} loading="lazy" decoding="async" />
+      </figure>
+      <div class="gl-body">
+        <p class="kicker">{c.gl.kicker}</p>
+        <h2>{c.gl.title}</h2>
+        <p class="gl-text">{c.gl.text}</p>
+        <ul class="gl-feats">
+          {c.gl.feats.map((f) => <li>{f}</li>)}
+        </ul>
+        <a class="btn btn--primary" href="https://ai-eyewear.ch" rel="noopener" target="_blank" data-track="glasses_view">{c.gl.btn} →</a>
+      </div>
+    </div>
+  </section>
+
   <section class="container hub-cta">
     <h2>{c.ctaTitle}</h2>
     <p>{c.ctaText}</p>
@@ -147,4 +169,14 @@ const schema = [
   .hub-cta { text-align: center; padding: var(--space-7) var(--space-4); margin-bottom: var(--space-7); border-top: 1px solid var(--line); }
   .hub-cta h2 { font-size: var(--fs-600); margin-bottom: 0.6rem; }
   .hub-cta p { color: var(--ink-soft); max-width: 40rem; margin: 0 auto var(--space-4); }
+
+  .glasses-showcase { padding-bottom: var(--space-7); }
+  .gl-card { display: grid; gap: var(--space-5); align-items: center; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--paper); padding: var(--space-5); }
+  @media (min-width: 760px) { .gl-card { grid-template-columns: 0.9fr 1.1fr; gap: var(--space-6); padding: var(--space-6); } }
+  .gl-media { margin: 0; border-radius: 16px; background: #f2f1ee; border: 1px solid var(--line); display: grid; place-items: center; padding: var(--space-4); }
+  .gl-media img { width: 100%; max-width: 22rem; display: block; }
+  .gl-body h2 { font-size: var(--fs-600); margin: 0.3rem 0 0.6rem; }
+  .gl-text { color: var(--ink-soft); margin: 0 0 var(--space-4); }
+  .gl-feats { list-style: none; padding: 0; margin: 0 0 var(--space-4); display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .gl-feats li { font-size: var(--fs-200); color: var(--ink-soft); border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.8rem; }
 </style>
