@@ -10,6 +10,7 @@ import Faq from '../Faq.astro';
 import { localePrefix, type Locale } from '../../data/site';
 import { relFor } from '../../data/routes';
 import { getService, servicePaths } from '../../data/services';
+import { getResource, resourcePaths } from '../../data/resources';
 import { t } from '../../i18n/ui';
 import { PACKAGES } from '../../data/pricing';
 import { webPage, breadcrumbs, faqPage, allPackageServices } from '../../data/schema';
@@ -50,7 +51,14 @@ const C: Record<Locale, any> = {
       { q: 'Wie funktioniert die Bezahlung?', a: 'Die KI-Telefonassistent-Pakete Starter und Premium können direkt online per Stripe abgeschlossen werden. Für alle anderen Pakete starten wir mit einem kurzen Beratungsgespräch, damit der Umfang wirklich passt.' },
       { q: 'Welche Vertragslaufzeiten gelten?', a: 'KI-Telefonassistent Starter und Premium: 12 Monate. Bei den monatlichen Marketing-Paketen besprechen wir die empfohlene Mindestlaufzeit transparent im Erstgespräch.' },
       { q: 'Was, wenn mein Projekt nicht in ein Paket passt?', a: 'Dann erstellen wir eine individuelle Offerte auf Basis einer Umfangsanalyse – zum Beispiel für grössere Websites ab CHF 9’900.' },
+      { q: 'Was kostet ein KI-Telefonassistent in der Schweiz?', a: 'Der Weissmann KI-Telefonassistent kostet ab CHF 350 pro Monat (Starter, inkl. 1500 Minuten) bzw. CHF 590 pro Monat (Premium, inkl. 3500 Minuten). Keine Setup-Gebühr, 12-Monatsvertrag, alle Preise exkl. MwSt.' },
     ],
+    phoneAnchor: 'Ab CHF 350/Monat – das sind weniger als CHF 12 pro Tag und ein Bruchteil einer Empfangskraft (typisch CHF 4’000–6’000+/Monat). Ihr KI-Telefonassistent nimmt jeden Anruf rund um die Uhr an – auch dann, wenn im Team gerade niemand ans Telefon kann.',
+    phoneAnchorLink: 'Rechnen Sie nach: Was kosten Sie verpasste Anrufe?',
+    startTitle: 'Nicht sicher, wo Sie starten sollen?',
+    startText: 'Die meisten Unternehmen beginnen mit dem KI-Telefonassistenten – das einzige Paket, das Sie sofort online abschliessen können. Unsicher? Buchen Sie ein kurzes Gespräch und wir empfehlen ehrlich das passende Paket.',
+    startCta1: 'Zu den Telefonassistent-Paketen',
+    badgeWebsite: 'Empfohlen',
     ctaTitle: 'Unsicher, welches Paket passt?',
     ctaText: 'In einem kurzen Gespräch finden wir gemeinsam heraus, was für Ihr Unternehmen wirklich Wirkung zeigt.',
   },
@@ -84,7 +92,14 @@ const C: Record<Locale, any> = {
       { q: 'How does payment work?', a: 'The AI Phone Agent Starter and Premium packages can be subscribed to directly online via Stripe. For all other packages we start with a short consultation so the scope truly fits.' },
       { q: 'What contract terms apply?', a: 'AI Phone Agent Starter and Premium: 12 months. For the monthly marketing packages we discuss the recommended minimum term transparently in the initial consultation.' },
       { q: 'What if my project doesn’t fit a package?', a: 'Then we create a custom proposal based on a scope analysis — for example for larger websites from CHF 9,900.' },
+      { q: 'What does an AI phone assistant cost in Switzerland?', a: 'The Weissmann AI phone assistant costs from CHF 350 per month (Starter, incl. 1,500 minutes) or CHF 590 per month (Premium, incl. 3,500 minutes). No setup fee, 12-month term, all prices exclusive of VAT.' },
     ],
+    phoneAnchor: 'From CHF 350/month – under CHF 12 a day, and a fraction of a receptionist (typically CHF 4,000–6,000+/month). Your AI phone agent answers every call around the clock – even when no one on the team can pick up.',
+    phoneAnchorLink: 'See the math: what are missed calls costing you?',
+    startTitle: 'Not sure where to start?',
+    startText: 'Most businesses begin with the AI phone agent – the only package you can subscribe to online right away. Unsure? Book a short call and we’ll honestly recommend the right fit.',
+    startCta1: 'See the phone agent plans',
+    badgeWebsite: 'Recommended',
     ctaTitle: 'Not sure which package fits?',
     ctaText: 'In a short conversation we’ll find out together what will really make a difference for your business.',
   },
@@ -118,7 +133,14 @@ const C: Record<Locale, any> = {
       { q: 'Come funziona il pagamento?', a: 'I pacchetti Starter e Premium dell’assistente telefonico possono essere sottoscritti direttamente online via Stripe. Per tutti gli altri iniziamo con una breve consulenza, perché il perimetro sia davvero adatto.' },
       { q: 'Quali durate contrattuali si applicano?', a: 'Assistente telefonico Starter e Premium: 12 mesi. Per i pacchetti marketing mensili discutiamo la durata minima raccomandata in modo trasparente nel primo colloquio.' },
       { q: 'E se il mio progetto non rientra in un pacchetto?', a: 'Allora creiamo un’offerta personalizzata basata su un’analisi del perimetro — ad esempio per siti più grandi da CHF 9’900.' },
+      { q: 'Quanto costa un assistente telefonico AI in Svizzera?', a: 'L’assistente telefonico Weissmann AI costa da CHF 350 al mese (Starter, 1500 minuti inclusi) o CHF 590 al mese (Premium, 3500 minuti inclusi). Nessun costo di attivazione, contratto di 12 mesi, tutti i prezzi IVA esclusa.' },
     ],
+    phoneAnchor: 'Da CHF 350/mese – meno di CHF 12 al giorno e una frazione di una receptionist (tipicamente CHF 4’000–6’000+/mese). Il vostro assistente telefonico AI risponde a ogni chiamata 24 ore su 24 – anche quando nel team nessuno può rispondere.',
+    phoneAnchorLink: 'Fate il calcolo: quanto vi costano le chiamate perse?',
+    startTitle: 'Non sapete da dove iniziare?',
+    startText: 'La maggior parte delle aziende inizia con l’assistente telefonico AI – l’unico pacchetto che potete sottoscrivere subito online. Indecisi? Prenotate una breve chiamata e vi consiglieremo onestamente la soluzione giusta.',
+    startCta1: 'Vai ai pacchetti dell’assistente telefonico',
+    badgeWebsite: 'Consigliato',
     ctaTitle: 'Non sapete quale pacchetto fa per voi?',
     ctaText: 'In una breve conversazione scopriamo insieme cosa avrà davvero effetto per la vostra azienda.',
   },
@@ -152,12 +174,24 @@ const C: Record<Locale, any> = {
       { q: 'Comment fonctionne le paiement ?', a: 'Les forfaits Starter et Premium de l’agent téléphonique peuvent être souscrits directement en ligne via Stripe. Pour tous les autres, nous commençons par une courte consultation afin que le périmètre convienne vraiment.' },
       { q: 'Quelles durées contractuelles s’appliquent ?', a: 'Agent téléphonique Starter et Premium : 12 mois. Pour les forfaits marketing mensuels, nous discutons de la durée minimale recommandée en toute transparence lors du premier entretien.' },
       { q: 'Et si mon projet ne rentre dans aucun forfait ?', a: 'Nous créons alors une offre sur mesure basée sur une analyse du périmètre — par exemple pour les sites plus grands dès CHF 9’900.' },
+      { q: 'Combien coûte un agent téléphonique IA en Suisse ?', a: 'L’agent téléphonique Weissmann AI coûte à partir de CHF 350 par mois (Starter, 1500 minutes incluses) ou CHF 590 par mois (Premium, 3500 minutes incluses). Aucuns frais d’installation, contrat de 12 mois, tous les prix hors TVA.' },
     ],
+    phoneAnchor: 'Dès CHF 350/mois – moins de CHF 12 par jour et une fraction d’une réceptionniste (typiquement CHF 4’000–6’000+/mois). Votre agent téléphonique IA répond à chaque appel 24h/24 – même quand personne dans l’équipe ne peut décrocher.',
+    phoneAnchorLink: 'Faites le calcul : combien vous coûtent les appels manqués ?',
+    startTitle: 'Vous ne savez pas par où commencer ?',
+    startText: 'La plupart des entreprises commencent par l’agent téléphonique IA – le seul forfait souscriptible en ligne immédiatement. Hésitant ? Réservez un court entretien et nous vous recommanderons honnêtement la bonne solution.',
+    startCta1: 'Voir les forfaits de l’agent téléphonique',
+    badgeWebsite: 'Recommandé',
     ctaTitle: 'Pas sûr du forfait qui convient ?',
     ctaText: 'Lors d’un court entretien, nous déterminons ensemble ce qui aura un réel impact pour votre entreprise.',
   },
 };
 const c = C[locale];
+
+// Link the point-of-price receptionist/missed-call anchor to the existing
+// missed-calls ROI calculator resource (never a hardcoded URL).
+const roi = getResource('phone-roi-calculator');
+const roiHref = roi ? relFor(locale, resourcePaths(roi)) : `${p}/`;
 
 const order: Array<keyof typeof c.groups> = ['phone-agent', 'website', 'seo', 'geo', 'ads'];
 
@@ -199,10 +233,23 @@ const schema = [
     </div>
   </section>
 
+  <section class="section">
+    <div class="container">
+      <div class="card" style="max-width:52rem;">
+        <h2 style="font-size:var(--fs-600);">{c.startTitle}</h2>
+        <p class="mt-3 prose">{c.startText}</p>
+        <div class="mt-3" style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <a class="btn btn--primary" href="#phone-plans" data-track="jump_phone_plans">{c.startCta1}</a>
+          <a class="btn btn--secondary" href={`${p}/kontakt/`} data-track="book_consultation">{t(locale, 'cta.consultation')}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   {order.map((cat, i) => {
     const link = serviceLinkFor(cat as string);
     return (
-    <section class={`section ${i % 2 === 0 ? 'section--alt' : ''}`}>
+    <section id={cat === 'phone-agent' ? 'phone-plans' : undefined} class={`section ${i % 2 === 0 ? 'section--alt' : ''}`}>
       <div class="container">
         <div class="section-head">
           <h2>{c.groups[cat]}</h2>
@@ -210,9 +257,15 @@ const schema = [
             <p class="muted mt-3"><a href={link.href} data-track="service_view">{link.label} →</a></p>
           )}
         </div>
+        {cat === 'phone-agent' && (
+          <div class="card" style="background:var(--paper-soft);max-width:52rem;margin-bottom:var(--space-4);">
+            <p class="prose">{c.phoneAnchor}</p>
+            <p class="mt-3"><a href={roiHref} data-track="roi_calculator_view">{c.phoneAnchorLink} →</a></p>
+          </div>
+        )}
         <div class="grid grid--3">
           {PACKAGES.filter((pkg) => pkg.category === cat).map((pkg) => (
-            <PricingCard pkg={pkg} locale={locale} highlight={pkg.id === 'phone-premium' || pkg.id === 'website-business'} />
+            <PricingCard pkg={pkg} locale={locale} highlight={pkg.id === 'phone-premium' || pkg.id === 'website-business'} badge={pkg.id === 'website-business' ? c.badgeWebsite : undefined} />
           ))}
         </div>
       </div>

@@ -225,37 +225,95 @@ const authority = AUTHORITY[locale];
 const founderLinkedin = 'linkedin' in SITE.founders[0] ? SITE.founders[0].linkedin : undefined;
 // "Try it for your industry" — example use cases tied to the live call number.
 const SCENARIO_ICONS = ['calendar-check', 'clock', 'sparkle', 'globe', 'briefcase'] as const;
-const SCENARIOS: Record<Locale, { eyebrow: string; title: string; text: string; cta: string; items: Array<{ name: string; does: string; phrase: string }> }> = {
-  de: { eyebrow: 'Für Ihre Branche', title: 'So arbeitet die KI in Ihrem Unternehmen.', text: 'Rufen Sie die Live-Nummer an und sagen Sie den Satz für Ihre Branche – die KI erledigt es in Sekunden.', cta: 'Anrufen und ausprobieren', items: [
-    { name: 'Restaurants', does: 'Nimmt Tischreservierungen entgegen, erfasst Personenzahl und Zeit.', phrase: '„Ein Tisch für vier heute Abend um 19:30.“' },
-    { name: 'Arztpraxen', does: 'Vergibt Termine und beantwortet Standardfragen.', phrase: '„Ich möchte nächste Woche einen Kontrolltermin.“' },
-    { name: 'Salons & Beauty', does: 'Bucht Behandlungen und verwaltet den Kalender.', phrase: '„Kann ich am Freitagnachmittag einen Haarschnitt haben?“' },
-    { name: 'Hotels', does: 'Bearbeitet Reservierungen und Gästefragen – in jeder Sprache.', phrase: '„Haben Sie dieses Wochenende ein Doppelzimmer?“' },
-    { name: 'Handwerk & Dienstleistung', does: 'Qualifiziert Anfragen und bucht Rückrufe.', phrase: '„Ich brauche einen Sanitär – wann kann jemand kommen?“' },
+const SCENARIOS: Record<Locale, { eyebrow: string; title: string; text: string; cta: string; example: string; reveal: string; items: Array<{ name: string; does: string; phrase: string; answer: string; result: string }> }> = {
+  de: { eyebrow: 'Für Ihre Branche', title: 'So arbeitet die KI in Ihrem Unternehmen.', text: 'Rufen Sie die Live-Nummer an und sagen Sie den Satz für Ihre Branche – die KI erledigt es in Sekunden.', cta: 'Anrufen und ausprobieren', example: 'Beispiel', reveal: 'Antwort der KI ansehen', items: [
+    { name: 'Restaurants', does: 'Nimmt Tischreservierungen entgegen, erfasst Personenzahl und Zeit.', phrase: '„Ein Tisch für vier heute Abend um 19:30.“', answer: '„Sehr gerne – um 19:30 Uhr ist ein Tisch frei. Auf welchen Namen?“', result: 'Tisch reserviert' },
+    { name: 'Arztpraxen', does: 'Vergibt Termine und beantwortet Standardfragen.', phrase: '„Ich möchte nächste Woche einen Kontrolltermin.“', answer: '„Nächste Woche Dienstag 10:15 Uhr wäre frei. Passt das?“', result: 'Termin gebucht' },
+    { name: 'Salons & Beauty', does: 'Bucht Behandlungen und verwaltet den Kalender.', phrase: '„Kann ich am Freitagnachmittag einen Haarschnitt haben?“', answer: '„Freitag 14:00 Uhr ist frei – soll ich es eintragen?“', result: 'Behandlung gebucht' },
+    { name: 'Hotels', does: 'Bearbeitet Reservierungen und Gästefragen – in jeder Sprache.', phrase: '„Haben Sie dieses Wochenende ein Doppelzimmer?“', answer: '„Ja, ein Doppelzimmer ist verfügbar. Für wie viele Nächte?“', result: 'Anfrage erfasst' },
+    { name: 'Handwerk & Dienstleistung', does: 'Qualifiziert Anfragen und bucht Rückrufe.', phrase: '„Ich brauche einen Sanitär – wann kann jemand kommen?“', answer: '„Ein Techniker kann morgen zwischen 8 und 10 Uhr kommen.“', result: 'Rückruf gebucht' },
   ] },
-  en: { eyebrow: 'For your industry', title: 'See how the AI works in your business.', text: 'Call the live number and say the phrase for your industry – the AI handles it in seconds.', cta: 'Call and try it', items: [
-    { name: 'Restaurants', does: 'Takes table reservations, notes party size and time.', phrase: '“A table for four tonight at 7:30.”' },
-    { name: 'Medical practices', does: 'Schedules appointments and answers routine questions.', phrase: '“I’d like to book a check-up next week.”' },
-    { name: 'Salons & beauty', does: 'Books treatments and manages the calendar.', phrase: '“Can I get a haircut on Friday afternoon?”' },
-    { name: 'Hotels', does: 'Handles reservations and guest questions – in any language.', phrase: '“Do you have a double room this weekend?”' },
-    { name: 'Trades & services', does: 'Qualifies enquiries and books call-backs.', phrase: '“I need a plumber – when can someone come?”' },
+  en: { eyebrow: 'For your industry', title: 'See how the AI works in your business.', text: 'Call the live number and say the phrase for your industry – the AI handles it in seconds.', cta: 'Call and try it', example: 'Example', reveal: 'See the AI’s reply', items: [
+    { name: 'Restaurants', does: 'Takes table reservations, notes party size and time.', phrase: '“A table for four tonight at 7:30.”', answer: '“Of course — 7:30pm is free. What name shall I put it under?”', result: 'Table reserved' },
+    { name: 'Medical practices', does: 'Schedules appointments and answers routine questions.', phrase: '“I’d like to book a check-up next week.”', answer: '“Next Tuesday at 10:15 is available. Does that work?”', result: 'Appointment booked' },
+    { name: 'Salons & beauty', does: 'Books treatments and manages the calendar.', phrase: '“Can I get a haircut on Friday afternoon?”', answer: '“Friday at 2pm is free — shall I book it?”', result: 'Treatment booked' },
+    { name: 'Hotels', does: 'Handles reservations and guest questions – in any language.', phrase: '“Do you have a double room this weekend?”', answer: '“Yes, a double room is available. For how many nights?”', result: 'Enquiry captured' },
+    { name: 'Trades & services', does: 'Qualifies enquiries and books call-backs.', phrase: '“I need a plumber – when can someone come?”', answer: '“A technician can come tomorrow between 8 and 10am.”', result: 'Call-back booked' },
   ] },
-  it: { eyebrow: 'Per il vostro settore', title: 'Come lavora l’AI nella vostra azienda.', text: 'Chiamate il numero live e dite la frase per il vostro settore – l’AI la gestisce in pochi secondi.', cta: 'Chiama e prova', items: [
-    { name: 'Ristoranti', does: 'Prende prenotazioni, registra numero di persone e orario.', phrase: '«Un tavolo per quattro stasera alle 19:30.»' },
-    { name: 'Studi medici', does: 'Fissa appuntamenti e risponde a domande di routine.', phrase: '«Vorrei un controllo la prossima settimana.»' },
-    { name: 'Saloni & beauty', does: 'Prenota trattamenti e gestisce il calendario.', phrase: '«Posso avere un taglio venerdì pomeriggio?»' },
-    { name: 'Hotel', does: 'Gestisce prenotazioni e domande degli ospiti – in ogni lingua.', phrase: '«Avete una camera doppia questo weekend?»' },
-    { name: 'Artigiani & servizi', does: 'Qualifica le richieste e prenota richiami.', phrase: '«Mi serve un idraulico – quando può venire qualcuno?»' },
+  it: { eyebrow: 'Per il vostro settore', title: 'Come lavora l’AI nella vostra azienda.', text: 'Chiamate il numero live e dite la frase per il vostro settore – l’AI la gestisce in pochi secondi.', cta: 'Chiama e prova', example: 'Esempio', reveal: 'Vedi la risposta dell’AI', items: [
+    { name: 'Ristoranti', does: 'Prende prenotazioni, registra numero di persone e orario.', phrase: '«Un tavolo per quattro stasera alle 19:30.»', answer: '«Certo – alle 19:30 c’è posto. A che nome?»', result: 'Tavolo prenotato' },
+    { name: 'Studi medici', does: 'Fissa appuntamenti e risponde a domande di routine.', phrase: '«Vorrei un controllo la prossima settimana.»', answer: '«Martedì prossimo alle 10:15 è libero. Va bene?»', result: 'Appuntamento prenotato' },
+    { name: 'Saloni & beauty', does: 'Prenota trattamenti e gestisce il calendario.', phrase: '«Posso avere un taglio venerdì pomeriggio?»', answer: '«Venerdì alle 14:00 è libero – lo prenoto?»', result: 'Trattamento prenotato' },
+    { name: 'Hotel', does: 'Gestisce prenotazioni e domande degli ospiti – in ogni lingua.', phrase: '«Avete una camera doppia questo weekend?»', answer: '«Sì, una camera doppia è disponibile. Per quante notti?»', result: 'Richiesta registrata' },
+    { name: 'Artigiani & servizi', does: 'Qualifica le richieste e prenota richiami.', phrase: '«Mi serve un idraulico – quando può venire qualcuno?»', answer: '«Un tecnico può venire domani tra le 8 e le 10.»', result: 'Richiamo prenotato' },
   ] },
-  fr: { eyebrow: 'Pour votre secteur', title: 'Comment l’IA travaille dans votre entreprise.', text: 'Appelez le numéro en direct et dites la phrase pour votre secteur – l’IA s’en occupe en quelques secondes.', cta: 'Appeler et essayer', items: [
-    { name: 'Restaurants', does: 'Prend les réservations, note le nombre de couverts et l’heure.', phrase: '« Une table pour quatre ce soir à 19h30. »' },
-    { name: 'Cabinets médicaux', does: 'Fixe les rendez-vous et répond aux questions courantes.', phrase: '« Je voudrais un contrôle la semaine prochaine. »' },
-    { name: 'Salons & beauté', does: 'Réserve les prestations et gère l’agenda.', phrase: '« Puis-je avoir une coupe vendredi après-midi ? »' },
-    { name: 'Hôtels', does: 'Gère les réservations et les questions des clients – dans toutes les langues.', phrase: '« Avez-vous une chambre double ce week-end ? »' },
-    { name: 'Artisans & services', does: 'Qualifie les demandes et planifie les rappels.', phrase: '« J’ai besoin d’un plombier – quand peut-on venir ? »' },
+  fr: { eyebrow: 'Pour votre secteur', title: 'Comment l’IA travaille dans votre entreprise.', text: 'Appelez le numéro en direct et dites la phrase pour votre secteur – l’IA s’en occupe en quelques secondes.', cta: 'Appeler et essayer', example: 'Exemple', reveal: 'Voir la réponse de l’IA', items: [
+    { name: 'Restaurants', does: 'Prend les réservations, note le nombre de couverts et l’heure.', phrase: '« Une table pour quatre ce soir à 19h30. »', answer: '« Bien sûr – 19h30 est libre. À quel nom ? »', result: 'Table réservée' },
+    { name: 'Cabinets médicaux', does: 'Fixe les rendez-vous et répond aux questions courantes.', phrase: '« Je voudrais un contrôle la semaine prochaine. »', answer: '« Mardi prochain à 10h15 est disponible. Cela convient ? »', result: 'Rendez-vous réservé' },
+    { name: 'Salons & beauté', does: 'Réserve les prestations et gère l’agenda.', phrase: '« Puis-je avoir une coupe vendredi après-midi ? »', answer: '« Vendredi à 14h est libre – je le réserve ? »', result: 'Prestation réservée' },
+    { name: 'Hôtels', does: 'Gère les réservations et les questions des clients – dans toutes les langues.', phrase: '« Avez-vous une chambre double ce week-end ? »', answer: '« Oui, une chambre double est disponible. Pour combien de nuits ? »', result: 'Demande enregistrée' },
+    { name: 'Artisans & services', does: 'Qualifie les demandes et planifie les rappels.', phrase: '« J’ai besoin d’un plombier – quand peut-on venir ? »', answer: '« Un technicien peut venir demain entre 8h et 10h. »', result: 'Rappel réservé' },
   ] },
 };
 const scen = SCENARIOS[locale];
+
+// Self-playing "watch a real call" replay — animated on scroll, but fully readable
+// with no JS and under prefers-reduced-motion. Every string is an explicit example.
+const REPLAY: Record<Locale, { eyebrow: string; title: string; example: string; turns: string[]; wa: { title: string; lines: string[] }; cal: { time: string; title: string; note: string } }> = {
+  de: {
+    eyebrow: 'Sehen, nicht nur lesen',
+    title: 'Vom Klingeln bis zum Kalendereintrag – in Sekunden.',
+    example: 'Beispielanruf – Illustration. Inhalte konfigurieren wir für Ihr Unternehmen.',
+    turns: [
+      '„Guten Tag, haben Sie heute Abend einen Tisch für vier?“',
+      '„Sehr gerne – um 19:30 Uhr wäre ein Tisch frei. Passt das?“',
+      '„Perfekt, auf den Namen Meier.“',
+      '„Danke, Herr Meier. Ihr Tisch für vier ist heute um 19:30 Uhr reserviert. Bis später!“',
+    ],
+    wa: { title: 'Zusammenfassung · WhatsApp', lines: ['✅ Neue Reservation', '4 Personen · heute 19:30', 'Name: Meier', 'Quelle: KI-Telefonassistent'] },
+    cal: { time: 'Heute 19:30', title: 'Tisch für 4 – Meier', note: 'Automatisch eingetragen' },
+  },
+  en: {
+    eyebrow: 'See it, don’t just read it',
+    title: 'From the first ring to the calendar entry — in seconds.',
+    example: 'Example call – illustration. We configure the content for your business.',
+    turns: [
+      '“Hi, do you have a table for four tonight?”',
+      '“Of course — I have 7:30pm available. Does that work?”',
+      '“Perfect, under the name Meier.”',
+      '“Thank you, Mr Meier. Your table for four is booked for 7:30pm today. See you later!”',
+    ],
+    wa: { title: 'Summary · WhatsApp', lines: ['✅ New reservation', '4 people · today 19:30', 'Name: Meier', 'Source: AI phone agent'] },
+    cal: { time: 'Today 19:30', title: 'Table for 4 – Meier', note: 'Added automatically' },
+  },
+  it: {
+    eyebrow: 'Vedere, non solo leggere',
+    title: 'Dal primo squillo all’evento in calendario – in pochi secondi.',
+    example: 'Chiamata di esempio – illustrazione. I contenuti vengono configurati per la vostra azienda.',
+    turns: [
+      '«Buonasera, avete un tavolo per quattro stasera?»',
+      '«Certo – alle 19:30 avremmo posto. Va bene?»',
+      '«Perfetto, a nome Meier.»',
+      '«Grazie, signor Meier. Il tavolo per quattro è prenotato per stasera alle 19:30. A più tardi!»',
+    ],
+    wa: { title: 'Riepilogo · WhatsApp', lines: ['✅ Nuova prenotazione', '4 persone · oggi 19:30', 'Nome: Meier', 'Fonte: assistente telefonico AI'] },
+    cal: { time: 'Oggi 19:30', title: 'Tavolo per 4 – Meier', note: 'Inserito automaticamente' },
+  },
+  fr: {
+    eyebrow: 'Voir, pas seulement lire',
+    title: 'De la première sonnerie à l’agenda — en quelques secondes.',
+    example: 'Appel exemple – illustration. Nous configurons le contenu pour votre entreprise.',
+    turns: [
+      '« Bonsoir, avez-vous une table pour quatre ce soir ? »',
+      '« Bien sûr – j’ai de la place à 19h30. Cela vous convient ? »',
+      '« Parfait, au nom de Meier. »',
+      '« Merci, M. Meier. Votre table pour quatre est réservée ce soir à 19h30. À tout à l’heure ! »',
+    ],
+    wa: { title: 'Résumé · WhatsApp', lines: ['✅ Nouvelle réservation', '4 personnes · aujourd’hui 19:30', 'Nom : Meier', 'Source : agent téléphonique IA'] },
+    cal: { time: 'Aujourd’hui 19:30', title: 'Table pour 4 – Meier', note: 'Ajouté automatiquement' },
+  },
+};
+const replay = REPLAY[locale];
 
 const C: Record<Locale, any> = {
   de: {
@@ -283,9 +341,9 @@ const C: Record<Locale, any> = {
     ],
     growthWords: ['Gewinnen', 'Konvertieren', 'Antworten', 'Automatisieren', 'Messen', 'Skalieren'],
     systemEyebrow: 'Das Weissmann Growth System',
-    systemTitle: 'Sechs Bausteine. Ein System.',
+    systemTitle: 'Aus mehr Besuchern werden gebuchte Kunden.',
     systemText:
-      'Jeder Baustein funktioniert einzeln. Zusammen entsteht die komplette Kette – vom ersten Website-Besuch bis zum gebuchten Termin.',
+      'Sechs Bausteine, ein System — vom ersten Website-Besuch bis zum gebuchten Termin. Jeder Baustein wirkt für sich; zusammen schliessen sie die Lücken, an denen Ihnen heute Kunden verloren gehen.',
     system: [
       { n: '01', title: 'Website', text: 'Die digitale Grundlage.', href: '/leistungen/ai-websites/' },
       { n: '02', title: 'SEO & GEO', text: 'Sichtbarkeit in Suchmaschinen und KI-Antworten.', href: '/preise/' },
@@ -295,12 +353,12 @@ const C: Record<Locale, any> = {
       { n: '06', title: 'Messung', text: 'Ergebnisse verstehen und kontinuierlich verbessern.', href: '/kontakt/' },
     ],
     methodEyebrow: 'Die Weissmann AI Methode',
-    methodTitle: 'Systematisch statt zufällig',
-    methodText: 'Sieben Schritte von der Analyse bis zur laufenden Optimierung – transparent und persönlich begleitet.',
+    methodTitle: 'Wachstum, das planbar wird — nicht dem Zufall überlassen.',
+    methodText: 'Sieben Schritte von der Analyse bis zur laufenden Optimierung — damit Ergebnisse planbar und messbar werden, transparent und persönlich begleitet.',
     voiceEyebrow: 'Umsetzung, nicht Theorie',
-    voiceTitle: 'So klingt umgesetzte KI.',
+    voiceTitle: 'Hören Sie, wie ein Kunde gebucht wird — ohne dass Ihr Team abheben muss.',
     voiceText:
-      'Der Weissmann KI-Telefonassistent im Echtbetrieb: natürliche Stimme, echte Terminbuchung, Weiterleitung an Menschen, wenn es darauf ankommt. Ein Baustein des Systems – hier können Sie ihn hören.',
+      'Der Weissmann KI-Telefonassistent im Echtbetrieb: natürliche Stimme, ein echt gebuchter Termin, Weiterleitung an Menschen, wenn es zählt. So klingt ein Anruf, den Sie nie mehr selbst annehmen müssen.',
     voiceCta: 'Zum KI-Telefonassistenten',
     calcEyebrow: 'Rechnen statt raten',
     pricingEyebrow: 'Transparente Preise',
@@ -369,9 +427,9 @@ const C: Record<Locale, any> = {
     ],
     growthWords: ['Attract', 'Convert', 'Answer', 'Automate', 'Measure', 'Scale'],
     systemEyebrow: 'The Weissmann Growth System',
-    systemTitle: 'Six building blocks. One system.',
+    systemTitle: 'Turn more of your visitors into booked customers.',
     systemText:
-      'Each block works on its own. Together they form the complete chain — from the first website visit to the booked appointment.',
+      'Six building blocks, one system — from the first website visit to the booked appointment. Each works on its own; together they close the gaps where customers slip away today.',
     system: [
       { n: '01', title: 'Website', text: 'The digital foundation.', href: '/leistungen/ai-websites/' },
       { n: '02', title: 'SEO & GEO', text: 'Visibility in search engines and AI answers.', href: '/preise/' },
@@ -381,12 +439,12 @@ const C: Record<Locale, any> = {
       { n: '06', title: 'Measurement', text: 'Understand results and improve continuously.', href: '/kontakt/' },
     ],
     methodEyebrow: 'The Weissmann AI Method',
-    methodTitle: 'Systematic, not accidental',
-    methodText: 'Seven steps from analysis to continuous optimization — transparent and personally guided.',
+    methodTitle: 'Growth you can plan for — not left to chance.',
+    methodText: 'Seven steps from analysis to continuous optimization — so results become predictable and measurable, transparent and personally guided.',
     voiceEyebrow: 'Implementation, not theory',
-    voiceTitle: 'This is what implemented AI sounds like.',
+    voiceTitle: 'Hear a customer get booked — without your team picking up.',
     voiceText:
-      'The Weissmann AI phone agent in real operation: natural voice, real appointment booking, human handover when it matters. One building block of the system — hear it here.',
+      'The Weissmann AI phone agent in real operation: natural voice, a real appointment booked, human handover when it matters. This is the call you never have to take again.',
     voiceCta: 'About the AI phone agent',
     calcEyebrow: 'Calculate, don’t guess',
     pricingEyebrow: 'Transparent pricing',
@@ -455,9 +513,9 @@ const C: Record<Locale, any> = {
     ],
     growthWords: ['Attrarre', 'Convertire', 'Rispondere', 'Automatizzare', 'Misurare', 'Scalare'],
     systemEyebrow: 'Il Weissmann Growth System',
-    systemTitle: 'Sei componenti. Un sistema.',
+    systemTitle: 'Trasformate più visitatori in clienti prenotati.',
     systemText:
-      'Ogni componente funziona da solo. Insieme formano la catena completa — dalla prima visita al sito all’appuntamento prenotato.',
+      'Sei componenti, un sistema — dalla prima visita al sito all’appuntamento prenotato. Ognuno funziona da solo; insieme chiudono le falle da cui oggi perdete clienti.',
     system: [
       { n: '01', title: 'Sito web', text: 'La base digitale.', href: '/leistungen/ai-websites/' },
       { n: '02', title: 'SEO & GEO', text: 'Visibilità nei motori di ricerca e nelle risposte AI.', href: '/preise/' },
@@ -467,12 +525,12 @@ const C: Record<Locale, any> = {
       { n: '06', title: 'Misurazione', text: 'Comprendere i risultati e migliorare continuamente.', href: '/kontakt/' },
     ],
     methodEyebrow: 'Il Metodo Weissmann AI',
-    methodTitle: 'Sistematico, non casuale',
-    methodText: 'Sette passaggi dall’analisi all’ottimizzazione continua — trasparenti e con accompagnamento personale.',
+    methodTitle: 'Una crescita pianificabile — non lasciata al caso.',
+    methodText: 'Sette passaggi dall’analisi all’ottimizzazione continua — perché i risultati diventino prevedibili e misurabili, con trasparenza e accompagnamento personale.',
     voiceEyebrow: 'Implementazione, non teoria',
-    voiceTitle: 'Così suona l’AI implementata.',
+    voiceTitle: 'Ascoltate un cliente che viene prenotato — senza che il vostro team risponda.',
     voiceText:
-      'L’assistente telefonico Weissmann AI in funzionamento reale: voce naturale, vera prenotazione di appuntamenti, passaggio a persone quando conta. Un componente del sistema — ascoltatelo qui.',
+      'L’assistente telefonico Weissmann AI in funzione reale: voce naturale, un appuntamento davvero prenotato, passaggio a una persona quando conta. È la chiamata che non dovrete più rispondere.',
     voiceCta: 'L’assistente telefonico AI',
     calcEyebrow: 'Calcolare invece di indovinare',
     pricingEyebrow: 'Prezzi trasparenti',
@@ -541,9 +599,9 @@ const C: Record<Locale, any> = {
     ],
     growthWords: ['Attirer', 'Convertir', 'Répondre', 'Automatiser', 'Mesurer', 'Développer'],
     systemEyebrow: 'Le Weissmann Growth System',
-    systemTitle: 'Six composants. Un système.',
+    systemTitle: 'Transformez plus de visiteurs en clients réservés.',
     systemText:
-      'Chaque composant fonctionne seul. Ensemble, ils forment la chaîne complète — de la première visite du site au rendez-vous réservé.',
+      'Six composants, un système — de la première visite du site au rendez-vous réservé. Chacun agit seul ; ensemble, ils comblent les fuites par lesquelles vous perdez des clients aujourd’hui.',
     system: [
       { n: '01', title: 'Site web', text: 'La fondation digitale.', href: '/leistungen/ai-websites/' },
       { n: '02', title: 'SEO & GEO', text: 'Visibilité dans les moteurs de recherche et les réponses IA.', href: '/preise/' },
@@ -553,12 +611,12 @@ const C: Record<Locale, any> = {
       { n: '06', title: 'Mesure', text: 'Comprendre les résultats et s’améliorer en continu.', href: '/kontakt/' },
     ],
     methodEyebrow: 'La Méthode Weissmann AI',
-    methodTitle: 'Systématique, pas aléatoire',
-    methodText: 'Sept étapes de l’analyse à l’optimisation continue — transparentes et accompagnées personnellement.',
+    methodTitle: 'Une croissance prévisible — pas laissée au hasard.',
+    methodText: 'Sept étapes de l’analyse à l’optimisation continue — pour des résultats prévisibles et mesurables, transparents et accompagnés personnellement.',
     voiceEyebrow: 'De la mise en œuvre, pas de la théorie',
-    voiceTitle: 'Voici comment sonne l’IA implémentée.',
+    voiceTitle: 'Écoutez un client être réservé — sans que votre équipe décroche.',
     voiceText:
-      'L’agent téléphonique Weissmann AI en conditions réelles : voix naturelle, vraie réservation de rendez-vous, transfert humain quand cela compte. Un composant du système — écoutez-le ici.',
+      'L’agent téléphonique Weissmann AI en conditions réelles : voix naturelle, un vrai rendez-vous réservé, transfert humain quand cela compte. C’est l’appel que vous n’aurez plus jamais à prendre.',
     voiceCta: 'L’agent téléphonique IA',
     calcEyebrow: 'Calculer plutôt que deviner',
     pricingEyebrow: 'Tarifs transparents',
@@ -659,6 +717,55 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
+  <!-- ── Self-playing call replay: ring → book → WhatsApp → calendar ─ -->
+  <section class="section callreplay" data-callreplay>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{replay.eyebrow}</span>
+        <h2>{replay.title}</h2>
+        <p class="creplay-note">{replay.example}</p>
+      </div>
+      <div class="creplay-grid">
+        <div class="device creplay-device">
+          <span class="device__notch"></span>
+          <figure class="callcard">
+            <figcaption class="callcard__bar">
+              <span class="callcard__live"><span class="callcard__pulse"></span>{c.mock.status}</span>
+              <span class="callcard__time">00:08</span>
+            </figcaption>
+            <div class="callcard__thread">
+              {replay.turns.map((turn: string, i: number) => (
+                <p class={`bubble ${i % 2 === 0 ? 'bubble--caller' : 'bubble--ai'} creplay-item`} style={`--s:${i}`}>{turn}</p>
+              ))}
+              <div class="callcard__wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </figure>
+        </div>
+        <div class="creplay-payoff">
+          <div class="wa-card creplay-item" style="--s:4">
+            <div class="wa-card__head"><Icon name="message" size={16} />{replay.wa.title}</div>
+            <div class="wa-card__body">
+              {replay.wa.lines.map((line: string, i: number) => (
+                <p class={`wa-card__line ${i === 0 ? 'wa-card__line--strong' : ''}`}>{line}</p>
+              ))}
+            </div>
+          </div>
+          <div class="cal-tile creplay-item" style="--s:5">
+            <span class="cal-tile__icon"><Icon name="calendar-check" size={18} /></span>
+            <div>
+              <p class="cal-tile__time">{replay.cal.time}</p>
+              <p class="cal-tile__title">{replay.cal.title}</p>
+              <p class="cal-tile__note">{replay.cal.note}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="center mt-5">
+        <a class="btn btn--primary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{t(locale, 'cta.callAi')} · {SITE.aiPhoneDisplay}</a>
+      </p>
+    </div>
+  </section>
+
   <!-- ── Live click-to-call: talk to the real AI now ──────── -->
   <section class="section livecall">
     <div class="container">
@@ -718,9 +825,17 @@ const websiteStarter = getPackage('website-starter');
       <div class="scenarios">
         {scen.items.map((it, i) => (
           <div class="scenario reveal" style={`--i:${i}`}>
+            <span class="scenario__tag">{scen.example}</span>
             <div class="scenario__name"><span class="feat-icon"><Icon name={SCENARIO_ICONS[i]} size={20} /></span>{it.name}</div>
             <p class="scenario__does">{it.does}</p>
             <p class="scenario__try">{it.phrase}</p>
+            <details class="scenario__reveal">
+              <summary class="scenario__summary">{scen.reveal}</summary>
+              <div class="scenario__answer">
+                <p class="bubble bubble--ai">{it.answer}</p>
+                <span class="scenario__result"><Icon name="check" size={15} />{it.result}</span>
+              </div>
+            </details>
           </div>
         ))}
       </div>
@@ -1116,6 +1231,40 @@ const websiteStarter = getPackage('website-starter');
   .scenario__does { color: var(--ink-mute); font-size: var(--fs-300); margin: 0 0 var(--space-3); }
   .scenario__try { font-size: var(--fs-300); color: var(--ink); border-left: 3px solid var(--accent); padding-left: 0.7rem; font-style: italic; margin: 0; }
   @media (prefers-reduced-motion: no-preference) { .scenario.reveal { transition-delay: calc(var(--i, 0) * 60ms); } }
+  .scenario__tag { display: inline-block; margin-bottom: 0.6rem; font-size: var(--fs-200); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mute); background: var(--paper-soft); border: 1px solid var(--line); border-radius: 999px; padding: 0.1rem 0.55rem; }
+  .scenario__reveal { margin-top: var(--space-3); border-top: 1px solid var(--line); padding-top: var(--space-3); }
+  .scenario__summary { cursor: pointer; font-size: var(--fs-300); font-weight: 600; color: var(--accent); list-style: none; display: inline-flex; align-items: center; gap: 0.4rem; }
+  .scenario__summary::-webkit-details-marker { display: none; }
+  .scenario__summary::after { content: '+'; font-weight: 700; font-size: 1.05em; line-height: 1; }
+  .scenario__reveal[open] .scenario__summary::after { content: '–'; }
+  .scenario__answer { display: flex; flex-direction: column; align-items: flex-start; gap: 0.6rem; margin-top: var(--space-3); }
+  .scenario__answer .bubble--ai { align-self: stretch; max-width: 100%; }
+  .scenario__result { display: inline-flex; align-items: center; gap: 0.35rem; font-size: var(--fs-200); font-weight: 700; color: #1a9d5a; background: color-mix(in srgb, #1a9d5a 12%, transparent); border-radius: 999px; padding: 0.25rem 0.7rem; }
+  .scenario__result .wi { color: currentColor; }
+
+  /* ── Self-playing call replay ─────────────────────────── */
+  .callreplay .creplay-note { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: var(--space-3); padding: 0.4rem 0.9rem; border: 1px solid var(--line); border-radius: 999px; background: var(--paper-soft); color: var(--ink-mute); font-size: var(--fs-200); font-weight: 500; }
+  .callreplay .creplay-note::before { content: ''; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--accent); flex: none; }
+  .creplay-grid { display: grid; gap: var(--space-5); align-items: center; justify-items: center; margin-top: var(--space-5); }
+  @media (min-width: 900px) { .creplay-grid { grid-template-columns: 21rem 1fr; align-items: center; } }
+  .creplay-device { width: 100%; max-width: 21rem; }
+  .creplay-payoff { display: grid; gap: var(--space-4); width: 100%; max-width: 27rem; }
+  .wa-card { border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--paper); box-shadow: var(--shadow); }
+  .wa-card__head { display: flex; align-items: center; gap: 0.5rem; background: #25D366; color: #fff; padding: 0.7rem 1rem; font-size: var(--fs-300); font-weight: 700; }
+  .wa-card__body { padding: 0.9rem 1rem; display: grid; gap: 0.35rem; }
+  .wa-card__line { margin: 0; font-size: var(--fs-300); color: var(--ink-soft); }
+  .wa-card__line--strong { font-weight: 700; color: var(--ink); }
+  .cal-tile { display: flex; align-items: center; gap: 0.9rem; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 0.9rem 1rem; background: var(--paper-soft); }
+  .cal-tile__icon { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 12px; background: var(--accent-soft); color: var(--accent); flex: none; }
+  .cal-tile p { margin: 0; }
+  .cal-tile__time { font-weight: 700; color: var(--ink); font-size: var(--fs-300); }
+  .cal-tile__title { color: var(--ink-soft); font-size: var(--fs-300); }
+  .cal-tile__note { color: var(--ink-mute); font-size: var(--fs-200); }
+  /* Sequential reveal is applied ONLY when JS marks the section enhanced AND motion is allowed. */
+  @media (prefers-reduced-motion: no-preference) {
+    .callreplay.is-enhanced .creplay-item { opacity: 0; transform: translateY(8px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .callreplay.is-enhanced.is-playing .creplay-item { opacity: 1; transform: none; transition-delay: calc(var(--s, 0) * 850ms); }
+  }
 
   /* ── Trust strip ──────────────────────────────────────── */
   .truststrip {
@@ -1292,5 +1441,23 @@ const websiteStarter = getPackage('website-starter');
     v.addEventListener('ended', function () {
       if (window.wmEvent) window.wmEvent('demo_complete', { demo: 'homepage_video' });
     });
+  })();
+
+  // Self-playing call replay — progressive enhancement only.
+  // No JS or prefers-reduced-motion => the replay is already fully visible (see CSS).
+  (function () {
+    var el = document.querySelector('[data-callreplay]');
+    if (!el) return;
+    if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+    el.classList.add('is-enhanced');
+    var start = function () { el.classList.add('is-playing'); };
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { start(); io.disconnect(); } });
+      }, { threshold: 0.3 });
+      io.observe(el);
+    } else {
+      start();
+    }
   })();
 </script>

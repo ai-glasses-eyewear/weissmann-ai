@@ -12,14 +12,17 @@ interface Props {
   pkg: PricingPackage;
   locale: Locale;
   highlight?: boolean;
+  badge?: string;
 }
-const { pkg, locale, highlight = false } = Astro.props;
+const { pkg, locale, highlight = false, badge } = Astro.props;
 const p = localePrefix(locale);
 const POPULAR: Record<Locale, string> = { de: 'Beliebteste', en: 'Most popular', it: 'Più scelto', fr: 'Le plus choisi' };
+const PER_DAY: Record<Locale, (n: number) => string> = { de: (n) => `≈ CHF ${n}/Tag`, en: (n) => `≈ CHF ${n}/day`, it: (n) => `≈ CHF ${n}/giorno`, fr: (n) => `≈ CHF ${n}/jour` };
+const perDay = pkg.interval === 'month' && pkg.price ? Math.round(pkg.price / 30) : null;
 ---
 
 <article class={`card pricing-card ${highlight ? 'card--raised pricing-card--highlight' : ''}`}>
-  {highlight && <span class="pricing-card__badge">{POPULAR[locale]}</span>}
+  {highlight && <span class="pricing-card__badge">{badge ?? POPULAR[locale]}</span>}
   <h3>{pkg.name[locale]}</h3>
   <p class="pricing-card__price">
     {pkg.price === null ? (
@@ -32,6 +35,7 @@ const POPULAR: Record<Locale, string> = { de: 'Beliebteste', en: 'Most popular',
           {pkg.interval === 'month' ? t(locale, 'price.month') : t(locale, 'price.once')}
         </span>
         <span class="pricing-card__vat">{t(locale, 'price.vatShort')}</span>
+        {perDay && <span class="pricing-card__perday">{PER_DAY[locale](perDay)}</span>}
       </>
     )}
   </p>
@@ -85,6 +89,7 @@ const POPULAR: Record<Locale, string> = { de: 'Beliebteste', en: 'Most popular',
   .pricing-card__from { font-weight: 600; }
   .pricing-card__interval { color: var(--ink-mute); margin-left: 0.35rem; font-size: var(--fs-300); }
   .pricing-card__vat { display: block; font-size: var(--fs-200); color: var(--ink-mute); margin-top: 0.15rem; }
+  .pricing-card__perday { display: block; font-size: var(--fs-200); color: var(--ink-mute); margin-top: 0.1rem; }
   .pricing-card__desc { margin-top: var(--space-2); font-size: var(--fs-300); }
   .pricing-card__disclosures {
     margin: var(--space-3) 0 0;

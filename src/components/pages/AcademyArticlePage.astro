@@ -11,7 +11,7 @@ import { type LocalePaths, pillarHome, urlFor, relFor } from '../../data/routes'
 import { type AcademyArticle, type AcademyCluster, clusterPaths, articlePaths, spokesOf } from '../../data/academy';
 import { getService, servicePaths } from '../../data/services';
 import { matchGlossaryTerms, termPaths } from '../../data/glossary';
-import { breadcrumbs, faqPage, CONTENT_DATE } from '../../data/schema';
+import { breadcrumbs, faqPage, CONTENT_DATE, FOUNDER_ID } from '../../data/schema';
 import { t } from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
@@ -73,13 +73,7 @@ const articleSchema = {
   image: `${SITE.domain}/og-default.png`,
   mainEntityOfPage: urlFor(locale, localePaths),
   about: (article.keyEntities ?? []).slice(0, 12),
-  author: {
-    '@type': 'Person',
-    name: author,
-    jobTitle: authorRole,
-    url: `${SITE.domain}/ueber-uns/`,
-    ...('linkedin' in founder && founder.linkedin ? { sameAs: [founder.linkedin] } : {}),
-  },
+  author: { '@id': FOUNDER_ID },
   publisher: { '@id': `${SITE.domain}/#organization` },
   isPartOf: { '@type': 'CollectionPage', name: cluster.name[locale], url: urlFor(locale, clusterPaths(cluster)) },
 };

@@ -10,6 +10,9 @@ import { PACKAGES, type PricingPackage } from './pricing';
 
 const ORG_ID = `${SITE.domain}/#organization`;
 
+/** Stable @id for the founder Person entity (consolidated author/expert node). */
+export const FOUNDER_ID = `${SITE.domain}/#giovanna-carpi`;
+
 /**
  * Content release/review date — a truthful freshness floor used for Article
  * dates and sitemap <lastmod>. Update when content is substantively reviewed.
@@ -61,6 +64,7 @@ export function organization(locale: Locale) {
     sameAs: Object.values(SITE.social),
     founder: SITE.founders.map((f) => ({
       '@type': 'Person',
+      ...(f.name === SITE.founders[0].name ? { '@id': FOUNDER_ID } : {}),
       name: f.name,
       jobTitle: f.role[locale],
       ...('linkedin' in f && f.linkedin ? { sameAs: [f.linkedin] } : {}),
@@ -111,6 +115,42 @@ export function breadcrumbs(locale: Locale, items: { name: string; path: string 
   };
 }
 
+/**
+ * Standalone founder Person entity with a stable @id, reused as the author of
+ * every Academy article to consolidate one real, named expert (E-E-A-T).
+ */
+export function founderPerson(locale: Locale) {
+  const f = SITE.founders[0];
+  return {
+    '@type': 'Person',
+    '@id': FOUNDER_ID,
+    name: f.name,
+    jobTitle: f.role[locale],
+    worksFor: { '@id': ORG_ID },
+    url: `${SITE.domain}/ueber-uns/`,
+    ...('linkedin' in f && f.linkedin ? { sameAs: [f.linkedin] } : {}),
+    knowsAbout: [
+      'Artificial intelligence',
+      'AI phone assistants',
+      'Conversational AI',
+      'Search engine optimization',
+      'Generative engine optimization',
+      'AI automation',
+    ],
+  };
+}
+
+/** Wraps the About page as the founder's canonical ProfilePage. */
+export function profilePage(locale: Locale, path: string) {
+  return {
+    '@type': 'ProfilePage',
+    '@id': `${localeUrl(locale, path)}#profilepage`,
+    url: localeUrl(locale, path),
+    mainEntity: { '@id': FOUNDER_ID },
+    isPartOf: { '@id': `${SITE.domain}/#website` },
+  };
+}
+
 export function faqPage(questions: { q: string; a: string }[]) {
   return {
     '@type': 'FAQPage',
@@ -132,17 +172,31 @@ export function serviceWithOffer(locale: Locale, pkg: PricingPackage, path: stri
     '@type': 'Service',
     name: pkg.name[locale],
     description: pkg.description[locale],
+    serviceType:
+      pkg.category === 'phone-agent'
+        ? 'AI phone assistant'
+        : pkg.category === 'seo'
+          ? 'Search engine optimization'
+          : pkg.category === 'geo'
+            ? 'Generative engine optimization'
+            : pkg.category === 'ads'
+              ? 'Google Ads management'
+              : 'Web development',
     provider: { '@id': ORG_ID },
-    areaServed: 'CH',
+    areaServed: { '@type': 'Country', name: 'Switzerland' },
     url: localeUrl(locale, path),
   };
   if (pkg.schemaOffer && pkg.price !== null) {
+    // Rolling end-of-year validity derived from the content review date.
+    const priceValidUntil = `${CONTENT_DATE.slice(0, 4)}-12-31`;
     service.offers = {
       '@type': 'Offer',
       price: pkg.price,
       priceCurrency: pkg.currency,
+      priceValidUntil,
       url: pkg.stripeLink ?? localeUrl(locale, path),
       availability: 'https://schema.org/InStock',
+      eligibleRegion: { '@type': 'Country', name: 'Switzerland' },
       ...(pkg.interval === 'month'
         ? {
             priceSpecification: {
