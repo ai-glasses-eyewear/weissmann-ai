@@ -911,23 +911,32 @@ const websiteStarter = getPackage('website-starter');
   <!-- ── AI Smart Glasses — ecosystem cross-sell → ai-eyewear.ch ─ -->
   <section class="section section--alt glasses-section">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">{c.glasses.eyebrow}</span>
-        <h2>{c.glasses.title}</h2>
-        <p>{c.glasses.lead}</p>
+      <div class="glasses-layout">
+        <figure class="glasses-visual reveal">
+          <svg class="glasses-illu" viewBox="0 0 520 240" fill="none" role="img" aria-label={c.glasses.title}>
+            <path d="M60 96 C40 88 24 86 12 92" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <path d="M460 96 C480 88 496 86 508 92" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <rect x="60" y="72" width="170" height="96" rx="34" stroke="currentColor" stroke-width="5"/>
+            <rect x="290" y="72" width="170" height="96" rx="34" stroke="currentColor" stroke-width="5"/>
+            <path d="M230 100 C250 86 270 86 290 100" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <path d="M312 132 h64 M312 150 h40" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
+            <circle cx="428" cy="92" r="6" fill="var(--accent)"/>
+          </svg>
+        </figure>
+        <div class="glasses-copy reveal">
+          <span class="eyebrow">{c.glasses.eyebrow}</span>
+          <h2>{c.glasses.title}</h2>
+          <p class="glasses-lead">{c.glasses.lead}</p>
+          <ul class="glasses-list">
+            {c.glasses.features.map((f: any, i: number) => (
+              <li><span class="feat-icon glasses-list__icon"><Icon name={GLASSES_ICONS[i]} size={18} /></span>{f.label}</li>
+            ))}
+          </ul>
+          <p class="mt-4">
+            <a class="btn btn--primary" href="https://ai-eyewear.ch" rel="noopener" target="_blank" data-track="glasses_view">{c.glasses.ctaLabel} →</a>
+          </p>
+        </div>
       </div>
-      <div class="glasses-grid">
-        {c.glasses.features.map((f: any, i: number) => (
-          <div class="glasses-feature reveal">
-            <span class="glasses-feature__icon"><Icon name={GLASSES_ICONS[i]} size={22} /></span>
-            <h3>{f.label}</h3>
-            <p>{f.text}</p>
-          </div>
-        ))}
-      </div>
-      <p class="mt-5">
-        <a class="btn btn--primary" href="https://ai-eyewear.ch" rel="noopener" target="_blank" data-track="glasses_view">{c.glasses.ctaLabel} →</a>
-      </p>
     </div>
   </section>
 
@@ -1256,10 +1265,15 @@ const websiteStarter = getPackage('website-starter');
   .eco-card__arrow { position: absolute; top: var(--space-4); right: var(--space-5); color: var(--accent); font-size: var(--fs-500); }
 
   /* ── AI Smart Glasses (ecosystem cross-sell) ──────────── */
-  .glasses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: var(--space-4); margin-top: var(--space-5); }
-  .glasses-feature { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-4); background: var(--paper); }
-  .glasses-feature h3 { font-size: var(--fs-400); margin: 0 0 0.35rem; color: var(--ink); }
-  .glasses-feature p { margin: 0; color: var(--ink-mute); font-size: var(--fs-300); }
+  .glasses-layout { display: grid; gap: var(--space-5); align-items: center; }
+  @media (min-width: 820px) { .glasses-layout { grid-template-columns: 1fr 1fr; gap: var(--space-6); } }
+  .glasses-visual { margin: 0; background: var(--accent-soft); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-6) var(--space-5); display: grid; place-items: center; }
+  .glasses-illu { width: 100%; max-width: 26rem; color: var(--ink); }
+  .glasses-lead { margin-top: var(--space-3); color: var(--ink-mute); }
+  .glasses-list { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: grid; gap: var(--space-2); }
+  @media (min-width: 480px) { .glasses-list { grid-template-columns: 1fr 1fr; } }
+  .glasses-list li { display: flex; align-items: center; gap: 0.7rem; color: var(--ink-soft); font-size: var(--fs-300); }
+  .glasses-list__icon { width: 1.9rem; height: 1.9rem; margin: 0; flex: none; }
 </style>
 
 <script is:inline>
