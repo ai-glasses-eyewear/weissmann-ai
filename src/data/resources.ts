@@ -43,6 +43,21 @@ export const RESOURCES: ResourceDef[] = [
     relatedServices: ['phone-assistant'],
   },
   {
+    id: 'phone-buyer-checklist',
+    type: 'checklist',
+    order: 2,
+    status: 'live',
+    slug: { de: 'ki-telefonassistent-checkliste', en: 'ai-phone-assistant-checklist', it: 'checklist-assistente-telefonico-ai', fr: 'checklist-agent-telephonique-ia' },
+    name: { de: 'Kaufberater-Checkliste: KI-Telefonassistent', en: 'Buyer’s Checklist: AI phone assistant', it: 'Checklist per la scelta: assistente telefonico AI', fr: 'Checklist de l’acheteur : agent téléphonique IA' },
+    tagline: {
+      de: '13 Fragen, die einen KI-Telefonassistenten, der Kunden gewinnt, von einem trennen, der still Kunden verliert.',
+      en: '13 questions that separate a phone AI that wins you customers from one that quietly loses them.',
+      it: '13 domande che distinguono un assistente telefonico AI che conquista clienti da uno che li perde in silenzio.',
+      fr: '13 questions qui séparent un agent téléphonique IA qui gagne des clients de celui qui en perd en silence.',
+    },
+    relatedServices: ['phone-assistant'],
+  },
+  {
     id: 'ai-readiness-assessment',
     type: 'checklist', order: 2, status: 'live',
     slug: { de: 'ki-readiness-check', en: 'ai-readiness-assessment', it: 'valutazione-maturita-ai', fr: 'evaluation-maturite-ia' },
