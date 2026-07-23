@@ -7,7 +7,7 @@ import Layout from '../../layouts/Layout.astro';
 import PricingCard from '../PricingCard.astro';
 import Faq from '../Faq.astro';
 import Icon from '../Icon.astro';
-import { localePrefix, localeUrl, type Locale } from '../../data/site';
+import { SITE, localePrefix, localeUrl, type Locale } from '../../data/site';
 import { t } from '../../i18n/ui';
 import { getPackage } from '../../data/pricing';
 import { getService, servicePaths } from '../../data/services';
@@ -66,6 +66,11 @@ const C: Record<Locale, any> = {
     ],
     ctaTitle: 'Hören Sie selbst – und starten Sie ohne Risiko',
     ctaText: 'Fordern Sie eine unverbindliche Demo an. Wir zeigen Ihnen, wie der Assistent mit Ihrer Wissensbasis klingt.',
+    heroEyebrow: 'KI-Telefonassistent · 24/7 · DE·EN·FR·IT',
+    heroReassure: 'Kostenlos & unverbindlich – Antwort in Sekunden.',
+    heroChips: ['Antwortet in Sekunden', 'Keine Setup-Gebühr', 'In wenigen Tagen live', 'Daten in der Schweiz/EU'],
+    trustRow: 'Daten in der Schweiz/EU · nDSG- & DSGVO-konform · Schweizer Unternehmen in Zürich · jederzeit Übergabe an Menschen',
+    riskReversal: 'Bevor Sie sich entscheiden: Rufen Sie unsere Live-KI an oder fordern Sie eine kostenlose Demo mit Ihrer eigenen Wissensbasis an. Keine Setup-Gebühr · Live-Test mit Ihrem Team vor dem Start · jederzeit Übergabe an Menschen.',
   },
   en: {
     metaTitle: 'AI Phone Agent for Swiss Businesses | Weissmann AI',
@@ -111,6 +116,11 @@ const C: Record<Locale, any> = {
     ],
     ctaTitle: 'Hear it yourself — and start without risk',
     ctaText: 'Request a no-obligation demo. We’ll show you how the agent sounds with your knowledge base.',
+    heroEyebrow: 'AI phone agent · 24/7 · DE·EN·FR·IT',
+    heroReassure: 'Free & no obligation – answers in seconds.',
+    heroChips: ['Answers in seconds', 'No setup fee', 'Live in days', 'Data in Switzerland/EU'],
+    trustRow: 'Data in Switzerland/EU · nDSG- & GDPR-aligned · Swiss company in Zurich · human handover any time',
+    riskReversal: 'Before you decide: call our live AI or request a free demo configured with your own knowledge base. No setup fee · live test with your team before go-live · human handover any time.',
   },
   it: {
     metaTitle: 'Assistente telefonico AI per aziende svizzere | Weissmann AI',
@@ -156,6 +166,11 @@ const C: Record<Locale, any> = {
     ],
     ctaTitle: 'Ascoltatelo voi stessi — e iniziate senza rischi',
     ctaText: 'Richiedete una demo senza impegno. Vi mostriamo come suona l’assistente con la vostra base di conoscenza.',
+    heroEyebrow: 'Assistente telefonico AI · 24/7 · DE·EN·FR·IT',
+    heroReassure: 'Gratis e senza impegno – risponde in pochi secondi.',
+    heroChips: ['Risponde in pochi secondi', 'Nessun costo di attivazione', 'Attivo in pochi giorni', 'Dati in Svizzera/UE'],
+    trustRow: 'Dati in Svizzera/UE · conforme a nLPD e GDPR · azienda svizzera a Zurigo · trasferimento a persone in qualsiasi momento',
+    riskReversal: 'Prima di decidere: chiamate la nostra AI dal vivo o richiedete una demo gratuita configurata con la vostra base di conoscenza. Nessun costo di attivazione · test dal vivo con il vostro team prima dell’avvio · trasferimento a persone in qualsiasi momento.',
   },
   fr: {
     metaTitle: 'Agent téléphonique IA pour entreprises suisses | Weissmann AI',
@@ -201,6 +216,11 @@ const C: Record<Locale, any> = {
     ],
     ctaTitle: 'Écoutez par vous-même — et démarrez sans risque',
     ctaText: 'Demandez une démo sans engagement. Nous vous montrons comment l’agent sonne avec votre base de connaissances.',
+    heroEyebrow: 'Agent téléphonique IA · 24/7 · DE·EN·FR·IT',
+    heroReassure: 'Gratuit et sans engagement – réponse en quelques secondes.',
+    heroChips: ['Répond en quelques secondes', 'Aucuns frais d’installation', 'Opérationnel en quelques jours', 'Données en Suisse/UE'],
+    trustRow: 'Données en Suisse/UE · conforme nLPD et RGPD · entreprise suisse à Zurich · transfert à un humain à tout moment',
+    riskReversal: 'Avant de décider : appelez notre IA en direct ou demandez une démo gratuite configurée avec votre propre base de connaissances. Aucuns frais d’installation · test en conditions réelles avec votre équipe avant le lancement · transfert à un humain à tout moment.',
   },
 };
 const c = C[locale];
@@ -226,13 +246,24 @@ const schema = [
 <Layout locale={locale} path={PATH} canonical={canonicalUrl} title={c.metaTitle} description={c.metaDesc} schema={schema}>
   <section class="section">
     <div class="container">
-      <span class="eyebrow">Weissmann AI</span>
+      <span class="eyebrow">{c.heroEyebrow}</span>
       <h1 style="max-width:44rem;">{c.h1}</h1>
       <p class="prose mt-4" style="font-size:var(--fs-500);">{c.intro}</p>
       <div class="mt-5" style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
-        <a class="btn btn--primary" href={`${p}/kontakt/`} data-track="request_demo">{t(locale, 'cta.demo')}</a>
+        <a class="btn btn--primary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{t(locale, 'cta.callAi')} · {SITE.aiPhoneDisplay}</a>
+        <a class="btn btn--secondary" href={`${p}/kontakt/`} data-track="request_demo">{t(locale, 'cta.demo')}</a>
         <a class="btn btn--secondary" href="#pricing" data-track="pricing_view">{c.pricingTitle}</a>
       </div>
+      <p class="muted mt-3" style="font-size:var(--fs-300);">{c.heroReassure}</p>
+      <ul class="mt-3" style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:0.5rem 1.1rem;font-size:var(--fs-300);color:var(--ink-mute);">
+        {c.heroChips.map((chip: string) => <li style="display:inline-flex;align-items:center;gap:0.4rem;"><Icon name="check" size={15} />{chip}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container">
+      <p class="muted" style="display:inline-flex;align-items:center;gap:0.55rem;flex-wrap:wrap;line-height:1.5;"><Icon name="shield" size={16} />{c.trustRow}</p>
     </div>
   </section>
 
@@ -278,6 +309,10 @@ const schema = [
         <PricingCard pkg={premium} locale={locale} highlight />
         <PricingCard pkg={enterprise} locale={locale} />
       </div>
+      <div class="card center mt-5" style="max-width:52rem;margin-inline:auto;">
+        <p class="prose" style="margin-inline:auto;">{c.riskReversal}</p>
+        <a class="btn btn--primary mt-4" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{t(locale, 'cta.callAi')} · {SITE.aiPhoneDisplay}</a>
+      </div>
       <p class="center muted mt-4">{t(locale, 'price.vatNote')}</p>
     </div>
   </section>
@@ -293,7 +328,8 @@ const schema = [
       <h2>{c.ctaTitle}</h2>
       <p class="mt-3" style="max-width:36rem;margin-inline:auto;">{c.ctaText}</p>
       <div class="mt-4" style="display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;">
-        <a class="btn btn--primary" href={`${p}/kontakt/`} data-track="request_demo">{t(locale, 'cta.demo')}</a>
+        <a class="btn btn--primary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{t(locale, 'cta.callAi')} · {SITE.aiPhoneDisplay}</a>
+        <a class="btn btn--secondary" href={`${p}/kontakt/`} data-track="request_demo">{t(locale, 'cta.demo')}</a>
         <a class="btn btn--secondary" href="https://wa.me/41783459788?text=Hello%20I%20am%20interested%20in%20learning%20more%20about%20your%20service" rel="noopener" target="_blank" data-track="whatsapp_click">{t(locale, 'cta.whatsapp')}</a>
       </div>
     </div>

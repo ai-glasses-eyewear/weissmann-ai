@@ -8,6 +8,8 @@ import Layout from '../../layouts/Layout.astro';
 import PricingCard from '../PricingCard.astro';
 import Faq from '../Faq.astro';
 import { localePrefix, type Locale } from '../../data/site';
+import { relFor } from '../../data/routes';
+import { getService, servicePaths } from '../../data/services';
 import { t } from '../../i18n/ui';
 import { PACKAGES } from '../../data/pricing';
 import { webPage, breadcrumbs, faqPage, allPackageServices } from '../../data/schema';
@@ -25,12 +27,21 @@ const C: Record<Locale, any> = {
     h1: 'Klare Preise. Klarer Umfang. Keine Überraschungen.',
     intro:
       'Jedes Paket hat einen definierten Umfang, transparente Grenzen und ein klares Ziel. Was nicht passt, besprechen wir ehrlich – bevor Sie etwas kaufen.',
+    tldr:
+      'Kurz: KI-Telefonassistent ab CHF 350/Monat, Websites ab CHF 2’490, SEO ab CHF 890/Monat, GEO ab CHF 990/Monat, Google Ads ab CHF 690/Monat — alle Preise exkl. MwSt.',
     groups: {
       'phone-agent': 'KI-Telefonassistent',
       website: 'Websites',
       seo: 'SEO',
       geo: 'GEO – Sichtbarkeit in der KI-Suche',
       ads: 'Google Ads',
+    },
+    moreLinks: {
+      'phone-agent': 'Mehr zum KI-Telefonassistenten',
+      website: 'Mehr zur KI-Webentwicklung',
+      seo: 'Mehr zu SEO',
+      geo: 'Mehr zu GEO – Generative Engine Optimization',
+      ads: 'Mehr zu Google Ads',
     },
     faqTitle: 'Häufige Fragen zu Preisen und Verträgen',
     faq: [
@@ -50,12 +61,21 @@ const C: Record<Locale, any> = {
     h1: 'Clear prices. Clear scope. No surprises.',
     intro:
       'Every package has a defined scope, transparent limits and a clear goal. If something doesn’t fit, we tell you honestly — before you buy anything.',
+    tldr:
+      'In short: AI phone agent from CHF 350/month, websites from CHF 2,490, SEO from CHF 890/month, GEO from CHF 990/month, Google Ads from CHF 690/month — all prices excl. VAT.',
     groups: {
       'phone-agent': 'AI Phone Agent',
       website: 'Websites',
       seo: 'SEO',
       geo: 'GEO – AI search visibility',
       ads: 'Google Ads',
+    },
+    moreLinks: {
+      'phone-agent': 'More about the AI phone assistant',
+      website: 'More about AI web development',
+      seo: 'More about SEO',
+      geo: 'More about GEO – Generative Engine Optimization',
+      ads: 'More about Google Ads',
     },
     faqTitle: 'Frequently asked questions about pricing and contracts',
     faq: [
@@ -75,12 +95,21 @@ const C: Record<Locale, any> = {
     h1: 'Prezzi chiari. Perimetro chiaro. Nessuna sorpresa.',
     intro:
       'Ogni pacchetto ha un perimetro definito, limiti trasparenti e un obiettivo chiaro. Se qualcosa non è adatto, ve lo diciamo onestamente — prima che acquistiate.',
+    tldr:
+      'In breve: assistente telefonico AI da CHF 350/mese, siti web da CHF 2’490, SEO da CHF 890/mese, GEO da CHF 990/mese, Google Ads da CHF 690/mese — tutti i prezzi IVA esclusa.',
     groups: {
       'phone-agent': 'Assistente telefonico AI',
       website: 'Siti web',
       seo: 'SEO',
       geo: 'GEO – Visibilità nella ricerca AI',
       ads: 'Google Ads',
+    },
+    moreLinks: {
+      'phone-agent': 'Scopri l’assistente telefonico AI',
+      website: 'Scopri lo sviluppo siti web AI',
+      seo: 'Scopri il servizio SEO',
+      geo: 'Scopri GEO – Generative Engine Optimization',
+      ads: 'Scopri Google Ads',
     },
     faqTitle: 'Domande frequenti su prezzi e contratti',
     faq: [
@@ -100,12 +129,21 @@ const C: Record<Locale, any> = {
     h1: 'Des prix clairs. Un périmètre clair. Pas de surprises.',
     intro:
       'Chaque forfait a un périmètre défini, des limites transparentes et un objectif clair. Si quelque chose ne convient pas, nous vous le disons honnêtement — avant tout achat.',
+    tldr:
+      'En bref : agent téléphonique IA dès CHF 350/mois, sites web dès CHF 2’490, SEO dès CHF 890/mois, GEO dès CHF 990/mois, Google Ads dès CHF 690/mois — tous les prix hors TVA.',
     groups: {
       'phone-agent': 'Agent téléphonique IA',
       website: 'Sites web',
       seo: 'SEO',
       geo: 'GEO – Visibilité dans la recherche IA',
       ads: 'Google Ads',
+    },
+    moreLinks: {
+      'phone-agent': 'En savoir plus sur l’assistant téléphonique IA',
+      website: 'En savoir plus sur le développement web IA',
+      seo: 'En savoir plus sur le SEO',
+      geo: 'En savoir plus sur le GEO – Generative Engine Optimization',
+      ads: 'En savoir plus sur Google Ads',
     },
     faqTitle: 'Questions fréquentes sur les tarifs et contrats',
     faq: [
@@ -122,6 +160,22 @@ const C: Record<Locale, any> = {
 const c = C[locale];
 
 const order: Array<keyof typeof c.groups> = ['phone-agent', 'website', 'seo', 'geo', 'ads'];
+
+// Each price group links to its canonical service page (locale-correct, via the
+// route registry — never a hardcoded URL). Groups whose service is missing or
+// not live simply render without a link.
+const SERVICE_FOR_GROUP: Record<string, string> = {
+  'phone-agent': 'phone-assistant',
+  website: 'websites',
+  seo: 'seo',
+  geo: 'geo',
+  ads: 'google-ads',
+};
+const serviceLinkFor = (cat: string): { href: string; label: string } | null => {
+  const s = getService(SERVICE_FOR_GROUP[cat]);
+  if (!s || s.status !== 'live') return null;
+  return { href: relFor(locale, servicePaths(s)), label: c.moreLinks[cat] };
+};
 
 const schema = [
   webPage(locale, PATH, c.metaTitle, c.metaDesc),
@@ -140,14 +194,22 @@ const schema = [
       <span class="eyebrow">{t(locale, 'nav.pricing')}</span>
       <h1 style="max-width:40rem;">{c.h1}</h1>
       <p class="prose mt-4" style="font-size:var(--fs-500);">{c.intro}</p>
+      <p class="muted mt-3" style="max-width:48rem;">{c.tldr}</p>
       <p class="muted mt-3">{t(locale, 'price.vatNote')}</p>
     </div>
   </section>
 
-  {order.map((cat, i) => (
+  {order.map((cat, i) => {
+    const link = serviceLinkFor(cat as string);
+    return (
     <section class={`section ${i % 2 === 0 ? 'section--alt' : ''}`}>
       <div class="container">
-        <div class="section-head"><h2>{c.groups[cat]}</h2></div>
+        <div class="section-head">
+          <h2>{c.groups[cat]}</h2>
+          {link && (
+            <p class="muted mt-3"><a href={link.href} data-track="service_view">{link.label} →</a></p>
+          )}
+        </div>
         <div class="grid grid--3">
           {PACKAGES.filter((pkg) => pkg.category === cat).map((pkg) => (
             <PricingCard pkg={pkg} locale={locale} highlight={pkg.id === 'phone-premium' || pkg.id === 'website-business'} />
@@ -155,7 +217,8 @@ const schema = [
         </div>
       </div>
     </section>
-  ))}
+    );
+  })}
 
   <section class="section">
     <div class="container">

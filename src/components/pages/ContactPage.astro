@@ -22,6 +22,11 @@ const C: Record<Locale, any> = {
     intro:
       'Erzählen Sie uns kurz, wo Sie stehen und was Sie erreichen möchten. Wir melden uns innerhalb eines Arbeitstags – ehrlich, konkret und ohne Verkaufsdruck.',
     directTitle: 'Direkter Draht',
+    callaiHeading: 'Noch nicht bereit fürs Formular?',
+    callaiNote: 'Sie sprechen mit unserer echten KI – kostenlos und unverbindlich.',
+    directLead: 'Lieber direkt anrufen oder schreiben?',
+    callLabel: 'Anrufen:',
+    emailLabel: 'E-Mail:',
     services: [
       'KI-Telefonassistent',
       'Website',
@@ -42,6 +47,11 @@ const C: Record<Locale, any> = {
     intro:
       'Tell us briefly where you stand and what you want to achieve. We’ll get back to you within one business day — honest, concrete and without sales pressure.',
     directTitle: 'Direct line',
+    callaiHeading: 'Not ready for a form?',
+    callaiNote: 'You’ll be speaking with our real AI assistant – free and no obligation.',
+    directLead: 'Prefer to talk instead?',
+    callLabel: 'Call us:',
+    emailLabel: 'Email:',
     services: [
       'AI Phone Agent',
       'Website',
@@ -62,6 +72,11 @@ const C: Record<Locale, any> = {
     intro:
       'Raccontateci brevemente a che punto siete e cosa volete raggiungere. Vi rispondiamo entro un giorno lavorativo — con onestà, concretezza e senza pressione commerciale.',
     directTitle: 'Linea diretta',
+    callaiHeading: 'Non ancora pronti per il modulo?',
+    callaiNote: 'Parlate con la nostra vera AI – gratis e senza impegno.',
+    directLead: 'Preferite contattarci direttamente?',
+    callLabel: 'Chiamateci:',
+    emailLabel: 'E-mail:',
     services: [
       'Assistente telefonico AI',
       'Sito web',
@@ -82,6 +97,11 @@ const C: Record<Locale, any> = {
     intro:
       'Dites-nous brièvement où vous en êtes et ce que vous voulez atteindre. Nous vous répondons sous un jour ouvrable — honnêtement, concrètement et sans pression commerciale.',
     directTitle: 'Ligne directe',
+    callaiHeading: 'Pas encore prêt pour le formulaire ?',
+    callaiNote: 'Vous parlez à notre véritable IA – gratuit et sans engagement.',
+    directLead: 'Vous préférez nous parler directement ?',
+    callLabel: 'Appelez-nous :',
+    emailLabel: 'E-mail :',
     services: [
       'Agent téléphonique IA',
       'Site web',
@@ -142,16 +162,16 @@ const schema = [
             <input id="cf-email" name="email" type="email" required autocomplete="email" />
           </div>
           <div class="field">
-            <label for="cf-company">{t(locale, 'form.company')} *</label>
-            <input id="cf-company" name="company" type="text" required autocomplete="organization" />
+            <label for="cf-company">{t(locale, 'form.company')}</label>
+            <input id="cf-company" name="company" type="text" autocomplete="organization" />
           </div>
           <div class="field">
             <label for="cf-phone">{t(locale, 'form.phone')}</label>
             <input id="cf-phone" name="phone" type="tel" autocomplete="tel" />
           </div>
           <div class="field">
-            <label for="cf-service">{t(locale, 'form.service')} *</label>
-            <select id="cf-service" name="service" required>
+            <label for="cf-service">{t(locale, 'form.service')}</label>
+            <select id="cf-service" name="service">
               <option value="" disabled selected>{t(locale, 'form.select')}</option>
               {c.services.map((s: string) => <option value={s}>{s}</option>)}
             </select>
@@ -177,13 +197,19 @@ const schema = [
           <button class="btn btn--primary" type="submit">{t(locale, 'form.submit')}</button>
         </form>
 
-        <div>
+        <div class="contact-aside">
+          <div class="card contact-callai">
+            <h2 style="font-size:var(--fs-600);">{c.callaiHeading}</h2>
+            <a class="btn btn--accent contact-callai__cta" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live">{t(locale, 'cta.callAi')} · {SITE.aiPhoneDisplay}</a>
+            <p class="contact-callai__note">{c.callaiNote}</p>
+          </div>
           <div class="card">
             <h2 style="font-size:var(--fs-600);">{c.directTitle}</h2>
+            <p class="mt-3" style="color:var(--ink-soft);">{c.directLead}</p>
             <ul class="checklist">
-              <li><a href={`tel:${SITE.phone}`} data-track="phone_click">{SITE.phoneDisplay}</a></li>
-              <li><a href={`mailto:${SITE.email}`} data-track="email_click">{SITE.email}</a></li>
-              <li><a href={SITE.whatsapp} rel="noopener" target="_blank" data-track="whatsapp_click">WhatsApp</a></li>
+              <li><a href={`tel:${SITE.phone}`} data-track="phone_click">{c.callLabel} {SITE.phoneDisplay}</a></li>
+              <li><a href={`mailto:${SITE.email}`} data-track="email_click">{c.emailLabel} {SITE.email}</a></li>
+              <li><a href={SITE.whatsapp} rel="noopener" target="_blank" data-track="whatsapp_click">{t(locale, 'cta.whatsapp')}</a></li>
             </ul>
             <address class="mt-4" style="font-style:normal;color:var(--ink-soft);">
               <strong>Weissmann AI</strong><br />
@@ -197,6 +223,28 @@ const schema = [
     </div>
   </section>
 </Layout>
+
+<style>
+  /* Accent button — mirrors the homepage accent style, which is component-scoped (not global). */
+  .btn--accent { background: #4f7cf0; color: #fff; box-shadow: 0 12px 30px -6px rgba(79,124,240,0.45); }
+  .btn--accent:hover { background: #6c92f6; }
+
+  /* "Call our AI live" highlight block */
+  .contact-callai { border-color: rgba(79,124,240,0.45); background: rgba(79,124,240,0.05); }
+  .contact-callai__cta { margin-top: var(--space-3); width: 100%; }
+  .contact-callai__note { margin-top: var(--space-3); margin-bottom: 0; color: var(--ink-soft); font-size: var(--fs-300); }
+
+  /* Mobile-first: dissolve the aside so its cards join the grid directly,
+     letting the call-AI block render ABOVE the form while the form stays primary. */
+  .contact-aside { display: contents; }
+  .contact-callai { order: -1; }
+
+  @media (min-width: 760px) {
+    /* Desktop: aside is the right-hand column with both cards stacked. */
+    .contact-aside { display: grid; gap: var(--space-4); align-content: start; }
+    .contact-callai { order: 0; }
+  }
+</style>
 
 <script is:inline>
   (function () {

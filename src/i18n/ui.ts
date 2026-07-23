@@ -40,6 +40,9 @@ export const UI: Record<Locale, Dict> = {
     'cta.contact': 'Kontakt aufnehmen',
     'cta.whatsapp': 'Per WhatsApp schreiben',
     'cta.call': 'Anrufen',
+    'cta.callAi': 'KI live anrufen',
+    'cta.questionsFirst': 'Erst Fragen? Kurzes Gespräch buchen',
+    'cta.secureCheckout': 'Sichere Zahlung über Stripe',
     'cta.buy': 'Jetzt abschliessen',
     'cta.learnMore': 'Mehr erfahren',
     'cta.allPricing': 'Alle Preise ansehen',
@@ -66,6 +69,7 @@ export const UI: Record<Locale, Dict> = {
     'price.from': 'ab',
     'price.onRequest': 'Preis auf Anfrage',
     'price.vatNote': 'Preise exkl. MwSt.',
+    'price.vatShort': 'zzgl. MwSt.',
 
     'consent.title': 'Datenschutz-Einstellungen',
     'consent.text':
@@ -114,6 +118,9 @@ export const UI: Record<Locale, Dict> = {
     'cta.contact': 'Get in touch',
     'cta.whatsapp': 'Message us on WhatsApp',
     'cta.call': 'Call us',
+    'cta.callAi': 'Call the AI live',
+    'cta.questionsFirst': 'Questions first? Book a quick call',
+    'cta.secureCheckout': 'Secure checkout via Stripe',
     'cta.buy': 'Subscribe now',
     'cta.learnMore': 'Learn more',
     'cta.allPricing': 'See all pricing',
@@ -140,6 +147,7 @@ export const UI: Record<Locale, Dict> = {
     'price.from': 'from',
     'price.onRequest': 'Price on request',
     'price.vatNote': 'Prices excl. VAT.',
+    'price.vatShort': 'excl. VAT',
 
     'consent.title': 'Privacy settings',
     'consent.text':
@@ -188,6 +196,9 @@ export const UI: Record<Locale, Dict> = {
     'cta.contact': 'Contattaci',
     'cta.whatsapp': 'Scrivici su WhatsApp',
     'cta.call': 'Chiamaci',
+    'cta.callAi': 'Chiama l’AI dal vivo',
+    'cta.questionsFirst': 'Prima qualche domanda? Prenota una chiamata',
+    'cta.secureCheckout': 'Pagamento sicuro tramite Stripe',
     'cta.buy': 'Abbonati ora',
     'cta.learnMore': 'Scopri di più',
     'cta.allPricing': 'Vedi tutti i prezzi',
@@ -214,6 +225,7 @@ export const UI: Record<Locale, Dict> = {
     'price.from': 'da',
     'price.onRequest': 'Prezzo su richiesta',
     'price.vatNote': 'Prezzi IVA esclusa.',
+    'price.vatShort': 'IVA esclusa',
 
     'consent.title': 'Impostazioni privacy',
     'consent.text':
@@ -262,6 +274,9 @@ export const UI: Record<Locale, Dict> = {
     'cta.contact': 'Nous contacter',
     'cta.whatsapp': 'Écrire sur WhatsApp',
     'cta.call': 'Appeler',
+    'cta.callAi': 'Appeler l’IA en direct',
+    'cta.questionsFirst': 'Des questions d’abord ? Réserver un appel',
+    'cta.secureCheckout': 'Paiement sécurisé via Stripe',
     'cta.buy': 'Souscrire',
     'cta.learnMore': 'En savoir plus',
     'cta.allPricing': 'Voir tous les tarifs',
@@ -288,6 +303,7 @@ export const UI: Record<Locale, Dict> = {
     'price.from': 'dès',
     'price.onRequest': 'Prix sur demande',
     'price.vatNote': 'Prix hors TVA.',
+    'price.vatShort': 'hors TVA',
 
     'consent.title': 'Paramètres de confidentialité',
     'consent.text':

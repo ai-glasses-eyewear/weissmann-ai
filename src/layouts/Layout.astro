@@ -11,9 +11,10 @@
  *  - availableLocales: locales this page actually exists in (defaults to all).
  *  - schema: optional array of JSON-LD objects rendered as one @graph.
  */
-import { SITE, LOCALES, HTML_LANG, localeUrl, type Locale } from '../data/site';
+import { SITE, LOCALES, HTML_LANG, localeUrl, localePrefix, type Locale } from '../data/site';
 import type { LocalePaths } from '../data/routes';
 import { organization, webSite } from '../data/schema';
+import { t } from '../i18n/ui';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ConsentAnalytics from '../components/ConsentAnalytics.astro';
@@ -121,6 +122,12 @@ const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
       <slot />
     </main>
     <Footer locale={locale} />
+    <!-- Mobile-only persistent CTA: header actions collapse into the hamburger,
+         so this keeps a call/demo tap target in view after the hero scrolls off. -->
+    <div class="mcta">
+      <a class="btn btn--primary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live">{t(locale, 'cta.call')}</a>
+      <a class="btn btn--secondary" href={`${localePrefix(locale)}/kontakt/`} data-track="request_demo">{t(locale, 'nav.cta')}</a>
+    </div>
     <ConsentBanner locale={locale} />
     <script is:inline>
       // Scroll reveal: only arms when motion is allowed; otherwise content stays
@@ -138,5 +145,24 @@ const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
         els.forEach(function (el) { io.observe(el); });
       })();
     </script>
+    <style>
+      /* Mobile-only persistent CTA bar (hidden from 920px, where header actions return). */
+      .mcta {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 70; /* below ConsentBanner (90), so consent still wins on first load */
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem calc(0.5rem + env(safe-area-inset-bottom));
+        background: var(--paper);
+        border-top: 1px solid var(--line);
+      }
+      .mcta a { flex: 1; justify-content: center; min-height: 48px; }
+      @media (min-width: 920px) { .mcta { display: none; } }
+      /* Reserve space so the fixed bar never covers the footer on mobile. */
+      @media (max-width: 919px) { :global(body) { padding-bottom: 64px; } }
+    </style>
   </body>
 </html>

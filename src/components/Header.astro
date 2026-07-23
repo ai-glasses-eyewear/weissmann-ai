@@ -4,7 +4,8 @@
  * Dark translucent bar over the midnight-violet ground.
  * Mobile: CSS-only disclosure via <details>, no JS dependency.
  */
-import { LOCALES, localePrefix, type Locale } from '../data/site';
+import Icon from './Icon.astro';
+import { LOCALES, localePrefix, SITE, type Locale } from '../data/site';
 import type { LocalePaths } from '../data/routes';
 import { pillarNav, companyNav, pricingHref } from '../data/nav';
 import { t } from '../i18n/ui';
@@ -56,6 +57,7 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
             : <a href={switchTarget(l)} hreflang={l}>{langLabel[l]}</a>;
         })}
       </nav>
+      <a class="btn btn--ghost site-header__call" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live" aria-label={`${t(locale, 'cta.callAi')} ${SITE.aiPhoneDisplay}`}><Icon name="phone" size={16} />{t(locale, 'cta.callAi')}</a>
       <a class="btn btn--primary site-header__cta" href={`${p}/kontakt/`} data-track="request_demo">
         {t(locale, 'nav.cta')}
       </a>
@@ -66,6 +68,7 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
         <span class="site-header__burger" aria-hidden="true"></span>
       </summary>
       <div class="site-header__mobile-panel">
+        <a class="btn btn--primary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live" aria-label={`${t(locale, 'cta.callAi')} ${SITE.aiPhoneDisplay}`}><Icon name="phone" size={16} />{t(locale, 'cta.callAi')}</a>
         {nav.map((item) => (
           <a href={item.href}>{item.label}</a>
         ))}
@@ -123,6 +126,8 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
   .lang-switch a { color: var(--ink-mute); }
   .lang-switch a:hover { color: var(--ink); text-decoration: none; }
   .lang-switch span[aria-current] { color: var(--ink); font-weight: 700; }
+  .lang-switch a, .lang-switch span { display: inline-flex; align-items: center; justify-content: center; min-width: 2.75rem; min-height: 2.75rem; padding: 0.35rem 0.5rem; }
+  .lang-switch--mobile { gap: 0.75rem; }
 
   .site-header__mobile { margin-left: auto; }
   .site-header__mobile summary {
@@ -130,8 +135,8 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
     cursor: pointer;
     display: grid;
     place-items: center;
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 2.75rem;
+    height: 2.75rem;
     border-radius: 10px;
     border: 1px solid var(--line);
   }

@@ -9,8 +9,10 @@
 import { SITE, localeUrl, type Locale } from '../../data/site';
 import { type LocalePaths, urlFor } from '../../data/routes';
 import { orderedServices, servicePaths, type ServiceGroup } from '../../data/services';
+import { faqPage } from '../../data/schema';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
+import Faq from '../Faq.astro';
 
 interface Props {
   locale: Locale;
@@ -19,13 +21,15 @@ interface Props {
 const { locale, localePaths } = Astro.props;
 
 const COPY: Record<Locale, {
-  title: string; h1: string; kicker: string; intro: string;
+  title: string; metaDesc: string; h1: string; kicker: string; intro: string;
   groups: Record<ServiceGroup, string>; soon: string; view: string;
   crumbHome: string; crumbHere: string; ctaTitle: string; ctaText: string; ctaBtn: string;
+  faqTitle: string; faq: { q: string; a: string }[];
   gl: { kicker: string; title: string; text: string; btn: string; feats: string[] };
 }> = {
   de: {
-    title: 'KI-Lösungen & Leistungen | Weissmann AI',
+    title: 'KI-Leistungen für Schweizer Unternehmen | Weissmann AI',
+    metaDesc: 'Neun dedizierte KI- und Wachstumsleistungen für Schweizer Unternehmen: KI-Telefonassistent, Websites, SEO, GEO, Google Ads, Automatisierung und KI-Beratung.',
     h1: 'Leistungen für Ihr Unternehmen',
     kicker: 'Das Ökosystem',
     intro: 'Jede Leistung ist eine eigenständige Disziplin mit einer eigenen Seite — vom KI-Telefonassistenten über Websites und Sichtbarkeit bis zu Automatisierung und KI-Agenten. Wählen Sie den Baustein, der Sie heute weiterbringt, oder kombinieren Sie mehrere zu einem Wachstumssystem.',
@@ -33,10 +37,17 @@ const COPY: Record<Locale, {
     soon: 'Seite folgt', view: 'Mehr erfahren',
     crumbHome: 'Startseite', crumbHere: 'Leistungen',
     ctaTitle: 'Nicht sicher, wo Sie anfangen sollen?', ctaText: 'In einem kurzen Gespräch finden wir den Baustein mit dem grössten Hebel für Ihr Unternehmen.', ctaBtn: 'Projekt besprechen',
+    faqTitle: 'Häufige Fragen zu unseren Leistungen',
+    faq: [
+      { q: 'Welche KI-Leistungen bietet Weissmann AI?', a: 'Weissmann AI bietet neun eigenständige Leistungen in drei Bereichen: Aufbauen (KI-Telefonassistent, KI-Webentwicklung, KI-Automatisierung, KI-Agenten, KI-Integrationen), Wachsen (SEO, GEO, Google Ads) und Beraten (KI-Beratung). Jede Leistung hat eine eigene Seite mit allen Details.' },
+      { q: 'Kann ich einzelne Leistungen buchen oder muss ich alles nehmen?', a: 'Sie wählen genau den Baustein, der Sie heute weiterbringt — jede Leistung ist eigenständig buchbar. Ebenso lassen sich mehrere Leistungen zu einem zusammenhängenden Wachstumssystem kombinieren.' },
+      { q: 'Arbeitet Weissmann AI mit KMU in der Schweiz?', a: 'Ja. Weissmann AI ist auf Schweizer Unternehmen ausgerichtet und unterstützt KMU dabei, den passenden KI-Baustein zu finden — vom ersten Gespräch bis zur Umsetzung.' },
+    ],
     gl: { kicker: 'Ökosystem-Erweiterung', title: 'KI-Brillen für die Arbeit', text: 'Über das Telefon hinaus: Even Realities Smart Glasses bringen Live-Übersetzung, Live-Untertitel und einen diskreten KI-Assistenten direkt in Ihr Sichtfeld — für Meetings, Barrierefreiheit und internationales Geschäft.', btn: 'KI-Brillen entdecken', feats: ['Live-Übersetzung', 'Live-Untertitel', 'Diskreter KI-Assistent'] },
   },
   en: {
-    title: 'AI Solutions & Services | Weissmann AI',
+    title: 'AI services for Swiss businesses | Weissmann AI',
+    metaDesc: 'Nine dedicated AI and growth services for Swiss businesses: AI phone assistant, websites, SEO, GEO, Google Ads, automation and AI consulting.',
     h1: 'Services for your business',
     kicker: 'The ecosystem',
     intro: 'Every service is its own discipline with its own page — from the AI phone assistant through websites and visibility to automation and AI agents. Pick the building block that moves you forward today, or combine several into one growth system.',
@@ -44,10 +55,17 @@ const COPY: Record<Locale, {
     soon: 'Coming soon', view: 'Learn more',
     crumbHome: 'Home', crumbHere: 'Services',
     ctaTitle: 'Not sure where to start?', ctaText: 'In a short call we find the building block with the biggest leverage for your business.', ctaBtn: 'Discuss your project',
+    faqTitle: 'Frequently asked questions about our services',
+    faq: [
+      { q: 'Which AI services does Weissmann AI offer?', a: 'Weissmann AI offers nine standalone services across three areas: Build (AI phone assistant, AI web development, AI automation, AI agents, AI integrations), Grow (SEO, GEO, Google Ads) and Advise (AI consulting). Each service has its own dedicated page with full details.' },
+      { q: 'Can I book individual services or do I have to take everything?', a: 'You pick exactly the building block that moves you forward today — every service can be booked on its own. You can also combine several services into one connected growth system.' },
+      { q: 'Does Weissmann AI work with SMEs in Switzerland?', a: 'Yes. Weissmann AI is focused on Swiss businesses and helps SMEs find the right AI building block — from the first conversation through to implementation.' },
+    ],
     gl: { kicker: 'Ecosystem extension', title: 'AI glasses for work', text: 'Beyond the phone: Even Realities smart glasses put live translation, live captions and a discreet AI assistant right in your field of view — built for meetings, accessibility and international business.', btn: 'Explore AI glasses', feats: ['Live translation', 'Live captions', 'Discreet AI assistant'] },
   },
   it: {
-    title: 'Soluzioni e servizi AI | Weissmann AI',
+    title: 'Servizi AI per le aziende svizzere | Weissmann AI',
+    metaDesc: 'Nove servizi AI e di crescita dedicati alle aziende svizzere: assistente telefonico AI, siti web, SEO, GEO, Google Ads, automazione e consulenza AI.',
     h1: 'Servizi per la vostra azienda',
     kicker: 'L’ecosistema',
     intro: 'Ogni servizio è una disciplina a sé con la propria pagina — dall’assistente telefonico AI ai siti web e alla visibilità, fino all’automazione e agli agenti AI. Scegliete il tassello che vi fa avanzare oggi, o combinatene più d’uno in un sistema di crescita.',
@@ -55,10 +73,17 @@ const COPY: Record<Locale, {
     soon: 'In arrivo', view: 'Scopri di più',
     crumbHome: 'Home', crumbHere: 'Servizi',
     ctaTitle: 'Non sapete da dove iniziare?', ctaText: 'In una breve chiamata individuiamo il tassello con la leva maggiore per la vostra azienda.', ctaBtn: 'Parliamo del progetto',
+    faqTitle: 'Domande frequenti sui nostri servizi',
+    faq: [
+      { q: 'Quali servizi AI offre Weissmann AI?', a: 'Weissmann AI offre nove servizi indipendenti in tre aree: Costruire (assistente telefonico AI, sviluppo siti web AI, automazione AI, agenti AI, integrazioni AI), Crescere (SEO, GEO, Google Ads) e Consigliare (consulenza AI). Ogni servizio ha una pagina dedicata con tutti i dettagli.' },
+      { q: 'Posso richiedere singoli servizi o devo prenderli tutti?', a: 'Scegliete esattamente il tassello che vi fa avanzare oggi — ogni servizio è richiedibile singolarmente. Potete anche combinarne più d’uno in un unico sistema di crescita integrato.' },
+      { q: 'Weissmann AI lavora con le PMI in Svizzera?', a: 'Sì. Weissmann AI è dedicata alle aziende svizzere e aiuta le PMI a individuare il tassello AI giusto — dalla prima conversazione fino alla realizzazione.' },
+    ],
     gl: { kicker: 'Estensione dell’ecosistema', title: 'Occhiali AI per il lavoro', text: 'Oltre il telefono: gli smart glasses Even Realities portano traduzione dal vivo, sottotitoli in tempo reale e un assistente AI discreto direttamente nel vostro campo visivo — per riunioni, accessibilità e business internazionale.', btn: 'Scopri gli occhiali AI', feats: ['Traduzione dal vivo', 'Sottotitoli in tempo reale', 'Assistente AI discreto'] },
   },
   fr: {
-    title: 'Solutions et services IA | Weissmann AI',
+    title: 'Services IA pour les entreprises suisses | Weissmann AI',
+    metaDesc: 'Neuf services IA et de croissance dédiés aux entreprises suisses : assistant téléphonique IA, sites web, SEO, GEO, Google Ads, automatisation et conseil IA.',
     h1: 'Services pour votre entreprise',
     kicker: 'L’écosystème',
     intro: 'Chaque service est une discipline à part entière avec sa propre page — de l’assistant téléphonique IA aux sites web et à la visibilité, jusqu’à l’automatisation et aux agents IA. Choisissez le module qui vous fait avancer aujourd’hui, ou combinez-en plusieurs en un système de croissance.',
@@ -66,6 +91,12 @@ const COPY: Record<Locale, {
     soon: 'Bientôt disponible', view: 'En savoir plus',
     crumbHome: 'Accueil', crumbHere: 'Services',
     ctaTitle: 'Vous ne savez pas par où commencer ?', ctaText: 'En un court appel, nous identifions le module au plus fort levier pour votre entreprise.', ctaBtn: 'Discuter du projet',
+    faqTitle: 'Questions fréquentes sur nos services',
+    faq: [
+      { q: 'Quels services IA propose Weissmann AI ?', a: 'Weissmann AI propose neuf services indépendants répartis en trois domaines : Construire (assistant téléphonique IA, développement web IA, automatisation IA, agents IA, intégrations IA), Croître (SEO, GEO, Google Ads) et Conseiller (conseil IA). Chaque service dispose de sa propre page détaillée.' },
+      { q: 'Puis-je réserver des services individuels ou dois-je tout prendre ?', a: 'Vous choisissez exactement le module qui vous fait avancer aujourd’hui — chaque service peut être réservé séparément. Vous pouvez aussi en combiner plusieurs en un seul système de croissance.' },
+      { q: 'Weissmann AI travaille-t-il avec les PME en Suisse ?', a: 'Oui. Weissmann AI s’adresse aux entreprises suisses et aide les PME à trouver le bon module IA — du premier échange jusqu’à la mise en œuvre.' },
+    ],
     gl: { kicker: 'Extension de l’écosystème', title: 'Lunettes IA pour le travail', text: 'Au-delà du téléphone : les smart glasses Even Realities offrent traduction en direct, sous-titres en temps réel et un assistant IA discret directement dans votre champ de vision — pour les réunions, l’accessibilité et le business international.', btn: 'Découvrir les lunettes IA', feats: ['Traduction en direct', 'Sous-titres en temps réel', 'Assistant IA discret'] },
   },
 };
@@ -92,9 +123,10 @@ const schema = [
     isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.domain },
     about: services.map((s) => ({ '@type': 'Service', name: s.name[locale], serviceType: s.serviceType })),
   },
+  faqPage(c.faq),
 ];
 ---
-<Layout locale={locale} localePaths={localePaths} title={c.title} description={c.intro} schema={schema}>
+<Layout locale={locale} localePaths={localePaths} title={c.title} description={c.metaDesc} schema={schema}>
   <Breadcrumbs locale={locale} items={[
     { name: c.crumbHome, href: homeUrl },
     { name: c.crumbHere },
@@ -146,6 +178,10 @@ const schema = [
     </div>
   </section>
 
+  <section class="container hub-faq">
+    <Faq title={c.faqTitle} items={c.faq} />
+  </section>
+
   <section class="container hub-cta">
     <h2>{c.ctaTitle}</h2>
     <p>{c.ctaText}</p>
@@ -169,6 +205,8 @@ const schema = [
   .hub-cta { text-align: center; padding: var(--space-7) var(--space-4); margin-bottom: var(--space-7); border-top: 1px solid var(--line); }
   .hub-cta h2 { font-size: var(--fs-600); margin-bottom: 0.6rem; }
   .hub-cta p { color: var(--ink-soft); max-width: 40rem; margin: 0 auto var(--space-4); }
+
+  .hub-faq { padding-bottom: var(--space-7); }
 
   .glasses-showcase { padding-bottom: var(--space-7); }
   .gl-card { display: grid; gap: var(--space-5); align-items: center; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--paper); padding: var(--space-5); }

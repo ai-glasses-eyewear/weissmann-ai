@@ -132,6 +132,10 @@ const t = (k: string) => kb.ui[locale][k];
 
   .wa[data-open] .wa__launcher { display: none; }
 
+  /* Lift the launcher above the mobile sticky CTA bar (64px) so they don't overlap. */
+  @media (max-width: 919px) {
+    .wa { bottom: calc(64px + 1rem); }
+  }
   @media (max-width: 520px) {
     .wa__panel { right: 0; bottom: 0; left: 0; top: 0; width: auto; max-height: none; border-radius: 0; border: none; }
   }
