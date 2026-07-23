@@ -71,10 +71,10 @@ const eco = ECO[locale];
 const FLOW_ICONS = ['phone', 'bot', 'calendar-check', 'calendar', 'message', 'users'] as const;
 const GLASSES_ICONS = ['translate', 'captions', 'sparkle', 'users', 'accessibility', 'briefcase', 'bolt'] as const;
 const HERO_CHIPS: Record<Locale, string[]> = {
-  de: ['Antwortet in Sekunden', '24/7 · 365 Tage', 'DE · EN · FR · IT', 'Daten in der Schweiz/EU'],
-  en: ['Answers in seconds', '24/7 · 365 days', 'DE · EN · FR · IT', 'Data in Switzerland/EU'],
-  it: ['Risponde in pochi secondi', '24/7 · 365 giorni', 'DE · EN · FR · IT', 'Dati in Svizzera/UE'],
-  fr: ['Répond en quelques secondes', '24/7 · 365 jours', 'DE · EN · FR · IT', 'Données en Suisse/UE'],
+  de: ['Antwortet in Sekunden', '24/7 · 365 Tage', 'DE · EN · FR · IT', 'Versteht Schweizerdeutsch', 'Daten in der Schweiz/EU'],
+  en: ['Answers in seconds', '24/7 · 365 days', 'DE · EN · FR · IT', 'Understands Swiss German', 'Data in Switzerland/EU'],
+  it: ['Risponde in pochi secondi', '24/7 · 365 giorni', 'DE · EN · FR · IT', 'Capisce lo svizzero tedesco', 'Dati in Svizzera/UE'],
+  fr: ['Répond en quelques secondes', '24/7 · 365 jours', 'DE · EN · FR · IT', 'Comprend le suisse allemand', 'Données en Suisse/UE'],
 };
 const FLOW: Record<Locale, { eyebrow: string; title: string; text: string; steps: Array<{ label: string; text: string }> }> = {
   de: { eyebrow: 'So funktioniert es', title: 'Vom verpassten Anruf zum gebuchten Kunden – automatisch.', text: 'Ein durchgehender Ablauf. Kein verpasster Umsatz, keine Handarbeit – Ihr Team bleibt ungestört produktiv.', steps: [
@@ -119,7 +119,7 @@ const TRUST: Record<Locale, { eyebrow: string; title: string; text: string; pill
     { icon: 'shield', label: 'Schweizer Unternehmen', text: 'Sitz in Zürich – ansprechbar und verantwortlich, kein anonymer Anbieter.' },
     { icon: 'globe', label: 'Daten in der Schweiz/EU', text: 'Ihre Anrufdaten bleiben in der Schweiz oder der EU – nDSG- und DSGVO-konform.' },
     { icon: 'transfer', label: 'Transparent & Übergabe an Menschen', text: 'Anrufende erreichen jederzeit einen Menschen – und erfahren, dass sie mit einer KI sprechen.' },
-    { icon: 'bolt', label: 'Keine Setup-Gebühr', text: 'Ohne Einrichtungsgebühr, typischerweise in wenigen Tagen live – transparenter 12-Monatsvertrag, keine versteckten Kosten.' },
+    { icon: 'bolt', label: 'Keine Setup-Gebühr', text: 'Ohne Einrichtungsgebühr. Starter monatlich kündbar, ohne Mindestlaufzeit; Pakete mit Integrationen mit 12 Monaten Laufzeit. Keine versteckten Kosten.' },
     { icon: 'users', label: 'Betreut, kein Self-Service', text: 'Wir konfigurieren, überwachen und verbessern laufend – Sie sind nie allein mit einem Tool.' },
     { icon: 'clock', label: 'Antwort innert 1 Werktag', text: 'Fragen? Ein echter Mensch meldet sich innerhalb eines Arbeitstags.' },
   ] },
@@ -127,7 +127,7 @@ const TRUST: Record<Locale, { eyebrow: string; title: string; text: string; pill
     { icon: 'shield', label: 'A Swiss company', text: 'Based in Zurich — reachable and accountable, not an anonymous vendor.' },
     { icon: 'globe', label: 'Data in Switzerland/EU', text: 'Your call data stays in Switzerland or the EU — nDSG- and GDPR-aligned.' },
     { icon: 'transfer', label: 'Transparent & human handover', text: 'Callers can always reach a human — and are told they’re speaking with an AI.' },
-    { icon: 'bolt', label: 'No setup fee', text: 'No setup fee, typically live within a few days — a transparent 12-month term with no hidden costs.' },
+    { icon: 'bolt', label: 'No setup fee', text: 'No setup fee. Starter is cancellable monthly, with no minimum term; packages with integrations have a 12-month term. No hidden costs.' },
     { icon: 'users', label: 'Managed, not self-service', text: 'We configure, monitor and continuously improve it — you’re never alone with a tool.' },
     { icon: 'clock', label: 'Reply within 1 business day', text: 'Questions? A real person gets back to you within one working day.' },
   ] },
@@ -135,7 +135,7 @@ const TRUST: Record<Locale, { eyebrow: string; title: string; text: string; pill
     { icon: 'shield', label: 'Un’azienda svizzera', text: 'Sede a Zurigo — raggiungibile e responsabile, non un fornitore anonimo.' },
     { icon: 'globe', label: 'Dati in Svizzera/UE', text: 'I dati delle chiamate restano in Svizzera o nell’UE — conformi a nLPD e GDPR.' },
     { icon: 'transfer', label: 'Trasparenza & passaggio a persone', text: 'I chiamanti raggiungono sempre una persona — e sanno di parlare con un’AI.' },
-    { icon: 'bolt', label: 'Nessun costo di attivazione', text: 'Nessun costo di attivazione, tipicamente attivo in pochi giorni — contratto trasparente di 12 mesi, senza costi nascosti.' },
+    { icon: 'bolt', label: 'Nessun costo di attivazione', text: 'Nessun costo di attivazione. Starter disdicibile mensilmente, senza durata minima; i pacchetti con integrazioni hanno una durata di 12 mesi. Nessun costo nascosto.' },
     { icon: 'users', label: 'Gestito, non self-service', text: 'Configuriamo, monitoriamo e miglioriamo di continuo — non siete mai soli con uno strumento.' },
     { icon: 'clock', label: 'Risposta entro 1 giorno lavorativo', text: 'Domande? Una persona reale vi risponde entro un giorno lavorativo.' },
   ] },
@@ -143,7 +143,7 @@ const TRUST: Record<Locale, { eyebrow: string; title: string; text: string; pill
     { icon: 'shield', label: 'Une entreprise suisse', text: 'Basée à Zurich — joignable et responsable, pas un fournisseur anonyme.' },
     { icon: 'globe', label: 'Données en Suisse/UE', text: 'Les données d’appel restent en Suisse ou dans l’UE — conformes nLPD et RGPD.' },
     { icon: 'transfer', label: 'Transparence & transfert humain', text: 'Les appelants joignent toujours un humain — et savent qu’ils parlent à une IA.' },
-    { icon: 'bolt', label: 'Sans frais d’installation', text: 'Sans frais d’installation, généralement actif en quelques jours — un contrat transparent de 12 mois, sans coûts cachés.' },
+    { icon: 'bolt', label: 'Sans frais d’installation', text: 'Sans frais d’installation. Starter résiliable mensuellement, sans durée minimale ; les forfaits avec intégrations ont une durée de 12 mois. Aucun coût caché.' },
     { icon: 'users', label: 'Géré, pas en self-service', text: 'Nous configurons, surveillons et améliorons en continu — jamais seul avec un outil.' },
     { icon: 'clock', label: 'Réponse sous 1 jour ouvré', text: 'Des questions ? Une personne réelle vous répond sous un jour ouvré.' },
   ] },
@@ -326,6 +326,7 @@ const C: Record<Locale, any> = {
       'Der Weissmann KI-Telefonassistent nimmt jeden Anruf entgegen – 24/7, bucht Termine, qualifiziert Anfragen und übergibt an Ihr Team, wenn es zählt. Ein Baustein eines kompletten KI-Wachstumssystems, gebaut und betreut in Zürich.',
     heroPrimary: 'Demo anfordern',
     heroSecondary: 'KI live anrufen',
+    socialProof: 'Über 20 Unternehmen haben bereits eine Live-Demo angefragt.',
     mock: {
       status: 'Eingehender Anruf · nimmt an',
       caller: '„Guten Tag, haben Sie heute Abend einen Tisch für vier?“',
@@ -412,6 +413,7 @@ const C: Record<Locale, any> = {
       'The Weissmann AI phone agent answers every call 24/7 — books appointments, qualifies leads and hands over to your team when it matters. One building block of a complete AI growth system, built and managed in Zurich.',
     heroPrimary: 'Request a demo',
     heroSecondary: 'Call the AI live',
+    socialProof: 'More than 20 businesses have already requested a live demo.',
     mock: {
       status: 'Incoming call · answering',
       caller: '“Hi, do you have a table for four tonight?”',
@@ -498,6 +500,7 @@ const C: Record<Locale, any> = {
       'L’assistente telefonico Weissmann AI risponde a ogni chiamata 24/7 – prenota appuntamenti, qualifica le richieste e passa al vostro team quando serve. Un componente di un sistema di crescita AI completo, realizzato e gestito a Zurigo.',
     heroPrimary: 'Richiedi una demo',
     heroSecondary: 'Chiama l’AI dal vivo',
+    socialProof: 'Oltre 20 aziende hanno già richiesto una demo dal vivo.',
     mock: {
       status: 'Chiamata in arrivo · risponde',
       caller: '«Buonasera, avete un tavolo per quattro?»',
@@ -584,6 +587,7 @@ const C: Record<Locale, any> = {
       'L’agent téléphonique Weissmann AI répond à chaque appel 24/7 – réserve des rendez-vous, qualifie les demandes et transfère à votre équipe quand il le faut. Un composant d’un système de croissance IA complet, conçu et géré à Zurich.',
     heroPrimary: 'Demander une démo',
     heroSecondary: 'Appeler l’IA en direct',
+    socialProof: 'Plus de 20 entreprises ont déjà demandé une démo en direct.',
     mock: {
       status: 'Appel entrant · réponse',
       caller: '« Bonsoir, avez-vous une table pour quatre ce soir ? »',
@@ -690,6 +694,7 @@ const websiteStarter = getPackage('website-starter');
           <a class="btn btn--accent" href={`${p}/kontakt/`} data-track="book_consultation">{c.heroPrimary}</a>
           <a class="btn btn--ondark" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{c.heroSecondary} · {SITE.aiPhoneDisplay}</a>
         </div>
+        <p class="hero__proof"><Icon name="users" size={16} />{c.socialProof}</p>
         <ul class="hero__chips">
           {heroChips.map((chip: string) => <li><Icon name="check" size={15} />{chip}</li>)}
         </ul>
@@ -1126,7 +1131,9 @@ const websiteStarter = getPackage('website-starter');
   .btn--accent:hover { background: #6c92f6; }
   .btn--ondark { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.22); }
   .btn--ondark:hover { border-color: #fff; background: rgba(255,255,255,0.12); }
-  .hero__chips { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: flex; flex-wrap: wrap; gap: 0.55rem 1.15rem; font-size: var(--fs-300); color: #9fb0d0; }
+  .hero__proof { display: inline-flex; align-items: center; gap: 0.5rem; margin: var(--space-4) 0 0; font-size: var(--fs-300); font-weight: 600; color: #cdd7ea; }
+  .hero__proof .wi { color: #6fe3a4; flex: none; }
+  .hero__chips { list-style: none; padding: 0; margin: var(--space-3) 0 0; display: flex; flex-wrap: wrap; gap: 0.55rem 1.15rem; font-size: var(--fs-300); color: #9fb0d0; }
   .hero__chips li { display: inline-flex; align-items: center; gap: 0.4rem; }
   .hero__chips .wi { color: #6fe3a4; }
 
