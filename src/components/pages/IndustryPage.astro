@@ -16,6 +16,7 @@ import { t } from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
 import Faq from '../Faq.astro';
+import Icon from '../Icon.astro';
 
 interface Props {
   locale: Locale;
@@ -25,11 +26,11 @@ interface Props {
 }
 const { locale, localePaths, industry, content } = Astro.props;
 
-const LBL: Record<Locale, { short: string; challenges: string; opportunities: string; services: string; faq: string; ctaTitle: string; ctaText: string }> = {
-  de: { short: 'Kurzantwort', challenges: 'Herausforderungen der Branche', opportunities: 'Wo KI ansetzt', services: 'Passende Leistungen', faq: 'Häufige Fragen', ctaTitle: 'KI für Ihre Branche – konkret', ctaText: 'In einem kurzen Gespräch zeigen wir, welcher Baustein in Ihrer Branche den grössten Unterschied macht.' },
-  en: { short: 'In short', challenges: 'Sector challenges', opportunities: 'Where AI helps', services: 'Relevant services', faq: 'Frequently asked questions', ctaTitle: 'AI for your industry – concretely', ctaText: 'In a short call we show which building block makes the biggest difference in your sector.' },
-  it: { short: 'In breve', challenges: 'Sfide del settore', opportunities: 'Dove interviene l’AI', services: 'Servizi pertinenti', faq: 'Domande frequenti', ctaTitle: 'AI per il vostro settore – concretamente', ctaText: 'In una breve chiamata mostriamo quale tassello fa la differenza maggiore nel vostro settore.' },
-  fr: { short: 'En bref', challenges: 'Défis du secteur', opportunities: 'Là où l’IA intervient', services: 'Services pertinents', faq: 'Questions fréquentes', ctaTitle: 'L’IA pour votre secteur – concrètement', ctaText: 'En un court appel, nous montrons quel module fait la plus grande différence dans votre secteur.' },
+const LBL: Record<Locale, { short: string; challenges: string; opportunities: string; services: string; faq: string; ctaTitle: string; ctaText: string; reassure: string }> = {
+  de: { short: 'Kurzantwort', challenges: 'Herausforderungen der Branche', opportunities: 'Wo KI ansetzt', services: 'Passende Leistungen', faq: 'Häufige Fragen', ctaTitle: 'KI für Ihre Branche – konkret', ctaText: 'In einem kurzen Gespräch zeigen wir, welcher Baustein in Ihrer Branche den grössten Unterschied macht.', reassure: 'Kostenlos & unverbindlich – hören Sie die KI in 30 Sekunden.' },
+  en: { short: 'In short', challenges: 'Sector challenges', opportunities: 'Where AI helps', services: 'Relevant services', faq: 'Frequently asked questions', ctaTitle: 'AI for your industry – concretely', ctaText: 'In a short call we show which building block makes the biggest difference in your sector.', reassure: 'Free & no obligation – hear the AI in 30 seconds.' },
+  it: { short: 'In breve', challenges: 'Sfide del settore', opportunities: 'Dove interviene l’AI', services: 'Servizi pertinenti', faq: 'Domande frequenti', ctaTitle: 'AI per il vostro settore – concretamente', ctaText: 'In una breve chiamata mostriamo quale tassello fa la differenza maggiore nel vostro settore.', reassure: 'Gratis e senza impegno – ascoltate l’AI in 30 secondi.' },
+  fr: { short: 'En bref', challenges: 'Défis du secteur', opportunities: 'Là où l’IA intervient', services: 'Services pertinents', faq: 'Questions fréquentes', ctaTitle: 'L’IA pour votre secteur – concrètement', ctaText: 'En un court appel, nous montrons quel module fait la plus grande différence dans votre secteur.', reassure: 'Gratuit et sans engagement – écoutez l’IA en 30 secondes.' },
 };
 const lbl = LBL[locale];
 
@@ -70,8 +71,10 @@ const schema = [
       <p>{content.answerFirst[locale]}</p>
     </aside>
     <div class="ind-cta-row">
-      <a class="btn btn--primary" href={contactHref} data-track="request_demo">{t(locale, 'cta.demo')}</a>
+      <a class="btn btn--primary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{t(locale, 'cta.callAi')} · {SITE.aiPhoneDisplay}</a>
+      <a class="btn btn--ghost" href={contactHref} data-track="request_demo">{t(locale, 'cta.demo')}</a>
     </div>
+    <p class="ind-reassure">{lbl.reassure}</p>
   </header>
 
   <section class="container ind-two-col">
@@ -126,7 +129,10 @@ const schema = [
   <section class="container ind-cta">
     <h2>{lbl.ctaTitle}</h2>
     <p>{lbl.ctaText}</p>
-    <a class="btn btn--primary" href={contactHref} data-track="request_demo">{t(locale, 'nav.cta')}</a>
+    <div class="ind-cta-btns">
+      <a class="btn btn--primary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{t(locale, 'cta.callAi')} · {SITE.aiPhoneDisplay}</a>
+      <a class="btn btn--ghost" href={contactHref} data-track="request_demo">{t(locale, 'nav.cta')}</a>
+    </div>
   </section>
 </Layout>
 
@@ -136,7 +142,9 @@ const schema = [
   .tldr { border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); border-radius: 0 12px 12px 0; padding: var(--space-4); }
   .tldr__label { text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--fs-200); color: var(--accent); font-weight: 700; }
   .tldr p { margin: 0.4rem 0 0; color: var(--ink); font-size: var(--fs-400); }
-  .ind-cta-row { margin-top: var(--space-4); }
+  .ind-cta-row { margin-top: var(--space-4); display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .ind-reassure { margin-top: 0.7rem; font-size: var(--fs-200); color: var(--ink-mute); }
+  .ind-cta-btns { display: flex; gap: var(--space-3); flex-wrap: wrap; justify-content: center; }
   .ind-two-col { display: grid; grid-template-columns: 1fr; gap: var(--space-6); padding-bottom: var(--space-5); }
   .ind-challenges h2, .ind-opps h2, .ind-section h2, .ind-services h2, .ind-faq h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
   .ind-challenges ul { display: flex; flex-direction: column; gap: 0.6rem; padding-left: 1.1rem; }
