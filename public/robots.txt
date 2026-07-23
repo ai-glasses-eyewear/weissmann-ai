@@ -1,20 +1,42 @@
+# robots.txt — Weissmann AI (weissmann.ai)
+# Alle Suchmaschinen duerfen die gesamte Website crawlen.
 User-agent: *
 Allow: /
 
-# KI-Crawler ausdruecklich erlaubt / AI crawlers explicitly allowed
+# KI-Crawler und Answer-Engines ausdruecklich erlaubt.
+# AI crawlers and answer engines are explicitly allowed to crawl and cite the site.
+
+# OpenAI (ChatGPT: training, search index, on-demand browsing)
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
+# Google (Gemini, AI Overviews, Vertex AI)
 User-agent: Google-Extended
+Allow: /
+
+# Apple (Apple Intelligence)
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (dataset used by many LLMs)
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://weissmann.ai/sitemap.xml
