@@ -20,11 +20,11 @@ import Faq from '../Faq.astro';
 interface Props { locale: Locale; localePaths: LocalePaths; resource: ResourceDef; content: ChecklistContent }
 const { locale, localePaths, resource, content } = Astro.props;
 
-const LBL: Record<Locale, { short: string; print: string; progress: string; faq: string; done: string; crumbHome: string; crumbRes: string; ctaTitle: string }> = {
-  de: { short: 'Kostenlos', print: 'Drucken / als PDF speichern', progress: 'Fortschritt', faq: 'Häufige Fragen', done: 'erledigt', crumbHome: 'Startseite', crumbRes: 'Ressourcen', ctaTitle: 'Unterstützung bei der Umsetzung?' },
-  en: { short: 'Free', print: 'Print / save as PDF', progress: 'Progress', faq: 'Frequently asked questions', done: 'done', crumbHome: 'Home', crumbRes: 'Resources', ctaTitle: 'Want help implementing this?' },
-  it: { short: 'Gratis', print: 'Stampa / salva come PDF', progress: 'Progresso', faq: 'Domande frequenti', done: 'completati', crumbHome: 'Home', crumbRes: 'Risorse', ctaTitle: 'Serve aiuto nell’attuazione?' },
-  fr: { short: 'Gratuit', print: 'Imprimer / enregistrer en PDF', progress: 'Progression', faq: 'Questions fréquentes', done: 'faits', crumbHome: 'Accueil', crumbRes: 'Ressources', ctaTitle: 'Besoin d’aide pour la mise en œuvre ?' },
+const LBL: Record<Locale, { short: string; print: string; progress: string; faq: string; done: string; crumbHome: string; crumbRes: string; ctaTitle: string; capTitle: string; capText: string; capName: string; capEmail: string; capConsent: string; capPrivacy: string; capBtn: string }> = {
+  de: { short: 'Kostenlos', print: 'Drucken / als PDF speichern', progress: 'Fortschritt', faq: 'Häufige Fragen', done: 'erledigt', crumbHome: 'Startseite', crumbRes: 'Ressourcen', ctaTitle: 'Unterstützung bei der Umsetzung?', capTitle: 'Checkliste als PDF & Praxis-Tipps', capText: 'Tragen Sie Ihre E-Mail ein – wir senden Ihnen die Checkliste als PDF und ab und zu einen konkreten Tipp, wie Sie mehr Anrufe in Kunden verwandeln. Kein Spam, jederzeit abbestellbar.', capName: 'Name (optional)', capEmail: 'E-Mail-Adresse', capConsent: 'Ich möchte die Checkliste und gelegentliche Praxis-Tipps per E-Mail erhalten. Es gilt die', capPrivacy: 'Datenschutzerklärung', capBtn: 'Checkliste als PDF anfordern' },
+  en: { short: 'Free', print: 'Print / save as PDF', progress: 'Progress', faq: 'Frequently asked questions', done: 'done', crumbHome: 'Home', crumbRes: 'Resources', ctaTitle: 'Want help implementing this?', capTitle: 'Get the checklist as a PDF & practical tips', capText: "Leave your email — we'll send the checklist as a PDF and, now and then, a concrete tip on turning more calls into customers. No spam, unsubscribe anytime.", capName: 'Name (optional)', capEmail: 'Email address', capConsent: "I'd like to receive the checklist and occasional practical tips by email. See our", capPrivacy: 'privacy policy', capBtn: 'Send me the checklist (PDF)' },
+  it: { short: 'Gratis', print: 'Stampa / salva come PDF', progress: 'Progresso', faq: 'Domande frequenti', done: 'completati', crumbHome: 'Home', crumbRes: 'Risorse', ctaTitle: 'Serve aiuto nell’attuazione?', capTitle: 'La checklist in PDF e consigli pratici', capText: 'Lasciate la vostra e-mail: vi inviamo la checklist in PDF e, ogni tanto, un consiglio concreto per trasformare più chiamate in clienti. Niente spam, disiscrizione in qualsiasi momento.', capName: 'Nome (facoltativo)', capEmail: 'Indirizzo e-mail', capConsent: 'Desidero ricevere la checklist e consigli pratici occasionali via e-mail. Si applica l’', capPrivacy: 'informativa sulla privacy', capBtn: 'Inviatemi la checklist (PDF)' },
+  fr: { short: 'Gratuit', print: 'Imprimer / enregistrer en PDF', progress: 'Progression', faq: 'Questions fréquentes', done: 'faits', crumbHome: 'Accueil', crumbRes: 'Ressources', ctaTitle: 'Besoin d’aide pour la mise en œuvre ?', capTitle: 'La checklist en PDF et des conseils pratiques', capText: 'Laissez votre e-mail : nous vous envoyons la checklist en PDF et, de temps en temps, un conseil concret pour convertir plus d’appels en clients. Pas de spam, désinscription à tout moment.', capName: 'Nom (facultatif)', capEmail: 'Adresse e-mail', capConsent: 'Je souhaite recevoir la checklist et des conseils pratiques occasionnels par e-mail. Voir notre', capPrivacy: 'politique de confidentialité', capBtn: 'Envoyez-moi la checklist (PDF)' },
 };
 const lbl = LBL[locale];
 const pre = locale === 'de' ? '' : `/${locale}`;
@@ -88,6 +88,30 @@ let idx = 0;
     ))}
   </div>
 
+  <section class="container cl-capture">
+    <div class="cl-capture-card">
+      <h2>{lbl.capTitle}</h2>
+      <p class="cl-capture-text">{lbl.capText}</p>
+      <form name="lead-checklist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action={`${pre}/danke/`} class="cl-form" data-lead-form>
+        <input type="hidden" name="form-name" value="lead-checklist" />
+        <input type="hidden" name="resource" value={resource.id} />
+        <p class="cl-hp"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+        <div class="cl-form-row">
+          <div class="cl-field">
+            <label for="lm-name">{lbl.capName}</label>
+            <input id="lm-name" name="name" type="text" autocomplete="name" />
+          </div>
+          <div class="cl-field">
+            <label for="lm-email">{lbl.capEmail}</label>
+            <input id="lm-email" name="email" type="email" required autocomplete="email" />
+          </div>
+        </div>
+        <label class="cl-consent"><input type="checkbox" name="consent" required /> <span>{lbl.capConsent} <a href={`${pre}/datenschutz/`}>{lbl.capPrivacy}</a>.</span></label>
+        <button type="submit" class="btn btn--primary">{lbl.capBtn}</button>
+      </form>
+    </div>
+  </section>
+
   {content.faq && content.faq.length > 0 && (
     <section class="container cl-faq">
       <h2>{lbl.faq}</h2>
@@ -128,7 +152,20 @@ let idx = 0;
   .cl-cta { padding: var(--space-6) var(--space-4) var(--space-7); border-top: 1px solid var(--line); max-width: 52rem; }
   .cl-cta h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
   .cl-cta-row { display: flex; gap: var(--space-3); flex-wrap: wrap; }
-  @media print { .crumbs, .cl-bar, .cl-cta, .site-header, .site-footer { display: none !important; } }
+  .cl-capture { max-width: 52rem; padding-bottom: var(--space-5); }
+  .cl-capture-card { border: 1px solid var(--line); border-radius: 14px; padding: var(--space-5); background: var(--accent-soft, var(--paper)); }
+  .cl-capture-card h2 { font-size: var(--fs-500); margin: 0 0 0.5rem; }
+  .cl-capture-text { color: var(--ink-soft); margin: 0 0 var(--space-4); }
+  .cl-form-row { display: grid; gap: var(--space-3); }
+  @media (min-width: 560px) { .cl-form-row { grid-template-columns: 1fr 1fr; } }
+  .cl-field { display: flex; flex-direction: column; gap: 0.3rem; }
+  .cl-field label { font-size: var(--fs-300); color: var(--ink-soft); }
+  .cl-field input { padding: 0.6rem 0.7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); font: inherit; }
+  .cl-consent { display: flex; gap: 0.6rem; align-items: flex-start; margin: var(--space-3) 0; font-size: var(--fs-200); color: var(--ink-soft); }
+  .cl-consent input { margin-top: 0.2rem; flex: none; accent-color: var(--accent); }
+  .cl-consent a { color: var(--accent); }
+  .cl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  @media print { .crumbs, .cl-bar, .cl-cta, .cl-capture, .site-header, .site-footer { display: none !important; } }
 </style>
 
 <script is:inline>
@@ -145,5 +182,11 @@ let idx = 0;
     }
     var printBtn = document.querySelector('[data-cl-print]');
     if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+    var lf = document.querySelector('[data-lead-form]');
+    if (lf) {
+      var rid = (lf.querySelector('[name=resource]') || {}).value || '';
+      if (window.wmEvent) window.wmEvent('lead_magnet_view', { resource: rid });
+      lf.addEventListener('submit', function () { if (window.wmEvent) window.wmEvent('lead_magnet_submit', { resource: rid }); });
+    }
   })();
 </script>
