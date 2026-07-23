@@ -79,6 +79,38 @@ export function organization(locale: Locale) {
   };
 }
 
+// Weissmann operates from a real, staffed office at the canonical address
+// (owner-confirmed 2026-07-23: Technoparkstrasse 6, 8005 Zürich). The geo
+// coordinates corroborate the PostalAddress for local/near-me search and AI
+// assistants. Opening hours are intentionally omitted until confirmed.
+const LOCALBUSINESS_ID = `${SITE.domain}/#localbusiness`;
+export function localBusiness(locale: Locale) {
+  return {
+    '@type': 'ProfessionalService',
+    '@id': LOCALBUSINESS_ID,
+    name: SITE.name,
+    url: SITE.domain,
+    image: `${SITE.domain}/og-default.png`,
+    logo: `${SITE.domain}/logo-weissmann.png`,
+    description: ORG_DESCRIPTION[locale],
+    telephone: SITE.phone,
+    email: SITE.email,
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: SITE.address.street,
+      postalCode: SITE.address.postalCode,
+      addressLocality: SITE.address.city,
+      addressCountry: SITE.address.countryCode,
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 47.3901, longitude: 8.5155 },
+    areaServed: { '@type': 'Country', name: 'Switzerland' },
+    availableLanguage: ['de', 'en', 'fr', 'it'],
+    sameAs: Object.values(SITE.social),
+    parentOrganization: { '@id': ORG_ID },
+  };
+}
+
 export function webSite(locale: Locale) {
   return {
     '@type': 'WebSite',
