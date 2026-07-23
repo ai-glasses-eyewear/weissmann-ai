@@ -106,19 +106,19 @@ export function buildChatKB(): ChatKB {
       answer: {
         de: [
           `${priceLine('phone-starter', 'de')} · ${priceLine('phone-premium', 'de')} · ${getPackage('phone-enterprise').name.de}: ${onRequest.de}. ${vat.de}`,
-          'Wichtig: Starter und Premium laufen als 12-Monatsvertrag, ohne Setup-Gebühr.',
+          'Wichtig: Starter ist monatlich kündbar (keine Mindestlaufzeit); Premium und Enterprise haben eine Mindestlaufzeit von 12 Monaten. Keine Setup-Gebühr, Kündigung mindestens einen Monat vor der Verlängerung.',
         ],
         en: [
           `${priceLine('phone-starter', 'en')} · ${priceLine('phone-premium', 'en')} · ${getPackage('phone-enterprise').name.en}: ${onRequest.en}. ${vat.en}`,
-          'Note: Starter and Premium run as a 12-month contract, with no setup fee.',
+          'Note: Starter is cancellable monthly (no minimum term); Premium and Enterprise have a 12-month minimum term. No setup fee; cancel at least one month before renewal.',
         ],
         it: [
           `${priceLine('phone-starter', 'it')} · ${priceLine('phone-premium', 'it')} · ${getPackage('phone-enterprise').name.it}: ${onRequest.it}. ${vat.it}`,
-          'Nota: Starter e Premium prevedono un contratto di 12 mesi, senza costi di attivazione.',
+          'Nota: Starter è disdicibile mensilmente (nessuna durata minima); Premium ed Enterprise hanno una durata minima di 12 mesi. Nessun costo di attivazione; disdetta almeno un mese prima del rinnovo.',
         ],
         fr: [
           `${priceLine('phone-starter', 'fr')} · ${priceLine('phone-premium', 'fr')} · ${getPackage('phone-enterprise').name.fr}: ${onRequest.fr}. ${vat.fr}`,
-          'À noter : Starter et Premium fonctionnent avec un contrat de 12 mois, sans frais d’installation.',
+          'À noter : Starter est résiliable mensuellement (sans durée minimale) ; Premium et Enterprise ont une durée minimale de 12 mois. Sans frais d’installation ; résiliation au moins un mois avant le renouvellement.',
         ],
       },
       chips: [
