@@ -1,0 +1,51 @@
+---
+/**
+ * "Hear the AI" audio player. Renders ONLY when a recording is configured in
+ * data/media.ts (AUDIO_SAMPLE); otherwise nothing renders. A locale with no own
+ * file falls back to DE, then EN. Fires GA4 `demo_play` on first play.
+ */
+import { type Locale } from '../data/site';
+import { AUDIO_SAMPLE } from '../data/media';
+import Icon from './Icon.astro';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const src = AUDIO_SAMPLE[locale] ?? AUDIO_SAMPLE.de ?? AUDIO_SAMPLE.en;
+
+const LBL: Record<Locale, { eyebrow: string; title: string; note: string }> = {
+  de: { eyebrow: 'In 20 Sekunden hören', title: 'So klingt unser KI-Telefonassistent', note: 'Ausschnitt aus einer echten Demo unseres KI-Telefonassistenten.' },
+  en: { eyebrow: 'Hear it in 20 seconds', title: 'This is how our AI phone assistant sounds', note: 'Excerpt from a real demo of our AI phone assistant.' },
+  it: { eyebrow: 'Ascoltala in 20 secondi', title: 'Ecco come suona il nostro assistente telefonico AI', note: 'Estratto da una demo reale del nostro assistente telefonico AI.' },
+  fr: { eyebrow: 'Écoutez en 20 secondes', title: 'Voici la voix de notre agent téléphonique IA', note: 'Extrait d’une démo réelle de notre agent téléphonique IA.' },
+};
+const lbl = LBL[locale];
+---
+{src && (
+  <section class="section audio-sample">
+    <div class="container audio-card">
+      <span class="eyebrow">{lbl.eyebrow}</span>
+      <h2>{lbl.title}</h2>
+      <p class="audio-card__note"><Icon name="phone" size={16} /> {lbl.note}</p>
+      <audio controls preload="none" src={src} class="audio-card__player" data-audio-sample></audio>
+    </div>
+  </section>
+)}
+
+<script is:inline>
+  (function () {
+    var a = document.querySelector('[data-audio-sample]');
+    if (!a) return;
+    var played = false;
+    a.addEventListener('play', function () {
+      if (played) return; played = true;
+      if (window.wmEvent) window.wmEvent('demo_play', { demo: 'audio_sample' });
+    });
+  })();
+</script>
+
+<style>
+  .audio-card { max-width: 42rem; }
+  .audio-card h2 { font-size: var(--fs-500); margin: 0.3rem 0 0.4rem; }
+  .audio-card__note { display: flex; align-items: center; gap: 0.4rem; color: var(--ink-soft); font-size: var(--fs-300); margin: 0 0 var(--space-3); }
+  .audio-card__player { width: 100%; }
+</style>

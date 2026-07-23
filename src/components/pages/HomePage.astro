@@ -13,6 +13,7 @@ import MissedCallsCalculator from '../MissedCallsCalculator.astro';
 import Faq from '../Faq.astro';
 import PricingCard from '../PricingCard.astro';
 import WeissmannAssistant from '../WeissmannAssistant.astro';
+import AudioSample from '../AudioSample.astro';
 import Icon from '../Icon.astro';
 import { SITE, localePrefix, type Locale } from '../../data/site';
 import { pillarHome, relFor } from '../../data/routes';
@@ -931,6 +932,8 @@ const websiteStarter = getPackage('website-starter');
       </video>
     </div>
   </section>
+
+  <AudioSample locale={locale} />
 
   <!-- ── Calculator (interactive proof) ───────────────────── -->
   <section class="section">
