@@ -496,8 +496,8 @@ export const PACKAGES: PricingPackage[] = [
         'Aucune garantie de classement – nous construisons les fondations d’une forte visibilité',
       ],
     },
-    stripeLink: null, // pending: Stripe link to be created by the business (never invented)
-    ctaType: 'consult',
+    stripeLink: 'https://buy.stripe.com/aFabIT9rE3h29GUgT21sQ05',
+    ctaType: 'stripe',
     schemaOffer: true,
   },
   {
@@ -554,8 +554,8 @@ export const PACKAGES: PricingPackage[] = [
       it: ['La GEO supporta il potenziale di visibilità nei motori di risposta AI, ma non può garantire citazioni o inclusione'],
       fr: ['Le GEO soutient le potentiel de visibilité dans les moteurs de réponse IA mais ne peut garantir ni citation ni inclusion'],
     },
-    stripeLink: null, // pending: Stripe link to be created by the business (never invented)
-    ctaType: 'consult',
+    stripeLink: 'https://buy.stripe.com/6oU3cngU6bNyf1e9qA1sQ06',
+    ctaType: 'stripe',
     schemaOffer: true,
   },
   {
@@ -617,8 +617,8 @@ export const PACKAGES: PricingPackage[] = [
       it: ['Il budget pubblicitario Google non è incluso e viene pagato separatamente e direttamente dal cliente'],
       fr: ['Le budget publicitaire Google n’est pas inclus et est payé séparément et directement par le client'],
     },
-    stripeLink: null, // pending: Stripe link to be created by the business (never invented)
-    ctaType: 'consult',
+    stripeLink: 'https://buy.stripe.com/fZu3cnbzMdVGcT646g1sQ07',
+    ctaType: 'stripe',
     schemaOffer: true,
   },
 ];

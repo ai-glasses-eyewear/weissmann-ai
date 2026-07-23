@@ -35,6 +35,9 @@ const allSrc = pricingSrc + '\n' + siteSrc;
 const VERIFIED_LINKS = [
   'https://buy.stripe.com/28EcMX47k9Fq5qE9qA1sQ03', // Phone Starter CHF 350/mo
   'https://buy.stripe.com/aFa4gr5bocRC06k1Y81sQ04', // Phone Premium CHF 590/mo
+  'https://buy.stripe.com/aFabIT9rE3h29GUgT21sQ05', // SEO Growth CHF 890/mo
+  'https://buy.stripe.com/6oU3cngU6bNyf1e9qA1sQ06', // GEO Authority CHF 990/mo
+  'https://buy.stripe.com/fZu3cnbzMdVGcT646g1sQ07', // Google Ads Growth CHF 690/mo
 ];
 const foundLinks = pricingSrc.match(/https:\/\/buy\.stripe\.com\/[A-Za-z0-9]+/g) ?? [];
 for (const link of foundLinks) {
