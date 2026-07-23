@@ -47,13 +47,23 @@ const GA = SITE.tracking.ga4;
   };
 
   // Delegated tracking for annotated links (works for all locales/pages).
+  // Optional data-value / data-currency / data-item enrich the event (e.g. a
+  // Stripe checkout start carries its CHF price so GA4 can measure value).
   document.addEventListener('click', function (ev) {
     var a = ev.target && ev.target.closest ? ev.target.closest('a[data-track]') : null;
     if (!a) return;
-    window.wmEvent(a.getAttribute('data-track'), {
+    var params = {
       link_url: a.getAttribute('href') || '',
       page_path: location.pathname,
       transport_type: 'beacon',
-    });
+    };
+    var val = a.getAttribute('data-value');
+    if (val) {
+      var n = parseFloat(val);
+      if (!isNaN(n)) { params.value = n; params.currency = a.getAttribute('data-currency') || 'CHF'; }
+    }
+    var item = a.getAttribute('data-item');
+    if (item) params.item_id = item;
+    window.wmEvent(a.getAttribute('data-track'), params);
   });
 </script>

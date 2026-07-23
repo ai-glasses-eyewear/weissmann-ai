@@ -60,6 +60,9 @@ const perDay = pkg.interval === 'month' && pkg.price ? Math.round(pkg.price / 30
           rel="noopener"
           target="_blank"
           data-track="begin_checkout"
+          data-value={pkg.price ?? undefined}
+          data-currency={pkg.currency}
+          data-item={pkg.id}
         >
           {t(locale, 'cta.buy')}
         </a>
