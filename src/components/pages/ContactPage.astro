@@ -4,9 +4,11 @@
  * GA4 form_start/form_submit tracking, direct rails (phone/email/WhatsApp).
  */
 import Layout from '../../layouts/Layout.astro';
+import Icon from '../Icon.astro';
 import { SITE, localePrefix, type Locale } from '../../data/site';
 import { t } from '../../i18n/ui';
 import { webPage, breadcrumbs } from '../../data/schema';
+import { BOOKING } from '../../data/booking';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -21,6 +23,19 @@ const C: Record<Locale, any> = {
     h1: 'Sprechen wir über Ihr Unternehmen',
     intro:
       'Erzählen Sie uns kurz, wo Sie stehen und was Sie erreichen möchten. Wir melden uns innerhalb eines Arbeitstags – ehrlich, konkret und ohne Verkaufsdruck.',
+    demoEyebrow: 'Live-Demo',
+    demoHeading: 'Buchen Sie Ihre 15-Minuten-Demo',
+    demoSub:
+      'Erleben Sie Ihren eigenen KI-Telefonassistenten an einem echten Anruf – kostenlos und unverbindlich.',
+    demoStepsTitle: 'Das passiert in Ihren 15 Minuten:',
+    demoSteps: [
+      'Wir richten einen kurzen Test ein, konfiguriert mit den Angaben zu Ihrem Unternehmen.',
+      'Sie hören live, wie die KI einen Anruf annimmt, einen Termin bucht und eine Zusammenfassung per WhatsApp oder E-Mail sendet.',
+      'Ein ehrliches Ja oder Nein, ob es zu Ihrem Unternehmen passt – ganz ohne Druck.',
+    ],
+    demoBook: '15-Minuten-Demo buchen',
+    demoReassure: 'Kostenlos · ca. 15 Min. · keine Vorbereitung nötig · unverbindlich',
+    demoFormNote: 'Lieber schreiben? Senden Sie uns dies und wir richten Ihre Demo ein.',
     directTitle: 'Direkter Draht',
     callaiHeading: 'Noch nicht bereit fürs Formular?',
     callaiNote: 'Sie sprechen mit unserer echten KI – kostenlos und unverbindlich.',
@@ -46,6 +61,19 @@ const C: Record<Locale, any> = {
     h1: 'Let’s talk about your business',
     intro:
       'Tell us briefly where you stand and what you want to achieve. We’ll get back to you within one business day — honest, concrete and without sales pressure.',
+    demoEyebrow: 'Live demo',
+    demoHeading: 'Book your 15-minute demo',
+    demoSub:
+      'Experience your own AI phone assistant on a real call — free and with no obligation.',
+    demoStepsTitle: 'What happens in your 15 minutes:',
+    demoSteps: [
+      'We set up a short test, configured with your business information.',
+      'You hear the AI answer a call, book an appointment and send a WhatsApp or email summary — live.',
+      'An honest yes or no on whether it fits your business — no pressure.',
+    ],
+    demoBook: 'Book a 15-min demo',
+    demoReassure: 'Free · ~15 min · no preparation needed · no obligation',
+    demoFormNote: 'Prefer to write? Send this and we’ll set up your demo.',
     directTitle: 'Direct line',
     callaiHeading: 'Not ready for a form?',
     callaiNote: 'You’ll be speaking with our real AI assistant – free and no obligation.',
@@ -71,6 +99,19 @@ const C: Record<Locale, any> = {
     h1: 'Parliamo della vostra azienda',
     intro:
       'Raccontateci brevemente a che punto siete e cosa volete raggiungere. Vi rispondiamo entro un giorno lavorativo — con onestà, concretezza e senza pressione commerciale.',
+    demoEyebrow: 'Demo dal vivo',
+    demoHeading: 'Prenotate la vostra demo di 15 minuti',
+    demoSub:
+      'Provate il vostro assistente telefonico AI durante una chiamata reale — gratis e senza impegno.',
+    demoStepsTitle: 'Cosa succede nei vostri 15 minuti:',
+    demoSteps: [
+      'Configuriamo un breve test con le informazioni della vostra azienda.',
+      'Sentite l’AI rispondere a una chiamata, fissare un appuntamento e inviare un riepilogo via WhatsApp o e-mail — dal vivo.',
+      'Un sì o un no onesto sul fatto che sia adatta alla vostra azienda — senza pressioni.',
+    ],
+    demoBook: 'Prenota una demo di 15 min',
+    demoReassure: 'Gratis · ~15 min · nessuna preparazione necessaria · senza impegno',
+    demoFormNote: 'Preferite scrivere? Inviateci questo e prepareremo la vostra demo.',
     directTitle: 'Linea diretta',
     callaiHeading: 'Non ancora pronti per il modulo?',
     callaiNote: 'Parlate con la nostra vera AI – gratis e senza impegno.',
@@ -96,6 +137,19 @@ const C: Record<Locale, any> = {
     h1: 'Parlons de votre entreprise',
     intro:
       'Dites-nous brièvement où vous en êtes et ce que vous voulez atteindre. Nous vous répondons sous un jour ouvrable — honnêtement, concrètement et sans pression commerciale.',
+    demoEyebrow: 'Démo en direct',
+    demoHeading: 'Réservez votre démo de 15 minutes',
+    demoSub:
+      'Découvrez votre propre assistant téléphonique IA lors d’un véritable appel — gratuit et sans engagement.',
+    demoStepsTitle: 'Ce qui se passe pendant vos 15 minutes :',
+    demoSteps: [
+      'Nous configurons un court test avec les informations de votre entreprise.',
+      'Vous entendez l’IA répondre à un appel, prendre un rendez-vous et envoyer un récapitulatif par WhatsApp ou e-mail — en direct.',
+      'Un oui ou un non honnête sur son adéquation à votre entreprise — sans pression.',
+    ],
+    demoBook: 'Réserver une démo de 15 min',
+    demoReassure: 'Gratuit · ~15 min · aucune préparation nécessaire · sans engagement',
+    demoFormNote: 'Vous préférez écrire ? Envoyez-nous ceci et nous préparerons votre démo.',
     directTitle: 'Ligne directe',
     callaiHeading: 'Pas encore prêt pour le formulaire ?',
     callaiNote: 'Vous parlez à notre véritable IA – gratuit et sans engagement.',
@@ -137,8 +191,36 @@ const schema = [
 
   <section class="section section--tight">
     <div class="container">
+      <div class="card demo-band">
+        <div class="demo-band__head">
+          <span class="eyebrow">{c.demoEyebrow}</span>
+          <h2 class="demo-band__title">{c.demoHeading}</h2>
+          <p class="demo-band__sub">{c.demoSub}</p>
+        </div>
+        <div class="demo-band__body">
+          <div class="demo-band__steps">
+            <p class="demo-band__stepsTitle">{c.demoStepsTitle}</p>
+            <ul class="checklist demo-band__list">
+              {c.demoSteps.map((s: string) => <li>{s}</li>)}
+            </ul>
+          </div>
+          <div class="demo-band__cta">
+            <a class="btn btn--primary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{t(locale, 'cta.callAi')} · {SITE.aiPhoneDisplay}</a>
+            {BOOKING.scheduleUrl
+              ? <a class="btn btn--secondary" href={BOOKING.scheduleUrl} target="_blank" rel="noopener" data-track="book_consultation"><Icon name="calendar-check" size={18} />{c.demoBook}</a>
+              : <a class="btn btn--secondary" href="#demo-form" data-track="book_consultation"><Icon name="calendar-check" size={18} />{c.demoBook}</a>}
+            <p class="demo-band__reassure">{c.demoReassure}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
       <div class="grid grid--2" style="align-items:start;">
         <form
+          id="demo-form"
           class="card card--raised"
           name="kontakt"
           method="POST"
@@ -152,6 +234,7 @@ const schema = [
           <p hidden aria-hidden="true">
             <label>Bot field<input name="bot-field" /></label>
           </p>
+          <p class="form-lead">{c.demoFormNote}</p>
 
           <div class="field">
             <label for="cf-name">{t(locale, 'form.name')} *</label>
@@ -228,6 +311,27 @@ const schema = [
   /* Accent button — mirrors the homepage accent style, which is component-scoped (not global). */
   .btn--accent { background: #4f7cf0; color: #fff; box-shadow: 0 12px 30px -6px rgba(79,124,240,0.45); }
   .btn--accent:hover { background: #6c92f6; }
+
+  /* "Book a 15-minute demo" highlighted band */
+  .demo-band {
+    background: var(--accent-soft);
+    border-color: color-mix(in srgb, var(--accent) 24%, transparent);
+  }
+  .demo-band__title { margin-top: var(--space-2); font-size: var(--fs-700); max-width: 32rem; }
+  .demo-band__sub { margin-top: var(--space-3); margin-bottom: 0; color: var(--ink-soft); font-size: var(--fs-500); max-width: 40rem; }
+  .demo-band__body { display: grid; gap: var(--space-4); margin-top: var(--space-5); }
+  .demo-band__stepsTitle { margin: 0; font-weight: 600; color: var(--ink); }
+  .demo-band__list { margin-top: var(--space-3); }
+  .demo-band__cta { display: flex; flex-direction: column; gap: var(--space-3); align-content: start; }
+  .demo-band__cta .btn { width: 100%; }
+  .demo-band__reassure { margin: 0; color: var(--ink-soft); font-size: var(--fs-300); }
+
+  @media (min-width: 760px) {
+    .demo-band__body { grid-template-columns: 1fr minmax(15rem, 20rem); gap: var(--space-6); align-items: start; }
+  }
+
+  /* Small lead framing the contact form as the demo-request form */
+  .form-lead { margin: 0 0 var(--space-4); color: var(--ink-soft); font-size: var(--fs-300); }
 
   /* "Call our AI live" highlight block */
   .contact-callai { border-color: rgba(79,124,240,0.45); background: rgba(79,124,240,0.05); }
