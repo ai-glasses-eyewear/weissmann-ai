@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396" role="img" aria-label="Giovanna Carpi — Practical AI, built in Switzerland. Founder, Weissmann AI · Official Swiss Partner, Even Realities">
+  <title>LinkedIn banner — Giovanna Carpi (Weissmann AI + Even Realities Swiss Partner)</title>
+  <!-- 1584x396. Avatar reserve (0,168 -> 300,396) kept empty. Text safe band x316-1180.
+       Palette "Swiss Graphite". Single Swiss-red accent = the middle dot in the credential line.
+       Font stack falls back gracefully; install "Space Grotesk" for the intended look, then export to PNG at 1584x396. -->
+  <defs>
+    <linearGradient id="bg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1360" y2="396">
+      <stop offset="0" stop-color="#0E1424"/>
+      <stop offset="1" stop-color="#131C30"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1584" height="396" fill="url(#bg)"/>
+
+  <!-- ── Text block (x=316) ─────────────────────────────── -->
+  <text x="316" y="116" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="500" letter-spacing="2.6" fill="#93A0B8">ZÜRICH · SWITZERLAND</text>
+
+  <text x="316" y="198" font-family="'Space Grotesk','Inter','Helvetica Neue',Arial,sans-serif" font-size="44" font-weight="600" letter-spacing="-0.5" fill="#F5F7FA">Practical AI, built in Switzerland.</text>
+
+  <text x="316" y="248" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="400" fill="#D7DEEA">Founder, Weissmann AI<tspan fill="#93A0B8">&#160;&#160;</tspan><tspan fill="#E1132C" font-weight="600">·</tspan><tspan fill="#93A0B8">&#160;&#160;</tspan>Official Swiss Partner, Even Realities</text>
+
+  <text x="316" y="300" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="500" letter-spacing="0.3" fill="#3FA9C9">Live AI phone demo → +41 56 539 18 67</text>
+
+  <!-- ── Motif zone (right): voice waveform + abstract lens/ring ── -->
+  <g fill="#3FA9C9">
+    <rect x="1193" y="172" width="4" height="56" rx="2" opacity="0.85"/>
+    <rect x="1208" y="148" width="4" height="104" rx="2" opacity="0.82"/>
+    <rect x="1223" y="180" width="4" height="40" rx="2" opacity="0.79"/>
+    <rect x="1238" y="134" width="4" height="132" rx="2" opacity="0.76"/>
+    <rect x="1253" y="162" width="4" height="76" rx="2" opacity="0.73"/>
+    <rect x="1268" y="118" width="4" height="164" rx="2" opacity="0.70"/>
+    <rect x="1283" y="152" width="4" height="96" rx="2" opacity="0.67"/>
+    <rect x="1298" y="106" width="4" height="188" rx="2" opacity="0.64"/>
+    <rect x="1313" y="142" width="4" height="116" rx="2" opacity="0.61"/>
+    <rect x="1328" y="122" width="4" height="156" rx="2" opacity="0.58"/>
+    <rect x="1343" y="158" width="4" height="84" rx="2" opacity="0.55"/>
+    <rect x="1358" y="138" width="4" height="124" rx="2" opacity="0.52"/>
+    <rect x="1373" y="170" width="4" height="60" rx="2" opacity="0.49"/>
+    <rect x="1388" y="150" width="4" height="100" rx="2" opacity="0.46"/>
+    <rect x="1403" y="176" width="4" height="48" rx="2" opacity="0.43"/>
+    <rect x="1418" y="162" width="4" height="76" rx="2" opacity="0.40"/>
+  </g>
+
+  <!-- abstract lens (Even Realities glasses, non-branded) + ring -->
+  <g fill="none" stroke-width="2">
+    <ellipse cx="1494" cy="200" rx="48" ry="32" stroke="#243248"/>
+    <ellipse cx="1494" cy="200" rx="30" ry="20" stroke="#3FA9C9" opacity="0.9"/>
+    <circle cx="1524" cy="238" r="21" stroke="#243248"/>
+  </g>
+
+  <!-- faint signal nodes -->
+  <g fill="#93A0B8" opacity="0.22">
+    <circle cx="1240" cy="96" r="3"/>
+    <circle cx="1320" cy="80" r="3"/>
+    <circle cx="1404" cy="98" r="3"/>
+    <path d="M1240 96 L1320 80 L1404 98" stroke="#93A0B8" stroke-width="1" fill="none"/>
+  </g>
+</svg>
