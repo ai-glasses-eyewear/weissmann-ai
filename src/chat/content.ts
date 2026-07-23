@@ -106,19 +106,19 @@ export function buildChatKB(): ChatKB {
       answer: {
         de: [
           `${priceLine('phone-starter', 'de')} · ${priceLine('phone-premium', 'de')} · ${getPackage('phone-enterprise').name.de}: ${onRequest.de}. ${vat.de}`,
-          'Wichtig: Starter und Premium laufen als 12-Monatsvertrag, ohne Setup-Gebühr.',
+          'Wichtig: Starter ist ohne Mindestlaufzeit monatlich kündbar; Premium und Enterprise haben 12 Monate Mindestlaufzeit. Keine Setup-Gebühr.',
         ],
         en: [
           `${priceLine('phone-starter', 'en')} · ${priceLine('phone-premium', 'en')} · ${getPackage('phone-enterprise').name.en}: ${onRequest.en}. ${vat.en}`,
-          'Note: Starter and Premium run as a 12-month contract, with no setup fee.',
+          'Note: Starter has no minimum term and is cancellable monthly; Premium and Enterprise have a 12-month minimum term. No setup fee.',
         ],
         it: [
           `${priceLine('phone-starter', 'it')} · ${priceLine('phone-premium', 'it')} · ${getPackage('phone-enterprise').name.it}: ${onRequest.it}. ${vat.it}`,
-          'Nota: Starter e Premium prevedono un contratto di 12 mesi, senza costi di attivazione.',
+          'Nota: Starter non ha durata minima ed è disdicibile di mese in mese; Premium ed Enterprise prevedono una durata minima di 12 mesi. Nessun costo di attivazione.',
         ],
         fr: [
           `${priceLine('phone-starter', 'fr')} · ${priceLine('phone-premium', 'fr')} · ${getPackage('phone-enterprise').name.fr}: ${onRequest.fr}. ${vat.fr}`,
-          'À noter : Starter et Premium fonctionnent avec un contrat de 12 mois, sans frais d’installation.',
+          'À noter : Starter n’a pas de durée minimale et est résiliable d’un mois à l’autre ; Premium et Enterprise ont une durée minimale de 12 mois. Sans frais d’installation.',
         ],
       },
       chips: [
