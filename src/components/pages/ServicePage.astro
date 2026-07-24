@@ -18,6 +18,7 @@ import { t } from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
 import Faq from '../Faq.astro';
+import Icon from '../Icon.astro';
 import PricingCard from '../PricingCard.astro';
 
 interface Props {
@@ -28,16 +29,16 @@ interface Props {
 }
 const { locale, localePaths, service, content } = Astro.props;
 
-const LBL: Record<Locale, { short: string; faq: string; pricing: string; whoTitle: string; ctaTitle: string; ctaText: string; onRequest: string }> = {
-  de: { short: 'Kurzantwort', faq: 'Häufige Fragen', pricing: 'Pakete & Preise', whoTitle: 'Für wen', ctaTitle: 'Bereit, loszulegen?', ctaText: 'Erzählen Sie uns kurz von Ihrer Situation – wir zeigen Ihnen, was mit KI konkret möglich ist.', onRequest: 'Preis auf Anfrage' },
-  en: { short: 'In short', faq: 'Frequently asked questions', pricing: 'Packages & pricing', whoTitle: 'Who it’s for', ctaTitle: 'Ready to get started?', ctaText: 'Tell us briefly about your situation – we’ll show you what AI can concretely do for you.', onRequest: 'Price on request' },
-  it: { short: 'In breve', faq: 'Domande frequenti', pricing: 'Pacchetti e prezzi', whoTitle: 'Per chi', ctaTitle: 'Pronti a iniziare?', ctaText: 'Raccontateci brevemente la vostra situazione – vi mostriamo cosa può fare concretamente l’AI.', onRequest: 'Prezzo su richiesta' },
-  fr: { short: 'En bref', faq: 'Questions fréquentes', pricing: 'Forfaits et tarifs', whoTitle: 'Pour qui', ctaTitle: 'Prêt à démarrer ?', ctaText: 'Parlez-nous brièvement de votre situation – nous vous montrons ce que l’IA peut concrètement faire.', onRequest: 'Prix sur demande' },
+const LBL: Record<Locale, { short: string; faq: string; pricing: string; whoTitle: string; ctaTitle: string; ctaText: string; onRequest: string; socialProof: string; reassure: string; demoBtn: string; hearAi: string }> = {
+  de: { short: 'Kurzantwort', faq: 'Häufige Fragen', pricing: 'Pakete & Preise', whoTitle: 'Für wen', ctaTitle: 'Bereit, loszulegen?', ctaText: 'Erzählen Sie uns kurz von Ihrer Situation – wir zeigen Ihnen, was mit KI konkret möglich ist.', onRequest: 'Preis auf Anfrage', socialProof: 'Über 20 Unternehmen haben bereits eine Live-Demo angefragt.', reassure: 'Kostenlos · ca. 15 Min · unverbindlich', demoBtn: '15-Min-Demo buchen', hearAi: 'Unsere KI live hören' },
+  en: { short: 'In short', faq: 'Frequently asked questions', pricing: 'Packages & pricing', whoTitle: 'Who it’s for', ctaTitle: 'Ready to get started?', ctaText: 'Tell us briefly about your situation – we’ll show you what AI can concretely do for you.', onRequest: 'Price on request', socialProof: 'More than 20 businesses have already requested a live demo.', reassure: 'Free · ~15 min · no obligation', demoBtn: 'Book a 15-min demo', hearAi: 'Hear our AI live' },
+  it: { short: 'In breve', faq: 'Domande frequenti', pricing: 'Pacchetti e prezzi', whoTitle: 'Per chi', ctaTitle: 'Pronti a iniziare?', ctaText: 'Raccontateci brevemente la vostra situazione – vi mostriamo cosa può fare concretamente l’AI.', onRequest: 'Prezzo su richiesta', socialProof: 'Oltre 20 aziende hanno già richiesto una demo dal vivo.', reassure: 'Gratis · ~15 min · senza impegno', demoBtn: 'Prenota una demo di 15 min', hearAi: 'Ascolta la nostra AI dal vivo' },
+  fr: { short: 'En bref', faq: 'Questions fréquentes', pricing: 'Forfaits et tarifs', whoTitle: 'Pour qui', ctaTitle: 'Prêt à démarrer ?', ctaText: 'Parlez-nous brièvement de votre situation – nous vous montrons ce que l’IA peut concrètement faire.', onRequest: 'Prix sur demande', socialProof: 'Plus de 20 entreprises ont déjà demandé une démo en direct.', reassure: 'Gratuit · ~15 min · sans engagement', demoBtn: 'Réserver une démo de 15 min', hearAi: 'Écoutez notre IA en direct' },
 };
 const lbl = LBL[locale];
 
 const pre = locale === 'de' ? '' : `/${locale}`;
-const contactHref = `${pre}/kontakt/`;
+const demoHref = `${pre}/kontakt/#demo-form`;
 const pricingHref = `${pre}/preise/`;
 
 const hubPaths = pillarHome('services');
@@ -85,10 +86,12 @@ const schema = [
     <p class="kicker">{content.kicker[locale]}</p>
     <h1>{content.h1[locale]}</h1>
     <p class="svc-lead">{service.tagline[locale]}</p>
+    <p class="svc-proof"><Icon name="users" size={18} />{lbl.socialProof}</p>
     <div class="svc-cta-row">
-      <a class="btn btn--primary" href={contactHref} data-track="request_demo">{t(locale, 'cta.demo')}</a>
-      <a class="btn btn--ghost" href={`tel:${SITE.phone}`} data-track="call">{t(locale, 'cta.call')}</a>
+      <a class="btn btn--primary" href={demoHref} data-track="book_consultation">{lbl.demoBtn}</a>
+      <a class="btn btn--ghost" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{lbl.hearAi} · {SITE.aiPhoneDisplay}</a>
     </div>
+    <p class="svc-reassure">{lbl.reassure}</p>
     <aside class="tldr" aria-label={lbl.short}>
       <span class="tldr__label">{lbl.short}</span>
       <p>{content.answerFirst[locale]}</p>
@@ -163,8 +166,8 @@ const schema = [
     <h2>{lbl.ctaTitle}</h2>
     <p>{lbl.ctaText}</p>
     <div class="svc-cta-row svc-cta-row--center">
-      <a class="btn btn--primary" href={contactHref} data-track="request_demo">{t(locale, 'nav.cta')}</a>
-      <a class="btn btn--ghost" href={SITE.whatsapp} rel="nofollow" data-track="whatsapp">{t(locale, 'cta.whatsapp')}</a>
+      <a class="btn btn--primary" href={demoHref} data-track="book_consultation">{lbl.demoBtn}</a>
+      <a class="btn btn--ghost" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{lbl.hearAi} · {SITE.aiPhoneDisplay}</a>
     </div>
   </section>
 </Layout>
@@ -175,6 +178,9 @@ const schema = [
   .svc-lead { font-size: var(--fs-400); color: var(--ink-soft); max-width: 48rem; }
   .svc-cta-row { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-4); }
   .svc-cta-row--center { justify-content: center; }
+  .svc-proof { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: var(--space-4); font-size: var(--fs-300); color: var(--ink-soft); font-weight: 600; }
+  .svc-proof :global(.wi) { color: var(--accent); flex-shrink: 0; }
+  .svc-reassure { margin-top: 0.7rem; font-size: var(--fs-200); color: var(--ink-mute); }
   .tldr { margin-top: var(--space-5); border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); border-radius: 0 12px 12px 0; padding: var(--space-4); }
   .tldr__label { text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--fs-200); color: var(--accent); font-weight: 700; }
   .tldr p { margin: 0.4rem 0 0; color: var(--ink); font-size: var(--fs-400); }
