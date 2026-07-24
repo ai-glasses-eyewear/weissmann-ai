@@ -1,0 +1,192 @@
+---
+/**
+ * ComparisonPage — decision-stage "vs. the alternatives" template. Answer-first
+ * hero + TL;DR, a real comparison TABLE (the passage AI answer engines extract),
+ * honest narrative sections, an FAQ, and a hard conversion path (book a demo /
+ * hear the AI live). Emits Article + BreadcrumbList + FAQPage schema. Content
+ * from comparisons.ts (comparison-content/*.json).
+ *
+ * Guardrails: renders content verbatim — it never invents prices, customers or
+ * competitor names; the phone number is always SITE.aiPhone (never hardcoded).
+ */
+import { SITE, localePrefix, HTML_LANG, type Locale } from '../../data/site';
+import { type LocalePaths, urlFor, relFor } from '../../data/routes';
+import { type ComparisonPageDef, type ComparisonContent, comparisonPaths } from '../../data/comparisons';
+import { getService, servicePaths } from '../../data/services';
+import { breadcrumbs, faqPage, CONTENT_DATE, FOUNDER_ID } from '../../data/schema';
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import Faq from '../Faq.astro';
+
+interface Props { locale: Locale; localePaths: LocalePaths; page: ComparisonPageDef; content: ComparisonContent }
+const { locale, localePaths, page, content } = Astro.props;
+
+const LBL: Record<Locale, { short: string; faq: string; crumbHome: string; criterion: string; ctaTitle: string; ctaText: string; primary: string; secondary: string; seePhone: string; seePricing: string; by: string; updated: string }> = {
+  de: { short: 'Kurzantwort', faq: 'Häufige Fragen', crumbHome: 'Startseite', criterion: 'Kriterium', ctaTitle: 'Überzeugen Sie sich in 15 Minuten', ctaText: 'Sehen Sie am eigenen Fall, was ein KI-Telefonassistent für Sie übernimmt – oder rufen Sie unsere KI direkt an und hören Sie selbst.', primary: 'Kostenlose 15-Min-Demo buchen', secondary: 'KI live anrufen', seePhone: 'KI-Telefonassistent im Detail', seePricing: 'Preise ansehen', by: 'Von', updated: 'Aktualisiert' },
+  en: { short: 'In short', faq: 'Frequently asked questions', crumbHome: 'Home', criterion: 'Criterion', ctaTitle: 'See for yourself in 15 minutes', ctaText: 'See what an AI phone assistant handles for your own business – or call our AI directly and hear it for yourself.', primary: 'Book a free 15-min demo', secondary: 'Hear the AI live', seePhone: 'The AI phone assistant in detail', seePricing: 'See pricing', by: 'By', updated: 'Updated' },
+  it: { short: 'In breve', faq: 'Domande frequenti', crumbHome: 'Home', criterion: 'Criterio', ctaTitle: 'Convincetevi in 15 minuti', ctaText: 'Vedete sul vostro caso cosa gestisce per voi un assistente telefonico AI – oppure chiamate la nostra AI e ascoltatela di persona.', primary: 'Prenota una demo gratuita di 15 min', secondary: 'Chiama l’AI dal vivo', seePhone: 'L’assistente telefonico AI in dettaglio', seePricing: 'Vedi i prezzi', by: 'Di', updated: 'Aggiornato' },
+  fr: { short: 'En bref', faq: 'Questions fréquentes', crumbHome: 'Accueil', criterion: 'Critère', ctaTitle: 'Jugez par vous-même en 15 minutes', ctaText: 'Voyez sur votre propre cas ce qu’un assistant téléphonique IA gère pour vous – ou appelez notre IA et écoutez-la vous-même.', primary: 'Réserver une démo gratuite de 15 min', secondary: 'Écouter l’IA en direct', seePhone: 'L’assistant téléphonique IA en détail', seePricing: 'Voir les tarifs', by: 'Par', updated: 'Mis à jour' },
+};
+const lbl = LBL[locale];
+const pre = localePrefix(locale);
+const demoHref = `${pre}/kontakt/#demo-form`;
+const phoneHref = `${pre}/ki-telefonassistent/`;
+const pricingHref = `${pre}/preise/`;
+
+const founder = SITE.founders[0]; // Giovanna Carpi
+const author = founder.name;
+const authorRole = founder.role[locale];
+const authorLink = 'linkedin' in founder && founder.linkedin ? founder.linkedin : `${pre}/ueber-uns/`;
+const dateDisplay = new Date(CONTENT_DATE).toLocaleDateString(locale === 'de' ? 'de-CH' : locale, { day: 'numeric', month: 'long', year: 'numeric' });
+
+const relServices = (content.relatedServices ?? [])
+  .map((id) => getService(id))
+  .filter((s): s is NonNullable<typeof s> => !!s && s.status === 'live');
+
+const schema: object[] = [
+  {
+    '@type': 'Article',
+    headline: content.h1[locale],
+    description: content.metaDescription[locale],
+    inLanguage: HTML_LANG[locale],
+    datePublished: CONTENT_DATE,
+    dateModified: CONTENT_DATE,
+    image: `${SITE.domain}/og-default.png`,
+    mainEntityOfPage: urlFor(locale, localePaths),
+    author: { '@id': FOUNDER_ID },
+    publisher: { '@id': `${SITE.domain}/#organization` },
+    about: { '@id': `${SITE.domain}/#organization` },
+  },
+  breadcrumbs(locale, [
+    { name: lbl.crumbHome, path: '/' },
+    { name: page.name[locale], path: localePaths[locale] },
+  ]),
+  faqPage(content.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))),
+];
+---
+<Layout locale={locale} localePaths={localePaths} title={content.title[locale]} description={content.metaDescription[locale]} schema={schema}>
+  <Breadcrumbs locale={locale} items={[
+    { name: lbl.crumbHome, href: `${pre}/` },
+    { name: page.name[locale] },
+  ]} />
+
+  <article class="cmp">
+    <header class="cmp-head container">
+      <p class="kicker">{content.kicker[locale]}</p>
+      <h1>{content.h1[locale]}</h1>
+      <p class="cmp-byline">{lbl.by} <a href={authorLink} rel={authorLink.startsWith('http') ? 'noopener' : undefined}>{author}</a>, {authorRole} · Weissmann AI · {lbl.updated} {dateDisplay}</p>
+      <p class="cmp-intro">{content.intro[locale]}</p>
+      <aside class="tldr" aria-label={lbl.short}>
+        <span class="tldr__label">{lbl.short}</span>
+        <p>{content.answerFirst[locale]}</p>
+      </aside>
+      <div class="cmp-cta-row">
+        <a class="btn btn--primary" href={demoHref} data-track="book_consultation">{lbl.primary}</a>
+        <a class="btn btn--secondary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live">{lbl.secondary} · {SITE.aiPhoneDisplay}</a>
+      </div>
+    </header>
+
+    <section class="container cmp-table-wrap">
+      <h2>{content.table.heading[locale]}</h2>
+      <div class="cmp-table-scroll" role="region" aria-label={content.table.heading[locale]} tabindex="0">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th scope="col">{lbl.criterion}</th>
+              {content.table.columns.map((col, i) => (
+                <th scope="col" class={i === 0 ? 'is-us' : undefined}>{col[locale]}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {content.table.rows.map((row) => (
+              <tr>
+                <th scope="row">{row.label[locale]}</th>
+                {row.cells.map((cell, i) => (
+                  <td class={i === 0 ? 'is-us' : undefined}>{cell[locale]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {content.table.caption && <p class="cmp-caption">{content.table.caption[locale]}</p>}
+    </section>
+
+    <div class="cmp-body container">
+      {content.sections.map((s) => (
+        <section class="cmp-section">
+          <h2>{s.heading[locale]}</h2>
+          {s.paragraphs?.map((p) => <p>{p[locale]}</p>)}
+          {s.bullets && s.bullets.length > 0 && (
+            <ul>{s.bullets.map((b) => <li>{b[locale]}</li>)}</ul>
+          )}
+        </section>
+      ))}
+    </div>
+
+    <section class="container cmp-faq">
+      <h2>{lbl.faq}</h2>
+      <Faq items={content.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))} />
+    </section>
+
+    <section class="container cmp-links">
+      <a href={phoneHref}>{lbl.seePhone} →</a>
+      <a href={pricingHref}>{lbl.seePricing} →</a>
+      {relServices.map((s) => (
+        <a href={relFor(locale, servicePaths(s))}>{s.name[locale]} →</a>
+      ))}
+    </section>
+
+    <section class="container cmp-cta">
+      <h2>{lbl.ctaTitle}</h2>
+      <p>{lbl.ctaText}</p>
+      <div class="cmp-cta-row cmp-cta-row--center">
+        <a class="btn btn--primary" href={demoHref} data-track="book_consultation">{lbl.primary}</a>
+        <a class="btn btn--secondary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live">{lbl.secondary} · {SITE.aiPhoneDisplay}</a>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .cmp-head { padding-top: var(--space-5); padding-bottom: var(--space-4); max-width: 52rem; }
+  .cmp-head h1 { font-size: var(--fs-700); line-height: 1.08; margin: 0.4rem 0 0.6rem; }
+  .cmp-byline { font-size: var(--fs-200); color: var(--ink-mute); margin-bottom: var(--space-4); }
+  .cmp-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 48rem; margin-bottom: var(--space-4); }
+  .tldr { border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); border-radius: 0 12px 12px 0; padding: var(--space-4); margin-bottom: var(--space-4); }
+  .tldr__label { text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--fs-200); color: var(--accent); font-weight: 700; }
+  .tldr p { margin: 0.4rem 0 0; color: var(--ink); font-size: var(--fs-400); }
+  .cmp-cta-row { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .cmp-cta-row--center { justify-content: center; }
+
+  .cmp-table-wrap { max-width: 60rem; padding-top: var(--space-4); padding-bottom: var(--space-5); }
+  .cmp-table-wrap > h2 { font-size: var(--fs-500); margin-bottom: var(--space-4); }
+  .cmp-table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+  .cmp-table { width: 100%; border-collapse: collapse; min-width: 40rem; font-size: var(--fs-300); }
+  .cmp-table th, .cmp-table td { text-align: left; padding: 0.7rem 0.85rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .cmp-table thead th { background: var(--paper-2, var(--paper)); font-weight: 700; color: var(--ink); position: sticky; top: 0; }
+  .cmp-table thead th.is-us, .cmp-table td.is-us { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  .cmp-table thead th.is-us { color: var(--accent); }
+  .cmp-table tbody th[scope="row"] { font-weight: 600; color: var(--ink); }
+  .cmp-table td { color: var(--ink-soft); }
+  .cmp-table tbody tr:last-child th, .cmp-table tbody tr:last-child td { border-bottom: none; }
+  .cmp-caption { margin-top: var(--space-3); font-size: var(--fs-200); color: var(--ink-mute); max-width: 52rem; }
+
+  .cmp-body { max-width: 52rem; }
+  .cmp-section { margin-bottom: var(--space-5); }
+  .cmp-section h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
+  .cmp-section p { color: var(--ink-soft); margin-bottom: var(--space-3); line-height: 1.7; }
+  .cmp-section ul { display: flex; flex-direction: column; gap: 0.5rem; padding-left: 1.1rem; margin-bottom: var(--space-3); }
+  .cmp-section li { color: var(--ink-soft); }
+
+  .cmp-faq { max-width: 52rem; padding-top: var(--space-4); padding-bottom: var(--space-4); }
+  .cmp-faq > h2 { font-size: var(--fs-500); margin-bottom: var(--space-4); }
+
+  .cmp-links { max-width: 52rem; display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-5); padding-bottom: var(--space-5); }
+  .cmp-links a { color: var(--accent); font-weight: 600; }
+
+  .cmp-cta { text-align: center; padding: var(--space-7) var(--space-4); margin-bottom: var(--space-7); border-top: 1px solid var(--line); }
+  .cmp-cta h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
+  .cmp-cta p { color: var(--ink-soft); max-width: 40rem; margin: 0 auto var(--space-4); }
+</style>

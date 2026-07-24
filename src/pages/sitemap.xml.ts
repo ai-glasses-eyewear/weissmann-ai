@@ -15,6 +15,7 @@ import { liveClusters, clusterPaths, spokesOf, articlePaths } from '../data/acad
 import { hasGlossary, glossaryHubPaths, termPaths, GLOSSARY } from '../data/glossary';
 import { liveResources, resourcePaths } from '../data/resources';
 import { liveCompanyPages, companyPagePaths } from '../data/company';
+import { liveComparisons, comparisonPaths } from '../data/comparisons';
 
 /** Legacy same-slug page (identical path in every locale) as LocalePaths. */
 const sameSlug = (path: string): LocalePaths => ({ de: path, en: path, it: path, fr: path });
@@ -43,6 +44,7 @@ function indexablePages(): LocalePaths[] {
     pillarHome('resources'),
     ...liveResources().map(resourcePaths),
     ...liveCompanyPages().map(companyPagePaths),
+    ...liveComparisons().map(comparisonPaths),
     sameSlug('/preise/'),
     sameSlug('/ueber-uns/'),
     sameSlug('/kontakt/'),
