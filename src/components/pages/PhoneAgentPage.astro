@@ -91,6 +91,17 @@ const C: Record<Locale, any> = {
     socialProof: 'Über 20 Unternehmen haben bereits eine Live-Demo angefragt.',
     trustRow: 'Daten in der Schweiz/EU · nDSG- & DSGVO-konform · Schweizer Unternehmen in Zürich · jederzeit Übergabe an Menschen',
     riskReversal: 'Bevor Sie sich entscheiden: Rufen Sie unsere Live-KI an oder fordern Sie eine kostenlose Demo mit Ihrer eigenen Wissensbasis an. Keine Setup-Gebühr · Live-Test mit Ihrem Team vor dem Start · jederzeit Übergabe an Menschen.',
+    setupTitle: 'So läuft die Einrichtung ab',
+    setupIntro: 'Kein IT-Projekt und kein Aufwand für Sie: Wir übernehmen die komplette Einrichtung. In der Regel ist Ihr Assistent in wenigen Tagen live.',
+    setupSteps: [
+      { title: 'Kostenlose Demo & Erstgespräch', text: 'Wir konfigurieren eine kostenlose Test-Demo mit Ihren Angaben – Öffnungszeiten, Leistungen und wie Anrufe behandelt werden sollen.' },
+      { title: 'Wir bauen & trainieren Ihren Assistenten', text: 'Wir bauen und trainieren Ihren Assistenten auf Ihr Unternehmen und Ihre Sprachen – inklusive Schweizerdeutsch.' },
+      { title: 'Live-Test mit Ihrem Team', text: 'Sie testen den Assistenten im Live-Betrieb mit Ihrem Team und geben ihn erst frei, wenn alles passt.' },
+      { title: 'Live-Schaltung', text: 'Der Assistent nimmt jeden Anruf rund um die Uhr an – und nach jedem Gespräch erhalten Sie eine Zusammenfassung.' },
+    ],
+    setupReassure: ['Keine Setup-Gebühr', 'In wenigen Tagen live', 'Wir übernehmen die Einrichtung', 'Starter monatlich kündbar'],
+    setupCtaPrimary: 'Demo in 15 Minuten buchen',
+    setupCtaSecondary: 'Hören Sie die KI live',
   },
   en: {
     metaTitle: 'AI Phone Assistant Switzerland: Cost from CHF 350/mo | Weissmann AI',
@@ -159,6 +170,17 @@ const C: Record<Locale, any> = {
     socialProof: 'More than 20 businesses have already requested a live demo.',
     trustRow: 'Data in Switzerland/EU · nDSG- & GDPR-aligned · Swiss company in Zurich · human handover any time',
     riskReversal: 'Before you decide: call our live AI or request a free demo configured with your own knowledge base. No setup fee · live test with your team before go-live · human handover any time.',
+    setupTitle: 'How setup works',
+    setupIntro: 'Not an IT project and no work for you: we handle the entire setup. Your assistant is typically live within a few days.',
+    setupSteps: [
+      { title: 'Free demo & discovery', text: 'We configure a free test demo with your details — opening hours, services and how you want calls handled.' },
+      { title: 'We build & train your assistant', text: 'We build and train your assistant on your business and your languages — including Swiss German.' },
+      { title: 'Live test with your team', text: 'You test the assistant in live operation with your team and only approve it once everything fits.' },
+      { title: 'Go live', text: 'The assistant answers every call around the clock — and after each conversation you receive a summary.' },
+    ],
+    setupReassure: ['No setup fee', 'Typically live within a few days', 'We handle the configuration', 'Cancel-anytime Starter'],
+    setupCtaPrimary: 'Book a 15-min demo',
+    setupCtaSecondary: 'Hear the AI live',
   },
   it: {
     metaTitle: 'Assistente telefonico AI Svizzera: da CHF 350/mese | Weissmann AI',
@@ -227,6 +249,17 @@ const C: Record<Locale, any> = {
     socialProof: 'Oltre 20 aziende hanno già richiesto una demo dal vivo.',
     trustRow: 'Dati in Svizzera/UE · conforme a nLPD e GDPR · azienda svizzera a Zurigo · trasferimento a persone in qualsiasi momento',
     riskReversal: 'Prima di decidere: chiamate la nostra AI dal vivo o richiedete una demo gratuita configurata con la vostra base di conoscenza. Nessun costo di attivazione · test dal vivo con il vostro team prima dell’avvio · trasferimento a persone in qualsiasi momento.',
+    setupTitle: 'Come funziona l’attivazione',
+    setupIntro: 'Non è un progetto IT e non richiede lavoro da parte vostra: ci occupiamo noi dell’intera configurazione. Di norma il vostro assistente è attivo in pochi giorni.',
+    setupSteps: [
+      { title: 'Demo gratuita e primo colloquio', text: 'Configuriamo una demo di prova gratuita con i vostri dati — orari, servizi e come volete che vengano gestite le chiamate.' },
+      { title: 'Costruiamo e addestriamo il vostro assistente', text: 'Costruiamo e addestriamo il vostro assistente sulla vostra azienda e sulle vostre lingue — svizzero tedesco incluso.' },
+      { title: 'Test dal vivo con il vostro team', text: 'Testate l’assistente in condizioni reali con il vostro team e lo approvate solo quando tutto è a posto.' },
+      { title: 'Messa in funzione', text: 'L’assistente risponde a ogni chiamata 24 ore su 24 — e dopo ogni conversazione ricevete un riepilogo.' },
+    ],
+    setupReassure: ['Nessun costo di attivazione', 'Attivo in pochi giorni', 'Ci occupiamo noi della configurazione', 'Starter disdicibile mensilmente'],
+    setupCtaPrimary: 'Prenota una demo di 15 minuti',
+    setupCtaSecondary: 'Ascolta l’AI dal vivo',
   },
   fr: {
     metaTitle: 'Agent téléphonique IA Suisse : dès CHF 350/mois | Weissmann AI',
@@ -295,6 +328,17 @@ const C: Record<Locale, any> = {
     socialProof: 'Plus de 20 entreprises ont déjà demandé une démo en direct.',
     trustRow: 'Données en Suisse/UE · conforme nLPD et RGPD · entreprise suisse à Zurich · transfert à un humain à tout moment',
     riskReversal: 'Avant de décider : appelez notre IA en direct ou demandez une démo gratuite configurée avec votre propre base de connaissances. Aucuns frais d’installation · test en conditions réelles avec votre équipe avant le lancement · transfert à un humain à tout moment.',
+    setupTitle: 'Comment se déroule la mise en place',
+    setupIntro: 'Ce n’est pas un projet informatique et cela ne vous demande aucun travail : nous nous occupons de toute la mise en place. En général, votre assistant est opérationnel en quelques jours.',
+    setupSteps: [
+      { title: 'Démo gratuite & découverte', text: 'Nous configurons une démo d’essai gratuite avec vos informations — horaires, prestations et la façon dont vous voulez gérer les appels.' },
+      { title: 'Nous construisons & entraînons votre assistant', text: 'Nous construisons et entraînons votre assistant sur votre entreprise et vos langues — suisse allemand inclus.' },
+      { title: 'Test en conditions réelles avec votre équipe', text: 'Vous testez l’assistant en conditions réelles avec votre équipe et ne le validez qu’une fois tout au point.' },
+      { title: 'Mise en service', text: 'L’assistant répond à chaque appel 24h/24 — et après chaque conversation vous recevez un résumé.' },
+    ],
+    setupReassure: ['Aucuns frais d’installation', 'Opérationnel en quelques jours', 'Nous gérons la configuration', 'Starter résiliable au mois'],
+    setupCtaPrimary: 'Réserver une démo de 15 min',
+    setupCtaSecondary: 'Écoutez l’IA en direct',
   },
 };
 const c = C[locale];
@@ -409,6 +453,33 @@ const schema = [
     </div>
   </section>
 
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>{c.setupTitle}</h2>
+        <p>{c.setupIntro}</p>
+      </div>
+      <ol class="setup-steps">
+        {c.setupSteps.map((s: any, i: number) => (
+          <li class="setup-step reveal" style={`--i:${i}`}>
+            <span class="setup-step__n" aria-hidden="true">{i + 1}</span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
+      <ul class="setup-reassure">
+        {c.setupReassure.map((r: string) => (
+          <li><Icon name="check" size={15} />{r}</li>
+        ))}
+      </ul>
+      <div class="setup-cta">
+        <a class="btn btn--primary" href={`${p}/kontakt/#demo-form`} data-track="book_consultation">{c.setupCtaPrimary}</a>
+        <a class="btn btn--secondary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{c.setupCtaSecondary} · {SITE.aiPhoneDisplay}</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section section--alt" id="pricing">
     <div class="container">
       <div class="section-head"><h2>{c.pricingTitle}</h2></div>
@@ -447,3 +518,41 @@ const schema = [
     </div>
   </section>
 </Layout>
+
+<style>
+  /* Onboarding / "live in a few days" path — reduces the setup-effort objection */
+  .setup-steps {
+    list-style: none; margin: 0 0 var(--space-5); padding: 0;
+    display: grid; gap: var(--space-4); grid-template-columns: 1fr;
+    counter-reset: setup;
+  }
+  @media (min-width: 560px) { .setup-steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px) { .setup-steps { grid-template-columns: repeat(4, 1fr); } }
+  .setup-step {
+    position: relative;
+    border: 1px solid var(--line); border-radius: var(--radius-lg);
+    padding: var(--space-4); background: var(--paper);
+    transition: border-color 0.2s ease;
+  }
+  .setup-step:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+  .setup-step__n {
+    display: inline-grid; place-items: center;
+    width: 2.1rem; height: 2.1rem; border-radius: var(--radius-pill);
+    background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-variant-numeric: tabular-nums;
+    font-size: var(--fs-400); margin-bottom: var(--space-3);
+  }
+  .setup-step h3 { font-size: var(--fs-500); margin-bottom: 0; }
+  .setup-step p { color: var(--ink-mute); font-size: var(--fs-300); margin: var(--space-2) 0 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .setup-step.reveal { transition-delay: calc(var(--i, 0) * 80ms); }
+  }
+  .setup-reassure {
+    list-style: none; margin: 0 0 var(--space-4); padding: 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem;
+    font-size: var(--fs-300); font-weight: 600; color: var(--ink-soft);
+  }
+  .setup-reassure li { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .setup-reassure svg { color: var(--accent); flex: none; }
+  .setup-cta { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+</style>
