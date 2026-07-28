@@ -30,7 +30,8 @@ const LBL: Record<Locale, { short: string; faq: string; crumbHome: string; crite
 const lbl = LBL[locale];
 const pre = localePrefix(locale);
 const demoHref = `${pre}/kontakt/#demo-form`;
-const phoneHref = `${pre}/ki-telefonassistent/`;
+const phoneService = getService('phone-assistant');
+const phoneHref = phoneService ? relFor(locale, servicePaths(phoneService)) : `${pre}/kontakt/`;
 const pricingHref = `${pre}/preise/`;
 
 const founder = SITE.founders[0]; // Giovanna Carpi

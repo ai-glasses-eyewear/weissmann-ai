@@ -12,6 +12,16 @@
  */
 import { PACKAGES, getPackage, formatPrice, type PricingPackage } from '../data/pricing';
 import { SITE, LOCALES, type Locale } from '../data/site';
+import { getService, servicePaths } from '../data/services';
+import { relFor } from '../data/routes';
+
+/** Per-locale relative URL for a service's canonical page, from the route registry. */
+function serviceHrefByLocale(id: string): Record<Locale, string> {
+  const s = getService(id);
+  const out = {} as Record<Locale, string>;
+  for (const l of LOCALES) out[l] = s ? relFor(l, servicePaths(s)) : `/${l === 'de' ? '' : l + '/'}kontakt/`;
+  return out;
+}
 
 type L = Record<Locale, string>;
 
@@ -19,8 +29,10 @@ type L = Record<Locale, string>;
 export interface ChatNode {
   answer: Record<Locale, string[]>;
   chips: { to: string; label: L }[];
-  /** Optional inline CTA rendered as a button under the answer. */
-  cta?: { kind: 'link' | 'whatsapp' | 'consult'; href?: string; label: L; event?: string };
+  /** Optional inline CTA rendered as a button under the answer. `href` is either
+   *  a locale-independent path (same slug in every language) or a per-locale
+   *  map (for localized-slug registry pages). */
+  cta?: { kind: 'link' | 'whatsapp' | 'consult'; href?: string | Record<Locale, string>; label: L; event?: string };
   /** Service slug for analytics (pricing.ts id or a category), if any. */
   service?: string;
 }
@@ -45,11 +57,19 @@ const interval = (pkg: PricingPackage, l: Locale) =>
 
 const onRequest: L = { de: 'Preis auf Anfrage', en: 'price on request', it: 'prezzo su richiesta', fr: 'prix sur demande' };
 
-/** "Starter CHF 350 pro Monat" — assembled from config, never typed by hand. */
+const regularly: L = { de: 'regulär', en: 'regularly', it: 'normalmente', fr: 'normalement' };
+const savingsLabel: L = { de: 'Ersparnis', en: 'savings', it: 'risparmio', fr: 'économie' };
+
+/** "Starter CHF 350 pro Monat" — assembled from config, never typed by hand.
+ *  Automatically appends a promo note (label + regular price + savings) when
+ *  the package has an active promotion (pricing.ts regularPrice/promoLabel). */
 function priceLine(id: string, l: Locale): string {
   const p = getPackage(id);
   const price = p.price === null ? onRequest[l] : `${p.isFrom ? ({ de: 'ab ', en: 'from ', it: 'da ', fr: 'dès ' } as L)[l] : ''}${formatPrice(p.price)} ${interval(p, l)}`;
-  return `${p.name[l]}: ${price}`;
+  const promo = p.regularPrice && p.promoLabel && p.price !== null
+    ? ` (${p.promoLabel[l]}, ${regularly[l]} ${formatPrice(p.regularPrice)}, ${savingsLabel[l]} ${formatPrice(p.regularPrice - p.price)})`
+    : '';
+  return `${p.name[l]}: ${price}${promo}`;
 }
 
 const vat: L = { de: 'Preise exkl. MwSt.', en: 'Prices excl. VAT.', it: 'Prezzi IVA esclusa.', fr: 'Prix hors TVA.' };
@@ -99,7 +119,7 @@ export function buildChatKB(): ChatKB {
         C('languages', 'Sprachen', 'Languages', 'Lingue', 'Langues'),
         human,
       ],
-      cta: { kind: 'link', href: '/ki-telefonassistent/', label: { de: 'Zur Seite', en: 'Open the page', it: 'Vai alla pagina', fr: 'Ouvrir la page' } },
+      cta: { kind: 'link', href: serviceHrefByLocale('phone-assistant'), label: { de: 'Zur Seite', en: 'Open the page', it: 'Vai alla pagina', fr: 'Ouvrir la page' } },
     },
     'phone-pricing': {
       service: 'phone-agent',
@@ -107,18 +127,22 @@ export function buildChatKB(): ChatKB {
         de: [
           `${priceLine('phone-starter', 'de')} · ${priceLine('phone-premium', 'de')} · ${getPackage('phone-enterprise').name.de}: ${onRequest.de}. ${vat.de}`,
           'Wichtig: Starter ist ohne Mindestlaufzeit monatlich kündbar; Premium und Enterprise haben 12 Monate Mindestlaufzeit. Keine Setup-Gebühr.',
+          `Lieber zuerst testen? Der ${priceLine('phone-starter-trial', 'de')} ist ein einmaliger Test ohne Abonnement – kein monatlicher Trial, keine automatische Verlängerung.`,
         ],
         en: [
           `${priceLine('phone-starter', 'en')} · ${priceLine('phone-premium', 'en')} · ${getPackage('phone-enterprise').name.en}: ${onRequest.en}. ${vat.en}`,
           'Note: Starter has no minimum term and is cancellable monthly; Premium and Enterprise have a 12-month minimum term. No setup fee.',
+          `Prefer to try first? The ${priceLine('phone-starter-trial', 'en')} is a one-time trial with no subscription — not a monthly trial, no automatic renewal.`,
         ],
         it: [
           `${priceLine('phone-starter', 'it')} · ${priceLine('phone-premium', 'it')} · ${getPackage('phone-enterprise').name.it}: ${onRequest.it}. ${vat.it}`,
           'Nota: Starter non ha durata minima ed è disdicibile di mese in mese; Premium ed Enterprise prevedono una durata minima di 12 mesi. Nessun costo di attivazione.',
+          `Preferite provare prima? La ${priceLine('phone-starter-trial', 'it')} è una prova una tantum senza abbonamento – non è una prova mensile, nessun rinnovo automatico.`,
         ],
         fr: [
           `${priceLine('phone-starter', 'fr')} · ${priceLine('phone-premium', 'fr')} · ${getPackage('phone-enterprise').name.fr}: ${onRequest.fr}. ${vat.fr}`,
           'À noter : Starter n’a pas de durée minimale et est résiliable d’un mois à l’autre ; Premium et Enterprise ont une durée minimale de 12 mois. Sans frais d’installation.',
+          `Vous préférez essayer d’abord ? L’${priceLine('phone-starter-trial', 'fr')} est un essai unique sans abonnement – ce n’est pas un essai mensuel, aucun renouvellement automatique.`,
         ],
       },
       chips: [
@@ -158,7 +182,7 @@ export function buildChatKB(): ChatKB {
         fr: ['Des sites web axés conversion avec des fondations techniques SEO et GEO. Trois forfaits — de l’entrée de gamme au site sur mesure.'],
       },
       chips: [C('website-pricing', 'Preise', 'Pricing', 'Prezzi', 'Tarifs'), C('website-scope', 'Was ist enthalten?', 'What’s included?', 'Cosa è incluso?', 'Ce qui est inclus'), human],
-      cta: { kind: 'link', href: '/leistungen/ai-websites/', label: { de: 'Zur Seite', en: 'Open the page', it: 'Vai alla pagina', fr: 'Ouvrir la page' } },
+      cta: { kind: 'link', href: serviceHrefByLocale('websites'), label: { de: 'Zur Seite', en: 'Open the page', it: 'Vai alla pagina', fr: 'Ouvrir la page' } },
     },
     'website-pricing': {
       service: 'website',
@@ -236,10 +260,10 @@ export function buildChatKB(): ChatKB {
     // ── Pricing overview ──────────────────────────────────────────────────
     pricing: {
       answer: {
-        de: ['Kurzüberblick: KI-Telefonassistent ab CHF 350/Monat, Websites ab CHF 2’490, SEO ab CHF 890/Monat, GEO ab CHF 990/Monat, Google Ads ab CHF 690/Monat. Alle Preise exkl. MwSt.'],
-        en: ['Quick overview: AI phone agent from CHF 350/month, websites from CHF 2,490, SEO from CHF 890/month, GEO from CHF 990/month, Google Ads from CHF 690/month. All prices excl. VAT.'],
-        it: ['Riepilogo: assistente telefonico AI da CHF 350/mese, siti web da CHF 2’490, SEO da CHF 890/mese, GEO da CHF 990/mese, Google Ads da CHF 690/mese. Tutti i prezzi IVA esclusa.'],
-        fr: ['Aperçu : agent téléphonique IA dès CHF 350/mois, sites web dès CHF 2’490, SEO dès CHF 890/mois, GEO dès CHF 990/mois, Google Ads dès CHF 690/mois. Tous les prix hors TVA.'],
+        de: ['Kurzüberblick: KI-Telefonassistent ab CHF 350/Monat, Websites ab CHF 880 (Aktionspreis, regulär CHF 2’490), SEO ab CHF 890/Monat, GEO ab CHF 990/Monat, Google Ads ab CHF 690/Monat. Alle Preise exkl. MwSt.'],
+        en: ['Quick overview: AI phone agent from CHF 350/month, websites from CHF 880 (special promotion, regularly CHF 2,490), SEO from CHF 890/month, GEO from CHF 990/month, Google Ads from CHF 690/month. All prices excl. VAT.'],
+        it: ['Riepilogo: assistente telefonico AI da CHF 350/mese, siti web da CHF 880 (promozione speciale, normalmente CHF 2’490), SEO da CHF 890/mese, GEO da CHF 990/mese, Google Ads da CHF 690/mese. Tutti i prezzi IVA esclusa.'],
+        fr: ['Aperçu : agent téléphonique IA dès CHF 350/mois, sites web dès CHF 880 (offre spéciale, normalement CHF 2’490), SEO dès CHF 890/mois, GEO dès CHF 990/mois, Google Ads dès CHF 690/mois. Tous les prix hors TVA.'],
       },
       chips: [C('phone-pricing', 'Telefonassistent', 'Phone agent', 'Assistente', 'Agent'), C('website-pricing', 'Websites', 'Websites', 'Siti web', 'Sites web'), C('seo-geo', 'SEO & GEO', 'SEO & GEO', 'SEO & GEO', 'SEO & GEO'), human],
       cta: allPricesCta,

@@ -22,8 +22,12 @@ interface Props {
   localePaths: LocalePaths;
   article: AcademyArticle;
   cluster: AcademyCluster;
+  /** Locales this specific article exists in (defaults to all four). */
+  availableLocales?: Locale[];
 }
-const { locale, localePaths, article, cluster } = Astro.props;
+const { locale, localePaths, article, cluster, availableLocales } = Astro.props;
+const publishedDate = article.publishedDate ?? CONTENT_DATE;
+const updatedDate = article.updatedDate ?? article.publishedDate ?? CONTENT_DATE;
 
 const LBL: Record<Locale, { short: string; faq: string; inCluster: string; related: string; backToCluster: string; ctaTitle: string; ctaText: string; academy: string; by: string }> = {
   de: { short: 'Kurzantwort', faq: 'Häufige Fragen', inCluster: 'In diesem Themenbereich', related: 'Passende Leistungen', backToCluster: 'Zurück zur Übersicht', ctaTitle: 'Praktische KI für Ihr Unternehmen', ctaText: 'Von der Idee zur Umsetzung – wir zeigen Ihnen, was in Ihrem Fall konkret möglich ist.', academy: 'AI Academy', by: 'Von' },
@@ -54,7 +58,7 @@ const author = founder.name;
 const authorRole = founder.role[locale];
 const authorLink = 'linkedin' in founder && founder.linkedin ? founder.linkedin : `${pre}/ueber-uns/`;
 const updatedLabel = { de: 'Aktualisiert', en: 'Updated', it: 'Aggiornato', fr: 'Mis à jour' }[locale];
-const dateDisplay = new Date(CONTENT_DATE).toLocaleDateString(locale === 'de' ? 'de-CH' : locale, { day: 'numeric', month: 'long', year: 'numeric' });
+const dateDisplay = new Date(updatedDate).toLocaleDateString(locale === 'de' ? 'de-CH' : locale, { day: 'numeric', month: 'long', year: 'numeric' });
 
 const crumbItems = [
   { name: crumbHome, path: '/' },
@@ -68,8 +72,8 @@ const articleSchema = {
   headline: article.h1[locale],
   description: article.metaDescription[locale],
   inLanguage: HTML_LANG[locale],
-  datePublished: CONTENT_DATE,
-  dateModified: CONTENT_DATE,
+  datePublished: publishedDate,
+  dateModified: updatedDate,
   image: `${SITE.domain}/og-default.png`,
   mainEntityOfPage: urlFor(locale, localePaths),
   about: (article.keyEntities ?? []).slice(0, 12),
@@ -83,7 +87,7 @@ const schema = [
   faqPage(article.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))),
 ];
 ---
-<Layout locale={locale} localePaths={localePaths} title={article.title[locale]} description={article.metaDescription[locale]} schema={schema}>
+<Layout locale={locale} localePaths={localePaths} availableLocales={availableLocales} title={article.title[locale]} description={article.metaDescription[locale]} schema={schema}>
   <Breadcrumbs locale={locale} items={[
     { name: crumbHome, href: `${pre}/` },
     { name: lbl.academy, href: relFor(locale, academyHub) },

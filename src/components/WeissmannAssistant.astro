@@ -206,7 +206,14 @@ const t = (k: string) => kb.ui[locale][k];
       a.addEventListener('click', () => { if (cta.event) ev(cta.event); });
       body.appendChild(a); scrollDown();
     }
-    function localizedHref(href) { const pre = locale === 'de' ? '' : '/' + locale; return pre + href; }
+    // href is either a locale-independent path (same slug in every language,
+    // e.g. '/preise/' — prefix it) or a per-locale map (localized-slug pages,
+    // e.g. the phone-assistant/website service pages — already prefixed, use as-is).
+    function localizedHref(href) {
+      if (typeof href === 'object' && href !== null) return href[locale] || href.de;
+      const pre = locale === 'de' ? '' : '/' + locale;
+      return pre + href;
+    }
 
     // ── conversation control ──────────────────────────────────────────────
     function goNode(id, userEcho) {

@@ -19,16 +19,31 @@ const p = localePrefix(locale);
 const POPULAR: Record<Locale, string> = { de: 'Beliebteste', en: 'Most popular', it: 'Più scelto', fr: 'Le plus choisi' };
 const PER_DAY: Record<Locale, (n: number) => string> = { de: (n) => `≈ CHF ${n}/Tag`, en: (n) => `≈ CHF ${n}/day`, it: (n) => `≈ CHF ${n}/giorno`, fr: (n) => `≈ CHF ${n}/jour` };
 const perDay = pkg.interval === 'month' && pkg.price ? Math.round(pkg.price / 30) : null;
+// Savings amount is always computed from the config (regularPrice - price),
+// never a hardcoded number, so it can never drift from the actual prices.
+const SAVE_LABEL: Record<Locale, (amount: string) => string> = {
+  de: (a) => `${a} sparen`,
+  en: (a) => `Save ${a}`,
+  it: (a) => `Risparmia ${a}`,
+  fr: (a) => `Économisez ${a}`,
+};
+const savings = pkg.regularPrice && pkg.price !== null ? pkg.regularPrice - pkg.price : null;
 ---
 
 <article class={`card pricing-card ${highlight ? 'card--raised pricing-card--highlight' : ''}`}>
   {highlight && <span class="pricing-card__badge">{badge ?? POPULAR[locale]}</span>}
   <h3>{pkg.name[locale]}</h3>
+  {pkg.regularPrice && pkg.promoLabel && (
+    <span class="pricing-card__promo">{pkg.promoLabel[locale]}</span>
+  )}
   <p class="pricing-card__price">
     {pkg.price === null ? (
       <span class="pricing-card__amount pricing-card__amount--custom">{t(locale, 'price.onRequest')}</span>
     ) : (
       <>
+        {pkg.regularPrice && (
+          <span class="pricing-card__regular">{formatPrice(pkg.regularPrice)}</span>
+        )}
         {pkg.isFrom && <span class="pricing-card__from">{t(locale, 'price.from')} </span>}
         <span class="pricing-card__amount">{formatPrice(pkg.price)}</span>
         <span class="pricing-card__interval">
@@ -39,6 +54,9 @@ const perDay = pkg.interval === 'month' && pkg.price ? Math.round(pkg.price / 30
       </>
     )}
   </p>
+  {savings !== null && (
+    <p class="pricing-card__savings">{SAVE_LABEL[locale](formatPrice(savings))}</p>
+  )}
   <p class="pricing-card__desc">{pkg.description[locale]}</p>
 
   <ul class="checklist">
@@ -63,6 +81,9 @@ const perDay = pkg.interval === 'month' && pkg.price ? Math.round(pkg.price / 30
           data-value={pkg.price ?? undefined}
           data-currency={pkg.currency}
           data-item={pkg.id}
+          data-service={pkg.analytics?.service}
+          data-package={pkg.analytics?.package}
+          data-billing-type={pkg.analytics ? (pkg.interval === 'once' ? 'one_time' : 'recurring') : undefined}
         >
           {t(locale, 'cta.buy')}
         </a>
@@ -86,7 +107,30 @@ const perDay = pkg.interval === 'month' && pkg.price ? Math.round(pkg.price / 30
   .pricing-card { display: flex; flex-direction: column; position: relative; }
   .pricing-card--highlight { border: 1.5px solid var(--accent); }
   .pricing-card__badge { position: absolute; top: -0.75rem; left: var(--space-4); background: var(--accent); color: #fff; font-size: var(--fs-200); font-weight: 700; padding: 0.28rem 0.75rem; border-radius: 999px; letter-spacing: 0.02em; }
+  .pricing-card__promo {
+    display: inline-block;
+    margin-top: var(--space-2);
+    font-size: var(--fs-200);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
   .pricing-card__price { margin-top: var(--space-2); color: var(--ink); }
+  .pricing-card__savings {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-size: var(--fs-200);
+    font-weight: 700;
+    color: #1a9d5a;
+    background: color-mix(in srgb, #1a9d5a 12%, transparent);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+  }
+  .pricing-card__regular { display: inline-block; margin-right: 0.5rem; font-size: 1.3rem; font-weight: 500; color: var(--ink-mute); text-decoration: line-through; }
   .pricing-card__amount { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
   .pricing-card__amount--custom { font-size: 1.35rem; }
   .pricing-card__from { font-weight: 600; }

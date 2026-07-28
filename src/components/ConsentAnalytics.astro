@@ -49,6 +49,9 @@ const GA = SITE.tracking.ga4;
   // Delegated tracking for annotated links (works for all locales/pages).
   // Optional data-value / data-currency / data-item enrich the event (e.g. a
   // Stripe checkout start carries its CHF price so GA4 can measure value).
+  // data-service / data-package / data-billing-type carry the exact
+  // begin_checkout taxonomy agreed for specific offers (pricing.ts `analytics`
+  // field) — never send names, emails or other personal data through this path.
   document.addEventListener('click', function (ev) {
     var a = ev.target && ev.target.closest ? ev.target.closest('a[data-track]') : null;
     if (!a) return;
@@ -64,6 +67,12 @@ const GA = SITE.tracking.ga4;
     }
     var item = a.getAttribute('data-item');
     if (item) params.item_id = item;
+    var service = a.getAttribute('data-service');
+    if (service) params.service = service;
+    var pkg = a.getAttribute('data-package');
+    if (pkg) params.package = pkg;
+    var billingType = a.getAttribute('data-billing-type');
+    if (billingType) params.billing_type = billingType;
     window.wmEvent(a.getAttribute('data-track'), params);
   });
 </script>

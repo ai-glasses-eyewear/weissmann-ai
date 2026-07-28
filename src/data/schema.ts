@@ -183,6 +183,23 @@ export function profilePage(locale: Locale, path: string) {
   };
 }
 
+/**
+ * VideoObject for a genuine, on-page video with a real matching thumbnail.
+ * Never call this without an accurate thumbnailUrl — a mismatched or missing
+ * poster produces misleading structured data, which is worse than omitting it.
+ */
+export function videoObject(opts: { name: string; description: string; thumbnailUrl: string; contentUrl: string; uploadDate: string; duration?: string }) {
+  return {
+    '@type': 'VideoObject',
+    name: opts.name,
+    description: opts.description,
+    thumbnailUrl: [`${SITE.domain}${opts.thumbnailUrl}`],
+    contentUrl: `${SITE.domain}${opts.contentUrl}`,
+    uploadDate: opts.uploadDate,
+    ...(opts.duration ? { duration: opts.duration } : {}),
+  };
+}
+
 export function faqPage(questions: { q: string; a: string }[]) {
   return {
     '@type': 'FAQPage',

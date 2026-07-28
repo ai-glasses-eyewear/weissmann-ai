@@ -20,6 +20,15 @@ const p = (id: string) => {
   const pkg = getPackage(id);
   return pkg.price === null ? 'auf Anfrage' : formatPrice(pkg.price);
 };
+
+/** Price plus an explicit promo note (regular price + savings) when active. */
+const pWithPromo = (id: string) => {
+  const pkg = getPackage(id);
+  const base = p(id);
+  if (!pkg.regularPrice || !pkg.promoLabel || pkg.price === null) return base;
+  const savings = pkg.regularPrice - pkg.price;
+  return `${base} (${pkg.promoLabel.de}, regulär ${formatPrice(pkg.regularPrice)}, Ersparnis ${formatPrice(savings)})`;
+};
 const deUrl = (lp: { de: string; en: string; it: string; fr: string }) => urlFor('de', lp);
 
 /**
@@ -51,7 +60,7 @@ Sprachen / Languages: Deutsch (Standard, /), English (/en/), Italiano (/it/), Fr
     `- Adresse: ${SITE.address.street}, ${SITE.address.postalCode} ${SITE.address.city}, ${SITE.address.country.de}.`,
     `- Live-Demo-Telefon (die KI direkt live anrufen / call the live AI): ${SITE.aiPhoneDisplay} — rund um die Uhr.`,
     `- Kontakt: Telefon ${SITE.phoneDisplay}, E-Mail ${SITE.email}, WhatsApp verfügbar.`,
-    `- Gründerin & CEO: Giovanna Carpi. Mitgründer (Strategie & Öffentlichkeitsarbeit): Nicola Mössner.`,
+    `- Gründerin & CEO: Giovanna Carpi.`,
     `- Sprachen: Deutsch, Englisch, Französisch, Italienisch (DE/EN/FR/IT). Der KI-Telefonassistent versteht zusätzlich Schweizerdeutsch (Swiss German / Mundart).`,
     `- Fähigkeiten des KI-Telefonassistenten: nimmt rund um die Uhr jeden Anruf an, bucht Termine, qualifiziert Leads, sendet nach jedem Gespräch eine Zusammenfassung per WhatsApp oder E-Mail und übergibt jederzeit an einen Menschen. Keine medizinische Beratung, keine Diagnosen und keine Notfall-Triage.`,
     `- Datenstandort / Data residency: Anrufdaten werden in der Schweiz oder der EU verarbeitet und gespeichert — nDSG- und DSGVO-konform.`,
@@ -60,7 +69,8 @@ Sprachen / Languages: Deutsch (Standard, /), English (/en/), Italiano (/it/), Fr
     `  - ${phoneTerms('phone-starter')}`,
     `  - ${phoneTerms('phone-premium')}`,
     `  - ${phoneTerms('phone-enterprise')}`,
-    `  - KI-Webentwicklung: Starter ${p('website-starter')}, Business ${p('website-business')} (einmaliger Festpreis); komplexe/individuelle Projekte ab ${p('website-complex')}.`,
+    `  - ${getPackage('phone-starter-trial').name.de}: ${p('phone-starter-trial')} einmalig — kein Abonnement, keine automatische Verlängerung, keine monatliche Zahlung. Separates Angebot zum monatlichen Starter-Abo oben.`,
+    `  - KI-Webentwicklung: Starter ${pWithPromo('website-starter')}, Business ${p('website-business')} (einmaliger Festpreis); komplexe/individuelle Projekte ab ${p('website-complex')}.`,
     `  - SEO Growth ${p('seo-growth')}/Monat, GEO Authority ${p('geo-authority')}/Monat, Google Ads Growth ${p('ads-growth')}/Monat (Google-Werbebudget nicht enthalten, wird vom Kunden direkt bezahlt).`,
     `  - KI-Automatisierung, KI-Agenten, KI-Integrationen und KI-Beratung: auf Anfrage.`,
     `  - Jahrespläne: Rabatt bei Vorauszahlung (persönliches Jahresangebot auf Anfrage).`,
@@ -120,7 +130,8 @@ Sprachen / Languages: Deutsch (Standard, /), English (/en/), Italiano (/it/), Fr
 - Der KI-Telefonassistent gibt keine medizinische Beratung, keine Diagnosen und keine Notfall-Triage; dringende und medizinische Anliegen werden nach definierten Regeln an Menschen weitergeleitet.
 - Weissmann AI verspricht keine Google-Rankings, keine Backlinks und keine garantierten KI-Zitierungen; aufgebaut werden die technischen, inhaltlichen und Autoritäts-Grundlagen für Sichtbarkeit.
 - Google-Werbebudget ist in den Google-Ads-Paketen nicht enthalten und wird vom Kunden direkt bezahlt.
-- Preise stammen aus einer zentralen Konfiguration; Leistungen ohne festen Preis werden ausschliesslich auf Anfrage angeboten.`;
+- Preise stammen aus einer zentralen Konfiguration; Leistungen ohne festen Preis werden ausschliesslich auf Anfrage angeboten.
+- Der "AI Telefonassistent Starter-Test" (CHF 350) ist eine einmalige Zahlung ohne Abonnement — nicht zu verwechseln mit dem monatlichen KI-Telefonassistent-Starter-Abo (ebenfalls CHF 350, aber wiederkehrend pro Monat). Beide sind eigenständige, separat buchbare Angebote.`;
 
   const langs = `## Andere Sprachen / Other languages
 - English: ${SITE.domain}/en/

@@ -14,6 +14,38 @@ const { locale } = Astro.props;
 const p = localePrefix(locale);
 const PATH = '/ueber-uns/';
 
+// Two currently open positions (2026-07-28). No invented salary, workload,
+// contract type, location, remote policy, experience requirements or deadline —
+// only what the business has actually confirmed.
+const POSITIONS: Record<Locale, Array<{ title: string; text: string; cta: string; mailtoSubject: string; mailtoBody: string; track: string }>> = {
+  de: [
+    { title: 'Sales / Business Development', text: 'Helfen Sie Schweizer Unternehmen, praktische Lösungen für KI, Websites, SEO, GEO und Automatisierung zu entdecken. Wir suchen jemanden, der gerne Gespräche eröffnet, Geschäftsprobleme versteht und langfristige Kundenbeziehungen aufbaut.', cta: 'Im Vertrieb bewerben', mailtoSubject: 'Bewerbung: Sales / Business Development', mailtoBody: 'Guten Tag Weissmann AI\n\nIch interessiere mich für die Stelle Sales / Business Development. Anbei meine kurze Vorstellung.\n\n', track: 'career_apply_sales' },
+    { title: 'Software Developer', text: 'Arbeiten Sie an KI-Telefonassistenten, Geschäftsintegrationen, Automatisierungs-Workflows und leistungsstarken Web-Erlebnissen. Wir suchen jemanden, der komplexe Anforderungen in zuverlässige, wartbare Lösungen umsetzen kann.', cta: 'Als Softwareentwickler:in bewerben', mailtoSubject: 'Bewerbung: Software Developer', mailtoBody: 'Guten Tag Weissmann AI\n\nIch interessiere mich für die Stelle Software Developer. Anbei meine kurze Vorstellung.\n\n', track: 'career_apply_developer' },
+  ],
+  en: [
+    { title: 'Sales / Business Development', text: 'Help Swiss businesses discover practical AI, website, SEO, GEO and automation solutions. We are looking for someone comfortable initiating conversations, understanding business problems and developing long-term customer relationships.', cta: 'Apply for Sales', mailtoSubject: 'Application: Sales / Business Development', mailtoBody: 'Hello Weissmann AI team\n\nI’m interested in the Sales / Business Development role. Please find my short introduction below.\n\n', track: 'career_apply_sales' },
+    { title: 'Software Developer', text: 'Work on AI telephone assistants, business integrations, automation workflows and high-performance web experiences. We are looking for someone who can turn complex requirements into dependable, maintainable solutions.', cta: 'Apply as Software Developer', mailtoSubject: 'Application: Software Developer', mailtoBody: 'Hello Weissmann AI team\n\nI’m interested in the Software Developer role. Please find my short introduction below.\n\n', track: 'career_apply_developer' },
+  ],
+  it: [
+    { title: 'Sales / Business Development', text: 'Aiutate le aziende svizzere a scoprire soluzioni pratiche di AI, siti web, SEO, GEO e automazione. Cerchiamo una persona a suo agio nell’avviare conversazioni, capire i problemi aziendali e sviluppare relazioni a lungo termine con i clienti.', cta: 'Candidati per Sales', mailtoSubject: 'Candidatura: Sales / Business Development', mailtoBody: 'Gentile team Weissmann AI\n\nSono interessato/a alla posizione Sales / Business Development. In allegato una breve presentazione.\n\n', track: 'career_apply_sales' },
+    { title: 'Software Developer', text: 'Lavorate su assistenti telefonici AI, integrazioni aziendali, workflow di automazione ed esperienze web ad alte prestazioni. Cerchiamo una persona capace di trasformare requisiti complessi in soluzioni affidabili e mantenibili.', cta: 'Candidati come Software Developer', mailtoSubject: 'Candidatura: Software Developer', mailtoBody: 'Gentile team Weissmann AI\n\nSono interessato/a alla posizione Software Developer. In allegato una breve presentazione.\n\n', track: 'career_apply_developer' },
+  ],
+  fr: [
+    { title: 'Sales / Business Development', text: 'Aidez les entreprises suisses à découvrir des solutions pratiques d’IA, de sites web, de SEO, de GEO et d’automatisation. Nous recherchons une personne à l’aise pour engager la conversation, comprendre les problématiques métier et développer des relations clients à long terme.', cta: 'Postuler dans la vente', mailtoSubject: 'Candidature : Sales / Business Development', mailtoBody: 'Bonjour à l’équipe Weissmann AI\n\nJe suis intéressé(e) par le poste Sales / Business Development. Voici une brève présentation.\n\n', track: 'career_apply_sales' },
+    { title: 'Software Developer', text: 'Travaillez sur des assistants téléphoniques IA, des intégrations métier, des workflows d’automatisation et des expériences web hautement performantes. Nous recherchons une personne capable de transformer des exigences complexes en solutions fiables et maintenables.', cta: 'Postuler comme développeur logiciel', mailtoSubject: 'Candidature : Software Developer', mailtoBody: 'Bonjour à l’équipe Weissmann AI\n\nJe suis intéressé(e) par le poste Software Developer. Voici une brève présentation.\n\n', track: 'career_apply_developer' },
+  ],
+};
+const positions = POSITIONS[locale];
+const CAREERS_LABEL: Record<Locale, { title: string; badge: string }> = {
+  de: { title: 'Karriere bei Weissmann', badge: 'Offene Stelle' },
+  en: { title: 'Join Weissmann', badge: 'Open Position' },
+  it: { title: 'Lavora con Weissmann', badge: 'Posizione aperta' },
+  fr: { title: 'Rejoignez Weissmann', badge: 'Poste ouvert' },
+};
+const careersLabel = CAREERS_LABEL[locale];
+const mailtoHref = (subject: string, body: string) =>
+  `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
 const C: Record<Locale, any> = {
   de: {
     metaTitle: 'Über uns | Weissmann AI – Praktische KI aus Zürich',
@@ -30,11 +62,11 @@ const C: Record<Locale, any> = {
       { title: 'Schweizer Massstab', text: 'Mehrsprachig (DE/EN/FR/IT), präzise und mit Fokus auf Schweizer KMU.' },
     ],
     methodTitle: 'Die Weissmann AI Methode',
-    teamTitle: 'Die Menschen dahinter',
+    teamTitle: 'Der Mensch dahinter',
     team: [
       { name: 'Giovanna Carpi', role: 'Gründerin & CEO', text: 'Verantwortet Strategie, Implementierung und die Qualität jedes Projekts.', linkedin: 'https://www.linkedin.com/in/giovanna-carpi-85a520155/' },
-      { name: 'Nicola Mössner', role: 'Mitgründer, Strategie & Öffentlichkeitsarbeit', text: 'Verantwortet Partnerschaften, Kommunikation und Marktaufbau.' },
     ],
+    imageAlt: 'Team bei der Arbeit bei Weissmann AI',
     ctaTitle: 'Lernen Sie uns kennen',
     ctaText: 'Ein kurzes Gespräch sagt mehr als jede Website. Wir freuen uns auf Ihre Herausforderung.',
   },
@@ -53,11 +85,11 @@ const C: Record<Locale, any> = {
       { title: 'Swiss standards', text: 'Multilingual (DE/EN/FR/IT), precise, focused on Swiss SMEs.' },
     ],
     methodTitle: 'The Weissmann AI Method',
-    teamTitle: 'The people behind it',
+    teamTitle: 'The person behind it',
     team: [
       { name: 'Giovanna Carpi', role: 'Founder & CEO', text: 'Responsible for strategy, implementation and the quality of every project.', linkedin: 'https://www.linkedin.com/in/giovanna-carpi-85a520155/' },
-      { name: 'Nicola Mössner', role: 'Co-founder, Strategy & Public Relations', text: 'Responsible for partnerships, communication and market development.' },
     ],
+    imageAlt: 'The Weissmann AI team at work',
     ctaTitle: 'Get to know us',
     ctaText: 'A short conversation says more than any website. We look forward to your challenge.',
   },
@@ -76,11 +108,11 @@ const C: Record<Locale, any> = {
       { title: 'Standard svizzeri', text: 'Multilingue (DE/EN/FR/IT), precisi e concentrati sulle PMI svizzere.' },
     ],
     methodTitle: 'Il Metodo Weissmann AI',
-    teamTitle: 'Le persone dietro il progetto',
+    teamTitle: 'La persona dietro il progetto',
     team: [
       { name: 'Giovanna Carpi', role: 'Fondatrice e CEO', text: 'Responsabile di strategia, implementazione e qualità di ogni progetto.', linkedin: 'https://www.linkedin.com/in/giovanna-carpi-85a520155/' },
-      { name: 'Nicola Mössner', role: 'Co-fondatore, strategia e relazioni pubbliche', text: 'Responsabile di partnership, comunicazione e sviluppo del mercato.' },
     ],
+    imageAlt: 'Il team al lavoro da Weissmann AI',
     ctaTitle: 'Conosciamoci',
     ctaText: 'Una breve conversazione dice più di qualsiasi sito web. Aspettiamo la vostra sfida.',
   },
@@ -99,11 +131,11 @@ const C: Record<Locale, any> = {
       { title: 'Exigence suisse', text: 'Multilingue (DE/EN/FR/IT), précis, concentré sur les PME suisses.' },
     ],
     methodTitle: 'La Méthode Weissmann AI',
-    teamTitle: 'Les personnes derrière le projet',
+    teamTitle: 'La personne derrière le projet',
     team: [
       { name: 'Giovanna Carpi', role: 'Fondatrice et CEO', text: 'Responsable de la stratégie, de la mise en œuvre et de la qualité de chaque projet.', linkedin: 'https://www.linkedin.com/in/giovanna-carpi-85a520155/' },
-      { name: 'Nicola Mössner', role: 'Co-fondateur, stratégie et relations publiques', text: 'Responsable des partenariats, de la communication et du développement du marché.' },
     ],
+    imageAlt: 'L’équipe Weissmann AI au travail',
     ctaTitle: 'Faisons connaissance',
     ctaText: 'Une courte conversation en dit plus que n’importe quel site web. Nous attendons votre défi.',
   },
@@ -123,10 +155,22 @@ const schema = [
 
 <Layout locale={locale} path={PATH} title={c.metaTitle} description={c.metaDesc} schema={schema}>
   <section class="section">
-    <div class="container">
-      <span class="eyebrow">{t(locale, 'nav.about')}</span>
-      <h1 style="max-width:40rem;">{c.h1}</h1>
-      <p class="prose mt-4" style="font-size:var(--fs-500);">{c.mission}</p>
+    <div class="container about-hero">
+      <div class="about-hero__copy">
+        <span class="eyebrow">{t(locale, 'nav.about')}</span>
+        <h1 style="max-width:40rem;">{c.h1}</h1>
+        <p class="prose mt-4" style="font-size:var(--fs-500);">{c.mission}</p>
+      </div>
+      <figure class="about-hero__image">
+        <img
+          src="/images/about/founder.jpg"
+          alt={c.imageAlt}
+          width="429"
+          height="522"
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
     </div>
   </section>
 
@@ -169,6 +213,24 @@ const schema = [
     </div>
   </section>
 
+  <section class="section section--alt" id="karriere">
+    <div class="container">
+      <div class="section-head"><h2>{careersLabel.title}</h2></div>
+      <div class="grid grid--2" style="max-width:56rem;">
+        {positions.map((pos) => (
+          <div class="card careers-card">
+            <span class="careers-card__badge">{careersLabel.badge}</span>
+            <h3>{pos.title}</h3>
+            <p class="mt-3" style="font-size:var(--fs-300);">{pos.text}</p>
+            <p class="mt-4">
+              <a class="btn btn--primary" href={mailtoHref(pos.mailtoSubject, pos.mailtoBody)} data-track={pos.track}>{pos.cta}</a>
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container center">
       <h2>{c.ctaTitle}</h2>
@@ -179,3 +241,25 @@ const schema = [
     </div>
   </section>
 </Layout>
+
+<style>
+  .about-hero { display: grid; gap: var(--space-5); align-items: center; }
+  @media (min-width: 820px) { .about-hero { grid-template-columns: 1.15fr 1fr; gap: var(--space-6); } }
+  .about-hero__image { margin: 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); max-width: 22rem; justify-self: center; }
+  .about-hero__image img { width: 100%; height: auto; aspect-ratio: 429 / 522; object-fit: cover; display: block; }
+  @media (min-width: 820px) { .about-hero__image { justify-self: end; } }
+
+  .careers-card { position: relative; }
+  .careers-card__badge {
+    display: inline-block;
+    font-size: var(--fs-200);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    margin-bottom: var(--space-2);
+  }
+</style>
