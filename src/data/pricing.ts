@@ -33,12 +33,19 @@ export interface PricingPackage {
   id: string;
   category: 'phone-agent' | 'website' | 'seo' | 'geo' | 'ads';
   name: Localized;
-  /** Numeric price in CHF; null = custom / on request. */
+  /** Numeric price in CHF; null = custom / on request. This is the CURRENT/effective
+   *  price — what a buyer actually pays today, and what schema.org Offer.price uses. */
   price: number | null;
   currency: 'CHF';
   interval: Interval;
   /** true → display as "ab CHF …" / "from CHF …" (price is a starting price). */
   isFrom: boolean;
+  /** Present only during an active promotion: the regular (non-promo) price,
+   *  shown crossed out next to `price`. Never fed into schema.org Offer — that
+   *  always reflects the real, current, transactable price. */
+  regularPrice?: number;
+  /** Localized badge shown next to a promotional price (e.g. "Aktionspreis"). */
+  promoLabel?: Localized;
   description: Localized;
   features: Record<Locale, string[]>;
   /** Notes shown near the price (contract term, exclusions). */
@@ -48,6 +55,10 @@ export interface PricingPackage {
   ctaType: CtaType;
   /** Schema.org Offer eligibility: only real purchasable packages get Offer markup. */
   schemaOffer: boolean;
+  /** GA4 begin_checkout params (snake_case values, exact taxonomy agreed with
+   *  the business). Only set where a specific event contract was requested —
+   *  billing_type is derived from `interval`, never hardcoded separately. */
+  analytics?: { service: string; package: string };
 }
 
 export const PACKAGES: PricingPackage[] = [
@@ -170,6 +181,65 @@ export const PACKAGES: PricingPackage[] = [
     ctaType: 'stripe',
     schemaOffer: true,
   },
+  // Distinct, low-commitment ONE-TIME entry point — not a subscription and
+  // not the same product as phone-starter above (which is CHF 350/MONTH,
+  // recurring). Never describe this as monthly, recurring or a subscription.
+  {
+    id: 'phone-starter-trial',
+    category: 'phone-agent',
+    name: {
+      de: 'AI Telefonassistent Starter-Test',
+      en: 'AI Phone Agent Starter Trial',
+      it: 'Prova Starter Assistente Telefonico AI',
+      fr: 'Essai Starter Assistant Téléphonique IA',
+    },
+    price: 350,
+    currency: 'CHF',
+    interval: 'once',
+    isFrom: false,
+    description: {
+      de: 'Testen Sie den KI-Telefonassistenten einmalig für CHF 350 – ohne laufendes Abonnement. Ideal, um das System unverbindlich in der Praxis zu erleben, bevor Sie sich für ein monatliches Paket entscheiden.',
+      en: 'Try the AI phone assistant for a one-time CHF 350 – no ongoing subscription. Ideal for experiencing the system in practice before committing to a monthly plan.',
+      it: 'Provate l’assistente telefonico AI con un pagamento una tantum di CHF 350 – senza abbonamento ricorrente. Ideale per sperimentare il sistema in pratica prima di scegliere un pacchetto mensile.',
+      fr: 'Essayez l’assistant téléphonique IA pour un paiement unique de CHF 350 – sans abonnement récurrent. Idéal pour découvrir le système en pratique avant de choisir un forfait mensuel.',
+    },
+    features: {
+      de: [
+        'Einmalige Einrichtung und Test Ihres KI-Telefonassistenten',
+        'Persönliche Konfiguration für Ihre Branche',
+        'Kein Abonnement, keine automatische Verlängerung',
+        'Danach freie Wahl: Wechsel zu Starter oder Premium jederzeit möglich',
+      ],
+      en: [
+        'One-time setup and trial of your AI phone assistant',
+        'Personal configuration for your industry',
+        'No subscription, no automatic renewal',
+        'Afterwards, free choice: switch to Starter or Premium any time',
+      ],
+      it: [
+        'Configurazione e prova una tantum del vostro assistente telefonico AI',
+        'Configurazione personalizzata per il vostro settore',
+        'Nessun abbonamento, nessun rinnovo automatico',
+        'In seguito, scelta libera: passaggio a Starter o Premium in qualsiasi momento',
+      ],
+      fr: [
+        'Configuration et essai ponctuels de votre assistant téléphonique IA',
+        'Configuration personnalisée pour votre secteur',
+        'Aucun abonnement, aucun renouvellement automatique',
+        'Ensuite, choix libre : passage à Starter ou Premium à tout moment',
+      ],
+    },
+    disclosures: {
+      de: ['Einmalige Zahlung – kein Abonnement', 'Keine automatische Verlängerung', 'Setup und Konfiguration inklusive'],
+      en: ['One-time payment – not a subscription', 'No automatic renewal', 'Setup and configuration included'],
+      it: ['Pagamento una tantum – non è un abbonamento', 'Nessun rinnovo automatico', 'Setup e configurazione inclusi'],
+      fr: ['Paiement unique – ce n’est pas un abonnement', 'Aucun renouvellement automatique', 'Configuration incluse'],
+    },
+    stripeLink: 'https://buy.stripe.com/aFadR1cDQ4l6f1egT21sQ09',
+    ctaType: 'stripe',
+    schemaOffer: true,
+    analytics: { service: 'ai_phone_agent', package: 'starter_trial' },
+  },
   {
     id: 'phone-enterprise',
     category: 'phone-agent',
@@ -240,15 +310,17 @@ export const PACKAGES: PricingPackage[] = [
       it: 'Sito web Starter',
       fr: 'Site web Starter',
     },
-    price: 2490,
+    price: 880,
+    regularPrice: 2490,
+    promoLabel: { de: 'Aktionspreis', en: 'Special promotion', it: 'Promozione speciale', fr: 'Offre spéciale' },
     currency: 'CHF',
     interval: 'once',
     isFrom: false,
     description: {
-      de: 'Das professionelle Fundament für kleine Unternehmen: eine moderne, glaubwürdige und konversionsstarke Website.',
-      en: 'A professional foundation for small businesses that need a modern, credible and conversion-focused website.',
-      it: 'La base professionale per piccole imprese: un sito web moderno, credibile e orientato alla conversione.',
-      fr: 'La base professionnelle pour petites entreprises : un site web moderne, crédible et axé sur la conversion.',
+      de: 'Premium Starter Website – CHF 880 Aktionspreis. Individuelles Premium-Webdesign für Unternehmen, die keinen gewöhnlichen Baukastenauftritt wollen. Inklusive technischer SEO- und GEO-Grundlage.',
+      en: 'Premium Starter Website – CHF 880 special promotion. Bespoke premium web design for businesses that want more than an ordinary template, including technical SEO and GEO foundations.',
+      it: 'Sito Web Premium Starter – Promozione CHF 880. Design personalizzato di livello premium, con basi tecniche SEO e GEO incluse.',
+      fr: 'Site Web Premium Starter – Offre spéciale CHF 880. Un design premium personnalisé avec des bases techniques SEO et GEO incluses.',
     },
     features: {
       de: [
@@ -285,14 +357,15 @@ export const PACKAGES: PricingPackage[] = [
       ],
     },
     disclosures: {
-      de: ['Einmaliger Festpreis', 'Texterstellung, weitere Sprachen und kostenpflichtige Drittanbieter-Tools sind nicht enthalten'],
-      en: ['One-time fixed price', 'Copywriting, additional languages and paid third-party tools are not included'],
-      it: ['Prezzo fisso una tantum', 'Copywriting, lingue aggiuntive e strumenti di terzi a pagamento non inclusi'],
-      fr: ['Prix fixe unique', 'Rédaction, langues supplémentaires et outils tiers payants non inclus'],
+      de: ['Regulärer Preis CHF 2’490 – aktuell CHF 880 Aktionspreis', 'Einmaliger Festpreis', 'Texterstellung, weitere Sprachen und kostenpflichtige Drittanbieter-Tools sind nicht enthalten'],
+      en: ['Regular price CHF 2,490 – currently CHF 880 special promotion', 'One-time fixed price', 'Copywriting, additional languages and paid third-party tools are not included'],
+      it: ['Prezzo regolare CHF 2’490 – attualmente CHF 880 promozione speciale', 'Prezzo fisso una tantum', 'Copywriting, lingue aggiuntive e strumenti di terzi a pagamento non inclusi'],
+      fr: ['Prix régulier CHF 2’490 – actuellement CHF 880 offre spéciale', 'Prix fixe unique', 'Rédaction, langues supplémentaires et outils tiers payants non inclus'],
     },
-    stripeLink: null, // pending: Stripe link to be created by the business (never invented)
-    ctaType: 'consult',
+    stripeLink: 'https://buy.stripe.com/5kQ4gr6fs18Uf1eeKU1sQ08', // Premium Starter Website, CHF 880 one-time (approved 2026-07-29)
+    ctaType: 'stripe',
     schemaOffer: true,
+    analytics: { service: 'website', package: 'starter' },
   },
   {
     id: 'website-business',

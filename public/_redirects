@@ -6,29 +6,50 @@
 # ============================================================
 
 # --- Rebuilt pages with renamed slugs (301) ---
-/funktionen                                   /ki-telefonassistent/            301!
-/en/funktionen                                /en/ki-telefonassistent/         301!
+# (targets point straight at the final canonical phone-assistant page, not the
+# now-redirected legacy /ki-telefonassistent/ — avoids a two-hop chain)
+/funktionen                                   /leistungen/ki-telefonassistent/       301!
+/en/funktionen                                /en/services/ai-phone-assistant/       301!
 /uber-uns                                     /ueber-uns/                      301!
 /en/uber-uns                                  /en/ueber-uns/                   301!
 /allgemeine-geschaftsbedingungen-agb          /agb/                            301!
 /en/allgemeine-geschaftsbedingungen-agb       /en/agb/                         301!
 
+# --- Legacy hand-written website-service page consolidated into the richer,
+#     registry-driven canonical page (2026-07-28; content compared word-for-word
+#     first — the new page is a superset, so this is a clean consolidation) ---
+/leistungen/ai-websites/                      /leistungen/ki-webentwicklung/          301!
+/en/leistungen/ai-websites/                   /en/services/ai-web-development/        301!
+/it/leistungen/ai-websites/                   /it/servizi/sviluppo-siti-web-ai/       301!
+/fr/leistungen/ai-websites/                   /fr/services/developpement-web-ia/      301!
+
+# --- Legacy hand-written AI-phone page consolidated into the registry-driven
+#     canonical page (2026-07-29). The "Ehrliche Grenzen" (honest limits) and
+#     "So läuft die Einrichtung ab" (setup walkthrough) sections plus 6 unique
+#     FAQ items were ported into service-content.ts (phone-assistant) first —
+#     verified content-complete before adding this redirect. ---
+/ki-telefonassistent/                         /leistungen/ki-telefonassistent/            301!
+/en/ki-telefonassistent/                      /en/services/ai-phone-assistant/            301!
+/it/ki-telefonassistent/                      /it/servizi/assistente-telefonico-ai/       301!
+/fr/ki-telefonassistent/                      /fr/services/assistant-telephonique-ia/     301!
+
 # --- Industry pages (consolidated into the phone-agent page until the
-#     dedicated industry pages ship in Phase 3; the -kl- typo slugs die here) ---
-/ki-telefonassistent-kl-fur-restaurants        /ki-telefonassistent/           301!
-/en/ki-telefonassistent-kl-fur-restaurants     /en/ki-telefonassistent/        301!
-/ki-telefonassistent-kl-fur-coiffeure-beauty   /ki-telefonassistent/           301!
-/en/ki-telefonassistent-kl-fur-coiffeure-beauty /en/ki-telefonassistent/       301!
-/ki-telefonassistent-fur-retail-stores         /ki-telefonassistent/           301!
-/en/ki-telefonassistent-fur-retail-stores      /en/ki-telefonassistent/        301!
-/ki-telefonassistent-fur-versicherungen        /ki-telefonassistent/           301!
-/en/ki-telefonassistent-fur-versicherungen     /en/ki-telefonassistent/        301!
-/ki-telefonassistent-fur-medizin-gesundheitswesen     /ki-telefonassistent/    301!
-/en/ki-telefonassistent-fur-medizin-gesundheitswesen  /en/ki-telefonassistent/ 301!
-/ai-telefonassistent-restaurant-schweiz        /ki-telefonassistent/           301!
-/en/ai-telefonassistent-restaurant-schweiz     /en/ki-telefonassistent/        301!
-/vergleich-ai-telefonassistent                 /ki-telefonassistent/           301!
-/en/vergleich-ai-telefonassistent              /en/ki-telefonassistent/        301!
+#     dedicated industry pages ship in Phase 3; the -kl- typo slugs die here)
+#     — targets point straight at the final canonical page, one hop only ---
+/ki-telefonassistent-kl-fur-restaurants        /leistungen/ki-telefonassistent/       301!
+/en/ki-telefonassistent-kl-fur-restaurants     /en/services/ai-phone-assistant/       301!
+/ki-telefonassistent-kl-fur-coiffeure-beauty   /leistungen/ki-telefonassistent/       301!
+/en/ki-telefonassistent-kl-fur-coiffeure-beauty /en/services/ai-phone-assistant/      301!
+/ki-telefonassistent-fur-retail-stores         /leistungen/ki-telefonassistent/       301!
+/en/ki-telefonassistent-fur-retail-stores      /en/services/ai-phone-assistant/       301!
+/ki-telefonassistent-fur-versicherungen        /leistungen/ki-telefonassistent/       301!
+/en/ki-telefonassistent-fur-versicherungen     /en/services/ai-phone-assistant/       301!
+/ki-telefonassistent-fur-medizin-gesundheitswesen     /leistungen/ki-telefonassistent/    301!
+/en/ki-telefonassistent-fur-medizin-gesundheitswesen  /en/services/ai-phone-assistant/    301!
+/ai-telefonassistent-restaurant-schweiz        /leistungen/ki-telefonassistent/       301!
+/en/ai-telefonassistent-restaurant-schweiz     /en/services/ai-phone-assistant/       301!
+/vergleich-ai-telefonassistent                 /leistungen/ki-telefonassistent/       301!
+/en/vergleich-ai-telefonassistent              /en/services/ai-phone-assistant/       301!
 
 # --- Pricing plan detail pages -> consolidated pricing page (301) ---
 /preise-plan/starter-plan                      /preise/                        301!

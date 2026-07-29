@@ -1,0 +1,155 @@
+---
+/**
+ * Case study detail page — future-ready template (see data/case-studies.ts).
+ * Renders a real, permission-cleared client story: problem, starting
+ * situation, work completed, process, verified result, an optional real
+ * quote and evidence links. Never rendered with placeholder/fabricated data —
+ * the catch-all route only emits this page once real content exists.
+ */
+import { SITE, localePrefix, HTML_LANG, type Locale } from '../../data/site';
+import { type LocalePaths, urlFor, relFor } from '../../data/routes';
+import { type CaseStudyDef, type CaseStudyContent, caseStudyPaths, CASE_STUDY_CATEGORIES } from '../../data/case-studies';
+import { getService, servicePaths } from '../../data/services';
+import { breadcrumbs, faqPage, CONTENT_DATE, FOUNDER_ID } from '../../data/schema';
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import Faq from '../Faq.astro';
+
+interface Props { locale: Locale; localePaths: LocalePaths; page: CaseStudyDef; content: CaseStudyContent }
+const { locale, localePaths, page, content } = Astro.props;
+const pre = localePrefix(locale);
+
+const LBL: Record<Locale, { crumbHome: string; crumbHere: string; problem: string; situation: string; work: string; process: string; result: string; faq: string; ctaTitle: string; ctaText: string; primary: string; secondary: string; by: string; updated: string; evidence: string }> = {
+  de: { crumbHome: 'Startseite', crumbHere: 'Referenzen', problem: 'Die Ausgangslage', situation: 'Wo das Unternehmen stand', work: 'Was umgesetzt wurde', process: 'Wie wir vorgegangen sind', result: 'Das verifizierte Ergebnis', faq: 'Häufige Fragen', ctaTitle: 'Ähnliche Herausforderung?', ctaText: 'Besprechen wir in einem kurzen Gespräch, was für Ihr Unternehmen realistisch möglich ist.', primary: 'Beratung buchen', secondary: 'KI live anrufen', by: 'Von', updated: 'Aktualisiert', evidence: 'Belege' },
+  en: { crumbHome: 'Home', crumbHere: 'Case studies', problem: 'The starting point', situation: 'Where the business stood', work: 'What we built', process: 'How we approached it', result: 'The verified result', faq: 'Frequently asked questions', ctaTitle: 'Facing something similar?', ctaText: 'Let’s talk in a short call about what’s realistically possible for your business.', primary: 'Book a consultation', secondary: 'Call the AI live', by: 'By', updated: 'Updated', evidence: 'Evidence' },
+  it: { crumbHome: 'Home', crumbHere: 'Referenze', problem: 'Il punto di partenza', situation: 'Dove si trovava l’azienda', work: 'Cosa abbiamo realizzato', process: 'Come abbiamo proceduto', result: 'Il risultato verificato', faq: 'Domande frequenti', ctaTitle: 'Avete una sfida simile?', ctaText: 'Parliamone in una breve chiamata per capire cosa è realisticamente possibile per la vostra azienda.', primary: 'Prenota una consulenza', secondary: 'Chiama l’AI dal vivo', by: 'Di', updated: 'Aggiornato', evidence: 'Prove' },
+  fr: { crumbHome: 'Accueil', crumbHere: 'Références', problem: 'Le point de départ', situation: 'Où en était l’entreprise', work: 'Ce que nous avons réalisé', process: 'Comment nous avons procédé', result: 'Le résultat vérifié', faq: 'Questions fréquentes', ctaTitle: 'Un défi similaire ?', ctaText: 'Parlons-en lors d’un court entretien pour voir ce qui est réalistement possible pour votre entreprise.', primary: 'Réserver une consultation', secondary: 'Appeler l’IA en direct', by: 'Par', updated: 'Mis à jour', evidence: 'Preuves' },
+};
+const lbl = LBL[locale];
+
+const founder = SITE.founders[0];
+const relService = getService(page.relatedService);
+const serviceHref = relService ? relFor(locale, servicePaths(relService)) : null;
+const dateDisplay = new Date(CONTENT_DATE).toLocaleDateString(locale === 'de' ? 'de-CH' : locale, { day: 'numeric', month: 'long', year: 'numeric' });
+
+const schema: object[] = [
+  {
+    '@type': 'Article',
+    headline: content.h1[locale],
+    description: content.metaDescription[locale],
+    inLanguage: HTML_LANG[locale],
+    datePublished: CONTENT_DATE,
+    dateModified: CONTENT_DATE,
+    image: `${SITE.domain}/og-default.png`,
+    mainEntityOfPage: urlFor(locale, localePaths),
+    author: { '@id': FOUNDER_ID },
+    publisher: { '@id': `${SITE.domain}/#organization` },
+    about: { '@id': `${SITE.domain}/#organization` },
+  },
+  breadcrumbs(locale, [
+    { name: lbl.crumbHome, path: '/' },
+    { name: page.name[locale], path: localePaths[locale] },
+  ]),
+  faqPage(content.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))),
+];
+---
+<Layout locale={locale} localePaths={localePaths} title={content.title[locale]} description={content.metaDescription[locale]} schema={schema}>
+  <Breadcrumbs locale={locale} items={[
+    { name: lbl.crumbHome, href: `${pre}/` },
+    { name: page.name[locale] },
+  ]} />
+
+  <article class="cs container">
+    <header class="cs-head">
+      <p class="kicker">{content.kicker[locale]}</p>
+      <h1>{content.h1[locale]}</h1>
+      <p class="cs-byline">{lbl.by} {founder.name}, {founder.role[locale]} · Weissmann AI · {lbl.updated} {dateDisplay}</p>
+      <p class="cs-client">{content.clientLabel[locale]}</p>
+    </header>
+
+    <section class="cs-section">
+      <h2>{lbl.problem}</h2>
+      <p>{content.clientProblem[locale]}</p>
+    </section>
+
+    <section class="cs-section">
+      <h2>{lbl.situation}</h2>
+      <p>{content.startingSituation[locale]}</p>
+    </section>
+
+    <section class="cs-section">
+      <h2>{lbl.work}</h2>
+      {content.workCompleted.map((s) => (
+        <div class="cs-subsection">
+          <h3>{s.heading[locale]}</h3>
+          {s.paragraphs?.map((p) => <p>{p[locale]}</p>)}
+          {s.bullets && s.bullets.length > 0 && <ul>{s.bullets.map((b) => <li>{b[locale]}</li>)}</ul>}
+        </div>
+      ))}
+    </section>
+
+    <section class="cs-section">
+      <h2>{lbl.process}</h2>
+      <p>{content.process[locale]}</p>
+    </section>
+
+    <section class="cs-section cs-result">
+      <h2>{lbl.result}</h2>
+      <p>{content.verifiedResult[locale]}</p>
+      {content.quote && (
+        <blockquote class="cs-quote">
+          <p>{content.quote.text[locale]}</p>
+          <cite>{content.quote.attribution[locale]}</cite>
+        </blockquote>
+      )}
+      {content.evidence && content.evidence.length > 0 && (
+        <p class="cs-evidence">
+          {lbl.evidence}: {content.evidence.map((e, i) => (
+            <>{i > 0 && ' · '}<a href={e.href} rel="noopener" target="_blank">{e.label[locale]}</a></>
+          ))}
+        </p>
+      )}
+    </section>
+
+    <section class="cs-section">
+      <h2>{lbl.faq}</h2>
+      <Faq items={content.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))} />
+    </section>
+
+    {serviceHref && (
+      <p class="cs-related"><a href={serviceHref}>{relService!.name[locale]} →</a></p>
+    )}
+
+    <section class="cs-cta">
+      <h2>{lbl.ctaTitle}</h2>
+      <p>{lbl.ctaText}</p>
+      <div class="cs-cta-row">
+        <a class="btn btn--primary" href={`${pre}/kontakt/`} data-track="book_consultation">{lbl.primary}</a>
+        <a class="btn btn--secondary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live">{lbl.secondary} · {SITE.aiPhoneDisplay}</a>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .cs-head { padding-top: var(--space-5); padding-bottom: var(--space-4); max-width: 52rem; }
+  .cs-head h1 { font-size: var(--fs-700); line-height: 1.1; margin: 0.4rem 0 0.6rem; }
+  .cs-byline { font-size: var(--fs-200); color: var(--ink-mute); margin-bottom: var(--space-2); }
+  .cs-client { font-weight: 600; color: var(--accent); }
+  .cs-section { max-width: 52rem; margin-bottom: var(--space-6); }
+  .cs-section h2 { font-size: var(--fs-600); margin-bottom: var(--space-3); }
+  .cs-section p { color: var(--ink-soft); line-height: 1.7; margin-bottom: var(--space-3); }
+  .cs-subsection { margin-bottom: var(--space-4); }
+  .cs-subsection h3 { font-size: var(--fs-500); margin-bottom: var(--space-2); }
+  .cs-subsection ul { padding-left: 1.1rem; color: var(--ink-soft); }
+  .cs-result { border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--accent-soft); padding: var(--space-5); }
+  .cs-quote { margin: var(--space-4) 0 0; padding-left: var(--space-4); border-left: 3px solid var(--accent); font-style: italic; }
+  .cs-quote cite { display: block; margin-top: var(--space-2); font-style: normal; font-size: var(--fs-300); color: var(--ink-mute); }
+  .cs-evidence { margin-top: var(--space-3); font-size: var(--fs-300); }
+  .cs-related { max-width: 52rem; margin-bottom: var(--space-6); }
+  .cs-related a { color: var(--accent); font-weight: 600; }
+  .cs-cta { text-align: center; padding: var(--space-7) var(--space-4); margin-bottom: var(--space-7); border-top: 1px solid var(--line); }
+  .cs-cta h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
+  .cs-cta p { color: var(--ink-soft); max-width: 40rem; margin: 0 auto var(--space-4); }
+  .cs-cta-row { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+</style>

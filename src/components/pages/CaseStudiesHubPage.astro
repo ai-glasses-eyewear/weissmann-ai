@@ -1,0 +1,77 @@
+---
+/**
+ * Case studies hub — future-ready template. Only routed once at least one
+ * verified case study is live (see [...path].astro), so this never ships as
+ * a thin/empty page.
+ */
+import { SITE, localeUrl, type Locale } from '../../data/site';
+import { type LocalePaths, urlFor } from '../../data/routes';
+import { liveCaseStudies, caseStudyPaths, CASE_STUDY_CATEGORIES, type CaseStudyCategory } from '../../data/case-studies';
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+
+interface Props { locale: Locale; localePaths: LocalePaths }
+const { locale, localePaths } = Astro.props;
+
+const CATEGORY_LABEL: Record<CaseStudyCategory, Record<Locale, string>> = {
+  'phone-assistant': { de: 'KI-Telefonassistent', en: 'AI phone assistant', it: 'Assistente telefonico AI', fr: 'Agent téléphonique IA' },
+  restaurant: { de: 'Restaurant', en: 'Restaurant', it: 'Ristorante', fr: 'Restaurant' },
+  hotel: { de: 'Hotel', en: 'Hotel', it: 'Hotel', fr: 'Hôtel' },
+  clinic: { de: 'Praxis', en: 'Clinic', it: 'Studio medico', fr: 'Cabinet médical' },
+  'website-redesign': { de: 'Website-Relaunch', en: 'Website redesign', it: 'Redesign del sito', fr: 'Refonte de site' },
+  'seo-growth': { de: 'SEO-Wachstum', en: 'SEO growth', it: 'Crescita SEO', fr: 'Croissance SEO' },
+  'geo-visibility': { de: 'GEO-Sichtbarkeit', en: 'GEO visibility', it: 'Visibilità GEO', fr: 'Visibilité GEO' },
+  automation: { de: 'Automatisierung', en: 'Automation', it: 'Automazione', fr: 'Automatisation' },
+};
+
+const C: Record<Locale, { title: string; metaDesc: string; h1: string; kicker: string; intro: string; crumbHome: string; crumbHere: string }> = {
+  de: { title: 'Referenzen | Weissmann AI', metaDesc: 'Verifizierte Kundenprojekte von Weissmann AI: KI-Telefonassistent, Websites, SEO und GEO in der Praxis.', h1: 'Referenzen', kicker: 'Echte Projekte', intro: 'Verifizierte Einblicke in Kundenprojekte — mit echten Ausgangslagen, echter Umsetzung und geprüften Ergebnissen.', crumbHome: 'Startseite', crumbHere: 'Referenzen' },
+  en: { title: 'Case Studies | Weissmann AI', metaDesc: 'Verified client projects from Weissmann AI: AI phone assistant, websites, SEO and GEO in practice.', h1: 'Case Studies', kicker: 'Real projects', intro: 'Verified insight into client projects — real starting points, real implementation and checked results.', crumbHome: 'Home', crumbHere: 'Case studies' },
+  it: { title: 'Referenze | Weissmann AI', metaDesc: 'Progetti clienti verificati di Weissmann AI: assistente telefonico AI, siti web, SEO e GEO nella pratica.', h1: 'Referenze', kicker: 'Progetti reali', intro: 'Approfondimenti verificati su progetti clienti — situazioni di partenza reali, realizzazione concreta e risultati verificati.', crumbHome: 'Home', crumbHere: 'Referenze' },
+  fr: { title: 'Références | Weissmann AI', metaDesc: 'Projets clients vérifiés de Weissmann AI : assistant téléphonique IA, sites web, SEO et GEO en pratique.', h1: 'Références', kicker: 'Projets réels', intro: 'Un aperçu vérifié de projets clients — points de départ réels, mise en œuvre concrète et résultats vérifiés.', crumbHome: 'Accueil', crumbHere: 'Références' },
+};
+const c = C[locale];
+const cases = liveCaseStudies();
+const homeUrl = `${localeUrl(locale, '/').replace(SITE.domain, '')}`;
+
+const schema = [
+  {
+    '@type': 'CollectionPage',
+    name: c.h1,
+    url: urlFor(locale, localePaths),
+    isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.domain },
+  },
+];
+---
+<Layout locale={locale} localePaths={localePaths} title={c.title} description={c.metaDesc} schema={schema}>
+  <Breadcrumbs locale={locale} items={[{ name: c.crumbHome, href: homeUrl }, { name: c.crumbHere }]} />
+
+  <header class="hub-head container">
+    <p class="kicker">{c.kicker}</p>
+    <h1>{c.h1}</h1>
+    <p class="hub-intro">{c.intro}</p>
+  </header>
+
+  <div class="container cs-grid">
+    {cases.map((cs) => {
+      const href = urlFor(locale, caseStudyPaths(cs)).replace(SITE.domain, '');
+      return (
+        <a class="cs-card" href={href}>
+          <span class="cs-card__cat">{CATEGORY_LABEL[cs.category][locale]}</span>
+          <h3>{cs.name[locale]}</h3>
+        </a>
+      );
+    })}
+  </div>
+</Layout>
+
+<style>
+  .hub-head { padding-top: var(--space-5); padding-bottom: var(--space-5); max-width: 60rem; }
+  .hub-head h1 { font-size: var(--fs-700); line-height: 1.05; margin: 0.4rem 0 1rem; }
+  .hub-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 52rem; }
+  .cs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: var(--space-4); padding-bottom: var(--space-7); }
+  .cs-card { display: block; border: 1px solid var(--line); border-radius: 14px; padding: var(--space-4); background: var(--paper); }
+  .cs-card:hover { border-color: var(--accent); text-decoration: none; }
+  .cs-card__cat { display: inline-block; font-size: var(--fs-200); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 0.2rem 0.65rem; margin-bottom: var(--space-2); }
+  .cs-card h3 { font-size: var(--fs-500); margin: 0; color: var(--ink); }
+</style>

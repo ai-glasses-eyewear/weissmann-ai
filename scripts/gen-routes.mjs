@@ -11,8 +11,6 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'pages')
 
 const PAGES = [
   { file: 'index.astro', component: 'HomePage' },
-  { file: 'ki-telefonassistent/index.astro', component: 'PhoneAgentPage' },
-  { file: 'leistungen/ai-websites/index.astro', component: 'WebsitesPage' },
   { file: 'preise/index.astro', component: 'PricingPage' },
   { file: 'ueber-uns/index.astro', component: 'AboutPage' },
   { file: 'kontakt/index.astro', component: 'ContactPage' },

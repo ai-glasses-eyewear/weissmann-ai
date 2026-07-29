@@ -59,7 +59,7 @@ const t = (k: string) => kb.ui[locale][k];
         <input type="text" data-wa-text autocomplete="off" aria-label={t('inputPlaceholder')} />
         <button type="submit" class="wa__send" aria-label={t('send')}>&#8593;</button>
       </form>
-      <p class="wa__foot"><span data-wa-foot></span> · <a href={`${p}/datenschutz/`}>{t('privacy')}</a></p>
+      <p class="wa__foot"><span data-wa-foot></span> · <span data-wa-privacy data-href={`${p}/datenschutz/`}>{t('privacy')}</span></p>
     </section>
   </template>
 </div>
@@ -206,7 +206,14 @@ const t = (k: string) => kb.ui[locale][k];
       a.addEventListener('click', () => { if (cta.event) ev(cta.event); });
       body.appendChild(a); scrollDown();
     }
-    function localizedHref(href) { const pre = locale === 'de' ? '' : '/' + locale; return pre + href; }
+    // href is either a locale-independent path (same slug in every language,
+    // e.g. '/preise/' — prefix it) or a per-locale map (localized-slug pages,
+    // e.g. the phone-assistant/website service pages — already prefixed, use as-is).
+    function localizedHref(href) {
+      if (typeof href === 'object' && href !== null) return href[locale] || href.de;
+      const pre = locale === 'de' ? '' : '/' + locale;
+      return pre + href;
+    }
 
     // ── conversation control ──────────────────────────────────────────────
     function goNode(id, userEcho) {
@@ -286,10 +293,30 @@ const t = (k: string) => kb.ui[locale][k];
       addChips(KB.greetingChips);
     }
 
+    // The privacy link is a <span data-wa-privacy> in the <template>, not a literal
+    // <a>: Astro's HTML compiler mis-nests <a>/<b>/<i>/etc. (the HTML5 "formatting
+    // elements") that sit inside a <template>, leaking duplicate anchors into the
+    // built page right after the closing </template> tag. Building the real <a> here
+    // at runtime avoids feeding that element through the buggy static HTML parser.
+    function hydratePrivacyLink(panel) {
+      const span = panel.querySelector('[data-wa-privacy]');
+      if (!span) return;
+      const a = document.createElement('a');
+      // Carry over the scoped-style marker Astro stamps on every element (its exact
+      // name is a per-build content hash) so the link keeps the .wa__foot a styling.
+      for (const attr of span.attributes) {
+        if (attr.name.startsWith('data-astro-cid')) a.setAttribute(attr.name, attr.value);
+      }
+      a.href = span.getAttribute('data-href');
+      a.textContent = span.textContent;
+      span.replaceWith(a);
+    }
+
     function openPanel() {
       if (panel) { panel.style.display = 'flex'; root.setAttribute('data-open', ''); panel.querySelector('[data-wa-text]').focus(); return; }
       const tpl = root.querySelector('[data-wa-template]');
       panel = tpl.content.firstElementChild.cloneNode(true);
+      hydratePrivacyLink(panel);
       root.appendChild(panel);
       root.setAttribute('data-open', '');
       body = panel.querySelector('[data-wa-body]');

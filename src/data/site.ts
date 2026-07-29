@@ -48,19 +48,10 @@ export const SITE = {
       role: { de: 'Gründerin & CEO', en: 'Founder & CEO', it: 'Fondatrice e CEO', fr: 'Fondatrice et CEO' },
       linkedin: 'https://www.linkedin.com/in/giovanna-carpi-85a520155/',
     },
-    {
-      name: 'Nicola Mössner',
-      role: {
-        de: 'Mitgründer, Strategie & Öffentlichkeitsarbeit',
-        en: 'Co-founder, Strategy & Public Relations',
-        it: 'Co-fondatore, strategia e relazioni pubbliche',
-        fr: 'Co-fondateur, stratégie et relations publiques',
-      },
-    },
   ],
 
   tracking: {
-    ga4: 'G-3L30SCGWGT', // preserved existing property — load exactly once
+    ga4: 'G-M47YT7S3EW',
     googleSiteVerification: 'gd7yw_BZCvML8jC9XJOazMBCdwkPAhnc1fsHMXP9ykw',
     bingVerification: '3B6D0C593961EBE3B9126E0B460A12C7',
     indexNowKey: 'x8jL0gGbhLu81B0L7pPg7afOBQ0CijOk',

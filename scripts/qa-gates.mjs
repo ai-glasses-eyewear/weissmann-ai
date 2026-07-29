@@ -12,12 +12,13 @@
  *
  * Positive assertions:
  *  - the canonical address appears on every built HTML page (footer)
- *  - GA4 id appears exactly once per page
+ *  - GA4 id (G-M47YT7S3EW) appears exactly once per page
+ *  - no occurrence of the retired GA4 id (G-3L30SCGWGT) or Nicola Mössner
  *
  * Reports (non-fatal warnings):
  *  - orphan pages: indexable pages with zero inbound internal links
  */
-import { readdirSync, readFileSync, statSync } from 'node:fs';
+import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -32,6 +33,17 @@ function* walk(dir) {
   }
 }
 
+// Required media assets referenced by the homepage/About page must actually
+// exist in the build output (Astro copies public/ verbatim into dist/).
+const REQUIRED_ASSETS = [
+  'images/about/founder.jpg',
+  'videos/weissmann-demo-de.mp4',
+  'videos/weissmann-demo-en.mp4',
+  'videos/weissmann-date-night-campaign-de.mp4',
+  'videos/weissmann-date-night-campaign-en.mp4',
+];
+const missingAssets = REQUIRED_ASSETS.filter((a) => !existsSync(join(dist, a)));
+
 const FORBIDDEN = [
   /Podomedics/i,
   /CHE-324\.165\.596/,
@@ -42,6 +54,10 @@ const FORBIDDEN = [
   // is now an owner-sanctioned cross-promotion (the AI Smart Glasses section that
   // links to ai-eyewear.ch), so it is intentionally no longer blocked.
   /eyewear/i,
+  // Nicola Mössner is fully removed from the public site (2026-07-28).
+  /Nicola\s*M(ö|o|&#246;|&ouml;)ssner/i,
+  // Retired GA4 property — must never reappear alongside the current one.
+  /G-3L30SCGWGT/,
 ];
 
 const ALLOWED_PATTERNS = [
@@ -50,22 +66,20 @@ const ALLOWED_PATTERNS = [
 ];
 const scrubAllowed = (text) => ALLOWED_PATTERNS.reduce((t, re) => t.replace(re, ''), text);
 const VERIFIED_STRIPE = [
-  'https://buy.stripe.com/28EcMX47k9Fq5qE9qA1sQ03', // Phone Starter CHF 350/mo
-  'https://buy.stripe.com/aFa4gr5bocRC06k1Y81sQ04', // Phone Premium CHF 590/mo
+  'https://buy.stripe.com/28EcMX47k9Fq5qE9qA1sQ03', // Phone Starter CHF 350/mo (recurring)
+  'https://buy.stripe.com/aFa4gr5bocRC06k1Y81sQ04', // Phone Premium CHF 590/mo (recurring)
+  'https://buy.stripe.com/aFadR1cDQ4l6f1egT21sQ09', // Phone Starter Trial CHF 350 (one-time)
   'https://buy.stripe.com/aFabIT9rE3h29GUgT21sQ05', // SEO Growth CHF 890/mo
   'https://buy.stripe.com/6oU3cngU6bNyf1e9qA1sQ06', // GEO Authority CHF 990/mo
   'https://buy.stripe.com/fZu3cnbzMdVGcT646g1sQ07', // Google Ads Growth CHF 690/mo
+  'https://buy.stripe.com/5kQ4gr6fs18Uf1eeKU1sQ08', // Premium Starter Website CHF 880 (one-time)
 ];
 
-// Legacy pages being deprecated (superseded by siloed URLs); excluded from the
-// orphan report until the cutover 301s land.
-const ORPHAN_EXEMPT = new Set([
-  '/ki-telefonassistent/',
-  '/leistungen/ai-websites/',
-  '/en/ki-telefonassistent/', '/en/leistungen/ai-websites/',
-  '/it/ki-telefonassistent/', '/it/leistungen/ai-websites/',
-  '/fr/ki-telefonassistent/', '/fr/leistungen/ai-websites/',
-]);
+// All legacy hand-written pages have now been merged + 301'd (2026-07-28/29):
+// /leistungen/ai-websites/ and /ki-telefonassistent/ (+locale variants) both
+// verified content-complete on their registry replacement before redirecting.
+// Nothing is currently exempt; kept as a named set for the next migration.
+const ORPHAN_EXEMPT = new Set([]);
 // Locale roots + home are entry points, never orphans.
 const ENTRY_POINTS = new Set(['/', '/en/', '/it/', '/fr/']);
 
@@ -110,9 +124,21 @@ for (const file of walk(dist)) {
     if (!text.includes('Technoparkstrasse 6')) {
       errors.push(`${rel}: canonical address missing (Technoparkstrasse 6).`);
     }
-    const gaCount = (text.match(/G-3L30SCGWGT/g) ?? []).length;
+
+    // Every JSON-LD block must parse — catches malformed structured data.
+    for (const m of text.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+      try { JSON.parse(m[1]); } catch { errors.push(`${rel}: invalid JSON-LD (fails to parse).`); }
+    }
+    const gaCount = (text.match(/G-M47YT7S3EW/g) ?? []).length;
     if (gaCount === 0) errors.push(`${rel}: GA4 id missing.`);
     if (gaCount > 4) errors.push(`${rel}: GA4 id appears ${gaCount}× — possible duplicate loading.`);
+
+    // Starter Website CHF 880 promotion (+ CHF 1,610 savings) must be present
+    // on every page that shows Starter Website pricing.
+    if (/\/(preise|leistungen\/ki-webentwicklung|services\/ai-web-development|servizi\/sviluppo-siti-web-ai|services\/developpement-web-ia)\//.test(url)) {
+      if (!text.includes('880')) errors.push(`${rel}: CHF 880 Starter Website promotion missing.`);
+      if (!text.includes('610')) errors.push(`${rel}: CHF 1,610 savings statement missing.`);
+    }
 
     const isNoindex = /name="robots"\s+content="noindex/i.test(text);
     const is404 = url === '/404/' || rel === '404.html';
@@ -141,6 +167,8 @@ for (const file of walk(dist)) {
     for (const h of hrefs) inbound.set(h, (inbound.get(h) ?? 0) + 1);
   }
 }
+
+for (const a of missingAssets) errors.push(`missing required asset: ${a}`);
 
 // Hreflang/canonical errors are collected above. Orphan report (non-fatal):
 for (const url of indexable) {

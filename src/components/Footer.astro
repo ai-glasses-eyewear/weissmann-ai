@@ -11,6 +11,7 @@ import { pillarHome, relFor } from '../data/routes';
 import { getService, servicePaths } from '../data/services';
 import { hasGlossary, glossaryHubPaths } from '../data/glossary';
 import { liveCompanyPages, companyPagePaths } from '../data/company';
+import { liveCaseStudies, caseStudiesHubPaths } from '../data/case-studies';
 import { t } from '../i18n/ui';
 
 interface Props { locale: Locale }
@@ -29,6 +30,8 @@ const lbl = L[locale];
 const topServices = ['phone-assistant', 'websites', 'seo', 'geo'].map((id) => getService(id)).filter((s) => !!s);
 const glossHref = hasGlossary() ? relFor(locale, glossaryHubPaths()) : null;
 const companyPages = liveCompanyPages();
+// Case studies only appear once at least one verified case is live.
+const caseStudiesHref = liveCaseStudies().length > 0 ? relFor(locale, caseStudiesHubPaths()) : null;
 ---
 
 <footer class="site-footer">
@@ -63,6 +66,7 @@ const companyPages = liveCompanyPages();
           <li><a href={relFor(locale, pillarHome('academy'))}>{lbl.academy}</a></li>
           {glossHref && <li><a href={glossHref}>{lbl.glossary}</a></li>}
           <li><a href={relFor(locale, pillarHome('resources'))}>{lbl.resources}</a></li>
+          {caseStudiesHref && <li><a href={caseStudiesHref}>{t(locale, 'nav.cases')}</a></li>}
         </ul>
       </nav>
 

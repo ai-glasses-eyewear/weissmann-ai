@@ -21,7 +21,7 @@ import { getService, servicePaths } from '../../data/services';
 import { liveComparisons, comparisonPaths } from '../../data/comparisons';
 import { t } from '../../i18n/ui';
 import { getPackage } from '../../data/pricing';
-import { webPage, faqPage } from '../../data/schema';
+import { webPage, faqPage, videoObject, CONTENT_DATE } from '../../data/schema';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -155,6 +155,58 @@ const TRUST: Record<Locale, { eyebrow: string; title: string; text: string; pill
   ] },
 };
 const trust = TRUST[locale];
+
+// Four-pillar section — the flagship services, each with a concrete benefit,
+// explanation and business outcome (no vague "transform your business" filler).
+// Links resolve via the route registry, never hardcoded.
+const PILLAR_ICONS = ['phone', 'bolt', 'target', 'sparkle'] as const;
+const PILLARS: Record<Locale, { eyebrow: string; title: string; text: string; items: Array<{ id: string; headline: string; text: string; outcome: string; cta: string }> }> = {
+  de: {
+    eyebrow: 'Vier Bausteine', title: 'Warum Unternehmen Weissmann wählen',
+    text: 'Vier eigenständige Leistungen, die zusammen ein System ergeben — jede für sich bereits wirksam.',
+    items: [
+      { id: 'phone-assistant', headline: 'Kein Anruf geht mehr verloren', text: 'Nimmt Kundenanrufe entgegen, qualifiziert Anfragen und schützt Ihr Team vor ständigen Unterbrechungen.', outcome: 'Ergebnis: mehr gebuchte Termine, weniger verpasste Chancen.', cta: 'KI-Telefonassistent entdecken' },
+      { id: 'websites', headline: 'Eine Website, die verkauft – nicht nur aussieht', text: 'Schafft einen glaubwürdigen, schnellen und konversionsstarken Auftritt, der nicht wie ein gewöhnlicher Baukasten wirkt.', outcome: 'Ergebnis: mehr Anfragen aus Ihrem bestehenden Traffic.', cta: 'Website-Pakete ansehen' },
+      { id: 'seo', headline: 'Gefunden werden, wenn es zählt', text: 'Hilft qualifizierten Interessenten, Ihr Unternehmen zu finden, wenn sie aktiv nach Ihren Leistungen suchen.', outcome: 'Ergebnis: mehr organischer Traffic mit echter Kaufabsicht.', cta: 'Mehr zu SEO' },
+      { id: 'geo', headline: 'Sichtbar in der KI-Suche', text: 'Strukturiert die Informationen Ihres Unternehmens so, dass KI-Suchsysteme sie besser verstehen, referenzieren und dort erwähnen können, wo es passt.', outcome: 'Ergebnis: bessere Chancen auf Erwähnung in ChatGPT, Gemini und Perplexity – ohne Garantie auf eine bestimmte Platzierung.', cta: 'Mehr zu GEO' },
+    ],
+  },
+  en: {
+    eyebrow: 'Four building blocks', title: 'Why companies choose Weissmann',
+    text: 'Four standalone services that add up to one system — each one effective on its own.',
+    items: [
+      { id: 'phone-assistant', headline: 'No call goes unanswered', text: 'Answers customer calls, qualifies requests and protects your team from constant interruptions.', outcome: 'Result: more booked appointments, fewer missed opportunities.', cta: 'Explore the AI Phone Assistant' },
+      { id: 'websites', headline: 'A website that sells – not just looks good', text: 'Creates a credible, fast and conversion-focused digital presence that doesn’t look like a generic template.', outcome: 'Result: more enquiries from the traffic you already have.', cta: 'See website packages' },
+      { id: 'seo', headline: 'Found when it matters', text: 'Helps qualified prospects discover your company when they’re actively searching for what you offer.', outcome: 'Result: more organic traffic with genuine buying intent.', cta: 'More about SEO' },
+      { id: 'geo', headline: 'Visible in AI search', text: 'Structures your company’s information so AI search systems can better understand, reference and mention it where relevant.', outcome: 'Result: better odds of being mentioned in ChatGPT, Gemini and Perplexity – with no guarantee of a specific placement.', cta: 'More about GEO' },
+    ],
+  },
+  it: {
+    eyebrow: 'Quattro pilastri', title: 'Perché le aziende scelgono Weissmann',
+    text: 'Quattro servizi indipendenti che insieme formano un sistema — ciascuno efficace già da solo.',
+    items: [
+      { id: 'phone-assistant', headline: 'Nessuna chiamata va persa', text: 'Risponde alle chiamate dei clienti, qualifica le richieste e protegge il team da interruzioni costanti.', outcome: 'Risultato: più appuntamenti prenotati, meno occasioni perse.', cta: 'Scopri l’assistente telefonico AI' },
+      { id: 'websites', headline: 'Un sito che vende – non solo bello da vedere', text: 'Crea una presenza digitale credibile, veloce e orientata alla conversione, che non sembra un template generico.', outcome: 'Risultato: più richieste dal traffico che avete già.', cta: 'Vedi i pacchetti sito web' },
+      { id: 'seo', headline: 'Trovati quando conta davvero', text: 'Aiuta i potenziali clienti qualificati a scoprire la vostra azienda quando cercano attivamente i vostri servizi.', outcome: 'Risultato: più traffico organico con reale intenzione d’acquisto.', cta: 'Scopri il servizio SEO' },
+      { id: 'geo', headline: 'Visibili nella ricerca AI', text: 'Struttura le informazioni della vostra azienda affinché i sistemi di ricerca AI possano comprenderle, citarle e menzionarle dove pertinente.', outcome: 'Risultato: maggiori possibilità di essere menzionati in ChatGPT, Gemini e Perplexity – senza garanzia di un posizionamento specifico.', cta: 'Scopri il servizio GEO' },
+    ],
+  },
+  fr: {
+    eyebrow: 'Quatre piliers', title: 'Pourquoi les entreprises choisissent Weissmann',
+    text: 'Quatre services indépendants qui forment ensemble un système — chacun déjà efficace seul.',
+    items: [
+      { id: 'phone-assistant', headline: 'Aucun appel ne reste sans réponse', text: 'Répond aux appels des clients, qualifie les demandes et protège votre équipe des interruptions constantes.', outcome: 'Résultat : plus de rendez-vous réservés, moins d’occasions manquées.', cta: 'Découvrir l’agent téléphonique IA' },
+      { id: 'websites', headline: 'Un site qui vend – pas seulement esthétique', text: 'Crée une présence digitale crédible, rapide et axée sur la conversion, qui ne ressemble pas à un modèle générique.', outcome: 'Résultat : plus de demandes à partir du trafic que vous avez déjà.', cta: 'Voir les forfaits site web' },
+      { id: 'seo', headline: 'Trouvé au bon moment', text: 'Aide les prospects qualifiés à découvrir votre entreprise lorsqu’ils recherchent activement vos services.', outcome: 'Résultat : plus de trafic organique avec une réelle intention d’achat.', cta: 'En savoir plus sur le SEO' },
+      { id: 'geo', headline: 'Visible dans la recherche IA', text: 'Structure les informations de votre entreprise pour que les systèmes de recherche IA puissent mieux les comprendre, les référencer et les mentionner lorsque c’est pertinent.', outcome: 'Résultat : de meilleures chances d’être mentionné dans ChatGPT, Gemini et Perplexity – sans garantie de positionnement spécifique.', cta: 'En savoir plus sur le GEO' },
+    ],
+  },
+};
+const pillars = PILLARS[locale];
+const pillarHref = (id: string): string => {
+  const s = getService(id);
+  return s ? relFor(locale, servicePaths(s)) : relFor(locale, pillarHome('services'));
+};
 // Comparison table — every value is truthful and framed fairly (col 0 = Weissmann).
 const COMPARE: Record<Locale, { eyebrow: string; title: string; text: string; cols: string[]; rows: Array<{ label: string; cells: Array<boolean | string> }> }> = {
   de: {
@@ -221,10 +273,10 @@ const LIVECALL: Record<Locale, { eyebrow: string; title: string; text: string; c
 const lc = LIVECALL[locale];
 // Authority: real founders (names/roles are public) + transparent process. Photos: owner to add.
 const AUTHORITY: Record<Locale, { eyebrow: string; title: string; text: string; founders: Array<{ name: string; role: string; initials: string }>; processTitle: string; steps: string[] }> = {
-  de: { eyebrow: 'Wer dahinter steht', title: 'Sprechen Sie mit den Gründern – nicht mit einem Callcenter.', text: 'Weissmann AI wird von Menschen in Zürich geführt, die Sie erreichen. Persönliche Betreuung, klare Verantwortung, echte Ansprechpartner.', founders: [{ name: 'Giovanna Carpi', role: 'Gründerin & CEO', initials: 'GC' }, { name: 'Nicola Mössner', role: 'Strategie & Partnerschaften', initials: 'NM' }], processTitle: 'In wenigen Tagen live', steps: ['Unverbindliches Erstgespräch – wir klären Bedarf und Machbarkeit.', 'Einrichtung & Konfiguration – Stimme, Wissensbasis, Abläufe.', 'Live-Test mit Ihrem Team – dann der echte Start.', 'Laufende Betreuung & Optimierung – messbar besser.'] },
-  en: { eyebrow: 'The people behind it', title: 'Talk to the founders — not a call center.', text: 'Weissmann AI is run by people in Zurich you can actually reach. Personal support, clear accountability, real contacts.', founders: [{ name: 'Giovanna Carpi', role: 'Founder & CEO', initials: 'GC' }, { name: 'Nicola Mössner', role: 'Strategy & Partnerships', initials: 'NM' }], processTitle: 'Live within days', steps: ['A no-obligation first call — we clarify needs and feasibility.', 'Setup & configuration — voice, knowledge base, workflows.', 'Live test with your team — then the real launch.', 'Ongoing support & optimization — measurably better.'] },
-  it: { eyebrow: 'Chi c’è dietro', title: 'Parlate con i fondatori — non con un call center.', text: 'Weissmann AI è guidata da persone a Zurigo che potete davvero raggiungere. Supporto personale, responsabilità chiara, contatti reali.', founders: [{ name: 'Giovanna Carpi', role: 'Fondatrice & CEO', initials: 'GC' }, { name: 'Nicola Mössner', role: 'Strategia & Partnership', initials: 'NM' }], processTitle: 'Attivo in pochi giorni', steps: ['Un primo colloquio senza impegno — chiariamo esigenze e fattibilità.', 'Configurazione — voce, base di conoscenza, processi.', 'Test dal vivo con il vostro team — poi l’avvio reale.', 'Assistenza e ottimizzazione continue — miglioramento misurabile.'] },
-  fr: { eyebrow: 'Les personnes derrière', title: 'Parlez aux fondateurs — pas à un call center.', text: 'Weissmann AI est dirigée par des personnes à Zurich que vous pouvez vraiment joindre. Accompagnement personnel, responsabilité claire, vrais interlocuteurs.', founders: [{ name: 'Giovanna Carpi', role: 'Fondatrice & CEO', initials: 'GC' }, { name: 'Nicola Mössner', role: 'Stratégie & Partenariats', initials: 'NM' }], processTitle: 'Opérationnel en quelques jours', steps: ['Un premier entretien sans engagement — besoins et faisabilité.', 'Mise en place — voix, base de connaissances, processus.', 'Test en conditions réelles avec votre équipe — puis le vrai lancement.', 'Accompagnement et optimisation continus — amélioration mesurable.'] },
+  de: { eyebrow: 'Wer dahinter steht', title: 'Sprechen Sie mit der Gründerin – nicht mit einem Callcenter.', text: 'Weissmann AI wird von Giovanna Carpi in Zürich persönlich geführt. Persönliche Betreuung, klare Verantwortung, eine echte Ansprechpartnerin.', founders: [{ name: 'Giovanna Carpi', role: 'Gründerin & CEO', initials: 'GC' }], processTitle: 'In wenigen Tagen live', steps: ['Unverbindliches Erstgespräch – wir klären Bedarf und Machbarkeit.', 'Einrichtung & Konfiguration – Stimme, Wissensbasis, Abläufe.', 'Live-Test mit Ihrem Team – dann der echte Start.', 'Laufende Betreuung & Optimierung – messbar besser.'] },
+  en: { eyebrow: 'Who’s behind it', title: 'Talk to the founder — not a call center.', text: 'Weissmann AI is run personally by Giovanna Carpi in Zurich — someone you can actually reach. Personal support, clear accountability, a real contact.', founders: [{ name: 'Giovanna Carpi', role: 'Founder & CEO', initials: 'GC' }], processTitle: 'Live within days', steps: ['A no-obligation first call — we clarify needs and feasibility.', 'Setup & configuration — voice, knowledge base, workflows.', 'Live test with your team — then the real launch.', 'Ongoing support & optimization — measurably better.'] },
+  it: { eyebrow: 'Chi c’è dietro', title: 'Parlate con la fondatrice — non con un call center.', text: 'Weissmann AI è guidata personalmente da Giovanna Carpi a Zurigo — una persona che potete davvero raggiungere. Supporto personale, responsabilità chiara, un contatto reale.', founders: [{ name: 'Giovanna Carpi', role: 'Fondatrice & CEO', initials: 'GC' }], processTitle: 'Attivo in pochi giorni', steps: ['Un primo colloquio senza impegno — chiariamo esigenze e fattibilità.', 'Configurazione — voce, base di conoscenza, processi.', 'Test dal vivo con il vostro team — poi l’avvio reale.', 'Assistenza e ottimizzazione continue — miglioramento misurabile.'] },
+  fr: { eyebrow: 'Qui est derrière', title: 'Parlez à la fondatrice — pas à un call center.', text: 'Weissmann AI est dirigée personnellement par Giovanna Carpi à Zurich — une personne que vous pouvez vraiment joindre. Accompagnement personnel, responsabilité claire, une vraie interlocutrice.', founders: [{ name: 'Giovanna Carpi', role: 'Fondatrice & CEO', initials: 'GC' }], processTitle: 'Opérationnel en quelques jours', steps: ['Un premier entretien sans engagement — besoins et faisabilité.', 'Mise en place — voix, base de connaissances, processus.', 'Test en conditions réelles avec votre équipe — puis le vrai lancement.', 'Accompagnement et optimisation continus — amélioration mesurable.'] },
 };
 const authority = AUTHORITY[locale];
 // CEO LinkedIn (verifiable) pulled from SITE.founders — never invented for founders without a profile.
@@ -262,6 +314,51 @@ const SCENARIOS: Record<Locale, { eyebrow: string; title: string; text: string; 
   ] },
 };
 const scen = SCENARIOS[locale];
+
+// Campaign section — "It's not always a lover, sometimes it's just work."
+// German page plays the German video; EN/IT/FR play the English video (no fake
+// dubbed versions) with a small note naming the languages the video is in.
+const CAMPAIGN: Record<Locale, { eyebrow: string; title: string; lead: string; body: string; finalLine: string; cta: string; videoNote: string | null }> = {
+  de: {
+    eyebrow: 'Eine ehrliche Geschichte',
+    title: 'Wenn die Arbeit nie aufhört anzurufen',
+    lead: 'Es ist nicht immer eine Affäre. Manchmal ist es einfach nur die Arbeit.',
+    body: 'Wenn jeder geschäftliche Anruf auf Ihrem privaten Telefon landet, begleitet Sie die Arbeit überallhin. Weissmann beantwortet Kundenanrufe, bearbeitet wiederkehrende Anliegen und schützt die Zeit, die wirklich zählt.',
+    finalLine: 'Verlieren Sie nicht den Menschen, den Sie lieben, nur weil die Arbeit ständig anruft.',
+    cta: 'Weissmann für mich antworten lassen',
+    videoNote: null,
+  },
+  en: {
+    eyebrow: 'An honest story',
+    title: 'When work never stops calling',
+    lead: 'It’s not always a lover. Sometimes, it’s just work.',
+    body: 'When every business call reaches your private phone, work follows you everywhere. Weissmann answers customer calls, handles routine enquiries and helps protect the time that actually matters.',
+    finalLine: 'Don’t lose the one you love because work won’t stop calling.',
+    cta: 'Let Weissmann answer for you',
+    videoNote: null,
+  },
+  it: {
+    eyebrow: 'Una storia onesta',
+    title: 'Quando il lavoro non smette mai di chiamare',
+    lead: 'Non è sempre un’amante. A volte, è solo il lavoro.',
+    body: 'Quando ogni chiamata di lavoro arriva sul vostro telefono privato, il lavoro vi segue ovunque. Weissmann risponde alle chiamate dei clienti, gestisce le richieste ricorrenti e protegge il tempo che conta davvero.',
+    finalLine: 'Non perdete la persona che amate solo perché il lavoro continua a chiamare.',
+    cta: 'Lascia che Weissmann risponda per te',
+    videoNote: 'Questo video è disponibile in tedesco e inglese.',
+  },
+  fr: {
+    eyebrow: 'Une histoire honnête',
+    title: 'Quand le travail n’arrête jamais d’appeler',
+    lead: 'Ce n’est pas toujours une liaison. Parfois, c’est simplement le travail.',
+    body: 'Quand chaque appel professionnel arrive sur votre téléphone privé, le travail vous suit partout. Weissmann répond aux appels des clients, traite les demandes courantes et protège le temps qui compte vraiment.',
+    finalLine: 'Ne perdez pas la personne que vous aimez juste parce que le travail n’arrête pas d’appeler.',
+    cta: 'Laissez Weissmann répondre pour moi',
+    videoNote: 'Cette vidéo est disponible en allemand et en anglais.',
+  },
+};
+const campaign = CAMPAIGN[locale];
+const campaignVideoSrc = locale === 'de' ? '/videos/weissmann-date-night-campaign-de.mp4' : '/videos/weissmann-date-night-campaign-en.mp4';
+const campaignVideoLang = locale === 'de' ? 'Deutsch' : 'English';
 
 // Self-playing "watch a real call" replay — animated on scroll, but fully readable
 // with no JS and under prefers-reduced-motion. Every string is an explicit example.
@@ -323,13 +420,14 @@ const replay = REPLAY[locale];
 
 const C: Record<Locale, any> = {
   de: {
-    metaTitle: 'KI & digitales Wachstum für Schweizer Unternehmen | Weissmann AI',
+    metaTitle: 'KI-Wachstum für Schweizer Unternehmen | Weissmann AI',
     metaDesc:
       'Weissmann AI baut die digitale Infrastruktur für Ihr Wachstum: Website, SEO & GEO, Google Ads, KI-Agenten und Automatisierung – ein System aus Zürich.',
-    heroEyebrow: 'KI-Telefonassistent · Schweiz',
-    heroTitle: 'Kein verpasster Anruf. Kein verlorener Kunde.',
+    heroEyebrow: 'KI-Telefonassistenten · Websites · SEO · GEO · Automatisierung',
+    heroTitle: 'Das System, mit dem Schweizer Unternehmen gefunden werden, überzeugen und gewinnen.',
     heroText:
-      'Der Weissmann KI-Telefonassistent nimmt jeden Anruf entgegen – 24/7, bucht Termine, qualifiziert Anfragen und übergibt an Ihr Team, wenn es zählt. Ein Baustein eines kompletten KI-Wachstumssystems, gebaut und betreut in Zürich.',
+      'Von der Sichtbarkeit bei Google und in der KI-Suche über eine Premium-Website bis zur Anrufannahme und zum abgeschlossenen Termin: Weissmann baut ein durchgehendes System – kein Sammelsurium aus Einzellösungen. Kein verpasster Anruf, kein verlorener Kunde.',
+    heroVideoLabel: 'Demo: Der KI-Telefonassistent nimmt einen Anruf entgegen',
     heroPrimary: 'Demo anfordern',
     heroSecondary: 'KI live anrufen',
     socialProof: 'Über 20 Unternehmen haben bereits eine Live-Demo angefragt.',
@@ -352,10 +450,10 @@ const C: Record<Locale, any> = {
     systemText:
       'Sechs Bausteine, ein System — vom ersten Website-Besuch bis zum gebuchten Termin. Jeder Baustein wirkt für sich; zusammen schliessen sie die Lücken, an denen Ihnen heute Kunden verloren gehen.',
     system: [
-      { n: '01', title: 'Website', text: 'Die digitale Grundlage.', href: '/leistungen/ai-websites/' },
+      { n: '01', title: 'Website', text: 'Die digitale Grundlage.', href: '/leistungen/ki-webentwicklung/' },
       { n: '02', title: 'SEO & GEO', text: 'Sichtbarkeit in Suchmaschinen und KI-Antworten.', href: '/preise/' },
       { n: '03', title: 'Google Ads', text: 'Gezielte Nachfrage und qualifizierter Traffic.', href: '/preise/' },
-      { n: '04', title: 'KI-Agenten', text: 'Jede Anfrage beantworten und qualifizieren.', href: '/ki-telefonassistent/' },
+      { n: '04', title: 'KI-Agenten', text: 'Jede Anfrage beantworten und qualifizieren.', href: '/leistungen/ki-telefonassistent/' },
       { n: '05', title: 'Automatisierung', text: 'Wiederkehrende Arbeit intelligent ausführen.', href: '/kontakt/' },
       { n: '06', title: 'Messung', text: 'Ergebnisse verstehen und kontinuierlich verbessern.', href: '/kontakt/' },
     ],
@@ -413,10 +511,11 @@ const C: Record<Locale, any> = {
     metaTitle: 'AI & digital growth for Swiss businesses | Weissmann AI',
     metaDesc:
       'Weissmann AI builds the digital infrastructure businesses grow on: website, SEO & GEO, Google Ads, AI agents and automation — one system from Zurich.',
-    heroEyebrow: 'AI phone agent · Switzerland',
-    heroTitle: 'No missed call. No lost customer.',
+    heroEyebrow: 'AI Phone Agents · Websites · SEO · GEO · Automation',
+    heroTitle: 'The system that helps Swiss companies get found, impress and win customers.',
     heroText:
-      'The Weissmann AI phone agent answers every call 24/7 — books appointments, qualifies leads and hands over to your team when it matters. One building block of a complete AI growth system, built and managed in Zurich.',
+      'From visibility on Google and in AI search, to a premium website, to answering the call and completing the booking: Weissmann builds one connected system — not a pile of disconnected tools. No missed call, no lost customer.',
+    heroVideoLabel: 'Demo: the AI phone agent answering a call',
     heroPrimary: 'Request a demo',
     heroSecondary: 'Call the AI live',
     socialProof: 'More than 20 businesses have already requested a live demo.',
@@ -439,10 +538,10 @@ const C: Record<Locale, any> = {
     systemText:
       'Six building blocks, one system — from the first website visit to the booked appointment. Each works on its own; together they close the gaps where customers slip away today.',
     system: [
-      { n: '01', title: 'Website', text: 'The digital foundation.', href: '/leistungen/ai-websites/' },
+      { n: '01', title: 'Website', text: 'The digital foundation.', href: '/en/services/ai-web-development/' },
       { n: '02', title: 'SEO & GEO', text: 'Visibility in search engines and AI answers.', href: '/preise/' },
       { n: '03', title: 'Google Ads', text: 'Targeted demand and qualified traffic.', href: '/preise/' },
-      { n: '04', title: 'AI agents', text: 'Answer and qualify every enquiry.', href: '/ki-telefonassistent/' },
+      { n: '04', title: 'AI agents', text: 'Answer and qualify every enquiry.', href: '/en/services/ai-phone-assistant/' },
       { n: '05', title: 'Automation', text: 'Execute recurring work intelligently.', href: '/kontakt/' },
       { n: '06', title: 'Measurement', text: 'Understand results and improve continuously.', href: '/kontakt/' },
     ],
@@ -500,10 +599,11 @@ const C: Record<Locale, any> = {
     metaTitle: 'AI e crescita digitale per aziende svizzere | Weissmann AI',
     metaDesc:
       'Weissmann AI costruisce l’infrastruttura digitale per la crescita: sito web, SEO e GEO, Google Ads, agenti AI e automazione — un sistema da Zurigo.',
-    heroEyebrow: 'Assistente telefonico AI · Svizzera',
-    heroTitle: 'Nessuna chiamata persa. Nessun cliente perso.',
+    heroEyebrow: 'Assistenti telefonici AI · Siti web · SEO · GEO · Automazione',
+    heroTitle: 'Il sistema con cui le aziende svizzere si fanno trovare, convincono e conquistano clienti.',
     heroText:
-      'L’assistente telefonico Weissmann AI risponde a ogni chiamata 24/7 – prenota appuntamenti, qualifica le richieste e passa al vostro team quando serve. Un componente di un sistema di crescita AI completo, realizzato e gestito a Zurigo.',
+      'Dalla visibilità su Google e nella ricerca AI, a un sito web premium, fino alla risposta alla chiamata e alla prenotazione conclusa: Weissmann costruisce un sistema unico e connesso – non un insieme di strumenti isolati. Nessuna chiamata persa, nessun cliente perso.',
+    heroVideoLabel: 'Demo: l’assistente telefonico AI risponde a una chiamata',
     heroPrimary: 'Richiedi una demo',
     heroSecondary: 'Chiama l’AI dal vivo',
     socialProof: 'Oltre 20 aziende hanno già richiesto una demo dal vivo.',
@@ -526,10 +626,10 @@ const C: Record<Locale, any> = {
     systemText:
       'Sei componenti, un sistema — dalla prima visita al sito all’appuntamento prenotato. Ognuno funziona da solo; insieme chiudono le falle da cui oggi perdete clienti.',
     system: [
-      { n: '01', title: 'Sito web', text: 'La base digitale.', href: '/leistungen/ai-websites/' },
+      { n: '01', title: 'Sito web', text: 'La base digitale.', href: '/it/servizi/sviluppo-siti-web-ai/' },
       { n: '02', title: 'SEO & GEO', text: 'Visibilità nei motori di ricerca e nelle risposte AI.', href: '/preise/' },
       { n: '03', title: 'Google Ads', text: 'Domanda mirata e traffico qualificato.', href: '/preise/' },
-      { n: '04', title: 'Agenti AI', text: 'Rispondere e qualificare ogni richiesta.', href: '/ki-telefonassistent/' },
+      { n: '04', title: 'Agenti AI', text: 'Rispondere e qualificare ogni richiesta.', href: '/it/servizi/assistente-telefonico-ai/' },
       { n: '05', title: 'Automazione', text: 'Eseguire il lavoro ricorrente in modo intelligente.', href: '/kontakt/' },
       { n: '06', title: 'Misurazione', text: 'Comprendere i risultati e migliorare continuamente.', href: '/kontakt/' },
     ],
@@ -584,13 +684,14 @@ const C: Record<Locale, any> = {
   },
 
   fr: {
-    metaTitle: 'IA & croissance digitale pour entreprises suisses | Weissmann AI',
+    metaTitle: 'IA et croissance pour entreprises suisses | Weissmann AI',
     metaDesc:
       'Weissmann AI construit l’infrastructure digitale de votre croissance : site web, SEO et GEO, Google Ads, agents IA et automatisation, depuis Zurich.',
-    heroEyebrow: 'Agent téléphonique IA · Suisse',
-    heroTitle: 'Aucun appel manqué. Aucun client perdu.',
+    heroEyebrow: 'Agents téléphoniques IA · Sites web · SEO · GEO · Automatisation',
+    heroTitle: 'Le système qui aide les entreprises suisses à se faire trouver, convaincre et gagner des clients.',
     heroText:
-      'L’agent téléphonique Weissmann AI répond à chaque appel 24/7 – réserve des rendez-vous, qualifie les demandes et transfère à votre équipe quand il le faut. Un composant d’un système de croissance IA complet, conçu et géré à Zurich.',
+      'De la visibilité sur Google et dans la recherche IA, à un site web premium, jusqu’à la réponse à l’appel et la réservation conclue : Weissmann construit un système unique et connecté – pas un ensemble d’outils isolés. Aucun appel manqué, aucun client perdu.',
+    heroVideoLabel: 'Démo : l’agent téléphonique IA répond à un appel',
     heroPrimary: 'Demander une démo',
     heroSecondary: 'Appeler l’IA en direct',
     socialProof: 'Plus de 20 entreprises ont déjà demandé une démo en direct.',
@@ -613,10 +714,10 @@ const C: Record<Locale, any> = {
     systemText:
       'Six composants, un système — de la première visite du site au rendez-vous réservé. Chacun agit seul ; ensemble, ils comblent les fuites par lesquelles vous perdez des clients aujourd’hui.',
     system: [
-      { n: '01', title: 'Site web', text: 'La fondation digitale.', href: '/leistungen/ai-websites/' },
+      { n: '01', title: 'Site web', text: 'La fondation digitale.', href: '/fr/services/developpement-web-ia/' },
       { n: '02', title: 'SEO & GEO', text: 'Visibilité dans les moteurs de recherche et les réponses IA.', href: '/preise/' },
       { n: '03', title: 'Google Ads', text: 'Demande ciblée et trafic qualifié.', href: '/preise/' },
-      { n: '04', title: 'Agents IA', text: 'Répondre à chaque demande et la qualifier.', href: '/ki-telefonassistent/' },
+      { n: '04', title: 'Agents IA', text: 'Répondre à chaque demande et la qualifier.', href: '/fr/services/assistant-telephonique-ia/' },
       { n: '05', title: 'Automatisation', text: 'Exécuter intelligemment le travail récurrent.', href: '/kontakt/' },
       { n: '06', title: 'Mesure', text: 'Comprendre les résultats et s’améliorer en continu.', href: '/kontakt/' },
     ],
@@ -680,6 +781,17 @@ const posterSrc = theme === 'b' ? '/poster-call-dark.png' : '/poster-call-light.
 const schema = [
   webPage(locale, '/', c.metaTitle, c.metaDesc),
   faqPage(c.faq),
+  // Campaign video has no accurate, matching poster/thumbnail yet (see report),
+  // so it deliberately has no VideoObject entry — a mismatched thumbnail would
+  // be worse than none.
+  videoObject({
+    name: c.heroVideoLabel,
+    description: c.heroText,
+    thumbnailUrl: posterSrc,
+    contentUrl: videoSrc,
+    uploadDate: CONTENT_DATE,
+    duration: 'PT46S',
+  }),
 ];
 
 const phoneStarter = getPackage('phone-starter');
@@ -705,24 +817,22 @@ const websiteStarter = getPackage('website-starter');
           {heroChips.map((chip: string) => <li><Icon name="check" size={15} />{chip}</li>)}
         </ul>
       </div>
-      <div class="hero__visual" aria-hidden="true">
-        <div class="device">
-          <span class="device__notch"></span>
-          <figure class="callcard">
-            <figcaption class="callcard__bar">
-              <span class="callcard__live"><span class="callcard__pulse"></span>{c.mock.status}</span>
-              <span class="callcard__time">00:12</span>
-            </figcaption>
-            <div class="callcard__thread">
-              <p class="bubble bubble--caller">{c.mock.caller}</p>
-              <p class="bubble bubble--ai">{c.mock.ai}</p>
-              <div class="callcard__wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-            </div>
-            <div class="callcard__foot">
-              <span class="callcard__badge"><Icon name="calendar-check" size={17} /></span>
-              <span>{c.mock.booked}</span>
-            </div>
-          </figure>
+      <div class="hero__visual">
+        <div class="hero-video">
+          <video
+            class="hero-video__el"
+            poster={posterSrc}
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            controls
+            data-hero-video
+            aria-label={c.heroVideoLabel}
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>
@@ -801,6 +911,28 @@ const websiteStarter = getPackage('website-starter');
       <ul class="truststrip__facts">
         {c.trustFacts.map((f: string, i: number) => <li><Icon name={TRUST_ICONS[i]} size={16} />{f}</li>)}
       </ul>
+    </div>
+  </section>
+
+  <!-- ── Four-pillar section: why companies choose Weissmann ─ -->
+  <section class="section pillars-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{pillars.eyebrow}</span>
+        <h2>{pillars.title}</h2>
+        <p>{pillars.text}</p>
+      </div>
+      <div class="pillars-grid">
+        {pillars.items.map((it, i) => (
+          <div class="pillar-card reveal" style={`--i:${i}`}>
+            <span class="pillar-card__icon"><Icon name={PILLAR_ICONS[i]} size={24} /></span>
+            <h3>{it.headline}</h3>
+            <p class="pillar-card__text">{it.text}</p>
+            <p class="pillar-card__outcome">{it.outcome}</p>
+            <a class="pillar-card__cta" href={pillarHref(it.id)} data-track="service_view">{it.cta} →</a>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -1068,6 +1200,39 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
+  <!-- ── Campaign: "it's not always a lover, sometimes it's just work" ─ -->
+  <section class="section section--alt campaign-section">
+    <div class="container">
+      <div class="campaign-layout">
+        <div class="campaign-copy reveal">
+          <span class="eyebrow">{campaign.eyebrow}</span>
+          <h2>{campaign.title}</h2>
+          <p class="campaign-lead">{campaign.lead}</p>
+          <p class="campaign-body">{campaign.body}</p>
+          <p class="campaign-final">{campaign.finalLine}</p>
+          <p class="mt-4">
+            <a class="btn btn--primary" href={phoneHref} data-track="campaign_cta">{campaign.cta} →</a>
+          </p>
+        </div>
+        <figure class="campaign-video reveal">
+          <video
+            controls
+            preload="none"
+            class="campaign-video__el"
+            data-campaign-video
+            aria-label={campaign.title}
+          >
+            <source src={campaignVideoSrc} type="video/mp4" />
+          </video>
+          <figcaption class="campaign-video__lang">
+            {t(locale, 'lang.switch')}: {campaignVideoLang}
+            {campaign.videoNote && <> · {campaign.videoNote}</>}
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Authority: founders + transparent process ────────── -->
   <section class="section section--alt">
     <div class="container">
@@ -1077,9 +1242,9 @@ const websiteStarter = getPackage('website-starter');
         <p>{authority.text}</p>
       </div>
       <div class="authority-grid">
-        <figure class="team-photo reveal">
-          <img src="/founders.jpg" alt={`${authority.founders[0].name} & ${authority.founders[1].name} — Weissmann AI, Zürich`} width="1600" height="1200" loading="lazy" />
-          <figcaption>{authority.founders[0].name} · {authority.founders[0].role}{founderLinkedin && (<> · <a class="team-photo__li" href={founderLinkedin} rel="noopener" target="_blank">LinkedIn →</a></>)} · {authority.founders[1].name} · {authority.founders[1].role}</figcaption>
+        <figure class="team-photo team-photo--avatar reveal">
+          <div class="team-photo__avatar" aria-hidden="true">{authority.founders[0].initials}</div>
+          <figcaption>{authority.founders[0].name} · {authority.founders[0].role}{founderLinkedin && (<> · <a class="team-photo__li" href={founderLinkedin} rel="noopener" target="_blank">LinkedIn →</a></>)}</figcaption>
         </figure>
         <div class="process reveal">
           <h3 class="process__title">{authority.processTitle}</h3>
@@ -1133,8 +1298,8 @@ const websiteStarter = getPackage('website-starter');
   .eyebrow--light { color: #8fa6d8; }
   .hero--dark .hero__title {
     color: #fff;
-    font-size: clamp(2.5rem, 1.3rem + 4.6vw, 4.5rem);
-    max-width: 15ch; letter-spacing: -0.03em; line-height: 1.02;
+    font-size: clamp(2.1rem, 1.1rem + 3.2vw, 3.4rem);
+    max-width: 27ch; letter-spacing: -0.025em; line-height: 1.08;
   }
   .hero__text { max-width: 40rem; margin-top: var(--space-4); font-size: var(--fs-500); color: #aab5cc; line-height: 1.6; }
   .hero__actions { display: flex; gap: var(--space-3); margin-top: var(--space-5); flex-wrap: wrap; }
@@ -1148,8 +1313,21 @@ const websiteStarter = getPackage('website-starter');
   .hero__chips li { display: inline-flex; align-items: center; gap: 0.4rem; }
   .hero__chips .wi { color: #6fe3a4; }
 
-  /* Phone device holding the live-call illustration */
-  .hero__visual { justify-self: center; width: 100%; max-width: 21rem; }
+  /* Hero video — the real product demo, autoplaying muted/looped/playsinline */
+  .hero__visual { justify-self: center; width: 100%; max-width: 34rem; }
+  .hero-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 46px 80px -26px rgba(0,0,0,0.7);
+  }
+  .hero-video__el { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (prefers-reduced-motion: reduce) { .hero-video { box-shadow: none; } }
+
+  /* Phone-device illustration, used by the "call replay" section below (.creplay-device sets its width) */
   .device { position: relative; border-radius: 40px; padding: 0.5rem; background: linear-gradient(160deg, #3a445e, #1a2236); box-shadow: 0 46px 80px -26px rgba(0,0,0,0.7); animation: floaty 6.5s ease-in-out infinite; }
   @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
   .device__notch { position: absolute; top: 0.5rem; left: 50%; transform: translateX(-50%); width: 32%; height: 1rem; background: #1a2236; border-radius: 0 0 12px 12px; z-index: 3; }
@@ -1172,6 +1350,31 @@ const websiteStarter = getPackage('website-starter');
   @keyframes cardwave { 0%,100% { height: 28%; } 50% { height: 100%; } }
   .callcard__foot { display: flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.15rem; border-top: 1px solid var(--line); background: var(--paper-soft); font-size: var(--fs-300); font-weight: 600; color: var(--ink); }
   .callcard__badge { display: inline-grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); }
+
+  /* ── Four-pillar cards ─────────────────────────────────── */
+  .pillars-grid { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .pillars-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .pillars-grid { grid-template-columns: repeat(4, 1fr); } }
+  .pillar-card {
+    display: flex; flex-direction: column;
+    border: 1px solid var(--line); border-radius: var(--radius-lg);
+    padding: var(--space-5); background: var(--paper);
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .pillar-card:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); transform: translateY(-3px); box-shadow: 0 16px 32px -18px rgba(16, 24, 40, 0.18); }
+  .pillar-card__icon {
+    display: inline-grid; place-items: center; width: 3rem; height: 3rem;
+    border-radius: 14px; background: var(--accent-soft); color: var(--accent);
+    margin-bottom: var(--space-4);
+  }
+  .pillar-card h3 { font-size: var(--fs-500); line-height: 1.25; margin-bottom: var(--space-2); }
+  .pillar-card__text { color: var(--ink-mute); font-size: var(--fs-300); margin-bottom: var(--space-3); }
+  .pillar-card__outcome { font-size: var(--fs-300); font-weight: 600; color: var(--ink); padding-top: var(--space-3); border-top: 1px solid var(--line); margin-bottom: var(--space-4); }
+  .pillar-card__cta { margin-top: auto; font-weight: 600; color: var(--accent); font-size: var(--fs-300); }
+  .pillar-card__cta:hover { text-decoration: none; }
+  @media (prefers-reduced-motion: reduce) { .pillar-card:hover { transform: none; } }
+  @media (prefers-reduced-motion: no-preference) { .pillar-card.reveal { transition-delay: calc(var(--i, 0) * 70ms); } }
 
   /* Call-flow "how it works" */
   .callflow { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); grid-template-columns: 1fr; counter-reset: step; }
@@ -1232,6 +1435,17 @@ const websiteStarter = getPackage('website-starter');
   @media (min-width: 820px) { .authority-grid { grid-template-columns: 1.1fr 1fr; gap: var(--space-6); } }
   .team-photo { margin: 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--paper); }
   .team-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+  .team-photo__avatar {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: grid;
+    place-items: center;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
   .team-photo figcaption { padding: var(--space-3) var(--space-4); font-size: var(--fs-300); color: var(--ink-mute); }
   .team-photo__li { color: var(--accent); font-weight: 600; text-decoration: none; white-space: nowrap; }
   .team-photo__li:hover { text-decoration: underline; }
@@ -1445,6 +1659,16 @@ const websiteStarter = getPackage('website-starter');
   @media (min-width: 480px) { .glasses-list { grid-template-columns: 1fr 1fr; } }
   .glasses-list li { display: flex; align-items: center; gap: 0.7rem; color: var(--ink-soft); font-size: var(--fs-300); }
   .glasses-list__icon { width: 1.9rem; height: 1.9rem; margin: 0; flex: none; }
+
+  /* ── Campaign section ─────────────────────────────────── */
+  .campaign-layout { display: grid; gap: var(--space-5); align-items: center; }
+  @media (min-width: 820px) { .campaign-layout { grid-template-columns: 1fr 1fr; gap: var(--space-6); } }
+  .campaign-lead { margin-top: var(--space-3); font-size: var(--fs-500); font-weight: 600; color: var(--ink); }
+  .campaign-body { margin-top: var(--space-3); color: var(--ink-soft); }
+  .campaign-final { margin-top: var(--space-3); font-style: italic; color: var(--ink); border-left: 3px solid var(--accent); padding-left: 0.9rem; }
+  .campaign-video { margin: 0; }
+  .campaign-video__el { width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-lg); border: 1px solid var(--line); background: #000; display: block; }
+  .campaign-video__lang { margin-top: var(--space-2); font-size: var(--fs-200); color: var(--ink-mute); }
 </style>
 
 <script is:inline>
@@ -1460,6 +1684,35 @@ const websiteStarter = getPackage('website-starter');
     });
     v.addEventListener('ended', function () {
       if (window.wmEvent) window.wmEvent('demo_complete', { demo: 'homepage_video' });
+    });
+  })();
+
+  // Hero video: prefers-reduced-motion disables ambient autoplay (poster + manual
+  // play remain available via native controls); tracks the first play as its own event.
+  (function () {
+    var v = document.querySelector('[data-hero-video]');
+    if (!v) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      v.removeAttribute('autoplay');
+      v.pause();
+    }
+    var played = false;
+    v.addEventListener('play', function () {
+      if (played) return;
+      played = true;
+      if (window.wmEvent) window.wmEvent('hero_video_play', { demo: 'homepage_hero_video' });
+    });
+  })();
+
+  // Campaign video play tracking (click-to-play, no autoplay).
+  (function () {
+    var v = document.querySelector('[data-campaign-video]');
+    if (!v) return;
+    var played = false;
+    v.addEventListener('play', function () {
+      if (played) return;
+      played = true;
+      if (window.wmEvent) window.wmEvent('campaign_video_play', { demo: 'homepage_campaign_video' });
     });
   })();
 

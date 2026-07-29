@@ -12,7 +12,7 @@ import { relFor } from '../../data/routes';
 import { getService, servicePaths } from '../../data/services';
 import { getResource, resourcePaths } from '../../data/resources';
 import { t } from '../../i18n/ui';
-import { PACKAGES } from '../../data/pricing';
+import { PACKAGES, getPackage } from '../../data/pricing';
 import { webPage, breadcrumbs, faqPage, allPackageServices } from '../../data/schema';
 
 interface Props { locale: Locale }
@@ -24,12 +24,12 @@ const C: Record<Locale, any> = {
   de: {
     metaTitle: 'Preise & Pakete: KI-Leistungen mit Festpreis | Weissmann AI',
     metaDesc:
-      'Transparente Preise von Weissmann AI: KI-Telefonassistent ab CHF 350/Monat, Websites ab CHF 2’490, SEO ab CHF 890/Monat, GEO ab CHF 990/Monat, Google Ads ab CHF 690/Monat.',
+      'Transparente Preise von Weissmann AI: KI-Telefonassistent ab CHF 350/Monat, Websites ab CHF 880 (Aktionspreis), SEO ab CHF 890/Monat, GEO ab CHF 990/Monat, Google Ads ab CHF 690/Monat.',
     h1: 'Klare Preise. Klarer Umfang. Keine Überraschungen.',
     intro:
       'Jedes Paket hat einen definierten Umfang, transparente Grenzen und ein klares Ziel. Was nicht passt, besprechen wir ehrlich – bevor Sie etwas kaufen.',
     tldr:
-      'Kurz: KI-Telefonassistent ab CHF 350/Monat, Websites ab CHF 2’490, SEO ab CHF 890/Monat, GEO ab CHF 990/Monat, Google Ads ab CHF 690/Monat — alle Preise exkl. MwSt.',
+      'Kurz: KI-Telefonassistent ab CHF 350/Monat, Websites ab CHF 880 (Aktionspreis, regulär CHF 2’490), SEO ab CHF 890/Monat, GEO ab CHF 990/Monat, Google Ads ab CHF 690/Monat — alle Preise exkl. MwSt.',
     groups: {
       'phone-agent': 'KI-Telefonassistent',
       website: 'Websites',
@@ -48,7 +48,7 @@ const C: Record<Locale, any> = {
     faq: [
       { q: 'Sind die Preise inklusive Mehrwertsteuer?', a: 'Alle Preise verstehen sich exklusive Mehrwertsteuer.' },
       { q: 'Gibt es versteckte Kosten?', a: 'Nein. Jedes Paket definiert Umfang und Ausschlüsse transparent. Drittanbieter-Kosten (z. B. Werbebudget bei Google Ads) sind klar gekennzeichnet und werden direkt von Ihnen bezahlt.' },
-      { q: 'Wie funktioniert die Bezahlung?', a: 'Die KI-Telefonassistent-Pakete Starter und Premium können direkt online per Stripe abgeschlossen werden. Für alle anderen Pakete starten wir mit einem kurzen Beratungsgespräch, damit der Umfang wirklich passt.' },
+      { q: 'Wie funktioniert die Bezahlung?', a: 'Die KI-Telefonassistent-Pakete Starter, Premium und der einmalige Starter-Test sowie die Starter Website können direkt online per Stripe abgeschlossen werden. Für alle anderen Pakete starten wir mit einem kurzen Beratungsgespräch, damit der Umfang wirklich passt.' },
       { q: 'Welche Vertragslaufzeiten gelten?', a: 'KI-Telefonassistent Starter hat keine Mindestlaufzeit und ist monatlich jederzeit kündbar – ideal für Unternehmen, die keine Systemintegrationen benötigen. Premium und Enterprise beinhalten die vollständige Systemintegration und haben eine Mindestlaufzeit von 12 Monaten. Bei den monatlichen Marketing-Paketen besprechen wir die empfohlene Mindestlaufzeit transparent im Erstgespräch.' },
       { q: 'Wie kündige ich meinen Vertrag?', a: 'Den Starter können Sie ohne Mindestlaufzeit jederzeit auf Monatsende kündigen. Bei Premium und Enterprise (12 Monate Mindestlaufzeit) muss die Kündigung mindestens einen Monat vor dem Verlängerungsdatum bei uns eingehen.' },
       { q: 'Kann ich jährlich bezahlen und dabei sparen?', a: 'Ja. Für Jahrespläne bieten wir einen Rabatt bei Vorauszahlung. Kontaktieren Sie uns und wir erstellen Ihnen Ihr persönliches Jahresangebot.' },
@@ -63,21 +63,22 @@ const C: Record<Locale, any> = {
     phoneAnchor: 'Ab CHF 350/Monat – das sind weniger als CHF 12 pro Tag und ein Bruchteil einer Empfangskraft (typisch CHF 4’000–6’000+/Monat). Ihr KI-Telefonassistent nimmt jeden Anruf rund um die Uhr an – auch dann, wenn im Team gerade niemand ans Telefon kann.',
     phoneAnchorLink: 'Rechnen Sie nach: Was kosten Sie verpasste Anrufe?',
     startTitle: 'Nicht sicher, wo Sie starten sollen?',
-    startText: 'Die meisten Unternehmen beginnen mit dem KI-Telefonassistenten – das einzige Paket, das Sie sofort online abschliessen können. Unsicher? Buchen Sie ein kurzes Gespräch und wir empfehlen ehrlich das passende Paket.',
+    startText: 'Die meisten Unternehmen beginnen mit dem KI-Telefonassistenten oder der Starter Website – beide können Sie direkt online abschliessen. Unsicher? Buchen Sie ein kurzes Gespräch und wir empfehlen ehrlich das passende Paket.',
     startCta1: 'Zu den Telefonassistent-Paketen',
     badgeWebsite: 'Empfohlen',
+    trialBadge: 'Einmaliger Test',
     ctaTitle: 'Unsicher, welches Paket passt?',
     ctaText: 'In einem kurzen Gespräch finden wir gemeinsam heraus, was für Ihr Unternehmen wirklich Wirkung zeigt.',
   },
   en: {
     metaTitle: 'Pricing & Packages: Fixed-Price AI Services | Weissmann AI',
     metaDesc:
-      'Transparent pricing from Weissmann AI: AI phone agent from CHF 350/month, websites from CHF 2,490, SEO from CHF 890/month, GEO from CHF 990/month, Google Ads from CHF 690/month.',
+      'Transparent pricing from Weissmann AI: AI phone agent from CHF 350/month, websites from CHF 880 (special promotion), SEO from CHF 890/month, GEO from CHF 990/month, Google Ads from CHF 690/month.',
     h1: 'Clear prices. Clear scope. No surprises.',
     intro:
       'Every package has a defined scope, transparent limits and a clear goal. If something doesn’t fit, we tell you honestly — before you buy anything.',
     tldr:
-      'In short: AI phone agent from CHF 350/month, websites from CHF 2,490, SEO from CHF 890/month, GEO from CHF 990/month, Google Ads from CHF 690/month — all prices excl. VAT.',
+      'In short: AI phone agent from CHF 350/month, websites from CHF 880 (special promotion, regularly CHF 2,490), SEO from CHF 890/month, GEO from CHF 990/month, Google Ads from CHF 690/month — all prices excl. VAT.',
     groups: {
       'phone-agent': 'AI Phone Agent',
       website: 'Websites',
@@ -96,7 +97,7 @@ const C: Record<Locale, any> = {
     faq: [
       { q: 'Do prices include VAT?', a: 'All prices are exclusive of VAT.' },
       { q: 'Are there hidden costs?', a: 'No. Every package defines scope and exclusions transparently. Third-party costs (such as ad budget for Google Ads) are clearly labeled and paid directly by you.' },
-      { q: 'How does payment work?', a: 'The AI Phone Agent Starter and Premium packages can be subscribed to directly online via Stripe. For all other packages we start with a short consultation so the scope truly fits.' },
+      { q: 'How does payment work?', a: 'The AI Phone Agent Starter, Premium and the one-time Starter Trial, as well as the Starter Website, can all be checked out directly online via Stripe. For all other packages we start with a short consultation so the scope truly fits.' },
       { q: 'What contract terms apply?', a: 'AI Phone Agent Starter has no minimum term and can be cancelled any time on a monthly basis – ideal for businesses that don’t need system integrations. Premium and Enterprise include full system integration and have a 12-month minimum term. For the monthly marketing packages we discuss the recommended minimum term transparently in the initial consultation.' },
       { q: 'How do I cancel my contract?', a: 'Starter has no minimum term and can be cancelled any time at the end of a month. For Premium and Enterprise (12-month minimum term), notice must reach us at least one month before the renewal date.' },
       { q: 'Can I pay yearly and save?', a: 'Yes. Annual plans come with a discount when you pay upfront. Get in touch and we’ll put together your personal annual offer.' },
@@ -111,21 +112,22 @@ const C: Record<Locale, any> = {
     phoneAnchor: 'From CHF 350/month – under CHF 12 a day, and a fraction of a receptionist (typically CHF 4,000–6,000+/month). Your AI phone agent answers every call around the clock – even when no one on the team can pick up.',
     phoneAnchorLink: 'See the math: what are missed calls costing you?',
     startTitle: 'Not sure where to start?',
-    startText: 'Most businesses begin with the AI phone agent – the only package you can subscribe to online right away. Unsure? Book a short call and we’ll honestly recommend the right fit.',
+    startText: 'Most businesses begin with the AI phone agent or the Starter Website – both can be checked out directly online. Unsure? Book a short call and we’ll honestly recommend the right fit.',
     startCta1: 'See the phone agent plans',
     badgeWebsite: 'Recommended',
+    trialBadge: 'One-time trial',
     ctaTitle: 'Not sure which package fits?',
     ctaText: 'In a short conversation we’ll find out together what will really make a difference for your business.',
   },
   it: {
     metaTitle: 'Prezzi e pacchetti: servizi AI a prezzo fisso | Weissmann AI',
     metaDesc:
-      'Prezzi trasparenti di Weissmann AI: assistente telefonico AI da CHF 350/mese, siti web da CHF 2’490, SEO da CHF 890/mese, GEO da CHF 990/mese, Google Ads da CHF 690/mese.',
+      'Prezzi trasparenti di Weissmann AI: assistente telefonico AI da CHF 350/mese, siti web da CHF 880 (promozione speciale), SEO da CHF 890/mese, GEO da CHF 990/mese, Google Ads da CHF 690/mese.',
     h1: 'Prezzi chiari. Perimetro chiaro. Nessuna sorpresa.',
     intro:
       'Ogni pacchetto ha un perimetro definito, limiti trasparenti e un obiettivo chiaro. Se qualcosa non è adatto, ve lo diciamo onestamente — prima che acquistiate.',
     tldr:
-      'In breve: assistente telefonico AI da CHF 350/mese, siti web da CHF 2’490, SEO da CHF 890/mese, GEO da CHF 990/mese, Google Ads da CHF 690/mese — tutti i prezzi IVA esclusa.',
+      'In breve: assistente telefonico AI da CHF 350/mese, siti web da CHF 880 (promozione speciale, normalmente CHF 2’490), SEO da CHF 890/mese, GEO da CHF 990/mese, Google Ads da CHF 690/mese — tutti i prezzi IVA esclusa.',
     groups: {
       'phone-agent': 'Assistente telefonico AI',
       website: 'Siti web',
@@ -144,7 +146,7 @@ const C: Record<Locale, any> = {
     faq: [
       { q: 'I prezzi includono l’IVA?', a: 'Tutti i prezzi si intendono IVA esclusa.' },
       { q: 'Ci sono costi nascosti?', a: 'No. Ogni pacchetto definisce perimetro ed esclusioni in modo trasparente. I costi di terzi (come il budget pubblicitario per Google Ads) sono chiaramente indicati e pagati direttamente da voi.' },
-      { q: 'Come funziona il pagamento?', a: 'I pacchetti Starter e Premium dell’assistente telefonico possono essere sottoscritti direttamente online via Stripe. Per tutti gli altri iniziamo con una breve consulenza, perché il perimetro sia davvero adatto.' },
+      { q: 'Come funziona il pagamento?', a: 'I pacchetti Starter e Premium dell’assistente telefonico, la prova Starter una tantum e il sito web Starter possono essere acquistati direttamente online via Stripe. Per tutti gli altri iniziamo con una breve consulenza, perché il perimetro sia davvero adatto.' },
       { q: 'Quali durate contrattuali si applicano?', a: 'L’assistente telefonico Starter non ha durata minima e può essere disdetto ogni mese in qualsiasi momento – ideale per le aziende che non necessitano di integrazioni di sistema. Premium ed Enterprise includono l’integrazione di sistema completa e prevedono una durata minima di 12 mesi. Per i pacchetti marketing mensili discutiamo la durata minima raccomandata in modo trasparente nel primo colloquio.' },
       { q: 'Come disdico il contratto?', a: 'Lo Starter non ha durata minima e può essere disdetto in qualsiasi momento con effetto a fine mese. Per Premium ed Enterprise (durata minima di 12 mesi) la disdetta deve pervenirci almeno un mese prima della data di rinnovo.' },
       { q: 'Posso pagare annualmente e risparmiare?', a: 'Sì. I piani annuali prevedono uno sconto con pagamento anticipato. Contattateci e prepareremo la vostra offerta annuale personalizzata.' },
@@ -159,21 +161,22 @@ const C: Record<Locale, any> = {
     phoneAnchor: 'Da CHF 350/mese – meno di CHF 12 al giorno e una frazione di una receptionist (tipicamente CHF 4’000–6’000+/mese). Il vostro assistente telefonico AI risponde a ogni chiamata 24 ore su 24 – anche quando nel team nessuno può rispondere.',
     phoneAnchorLink: 'Fate il calcolo: quanto vi costano le chiamate perse?',
     startTitle: 'Non sapete da dove iniziare?',
-    startText: 'La maggior parte delle aziende inizia con l’assistente telefonico AI – l’unico pacchetto che potete sottoscrivere subito online. Indecisi? Prenotate una breve chiamata e vi consiglieremo onestamente la soluzione giusta.',
+    startText: 'La maggior parte delle aziende inizia con l’assistente telefonico AI o con il sito Starter – entrambi si possono acquistare direttamente online. Indecisi? Prenotate una breve chiamata e vi consiglieremo onestamente la soluzione giusta.',
     startCta1: 'Vai ai pacchetti dell’assistente telefonico',
     badgeWebsite: 'Consigliato',
+    trialBadge: 'Prova una tantum',
     ctaTitle: 'Non sapete quale pacchetto fa per voi?',
     ctaText: 'In una breve conversazione scopriamo insieme cosa avrà davvero effetto per la vostra azienda.',
   },
   fr: {
     metaTitle: 'Tarifs et forfaits : services IA à prix fixe | Weissmann AI',
     metaDesc:
-      'Tarifs transparents de Weissmann AI : agent téléphonique IA dès CHF 350/mois, sites web dès CHF 2’490, SEO dès CHF 890/mois, GEO dès CHF 990/mois, Google Ads dès CHF 690/mois.',
+      'Tarifs transparents de Weissmann AI : agent téléphonique IA dès CHF 350/mois, sites web dès CHF 880 (offre spéciale), SEO dès CHF 890/mois, GEO dès CHF 990/mois, Google Ads dès CHF 690/mois.',
     h1: 'Des prix clairs. Un périmètre clair. Pas de surprises.',
     intro:
       'Chaque forfait a un périmètre défini, des limites transparentes et un objectif clair. Si quelque chose ne convient pas, nous vous le disons honnêtement — avant tout achat.',
     tldr:
-      'En bref : agent téléphonique IA dès CHF 350/mois, sites web dès CHF 2’490, SEO dès CHF 890/mois, GEO dès CHF 990/mois, Google Ads dès CHF 690/mois — tous les prix hors TVA.',
+      'En bref : agent téléphonique IA dès CHF 350/mois, sites web dès CHF 880 (offre spéciale, normalement CHF 2’490), SEO dès CHF 890/mois, GEO dès CHF 990/mois, Google Ads dès CHF 690/mois — tous les prix hors TVA.',
     groups: {
       'phone-agent': 'Agent téléphonique IA',
       website: 'Sites web',
@@ -192,7 +195,7 @@ const C: Record<Locale, any> = {
     faq: [
       { q: 'Les prix incluent-ils la TVA ?', a: 'Tous les prix s’entendent hors TVA.' },
       { q: 'Y a-t-il des coûts cachés ?', a: 'Non. Chaque forfait définit le périmètre et les exclusions de façon transparente. Les coûts tiers (comme le budget publicitaire Google Ads) sont clairement indiqués et payés directement par vous.' },
-      { q: 'Comment fonctionne le paiement ?', a: 'Les forfaits Starter et Premium de l’agent téléphonique peuvent être souscrits directement en ligne via Stripe. Pour tous les autres, nous commençons par une courte consultation afin que le périmètre convienne vraiment.' },
+      { q: 'Comment fonctionne le paiement ?', a: 'Les forfaits Starter et Premium de l’agent téléphonique, l’essai Starter à paiement unique ainsi que le site Starter peuvent tous être réglés directement en ligne via Stripe. Pour tous les autres, nous commençons par une courte consultation afin que le périmètre convienne vraiment.' },
       { q: 'Quelles durées contractuelles s’appliquent ?', a: 'L’agent téléphonique Starter n’a aucune durée minimale et peut être résilié chaque mois à tout moment – idéal pour les entreprises qui n’ont pas besoin d’intégrations système. Premium et Enterprise incluent l’intégration système complète et ont une durée minimale de 12 mois. Pour les forfaits marketing mensuels, nous discutons de la durée minimale recommandée en toute transparence lors du premier entretien.' },
       { q: 'Comment résilier mon contrat ?', a: 'Le Starter n’a pas de durée minimale et peut être résilié à tout moment pour la fin du mois. Pour Premium et Enterprise (durée minimale de 12 mois), la résiliation doit nous parvenir au moins un mois avant la date de renouvellement.' },
       { q: 'Puis-je payer annuellement et économiser ?', a: 'Oui. Les forfaits annuels bénéficient d’une remise en cas de paiement à l’avance. Contactez-nous et nous préparerons votre offre annuelle personnalisée.' },
@@ -207,9 +210,10 @@ const C: Record<Locale, any> = {
     phoneAnchor: 'Dès CHF 350/mois – moins de CHF 12 par jour et une fraction d’une réceptionniste (typiquement CHF 4’000–6’000+/mois). Votre agent téléphonique IA répond à chaque appel 24h/24 – même quand personne dans l’équipe ne peut décrocher.',
     phoneAnchorLink: 'Faites le calcul : combien vous coûtent les appels manqués ?',
     startTitle: 'Vous ne savez pas par où commencer ?',
-    startText: 'La plupart des entreprises commencent par l’agent téléphonique IA – le seul forfait souscriptible en ligne immédiatement. Hésitant ? Réservez un court entretien et nous vous recommanderons honnêtement la bonne solution.',
+    startText: 'La plupart des entreprises commencent par l’agent téléphonique IA ou le site Starter – les deux peuvent être réglés directement en ligne. Hésitant ? Réservez un court entretien et nous vous recommanderons honnêtement la bonne solution.',
     startCta1: 'Voir les forfaits de l’agent téléphonique',
     badgeWebsite: 'Recommandé',
+    trialBadge: 'Essai unique',
     ctaTitle: 'Pas sûr du forfait qui convient ?',
     ctaText: 'Lors d’un court entretien, nous déterminons ensemble ce qui aura un réel impact pour votre entreprise.',
   },
@@ -218,6 +222,7 @@ const c = C[locale];
 
 // Link the point-of-price receptionist/missed-call anchor to the existing
 // missed-calls ROI calculator resource (never a hardcoded URL).
+const trialPkg = getPackage('phone-starter-trial');
 const roi = getResource('phone-roi-calculator');
 const roiHref = roi ? relFor(locale, resourcePaths(roi)) : `${p}/`;
 
@@ -299,10 +304,22 @@ const schema = [
           </div>
         )}
         <div class="grid grid--3">
-          {PACKAGES.filter((pkg) => pkg.category === cat).map((pkg) => (
+          {PACKAGES.filter((pkg) => pkg.category === cat && pkg.id !== 'phone-starter-trial').map((pkg) => (
             <PricingCard pkg={pkg} locale={locale} highlight={pkg.id === 'phone-premium' || pkg.id === 'website-business'} badge={pkg.id === 'website-business' ? c.badgeWebsite : undefined} />
           ))}
         </div>
+        {cat === 'phone-agent' && (
+          <div class="trial-callout mt-5">
+            <div>
+              <span class="trial-callout__badge">{c.trialBadge}</span>
+              <h3>{trialPkg.name[locale]}</h3>
+              <p class="muted">{trialPkg.description[locale]}</p>
+            </div>
+            <div class="trial-callout__cta">
+              <PricingCard pkg={trialPkg} locale={locale} />
+            </div>
+          </div>
+        )}
       </div>
     </section>
     );
@@ -324,3 +341,35 @@ const schema = [
     </div>
   </section>
 </Layout>
+
+<style>
+  /* Starter Trial — deliberately styled apart from the 3-card recurring-plan
+     grid above (both display "CHF 350"; the badge, framing and standalone
+     card make it unmistakably a distinct, one-time, non-subscription offer). */
+  .trial-callout {
+    display: grid;
+    gap: var(--space-4);
+    align-items: center;
+    border: 1px dashed color-mix(in srgb, var(--accent) 45%, var(--line));
+    border-radius: var(--radius-lg);
+    background: var(--paper-soft);
+    padding: var(--space-5);
+  }
+  @media (min-width: 760px) {
+    .trial-callout { grid-template-columns: 1.3fr 1fr; gap: var(--space-6); }
+  }
+  .trial-callout__badge {
+    display: inline-block;
+    font-size: var(--fs-200);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    margin-bottom: var(--space-2);
+  }
+  .trial-callout h3 { font-size: var(--fs-600); margin-bottom: var(--space-2); }
+  .trial-callout__cta :global(.pricing-card) { height: 100%; }
+</style>

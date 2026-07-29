@@ -9,8 +9,9 @@
  *
  * `status: 'live'` gates a cluster (it needs a published pillar article).
  */
-import type { LocaleMap, LocalePaths } from './routes';
+import type { Locale, LocaleMap, LocalePaths } from './routes';
 import { underPillar, underPillarNested } from './routes';
+import { LOCALES } from './site';
 import type { RichSection } from './service-content';
 
 export interface AcademyCluster {
@@ -21,6 +22,9 @@ export interface AcademyCluster {
   name: LocaleMap;
   tagline: LocaleMap;
 }
+
+/** Matches the Phase 10 intent taxonomy — informs internal linking + structure. */
+export type SearchIntent = 'informational' | 'comparison' | 'commercial-investigation' | 'local' | 'transactional' | 'navigational';
 
 export interface AcademyArticle {
   id: string;
@@ -42,6 +46,35 @@ export interface AcademyArticle {
   relatedServices?: string[];
   /** Related glossary term ids. */
   relatedGlossary?: string[];
+
+  // ── Prepared 2026-07-29 for the future 60-article strategy (not yet used
+  //    by any live article) — see docs/knowledge-hub for the content plan. ──
+  /** Which locales this article genuinely exists in. Omit for "all four"
+   *  (every current article). The 60-article plan ships DE/EN/IT only — set
+   *  this explicitly rather than inventing French copy or fake hreflang. When
+   *  a locale is excluded here, its string fields above should still hold a
+   *  real value for the *included* locales only; do not pad excluded locales
+   *  with placeholder or duplicated text. */
+  languages?: Locale[];
+  /** Related article ids (informational cross-links within/across clusters). */
+  relatedArticles?: string[];
+  /** Per-locale published Claude Artifact URL, once the matching Artifact exists. */
+  artifactUrl?: Partial<Record<Locale, string>>;
+  /** Cited sources/evidence for factual claims (never fabricated). */
+  sources?: Array<{ label: LocaleMap; href: string }>;
+  /** Override the default "book a consultation" CTA when a more specific
+   *  action fits the article (e.g. link straight to a calculator/checklist). */
+  cta?: { label: LocaleMap; href: string };
+  /** Primary search intent this article targets — used to avoid cannibalization. */
+  searchIntent?: SearchIntent;
+  /** ISO date. Falls back to the site-wide CONTENT_DATE (schema.ts) when unset. */
+  publishedDate?: string;
+  updatedDate?: string;
+}
+
+/** Locales an article actually exists in (all four unless stated otherwise). */
+export function articleLanguages(a: AcademyArticle): Locale[] {
+  return a.languages ?? LOCALES;
 }
 
 export const CLUSTERS: AcademyCluster[] = [

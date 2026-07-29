@@ -53,3 +53,4 @@ console.log('Images:', imgs, '| without width+height (CLS risk):', imgNoDim);
 const b = [...broken.entries()].sort((a, c) => c[1].size - a[1].size);
 console.log('BROKEN internal link targets:', b.length);
 for (const [h, srcs] of b.slice(0, 30)) console.log(`  ${srcs.size}x  ${h}`);
+if (b.length > 0) process.exitCode = 1;
