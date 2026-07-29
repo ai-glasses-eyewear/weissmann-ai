@@ -51,7 +51,8 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 | Batch | IDs | Status |
 |---|---|---|
 | 1 | DE-PHONE-01 – 05 | done |
-| 2 | DE-PHONE-06 – 10 | done (commit pending) |
+| 2 | DE-PHONE-06 – 10 | done |
+| 3 | EN-PHONE-01 – 05 | done (commit pending) |
 | 3 | EN-PHONE-01 – 05 | pending |
 | 4 | EN-PHONE-06 – 10 | pending |
 | 5 | IT-PHONE-01 – 05 | pending |
@@ -94,5 +95,21 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 **Notable QA finding:** DE-PHONE-10's drafting agent independently fact-checked my supplied research and found it wrong (a fine amount I'd sourced was actually a complaint count) — corrected before publication. This is the kind of factual-verification failure the master prompt's batch-QA step exists to catch; flagging it here as evidence the process works, not just the output.
 
 **Remaining after Batch 2:** 50 articles / 50 artifact briefs (all 10 DE-PHONE complete).
+
+### Batch 3 — EN-PHONE-01–05 (complete)
+
+| # | Title | Keyword | Intent | Article file | Artifact files | Uniqueness | Factual | Impl. | Validation |
+|---|---|---|---|---|---|---|---|---|---|
+| EN-PHONE-01 | Best AI Receptionists in Switzerland: 2026 Guide | best AI receptionist Switzerland | comparison | `academy-content/best-ai-receptionists-switzerland-buyers-guide.json` | `artifacts/best-ai-receptionists-switzerland-buyers-guide/` | pass — persona-sorted structure (cost/compliance/hospitality/technical buyer), not a translation of DE-PHONE-01's flat vendor-list format; adds an international-buyer language-breadth angle DE-PHONE-01 doesn't cover | same 6 real providers re-verified against DE-PHONE-01's sourced facts, plus a fresh Alveni English-availability check; no invented data | done | build+QA+links+duplicates+guardrails pass |
+| EN-PHONE-02 | Will an AI Receptionist Work With Your Phone System? | AI receptionist existing phone number Switzerland | informational | `academy-content/ai-receptionist-swiss-phone-system-compatibility.json` | `artifacts/ai-receptionist-swiss-phone-system-compatibility/` | pass — technical SIP/PBX/Teams system-compatibility layer, explicitly distinguished from DE-PHONE-05's number-porting-regulation angle (one cross-link paragraph, not repeated) | Swisscom Enterprise SIP + Sunrise Business Voice/Teams pages verified live; Weissmann's own limited (forwarding-only) technical scope stated honestly | done | build+QA+links+duplicates+guardrails pass |
+| EN-PHONE-03 | AI Receptionists for Hotels in Switzerland | AI receptionist hotel Switzerland | informational | `academy-content/ai-receptionist-swiss-hotels.json` | `artifacts/ai-receptionist-swiss-hotels/` | pass — hotel-specific scenario/boundary-list guide, distinct from the commercial `industry-content/hotels.json` landing page | grounded in Weissmann's own "honest limits" copy; explicitly did not borrow Alveni's PMS-integration facts (verified for a different provider in EN-PHONE-01) | done | build+QA+links+duplicates+guardrails pass |
+| EN-PHONE-04 | AI Receptionist for Swiss Property Management | AI receptionist property management Switzerland | informational | `academy-content/ai-phone-assistant-property-management.json` | `artifacts/ai-phone-assistant-property-management/` | pass — administrative-triage-vs-emergency-judgement framework, new content not covered elsewhere | no invented PM-software integrations; safety framing hard-coded into artifact UI rules | done | build+QA+links+duplicates+guardrails pass |
+| EN-PHONE-05 | AI Answering Services for Swiss Trades | AI answering service trades Switzerland | informational | `academy-content/ai-answering-service-swiss-trades.json` | `artifacts/ai-answering-service-swiss-trades/` | pass — good-vs-bad qualification-script breakdown; self-caught and fixed an opening-example overlap with EN-PHONE-04 ("dripping tap") before finalizing | no invented trade-specific integrations | done | build+QA+links+duplicates+guardrails pass |
+
+**Batch 3 cross-checks:** 0 duplicate titles/slugs/H1s/openings within batch and against Batches 1–2; 0 slug collisions across all 94 academy-content files (331 unique locale-slug keys); full build = 664 pages.
+
+**Real bug found and fixed during this batch:** `scripts/qa-gates.mjs` hard-required `hreflang="de-CH"` on every indexable page — a pre-existing assumption from before locale-restricted articles existed. This broke the build (exit 1) the moment 5 real `languages: ['en']` pages shipped, exactly the scenario the master prompt's §2 architecture was built to support. Fixed to require a self-referencing hreflang for the page's own locale (derived from its URL prefix) instead of hardcoding `de-CH`. Verified: full build now exits 0, all EN pages render only `hreflang="en"` + `x-default` (no fabricated de-CH/it/fr alternates), full validator suite passes with 0 issues across 664 pages. (One drafting agent in this batch had reported this as "non-blocking" — it was not; `npm run build`'s real exit code was 1. Re-verified independently before trusting the report.)
+
+**Remaining after Batch 3:** 45 articles / 45 artifact briefs (all 10 DE-PHONE + 5 EN-PHONE complete).
 
 _(Further batches logged the same way as they complete.)_

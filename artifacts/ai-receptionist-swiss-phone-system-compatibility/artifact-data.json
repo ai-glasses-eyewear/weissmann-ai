@@ -1,0 +1,163 @@
+{
+  "articleId": "ai-receptionist-swiss-phone-system-compatibility",
+  "language": "en",
+  "dataAsOf": "2026-07-29",
+  "inputs": {
+    "currentSetup": {
+      "label": "How do calls currently reach your business?",
+      "options": [
+        { "id": "mobile", "label": "Mobile number only, no in-house system" },
+        { "id": "landline", "label": "Landline number, no in-house system" },
+        { "id": "pbx", "label": "On-premise PBX (office phone system)" },
+        { "id": "teams", "label": "Microsoft Teams-based / cloud telephony" },
+        { "id": "unknown", "label": "I don't know" }
+      ],
+      "required": true
+    },
+    "pbxHasSipTrunk": {
+      "label": "Does that PBX already connect to the outside world via a SIP trunk?",
+      "options": [
+        { "id": "yes", "label": "Yes" },
+        { "id": "no", "label": "No, a traditional line" },
+        { "id": "unknown", "label": "Not sure" }
+      ],
+      "required": false,
+      "showWhen": { "currentSetup": "pbx" },
+      "helpText": "If unsure: a SIP trunk is a virtual phone line delivered over the internet instead of copper or ISDN. Ask whoever administers your PBX or your IT provider if you are not certain."
+    },
+    "teamsConnectionType": {
+      "label": "How is your Teams calling connected to the phone network?",
+      "options": [
+        { "id": "operator-connect", "label": "Operator Connect (pure cloud, no on-site hardware)" },
+        { "id": "direct-routing", "label": "Direct Routing (via a locally installed session border controller)" },
+        { "id": "unsure", "label": "Not sure" }
+      ],
+      "required": false,
+      "showWhen": { "currentSetup": "teams" },
+      "helpText": "If unsure: ask whoever manages your Microsoft 365 tenant, or your telecom provider, which of the two your organisation uses."
+    },
+    "providerKnown": {
+      "label": "Do you know your current telecom provider?",
+      "options": [
+        { "id": "yes", "label": "Yes (enter name)" },
+        { "id": "no", "label": "No / not sure" }
+      ],
+      "required": false,
+      "textFieldWhenYes": "providerName"
+    },
+    "planningToMigrate": {
+      "label": "We are planning a change to our phone system in the next 12 months (for example, moving from a landline to Teams calling).",
+      "type": "checkbox",
+      "required": false
+    }
+  },
+  "paths": [
+    {
+      "id": "mobile",
+      "matchWhen": { "currentSetup": "mobile" },
+      "label": "Your path: mobile number with call forwarding",
+      "explanation": "This is the lowest-risk setup in this planner and the one almost every AI receptionist vendor is built to support without complication. From the vendor's side, a forwarded call looks like an ordinary phone call arriving on a new number. The technical part of your decision is genuinely a short conversation with your mobile provider.",
+      "telecomChecklist": [
+        "Is call forwarding included in our tariff, or does it cost extra per minute once a free allowance is used up?",
+        "Can we choose conditional forwarding (only when busy or unanswered), or only unconditional forwarding?",
+        "How is forwarding set up and switched off: self-service in the customer portal, or does it require a call to support?"
+      ],
+      "vendorChecklist": [
+        "Do you receive calls only through a forwarded number? (For a mobile setup like ours, the answer should simply be yes.)",
+        "What happens if our forwarding is briefly misconfigured or our phone is unreachable: do calls fail silently, or fall back to voicemail or a human line?",
+        "Is there a minimum call-volume assumption built into your pricing that we should know about?"
+      ],
+      "goWrong": "The main risk here is not technical but financial: forwarded-minute charges that turn out higher than expected once a free allowance is used up. Ask about the per-minute cost before go-live, not after the first invoice."
+    },
+    {
+      "id": "landline",
+      "matchWhen": { "currentSetup": "landline" },
+      "label": "Your path: landline number with call forwarding",
+      "explanation": "In principle the same mechanism as a mobile setup: you forward calls from your existing number to the AI vendor's line. In practice, whether conditional forwarding (only when busy or unanswered) is available, or only unconditional forwarding, depends more on your specific line type and provider than it does for mobile numbers, so confirm this one explicitly.",
+      "telecomChecklist": [
+        "Does our line support conditional forwarding (only when busy or unanswered), or only unconditional forwarding?",
+        "Are there additional charges for forwarded calls, and who pays them?",
+        "How long does setup take, and can we do it ourselves in the customer portal or a short code?"
+      ],
+      "vendorChecklist": [
+        "Do you receive calls only through a forwarded number? (For a landline setup like ours, the answer should simply be yes.)",
+        "What happens if our forwarding fails or our line has an outage: do calls fail silently, or fall back to voicemail or a human line?",
+        "Is there a minimum call-volume assumption built into your pricing that we should know about?"
+      ],
+      "goWrong": "The most common surprise is discovering, after signing, that your specific line type only supports unconditional forwarding when you actually wanted calls to reach reception first and the AI assistant only when unanswered. Confirm which type your line supports before choosing a forwarding rule."
+    },
+    {
+      "id": "pbx-nosip",
+      "matchWhen": { "currentSetup": "pbx", "pbxHasSipTrunk": ["no", "unknown"] },
+      "label": "Your path: on-premise PBX, no confirmed SIP trunk",
+      "explanation": "A simple forwarded call is often still possible, set up as an extension or a routing rule inside the PBX itself. That is a job for whoever administers your PBX, not for the AI vendor alone, so the coordination between the two matters more here than in a simple forwarding setup.",
+      "telecomChecklist": [
+        "Who administers our PBX, and can they add a new extension or external routing rule?",
+        "Does our PBX support SIP trunking at all, or does it only run over a classic line?",
+        "How long does a routing-rule change typically take, and does it require any downtime for existing extensions?"
+      ],
+      "vendorChecklist": [
+        "Do you require a forwarded number from our PBX, or is there another way you connect to an on-premise system like ours?",
+        "If we later add a SIP trunk, does your integration change, or does it keep working as it is?",
+        "What happens on your side if our PBX is reconfigured or goes down?"
+      ],
+      "goWrong": "The most common failure here is that your PBX administrator and the AI vendor each assume the other side is handling the routing change, and nobody configures anything until someone notices the AI line has never rung. Name one person as the owner of the PBX-side change before go-live."
+    },
+    {
+      "id": "pbx-sip",
+      "matchWhen": { "currentSetup": "pbx", "pbxHasSipTrunk": "yes" },
+      "label": "Your path: on-premise PBX with a SIP trunk",
+      "explanation": "This is the technically deepest starting point in this planner. Some AI vendors can terminate calls directly on an existing SIP trunk, skipping forwarding altogether; most cannot, and will expect a forwarded number instead. Which one applies to your chosen vendor is not something you should assume from a sales conversation.",
+      "telecomChecklist": [
+        "Which SIP protocol and codec does our trunk use, and who do we contact if the connection fails?",
+        "Is our SIP trunk provisioned to accept a new inbound destination such as an AI receptionist, or does that require a change request to our provider?",
+        "Who is responsible for troubleshooting a failed call: our SIP trunk provider, our PBX administrator, or the AI vendor?"
+      ],
+      "vendorChecklist": [
+        "Do you terminate calls directly on our SIP trunk, or do you still need us to forward a number to you?",
+        "Which SIP protocols and codecs do you support, and has that combination been tested against our trunk provider before?",
+        "If direct SIP termination turns out not to be supported after all, what is the fallback, and who sets it up?"
+      ],
+      "goWrong": "The most expensive surprise here is signing based on the phrase \"connects to any phone system\" and only later discovering the vendor meant forwarding, not SIP termination. Get the specific integration method confirmed in writing before you sign."
+    },
+    {
+      "id": "teams",
+      "matchWhen": { "currentSetup": "teams" },
+      "label": "Your path: Microsoft Teams-based telephony",
+      "explanation": "Whether an AI receptionist can sit in front of Teams calling depends entirely on the vendor, not on Microsoft or your carrier. Some vendors support something equivalent to Direct Routing or Operator Connect; many simply expect a number forwarded out of Teams, the same way they would expect one forwarded from a mobile line. Neither answer is a red flag by itself, but you need to know which one you are getting.",
+      "telecomChecklist": [
+        "Are we on Operator Connect or Direct Routing for our Teams calling, and who manages number assignment inside Microsoft 365?",
+        "If we are on Direct Routing, who manages the session border controller, and can it route to an external AI system?",
+        "What happens to inbound calls if our Teams telephony connection has an outage?"
+      ],
+      "vendorChecklist": [
+        "Do you support Microsoft Teams-based telephony directly, comparable to Direct Routing or Operator Connect, or do you need calls forwarded out of Teams to a conventional number first?",
+        "Has this been tested with a Swiss Teams telephony setup specifically, not just Teams calling in general?",
+        "If we later move away from Teams calling, does your integration need to be rebuilt, or does it keep working?"
+      ],
+      "goWrong": "The most common surprise is an integration that worked fine with an old landline forwarding setup quietly failing to carry over when the business migrates to Teams calling later. Treat a Teams migration as a reason to re-ask every question on this list, not as a detail to mention in passing."
+    }
+  ],
+  "unknownSetupGuidance": {
+    "heading": "If you are not sure which setup you have",
+    "tips": [
+      "Check your last phone or IT invoice for terms like SIP trunk, PBX maintenance, or Teams telephony, Direct Routing or Operator Connect.",
+      "Ask whoever manages your phone system or your IT provider directly; this is usually a one-line answer for them even when it is not obvious to you.",
+      "If nobody in your organisation knows, that is itself useful information: a PBX or SIP trunk is rarely invisible to everyone in a small company, so an unclear answer often means you are on simple mobile or landline forwarding with no PBX at all."
+    ],
+    "genericChecklist": [
+      "What type of connection do we have today: mobile forwarding, landline forwarding, an on-premise PBX, a SIP trunk, or Teams-based calling?",
+      "Do you, the AI vendor, receive calls only through a forwarded number, or can you also connect via a SIP trunk or Teams telephony?"
+    ]
+  },
+  "migrationAddendum": {
+    "heading": "Because you are planning an infrastructure change",
+    "explanation": "A phone-system change, such as moving from a landline to Teams calling or adding a SIP trunk to an existing PBX, is a reason to re-ask every question above, not a one-off setup step you finish once. An integration that works today can stop working, or start working differently, the moment the underlying infrastructure changes.",
+    "note": "Confirm with your AI vendor, in writing, what happens to your integration on the day your new phone system goes live, before that date is fixed."
+  },
+  "weissmannNote": "For context: according to Weissmann AI's own published service information, every package connects through a dedicated phone line included in the plan, using call forwarding from your existing business number. No separate SIP-trunk termination or Teams-specific integration is documented in that material. That is worth asking about explicitly at Weissmann, exactly as this planner recommends asking any vendor.",
+  "disclaimer": "This planner summarises publicly available information from Swisscom, Sunrise and Weissmann AI's own published service pages, correct as of 29 July 2026. It is not technical or legal advice and does not replace written confirmation from your telecom provider or your AI vendor; products, features and terms can change.",
+  "articleUrl": "https://weissmann.ai/en/ai-academy/agents-automation/ai-receptionist-phone-system-compatibility/",
+  "ctaHref": "/en/kontakt/",
+  "ctaLabel": "Free consultation: we'll map your setup before you commit to anything"
+}

@@ -1,0 +1,157 @@
+{
+  "artifactId": "ai-phone-assistant-property-management",
+  "articleId": "ai-phone-assistant-property-management",
+  "language": "en",
+  "title": "Tenant Request Routing Board",
+  "note": "Spec/data file for the artifact described in ARTIFACT-BRIEF.md. This is structured content only — no HTML/JS is implemented here. All caller lines are constructed illustrations of call types, never a transcript of a real tenant call, and never attributed to Weissmann or any named competitor as a measured result.",
+
+  "categories": {
+    "routine": {
+      "label": "Routine — administrative queue",
+      "shortLabel": "Routine",
+      "description": "No time pressure. The assistant listens, categorises, and routes or schedules — the same job as filing correctly.",
+      "aiRole": "Handles the full interaction: captures the details, confirms next steps, logs the request.",
+      "humanRole": "Reviewed on the normal schedule; no immediate involvement required.",
+      "typicalResponseTime": "Standard queue — next available slot, no fixed deadline."
+    },
+    "urgent": {
+      "label": "Urgent — fast-tracked, still administrative",
+      "shortLabel": "Urgent",
+      "description": "Not a danger signal, but leaving it in the standard queue creates real hardship. The assistant still is not judging risk here — it is applying a fixed priority rule to a known category.",
+      "aiRole": "Captures the details, flags the request as high priority, and notifies the relevant contractor or caretaker the same day.",
+      "humanRole": "Acts within a defined short window (typically same business day) rather than the standard queue.",
+      "typicalResponseTime": "Same-day or next-business-day acknowledgement."
+    },
+    "emergency": {
+      "label": "Emergency — immediate human escalation",
+      "shortLabel": "Emergency",
+      "description": "The assistant never evaluates how dangerous the situation actually is. Recognising one of a small, fixed set of signal words is enough on its own — escalation is immediate and automatic, not a judgement call, and confidence or calmness in the caller's voice does not change it.",
+      "aiRole": "Does not gather the usual intake details first. Connects the caller to a human immediately, or gives them the direct emergency number if nobody can be reached instantly. Logs the call as flagged afterwards.",
+      "humanRole": "Assesses the actual danger and decides what happens next — the human, not the AI, makes the safety judgement.",
+      "typicalResponseTime": "Immediate — minutes, not hours."
+    }
+  },
+
+  "alwaysEscalateTriggers": [
+    "Smell of gas, or any suspicion of a gas leak",
+    "Active flooding or a burst pipe (water currently spreading, not a slow drip)",
+    "Smoke, or any indication of fire",
+    "Signs of a break-in, forced entry, or an intruder on the property",
+    "Any mention of injury or of someone's safety being at risk right now"
+  ],
+
+  "scenarios": [
+    {
+      "id": "dripping-tap",
+      "label": "Dripping tap",
+      "callerLine": "There's a tap in the bathroom that's been dripping since Tuesday. It's not urgent, just annoying.",
+      "category": "routine",
+      "aiAction": "Logs the request, confirms the unit and the exact tap location, and adds it to the standard maintenance queue.",
+      "humanInvolvement": "Reviewed on the normal schedule — no same-day action required.",
+      "note": "A slow, contained drip is exactly the kind of call an AI system should handle from start to finish without involving anyone immediately."
+    },
+    {
+      "id": "no-heat-winter",
+      "label": "No heat in winter",
+      "callerLine": "The heating hasn't worked since yesterday morning and it's minus two outside.",
+      "category": "urgent",
+      "aiAction": "Logs the request as high priority, notifies the heating contractor the same day, and tells the tenant when to expect contact.",
+      "humanInvolvement": "Acted on within the same business day — not the standard queue, but not an emergency transfer either.",
+      "note": "Nobody is in danger the way a gas leak implies danger, but a cold home for several days is a real hardship. This gets fast-tracked, not escalated as an emergency."
+    },
+    {
+      "id": "lost-key",
+      "label": "Lost key",
+      "callerLine": "I've lost my key somewhere between the office and home — can I get a replacement?",
+      "category": "routine",
+      "aiAction": "Logs the request and explains the standard replacement or spare-key process.",
+      "humanInvolvement": "Handled through the normal replacement process; no immediate action needed.",
+      "note": "A lost key during ordinary hours is paperwork, not a crisis. It would only move to a different category if the caller were currently locked out with no fallback available."
+    },
+    {
+      "id": "noise-complaint",
+      "label": "Noise complaint",
+      "callerLine": "The neighbours upstairs have had loud music going since eleven, and it's not the first time.",
+      "category": "routine",
+      "aiAction": "Logs the complaint, the unit involved, and how often it has happened, then routes it to the property manager for a decision.",
+      "humanInvolvement": "A person reviews and decides how to handle it — not resolved on the call.",
+      "note": "This needs a value judgement about who is right and what to do next. The assistant's job stops at listening accurately and filing correctly."
+    },
+    {
+      "id": "viewing-request",
+      "label": "Viewing request",
+      "callerLine": "I saw the listing for the two-bedroom on Bahnhofstrasse — could I arrange a viewing this week?",
+      "category": "routine",
+      "aiAction": "Checks available slots and books the viewing directly, or proposes alternatives if none are open this week.",
+      "humanInvolvement": "None required unless the caller has a request outside the standard process.",
+      "note": "A booking action with no danger dimension at all — the clearest possible case for full automation."
+    },
+    {
+      "id": "rent-document-request",
+      "label": "Rent document request",
+      "callerLine": "I need a copy of my rent statement for this year for my tax return.",
+      "category": "routine",
+      "aiAction": "Confirms the identity details already on file and arranges for the document to be sent.",
+      "humanInvolvement": "Sent through the standard document process; no urgency attached.",
+      "note": "Paperwork, not a problem — logged and routed like any other administrative request."
+    },
+    {
+      "id": "gas-smell",
+      "label": "Smell of gas",
+      "callerLine": "I think I can smell gas near the kitchen — I'm not totally sure.",
+      "category": "emergency",
+      "aiAction": "Does not ask for the unit number or run through normal intake questions first. Connects the caller to a human immediately, or gives the direct emergency number if nobody is reached within seconds. Logs the call as flagged afterwards.",
+      "humanInvolvement": "A person assesses the situation immediately — the danger judgement is made by a human, not inferred by the AI from how calm or unsure the caller sounds.",
+      "note": "\"I'm not totally sure\" does not downgrade this call. The trigger is the word \"gas,\" not the caller's confidence."
+    },
+    {
+      "id": "active-flooding",
+      "label": "Active flooding / burst pipe",
+      "callerLine": "Water is coming out from under the sink — it's already on the floor and spreading.",
+      "category": "emergency",
+      "aiAction": "Escalates immediately, the same way as the gas-smell scenario — no diagnostic questions about the pipe or the damage first.",
+      "humanInvolvement": "A person coordinates an emergency plumber and, if needed, other affected units — decisions the AI does not make.",
+      "note": "The distinction from the dripping-tap scenario is not the word \"water\" — it's \"spreading\" versus \"since Tuesday.\" Both matter for accurate routing; only one requires immediate escalation."
+    },
+    {
+      "id": "break-in",
+      "label": "Break-in / forced entry",
+      "callerLine": "My door looks like it's been forced open. I don't think anyone's inside right now, but I haven't gone in.",
+      "category": "emergency",
+      "aiAction": "Escalates immediately and, depending on configuration, advises the caller not to enter the unit while connecting them to a human or the police.",
+      "humanInvolvement": "A person, and where relevant the police, take over entirely — well outside anything an administrative system should attempt to manage.",
+      "note": "The caller's own uncertainty (\"I don't think anyone's inside\") is exactly why this cannot be left to a script — it goes straight to a human."
+    },
+    {
+      "id": "smoke-fire",
+      "label": "Smoke or signs of fire",
+      "callerLine": "There's smoke coming from the stairwell on the third floor.",
+      "category": "emergency",
+      "aiAction": "Escalates immediately and, if nobody can be reached instantly, tells the caller to contact the fire brigade directly rather than waiting on the line.",
+      "humanInvolvement": "Emergency services and the property manager decide what happens next — not the AI.",
+      "note": "Speed matters more than internal process here. The assistant does not try to route this through the normal escalation chain first."
+    }
+  ],
+
+  "uiRules": {
+    "noSeverityScoring": "This tool must never compute, display, or imply that the AI measured or ranked how dangerous a scenario is (e.g. no '78% risk' or similar). It only shows the fixed category a scenario belongs to and the fixed rule attached to that category.",
+    "colorRule": "Never use colour alone to distinguish Routine / Urgent / Emergency — always pair with the text label. Emergency should read clearly as text even to a user with no colour perception.",
+    "emergencyFraming": "For emergency scenarios, the UI copy must always say the AI 'recognised a fixed signal' and 'escalated immediately' — never that it 'decided,' 'judged,' 'assessed,' or 'determined' the situation was dangerous. That judgement belongs to the human it hands over to.",
+    "noDefaultSelection": "No scenario is pre-selected on load — the board starts empty with a prompt to choose a call type, so the tool never implies a single 'typical' call."
+  },
+
+  "ctaCopy": {
+    "primary": {
+      "label": "Test how the escalation rules would actually work (CHF 350, one-time)",
+      "href": "/en/services/ai-phone-assistant/"
+    },
+    "secondary": {
+      "label": "Read the full article on triage vs. emergency judgement",
+      "hrefNote": "Links to the academy spoke page for the ai-phone-assistant-property-management article."
+    }
+  },
+
+  "disclaimerText": "All caller lines in this tool are constructed illustrations of common call types, not recordings or transcripts of a real tenant call, and not a measured result from Weissmann or any other vendor's system. The routing shown is an example of good triage design, not a documented specification of any single product.",
+
+  "privacyNote": "This tool runs entirely in the browser. There is no field for a real name, address, phone number, or apartment number at any point — it only displays fixed example scenarios and reflects back which one you selected, without transmitting or storing anything."
+}
