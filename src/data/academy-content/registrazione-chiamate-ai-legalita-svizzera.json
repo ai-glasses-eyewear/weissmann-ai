@@ -1,0 +1,199 @@
+{
+  "id": "registrazione-chiamate-ai-legalita-svizzera",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["it"],
+  "slug": {
+    "de": "",
+    "en": "",
+    "it": "registrazione-chiamate-ai-legalita-svizzera",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["ai-phone-assistant-data-protection"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "", "en": "", "fr": "",
+    "it": "Registrare le telefonate AI: le regole in Svizzera | Weissmann"
+  },
+  "metaDescription": {
+    "de": "", "en": "", "fr": "",
+    "it": "Prenotazioni e ordini si registrano senza consenso (art. 179quinquies CP); quasi tutte le altre chiamate no. Sei casi ticinesi, non è consulenza legale."
+  },
+  "kicker": {
+    "de": "", "en": "", "fr": "",
+    "it": "Chiamate, registrazione e diritto svizzero"
+  },
+  "h1": {
+    "de": "", "en": "", "fr": "",
+    "it": "Registrare e trascrivere le telefonate con l'AI in Svizzera: la regola cambia con il tipo di chiamata"
+  },
+  "answerFirst": {
+    "de": "", "en": "", "fr": "",
+    "it": "No, non sempre, e la risposta dipende dal contenuto della telefonata, non dal fatto che risponda un'AI. Il diritto penale svizzero (art. 179bis e 179ter CP) vieta di registrare una conversazione non pubblica senza il consenso di tutti i partecipanti. Un'eccezione mirata (art. 179quinquies CP) permette di registrare senza consenso preventivo le chiamate con servizi di soccorso e le chiamate commerciali che riguardano ordinazioni, mandati, prenotazioni o operazioni simili, ma solo a scopo di prova. Per reclami, richieste di preventivo dubbie, chiamate con dipendenti e appuntamenti medici serve invece un consenso chiaro, dato prima che la registrazione inizi. Questo articolo non sostituisce una consulenza legale."
+  },
+  "sections": [
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Una telefonata legale, la successiva no" },
+      "paragraphs": [
+        { "de": "", "en": "", "fr": "", "it": "Stesso numero, stesso pomeriggio, stessa azienda ticinese: una telefonata può essere registrata legalmente e quella successiva, sullo stesso apparecchio, può costituire un reato. Non cambia chi risponde — un'impiegata o un assistente telefonico AI — e non cambia il sistema usato per registrare. Cambia soltanto una cosa: di cosa si sta parlando." },
+        { "de": "", "en": "", "fr": "", "it": "Il diritto svizzero non distingue tra una voce umana e una voce sintetica al telefono. Distingue tra i contenuti delle chiamate. Una prenotazione, un ordine o un mandato possono essere registrati senza chiedere il permesso prima. Quasi ogni altra conversazione — un reclamo, una domanda su una fattura, una richiesta generica — richiede invece un consenso esplicito, dato prima che la registrazione inizi. Le aziende che introducono un assistente telefonico AI applicano spesso la stessa regola a tutte le chiamate che passano dallo stesso numero, e proprio lì nasce il rischio: o si registra ciò che non si può registrare, oppure — per eccesso di prudenza — non si registra ciò che si potrebbe legittimamente conservare come prova." },
+        { "de": "", "en": "", "fr": "", "it": "Una premessa necessaria: questo articolo inquadra la situazione giuridica sulla base di fonti ufficiali svizzere. Non sostituisce una consulenza legale nel singolo caso — in particolare per le questioni di diritto del lavoro o per le chiamate il cui contenuto non è chiaramente classificabile." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "La regola di base: senza consenso è reato" },
+      "paragraphs": [
+        { "de": "", "en": "", "fr": "", "it": "Chi registra una conversazione altrui non pubblica, senza il consenso di tutti gli interlocutori, commette un reato secondo il diritto svizzero. Gli articoli di riferimento sono l'art. 179bis e l'art. 179ter del Codice penale svizzero (CP): il primo copre chi ascolta o registra una conversazione a cui non partecipa; il secondo copre chi registra una conversazione a cui partecipa lui stesso — il caso tipico di un'azienda che registra le chiamate sulla propria linea — ma senza il consenso degli altri interlocutori. Entrambi i reati sono perseguibili solo a querela di parte: nessuna autorità li verifica d'ufficio, ma la persona coinvolta può sporgere denuncia in qualsiasi momento. Le pene previste arrivano fino a un anno di pena detentiva o a una pena pecuniaria per chi partecipa alla conversazione e la registra senza consenso, e fino a tre anni per chi intercetta una conversazione a cui non partecipa affatto." }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Non serve che la registrazione sia nascosta: anche una registrazione dichiarata, ma senza un consenso valido, rientra nel reato." },
+        { "de": "", "en": "", "fr": "", "it": "Il silenzio di chi chiama non equivale a un consenso, così come un avviso pronunciato troppo velocemente o in modo poco chiaro." },
+        { "de": "", "en": "", "fr": "", "it": "In caso di condanna, il giudice può ordinare la distruzione della registrazione e, in alcuni casi, il sequestro degli apparecchi usati per farla." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "L'eccezione: quando basta il contenuto della chiamata" },
+      "paragraphs": [
+        { "de": "", "en": "", "fr": "", "it": "Da questa regola generale esiste un'eccezione precisa, non una scappatoia generale. L'art. 179quinquies CP, in vigore dal marzo 2004, stabilisce che non commette reato chi, come interlocutore o abbonato del collegamento telefonico usato, registra conversazioni con servizi di soccorso o di sicurezza, oppure — ed è il caso che interessa la maggior parte delle PMI ticinesi — conversazioni che, nell'ambito di relazioni commerciali, riguardano ordinazioni, mandati, prenotazioni o operazioni analoghe. È esattamente il tipo di chiamata per cui molte aziende hanno introdotto un assistente telefonico AI: prenotare un tavolo, confermare una camera, ordinare un pezzo di ricambio." },
+        { "de": "", "en": "", "fr": "", "it": "L'eccezione copre l'operazione commerciale in sé, non l'intero traffico telefonico di un'azienda. Una richiesta di assistenza, un reclamo o una domanda generica non rientrano nell'eccezione, anche se arrivano sullo stesso numero o sullo stesso assistente AI che gestisce anche le prenotazioni. Ciò che conta è il contenuto della singola telefonata, non il reparto o il sistema che la gestisce — e nei casi dubbi, la scelta più difendibile è trattare la chiamata come se richiedesse un consenso, non il contrario." }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Rientra tipicamente nell'eccezione: prenotazione di un tavolo o di una camera, conferma di un appuntamento già concordato, ordine di un prodotto o di un servizio definito." },
+        { "de": "", "en": "", "fr": "", "it": "Non rientra tipicamente nell'eccezione: assistenza tecnica, reclami, richieste di consulenza, informazioni generiche — anche quando la stessa AI gestisce entrambi i tipi di chiamata." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Sei telefonate ticinesi, un solo criterio" },
+      "paragraphs": [
+        { "de": "", "en": "", "fr": "", "it": "Il modo più pratico di applicare questa distinzione non è mandare a memoria un articolo di legge, ma passare in rassegna i tipi di chiamata che arrivano davvero sul centralino di una PMI ticinese. Ecco sei esempi concreti, classificati secondo l'art. 179quinquies CP: verde per chi rientra chiaramente nell'eccezione, giallo per i casi dubbi da trattare con prudenza, rosso per chi richiede sempre un consenso preventivo." }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Verde — Prenotazione alberghiera: un hotel di Lugano che conferma una camera per il weekend. È una prenotazione in senso proprio, rientra nell'eccezione dell'art. 179quinquies CP: registrabile senza consenso preventivo, ma solo a scopo di prova della prenotazione stessa." },
+        { "de": "", "en": "", "fr": "", "it": "Verde — Prenotazione al ristorante: un tavolo per quattro persone in un locale di Bellinzona il sabato sera. Stessa logica: è un'operazione preliminare a una prestazione commerciale già definita." },
+        { "de": "", "en": "", "fr": "", "it": "Giallo — Richiesta di preventivo: un'impresa di Mendrisio chiede un prezzo indicativo per una ristrutturazione (per esempio un cantiere del valore approssimativo di CHF 45'000, solo a titolo di esempio). Un preventivo non è ancora un'ordinazione né un mandato: è una fase prima dell'accordo, non l'accordo stesso. Nel dubbio, trattatelo come una chiamata che richiede consenso." },
+        { "de": "", "en": "", "fr": "", "it": "Rosso — Reclamo: un cliente richiama per lamentarsi di un servizio già fornito. Un reclamo non è mai un'operazione commerciale ai sensi dell'eccezione, anche se riguarda un ordine registrato in precedenza: serve un annuncio chiaro e la possibilità reale di opporsi." },
+        { "de": "", "en": "", "fr": "", "it": "Caso a parte — Chiamata con un dipendente: una collaboratrice richiama l'ufficio per un'informazione interna, sulla stessa linea gestita dall'assistente AI. L'eccezione per operazioni commerciali non è pensata per il personale dell'azienda: entrano in gioco considerazioni di diritto del lavoro e di protezione della personalità che vanno oltre il semplice consenso — vedi la sezione dedicata più sotto." },
+        { "de": "", "en": "", "fr": "", "it": "Rosso, con attenzione ulteriore — Appuntamento medico: uno studio di fisioterapia a Locarno che conferma un orario di visita. Non è né un'ordinazione né una prenotazione commerciale in senso stretto, e la conversazione può toccare dati sulla salute, particolarmente degni di protezione secondo la nLPD: qui un consenso chiaro prima della registrazione non è solo prudente, è la base corretta." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Registrare non è conservare: due domande distinte" },
+      "paragraphs": [
+        { "de": "", "en": "", "fr": "", "it": "C'è una distinzione pratica che vale la pena tenere separata, perché le aziende la confondono più spesso di quanto sembri: il diritto penale (art. 179bis, 179ter e 179quinquies CP) decide se la registrazione stessa era legittima. La nLPD, la nuova legge sulla protezione dei dati, decide per quanto tempo si può conservare una registrazione fatta legalmente e per quali scopi la si può riutilizzare. Sono due domande in sequenza, non una domanda sola: prima «potevo registrare questa telefonata?», poi «per quanto tempo posso tenerla, e per cosa posso usarla?». Il nostro articolo «Assistente telefonico AI e protezione dei dati» approfondisce il secondo livello con una checklist pratica; qui ci concentriamo sul primo, quello penale, che quell'articolo non tratta nel dettaglio." },
+        { "de": "", "en": "", "fr": "", "it": "Anche quando l'art. 179quinquies CP permette di registrare senza consenso preventivo, l'uso della registrazione resta vincolato allo scopo per cui l'eccezione esiste: la prova dell'operazione commerciale. Usare la stessa registrazione per valutare quanto è stato cortese l'assistente AI, per scopi di marketing, o per addestrare un modello linguistico, non è automaticamente coperto — anche se la registrazione era, in origine, perfettamente legale. Cambiare scopo senza una base propria per farlo fa uscire l'azienda dalla protezione dell'eccezione, con le stesse conseguenze penali di una registrazione mai autorizzata." }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Prenotazione registrata e poi usata come prova in caso di controversia sulla data o sull'orario: lecito." },
+        { "de": "", "en": "", "fr": "", "it": "La stessa registrazione riascoltata per valutare le prestazioni dell'assistente AI o come materiale di marketing: non lecito senza un consenso separato." },
+        { "de": "", "en": "", "fr": "", "it": "Una volta scaduto lo scopo per cui la registrazione era necessaria, la nLPD impone di cancellarla o di documentare perché viene ancora conservata." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "L'avviso che funziona davvero" },
+      "paragraphs": [
+        { "de": "", "en": "", "fr": "", "it": "Fuori dall'eccezione dei mandati e delle prenotazioni, serve un consenso esplicito prima che la registrazione cominci. Nella pratica, questo consenso si ottiene quasi sempre con un breve annuncio all'inizio della chiamata — ma un annuncio qualsiasi non basta. Un annuncio utile comunica tre cose in poche frasi: che la conversazione viene registrata, per quale motivo, e come rifiutare. Una formula vaga come «per motivi di qualità» non supera nessuna di queste tre condizioni: il motivo non è comprensibile, e non viene proposta alcuna alternativa." }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Debole: «Questa chiamata potrebbe essere registrata.» Nessuno scopo indicato, nessuna possibilità reale di opporsi, un condizionale che non chiarisce se sta accadendo davvero." },
+        { "de": "", "en": "", "fr": "", "it": "Migliore: «Buongiorno, siamo [nome azienda]. Registriamo questa chiamata per gestire correttamente la sua richiesta. Se preferisce di no, ce lo dica ora: proseguiamo senza registrazione.»" },
+        { "de": "", "en": "", "fr": "", "it": "Per una prenotazione o un ordine, un avviso formale non è legalmente obbligatorio — ma un breve cenno del tipo «per questa prenotazione registriamo la chiamata a scopo di conferma» costruisce fiducia senza costare nulla in termini legali." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Il caso a parte: quando in gioco c'è un vostro dipendente" },
+      "paragraphs": [
+        { "de": "", "en": "", "fr": "", "it": "Se il sistema che gestisce l'assistente telefonico AI registra anche conversazioni interne, o telefonate in cui una collaboratrice o un collaboratore comunica con l'esterno per conto dell'azienda, entra in gioco un livello ulteriore: la protezione della personalità e il diritto del lavoro. L'eccezione dell'art. 179quinquies CP è pensata per le relazioni commerciali con la clientela, non per la sorveglianza del proprio personale — usarla in quel senso significa uscire dal perimetro per cui esiste." },
+        { "de": "", "en": "", "fr": "", "it": "Questo articolo non stabilisce una regola specifica di diritto del lavoro, perché non esiste un'unica risposta valida per ogni azienda e ogni contratto: dipende da come è organizzato il centralino, da cosa prevede il regolamento interno e dal tipo di rapporto di lavoro. Se il vostro assistente telefonico AI registra anche chiamate con o tra dipendenti, il passo corretto è chiedere una consulenza legale specifica per il vostro caso, invece di applicare per analogia una regola pensata per le prenotazioni dei clienti." }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Prima di registrare conversazioni con il personale, serve un'informazione preventiva chiara e una possibilità reale di opporsi, senza conseguenze negative per chi rifiuta." },
+        { "de": "", "en": "", "fr": "", "it": "Usare le registrazioni per controllare le prestazioni di vendita o il tono di un dipendente, senza un'informazione trasparente data in anticipo, non è una base legale sufficiente." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Cosa può andare storto" },
+      "paragraphs": [
+        { "de": "", "en": "", "fr": "", "it": "La maggior parte degli errori non nasce da cattiva fede, ma da una classificazione troppo grossolana delle chiamate. Questi sono gli schemi che si ripetono più spesso tra le PMI ticinesi." }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Errore: trattare ogni chiamata in entrata come «prenotazione» e registrare tutto senza avviso. Meglio: definire in anticipo i tipi di chiamata e applicare l'eccezione solo a quelli che la rispettano davvero." },
+        { "de": "", "en": "", "fr": "", "it": "Errore: inserire un avviso generico e presumere che basti a livello legale. Meglio: indicare uno scopo comprensibile e offrire un'opposizione immediata, non solo scritta o successiva." },
+        { "de": "", "en": "", "fr": "", "it": "Errore: riutilizzare le registrazioni delle prenotazioni per marketing o per valutare l'assistente AI. Meglio: definire una base separata per ogni nuovo scopo, prima di usarla." },
+        { "de": "", "en": "", "fr": "", "it": "Errore: applicare la stessa logica delle prenotazioni alle chiamate con i propri dipendenti. Meglio: trattare le questioni di personale separatamente, con una consulenza legale mirata." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "La formula breve da applicare oggi" },
+      "paragraphs": [
+        { "de": "", "en": "", "fr": "", "it": "Prima di attivare la registrazione sul vostro assistente telefonico AI, ponetevi una domanda per ogni tipo di chiamata che gestite: si tratta di un'ordinazione, di un mandato, di una prenotazione o di un'operazione commerciale molto simile? Se la risposta è chiaramente sì, potete registrare senza consenso preventivo, ma solo a scopo di prova. Se la risposta è no, o se non siete sicuri, serve un avviso chiaro con una possibilità reale di opporsi, prima che la registrazione inizi. In entrambi i casi, una volta che la registrazione esiste legalmente, subentra la nLPD con le sue regole su conservazione e cancellazione. Il prossimo passo pratico è uno solo: classificate i vostri tipi di chiamata secondo questo criterio prima di accendere la funzione di registrazione, non dopo." }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Devo annunciare ogni chiamata gestita dall'assistente AI?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "No. Per le chiamate che riguardano chiaramente un'ordinazione, un mandato o una prenotazione, l'art. 179quinquies CP non richiede un consenso preventivo. Per quasi tutte le altre — assistenza, reclami, richieste generiche — serve un avviso con una possibilità reale di opporsi prima che la registrazione cominci. Se il contenuto della chiamata non è chiaro, trattatela come se richiedesse consenso." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Cosa vale per le chiamate di reclamo?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Un reclamo non rientra nell'eccezione dei mandati e delle prenotazioni, anche se riguarda un ordine registrato in precedenza. Serve un avviso chiaro all'inizio della chiamata, con una possibilità reale — non solo scritta o successiva — di rifiutare la registrazione." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Per quanto tempo posso conservare le registrazioni fatte legalmente?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Questa non è più una domanda di diritto penale, ma di protezione dei dati: la nLPD impone di conservare una registrazione solo per il tempo necessario allo scopo dichiarato, e di cancellarla dopo. La legge non fissa una durata fissa uguale per tutti i casi: la definite voi stessi e la documentate. L'articolo «Assistente telefonico AI e protezione dei dati» tratta questo aspetto in dettaglio." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Una richiesta di preventivo equivale a una prenotazione?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Non necessariamente. Un preventivo è una fase preliminare alla decisione del cliente, non un'ordinazione, un mandato o una prenotazione già conclusa. Nei casi dubbi, la scelta più difendibile è trattare la richiesta di preventivo come una chiamata soggetta a consenso, non come un'operazione già coperta dall'eccezione." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Un avviso registrato all'inizio della chiamata basta sempre come consenso valido?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Non automaticamente. Un avviso è un buon punto di partenza, ma deve indicare uno scopo comprensibile e offrire una possibilità reale e immediata di rifiutare. Un testo vago, pronunciato velocemente o senza un'alternativa concreta, rischia di non reggere in caso di contestazione." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Cosa cambia se a chiamare è un paziente per un appuntamento medico?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "L'appuntamento medico non rientra tipicamente nell'eccezione dei mandati e delle prenotazioni commerciali, e la conversazione può toccare dati sulla salute, particolarmente degni di protezione secondo la nLPD. Qui un consenso chiaro, dato prima dell'inizio della registrazione, è la base corretta — non un'opzione tra le altre." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "L'eccezione dell'art. 179quinquies CP vale anche per le chiamate con i miei dipendenti?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "No. L'eccezione è pensata per le relazioni commerciali con la clientela, non per la sorveglianza del proprio personale. Per le chiamate con o tra dipendenti entrano in gioco considerazioni ulteriori di diritto del lavoro e di protezione della personalità: chiedete una consulenza specifica per il vostro caso invece di applicare per analogia la regola delle prenotazioni." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Cosa rischio se registro una chiamata senza una base legale valida?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Registrare una conversazione non pubblica senza un consenso valido è un reato perseguibile a querela di parte in Svizzera: la persona coinvolta può sporgere denuncia, con pene che arrivano fino a un anno o fino a tre anni di pena detentiva o a una pena pecuniaria, a seconda che chi registra partecipi o meno alla conversazione. Un giudice può inoltre ordinare la distruzione della registrazione." }
+    }
+  ],
+  "keyEntities": [
+    "Art. 179bis CP",
+    "Art. 179ter CP",
+    "Art. 179quinquies CP",
+    "Codice penale svizzero",
+    "IFPDT",
+    "nLPD",
+    "operazioni preliminari",
+    "querela di parte",
+    "consenso",
+    "assistente telefonico AI",
+    "Ticino",
+    "preventivo",
+    "chiamate con dipendenti"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "", "en": "", "fr": "",
+        "it": "IFPDT – Registrazione di conversazioni (consultato il 29 luglio 2026)"
+      },
+      "href": "https://www.edoeb.admin.ch/it/registrazione-di-conversazioni"
+    },
+    {
+      "label": {
+        "de": "", "en": "", "fr": "",
+        "it": "Codice penale svizzero (CP, RS 311.0), art. 179bis–179quinquies – Fedlex (consultato il 29 luglio 2026)"
+      },
+      "href": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it"
+    }
+  ]
+}

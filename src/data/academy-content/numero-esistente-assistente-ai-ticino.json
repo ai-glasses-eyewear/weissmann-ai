@@ -1,0 +1,246 @@
+{
+  "id": "numero-esistente-assistente-ai-ticino",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["it"],
+  "slug": {
+    "de": "",
+    "en": "",
+    "it": "numero-41-assistente-telefonico-ai",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["what-is-an-ai-phone-assistant", "assistenti-telefonici-ai-svizzera-pmi-ticinesi"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "", "en": "", "fr": "",
+    "it": "Numero +41 esistente con un assistente AI? | Weissmann AI"
+  },
+  "metaDescription": {
+    "de": "", "en": "", "fr": "",
+    "it": "Deviazione, SIP, PBX o portabilità: come mantenere il numero +41 con un assistente AI in Ticino — con checklist per l'operatore e piano di ripristino."
+  },
+  "kicker": {
+    "de": "", "en": "", "fr": "",
+    "it": "Agenti AI, automazione e voce"
+  },
+  "h1": {
+    "de": "", "en": "", "fr": "",
+    "it": "Posso mantenere il mio numero +41 con un assistente telefonico AI?"
+  },
+  "answerFirst": {
+    "de": "", "en": "", "fr": "",
+    "it": "Sì, quasi sempre potete mantenere il vostro numero +41 quando attivate un assistente telefonico AI — ma «mantenere» nella maggior parte dei casi significa deviare le chiamate verso una nuova linea, non portare il numero a un altro operatore. Il numero resta dove si trova oggi; voi decidete solo dove deve squillare: sempre, solo fuori orario o solo quando la linea è occupata. Una vera portabilità — il trasferimento del numero a un nuovo fornitore di telefonia — è una procedura regolata separata, con un contratto preliminare, documenti e tempistiche proprie, e nella maggior parte dei casi non è affatto necessaria per usare un assistente AI. Quale delle due strade vi riguarda dipende soprattutto da un fattore: se avete o meno un centralino (PBX) interno."
+  },
+  "sections": [
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Un numero che vale più del contratto stesso" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Uno studio di architettura di Lugano risponde ancora allo stesso numero +41 91 da quando l'ufficio era in via Nassa, vent'anni fa. I clienti storici lo conoscono a memoria, lo hanno scritto a mano su vecchi preventivi, lo trovano su targhe professionali mai aggiornate. Quando i tre soci hanno iniziato a valutare un assistente telefonico AI per gestire le chiamate durante i sopralluoghi, la prima domanda non riguardava l'intelligenza artificiale: riguardava quel numero. Perderlo, anche solo per una settimana, sarebbe costato più di qualsiasi abbonamento."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "È una preoccupazione legittima, ma nasconde una confusione molto comune. «Mantenere il numero» descrive in realtà due situazioni tecnicamente diverse, e la maggior parte delle pagine dei fornitori risponde solo alla più semplice delle due. La prima è una questione di proprietà: il numero cambia operatore telefonico? Questa è la portabilità, una procedura regolata dall'UFCOM (l'Ufficio federale delle comunicazioni), con contratti, moduli e tempistiche proprie. La seconda è una questione di instradamento: dove squilla il numero quando qualcuno chiama? Questa è quasi sempre una semplice deviazione di chiamata, configurabile in pochi minuti dal portale del vostro operatore attuale, senza toccare la titolarità del numero."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Per lo studio di Lugano — come per la stragrande maggioranza delle PMI ticinesi che introducono un assistente AI — si pone solo la seconda domanda. Questo articolo separa le due questioni con chiarezza, spiega il panorama tecnico reale, affronta la portabilità come procedura vera con le sue regole UFCOM, elenca cosa può andare storto e come tornare indietro, e chiude con una checklist da portare al colloquio con il vostro operatore telecom."
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Le tre domande che decidono il vostro percorso" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Prima di guardare le opzioni tecniche, conviene rispondere a tre domande sulla vostra situazione attuale. Le risposte non richiedono competenze tecniche — nella maggior parte dei casi bastano cinque minuti al telefono con chi paga la vostra bolletta telefonica — ma determinano quale dei percorsi seguenti vi riguarda davvero."
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Il numero che volete usare è mobile o fisso? Il fisso ticinese porta quasi sempre il prefisso geografico +41 91; il mobile segue le proprie regole di portabilità, nella pratica valide in tutta la Svizzera." },
+        { "de": "", "en": "", "fr": "", "it": "Sapete con certezza chi è il vostro operatore telefonico attuale e a quali condizioni contrattuali siete legati? Non è una domanda banale quanto sembra: numeri ereditati da una gestione precedente, contratti aziendali stipulati anni fa da un socio che non c'è più, o linee condivise con un'altra attività nello stesso stabile generano più incertezza di quanto ci si aspetti. Se la risposta è «non lo so con certezza», questo è il primo punto da chiarire, prima di qualsiasi altra decisione." },
+        { "de": "", "en": "", "fr": "", "it": "Avete un centralino telefonico (PBX) interno, con interni e uno smistamento delle chiamate, oppure ogni numero squilla direttamente su un telefono fisso o un cellulare?" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Il panorama tecnico, in cinque scenari onesti" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Come un assistente AI «si aggancia» al vostro numero dipende dalla vostra infrastruttura telefonica di oggi, non da quella del fornitore. Ci sono nella pratica cinque situazioni di partenza, e non sono intercambiabili: chi le confonde finisce per negoziare un equivoco invece di un contratto."
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Mobile, nessun centralino: il caso più comune tra le PMI e i professionisti ticinesi. Si attiva una deviazione di chiamata presso il proprio operatore mobile — sempre, solo se occupato o solo se non risponde — verso la nuova linea fornita dall'assistente AI. L'attivazione richiede in genere pochi minuti tramite l'app o il portale clienti ed è disattivabile in qualsiasi momento. Chiedete esplicitamente il costo per minuto deviato e se la vostra tariffa prevede un contingente incluso." },
+        { "de": "", "en": "", "fr": "", "it": "Fisso, nessun centralino: stesso principio, spesso configurabile via portale clienti o con un codice di attivazione rapida. Se sia disponibile anche una deviazione condizionata (solo se occupato o non risponde), oltre a quella incondizionata, dipende dall'operatore e dal tipo di collegamento — verificatelo, non datelo per scontato." },
+        { "de": "", "en": "", "fr": "", "it": "Centralino (PBX) interno: qui una semplice deviazione spesso non basta, perché è il centralino stesso a decidere come vengono distribuite le chiamate. L'assistente AI viene di norma collegato come un interno aggiuntivo o tramite una regola di instradamento configurata nel centralino — un lavoro per chi gestisce il vostro impianto, non per il fornitore AI da solo. Chiarite prima chi esegue questa configurazione e se il vostro impianto la prevede tecnicamente." },
+        { "de": "", "en": "", "fr": "", "it": "SIP-trunk esistente: se la vostra telefonia passa già attraverso un SIP-trunk — una linea virtuale via internet al posto del rame o dell'ISDN — alcuni fornitori AI possono terminare le chiamate direttamente su quel trunk, saltando la deviazione. Non tutti i fornitori lo sanno fare: chiedetelo esplicitamente invece di darlo per scontato, perché un fornitore abituato solo alla deviazione classica annuirà comunque, cordialmente e senza conseguenze pratiche." },
+        { "de": "", "en": "", "fr": "", "it": "Nuova linea separata: la soluzione più semplice se il numero esistente non deve essere toccato per nessun motivo. L'assistente riceve un proprio numero, introdotto gradualmente su sito, Google Business Profile e materiale stampato. Onesta per un test a tempo determinato; come soluzione permanente indebolisce però proprio il vantaggio che la maggior parte delle aziende cerca — un numero sotto cui si è conosciuti da anni." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Come lo gestisce oggi Weissmann, detto onestamente" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Poiché Weissmann offre essa stessa un assistente telefonico AI, questa trasparenza appartiene qui: secondo le informazioni di servizio pubblicamente consultabili, ogni pacchetto include una linea dedicata, e voi mantenete il vostro numero aziendale attuale deviando le chiamate su quella linea — sempre, solo fuori orario o solo quando la linea è occupata. È lo scenario di deviazione mobile o fissa descritto sopra. Un collegamento diretto tramite SIP-trunk o un'integrazione lato centralino non sono descritti in questi materiali."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Non è una lacuna: per la maggior parte delle PMI senza centralino proprio, la deviazione è la via più pragmatica e meno rischiosa, perché resta reversibile in pochi minuti. Se la vostra attività ha però un centralino o un SIP-trunk e vi serve un collegamento più profondo, fatelo chiedere esplicitamente presso ogni fornitore che valutate — Weissmann incluso — invece di darlo per scontato leggendo una riga promozionale."
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "La portabilità come procedura vera, non una formalità" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Una portabilità reale — il trasferimento del numero a un nuovo operatore — riguarda solo chi vuole davvero cambiare fornitore telefonico, ad esempio per affidare telefonia e assistente AI a un unico fornitore. Secondo l'UFCOM, la portabilità geografica dei numeri è tecnicamente possibile in Svizzera dal 2002, ma non è obbligatoria per il fornitore: ogni operatore di telecomunicazioni decide autonomamente se offrirla e in quale misura — alcuni solo all'interno della stessa zona di prefisso, altri in tutta la Svizzera. Per i numeri mobili, la portabilità è nella pratica disponibile a livello nazionale."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Un chiarimento necessario: i punti seguenti riassumono informazioni pubblicamente accessibili dell'UFCOM e della camera di conciliazione ombudscom. Non sostituiscono una consulenza legale né un'informazione vincolante del vostro operatore — procedure, termini e prassi possono cambiare."
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Serve un contratto con il nuovo operatore prima della portabilità. Senza un contratto concluso con il nuovo fornitore, la portabilità non è possibile — il solo modulo di portabilità non basta. Lo confermano espressamente le note di caso pubblicate da ombudscom." },
+        { "de": "", "en": "", "fr": "", "it": "Il numero da portare deve essere attivo. Un numero già disattivato o bloccato non può più essere portato." },
+        { "de": "", "en": "", "fr": "", "it": "I dati sul modulo di portabilità devono coincidere con il contratto presso il vecchio operatore. Un nome scritto in modo diverso, una ragione sociale abbreviata diversamente o un numero errato bastano, secondo le note di caso pubblicate, come motivo di rifiuto — e non è un dettaglio teorico: in un caso reale pubblicato da ombudscom in italiano nel 2018, un cliente ha visto la propria portabilità rifiutata più volte perché il nuovo operatore aveva inviato moduli prima senza il nome completo e poi con una data sbagliata, mentre l'operatore precedente continuava nel frattempo a fatturargli l'abbonamento." },
+        { "de": "", "en": "", "fr": "", "it": "Le fatture in sospeso presso l'operatore precedente non sono, secondo quanto dichiara esplicitamente ombudscom, un motivo legittimo di rifiuto. Nella pratica alcuni operatori le usano comunque come leva di pressione, cosa che la camera di conciliazione ha criticato più volte nelle proprie note di caso." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Numeri aziendali: +41 91, +41 058 e i documenti che servono in più" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Per il vostro numero fisso ticinese quotidiano, il prefisso è quasi sempre +41 91 — quello che i vostri clienti digitano da sempre. Accanto a questo, molte aziende svizzere usano anche numeri con prefissi nazionali non geografici come +41 051 e +41 058, tipici di centralini aziendali, numeri verdi o linee gestite da fornitori di telefonia cloud. Che stiate deviando o portando davvero un numero del genere, aspettatevi documenti aggiuntivi rispetto a un numero personale."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Come esempio concreto: la documentazione pubblica di Amazon Web Services per il proprio servizio di telefonia Chime SDK richiede, per i numeri aziendali locali svizzeri con questi prefissi, un indirizzo aziendale, una prova dell'ubicazione e una copia della registrazione dell'attività o dell'estratto del registro di commercio — per una portabilità, in aggiunta, l'ultima fattura del fornitore precedente e una lettera di autorizzazione firmata. Non è una norma legale svizzera valida per tutti, ma la prassi documentata di un singolo fornitore, in questo caso internazionale: mostra però realisticamente quale tipo di documenti aspettarsi in generale per un numero aziendale. Chiedete al vostro operatore o fornitore AI quali documenti richiede davvero, invece di basarvi su un solo esempio."
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Documenti tipici per un numero aziendale: indirizzo aziendale, prova dell'ubicazione, registrazione dell'attività o estratto del registro di commercio — in Ticino, quello dell'Ufficio del registro di commercio del Cantone Ticino." },
+        { "de": "", "en": "", "fr": "", "it": "In aggiunta, per una vera portabilità: l'ultima fattura del fornitore precedente e una lettera di autorizzazione firmata a favore del nuovo fornitore." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Cosa può andare storto" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Una deviazione raramente fallisce — nel peggiore dei casi dimenticate di disattivarla e vi chiedete, mesi dopo, perché il cellulare aziendale non squilla mai più. Con una portabilità il discorso cambia, ed è proprio per questo che vale la pena prepararsi."
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "La portabilità viene rifiutata. Il motivo più comune, come mostra anche il caso citato sopra, è una discrepanza tra i dati sul modulo e quelli del contratto esistente — un nome, una data o un numero inseriti in modo diverso dal nuovo operatore. Il secondo motivo più frequente nella pratica: fatture in sospeso, anche se secondo ombudscom non costituiscono un motivo di rifiuto legittimo." },
+        { "de": "", "en": "", "fr": "", "it": "Il numero entra in timeout. Se una portabilità viene rifiutata, il numero cade per un periodo compreso tra 20 e 40 giorni lavorativi in una sorta di stato sospeso. In questo lasso di tempo dovete presentare attivamente un modulo di portabilità corretto. Restare inattivi rischia di far tornare il numero al fornitore precedente — un rischio che molte aziende notano solo quando è già troppo tardi." },
+        { "de": "", "en": "", "fr": "", "it": "La deviazione costa più del previsto. Alcune tariffe mobili limitano i minuti di deviazione gratuiti o fatturano le chiamate deviate come normali chiamate in uscita. Con un volume di chiamate alto, la differenza si somma — chiedetelo prima dell'attivazione, non sulla prossima fattura." },
+        { "de": "", "en": "", "fr": "", "it": "Una modifica al centralino blocca per errore interni esistenti. Chi modifica un impianto PBX senza aver documentato la configurazione precedente rischia che un reparto estraneo alla modifica diventi improvvisamente irraggiungibile. Non è un rischio specifico dell'intelligenza artificiale, ma un rischio generale dei centralini — che nell'entusiasmo per il nuovo assistente si tende volentieri a sottovalutare." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Il piano di ripristino: la via del ritorno" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "La differenza pratica più grande tra deviazione e portabilità emerge proprio quando qualcosa non convince e volete tornare indietro."
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Annullare una deviazione: un'impostazione nel portale clienti o un codice rapido, di norma efficace immediatamente. Il vostro numero non se n'è mai andato — ha solo squillato altrove per un periodo. È il motivo principale per cui, nel dubbio, conviene iniziare con una deviazione invece di portare subito il numero." },
+        { "de": "", "en": "", "fr": "", "it": "Annullare una portabilità: una nuova portabilità, con le stesse tempistiche, gli stessi moduli e gli stessi rischi di rifiuto della prima volta. Non esiste un tasto «annulla» — solo lo stesso percorso, nella direzione opposta." },
+        { "de": "", "en": "", "fr": "", "it": "Annullare una modifica al centralino: dipende interamente da quanto accuratamente è stata documentata la configurazione originale. Fatevi mettere per iscritto, prima di ogni modifica al vostro impianto, come si presentava la situazione prima — richiede cinque minuti e ne risparmia ore in seguito." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "La checklist da portare al vostro operatore telecom" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Le domande seguenti sono ordinate per situazione di partenza. Prendete i punti che vi riguardano e portateli, quasi parola per parola, al colloquio con il vostro operatore telefonico o il vostro fornitore AI."
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Con un numero mobile senza centralino: la deviazione di chiamata è inclusa nel mio abbonamento o è a pagamento? C'è un contingente di minuti gratuiti, e cosa succede una volta esaurito? Posso distinguere tra «sempre», «se occupato» e «se non risponde»?" },
+        { "de": "", "en": "", "fr": "", "it": "Con un numero fisso senza centralino: il mio collegamento supporta una deviazione condizionata, o solo una incondizionata? Le chiamate deviate comportano costi aggiuntivi, e chi li sostiene?" },
+        { "de": "", "en": "", "fr": "", "it": "Con un centralino (PBX) proprio: chi gestisce il nostro impianto, e questa persona può configurare un nuovo interno o una nuova regola di instradamento? Il nostro centralino supporta il SIP-trunking, o funziona ancora su una linea telefonica classica?" },
+        { "de": "", "en": "", "fr": "", "it": "Con un SIP-trunk esistente: il fornitore AI termina le chiamate in entrata direttamente sul nostro SIP-trunk, oppure si aspetta comunque una deviazione classica? Quale protocollo è previsto, e chi è responsabile in caso di guasto?" },
+        { "de": "", "en": "", "fr": "", "it": "Con una vera portabilità (cambio operatore): il nostro numero è attivo in questo momento? Tutte le fatture presso l'operatore attuale sono saldate — e se non lo sono, viene indicato come motivo di rifiuto, anche se secondo ombudscom non lo è? Quale termine di disdetta si applica, e quanto costa una disdetta anticipata?" },
+        { "de": "", "en": "", "fr": "", "it": "Con un numero aziendale: quali documenti vengono richiesti — indirizzo aziendale, estratto del registro di commercio, registrazione dell'attività? Per il nostro prefisso, ad esempio +41 91, +41 051 o +41 058, vale una regola particolare?" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Per chi il problema non si pone nemmeno" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Se volete prima solo provare un assistente telefonico AI, prima di occuparvi di deviazione, centralino o portabilità, non dovete toccare il vostro numero principale. Un accesso di prova una tantum — presso Weissmann, ad esempio la Prova Starter a CHF 350 senza abbonamento in corso — passa attraverso una propria linea di test, senza modificare nulla sul vostro numero esistente. Solo quando decidete per l'uso continuativo diventa rilevante la questione della deviazione o dell'integrazione. E per chi riceve solo poche chiamate a settimana, l'intero sforzo spesso non vale comunque la pena: in quel caso una segreteria telefonica ben impostata, con una promessa di richiamata chiara, funziona altrettanto bene — senza alcun modulo di portabilità."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Devo cambiare operatore telefonico per usare un assistente telefonico AI?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "No, nella grandissima maggioranza dei casi no. Basta una deviazione verso la linea del fornitore AI, e restate presso il vostro operatore attuale. Un cambio di operatore con portabilità serve solo se volete deliberatamente affidare telefonia e assistente AI a un unico nuovo fornitore." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Posso attivare la deviazione solo per le chiamate fuori orario?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Spesso sì. Molti operatori distinguono tra una deviazione incondizionata (sempre) e una condizionata (solo se occupato o se non risponde) — se e come esattamente il vostro collegamento lo supporti va chiarito direttamente con il vostro operatore, perché varia secondo tariffa e tipo di linea." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Cosa succede se una portabilità viene rifiutata — perdo il numero?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Non subito, ma la situazione si fa seria: il numero cade per un periodo compreso tra 20 e 40 giorni lavorativi in un cosiddetto timeout. Se in questo termine non presentate un modulo di portabilità corretto, il numero può tornare al fornitore precedente. Chi pianifica una portabilità dovrebbe segnare questo termine in agenda, non solo tenerlo a mente." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Le fatture in sospeso sono un motivo valido per rifiutare una portabilità?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "No, secondo le note di caso pubblicate dalla camera di conciliazione ombudscom, le pretese in sospeso presso il vecchio operatore non costituiscono un motivo legittimo di rifiuto. Nella pratica capita comunque che alcuni operatori le usino come leva di pressione; in caso di controversia, ombudscom è l'ente competente." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "I numeri aziendali con prefissi come +41 051 o +41 058 seguono una procedura diversa?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "La procedura regolatoria di base è la stessa, ma i fornitori richiedono in genere documenti aggiuntivi per i numeri aziendali, ad esempio un indirizzo aziendale e una copia della registrazione dell'attività o dell'estratto del registro di commercio. I dettagli precisi dipendono dal vostro fornitore specifico e vanno richiesti direttamente." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Ogni assistente telefonico AI supporta un SIP-trunk o un'integrazione con il centralino (PBX)?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "No, e raramente i siti dei fornitori lo chiariscono. Alcuni fornitori — anche Weissmann, per quanto risulta dai materiali pubblicamente consultabili — descrivono esclusivamente una deviazione verso una linea dedicata, non una terminazione diretta su SIP-trunk. Se vi serve un collegamento tecnico più profondo, chiedetelo esplicitamente a ogni fornitore, invece di darlo per scontato." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Serve portare il numero se voglio solo provare un assistente AI prima di decidere?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "No. Un test una tantum passa attraverso una linea separata dedicata alla prova, senza toccare in alcun modo il vostro numero principale. La domanda sulla deviazione o sull'integrazione diventa rilevante solo se decidete di passare all'uso continuativo." }
+    }
+  ],
+  "keyEntities": [
+    "portabilità del numero",
+    "UFCOM",
+    "ombudscom",
+    "deviazione di chiamata",
+    "SIP-trunk",
+    "PBX",
+    "VoIP",
+    "numero aziendale",
+    "+41 91",
+    "+41 058",
+    "+41 051",
+    "registro di commercio",
+    "assistente telefonico AI",
+    "linea telefonica dedicata"
+  ],
+  "sources": [
+    { "label": { "de": "", "en": "", "fr": "", "it": "UFCOM (Ufficio federale delle comunicazioni) — Numeri telefonici, pagina aggiornata il 18 marzo 2024, consultata il 29 luglio 2026" }, "href": "https://www.bakom.admin.ch/it/numeri-telefonici" },
+    { "label": { "de": "", "en": "", "fr": "", "it": "ombudscom — nota di caso «Richiesta di portabilità non accettata» (2018, in italiano), consultata il 29 luglio 2026" }, "href": "https://cas.ombudscom.ch/2018/richiesta-di-portabilita-non-accettata" },
+    { "label": { "de": "", "en": "", "fr": "", "it": "ombudscom — nota di caso «Verweigerung der Portierung der Rufnummer» (2019, fonte in tedesco — timeout di 20–40 giorni lavorativi), consultata il 29 luglio 2026" }, "href": "https://cas.ombudscom.ch/2019/verweigerung-der-portierung-der-rufnummer" },
+    { "label": { "de": "", "en": "", "fr": "", "it": "AWS Chime SDK — documentazione italiana su ordine e portabilità dei numeri svizzeri (esempio di un singolo fornitore di telefonia cloud, non fonte giuridica svizzera), consultata il 29 luglio 2026" }, "href": "https://docs.aws.amazon.com/it_it/chime-sdk/latest/ag/order-port-switzerland.html" },
+    { "label": { "de": "", "en": "", "fr": "", "it": "Weissmann AI — pagina di servizio Assistente telefonico AI, sezione «Posso mantenere il mio numero di telefono attuale?» (first-party)" }, "href": "https://weissmann.ai/it/servizi/assistente-telefonico-ai/" }
+  ],
+  "cta": {
+    "label": { "de": "", "en": "", "fr": "", "it": "Colloquio gratuito: chiariamo insieme quale collegamento fa per voi" },
+    "href": "/it/kontakt/"
+  }
+}

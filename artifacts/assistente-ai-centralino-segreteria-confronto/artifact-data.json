@@ -1,0 +1,117 @@
+{
+  "artifactId": "assistente-ai-centralino-segreteria-confronto",
+  "articleId": "assistente-ai-centralino-segreteria-confronto",
+  "language": "it",
+  "title": "Percorso interattivo della stessa chiamata in tre sistemi",
+  "note": "Spec/data file for the artifact described in ARTIFACT-BRIEF.md. This is structured content only — no HTML/JS is implemented here. All dialogue lines and timings are constructed illustrations of typical interaction patterns, never a transcript or measurement of a real call, and never attributed to Weissmann or any named competitor as a measured result. Scenarios 1 and 2 mirror the two worked examples in the companion article; scenario 3 is new to the artifact and deliberately shows the centralino virtuale performing close to the AI assistant, so the tool does not always resolve in favour of the AI path.",
+
+  "metrics": {
+    "turns": "Number of distinct actions the caller must take (a keypress, a spoken sentence, a spoken confirmation). Counted identically across all three systems so they are comparable.",
+    "seconds": "Cumulative elapsed time from call start to the point the caller's request is either resolved, or handed to a voicemail/queue with no confirmation.",
+    "outcome": "Whether the call ends with the request actually actioned, or only recorded/routed onward for a human to act on later."
+  },
+
+  "scenarios": [
+    {
+      "id": "prenotazione-ultimo-minuto",
+      "label": "Prenotazione che cambia all'ultimo minuto",
+      "shortNote": "La signora Bernasconi, cliente abituale del ristorante Da Marco a Lugano, richiama alle 18:40 per aggiungere due coperti alla prenotazione delle 20:00, chiedere un tavolo vicino alla finestra e segnalare un'allergia al glutine.",
+      "business": "Ristorante Da Marco, Lugano",
+      "assistenteAI": {
+        "summary": { "turns": 3, "seconds": 34, "outcome": "coperti aggiornati subito, richieste speciali inoltrate per iscritto alla sala" },
+        "steps": [
+          { "t": "18:40", "speaker": "Assistente", "line": "Ristorante Da Marco, buonasera, sono l'assistente digitale. Come posso aiutarla?" },
+          { "t": "18:40", "speaker": "Bernasconi", "line": "Buonasera, ho una prenotazione per stasera alle otto a nome Bernasconi, eravamo in quattro, ora saremo in sei — e se c'è un tavolo vicino alla finestra meglio, ah, e uno di noi non può mangiare glutine.", "turn": 1 },
+          { "t": "18:41", "speaker": "Assistente", "line": "Trovo la prenotazione Bernasconi delle 20:00 per quattro persone e la aggiorno subito a sei coperti. Segno anche il tavolo vicino alla finestra e l'intolleranza al glutine — quale tavolo resta libero stasera dipende dalla sala, quindi non posso garantirglielo da qui.", "note": "Esegue subito ciò che può garantire, inoltra per iscritto ciò che richiede un giudizio umano." },
+          { "t": "18:41", "speaker": "Bernasconi", "line": "Perfetto, va benissimo così.", "turn": 2 },
+          { "t": "18:42", "speaker": "Assistente", "line": "Aggiornato: sei persone alle 20:00, richiesta tavolo vicino alla finestra e allergia al glutine segnalate alla sala. Le arriva un SMS di conferma tra poco. Altro?" },
+          { "t": "18:42", "speaker": "Bernasconi", "line": "No, grazie mille, a dopo.", "turn": 3 }
+        ]
+      },
+      "centralinoVirtuale": {
+        "summary": { "turns": 2, "seconds": 64, "outcome": "instradata correttamente, nessuna conferma" },
+        "steps": [
+          { "t": "18:40", "speaker": "Voce guida", "line": "Ristorante Da Marco. Per prenotazioni prema 1, per la sala eventi prema 2, per tutte le altre richieste prema 0.", "note": "Nessuna delle tre opzioni corrisponde esattamente a «modificare una prenotazione già fatta»." },
+          { "t": "18:41", "speaker": "Bernasconi", "line": "(preme 1, sperando sia la scelta giusta)", "turn": 1 },
+          { "t": "18:41", "speaker": "Voce guida", "line": "La trasferisco alla sala prenotazioni. Attenda in linea." },
+          { "t": "18:44", "speaker": "Voce guida", "line": "Tutti gli operatori sono occupati. Può lasciare un messaggio dopo il segnale, oppure riprovare più tardi.", "note": "È l'ora di punta del servizio: il personale sta accogliendo gli ospiti delle 20:00." },
+          { "t": "18:44", "speaker": "Bernasconi", "line": "(lascia un messaggio con tutti i dettagli, sperando che qualcuno lo ascolti prima delle 20:00)", "turn": 2 }
+        ]
+      },
+      "segreteria": {
+        "summary": { "turns": 1, "seconds": 41, "outcome": "messaggio registrato, nessuna conferma" },
+        "steps": [
+          { "t": "18:40", "speaker": "Segreteria", "line": "Ristorante Da Marco. Siamo momentaneamente non raggiungibili. Lasci un messaggio dopo il segnale acustico." },
+          { "t": "18:41", "speaker": "Bernasconi", "line": "Buonasera, sono la signora Bernasconi, avevo prenotato per stasera alle otto in quattro, ora saremo in sei, se possibile un tavolo vicino alla finestra, e uno di noi non mangia glutine — mi richiami se c'è un problema, il mio numero è +41 91 923 XX XX.", "turn": 1, "note": "Deve dire tutto in una volta, senza interruzioni né conferme." }
+        ]
+      }
+    },
+    {
+      "id": "imprevisto-fuori-copione",
+      "label": "Un imprevisto fuori copione",
+      "shortNote": "Il signor Rossi, cliente abituale del Salone Bellavista a Bellinzona, chiama per spostare il taglio di domani e chiede se possono fare la barba a suo figlio minorenne — una domanda fuori da ogni script standard.",
+      "business": "Salone Bellavista, Bellinzona",
+      "assistenteAI": {
+        "summary": { "turns": 3, "seconds": 32, "outcome": "orario spostato subito, domanda delicata instradata con scadenza chiara" },
+        "steps": [
+          { "t": "0:00", "speaker": "Assistente", "line": "Salone Bellavista, buongiorno, sono l'assistente virtuale. Come posso aiutarla?" },
+          { "t": "0:03", "speaker": "Rossi", "line": "Buongiorno, ho il taglio domani alle tre, lo sposterei alle cinque se è possibile — e già che ci sono, potete fare la barba anche a mio figlio, ha quattordici anni, o serve il consenso di un genitore?", "turn": 1 },
+          { "t": "0:10", "speaker": "Assistente", "line": "Sposto subito il suo appuntamento di domani dalle 15:00 alle 17:00 — confermato. Sulla domanda per suo figlio non ho un'informazione affidabile, dipende dal barbiere di turno, e preferisco non improvvisare. Vuole che qualcuno la richiami oggi pomeriggio?", "note": "Distingue ciò che può eseguire con certezza da ciò su cui non ha un'informazione affidabile." },
+          { "t": "0:17", "speaker": "Rossi", "line": "Va bene, fatemi richiamare oggi pomeriggio.", "turn": 2 },
+          { "t": "0:22", "speaker": "Assistente", "line": "Perfetto, prendo nota: richiamare il signor Rossi oggi pomeriggio per la domanda sulla barba del figlio minorenne. L'appuntamento di domani alle 17:00 è già confermato via SMS. Altro?" },
+          { "t": "0:29", "speaker": "Rossi", "line": "No, va bene così, grazie.", "turn": 3 }
+        ]
+      },
+      "centralinoVirtuale": {
+        "summary": { "turns": 3, "seconds": 95, "outcome": "due chiamate separate, nessuna delle due confermata" },
+        "steps": [
+          { "t": "0:00", "speaker": "Voce guida", "line": "Salone Bellavista. Per appuntamenti prema 1, per trattamenti prema 2, per tutto il resto prema 0." },
+          { "t": "0:05", "speaker": "Rossi", "line": "(preme 1, per lo spostamento dell'appuntamento)", "turn": 1 },
+          { "t": "0:09", "speaker": "Voce guida", "line": "Dica il suo nome e l'orario attuale dopo il segnale, un operatore la richiamerà.", "note": "Solo una casella vocale dedicata agli appuntamenti, nessuna interazione." },
+          { "t": "0:20", "speaker": "Rossi", "line": "(lascia il messaggio con l'orario da spostare, poi richiama per la domanda sulla barba, perché non è chiaro se rientri in «appuntamenti» o in «tutto il resto»)", "turn": 2 },
+          { "t": "0:55", "speaker": "Voce guida", "line": "(seconda chiamata, stesso menu dall'inizio)" },
+          { "t": "1:20", "speaker": "Rossi", "line": "(preme 0, sperando che «tutto il resto» copra anche la domanda sul figlio; attesa di alcuni minuti, nessuna garanzia di risposta prima di sera)", "turn": 3 }
+        ]
+      },
+      "segreteria": {
+        "summary": { "turns": 1, "seconds": 38, "outcome": "nessuna delle due richieste confermata, rischio di doppio impegno" },
+        "steps": [
+          { "t": "0:00", "speaker": "Segreteria", "line": "Salone Bellavista, siamo al momento assenti. Lasciate un messaggio dopo il segnale." },
+          { "t": "0:05", "speaker": "Rossi", "line": "(lascia tutto in un solo messaggio — l'orario da spostare e la domanda sul figlio — senza sapere se la seconda parte verrà ascoltata con attenzione)", "turn": 1, "note": "Se nessuno trascrive il messaggio nell'agenda prima di domani, il vecchio orario delle 15:00 resta valido." }
+        ]
+      }
+    },
+    {
+      "id": "domanda-semplice-orari",
+      "label": "Una domanda semplice sugli orari",
+      "shortNote": "Un cliente della Ferramenta Cattori, a Locarno, vuole solo sapere se il negozio è aperto sabato pomeriggio — una domanda semplice e statica, non una richiesta da eseguire.",
+      "business": "Ferramenta Cattori, Locarno",
+      "note": "Questo scenario è costruito apposta perché il centralino virtuale si avvicini alla prestazione dell'assistente AI: una domanda fissa e prevedibile è esattamente ciò che un annuncio preregistrato gestisce bene.",
+      "assistenteAI": {
+        "summary": { "turns": 2, "seconds": 14, "outcome": "risposta immediata e corretta" },
+        "steps": [
+          { "t": "0:00", "speaker": "Assistente", "line": "Ferramenta Cattori, buongiorno. Come posso aiutarla?" },
+          { "t": "0:02", "speaker": "Cliente", "line": "Buongiorno, siete aperti sabato pomeriggio?", "turn": 1 },
+          { "t": "0:06", "speaker": "Assistente", "line": "Sì, il sabato siamo aperti dalle 8:30 alle 12:00 e dalle 14:00 alle 16:00. Altro?" },
+          { "t": "0:12", "speaker": "Cliente", "line": "No, perfetto, grazie.", "turn": 2 }
+        ]
+      },
+      "centralinoVirtuale": {
+        "summary": { "turns": 1, "seconds": 19, "outcome": "risposta corretta via annuncio registrato" },
+        "steps": [
+          { "t": "0:00", "speaker": "Voce guida", "line": "Ferramenta Cattori. Per orari e indirizzo prema 1, per parlare con un addetto prema 2." },
+          { "t": "0:04", "speaker": "Cliente", "line": "(preme 1)", "turn": 1 },
+          { "t": "0:06", "speaker": "Voce guida", "line": "Siamo aperti dal lunedì al venerdì dalle 8:00 alle 18:00, il sabato dalle 8:30 alle 12:00 e dalle 14:00 alle 16:00.", "note": "Annuncio statico, corretto e quasi rapido quanto l'assistente AI: la domanda non richiedeva alcuna interpretazione." }
+        ]
+      },
+      "segreteria": {
+        "summary": { "turns": 1, "seconds": 0, "outcome": "risposta utile solo prima di sabato, arrivata dopo" },
+        "steps": [
+          { "t": "0:00", "speaker": "Segreteria", "line": "Ferramenta Cattori. Siamo momentaneamente assenti. Lasciate un messaggio." },
+          { "t": "0:05", "speaker": "Cliente", "line": "Buongiorno, volevo sapere se siete aperti sabato pomeriggio, mi richiami quando può, grazie.", "turn": 1 },
+          { "t": "lunedì mattina", "speaker": "Segreteria", "line": "(il messaggio viene ascoltato solo al rientro, il lunedì successivo)", "note": "La debolezza della segreteria qui non è la complessità, è l'assenza totale di una risposta dal vivo — anche per la domanda più semplice possibile." }
+        ]
+      }
+    }
+  ]
+}

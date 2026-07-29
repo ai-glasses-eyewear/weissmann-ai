@@ -1,0 +1,181 @@
+{
+  "artifactId": "trasparenza-ai-telefono-ticino",
+  "toolTitle": "Generatore di messaggi trasparenti in italiano, tedesco e inglese",
+  "toolLanguageUi": "it",
+  "outputLanguages": ["it", "de", "en"],
+  "note": "Plain structured data for the companion Claude Artifact described in ARTIFACT-BRIEF.md. Generation is deterministic template composition per language: pick a settore (industry), a tonalità (tone) and, optionally, an escalation toggle; the tool fills the buildingBlocks templates below independently for it/de/en. The three languages are separately authored phrase sets, not machine translations of one another. No field here is legal advice or a compliance claim — see disclaimer.",
+
+  "tones": [
+    {
+      "id": "cordiale",
+      "uiLabel": "Cordiale e diretta",
+      "greetingWord": { "it": "Buongiorno", "de": "Grüezi", "en": "Hi" }
+    },
+    {
+      "id": "neutra",
+      "uiLabel": "Neutra e professionale",
+      "greetingWord": { "it": "Buongiorno", "de": "Guten Tag", "en": "Hello" }
+    },
+    {
+      "id": "formale",
+      "uiLabel": "Formale e riservata",
+      "greetingWord": { "it": "Buongiorno", "de": "Guten Tag", "en": "Good day" }
+    }
+  ],
+
+  "industries": [
+    {
+      "id": "hotel",
+      "uiLabel": "Hotel / alloggio turistico",
+      "exampleBusinessName": "Hotel Riviera Ascona",
+      "defaultToneId": "cordiale",
+      "escalationDefaultOn": false,
+      "hasBindingLimitClause": false,
+      "selfReference": {
+        "it": "l'assistente digitale della reception",
+        "de": "der digitale Empfangsassistent",
+        "en": "the digital front-desk assistant"
+      },
+      "capabilities": {
+        "it": ["verificare la disponibilità delle camere", "rispondere a domande sull'arrivo"],
+        "de": ["die Zimmerverfügbarkeit prüfen", "Fragen zur Anreise beantworten"],
+        "en": ["check room availability", "answer questions about your arrival"]
+      }
+    },
+    {
+      "id": "studio-professionale",
+      "uiLabel": "Studio professionale (legale, notarile, fiduciario)",
+      "exampleBusinessName": "Studio Legale e Fiduciario Bernasconi & Conti",
+      "defaultToneId": "formale",
+      "escalationDefaultOn": false,
+      "hasBindingLimitClause": true,
+      "selfReference": {
+        "it": "l'assistente digitale dello studio",
+        "de": "der digitale Kanzleiassistent",
+        "en": "the practice's digital assistant"
+      },
+      "capabilities": {
+        "it": ["registrare la sua richiesta in modo riservato", "fissare un richiamo con la persona competente"],
+        "de": ["Ihr Anliegen vertraulich aufnehmen", "einen Rückruf mit der zuständigen Person vereinbaren"],
+        "en": ["take your request in confidence", "arrange a callback with the right person"]
+      }
+    },
+    {
+      "id": "artigiano",
+      "uiLabel": "Artigiano (idraulico, elettricista, falegname...)",
+      "exampleBusinessName": "Idraulica Pellanda",
+      "defaultToneId": "cordiale",
+      "escalationDefaultOn": true,
+      "hasBindingLimitClause": false,
+      "selfReference": {
+        "it": "l'assistente al telefono",
+        "de": "der Telefonassistent",
+        "en": "the call assistant"
+      },
+      "capabilities": {
+        "it": ["registrare il suo problema", "organizzare un intervento rapido"],
+        "de": ["Ihr Problem aufnehmen", "einen raschen Einsatz organisieren"],
+        "en": ["log your problem", "arrange a fast callout"]
+      }
+    },
+    {
+      "id": "amministrazione-immobiliare",
+      "uiLabel": "Amministrazione immobiliare",
+      "exampleBusinessName": "Amministrazione Immobiliare Gaggini",
+      "defaultToneId": "neutra",
+      "escalationDefaultOn": true,
+      "hasBindingLimitClause": true,
+      "selfReference": {
+        "it": "l'assistente digitale",
+        "de": "der digitale Assistent",
+        "en": "the digital assistant"
+      },
+      "capabilities": {
+        "it": ["registrare segnalazioni e richieste di documenti", "verificare la disponibilità per visite"],
+        "de": ["Meldungen und Dokumentenanfragen aufnehmen", "Besichtigungstermine prüfen"],
+        "en": ["log reports and document requests", "check availability for viewings"]
+      }
+    }
+  ],
+
+  "buildingBlocks": {
+    "disclosureTemplate": {
+      "it": "qui risponde {selfReference} di {businessName}.",
+      "de": "hier antwortet {selfReference} von {businessName}.",
+      "en": "this is {selfReference} for {businessName}."
+    },
+    "capabilityTemplate": {
+      "it": "Posso {capabilityList}.",
+      "de": "Ich kann {capabilityList}.",
+      "en": "I can {capabilityList}."
+    },
+    "capabilityJoiner": { "it": " e ", "de": " und ", "en": " and " },
+    "escapeTemplate": {
+      "it": "Dica in qualsiasi momento «{keyword}» e la metto subito in contatto con il nostro team.",
+      "de": "Sagen Sie jederzeit «{keyword}», dann verbinde ich Sie sofort mit unserem Team.",
+      "en": "Just say \"{keyword}\" at any time and I'll connect you with our team right away."
+    },
+    "defaultKeyword": { "it": "urgente", "de": "dringend", "en": "urgent" },
+    "bindingLimitClause": {
+      "it": "Per pareri vincolanti o decisioni di spesa risponde esclusivamente il nostro team.",
+      "de": "Verbindliche Auskünfte oder Ausgabenentscheide trifft ausschliesslich unser Team.",
+      "en": "Binding advice or spending decisions are handled exclusively by our team."
+    }
+  },
+
+  "rationaleNotes": {
+    "it": {
+      "who": "Il nome dell'attività apre la frase: chi chiama sa subito di aver fatto il numero giusto.",
+      "disclosure": "La dichiarazione arriva nella prima frase, non dopo un lungo preambolo.",
+      "capability": "Una o due capacità bastano a creare un'aspettativa chiara senza un catalogo di servizi.",
+      "escape": "La via d'uscita verso una persona resta valida per tutta la telefonata.",
+      "binding": "Il limite su pareri vincolanti o spese è dichiarato subito, non scoperto dopo."
+    },
+    "de": {
+      "who": "Der Firmenname steht zuerst — Anrufende wissen sofort, ob sie richtig sind.",
+      "disclosure": "Die Offenlegung steht im ersten Satz, nicht nach einer langen Anmoderation.",
+      "capability": "Ein bis zwei Fähigkeiten schaffen Erwartungsklarheit, ohne die Begrüssung zu überladen.",
+      "escape": "Der Weg zu einem Menschen gilt während des ganzen Gesprächs.",
+      "binding": "Die Grenze bei verbindlichen Auskünften oder Ausgaben wird sofort genannt, nicht erst später entdeckt."
+    },
+    "en": {
+      "who": "The business name opens the sentence, so callers know within seconds they reached the right place.",
+      "disclosure": "The disclosure sits in the first sentence, not buried after a long introduction.",
+      "capability": "One or two capabilities set clear expectations without reading like a service catalogue.",
+      "escape": "The route to a human stays valid for the whole call, not just a one-time offer at the start.",
+      "binding": "The limit on binding advice or spending decisions is stated upfront, not discovered later."
+    }
+  },
+
+  "uiCopy": {
+    "it": {
+      "fieldBusinessName": "Nome dell'attività",
+      "fieldBusinessNamePlaceholder": "[Nome azienda]",
+      "fieldIndustry": "Settore",
+      "fieldTone": "Tonalità",
+      "fieldEscalationToggle": "Escalation per urgenza attiva?",
+      "privacyNote": "Tutti i dati inseriti restano nel suo browser.",
+      "copyButton": "Copia",
+      "downloadButton": "Scarica tutte e tre come testo",
+      "missingIndustryWarning": "Selezioni prima un settore: determina le impostazioni di base per tono e vocabolario in tutte e tre le lingue.",
+      "missingNameWarning": "Nessun nome inserito. Ogni versione userà un segnaposto nella propria lingua — da sostituire prima dell'uso.",
+      "escalationKeywordNote": "Per l'escalation viene usata la parola predefinita in ciascuna lingua (urgente / dringend / urgent): una parola personalizzata inserita in italiano non viene tradotta automaticamente nelle altre due lingue.",
+      "bindingLimitFixedNote": "Questa frase è fissa e non fa parte del testo modificabile.",
+      "outputLabelIt": "Italiano",
+      "outputLabelDe": "Deutsch",
+      "outputLabelEn": "English"
+    }
+  },
+
+  "disclaimer": {
+    "it": "Questo modello è un aiuto alla scrittura, non una consulenza legale. Se e in quale forma valga un obbligo di dichiarazione per la vostra azienda dipende dal singolo caso (si veda l'articolo sulla trasparenza dell'IA). In caso di dubbio è consigliabile una verifica individuale."
+  },
+
+  "cta": {
+    "it": {
+      "line": "Vuole configurare davvero questo assistente per la sua attività?",
+      "linkLabel": "Richieda una demo gratuita con i suoi dati",
+      "href": "/it/servizi/assistente-telefonico-ai/"
+    }
+  }
+}

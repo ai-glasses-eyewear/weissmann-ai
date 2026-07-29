@@ -53,7 +53,8 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 | 1 | DE-PHONE-01 – 05 | done |
 | 2 | DE-PHONE-06 – 10 | done |
 | 3 | EN-PHONE-01 – 05 | done |
-| 4 | EN-PHONE-06 – 10 | done (commit pending) |
+| 4 | EN-PHONE-06 – 10 | done |
+| 5 | IT-PHONE-01 – 05 | done (commit pending) |
 | 3 | EN-PHONE-01 – 05 | pending |
 | 4 | EN-PHONE-06 – 10 | pending |
 | 5 | IT-PHONE-01 – 05 | pending |
@@ -128,5 +129,21 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 **Phone-assistant progress: 20 of 30 complete** (all 10 DE-PHONE + all 10 EN-PHONE; 10 IT-PHONE remain in Batches 5–6).
 
 **Remaining after Batch 4:** 40 articles / 40 artifact briefs (10 IT-PHONE + 30 WEB articles).
+
+### Batch 5 — IT-PHONE-01–05 (complete)
+
+| # | Title | Keyword | Intent | Article file | Artifact files | Uniqueness | Factual | Impl. | Validation |
+|---|---|---|---|---|---|---|---|---|---|
+| IT-PHONE-01 | Assistenti telefonici AI in Svizzera: guida PMI | assistente telefonico AI Svizzera / centralino AI Svizzera | comparison | `academy-content/assistenti-telefonici-ai-svizzera-pmi-ticinesi.json` | `artifacts/assistenti-telefonici-ai-svizzera-pmi-ticinesi/` | pass — third distinct structure for the same underlying 6-provider dataset (market-reach-segmented: Ticino-only vs. multilingual vs. hospitality, vs. DE's flat list and EN's persona list) | same 6 verified providers, re-confirmed Italian-language availability for all six | done | build+QA+links+duplicates+guardrails pass |
+| IT-PHONE-02 | Assistente AI, centralino o segreteria a confronto | centralino AI / segreteria telefonica AI | comparison | `academy-content/assistente-ai-centralino-segreteria-confronto.json` | `artifacts/assistente-ai-centralino-segreteria-confronto/` | pass — narrative caller-journey format, explicitly differentiated from the existing 4-locale `phone-assistant-vs-alternatives.json` feature table and from DE-PHONE-08's 2-system IVR journey (this is 3 systems, new Ticino scenarios) | no invented category-product claims | done | build+QA+links+duplicates+guardrails pass |
+| IT-PHONE-03 | Al telefono risponde un'IA: il cliente lo sa? | obbligo dichiarare intelligenza artificiale Svizzera | informational | `academy-content/trasparenza-ai-telefono-ticino.json` | `artifacts/trasparenza-ai-telefono-ticino/` | pass — adds a genuinely new "language-switching disclosure" thesis specific to Ticino's cross-border/cross-lingual clientele; 4 new industry scripts, not a translation of DE-PHONE-03 | cross-links (not repeats) `ai-transparency-disclosure.json`'s legal analysis | done | build+QA+links+duplicates+guardrails pass |
+| IT-PHONE-04 | Registrare le telefonate AI: le regole in Svizzera | registrare telefonate Svizzera / trascrizione chiamate AI | informational | `academy-content/registrazione-chiamate-ai-legalita-svizzera.json` | `artifacts/registrazione-chiamate-ai-legalita-svizzera/` | pass — 6 named Ticino scenarios incl. a genuinely uncertain "giallo" case (preventivo) DE-PHONE-04 doesn't raise | Italian-language IFPDT + Fedlex sources verified live, exact statutory wording cross-checked; "non è consulenza legale" present | done | build+QA+links+duplicates+guardrails pass |
+| IT-PHONE-05 | Numero +41 esistente con un assistente AI? | assistente AI numero esistente / centralino AI numero svizzero | informational | `academy-content/numero-esistente-assistente-ai-ticino.json` | `artifacts/numero-esistente-assistente-ai-ticino/` | pass — new primary source (2018 Italian-language ombudscom case) not used by either sibling; wizard-style action-plan artifact, distinct mechanic from both DE and EN siblings | UFCOM/ombudscom verified live; Weissmann's limited technical scope stated honestly | done | build+QA+links+duplicates+guardrails pass |
+
+**Batch 5 cross-checks:** 0 duplicate titles/slugs/H1s within batch and against all prior batches; 0 slug collisions across all 104 academy-content files (341 unique locale-slug keys); full build = 674 pages; full validator suite passes with 0 issues.
+
+**Phone-assistant progress: 25 of 30 complete** (all 10 DE-PHONE + all 10 EN-PHONE + IT-PHONE-01–05). IT-PHONE-06–10 remain in Batch 6.
+
+**Remaining after Batch 5:** 35 articles / 35 artifact briefs (5 IT-PHONE remain in Batch 6; 30 WEB articles in Batches 7–12).
 
 _(Further batches logged the same way as they complete.)_
