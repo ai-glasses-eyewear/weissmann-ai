@@ -39,8 +39,8 @@ const REQUIRED_ASSETS = [
   'images/about/founder.jpg',
   'videos/weissmann-demo-de.mp4',
   'videos/weissmann-demo-en.mp4',
-  'videos/public_video_weissmann_campaing_de.mp4',
-  'videos/public_video_weissmann_campaing_en.mp4',
+  'videos/weissmann-date-night-campaign-de.mp4',
+  'videos/weissmann-date-night-campaign-en.mp4',
 ];
 const missingAssets = REQUIRED_ASSETS.filter((a) => !existsSync(join(dist, a)));
 

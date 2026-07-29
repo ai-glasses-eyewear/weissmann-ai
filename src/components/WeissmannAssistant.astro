@@ -59,7 +59,7 @@ const t = (k: string) => kb.ui[locale][k];
         <input type="text" data-wa-text autocomplete="off" aria-label={t('inputPlaceholder')} />
         <button type="submit" class="wa__send" aria-label={t('send')}>&#8593;</button>
       </form>
-      <p class="wa__foot"><span data-wa-foot></span> · <a href={`${p}/datenschutz/`}>{t('privacy')}</a></p>
+      <p class="wa__foot"><span data-wa-foot></span> · <span data-wa-privacy data-href={`${p}/datenschutz/`}>{t('privacy')}</span></p>
     </section>
   </template>
 </div>
@@ -293,10 +293,30 @@ const t = (k: string) => kb.ui[locale][k];
       addChips(KB.greetingChips);
     }
 
+    // The privacy link is a <span data-wa-privacy> in the <template>, not a literal
+    // <a>: Astro's HTML compiler mis-nests <a>/<b>/<i>/etc. (the HTML5 "formatting
+    // elements") that sit inside a <template>, leaking duplicate anchors into the
+    // built page right after the closing </template> tag. Building the real <a> here
+    // at runtime avoids feeding that element through the buggy static HTML parser.
+    function hydratePrivacyLink(panel) {
+      const span = panel.querySelector('[data-wa-privacy]');
+      if (!span) return;
+      const a = document.createElement('a');
+      // Carry over the scoped-style marker Astro stamps on every element (its exact
+      // name is a per-build content hash) so the link keeps the .wa__foot a styling.
+      for (const attr of span.attributes) {
+        if (attr.name.startsWith('data-astro-cid')) a.setAttribute(attr.name, attr.value);
+      }
+      a.href = span.getAttribute('data-href');
+      a.textContent = span.textContent;
+      span.replaceWith(a);
+    }
+
     function openPanel() {
       if (panel) { panel.style.display = 'flex'; root.setAttribute('data-open', ''); panel.querySelector('[data-wa-text]').focus(); return; }
       const tpl = root.querySelector('[data-wa-template]');
       panel = tpl.content.firstElementChild.cloneNode(true);
+      hydratePrivacyLink(panel);
       root.appendChild(panel);
       root.setAttribute('data-open', '');
       body = panel.querySelector('[data-wa-body]');

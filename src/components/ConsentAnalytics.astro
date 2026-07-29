@@ -8,8 +8,8 @@
  * - The choice is stored in localStorage ('wm-consent': 'granted'|'denied')
  *   and re-applied on every page view. The banner only renders when no choice
  *   has been made yet.
- * - GA4 property G-3L30SCGWGT is the preserved existing property and is
- *   loaded exactly once, here and nowhere else.
+ * - The GA4 property id comes from SITE.tracking.ga4 (src/data/site.ts, the
+ *   single source of truth) and is loaded exactly once, here and nowhere else.
  */
 import { SITE } from '../data/site';
 const GA = SITE.tracking.ga4;

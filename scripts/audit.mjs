@@ -61,3 +61,4 @@ for (const [k, arr] of Object.entries(issues)) {
 }
 const total = Object.values(issues).reduce((s, a) => s + a.length, 0);
 console.log(`\nTOTAL ISSUES: ${total}`);
+if (total > 0) process.exitCode = 1;

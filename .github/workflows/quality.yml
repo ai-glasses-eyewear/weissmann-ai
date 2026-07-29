@@ -1,0 +1,45 @@
+name: Quality
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+jobs:
+  quality:
+    name: Build, QA gates, and content audits
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js (LTS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (chains validate-pricing.mjs -> astro build -> qa-gates.mjs)
+        run: npm run build
+
+      - name: Validate pricing / Stripe links
+        run: node scripts/validate-pricing.mjs
+
+      - name: QA gates (brand, NAP, prices, canonical, hreflang, orphans)
+        run: node scripts/qa-gates.mjs
+
+      - name: Check internal links
+        run: node scripts/check-links.mjs
+
+      - name: Content audit (titles, descriptions, H1s, alt text, anchors)
+        run: node scripts/audit.mjs
+
+      - name: Duplicate-content audit (titles, canonicals, sitemap, hreflang, orphans)
+        run: node scripts/audit-duplicates.mjs
+
+      - name: CI guardrails (secrets, old GA4 ID, redirect chains, stale filenames, Nicola references)
+        run: node scripts/ci-guardrails.mjs
