@@ -28,6 +28,12 @@ const SAVE_LABEL: Record<Locale, (amount: string) => string> = {
   fr: (a) => `Économisez ${a}`,
 };
 const savings = pkg.regularPrice && pkg.price !== null ? pkg.regularPrice - pkg.price : null;
+// TWINT is confirmed live (verified 2026-07-29) only at the two approved
+// one-time Stripe Payment Links — never shown on the recurring monthly
+// packages, and not generalized to the other one-time website tiers
+// (website-business / website-complex) without a separate owner sign-off.
+const TWINT_PACKAGES = new Set(['phone-starter-trial', 'website-starter']);
+const showTwint = TWINT_PACKAGES.has(pkg.id);
 ---
 
 <article class={`card pricing-card ${highlight ? 'card--raised pricing-card--highlight' : ''}`}>
@@ -92,7 +98,7 @@ const savings = pkg.regularPrice && pkg.price !== null ? pkg.regularPrice - pkg.
         </a>
         <p class="pricing-card__secure">
           <Icon name="shield" size={14} />
-          {t(locale, 'cta.secureCheckout')}
+          {showTwint ? t(locale, 'cta.securePaymentTwint') : t(locale, 'cta.secureCheckout')}
         </p>
       </>
     ) : (
