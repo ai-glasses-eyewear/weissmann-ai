@@ -1,0 +1,199 @@
+{
+  "id": "ai-outbound-marketing-calls-switzerland",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["de"],
+  "slug": {
+    "de": "ki-werbeanrufe-schweiz-erlaubt",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["ai-phone-assistant-greeting-transparency"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "KI-Werbeanrufe Schweiz: was ist erlaubt? | Weissmann",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "Outbound-Werbeanrufe mit KI in der Schweiz: Sterneintrag, Kundenbeziehung und warum Automatisierung das Risiko erhöht. Eingeordnet, keine Rechtsberatung.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "Outbound-Anrufe & Schweizer Recht",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "Automatische KI-Werbeanrufe in der Schweiz: Was ist erlaubt und was ist einfach eine schlechte Idee?",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "Outbound-Werbeanrufe sind in der Schweiz grundsätzlich erlaubt – ausser die angerufene Nummer trägt einen Sterneintrag im Telefonverzeichnis oder ist gar nicht eingetragen, und es besteht keine bestehende Kundenbeziehung. Das regelt Art. 3 Abs. 1 lit. u UWG, unabhängig davon, ob ein Mensch oder ein KI-System wählt. Bestandskunden dürfen Sie also weiterhin anrufen, auch wenn ihre Nummer sternmarkiert ist. Was sich mit einer KI ändert, ist nicht die Rechtslage, sondern das Risiko: Ein automatisiertes System kann in einer Stunde mehr Nummern wählen als ein Verkaufsteam in einer Woche – ein einziger Fehler bei der Listenprüfung vervielfacht sich entsprechend. Dieser Artikel ordnet die Rechtslage ein, erklärt das Skalierungsrisiko der Automatisierung und ersetzt keine Rechtsberatung im Einzelfall.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "Ein Rechenbeispiel, bevor wir zur Rechtslage kommen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Ein Verkäufer, der Kaltakquise am Telefon macht, schafft an einem konzentrierten Tag vielleicht sechzig bis achtzig Anrufe – mit Pausen, einem Kaffee zwischendurch und der einen Nummer, bei der er sich zweimal verwählt. Ein KI-System an derselben Anschlussleitung schafft in derselben Zeit mehrere tausend. Das folgende Rechenbeispiel ist eine Veranschaulichung, keine gemessene Grösse: Passiert bei jeder hundertsten manuell gewählten Nummer ein Fehler bei der Sterneintrag-Prüfung, sind das an einem Tag ein, vielleicht zwei ärgerliche Anrufe bei der falschen Person. Beim gleichen Fehleranteil, aber am zehn- bis fünfzigfachen Volumen eines automatisierten Systems, ist das Ergebnis kein proportional grösseres Ärgernis – es ist ein System, das an einem einzigen Nachmittag mehr potenzielle Verstösse produzieren kann, als ein menschliches Verkaufsteam in einem Jahr überhaupt Anrufe tätigt.", "en": "", "it": "", "fr": "" },
+        { "de": "Damit sind wir mitten im eigentlichen Thema, aber noch nicht bei der Rechtslage selbst – und vorher eine Abgrenzung, die in der Praxis oft durcheinandergerät. In den übrigen Artikeln dieser Reihe geht es um Anrufe, die bei Ihnen ankommen: Jemand ruft an, eine KI nimmt ab, und die Frage ist, wie sich der Assistent zu erkennen gibt – dazu mehr im Artikel zur Begrüssungstransparenz. Hier geht es um das Gegenteil: Ihr Unternehmen ruft jemanden an, der nicht darum gebeten hat. Das ist keine Nuance, sondern eine andere Rechtsgrundlage. Bei eingehenden Anrufen ist relevant, was die KI sagt. Bei ausgehenden Anrufen ist relevant, ob Sie überhaupt anrufen dürfen – bevor irgendjemand ein Wort gesprochen hat.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Die Grundregel: Sterneintrag, unlisted Nummer, bestehende Kundenbeziehung", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Massgeblich ist Art. 3 Abs. 1 lit. u des Bundesgesetzes gegen den unlauteren Wettbewerb (UWG). Die Vorschrift erklärt einen Werbeanruf für unlauter, wenn die angerufene Nummer im Schweizer Telefonverzeichnis mit einem Stern (*) markiert ist – der sogenannte Sterneintrag, mit dem eine Person erklärt, keine Werbeanrufe von Unternehmen zu wollen, mit denen sie keine Geschäftsbeziehung hat. Nicht im Verzeichnis eingetragene Nummern, etwa viele Mobilnummern, werden dabei automatisch gleich behandelt wie ein Sterneintrag – ohne dass die betroffene Person aktiv etwas markieren musste.", "en": "", "it": "", "fr": "" },
+        { "de": "Von dieser Regel gibt es eine praktisch wichtige Ausnahme: Besteht bereits eine Kundenbeziehung, dürfen Sie die betroffene Person weiterhin zu Werbezwecken anrufen, auch wenn deren Nummer sternmarkiert ist. Die Sterneintrag-Regel schützt gezielt vor Anrufen von Unternehmen, mit denen jemand noch nie zu tun hatte – nicht vor einem Anruf des eigenen Telefonanbieters oder Coiffeursalons. Was genau als Kundenbeziehung zählt, ist im Gesetz allerdings nicht abschliessend definiert: Ein laufender Vertrag ist unstrittig eine Kundenbeziehung, ein einmaliger Kauf vor drei Jahren oder eine blosse Newsletter-Anmeldung sind weniger eindeutig. Je älter oder loser die Beziehung, desto vorsichtiger sollten Sie sein, sich allein darauf zu verlassen.", "en": "", "it": "", "fr": "" },
+        { "de": "Daraus lässt sich ein einfacher Drei-Fragen-Test bauen, den Sie auf jede Zielliste anwenden können, bevor ein Anruf – von wem auch immer – überhaupt stattfindet.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Frage 1 – Verzeichnisstatus: Ist die Nummer sternmarkiert, gar nicht im Verzeichnis eingetragen, oder ganz normal gelistet? Nur in den ersten beiden Fällen greift die Schutzvorschrift von Art. 3 Abs. 1 lit. u UWG überhaupt.", "en": "", "it": "", "fr": "" },
+        { "de": "Frage 2 – Kundenbeziehung: Bestand mit dieser Person bereits eine Geschäftsbeziehung – ein Kauf, eine Buchung, ein laufender Vertrag? Je länger diese zurückliegt oder je loser sie war, desto weniger tragfähig ist die Ausnahme im Streitfall.", "en": "", "it": "", "fr": "" },
+        { "de": "Frage 3 – Nachweis: Können Sie zeigen, woher die Nummer stammt und worauf sich die angenommene Kundenbeziehung stützt? Eine gekaufte oder extern zusammengestellte Adressliste liefert diesen Nachweis in aller Regel nicht.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Warum Automatisierung dieselbe Regel gefährlicher macht", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Die Rechtslage selbst ändert ein KI-System nicht. Art. 3 Abs. 1 lit. u UWG unterscheidet nicht danach, ob eine Mitarbeiterin oder eine Software wählt. Was sich ändert, ist die Häufigkeit, mit der ein einziger Systemfehler zu einem tatsächlichen Verstoss wird – und wie schnell sich das summiert, bevor es jemandem auffällt.", "en": "", "it": "", "fr": "" },
+        { "de": "Der erste Mechanismus ist simpel: Fehlerquote mal Volumen. Prüft eine Mitarbeiterin von Hand jede Nummer gegen eine veraltete oder unvollständige Sterneintrag-Liste, passiert der Fehler bei einigen wenigen Anrufen am Tag – korrigierbar, sobald es auffällt. Prüft ein automatisiertes System dieselbe veraltete Liste gegen mehrere tausend Nummern, bevor überhaupt jemand die Datenqualität kontrolliert, ist der Fehler nicht mehr einzeln, sondern strukturell: Er betrifft jede Nummer, die durch dasselbe System läuft, bis jemand eingreift. Ein Datenqualitätsproblem, das bei manueller Arbeit eine Randnotiz gewesen wäre, wird bei Automatisierung zum Systemfehler mit Breitenwirkung.", "en": "", "it": "", "fr": "" },
+        { "de": "Der zweite Mechanismus ist subtiler und hat mit Recht im engeren Sinn nichts zu tun: Ein Anruf, der klar synthetisch klingt oder sich wie ein Skript anfühlt, wird eher als Belästigung wahrgenommen und eher gemeldet als derselbe Inhalt aus dem Mund einer Person, die auf eine Zwischenfrage natürlich reagiert. Das gilt selbst dann, wenn der Anruf rechtlich vollkommen zulässig war, etwa weil eine echte Kundenbeziehung besteht. Ein technisch legaler, aber unpersönlich wirkender automatisierter Werbeanruf kostet damit häufiger eine Beschwerde, eine schlechte Bewertung oder einen Kommentar in der lokalen Gruppe als derselbe Anruf von einem Menschen – nicht weil er unrechtmässiger wäre, sondern weil er unangenehmer auffällt.", "en": "", "it": "", "fr": "" },
+        { "de": "Beide Mechanismen zusammen ergeben den eigentlichen Punkt: Wer Outbound-Werbeanrufe automatisiert, verändert nicht, was erlaubt ist – er verändert, wie teuer ein einzelner Fehler in der Liste oder im Tonfall werden kann, weil er sich nicht mehr einmal, sondern tausendfach wiederholt, bevor jemand es merkt. Das ist ein Grund, Automatisierung bei Outbound-Anrufen vorsichtiger zu skalieren als bei Inbound-Systemen – kein Grund, sie grundsätzlich zu meiden.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Was ein System vor dem Wählen tatsächlich prüfen sollte", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Die Konsequenz aus dem Rechenbeispiel oben ist praktisch, nicht philosophisch: Bei einem System, das tausende Nummern pro Stunde wählen kann, muss die Prüfung vor dem ersten Klingeln stattfinden, nicht als Reaktion auf die erste Beschwerde.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Sterneintrag-Abgleich mit Aktualitätsdatum: Nicht nur, ob ein Abgleich existiert, sondern wann er zuletzt aktualisiert wurde. Eine drei Jahre alte Kopie des Verzeichnisses ist keine Prüfung, sondern eine Fehlerquelle mit Zeitstempel.", "en": "", "it": "", "fr": "" },
+        { "de": "Interne Opt-out-Liste mit Vorrang: Wer sich einmal explizit gegen weitere Anrufe ausgesprochen hat, muss dauerhaft aus jeder künftigen Liste herausfallen – unabhängig davon, aus welcher Quelle die Nummer später erneut importiert wird.", "en": "", "it": "", "fr": "" },
+        { "de": "Herkunftsnachweis pro Liste: Jede importierte Kontaktliste braucht eine dokumentierte Antwort auf die Frage, worauf sich die angenommene Kundenbeziehung stützt – nicht erst, wenn eine Beschwerde eintrifft.", "en": "", "it": "", "fr": "" },
+        { "de": "Testlauf vor Skalierung: Ein neues Skript oder eine neue Liste zuerst an einer kleinen, gut dokumentierten Stichprobe laufen lassen, bevor das System auf volles Volumen hochgefahren wird. Der teuerste Fehler ist der, der erst nach zehntausend Anrufen auffällt.", "en": "", "it": "", "fr": "" },
+        { "de": "Menschliche Stichprobenkontrolle: Regelmässig echte Gesprächsmitschnitte oder Transkripte gegenhören, nicht nur Fehlerquoten in einem Dashboard ablesen – wie ein Anruf tatsächlich wirkt, zeigt sich selten in einer Kennzahl allein.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Was ein Verstoss in der Praxis auslöst", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Wer trotz Sterneintrag oder fehlendem Verzeichniseintrag und ohne bestehende Kundenbeziehung anruft, begeht nach Art. 3 Abs. 1 lit. u UWG einen Akt unlauteren Wettbewerbs. Geschieht das vorsätzlich, ist das nach Art. 23 UWG strafbar – das Gesetz sieht Freiheitsstrafe bis zu drei Jahren oder eine Geldstrafe vor. Verfolgt wird das allerdings nur auf Antrag: Ohne dass sich jemand beschwert, passiert von Amtes wegen nichts. Genau dafür betreibt das Staatssekretariat für Wirtschaft (SECO) eine offizielle Beschwerdestelle für unerbetene Werbeanrufe. SECO bündelt eingehende Beschwerden und kann bei ausreichender Grundlage bei den zuständigen kantonalen Strafverfolgungsbehörden Anzeige erstatten. SECO selbst kann weder eine Nummer sperren noch direkt eine Busse aussprechen – das bleibt Sache der Strafverfolgung.", "en": "", "it": "", "fr": "" },
+        { "de": "Der rechtliche Weg ist selten der erste, den eine verärgerte angerufene Person einschlägt. In der Praxis kommt zuerst die schlechte Bewertung, der Kommentar in der lokalen Gruppe oder das Gespräch beim Coiffeur darüber, welche Firma schon wieder angerufen hat. In einem kleinen Markt wie der Schweiz, mit engen Branchen- und Ortsnetzen, verbreitet sich «diese Firma ruft ungefragt an» schneller, als eine einzelne Beschwerde bearbeitet werden könnte. Genau hier schliesst sich der Kreis zum Rechenbeispiel vom Anfang: Ein automatisiertes System, das denselben Fehler tausendfach wiederholt, produziert nicht eine schlechte Bewertung, sondern ein Muster – und ein Muster ist genau das, was Aufsichtsbehörden und Suchmaschinen gleichermassen auffällt.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Der Vergleich mit dem Ausland – kurz eingeordnet", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Verglichen mit Nachbarländern ist die Schweizer Regelung vergleichsweise liberal, weil sie auf einem Opt-out-Modell beruht: Anrufe sind grundsätzlich erlaubt, ausser jemand hat sich aktiv über den Sterneintrag oder durch fehlenden Verzeichniseintrag dagegen ausgesprochen. Andere Rechtsordnungen verlangen für Werbeanrufe teils eine vorherige ausdrückliche Zustimmung, unabhängig vom Verzeichnisstatus. Das macht die eine Regelung nicht grundsätzlich besser als die andere – es bedeutet für ein Schweizer KMU vor allem, dass die Grundmenge an rechtlich zulässigen Kaltakquise-Zielen hierzulande höher liegt. Das macht das Rechenbeispiel von oben noch relevanter: Es gibt schlicht mehr legal anrufbare Nummern, an denen ein automatisiertes System in derselben Zeit mehr potenzielle Fehler produzieren kann.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Was dieser Artikel nicht ist", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Dieser Artikel ordnet die öffentlich zugängliche Rechtslage ein und ist ausdrücklich keine Rechtsberatung im Einzelfall. Für einige Situationen reicht diese Einordnung nicht aus, und eine individuelle Abklärung ist die klügere Investition:", "en": "", "it": "", "fr": "" },
+        { "de": "Wer keinen der folgenden Punkte auf sich zutreffen sieht, kommt mit der Logik dieses Artikels in der Regel weit. Wer unsicher ist, sollte diese Unsicherheit nicht durch mehr Automatisierung überdecken, sondern durch eine kurze Abklärung auflösen.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Gekaufte oder extern beschaffte Kontaktlisten, bei denen Herkunft und Rechtsgrund der behaupteten Kundenbeziehung nicht lückenlos dokumentiert sind.", "en": "", "it": "", "fr": "" },
+        { "de": "Grenzüberschreitende Kampagnen, bei denen Nummern aus dem Ausland angerufen werden oder ein ausländischer Anbieter im Auftrag eines Schweizer Unternehmens wählt – hier greifen zusätzlich zur Schweizer Regelung unter Umständen ausländische Vorschriften.", "en": "", "it": "", "fr": "" },
+        { "de": "B2B-Kaltakquise an Geschäftsnummern, wo die Grenzen teils anders verlaufen als bei Privatnummern und die eigene Einschätzung schnell zu optimistisch ausfällt.", "en": "", "it": "", "fr": "" },
+        { "de": "Jede Situation, in der eine Rückfrage kommt, ob die Nummer tatsächlich zu Recht angerufen wurde, und die Antwort nicht sofort und klar «ja» lautet.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Die kurze Formel, wenn's schnell gehen muss", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Bevor Sie ein KI-System für Outbound-Werbeanrufe freischalten, beantworten Sie eine Frage pro Zielliste: Sternmarkiert oder nicht im Verzeichnis eingetragen – und wenn ja, besteht eine dokumentierte Kundenbeziehung? Ist beides mit Nein zu beantworten, ist die Nummer regulär anrufbar. Trifft eine der beiden Bedingungen zu und besteht keine Kundenbeziehung, gehört die Nummer nicht auf die Liste, unabhängig davon, wie überzeugend das Skript ist. Und weil ein automatisiertes System diese Prüfung nicht einmal, sondern zehntausendfach anwendet, gehört die Prüfung selbst vor die Skalierung, nicht danach. Der praktische nächste Schritt: Lassen Sie Ihre aktuelle Zielliste einmal gegen diese drei Fragen laufen, bevor die nächste Kampagne live geht – nicht, nachdem die ersten Beschwerden eingetroffen sind.", "en": "", "it": "", "fr": "" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "Darf ich meine bestehenden Kunden weiterhin anrufen, auch wenn ihre Nummer sternmarkiert ist?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Ja. Die Sterneintrag-Regel in Art. 3 Abs. 1 lit. u UWG schützt gezielt vor Anrufen von Unternehmen ohne bestehende Geschäftsbeziehung. Besteht eine solche Beziehung bereits, etwa durch einen früheren Kauf oder einen laufenden Vertrag, dürfen Sie zu Werbezwecken anrufen, auch wenn die Nummer einen Stern trägt. Je älter oder loser die Beziehung, desto vorsichtiger sollten Sie mit dieser Annahme umgehen.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Was zählt genau als bestehende Kundenbeziehung?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Das Gesetz definiert den Begriff nicht abschliessend. Ein aktueller Vertrag oder ein kürzlicher Kauf gilt unstrittig als Kundenbeziehung; wie weit das bei einem einmaligen, Jahre zurückliegenden Kauf oder einer blossen Newsletter-Anmeldung reicht, ist weniger eindeutig. Dokumentieren Sie im Zweifel, worauf sich Ihre Einschätzung stützt, statt sich allein auf die Annahme zu verlassen.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Ändert sich etwas, wenn nicht ein Mensch, sondern eine KI die Werbeanrufe tätigt?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "An der rechtlichen Grundregel nichts: Art. 3 Abs. 1 lit. u UWG unterscheidet nicht danach, wer wählt. Was sich ändert, ist das praktische Risiko: Ein automatisiertes System kann denselben Fehler bei der Sterneintrag-Prüfung tausendfach wiederholen, bevor er auffällt, und ein robotisch wirkender Anruf wird eher gemeldet als derselbe Inhalt von einer Person.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Was, wenn meine Kontaktliste von einem externen Anbieter stammt?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Dann tragen Sie trotzdem die Verantwortung dafür, dass jede Nummer auf der Liste die Sterneintrag-Prüfung besteht oder eine echte Kundenbeziehung vorliegt. Eine gekaufte oder extern zusammengestellte Liste ohne dokumentierte Herkunft ist im Streitfall kein Nachweis – lassen Sie sich die Grundlage jeder Liste schriftlich bestätigen, bevor Sie sie verwenden.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Muss sich die KI am Telefon als KI zu erkennen geben, wenn sie einen Werbeanruf tätigt?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Das ist eine separate Transparenzfrage, die unabhängig davon gilt, ob der Anruf ein- oder ausgehend ist – dazu ordnet unser Artikel zur Begrüssungstransparenz die Rechtslage ein. Bei einem Werbeanruf kommt hinzu, dass ein erkennbar synthetischer, unpersönlicher Anruf ohnehin eher als Belästigung wahrgenommen wird, unabhängig von der reinen Kennzeichnungsfrage.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Was passiert konkret, wenn ich trotzdem eine sternmarkierte Nummer anrufe?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nichts automatisch – ein Verstoss gegen Art. 3 Abs. 1 lit. u UWG wird nur auf Antrag verfolgt, also wenn sich jemand beschwert. SECO nimmt genau solche Beschwerden entgegen und kann sie bei ausreichender Grundlage an die zuständige kantonale Strafverfolgung weiterleiten; vorsätzliche Verstösse sind nach Art. 23 UWG mit Freiheitsstrafe bis zu drei Jahren oder Geldstrafe bedroht. In der Praxis kommt der Reputationsschaden oft schneller als ein Verfahren.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Reicht es, während des Anrufs eine Opt-out-Möglichkeit anzubieten?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Ein Opt-out während des Gesprächs ist guter Stil und verhindert weitere Anrufe an dieselbe Person – es macht einen unzulässigen Erstanruf an eine sternmarkierte Nummer ohne bestehende Kundenbeziehung aber nicht nachträglich zulässig. Die Prüfung gehört vor den Anruf, nicht als Reaktion danach.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Gilt diese Regel auch für Werbe-SMS oder E-Mail-Marketing?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein, dieser Artikel behandelt ausschliesslich Telefonanrufe. Massenwerbung per SMS oder E-Mail unterliegt einer eigenen Vorschrift, Art. 3 Abs. 1 lit. o UWG, mit eigenen Anforderungen an Einwilligung und Abmeldemöglichkeit – ein eigenes Thema, das hier bewusst nicht vertieft wird.", "en": "", "it": "", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "UWG",
+    "Art. 3 Abs. 1 lit. u UWG",
+    "Art. 23 UWG",
+    "Sterneintrag",
+    "Antragsdelikt",
+    "SECO",
+    "Bestehende Kundenbeziehung",
+    "Outbound-Werbeanruf",
+    "Opt-out",
+    "Skalierungsrisiko",
+    "Kaltakquise",
+    "Art. 3 Abs. 1 lit. o UWG"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "SECO – Unerbetene Werbeanrufe (Zugriff 29. Juli 2026)",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://www.seco.admin.ch/seco/de/home/Werbe_Geschaeftsmethoden/Unlauterer_Wettbewerb/Unerbetene_Werbeanrufe.html"
+    },
+    {
+      "label": {
+        "de": "SECO – Beschwerde wegen unerbetener Werbeanrufe (Zugriff 29. Juli 2026)",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://www.seco.admin.ch/seco/de/home/Werbe_Geschaeftsmethoden/Unlauterer_Wettbewerb/Beschwerde_melden/Antwort_beschwerdeformular.html"
+    },
+    {
+      "label": {
+        "de": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG, SR 241), Art. 3 und 23 – Fedlex (Zugriff 29. Juli 2026)",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/de"
+    }
+  ]
+}

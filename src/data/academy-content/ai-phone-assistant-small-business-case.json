@@ -1,0 +1,277 @@
+{
+  "id": "ai-phone-assistant-small-business-case",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["de"],
+  "slug": {
+    "de": "ki-telefonassistent-lohnt-sich-fuer-kmu",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["what-is-an-ai-phone-assistant", "swiss-ai-phone-assistant-provider-comparison"],
+  "searchIntent": "commercial-investigation",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "Lohnt sich ein KI-Telefonassistent für KMU? | Weissmann AI",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "Break-Even statt Bauchgefühl: Mit Ihren eigenen Zahlen berechnen, ob ein KI-Telefonassistent für Ihr KMU gegen CHF 350/Monat lohnt – und wann eine Combox reicht.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "KI-Agenten, Automatisierung & Voice",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "Lohnt sich ein KI-Telefonassistent für kleine KMU und Einzelfirmen?",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "Ob sich ein bezahlter KI-Telefonassistent für einen kleinen Betrieb lohnt, entscheidet nicht die Firmengrösse, sondern drei eigene Zahlen: die Anrufe pro Woche, der Anteil davon, der heute verpasst wird, und der Wert eines geretteten Anrufs für Ihr Geschäft. Für den letzten Punkt gibt es keinen seriösen Schweizer Durchschnittswert – er hängt zu stark von Branche und Auftragswert ab, deshalb rechnet dieser Artikel mit Ihrer eigenen Zahl, nicht mit einer Schätzung von uns. Beim Starter-Paket (CHF 350 im Monat, keine Setup-Gebühr, keine Mindestlaufzeit) lohnt sich die Investition rechnerisch, sobald der monatliche Wert geretteter Anrufe diesen Betrag übersteigt. Für viele sehr kleine Betriebe reicht eine gut besprochene Combox völlig aus.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "Zwei kleine Betriebe, dieselbe Anrufmenge, zwei entgegengesetzte Antworten", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Ein Elektro-Einzelunternehmer und ein kleiner Coiffeursalon bekommen beide rund zwanzig Anrufe pro Woche. Beide verpassen schätzungsweise jeden dritten davon, weil der eine auf der Baustelle steckt und die andere gerade eine Kundin unter der Schere hat. Zahlenmässig sind die beiden Betriebe fast identisch. Trotzdem lautet die ehrliche Antwort auf «lohnt sich ein KI-Telefonassistent» für den einen ziemlich klar Ja und für den anderen eher Nein. Der Unterschied liegt nicht in der Anrufmenge, sondern in dem, was am anderen Ende der Leitung auf dem Spiel steht: Ein verpasster Anruf beim Elektriker ist oft ein Auftrag im drei- oder vierstelligen Bereich, ein verpasster Anruf beim Coiffeur ist meistens eine Terminverschiebung um einen Tag.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Dieses Beispiel ist erfunden, aber die Logik dahinter nicht: Wer «lohnt sich das für mein KMU» fragt, stellt implizit die falsche Frage. Die richtige Frage lautet: Was ist bei mir konkret ein verpasster Anruf wert, und wie oft passiert das? Dieser Artikel beantwortet das nicht pauschal – das kann seriös niemand –, sondern zeigt die Rechnung, mit der Sie selbst zu einer belastbaren Antwort für Ihren eigenen Betrieb kommen.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Die drei Zahlen, die zählen – und die eine, die es nicht gibt", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Ob sich CHF 350 im Monat lohnen, hängt an genau drei Grössen. Erstens: wie viele Anrufe Ihr Geschäft pro Woche überhaupt erhält. Zweitens: welcher Anteil davon heute unbeantwortet bleibt – weil besetzt ist, weil gerade niemand abnehmen kann, oder weil es ausserhalb der Öffnungszeiten war. Drittens: was ein einzelner geretteter Anruf für Sie im Schnitt wert ist – der durchschnittliche Auftrags- oder Bestellwert multipliziert mit der Wahrscheinlichkeit, dass aus einem Rückruf tatsächlich ein Geschäft wird.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "An dieser dritten Zahl scheitern die meisten Online-Rechner zu diesem Thema: Sie unterstellen einen pauschalen Wert pro verpasstem Anruf, oft irgendwo zwischen CHF 50 und mehreren hundert Franken, ohne erkennbare Quelle. Es gibt keinen seriösen Schweizer Durchschnittswert für den Wert eines verpassten Anrufs – er hängt zu stark von Ihrer Branche und Ihrem durchschnittlichen Auftragswert ab, deshalb rechnen dieser Artikel und der dazugehörige Rechner mit Ihrer eigenen Zahl, nicht mit unserer Vermutung. Ein Treuhandbüro, ein Umzugsunternehmen und ein Take-away-Betrieb haben nichts gemeinsam ausser der Tatsache, dass bei allen dreien irgendwann das Telefon klingelt.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Die Rechnung in drei Schritten", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Die Break-Even-Logik ist bewusst einfach gehalten, damit Sie sie im Kopf oder auf einem Bierdeckel nachvollziehen können, bevor Sie dem Rechner überhaupt eine Zahl anvertrauen.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Schritt 1 – Anrufe pro Monat: Anrufe pro Woche × 4,33 (durchschnittliche Wochen pro Monat) = Anrufe pro Monat.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Schritt 2 – Geretteter Wert pro Monat: Anrufe pro Monat × Ihr geschätzter Anteil heute verpasster Anrufe (in %) × Ihr geschätzter Wert eines geretteten Anrufs (in CHF) = monatlicher Nutzen in CHF.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Schritt 3 – Vergleich: monatlicher Nutzen aus Schritt 2 minus CHF 350 (Starter-Paket, keine Setup-Gebühr) = Ihr monatliches Plus oder Minus. Setzt man ein durchschnittliches Gespräch mit geschätzten drei bis vier Minuten an (Ihr eigener Wert kann abweichen), entsprechen die im Starter-Paket enthaltenen 1'500 Minuten rund 400 bis 500 Anrufen im Monat – für die in diesem Artikel behandelte Betriebsgrösse in aller Regel ein grosser Puffer, den Sie im Einzelfall aber selbst gegenprüfen sollten. Darüber hinaus kostet jede zusätzliche Minute CHF 0.30.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Wichtig: Nicht jeder Anruf, den der KI-Assistent künftig entgegennimmt, wird automatisch zum Geschäft. Der Assistent sorgt dafür, dass der Anruf überhaupt beantwortet wird – ob daraus ein Auftrag wird, hängt weiterhin von Ihrem Angebot ab. Rechnen Sie deshalb mit einem Wert pro Anruf, der diese Umwandlungswahrscheinlichkeit bereits einpreist, nicht mit dem vollen Auftragswert.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Ein Rechenbeispiel, damit die Formel nicht abstrakt bleibt", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Auch hier gilt: erfundene, aber realistische Zahlen zur Illustration – keine Schweizer Durchschnittswerte, sondern ein Rechenweg, den Sie mit Ihren eigenen Zahlen wiederholen. Eine Physiotherapiepraxis mit zwei Behandlungsräumen erhält rund 35 Anrufe pro Woche, hauptsächlich während der Behandlungszeiten, wenn niemand am Empfang frei ist. Geschätzt bleiben 25 Prozent davon unbeantwortet. Die Praxisinhaberin schätzt: Von zehn zurückgerufenen Interessent:innen werden im Schnitt sechs zu einer ersten Sitzung, mit einem geschätzten Wert von rund CHF 90 pro neuer Patientin oder neuem Patienten inklusive der ersten Folgetermine. Der geschätzte Wert eines geretteten Anrufs liegt damit bei rund CHF 54 (60 % von CHF 90).",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Anrufe pro Monat: 35 × 4,33 ≈ 152. Verpasste Anrufe pro Monat: 152 × 25 % ≈ 38. Geretteter Wert pro Monat: 38 × CHF 54 ≈ CHF 2'052. Abzüglich CHF 350 Starter-Paket bleibt ein rechnerisches Plus von rund CHF 1'700 im Monat. Selbst in einem deutlich vorsichtigeren Szenario, in dem der Assistent nur die Hälfte dieses Werts tatsächlich einlöst, liegt die Praxis mit rund CHF 675 im Monat klar im Plus. Das ist der Sinn eines Rechenbeispiels: nicht die eine richtige Zahl zu liefern, sondern zu zeigen, wie robust – oder eben nicht robust – eine Entscheidung gegenüber vorsichtigeren Annahmen ist.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Wann eine einfache Combox völlig ausreicht", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Nicht jeder Betrieb sollte hier aufhören zu lesen und gleich bestellen. Es gibt reale, häufige Fälle, in denen eine gut besprochene Combox mit klarer Rückrufzusage ausreicht und CHF 350 im Monat sich schlicht nicht amortisieren.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Sehr wenige Anrufe pro Woche: Bei einem kleinen Anrufvolumen erreicht selbst eine hohe Verpasst-Quote und ein hoher Wert pro Anruf CHF 350 im Monat oft nicht – prüfen Sie das mit Ihren eigenen Zahlen im Rechner, statt es zu vermuten.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Niedriger Wert pro Kontakt: Wenn ein typischer Anruf eine Auskunft ist, die auch eine Stunde später noch dieselbe Antwort hat – etwa Öffnungszeiten oder ob ein Artikel vorrätig ist –, bringt eine schnellere Antwort selten zusätzlichen Umsatz.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Der Inhaber oder die Inhaberin nimmt ohnehin fast immer ab: Wenn die tatsächliche Verpasst-Quote nachweislich niedrig ist, gibt es rechnerisch wenig zu retten, unabhängig vom Wert pro Anruf.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Ausschliesslich planbare Terminvereinbarung ohne Dringlichkeit: Wer sowieso nur per E-Mail oder Online-Formular bucht und das Telefon kaum nutzt, löst mit einem KI-Assistenten ein Problem, das gar nicht besteht.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Verkauf ausschliesslich über Ausschreibung oder Rahmenvertrag: In Konstellationen, in denen ein Rückruf so gut wie nie zu einem eigenständigen Auftrag führt, gibt es strukturell keinen Wert pro Anruf, den eine schnellere Antwort erhöhen könnte.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Saisonalität: Wenn der Anruf-Ansturm nur zehn Wochen im Jahr da ist", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Eine Bergbeiz mit Betrieb von Dezember bis April, eine Eventfirma mit Spitzenzeit im Sommer oder ein Treuhandbüro in der Steuersaison haben ein gemeinsames Problem: Der Anrufdruck ist real, aber nur während eines Bruchteils des Jahres. Ein Abo für CHF 350 pro Monat über zwölf Monate zu rechnen, obwohl nur wenige Wochen davon tatsächlich anrufintensiv sind, verzerrt die Rechnung – die Kosten der ruhigen Monate müssten dann von den wenigen intensiven Wochen mitgetragen werden.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Für genau diese Situation eignet sich eher der einmalige Starter-Test für CHF 350, ohne laufendes Abonnement und ohne automatische Verlängerung: Sie konfigurieren den Assistenten für Ihre Spitzensaison, testen ihn dort, wo der Bedarf tatsächlich besteht, und entscheiden danach in Ruhe, ob ein Wechsel auf ein laufendes Monatspaket – nur für die Saison oder ganzjährig – für Sie Sinn ergibt. Das ist keine Werbeaussage, sondern schlicht die Konsequenz aus der Break-Even-Rechnung: Wenn der Nutzen nur in einem Zeitfenster entsteht, sollten auch die Kosten möglichst nur dort anfallen.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Die Unterbrechungskosten, die in keiner Tabelle stehen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Die Break-Even-Rechnung in Schritt 2 erfasst nur den Wert direkt verpasster Anrufe. Sie erfasst nicht, was es kostet, wenn Sie mitten in einer Beratung, unter dem Auto oder in der Buchhaltung sitzen und das Telefon trotzdem klingelt – und Sie abnehmen, obwohl es Sie gerade eine Konzentration kostet, die Sie danach erst wieder aufbauen müssen. Dieser Unterbrechungswert lässt sich nicht seriös als schweizweite Zahl ausdrücken, weil er von der Art Ihrer Arbeit abhängt: Für jemanden, der gerade eine Steuererklärung prüft, ist eine Unterbrechung etwas anderes als für jemanden, der ohnehin zwischen zwei Terminen wartet.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Wenn Unterbrechungen bei Ihnen ein echtes Thema sind, gehört dieser Effekt in Ihre eigene Schätzung des Werts pro Anruf hinein – nicht als separate erfundene Kennzahl, sondern indem Sie bei der Schätzung bewusst grosszügiger nach oben runden, wenn Anrufe Sie regelmässig aus konzentrierter Arbeit reissen. Der Rechner am Ende dieses Artikels bildet das nicht automatisch ab, weil jede automatische Annahme hier für Ihren Betrieb falsch wäre – er überlässt Ihnen diese Anpassung bewusst.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Warum eine Einzelfirma manchmal schneller im Plus ist als ein grösseres Team", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Eine verbreitete Annahme lautet: Ein KI-Telefonassistent lohne sich erst ab einer gewissen Firmengrösse, weil erst dann genug Anrufvolumen zusammenkomme. Das stimmt in der Tendenz, übersieht aber einen Gegeneffekt. In einem grösseren Team mit Empfang oder mehreren Personen, die abwechselnd ans Telefon gehen, ist die Verpasst-Quote oft schon niedrig – es gibt praktisch immer jemanden, der abnehmen kann. Genau dieser Effekt drückt den rechnerischen Nutzen eines KI-Assistenten, selbst bei hohem Gesamtanrufvolumen.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Bei einer Einzelfirma ist es oft umgekehrt: Das Anrufvolumen ist kleiner, aber die Verpasst-Quote ist strukturell hoch, weil es niemanden gibt, der einspringt, wenn der Inhaber oder die Inhaberin gerade auf der Leiter steht oder am Steuer sitzt. Eine hohe Verpasst-Quote bei einem hohen Wert pro Anruf – etwa im Handwerk oder bei individuellen Dienstleistungen – kann eine kleinere Anrufmenge locker aufwiegen. Die Firmengrösse allein sagt also wenig darüber aus, wer profitiert; das Zusammenspiel aus Verpasst-Quote und Wert pro Anruf schon.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Was schiefgehen kann – und warum das Risiko hier kleiner ist als bei den meisten Anschaffungen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Der grösste Rechenfehler bei diesem Thema ist nicht ein zu tiefer, sondern ein zu optimistischer Wert pro Anruf – aus Wunschdenken heraus eine runde, gefällige Zahl einzusetzen, statt den eigenen typischen Auftragswert realistisch mit der eigenen Rückruf-Erfolgsquote zu multiplizieren. Rechnen Sie im Zweifel mit dem vorsichtigeren der beiden möglichen Werte, nicht mit dem optimistischen.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Zu hoch geschätzter Wert pro Anruf führt zu einer Entscheidung, die sich in der Praxis nicht bestätigt – prüfen Sie nach den ersten vier bis sechs Wochen die tatsächlichen Zahlen aus dem Reporting, nicht nur die Schätzung vom Anfang.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Zu tief geschätzte Verpasst-Quote: Wer sich selbst für erreichbarer hält, als er oder sie tatsächlich ist, unterschätzt oft, wie viele Anrufe während Kundengesprächen, auf der Baustelle oder ausserhalb der Öffnungszeiten tatsächlich verloren gehen.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Das grössere finanzielle Risiko fehlt hier weitgehend: Das Starter-Paket hat keine Setup-Gebühr und keine Mindestvertragslaufzeit – wer nach einem Monat merkt, dass die Rechnung nicht aufgeht, kündigt und zahlt für diesen einen Monat, nicht für ein Jahr. Das unterscheidet diese Entscheidung von den meisten anderen KMU-Anschaffungen, bei denen ein Fehlkauf über Monate weiterläuft.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Der Rechner: Ihre Zahlen statt einer Schätzung von uns", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Der Break-Even-Rechner am Ende dieses Artikels übernimmt genau die drei Schritte von oben – nichts mehr und nichts weniger. Sie tragen Ihre Anrufe pro Woche, Ihre geschätzte Verpasst-Quote und Ihren eigenen geschätzten Wert pro gerettetem Anruf ein; der Rechner zeigt Ihnen den monatlichen Nutzen, vergleicht ihn mit CHF 350 und zeigt zusätzlich, wie schnell sich der einmalige Starter-Test für CHF 350 amortisieren würde. Es gibt keinen voreingestellten Schweizer Durchschnittswert, den Sie nur bestätigen müssten – wenn Sie Ihre eigene Zahl nicht kennen, zeigt der Rechner Ihnen stattdessen anhand des Rechenbeispiels aus diesem Artikel, wie Sie sie in wenigen Minuten aus Ihrem eigenen Auftragswert und Ihrer eigenen Einschätzung der Rückruf-Erfolgsquote herleiten.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Die Entscheidung in einem Satz", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Wenn der monatliche Wert Ihrer heute verpassten Anrufe CHF 350 übersteigt, lohnt sich ein KI-Telefonassistent rechnerisch – prüfen Sie das mit Ihren eigenen Zahlen, nicht mit einer fremden Schätzung. Bleibt er darunter, ist eine gut besprochene Combox keine Notlösung, sondern die richtige Antwort für Ihren Betrieb, und das darf ruhig so bleiben, bis sich die Zahlen ändern.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "Was zählt als «verpasster Anruf» in dieser Rechnung?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Jeder Anruf, der nicht innert weniger Sekunden von einem Menschen beantwortet wird – egal ob wegen Besetztzeichen, weil niemand in Reichweite des Telefons war, oder weil es ausserhalb der Öffnungszeiten war. Wenn Sie diese Zahl nicht genau kennen, reicht für den Rechner eine ehrliche Schätzung aus den letzten Wochen; wichtiger als Präzision ist, dass Sie eher vorsichtig als optimistisch schätzen.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Ich kenne meine Konversionsrate von Rückruf zu Auftrag nicht – wie schätze ich den Wert eines Anrufs?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Schauen Sie in Ihre letzten zehn bis zwanzig echten Rückrufe und zählen Sie nach, wie viele davon zu einem Auftrag wurden – das ist die einzige Zahl, die für Ihr Geschäft zählt, nicht ein allgemeiner Branchenwert. Falls Sie diese Historie noch nicht haben, schätzen Sie bewusst vorsichtig: Multiplizieren Sie Ihren typischen Auftragswert mit einer Zahl, bei der Sie im Zweifelsfall selbst sagen würden «eher zu tief als zu hoch». Passen Sie die Schätzung an, sobald Sie nach ein paar Wochen echte Zahlen aus dem Assistenten-Reporting haben.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Was, wenn ich nur saisonal viele Anrufe habe – lohnt sich das trotzdem?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Oft ja, aber eher über den einmaligen Starter-Test für CHF 350 als über ein Jahresabo: Sie testen den Assistenten gezielt in Ihrer Spitzensaison und wenden die Break-Even-Formel nur auf diesen Zeitraum an, nicht auf zwölf Monate. Siehe dazu den Abschnitt zur Saisonalität weiter oben – dort steht die Überlegung im Detail.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Lohnt sich das auch, wenn ich sowieso fast immer selbst abnehme?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Rechnerisch eher nicht: Wenn Ihre tatsächliche Verpasst-Quote schon sehr niedrig ist, bleibt wenig übrig, das ein KI-Assistent noch retten könnte, egal wie hoch der Wert pro Anruf ist. Prüfen Sie das ehrlich anhand der letzten Wochen, nicht anhand des Gefühls – einige Betriebsinhaber:innen überschätzen ihre eigene Erreichbarkeit.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Was passiert, wenn ich nach ein paar Monaten merke, dass sich die Rechnung nicht bestätigt?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Das Starter-Paket hat keine Mindestvertragslaufzeit und keine Setup-Gebühr – Sie kündigen und zahlen für den letzten Monat, nicht für ein Jahr im Voraus. Genau deshalb ist das finanzielle Risiko bei dieser Entscheidung kleiner als bei den meisten anderen KMU-Anschaffungen.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Zählt auch die Zeit, die mich das Telefonieren an sich kostet, nicht nur verpasste Anrufe?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Das ist der in diesem Artikel beschriebene Unterbrechungswert – er lässt sich nicht seriös als allgemeine Zahl angeben, weil er von der Art Ihrer Arbeit abhängt. Wenn Anrufe Sie regelmässig aus konzentrierter Arbeit reissen, sollten Sie das durch eine grosszügigere eigene Schätzung des Werts pro Anruf abbilden, nicht durch eine zusätzliche erfundene Kennzahl.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Brauche ich für eine kleine Einzelfirma das teurere Premium-Paket statt Starter?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "In den allermeisten Fällen nicht. Premium (CHF 590 im Monat, zwölf Monate Mindestlaufzeit) lohnt sich vor allem bei tieferer Systemintegration, mehreren Sprachen oder einem Anrufvolumen deutlich über 1'500 Minuten im Monat. Für die in diesem Artikel beschriebene Break-Even-Frage einer kleinen Firma ist das Starter-Paket der richtige Vergleichswert.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Wie unterscheidet sich der einmalige Starter-Test vom normalen Monatsabo?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Der Starter-Test kostet einmalig CHF 350 ohne laufendes Abonnement und ohne automatische Verlängerung – ideal, um die eigene Break-Even-Rechnung an echten Zahlen zu überprüfen, bevor Sie sich für oder gegen ein Monatspaket entscheiden. Das reguläre Starter-Paket kostet ebenfalls CHF 350, aber pro Monat, und läuft laufend weiter, bis Sie kündigen.", "en": "", "it": "", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "KI-Telefonassistent",
+    "Break-Even-Rechnung",
+    "verpasster Anruf",
+    "Combox",
+    "Einzelfirma",
+    "KMU",
+    "Saisonalität",
+    "Starter-Paket",
+    "Anrufvolumen"
+  ],
+  "sources": [
+    { "label": { "de": "Weissmann AI – Preise und Leistungsumfang KI-Telefonassistent Starter/Trial (src/data/pricing.ts, first-party), Stand 29. Juli 2026", "en": "", "it": "", "fr": "" }, "href": "https://weissmann.ai/preise/" }
+  ],
+  "cta": {
+    "label": { "de": "Kostenloses Erstgespräch: Wir rechnen Ihren Break-Even gemeinsam durch", "en": "", "it": "", "fr": "" },
+    "href": "/kontakt/"
+  }
+}

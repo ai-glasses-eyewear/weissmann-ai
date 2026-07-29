@@ -1,0 +1,117 @@
+{
+  "artifactId": "ai-phone-assistant-vs-ivr-caller-journey",
+  "articleId": "ai-phone-assistant-vs-ivr-caller-journey",
+  "language": "de",
+  "title": "Anruf-Simulator: Telefonmenü gegen KI-Telefonassistent",
+  "note": "Spec/data file for the artifact described in ARTIFACT-BRIEF.md. This is structured content only — no HTML/JS is implemented here. All dialogue lines and timings are constructed illustrations of typical interaction patterns, never a transcript or measurement of a real call, and never attributed to Weissmann or any named competitor as a measured result. Scenario 1 and 2 mirror the two worked examples in the companion article; Scenario 3 is new to the artifact and deliberately shows a case where the IVR path performs competitively, so the tool does not always resolve in favour of the AI path.",
+
+  "metrics": {
+    "turns": "Number of distinct actions the caller must take (a keypress, a spoken sentence, a spoken confirmation). Counted identically on both paths so they are comparable.",
+    "seconds": "Cumulative elapsed time from call start to the point the caller's task is either resolved or handed to a human queue.",
+    "corrections": "Number of times the caller had to redo or clarify something because the system rejected or misheard the first attempt.",
+    "outcome": "Whether the call ends with the task actually completed, or only routed onward to a human who still has to do the work."
+  },
+
+  "scenarios": [
+    {
+      "id": "termin-verschieben-vertippte-kundennummer",
+      "label": "Termin verschieben, vertippte Kundennummer",
+      "shortNote": "Ein Kunde einer Autowerkstatt möchte einen Ölwechsel-Termin von 10:00 auf 15:00 Uhr verschieben und vertippt sich bei der sechsstelligen Kundennummer.",
+      "business": "Autowerkstatt",
+      "ivrPath": {
+        "summary": { "turns": 7, "seconds": 88, "corrections": 1, "outcome": "erledigt, aber ohne Bestätigung" },
+        "steps": [
+          { "t": "0:00", "speaker": "Ansage", "line": "Für Terminvereinbarung drücken Sie die 1, für Terminänderung die 2, für den Pannendienst die 3, für alle übrigen Anliegen die 0.", "note": "Vier Optionen, vollständig vorgelesen, bevor der Anrufer reagieren kann." },
+          { "t": "0:12", "speaker": "Anrufer", "line": "(Taste 2)", "turn": 1 },
+          { "t": "0:13", "speaker": "Ansage", "line": "Bitte geben Sie Ihre sechsstellige Kundennummer ein, gefolgt von der Rautetaste." },
+          { "t": "0:18", "speaker": "Anrufer", "line": "(tippt Kundennummer, vertauscht zwei Ziffern)", "turn": 2 },
+          { "t": "0:26", "speaker": "Ansage", "line": "Diese Kundennummer ist uns nicht bekannt. Bitte versuchen Sie es erneut.", "correction": true, "note": "Keine Rückfrage, kein Vorschlag einer ähnlichen Nummer." },
+          { "t": "0:33", "speaker": "Anrufer", "line": "(tippt Kundennummer erneut, diesmal korrekt)", "turn": 3, "correction": true },
+          { "t": "0:43", "speaker": "Ansage", "line": "Ihr nächster Termin: Donnerstag, 10:00 Uhr, Ölwechsel. Zum Verschieben die 1, zum Stornieren die 2." },
+          { "t": "0:53", "speaker": "Anrufer", "line": "(Taste 1)", "turn": 4 },
+          { "t": "0:53", "speaker": "Ansage", "line": "Bitte geben Sie das neue Datum ein, vierstellig, Tag und Monat." },
+          { "t": "0:59", "speaker": "Anrufer", "line": "(gibt Datum ein)", "turn": 5 },
+          { "t": "1:05", "speaker": "Ansage", "line": "Bitte geben Sie die gewünschte Uhrzeit ein, vierstellig, zum Beispiel 1400 für 14 Uhr." },
+          { "t": "1:11", "speaker": "Anrufer", "line": "(gibt 1500 ein)", "turn": 6 },
+          { "t": "1:15", "speaker": "Ansage", "line": "Donnerstag, 15:00 Uhr. Zur Bestätigung die 1." },
+          { "t": "1:23", "speaker": "Anrufer", "line": "(Taste 1)", "turn": 7 },
+          { "t": "1:23", "speaker": "Ansage", "line": "Ihr Termin wurde verschoben. Auf Wiederhören.", "note": "Keine SMS- oder E-Mail-Bestätigung." }
+        ]
+      },
+      "aiPath": {
+        "summary": { "turns": 4, "seconds": 34, "corrections": 0, "outcome": "erledigt mit SMS-Bestätigung" },
+        "steps": [
+          { "t": "0:00", "speaker": "Assistent", "line": "Guten Tag, hier spricht der digitale Assistent der Autowerkstatt. Wie kann ich Ihnen helfen?" },
+          { "t": "0:03", "speaker": "Anrufer", "line": "Guten Tag, ich habe am Donnerstag einen Termin um zehn Uhr für den Ölwechsel, den möchte ich auf drei Uhr nachmittags verschieben. Meine Kundennummer ist glaub 118429 – oder 114829, ich bin mir grad nicht ganz sicher.", "turn": 1 },
+          { "t": "0:12", "speaker": "Assistent", "line": "Kein Problem. Unter 114829 finde ich einen Termin auf Ihren Namen, Donnerstag 10:00 Uhr, Ölwechsel – meinen Sie diesen?", "note": "Der Assistent gleicht die unsichere Zifferneingabe selbst mit dem wahrscheinlichsten Treffer ab, statt sie abzulehnen." },
+          { "t": "0:18", "speaker": "Anrufer", "line": "Ja, genau der.", "turn": 2 },
+          { "t": "0:20", "speaker": "Assistent", "line": "Ich verschiebe ihn auf Donnerstag, 15:00 Uhr. Passt das für Sie?" },
+          { "t": "0:24", "speaker": "Anrufer", "line": "Perfekt, danke.", "turn": 3 },
+          { "t": "0:26", "speaker": "Assistent", "line": "Erledigt. Sie erhalten in Kürze eine SMS-Bestätigung. Sonst noch etwas?" },
+          { "t": "0:30", "speaker": "Anrufer", "line": "Nein, das wär's.", "turn": 4 },
+          { "t": "0:32", "speaker": "Assistent", "line": "Gerne, einen schönen Tag noch." }
+        ]
+      }
+    },
+    {
+      "id": "rueckgabe-falsches-stichwort",
+      "label": "Rückgabe, falsches Stichwort",
+      "shortNote": "Eine ältere Kundin mit Hörgerät möchte einen Wasserkocher zurückgeben, weil er ihr nicht gefällt — sie kennt weder «Widerruf» noch die Kategorie-Logik des Geschäfts.",
+      "business": "Haushaltsgeräte-Fachgeschäft",
+      "ivrPath": {
+        "summary": { "turns": 4, "seconds": 71, "corrections": 2, "outcome": "nur in Warteschlange, nichts gelöst" },
+        "steps": [
+          { "t": "0:00", "speaker": "Ansage", "line": "Für Reklamationen zu einer bestehenden Bestellung die 1, für Rückgaben und Widerruf die 2, für Ersatzteile die 3, für alle übrigen Anfragen die 0." },
+          { "t": "0:14", "speaker": "Anrufer", "line": "(Taste 1 — Reklamation, falscher Ast)", "turn": 1, "note": "Sie zögert und wählt das zuerst genannte Wort, das ihr vage passend klingt." },
+          { "t": "0:20", "speaker": "Ansage", "line": "Bitte nennen Sie die Bestellnummer, gefolgt von der Rautetaste." },
+          { "t": "0:25", "speaker": "Anrufer", "line": "(Taste 0, in der Hoffnung auf einen Menschen)", "turn": 2, "correction": true },
+          { "t": "0:28", "speaker": "Ansage", "line": "Sie haben keine gültige Eingabe gemacht. Ich verbinde Sie zurück zum Hauptmenü.", "correction": true, "note": "Rücksprung zum Hauptmenü, komplette Ansage läuft erneut." },
+          { "t": "0:34", "speaker": "Ansage", "line": "Für Reklamationen die 1, für Rückgaben und Widerruf die 2, für Ersatzteile die 3, für alle übrigen Anfragen die 0." },
+          { "t": "0:48", "speaker": "Anrufer", "line": "(Taste 2 — Rückgabe und Widerruf)", "turn": 3 },
+          { "t": "0:50", "speaker": "Ansage", "line": "Für einen Widerruf innerhalb der 14-tägigen Frist die 1, für eine Rückgabe aus anderem Grund die 2.", "note": "Sie kennt den Unterschied zwischen den zwei juristischen Begriffen nicht und rät." },
+          { "t": "0:59", "speaker": "Anrufer", "line": "(Taste 2)", "turn": 4 },
+          { "t": "1:01", "speaker": "Ansage", "line": "Bitte bleiben Sie in der Leitung, alle Mitarbeitenden sind derzeit besetzt. Ihre geschätzte Wartezeit beträgt sieben Minuten.", "note": "Nach über einer Minute Menüführung steht noch keine Lösung — nur eine Warteschlange." }
+        ]
+      },
+      "aiPath": {
+        "summary": { "turns": 4, "seconds": 40, "corrections": 0, "outcome": "Rückgabe angelegt, ohne Warteschlange" },
+        "steps": [
+          { "t": "0:00", "speaker": "Assistent", "line": "Guten Tag, hier ist der digitale Assistent. Wie kann ich helfen?" },
+          { "t": "0:03", "speaker": "Anrufer", "line": "Ich habe letzte Woche einen Wasserkocher gekauft, und der gefällt mir einfach nicht, ich möchte ihn zurückgeben.", "turn": 1 },
+          { "t": "0:08", "speaker": "Assistent", "line": "Das ist kein Problem, ein freiwilliger Umtausch ohne Mangel. Haben Sie die Bestellnummer zur Hand, oder darf ich mit Namen und ungefährem Kaufdatum suchen?", "note": "Erkennt aus dem ganzen Satz sofort «Rückgabe», ohne dass die Anruferin dieses Wort benutzt hätte." },
+          { "t": "0:14", "speaker": "Anrufer", "line": "Die Nummer hab ich nicht griffbereit, aber ich heisse Ruth Bieri, letzten Donnerstag gekauft.", "turn": 2 },
+          { "t": "0:18", "speaker": "Assistent", "line": "Gefunden – ein Wasserkocher, gekauft am Donnerstag in der Filiale Bern. Ich lege eine Rückgabe an, Sie haben 14 Tage Zeit, das Gerät zurückzubringen. Möchten Sie es vorbeibringen oder abholen lassen?" },
+          { "t": "0:26", "speaker": "Anrufer", "line": "Vorbeibringen, das schaffe ich noch diese Woche.", "turn": 3 },
+          { "t": "0:29", "speaker": "Assistent", "line": "Perfekt. Da ich keine SMS-fähige Nummer von Ihnen habe, schicke ich Ihnen die Rückgabenummer per Post. Sonst noch etwas?" },
+          { "t": "0:35", "speaker": "Anrufer", "line": "Nein, das reicht, danke vielmal.", "turn": 4 },
+          { "t": "0:38", "speaker": "Assistent", "line": "Gern geschehen, alles Gute." }
+        ]
+      }
+    },
+    {
+      "id": "notdienst-laute-umgebung",
+      "label": "Notdienst-Anruf aus lauter Umgebung",
+      "shortNote": "Ein Sanitär-Notdienst am Wochenende: Rohrbruch im Keller, der Anrufer meldet sich per Freisprechanlage aus dem Auto — hier zeigt sich, dass ein einfaches Telefonmenü der KI in einer akustisch schwierigen, rein binären Situation tatsächlich überlegen sein kann.",
+      "business": "Sanitär-Pikettdienst",
+      "note": "Dieses Szenario ist absichtlich so gebaut, dass der IVR-Pfad gewinnt — der Simulator soll nicht in jedem Fall zugunsten des KI-Assistenten ausfallen.",
+      "ivrPath": {
+        "summary": { "turns": 1, "seconds": 12, "corrections": 0, "outcome": "sofort mit Pikettdienst verbunden" },
+        "steps": [
+          { "t": "0:00", "speaker": "Ansage", "line": "Sanitär-Service. Für einen Notfall ausserhalb der Geschäftszeiten sofort die 1, für alle anderen Anliegen die 2.", "note": "Nur zwei Optionen, in einem Satz vorgelesen." },
+          { "t": "0:08", "speaker": "Anrufer", "line": "(Taste 1)", "turn": 1, "note": "Ein Tastendruck ist unabhängig von Hintergrundlärm immer eindeutig erkennbar." },
+          { "t": "0:09", "speaker": "Ansage", "line": "Sie werden direkt mit dem Pikettdienst verbunden." }
+        ]
+      },
+      "aiPath": {
+        "summary": { "turns": 2, "seconds": 25, "corrections": 1, "outcome": "mit Pikettdienst verbunden, aber langsamer" },
+        "steps": [
+          { "t": "0:00", "speaker": "Assistent", "line": "Guten Tag, hier ist der digitale Assistent des Sanitär-Notdiensts. Wie kann ich helfen?" },
+          { "t": "0:03", "speaker": "Anrufer", "line": "(Motorengeräusch, Wind) Ja hallo, ich hab hier en Rohrbruch im Keller, 's Wasser lauft, ich chas nid stoppe—", "turn": 1, "note": "Spracherkennung erfasst nur Bruchstücke wegen der Freisprechanlage und Umgebungslärm." },
+          { "t": "0:09", "speaker": "Assistent", "line": "Ich habe akustisch nur Teile verstanden — ging es um einen Rohrbruch mit auslaufendem Wasser?", "correction": true, "note": "Rückfrage wegen niedriger Erkennungssicherheit, nicht wegen einer falschen Eingabe des Anrufers." },
+          { "t": "0:14", "speaker": "Anrufer", "line": "Ja genau, Rohrbruch, dringend!", "turn": 2 },
+          { "t": "0:17", "speaker": "Assistent", "line": "Verstanden, das ist ein Notfall. Ich verbinde Sie direkt mit dem Pikettdienst, bleiben Sie dran." }
+        ]
+      }
+    }
+  ]
+}

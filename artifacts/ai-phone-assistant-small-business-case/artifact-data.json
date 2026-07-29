@@ -1,0 +1,100 @@
+{
+  "articleId": "ai-phone-assistant-small-business-case",
+  "language": "de",
+  "dataAsOf": "2026-07-29",
+  "pricing": {
+    "starter": {
+      "id": "phone-starter",
+      "label": "KI-Telefonassistent Starter",
+      "price": 350,
+      "currency": "CHF",
+      "interval": "month",
+      "freeMinutesPerMonth": 1500,
+      "overageRatePerMinute": 0.30,
+      "setupFee": 0,
+      "minimumTermMonths": 0,
+      "source": "src/data/pricing.ts (id: phone-starter), verified 2026-07-29"
+    },
+    "trial": {
+      "id": "phone-starter-trial",
+      "label": "AI Telefonassistent Starter-Test",
+      "price": 350,
+      "currency": "CHF",
+      "interval": "once",
+      "subscription": false,
+      "autoRenewal": false,
+      "source": "src/data/pricing.ts (id: phone-starter-trial), verified 2026-07-29"
+    },
+    "premium": {
+      "id": "phone-premium",
+      "label": "KI-Telefonassistent Premium",
+      "price": 590,
+      "currency": "CHF",
+      "interval": "month",
+      "minimumTermMonths": 12,
+      "note": "Nicht die Vergleichsbasis dieses Rechners — wird nur in FAQ 7 referenziert, für Betriebe, die aus diesem Rahmen herauswachsen."
+    }
+  },
+  "inputs": {
+    "callsPerWeek": {
+      "label": "Anrufe pro Woche",
+      "type": "number",
+      "min": 0,
+      "step": 1,
+      "required": true,
+      "helpText": "Eine grobe Schätzung reicht — aus dem Kopf oder aus den letzten paar Wochen. Zählen Sie alle eingehenden Geschäftsanrufe, nicht nur die, die Sie persönlich entgegennehmen."
+    },
+    "missedCallRate": {
+      "label": "Geschätzter Anteil heute verpasster Anrufe",
+      "type": "percent",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "required": true,
+      "helpText": "Anrufe, die nicht innert weniger Sekunden von einem Menschen beantwortet werden — wegen Besetztzeichen, Abwesenheit oder ausserhalb der Öffnungszeiten. Schätzen Sie eher vorsichtig als optimistisch."
+    },
+    "valuePerRecoveredCall": {
+      "label": "Ihr geschätzter Wert eines geretteten Anrufs (CHF)",
+      "type": "currency",
+      "min": 0,
+      "step": 5,
+      "required": true,
+      "helpText": "Durchschnittlicher Auftrags- oder Bestellwert multipliziert mit Ihrer eigenen, vorsichtigen Einschätzung der Rückruf-Erfolgsquote. Es gibt keinen Schweizer Durchschnittswert hierfür — wenn Sie unsicher sind, öffnen Sie das Rechenbeispiel unten, bevor Sie eine Zahl eintragen."
+    }
+  },
+  "formula": {
+    "weeksPerMonth": 4.33,
+    "starterMonthlyCost": 350,
+    "steps": [
+      { "id": "callsPerMonth", "expression": "callsPerWeek * 4.33", "label": "Anrufe pro Monat" },
+      { "id": "recoveredCallsPerMonth", "expression": "callsPerMonth * (missedCallRate / 100)", "label": "Bisher verpasste, künftig gerettete Anrufe pro Monat" },
+      { "id": "monthlyRecoveredValue", "expression": "recoveredCallsPerMonth * valuePerRecoveredCall", "label": "Monatlicher geretteter Wert (CHF)" },
+      { "id": "monthlyNet", "expression": "monthlyRecoveredValue - 350", "label": "Monatliches Plus oder Minus gegenüber dem Starter-Paket (CHF)" },
+      { "id": "trialWeeksToBreakEven", "expression": "monthlyRecoveredValue > 0 ? (350 / monthlyRecoveredValue) * 4.33 : null", "label": "Wochen, bis der einmalige Starter-Test (CHF 350) sich amortisiert hat" }
+    ],
+    "note": "Alle drei Eingaben stammen vom Nutzer selbst. Der Rechner setzt keinen eigenen Schweizer Durchschnittswert für 'Wert pro Anruf' oder 'Verpasst-Quote' voraus."
+  },
+  "sensitivityCheck": {
+    "description": "Zeigt zusätzlich das Ergebnis bei nur 50% des rechnerisch möglichen geretteten Werts — für den Fall, dass der Assistent nicht jeden theoretisch geretteten Anruf tatsächlich zu einem Rückruf oder Auftrag führt. Entspricht der Vorsichtsprüfung aus dem Artikelabschnitt 'Ein Rechenbeispiel'.",
+    "factor": 0.5
+  },
+  "workedExample": {
+    "label": "Physiotherapiepraxis (erfundenes, aber realistisches Rechenbeispiel — keine Statistik)",
+    "inputs": { "callsPerWeek": 35, "missedCallRate": 25, "valuePerRecoveredCall": 54 },
+    "derivation": "Auftragswert erste Behandlungsserie ca. CHF 90 × geschätzte 60% Rückruf-zu-Termin-Erfolgsquote ≈ CHF 54 Wert pro geretteten Anruf.",
+    "result": { "callsPerMonth": 152, "recoveredCallsPerMonth": 38, "monthlyRecoveredValue": 2052, "monthlyNet": 1702, "monthlyNetAt50PercentEffectiveness": 675 }
+  },
+  "comboxGuidance": [
+    "Sehr wenige Anrufe pro Woche: Selbst eine hohe Verpasst-Quote und ein hoher Wert pro Anruf brauchen bei geringem Anrufvolumen lange, um CHF 350 im Monat zu erreichen.",
+    "Niedriger Wert pro Kontakt: Wenn ein typischer Anruf eine Auskunft ist, die auch später noch dieselbe Antwort hat, bringt eine schnellere Antwort selten zusätzlichen Umsatz.",
+    "Bereits niedrige Verpasst-Quote: Wer ohnehin fast immer abnimmt, hat rechnerisch wenig zu retten.",
+    "Ausschliesslich planbare Terminvereinbarung ohne Dringlichkeit: Wer sowieso nur per E-Mail oder Online-Formular bucht, löst mit einem Telefonassistenten ein Problem, das nicht besteht.",
+    "Verkauf ausschliesslich über Ausschreibung oder Rahmenvertrag: Hier führt ein Rückruf so gut wie nie zu einem eigenständigen Auftrag."
+  ],
+  "unknownValueGuidance": "Wenn 'valuePerRecoveredCall' nicht ausgefüllt werden kann: Zeigen Sie das Rechenbeispiel (workedExample) als Vorlage, keine leere Fehlermeldung. Erklären Sie den Herleitungsweg (Auftragswert × eigene Rückruf-Erfolgsquote) direkt neben dem Eingabefeld.",
+  "interruptionCostNote": "Der Rechner bildet Unterbrechungskosten (Konzentrationsverlust durch das Telefonklingeln selbst) bewusst nicht als eigene Kennzahl ab, weil dafür kein seriöser allgemeiner Wert existiert. Hinweistext im Ergebnisbereich: 'Wenn Anrufe Sie regelmässig aus konzentrierter Arbeit reissen, schätzen Sie Ihren Wert pro Anruf oben bewusst grosszügiger.'",
+  "disclaimer": "Diese Berechnung basiert ausschliesslich auf den von Ihnen eingegebenen Zahlen und den öffentlich einsehbaren Preisen von Weissmann AI (Stand 29. Juli 2026, siehe weissmann.ai/preise/). Sie ersetzt keine betriebswirtschaftliche Beratung und ist keine Umsatz- oder Ertragsgarantie. Alle Berechnungen erfolgen lokal in Ihrem Browser; es werden keine Daten übermittelt oder gespeichert.",
+  "articleUrl": "https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-lohnt-sich-fuer-kmu/",
+  "ctaHref": "/kontakt/",
+  "ctaLabel": "Kostenloses Erstgespräch: Wir rechnen Ihren Break-Even gemeinsam durch"
+}

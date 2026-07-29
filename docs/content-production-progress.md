@@ -50,8 +50,8 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 
 | Batch | IDs | Status |
 |---|---|---|
-| 1 | DE-PHONE-01 – 05 | done (commit pending) |
-| 2 | DE-PHONE-06 – 10 | pending |
+| 1 | DE-PHONE-01 – 05 | done |
+| 2 | DE-PHONE-06 – 10 | done (commit pending) |
 | 3 | EN-PHONE-01 – 05 | pending |
 | 4 | EN-PHONE-06 – 10 | pending |
 | 5 | IT-PHONE-01 – 05 | pending |
@@ -78,5 +78,21 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 **Batch 1 cross-checks:** 0 duplicate titles/slugs/H1s/openings within batch; 0 slug collisions against the other 79 existing academy articles (321 unique locale-slug keys across 84 files); full build = 654 pages; `qa-gates`/`check-links`/`audit`/`audit-duplicates`/`ci-guardrails`/`validate-pricing` all pass with 0 issues; spot-checked rendered HTML confirms self-referencing canonical, honest hreflang (only `de-CH` + `x-default`, no fabricated en/it/fr alternates), correct single H1, and automatic pillar-page linking (no orphans, no manual nav wiring needed). Two titles initially exceeded the 65-char audit limit and were shortened without losing meaning.
 
 **Remaining:** 55 articles / 55 artifact briefs.
+
+### Batch 2 — DE-PHONE-06–10 (complete)
+
+| # | Title | Keyword | Intent | Article file | Artifact files | Uniqueness | Factual | Impl. | Validation |
+|---|---|---|---|---|---|---|---|---|---|
+| DE-PHONE-06 | KI-Telefonassistent: Kalender & CRM verbinden | KI Telefonassistent Kalender Integration | informational | `academy-content/ai-phone-assistant-calendar-crm-integration.json` | `artifacts/ai-phone-assistant-calendar-crm-integration/` | pass — no existing page covers integration architecture; distinct from DE-PHONE-01's per-vendor "Integrationstiefe" line | Microsoft Graph API + Google Calendar API docs verified live; no invented Weissmann-specific integrations (Premium-only, per pricing.ts) | done | build+QA+links+duplicates+guardrails pass |
+| DE-PHONE-07 | KI-Telefonassistent versteht nicht: was dann? | KI Telefonassistent Fehler | informational | `academy-content/ai-phone-assistant-failure-handling.json` | `artifacts/ai-phone-assistant-failure-handling/` | pass — assumes `how-voice-ai-works.json` pipeline, adds original 4-stage escalation framework; self-caught and rewrote one repeated 8-word phrase vs. Batch 1 | Weissmann's own escalation claim (service-content.ts) cited honestly; 4-stage framework labelled as general best practice, not a documented Weissmann spec | done | build+QA+links+duplicates+guardrails pass |
+| DE-PHONE-08 | KI-Telefonassistent vs. IVR: Der Anruf-Vergleich | KI Telefonassistent vs IVR | comparison | `academy-content/ai-phone-assistant-vs-ivr-caller-journey.json` | `artifacts/ai-phone-assistant-vs-ivr-caller-journey/` | pass — highest cannibalization risk in the batch, fully differentiated from `chatbot-vs-voicebot-vs-ivr.json` (measured caller-journey turns/seconds vs. that article's definitions); one scenario intentionally favors IVR | all example calls explicitly labelled as constructed illustrations, no invented studies | done | build+QA+links+duplicates+guardrails pass |
+| DE-PHONE-09 | Lohnt sich ein KI-Telefonassistent für KMU? | KI Telefonassistent KMU | commercial-investigation | `academy-content/ai-phone-assistant-small-business-case.json` | `artifacts/ai-phone-assistant-small-business-case/` | pass — personalized break-even framing, distinct from both the vendor comparison and the category-comparison article | zero invented Swiss wage/interruption-cost statistics — all 3 calculator inputs are reader-supplied; illustrative example numbers explicitly labelled as such; real pricing.ts figures for the cost side | done | build+QA+links+duplicates+guardrails pass |
+| DE-PHONE-10 | KI-Werbeanrufe Schweiz: was ist erlaubt? | KI Werbeanrufe Schweiz | informational | `academy-content/ai-outbound-marketing-calls-switzerland.json` | `artifacts/ai-outbound-marketing-calls-switzerland/` | pass — outbound (calling out) vs. inbound-disclosure (DE-PHONE-03) explicitly distinguished; original "automation multiplies the stakes" thesis, not a restatement of UWG | Art. 3 lit. u / Art. 23 UWG verified via SECO + Fedlex; **caught and corrected an inaccurate "CHF 20,000 fine" claim in the original research brief** — real penalty is imprisonment up to 3 years or a Geldstrafe, Antragsdelikt; the "20,000" figure was actually a historical SECO complaint count, not a fine amount | done | build+QA+links+duplicates+guardrails pass |
+
+**Batch 2 cross-checks:** 0 duplicate titles/slugs/H1s/openings within batch and against Batch 1; 0 slug collisions across all 89 academy-content files (326 unique locale-slug keys); full build = 659 pages; full validator suite (`qa-gates`/`check-links`/`audit`/`audit-duplicates`/`ci-guardrails`/`validate-pricing`) passes with 0 issues, 0 orphans, 0 broken links, 0 near-duplicate content.
+
+**Notable QA finding:** DE-PHONE-10's drafting agent independently fact-checked my supplied research and found it wrong (a fine amount I'd sourced was actually a complaint count) — corrected before publication. This is the kind of factual-verification failure the master prompt's batch-QA step exists to catch; flagging it here as evidence the process works, not just the output.
+
+**Remaining after Batch 2:** 50 articles / 50 artifact briefs (all 10 DE-PHONE complete).
 
 _(Further batches logged the same way as they complete.)_

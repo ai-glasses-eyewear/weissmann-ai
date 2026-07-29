@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Outbound-Anruf-Compliance- und Reputations-Checker",
+    "language": "de",
+    "articleId": "ai-outbound-marketing-calls-switzerland",
+    "canonicalArticleUrl": "https://weissmann.ai/ki-academy/agenten-automatisierung/ki-werbeanrufe-schweiz-erlaubt/",
+    "lastVerified": "2026-07-29",
+    "disclaimer": "Dieses Werkzeug ordnet die Rechtslage anhand von Art. 3 Abs. 1 lit. u und Art. 23 UWG sowie öffentlichen SECO-Quellen ein. Es ist keine Rechtsberatung und ersetzt keine individuelle Abklärung im Einzelfall – insbesondere nicht bei gekauften Kontaktlisten, grenzüberschreitenden Kampagnen oder B2B-Kaltakquise. Stand der Rechtslage: 29. Juli 2026."
+  },
+  "directoryStatusOptions": [
+    { "id": "sternmarkiert", "label": "Sternmarkierte Nummer im Telefonverzeichnis" },
+    { "id": "nicht_gelistet", "label": "Nicht im Verzeichnis eingetragen (z. B. viele Mobilnummern)" },
+    { "id": "gelistet_ohne_stern", "label": "Normal gelistet, kein Sterneintrag" },
+    { "id": "unbekannt", "label": "Verzeichnisstatus nicht geprüft / unbekannt" }
+  ],
+  "customerRelationshipOptions": [
+    { "id": "aktuell", "label": "Aktueller Vertrag oder kürzlicher Kauf" },
+    { "id": "alt_lose", "label": "Liegt lange zurück oder ist lose (z. B. nur Newsletter-Anmeldung)" },
+    { "id": "keine", "label": "Keine Kundenbeziehung – reine Kaltakquise" },
+    { "id": "unbekannt", "label": "Nicht sicher / nicht dokumentiert" }
+  ],
+  "listSourceOptions": [
+    { "id": "eigene_kundenliste", "label": "Eigene, selbst geführte Kundenliste" },
+    { "id": "gekauft_extern", "label": "Gekaufte oder extern zusammengestellte Liste" },
+    { "id": "unbekannt_herkunft", "label": "Herkunft nicht dokumentiert / unbekannt" }
+  ],
+  "decisionTree": [
+    {
+      "id": "existing-strong-relationship",
+      "priority": 1,
+      "when": { "customerRelationship": "aktuell" },
+      "result": {
+        "ruleKey": "allowed_exception",
+        "badge": "Erlaubt – Bestandskundenausnahme greift",
+        "statute": "Art. 3 Abs. 1 lit. u UWG (Ausnahme für bestehende Kundenbeziehung)",
+        "explanation": "Bei einer aktuellen Kundenbeziehung dürfen Sie zu Werbezwecken anrufen, unabhängig vom Verzeichnisstatus der Nummer. Die Sterneintrag-Regel schützt gezielt vor Anrufen von Unternehmen ohne bestehende Geschäftsbeziehung.",
+        "reputationAdvice": "Auch bei einer bestehenden Kundenbeziehung schützt die rechtliche Erlaubnis nicht vor einer schlechten Bewertung, wenn der Anruf unpassend wirkt. Halten Sie die Grundlage der Kundenbeziehung schriftlich fest, falls sie infrage gestellt wird.",
+        "automationSeverity": "low_stakes"
+      }
+    },
+    {
+      "id": "weak-relationship-clear-directory",
+      "priority": 2,
+      "when": { "customerRelationship": "alt_lose", "directoryStatus": "gelistet_ohne_stern" },
+      "result": {
+        "ruleKey": "allowed_clear",
+        "badge": "Rechtlich unproblematisch",
+        "statute": "Art. 3 Abs. 1 lit. u UWG greift nicht (kein Sterneintrag, im Verzeichnis gelistet)",
+        "explanation": "Die Nummer trägt keinen Sterneintrag und ist regulär gelistet. Der Verzeichnisschutz greift hier gar nicht erst, unabhängig davon, wie stark die Kundenbeziehung ist.",
+        "reputationAdvice": "Reputationsrisiko bleibt trotzdem nicht null: Auch ein rechtlich einwandfreier Anruf kann als Belästigung wahrgenommen werden, besonders wenn er robotisch klingt. Ein klarer, kurzer Opt-out im Gespräch reduziert Beschwerden, ohne dass er rechtlich zwingend wäre.",
+        "automationSeverity": "low_stakes"
+      }
+    },
+    {
+      "id": "weak-relationship-protected-directory",
+      "priority": 3,
+      "when": { "customerRelationship": "alt_lose" },
+      "result": {
+        "ruleKey": "allowed_borderline",
+        "badge": "Erlaubt, aber mit Dokumentationsrisiko",
+        "statute": "Art. 3 Abs. 1 lit. u UWG (Ausnahme technisch anwendbar, aber schwach begründet)",
+        "explanation": "Die Bestandskundenausnahme deckt diesen Fall wahrscheinlich ab, ist aber schwächer begründet als bei einer aktuellen Beziehung – das Gesetz definiert «Kundenbeziehung» nicht abschliessend, und eine Jahre zurückliegende oder lose Beziehung ist ein Grenzfall.",
+        "reputationAdvice": "Diese Nummer ist ein Grenzfall: Erwägen Sie, solche Kontakte aus einer vollautomatisierten Kampagne herauszuhalten, bis die Beziehung besser dokumentiert ist, statt sich allein auf die Ausnahme zu verlassen.",
+        "automationSeverity": "high_stakes"
+      }
+    },
+    {
+      "id": "no-star-any-remaining",
+      "priority": 4,
+      "when": { "directoryStatus": "gelistet_ohne_stern" },
+      "result": {
+        "ruleKey": "allowed_clear",
+        "badge": "Rechtlich unproblematisch",
+        "statute": "Art. 3 Abs. 1 lit. u UWG greift nicht (kein Sterneintrag, im Verzeichnis gelistet)",
+        "explanation": "Die Nummer trägt keinen Sterneintrag und ist regulär gelistet. Der Verzeichnisschutz greift hier nicht, auch ohne bestehende Kundenbeziehung.",
+        "reputationAdvice": "Reputationsrisiko bleibt trotzdem nicht null: Auch ein rechtlich einwandfreier Anruf kann als Belästigung wahrgenommen werden, besonders wenn er robotisch klingt oder unangekündigt kommt.",
+        "automationSeverity": "low_stakes"
+      }
+    },
+    {
+      "id": "no-relationship-protected-directory",
+      "priority": 5,
+      "when": { "customerRelationship": "keine" },
+      "result": {
+        "ruleKey": "not_allowed",
+        "badge": "Nicht erlaubt – nicht anrufen",
+        "statute": "Art. 3 Abs. 1 lit. u UWG greift, keine Ausnahme anwendbar",
+        "explanation": "Die Nummer ist sternmarkiert, nicht gelistet oder der Status ist unbekannt, und es besteht keine Kundenbeziehung. Ein Werbeanruf wäre ein Akt unlauteren Wettbewerbs.",
+        "reputationAdvice": "Diese Nummer gehört nicht auf die Anrufliste. Ein Verstoss wird nur auf Antrag verfolgt, aber der Reputationsschaden – schlechte Bewertungen, Beschwerden im Bekanntenkreis – entsteht unabhängig davon, ob je ein Verfahren eröffnet wird.",
+        "automationSeverity": "high_stakes"
+      }
+    },
+    {
+      "id": "unknown-relationship-fallback",
+      "priority": 6,
+      "when": { "customerRelationship": "unbekannt" },
+      "result": {
+        "ruleKey": "verify_first",
+        "badge": "Status unklar – vor Anruf prüfen",
+        "statute": "Ohne bekannten Verzeichnisstatus oder dokumentierte Kundenbeziehung ist keine verlässliche Einschätzung möglich",
+        "explanation": "Weder der Verzeichnisstatus noch die Kundenbeziehung sind eindeutig geklärt. Im Zweifel gilt: wie eine geschützte Nummer ohne Kundenbeziehung behandeln, bis beides geklärt ist.",
+        "reputationAdvice": "Klären Sie Verzeichnisstatus und Kundenbeziehung, bevor diese Nummer auf eine automatisierte Anrufliste kommt – gerade bei Automatisierung multipliziert sich eine falsche Annahme sofort auf die gesamte Liste.",
+        "automationSeverity": "high_stakes"
+      }
+    }
+  ],
+  "automationMultiplierText": {
+    "low_stakes": "Bei einem automatisierten System bleibt das rechtliche Grundrisiko hier gering, wiederholt sich aber ungeprüft auf jede Nummer in der Liste. Ein einmaliger Fehler in der Datenquelle betrifft sonst einen Anruf – bei Automatisierung betrifft er jede Nummer, die auf derselben fehlerhaften Annahme beruht.",
+    "high_stakes": "Bei diesem Ergebnis ist Automatisierung besonders riskant: Die rechtliche Grundlage ist schwach oder fehlt, und ein automatisiertes System würde denselben Fehler nicht einmal, sondern über die gesamte Liste hinweg wiederholen, bevor es jemandem auffällt. Prüfen und bereinigen Sie diese Kontakte manuell, bevor sie in eine automatisierte Kampagne einfliessen."
+  },
+  "listSourceWarnings": {
+    "gekauft_extern": "Diese Liste stammt aus externer Quelle. Lassen Sie sich die Grundlage jeder angenommenen Kundenbeziehung schriftlich bestätigen, bevor Sie die Liste in eine automatisierte Kampagne einspeisen.",
+    "unbekannt_herkunft": "Die Herkunft dieser Liste ist nicht dokumentiert. Ohne Herkunftsnachweis ist im Streitfall kaum zu belegen, worauf sich eine angenommene Kundenbeziehung stützt – das ist bei einer automatisierten Grosskampagne ein grösseres Risiko als bei ein paar manuellen Anrufen."
+  },
+  "preCallChecklist": [
+    "Sterneintrag-Abgleich mit Aktualitätsdatum prüfen – nicht nur ob, sondern wann zuletzt aktualisiert.",
+    "Interne Opt-out-Liste mit Vorrang vor jeder neu importierten Liste abgleichen.",
+    "Herkunftsnachweis pro Kontaktliste dokumentieren, bevor die Liste verwendet wird.",
+    "Neues Skript oder neue Liste zuerst an einer kleinen, dokumentierten Stichprobe testen.",
+    "Regelmässig echte Gesprächsmitschnitte oder Transkripte stichprobenartig gegenhören."
+  ]
+}
