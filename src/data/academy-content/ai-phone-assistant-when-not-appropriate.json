@@ -1,0 +1,253 @@
+{
+  "id": "ai-phone-assistant-when-not-appropriate",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["de"],
+  "slug": {
+    "de": "ki-telefonassistent-falsche-wahl",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["ai-phone-assistant-failure-handling", "ai-phone-assistant-small-business-case"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "Wann ein KI-Telefonassistent die falsche Wahl ist | Weissmann AI",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "Fünf reale Situationen, in denen ein KI-Telefonassistent nicht passt – ehrlich benannt vom Anbieter selbst, inklusive Selbst-Check vor dem Kauf.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "KI-Agenten & Voice · Eignungsprüfung",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "Fünf Situationen, in denen ein KI-Telefonassistent die falsche Wahl ist",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "Dieser Artikel verkauft nichts. Er beschreibt fünf konkrete Situationen, in denen ein KI-Telefonassistent für einen Betrieb die falsche Wahl ist – geschrieben von einem Anbieter, der ihn eigentlich verkaufen möchte. Dazu gehören Anrufe, die eine echte Notlage sein könnten, ein Anrufvolumen, das die Fixkosten von CHF 350 im Monat rechnerisch nie einholt, Kundschaft mit einer dokumentierten Präferenz für menschlichen Kontakt, ein Betrieb ohne Kapazität, das System laufend zu pflegen, und reputationell hochsensible Praxen, in denen ein einziger schlecht gelaufener Anruf mehr kostet, als die Automatisierung je einspart. Wer sich in einem dieser Fälle wiedererkennt, sollte ehrlich zu sich selbst sein – nicht zum Anbieter.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "Ein Interessenkonflikt, den wir nicht verstecken", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Weissmann verkauft KI-Telefonassistenten. Dieser Artikel ist trotzdem eine Liste von Gründen, im Einzelfall keinen zu kaufen. Das ist kein Widerspruch, sondern eine nüchterne Feststellung: Ein Produkt, das für jeden Betrieb passt, gibt es nicht – und ein Anbieter, der das Gegenteil behauptet, hat entweder zu wenig unterschiedliche Kundschaft gesehen oder verkauft gerade zu ehrlich für das eigene Bankkonto. Fünf Situationen aus der Praxis zeigen, wann ein KI-Telefonassistent tatsächlich die falsche Wahl ist – benannt von der Firma, die ihn eigentlich gerne verkaufen würde.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Der Grund dafür ist wirtschaftlich, nicht nur ehrenhaft. Ein Betrieb, der ein Produkt kauft, das für seine Situation nicht passt, kündigt es früher oder später wieder – meistens enttäuscht, gelegentlich lautstark. Das kostet am Ende mehr Vertrauen, als der ursprüngliche Verkauf je an Umsatz eingebracht hat. Eine ehrliche Vorauswahl ist deshalb kein Widerspruch zum eigenen Geschäftsinteresse, sondern schlicht die langfristig günstigere Strategie.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Was dieser Artikel nicht ist", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Ein KI-Telefonassistent, der bei einem einzelnen Anruf einen ungewöhnlichen Namen falsch versteht oder bei lautem Hintergrund gezielt nachfragen muss, ist kein Grund, das Produkt grundsätzlich abzulehnen – das ist Fehlerbehandlung im laufenden Betrieb, und wie ein gut gebautes System damit umgeht, beschreibt der Artikel «KI-Telefonassistent versteht nicht: was dann?» im Detail. Dieser Text hier behandelt etwas anderes: nicht, was passiert, wenn die Technik im Einzelfall an ihre Grenzen stösst, sondern Situationen, in denen die Entscheidung für das Produkt selbst falsch ist – lange bevor der erste Anruf überhaupt eingeht.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Der Unterschied ist praktisch, nicht akademisch. Eine falsch verstandene Rückfrage lässt sich durch besseres Design, eine engere Konfidenzschwelle oder eine klarere Eskalationsregel beheben. Die fünf Situationen in diesem Artikel lassen sich nicht durch besseres Design beheben – bei ihnen ist die grundsätzliche Passung zwischen Produkt und Betrieb das Problem, nicht die technische Umsetzung.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Szenario 1: Der Anruf könnte eine echte Notlage sein", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Manche Telefonleitungen bekommen gelegentlich Anrufe, bei denen es um mehr geht als eine Terminverschiebung: eine Praxis mit Bereitschaftsdienst, eine Beratungsstelle, ein Betrieb, bei dem ein verzweifelter Ton am anderen Ende der Leitung keine Ausnahme, sondern ein realistischer Bestandteil des Alltags ist. Eine deutschsprachige Fachpublikation zu KI-Telefonassistenten in Kanzleien nennt hier ausdrücklich Sorgerechtsstreitigkeiten, häusliche Gewalt und existenzbedrohende Situationen als Fälle, die menschliche Wärme brauchen, die eine Maschine nicht vollständig ersetzen kann – eine Einschätzung, die sich mit der eigenen Erfahrung deckt, nicht nur mit Marketing-Zurückhaltung.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Kein seriöser Anbieter – Weissmann eingeschlossen – lässt eine KI medizinische Diagnosen stellen oder eigenständig entscheiden, ob ein Anruf ein echter Notfall ist. Bei einer akuten Notlage gehören Anrufende zu den Schweizer Notrufnummern 144, 117 oder 118, nicht in ein Gespräch mit einem Sprachmodell. Das eigentliche Risiko liegt deshalb nicht in offensichtlichen Notfällen – dort greift die Weiterleitung –, sondern im breiten Grenzbereich davor: ein Anruf, der vielleicht dringend ist, vielleicht auch nicht, und bei dem die richtige Reaktion Fingerspitzengefühl statt eines Entscheidungsbaums braucht. Wenn ein Betrieb regelmässig genau solche Grenzfälle bekommt und keine verlässliche, schnelle menschliche Rückfalloption für exakt diese Anrufe hat, ist das kein Konfigurationsproblem, das sich später lösen lässt – es ist ein Grund, mit der Einführung zu warten oder ganz darauf zu verzichten.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Szenario 2: Das Anrufvolumen holt die Fixkosten rechnerisch nie ein", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Das Starter-Paket kostet CHF 350 im Monat, ohne Setup-Gebühr und ohne Mindestvertragslaufzeit. Das ist bewusst niedrig angesetzt – und trotzdem gibt es Betriebe, bei denen selbst dieser Betrag rechnerisch nie zurückkommt. Der Artikel «Lohnt sich ein KI-Telefonassistent für KMU?» zeigt die vollständige Break-Even-Rechnung anhand von drei eigenen Zahlen: Anrufe pro Woche, Anteil verpasster Anrufe, Wert eines geretteten Anrufs. Dieser Artikel hier wiederholt diese Rechnung nicht, sondern beschreibt nur den Rand, an dem sie strukturell nicht aufgeht.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Dieser Rand ist erreicht, wenn zwei Dinge gleichzeitig zutreffen: ein sehr geringes Anrufvolumen und ein niedriger Wert pro Anruf. Eine kleine Boutique, die im Schnitt vier bis fünf Telefonanrufe pro Woche erhält – die meisten davon Fragen zu Öffnungszeiten, die auch eine Website beantwortet –, muss die Break-Even-Formel nicht einmal zu Ende rechnen. Selbst mit einer grosszügig geschätzten Verpasst-Quote und einem optimistischen Wert pro Anruf bleibt am Ende ein Betrag deutlich unter CHF 350. Für diesen Fall gibt es keine Kombination realistischer Annahmen, die das Ergebnis dreht – und das ist auch keine Enttäuschung, sondern schlicht eine andere Betriebsgrösse mit einer anderen richtigen Lösung: eine gut besprochene Combox oder, bei saisonalen Spitzen, der einmalige Starter-Test für CHF 350 ohne laufendes Abonnement.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Szenario 3: Die Kundschaft hat eine dokumentierte, nicht nur vermutete Präferenz für Menschen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "«Ältere Menschen mögen keine KI» ist ein Klischee und gehört nicht in einen seriösen Artikel – es ist pauschal, oft falsch und unfair gegenüber einer Gruppe, die technisch längst vielfältiger ist, als das Klischee unterstellt. Etwas anderes ist eine dokumentierte, branchenweite Erwartung an menschlichen Kontakt in einem bestimmten Moment. Eine Untersuchung des Marktforschungsunternehmens Five9 findet, dass 75 Prozent der befragten Konsument:innen menschlichen Kundenservice gegenüber automatisierten Systemen bevorzugen – eine internationale, nicht Schweiz-spezifische Zahl, aber ein reales Signal, kein erfundenes.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Ein fiktives Beispiel für eine typische Situation: Ein Bestattungsinstitut nimmt Anrufe entgegen, bei denen Angehörige oft innerhalb weniger Stunden nach einem Todesfall anrufen. Für dieses Klientel ist die menschliche Stimme am Telefon nicht ein netter Zusatz zum eigentlichen Angebot, sondern der ganze Sinn des ersten Kontakts – unabhängig davon, wie einfühlsam eine Sprach-KI formuliert wäre. Dasselbe gilt für Beratungsstellen in akuten Lebenskrisen oder für Betriebe, die selbst schon dokumentiert haben – etwa über Feedback, Beschwerden oder eine wiederholte Beobachtung im Tagesgeschäft –, dass ihre Kundschaft eine Maschine am Telefon als respektlos empfindet. Der Unterschied zum Klischee ist die Beweislast: eine Vermutung reicht nicht, eine wiederholt beobachtete oder erhobene Präferenz schon.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Szenario 4: Niemand im Betrieb hat Kapazität, das System zu pflegen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Ein KI-Telefonassistent ist kein Gerät, das man einmal einrichtet und dann vergisst. Preise ändern sich, Öffnungszeiten verschieben sich, ein Angebot fällt weg, ein neues kommt dazu – und jede dieser Änderungen muss jemand dem System mitteilen, sonst beantwortet es Anrufe zuverlässig falsch, nicht zuverlässig richtig. Ein System, das niemand beobachtet, verhält sich wie ein Rauchmelder ohne Batterie: Es sieht so aus, als würde es seine Arbeit tun – bis es sie nicht mehr tut, und meist genau dann, wenn es am meisten wehtun würde.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Illustratives Beispiel: Ein Einzelunternehmer im Sanitärbereich richtet den Assistenten im Januar ein und stellt im Februar die Preise für eine Dienstleistung um – vergisst aber, es dem System mitzuteilen, weil gerade drei Baustellen gleichzeitig laufen. Drei Monate später nennt der Assistent Kundinnen und Kunden am Telefon zuverlässig den falschen Preis, und niemand merkt es, bis sich die erste Person darüber beschwert. Das monatliche Reporting hätte das in Minuten sichtbar gemacht – wenn jemand die Zeit gehabt hätte, es anzuschauen. Wer ehrlich weiss, dass diese wöchentlichen fünfzehn Minuten im eigenen Betrieb realistisch nicht existieren, sollte das vor dem Kauf klären, nicht danach.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Szenario 5: Ein einziger schlechter Anruf kostet mehr, als zehn gute je einsparen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Bei manchen Betrieben ist der Nutzen eines KI-Telefonassistenten – etwas schnellere Antwortzeiten, weniger verpasste Anrufe – klein im Vergleich zum Schaden eines einzigen missglückten Gesprächs. Das betrifft vor allem reputationell hochsensible Praxen: Anwaltskanzleien, bestimmte medizinische Fachrichtungen, Beratungen in existenziellen Fragen. Eine Analyse der American Bar Association hält dazu fest, dass ein Unternehmen grundsätzlich für das einstehen muss, was seine KI oder sein Chatbot im Kundenkontakt sagt – ein Unternehmen kann sich nicht im Nachhinein hinter der Aussage verstecken, die KI habe eben einen Fehler gemacht. Das ist keine Schweizer Rechtsauskunft und ersetzt keine eigene rechtliche Beratung, aber das dahinterliegende Prinzip – Verantwortung folgt der Aussage, nicht dem Sprecher – gilt im Grundsatz unabhängig vom Rechtssystem auch hierzulande.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Die eigentliche Rechnung ist hier nicht CHF gegen CHF, sondern Wahrscheinlichkeit gegen Ausmass. Eine Fachpublikation zur Zusammenarbeit von Anwaltskanzleien mit KI-Empfangslösungen beschreibt es treffend: Wer bei einer kleinen Kanzlei anruft, ist oft in einem der schwierigsten Momente des eigenen Lebens – und ob dieser erste Kontakt kompetent und einfühlsam wirkt, entscheidet häufig, ob die anrufende Person die Kanzlei mandatiert oder eine andere anruft. Bei dieser Art von Anruf zählt nicht die durchschnittliche Erfahrung über hundert Gespräche, sondern die eine, die schiefgeht und sich in einer kleinen Fachwelt oder einem überschaubaren Ort schnell herumspricht.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Was diese fünf Szenarien nicht bedeuten", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Diese Liste ist kein pauschales «KI am Telefon ist riskant». Die meisten Schweizer KMU fallen in keines der fünf Szenarien – ein Coiffeursalon mit planbaren Terminen, ein Handwerksbetrieb mit hohem, aber unkritischem Anrufvolumen oder ein Detailhandelsgeschäft mit Standardfragen haben strukturell wenig gemeinsam mit einer Bereitschaftspraxis oder einer familienrechtlichen Kanzlei. Und selbst wer sich in einem einzelnen Punkt teilweise wiedererkennt, muss nicht automatisch ganz verzichten: Eine Kanzlei kann reine Terminlogistik automatisieren und jedes inhaltliche Gespräch konsequent an Menschen weiterleiten; ein saisonaler Betrieb kann den einmaligen Starter-Test statt eines Jahresabos wählen. Die fünf Szenarien sind Warnsignale für eine genauere Prüfung, keine automatische Ablehnung.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Der ehrliche Selbst-Check vor dem Kauf", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Sieben Fragen, mit denen sich die fünf Szenarien von oben auf den eigenen Betrieb übertragen lassen – am besten schriftlich beantwortet, nicht aus dem Bauch heraus:",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        { "de": "Könnte ein Anruf bei uns eine echte Notlage sein, bei der eine schnelle menschliche Reaktion nötig ist – und haben wir dafür eine verlässliche Rückfalloption?", "en": "", "it": "", "fr": "" },
+        { "de": "Erreichen unsere aktuellen Zahlen – Anrufe pro Woche, geschätzte Verpasst-Quote, Wert pro gerettetem Anruf – realistisch die CHF 350 im Monat, oder bleibt selbst die optimistische Rechnung darunter?", "en": "", "it": "", "fr": "" },
+        { "de": "Haben wir eine dokumentierte, nicht nur vermutete Beobachtung, dass unsere Kundschaft automatisierte Anrufe ablehnt?", "en": "", "it": "", "fr": "" },
+        { "de": "Hat konkret eine Person im Betrieb wöchentlich Zeit, das Reporting anzuschauen und Änderungen ans System weiterzugeben?", "en": "", "it": "", "fr": "" },
+        { "de": "Wie viel würde uns ein einziger schlecht gelaufener, emotional aufgeladener Anruf kosten – an Vertrauen, nicht nur an Umsatz?", "en": "", "it": "", "fr": "" },
+        { "de": "Betrifft eines der fünf Szenarien den ganzen Betrieb, oder nur einen Teil der Anrufe, den wir gezielt weiterhin menschlich abdecken können?", "en": "", "it": "", "fr": "" },
+        { "de": "Was würden wir einer befreundeten Unternehmerin raten, die uns exakt diese Situation schildert – nicht uns selbst?", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Die ehrliche Antwort bleibt stehen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Wenn eines oder mehrere dieser fünf Szenarien tatsächlich auf einen Betrieb zutreffen, lautet die ehrliche Antwort nicht «trotzdem kaufen und dann schauen». Sie lautet: eher nicht, jedenfalls nicht so, wie das Produkt heute aufgebaut ist. Das ist keine rhetorische Vorsichtsmassnahme, mit der ein Verkaufsgespräch am Ende doch noch in dieselbe Richtung gedreht wird – es ist die eigentliche Aussage dieses Artikels, und sie bleibt so stehen, auch am Schluss.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "Bedeutet dieser Artikel, dass Weissmann grundsätzlich von KI-Telefonassistenten abrät?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein. Für die meisten Schweizer KMU, die keines der fünf beschriebenen Szenarien betrifft, bleibt ein KI-Telefonassistent eine sinnvolle Investition – der Artikel beschreibt bewusst die Ausnahmen, nicht die Regel. Wer sich in keinem der fünf Punkte wiedererkennt, findet die reguläre Wirtschaftlichkeitsrechnung im Artikel «Lohnt sich ein KI-Telefonassistent für KMU?».", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Wie unterscheidet sich dieser Artikel vom Artikel über Fehlerbehandlung?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "«KI-Telefonassistent versteht nicht: was dann?» beschreibt, was innerhalb eines einzelnen Anrufs passiert, wenn die Technik etwas falsch versteht, und wie ein gutes System sich davon erholt – ein Design- und Betriebsproblem. Dieser Artikel hier beschreibt die Entscheidung davor: ob ein KI-Telefonassistent für einen bestimmten Betrieb überhaupt die richtige Produktkategorie ist, unabhängig davon, wie gut die Fehlerbehandlung im Einzelfall funktioniert.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Trifft nur eines der fünf Szenarien auf uns zu – müssen wir trotzdem ganz verzichten?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nicht zwingend. Mehrere der Szenarien lassen sich eingrenzen, statt das ganze Vorhaben zu stoppen: Eine Kanzlei kann zum Beispiel reine Terminlogistik automatisieren und inhaltliche Gespräche konsequent an Menschen weiterleiten. Wichtig ist, die Einschränkung bewusst zu planen, statt sie zu übersehen.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Gilt die Break-Even-Grenze aus Szenario 2 auch für den einmaligen Starter-Test?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Der einmalige Starter-Test kostet ebenfalls CHF 350, aber ohne laufendes Abonnement und ohne automatische Verlängerung – er eignet sich deshalb gerade für Betriebe mit sehr geringem oder stark saisonalem Anrufvolumen, um die eigene Rechnung an echten Zahlen zu prüfen, bevor ein Monatspaket überhaupt zur Debatte steht.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Kann sich die Einschätzung mit der Zeit ändern, zum Beispiel wenn der Betrieb wächst?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Ja, regelmässig. Ein Betrieb, der heute an der Break-Even-Grenze aus Szenario 2 scheitert, kann das in einem Jahr bei doppeltem Anrufvolumen längst nicht mehr tun. Die fünf Szenarien sind deshalb eine Momentaufnahme, die sich lohnt, bei wachsendem oder schrumpfendem Geschäft neu zu prüfen, nicht ein einmaliges, endgültiges Urteil.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Ist ein KI-Telefonassistent grundsätzlich ungeeignet für Notfalldienste?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Ein KI-Telefonassistent ersetzt nie die Schweizer Notrufnummern 144, 117 oder 118 und trifft keine medizinischen Entscheidungen – das gilt uneingeschränkt. Die eigentliche Frage in Szenario 1 betrifft den breiten Graubereich davor: Betriebe, die regelmässig Grenzfälle bekommen, bei denen Fingerspitzengefühl statt eines Entscheidungsbaums gefragt ist, und die für genau diese Anrufe keine schnelle menschliche Rückfalloption haben.", "en": "", "it": "", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "KI-Telefonassistent",
+    "Notlage",
+    "Break-Even",
+    "Anrufvolumen",
+    "Reputationsrisiko",
+    "Wartungsaufwand",
+    "Starter-Paket",
+    "Kundenpräferenz",
+    "Kanzlei"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "Five9-Studie: 75 % der Konsument:innen bevorzugen menschlichen Kundenservice gegenüber automatisierten Systemen",
+        "en": "", "it": "", "fr": ""
+      },
+      "href": "https://www.five9.com/news/news-releases/new-five9-study-finds-75-consumers-prefer-talking-human-customer-service"
+    },
+    {
+      "label": {
+        "de": "American Bar Association – rechtliche Risiken, wenn eine KI im Namen eines Unternehmens spricht",
+        "en": "", "it": "", "fr": ""
+      },
+      "href": "https://www.americanbar.org/news/abanews/aba-news-archives/2025/06/legal-risks-ai-speaking-for-business/"
+    },
+    {
+      "label": {
+        "de": "Smith.ai – KI-Empfang für kleine Anwaltskanzleien: was in der Praxis funktioniert (Branchenquelle zur Bedeutung des ersten Kontakts)",
+        "en": "", "it": "", "fr": ""
+      },
+      "href": "https://smith.ai/blog/ai-receptionist-small-law-firm"
+    },
+    {
+      "label": {
+        "de": "lexdial – Praxis-Szenarien für KI-Telefonassistenten in Kanzleien (Branchenbeobachtung, keine Rechtsauskunft)",
+        "en": "", "it": "", "fr": ""
+      },
+      "href": "https://lexdial.de/blog/ki-telefonassistent-szenarien-kanzlei"
+    },
+    {
+      "label": {
+        "de": "Weissmann AI – Preise und Leistungsumfang KI-Telefonassistent Starter/Trial (src/data/pricing.ts, first-party), Stand 29. Juli 2026",
+        "en": "", "it": "", "fr": ""
+      },
+      "href": "https://weissmann.ai/preise/"
+    }
+  ],
+  "cta": {
+    "label": { "de": "Kostenloses Erstgespräch – auch wenn die ehrliche Antwort «eher nicht» lautet", "en": "", "it": "", "fr": "" },
+    "href": "/kontakt/"
+  }
+}
