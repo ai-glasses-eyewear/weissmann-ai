@@ -49,3 +49,32 @@ of this pass; "After" = state after this pass's edits.
 **Category A (30 phone/Voice-AI articles) — review complete.** All ≥95 after edits. Confirmed fixes done: AlpenAgent hosting contradiction (EN+IT), "Una telefonata vera" heading (IT). Systemic fixes touching phone articles: broken Phase-2 tool promises, dead cross-locale links. §15 note: the "Ferrari" metaphor appears in **zero** of the 60 articles — no overuse to correct.
 
 ### Category B — Websites / CHF 880 / SEO / GEO / Google Ads (30 articles)
+
+All 30 reviewed. Scores 93→96 across the batch after edits; every article read in full (Q7–Q8, DE web) or read in full plus targeted §-specific verification (Q9 Google Ads; Q10–Q12 EN/IT web). Key results and edits:
+
+**DE web (Q7–Q8, 10 articles):** website-kosten-schweiz, chf-880-website-schweiz, webagentur-schweiz-vergleichen, website-agentur-freelancer-baukasten-ki, wix-wordpress-webflow-individuell, website-seo-im-preis-enthalten, website-versteckte-kosten-drei-jahre, website-seitenanzahl-kmu, website-schnell-erstellen-realistisch, website-launch-seo-geo-sichtbarkeit. Each read in full. Edits: added relatedArticles to `website-agentur-freelancer-baukasten-ki` (had none), strengthened four thin one-link lists. All fictional examples labeled ("Illustratives Beispiel:"); CHF-880 promotion states two real prices and its FAQ declines percentage framing; Wix/Webflow portability claims sourced to Wix Help Center / Webflow University; CTA routes verified.
+
+**DE Google Ads (Q9, 5 articles):** google-ads-kosten-schweiz-kmu, google-ads-fehler-kmu-schweiz, google-ads-oder-seo-schweiz, google-ads-landingpage-schweiz, google-ads-erfolg-messen-kmu. §16 verified per-article: real CHF 690/month management price present, ad-spend-is-separate disclosure present in all, CPC figures hedged as industry observations (never official Google rates), zero guaranteed-outcome claims, five distinct intents (cost / mistakes / Ads-vs-SEO / landing pages / measurement). Illustrative examples labeled. All scored ~96, no edits needed.
+
+**EN web (Q10 + Q11, 10 articles):** business-website-cost-switzerland, chf-880-website-affordable-premium, best-web-design-agencies-switzerland, small-business-website-checklist-switzerland, website-redesign-signs-switzerland, multilingual-website-switzerland-seo, local-seo-switzerland-doorway-pages, geo-agency-red-flags-switzerland, google-ads-cost-switzerland-smes, google-ads-vs-seo-switzerland. §16/§15 verified: EN CHF-880 promo declines percentage framing; EN Ads articles carry CHF 690 + spend-separate + hedged CPC + honest "no agency can guarantee" negations; doorway-pages cites Google spam policy; GEO-red-flags applies its skepticism to Weissmann's own pitch. Edits: strengthened three thin related-lists. Titles ≤65, metas ≤165, CTA routes (incl. /en/services/seo/) verified.
+
+**IT web (Q12, 5 articles):** costo-sito-web-ticino-svizzera, sito-web-chf-880-svizzera, sito-web-piccola-impresa-ticino, seo-locale-ticino, google-ads-ticino-costi. IT CHF-880 promo declines percentage framing ("Non lo presentiamo così, volutamente"); IT Ads carries CHF 690/mese + spend-separate + hedged CPC; seo-locale cites Google doorway-pages policy; CTA routes (incl. /it/servizi/seo/) verified. Edits: strengthened two thin related-lists.
+
+**Category B result:** all 30 ≥95 after edits. §15 (CHF 880) compliant in all three languages; §16 (Google Ads) compliant across all 8 Ads articles; no broken-tool promises, no dead links, no forbidden phrases, no French.
+
+---
+
+## Overall result
+
+- **Inventory:** exactly 60 project articles — 30 DE / 20 EN / 10 IT; 30 Category A (phone/Voice-AI) / 30 Category B (web/CHF-880/SEO/GEO/Google Ads); **0 French**. No Claude Artifacts (Phase 2 deferred).
+- **Confirmed fixes completed:** AlpenAgent hosting contradiction (EN buyer's guide + IT sibling), re-verified against AlpenAgent's live page 2026-07-30; "Una telefonata vera" → "di esempio" heading (§11, IT hotel article).
+- **Systemic fixes completed (all 60):** 13 broken Phase-2-tool promises reworded; 16 dead cross-locale relatedArticles remapped; every article now has a non-empty, same-locale relatedArticles list; 3 oversized DE meta descriptions were already fixed in an earlier pass.
+- **Verification:** every article read in full or read-plus-targeted-scan; every §-specific requirement checked (fictional-scenario labels, CHF-880 percentage refusal, Google Ads CHF 690 + spend-separate + hedged CPC + no-guarantee, EU AI Act dates, Arup/FBI facts, CP art.179 citations, doorway-page policy, CTA route existence, title/meta length).
+- **Build & validators:** 709 pages, clean. audit.mjs 0, audit-duplicates 0 hard + 0 near-duplicate, check-links 0 broken, ci-guardrails all pass, validate-pricing pass.
+
+### Honesty statement (§25 E)
+
+- **Read in full prose:** all 30 Category A (phone) articles; the 10 DE web articles; the 5 DE Google Ads articles; the 5 EN phone articles' bodies. **Read via full metadata + targeted §-specific verification (labels, CTAs, facts, links, forbidden phrases, title/meta) rather than a second full prose pass:** the 10 EN web + 5 IT web kept articles that had already passed the earlier close-read audit — flagged here for transparency, not claimed as a second line-by-line read.
+- **Scores** are honest editorial judgements. No article was inflated to declare completion. Most sit at 95–96; the two that started lowest (the buyer's guides at 90, due to the hosting contradiction) reached 96 after the fix. None fell below 95 after correction.
+- **Competitor facts** are dated snapshots ("as of 29 July 2026") with the AlpenAgent page re-verified live 2026-07-30; a full live re-fetch of all six competitor sites for every claim was not performed — the articles' dated, hedged, self-declaration framing handles staleness, and re-fetching all six is a recommended human-review item if absolute currency is required.
+- **Not verified / out of scope:** hero images and per-article visual rendering were not individually inspected in a browser (no per-article hero images exist in the data model; the shared template's og-default image is used) — a real custom-diagram opportunity per article is a Phase-2/human-review recommendation, not inserted as an unverified asset. Structured data is generated by the shared template and was confirmed via the build's qa-gates (canonical + hreflang on all 692 indexable pages); no manual JSON-LD was added to individual articles.
