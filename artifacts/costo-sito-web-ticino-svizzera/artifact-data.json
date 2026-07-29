@@ -1,0 +1,210 @@
+{
+  "artifactId": "costo-sito-web-ticino-svizzera",
+  "articleId": "costo-sito-web-ticino-svizzera",
+  "language": "it",
+  "title": "Calcolatore svizzero del costo del sito",
+  "note": "Spec/data file for the artifact described in ARTIFACT-BRIEF.md. This is structured content only — no HTML/JS is implemented here. This tool never computes or displays a fabricated CHF total; the only real prices shown are the three exact Weissmann reference prices (CHF 880 / CHF 4'990 / CHF 9'900), and only when a selection cleanly matches that tier's published scope. Distinct mechanic from the DE/EN cost-anatomy siblings: starts from a business-archetype preset, treats language reach as a first-class axis, and always splits its output into two separate panels (launch costs vs. ongoing costs) rather than one merged score.",
+
+  "inputs": [
+    {
+      "id": "tipo_attivita",
+      "label": "Tipo di attività",
+      "type": "single-select-preset",
+      "options": [
+        { "value": "artigiano", "label": "Artigiano (elettricista, idraulico, falegname…)" },
+        { "value": "ristorante", "label": "Ristorante o locale" },
+        { "value": "studio", "label": "Studio professionale (avvocato, fiduciario, consulente…)" },
+        { "value": "altro", "label": "Altro / preferisco configurare da zero" }
+      ],
+      "required": true,
+      "note": "Selecting artigiano/ristorante/studio pre-fills inputs 2–6 from `presets` below. The reader may override any pre-filled value afterwards without losing the archetype label. Selecting 'altro' leaves inputs 2–6 unset."
+    },
+    {
+      "id": "lingue",
+      "label": "Lingue del sito",
+      "type": "single-select",
+      "options": [
+        { "value": "solo_it", "label": "Solo italiano" },
+        { "value": "it_de", "label": "Italiano e tedesco" },
+        { "value": "it_de_altro", "label": "Italiano, tedesco e una terza lingua (francese o inglese)" }
+      ],
+      "required": true
+    },
+    {
+      "id": "ampiezza",
+      "label": "Ampiezza del sito",
+      "type": "single-select",
+      "options": [
+        { "value": "poche_pagine", "label": "Poche pagine mirate (1–5)" },
+        { "value": "sito_aziendale", "label": "Sito aziendale (6–12 pagine)" },
+        { "value": "ampio", "label": "Architettura ampia (12+ pagine)" }
+      ],
+      "required": false
+    },
+    {
+      "id": "copywriting",
+      "label": "Contenuti",
+      "type": "toggle",
+      "options": [
+        { "value": false, "label": "Fornisco io i testi" },
+        { "value": true, "label": "Serve copywriting professionale" }
+      ],
+      "required": false
+    },
+    {
+      "id": "prenotazioni",
+      "label": "Prenotazioni o vendita online",
+      "type": "single-select",
+      "options": [
+        { "value": "nessuna", "label": "Nessuna" },
+        { "value": "prenotazione", "label": "Modulo di prenotazione o richiesta" },
+        { "value": "shop_completo", "label": "Shop completo con pagamento e spedizione" }
+      ],
+      "required": false
+    },
+    {
+      "id": "manutenzione",
+      "label": "Manutenzione continuativa",
+      "type": "single-select",
+      "options": [
+        { "value": "self", "label": "Me ne occupo io" },
+        { "value": "fornitore", "label": "Preferisco affidarla a un fornitore" }
+      ],
+      "required": false
+    }
+  ],
+
+  "presets": {
+    "note": "Applied only when the reader selects that archetype in `tipo_attivita`. The reader may override any individual field afterwards without clearing the archetype label. 'altro' applies no defaults.",
+    "artigiano": { "lingue": "solo_it", "ampiezza": "poche_pagine", "copywriting": false, "prenotazioni": "nessuna", "manutenzione": "self" },
+    "ristorante": { "lingue": "it_de", "ampiezza": "poche_pagine", "copywriting": true, "prenotazioni": "prenotazione", "manutenzione": "fornitore" },
+    "studio": { "lingue": "it_de_altro", "ampiezza": "sito_aziendale", "copywriting": true, "prenotazioni": "nessuna", "manutenzione": "fornitore" },
+    "altro": {}
+  },
+
+  "resultGate": {
+    "requiredInputs": ["tipo_attivita", "lingue"],
+    "emptyStateMessage": "Scegliete almeno il tipo di attività e le lingue del sito per vedere una valutazione."
+  },
+
+  "blockGroups": [
+    {
+      "id": "lancio",
+      "label": "Costi di lancio",
+      "blocks": [
+        { "id": "design", "label": "Design", "description": "L'aspetto visivo pensato per l'attività, non un tema scaricato e ricolorato." },
+        { "id": "contenuti", "label": "Contenuti e copywriting", "description": "Testi scritti per il vostro pubblico, non un testo incollato da una brochure." },
+        { "id": "sviluppo", "label": "Sviluppo", "description": "La costruzione tecnica: moduli, gestione dei contenuti, eventuali prenotazioni o shop." },
+        { "id": "base_seo_geo", "label": "Base tecnica SEO e GEO", "description": "Struttura, dati strutturati, velocità: le fondamenta per essere trovati da Google e dai motori di risposta AI." }
+      ]
+    },
+    {
+      "id": "continuativo",
+      "label": "Costi continuativi",
+      "blocks": [
+        { "id": "hosting", "label": "Hosting", "description": "Lo spazio dove il sito vive online, un costo ricorrente indipendente dal fornitore." },
+        { "id": "manutenzione", "label": "Manutenzione", "description": "Aggiornamenti di sicurezza, piccole correzioni, reperibilità in caso di problemi." },
+        { "id": "lingue_aggiuntive", "label": "Lingue aggiuntive nel tempo", "description": "Mantenere ogni versione linguistica aggiornata quando l'offerta cambia." }
+      ]
+    }
+  ],
+
+  "impactRules": {
+    "note": "Each block's impact is the HIGHEST tag triggered by any current selection (basso < medio < alto). Fixed editorial rules, not a numeric or statistical formula.",
+    "design": [
+      { "if": "always", "tag": "medio" },
+      { "if": "ampiezza == ampio", "tag": "alto" }
+    ],
+    "contenuti": [
+      { "if": "copywriting == false", "tag": "basso" },
+      { "if": "copywriting == true", "tag": "alto" }
+    ],
+    "sviluppo": [
+      { "if": "ampiezza == poche_pagine", "tag": "basso" },
+      { "if": "ampiezza == sito_aziendale", "tag": "medio" },
+      { "if": "ampiezza == ampio", "tag": "alto" },
+      { "if": "prenotazioni == prenotazione", "tag": "medio" },
+      { "if": "prenotazioni == shop_completo", "tag": "alto" }
+    ],
+    "base_seo_geo": [
+      { "if": "lingue == solo_it and ampiezza == poche_pagine", "tag": "basso" },
+      { "if": "lingue == solo_it and ampiezza in [sito_aziendale, ampio]", "tag": "medio" },
+      { "if": "lingue == it_de", "tag": "medio" },
+      { "if": "lingue == it_de_altro", "tag": "alto" }
+    ],
+    "hosting": [
+      { "if": "always", "tag": "basso" },
+      { "if": "prenotazioni == shop_completo", "tag": "medio" }
+    ],
+    "manutenzione": [
+      { "if": "manutenzione == self", "tag": "basso" },
+      { "if": "manutenzione == fornitore", "tag": "medio" },
+      { "if": "prenotazioni == shop_completo", "tag": "alto" }
+    ],
+    "lingue_aggiuntive": [
+      { "if": "lingue == solo_it", "tag": "basso" },
+      { "if": "lingue == it_de", "tag": "medio" },
+      { "if": "lingue == it_de_altro", "tag": "alto" }
+    ]
+  },
+
+  "checklist": [
+    { "id": 1, "text": "Il numero di pagine è elencato con i titoli reali, o resta un generico «fino a X pagine»?", "relevantWhen": "ampiezza != poche_pagine" },
+    { "id": 2, "text": "Chi scrive i testi — voi, il fornitore, o il preventivo non lo specifica affatto?", "relevantWhen": "copywriting == true" },
+    { "id": 3, "text": "Quante lingue sono esplicitamente contate, e quali sono?", "relevantWhen": "lingue != solo_it" },
+    { "id": 4, "text": "Quanti cicli di correzione sono inclusi, e quanto costa un ciclo aggiuntivo?", "relevantWhen": "always" },
+    { "id": 5, "text": "Il codice e i file sorgente restano vostri dopo la consegna?", "relevantWhen": "ampiezza in [sito_aziendale, ampio]" },
+    { "id": 6, "text": "«SEO inclusa» è descritta concretamente (sitemap, dati strutturati, velocità) o resta una parola di marketing?", "relevantWhen": "base_seo_geo in [medio, alto]" },
+    { "id": 7, "text": "Hosting e manutenzione dopo il lancio: quanto costano, e a nome di chi restano dominio e hosting?", "relevantWhen": "manutenzione == fornitore" },
+    { "id": 8, "text": "Il prezzo indicato è al netto o al lordo dell'IVA svizzera (8,1%)?", "relevantWhen": "always" },
+    { "id": 9, "text": "Cosa succede se in futuro si aggiunge una lingua o una funzione?", "relevantWhen": "lingue == solo_it or prenotazioni == nessuna" }
+  ],
+
+  "referenceTiers": [
+    {
+      "id": "website-starter",
+      "matchWhen": "ampiezza == poche_pagine and lingue == solo_it",
+      "name": "Starter Website",
+      "priceText": "CHF 880 (regolare CHF 2'490)",
+      "scopeText": "fino a 5 pagine principali, 1 lingua, 2 cicli di correzione, base tecnica SEO e GEO, GA4 e Search Console",
+      "sourceNote": "src/data/pricing.ts, id: website-starter — cifre esatte, non arrotondate.",
+      "labelNote": "Un esempio reale di un fornitore svizzero (Weissmann) per un ambito simile alla vostra selezione — non una raccomandazione automatica."
+    },
+    {
+      "id": "website-business",
+      "matchWhen": "ampiezza in [sito_aziendale, ampio] and prenotazioni != shop_completo",
+      "name": "Business Website",
+      "priceText": "CHF 4'990",
+      "scopeText": "circa 10–20 pagine, predisposto per il multilingue, architettura orientata alla conversione, 3 cicli di correzione",
+      "sourceNote": "src/data/pricing.ts, id: website-business — cifre esatte, non arrotondate.",
+      "labelNote": "Un esempio reale di un fornitore svizzero (Weissmann) per un ambito simile alla vostra selezione — non una raccomandazione automatica."
+    },
+    {
+      "id": "website-complex",
+      "matchWhen": "prenotazioni == shop_completo",
+      "name": "Sito web complesso / su misura",
+      "priceText": "da CHF 9'900",
+      "scopeText": "grande architettura multilingue, e-commerce o integrazioni, applicazioni su misura",
+      "sourceNote": "src/data/pricing.ts, id: website-complex — cifre esatte, non arrotondate.",
+      "labelNote": "Un esempio reale di un fornitore svizzero (Weissmann) per un ambito simile alla vostra selezione — non una raccomandazione automatica."
+    }
+  ],
+  "referenceTierRule": "Show at most one matching tier. If more than one condition matches, or none matches cleanly, show no reference tier block at all — never force a fit.",
+
+  "copyBlockTemplate": "Tipo di attività: {tipoAttivitaLabel}. Lingue: {lingueLabel}. Ampiezza: {ampiezzaLabel}. Contenuti: {copywritingLabel}. Prenotazioni/Shop: {prenotazioniLabel}. Manutenzione: {manutenzioneLabel}.",
+
+  "ctaCopy": {
+    "primary": {
+      "label": "Richiedete una valutazione gratuita del vostro progetto di sito web",
+      "href": "/it/kontakt/"
+    },
+    "secondary": {
+      "label": "Leggi l'articolo completo con le sette voci di costo e la checklist del preventivo",
+      "hrefNote": "Links to the academy spoke page for the costo-sito-web-ticino-svizzera article."
+    }
+  },
+
+  "disclaimerText": "Questo strumento non calcola un prezzo. Mostra quali delle sette voci di costo il vostro progetto attiva — separando quelle di lancio da quelle continuative — e crea una checklist personale per i colloqui con i fornitori. L'unica cifra reale mostrata proviene dalla struttura di prezzo pubblica di Weissmann e appare solo se la vostra selezione corrisponde all'ambito lì descritto: è un esempio, non un'offerta per il vostro progetto.",
+
+  "privacyNote": "Lo strumento funziona interamente nel browser. Non esiste alcun campo per nome, azienda, e-mail o budget — solo parametri generici di tipo di attività e ambito. Nessun dato viene trasmesso o inviato a un server."
+}

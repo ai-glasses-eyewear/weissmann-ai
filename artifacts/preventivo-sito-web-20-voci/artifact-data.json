@@ -1,0 +1,169 @@
+{
+  "articleId": "preventivo-sito-web-20-voci",
+  "language": "it",
+  "dataAsOf": "2026-07-29",
+  "toolTitle": "Analizzatore interattivo di preventivi web",
+  "instructions": "Per ognuna delle 20 voci qui sotto, scegliete lo stato che corrisponde al vostro preventivo reale: scritto per iscritto, mancante, oppure non applicabile al vostro progetto. Lo strumento funziona per qualunque preventivo, di qualunque fornitore — agenzia ticinese, freelancer, studio grafico o Weissmann stesso — perché nessuna voce presume un fornitore specifico.",
+  "statusOptions": [
+    { "id": "written", "label": "Scritto per iscritto", "scoreValue": 1 },
+    { "id": "missing", "label": "Manca / non specificato", "scoreValue": 0 },
+    { "id": "unclear", "label": "Vago (menzionato ma senza dettagli verificabili)", "scoreValue": 0.5 },
+    { "id": "na", "label": "Non si applica a questo progetto", "scoreValue": null }
+  ],
+  "defaultStatus": "missing",
+  "groups": [
+    {
+      "id": "content-scope",
+      "label": "Gruppo 1 — Contenuto e portata",
+      "items": [
+        {
+          "id": "pages-count",
+          "label": "Numero esatto di pagine incluse",
+          "whyItMatters": "Senza una cifra precisa, ogni pagina aggiuntiva richiesta durante il progetto diventa un supplemento non preventivato.",
+          "questionToAsk": "Quante pagine sono incluse esattamente, e quanto costa ogni pagina aggiuntiva?"
+        },
+        {
+          "id": "copywriting",
+          "label": "Chi scrive i testi (copywriting)",
+          "whyItMatters": "Scrivere bene i testi richiede tempo; sapere chi lo mette in conto evita ritardi e costi scoperti a metà progetto.",
+          "questionToAsk": "Il copywriting è incluso, è un costo separato, o resta a nostro carico?"
+        },
+        {
+          "id": "languages-count",
+          "label": "Numero di lingue incluse",
+          "whyItMatters": "Il costo di ogni lingua aggiuntiva, in creazione e negli aggiornamenti futuri, va conosciuto prima, non scoperto dopo.",
+          "questionToAsk": "Quante lingue sono incluse, e quanto costa aggiungerne una in più, ora e in futuro?"
+        },
+        {
+          "id": "revision-rounds",
+          "label": "Numero di cicli di revisione inclusi",
+          "whyItMatters": "\"Revisioni illimitate\" senza altra precisazione lascia aperto sia il numero sia la scadenza entro cui richiederle.",
+          "questionToAsk": "Quanti cicli di correzione sono inclusi, ed entro quando vanno richiesti?"
+        },
+        {
+          "id": "photos",
+          "label": "Fotografie e immagini: chi le fornisce",
+          "whyItMatters": "Immagini generiche o di bassa qualità indeboliscono la percezione del sito indipendentemente dal design.",
+          "questionToAsk": "Le immagini sono nostre, stock gratuito, stock a pagamento, o è previsto un servizio fotografico?"
+        },
+        {
+          "id": "features",
+          "label": "Moduli e funzionalità specifiche",
+          "whyItMatters": "Prenotazioni, calcolatori, aree riservate o e-commerce di base hanno costi e complessità diversi da una pagina statica.",
+          "questionToAsk": "Quali funzionalità oltre alle pagine statiche sono incluse, ed elencate singolarmente?"
+        },
+        {
+          "id": "integrations",
+          "label": "Integrazioni con sistemi terzi",
+          "whyItMatters": "Il costo di servizi terzi collegati (CRM, calendario, newsletter, pagamenti) spesso si somma silenziosamente a quello del sito.",
+          "questionToAsk": "Quali integrazioni sono incluse nel prezzo, e quali richiedono un canone a parte per il servizio terzo?"
+        }
+      ]
+    },
+    {
+      "id": "technical-seo",
+      "label": "Gruppo 2 — Fondamenta tecniche e SEO",
+      "items": [
+        {
+          "id": "analytics",
+          "label": "Google Analytics 4 intestato a voi",
+          "whyItMatters": "Un account non intestato a voi significa perdere lo storico dei dati se cambiate fornitore.",
+          "questionToAsk": "Google Analytics 4 sarà configurato con noi come proprietari dell'account?"
+        },
+        {
+          "id": "search-console",
+          "label": "Google Search Console verificata a vostro nome",
+          "whyItMatters": "È lo strumento che mostra come Google vede il sito; senza accesso proprio dipendete da altri anche solo per verificare l'indicizzazione.",
+          "questionToAsk": "Search Console sarà verificata a nome della nostra azienda, con accesso diretto per noi?"
+        },
+        {
+          "id": "seo-foundations",
+          "label": "Elementi SEO tecnici elencati esplicitamente",
+          "whyItMatters": "\"SEO incluso\" senza elementi nominati (URL, meta tag, sitemap, dati strutturati) è una frase, non un impegno verificabile.",
+          "questionToAsk": "Quali elementi tecnici SEO concreti sono inclusi, uno per uno?"
+        },
+        {
+          "id": "performance",
+          "label": "Performance verificabile con un test pubblico",
+          "whyItMatters": "Un aggettivo come \"velocissimo\" non è verificabile; una URL di riferimento testabile con uno strumento gratuito lo è.",
+          "questionToAsk": "Potete mostrarmi un sito già online, dello stesso tipo, che posso testare io stesso con PageSpeed Insights?"
+        },
+        {
+          "id": "hosting",
+          "label": "Hosting: dove, e chi paga il canone",
+          "whyItMatters": "Un hosting intestato solo all'agenzia è spesso il primo elemento di un vincolo scoperto solo al cambio fornitore.",
+          "questionToAsk": "Su quale account è ospitato il sito, e chi paga l'eventuale canone ricorrente?"
+        },
+        {
+          "id": "security-backup",
+          "label": "Sicurezza (SSL, header) e backup",
+          "whyItMatters": "Sono elementi tecnici a basso costo da includere dall'inizio, non un pacchetto separato venduto dopo un problema.",
+          "questionToAsk": "Certificato SSL, header di sicurezza di base e backup regolari sono inclusi fin dal lancio?"
+        }
+      ]
+    },
+    {
+      "id": "ownership-exit",
+      "label": "Gruppo 3 — Proprietà e uscita",
+      "items": [
+        {
+          "id": "code-ownership",
+          "label": "Proprietà del codice sorgente",
+          "whyItMatters": "Una rassicurazione verbale non vale nulla se nessuno consegna mai un accesso concreto al codice.",
+          "questionToAsk": "A fine progetto, il codice sorgente è nostro, con accesso consegnato concretamente?"
+        },
+        {
+          "id": "cms-access",
+          "label": "Accesso amministrativo al CMS",
+          "whyItMatters": "Senza accesso da amministratore intestato a voi, ogni piccola modifica richiede passare dall'agenzia.",
+          "questionToAsk": "Riceveremo un accesso amministratore al CMS intestato a noi fin dall'inizio?"
+        },
+        {
+          "id": "domain-registrar",
+          "label": "Controllo del registrar del dominio",
+          "whyItMatters": "Se il dominio è registrato a nome dell'agenzia, tecnicamente il vostro indirizzo web non è vostro.",
+          "questionToAsk": "Il dominio è, o sarà, registrato a nostro nome presso il registrar?"
+        },
+        {
+          "id": "legal-texts",
+          "label": "Testi legali obbligatori (Impressum, privacy)",
+          "whyItMatters": "La responsabilità dei contenuti legali resta quasi sempre dell'azienda titolare, non dell'agenzia che li inserisce materialmente.",
+          "questionToAsk": "Chi redige i testi legali obbligatori, e chi ne è responsabile in caso di errore?"
+        },
+        {
+          "id": "migration",
+          "label": "Migrazione dei contenuti dal sito esistente",
+          "whyItMatters": "Senza un piano scritto di reindirizzamenti, un redesign può cancellare posizionamento costruito in anni.",
+          "questionToAsk": "Esiste un piano scritto per migrare contenuti e reindirizzare le pagine esistenti?"
+        }
+      ]
+    },
+    {
+      "id": "ongoing-support",
+      "label": "Gruppo 4 — Supporto continuativo",
+      "items": [
+        {
+          "id": "maintenance",
+          "label": "Manutenzione post-lancio e tempi di risposta",
+          "whyItMatters": "\"Siamo sempre raggiungibili\" senza un tempo scritto non è una garanzia verificabile.",
+          "questionToAsk": "Cosa è incluso nella manutenzione, cosa costa a parte, e qual è il tempo di risposta scritto?"
+        },
+        {
+          "id": "contract-terms",
+          "label": "Condizioni contrattuali e uscita",
+          "whyItMatters": "Un pagamento una tantum evita il rinnovo automatico, ma non sostituisce la verifica della proprietà reale di codice, CMS e dominio.",
+          "questionToAsk": "Qual è la durata dell'impegno, come si esce dal contratto, e ci sono costi legati alla chiusura del rapporto?"
+        }
+      ]
+    }
+  ],
+  "scoringFormula": "completeness% = (numero di voci segnate \"scritto\" + 0.5 × numero di voci segnate \"vago\") / (20 − numero di voci segnate \"non applicabile\") × 100. Le voci \"non applicabile\" sono escluse sia dal numeratore sia dal denominatore, non contano come mancanti.",
+  "completenessBands": [
+    { "min": 0, "max": 39, "label": "Preventivo ad alto rischio", "description": "Troppe voci restano non scritte. Prima di firmare, portate l'elenco delle voci mancanti alla prossima conversazione con il fornitore." },
+    { "min": 40, "max": 69, "label": "Preventivo parzialmente scritto", "description": "Una parte solida è già per iscritto, ma restano zone grigie concentrate in uno o più gruppi. Chiedete per iscritto proprio le voci mancanti, non l'intero preventivo da rifare." },
+    { "min": 70, "max": 89, "label": "Preventivo solido", "description": "La maggior parte delle voci è chiara. Restano poche domande puntuali da fare prima della firma." },
+    { "min": 90, "max": 100, "label": "Preventivo quasi completo per iscritto", "description": "Quasi tutte le voci applicabili sono documentate. Verificate comunque le eventuali voci ancora segnate come vaghe." }
+  ],
+  "outputGuidance": "Oltre al punteggio complessivo, mostrare sempre la ripartizione per gruppo (Contenuto e portata / Fondamenta tecniche e SEO / Proprietà e uscita / Supporto continuativo), evidenziando il gruppo con più voci mancanti o vaghe, e generare un elenco delle sole domande (questionToAsk) corrispondenti alle voci non scritte, pronte da copiare per la prossima email o telefonata al fornitore.",
+  "disclaimer": "Questo strumento non emette un giudizio legale né garantisce che un punteggio alto renda un contratto sicuro: aiuta solo a individuare quali voci del vostro preventivo restano da chiarire per iscritto prima di firmare. Funziona allo stesso modo per un preventivo di qualsiasi fornitore, incluso Weissmann."
+}

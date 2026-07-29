@@ -59,7 +59,8 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 | 7 | DE-WEB-01 – 05 | done |
 | 8 | DE-WEB-06 – 10 | done |
 | 9 | EN-WEB-01 – 05 | done |
-| 10 | EN-WEB-06 – 10 | done (commit pending) |
+| 10 | EN-WEB-06 – 10 | done |
+| 11 | IT-WEB-01 – 05 | done (commit pending) |
 | 3 | EN-PHONE-01 – 05 | pending |
 | 4 | EN-PHONE-06 – 10 | pending |
 | 5 | IT-PHONE-01 – 05 | pending |
@@ -226,5 +227,19 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 **Batch 10 cross-checks:** 0 duplicate titles/slugs/H1s within batch and against all prior batches; 0 slug collisions across all 129 academy-content files (366 unique locale-slug keys); full build = 699 pages; full validator suite passes with 0 issues.
 
 **Progress: 50 of 60 articles complete** — all 30 phone-assistant articles (10 DE + 10 EN + 10 IT) and all 20 DE/EN website articles. **Remaining: 10 IT-WEB articles across Batches 11–12 — the final stretch.**
+
+### Batch 11 — IT-WEB-01–05 (complete)
+
+| # | Title | Keyword | Intent | Article file | Artifact files | Uniqueness | Factual | Impl. | Validation |
+|---|---|---|---|---|---|---|---|---|---|
+| IT-WEB-01 | Costo sito web in Ticino e Svizzera | costo sito web Svizzera | informational | `academy-content/costo-sito-web-ticino-svizzera.json` | `artifacts/costo-sito-web-ticino-svizzera/` | pass — launch-vs-ongoing cost split + language-reach axis, distinct structure from DE/EN cost-anatomy siblings | Swiss VAT rate (8.1%) live-verified against AFC/ESTV Italian page | done | build+QA+links+duplicates+guardrails pass |
+| IT-WEB-02 | Sito web economico Svizzera: CHF 880, cosa include | sito web economico Svizzera | transactional | `academy-content/sito-web-chf-880-svizzera.json` | `artifacts/sito-web-chf-880-svizzera/` | pass — third and final language version of the promotion article, freshly written, own Ticino "prezzo civetta" skepticism framing | every feature bullet programmatically verified verbatim against pricing.ts; percentage-discount framing explicitly refused | done | build+QA+links+duplicates+guardrails pass — 3rd and final highest-stakes commercial article, verified line-by-line |
+| IT-WEB-03 | Preventivo sito web: 20 voci da avere per iscritto | preventivo sito web Ticino | commercial-investigation | `academy-content/preventivo-sito-web-20-voci.json` | `artifacts/preventivo-sito-web-20-voci/` | pass — vendor-neutral 20-item quote checklist, honestly flags a real gap in Weissmann's own published process language | works for any vendor's quote by design | done | build+QA+links+duplicates+guardrails pass |
+| IT-WEB-04 | La migliore agenzia web in Ticino: i criteri giusti | migliore agenzia web Ticino | commercial-investigation | `academy-content/migliore-agenzia-web-ticino.json` | `artifacts/migliore-agenzia-web-ticino/` | pass — proximity-vs-remote fork as primary axis, genuinely Ticino-specific vs. DE's flat scorecard and EN's due-diligence-stage structure; no invented competitors | Weissmann honestly self-classified as "Remota" for Ticino, real Zürich address disclosed | done | build+QA+links+duplicates+guardrails pass |
+| IT-WEB-05 | Sito web per PMI ticinesi: cosa serve davvero | sito web per piccole imprese | commercial-investigation | `academy-content/sito-web-piccola-impresa-ticino.json` | `artifacts/sito-web-piccola-impresa-ticino/` | pass — 5 genuinely distinct business-type priority profiles (ristorante/estetica/artigiano/consulente/studio medico), confirmed via one differentiating detail per type | no invented integrations | done | build+QA+links+duplicates+guardrails pass |
+
+**Batch 11 cross-checks:** 0 duplicate titles/slugs/H1s within batch and against all prior batches; 0 slug collisions across all 134 academy-content files (371 unique locale-slug keys); full build = 704 pages; full validator suite passes with 0 issues.
+
+**Progress: 55 of 60 articles complete.** Remaining: IT-WEB-06–10 (Batch 12) — the final 5 articles of the entire project.
 
 _(Further batches logged the same way as they complete.)_
