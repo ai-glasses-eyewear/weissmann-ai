@@ -268,6 +268,24 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 
 **One pre-existing dangling reference found and left as-is (not a regression):** `swiss-ai-phone-assistant-provider-comparison` (DE-PHONE-01, written before the 60-article project's batch structure) lists `phone-assistant-vs-alternatives` in `relatedArticles`, which is a `comparison-content/` page, not an `academy-content/` article — a different content type this resolver doesn't (and shouldn't, out of scope) reach into. The lookup safely returns nothing and the reference is silently omitted; confirmed this causes no broken link, no build failure, and no audit flag (`audit-duplicates.mjs`'s "BROKEN internal link targets: 0" and orphan checks both pass). Flagged here for visibility, not treated as blocking.
 
-Remaining work before PR: (1) full-project final QA pass beyond the per-batch validators already run (task #103 — largely already covered by the full-corpus runs above, one more pass planned), (2) final uniqueness/factual audit report, branch push, and PR creation (task #104).
+### Full-project QA pass across all 60 new articles together (task #103)
+
+Beyond the per-batch checks already run 12 times, ran a dedicated cross-article scan treating all 60 new articles (confirmed via `git diff master...HEAD --name-only -- src/data/academy-content/` = exactly 60 files) as one set:
+
+- **Slug/title collisions within the 60:** 0 (in addition to the 0 already confirmed against the full 139-file corpus).
+- **Opening-sentence collisions** (first 60 chars of `answerFirst`, per active locale): 0.
+- **FAQ question collisions** across all 60 articles' FAQ sets (same locale): 0.
+- **H1 collisions:** 0.
+- **Forbidden-phrase scan** (revolutionary/game-changer/seamless-solution/perfect-solution/"in today's fast-paced world" and DE/IT/FR equivalents) across all 60: 0 hits.
+- **Locale-padding convention** (excluded locales must be empty string, never placeholder text) verified across all locale-restricted articles among the 60: 0 violations.
+- **Title rendered-length risk** (raw length + HTML-entity inflation from apostrophes/ampersands) across all 60: 0 at risk.
+
+**Real issue found and fixed:** a raw-JSON `metaDescription.de` length check (not caught by any per-batch build run, since `scripts/audit.mjs` validates the *rendered* `<meta>` tag, and `src/layouts/Layout.astro` silently auto-truncates any description over ~160 chars at a word boundary with "…") found 3 pre-existing Batch-1 articles whose authored German meta descriptions were 203–213 characters — well over the ≤165 authoring convention used for the rest of the project. This wasn't a build-breaking bug, but the auto-truncation was silently cutting real content from the search-result snippet — in `ai-call-recording-legality-switzerland.json`, it cut off the "keine Rechtsberatung" (not legal advice) disclaimer entirely. Fixed by manually shortening all 3 (`ai-call-recording-legality-switzerland`, `keep-existing-swiss-number-ai-assistant`, `swiss-ai-phone-assistant-provider-comparison`) to fit within 165 characters while preserving their exact original factual claims and sources. Re-verified: rendered meta description for the first now reads in full (155 chars, no truncation, disclaimer intact). Full build + all 6 validators re-run clean after the fix.
+
+**Full-corpus validation, final state (709 pages):** `npm run build` clean, `qa-gates` pass, `audit.mjs` 0 issues, `audit-duplicates.mjs` 0 hard issues, `check-links.mjs` 0 broken links, `ci-guardrails.mjs` all pass, `validate-pricing.mjs` pass (10 packages, 7 Stripe links).
+
+**Task #103 status: complete.**
+
+Remaining before PR: final uniqueness/factual audit report, branch push, and PR creation (task #104).
 
 _(Further batches logged the same way as they complete.)_
