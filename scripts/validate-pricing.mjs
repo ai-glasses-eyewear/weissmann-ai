@@ -19,7 +19,12 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const read = (p) => readFileSync(join(root, p), 'utf8');
+// Normalize CRLF -> LF at the read boundary so every regex below (all written
+// against bare \n) behaves identically regardless of the checkout's line
+// endings. Without this, a Windows checkout with core.autocrlf=true silently
+// produces 0 regex matches downstream instead of failing loudly — caught in
+// production when this script reported "0 packages" and still exited 0.
+const read = (p) => readFileSync(join(root, p), 'utf8').replace(/\r\n/g, '\n');
 
 const errors = [];
 
@@ -70,6 +75,11 @@ if (!siteSrc.includes('Technoparkstrasse 6') || !siteSrc.includes("postalCode: '
 // 5. Structural checks: every package block needs all four locales in
 //    localized fields, a CHF currency, and a coherent CTA/link pairing.
 const packageBlocks = pricingSrc.split(/\n  \{\n    id: '/).slice(1);
+// A parser that finds nothing is a parser that broke, not a config with zero
+// packages — never let that pass silently as if 0 were a valid count.
+if (packageBlocks.length === 0) {
+  errors.push('Parsed 0 package blocks from pricing.ts — the block-splitting regex found no matches. This means the parser is broken (e.g. pricing.ts formatting changed) or the file is empty, not that there are genuinely no packages. Fix the parser before trusting this script again.');
+}
 for (const block of packageBlocks) {
   const id = block.slice(0, block.indexOf("'"));
   for (const loc of ['de:', 'en:', 'it:', 'fr:']) {
