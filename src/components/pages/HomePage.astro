@@ -159,46 +159,50 @@ const trust = TRUST[locale];
 // Four-pillar section — the flagship services, each with a concrete benefit,
 // explanation and business outcome (no vague "transform your business" filler).
 // Links resolve via the route registry, never hardcoded.
-const PILLAR_ICONS = ['phone', 'bolt', 'target', 'sparkle'] as const;
+const PILLAR_ICONS = ['phone', 'bolt', 'target', 'sparkle', 'glasses'] as const;
 const PILLARS: Record<Locale, { eyebrow: string; title: string; text: string; items: Array<{ id: string; headline: string; text: string; outcome: string; cta: string }> }> = {
   de: {
-    eyebrow: 'Vier Bausteine', title: 'Warum Unternehmen Weissmann wählen',
-    text: 'Vier eigenständige Leistungen, die zusammen ein System ergeben — jede für sich bereits wirksam.',
+    eyebrow: 'Unsere Bausteine', title: 'Warum Unternehmen Weissmann wählen',
+    text: 'Eigenständige Leistungen, die zusammen ein System ergeben — jede für sich bereits wirksam.',
     items: [
       { id: 'phone-assistant', headline: 'Kein Anruf geht mehr verloren', text: 'Nimmt Kundenanrufe entgegen, qualifiziert Anfragen und schützt Ihr Team vor ständigen Unterbrechungen.', outcome: 'Ergebnis: mehr gebuchte Termine, weniger verpasste Chancen.', cta: 'KI-Telefonassistent entdecken' },
       { id: 'websites', headline: 'Eine Website, die verkauft – nicht nur aussieht', text: 'Schafft einen glaubwürdigen, schnellen und konversionsstarken Auftritt, der nicht wie ein gewöhnlicher Baukasten wirkt.', outcome: 'Ergebnis: mehr Anfragen aus Ihrem bestehenden Traffic.', cta: 'Website-Pakete ansehen' },
       { id: 'seo', headline: 'Gefunden werden, wenn es zählt', text: 'Hilft qualifizierten Interessenten, Ihr Unternehmen zu finden, wenn sie aktiv nach Ihren Leistungen suchen.', outcome: 'Ergebnis: mehr organischer Traffic mit echter Kaufabsicht.', cta: 'Mehr zu SEO' },
       { id: 'geo', headline: 'Sichtbar in der KI-Suche', text: 'Strukturiert die Informationen Ihres Unternehmens so, dass KI-Suchsysteme sie besser verstehen, referenzieren und dort erwähnen können, wo es passt.', outcome: 'Ergebnis: bessere Chancen auf Erwähnung in ChatGPT, Gemini und Perplexity – ohne Garantie auf eine bestimmte Platzierung.', cta: 'Mehr zu GEO' },
+      { id: 'ai-eyewear', headline: 'Information direkt im Blick', text: 'Even Realities Smart Glasses mit Live-Übersetzung, Live-Untertiteln und einem KI-Assistenten fürs Sichtfeld.', outcome: 'Ergebnis: mehr KI im Alltag – über das Telefon hinaus.', cta: 'AI-Eyewear entdecken' },
     ],
   },
   en: {
-    eyebrow: 'Four building blocks', title: 'Why companies choose Weissmann',
-    text: 'Four standalone services that add up to one system — each one effective on its own.',
+    eyebrow: 'Our building blocks', title: 'Why companies choose Weissmann',
+    text: 'Standalone services that add up to one system — each one effective on its own.',
     items: [
       { id: 'phone-assistant', headline: 'No call goes unanswered', text: 'Answers customer calls, qualifies requests and protects your team from constant interruptions.', outcome: 'Result: more booked appointments, fewer missed opportunities.', cta: 'Explore the AI Phone Assistant' },
       { id: 'websites', headline: 'A website that sells – not just looks good', text: 'Creates a credible, fast and conversion-focused digital presence that doesn’t look like a generic template.', outcome: 'Result: more enquiries from the traffic you already have.', cta: 'See website packages' },
       { id: 'seo', headline: 'Found when it matters', text: 'Helps qualified prospects discover your company when they’re actively searching for what you offer.', outcome: 'Result: more organic traffic with genuine buying intent.', cta: 'More about SEO' },
       { id: 'geo', headline: 'Visible in AI search', text: 'Structures your company’s information so AI search systems can better understand, reference and mention it where relevant.', outcome: 'Result: better odds of being mentioned in ChatGPT, Gemini and Perplexity – with no guarantee of a specific placement.', cta: 'More about GEO' },
+      { id: 'ai-eyewear', headline: 'Information right in view', text: 'Even Realities smart glasses with live translation, live captions and an AI assistant in your field of view.', outcome: 'Result: more AI in your day, beyond the phone.', cta: 'Discover AI-Eyewear' },
     ],
   },
   it: {
-    eyebrow: 'Quattro pilastri', title: 'Perché le aziende scelgono Weissmann',
-    text: 'Quattro servizi indipendenti che insieme formano un sistema — ciascuno efficace già da solo.',
+    eyebrow: 'I nostri pilastri', title: 'Perché le aziende scelgono Weissmann',
+    text: 'Servizi indipendenti che insieme formano un sistema — ciascuno efficace già da solo.',
     items: [
       { id: 'phone-assistant', headline: 'Nessuna chiamata va persa', text: 'Risponde alle chiamate dei clienti, qualifica le richieste e protegge il team da interruzioni costanti.', outcome: 'Risultato: più appuntamenti prenotati, meno occasioni perse.', cta: 'Scopri l’assistente telefonico AI' },
       { id: 'websites', headline: 'Un sito che vende – non solo bello da vedere', text: 'Crea una presenza digitale credibile, veloce e orientata alla conversione, che non sembra un template generico.', outcome: 'Risultato: più richieste dal traffico che avete già.', cta: 'Vedi i pacchetti sito web' },
       { id: 'seo', headline: 'Trovati quando conta davvero', text: 'Aiuta i potenziali clienti qualificati a scoprire la vostra azienda quando cercano attivamente i vostri servizi.', outcome: 'Risultato: più traffico organico con reale intenzione d’acquisto.', cta: 'Scopri il servizio SEO' },
       { id: 'geo', headline: 'Visibili nella ricerca AI', text: 'Struttura le informazioni della vostra azienda affinché i sistemi di ricerca AI possano comprenderle, citarle e menzionarle dove pertinente.', outcome: 'Risultato: maggiori possibilità di essere menzionati in ChatGPT, Gemini e Perplexity – senza garanzia di un posizionamento specifico.', cta: 'Scopri il servizio GEO' },
+      { id: 'ai-eyewear', headline: 'L’informazione sempre in vista', text: 'Occhiali smart Even Realities con traduzione dal vivo, sottotitoli dal vivo e un assistente AI nel campo visivo.', outcome: 'Risultato: più AI nella vostra giornata, oltre il telefono.', cta: 'Scoprite AI-Eyewear' },
     ],
   },
   fr: {
-    eyebrow: 'Quatre piliers', title: 'Pourquoi les entreprises choisissent Weissmann',
-    text: 'Quatre services indépendants qui forment ensemble un système — chacun déjà efficace seul.',
+    eyebrow: 'Nos piliers', title: 'Pourquoi les entreprises choisissent Weissmann',
+    text: 'Des services indépendants qui forment ensemble un système — chacun déjà efficace seul.',
     items: [
       { id: 'phone-assistant', headline: 'Aucun appel ne reste sans réponse', text: 'Répond aux appels des clients, qualifie les demandes et protège votre équipe des interruptions constantes.', outcome: 'Résultat : plus de rendez-vous réservés, moins d’occasions manquées.', cta: 'Découvrir l’agent téléphonique IA' },
       { id: 'websites', headline: 'Un site qui vend – pas seulement esthétique', text: 'Crée une présence digitale crédible, rapide et axée sur la conversion, qui ne ressemble pas à un modèle générique.', outcome: 'Résultat : plus de demandes à partir du trafic que vous avez déjà.', cta: 'Voir les forfaits site web' },
       { id: 'seo', headline: 'Trouvé au bon moment', text: 'Aide les prospects qualifiés à découvrir votre entreprise lorsqu’ils recherchent activement vos services.', outcome: 'Résultat : plus de trafic organique avec une réelle intention d’achat.', cta: 'En savoir plus sur le SEO' },
       { id: 'geo', headline: 'Visible dans la recherche IA', text: 'Structure les informations de votre entreprise pour que les systèmes de recherche IA puissent mieux les comprendre, les référencer et les mentionner lorsque c’est pertinent.', outcome: 'Résultat : de meilleures chances d’être mentionné dans ChatGPT, Gemini et Perplexity – sans garantie de positionnement spécifique.', cta: 'En savoir plus sur le GEO' },
+      { id: 'ai-eyewear', headline: 'L’information directement sous les yeux', text: 'Lunettes intelligentes Even Realities avec traduction en direct, sous-titres en direct et un assistant IA dans votre champ de vision.', outcome: 'Résultat : plus d’IA dans votre quotidien, au-delà du téléphone.', cta: 'Découvrir AI-Eyewear' },
     ],
   },
 };
@@ -429,7 +433,8 @@ const C: Record<Locale, any> = {
       'Von der Sichtbarkeit bei Google und in der KI-Suche über eine Premium-Website bis zur Anrufannahme und zum abgeschlossenen Termin: Weissmann baut ein durchgehendes System – kein Sammelsurium aus Einzellösungen. Kein verpasster Anruf, kein verlorener Kunde.',
     heroVideoLabel: 'Demo: Der KI-Telefonassistent nimmt einen Anruf entgegen',
     heroPrimary: 'Demo anfordern',
-    heroSecondary: 'KI live anrufen',
+    heroSecondary: 'Leistungen entdecken',
+    externalLinkHint: 'öffnet in neuem Tab',
     socialProof: 'Über 20 Unternehmen haben bereits eine Live-Demo angefragt.',
     mock: {
       status: 'Eingehender Anruf · nimmt an',
@@ -491,8 +496,8 @@ const C: Record<Locale, any> = {
     finalTitle: 'Bereit für ein System, dessen Wirkung Sie messen können?',
     finalText: 'Buchen Sie ein unverbindliches Erstgespräch. Wir zeigen Ihnen konkret, wo KI und Automatisierung in Ihrem Unternehmen Wirkung zeigen – und wo (noch) nicht.',
     glasses: {
-      eyebrow: 'Das Weissmann AI Ökosystem',
-      title: 'KI-Brillen für die Arbeit',
+      eyebrow: 'Ausgewählte Innovation',
+      title: 'Even Realities Smart Glasses — Information, genau dann, wenn Sie sie brauchen',
       lead: 'Über KI am Telefon hinaus bringt Weissmann KI in Ihr Sichtfeld. Even Realities Smart Glasses bieten Live-Übersetzung, Live-Untertitel und einen diskreten KI-Assistenten – gemacht für Meetings, Barrierefreiheit und internationales Geschäft.',
       features: [
         { label: 'Live-Übersetzung', text: 'Gespräche in Echtzeit verstehen – über Sprachgrenzen hinweg.' },
@@ -517,7 +522,8 @@ const C: Record<Locale, any> = {
       'From visibility on Google and in AI search, to a premium website, to answering the call and completing the booking: Weissmann builds one connected system — not a pile of disconnected tools. No missed call, no lost customer.',
     heroVideoLabel: 'Demo: the AI phone agent answering a call',
     heroPrimary: 'Request a demo',
-    heroSecondary: 'Call the AI live',
+    heroSecondary: 'Explore services',
+    externalLinkHint: 'opens in a new tab',
     socialProof: 'More than 20 businesses have already requested a live demo.',
     mock: {
       status: 'Incoming call · answering',
@@ -579,8 +585,8 @@ const C: Record<Locale, any> = {
     finalTitle: 'Ready for a system whose impact you can measure?',
     finalText: 'Book a no-obligation consultation. We’ll show you concretely where AI and automation create impact in your business — and where they don’t (yet).',
     glasses: {
-      eyebrow: 'The Weissmann AI ecosystem',
-      title: 'AI smart glasses for work',
+      eyebrow: 'Featured innovation',
+      title: 'Even Realities smart glasses — information when you need it',
       lead: 'Beyond AI on the phone, Weissmann brings AI into your field of view. Even Realities smart glasses deliver live translation, live captions and a discreet AI assistant – built for meetings, accessibility and international business.',
       features: [
         { label: 'Live translation', text: 'Understand conversations in real time, across language barriers.' },
@@ -605,7 +611,8 @@ const C: Record<Locale, any> = {
       'Dalla visibilità su Google e nella ricerca AI, a un sito web premium, fino alla risposta alla chiamata e alla prenotazione conclusa: Weissmann costruisce un sistema unico e connesso – non un insieme di strumenti isolati. Nessuna chiamata persa, nessun cliente perso.',
     heroVideoLabel: 'Demo: l’assistente telefonico AI risponde a una chiamata',
     heroPrimary: 'Richiedi una demo',
-    heroSecondary: 'Chiama l’AI dal vivo',
+    heroSecondary: 'Scoprite i servizi',
+    externalLinkHint: 'si apre in una nuova scheda',
     socialProof: 'Oltre 20 aziende hanno già richiesto una demo dal vivo.',
     mock: {
       status: 'Chiamata in arrivo · risponde',
@@ -667,8 +674,8 @@ const C: Record<Locale, any> = {
     finalTitle: 'Pronti per un sistema di cui potete misurare l’impatto?',
     finalText: 'Prenotate un primo colloquio senza impegno. Vi mostriamo concretamente dove AI e automazione creano impatto nella vostra azienda — e dove (ancora) no.',
     glasses: {
-      eyebrow: 'L’ecosistema Weissmann AI',
-      title: 'Occhiali smart con AI per il lavoro',
+      eyebrow: 'Innovazione in evidenza',
+      title: 'Occhiali smart Even Realities — l’informazione quando serve',
       lead: 'Oltre all’AI al telefono, Weissmann porta l’AI nel vostro campo visivo. Gli occhiali smart Even Realities offrono traduzione dal vivo, sottotitoli dal vivo e un assistente AI discreto – pensati per riunioni, accessibilità e business internazionale.',
       features: [
         { label: 'Traduzione dal vivo', text: 'Capite le conversazioni in tempo reale, oltre le barriere linguistiche.' },
@@ -693,7 +700,8 @@ const C: Record<Locale, any> = {
       'De la visibilité sur Google et dans la recherche IA, à un site web premium, jusqu’à la réponse à l’appel et la réservation conclue : Weissmann construit un système unique et connecté – pas un ensemble d’outils isolés. Aucun appel manqué, aucun client perdu.',
     heroVideoLabel: 'Démo : l’agent téléphonique IA répond à un appel',
     heroPrimary: 'Demander une démo',
-    heroSecondary: 'Appeler l’IA en direct',
+    heroSecondary: 'Découvrir nos services',
+    externalLinkHint: 'ouvre un nouvel onglet',
     socialProof: 'Plus de 20 entreprises ont déjà demandé une démo en direct.',
     mock: {
       status: 'Appel entrant · réponse',
@@ -755,8 +763,8 @@ const C: Record<Locale, any> = {
     finalTitle: 'Prêt pour un système dont vous pouvez mesurer l’impact ?',
     finalText: 'Réservez un premier entretien sans engagement. Nous vous montrons concrètement où l’IA et l’automatisation créent de l’impact dans votre entreprise — et où pas (encore).',
     glasses: {
-      eyebrow: 'L’écosystème Weissmann AI',
-      title: 'Lunettes intelligentes IA pour le travail',
+      eyebrow: 'Innovation à la une',
+      title: 'Lunettes intelligentes Even Realities — l’info quand vous en avez besoin',
       lead: 'Au-delà de l’IA au téléphone, Weissmann amène l’IA dans votre champ de vision. Les lunettes connectées Even Realities offrent traduction en direct, sous-titres en direct et un assistant IA discret – conçus pour les réunions, l’accessibilité et le business international.',
       features: [
         { label: 'Traduction en direct', text: 'Comprenez les conversations en temps réel, au-delà des barrières linguistiques.' },
@@ -775,6 +783,7 @@ const C: Record<Locale, any> = {
 const c = C[locale];
 const videoSrc = locale === 'de' ? '/videos/weissmann-demo-de.mp4' : '/videos/weissmann-demo-en.mp4';
 const posterSrc = theme === 'b' ? '/poster-call-dark.png' : '/poster-call-light.png';
+const servicesHref = relFor(locale, pillarHome('services'));
 
 // Organization + WebSite are emitted site-wide by the Layout; the homepage adds
 // its WebPage + FAQ.
@@ -803,14 +812,14 @@ const websiteStarter = getPackage('website-starter');
   <!-- ── 2. Hero — premium dark, animated phone device ─────── -->
   <section class="hero hero--dark">
     <div class="hero__glow" aria-hidden="true"></div>
-    <div class="container hero__grid">
+    <div class="hero__grid">
       <div class="hero__copy">
         <span class="eyebrow eyebrow--light">{c.heroEyebrow}</span>
         <h1 class="hero__title">{c.heroTitle}</h1>
         <p class="hero__text">{c.heroText}</p>
         <div class="hero__actions">
           <a class="btn btn--accent" href={`${p}/kontakt/`} data-track="book_consultation">{c.heroPrimary}</a>
-          <a class="btn btn--ondark" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live"><Icon name="phone" size={18} />{c.heroSecondary} · {SITE.aiPhoneDisplay}</a>
+          <a class="btn btn--ondark" href={servicesHref} data-track="explore_services">{c.heroSecondary}</a>
         </div>
         <p class="hero__proof"><Icon name="users" size={16} />{c.socialProof}</p>
         <ul class="hero__chips">
@@ -838,7 +847,197 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
-  <!-- ── Self-playing call replay: ring → book → WhatsApp → calendar ─ -->
+  <!-- ── Even Realities AI Eyewear — featured product, immediately after the
+       hero and before any educational/proof content, per the ecosystem's
+       flagship-placement brief. Links out to ai-eyewear.ch (the canonical
+       product site) rather than duplicating an indexable Weissmann page. ─ -->
+  <section class="section glasses-section glasses-section--featured">
+    <div class="container">
+      <div class="glasses-layout">
+        <figure class="glasses-visual reveal">
+          <img class="glasses-photo" src="/smart-glasses-worn.webp" width="1651" height="2200"
+               alt={c.glasses.title} loading="eager" decoding="async" />
+          <img class="glasses-photo glasses-photo--inset" src="/smart-glasses.webp" width="2000" height="2000"
+               alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        </figure>
+        <div class="glasses-copy reveal">
+          <span class="eyebrow">{c.glasses.eyebrow}</span>
+          <h2>{c.glasses.title}</h2>
+          <p class="glasses-lead">{c.glasses.lead}</p>
+          <ul class="glasses-list">
+            {c.glasses.features.map((f: any, i: number) => (
+              <li><span class="feat-icon glasses-list__icon"><Icon name={GLASSES_ICONS[i]} size={18} /></span>{f.label}</li>
+            ))}
+          </ul>
+          <p class="mt-4">
+            <a class="btn btn--primary" href="https://ai-eyewear.ch" rel="noopener noreferrer" target="_blank" data-track="glasses_view" aria-label={`${c.glasses.ctaLabel} (${c.externalLinkHint})`}>
+              {c.glasses.ctaLabel} <span aria-hidden="true">↗</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       Section order (per the homepage-hierarchy brief):
+       Hero → AI Eyewear (done above) → Core Weissmann services → Business
+       benefits/Why Weissmann → Proof/process/comparison → Pricing →
+       Resources/secondary → Final CTA. ═══════════════════════════════════ -->
+
+  <!-- ── CORE SERVICES 1/3: Four-pillar section ───────────── -->
+  <section class="section pillars-section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{pillars.eyebrow}</span>
+        <h2>{pillars.title}</h2>
+        <p>{pillars.text}</p>
+      </div>
+      <div class="pillars-grid">
+        {pillars.items.map((it, i) => {
+          const isExternal = it.id === 'ai-eyewear';
+          return (
+            <div class="pillar-card reveal" style={`--i:${i}`}>
+              <span class="pillar-card__icon"><Icon name={PILLAR_ICONS[i]} size={24} /></span>
+              <h3>{it.headline}</h3>
+              <p class="pillar-card__text">{it.text}</p>
+              <p class="pillar-card__outcome">{it.outcome}</p>
+              {isExternal ? (
+                <a class="pillar-card__cta" href="https://ai-eyewear.ch" rel="noopener noreferrer" target="_blank" data-track="glasses_view" aria-label={`${it.cta} (${c.externalLinkHint})`}>{it.cta} ↗</a>
+              ) : (
+                <a class="pillar-card__cta" href={pillarHref(it.id)} data-track="service_view">{it.cta} →</a>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CORE SERVICES 2/3: Six modules — one system ──────── -->
+  <section class="section" id="system">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">{c.systemEyebrow}</span>
+        <h2>{c.systemTitle}</h2>
+        <p>{c.systemText}</p>
+      </div>
+
+      <p class="growthwords">
+        {c.growthWords.map((w: string, i: number) => (
+          <>
+            <span class="growthwords__word">{w}</span>
+            {i < c.growthWords.length - 1 && <span class="growthwords__sep" aria-hidden="true">→</span>}
+          </>
+        ))}
+      </p>
+
+      <ol class="system">
+        {c.system.map((s: any, i: number) => (
+          <li class="system__row">
+            <span class="system__num" aria-hidden="true">{s.n}</span>
+            <div class="system__body">
+              <h3><a href={linkFor(i)} data-track="service_view">{s.title}</a></h3>
+              <p>{s.text}</p>
+            </div>
+            <a class="system__link" href={linkFor(i)} tabindex="-1" aria-hidden="true">→</a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── CORE SERVICES 3/3: Ecosystem router (4 content pillars) ─ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">{eco.eyebrow}</span>
+        <h2>{eco.title}</h2>
+        <p>{eco.text}</p>
+      </div>
+      <div class="eco-grid">
+        {eco.items.map((it) => (
+          <a class="eco-card" href={it.href}>
+            <h3>{it.title}</h3>
+            <p>{it.text}</p>
+            <span class="eco-card__arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BUSINESS BENEFITS 1/4: strategic trust statement ─── -->
+  <section class="section--tight truststrip">
+    <div class="container">
+      <p class="truststrip__statement">{c.trustStatement}</p>
+      <ul class="truststrip__facts">
+        {c.trustFacts.map((f: string, i: number) => <li><Icon name={TRUST_ICONS[i]} size={16} />{f}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── BUSINESS BENEFITS 2/4: Why Weissmann — numbered index ─ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head"><h2>{c.whyTitle}</h2></div>
+      <ol class="why">
+        {c.why.map((item: string, i: number) => (
+          <li class="why__item">
+            <span class="why__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <p>{item}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── BUSINESS BENEFITS 3/4: Trust & Swiss compliance cluster ─ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{trust.eyebrow}</span>
+        <h2>{trust.title}</h2>
+        <p>{trust.text}</p>
+      </div>
+      <div class="trustgrid">
+        {trust.pillars.map((pl, i) => (
+          <div class="trustpillar reveal" style={`--i:${i}`}>
+            <span class="feat-icon"><Icon name={pl.icon} size={22} /></span>
+            <h3>{pl.label}</h3>
+            <p>{pl.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BUSINESS BENEFITS 4/4: Authority — founders + process ─ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{authority.eyebrow}</span>
+        <h2>{authority.title}</h2>
+        <p>{authority.text}</p>
+      </div>
+      <div class="authority-grid">
+        <figure class="team-photo team-photo--avatar reveal">
+          <div class="team-photo__avatar" aria-hidden="true">{authority.founders[0].initials}</div>
+          <figcaption>{authority.founders[0].name} · {authority.founders[0].role}{founderLinkedin && (<> · <a class="team-photo__li" href={founderLinkedin} rel="noopener" target="_blank">LinkedIn →</a></>)}</figcaption>
+        </figure>
+        <div class="process reveal">
+          <h3 class="process__title">{authority.processTitle}</h3>
+          <ol class="process__steps">
+            {authority.steps.map((s, i) => (
+              <li><span class="process__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><span>{s}</span></li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROOF/PROCESS 1/8: Self-playing call replay ──────── -->
   <section class="section callreplay" data-callreplay>
     <div class="container">
       <div class="section-head reveal">
@@ -887,7 +1086,7 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
-  <!-- ── Live click-to-call: talk to the real AI now ──────── -->
+  <!-- ── PROOF/PROCESS 2/8: Live click-to-call ─────────────── -->
   <section class="section livecall">
     <div class="container">
       <div class="livecall__inner reveal">
@@ -904,39 +1103,7 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
-  <!-- ── 3. Strategic trust statement ─────────────────────── -->
-  <section class="section--tight truststrip">
-    <div class="container">
-      <p class="truststrip__statement">{c.trustStatement}</p>
-      <ul class="truststrip__facts">
-        {c.trustFacts.map((f: string, i: number) => <li><Icon name={TRUST_ICONS[i]} size={16} />{f}</li>)}
-      </ul>
-    </div>
-  </section>
-
-  <!-- ── Four-pillar section: why companies choose Weissmann ─ -->
-  <section class="section pillars-section">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">{pillars.eyebrow}</span>
-        <h2>{pillars.title}</h2>
-        <p>{pillars.text}</p>
-      </div>
-      <div class="pillars-grid">
-        {pillars.items.map((it, i) => (
-          <div class="pillar-card reveal" style={`--i:${i}`}>
-            <span class="pillar-card__icon"><Icon name={PILLAR_ICONS[i]} size={24} /></span>
-            <h3>{it.headline}</h3>
-            <p class="pillar-card__text">{it.text}</p>
-            <p class="pillar-card__outcome">{it.outcome}</p>
-            <a class="pillar-card__cta" href={pillarHref(it.id)} data-track="service_view">{it.cta} →</a>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ── How the AI phone agent works — 4-step call flow ──── -->
+  <!-- ── PROOF/PROCESS 3/8: How the AI phone agent works ──── -->
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
@@ -957,7 +1124,7 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
-  <!-- ── Try it for your industry (ties to the live call) ──── -->
+  <!-- ── PROOF/PROCESS 4/8: Try it for your industry ──────── -->
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
@@ -988,60 +1155,7 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
-  <!-- ── 4. Six modules — one system ──────────────────────── -->
-  <section class="section" id="system">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">{c.systemEyebrow}</span>
-        <h2>{c.systemTitle}</h2>
-        <p>{c.systemText}</p>
-      </div>
-
-      <p class="growthwords">
-        {c.growthWords.map((w: string, i: number) => (
-          <>
-            <span class="growthwords__word">{w}</span>
-            {i < c.growthWords.length - 1 && <span class="growthwords__sep" aria-hidden="true">→</span>}
-          </>
-        ))}
-      </p>
-
-      <ol class="system">
-        {c.system.map((s: any, i: number) => (
-          <li class="system__row">
-            <span class="system__num" aria-hidden="true">{s.n}</span>
-            <div class="system__body">
-              <h3><a href={linkFor(i)} data-track="service_view">{s.title}</a></h3>
-              <p>{s.text}</p>
-            </div>
-            <a class="system__link" href={linkFor(i)} tabindex="-1" aria-hidden="true">→</a>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
-
-  <!-- ── Ecosystem router: the four content pillars ───────── -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">{eco.eyebrow}</span>
-        <h2>{eco.title}</h2>
-        <p>{eco.text}</p>
-      </div>
-      <div class="eco-grid">
-        {eco.items.map((it) => (
-          <a class="eco-card" href={it.href}>
-            <h3>{it.title}</h3>
-            <p>{it.text}</p>
-            <span class="eco-card__arrow" aria-hidden="true">→</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 5. Method ────────────────────────────────────────── -->
+  <!-- ── PROOF/PROCESS 5/8: Method ─────────────────────────── -->
   <section class="section section--alt">
     <div class="container">
       <div class="section-head">
@@ -1053,7 +1167,7 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
-  <!-- ── 6+7. Implementation proof: voice demo ────────────── -->
+  <!-- ── PROOF/PROCESS 6/8: Implementation proof — voice demo ─ -->
   <section class={`section voice-section ${theme === 'b' ? 'section--dark' : ''}`} id="demo">
     <div class="container voice">
       <div>
@@ -1072,7 +1186,7 @@ const websiteStarter = getPackage('website-starter');
 
   <AudioSample locale={locale} />
 
-  <!-- ── Calculator (interactive proof) ───────────────────── -->
+  <!-- ── PROOF/PROCESS 7/8: Calculator (interactive proof) ─── -->
   <section class="section">
     <div class="container">
       <span class="eyebrow">{c.calcEyebrow}</span>
@@ -1080,22 +1194,7 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
-  <!-- ── 9. Why Weissmann — numbered editorial index ──────── -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section-head"><h2>{c.whyTitle}</h2></div>
-      <ol class="why">
-        {c.why.map((item: string, i: number) => (
-          <li class="why__item">
-            <span class="why__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
-            <p>{item}</p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
-
-  <!-- ── Comparison table ─────────────────────────────────── -->
+  <!-- ── PROOF/PROCESS 8/8: Comparison table ──────────────── -->
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
@@ -1133,27 +1232,7 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
-  <!-- ── Trust & Swiss compliance cluster ─────────────────── -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">{trust.eyebrow}</span>
-        <h2>{trust.title}</h2>
-        <p>{trust.text}</p>
-      </div>
-      <div class="trustgrid">
-        {trust.pillars.map((pl, i) => (
-          <div class="trustpillar reveal" style={`--i:${i}`}>
-            <span class="feat-icon"><Icon name={pl.icon} size={22} /></span>
-            <h3>{pl.label}</h3>
-            <p>{pl.text}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 11. Pricing overview ─────────────────────────────── -->
+  <!-- ── PRICING: overview ─────────────────────────────────── -->
   <section class="section">
     <div class="container">
       <div class="section-head">
@@ -1173,34 +1252,7 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
-  <!-- ── AI Smart Glasses — ecosystem cross-sell → ai-eyewear.ch ─ -->
-  <section class="section section--alt glasses-section">
-    <div class="container">
-      <div class="glasses-layout">
-        <figure class="glasses-visual reveal">
-          <img class="glasses-photo" src="/smart-glasses-worn.webp" width="1651" height="2200"
-               alt={c.glasses.title} loading="lazy" decoding="async" />
-          <img class="glasses-photo glasses-photo--inset" src="/smart-glasses.webp" width="2000" height="2000"
-               alt="" aria-hidden="true" loading="lazy" decoding="async" />
-        </figure>
-        <div class="glasses-copy reveal">
-          <span class="eyebrow">{c.glasses.eyebrow}</span>
-          <h2>{c.glasses.title}</h2>
-          <p class="glasses-lead">{c.glasses.lead}</p>
-          <ul class="glasses-list">
-            {c.glasses.features.map((f: any, i: number) => (
-              <li><span class="feat-icon glasses-list__icon"><Icon name={GLASSES_ICONS[i]} size={18} /></span>{f.label}</li>
-            ))}
-          </ul>
-          <p class="mt-4">
-            <a class="btn btn--primary" href="https://ai-eyewear.ch" rel="noopener" target="_blank" data-track="glasses_view">{c.glasses.ctaLabel} →</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Campaign: "it's not always a lover, sometimes it's just work" ─ -->
+  <!-- ── RESOURCES/SECONDARY 1/2: Campaign video ──────────── -->
   <section class="section section--alt campaign-section">
     <div class="container">
       <div class="campaign-layout">
@@ -1233,39 +1285,14 @@ const websiteStarter = getPackage('website-starter');
     </div>
   </section>
 
-  <!-- ── Authority: founders + transparent process ────────── -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">{authority.eyebrow}</span>
-        <h2>{authority.title}</h2>
-        <p>{authority.text}</p>
-      </div>
-      <div class="authority-grid">
-        <figure class="team-photo team-photo--avatar reveal">
-          <div class="team-photo__avatar" aria-hidden="true">{authority.founders[0].initials}</div>
-          <figcaption>{authority.founders[0].name} · {authority.founders[0].role}{founderLinkedin && (<> · <a class="team-photo__li" href={founderLinkedin} rel="noopener" target="_blank">LinkedIn →</a></>)}</figcaption>
-        </figure>
-        <div class="process reveal">
-          <h3 class="process__title">{authority.processTitle}</h3>
-          <ol class="process__steps">
-            {authority.steps.map((s, i) => (
-              <li><span class="process__n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><span>{s}</span></li>
-            ))}
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 13. FAQ ──────────────────────────────────────────── -->
+  <!-- ── RESOURCES/SECONDARY 2/2: FAQ ──────────────────────── -->
   <section class="section section--alt">
     <div class="container">
       <Faq title={c.faqTitle} items={c.faq} />
     </div>
   </section>
 
-  <!-- ── 14. Final CTA — selective dark moment ────────────── -->
+  <!-- ── Final CTA — selective dark moment ─────────────────── -->
   <section class="section section--dark final-cta">
     <div class="container center">
       <h2 style="max-width:26ch;margin-inline:auto;">{c.finalTitle}</h2>
@@ -1288,38 +1315,54 @@ const websiteStarter = getPackage('website-starter');
     position: relative;
     background: radial-gradient(125% 130% at 82% 0%, #1c2a4a 0%, #0f1729 55%, #0b1018 100%);
     color: #b9c2d6;
-    padding-block: clamp(3.25rem, 8vh, 6rem);
+    padding-block: clamp(2.5rem, 6vh, 4.5rem);
     overflow: clip;
   }
   .hero__glow { position: absolute; inset: 0; pointer-events: none;
     background: radial-gradient(42% 55% at 78% 20%, rgba(96,138,235,0.24), transparent 72%); }
-  .hero__grid { position: relative; display: grid; gap: var(--space-5); align-items: center; }
-  @media (min-width: 900px) { .hero__grid { grid-template-columns: 1.02fr 0.98fr; gap: var(--space-6); } }
+  /* Hero gets the same wider 1440px container as the header, and the two
+     columns start-aligned (not centered) so the video's top edge sits level
+     with the eyebrow/H1 instead of centering against the whole (taller) copy
+     column, which was leaving empty space above it. */
+  .hero__grid {
+    position: relative;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+    display: grid;
+    gap: var(--space-5);
+    align-items: start;
+  }
+  @media (min-width: 900px) { .hero__grid { grid-template-columns: 1.08fr 0.92fr; gap: var(--space-6); padding-block-start: clamp(0.5rem, 2vh, 1.5rem); } }
   .eyebrow--light { color: #8fa6d8; }
   .hero--dark .hero__title {
     color: #fff;
-    font-size: clamp(2.1rem, 1.1rem + 3.2vw, 3.4rem);
-    max-width: 27ch; letter-spacing: -0.025em; line-height: 1.08;
+    font-size: clamp(2.4rem, 1.2rem + 2.6vw, 4.125rem);
+    max-width: 30ch; letter-spacing: -0.02em; line-height: 1.02;
+    text-wrap: balance;
   }
-  .hero__text { max-width: 40rem; margin-top: var(--space-4); font-size: var(--fs-500); color: #aab5cc; line-height: 1.6; }
-  .hero__actions { display: flex; gap: var(--space-3); margin-top: var(--space-5); flex-wrap: wrap; }
+  .hero__text { max-width: 62ch; margin-top: var(--space-3); font-size: var(--fs-500); color: #aab5cc; line-height: 1.55; }
+  .hero__actions { display: flex; gap: var(--space-3); margin-top: var(--space-4); flex-wrap: wrap; }
   .btn--accent { background: #4f7cf0; color: #fff; box-shadow: 0 12px 30px -6px rgba(79,124,240,0.45); }
   .btn--accent:hover { background: #6c92f6; }
   .btn--ondark { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.22); }
   .btn--ondark:hover { border-color: #fff; background: rgba(255,255,255,0.12); }
-  .hero__proof { display: inline-flex; align-items: center; gap: 0.5rem; margin: var(--space-4) 0 0; font-size: var(--fs-300); font-weight: 600; color: #cdd7ea; }
+  .hero__proof { display: inline-flex; align-items: center; gap: 0.5rem; margin: var(--space-3) 0 0; font-size: var(--fs-300); font-weight: 600; color: #cdd7ea; }
   .hero__proof .wi { color: #6fe3a4; flex: none; }
   .hero__chips { list-style: none; padding: 0; margin: var(--space-3) 0 0; display: flex; flex-wrap: wrap; gap: 0.55rem 1.15rem; font-size: var(--fs-300); color: #9fb0d0; }
   .hero__chips li { display: inline-flex; align-items: center; gap: 0.4rem; }
   .hero__chips .wi { color: #6fe3a4; }
 
-  /* Hero video — the real product demo, autoplaying muted/looped/playsinline */
-  .hero__visual { justify-self: center; width: 100%; max-width: 34rem; }
+  /* Hero video — the real product demo, autoplaying muted/looped/playsinline.
+     Sized to genuinely fill its ~48% grid column (previous 34rem cap made it
+     visibly narrower than its column on wide screens); top-aligned via the
+     grid's align-items:start above so it starts level with the headline. */
+  .hero__visual { width: 100%; max-width: 40rem; margin-inline: auto; }
   .hero-video {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    border-radius: 20px;
+    border-radius: 22px;
     overflow: hidden;
     background: #000;
     box-shadow: 0 46px 80px -26px rgba(0,0,0,0.7);
@@ -1352,9 +1395,12 @@ const websiteStarter = getPackage('website-starter');
   .callcard__badge { display: inline-grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); }
 
   /* ── Four-pillar cards ─────────────────────────────────── */
+  /* 5 cards now (4 core services + AI-Eyewear) — sized so 5 columns land
+     evenly on one row at wide desktop instead of leaving an orphan card. */
   .pillars-grid { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
   @media (min-width: 640px) { .pillars-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1100px) { .pillars-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (min-width: 900px) { .pillars-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1200px) { .pillars-grid { grid-template-columns: repeat(5, 1fr); } }
   .pillar-card {
     display: flex; flex-direction: column;
     border: 1px solid var(--line); border-radius: var(--radius-lg);
@@ -1646,7 +1692,15 @@ const websiteStarter = getPackage('website-starter');
   .eco-card p { color: var(--ink-mute); font-size: var(--fs-300); margin: 0; }
   .eco-card__arrow { position: absolute; top: var(--space-4); right: var(--space-5); color: var(--accent); font-size: var(--fs-500); }
 
-  /* ── AI Smart Glasses (ecosystem cross-sell) ──────────── */
+  /* ── Even Realities AI Eyewear — featured product, right after the hero ── */
+  .glasses-section--featured {
+    background: linear-gradient(180deg, var(--paper-soft) 0%, var(--paper) 100%);
+    border-bottom: 1px solid var(--line);
+  }
+  .glasses-section--featured .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    color: var(--accent); font-weight: 700;
+  }
   .glasses-layout { display: grid; gap: var(--space-5); align-items: center; }
   @media (min-width: 820px) { .glasses-layout { grid-template-columns: 1fr 1fr; gap: var(--space-6); } }
   .glasses-visual { position: relative; margin: 0 auto; width: 100%; max-width: 30rem; }
