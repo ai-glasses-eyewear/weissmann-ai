@@ -56,7 +56,8 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 | 4 | EN-PHONE-06 – 10 | done |
 | 5 | IT-PHONE-01 – 05 | done |
 | 6 | IT-PHONE-06 – 10 | done |
-| 7 | DE-WEB-01 – 05 | done (commit pending) |
+| 7 | DE-WEB-01 – 05 | done |
+| 8 | DE-WEB-06 – 10 | done (commit pending) |
 | 3 | EN-PHONE-01 – 05 | pending |
 | 4 | EN-PHONE-06 – 10 | pending |
 | 5 | IT-PHONE-01 – 05 | pending |
@@ -177,5 +178,23 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 **Batch 7 cross-checks:** 0 duplicate titles/slugs/H1s/openings within batch and against all prior batches; 0 slug collisions across all 114 academy-content files (351 unique locale-slug keys); full build = 684 pages; full validator suite passes with 0 issues.
 
 **Remaining after Batch 7:** 25 articles / 25 artifact briefs (5 DE-WEB in Batch 8; 20 EN/IT-WEB in Batches 9–12).
+
+### Batch 8 — DE-WEB-06–10 (complete) — all 10 German website/SEO/GEO articles now done
+
+| # | Title | Keyword | Intent | Article file | Artifact files | Uniqueness | Factual | Impl. | Validation |
+|---|---|---|---|---|---|---|---|---|---|
+| DE-WEB-06 | Website mit SEO erstellen lassen: Der Preis-Check | Website mit SEO erstellen lassen | commercial-investigation | `academy-content/website-seo-im-preis-enthalten.json` | `artifacts/website-seo-im-preis-enthalten/` | pass — narrow quote-scope angle, cross-links `ai-seo-guide` instead of repeating it | 4 official sources (Google Search Central, web.dev, schema.org) verified live | done | build+QA+links+duplicates+guardrails pass |
+| DE-WEB-07 | Die versteckten Kosten einer billigen Website | billige Website versteckte Kosten | commercial-investigation | `academy-content/website-versteckte-kosten-drei-jahre.json` | `artifacts/website-versteckte-kosten-drei-jahre/` | pass — transparent illustrative 3-year TCO example, cross-links DE-WEB-01 | explicitly labelled illustrative, not rigged to favor Weissmann | done | build+QA+links+duplicates+guardrails pass |
+| DE-WEB-08 | One-Pager oder Firmenwebsite: Wie viele Seiten? | One Pager Kosten Schweiz | commercial-investigation | `academy-content/website-seitenanzahl-kmu.json` | `artifacts/website-seitenanzahl-kmu/` | pass — information-architecture framework, honest counter-cases for needing more pages | Google doorway-pages policy cited; worked example independently verified to recommend fewer pages (39→11) than a reader might expect | done | build+QA+links+duplicates+guardrails pass |
+| DE-WEB-09 | Website schnell erstellen lassen: was wirklich zählt | Website schnell erstellen lassen | commercial-investigation | `academy-content/website-schnell-erstellen-realistisch.json` | `artifacts/website-schnell-erstellen-realistisch/` | pass — 6-factor speed framework, no Weissmann-specific timeline invented (none documented in source) | confirmed no delivery-day figure exists anywhere in pricing.ts/service-content.ts | done | build+QA+links+duplicates+guardrails pass |
+| DE-WEB-10 | Website-Launch: Tag eins bei Google und KI sichtbar | Website bei Google sichtbar machen / GEO Agentur Schweiz | commercial-investigation | `academy-content/website-launch-seo-geo-sichtbarkeit.json` | `artifacts/website-launch-seo-geo-sichtbarkeit/` | pass — highest cannibalization risk in the project, resolved: time-phased launch sequence, explicitly defers to and cross-links the 5 existing GEO academy articles rather than re-deriving definitions | Google recrawl/GBP docs + schema.org verified live; explicit no-guaranteed-outcome disclaimers matching existing `geo.json` service copy | done | build+QA+links+duplicates+guardrails pass |
+
+**Batch 8 cross-checks:** 0 duplicate titles/slugs/H1s within batch and against all prior batches; 0 slug collisions across all 119 academy-content files (356 unique locale-slug keys); full build = 689 pages; full validator suite passes with 0 issues.
+
+**Operational note:** all 5 of this batch's first-attempt agents failed mid-task with a session/API usage-limit error ("You've hit your session limit · resets 9am (Europe/Zurich)"). Rather than looping retries, I tested with one retry first (succeeded immediately, confirming the limit had reset), then retried the remaining four — all succeeded, some finding and correctly completing their own partially-written files from the failed first attempt rather than starting over blind.
+
+**Real site-integration gap found (not yet fixed, deferred to the Site Integration task):** `AcademyArticlePage.astro` does not render the `relatedArticles` field into a visible link anywhere on the page, despite every article in this project (and pre-existing ones) populating it correctly. Orphan-checking still passes (pillar hub pages auto-list all spokes), but the master prompt's §11 cross-linking intent ("related existing page" links, avoiding "identical 'related articles' block across all pages") is not yet visually fulfilled. Confirmed via direct grep — zero references to `relatedArticles` in the render component. Will address as part of the site-integration batch (#102) before final PR.
+
+**Progress: 40 of 60 articles complete** — all 10 DE-PHONE, all 10 EN-PHONE, all 10 IT-PHONE, and all 10 DE-WEB. **Remaining: 20 EN-WEB + IT-WEB articles across Batches 9–12.**
 
 _(Further batches logged the same way as they complete.)_

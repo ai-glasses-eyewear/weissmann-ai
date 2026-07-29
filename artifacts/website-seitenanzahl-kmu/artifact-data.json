@@ -1,0 +1,126 @@
+{
+  "artifactId": "website-seitenanzahl-kmu",
+  "articleId": "website-seitenanzahl-kmu",
+  "language": "de",
+  "title": "Website-Grösse und Informationsarchitektur-Planer",
+  "note": "Spec/data file for the artifact described in ARTIFACT-BRIEF.md. This is structured content only — no HTML/JS is implemented here. The formula is a transparent additive count derived from the article's four-variable framework (Leistungen, Zielgruppen, Standorte, Sales-Cycle-Länge) plus the article's three-question per-page test. It is deliberately capable of recommending FEWER pages than a reader expects — see 'workedExamples' below, both reproduced from the companion article so the tool and the article never contradict each other.",
+
+  "fixedFloor": {
+    "home": 1,
+    "kontakt": 1,
+    "note": "Startseite und Kontaktseite sind immer enthalten — ausser im One-Pager-Sonderfall, in dem beide Funktionen als Anker-Abschnitte auf einer einzigen Seite leben."
+  },
+
+  "trustPage": {
+    "count": 1,
+    "label": "Über uns / Vertrauen",
+    "note": "Standardmässig immer 1 zusätzliche Seite, ausser im One-Pager-Sonderfall (siehe unten), wo Vertrauenselemente als Abschnitt auf der einen Seite laufen."
+  },
+
+  "onePagerOverride": {
+    "condition": "distinctServices <= 1 AND audienceSegments <= 1 AND rawLocationCount <= 1 AND salesCycle == 'days'",
+    "result": "Ein-Seiten-Website (One-Pager) mit Ankernavigation statt mehrerer Einzelseiten — Home, Angebot, Vertrauen und Kontakt leben als Abschnitte auf einer URL.",
+    "totalPages": 1,
+    "explanation": "Wenn alle vier Variablen minimal sind, ist selbst die 3-Kern-Seiten-Grundstruktur (Home, Über uns, Kontakt) mehr, als der Inhalt trägt. Das ist der Fall, in dem das Werkzeug ausdrücklich WENIGER empfiehlt, als die meisten Nutzer:innen erwarten."
+  },
+
+  "variables": [
+    {
+      "id": "distinctServices",
+      "label": "Echt unterscheidbare Leistungen",
+      "inputType": "integer",
+      "min": 0,
+      "max": 15,
+      "help": "Zählen Sie nur Leistungen, die je eine eigenständige Kaufentscheidung mit eigener Suchintention auslösen — nicht Varianten derselben Leistung (Grössen, Pakete, Farboptionen).",
+      "pageFormula": {
+        "0-1": 0,
+        "2-6": "n (eine Seite pro Leistung)",
+        "7+": "6 (Obergrenze) + 1 Hub-Seite — Warnhinweis: Leistungen erneut mit dem Drei-Fragen-Test prüfen, bevor mehr als 7 Seiten gebaut werden"
+      }
+    },
+    {
+      "id": "audienceSegments",
+      "label": "Zielgruppen mit unterschiedlicher Ansprache",
+      "inputType": "integer",
+      "min": 1,
+      "max": 6,
+      "help": "Zählen Sie nur Gruppen, die unterschiedliche Beweise, Sprache oder Call-to-Action brauchen (z. B. Privatkund:innen vs. Geschäftskund:innen) — nicht dieselbe Zielgruppe aus zwei Blickwinkeln beschrieben.",
+      "pageFormula": {
+        "1": 0,
+        "2": 1,
+        "3+": "n - 1 (die erste Zielgruppe läuft in den bestehenden Seiten mit)"
+      }
+    },
+    {
+      "id": "rawLocationCount",
+      "label": "Anzahl belieferter/bedienter Standorte oder Orte",
+      "inputType": "integer",
+      "min": 1,
+      "max": 50,
+      "help": "Alle Orte, in denen Sie tätig sind oder liefern — unabhängig davon, ob dort schon eigener Inhalt existiert."
+    },
+    {
+      "id": "genuineLocalContentCount",
+      "label": "Davon Standorte mit echtem eigenem Inhalt",
+      "inputType": "integer",
+      "min": 0,
+      "max": 50,
+      "constraint": "genuineLocalContentCount <= rawLocationCount",
+      "help": "Nur Standorte mit eigenem Team, eigenen Öffnungszeiten oder eigenen Bewertungen zählen — ein ausgetauschter Ortsname im gleichen Text zählt nicht.",
+      "pageFormula": {
+        "rawLocationCount<=1": 0,
+        "rawLocationCount>1 AND genuine==0": "1 (nur eine gebündelte Standort-Übersichtsseite, keine Einzelseiten)",
+        "rawLocationCount>1 AND genuine>=1": "genuine (dedizierte Standortseiten) + 1 Übersichtsseite, falls rawLocationCount > genuine"
+      }
+    },
+    {
+      "id": "salesCycle",
+      "label": "Typische Dauer bis zum Auftrag",
+      "inputType": "select",
+      "options": [
+        { "value": "days", "label": "Tage (Spontanentscheidung)", "extraPages": 0 },
+        { "value": "weeks", "label": "Wochen (typisches KMU-Angebot)", "extraPages": 0 },
+        { "value": "months", "label": "Monate (beratungsintensiv)", "extraPages": 1, "extraPageLabel": "Ablauf/Prozess-Seite" },
+        { "value": "long", "label": "6+ Monate (komplex, mehrstufig)", "extraPages": 2, "extraPageLabel": "Ablauf/Prozess-Seite + Ressourcen/Wissens-Hub" }
+      ]
+    }
+  ],
+
+  "referenceBands": {
+    "note": "Reine Einordnungshilfe auf Basis der realen Weissmann-Preispakete (src/data/pricing.ts) — kein Kaufzwang, keine automatische Empfehlung eines bestimmten Pakets.",
+    "bands": [
+      { "range": "1", "label": "One-Pager", "priceContext": "keine feste Paket-Zuordnung nötig" },
+      { "range": "2-5", "label": "Starter-Bereich (~5 Kernseiten)", "priceContext": "Starter Website, CHF 880 Aktionspreis (regulär CHF 2'490)" },
+      { "range": "6-9", "label": "Schlanker Business-Bereich", "priceContext": "zwischen Starter und Business — im Gespräch klären" },
+      { "range": "10-20", "label": "Business-Bereich", "priceContext": "Business Website, ab CHF 4'990" },
+      { "range": "21+", "label": "Complex/individuelle Architektur", "priceContext": "individuelle Website/Web-Plattform, ab CHF 9'900" }
+    ]
+  },
+
+  "workedExamples": [
+    {
+      "name": "Corinne (Reinigungsunternehmen, 9 Gemeinden) — aus dem Artikel",
+      "inputs": { "distinctServices": 4, "audienceSegments": 2, "rawLocationCount": 9, "genuineLocalContentCount": 2, "salesCycle": "weeks" },
+      "breakdown": { "home": 1, "kontakt": 1, "trust": 1, "services": 4, "audience": 1, "locations": 3, "cycle": 0 },
+      "total": 11,
+      "band": "Schlanker Business-Bereich",
+      "note": "Die ursprünglich (von einer Agentur empfohlene) Struktur hatte 39 Seiten (4 Leistungen × 9 Gemeinden + 3). Das Werkzeug empfiehlt mit denselben Fakten 11 — weniger als ein Drittel."
+    },
+    {
+      "name": "Solo-Beraterin mit einem Angebot, einem Standort, kurzer Entscheidung",
+      "inputs": { "distinctServices": 1, "audienceSegments": 1, "rawLocationCount": 1, "genuineLocalContentCount": 1, "salesCycle": "days" },
+      "breakdown": { "onePagerOverride": true },
+      "total": 1,
+      "band": "One-Pager",
+      "note": "Extremfall: Selbst die 3-Kern-Seiten-Grundstruktur wäre hier mehr, als der Inhalt trägt — das Werkzeug empfiehlt explizit eine einzige Seite mit Ankernavigation."
+    },
+    {
+      "name": "Berater mit 3 Leistungen, der 8 Regionen als Städte-Seiten geplant hatte",
+      "inputs": { "distinctServices": 3, "audienceSegments": 1, "rawLocationCount": 8, "genuineLocalContentCount": 1, "salesCycle": "weeks" },
+      "breakdown": { "home": 1, "kontakt": 1, "trust": 1, "services": 3, "audience": 0, "locations": 2, "cycle": 0 },
+      "total": 8,
+      "band": "Schlanker Business-Bereich",
+      "note": "Naive Annahme war mindestens 8 Städte-Seiten plus 3 Leistungsseiten (11+). Das Werkzeug bündelt 7 der 8 Regionen auf einer Übersichtsseite und kommt auf 8 Seiten insgesamt."
+    }
+  ]
+}
