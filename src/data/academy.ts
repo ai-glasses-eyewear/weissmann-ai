@@ -150,6 +150,9 @@ export function pillarOf(clusterId: string): AcademyArticle | undefined {
 export function spokesOf(clusterId: string): AcademyArticle[] {
   return ARTICLES.filter((a) => a.cluster === clusterId && a.type === 'spoke');
 }
+export function getArticleById(id: string): AcademyArticle | undefined {
+  return ARTICLES.find((a) => a.id === id);
+}
 export function articlePaths(a: AcademyArticle): LocalePaths {
   const c = getCluster(a.cluster)!;
   return a.type === 'pillar' ? clusterPaths(c) : underPillarNested('academy', c.slug, a.slug);
