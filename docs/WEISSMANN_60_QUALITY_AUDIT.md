@@ -40,3 +40,12 @@ of this pass; "After" = state after this pass's edits.
 | 23 | do-customers-trust-ai-receptionists | en | informational | 96 | 96 | "Illustrative scenario:" labeled; 4-factor trust framework | investigation/opinion | — | remapped EN siblings | 1 source | none |
 | 24 | ai-voice-cloning-business-switzerland | en | informational | 96 | 96 | **verified: Arup HK $25M deepfake (real, CNN-sourced), FBI IC3 PSA241203, EU AI Act Art.50(2) 2-Aug-2026, Weissmann Enterprise voice-cloning confirmed in pricing.ts** | investigation | — | good | 4 sources | none |
 | 25 | how-to-measure-ai-receptionist-kpis | en | commercial-investigation | 96 | 96 | "Illustrative scenario:" labeled; honest "no Swiss benchmark exists" | diagnostic/12-KPI | — | remapped EN siblings | 1 source | none |
+| 26 | assistenti-telefonici-ai-svizzera-pmi-ticinesi | it | comparison | 90 | 96 | **hosting contradiction fixed (5-of-6)** | market-reach comparison | — | remapped IT siblings | dated | — |
+| 27 | registrazione-chiamate-ai-legalita-svizzera | it | informational | 96 | 96 | CP art.179bis/ter/quinquies + IFPDT + Fedlex sourced; traffic-light classification | legal explainer | — | good | 2 sources | none |
+| 28 | test-comprensione-italiano-ticinese-ai | it | informational | 96 | 96 | "Scenario illustrativo:" labeled; "ticinese ≠ mini-Swiss-German" thesis | practical test | — | good; IT CTA verified | 1 source | none |
+| 29 | assistente-ai-hotel-bb-campeggi-ticino | it | informational | 93 | 96 | scene labeled illustrative | field guide (3-property triptych) | **renamed "Una telefonata vera" → "di esempio" (§11)** | remapped IT siblings | — | — |
+| 30 | assistente-ai-artigiani-ticino | it | informational | 94 | 96 | "Scenario illustrativo:" ×2 labeled; no invented price | field guide, 6-Q script | — | good; IT CTA verified | 1 source | **broken-tool line already fixed** |
+
+**Category A (30 phone/Voice-AI articles) — review complete.** All ≥95 after edits. Confirmed fixes done: AlpenAgent hosting contradiction (EN+IT), "Una telefonata vera" heading (IT). Systemic fixes touching phone articles: broken Phase-2 tool promises, dead cross-locale links. §15 note: the "Ferrari" metaphor appears in **zero** of the 60 articles — no overuse to correct.
+
+### Category B — Websites / CHF 880 / SEO / GEO / Google Ads (30 articles)
