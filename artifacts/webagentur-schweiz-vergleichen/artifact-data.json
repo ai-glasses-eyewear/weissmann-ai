@@ -1,0 +1,75 @@
+{
+  "articleId": "webagentur-schweiz-vergleichen",
+  "language": "de",
+  "dataAsOf": "2026-07-29",
+  "scaleNote": "Jedes Kriterium wird 1–5 bewertet: 1 = Rotes Licht trifft zu / keine brauchbare Antwort erhalten, 3 = teilweise beantwortet / vage, 5 = konkret, überprüfbar und schriftlich zugesichert. Diese Skala ist eine Bewertungshilfe für die eigene Einschätzung des Nutzers, keine standardisierte Branchenmessung.",
+  "defaultAgencySlots": 3,
+  "maxAgencySlots": 3,
+  "defaultWeight": 3,
+  "weightRange": { "min": 0, "max": 5 },
+  "criteria": [
+    {
+      "id": "evidence",
+      "label": "Nachweis",
+      "shortDescription": "Zeigt die Agentur überprüfbare Ergebnisse oder nur ein kuratiertes Portfolio?",
+      "whyItMatters": "Ein Portfolio zeigt Design-Geschmack, keine Ergebnisse. Eine Case Study mit einer nachvollziehbaren Vorher-Nachher-Grösse (Ladezeit, Sichtbarkeit, Anfragen) und einer auffindbaren, kontaktierbaren Referenzperson ist ein echter Beleg.",
+      "redFlag": "Logos ohne beschriebenes Ergebnis, Kundenzitate ohne auffindbaren Absender, oder eine Agentur, die keine einzige Referenzperson zum Rückfragen nennen will. Ein ehrliches 'noch keine veröffentlichten Fallstudien' bei einer jungen Agentur ist dagegen kein Warnsignal."
+    },
+    {
+      "id": "process",
+      "label": "Prozess",
+      "shortDescription": "Gibt es einen klaren, schriftlichen Weg vom Erstgespräch bis zur Live-Schaltung?",
+      "whyItMatters": "Ein seriöser Prozess beginnt mit Fragen zu Zielgruppe, Angebot und Konkurrenz, nicht mit einem Mockup am nächsten Tag. Meilensteine und eine definierte Zahl Revisionsrunden schützen beide Seiten vor Missverständnissen und Verzögerungen.",
+      "redFlag": "Die Agentur springt ohne eine einzige Frage zu Ihrem Geschäft direkt zum Design, 'unbegrenzte Revisionen' wird als Slogan verkauft ohne Erklärung, wie das den Zeitplan schützt, oder es gibt keinen schriftlichen Zeitplan mit Meilensteinen."
+    },
+    {
+      "id": "ownership",
+      "label": "Ownership",
+      "shortDescription": "Gehören Ihnen Code, CMS-Zugang und Domain nach Projektende tatsächlich?",
+      "whyItMatters": "Ownership ist eine praktische Frage: Bekommen Sie Quellcode, administrativen CMS-Zugang, Domain-Registrar-Kontrolle und Hosting-Zugang wirklich übertragen, oder bleibt alles unter dem Konto der Agentur? Eine mündliche Zusage ohne übertragene Zugangsdaten ist wertlos.",
+      "redFlag": "Domain, Hosting oder CMS laufen dauerhaft nur über das Konto der Agentur, die Seite läuft auf einem proprietären System ohne Exportmöglichkeit, oder die Agentur kann nicht konkret benennen, welche Zugänge bei Projektabschluss übergeben werden."
+    },
+    {
+      "id": "performance",
+      "label": "Performance",
+      "shortDescription": "Lässt sich die Ladezeit an einer echten Referenzseite selbst nachmessen?",
+      "whyItMatters": "Ladezeit ist eine Zahl, keine Behauptung – sie beeinflusst Core Web Vitals, Ranking und Absprungrate direkt. Eine testbare Live-URL einer bereits ausgelieferten, vergleichbaren Seite lässt sich mit kostenlosen Tools wie Google PageSpeed Insights unabhängig prüfen.",
+      "redFlag": "Die Agentur kann oder will keine testbare Live-Referenz nennen, verwendet Adjektive wie 'blitzschnell' ohne Zahl dahinter, oder der technische Unterbau besteht aus einem schwergewichtigen Page-Builder mit vielen Plug-ins ohne Erklärung, warum das schnell bleibt."
+    },
+    {
+      "id": "seo",
+      "label": "SEO-Fundament",
+      "shortDescription": "Ist die technische SEO-Basis von Anfang an eingebaut oder ein nachträgliches Zusatzpaket?",
+      "whyItMatters": "Saubere Seitenstruktur, korrekte Metadaten, eine Sitemap und strukturierte Daten gehören in die Architektur, nicht in ein separates Zusatzpaket. Bei mehrsprachigen Schweizer Seiten zählt zusätzlich eine technisch saubere hreflang- und URL-Struktur statt eines reinen Übersetzungs-Plug-ins.",
+      "redFlag": "'SEO inklusive' ohne ein einziges konkret genanntes technisches Element, oder SEO wird ausschliesslich als teures Monatsabo verkauft, ohne dass die Website-Architektur selbst dafür eine technische Grundlage bietet."
+    },
+    {
+      "id": "support",
+      "label": "Support & Wartung",
+      "shortDescription": "Gibt es eine schriftliche Reaktionszeit und transparente Wartungskosten?",
+      "whyItMatters": "Der Moment, der über Zufriedenheit entscheidet, kommt meist Monate nach dem Launch, wenn etwas geändert werden muss. Eine schriftliche Reaktionszeit und eine klare Kostenangabe für kleine Änderungen verhindern böse Überraschungen.",
+      "redFlag": "'Wir sind immer für Sie da' ohne schriftliche Zusicherung, die Wartungsgebühr wird erst nach Vertragsabschluss genannt, oder jede kleine Textänderung löst ein intransparentes Zusatzangebot aus."
+    },
+    {
+      "id": "contract",
+      "label": "Vertragsbedingungen",
+      "shortDescription": "Wie wird gekündigt, und wem gehören die Rechte nach vollständiger Bezahlung wirklich?",
+      "whyItMatters": "Ownership und Vertrag müssen zusammenpassen – eine freundliche mündliche Zusage zum Eigentum ist wertlos, wenn die Rechteklausel im Vertrag etwas anderes sagt. Bei Datenverarbeitung nach dem Launch gehört auch ein Auftragsverarbeitungsvertrag gemäss revDSG in dieses Gespräch.",
+      "redFlag": "Ein automatisch verlängerter Jahresvertrag mit schmalem Kündigungsfenster, eine Rechteklausel, die Design- und Coderechte auch nach voller Bezahlung bei der Agentur belässt, oder eine 'Exit-Gebühr' für die Herausgabe der eigenen Domain."
+    }
+  ],
+  "discoveryCallQuestions": [
+    { "criterionId": "evidence", "question": "Können Sie mir zwei bis drei Referenzen zeigen, bei denen ich das Ergebnis unabhängig von Ihrer eigenen Darstellung prüfen kann?" },
+    { "criterionId": "ownership", "question": "Was genau bekomme ich nach Projektabschluss übergeben – Quellcode, CMS-Admin-Zugang, Domain-Registrar-Zugang, Hosting-Zugang?" },
+    { "criterionId": "process", "question": "Wie sieht Ihr Prozess von der ersten Anfrage bis zur Live-Schaltung konkret aus, und was ist der erste Schritt vor dem Design?" },
+    { "criterionId": "performance", "question": "Welche Ladezeit beziehungsweise welchen PageSpeed-Wert kann ich an einer bereits gelieferten, vergleichbaren Seite selbst nachmessen?" },
+    { "criterionId": "seo", "question": "Was genau ist mit 'SEO inklusive' gemeint – welche technischen Elemente konkret, und was ist ausdrücklich nicht enthalten?" },
+    { "criterionId": "support", "question": "Was kostet Support nach Projektende, und welche Reaktionszeit ist vertraglich zugesichert, nicht nur versprochen?" },
+    { "criterionId": "contract", "question": "Gibt es eine Mindestlaufzeit oder eine automatische Vertragsverlängerung, und wie und bis wann muss ich kündigen?" },
+    { "criterionId": "process", "question": "Wer ist während der Projektlaufzeit meine feste Ansprechperson, und was passiert, wenn diese Person das Unternehmen verlässt?" },
+    { "criterionId": "process", "question": "Was passiert mit Zeitplan und Preis, wenn Texte oder Bilder von meiner Seite später kommen als geplant?" },
+    { "criterionId": "contract", "question": "Ist der Preis in der Offerte final, oder welche Positionen sind bei ähnlichen Projekten typischerweise als Nachtrag dazugekommen?" }
+  ],
+  "scoringFormula": "Für jede ausgefüllte Agentur: score(agency) = Σ over 7 criteria of (userWeight[c] × userScore[c][agency]), normalisiert auf 0–100 relativ zur theoretisch maximal erreichbaren Punktzahl (5 × Summe der gesetzten Gewichte). Agenturen ohne jede eingegebene Bewertung werden nicht in die Rangliste aufgenommen.",
+  "disclaimer": "Alle Werte in diesem Artefakt werden ausschliesslich vom Nutzer selbst eingegeben, direkt im Browser gespeichert und nirgendwo hin übertragen. Es sind keine echten Agenturnamen vorausgefüllt und keine Weissmann-eigenen Werte hinterlegt. Das Ergebnis ersetzt keine eigene Vertragsprüfung."
+}

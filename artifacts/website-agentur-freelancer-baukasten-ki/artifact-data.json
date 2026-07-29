@@ -1,0 +1,121 @@
+{
+  "articleId": "website-agentur-freelancer-baukasten-ki",
+  "language": "de",
+  "dataAsOf": "2026-07-29",
+  "routes": [
+    { "id": "baukasten", "label": "Baukasten" },
+    { "id": "ki-tool", "label": "KI-Tool" },
+    { "id": "freelancer", "label": "Freelancer" },
+    { "id": "agentur", "label": "Agentur" }
+  ],
+  "scoringNote": "Jede der sechs Variablen liefert pro Route 0 bis 3 Punkte, abhängig von der gewählten Antwortoption. Die theoretisch maximale Punktzahl unterscheidet sich bewusst pro Route (Baukasten 18, Agentur 18, Freelancer 16, KI-Tool 17), weil keine Route in jeder denkbaren Situation gleich gut abschneiden kann. Die Route mit der höchsten Gesamtpunktzahl aus den sechs Antworten wird empfohlen; bei Gleichstand werden beide Routen mit einer erklärenden Abwägung angezeigt statt einer erzwungenen Einzelentscheidung.",
+  "variables": [
+    {
+      "id": "timeBudget",
+      "label": "Zeitbudget bis zum Launch",
+      "options": [
+        { "id": "sehr_knapp", "label": "sehr knapp (unter 2 Wochen)", "scores": { "baukasten": 3, "ki-tool": 3, "freelancer": 1, "agentur": 0 } },
+        { "id": "knapp", "label": "knapp (2–6 Wochen)", "scores": { "baukasten": 2, "ki-tool": 2, "freelancer": 2, "agentur": 1 } },
+        { "id": "moderat", "label": "moderat (6–12 Wochen)", "scores": { "baukasten": 1, "ki-tool": 1, "freelancer": 2, "agentur": 2 } },
+        { "id": "flexibel", "label": "flexibel (über 12 Wochen)", "scores": { "baukasten": 0, "ki-tool": 0, "freelancer": 2, "agentur": 3 } }
+      ]
+    },
+    {
+      "id": "budget",
+      "label": "Geld-Budget (grobe Grössenordnung)",
+      "options": [
+        { "id": "sehr_klein", "label": "sehr klein (unter CHF 500)", "scores": { "baukasten": 3, "ki-tool": 3, "freelancer": 1, "agentur": 0 } },
+        { "id": "klein", "label": "klein (CHF 500–3'000)", "scores": { "baukasten": 2, "ki-tool": 2, "freelancer": 2, "agentur": 1 } },
+        { "id": "mittel", "label": "mittel (CHF 3'000–10'000)", "scores": { "baukasten": 1, "ki-tool": 1, "freelancer": 2, "agentur": 2 } },
+        { "id": "gross", "label": "gross (über CHF 10'000)", "scores": { "baukasten": 0, "ki-tool": 0, "freelancer": 1, "agentur": 3 } }
+      ]
+    },
+    {
+      "id": "skill",
+      "label": "Eigene technische/gestalterische Erfahrung",
+      "options": [
+        { "id": "keine", "label": "keine Erfahrung", "scores": { "baukasten": 1, "ki-tool": 2, "freelancer": 1, "agentur": 3 } },
+        { "id": "etwas", "label": "etwas Erfahrung (z. B. schon einmal einen Baukasten genutzt)", "scores": { "baukasten": 3, "ki-tool": 3, "freelancer": 2, "agentur": 2 } },
+        { "id": "gut", "label": "gute Erfahrung (Code oder Design)", "scores": { "baukasten": 2, "ki-tool": 2, "freelancer": 3, "agentur": 1 } },
+        { "id": "professionell", "label": "professionelle Erfahrung im eigenen Team vorhanden", "scores": { "baukasten": 1, "ki-tool": 1, "freelancer": 2, "agentur": 2 } }
+      ]
+    },
+    {
+      "id": "brandComplexity",
+      "label": "Markenkomplexität",
+      "options": [
+        { "id": "einfach", "label": "einfach (1 Zielgruppe, 1 Sprache, 1 Standort)", "scores": { "baukasten": 3, "ki-tool": 2, "freelancer": 2, "agentur": 1 } },
+        { "id": "mittel", "label": "mittel (mehrere Zielgruppen oder 2 Sprachen)", "scores": { "baukasten": 1, "ki-tool": 1, "freelancer": 3, "agentur": 2 } },
+        { "id": "komplex", "label": "komplex (mehrere Sprachen, Standorte oder Marken)", "scores": { "baukasten": 0, "ki-tool": 0, "freelancer": 1, "agentur": 3 } }
+      ]
+    },
+    {
+      "id": "integrationNeeds",
+      "label": "Integrationsbedarf",
+      "options": [
+        { "id": "keine", "label": "keine (reine Informationsseite)", "scores": { "baukasten": 3, "ki-tool": 3, "freelancer": 1, "agentur": 0 } },
+        { "id": "einfach", "label": "einfach (Kontaktformular, Karte, Buchungslink)", "scores": { "baukasten": 2, "ki-tool": 2, "freelancer": 2, "agentur": 1 } },
+        { "id": "mittel", "label": "mittel (Kalender, Zahlungsanbindung, CRM)", "scores": { "baukasten": 1, "ki-tool": 0, "freelancer": 3, "agentur": 2 } },
+        { "id": "hoch", "label": "hoch (individuelle Anwendungen, mehrere Systeme, E-Commerce)", "scores": { "baukasten": 0, "ki-tool": 0, "freelancer": 1, "agentur": 3 } }
+      ]
+    },
+    {
+      "id": "accountabilityNeed",
+      "label": "Risikotoleranz / Accountability-Bedürfnis",
+      "options": [
+        { "id": "niedrig", "label": "niedrig (ich probiere etwas aus, das Risiko ist überschaubar)", "scores": { "baukasten": 3, "ki-tool": 3, "freelancer": 1, "agentur": 0 } },
+        { "id": "mittel", "label": "mittel (soll funktionieren, ich kann bei Problemen selbst nachbessern)", "scores": { "baukasten": 1, "ki-tool": 1, "freelancer": 3, "agentur": 2 } },
+        { "id": "hoch", "label": "hoch (geschäftskritisch, ich will eine Vertragspartei, die haftet und supportet)", "scores": { "baukasten": 0, "ki-tool": 0, "freelancer": 1, "agentur": 3 } }
+      ]
+    }
+  ],
+  "routeProfiles": {
+    "baukasten": {
+      "strengthSummary": "Schnellster und günstigster Start, volle redaktionelle Unabhängigkeit, ideal zum Testen einer Geschäftsidee.",
+      "honestLimit": "Stösst bei Integrationstiefe, Markenkomplexität und langfristiger SEO-/GEO-Reife an Grenzen; Migration später ist Mehraufwand."
+    },
+    "ki-tool": {
+      "strengthSummary": "Schnellster erster Entwurf überhaupt, praktisch kein Startaufwand, ideal zur Visualisierung einer Idee vor jedem Budgetentscheid.",
+      "honestLimit": "Ergebnis liest sich oft generisch und braucht praktisch immer eine menschliche Prüf- und Überarbeitungsrunde vor Veröffentlichung, besonders bei rechtlich relevanten Seiten."
+    },
+    "freelancer": {
+      "strengthSummary": "Direkte Beziehung zu einer Fachperson, gute Balance aus Handwerk und Preis bei mittlerer Komplexität.",
+      "honestLimit": "Single Point of Failure ohne Team-Backup; Kapazität einer einzelnen Person ist strukturell begrenzt."
+    },
+    "agentur": {
+      "strengthSummary": "Redundanz im Team, vertragliche Verantwortung, geeignet für hohe Integrationstiefe und Markenkomplexität.",
+      "honestLimit": "Höherer Koordinationsaufwand und meist höherer Einstiegspreis als bei einem einfachen, integrationsfreien Projekt nötig wäre."
+    }
+  },
+  "workedExamples": [
+    {
+      "label": "Neu eröffnetes Nagelstudio, testet die Nachfrage",
+      "answers": { "timeBudget": "sehr_knapp", "budget": "sehr_klein", "skill": "etwas", "brandComplexity": "einfach", "integrationNeeds": "keine", "accountabilityNeed": "niedrig" },
+      "expectedWinner": "baukasten",
+      "expectedTotals": { "baukasten": 18, "ki-tool": 17, "freelancer": 8, "agentur": 3 }
+    },
+    {
+      "label": "Etabliertes Treuhandbüro mit Terminbuchung",
+      "answers": { "timeBudget": "moderat", "budget": "mittel", "skill": "gut", "brandComplexity": "mittel", "integrationNeeds": "mittel", "accountabilityNeed": "mittel" },
+      "expectedWinner": "freelancer",
+      "expectedTotals": { "baukasten": 7, "ki-tool": 6, "freelancer": 16, "agentur": 11 }
+    },
+    {
+      "label": "Hotelgruppe mit drei Standorten und PMS-Anbindung",
+      "answers": { "timeBudget": "flexibel", "budget": "gross", "skill": "keine", "brandComplexity": "komplex", "integrationNeeds": "hoch", "accountabilityNeed": "hoch" },
+      "expectedWinner": "agentur",
+      "expectedTotals": { "baukasten": 1, "ki-tool": 2, "freelancer": 7, "agentur": 18 }
+    }
+  ],
+  "tieBreakGuidance": "Bei einem Gleichstand zwischen Baukasten und KI-Tool: Baukasten empfehlen, wenn regelmässige eigene Nachbearbeitung gewünscht ist; KI-Tool empfehlen, wenn nur ein einmaliger schneller Startentwurf gebraucht wird. Bei einem Gleichstand zwischen Freelancer und Agentur: Freelancer empfehlen, wenn eine einzelne durchgängige Ansprechperson wichtiger ist als Team-Redundanz; Agentur empfehlen, wenn Redundanz und vertragliche Verantwortung wichtiger sind als der Preis. Zeige in jedem Gleichstandsfall beide Routen nebeneinander mit ihrem jeweiligen honestLimit-Text, nie nur eine.",
+  "pricingReference": {
+    "note": "Nur als Grössenordnungs-Referenz für die Agentur-Route bei Weissmann AI, ausdrücklich nicht als allgemeiner Massstab für jede Agentur oder jeden Freelancer.",
+    "starter": { "price": 880, "regularPrice": 2490, "currency": "CHF", "interval": "once", "scope": "bis 5 Kernseiten, technische SEO-/GEO-Grundlage, GA4, Basis strukturierte Daten, 1 Sprache, 2 Korrekturrunden", "source": "src/data/pricing.ts (id: website-starter), verifiziert 2026-07-29" },
+    "business": { "price": 4990, "currency": "CHF", "interval": "once", "scope": "ca. 10–20 Seiten, Conversion-Architektur, mehrsprachig-ready" },
+    "complex": { "priceFrom": 9900, "currency": "CHF", "interval": "once", "scope": "grosse mehrsprachige Auftritte, eigene Anwendungen, E-Commerce, Integrationen" }
+  },
+  "disclaimer": "Dieses Ergebnis basiert ausschliesslich auf Ihren eigenen Antworten und einem transparenten, im Artikel erklärten Punktesystem. Es ist eine Entscheidungshilfe, keine Garantie und kein Ersatz für ein eigenes Angebotsgespräch. Alle Berechnungen erfolgen lokal in Ihrem Browser; es werden keine Daten übermittelt oder gespeichert.",
+  "articleUrl": "https://weissmann.ai/ki-academy/marketing-seo-geo/webagentur-freelancer-baukasten-oder-ki/",
+  "ctaHref": "/kontakt/",
+  "ctaLabel": "Unsicher, welche Route zu Ihnen passt? Wir sagen es ehrlich – auch wenn die Antwort nicht «Agentur» lautet"
+}

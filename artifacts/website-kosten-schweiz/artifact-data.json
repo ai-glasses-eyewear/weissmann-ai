@@ -1,0 +1,230 @@
+{
+  "artifactId": "website-kosten-schweiz",
+  "articleId": "website-kosten-schweiz",
+  "language": "de",
+  "title": "Website-Kosten-Rechner Schweiz",
+  "note": "Spec/data file for the artifact described in ARTIFACT-BRIEF.md. This is structured content only — no HTML/JS is implemented here. This tool never computes or displays a fabricated CHF total; the only real prices shown are the three exact Weissmann reference prices (CHF 880 / CHF 4'990 / CHF 9'900), and only when a selection cleanly matches that tier's published scope.",
+
+  "inputs": [
+    {
+      "id": "seitenumfang",
+      "label": "Seitenumfang",
+      "type": "single-select",
+      "options": [
+        { "value": "xs", "label": "1–5 Seiten" },
+        { "value": "s", "label": "6–10 Seiten" },
+        { "value": "m", "label": "11–20 Seiten" },
+        { "value": "l", "label": "20+ Seiten" }
+      ],
+      "required": true
+    },
+    {
+      "id": "sprachen",
+      "label": "Sprachen",
+      "type": "single-select",
+      "options": [
+        { "value": 1, "label": "1 Sprache" },
+        { "value": 2, "label": "2 Sprachen" },
+        { "value": 3, "label": "3 Sprachen" },
+        { "value": 4, "label": "4 Sprachen (DE/EN/FR/IT)" }
+      ],
+      "required": true
+    },
+    {
+      "id": "copywriting",
+      "label": "Texte",
+      "type": "toggle",
+      "options": [
+        { "value": true, "label": "Ich brauche professionell geschriebene Texte" },
+        { "value": false, "label": "Ich liefere die Texte selbst" }
+      ],
+      "required": false
+    },
+    {
+      "id": "custom_design",
+      "label": "Design",
+      "type": "toggle",
+      "options": [
+        { "value": true, "label": "Individuelles Design" },
+        { "value": false, "label": "Vorlage/Theme genügt" }
+      ],
+      "required": false
+    },
+    {
+      "id": "shop",
+      "label": "Shop / E-Commerce",
+      "type": "single-select",
+      "options": [
+        { "value": "none", "label": "Kein Shop" },
+        { "value": "catalog", "label": "Kleiner Katalog ohne Zahlungsabwicklung" },
+        { "value": "full", "label": "Vollständiger Shop mit Zahlung, Versand, Retouren" }
+      ],
+      "required": false
+    },
+    {
+      "id": "integrationen",
+      "label": "Integrationen",
+      "type": "toggle",
+      "options": [
+        { "value": true, "label": "CRM-, Buchungs- oder API-Anbindung nötig" },
+        { "value": false, "label": "Keine externen Systeme nötig" }
+      ],
+      "required": false
+    },
+    {
+      "id": "laufender_betrieb",
+      "label": "Laufender Betrieb",
+      "type": "single-select",
+      "options": [
+        { "value": "managed", "label": "Ich möchte Hosting/Wartung/Updates abgeben" },
+        { "value": "self", "label": "Ich betreue das selbst weiter" }
+      ],
+      "required": false
+    },
+    {
+      "id": "korrekturrunden",
+      "label": "Korrekturrunden",
+      "type": "single-select",
+      "options": [
+        { "value": "two", "label": "2 Runden reichen" },
+        { "value": "three_plus", "label": "3 oder mehr Runden gewünscht" }
+      ],
+      "required": false
+    }
+  ],
+
+  "resultGate": {
+    "requiredInputs": ["seitenumfang", "sprachen"],
+    "emptyStateMessage": "Wählen Sie mindestens Seitenumfang und Sprachen, um eine Einschätzung zu sehen."
+  },
+
+  "blocks": [
+    { "id": "strategie", "label": "Strategie & Konzeption", "description": "Zielgruppe, Kernbotschaft und Seitenstruktur, bevor gestaltet wird." },
+    { "id": "copywriting", "label": "Copywriting & Texterstellung", "description": "Zielgruppengerechte Texte statt übernommener Firmenbroschüren-Sätze." },
+    { "id": "design", "label": "Design", "description": "Eigens entwickelte visuelle Sprache statt Theme mit ausgetauschten Farben." },
+    { "id": "entwicklung", "label": "Entwicklung & Umsetzung", "description": "Der eigentliche technische Bau: Formulare, Inhaltsverwaltung, Anbindungen." },
+    { "id": "mobile", "label": "Mobile-Optimierung", "description": "Echtes Testen auf realen Geräten, nicht nur ein kurzer Blick aufs eigene Telefon." },
+    { "id": "performance", "label": "Performance", "description": "Komprimierte Bilder, sauberer Code, kurze Ladezeiten." },
+    { "id": "analytics", "label": "Analytics-Einrichtung", "description": "GA4 und Search Console sauber mit Geschäftszielen verknüpft." },
+    { "id": "seo_geo_fundament", "label": "Technisches SEO- und GEO-Fundament", "description": "Crawlbarkeit, strukturierte Daten, Sitemap, klare Entitäten." },
+    { "id": "hosting_wartung", "label": "Hosting & Wartung", "description": "Laufender Betrieb nach dem Launch: Updates, Erreichbarkeit, Pflege." },
+    { "id": "korrekturrunden", "label": "Korrekturrunden", "description": "Definierte Anzahl Feedback-Schlaufen vor Projektabschluss." }
+  ],
+
+  "impactRules": {
+    "note": "Each block's impact is the HIGHEST tag triggered by any current selection (gering < mittel < hoch). Fixed editorial rules, not a numeric or statistical formula.",
+    "strategie": [
+      { "if": "seitenumfang in [m, l]", "tag": "mittel" },
+      { "if": "shop != none", "tag": "hoch" }
+    ],
+    "copywriting": [
+      { "if": "copywriting == true", "tag": "hoch" }
+    ],
+    "design": [
+      { "if": "custom_design == true", "tag": "hoch" }
+    ],
+    "entwicklung": [
+      { "if": "seitenumfang == m", "tag": "mittel" },
+      { "if": "seitenumfang == l", "tag": "hoch" },
+      { "if": "integrationen == true", "tag": "hoch" },
+      { "if": "shop == full", "tag": "hoch" }
+    ],
+    "mobile": [
+      { "if": "always", "tag": "mittel" },
+      { "if": "shop == full", "tag": "hoch" }
+    ],
+    "performance": [
+      { "if": "seitenumfang == m", "tag": "mittel" },
+      { "if": "seitenumfang == l", "tag": "hoch" },
+      { "if": "shop == full", "tag": "hoch" }
+    ],
+    "analytics": [
+      { "if": "always", "tag": "gering" },
+      { "if": "shop != none", "tag": "mittel" }
+    ],
+    "seo_geo_fundament": [
+      { "if": "sprachen == 1 and seitenumfang in [m, l]", "tag": "mittel" },
+      { "if": "sprachen >= 2", "tag": "hoch" }
+    ],
+    "hosting_wartung": [
+      { "if": "laufender_betrieb == managed", "tag": "mittel" },
+      { "if": "shop == full", "tag": "hoch" }
+    ],
+    "korrekturrunden": [
+      { "if": "korrekturrunden == three_plus", "tag": "mittel" }
+    ]
+  },
+
+  "complexityTiers": {
+    "note": "Qualitative label only, derived by counting how many of the ten blocks resolve to 'hoch'. Never shown as, or implying, a number or a price.",
+    "thresholds": [
+      { "hochBlocksCount": [0, 1], "tier": "Schlank" },
+      { "hochBlocksCount": [2, 3], "tier": "Mittel" },
+      { "hochBlocksCount": [4, 5], "tier": "Umfangreich" },
+      { "hochBlocksCount": [6, 10], "tier": "Komplex" }
+    ],
+    "driverExplanationTemplate": "Vor allem {blockLabels} treiben den Umfang hier nach oben."
+  },
+
+  "checklist": [
+    { "id": 1, "text": "Ist die Seitenzahl konkret aufgelistet, oder steht nur ein unbestimmtes «bis zu X Seiten»?", "relevantWhen": "seitenumfang in [m, l]" },
+    { "id": 2, "text": "Wer schreibt die Texte — Sie selbst, der Anbieter, oder ist das ungeregelt?", "relevantWhen": "copywriting == true" },
+    { "id": 3, "text": "Wie viele Korrekturrunden sind enthalten, und was kostet eine zusätzliche?", "relevantWhen": "korrekturrunden == three_plus" },
+    { "id": 4, "text": "Gehören Ihnen Code und Quelldateien nach Projektabschluss?", "relevantWhen": "custom_design == true" },
+    { "id": 5, "text": "Ist SEO konkret beschrieben (Sitemap, strukturierte Daten, Ladezeit) oder ein vages Marketingwort?", "relevantWhen": "seo_geo_fundament in [mittel, hoch]" },
+    { "id": 6, "text": "Was kostet Hosting und Wartung nach dem Launch, und auf wessen Namen laufen Domain und Hosting?", "relevantWhen": "laufender_betrieb == managed" },
+    { "id": 7, "text": "Ist die Anzahl Sprachen explizit gezählt?", "relevantWhen": "sprachen >= 2" },
+    { "id": 8, "text": "Gibt es einen Zeitplan, und was passiert bei verspäteten Inhalten von Ihrer Seite?", "relevantWhen": "always" },
+    { "id": 9, "text": "Sind GA4 und Search Console Teil des Grundpreises oder ein Extra?", "relevantWhen": "always" },
+    { "id": 10, "text": "Ist ein Shop, ein Buchungssystem oder eine CRM-Anbindung bereits eingepreist oder folgt eine separate Offerte?", "relevantWhen": "shop != none or integrationen == true" },
+    { "id": 11, "text": "Ist ein Mindestmass an Support nach dem Launch im Preis enthalten, oder wird jede Stunde einzeln verrechnet?", "relevantWhen": "laufender_betrieb == managed" }
+  ],
+
+  "referenceTiers": [
+    {
+      "id": "website-starter",
+      "matchWhen": "seitenumfang == xs and sprachen == 1",
+      "name": "Starter Website",
+      "priceText": "CHF 880 (regulär CHF 2'490)",
+      "scopeText": "bis zu 5 Kernseiten, 1 Sprache, 2 Korrekturrunden, technisches SEO- und GEO-Fundament, GA4 und Search Console",
+      "sourceNote": "src/data/pricing.ts, id: website-starter — exact figures, not rounded.",
+      "labelNote": "Ein reales Beispiel eines Schweizer Anbieters (Weissmann) für einen Umfang wie Ihre Auswahl — keine automatische Empfehlung."
+    },
+    {
+      "id": "website-business",
+      "matchWhen": "seitenumfang in [m, l] and shop == none",
+      "name": "Business Website",
+      "priceText": "CHF 4'990",
+      "scopeText": "ca. 10–20 Seiten, mehrsprachigkeitsfähig, konversionsorientierte Architektur, 3 Korrekturrunden",
+      "sourceNote": "src/data/pricing.ts, id: website-business — exact figures, not rounded.",
+      "labelNote": "Ein reales Beispiel eines Schweizer Anbieters (Weissmann) für einen Umfang wie Ihre Auswahl — keine automatische Empfehlung."
+    },
+    {
+      "id": "website-complex",
+      "matchWhen": "shop == full or integrationen == true",
+      "name": "Individuelle Website / Web-Plattform",
+      "priceText": "ab CHF 9'900",
+      "scopeText": "grosse mehrsprachige Architektur, E-Commerce oder Integrationen, individuelle Anwendungen",
+      "sourceNote": "src/data/pricing.ts, id: website-complex — exact figures, not rounded.",
+      "labelNote": "Ein reales Beispiel eines Schweizer Anbieters (Weissmann) für einen Umfang wie Ihre Auswahl — keine automatische Empfehlung."
+    }
+  ],
+  "referenceTierRule": "Show at most one matching tier. If more than one condition matches, or none matches cleanly, show no reference tier block at all — never force a fit.",
+
+  "copyBlockTemplate": "Seitenumfang: {seitenumfangLabel}. Sprachen: {sprachenLabel}. Texte: {copywritingLabel}. Design: {designLabel}. Shop: {shopLabel}. Integrationen: {integrationenLabel}. Laufender Betrieb: {laufenderBetriebLabel}. Korrekturrunden: {korrekturrundenLabel}.",
+
+  "ctaCopy": {
+    "primary": {
+      "label": "Eigenes Website-Projekt kostenlos einordnen lassen",
+      "href": "/kontakt/"
+    },
+    "secondary": {
+      "label": "Zum vollständigen Artikel mit den zehn Bausteinen und der Offerten-Checkliste: Artikel lesen",
+      "hrefNote": "Links to the academy spoke page for the website-kosten-schweiz article."
+    }
+  },
+
+  "disclaimerText": "Dieses Werkzeug berechnet keinen Preis. Es zeigt, welche der zehn Kostenbausteine Ihre Auswahl betrifft, und erstellt eine persönliche Checkliste für Offertengespräche. Die einzige echte Preisangabe stammt aus der öffentlich einsehbaren Preisstruktur von Weissmann und wird nur gezeigt, wenn Ihre Auswahl zum dort beschriebenen Umfang passt — sie ist ein Beispiel, kein Angebot für Ihr Projekt.",
+
+  "privacyNote": "Das Werkzeug läuft vollständig im Browser. Es gibt kein Eingabefeld für Name, Firma, E-Mail oder Budget — nur allgemeine Umfangsparameter. Es werden keine Daten übertragen oder an einen Server gesendet."
+}

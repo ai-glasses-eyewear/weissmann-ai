@@ -1,0 +1,168 @@
+{
+  "articleId": "chf-880-website-schweiz",
+  "language": "de",
+  "dataAsOf": "2026-07-29",
+  "tiers": {
+    "starter": {
+      "id": "website-starter",
+      "label": "Starter Website",
+      "price": 880,
+      "regularPrice": 2490,
+      "currency": "CHF",
+      "interval": "once",
+      "promoLabel": "Aktionspreis",
+      "maxCorePages": 5,
+      "languagesIncluded": 1,
+      "revisionRounds": 2,
+      "features": [
+        "Bis zu 5 Kernseiten, responsives Design, mobiloptimiert",
+        "Kontakt- oder Lead-Formular",
+        "Technisches SEO- und GEO-Fundament",
+        "Google Analytics 4 und Search Console eingerichtet",
+        "Strukturierte Daten (Basis), Performance-Optimierung, Security-Header",
+        "Netlify-Deployment, 1 Sprache, 2 definierte Korrekturrunden"
+      ],
+      "excluded": [
+        "Texterstellung",
+        "Weitere Sprachen (mehr als 1)",
+        "Kostenpflichtige Drittanbieter-Tools",
+        "Mehr als 5 Kernseiten",
+        "Mehr als 2 Korrekturrunden",
+        "E-Commerce",
+        "Buchungs- oder CRM-Integrationen",
+        "Mitgliederbereiche / Individuelle Anwendungen"
+      ],
+      "ctaType": "stripe",
+      "checkoutHref": "/preise/",
+      "source": "src/data/pricing.ts (id: website-starter), verified 2026-07-29"
+    },
+    "business": {
+      "id": "website-business",
+      "label": "Business Website",
+      "price": 4990,
+      "currency": "CHF",
+      "interval": "once",
+      "corePagesRange": { "min": 10, "max": 20 },
+      "multilingualReady": true,
+      "revisionRounds": 3,
+      "features": [
+        "Ca. 10–20 Seiten gemäss freigegebenem Umfang, Premium-Design",
+        "Konversionsorientierte Architektur und Lead-Generierungssystem",
+        "Fortgeschrittenes technisches SEO und GEO-Optimierung",
+        "Mehrsprachigkeitsfähig, Blog- oder Wissensbereich",
+        "Erweiterte Formulare, Buchungs-/CRM-Anbindung wo sinnvoll",
+        "GA4 mit Conversion-Tracking, erweiterte strukturierte Daten",
+        "Netlify-Deployment, 3 definierte Korrekturrunden"
+      ],
+      "disclosures": [
+        "Einmaliger Festpreis",
+        "Kostenpflichtige Drittanbieter-Abos sind nicht enthalten, sofern nicht ausdrücklich genannt"
+      ],
+      "ctaType": "consult",
+      "checkoutHref": null,
+      "source": "src/data/pricing.ts (id: website-business), verified 2026-07-29"
+    },
+    "complex": {
+      "id": "website-complex",
+      "label": "Individuelle Website / Web-Plattform",
+      "priceFrom": 9900,
+      "currency": "CHF",
+      "interval": "once",
+      "isFrom": true,
+      "features": [
+        "Grosse mehrsprachige Informationsarchitektur",
+        "Individuelle Anwendungen, API- und CRM-Integrationen",
+        "E-Commerce, Mitgliederbereiche, Dashboards",
+        "Interaktive Tools und KI-Workflows",
+        "Erweiterte Analytics und individuelle Lead-Funnels",
+        "Laufende Beratung möglich"
+      ],
+      "disclosures": [
+        "Ab CHF 9'900 – Endpreis nach Umfang",
+        "Beratung und Offerte statt Direktkauf"
+      ],
+      "ctaType": "consult",
+      "checkoutHref": null,
+      "source": "src/data/pricing.ts (id: website-complex), verified 2026-07-29"
+    }
+  },
+  "inputs": {
+    "pageCount": {
+      "label": "Wie viele Kernseiten braucht Ihre Website?",
+      "type": "select",
+      "options": [
+        { "value": "1-5", "label": "1–5 Seiten" },
+        { "value": "6-20", "label": "6–20 Seiten" },
+        { "value": "20+", "label": "Mehr als 20 Seiten" }
+      ],
+      "required": true
+    },
+    "languageCount": {
+      "label": "Wie viele Sprachen braucht die Website?",
+      "type": "select",
+      "options": [
+        { "value": "1", "label": "1 Sprache" },
+        { "value": "2+", "label": "2 oder mehr Sprachen" }
+      ],
+      "required": true
+    },
+    "needsEcommerce": {
+      "label": "Brauchen Sie einen Online-Shop mit Zahlungsabwicklung?",
+      "type": "boolean",
+      "required": true
+    },
+    "needsBookingOrCrm": {
+      "label": "Brauchen Sie eine Buchungsstrecke oder CRM-Anbindung?",
+      "type": "boolean",
+      "required": true
+    },
+    "needsCustomApps": {
+      "label": "Brauchen Sie individuelle Anwendungen, einen Mitgliederbereich, API-Integrationen oder KI-Workflows?",
+      "type": "boolean",
+      "required": true
+    },
+    "hasOwnCopy": {
+      "label": "Haben Sie die Texte für Ihre Seiten schon (oder planen Sie Copywriting separat ein)?",
+      "type": "boolean",
+      "required": false,
+      "helpText": "Ändert die empfohlene Kategorie nicht, wird aber im Ergebnis als Hinweis angezeigt, weil Texterstellung im Starter-Paket nicht enthalten ist."
+    }
+  },
+  "decisionLogic": {
+    "description": "Deterministisches Regelwerk, das die Eingaben ausschliesslich auf die drei realen, in pricing.ts definierten Pakete abbildet. Keine Gewichtung, kein Punktesystem, kein Zufallsfaktor — jede Empfehlung muss aus den Eingaben nachvollziehbar herleitbar sein.",
+    "rules": [
+      {
+        "id": "complex-override",
+        "condition": "needsEcommerce === true OR needsCustomApps === true OR pageCount === '20+'",
+        "result": "complex",
+        "reason": "E-Commerce, individuelle Anwendungen/API-Integrationen/KI-Workflows und mehr als 20 Seiten liegen ausserhalb von Starter und Business und gehören strukturell zur individuellen Website ab CHF 9'900 — unabhängig von den übrigen Antworten."
+      },
+      {
+        "id": "business-match",
+        "condition": "pageCount === '6-20' OR languageCount === '2+' OR needsBookingOrCrm === true",
+        "result": "business",
+        "reason": "Mehr als 5 Seiten, Mehrsprachigkeit oder eine Buchungs-/CRM-Anbindung sind laut pricing.ts explizit Business-Website-Merkmale (10–20 Seiten, mehrsprachigkeitsfähig, Buchungs-/CRM-Anbindung wo sinnvoll) und nicht im Starter-Umfang enthalten."
+      },
+      {
+        "id": "starter-match",
+        "condition": "pageCount === '1-5' AND languageCount === '1' AND needsEcommerce === false AND needsBookingOrCrm === false AND needsCustomApps === false",
+        "result": "starter",
+        "reason": "Der Bedarf passt vollständig in den freigegebenen Starter-Umfang: bis zu 5 Seiten, 1 Sprache, kein E-Commerce, keine Buchungs-/CRM-Anbindung, keine individuellen Anwendungen."
+      }
+    ],
+    "evaluationOrder": ["complex-override", "business-match", "starter-match"],
+    "note": "Regeln werden in der angegebenen Reihenfolge geprüft; die erste zutreffende Regel bestimmt das Ergebnis. Trifft keine Regel zu (sollte bei vollständigen Eingaben nicht vorkommen), wird kein Ergebnis angezeigt, sondern ein Hinweis, dass die Kombination im Erstgespräch geklärt werden sollte."
+  },
+  "boundaryGuidance": {
+    "description": "Ehrlicher Hinweis für Grenzfälle, damit das Tool nicht automatisch zur teuersten Option drängt.",
+    "text": "Wenn Ihre Seitenzahl nur knapp über 5 liegt (zum Beispiel 6 oder 7) und die einzige Business-Anforderung diese eine zusätzliche Seite ist, kann es günstiger sein, den Inhalt auf 5 Kernseiten zu verdichten und beim Starter-Paket zu bleiben, statt in die Business-Kategorie zu wechseln. Das Tool zeigt diesen Hinweis genau dann, wenn pageCount = '6-20' die einzige ausschlaggebende Bedingung für die Business-Empfehlung war."
+  },
+  "copyReminder": "Wenn hasOwnCopy = false, wird unabhängig vom empfohlenen Paket der Hinweis angezeigt: 'Texterstellung ist im Starter-Paket nicht enthalten; prüfen Sie für jede Kategorie, ob Copywriting separat eingeplant werden muss.'",
+  "disclaimer": "Diese Empfehlung basiert ausschliesslich auf Ihren eigenen Angaben und den öffentlich einsehbaren Paketdefinitionen von Weissmann AI (Stand 29. Juli 2026, siehe weissmann.ai/preise/). Sie ist eine unverbindliche Einordnung, kein Angebot und kein Vertrag. Der tatsächliche Umfang und Preis werden erst im Erstgespräch beziehungsweise beim Checkout verbindlich festgelegt. Alle Berechnungen erfolgen lokal in Ihrem Browser; es werden keine Daten übermittelt oder gespeichert.",
+  "articleUrl": "https://weissmann.ai/ki-academy/marketing-seo-geo/guenstige-website-schweiz-chf-880/",
+  "ctaByTier": {
+    "starter": { "label": "Zu den aktuellen Preisen und zum Starter-Paket", "href": "/preise/" },
+    "business": { "label": "Kostenloses Erstgespräch zur Business Website", "href": "/kontakt/" },
+    "complex": { "label": "Kostenloses Erstgespräch zur individuellen Website", "href": "/kontakt/" }
+  }
+}

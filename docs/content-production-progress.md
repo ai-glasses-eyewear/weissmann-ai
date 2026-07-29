@@ -55,7 +55,8 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 | 3 | EN-PHONE-01 – 05 | done |
 | 4 | EN-PHONE-06 – 10 | done |
 | 5 | IT-PHONE-01 – 05 | done |
-| 6 | IT-PHONE-06 – 10 | done (commit pending) |
+| 6 | IT-PHONE-06 – 10 | done |
+| 7 | DE-WEB-01 – 05 | done (commit pending) |
 | 3 | EN-PHONE-01 – 05 | pending |
 | 4 | EN-PHONE-06 – 10 | pending |
 | 5 | IT-PHONE-01 – 05 | pending |
@@ -162,5 +163,19 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 **Real issue found and fixed during this batch:** SECO restructured their public website mid-session, breaking the two SECO source URLs already committed in `ai-outbound-marketing-calls-switzerland.json` (DE-PHONE-10, Batch 2) — discovered when the IT-PHONE-10 drafting agent independently re-verified the same claim and found the old URLs 404ing. Located and verified the correct current URLs (`seco.admin.ch/de/uwg-themen`, `seco.admin.ch/de/beschwerde-wegen-unlauterer-geschaeftspraktiken-melden`) and fixed the already-committed article's `sources` array (included in this batch's commit). Also fixed 2 title-length overflows caused by HTML-entity encoding of apostrophes/ampersands inflating rendered `<title>` length beyond what the raw JSON string length suggested (same class of issue IT-PHONE-03 self-caught in Batch 5) — both titles rewritten to avoid the offending character.
 
 **All 30 AI-phone-assistant articles complete** (10 DE + 10 EN + 10 IT). **Remaining: 30 website/SEO/GEO articles across Batches 7–12.**
+
+### Batch 7 — DE-WEB-01–05 (complete)
+
+| # | Title | Keyword | Intent | Article file | Artifact files | Uniqueness | Factual | Impl. | Validation |
+|---|---|---|---|---|---|---|---|---|---|
+| DE-WEB-01 | Website-Kosten Schweiz: Was den Preis bestimmt | Website Kosten Schweiz | informational | `academy-content/website-kosten-schweiz.json` | `artifacts/website-kosten-schweiz/` | pass — cost-anatomy market education, distinct from DE-WEB-02's promotion-centric article | zero invented market-average statistics; Weissmann's own real pricing used only as one labelled example, not a market claim | done | build+QA+links+duplicates+guardrails pass |
+| DE-WEB-02 | Günstige Website Schweiz für CHF 880: was ist drin? | günstige Website Schweiz | transactional | `academy-content/chf-880-website-schweiz.json` | `artifacts/chf-880-website-schweiz/` | pass — exhaustive inclusion/exclusion transparency, cross-links (not repeats) DE-WEB-01 | every price/feature bullet re-verified verbatim against live pricing.ts twice; explicitly refuses "60% discount" framing with reasoning; no fake urgency/expiry | done | build+QA+links+duplicates+guardrails pass — highest-stakes commercial article, independently re-verified by me line-by-line |
+| DE-WEB-03 | Beste Webagentur Schweiz: fair vergleichen | beste Webagentur Schweiz | commercial-investigation | `academy-content/webagentur-schweiz-vergleichen.json` | `artifacts/webagentur-schweiz-vergleichen/` | pass — evaluation framework, no named/invented competing agencies (confirmed via grep) | Weissmann's own gaps honestly disclosed, not just its strengths | done | build+QA+links+duplicates+guardrails pass |
+| DE-WEB-04 | Agentur, Freelancer, Baukasten oder KI? | Webagentur oder Freelancer | commercial-investigation | `academy-content/website-agentur-freelancer-baukasten-ki.json` | `artifacts/website-agentur-freelancer-baukasten-ki/` | pass — proactively caught and fixed 3 near-duplicate section headings against concurrently-drafted siblings before finalizing | 3 of 4 worked examples resolve to non-agency routes, independently verified by re-running the scoring logic | done | build+QA+links+duplicates+guardrails pass |
+| DE-WEB-05 | Wix, WordPress, Webflow: Welche Plattform passt? | Wix oder WordPress | commercial-investigation | `academy-content/wix-wordpress-webflow-individuell.json` | `artifacts/wix-wordpress-webflow-individuell/` | pass — requirements-first framework, distinct axis from DE-WEB-04 (technology vs. executor) | Wix/WordPress/Webflow platform facts verified against official docs with access dates; fit matrix independently verified non-rigged (3 of 4 presets favor non-custom-dev) | done | build+QA+links+duplicates+guardrails pass |
+
+**Batch 7 cross-checks:** 0 duplicate titles/slugs/H1s/openings within batch and against all prior batches; 0 slug collisions across all 114 academy-content files (351 unique locale-slug keys); full build = 684 pages; full validator suite passes with 0 issues.
+
+**Remaining after Batch 7:** 25 articles / 25 artifact briefs (5 DE-WEB in Batch 8; 20 EN/IT-WEB in Batches 9–12).
 
 _(Further batches logged the same way as they complete.)_
