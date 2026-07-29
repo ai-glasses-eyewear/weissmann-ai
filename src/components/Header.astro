@@ -2,7 +2,10 @@
 /**
  * Site header: real Weissmann logo, primary nav, language switcher, demo CTA.
  * Dark translucent bar over the midnight-violet ground.
- * Mobile: CSS-only disclosure via <details>, no JS dependency.
+ * Mobile: CSS-only disclosure via <details>, no JS dependency. The desktop
+ * "Company" group and the language switcher use the same <details> pattern
+ * (native keyboard support — Enter/Space toggles, Tab moves through panel
+ * links — with zero added JS).
  */
 import Icon from './Icon.astro';
 import { LOCALES, localePrefix, SITE, type Locale } from '../data/site';
@@ -26,38 +29,55 @@ const lp: LocalePaths | null = localePaths ?? (path ? { de: path, en: path, it: 
 const switchTarget = (l: Locale): string =>
   availableLocales.includes(l) && lp ? `${localePrefix(l)}${lp[l]}` : `${localePrefix(l)}/`;
 
-// Six-pillar primary nav (only live pillars) + company links + pricing utility.
-const nav = [...pillarNav(locale), ...companyNav(locale)];
+const pillars = pillarNav(locale); // Services, Industries, AI Academy, Resources
+const company = companyNav(locale); // About, Contact — grouped under one "Company" disclosure
+const mobileNav = [...pillars, ...company]; // mobile panel stays flat, unchanged
 const priceHref = pricingHref(locale);
 const currentHref = lp ? `${p}${lp[locale]}` : `${p}/`;
+const isCompanyActive = company.some((item) => item.href === currentHref);
 
 const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'FR' };
 ---
 
 <header class="site-header">
-  <div class="container site-header__inner">
+  <div class="site-header__inner">
     <a class="site-header__brand" href={`${p}/`} aria-label="Weissmann AI – Home">
       <img src="/logo-weissmann-dark.png" alt="Weissmann AI" width="185" height="80" loading="eager" decoding="async" />
     </a>
 
     <nav class="site-header__nav" aria-label={locale === 'de' ? 'Hauptnavigation' : locale === 'fr' ? 'Navigation principale' : locale === 'it' ? 'Navigazione principale' : 'Main navigation'}>
-      {nav.map((item) => (
+      {pillars.map((item) => (
         <a href={item.href} aria-current={item.href === currentHref ? 'page' : undefined}>
           {item.label}
         </a>
       ))}
+      <details class="nav-drop">
+        <summary aria-current={isCompanyActive ? 'page' : undefined}>
+          {t(locale, 'nav.company')}<span class="nav-drop__chev" aria-hidden="true">▾</span>
+        </summary>
+        <div class="nav-drop__panel">
+          {company.map((item) => (
+            <a href={item.href} aria-current={item.href === currentHref ? 'page' : undefined}>{item.label}</a>
+          ))}
+        </div>
+      </details>
+      <a href={priceHref} aria-current={priceHref === currentHref ? 'page' : undefined}>{t(locale, 'nav.pricing')}</a>
     </nav>
 
     <div class="site-header__actions">
-      <a class="site-header__price" href={priceHref}>{t(locale, 'nav.pricing')}</a>
-      <nav class="lang-switch" aria-label={t(locale, 'lang.switch')}>
-        {LOCALES.map((l) => {
-          return l === locale
-            ? <span aria-current="true">{langLabel[l]}</span>
-            : <a href={switchTarget(l)} hreflang={l}>{langLabel[l]}</a>;
-        })}
-      </nav>
-      <a class="btn btn--ghost site-header__call" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live" aria-label={`${t(locale, 'cta.callAi')} ${SITE.aiPhoneDisplay}`}><Icon name="phone" size={16} />{t(locale, 'cta.callAi')}</a>
+      <details class="lang-drop">
+        <summary aria-label={t(locale, 'lang.switch')}>
+          {langLabel[locale]}<span class="nav-drop__chev" aria-hidden="true">▾</span>
+        </summary>
+        <div class="nav-drop__panel nav-drop__panel--lang">
+          {LOCALES.filter((l) => l !== locale).map((l) => (
+            <a href={switchTarget(l)} hreflang={l}>{langLabel[l]}</a>
+          ))}
+        </div>
+      </details>
+      <a class="btn btn--ghost site-header__call" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live" aria-label={`${t(locale, 'cta.callAi')} ${SITE.aiPhoneDisplay}`}>
+        <Icon name="phone" size={14} /><span>{t(locale, 'cta.callAi')}</span>
+      </a>
       <a class="btn btn--primary site-header__cta" href={`${p}/kontakt/`} data-track="request_demo">
         {t(locale, 'nav.cta')}
       </a>
@@ -69,7 +89,7 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
       </summary>
       <div class="site-header__mobile-panel">
         <a class="btn btn--primary" href={`tel:${SITE.aiPhone}`} data-track="call_ai_live" aria-label={`${t(locale, 'cta.callAi')} ${SITE.aiPhoneDisplay}`}><Icon name="phone" size={16} />{t(locale, 'cta.callAi')}</a>
-        {nav.map((item) => (
+        {mobileNav.map((item) => (
           <a href={item.href}>{item.label}</a>
         ))}
         <a href={priceHref}>{t(locale, 'nav.pricing')}</a>
@@ -96,38 +116,108 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
+  /* Header gets its own wider constrained container (1440px) rather than the
+     site-wide 74rem/1184px .container, per the wider header/hero brief —
+     scoped to this component only, not a change to the shared token. */
   .site-header__inner {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
     display: flex;
     align-items: center;
     gap: var(--space-4);
-    min-height: 4.25rem;
+    min-height: 5.25rem;
   }
-  .site-header__brand { display: flex; align-items: center; }
+  .site-header__brand { display: flex; align-items: center; flex: none; }
   .site-header__brand img { height: 2.1rem; width: auto; }
+
   .site-header__nav {
     display: none;
+    align-items: center;
     gap: var(--space-4);
     margin-inline: auto;
   }
-  .site-header__nav a {
+  .site-header__nav > a,
+  .site-header__nav .nav-drop > summary {
+    display: inline-flex;
+    align-items: center;
     color: var(--ink-soft);
     font-weight: 500;
     font-size: var(--fs-300);
+    line-height: 1;
     letter-spacing: 0.01em;
+    white-space: nowrap;
     transition: color 0.15s ease;
   }
-  .site-header__nav a:hover { color: var(--ink); text-decoration: none; }
-  .site-header__nav a[aria-current='page'] { color: var(--accent); }
+  .site-header__nav > a:hover,
+  .site-header__nav .nav-drop > summary:hover { color: var(--ink); text-decoration: none; }
+  .site-header__nav > a[aria-current='page'],
+  .site-header__nav .nav-drop > summary[aria-current='page'] { color: var(--accent); }
+
+  /* Company + language disclosures share one compact dropdown pattern. */
+  .nav-drop, .lang-drop { position: relative; }
+  .nav-drop > summary, .lang-drop > summary {
+    list-style: none;
+    cursor: pointer;
+    gap: 0.3rem;
+  }
+  .nav-drop > summary::-webkit-details-marker,
+  .lang-drop > summary::-webkit-details-marker { display: none; }
+  .nav-drop__chev { font-size: 0.65em; transition: transform 0.15s ease; }
+  .nav-drop[open] .nav-drop__chev, .lang-drop[open] .nav-drop__chev { transform: rotate(180deg); }
+  .nav-drop__panel {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    left: 0;
+    min-width: 10rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    z-index: 60;
+  }
+  .nav-drop__panel a {
+    padding: 0.55rem 0.7rem;
+    border-radius: calc(var(--radius) - 4px);
+    color: var(--ink-soft);
+    font-size: var(--fs-300);
+    white-space: nowrap;
+  }
+  .nav-drop__panel a:hover { background: var(--paper-soft); color: var(--ink); text-decoration: none; }
+  .nav-drop__panel a[aria-current='page'] { color: var(--accent); }
+
   .site-header__actions { display: none; align-items: center; gap: var(--space-3); margin-left: auto; }
-  .site-header__cta { padding: 0.55rem 1.15rem; font-size: var(--fs-300); }
-  .site-header__price { color: var(--ink-soft); font-weight: 500; font-size: var(--fs-300); }
-  .site-header__price:hover { color: var(--ink); text-decoration: none; }
-  .lang-switch { display: flex; gap: 0.6rem; font-size: var(--fs-300); }
-  .lang-switch a { color: var(--ink-mute); }
-  .lang-switch a:hover { color: var(--ink); text-decoration: none; }
-  .lang-switch span[aria-current] { color: var(--ink); font-weight: 700; }
-  .lang-switch a, .lang-switch span { display: inline-flex; align-items: center; justify-content: center; min-width: 2.75rem; min-height: 2.75rem; padding: 0.35rem 0.5rem; }
-  .lang-switch--mobile { gap: 0.75rem; }
+
+  .lang-drop > summary {
+    display: inline-flex; align-items: center;
+    min-width: 3.4rem; justify-content: center;
+    color: var(--ink-soft); font-weight: 600; font-size: var(--fs-300);
+    padding: 0.5rem 0.6rem; border: 1px solid var(--line); border-radius: var(--radius-pill);
+    line-height: 1; white-space: nowrap;
+  }
+  .lang-drop > summary:hover { color: var(--ink); border-color: var(--ink-mute); }
+  .nav-drop__panel--lang { min-width: 3.4rem; }
+  .nav-drop__panel--lang a { text-align: center; }
+
+  .site-header__call {
+    padding: 0.5rem 0.85rem;
+    font-size: var(--fs-300);
+    font-weight: 500;
+    gap: 0.45rem;
+    white-space: nowrap;
+    color: var(--ink-soft);
+    border-color: var(--line);
+  }
+  .site-header__call:hover { color: var(--ink); }
+  .site-header__cta {
+    padding: 0.6rem 1.2rem;
+    font-size: var(--fs-300);
+    white-space: nowrap;
+  }
 
   .site-header__mobile { margin-left: auto; }
   .site-header__mobile summary {
@@ -164,9 +254,25 @@ const langLabel: Record<Locale, string> = { de: 'DE', en: 'EN', it: 'IT', fr: 'F
     padding: var(--space-4);
   }
   .site-header__mobile-panel a { color: var(--ink); font-weight: 600; }
+  .lang-switch { display: flex; gap: 0.75rem; font-size: var(--fs-300); }
+  .lang-switch a { color: var(--ink-mute); }
+  .lang-switch a:hover { color: var(--ink); text-decoration: none; }
+  .lang-switch span[aria-current] { color: var(--ink); font-weight: 700; }
+  .lang-switch a, .lang-switch span { display: inline-flex; align-items: center; justify-content: center; min-width: 2.75rem; min-height: 2.75rem; padding: 0.35rem 0.5rem; }
 
   @media (min-width: 920px) {
     .site-header__nav, .site-header__actions { display: flex; }
     .site-header__mobile { display: none; }
+  }
+  /* Narrow-desktop tier (920–1200px): logo + 6 nav items + lang + 2 CTAs is
+     tight in this range. Tighten gaps and drop the call button's visible
+     label (icon + aria-label only) to reclaim width rather than letting the
+     actions group overflow the viewport. */
+  @media (min-width: 920px) and (max-width: 1200px) {
+    .site-header__nav { gap: var(--space-3); }
+    .site-header__actions { gap: var(--space-2); }
+    .site-header__call span { display: none; }
+    .site-header__call { padding: 0.5rem; }
+    .site-header__cta { padding: 0.6rem 0.9rem; }
   }
 </style>
