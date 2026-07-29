@@ -52,7 +52,8 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 |---|---|---|
 | 1 | DE-PHONE-01 – 05 | done |
 | 2 | DE-PHONE-06 – 10 | done |
-| 3 | EN-PHONE-01 – 05 | done (commit pending) |
+| 3 | EN-PHONE-01 – 05 | done |
+| 4 | EN-PHONE-06 – 10 | done (commit pending) |
 | 3 | EN-PHONE-01 – 05 | pending |
 | 4 | EN-PHONE-06 – 10 | pending |
 | 5 | IT-PHONE-01 – 05 | pending |
@@ -111,5 +112,21 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 **Real bug found and fixed during this batch:** `scripts/qa-gates.mjs` hard-required `hreflang="de-CH"` on every indexable page — a pre-existing assumption from before locale-restricted articles existed. This broke the build (exit 1) the moment 5 real `languages: ['en']` pages shipped, exactly the scenario the master prompt's §2 architecture was built to support. Fixed to require a self-referencing hreflang for the page's own locale (derived from its URL prefix) instead of hardcoding `de-CH`. Verified: full build now exits 0, all EN pages render only `hreflang="en"` + `x-default` (no fabricated de-CH/it/fr alternates), full validator suite passes with 0 issues across 664 pages. (One drafting agent in this batch had reported this as "non-blocking" — it was not; `npm run build`'s real exit code was 1. Re-verified independently before trusting the report.)
 
 **Remaining after Batch 3:** 45 articles / 45 artifact briefs (all 10 DE-PHONE + 5 EN-PHONE complete).
+
+### Batch 4 — EN-PHONE-06–10 (complete) — all 30 phone-assistant articles now done
+
+| # | Title | Keyword | Intent | Article file | Artifact files | Uniqueness | Factual | Impl. | Validation |
+|---|---|---|---|---|---|---|---|---|---|
+| EN-PHONE-06 | How to Test an AI Receptionist Before You Sign | how to test AI receptionist | commercial-investigation | `academy-content/how-to-test-ai-receptionist-before-buying.json` | `artifacts/how-to-test-ai-receptionist-before-buying/` | pass — broad 25-call pre-purchase due-diligence plan, cross-links (not repeats) the narrower DE dialect-test and failure-handling articles; zero Weissmann-favoring bias by design (no pre-populated vendors, identical scoring for all) | no invented Weissmann results | done | build+QA+links+duplicates+guardrails pass |
+| EN-PHONE-07 | What Happens When Your AI Receptionist Goes Down | AI receptionist reliability / outage fallback | informational | `academy-content/ai-receptionist-reliability-outage-fallback.json` | `artifacts/ai-receptionist-reliability-outage-fallback/` | pass — system-level outage category (calendar/internet/vendor platform down), distinct from DE-PHONE-07's mid-conversation-misunderstanding category | zero invented uptime/SLA figures — confirmed by grep; Weissmann's own gap stated honestly | done | build+QA+links+duplicates+guardrails pass |
+| EN-PHONE-08 | Do Customers Trust AI Receptionists? | do customers like AI receptionists | informational | `academy-content/do-customers-trust-ai-receptionists.json` | `artifacts/do-customers-trust-ai-receptionists/` | pass — 4-factor trust framework + reasoned human-first routing list, broader than DE-PHONE-03's script-specific disclosure focus | zero invented trust/psychology statistics — confirmed by grep | done | build+QA+links+duplicates+guardrails pass |
+| EN-PHONE-09 | AI Voice Cloning for Swiss Businesses: The Real Risks | AI voice cloning business Switzerland | informational | `academy-content/ai-voice-cloning-business-switzerland.json` | `artifacts/ai-voice-cloning-business-switzerland/` | pass — entirely new topic (voice replication vs. inbound call answering), zero overlap with any of the other 29 phone articles | Arup case (CNN) + FBI IC3 PSA + EU AI Act Art. 50 verified live; **discovered and honestly disclosed that Weissmann's Enterprise tier does list voice cloning** (verified against pricing.ts line 258) rather than assuming it doesn't exist | done | build+QA+links+duplicates+guardrails pass |
+| EN-PHONE-10 | How to Measure an AI Receptionist: 12 KPIs | AI receptionist ROI / metrics | commercial-investigation | `academy-content/how-to-measure-ai-receptionist-kpis.json` | `artifacts/how-to-measure-ai-receptionist-kpis/` | pass — post-purchase measurement guide, distinct reader stage from DE-PHONE-09's pre-purchase break-even calculator | zero invented benchmark figures — explicit "no Swiss benchmark exists, track your own trend" section | done | build+QA+links+duplicates+guardrails pass |
+
+**Batch 4 cross-checks:** 0 duplicate titles/slugs/H1s within batch and against all prior batches; 0 slug collisions across all 99 academy-content files (336 unique locale-slug keys); full build = 669 pages; full validator suite passes with 0 issues.
+
+**Phone-assistant progress: 20 of 30 complete** (all 10 DE-PHONE + all 10 EN-PHONE; 10 IT-PHONE remain in Batches 5–6).
+
+**Remaining after Batch 4:** 40 articles / 40 artifact briefs (10 IT-PHONE + 30 WEB articles).
 
 _(Further batches logged the same way as they complete.)_

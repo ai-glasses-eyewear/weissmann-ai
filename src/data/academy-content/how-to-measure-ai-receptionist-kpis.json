@@ -1,0 +1,370 @@
+{
+  "id": "how-to-measure-ai-receptionist-kpis",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["en"],
+  "slug": {
+    "de": "",
+    "en": "how-to-measure-ai-receptionist-kpis",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["ai-phone-assistant-small-business-case"],
+  "searchIntent": "commercial-investigation",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "",
+    "en": "How to Measure an AI Receptionist: 12 KPIs | Weissmann AI",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "",
+    "en": "Twelve numbers that show whether an AI receptionist actually helps callers, how each is calculated, how each gets gamed, and why no benchmark exists to chase.",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "",
+    "en": "AI Agents & Voice · Measurement Guide",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "",
+    "en": "How to Measure an AI Receptionist: 12 KPIs That Matter More Than “Calls Answered”",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "",
+    "en": "An AI receptionist that answers every call is not automatically one that helps callers, and “calls answered” — the number most dashboards lead with — sits close to 100 percent for any working system by design, which is exactly why it says almost nothing on its own. Twelve other numbers matter more: resolution rate, containment rate, booking conversion rate, correction rate, transfer success rate, abandonment rate, repeat-call rate, a sampled bad-answer rate, after-hours value, a customer-effort proxy, and average handling time. Each can be calculated from your own call data, and each can be made to look better than it is. There is no credible published Swiss or international benchmark for any of these figures — track your own trend instead of chasing someone else's number.",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "", "en": "A dashboard full of green numbers, and a quarter that did not grow", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "A physiotherapy practice owner opens a laptop in front of her accountant and points at a screen: calls answered, 99.6 percent. The AI receptionist she signed up for six months ago is, by this measure, an unambiguous success. The accountant asks the one question nobody had prepared an answer for: how many new patients did that actually bring in this quarter? The honest figure, once someone finally counted, was close to the same number as the quarter before the assistant was installed — and two long-standing patients had quietly moved to a competitor down the street, for reasons the dashboard had nothing to say about.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "The number on the screen was true and almost entirely beside the point. An AI receptionist, by construction, picks up nearly every call that reaches it — the one job it is built never to fail at, in a way a human receptionist juggling three other tasks cannot match. A high “calls answered” figure is therefore not evidence of quality; it describes what the system does by default, the way a shop being open confirms it has a door, not that anyone inside is buying anything. The question worth asking was never whether the phone got picked up, but what happened in the seconds after.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "The number that lies by omission: Calls Answered", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Calls Answered Rate is calculated as calls the assistant picked up divided by total inbound calls in the period. For a functioning AI receptionist, this figure sits close to 100 percent almost all the time, because unlike a human receptionist who might be on another call, at lunch, or busy with someone at the counter, the assistant's entire purpose is to pick up. A dip below that ceiling is worth noticing — it usually means an outage, an integration failure, or a volume spike the system could not absorb — but the number has nowhere further to climb, and nowhere useful to go once it is already near the top.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "This is worth stating plainly, because it is the figure a vendor is most likely to lead with — it is close to guaranteed to look good. Track it as a floor check: a business that discovers its answer rate quietly slipped to 92 percent during a busy week has found a real problem. Do not treat it as evidence the assistant is working well — a system that answers every call and helps almost nobody produces exactly the same figure.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Resolution Rate and Containment Rate: the two numbers most often blurred together", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Resolution Rate is calls where the caller's stated request was fully completed, with no follow-up call needed, divided by total calls handled. Containment Rate is calls completed without any transfer to a human, divided by total calls handled. The two sound similar and are often reported as if interchangeable, but they answer different questions: containment tells you whether the call stayed inside the system; resolution tells you whether the caller actually got what they called for.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A call can be contained and still unresolved. A caller who asks something the assistant cannot answer precisely, receives a vague, hedging response instead of an honest offer to connect them to someone, and hangs up without pushing further, never reaches a transfer. It counts as contained. It should not count as resolved — unless resolution is defined loosely enough to hide the difference, which is exactly what tends to happen when only one of the two numbers gets reported.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Booking Conversion Rate, and the question of what sits underneath the line", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Booking Conversion Rate is confirmed bookings divided by calls where the caller's evident intent was to book or schedule something — not divided by every call the business receives, since most calls to most businesses are not booking calls at all. A dental practice fields calls about invoices, opening hours and prescription refills alongside genuine appointment requests; folding all of those into one denominator describes the whole call mix, not the assistant's booking performance.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "The choice of denominator does more work than it looks like. Reporting bookings against every call received makes a business with a lot of non-booking traffic look artificially weak. Reporting bookings only against calls the system itself recognised as booking attempts can make the assistant look artificially strong, since every call where it missed the booking intent simply disappears from the calculation. Both versions use the same honest-sounding label; only one measures the thing it claims to measure.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Correction Rate and Customer Effort: measuring friction inside the call", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Correction Rate is calls in which the caller had to correct, repeat, or spell something the assistant misheard, divided by total calls — a breadth measure of how many calls had at least one friction moment. Customer Effort, used here as a proxy rather than a formal survey score, is total correction or repeat events across all calls divided by total calls — a depth measure of how much friction the average call contained. The distinction matters: nine calls with no friction and one call needing four corrections in a row produce a correction rate of ten percent, and a customer-effort figure that tells a far more honest story about that one caller's afternoon.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "In multilingual Swiss operation, a rising correction rate is not automatically evidence the assistant got worse. A caller switching between German and French mid-sentence, or an address spelled out letter by letter over a poor mobile line, are ordinary sources of legitimate correction with nothing to do with a system regression. Read the trend alongside what changed in the caller mix before assuming the number itself is the problem.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Transfer Success Rate and Abandonment Rate: what happens when the assistant does not finish the job", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Transfer Success Rate is, of the calls handed to a human, how many actually reached a person — not a voicemail, not a dropped line, not an extension that rang out — divided by total calls transferred. It is easy to assume that once a call is marked “transferred”, the handover worked; in practice a transfer can fail just as quietly as a bad answer, and a caller left on hold after being told they are being connected is often worse off than one never transferred at all.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Abandonment Rate is calls where the caller hung up before their request was addressed, at any point in the flow, divided by total calls. This is distinct from a call that ends normally once the caller has what they need — the marker is not that the call ended, but that it ended mid-request, which is usually a sign of frustration, confusion, or a wait that ran too long.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Repeat-Call Rate and Bad-Answer Rate: the two numbers that need a memory", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Repeat-Call Rate is calls that are a caller calling back within a defined window — 48 hours is a reasonable starting point — about a matter not actually settled the first time, divided by total calls. It is the closest thing here to a genuine “did we actually fix it” signal, precisely because it can only be observed across more than one call, which is also why it is the easiest number for a single-call dashboard to leave out.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Bad-Answer Rate is, of a manually sampled set of calls, how many contained an answer that was factually wrong, invented, or outside the business's actual policies, divided by calls sampled. This is the one KPI here that cannot be fully automated: a system that has confidently stated something incorrect has, by definition, not flagged it as an error, so nobody finds it without a person listening to or reading a sample of transcripts on a regular schedule. That inconvenience is precisely why it is the metric most often skipped — and the most expensive shortcut on this list.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "After-Hours Value and Average Handling Time: context, not vanity", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "After-Hours Resolution Share is after-hours calls that ended in a resolution or a booking, divided by total calls received outside the business's posted opening hours. This is often the figure with the clearest story, since these are calls that previously reached voicemail or nothing at all. Comparing it against the daytime resolution rate is a useful check: a wide gap shows whether the assistant is genuinely capturing demand nobody was serving, or quietly performing worse once no human is around to notice.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Average Handling Time is total call minutes divided by total calls. It belongs on this list as a number to watch, not a target to push in either direction. A call that ends unusually quickly can mean an efficient system or a caller who was cut off before finishing; a call that runs unusually long can mean a genuinely complex request or a system stuck in a clarifying loop. Read it alongside resolution rate and repeat-call rate, never on its own.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "How each of these numbers gets gamed", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "None of the following requires a dishonest vendor. Most of it is simply a default definition baked into a dashboard, or a support team quietly optimising for whatever number they are measured on — an older problem than AI phone systems. Each entry pairs one way a figure gets inflated with an honest counter-metric that catches it.",
+          "it": "",
+          "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Calls Answered is inflated by design: an always-on assistant answers nearly everything it receives before a single caller has been helped. Never report it alone — read it next to Resolution Rate, since a system can answer 100 percent of calls and meaningfully resolve almost none of them.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Containment Rate is inflated when a system is built, deliberately or not, to avoid transferring difficult callers rather than to resolve their request — a caller looped through the same question three times who gives up still counts as contained. The tell is a high containment rate next to a repeat-call rate that is also rising: that combination usually means calls are being kept inside the system, not settled by it.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Resolution Rate is inflated by quietly defining “resolved” as “the call ended without a transfer” — reusing the containment definition under a more reassuring label. Catch this by sampling a handful of “resolved” calls each period in the same review used for Bad-Answer Rate, checking whether the caller's actual question was answered, not just whether the call reached an end.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Booking Conversion Rate is inflated by narrowing the denominator to only calls the system itself recognised as booking attempts, erasing every call where it missed the booking intent entirely. Track how many calls carried booking intent at all, not only how many recognised ones converted.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Correction Rate is made to look better than reality by only logging a correction when the caller says something explicit like “no, I said” — missing the caller who simply stops correcting and hangs up instead. Cross-check a suspiciously low correction rate against Abandonment Rate: short calls, a low correction rate and an elevated abandonment rate together usually mean callers left rather than corrected.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Average Handling Time is presented as a pure efficiency win when a falling average can just as easily mean the assistant is ending calls before the caller's request is addressed. A falling average alongside a falling resolution rate means calls are getting shorter because they are being cut short, not because they are getting easier.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "There is no Swiss benchmark for any of this", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "No single credible published Swiss or international benchmark exists for AI-receptionist containment rate, resolution rate, or any of the other figures above. Anyone quoting a specific “good” number is, at best, quoting an internal figure from their own customer base, with its own mix of industries and caller expectations baked in — and, at worst, quoting a number nobody measured. Neither tells you anything reliable about a physiotherapy practice in Zug or a garage in Bellinzona, because neither shares a caller mix with whichever dataset produced that figure.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "The only comparison worth making is your own number against your own number from an earlier period. Build that comparison with a few habits: calculate over a consistent rolling window — four weeks is a reasonable default — rather than single days, since call mix swings considerably day to day at typical SME volumes. Wait for a change to hold across three or four consecutive windows before treating it as a signal rather than noise from one unusually easy or difficult stretch. And keep definitions identical from one period to the next — the moment “resolved” or “after hours” gets redefined, the trend line starts measuring the definition change instead of the assistant.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "What can go wrong once you start measuring", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Measuring properly removes one set of problems and introduces a smaller set of new ones, worth knowing before they cause a wrong conclusion.",
+          "it": "",
+          "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Small samples make weekly percentages swing for reasons that have nothing to do with quality. A business handling forty calls a week can see its resolution rate move ten points from a single unusually confusing caller — read the rolling window, not the single week, before reacting.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Bad-Answer Rate gets skipped entirely, because it is the only metric here that requires a person to actually listen to or read calls rather than pull a number from a log — and it is the one most likely to surface an uncomfortable finding, which is exactly why it deserves a fixed slot on a calendar rather than whenever there is time.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A genuine change in caller mix gets mistaken for a change in the assistant. A marketing campaign that brings in a wave of simple, single-purpose calls will make correction rate and average handling time both look better than the month before, without the assistant itself having changed at all.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "One metric gets optimised in isolation and the other eleven quietly move the wrong way — a team explicitly told to keep containment rate high can produce exactly that number without anyone intending to make the caller's actual experience worse.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "When percentage KPIs are the wrong tool", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "A business handling a handful of calls a day does not have enough volume for percentages to mean much. Three out of five calls needing a correction is not a sixty percent correction rate worth acting on — it is five phone calls, and the honest response is to listen to those five, not chart them. Below roughly a few dozen calls a period, raw counts and a direct read of the transcripts tell a small operation more than any rate will, and that is a legitimate, permanent way to watch a small caller volume, not a stopgap until the business grows into the spreadsheet.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "The decision in one sentence", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "If only one pair of numbers gets tracked this month, make it Resolution Rate and Repeat-Call Rate, read together over a rolling four weeks, because between them they come closest to answering the one question that actually matters — not whether the phone got picked up, but whether the person on the other end got what they called for.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "", "en": "How often should I recalculate these KPIs?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "On a rolling window basis — calculate over the last four weeks and update it every week or two, not daily. At typical SME call volumes, daily numbers are usually just noise, and reacting to a single bad day will send you chasing a problem that was never really there.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "Which of the twelve comes closest to a single “health” number?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "None on its own, but Resolution Rate and Repeat-Call Rate read together come closest. A call can look resolved in the moment and still not have actually solved the caller's problem — the repeat call, days later, is what exposes that gap.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "Do I need special software to track this, or can I do it by hand?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "Most of it can be built from what a decent call log already records — timestamps, transfer flags, call duration — plus a simple spreadsheet. The one exception is Bad-Answer Rate, which needs someone to sample and listen to or read a set of transcripts, since no system reliably self-reports when it has said something wrong.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "What counts as “after hours” for the after-hours KPI?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "Whatever your own posted opening hours say — evenings, weekends and public holidays for most Swiss SMEs. The point of the metric is to isolate calls that would previously have gone to voicemail or nowhere, so use your real hours, not a generic definition borrowed from somewhere else.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "My correction rate went up after a system update — does that mean the update made things worse?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "Not necessarily. Check whether your caller mix changed at the same time — a new marketing channel, a seasonal shift, more first-time callers — before assuming the update caused it. A rolling trend answers this better than a single before-and-after snapshot.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "Is a 100 percent containment rate a good sign?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "On its own, it is no more informative than a 100 percent “calls answered” figure. Check it next to your repeat-call rate and a small sample of the “contained” calls' transcripts before treating it as a win — a system that never transfers can be genuinely excellent or quietly refusing to escalate, and the number alone cannot tell you which.", "it": "", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "AI receptionist KPIs",
+    "containment rate",
+    "resolution rate",
+    "booking conversion rate",
+    "correction rate",
+    "transfer success rate",
+    "abandonment rate",
+    "repeat-call rate",
+    "bad-answer rate",
+    "after-hours call value",
+    "customer effort",
+    "average handling time",
+    "AI phone assistant ROI"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "",
+        "en": "Weissmann AI — AI phone assistant service page (first-party source for call routing, escalation-by-rules and human-transfer behaviour)",
+        "it": "",
+        "fr": ""
+      },
+      "href": "/en/services/ai-phone-assistant/"
+    }
+  ],
+  "cta": {
+    "label": {
+      "de": "",
+      "en": "Free consultation: we'll go through your own call numbers together",
+      "it": "",
+      "fr": ""
+    },
+    "href": "/en/kontakt/"
+  }
+}

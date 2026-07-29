@@ -1,0 +1,208 @@
+{
+  "articleId": "how-to-measure-ai-receptionist-kpis",
+  "language": "en",
+  "dataAsOf": "2026-07-29",
+  "periodLabel": "Choose any consistent period (a rolling 4 weeks is recommended in the article) and enter your own counts for it.",
+  "rawInputs": [
+    { "id": "totalCalls", "label": "Total inbound calls in the period", "type": "integer", "min": 0, "required": true, "helpText": "Every inbound call the assistant received, counted from your own call log." },
+    { "id": "callsMissedDespiteAssistant", "label": "Calls missed even with the assistant active (outage, overflow)", "type": "integer", "min": 0, "required": false, "default": 0, "helpText": "Leave at 0 if you are not aware of any. Used only to sanity-check Calls Answered Rate." },
+    { "id": "callsResolved", "label": "Calls fully resolved with no follow-up needed", "type": "integer", "min": 0, "required": false, "helpText": "Use your own honest definition of ‘resolved’ — not just ‘ended without a transfer’. See the article's gaming section on why these two get confused." },
+    { "id": "callsTransferred", "label": "Calls transferred to a human at any point", "type": "integer", "min": 0, "required": false },
+    { "id": "transfersConnected", "label": "Of those transferred, how many actually reached a person", "type": "integer", "min": 0, "required": false, "helpText": "Not voicemail, not a dropped line, not an extension that rang out." },
+    { "id": "callsWithBookingIntent", "label": "Calls where the caller clearly wanted to book or schedule something", "type": "integer", "min": 0, "required": false },
+    { "id": "bookingsConfirmed", "label": "Of those, how many ended in a confirmed booking", "type": "integer", "min": 0, "required": false },
+    { "id": "callsWithCorrection", "label": "Calls where the caller had to correct, repeat, or spell something", "type": "integer", "min": 0, "required": false },
+    { "id": "totalCorrectionEvents", "label": "Total correction/repeat events across all calls", "type": "integer", "min": 0, "required": false, "helpText": "A single call can need more than one correction — count every instance, not just every call." },
+    { "id": "callsAbandoned", "label": "Calls where the caller hung up before their request was addressed", "type": "integer", "min": 0, "required": false },
+    { "id": "repeatCalls", "label": "Calls that were a caller calling back within 48 hours about an unresolved matter", "type": "integer", "min": 0, "required": false, "helpText": "Change the 48-hour window in your own tracking if a different window suits your business — just keep it consistent period to period." },
+    { "id": "afterHoursCalls", "label": "Calls received outside your posted opening hours", "type": "integer", "min": 0, "required": false },
+    { "id": "afterHoursResolvedOrBooked", "label": "Of those after-hours calls, how many were resolved or resulted in a booking", "type": "integer", "min": 0, "required": false },
+    { "id": "totalCallMinutes", "label": "Sum of all call durations in the period (minutes)", "type": "number", "min": 0, "required": false },
+    { "id": "sampledCallsReviewed", "label": "Calls you manually sampled/listened to or read for accuracy", "type": "integer", "min": 0, "required": false, "helpText": "This is a manual audit step — no system can reliably self-report when it has said something wrong." },
+    { "id": "sampledBadAnswers", "label": "Of those sampled calls, how many contained a wrong, invented, or off-scope answer", "type": "integer", "min": 0, "required": false }
+  ],
+  "previousPeriodInputs": {
+    "description": "Optional. For any KPI, enter the value (percentage or minutes) from an earlier period of your own to see a directional trend — up, down, or flat. There is no target value to compare against, only your own history.",
+    "fields": ["callsAnsweredRate", "resolutionRate", "containmentRate", "bookingConversionRate", "correctionRate", "customerEffortIndex", "transferSuccessRate", "abandonmentRate", "repeatCallRate", "badAnswerRate", "afterHoursResolutionShare", "averageHandlingTime"]
+  },
+  "kpis": [
+    {
+      "id": "callsAnsweredRate",
+      "label": "Calls Answered Rate",
+      "unit": "percent",
+      "formula": "(totalCalls - callsMissedDespiteAssistant) / totalCalls",
+      "requires": ["totalCalls"],
+      "read": "This is expected to sit close to 100% for any working assistant — that is what an always-on system is built to do. On its own it says nothing about quality. Look at Resolution Rate next, not this number, to judge whether calls actually went well.",
+      "lowDataMessage": "Enter your total call count to see this figure."
+    },
+    {
+      "id": "resolutionRate",
+      "label": "Resolution Rate",
+      "unit": "percent",
+      "formula": "callsResolved / totalCalls",
+      "requires": ["totalCalls", "callsResolved"],
+      "read": "The share of calls where the caller's request was fully completed with no follow-up needed, using your own definition of ‘resolved’. Compare this to your own resolution rate from an earlier period — the trend tells you more than the single number.",
+      "lowDataMessage": "Enter how many calls you consider fully resolved to see this figure."
+    },
+    {
+      "id": "containmentRate",
+      "label": "Containment Rate",
+      "unit": "percent",
+      "formula": "(totalCalls - callsTransferred) / totalCalls",
+      "requires": ["totalCalls", "callsTransferred"],
+      "read": "The share of calls that finished without being handed to a human. This tells you whether calls stayed inside the system — it does not by itself tell you whether the caller's problem was solved. Read it next to Resolution Rate and Repeat-Call Rate.",
+      "lowDataMessage": "Enter how many calls were transferred to see this figure."
+    },
+    {
+      "id": "bookingConversionRate",
+      "label": "Booking Conversion Rate",
+      "unit": "percent",
+      "formula": "bookingsConfirmed / callsWithBookingIntent",
+      "requires": ["callsWithBookingIntent", "bookingsConfirmed"],
+      "read": "Confirmed bookings as a share of calls where the caller clearly wanted to book something — deliberately not divided by all calls, since most calls to most businesses are not booking calls. Track your booking-intent count over time too: if it drops, the assistant may be missing booking requests rather than losing fewer of them.",
+      "lowDataMessage": "Enter how many calls showed booking intent, and how many became confirmed bookings, to see this figure."
+    },
+    {
+      "id": "correctionRate",
+      "label": "Correction Rate",
+      "unit": "percent",
+      "formula": "callsWithCorrection / totalCalls",
+      "requires": ["totalCalls", "callsWithCorrection"],
+      "read": "The share of calls with at least one moment where the caller had to correct, repeat, or spell something. A breadth measure of friction — see Customer Effort Index below for how much friction the average call contained.",
+      "lowDataMessage": "Enter how many calls needed a correction to see this figure."
+    },
+    {
+      "id": "customerEffortIndex",
+      "label": "Customer Effort Index",
+      "unit": "number",
+      "formula": "totalCorrectionEvents / totalCalls",
+      "requires": ["totalCalls", "totalCorrectionEvents"],
+      "read": "Average number of correction or repeat events per call. A low correction rate can still hide a handful of genuinely frustrating calls — this figure catches that by counting every correction, not just every call that had one.",
+      "lowDataMessage": "Enter the total number of correction events across all calls to see this figure."
+    },
+    {
+      "id": "transferSuccessRate",
+      "label": "Transfer Success Rate",
+      "unit": "percent",
+      "formula": "transfersConnected / callsTransferred",
+      "requires": ["callsTransferred", "transfersConnected"],
+      "read": "Of the calls handed to a human, the share that actually reached a person — not voicemail, not a dropped line. A transfer marked as complete is not the same as a transfer that worked.",
+      "lowDataMessage": "Enter how many transferred calls actually reached a person to see this figure."
+    },
+    {
+      "id": "abandonmentRate",
+      "label": "Abandonment Rate",
+      "unit": "percent",
+      "formula": "callsAbandoned / totalCalls",
+      "requires": ["totalCalls", "callsAbandoned"],
+      "read": "The share of calls where the caller hung up before their request was addressed, at any point in the flow — distinct from a call that ends normally once the caller has what they need.",
+      "lowDataMessage": "Enter how many calls were abandoned mid-request to see this figure."
+    },
+    {
+      "id": "repeatCallRate",
+      "label": "Repeat-Call Rate",
+      "unit": "percent",
+      "formula": "repeatCalls / totalCalls",
+      "requires": ["totalCalls", "repeatCalls"],
+      "read": "Calls that were a caller calling back about a matter that was not actually settled the first time. This is the closest proxy here to ‘did we actually fix it’, because it can only be seen across more than one call.",
+      "lowDataMessage": "Enter how many calls were repeat calls about an unresolved matter to see this figure."
+    },
+    {
+      "id": "badAnswerRate",
+      "label": "Bad-Answer Rate (sampled)",
+      "unit": "percent",
+      "formula": "sampledBadAnswers / sampledCallsReviewed",
+      "requires": ["sampledCallsReviewed", "sampledBadAnswers"],
+      "read": "Of the calls you manually reviewed, the share containing an answer that was wrong, invented, or outside your actual policies. This figure only exists if a real review happened — it cannot be generated automatically.",
+      "lowDataMessage": "You have not logged any sampled calls yet. This is the one KPI on the list that needs a person to actually listen to or read a sample of calls — it is also the metric most often skipped. Enter a sample size and a bad-answer count once you have reviewed a batch."
+    },
+    {
+      "id": "afterHoursResolutionShare",
+      "label": "After-Hours Resolution Share",
+      "unit": "percent",
+      "formula": "afterHoursResolvedOrBooked / afterHoursCalls",
+      "requires": ["afterHoursCalls", "afterHoursResolvedOrBooked"],
+      "read": "Of the calls received outside your posted opening hours, the share that were resolved or resulted in a booking. These are calls that, before an always-on assistant, mostly went to voicemail or nowhere — compare this to your daytime Resolution Rate to see if after-hours quality is holding up.",
+      "lowDataMessage": "Enter your after-hours call count and how many were resolved or booked to see this figure."
+    },
+    {
+      "id": "averageHandlingTime",
+      "label": "Average Handling Time",
+      "unit": "minutes",
+      "formula": "totalCallMinutes / totalCalls",
+      "requires": ["totalCalls", "totalCallMinutes"],
+      "read": "Average call length in minutes. Not a target to minimise or maximise on its own — a falling average paired with a falling Resolution Rate usually means calls are being cut short, not made easier.",
+      "lowDataMessage": "Enter your total call minutes for the period to see this figure."
+    }
+  ],
+  "consistencyChecks": [
+    {
+      "id": "answeredAloneCheck",
+      "condition": "callsAnsweredRate is shown and resolutionRate is not entered",
+      "message": "Calls Answered Rate on its own tells you almost nothing — enter Resolution Rate as well before drawing any conclusion from this figure."
+    },
+    {
+      "id": "containmentVsRepeat",
+      "condition": "containmentRate >= 90% AND (repeatCallRate is elevated OR repeatCallRate trend is rising vs. previous period)",
+      "message": "Your containment rate is high while your repeat-call rate is also elevated or rising. The article describes this combination as a common sign that calls are being kept inside the system rather than actually resolved — worth sampling a few ‘contained’ transcripts."
+    },
+    {
+      "id": "resolutionEqualsContainment",
+      "condition": "abs(resolutionRate - containmentRate) <= 2 percentage points AND both are entered",
+      "message": "Your resolution rate and containment rate are almost identical. That is a common sign that ‘resolved’ is quietly being defined the same way as ‘not transferred’ in your own tracking — worth checking your definition before trusting this number."
+    },
+    {
+      "id": "handlingTimeVsResolution",
+      "condition": "averageHandlingTime trend is falling AND resolutionRate trend is falling (both vs. previous period)",
+      "message": "Average handling time is falling at the same time resolution rate is falling. That combination usually means calls are getting shorter because they are being cut short, not because they are getting easier."
+    },
+    {
+      "id": "correctionVsAbandonment",
+      "condition": "correctionRate is low AND abandonmentRate is elevated relative to its own previous period",
+      "message": "A low correction rate alongside a rising abandonment rate can mean callers are giving up rather than correcting the assistant — short calls with both patterns are worth a manual listen."
+    },
+    {
+      "id": "smallSample",
+      "condition": "totalCalls < 30",
+      "message": "With fewer than around 30 calls in this period, a single unusual call can swing any percentage by several points. Treat these figures as a rough signal, not a precise score, until you have a larger or longer window."
+    }
+  ],
+  "gamingPatterns": [
+    {
+      "metric": "Calls Answered Rate",
+      "howItGetsGamed": "Inflated by design — an always-on assistant answers nearly everything it receives, so the figure is close to its ceiling before a single caller has actually been helped.",
+      "honestCounterMetric": "Never report it alone. Read it next to Resolution Rate."
+    },
+    {
+      "metric": "Containment Rate",
+      "howItGetsGamed": "Inflated when a system avoids transferring difficult callers rather than resolving their request — a caller looped through the same clarifying question who eventually gives up still counts as contained.",
+      "honestCounterMetric": "Read it next to Repeat-Call Rate. High containment plus rising repeat calls suggests calls are being kept in, not settled."
+    },
+    {
+      "metric": "Resolution Rate",
+      "howItGetsGamed": "Inflated by quietly defining ‘resolved’ as ‘the call ended without a transfer’ — reusing the containment definition under a more reassuring label.",
+      "honestCounterMetric": "Sample a handful of ‘resolved’ calls each period against the same review used for Bad-Answer Rate."
+    },
+    {
+      "metric": "Booking Conversion Rate",
+      "howItGetsGamed": "Inflated by narrowing the denominator to only the calls the system itself recognised as booking attempts, erasing every call where it missed the booking intent entirely.",
+      "honestCounterMetric": "Track how many calls carried booking intent at all, not only how many of the recognised ones converted."
+    },
+    {
+      "metric": "Correction Rate",
+      "howItGetsGamed": "Made to look better than reality by only logging a correction when the caller uses an explicit phrase like ‘no, I said’ — missing the caller who simply gives up and hangs up instead.",
+      "honestCounterMetric": "Cross-check against Abandonment Rate and Average Handling Time."
+    },
+    {
+      "metric": "Average Handling Time",
+      "howItGetsGamed": "Presented as a pure efficiency win when a falling average can just as easily mean the assistant is ending calls before the caller's request is addressed.",
+      "honestCounterMetric": "Never read alone — pair with Resolution Rate and Repeat-Call Rate trends."
+    }
+  ],
+  "noBenchmarkStatement": "There is no single credible published Swiss or international benchmark for AI-receptionist containment rate, resolution rate, or any of the other figures in this tool. This dashboard never scores your numbers against an external target. It only compares your own current-period figures to your own previous-period figures, when you provide them, and flags internal contradictions between your own metrics.",
+  "trendGuidance": "Use a consistent rolling window (four weeks is a reasonable default) rather than single days. Wait for a change to hold across three or four consecutive windows before treating it as a signal rather than noise. Keep your own definitions of ‘resolved’, ‘after hours’ and any correction window identical from one period to the next — changing a definition breaks the trend.",
+  "disclaimer": "This tool performs only the arithmetic described in ‘How to Measure an AI Receptionist’ (weissmann.ai) on the numbers you enter. It does not compare your figures to any external benchmark, because no credible published one exists for these metrics. It is not a substitute for actually listening to or reading a sample of your own calls, particularly for the Bad-Answer Rate. All calculations run locally in your browser; nothing you enter is transmitted or stored.",
+  "articleUrl": "https://weissmann.ai/en/ai-academy/agents-automation/how-to-measure-ai-receptionist-kpis/",
+  "ctaHref": "/en/kontakt/",
+  "ctaLabel": "Free consultation: we'll go through your own call numbers together"
+}

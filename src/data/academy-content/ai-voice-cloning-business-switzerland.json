@@ -1,0 +1,444 @@
+{
+  "id": "ai-voice-cloning-business-switzerland",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["en"],
+  "slug": {
+    "de": "",
+    "en": "ai-voice-cloning-business-switzerland",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["ai-transparency-disclosure", "what-is-an-ai-phone-assistant"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "",
+    "en": "AI Voice Cloning for Swiss Businesses: The Real Risks | Weissmann",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "",
+    "en": "What real consent for AI voice cloning requires, how the Arup deepfake fraud unfolded, and why watermarking cannot always prove what is real.",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "",
+    "en": "Voice AI · Consent, Security & Fraud",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "",
+    "en": "AI Voice Cloning for Swiss Business Calls: Consent, Security and the Fastest Way to Damage a Brand",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "",
+    "en": "AI voice cloning replicates one specific real person's voice — a founder, a CEO, a long-serving receptionist — so a system can speak in that exact voice instead of a generic synthetic one. Swiss businesses evaluating it face two separate risks that get treated as one. The first is cloning a voice on purpose without proper consent, access control and a plan for what happens when that person leaves. The second is someone else cloning the same voice without any permission at all, to commit fraud — the pattern documented in the 2024 Arup case and repeated in FBI fraud warnings since. Watermarking only proves a recording is genuine when it was made on a platform that adds one; it cannot unmask a clone built with a tool that doesn't.",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "",
+        "en": "The same four seconds of audio, two different outcomes",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "A voicemail greeting, a conference panel recording, a LinkedIn video — a few seconds of someone talking is now enough raw material to build a passable clone of their voice. Used on purpose, with that person's knowledge, it can make an AI phone assistant sound like the founder answering calls after hours, or give a brand a consistent voice across every recorded touchpoint. Used by someone else without asking, it is the opening move of a fraud playbook that has already moved millions of dollars out of real companies. The technology behind both outcomes is identical. What separates them is not a technical safeguard but a handful of questions almost nobody asks before pressing “clone”: whose voice is this, who agreed to it, who is allowed to generate speech with it, and who switches it off the day that person leaves."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "This is not a hypothetical for anyone shopping for a Swiss AI phone assistant. Some providers already sell voice cloning as a feature. Weissmann AI's own Enterprise tier, for demanding businesses that want a specific person's voice rather than a standard one, lists it among its capabilities, offered on request rather than switched on by default. That is worth stating plainly rather than glossing over, because it means the questions in this article are not academic for anyone evaluating that option — from Weissmann or from any other Swiss provider offering the same thing."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "What it actually takes to clone a voice today",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "Modern voice-cloning systems need surprisingly little source audio. Production-grade services can produce a convincing replica from well under a minute of clean speech, and some produce a rough approximation from a handful of seconds. The source material doesn't need to be secretly recorded — a voicemail greeting, a podcast appearance, an all-hands meeting uploaded to a shared drive, a talk on YouTube are all usable inputs, and none of them were ever meant to be a security asset in the first place."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "This matters because “keep your voice private” is not a realistic defence for anyone whose job involves talking to people in public. The practical response has to be about controlling what a clone is allowed to do once it exists, not about hiding a voice that, for most business leaders, was never hideable to begin with."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "What $25 million in fifteen transfers actually looked like",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "In January 2024, a finance employee at the Hong Kong office of the UK-headquartered engineering firm Arup received an email that appeared to come from the company's UK-based chief financial officer, referencing a confidential transaction. He was suspicious enough not to act on the email alone. What changed his mind was a video call: on it, he saw and heard people who looked and sounded exactly like the CFO and several colleagues he recognised. Every one of them was a deepfake, built from publicly available video and audio of Arup's own executives. Over the days that followed, he authorised fifteen transfers totalling roughly US$25 million (about HK$200 million), before the fraud came to light when he called Arup's actual head office to follow up on the “secret transaction.” Hong Kong police confirmed the case in February 2024; Arup itself confirmed it publicly in May 2024. As of the most recent public reporting, the funds have not been recovered and no perpetrator has been identified — this account is drawn from that public reporting, not from a firsthand review of the transaction records."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "The lesson isn't “the deepfake was unconvincing, watch more closely next time.” It worked precisely because everything about that call looked and sounded right, voices included. What was missing was a callback to a phone number the employee already had on file, or a second approver who hadn't been on the call. Eyes and ears are no longer reliable evidence on their own for a decision of that size. Voice and video should never be the entire authorisation for moving money or changing access — only a starting point that a separate, independent check confirms."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "Why the FBI's warning applies well below CFO level",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "In December 2024, the FBI's Internet Crime Complaint Center (IC3) issued a public warning describing exactly this category of fraud at smaller scale: criminals generating short AI audio clips of a family member's voice to demand urgent money during a manufactured crisis, using cloned audio to talk their way into someone's bank account, or impersonating a recognisable public figure to solicit payment. None of that requires a boardroom or a CFO — it requires an owner who has ever posted a video greeting on the company website, spoken at a Chamber of Commerce event, or left a warm voicemail message, which describes most Swiss business owners with any public presence at all."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "The FBI's advice to individuals — hang up, call back on a number you already have, don't act on a single call alone — is the consumer version of the same callback-verification principle the Arup case illustrates at corporate scale. It is also the cheapest, most reliable defence available to a business of any size, and it costs nothing to write into a procedure this afternoon."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "Consent is not a checkbox someone signs once",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "Cloning an employee's or founder's voice on purpose starts with consent, and real consent is narrower and more ongoing than most businesses assume when they first ask."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "A specific, limited purpose stated up front — “your voice will be used for the after-hours phone greeting and nothing else,” not a blanket permission to use it however the business later decides."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "The chance to hear or review actual output before it goes live, not just a description of the plan in the abstract."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "A genuine ability to withdraw consent later, not only at the moment of signing — a clone, once approved, is not supposed to become permanent by default."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "For employees specifically, an honest acknowledgement of the power imbalance in the request: a real ability to decline without professional consequence, recorded in writing, not assumed during a busy first week."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "Access control: who is allowed to make that voice say something new",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "Once a clone exists, the safest mental model is to treat it like a credential, not a creative asset sitting in a shared folder."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "A named, short list of people authorised to generate new speech with a specific person's cloned voice — not “the marketing team,” a list of individuals."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "Every generation logged — who requested it, when, and for what stated purpose — so an unusual request stands out rather than blending into routine use."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "Separation between everyday text or chat tools staff already use and the specific ability to produce cloned audio, so a compromised general account doesn't automatically grant voice-generation rights."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "A default of the smallest set of people who can still do the job, reviewed periodically — not the largest set that seemed convenient when the feature was switched on."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "Revocation: what actually happens the day someone leaves",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "This is the step most policies skip, because it's the one nobody wants to think about while the relationship is still good."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "Consent ends on the departure date by default, not “whenever someone gets around to updating the system.”"
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "The underlying voice model or embedding is deleted or deactivated — not merely left unused, which leaves it recoverable."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "Any API keys or generation permissions tied to that person's clone are revoked the same day, on the same checklist as returning a laptop or badge."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "For an ongoing use — a phone greeting that's still live — ask the departing person, while still employed and on good terms, whether they consent to its continued use after they leave. That conversation is far easier to have before a dispute than after one."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "Watermarking helps, until it doesn't",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "Machine-readable marking of synthetic audio — the kind Article 50(2) of the EU AI Act will require from providers of generative AI from 2 August 2026, implemented in practice mostly through the C2PA / Content Credentials standard — is a genuinely useful idea with one hard limit: it only appears in audio actually created through a platform that adds it. A clone built with an open-source model, a self-hosted tool, or any platform that simply hasn't implemented the standard carries no watermark at all, and there is currently no reliable way to detect that absence after the fact from the audio itself."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "That makes watermarking useful for a business that generates its own synthetic audio responsibly — it lets your own content prove it's yours — but it is not a fraud-detection tool you can rely on to unmask someone else's unmarked clone. The obligation is also extraterritorial in the same way the rest of the EU AI Act is: it reaches a Swiss business whose synthetic audio is used by, or offered to, people in the EU, regardless of where the business is registered. For the full regulatory picture beyond voice specifically, see our guide to AI transparency and disclosure."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "What can go wrong even with a written policy",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "A policy on paper doesn't enforce itself. The realistic failure modes are quieter than a dramatic breach."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "Consent scoped to “the phone greeting” quietly gets reused in a marketing video months later, without anyone asking again."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "A departed contractor's access is forgotten because the IT offboarding checklist was written before voice cloning existed as a category to include on it."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "Staff apply less scrutiny to a familiar-sounding voice on the phone than they would to a suspicious email, because “hearing is believing” is a hard instinct to override even when you know better."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "A vendor's watermarking claim gets treated as a complete guarantee rather than the partial signal it actually is."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "When cloning a voice is not the right answer at all",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "None of this is an argument that every business needs a policy binder before it can safely use an AI phone assistant. Most don't need voice cloning specifically, and it's worth saying so."
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "A business with occasional, low-stakes customer contact gains little from the governance overhead of consent, access review and offboarding that a cloned voice requires — a well-configured standard voice does the same job."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "A business without anyone able to own the access review and offboarding work honestly shouldn't add a capability it can't administer safely, however appealing a signature voice sounds in a sales conversation."
+        },
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "An executive who is personally uneasy about being cloned should be allowed to say no without being talked out of it — that instinct is not paranoia, it may be the most accurate risk assessment in the room."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "The decision, in one sentence",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "it": "",
+          "fr": "",
+          "en": "Before cloning anyone's voice on purpose, write down who consented, who is allowed to use it, and how it gets switched off — and before trusting a familiar voice on the phone, remember that the same few seconds of audio a business might reasonably want to use are exactly what a fraudster needs too, so verify anything involving money or access through a second channel regardless of how certain the voice sounds. The concrete next step isn't a bigger security budget. It's a one-page written answer to those four questions, agreed before any recording is made — the checklist above, filled in with real names."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "Is voice cloning illegal in Switzerland?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "There is no single Swiss law that specifically bans or permits voice cloning. Using someone's voice without their consent is likely to engage personality-rights protections and the revised Data Protection Act (revDSG), which treats voice as personal data because it can identify a specific individual. Using a clone to commit fraud is criminal fraud regardless of the AI involved. This is general information, not legal advice — get advice specific to your situation before acting on it." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "Does Weissmann's AI phone assistant clone voices by default?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "No. The Starter and Premium phone-assistant packages use a standard synthetic voice, not a real person's. Voice cloning appears only as an Enterprise-tier option, offered on request rather than switched on automatically. Anyone considering it — with Weissmann or any other provider — should apply the consent, access-control and revocation questions in this article before agreeing to it." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "Can watermarking prove a recording is fake?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "It can only prove a recording is genuine, and only if it was made on a platform that added the watermark in the first place. It cannot prove the opposite — that the absence of a watermark means a recording is fake — because plenty of authentic audio, and plenty of unmarked cloned audio, carries no watermark at all. Treat it as a partial signal, not a verdict." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "What is the single most useful defence against a fraud like the Arup case?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "Never let a voice or video call alone authorise moving money, changing bank details or granting access. Confirm it through a second, independent channel — such as calling back a number you already had on file before the call, not a number given to you during it." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "What should happen to a cloned voice when the person leaves the company?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "Their consent should be treated as ending on their departure date unless they explicitly agree in writing, while still employed, to any continued use. The underlying voice model and any related access should be deactivated the same day, alongside the rest of the standard offboarding checklist." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "Does the EU AI Act's Article 50 apply to a small Swiss business that never sells into the EU?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "Only if its synthetic audio reaches people in the EU or is otherwise offered to them — the obligation follows where the output is used or offered, not where the business is registered. A purely domestic Swiss use case sits outside its direct reach, though the underlying practices remain good practice regardless." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "Is a generic AI phone-assistant voice the same risk as a cloned one?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "No. A generic synthetic voice doesn't represent an identifiable real person, so it doesn't raise the same consent, impersonation or personality-rights questions a clone of a specific individual's voice does. The fraud risk described in this article is specifically about voices built to replicate someone real." }
+    }
+  ],
+  "keyEntities": [
+    "voice cloning",
+    "deepfake",
+    "EU AI Act Article 50",
+    "watermarking",
+    "impersonation fraud",
+    "consent",
+    "access control",
+    "revocation",
+    "CEO fraud",
+    "FBI IC3",
+    "synthetic voice",
+    "revDSG"
+  ],
+  "sources": [
+    {
+      "label": { "de": "", "it": "", "fr": "", "en": "CNN Business — \"Arup revealed as victim of $25 million deepfake scam involving Hong Kong employee,\" accessed 29 Jul 2026" },
+      "href": "https://www.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk"
+    },
+    {
+      "label": { "de": "", "it": "", "fr": "", "en": "FBI Internet Crime Complaint Center (IC3) — PSA241203, \"Criminals Use Generative Artificial Intelligence to Facilitate Financial Fraud,\" 3 Dec 2024, accessed 29 Jul 2026" },
+      "href": "https://www.ic3.gov/PSA/2024/PSA241203"
+    },
+    {
+      "label": { "de": "", "it": "", "fr": "", "en": "European Commission — EU AI Act Service Desk, Article 50 transparency obligations, accessed 29 Jul 2026" },
+      "href": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50"
+    },
+    {
+      "label": { "de": "", "it": "", "fr": "", "en": "Weissmann AI — pricing and package features (first-party, src/data/pricing.ts), confirming voice cloning as an Enterprise-tier, on-request feature" },
+      "href": "/en/preise/"
+    }
+  ],
+  "cta": {
+    "label": { "de": "", "it": "", "fr": "", "en": "Ask about voice-cloning safeguards before you say yes" },
+    "href": "/en/services/ai-phone-assistant/"
+  }
+}

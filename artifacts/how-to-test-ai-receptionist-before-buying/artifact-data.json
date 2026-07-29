@@ -1,0 +1,99 @@
+{
+  "artifactId": "how-to-test-ai-receptionist-before-buying",
+  "articleId": "how-to-test-ai-receptionist-before-buying",
+  "language": "en",
+  "title": "25-Call Test Runner",
+  "note": "Spec/data file for the artifact described in ARTIFACT-BRIEF.md. This is structured content only — no HTML/JS is implemented here. This data set is vendor-neutral by design: no vendor (including Weissmann) is pre-populated, pre-ranked, or scored by default. All 25 calls, groups and scoring definitions below must render identically regardless of which vendor a user is testing.",
+
+  "groupOrder": ["comprehension", "scheduling", "disruption", "emotional-edge", "handover", "data-privacy"],
+
+  "groupLabels": {
+    "comprehension": "A — Comprehension: Names, Numbers & Addresses",
+    "scheduling": "B — Dates, Scheduling & Slots That Don't Exist",
+    "disruption": "C — Disruption: Interruption, Correction, Silence & Noise",
+    "emotional-edge": "D — Emotional & Edge-Case Callers",
+    "handover": "E — Handing Over to a Human",
+    "data-privacy": "F — Recording, Data & Deletion Questions"
+  },
+
+  "groupIntros": {
+    "comprehension": "A system that sounds fluent in conversation can still lose the details that make a booking usable.",
+    "scheduling": "A booking that sounds agreed on the phone still has to survive contact with an actual calendar.",
+    "disruption": "Real calls are rarely calm and linear. This group tests what happens when they aren't.",
+    "emotional-edge": "Not every caller is calm, on-topic and easy to follow. This group deliberately isn't either.",
+    "handover": "Every AI receptionist eventually has to let go of a call. These three test how well it actually does that.",
+    "data-privacy": "The last four calls have nothing to do with whether the system is good at its job, and everything to do with whether it's honest about what happens to the call itself."
+  },
+
+  "calls": [
+    { "id": "a1", "group": "comprehension", "number": 1, "label": "Uncommon surname, unspelled", "prompt": "Give an uncommon Swiss surname without spelling it first (e.g. Zbinden, Küng, Aebischer).", "whatItTests": "Whether the system asks to confirm the spelling or simply guesses." },
+    { "id": "a2", "group": "comprehension", "number": 2, "label": "Fast digits", "prompt": "Read a phone number or a four-digit postcode at normal conversational pace, not the slow, deliberate pace people use when they know a machine is listening.", "whatItTests": "Digit-accuracy under natural speech rate, not lab conditions." },
+    { "id": "a3", "group": "comprehension", "number": 3, "label": "Confusable address", "prompt": "Give a street address that has a near-identical name in a neighbouring town.", "whatItTests": "Whether the system disambiguates or just picks one." },
+    { "id": "a4", "group": "comprehension", "number": 4, "label": "Booking for someone else", "prompt": "Book an appointment under a name that isn't your own — \"this is for my colleague, Schürch.\"", "whatItTests": "Whose name actually ends up on the booking." },
+    { "id": "a5", "group": "comprehension", "number": 5, "label": "Accent on an ordinary word", "prompt": "Call with a foreign accent or unusual pronunciation of an otherwise ordinary word.", "whatItTests": "Whether the system asks a clarifying question or answers confidently on a guess." },
+
+    { "id": "b1", "group": "scheduling", "number": 6, "label": "Already-booked slot", "prompt": "Ask for a specific date and time you already know is fully booked.", "whatItTests": "Whether it offers a genuine alternative or confirms a slot that doesn't exist." },
+    { "id": "b2", "group": "scheduling", "number": 7, "label": "Relative date", "prompt": "Use a relative date instead of a fixed one — \"the Tuesday after next\", \"a week on Friday.\"", "whatItTests": "Whether it resolves to the correct calendar date." },
+    { "id": "b3", "group": "scheduling", "number": 8, "label": "Mid-call date change", "prompt": "Change the date mid-call — \"actually, not Tuesday, make it Wednesday.\"", "whatItTests": "Whether the correction overwrites the first answer instead of both being logged." },
+    { "id": "b4", "group": "scheduling", "number": 9, "label": "Outside business hours", "prompt": "Ask what happens if you call outside business hours or on a public holiday.", "whatItTests": "Whether the answer is specific or just a vague reassurance." },
+
+    { "id": "c1", "group": "disruption", "number": 10, "label": "Mid-sentence interruption", "prompt": "Interrupt the assistant mid-sentence with a new request.", "whatItTests": "Whether it drops the original thread entirely or picks it back up." },
+    { "id": "c2", "group": "disruption", "number": 11, "label": "Unprompted self-correction", "prompt": "Give a wrong detail on purpose, then correct it yourself a sentence later without being asked.", "whatItTests": "Whether an unprompted correction is actually applied, the way people naturally talk." },
+    { "id": "c3", "group": "disruption", "number": 12, "label": "Dead silence", "prompt": "Go completely silent for ten to fifteen seconds partway through the call.", "whatItTests": "What the system does: wait, prompt, or hang up." },
+    { "id": "c4", "group": "disruption", "number": 13, "label": "Real background noise", "prompt": "Call from a genuinely noisy environment — a workshop, a busy street, a car with the window down.", "whatItTests": "Comprehension under real acoustic conditions, not a quiet office." },
+    { "id": "c5", "group": "disruption", "number": 14, "label": "Run-on sentences", "prompt": "Speak in long, run-on sentences without the pauses a system might be tuned to expect.", "whatItTests": "Handling of natural, hurried speech patterns." },
+
+    { "id": "d1", "group": "emotional-edge", "number": 15, "label": "Irritated from the start", "prompt": "Start the call already sounding irritated — raise your voice slightly, speak faster.", "whatItTests": "Whether tone gets acknowledged or simply processed as neutral words." },
+    { "id": "d2", "group": "emotional-edge", "number": 16, "label": "Out-of-scope question", "prompt": "Ask a question genuinely outside the system's scope — a legal question to a trades business, a medical question to a hotel.", "whatItTests": "Whether it says honestly that it can't help, or answers with confidence anyway." },
+    { "id": "d3", "group": "emotional-edge", "number": 17, "label": "Strong accent", "prompt": "Speak with a strong regional or foreign accent unlikely to be well represented in typical training data.", "whatItTests": "Exactly where comprehension breaks down." },
+    { "id": "d4", "group": "emotional-edge", "number": 18, "label": "Buried request", "prompt": "Ramble slightly and bury the real request in the middle of an unrelated sentence.", "whatItTests": "Whether the system can extract the actual ask." },
+
+    { "id": "e1", "group": "handover", "number": 19, "label": "Direct request for a human", "prompt": "Ask directly to speak to a person, with no other explanation.", "whatItTests": "Whether the system complies immediately or tries to keep handling the call itself." },
+    { "id": "e2", "group": "handover", "number": 20, "label": "Forced escalation", "prompt": "Deliberately give confusing or contradictory answers for a minute or two.", "whatItTests": "Whether the system escalates on its own once it's clearly getting nowhere, rather than looping." },
+    { "id": "e3", "group": "handover", "number": 21, "label": "Context after handover", "prompt": "Call back a few minutes after being handed over and ask the human who picks up what they were told.", "whatItTests": "Whether context travels with the handover, or you have to start again from zero." },
+
+    { "id": "f1", "group": "data-privacy", "number": 22, "label": "Human or AI?", "prompt": "Ask directly, \"Am I talking to a person or an AI?\"", "whatItTests": "Whether the answer is immediate and plain, or evasive." },
+    { "id": "f2", "group": "data-privacy", "number": 23, "label": "Recording disclosure", "prompt": "Ask whether the call is being recorded and what happens to the recording afterwards.", "whatItTests": "Whether the answer is specific, or a generic reassurance." },
+    { "id": "f3", "group": "data-privacy", "number": 24, "label": "Deletion request", "prompt": "Ask how you would go about having your details deleted.", "whatItTests": "Whether the system gives an actual next step, or just says it will \"pass that along.\"" },
+    { "id": "f4", "group": "data-privacy", "number": 25, "label": "Who else has access", "prompt": "Ask who, besides the business you called, has access to the recording or transcript afterwards.", "whatItTests": "The hardest question on the list — a system that handles it well is worth noting." }
+  ],
+
+  "scoreStates": ["fail", "partial", "pass"],
+  "scoreLabels": {
+    "fail": "Fail",
+    "partial": "Partial",
+    "pass": "Pass"
+  },
+  "scoreDefinitions": {
+    "fail": "The system got it wrong and acted on the wrong information anyway — booked the wrong date, recorded the wrong name, or answered a question it should have declined, confidently and incorrectly.",
+    "partial": "The system struggled but recovered — it asked a clarifying question it shouldn't have needed to, took two attempts to get something right, or gave a technically true but noticeably vague answer.",
+    "pass": "The system handled the call cleanly, accurately and without unnecessary friction, the first time."
+  },
+  "scoreValues": { "fail": 0, "partial": 0.5, "pass": 1 },
+
+  "vendors": [],
+
+  "uiRules": {
+    "noPrepopulatedVendor": "The tool ships with zero vendors pre-entered. The user types in every vendor name they want to test (their own label — e.g. 'Weissmann', 'Provider B', 'Current voicemail') themselves. Weissmann is never pre-added, pre-selected, or shown as a default/example vendor in a way that implies it should be tested first or rated favourably.",
+    "noAutoRanking": "When two or more vendors are entered, the comparison table sorts by whatever column the user clicks to sort by (default: entry order, not score). The tool never auto-highlights a 'winner', never adds a badge like 'Recommended' or 'Best', and never breaks a tie in any vendor's favour.",
+    "noScoreWithoutData": "A vendor's overall score and group scores are computed only from calls actually marked for that vendor. Unscored calls are excluded from the denominator, not silently counted as a fail or a pass, and the UI states clearly how many of the 25 calls were actually scored (e.g. '14 of 25 calls scored').",
+    "weightingIsUserControlled": "An optional per-group weighting control (default: all six groups equal) lets the user increase or decrease a group's contribution to the overall score before comparing vendors. This must be clearly optional and reset to equal weighting by default — never pre-weighted toward any group in a way that favours a specific vendor's known strength.",
+    "colorRule": "Never use colour alone to distinguish fail / partial / pass — always pair with the text label. No green anywhere in the palette (site convention); pass uses near-black with a check glyph, partial uses a muted grey, fail uses the Swiss red accent paired with the word 'Fail'.",
+    "vendorSwitchDoesNotReset": "Unlike a single-subject tool, this artifact must hold multiple vendors' data simultaneously (that is the entire point of the comparison view) — switching which vendor's scorecard is currently displayed must never clear another vendor's already-entered scores."
+  },
+
+  "ctaCopy": {
+    "primary": {
+      "label": "Run this test on Weissmann's AI phone assistant (CHF 350, one-time trial)",
+      "href": "/en/services/ai-phone-assistant/"
+    },
+    "secondary": {
+      "label": "Read the full article: the 25-call test plan",
+      "hrefNote": "Links to the English academy spoke page for the how-to-test-ai-receptionist-before-buying article."
+    }
+  },
+
+  "disclaimerText": "This tool reflects your own self-reported scoring of your own test calls — it does not place calls, record anything, or independently verify any vendor's real-world performance. Every vendor you add, Weissmann included, is scored using the identical 25-call list, the identical three-point scale, and no built-in ranking or preference. A result here is only as reliable as the calls you actually ran.",
+
+  "privacyNote": "The tool runs fully in the browser. No vendor name, call content, or score ever leaves your device — there is no server, no analytics call, and no network request. If the build stores your entries locally for convenience between visits, that must be disclosed in one line next to a visible 'clear all data' control."
+}

@@ -1,0 +1,98 @@
+{
+  "articleId": "ai-receptionist-reliability-outage-fallback",
+  "language": "en",
+  "dataAsOf": "2026-07-29",
+  "inputs": {
+    "outageType": {
+      "label": "Which outage do you want to explore?",
+      "options": [
+        { "id": "calendar-api", "label": "The calendar or booking system is not responding" },
+        { "id": "caller-connection", "label": "The caller's own connection is poor" },
+        { "id": "vendor-platform", "label": "The AI vendor's own platform is down" }
+      ],
+      "required": true
+    },
+    "weeklyCallVolume": {
+      "label": "Optional: roughly how many calls do you get per week?",
+      "type": "number",
+      "required": false,
+      "min": 1,
+      "helpText": "Used only for the illustrative impact estimate below. This is simple arithmetic on the number you provide, not a measured statistic or a claim about how often an outage actually happens."
+    }
+  },
+  "scenarios": [
+    {
+      "id": "calendar-api",
+      "label": "Scenario: the calendar or booking system times out mid-call",
+      "context": "A caller asks for the earliest available appointment. The assistant queries the calendar API while the caller waits on the line, and the response does not come back in time.",
+      "poorTimeline": [
+        { "time": "T+0s", "step": "Caller asks for the earliest available appointment." },
+        { "time": "T+0–3s", "step": "Assistant sends the request to the calendar API." },
+        { "time": "T+3–30s", "step": "No response yet. Assistant keeps the caller waiting with no defined limit, or repeats \"let me check that for you\" with no new information." },
+        { "time": "T+30s+", "step": "Assistant offers a slot based on a stale cache or a guess, and confirms it as booked." },
+        { "time": "End of call", "step": "Caller hangs up believing they have a real appointment. Nothing is flagged internally." },
+        { "time": "Days later", "step": "The slot turns out to be double-booked or never existed. Discovered only when someone doesn't show, or two people do." }
+      ],
+      "goodTimeline": [
+        { "time": "T+0s", "step": "Caller asks for the earliest available appointment." },
+        { "time": "T+0–3s", "step": "Assistant sends the request to the calendar API." },
+        { "time": "T+3s", "step": "A defined timeout is reached — no response within a few seconds, not a minute of dead air." },
+        { "time": "T+3–8s", "step": "Assistant tells the caller plainly that the booking system is running slowly, and takes their name, number and preferred time instead of guessing." },
+        { "time": "T+8s", "step": "An internal alert fires immediately, flagging the failed lookup to whoever owns the phone line." },
+        { "time": "End of call", "step": "Caller leaves knowing a person will confirm the exact slot and call back — a real next step, not a false confirmation." }
+      ],
+      "takeaway": "The difference is not whether the calendar ever times out. It is whether the assistant admits uncertainty within seconds and defers the booking, instead of guessing and presenting a guess as a confirmation."
+    },
+    {
+      "id": "caller-connection",
+      "label": "Scenario: the caller's own connection is poor",
+      "context": "The assistant and the calendar are both working normally. The caller is on a patchy mobile signal — a job site, a lift, a mobile dead zone — and the audio arriving is unreliable.",
+      "poorTimeline": [
+        { "time": "T+0s", "step": "Caller gives an address; parts of it are lost to static." },
+        { "time": "T+0–10s", "step": "Assistant asks the same question again, louder or slower, two or three times." },
+        { "time": "T+10–20s", "step": "Confidence stays low, but the assistant proceeds anyway on its best guess of the garbled answer." },
+        { "time": "End of call", "step": "A booking is recorded with incorrect details. The caller has no idea anything was misheard." },
+        { "time": "Days later", "step": "A technician, driver or guest arrives at the wrong address or time." }
+      ],
+      "goodTimeline": [
+        { "time": "T+0s", "step": "Caller gives an address; parts of it are lost to static." },
+        { "time": "T+0–3s", "step": "The assistant's confidence score drops below its threshold as audio quality falls." },
+        { "time": "T+3–8s", "step": "Low confidence triggers a different behaviour, not a repeated question: an offer to text the details instead of speaking them, or a suggestion to call back from clearer reception." },
+        { "time": "T+8–15s", "step": "If the line stays unreliable, an early handover to a human, who can work a bad connection the way an experienced receptionist already does." },
+        { "time": "End of call", "step": "Correct details are captured, or the caller is handed to someone who can get them accurately — no false confidence in a guess." }
+      ],
+      "takeaway": "This is not a vendor outage at all — nothing on the vendor's side has failed. The test is whether falling confidence changes the assistant's behaviour, instead of it repeating itself louder and eventually guessing."
+    },
+    {
+      "id": "vendor-platform",
+      "label": "Scenario: the AI vendor's own platform is down",
+      "context": "The vendor's voice platform — the part that answers calls at all — is having an incident. This is the outage a buyer has the least visibility into.",
+      "poorTimeline": [
+        { "time": "T+0s", "step": "The vendor's voice platform has an incident." },
+        { "time": "T+0s", "step": "A caller dials the business's forwarded number." },
+        { "time": "T+0s+", "step": "The call connects to silence, or fails to connect at all — no fallback number was ever configured, because nobody asked about one before signing." },
+        { "time": "End of call", "step": "The caller hangs up, tries again later, or gives up entirely." },
+        { "time": "Discovery", "step": "The business finds out days later, if at all — usually from a customer mentioning, in passing, that they gave up trying to get through." }
+      ],
+      "goodTimeline": [
+        { "time": "T+0s", "step": "The vendor's voice platform has an incident." },
+        { "time": "T+0s", "step": "A caller dials the business's forwarded number." },
+        { "time": "T+0–2s", "step": "The carrier-level forwarding rule — configured in advance, independent of the vendor — routes the call to a pre-set backup: a voicemail box or a human line." },
+        { "time": "T+minutes", "step": "Monitoring detects the incident and an internal alert fires to a named owner, not just \"whoever notices.\"" },
+        { "time": "End of call", "step": "The caller reaches a working fallback instead of nothing, and the business is notified quickly instead of finding out from a customer." }
+      ],
+      "takeaway": "The forwarding rule that reaches the assistant sits at the telecom carrier's level, not the vendor's — which is exactly what makes a second, independent destination possible. Configuring it before it is ever needed is the cheapest insurance in this whole scenario set."
+    }
+  ],
+  "impactEstimate": {
+    "assumedBusinessHoursPerWeek": 45,
+    "formulaLabel": "Illustrative calls potentially affected per hour of undetected outage",
+    "formulaDescription": "weeklyCallVolume ÷ 45 assumed business hours per week, rounded to the nearest whole call. This is simple arithmetic on the number you entered, using a stated assumption about business hours — not a measured outage frequency, not a prediction, and not specific to any vendor.",
+    "disclaimerNote": "Change the 45-hour assumption in your head if your business has materially different hours — the point of this number is to make \"a silent outage is invisible until someone notices\" concrete, not to be precise."
+  },
+  "weissmannNote": "For context: Weissmann's own published service material states that every package is reachable around the clock, that unanswerable questions are captured and escalated according to the business's own rules, and that every plan includes a dedicated phone line connected by call forwarding from the business's existing number. It does not publish a specific uptime percentage, a timeout figure for calendar integrations, or a described monitoring and incident-notification process — worth asking about directly, exactly as this simulator recommends asking any vendor.",
+  "disclaimer": "This simulator illustrates the difference between well-designed and poorly-designed fallback behaviour, based on general reliability-engineering practice (timeouts, fail-open channels, fail-closed actions, independent fallback paths). The timings shown are illustrative, not measured figures, and the scenarios do not describe the actual behaviour of any specific vendor's system, including Weissmann's, unless explicitly stated as a documented fact. It is not a technical guarantee or a substitute for a written answer from your vendor. Correct as of 29 July 2026.",
+  "articleUrl": "https://weissmann.ai/en/ai-academy/agents-automation/ai-receptionist-outage-fallback/",
+  "ctaHref": "/en/services/ai-phone-assistant/",
+  "ctaLabel": "Stress-test the assistant's fallback behaviour yourself (CHF 350, one-time)"
+}
