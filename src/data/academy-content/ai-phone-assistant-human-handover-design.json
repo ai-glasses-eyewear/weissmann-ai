@@ -1,0 +1,313 @@
+{
+  "id": "ai-phone-assistant-human-handover-design",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["de"],
+  "slug": {
+    "de": "ki-telefonassistent-uebergabe-mensch",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["ai-phone-assistant-failure-handling", "ai-phone-assistant-vs-ivr-caller-journey"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "KI-Telefonassistent: Übergabe an Menschen | Weissmann",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "Eine gute Übergabe an Menschen ist Design, keine Notlösung: welche Anrufe immer zu Menschen gehen, was ins Kontext-Paket gehört, wie das Team bereit ist.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "KI-Agenten & Voice · Übergabe-Design",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "Vom Bot zum Menschen: Die Übergabe richtig gestalten",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "Eine gute Übergabe an einen Menschen ist keine Notlösung für Momente, in denen die KI überfordert ist, sondern eine bewusste Design-Entscheidung, die lange vor dem ersten Anruf getroffen wird. Drei Bausteine gehören dazu: Erstens eine vorab festgelegte Liste von Gesprächstypen, die grundsätzlich immer an einen Menschen gehen – unabhängig davon, wie gut die KI sie verstanden hätte, etwa Anliegen mit rechtlicher oder versicherungstechnischer Tragweite. Zweitens ein Kontext-Paket, das beim Wechsel mitgeliefert wird, damit die anrufende Person ihr Anliegen nicht ein zweites Mal erklären muss. Drittens ein Team, das weiss, wie eine Übergabe ankommt und wer sie annimmt, wenn gerade nur eine Person im Haus ist. Dieser Artikel zeigt, wie ein Betrieb alle drei Entscheidungen konkret trifft.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "Zwei Fragen, die wie eine klingen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "In Verkaufsgesprächen über KI-Telefonassistenten fällt fast immer derselbe Satz: «Und wenn die KI etwas nicht versteht, verbindet sie einfach weiter.» Das klingt nach einer vollständigen Antwort auf die Frage, wie die Übergabe an Menschen funktioniert. Ist es aber nicht. Es beantwortet nur die Hälfte – und ausgerechnet die Hälfte, die für den Betrieb selbst am wenigsten gestaltbar ist.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Der Artikel «Was passiert, wenn der KI-Telefonassistent den Anrufer falsch versteht?» behandelt diese erste Hälfte: den Moment, in dem das System selbst merkt, dass es sich nicht mehr sicher ist, und deshalb reagiert – Konfidenzschwelle, gezielte Rückfrage, Eskalation nach zwei gescheiterten Versuchen. Das ist Fehlerbehandlung: reaktiv, ausgelöst durch ein technisches Signal, im Kern eine Frage der Software-Konfiguration. Dieser Artikel behandelt die zweite Hälfte, die in Verkaufsgesprächen praktisch nie vorkommt: die Entscheidung, welche Gesprächstypen grundsätzlich nie bei der KI bleiben sollen – nicht weil sie sie falsch verstehen würde, sondern weil der Betrieb im Voraus festgelegt hat, dass genau dieses Thema in Menschenhände gehört, ganz unabhängig davon, wie gut die KI zugehört hätte. Das ist Übergabe-Design: proaktiv, eine unternehmerische Entscheidung, keine technische.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Die Verwechslung beider Fragen ist keine Kleinigkeit. Ein Betrieb, der nur die Fehlerbehandlung konfiguriert, aber nie festgelegt hat, welche Themen von vornherein zu Menschen gehören, überlässt genau diese Entscheidung dem Zufall – nämlich der Frage, ob die KI im Einzelfall gerade unsicher genug war, um zu eskalieren.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Entscheidung eins: Welche Gespräche gar nicht erst bei der KI bleiben", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Bevor irgendein Schwellenwert konfiguriert wird, braucht es eine Liste – kurz, konkret, vom Betrieb selbst geschrieben – mit Gesprächstypen, die immer an einen Menschen gehen. Nicht «wenn die KI unsicher ist», sondern immer, unabhängig vom Gesprächsverlauf. Diese Liste ist die eigentliche Design-Entscheidung, um die es in diesem Artikel geht.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Rechtliche und versicherungstechnische Anliegen: eine Haftpflicht-Meldung, ein Unfall im Rahmen der Unfallversicherung, eine Kündigungsandrohung. Nicht weil eine KI die Fakten nicht korrekt erfassen könnte, sondern weil die Formulierung später Bedeutung haben kann – dafür braucht es jemanden mit Entscheidungsbefugnis, nicht nur mit Zuhörvermögen.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Akute Beschwerden mit Reputationsrisiko: eine Kundin, die mit einer schlechten Bewertung droht, ein Gast, der einen ernsten Vorfall meldet. Hier zählt weniger, was gesagt wird, als wer antwortet.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Zahlungsverzug und Inkasso: Gespräche über offene Rechnungen brauchen Verhandlungsspielraum, den eine KI nicht hat und aus gutem Grund auch nicht haben sollte.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Anfragen von Presse oder Behörden: selten, aber wenn sie eintreffen, ist eine automatisierte Antwort fast immer die falsche.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Alles, was die Person selbst ausdrücklich verlangt: Der Wunsch, mit einem Menschen zu sprechen, ist der zuverlässigste aller Trigger und braucht keine weitere Prüfung durch das System.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Illustratives Beispiel: die «immer Mensch»-Liste in der Praxis", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Illustratives Beispiel: Eine Physiotherapie-Praxis mit zwei Behandlungsräumen richtet einen KI-Telefonassistenten für Terminanfragen ein. Die Praxisleitung legt vorab fest: Ein Anruf, in dem eine Patientin einen Arbeitsunfall meldet und nach der weiteren Abwicklung über die Unfallversicherung fragt, geht immer sofort an die Praxisassistentin – selbst wenn die KI Datum, Uhrzeit und Anliegen tadellos verstanden hätte. Der Grund hat nichts mit den Fähigkeiten der KI zu tun: Eine solche Meldung kann später versicherungsrechtlich relevant werden, und dafür braucht es jemanden, der weiss, was er sagt, nicht nur jemanden, der zuhören kann.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Diese Liste ist branchenspezifisch – eine Physiotherapie-Praxis braucht andere Einträge als eine Treuhandkanzlei oder ein Coiffeur-Salon. Entscheidend ist nicht die exakte Liste, sondern dass es überhaupt eine gibt, bevor die KI in Betrieb geht, und dass sie nicht mit der Fehlerbehandlung verwechselt wird.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Entscheidung zwei: Wo die Eskalationsschwelle liegt, wenn kein fester Trigger greift", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Nicht jede Übergabe lässt sich im Voraus als feste Regel formulieren. Für alles, was nicht auf der «immer Mensch»-Liste steht, braucht es eine zweite Art von Auslöser – einen, der während des Gesprächs entscheidet, ob es gerade schwierig wird. Genau hier liegt die Eskalationsschwelle: der Punkt, an dem die KI von sich aus erkennt, dass die Situation ihre Kompetenz übersteigt, auch wenn niemand das im Voraus namentlich festgelegt hat.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Branchenübliche Ansätze für diesen zweiten Trigger-Typ kombinieren mehrere Signale: den Tonfall – Tempo, Lautstärke, wiederholte Unterbrechungen als Hinweis auf Frust –, bestimmte Signalwörter wie «Beschwerde», «Anwalt», «kündigen» oder «Notfall», und schlicht die Dauer eines Gesprächs, das sich im Kreis dreht. Keines dieser Signale ist für sich allein zuverlässig – Tonfall-Erkennung liegt nicht immer richtig, und ein Signalwort kann auch harmlos gemeint sein. Deshalb gilt in der Praxis dieselbe Regel wie bei der Fehlerbehandlung: im Zweifel eher zu früh als zu spät übergeben. Eine überflüssige Übergabe kostet eine Minute Team-Zeit; eine ausgebliebene kostet im schlechtesten Fall die Kundenbeziehung.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Diese Schwelle ist zudem keine Einstellung, die man einmal festlegt und dann vergisst. In der Praxis bewährt es sich, regelmässig zu überprüfen, welche Trigger tatsächlich auslösen und welche zu oft oder zu selten reagieren – und entsprechend nachzujustieren, ähnlich wie eine Preisliste, die man periodisch aktualisiert statt sie für immer festzuschreiben.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Entscheidung drei: Die Kontextübergabe – was mitkommen muss, damit niemand zweimal alles erzählt", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Der wohl unterschätzteste Teil einer Übergabe ist nicht, dass sie stattfindet, sondern was dabei mitgeliefert wird. Eine Übergabe ohne Kontext fühlt sich für die anrufende Person wie ein Rückschritt an: Sie hat gerade zwei Minuten mit der KI gesprochen – und muss jetzt bei null neu anfangen. Genau das ist der Unterschied zwischen einem kalten und einem warmen Transfer.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Wer anruft und worum es geht: Name, falls erfasst, und eine knappe Ein-Satz-Zusammenfassung des Anliegens – nicht das volle Transkript, das niemand in fünf Sekunden lesen kann.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Was bereits gesagt oder versucht wurde: Wurde schon ein Termin vorgeschlagen? Wurde eine Frage bereits beantwortet? Damit das Team nicht denselben Boden ein zweites Mal beackert.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Der erkannte Grund für die Übergabe: fester Trigger von der «immer Mensch»-Liste oder erkannte Schwierigkeit während des Gesprächs – diese Unterscheidung allein sagt dem Team schon viel darüber, wie dringend oder wie heikel der Anruf ist.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Ein Hinweis auf die Stimmung, wenn erkennbar: neutral, ungeduldig, verärgert – nicht als Ferndiagnose, sondern als kurze Vorwarnung, damit die Person am Telefon nicht kalt in eine aufgeladene Situation läuft.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Warmer Transfer am Telefon: die kurze Zusammenfassung vor dem Durchstellen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Bei einem Telefongespräch – anders als beim Chat – lässt sich der Kontext nicht einfach als Text neben dem Anruf anzeigen, während schon jemand in der Leitung wartet. Die in der Praxis bewährte Lösung ist eine kurze gesprochene oder eingeblendete Zusammenfassung an das Team, bevor die anrufende Person durchgestellt wird: ein paar Sekunden, in denen die Mitarbeiterin hört oder liest, worum es geht, und erst danach das Gespräch übernimmt. Diese wenigen Sekunden entscheiden oft darüber, ob sich die Übergabe für die anrufende Person wie eine Fortsetzung anfühlt oder wie ein Neustart.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Das Kontext-Paket sollte zudem nicht mehr enthalten, als das Team für das Gespräch tatsächlich braucht. Ein vollständiges Transkript wirkt gründlich, ist in der Praxis aber oft zu lang, um es in der Kürze einer Übergabe zu lesen, und enthält häufig auch Angaben, die für das eigentliche Anliegen gar nicht relevant sind. Kürzer und gezielter ist hier tatsächlich besser – nicht nur aus Datenschutzgründen, sondern weil eine Zusammenfassung schneller gelesen ist als ein Protokoll.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Ein fiktives Beispiel für eine typische Situation: Ein Patient ruft zum dritten Mal an, weil sein Termin bereits zweimal verschoben wurde, und wird hörbar ungeduldig. Schlecht gestaltet sieht die Übergabe so aus: Die KI verbindet weiter, die Praxisassistentin meldet sich mit «Grüezi, was kann ich für Sie tun?» – der Patient muss die ganze Vorgeschichte ein drittes Mal erzählen, diesmal noch gereizter. Gut gestaltet sieht dieselbe Übergabe so aus: Die Assistentin bekommt vorab die Kurzmeldung «Dritter Anruf wegen zweimal verschobenem Termin, Anrufer klingt ungeduldig» und eröffnet stattdessen mit «Grüezi Herr Müller, ich sehe, Ihr Termin wurde bereits zweimal verschoben – das tut mir leid, schauen wir das jetzt gemeinsam an.» Gleicher Anruf, gleiche KI, gleiche Praxis – der einzige Unterschied ist, was im Kontext-Paket stand.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Entscheidung vier: Kann das Team eine Übergabe gerade überhaupt annehmen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Die beste Trigger-Liste und das sauberste Kontext-Paket nützen wenig, wenn im Moment der Übergabe niemand abnimmt. Das ist keine theoretische Sorge: Viele Schweizer KMU-Betriebe haben genau eine oder zwei Personen, die überhaupt telefonisch erreichbar sind – und die sitzen möglicherweise gerade selbst am Empfang, in einer Behandlung oder auf der Baustelle.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Wer ist während der Geschäftszeiten tatsächlich für Übergaben zuständig – nicht «irgendjemand im Team», sondern eine benannte Person oder eine klare Reihenfolge.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Was passiert, wenn diese Person gerade in einem anderen Gespräch, im Kundenkontakt oder ausser Haus ist – eine zweite Stufe, kein Verhallen des Anrufs.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Ist die Rückfallebene eine Combox mit erhaltenem Kontext oder eine echte Rückrufzusage mit Zeitfenster – «wir rufen innerhalb von zwei Stunden zurück» ist ein Versprechen, das eingehalten werden muss, nicht nur formuliert.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Weiss das Team, wie eine Übergabe technisch ankommt – als Anruf mit vorgelesener Zusammenfassung, als Textnachricht, als beides – und wurde das einmal geübt, nicht nur einmal erklärt?",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Was bei schlecht gestalteten Übergaben schiefgeht", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Ein durchdachtes Übergabe-Design zeigt sich selten dadurch, dass alles perfekt läuft – sondern dadurch, dass die folgenden fünf Muster gar nicht erst auftreten.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Zu viele Trigger: Wenn beinahe jedes zweite Gespräch eskaliert, verliert die KI ihren eigentlichen Zweck – das Team ist am Ende genauso beschäftigt wie ohne Automatisierung, nur mit einem zusätzlichen technischen Umweg davor.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Zu wenige Trigger: Ein Betrieb, der die «immer Mensch»-Liste zu knapp hält, überlässt heikle Gespräche der KI, obwohl die eigentliche Entscheidung – dieses Thema gehört zu einem Menschen – längst hätte getroffen werden können.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Kontext, den niemand liest: Eine lange, technisch vollständige Zusammenfassung, die im Alltag zwischen zwei Kundengesprächen niemand in der verfügbaren Zeit erfasst, ist faktisch kein Kontext – nur ein ungelesenes Protokoll.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Eine Rückfallebene, die nicht greift: Übergabe an eine Person, die gerade nicht erreichbar ist, ohne definierte zweite Stufe – der Anruf verhallt, und die anrufende Person ist am Ende schlechter dran als vor der Übergabe.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Eine Trigger-Liste, die nie aktualisiert wird: ein neues Angebot, eine neue Dienstleistung, eine veränderte Situation im Betrieb – und die Liste von vor zwei Jahren passt nicht mehr zum heutigen Geschäft.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Wann ein eigenes Übergabe-Design nicht nötig ist", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Nicht jeder Betrieb braucht vier separat ausformulierte Entscheidungen. Bei sehr geringem Anrufvolumen, wenn ohnehin fast jeder Anruf sofort an dieselbe eine Person geht, oder wenn ein Geschäft so klein ist, dass die Inhaberin selbst jeden Anruf entgegennimmt, ist ein ausgearbeitetes Übergabe-Protokoll mehr Aufwand, als es Nutzen bringt. Für solche Fälle reicht eine einzige Regel: Alles, was die KI nicht in unter einer Minute lösen kann, geht sofort weiter. Das ist kein Versagen des Konzepts – es ist die richtige Grösse für den Betrieb.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Die vier Entscheidungen als Checkliste fürs nächste Team-Meeting", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Der nächste sinnvolle Schritt ist nicht, einem Anbieter zu glauben, dass «die KI schon weiss, wann sie übergeben soll». Es ist, die vier Entscheidungen aus diesem Artikel im eigenen Team zu besprechen, bevor die KI überhaupt in Betrieb geht: Welche Gespräche gehen immer an einen Menschen? Wo liegt die Schwelle für alles andere? Was genau steht im Kontext-Paket? Und ist tatsächlich jemand da, der eine Übergabe entgegennehmen kann – auch um 11:40 Uhr an einem vollen Dienstag?",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Diese vier Fragen lassen sich nicht von einer Software allein beantworten. Sie sind die Hausaufgabe des Betriebs, nicht des Anbieters – und genau deshalb lohnt es sich, sie vor dem ersten Anruf zu klären, nicht danach.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "Ist eine Übergabe an einen Menschen ein Zeichen, dass die KI nicht gut genug ist?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein, im Gegenteil: Eine gezielte, gut gestaltete Übergabe ist ein Zeichen, dass der Betrieb im Voraus entschieden hat, welche Themen zu einem Menschen gehören. Das ist etwas anderes als eine Übergabe, die nur passiert, weil die KI gerade nicht weiterwusste – Ersteres ist Design, Zweiteres ist Fehlerkorrektur.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Wie viele «immer Mensch»-Trigger sind sinnvoll, bevor die Automatisierung ihren Sinn verliert?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Es gibt keine feste Zahl, aber eine brauchbare Faustregel: Die Liste sollte kurz genug sein, dass sie sich auf einer halben Seite aufschreiben lässt, und lang genug, dass jedes wirklich heikle Thema abgedeckt ist. Beginnt die Liste, alltägliche Anfragen mit einzuschliessen, übernimmt sie faktisch die Aufgabe der Eskalationsschwelle – und das ist ein anderes Werkzeug für ein anderes Problem.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Was passiert, wenn im Moment der Übergabe niemand im Team erreichbar ist?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Das muss vorab definiert sein, nicht dem Zufall überlassen: eine zweite Person, eine Combox mit erhaltenem Kontext, oder eine verbindliche Rückrufzusage mit Zeitfenster. Eine Übergabe ohne funktionierende Rückfallebene ist schlechter als gar keine Übergabe, weil die anrufende Person zusätzlich zur Wartezeit auch noch das Gefühl bekommt, ignoriert zu werden.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Muss das Kontext-Paket ein vollständiges Gesprächs-Transkript enthalten?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nicht zwingend, und oft sogar besser nicht. Eine kurze, gezielte Zusammenfassung – wer anruft, worum es geht, was bereits versucht wurde, warum übergeben wird – lässt sich in Sekunden erfassen. Ein vollständiges Transkript ist zwar vollständiger, aber in der Kürze einer echten Übergabe praktisch unlesbar.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Wie oft sollte man die Trigger-Liste und die Eskalationsschwelle überprüfen?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Regelmässig, nicht einmalig bei der Einrichtung. Neue Dienstleistungen, veränderte Abläufe oder einfach die Erfahrung aus den ersten Betriebswochen zeigen häufig, dass ein Trigger zu selten oder zu oft auslöst. Eine Überprüfung alle paar Monate ist in der Praxis ein vernünftiger Rhythmus.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Braucht ein Einzelunternehmen mit nur einer Person überhaupt ein Übergabe-Protokoll?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "In reduzierter Form ja – zumindest die Antwort auf die Frage, was passiert, wenn genau diese eine Person gerade nicht ans Telefon kann. Ein mehrstufiges Team-Protokoll braucht es dafür nicht, aber eine klare Regel für die Rückfallebene schon, sonst übernimmt im Zweifel niemand die Übergabe.", "en": "", "it": "", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "KI-Telefonassistent",
+    "Eskalationsschwelle",
+    "Kontextübergabe",
+    "Warmer Transfer",
+    "Kalter Transfer",
+    "Übergabe-Design",
+    "Human Handoff",
+    "Rückfallebene"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "Weissmann AI – Leistungsseite KI-Telefonassistent, Abschnitt zu Weiterleitung bei komplexen und heiklen Anliegen (first-party)",
+        "en": "", "it": "", "fr": ""
+      },
+      "href": "/leistungen/ki-telefonassistent/"
+    },
+    {
+      "label": {
+        "de": "Cresta – AI to Human Agent Handoff Best Practices, Branchenleitfaden zu Eskalationsschwellen und strukturierter Kontextübergabe (abgerufen 29. Juli 2026)",
+        "en": "", "it": "", "fr": ""
+      },
+      "href": "https://cresta.com/guides/ai-to-human-agent-handoff-best-practices"
+    },
+    {
+      "label": {
+        "de": "Replicant – When to Hand Off to a Human: How to Set Effective AI Escalation Rules (abgerufen 29. Juli 2026)",
+        "en": "", "it": "", "fr": ""
+      },
+      "href": "https://www.replicant.com/blog/when-to-hand-off-to-a-human-how-to-set-effective-ai-escalation-rules"
+    }
+  ],
+  "cta": {
+    "label": { "de": "Kostenloses Erstgespräch: Wir legen gemeinsam fest, welche Anrufe bei Ihnen immer an einen Menschen gehen", "en": "", "it": "", "fr": "" },
+    "href": "/kontakt/"
+  }
+}

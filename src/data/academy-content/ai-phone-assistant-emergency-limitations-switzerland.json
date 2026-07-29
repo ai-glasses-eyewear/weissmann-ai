@@ -1,0 +1,199 @@
+{
+  "id": "ai-phone-assistant-emergency-limitations-switzerland",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["de"],
+  "slug": {
+    "de": "ki-telefonassistent-notfall-grenzen",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["ai-call-recording-legality-switzerland", "ai-phone-assistant-failure-handling"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "Notfall-Check: Grenzen des KI-Telefonassistenten | Weissmann",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "Die Checkliste vor dem Start: Ein KI-Telefonassistent darf nie diagnostizieren oder Notfälle triagieren. Er erkennt Signale und verweist an 144, 117 oder 118.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "KI-Agenten & Voice · Notfallgrenzen",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "Der Notfall-Check: Was Ihr KI-Assistent können muss, bevor er ans Telefon geht",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "Ein KI-Telefonassistent darf niemals medizinisch beraten, Symptome einschätzen oder in einem echten Notfall triagieren – das ist eine harte, nicht verhandelbare Grenze, keine Konfigurationsoption. Was er stattdessen können muss: notfalltypische Signale in der Sprache eines Anrufers erkennen («ich kriege keine Luft», «es blutet stark») und sofort nach einem festen Weiterleitungsprotokoll reagieren – an eine Mitarbeiterin, an eine definierte Rufnummer oder direkt an die echten Schweizer Notrufnummern 144 (Sanität), 117 (Polizei) und 118 (Feuerwehr). Dieser Artikel ist die Checkliste, die vor dem ersten Anruf abgehakt sein sollte: was der Assistent nie tun darf, was er immer tun muss, und woran ein fehlerhaft konfiguriertes System zu erkennen ist.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "Die Grenze, die nie verschwimmen darf", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Ihr KI-Telefonassistent wird nie wissen, ob ein Anrufer tatsächlich einen Herzinfarkt hat, ob eine Verletzung lebensbedrohlich ist oder ob ein «es geht mir nicht gut» harmlos oder ernst gemeint ist. Das ist keine Schwäche, die ein besseres Sprachmodell irgendwann behebt – es ist eine Grenze, die so bleiben muss. Die einzige Aufgabe des Systems in einem solchen Moment ist nicht, richtig zu urteilen, sondern schnell genug loszulassen: das Gespräch sofort an einen Menschen oder an die echte Notrufnummer weiterzugeben, ohne selbst mitzuentscheiden, wie dringend die Lage ist.", "en": "", "it": "", "fr": "" },
+        { "de": "Die meisten Artikel zu diesem Thema fragen zuerst, was das Gesetz erlaubt oder verbietet. Diese Frage stellt dieser Artikel bewusst nicht an erste Stelle – zur strafrechtlichen Einordnung der Gesprächsaufzeichnung selbst gibt es den separaten Artikel «Anrufe aufzeichnen mit KI: was die Schweiz erlaubt», ein eigenes Rechtsgebiet mit eigenen Regeln. Hier geht es um etwas Vorgelagertes: eine technische und organisatorische Fähigkeit, die entweder vorhanden ist, bevor der erste Anruf eingeht, oder gar nicht. Der folgende Vorab-Check listet, was ein KI-Telefonassistent niemals tun darf und was er immer tun muss, bevor Sie ihn für einen Betrieb freischalten, in dem ein Anrufer tatsächlich einmal in Not sein könnte – eine Arztpraxis, ein Pflegedienst, aber auch ein Handwerksbetrieb oder eine Hausverwaltung, bei denen niemand ausschliessen kann, dass irgendwann ein ernster Anruf dazwischenkommt.", "en": "", "it": "", "fr": "" },
+        { "de": "Ein fiktives Beispiel für eine typische Situation: Eine Physiotherapiepraxis in einem Mittelstädtchen hat vor drei Monaten einen KI-Telefonassistenten eingerichtet, der Termine bucht und Absagen entgegennimmt. Ein Anrufer meldet sich ausser Atem: «Mein Vater liegt auf dem Boden und reagiert nicht richtig.» Der Assistent, eingerichtet für Terminanfragen, fragt höflich nach, ob ein bestehender oder ein neuer Termin gewünscht sei. Der Anrufer legt auf. Ob am Ende alles gut ausging, weiss in dieser Praxis niemand – das System selbst hat den Vorfall nicht einmal als ungewöhnlich markiert. Genau dieses Szenario soll der folgende Vorab-Check verhindern, nicht durch Zufall, sondern durch eine Fähigkeit, die vor dem Livegang geprüft und abgehakt wurde.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Der Vorab-Check, Teil 1: Was Ihr Assistent niemals tun darf", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Diese fünf Verhaltensweisen sind keine Konfigurationsfehler, die sich später nachbessern lassen. Sie müssen von Anfang an technisch ausgeschlossen sein, nicht nur unwahrscheinlich gemacht werden.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Medizinische Beratung geben oder Symptome einschätzen. Kein Satz wie «Das klingt nach einer Erkältung, trinken Sie viel und ruhen Sie sich aus» oder «Legen Sie sich hin, das wird schon» darf je vom System kommen – auch nicht als gut gemeinte Beruhigung.", "en": "", "it": "", "fr": "" },
+        { "de": "Die Dringlichkeit einer Situation selbst bewerten. Der Assistent entscheidet nie, ob etwas «wahrscheinlich harmlos» oder «wahrscheinlich ernst» ist. Diese Einschätzung – Notfall-Triage im eigentlichen Sinn – bleibt ausschliesslich Fachpersonal und den echten Notrufzentralen vorbehalten.", "en": "", "it": "", "fr": "" },
+        { "de": "Den Eindruck erwecken, er könne selbst Hilfe schicken. Kein «Ich habe einen Krankenwagen für Sie informiert» oder Ähnliches – der Assistent kann höchstens weiterleiten, niemals selbst alarmieren oder disponieren.", "en": "", "it": "", "fr": "" },
+        { "de": "Bei erkannten Notfallsignalen im normalen Skript weitermachen. Sobald ein Trigger erkannt ist, endet die Terminbuchung, die Produktberatung oder jedes andere reguläre Gesprächsziel sofort – nicht nach der nächsten Frage, sondern sofort.", "en": "", "it": "", "fr": "" },
+        { "de": "Raten, wenn die Situation unklar bleibt. Erkennt das System eine mögliche Notfallsprache nicht eindeutig, gilt immer die vorsichtigere Regel: lieber einmal zu früh weiterleiten als einmal zu spät.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Der Vorab-Check, Teil 2: Was Ihr Assistent immer tun muss", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Diesen fünf Punkten muss das System nicht nur folgen können, sondern nachweislich folgen – im Testlauf genauso wie im echten Betrieb.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Eine geprüfte Liste von Signalwörtern und -sätzen kennen. Nicht nur «Notfall» oder «Hilfe», sondern auch indirekte Formulierungen wie «er atmet komisch», «sie reagiert nicht» oder «es blutet stark» – branchenspezifisch ergänzt, je nachdem, wer normalerweise anruft.", "en": "", "it": "", "fr": "" },
+        { "de": "Sofort in einen reinen Weiterleitungsmodus wechseln. Keine weiteren Fragen zum eigentlichen Gesprächsanlass mehr, keine Bestätigungsschleifen – nur noch die Übergabe.", "en": "", "it": "", "fr": "" },
+        { "de": "Ruhig und klar die richtige Nummer nennen. 144 für die Sanität, 117 für die Polizei, 118 für die Feuerwehr – und den ausdrücklichen Hinweis, bei akuter Lebensgefahr sofort selbst aufzulegen und direkt zu wählen, statt auf eine Weiterleitung durch das System zu warten.", "en": "", "it": "", "fr": "" },
+        { "de": "Parallel an einen Menschen übergeben, wenn einer erreichbar ist. Ein warmer Transfer mit Kontext ist die sinnvolle Ergänzung zur Notrufnummer, niemals ihr Ersatz.", "en": "", "it": "", "fr": "" },
+        { "de": "Den Anruf für die Nachbearbeitung markieren – unabhängig vom Ausgang. Auch wenn der Anrufer auflegt, bevor die Übergabe greift, muss jemand aus dem Team den Vorfall im Nachhinein sehen und einordnen können.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Das Weiterleitungsprotokoll: vom Signal zur Übergabe", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Anders als bei einem gewöhnlichen Missverständnis – ausführlich behandelt im Artikel «KI-Telefonassistent versteht nicht: was dann?» – gibt es bei einem echten Notfallsignal keine Konfidenzschwelle, die erst überschritten werden muss, und keine Rückfrage, die den Vorgang verlangsamt. Ein Missverständnis verträgt eine zweite Nachfrage; ein Notfallsignal verträgt sie nicht. Das Weiterleitungsprotokoll kennt deshalb drei Schritte, nicht vier, und jeder davon muss in Sekunden ablaufen: erkennen, unterbrechen, weiterleiten.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Illustratives Beispiel, gut gelöst: Anruferin: «Mein Nachbar liegt im Treppenhaus, er redet nicht mehr richtig.» Assistent: «Das klingt ernst. Wenn das gerade akut ist, legen Sie bitte sofort auf und wählen Sie 144 – warten Sie nicht auf mich. Ich verbinde Sie ausserdem direkt mit unserem Team, falls das hilft.» Keine Rückfrage zum ursprünglichen Anliegen, keine Bestätigung, keine Verzögerung.", "en": "", "it": "", "fr": "" },
+        { "de": "Illustratives Beispiel, schlecht gelöst: Anruferin: «Mein Nachbar liegt im Treppenhaus, er redet nicht mehr richtig.» Assistent: «Das tut mir leid zu hören. Rufen Sie wegen eines Untersuchungstermins an, oder ist das etwas anderes?» Das System hat das Signal zwar registriert, aber nicht verstanden, dass ab diesem Satz kein reguläres Gespräch mehr stattfindet – der teuerste Fehler in diesem ganzen Artikel.", "en": "", "it": "", "fr": "" },
+        { "de": "Wie eine Aufzeichnung eines solchen Anrufs rechtlich zu behandeln ist, beantwortet dieser Artikel bewusst nicht. Das ist eine eigene, strafrechtliche Frage, die unabhängig davon gilt, ob überhaupt ein Notfall vorlag – ausführlich eingeordnet im Artikel zur Gesprächsaufzeichnung.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Der Praxistest vor dem Livegang", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Bevor ein KI-Telefonassistent für einen Betrieb mit Publikumsverkehr live geschaltet wird, gehört ein kurzer, aber ernstgemeinter Testlauf zum Vorab-Check – keine Zusicherung des Anbieters, sondern eine geprüfte Tatsache im eigenen Betrieb.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Direkte Formulierung: «Ich brauche einen Krankenwagen.»", "en": "", "it": "", "fr": "" },
+        { "de": "Indirekte, unklare Formulierung: «Es geht ihr plötzlich richtig schlecht.»", "en": "", "it": "", "fr": "" },
+        { "de": "Gemischt mit einem regulären Anliegen: Der Anrufer beginnt mit einer Terminfrage und wechselt mitten im Satz zu einer Notlage.", "en": "", "it": "", "fr": "" },
+        { "de": "Ruhig gesprochen trotz ernster Lage: Nicht jeder Notfall klingt am Telefon panisch – das System darf sich nicht allein auf Tonfall oder Lautstärke verlassen.", "en": "", "it": "", "fr": "" },
+        { "de": "Mit Akzent oder in gebrochenem Deutsch: Ein Signal muss auch erkannt werden, wenn der Satzbau ungewohnt ist.", "en": "", "it": "", "fr": "" },
+        { "de": "Panisch, stockend, unvollständig: Anrufer in echter Not formulieren selten einen sauberen Satz.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Was schiefgehen kann", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Die Risiken eines fehlenden oder ungetesteten Weiterleitungsprotokolls sind nicht in erster Linie juristischer Natur – sie sind menschlich und geschäftlich, und beide wiegen schwer genug.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Echte Verzögerung im echten Notfall: Ein Anrufer in echter Not bekommt eine Terminbestätigung statt einer Weiterleitung. Das ist der Kern des Risikos, und alles andere in diesem Artikel existiert nur, um genau das zu verhindern.", "en": "", "it": "", "fr": "" },
+        { "de": "Reputationsschaden: Eine schlecht aufgelöste Notfallsituation spricht sich in einer Ortschaft oder einer Fachbranche schneller herum, als jede Marketingaussage sie ausgleichen kann – besonders bei Praxen, Pflegediensten oder anderen vertrauenssensiblen Betrieben, bei denen genau dieses Vertrauen das eigentliche Geschäftsmodell ist.", "en": "", "it": "", "fr": "" },
+        { "de": "Schwer erklärbar im Nachhinein: Wird ein Vorfall später hinterfragt – von einer betroffenen Familie, einer Versicherung oder der eigenen Geschäftsleitung –, lässt sich ein dokumentierter, getesteter und unterschriebener Vorab-Check erklären. Ein Protokoll, das niemand je aufgeschrieben oder getestet hat, lässt sich im Nachhinein nur schwer rechtfertigen.", "en": "", "it": "", "fr": "" },
+        { "de": "Reale Rechtsfolge bei EU-Bezug: Sobald ein System auch EU-Kundschaft mitbedient, stuft der EU AI Act KI-Systeme, die Notrufe selbst bewerten, einstufen oder deren Priorisierung mitbestimmen, ausdrücklich als Hochrisiko-Systeme ein (Anhang III, Ziffer 5 lit. d). Ein Weiterleitungsprotokoll, das korrekt an Menschen und echte Notrufnummern übergibt statt selbst zu triagieren, bewegt sich ausserhalb dieser Einstufung – ein System, das eigene Dringlichkeitsurteile fällt, bewegt sich mitten hinein, mit dem vollen Pflichtenkatalog, der daran hängt.", "en": "", "it": "", "fr": "" },
+        { "de": "Ein Team, das aus Fehlern nichts lernt: Erfährt niemand im Betrieb, dass ein kritischer Anruf durchgerutscht ist, kann das Team seine eigene Erreichbarkeit für solche Fälle nicht verbessern – ein Fehler ohne Rückmeldung wiederholt sich.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Wo die Verantwortung liegt: Anbieter, Betrieb und die Grenze dazwischen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Ein Anbieter wie Weissmann kann die technische Fähigkeit liefern: eine geprüfte Signalliste, einen Weiterleitungsmodus, der das reguläre Skript zuverlässig unterbricht, und eine saubere Übergabe an Mensch oder Notrufnummer. Was ein Anbieter nicht liefern kann, ist die branchenspezifische Signalliste für den konkreten Betrieb, die Entscheidung, wer im Team eine Übergabe tatsächlich entgegennimmt, oder die Sicherstellung, dass diese Person auch wirklich erreichbar ist. Diese drei Punkte bleiben Aufgabe des Betriebs – vor dem Livegang, nicht danach.", "en": "", "it": "", "fr": "" },
+        { "de": "Weissmanns eigene KI-Telefonassistenten sind an dieser Stelle bewusst eng gehalten: Sie erkennen notfalltypische Sprache, sie unterbrechen das reguläre Gespräch, und sie leiten weiter – an eine Mitarbeiterin, einen Mitarbeiter oder direkt an die echte Notrufnummer. Sie stellen keine Diagnose, sie geben keine medizinische Beratung, und sie übernehmen keine Notfall-Triage. Diese Grenze ist keine aktuelle technische Einschränkung, die mit dem nächsten Modell verschwindet – sie ist die richtige Grenze, dauerhaft.", "en": "", "it": "", "fr": "" },
+        { "de": "Der praktische nächste Schritt ist nicht, diesem Artikel zu vertrauen, sondern die eigene Signalliste und das eigene Protokoll mit echten Testanrufen durchzuspielen, bevor der erste reale Anruf es tut – und das Ergebnis schriftlich festzuhalten, damit es im Zweifel nachweisbar ist, nicht nur gut gemeint.", "en": "", "it": "", "fr": "" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "Kann der KI-Telefonassistent von Weissmann selbst einen Rettungsdienst rufen?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein. Der Assistent kann niemals selbst einen Rettungsdienst, die Polizei oder die Feuerwehr alarmieren – das kann ausschliesslich die anrufende Person selbst oder ein Mensch im Betrieb, der die Übergabe entgegennimmt. Der Assistent nennt die richtige Nummer (144, 117 oder 118) und rät bei akuter Gefahr ausdrücklich, sofort selbst aufzulegen und direkt zu wählen, statt auf eine Weiterleitung zu warten.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Gibt es in der Schweiz ein Gesetz, das genau vorschreibt, wie ein KI-Telefonassistent auf Notfälle reagieren muss?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Ein eigenständiges Schweizer Gesetz mit dieser genauen Vorschrift gibt es nicht. Was es gibt, sind allgemeine Sorgfalts- und Datenschutzpflichten (revDSG, EDÖB-Grundsätze) sowie – sobald ein System auch EU-Kundschaft bedient – eine Hochrisiko-Einstufung im EU AI Act für Systeme, die Notrufe selbst bewerten oder deren Dringlichkeit einschätzen. Die Vorab-Checkliste in diesem Artikel ist deshalb keine Zusammenfassung einer einzelnen Vorschrift, sondern eine praktische Fähigkeitsprüfung, die unabhängig vom genauen Rechtsrahmen sinnvoll ist. Dies ist keine Rechtsberatung im Einzelfall.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Muss jede Branche dieselbe Signalliste verwenden?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein. Eine Arztpraxis braucht eine andere Liste als ein Handwerksbetrieb oder eine Hausverwaltung – dieselbe Formulierung, etwa «es geht ihm schlecht», bedeutet in einer Zahnarztpraxis etwas anderes als am Telefon eines Heizungsinstallateurs. Die Grundstruktur des Weiterleitungsprotokolls bleibt gleich, die konkrete Signalliste muss branchenspezifisch angepasst werden.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Was passiert, wenn ein Notfallsignal fälschlicherweise erkannt wird, obwohl gar keiner vorliegt?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Dann eskaliert das System einmal unnötig – im Zweifel die deutlich bessere Fehlerrichtung. Eine kurze, überflüssige Weiterleitung kostet ein bis zwei Minuten und lässt sich problemlos wieder einordnen. Ein übersehenes echtes Signal lässt sich nicht rückgängig machen. Deshalb gilt für die Signalliste bewusst die grosszügigere Regel: lieber einmal zu häufig auslösen als einmal zu selten.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Reicht es, das Weiterleitungsprotokoll einmal bei der Einrichtung zu testen?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein. Sprachmodelle, Skripte und Geschäftsabläufe ändern sich, und mit jeder Anpassung kann sich auch das Verhalten bei Notfallsignalen verändern. Sinnvoll ist ein erneuter Testlauf nach jeder grösseren Änderung am System sowie mindestens einmal im Jahr unabhängig davon.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Unterscheidet sich dieser Vorab-Check von der allgemeinen Fehlerbehandlung eines KI-Telefonassistenten?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Ja, deutlich. Allgemeine Fehlerbehandlung – behandelt im Artikel «KI-Telefonassistent versteht nicht: was dann?» – arbeitet mit Konfidenzschwellen, Rückfragen und mehreren Anläufen, weil ein gewöhnliches Missverständnis Zeit zum Klären verträgt. Bei einem echten Notfallsignal gibt es diese Zeit nicht: keine Rückfrage, keine Konfidenzschwelle, sondern eine sofortige Weiterleitung.", "en": "", "it": "", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "KI-Telefonassistent",
+    "Notfall-Triage",
+    "Weiterleitungsprotokoll",
+    "medizinische Beratung",
+    "Notrufnummer",
+    "Sanitätsnotruf 144",
+    "Polizeinotruf 117",
+    "Feuerwehrnotruf 118",
+    "EU AI Act Anhang III",
+    "Hochrisiko-KI-System",
+    "Eskalation",
+    "Warmer Transfer",
+    "revDSG",
+    "EDÖB"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "Stadt Zürich – Notrufe: 144 Sanität, 117 Polizei, 118 Feuerwehr (abgerufen 29. Juli 2026)",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://www.stadt-zuerich.ch/de/stadtleben/notfall/notrufe.html"
+    },
+    {
+      "label": {
+        "de": "EU AI Act Service Desk (Europäische Kommission) – Anhang III Ziffer 5 lit. d, Hochrisiko-Einstufung für Notruf-Bewertung, -Priorisierung und Patiententriage (abgerufen 29. Juli 2026)",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3"
+    },
+    {
+      "label": {
+        "de": "EDÖB – Einsatz von ChatGPT und vergleichbaren KI-gestützten Anwendungen (abgerufen 29. Juli 2026)",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://www.edoeb.admin.ch/de/04042023-einsatz-von-chatgpt-und-vergleichbaren-ki-gestuetzten-anwendungen"
+    }
+  ]
+}

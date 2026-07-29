@@ -1,0 +1,250 @@
+{
+  "id": "website-launch-seo-geo-sichtbarkeit",
+  "cluster": "marketing-seo-geo",
+  "type": "spoke",
+  "languages": ["de"],
+  "slug": {
+    "de": "website-launch-seo-geo-sichtbarkeit",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["websites", "seo", "geo"],
+  "relatedArticles": ["what-is-generative-engine-optimization", "get-cited-by-ai-assistants"],
+  "searchIntent": "commercial-investigation",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "Website-Launch: Tag eins bei Google und KI sichtbar | Weissmann",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "Der Zeitplan für eine neue Website: was am Launch-Tag technisch stehen muss, was in Woche eins folgt – und warum sich KI-Sichtbarkeit nicht erzwingen lässt.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "Launch-Fahrplan für neue Websites",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "Wie wird eine neue Website ab Tag eins bei Google und in KI-Antworten sichtbar?",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "Eine neue Website wird nicht an einem einzigen Tag sichtbar, sondern in einer festen Reihenfolge, die sich nicht abkürzen lässt. Am Launch-Tag muss die technische Basis stehen: Crawlbarkeit, Sitemap, individuelle Seitentitel, korrektes Organization-Schema und ein eingerichteter Zugang zu Google Search Console und Analytics. In der ersten Woche folgen aktive Schritte wie das Einreichen der Sitemap, die Anfrage zur Neuindexierung und die Einrichtung des Google-Unternehmensprofils. Erst danach – über Wochen und Monate, nicht Tage – bauen sich Indexierung, Vertrauenssignale und die Voraussetzungen für KI-Zitate auf. Wer GEO-Massnahmen vor der Indexierung beginnt, optimiert eine Seite, die noch niemand lesen kann.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "Der Fehler, der die Reihenfolge kippt", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Der teuerste Fehler beim Website-Launch passiert selten am Launch-Tag selbst. Er passiert eine Woche später, wenn jemand in bester Absicht beschliesst, sofort mit «GEO machen» anzufangen – llms.txt schreiben, Schema-Typen sammeln, Prompts in ChatGPT testen. Das Problem ist nicht der Wille, sondern die Reihenfolge. Google hat die Website zu diesem Zeitpunkt oft noch nicht einmal gecrawlt. Für eine Seite, die noch nicht im Index steht, gibt es buchstäblich nichts zu zitieren – für keine Suchmaschine und für kein KI-System.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Die Leitfäden in dieser Academy-Rubrik erklären ausführlich, was GEO ist, wie sich SEO, AEO und GEO unterscheiden und welche Schema-Typen dabei helfen. Dieser Artikel setzt das voraus und beantwortet eine andere Frage: In welcher Reihenfolge passiert das eigentlich, wenn eine Website noch gar keine Geschichte hat – keinen Crawl-Verlauf, keine Backlinks, keine einzige bestehende Erwähnung irgendwo? Genau das unterscheidet den Launch einer neuen Website von der laufenden Pflege einer bestehenden: Es gibt nichts, worauf man aufbauen kann, ausser dem, was Sie in den ersten Wochen selbst aufbauen.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Warum sich diese Reihenfolge nicht abkürzen lässt", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Ein Teil dieses Zeitplans liegt in Ihrer Hand. Ein anderer Teil nicht. Google schreibt zur erneuten Indexierungs-Anfrage selbst, dass das Crawling einer Seite – je nach Fall – von wenigen Tagen bis zu mehreren Wochen dauern kann, und dass eine Anfrage keine sofortige oder überhaupt stattfindende Aufnahme in die Suchergebnisse garantiert. Das ist keine Ausrede einer Agentur, sondern eine technische Realität, die für jede Website gilt, unabhängig vom Budget. Wer versucht, diesen Teil durch mehr Aktivität zu beschleunigen – etwa durch tägliches erneutes Einreichen derselben Sitemap –, verschwendet Zeit, die besser in Inhalte fliesst.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Für KI-Zitate gilt eine ähnliche, aber nicht identische Logik. Ein Sprachmodell mit Websuche kann eine frisch indexierte, sauber strukturierte Seite technisch schon nach Tagen aufgreifen. Ob eine Marke aber als eigenständige, vertrauenswürdige Entität erkannt wird, entsteht aus mehreren übereinstimmenden Quellen über Zeit – nicht aus einer einzelnen, gut gemachten Seite am Tag eins. Diese Erwartung realistisch zu setzen, gehört zu einem seriösen Launch genauso wie die Technik selbst.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Tag eins: was feststehen muss, bevor die Website live geht", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Diese Punkte sind keine Checkliste zum Abhaken nach dem Launch. Sie müssen feststehen, bevor die Website live geht – jede Korrektur danach kostet Zeit, die sich nicht zurückholen lässt, weil eine bereits gecrawlte, fehlerhafte Version länger nachwirkt als eine, die von Anfang an stimmte. Sie überschneiden sich mit dem, was jede seriöse Website-Offerte ohnehin technisch zusichern sollte – hier geht es aber nicht um die Frage, was im Preis enthalten ist, sondern darum, was an welchem Tag tatsächlich passieren muss.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        { "de": "Crawlbarkeit bestätigt: robots.txt geprüft, kein versehentliches noindex aus der Testumgebung mit live gegangen.", "en": "", "it": "", "fr": "" },
+        { "de": "XML-Sitemap generiert – die Einreichung folgt in Woche eins, aber die Datei muss am Launch-Tag existieren und korrekt sein.", "en": "", "it": "", "fr": "" },
+        { "de": "Individuelle Seitentitel und Meta-Beschreibungen für jede einzelne Seite, nicht ein generischer Firmenname auf allen fünf.", "en": "", "it": "", "fr": "" },
+        { "de": "Organization-Schema mit korrektem Namen, URL, Logo und sameAs-Verweisen auf Handelsregister-Eintrag und LinkedIn.", "en": "", "it": "", "fr": "" },
+        { "de": "HTTPS aktiv und Canonical-Tags gesetzt, auch wenn vorerst nur eine URL-Variante existiert.", "en": "", "it": "", "fr": "" },
+        { "de": "Mobile Darstellung auf einem echten Smartphone geprüft, keine render-blockierenden Skripte.", "en": "", "it": "", "fr": "" },
+        { "de": "Google Analytics 4 und Search Console technisch eingebunden – das Property existiert, auch wenn die Verifizierung erst in Woche eins abgeschlossen wird.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Woche eins: was Sie aktiv tun müssen – nicht nur einbauen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Alles aus Tag eins ist in den Code eingebaut. Was jetzt folgt, muss jemand aktiv auslösen – ein Klick, ein Formular, eine Bestätigungs-E-Mail. Eine Sitemap, die nur auf dem Server liegt, aber nie eingereicht wurde, hat für die Auffindbarkeit denselben Effekt wie keine Sitemap. Diese Schritte gehören der ersten Woche, nicht dem Launch-Tag selbst, weil ein Teil von ihnen erst funktioniert, sobald die Seite tatsächlich online und über die Domain erreichbar ist.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        { "de": "Sitemap aktiv in der Google Search Console einreichen, nicht nur auf dem Server ablegen.", "en": "", "it": "", "fr": "" },
+        { "de": "Für die wichtigsten Seiten über die URL-Prüfung eine Indexierung anfragen.", "en": "", "it": "", "fr": "" },
+        { "de": "Google-Unternehmensprofil anlegen oder beanspruchen – mit Namen, Adresse und Telefonnummer exakt identisch zur Website (NAP-Konsistenz).", "en": "", "it": "", "fr": "" },
+        { "de": "Strukturierte Daten mit Googles Rich-Results-Test und dem Schema.org-Validator gegenprüfen, nicht nur im Code vertrauen.", "en": "", "it": "", "fr": "" },
+        { "de": "Entität abgleichen: derselbe Name, dieselbe Adresse, dieselbe Kurzbeschreibung auf LinkedIn, im Handelsregister-Eintrag und auf der Website.", "en": "", "it": "", "fr": "" },
+        { "de": "Optional eine llms.txt veröffentlichen – kein Rankingfaktor, aber ein günstiges Zusatzsignal, sinnvoll erst, wenn die Basis darunter bereits stimmt.", "en": "", "it": "", "fr": "" },
+        { "de": "Einen realistischen Prüf-Rhythmus festlegen, etwa einmal wöchentlich die Search Console – nicht täglich nachsehen, ob schon etwas passiert ist.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Monat eins: was sich erst über Zeit aufbaut", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Ab hier übernimmt die Zeit einen Teil der Arbeit – und lässt sich dabei nicht antreiben. Die meisten Seiten werden in diesem Fenster indexiert, gemäss Googles eigener Angabe innerhalb von einigen Tagen bis mehreren Wochen, ohne Garantie. Wer in dieser Phase beginnt, echte Kundenfragen als answer-first-Inhalte zu beantworten – wie in den GEO-Leitfäden dieser Academy im Detail beschrieben –, legt die Grundlage für alles, was danach an Zitaten und Rankings entsteht.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        { "de": "Indexierung der meisten Seiten abwarten und in der Search Console kontrollieren – nicht nur die Startseite, die gesamte Abdeckung.", "en": "", "it": "", "fr": "" },
+        { "de": "Erste answer-first-Inhalte zu echten Kundenfragen veröffentlichen, statt weiter an der technischen Basis zu feilen, die bereits steht.", "en": "", "it": "", "fr": "" },
+        { "de": "Weitere Sprachen bewusst und korrekt ausrollen, falls geplant – mit sauberem hreflang, nicht hastig und halbfertig.", "en": "", "it": "", "fr": "" },
+        { "de": "Eigene Kernfragen erstmals in ChatGPT, Perplexity und Google AI Overviews testen und das Ergebnis dokumentieren – als Beobachtung, nicht als Erfolgsmessung im ersten Monat.", "en": "", "it": "", "fr": "" },
+        { "de": "Erste externe Erwähnungen anstossen: Brancheneinträge, Verzeichnisse, eine Pressemitteilung – frühere Erwähnungen konnten schlicht noch nicht existieren.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Was NICHT funktioniert: sieben Launch-Mythen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Diese sieben Sätze hören wir regelmässig von frisch gestarteten Unternehmen, meist mit der besten Absicht der Welt. Keiner davon ist bösartig gemeint. Alle sieben kosten trotzdem Zeit.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        { "de": "«Es gibt ein spezielles GEO-Schema, das man einbauen kann.» Es gibt den offenen schema.org-Standard mit Typen wie Article, FAQPage und Organization – kein separates, proprietäres GEO-Format.", "en": "", "it": "", "fr": "" },
+        { "de": "«llms.txt verbessert das Google-Ranking.» llms.txt ist kein Rankingsignal für die klassische Suche, sondern höchstens ein optionaler Wegweiser für KI-Crawler.", "en": "", "it": "", "fr": "" },
+        { "de": "«Man kann eine Erwähnung in ChatGPT einreichen oder buchen.» Es gibt kein Einreichformular für KI-Antworten, und kein seriöser Anbieter kontrolliert, was ein Sprachmodell im Einzelfall ausgibt.", "en": "", "it": "", "fr": "" },
+        { "de": "«Mehr Schema-Typen bedeuten automatisch mehr Sichtbarkeit.» Auszeichnung ohne echten, sichtbaren Inhalt dahinter bringt nichts – übertriebenes Markup wirkt eher misstrauisch als hilfreich.", "en": "", "it": "", "fr": "" },
+        { "de": "«Wenn die Seite nach zwei Tagen nicht bei Google erscheint, ist etwas falsch gebaut.» Bei einer technisch sauberen Seite ist das meistens die normale Wartezeit, kein Baufehler.", "en": "", "it": "", "fr": "" },
+        { "de": "«GEO zuerst, die technische Basis kommt später nach.» Ohne crawlbare, indexierte Seite gibt es für kein KI-System etwas zu finden – die Reihenfolge lässt sich nicht umdrehen.", "en": "", "it": "", "fr": "" },
+        { "de": "«Ein Launch-Tag reicht, danach ist die Sichtbarkeitsarbeit erledigt.» Ab Monat zwei ist Sichtbarkeit eine fortlaufende Aufgabe, kein einmalig abgeschlossenes Projekt.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Was in dieser Phase schiefgehen kann", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Die folgenden Fehler entstehen selten aus Nachlässigkeit, sondern aus Tempo – weil in der Launch-Woche vieles gleichzeitig passiert und ein einzelner Punkt zwischen zwei Aufgaben untergeht.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        { "de": "Google-Unternehmensprofil mit einer Adresse oder Telefonnummer angelegt, die von der Website abweicht – diese Inkonsistenz verwirrt genau die lokalen Signale, die sie eigentlich stärken sollte.", "en": "", "it": "", "fr": "" },
+        { "de": "llms.txt veröffentlicht, bevor die Crawlbarkeit überhaupt bestätigt ist – das Signal zeigt dann auf eine Seite, die ein Crawler noch gar nicht zuverlässig findet.", "en": "", "it": "", "fr": "" },
+        { "de": "Mehrere Sprachen gleichzeitig gelauncht, aber hreflang falsch oder gar nicht gesetzt – aus einem Mehrsprachigkeits-Vorteil wird eine Duplicate-Content-Verwirrung.", "en": "", "it": "", "fr": "" },
+        { "de": "KI-Crawler in der robots.txt versehentlich blockiert, weil eine generische Sicherheitsvorlage übernommen wurde, ohne die einzelnen Zeilen zu prüfen.", "en": "", "it": "", "fr": "" },
+        { "de": "Nach zwei ungeduldigen Wochen ohne sichtbares Ergebnis wird das ganze Fundament neu aufgesetzt, obwohl das eigentliche Problem schlicht die normale Wartezeit war.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Wann dieser Zeitplan nicht Ihre grösste Baustelle ist", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Nicht jede neue Website braucht diesen vollständigen Fahrplan mit derselben Dringlichkeit. Vier ehrliche Ausnahmen:",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        { "de": "Eine reine Kampagnen-Landingpage für bezahlten Traffic, die nie organisch gefunden werden soll – hier zählen Ladezeit und Formular mehr als eine Indexierungs-Strategie.", "en": "", "it": "", "fr": "" },
+        { "de": "Interne Tools, Kundenportale oder Terminseiten, die absichtlich nicht öffentlich auffindbar sein sollen – hier ist ein gezieltes noindex gewünscht, kein Sichtbarkeits-Fahrplan.", "en": "", "it": "", "fr": "" },
+        { "de": "Ein Geschäft, das bewusst zu hundert Prozent über persönliche Empfehlungen läuft und keine Ambition hat, über Suche gefunden zu werden – das ist keine verpasste Chance, sondern eine legitime Entscheidung.", "en": "", "it": "", "fr": "" },
+        { "de": "Eine Website, die bereits seit Monaten live ist, ohne diese Reihenfolge durchlaufen zu haben – dann ist dieser Artikel keine Launch-Anleitung mehr, sondern eine Nachhol-Liste, und die Dringlichkeits-Reihenfolge bleibt trotzdem dieselbe.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Der nächste Schritt", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Ein Launch-Tag lässt sich nicht wiederholen, ein Zeitplan schon. Der Fahrplan in diesem Artikel sortiert die Punkte nach genau dieser Dringlichkeit – blockierend, Woche eins, Monat eins, laufend – und zeigt, was als Nächstes tatsächlich dran ist, statt einer weiteren allgemeinen Liste, die alles gleich wichtig erscheinen lässt.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "Ab wann kann ich frühestens mit einer Erwähnung in ChatGPT oder Perplexity rechnen?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Es gibt kein verlässliches Datum. Systeme mit Websuche wie Perplexity, Google AI Overviews oder ChatGPT und Claude mit Suchfunktion können eine frisch indexierte, gut strukturierte Seite technisch innerhalb von Tagen aufgreifen. Bis eine Marke aber als eigenständige, vertrauenswürdige Entität erkannt wird, vergehen realistisch mehrere Monate, nicht Tage – und eine Garantie gibt es dafür nie.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Muss llms.txt schon am Launch-Tag online sein?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein. llms.txt ist ein optionales, kostengünstiges Zusatzsignal für KI-Crawler, kein Rankingfaktor und keine Voraussetzung für den Launch. Sinnvoll wird sie erst, wenn Crawlbarkeit, Sitemap und strukturierte Daten bereits stehen – vorher zeigt sie nur auf eine Seite, die ein Crawler ohnehin noch nicht zuverlässig findet.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Meine Website läuft schon seit Monaten, aber ich habe diese Reihenfolge nie durchlaufen. Ist es zu spät?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein, aber der Rahmen ändert sich. Statt eines Launch-Fahrplans wird die Liste aus diesem Artikel zu einer Nachhol-Liste – mit derselben Dringlichkeits-Reihenfolge: zuerst die blockierenden technischen Punkte prüfen, dann die aktiven Woche-eins-Schritte nachholen, danach die Monat-eins-Punkte. Eine bereits länger laufende Website hat gegenüber einem Neustart sogar einen kleinen Vorteil: Ein Teil der nötigen Zeit für Indexierung und Entitäts-Aufbau ist bereits vergangen.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Brauche ich ab Tag eins alle vier Landessprachen?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein, und ein hastiger Halb-Rollout schadet mehr als eine bewusst kleinere Sprachauswahl. Zwei sauber lokalisierte Sprachen mit korrektem hreflang sind einer vierten, überstürzt übersetzten Version vorzuziehen. Weitere Sprachen gehören eher in die Monat-eins-Phase, wenn dafür Zeit für echte Lokalisierung statt reiner Übersetzung besteht.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Wie oft sollte ich in den ersten Wochen die Search Console prüfen?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Einmal pro Woche reicht für die ersten ein bis zwei Monate völlig aus. Tägliches Nachsehen ändert nichts an der Wartezeit, die Google selbst mit einigen Tagen bis mehreren Wochen beziffert – es erzeugt nur unnötige Ungeduld, ohne dass sich am Ergebnis etwas verschiebt.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Reicht die technische Basis, die eine Agentur liefert, oder muss ich selbst noch etwas tun?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Beides gehört zusammen. Eine Agentur kann die Tag-eins-Punkte technisch einbauen – Crawlbarkeit, Schema, Sitemap-Datei. Das aktive Einreichen, die Bestätigung des Google-Unternehmensprofils und die Entitäts-Abstimmung über mehrere Plattformen hinweg erfordern jedoch fast immer eine Bestätigung durch Sie selbst, etwa per E-Mail oder Telefonanruf, die niemand stellvertretend erledigen kann.", "en": "", "it": "", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "Google Search Console",
+    "XML-Sitemap",
+    "Google-Unternehmensprofil",
+    "Organization-Schema",
+    "llms.txt",
+    "NAP-Konsistenz",
+    "hreflang",
+    "Rich-Results-Test",
+    "Google AI Overviews",
+    "Generative Engine Optimization (GEO)",
+    "revDSG",
+    "Handelsregister"
+  ],
+  "sources": [
+    {
+      "label": { "de": "Weissmann AI – Leistungsseite Websites (Starter-Paket, technisches SEO-/GEO-Fundament), Stand 29.07.2026 (first-party)", "en": "", "it": "", "fr": "" },
+      "href": "/preise/"
+    },
+    {
+      "label": { "de": "Google Search Central – Google um eine erneute Indexierung bitten (abgerufen 29. Juli 2026)", "en": "", "it": "", "fr": "" },
+      "href": "https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl"
+    },
+    {
+      "label": { "de": "Google Search Central – Sitemap erstellen und einreichen (abgerufen 29. Juli 2026)", "en": "", "it": "", "fr": "" },
+      "href": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap"
+    },
+    {
+      "label": { "de": "Google-Hilfe – Business-Profil erstellen oder beanspruchen (abgerufen 29. Juli 2026)", "en": "", "it": "", "fr": "" },
+      "href": "https://support.google.com/business/answer/2911778"
+    },
+    {
+      "label": { "de": "Schema.org – offizieller Standard für strukturierte Daten (abgerufen 29. Juli 2026)", "en": "", "it": "", "fr": "" },
+      "href": "https://schema.org/"
+    }
+  ],
+  "cta": {
+    "label": { "de": "Launch-Fahrplan der eigenen Website besprechen", "en": "", "it": "", "fr": "" },
+    "href": "/kontakt/"
+  }
+}

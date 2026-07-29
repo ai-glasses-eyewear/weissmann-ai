@@ -1,0 +1,428 @@
+{
+  "id": "ai-receptionist-reliability-outage-fallback",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["en"],
+  "slug": {
+    "de": "",
+    "en": "ai-receptionist-outage-fallback",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["what-is-an-ai-phone-assistant","how-to-test-ai-receptionist-before-buying","how-to-measure-ai-receptionist-kpis"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "",
+    "en": "What Happens When Your AI Receptionist Goes Down | Weissmann",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "",
+    "en": "AI receptionists depend on calendars, callers' connections and the vendor's platform. The fail-open framework for what should happen when one of them fails.",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "",
+    "en": "AI Agents, Automation & Voice · Reliability",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "",
+    "en": "What Happens When Your AI Receptionist, Calendar or Internet Goes Down?",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "",
+    "en": "An AI receptionist depends on at least three things staying available at once: the caller's own connection, the calendar or booking system it queries mid-call, and the vendor's own voice platform. None of the three is guaranteed to be up at every moment, and no credible vendor can honestly promise otherwise. What separates a resilient setup from a fragile one is not whether a dependency fails — it will — but whether the system fails open toward a human, a voicemail or a captured message, rather than fails closed into silence or a booking nobody confirmed. This article sets out that decision framework, walks through three outage scenarios, and lists questions worth asking before signing with any vendor, Weissmann included.",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "", "en": "The Question the Demo Never Answers", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Every AI receptionist demo happens on a good day: a quiet office, a strong connection, a laptop rebooted that morning, and an assistant that has answered the same three sample questions a hundred times before. Nobody schedules a demo for the afternoon the calendar API times out, or the ninety seconds when the vendor's own voice platform has a rough patch — yet both happen regularly in practice, because every AI receptionist runs on infrastructure it does not fully control. The question worth asking before signing anything is not whether that will happen, but what the assistant does in the seconds immediately afterwards.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "That question sits one layer below the one most buyers already ask. Getting a name wrong, mishearing a date, or needing a human when a caller is upset is a comprehension problem inside a system that is otherwise working — Weissmann's own guide to conversation failure handling covers that ground: confidence thresholds, clarifying questions, a warm handover mid-call. This article is about what happens when a piece of the plumbing itself — the calendar it needs to check, the caller's own connection, or the vendor's own platform — is not there to answer at all.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Three Dependencies, Three Different Ways to Fail", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "An AI receptionist is never really one system. It is a chain of at least three, and each link can fail independently of the other two, which is why \"does it work\" is the wrong question and \"what happens when a specific link breaks\" is the right one.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "The caller's own connection. A patchy mobile signal from a job site, a basement office, or an alpine valley with poor reception degrades what the assistant can hear before anything on the vendor's side has gone wrong at all. This is not an outage in the usual sense — the system is up — but it produces the same practical problem: uncertain input at exactly the moment accuracy matters most, such as spelling a name.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "The calendar or booking system it queries mid-call. To check availability or write an appointment, the assistant calls out to a separate service — Google Calendar, Microsoft Graph, or a booking platform — while the caller is still on the line. That external service can time out, rate-limit, or return an error, and when it does, the assistant is working perfectly; the thing it just asked is what failed to answer.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "The vendor's own platform. The speech recognition, the language model and the call-routing layer all run on infrastructure the vendor operates, typically cloud-hosted like any modern software service — and like any cloud service, it has occasional incidents. This is the link a buyer has the least visibility into, and the one vendors are least likely to volunteer detail about unprompted.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Fail Open on the Channel, Fail Closed on the Action", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Systems engineers borrow a useful pair of terms from access control: a system \"fails open\" when a fault makes it default to letting things through anyway; it \"fails closed\" when it defaults to blocking. Applied to a phone line, the terms need two separate answers, because a receptionist does two jobs at once — staying reachable, and taking actions on the caller's behalf — and the safe default is not the same for both.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "The channel should fail open. Whatever has broken behind the scenes, the caller should never be met with silence, a dead line, or a loop repeating the same unhelpful sentence. There is always a next step: a message taken, a callback promised, a transfer to voicemail or a human line. A phone channel that goes silent when something fails has chosen the worst possible default — the caller has no way of knowing whether to call back in five minutes or never call again.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "The action should fail closed. When the assistant cannot verify something it needs — real calendar availability, a confirmed slot, an accurately captured spelling — it should not act as if it had. Booking against a calendar response that never confirmed the slot is worse than not booking at all: the caller leaves believing something is arranged that is not, and nobody finds out until two people arrive expecting the same time.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Never let the channel go silent, and never let an uncertain write pretend to be confirmed. Treat these as two separate switches — a system that stays \"available\" in the sense of still picking up calls can still be quietly inventing bookings it never verified, which is the wrong place to be permissive.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Scenario One: the Calendar Times Out Mid-Call", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "A caller asks for the earliest available appointment. The assistant sends the request to the calendar API, and the response does not come back within its timeout window — the calendar service is having a slow minute, not a full outage, which is the more common case in practice.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Poorly designed: the assistant either keeps the caller waiting in silence while it retries indefinitely, or offers a slot it never confirmed as free, based on a stale cache or a guess. The caller hangs up believing they have an appointment, and nobody finds out otherwise until the slot turns out to be double-booked or does not exist.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Well designed: the assistant recognises the timeout within seconds, not a minute of dead air, tells the caller plainly that the booking system is running slowly, takes their name, number and preferred time, and confirms accurately that a person will call back with the exact slot. The failure triggers an internal alert immediately, and the caller leaves with a real next step, not a false confirmation.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Scenario Two: the Caller Is on a Bad Connection", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "This is not the vendor's outage at all — it is the caller's own signal, breaking up on a building site, in a lift, or in one of the mobile dead zones that Swiss geography produces more of than flat countries do. The assistant is up, the calendar is up, and the audio arriving is still unreliable.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Poorly designed: the assistant keeps asking increasingly literal versions of the same question, louder or slower each time, and eventually acts on its best guess of a garbled answer rather than admitting it did not catch it. A caller whose address had three syllables lost to static discovers days later that the wrong street was booked.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Well designed: the assistant's confidence score drops with the audio quality, and low confidence triggers a different behaviour, not a repeated question — an offer to text the details instead, a suggestion to call back from a clearer spot, or an early handover to a human who can work a bad line the way an experienced receptionist already does.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Scenario Three: the Vendor's Own Platform Is Down", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "This is the outage buyers think about least, because it is the one the vendor controls entirely and is least likely to advertise: the assistant itself is unreachable, and calls connect to silence or do not connect at all.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Poorly designed: there is no fallback number configured anywhere, because nobody asked about one during the sales conversation. Calls simply fail — ringing into nothing, or reaching a dead assistant that never answers — and the business finds out only when a customer mentions, in passing, that they gave up trying to get through.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Well designed: the forwarding rule that sends calls to the assistant sits at the telecom carrier's level, not the vendor's, which is what makes a second destination — a backup number, a voicemail box, a human line — genuinely independent of the vendor's platform having a bad day. Configuring that second destination in advance is the cheapest insurance in this article.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "What a Resilient Fallback Chain Actually Looks Like", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "None of the three scenarios above need different technology to fix. They need the same three layers, applied consistently: a short, defined timeout instead of indefinite waiting; a default that captures and defers rather than guesses and commits; and a second, independent path to a human that does not share infrastructure with the first.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Timeouts with a number attached. \"The system will try for a few seconds, then fall back\" is a decision, not an accident, and someone should be able to name the duration, not offer a vague reassurance.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A capture-and-defer default for anything uncertain. Name, number and request taken accurately, labelled internally as pending confirmation rather than presented to the caller as already booked.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A second path to a human that survives the first path's outage. Carrier-level forwarding to a backup number or voicemail box, configured before it is needed, not improvised mid-incident.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Monitoring that notices before a customer does. Someone — a person, not just a dashboard nobody checks — needs to know within minutes that calls are failing, not a week later from a complaint.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A named owner for the alert. \"Someone will probably notice\" is not a fallback plan; a specific phone or person who is actually paged is.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "The Incident Communication Checklist", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Fallback design covers what the system does automatically in the moment. Incident communication covers what the humans around it do in the minutes and days after, and it is the part most fallback plans skip entirely, because it involves people, not code.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Internal alert within minutes, not hours: whoever owns the phone line should know a failure is happening while it is still happening, not from a customer complaint the next morning.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A caller-facing message that matches reality: if the voicemail greeting changes during an incident, it should say something true and useful — \"we're experiencing a technical issue and will call you back shortly\" — not a generic message that implies nothing is wrong.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A log of what was missed: every call affected by the incident, captured well enough that each one can actually be called back, not just counted.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A callback pass, not just a note: someone works through the list of affected callers within a defined window, rather than leaving captured messages to be discovered eventually.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A short written summary afterwards: what broke, for how long, and what changed to make it less likely — sent to whoever owns the business relationship, not just logged in a system nobody reads.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "What Can Go Wrong: the Silent Failure", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "The scenarios above assume some kind of fallback exists, even an imperfect one. The genuinely dangerous case is the one with no fallback design at all — not a bad fallback, but the absence of one, which tends to stay invisible until it has already cost something.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Calls that simply stop being answered, with nobody inside the business aware anything has changed, because there is no monitoring layer to notice a drop in call volume.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A caller who reaches dead air and never calls back, and never complains either — a lost enquiry that leaves no trace in any system, because it never entered one.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A booking made on an unconfirmed calendar response that turns out to be wrong, discovered only when two people arrive expecting the same appointment slot.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A backup number that was never tested, so the first time it is genuinely needed is also the first time anyone discovers it was misconfigured or points at a number nobody answers.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A business owner who genuinely believes the system is reliable because it has never audibly failed in front of them, which is a different claim from it never having failed at all.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Ask Any Vendor These Questions Before You Sign", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "No credible vendor — Weissmann included — can honestly promise a phone line will never meet a broken dependency; distributed systems do not work that way, and any uptime percentage quoted in a sales call is worth verifying in writing. What is reasonable to expect is a specific answer for each of the three dependencies above.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "What is the timeout before the assistant stops waiting on the calendar or booking system, and what does it do instead: keep the caller waiting, guess, or capture and defer?",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "If your own platform has an incident, does the call still reach something — a backup number, voicemail, a human line — or does it simply fail? Is that backup configured by default?",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "How do you detect an incident: automated monitoring, or a customer complaint? What is the typical time between a failure starting and someone at your company knowing about it?",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Do you publish an uptime figure or SLA, and if so, for which part of the system — the voice platform alone, or the whole call path including calendar integrations? Ask to see it in writing.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "What happens to calls that arrived during an incident: are they logged and called back, or simply lost?",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Where Weissmann's Own Documentation Stops", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Because Weissmann sells an AI phone assistant, this disclosure belongs here: Weissmann's own published service material states that every package is reachable around the clock, that unanswerable questions are captured and escalated according to the business's own rules so no caller is left without a next step, and that every plan includes a dedicated phone line, set up with call forwarding from the business's existing number.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "What that material does not publish is a specific uptime percentage, a documented timeout figure for calendar integrations, or a described monitoring and incident-notification process. That is not a criticism unique to Weissmann — very few AI receptionist vendors publish this level of operational detail. It means the questions above are worth asking directly, rather than assumed from a general \"around the clock\" claim.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "When This Is Not Worth Engineering Around", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "A four-layer fallback chain with monitoring, a named on-call owner and a written incident process is real engineering effort, and not every business needs all of it. A sole trader taking a handful of calls a week, where a missed enquiry during a rare outage costs an inconvenient callback rather than a lost contract, can reasonably accept a simpler setup: one backup voicemail number, checked by hand once a day, no formal monitoring layer. The elaborate version earns its cost at higher call volumes, where a silent outage can affect dozens of callers before anyone notices — not at the scale where a human already checks every voicemail personally by day's end regardless.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "The One Rule Worth Insisting On", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Every dependency in this article will fail eventually — the calendar, the caller's own signal, the vendor's platform, all of them, at some point, because that is simply how software running on other people's infrastructure behaves. The decision that actually matters is not whether that happens, but whether the phone line defaults to silence or to a next step when it does.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Before signing with any AI receptionist vendor, ask for a specific answer, in writing, to one question: what happens to a call the moment your calendar, your platform, or the caller's own connection stops cooperating? A vendor who answers with a concrete mechanism has thought about this already. A vendor who answers with a general reliability claim has not, whatever percentage they quote.",
+          "it": "", "fr": ""
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "", "en": "Does a vendor's \"24/7\" or \"always available\" claim mean the same thing as a published uptime SLA?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "No. \"Around the clock\" usually describes when a service is intended to operate, not a measured, guaranteed percentage of time it actually does. A specific uptime figure is a separate, more concrete claim, worth asking about and seeing in writing rather than accepting the general phrase alone.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "What should happen if the calendar or booking system is briefly unavailable during a call?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "A well-designed assistant should stop waiting after a short, defined timeout, tell the caller plainly that the booking system is running slowly, and capture their details for a person to confirm, rather than either leaving the caller in silence or booking a slot it never actually verified as free.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "If the AI vendor's own platform has an outage, can a caller still reach a human?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "Only if a second path was configured in advance, independent of the vendor's own infrastructure — typically a carrier-level forwarding rule to a backup number or voicemail box, set up and tested before it is needed, not improvised during an incident.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "Is a bad connection on the caller's side treated the same way as a system outage?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "Not technically, since nothing on the vendor's side has failed, but the practical effect is similar: unreliable input at a moment where accuracy matters. A good system responds to a drop in audio confidence by changing its approach — a text alternative or an earlier handover to a human — rather than repeating the same question louder.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "Is voicemail a sign of a badly built AI receptionist?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "No. Used as a deliberate fallback, voicemail is a sound design choice, not a failure. The difference between a resilient system and a fragile one is not whether voicemail ever gets used, but whether it is a configured, tested destination for the moments when nothing else can pick up, rather than an accidental dead end nobody planned for.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "How is a system outage different from the AI simply misunderstanding a caller?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "A misunderstanding happens inside a system that is otherwise working: the audio arrived and the assistant interpreted it incorrectly, which is the territory covered in Weissmann's guide to conversation failure handling. An outage is different: a piece of infrastructure the assistant depends on — the calendar, the connection, the platform itself — was not there to respond at all.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "Should a small business ask for a formal incident-communication process from its AI receptionist vendor?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "It is reasonable to ask what happens when something breaks, but the right level of formality should match call volume. A business taking a handful of calls a week does not need a documented on-call rotation; one depending on the phone line for a meaningful share of its bookings has more reason to ask for a specific, written answer.", "it": "", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "AI receptionist",
+    "fail-open",
+    "fail-closed",
+    "calendar API",
+    "voicemail fallback",
+    "call forwarding",
+    "incident communication",
+    "business continuity",
+    "monitoring",
+    "vendor outage",
+    "timeout",
+    "uptime SLA"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "", "it": "", "fr": "",
+        "en": "Weissmann AI – AI Phone Assistant service page, availability and escalation claims (first-party), accessed 29 July 2026"
+      },
+      "href": "https://weissmann.ai/en/services/ai-phone-assistant/"
+    }
+  ],
+  "cta": {
+    "label": { "de": "", "en": "Stress-test the assistant's fallback behaviour yourself (CHF 350, one-time)", "it": "", "fr": "" },
+    "href": "/en/services/ai-phone-assistant/"
+  }
+}

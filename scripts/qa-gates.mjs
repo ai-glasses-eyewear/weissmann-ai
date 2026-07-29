@@ -7,8 +7,10 @@
  *    legacy "8001" contact-block variant
  *  - the stale CHF 590 price
  *  - any buy.stripe.com URL that is not one of the two verified links
- *  - any indexable HTML page missing rel=canonical or the hreflang cluster
- *    (de-CH + x-default) — protects the localized-routing architecture
+ *  - any indexable HTML page missing rel=canonical, a self-referencing
+ *    hreflang for its own locale, or hreflang x-default — protects the
+ *    localized-routing architecture (locale-restricted articles correctly
+ *    omit alternates for locales they don't exist in)
  *
  * Positive assertions:
  *  - the canonical address appears on every built HTML page (footer)
@@ -152,7 +154,15 @@ for (const file of walk(dist)) {
       if (!canonicalHref) errors.push(`${rel}: missing rel=canonical.`);
       if (!isCrossCanonical) {
         indexable.add(url);
-        if (!/hreflang="de-CH"/i.test(text)) errors.push(`${rel}: missing hreflang de-CH.`);
+        // A page's own locale must always self-reference in hreflang (Layout.astro
+        // always emits this). de-CH only applies to German pages (no prefix) —
+        // requiring it on every page broke once locale-restricted articles
+        // (languages: ['en'] etc.) started shipping real en-only/it-only pages,
+        // which correctly omit de-CH per the master prompt's "no hreflang links
+        // to nonexistent translations" rule.
+        const ownLocale = url.startsWith('/en/') ? 'en' : url.startsWith('/it/') ? 'it' : url.startsWith('/fr/') ? 'fr' : 'de';
+        const ownHreflang = ownLocale === 'de' ? 'de-CH' : ownLocale;
+        if (!new RegExp(`hreflang="${ownHreflang}"`, 'i').test(text)) errors.push(`${rel}: missing self-referencing hreflang ${ownHreflang}.`);
         if (!/hreflang="x-default"/i.test(text)) errors.push(`${rel}: missing hreflang x-default.`);
       }
     }

@@ -1,0 +1,285 @@
+{
+  "id": "ai-receptionist-swiss-phone-system-compatibility",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["en"],
+  "slug": {
+    "de": "",
+    "en": "ai-receptionist-phone-system-compatibility",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["what-is-an-ai-phone-assistant","best-ai-receptionists-switzerland-buyers-guide"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "",
+    "en": "Will an AI Receptionist Work With Your Phone System? | Weissmann",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "",
+    "en": "A plain-English guide to PBX, SIP trunking, VoIP and Microsoft Teams telephony in Switzerland: what to ask Swisscom, Sunrise and your AI vendor before you sign.",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "",
+    "en": "AI Agents, Automation & Voice",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "",
+    "en": "Will an AI Receptionist Work With My Existing Swiss Phone System?",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "",
+    "en": "Whether an AI receptionist can work with your existing Swiss phone system depends on two separate facts, not one. The first is what kind of phone infrastructure you actually have: a mobile or landline number with simple forwarding, an on-premise PBX, a SIP trunk, or Microsoft Teams-based cloud telephony. The second is which of those setups your chosen AI vendor actually supports, and that varies enormously between providers, none of whom publish one universal answer. Swisscom and Sunrise can tell you what kind of connection you have. Only the AI vendor can tell you whether their system can plug into it. Most disappointments happen because buyers only ask one of these two parties, not both.",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "", "en": "The Question Everyone Asks the Wrong Person", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Ask a Swiss telecom account manager whether they can forward your business calls to a new number, and the answer is almost always yes, and it takes minutes, not months. Ask an AI receptionist vendor whether their system works with \"a standard Swiss phone setup\", and you will usually get an equally confident yes, delivered before anyone has asked what your setup actually is. Both answers can be true and the project can still fail, because \"compatible\" is not a single fact about your business. It is a match between two things: the kind of telephony infrastructure you run today, and the specific way a given AI assistant expects to receive a call. Nobody sells the second half of that sentence, which is exactly why it needs its own explanation.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "This article is deliberately narrow. It does not cover whether you are legally allowed to keep your phone number when you switch telecom providers; that is a regulatory question about number portability, and a separate Weissmann guide covers it in detail. What this article covers is the layer underneath: what a PBX, a SIP trunk and Teams-based telephony actually are, how Swisscom and Sunrise describe their own products in each case, and what to ask before you assume an AI receptionist will simply plug into whatever you already have.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Four Ways Swiss Offices Actually Receive Calls", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Strip away the marketing language and almost every Swiss business phone setup falls into one of four categories. Knowing which one you are in is the first step, and it is usually a five-minute conversation with whoever pays your phone bill, not a technical mystery.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Mobile or landline number, no in-house system. The most common setup for small and mid-sized companies. Calls arrive on one number, and forwarding it elsewhere, always, only when busy, or only outside office hours, is a setting in your provider's customer portal, not a project.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "An on-premise PBX (private branch exchange). A PBX is call-routing hardware or software that sits inside your office and decides how incoming calls are distributed to internal extensions, hunt groups or voicemail. If your reception has extension numbers, a shared switchboard, or a phone system administered by an internal IT person or an external installer, you almost certainly have a PBX.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A SIP trunk. SIP (Session Initiation Protocol) trunking replaces the physical copper or ISDN line that used to connect a PBX to the outside world with a virtual line delivered over your internet or data connection. A SIP trunk is not the same thing as a PBX: you can have a PBX without one, and in principle a SIP trunk without a traditional on-premise PBX at all. What matters for an AI receptionist is whether a provider can terminate calls directly on that trunk, instead of receiving them through a forwarded number.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Microsoft Teams-based telephony, sometimes called cloud telephony. Instead of a physical PBX, calls are routed through Microsoft 365, and staff answer them inside the Teams app on a laptop, tablet or phone. Swisscom and Sunrise both offer ways to connect a normal telephone number to Teams calling: Swisscom calls its version Enterprise SIP Cloud, Sunrise offers Operator Connect and Direct Routing. The practical difference: Operator Connect is a pure cloud service with no on-site hardware, while Direct Routing is a hybrid setup that connects an existing phone system to Teams through a session border controller installed locally. Either way, there is no physical PBX box to point to.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "What Swisscom and Sunrise Actually Publish About This", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "The two dominant Swiss carriers describe their relevant products clearly enough to quote directly, so there is no need to guess. Swisscom's Enterprise SIP \"connects your on-premise or cloud-based PBX system to Swisscom's IP telephony network\", using the standard Session Initiation Protocol to set up, manage and terminate calls. For companies running or moving to Teams-based calling, Swisscom offers Enterprise SIP Cloud, aimed at customers who want to combine telephony with the collaboration features of Microsoft Teams or Cisco Webex.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Sunrise's equivalent, Business Voice SIP, connects a company's telephone system to the public telephone network via SIP, with a choice of a dedicated VPN connection or the open internet, and support for phone systems hosted locally, in a private data centre, or in the cloud. For Teams specifically, Sunrise offers two distinct paths: Operator Connect, a pure cloud service that needs no on-site hardware and no local installation, and Direct Routing, a hybrid approach that links an existing phone-system infrastructure to Teams through a session border controller installed on site.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Neither carrier's public documentation says anything about AI voice assistants, and that is not a gap in this research, it is a genuine gap in the market. Swisscom and Sunrise sell the pipe. They have no commercial reason to publish which AI vendors can plug into it, because that decision sits entirely on the other side of the connection, with the AI vendor.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Two Different Questions, With Two Different Owners", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "This is the part most buyers skip, and it is the actual thesis of this article: your telecom provider can tell you what kind of connection you have. Only your AI vendor can tell you whether their assistant supports that kind of connection. Treating these as one conversation is how a company ends up mid-contract with a phone system that works perfectly and an AI assistant that has nothing to plug into.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Mobile or landline forwarding, no PBX: the least risky path, and the one almost every AI phone assistant is built to support, because from the vendor's side it looks like an ordinary phone call arriving on a new number. Confirm with your provider whether conditional forwarding (only when busy or unanswered) is available on your specific tariff, and confirm with the vendor there are no hidden minimum-volume assumptions.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "On-premise PBX without a SIP trunk: a forwarded call is often still possible, set up as an extension or a routing rule inside the PBX itself. That is a job for whoever administers your PBX, not for the AI vendor. Ask them directly whether adding a new external routing rule is technically possible on your specific system before you promise a go-live date to anyone.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "SIP trunk in place: some AI vendors can terminate calls directly on an existing SIP trunk, skipping forwarding altogether. Most cannot, and will quietly expect you to set up a forwarded number anyway, which works but is a different, and sometimes costlier, integration than what a SIP-fluent sales conversation implied. Ask the vendor plainly: do you terminate on our SIP trunk, or do you need us to forward a number to you?",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Teams-based telephony: whether an AI assistant can sit in front of Teams calling depends entirely on whether the vendor supports something equivalent to Direct Routing or Operator Connect, or whether Teams calls need to be forwarded out to a conventional number first, the same way a mobile number would be. This is rarely mentioned on either the carrier's or the AI vendor's marketing page, and is worth a direct written answer before signing anything.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Questions to Ask Your Telecom Provider", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Bring this list to Swisscom, Sunrise, or whichever provider actually manages your line. These are questions about your infrastructure, not about any AI vendor's capability.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "What type of connection do we have today: mobile forwarding, landline forwarding, an on-premise PBX, a SIP trunk, or Teams-based calling?", "it": "", "fr": "" },
+        { "de": "", "en": "If we need call forwarding, is it conditional (only when busy or unanswered) or only unconditional, and does our tariff include free forwarded minutes or charge for every one?", "it": "", "fr": "" },
+        { "de": "", "en": "If we have a PBX, who is authorised to add a new extension or routing rule, and how long does that typically take?", "it": "", "fr": "" },
+        { "de": "", "en": "If we have a SIP trunk, which protocol and codec does it use, and who do we contact if the connection fails?", "it": "", "fr": "" },
+        { "de": "", "en": "If we use Teams calling, are we on Operator Connect or Direct Routing, and who inside our organisation manages number assignment in Microsoft 365?", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Questions to Ask Your AI Vendor", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Bring this second list to every AI receptionist vendor you evaluate, Weissmann included. A vendor who has done this before will answer precisely; a vague answer is itself useful information.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "Do you receive calls only through a forwarded number, or can you terminate directly on a SIP trunk?", "it": "", "fr": "" },
+        { "de": "", "en": "Do you support Microsoft Teams-based telephony, and if so, through Direct Routing, Operator Connect, or only via an externally forwarded number?", "it": "", "fr": "" },
+        { "de": "", "en": "If our setup changes later, for example we migrate from a landline to Teams calling, does your integration need to be rebuilt, or does it keep working?", "it": "", "fr": "" },
+        { "de": "", "en": "What happens on your side if our PBX or internet connection goes down: do calls fail silently, or fall back to voicemail or a human line?", "it": "", "fr": "" },
+        { "de": "", "en": "Can you name a current Swiss customer running the same type of setup we have, whether that is a PBX, a SIP trunk or Teams calling, so we can ask them directly how the connection has actually performed?", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Where Weissmann's Own Setup Fits Into This", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Because Weissmann sells an AI phone assistant, this disclosure belongs here: according to Weissmann's own published service information, every package connects through a dedicated phone line included in the plan, and you keep your existing business number by forwarding calls to it, always, only outside office hours, or only when the line is busy. That is the mobile and landline forwarding path described above. No separate SIP-trunk termination or PBX-side integration is documented in that material, and no Teams-specific integration is described either.",
+          "it": "", "fr": ""
+        },
+        {
+          "de": "",
+          "en": "That is not a criticism of the offer. Forwarding is the lowest-risk, easiest-to-reverse option for most SMEs without an in-house phone system. But if your business runs a PBX, a SIP trunk or Teams-based calling and needs something deeper, ask Weissmann the same SIP and Teams questions listed above that you would ask any other vendor, rather than assuming an answer from a features page.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "What Can Go Wrong", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Most compatibility problems are not dramatic system failures. They are expectation gaps that surface weeks after the contract is signed.",
+          "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "You sign based on the phrase \"connects to any phone system.\" That phrase is true of forwarding-based setups and can be quietly false for SIP trunk or Teams integrations. Ask which one your vendor actually means before you sign, not after.", "it": "", "fr": "" },
+        { "de": "", "en": "Your PBX administrator and your AI vendor each assume the other side is handling the routing change. Nobody configures anything until someone notices the AI line has never once rung.", "it": "", "fr": "" },
+        { "de": "", "en": "A Teams migration happens after the AI assistant is already live, and the integration that worked with your old landline forwarding does not automatically carry over to Teams calling. Treat any phone-system change as a reason to re-ask the same compatibility questions, not as a one-off setup step you finish once.", "it": "", "fr": "" },
+        { "de": "", "en": "Forwarded-minute costs turn out higher than expected because the tariff charges for every forwarded call once a free allowance is used up, and nobody checked that before go-live.", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "When You Can Skip Most of This", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "If your business runs on a single mobile or landline number with no PBX, none of the SIP or Teams sections above are your problem. Mobile and landline forwarding is the path almost every AI phone assistant supports without complication, and the technical part of your decision is genuinely a short phone call to your provider. The complexity in this article is aimed at businesses with an existing PBX, SIP trunk or Teams-based system, where a wrong assumption is expensive to unwind later. If that is not you, spend your evaluation time on the assistant's conversation quality and pricing instead, not its telephony architecture.",
+          "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "The One Question That Replaces All the Others", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "If there is a single question to carry into every vendor conversation, it is this: given that we run mobile forwarding, a PBX, a SIP trunk, or Teams-based calling, exactly how does your system receive our calls, and who is responsible for setting that up? A vendor who answers precisely has done this before. A vendor who answers with \"we connect to any phone system\" has told you nothing yet. Get the specific answer in writing before you sign, not after the first missed call.",
+          "it": "", "fr": ""
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "", "en": "Do I need a SIP trunk to use an AI receptionist in Switzerland?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "No. Most Swiss businesses connect an AI receptionist through simple call forwarding from their existing mobile or landline number, which requires no SIP trunk at all. A SIP trunk only becomes relevant if you already have one and want the AI vendor to terminate calls on it directly instead of using forwarding.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "What is the difference between a PBX and a SIP trunk?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "A PBX is the call-routing system itself: the hardware or software that decides how calls move between extensions inside your office. A SIP trunk is a connection method that can deliver calls to that PBX over the internet instead of a physical line. You can have a PBX without a SIP trunk, using a traditional line instead, and in principle a SIP trunk without a classic on-premise PBX at all.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "Can an AI receptionist plug directly into Microsoft Teams calling?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "It depends entirely on the vendor, not on Microsoft or your carrier. Some AI phone assistants support Teams-style integration comparable to Direct Routing or Operator Connect; many simply expect a phone number forwarded out of Teams the same way they would expect one forwarded from a mobile line. Ask the vendor directly which one applies before assuming either.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "Do Swisscom and Sunrise support AI phone assistants directly?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "Their public product pages do not mention AI voice assistants at all. Swisscom's Enterprise SIP and Sunrise's Business Voice SIP describe how a PBX or phone system connects to the public network in general, not compatibility with any specific AI vendor. The carrier provides the connection; whether a given AI assistant can use it is a separate question for that vendor.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "Will changing my phone system later break my AI receptionist?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "It can, unless you ask about it upfront. A setup that connects through simple forwarding today may need to be reconfigured, or may not work at all, if you later add a PBX, move to a SIP trunk, or migrate to Teams-based calling. Ask any vendor how a future infrastructure change affects the integration before you assume it just keeps working.", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "Does keeping my existing number require porting it to a new provider?", "it": "", "fr": "" },
+      "a": { "de": "", "en": "Usually not. In the great majority of cases you keep your number with your current provider and simply forward calls to the AI assistant's line, a technical setting, not a regulatory process. A genuine number port, with its own rules and timelines, is a separate topic covered in a dedicated Weissmann guide, and is only relevant if you are actually switching telecom providers.", "it": "", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "SIP trunk",
+    "PBX",
+    "VoIP",
+    "Swisscom",
+    "Sunrise",
+    "Microsoft Teams",
+    "Direct Routing",
+    "Operator Connect",
+    "Enterprise SIP",
+    "Enterprise SIP Cloud",
+    "Business Voice SIP",
+    "cloud telephony",
+    "AI receptionist",
+    "call forwarding"
+  ],
+  "sources": [
+    { "label": { "de": "", "en": "Swisscom – Enterprise SIP, accessed 29 July 2026", "it": "", "fr": "" }, "href": "https://www.swisscom.ch/en/business/enterprise/offer/wireline/enterprise-sip.html" },
+    { "label": { "de": "", "en": "Swisscom – Microsoft Teams telephony (Enterprise SIP Cloud), accessed 29 July 2026", "it": "", "fr": "" }, "href": "https://www.swisscom.ch/en/business/enterprise/offer/new-work/microsoft-cloud-services/microsoft-teams-telefonie.html" },
+    { "label": { "de": "", "en": "Sunrise Business – Business Voice SIP, accessed 29 July 2026", "it": "", "fr": "" }, "href": "https://www.sunrise.ch/business/en/solutions/collaboration/on-premise-hybrid-pbx-folder/business-voice-sip" },
+    { "label": { "de": "", "en": "Sunrise Business – Business Voice for Microsoft Teams (Operator Connect / Direct Routing), accessed 29 July 2026", "it": "", "fr": "" }, "href": "https://www.sunrise.ch/business/en/solutions/collaboration/calls-via-microsoft-teams" },
+    { "label": { "de": "", "en": "Weissmann AI – AI Phone Assistant service page, \"Can I keep my existing phone number?\" (first-party)", "it": "", "fr": "" }, "href": "https://weissmann.ai/en/services/ai-phone-assistant/" }
+  ],
+  "cta": {
+    "label": { "de": "", "en": "Free consultation: we'll map your setup before you commit to anything", "it": "", "fr": "" },
+    "href": "/en/kontakt/"
+  }
+}

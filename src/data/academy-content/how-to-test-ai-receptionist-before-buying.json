@@ -1,0 +1,301 @@
+{
+  "id": "how-to-test-ai-receptionist-before-buying",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["en"],
+  "slug": {
+    "de": "",
+    "en": "how-to-test-an-ai-receptionist",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["what-is-an-ai-phone-assistant","best-ai-receptionists-switzerland-buyers-guide","how-to-measure-ai-receptionist-kpis"],
+  "searchIntent": "commercial-investigation",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "",
+    "en": "How to Test an AI Receptionist Before You Sign | Weissmann",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "",
+    "en": "A 25-call test plan for judging any AI receptionist before you sign: names, interruptions, silence, handover and data-deletion questions, not a vendor demo.",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "",
+    "en": "AI Agents, Automation & Voice · Buyer's Due Diligence",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "",
+    "en": "How to Test an AI Receptionist Before You Sign Anything: The 25-Call Stress Test",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "",
+    "en": "Testing an AI receptionist properly means placing your own calls under realistic conditions, not judging it by a single polished demo. A thorough pre-purchase test covers six areas: whether it captures names, numbers and addresses correctly; how it handles dates and slots that are already booked; whether it survives interruption, self-correction, silence and background noise; how it responds to a frustrated or off-topic caller; whether it hands over to a human cleanly when asked; and whether it gives straight answers about recording and data deletion. Score each call as a pass, a partial recovery or a fail, then weight the results against the calls your own business actually receives.",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "", "en": "The Contract Nobody Test-Drove", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "People in Switzerland test-drive a car twice, get three moving quotes before choosing one, and read a rental lease line by line before signing it. Yet a striking number of businesses sign a twelve-month contract for a system that will answer their phone, in their name, to their customers, on the strength of exactly one call: the one the vendor arranged for them. That call was handled by someone who does this demo for a living, on a good line, in a quiet room, with a scenario chosen because it works."
+        },
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "This article does not rank providers and does not tell you which one to choose. It is a test plan: twenty-five specific calls, organised into six groups, that you can run against any AI receptionist, Weissmann's own included, before a contract exists at all. The result isn't a verdict handed to you by a vendor's sales page. It's a set of pass, partial and fail marks you generate yourself, on your own phone, in your own voice."
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "What a Sales Demo Is Built to Avoid", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "A demo call is not dishonest by default. It is simply optimised for a different goal than yours. The person on the other end wants the call to go well, so, consciously or not, they steer around the situations that go badly: they speak clearly, they wait for the assistant to finish, they ask for a date that happens to be free, and they never once say \"actually, never mind\" halfway through a sentence."
+        }
+      ],
+      "bullets": [
+        { "de": "", "it": "", "fr": "", "en": "The calendar always has room. A demo booking almost never lands on a slot that's already taken, so you never see how the system handles disappointing a caller." },
+        { "de": "", "it": "", "fr": "", "en": "Nobody interrupts. Real callers interrupt constantly, to add a detail, correct themselves, or answer a second phone ringing in the background. A demo caller, out of habit, waits their turn." },
+        { "de": "", "it": "", "fr": "", "en": "The tone stays pleasant throughout. A demo is rarely run by someone pretending to be genuinely irritated, because doing so works against the point of the call." },
+        { "de": "", "it": "", "fr": "", "en": "Data questions don't come up. Nobody on a sales demo asks whether the call is being recorded or how to have their details deleted, because that isn't why the call is happening." },
+        { "de": "", "it": "", "fr": "", "en": "One convincing attempt is treated as sufficient. A single successful call proves the system can succeed once, on a day when everything cooperated, not that it succeeds reliably." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Why Twenty-Five Calls, Not One", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "One call, however it goes, is a single data point. A good one tells you the system can succeed under one specific set of conditions; a bad one tells you it can fail under one specific set of conditions. Neither tells you what happens on an ordinary Tuesday, when a genuinely mixed set of people ring in. Twenty-five calls spread across six categories that stress different things gives you a pattern instead of an anecdote, still not a scientific sample, but enough to separate a system that actually holds up from one that simply survived a single lucky exchange."
+        },
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "This test deliberately stays broad rather than deep in any one dimension. If Swiss-German dialect comprehension specifically is your main concern, our separate dialect stress test walks through Zürich, Bern, Basel and Central Swiss regional variation in far more depth than the two calls given room for here. If you want to understand how a system is supposed to recover once it has already misunderstood something, our article on failure handling sets out the escalation logic behind it. This test assumes both of those and asks a wider question: across the whole shape of a real call, comprehension, disruption, emotion, handover and honesty about data, where does the system actually hold up, and where does it quietly fold?"
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Group A — Comprehension: Names, Numbers and Addresses", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "A system that sounds fluent in conversation can still lose the details that make a booking usable. These five calls test whether what gets captured matches what was actually said."
+        }
+      ],
+      "bullets": [
+        { "de": "", "it": "", "fr": "", "en": "1. Give an uncommon Swiss surname without spelling it first — Zbinden, Küng, Aebischer — and see whether the assistant asks to confirm the spelling or simply guesses." },
+        { "de": "", "it": "", "fr": "", "en": "2. Read out a phone number or a four-digit postcode at a normal conversational pace, not the slow, deliberate pace people unconsciously use once they know a machine is listening." },
+        { "de": "", "it": "", "fr": "", "en": "3. Give a street address that has a near-identical name in a neighbouring town, and check whether the system disambiguates or simply picks one." },
+        { "de": "", "it": "", "fr": "", "en": "4. Book an appointment under a name that isn't your own — \"this is for my colleague, Schürch\" — and see whose name actually ends up on the booking." },
+        { "de": "", "it": "", "fr": "", "en": "5. Call with a foreign accent or an unusual pronunciation of an otherwise ordinary word, and note whether the system asks a clarifying question or answers confidently on a guess." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Group B — Dates, Scheduling and Slots That Don't Exist", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "A booking that sounds agreed on the phone still has to survive contact with an actual calendar."
+        }
+      ],
+      "bullets": [
+        { "de": "", "it": "", "fr": "", "en": "6. Ask for a specific date and time you already know is fully booked, and see whether the system offers a genuine alternative or simply confirms a slot that doesn't exist." },
+        { "de": "", "it": "", "fr": "", "en": "7. Use a relative date instead of a fixed one — \"the Tuesday after next\", \"a week on Friday\" — and check whether it resolves to the correct calendar date." },
+        { "de": "", "it": "", "fr": "", "en": "8. Change the date mid-call — \"actually, not Tuesday, make it Wednesday\" — and confirm the correction actually overwrites the first answer instead of both getting logged." },
+        { "de": "", "it": "", "fr": "", "en": "9. Ask what happens if you call outside business hours or on a public holiday, and see whether the answer is specific or just a vague reassurance." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Group C — Disruption: Interruption, Correction, Silence and Noise", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "Real calls are rarely calm and linear. This group tests what happens when they aren't."
+        }
+      ],
+      "bullets": [
+        { "de": "", "it": "", "fr": "", "en": "10. Interrupt the assistant mid-sentence with a new request, and see whether it drops the original thread entirely or picks it back up." },
+        { "de": "", "it": "", "fr": "", "en": "11. Give a wrong detail on purpose, then correct it yourself a sentence later without being asked, the way people actually talk." },
+        { "de": "", "it": "", "fr": "", "en": "12. Go completely silent for ten to fifteen seconds partway through the call, and see what the system does: wait, prompt, or hang up on you." },
+        { "de": "", "it": "", "fr": "", "en": "13. Call from a genuinely noisy environment — a workshop, a busy street, a car with the window down — rather than a quiet office." },
+        { "de": "", "it": "", "fr": "", "en": "14. Speak in long, run-on sentences without the pauses a system might be tuned to expect, the way people talk when they're in a hurry." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Group D — Emotional and Edge-Case Callers", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "Not every caller is calm, on-topic and easy to follow. This group deliberately isn't either."
+        }
+      ],
+      "bullets": [
+        { "de": "", "it": "", "fr": "", "en": "15. Start the call already sounding irritated — raise your voice slightly, speak faster — and see whether the tone gets acknowledged or simply processed as neutral words." },
+        { "de": "", "it": "", "fr": "", "en": "16. Ask a question genuinely outside the system's scope — a legal question to a trades business, a medical question to a hotel — and see whether it says so honestly or answers with confidence anyway." },
+        { "de": "", "it": "", "fr": "", "en": "17. Speak with a strong regional or foreign accent unlikely to be well represented in typical training data, and see exactly where comprehension breaks down." },
+        { "de": "", "it": "", "fr": "", "en": "18. Ramble slightly and bury the real request in the middle of an unrelated sentence, and see whether the system can extract the actual ask." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Group E — Handing Over to a Human", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "Every AI receptionist eventually has to let go of a call. These three test how well it actually does that."
+        }
+      ],
+      "bullets": [
+        { "de": "", "it": "", "fr": "", "en": "19. Ask directly to speak to a person, with no other explanation, and see whether the system complies immediately or tries to keep handling the call itself." },
+        { "de": "", "it": "", "fr": "", "en": "20. Deliberately give confusing or contradictory answers for a minute or two, and see whether the system escalates on its own once it's clearly getting nowhere, rather than looping." },
+        { "de": "", "it": "", "fr": "", "en": "21. Call back a few minutes after being handed over and ask the human who picks up what they were told — this checks whether context travels with the handover or you have to start again from zero." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Group F — Recording, Data and Deletion Questions", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "The last four calls have nothing to do with whether the system is good at its job, and everything to do with whether it's honest about what happens to the call itself."
+        }
+      ],
+      "bullets": [
+        { "de": "", "it": "", "fr": "", "en": "22. Ask directly, \"Am I talking to a person or an AI?\" and see whether the answer is immediate and plain, or evasive." },
+        { "de": "", "it": "", "fr": "", "en": "23. Ask whether the call is being recorded and what happens to the recording afterwards — a specific answer is a good sign; a generic reassurance is not." },
+        { "de": "", "it": "", "fr": "", "en": "24. Ask how you would go about having your details deleted, and see whether the system gives an actual next step or simply says it will \"pass that along.\"" },
+        { "de": "", "it": "", "fr": "", "en": "25. Ask who, besides the business you called, has access to the recording or transcript afterwards — this is deliberately the hardest question on the list, and a system that handles it well is worth noting." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Scoring Each Call: Pass, Partial or Fail", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "Score every one of the twenty-five calls on the same three-point scale, applied consistently across all six groups:"
+        }
+      ],
+      "bullets": [
+        { "de": "", "it": "", "fr": "", "en": "Fail: the system got it wrong and acted on the wrong information anyway — booked the wrong date, recorded the wrong name, or answered a question it should have declined, confidently and incorrectly. This is the costliest outcome, because nothing about the call itself signals that anything went wrong." },
+        { "de": "", "it": "", "fr": "", "en": "Partial: the system struggled but recovered — it asked a clarifying question it shouldn't have needed to, took two attempts to get something right, or gave a technically true but noticeably vague answer." },
+        { "de": "", "it": "", "fr": "", "en": "Pass: the system handled the call cleanly, accurately and without unnecessary friction, the first time." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Weighting the Result to Your Own Business", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "A raw score out of twenty-five is a starting point, not a verdict. Which calls matter most depends entirely on your own business. A hotel that takes bookings mostly by name and date should weight Group A and Group B failures heavily and may care comparatively less about Group D. A trades business fielding genuinely urgent calls should weight Group C and Group D more heavily than a quiet professional-services office that rarely deals with an angry caller. Decide which groups matter most to you before you start dialling, not afterwards, once you've already seen the results and are tempted to explain away an inconvenient one."
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "Where the Test Itself Can Go Wrong", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "A flawed test can produce a confident, wrong conclusion just as easily as a flawed system can. A few habits quietly undermine the whole exercise."
+        }
+      ],
+      "bullets": [
+        { "de": "", "it": "", "fr": "", "en": "Testing only during a calm moment at your desk, in a quiet room, with a script you wrote yourself — which reproduces roughly the same conditions a sales demo already covers, just with your own voice instead of the vendor's." },
+        { "de": "", "it": "", "fr": "", "en": "Using only colleagues as callers, all of whom unconsciously know they're testing a machine and, without meaning to, speak more clearly and patiently than a real, distracted customer ever would." },
+        { "de": "", "it": "", "fr": "", "en": "Treating one successful call in a group as proof for the whole category, rather than repeating the harder calls at least once — behaviour near a confidence threshold can vary from one attempt to the next, not only from one dialect to the next." },
+        { "de": "", "it": "", "fr": "", "en": "Never following up — testing a system once before signing and then never checking whether it still performs the same way six months and one vendor software update later." },
+        { "de": "", "it": "", "fr": "", "en": "Grading generously because the overall impression was positive. A warm, natural-sounding voice can make a buyer forgive a specific factual failure that would be unacceptable from a human receptionist." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "When the Full Twenty-Five Is Overkill", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "Not every business needs to run all twenty-five calls before deciding."
+        }
+      ],
+      "bullets": [
+        { "de": "", "it": "", "fr": "", "en": "Very low call volume: a handful of calls a week rarely justifies a multi-hour testing project. A shorter, ten-call version focused on the groups that matter most to your business gets you most of the useful signal." },
+        { "de": "", "it": "", "fr": "", "en": "A narrow, closed set of requests: a business that only ever takes one type of straightforward booking, with little real judgement involved, has less to gain from the emotional and edge-case group than one fielding a wide range of enquiries." },
+        { "de": "", "it": "", "fr": "", "en": "A short, cancellable contract already on the table: if a provider offers a genuine month-to-month term or a low-cost one-time trial rather than a long lock-in, a lighter initial test followed by close attention during the first weeks of real use is a reasonable trade-off against a full pre-purchase audit." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "The Decision, Not the Demo", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "", "it": "", "fr": "",
+          "en": "The question worth answering isn't whether an AI receptionist sounds convincing on a call arranged specifically to sound convincing — most do, by now; that's what a demo is for. It's what happens on the sixteenth call of an ordinary Tuesday, when someone with a heavy cold and a toddler in the background needs to change a booking made under their spouse's name. Run enough of these twenty-five calls yourself, against any provider you're seriously considering, before a signature makes the answer expensive to find out."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "How long does the full 25-call test actually take?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "Budgeted properly, most calls run two to four minutes, so the full set takes somewhere between one and two hours spread across a few sessions — considerably less time than living with the wrong system for the length of a contract." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "Do I need real customers to make these calls, or can colleagues do it?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "Colleagues and friends are fine for most of the twenty-five, as long as they don't know the script in advance and aren't told to speak unnaturally clearly. The comprehension and disruption groups specifically lose their value if the caller is unconsciously trying to help the system succeed." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "Should I identify myself as a prospective customer, or call without saying who I am?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "Call the way a real customer would, without announcing that you're testing the system. Identifying yourself as an evaluator risks getting a more careful, more closely monitored response than an ordinary caller would ever receive." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "What if a system fails one call but passes the other twenty-four?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "Look at which call it was before deciding what that means. A single Group A slip on an unusual surname is a different kind of problem than a single Group F fail on the data-deletion question — the second one says something about how the vendor thinks about your callers' privacy, not just about speech recognition." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "Does passing this test mean the system will keep performing the same way after I sign?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "No. This is a pre-purchase snapshot, not an ongoing guarantee — vendors update their systems, and performance can shift with them. Treat the first few weeks of real use as an extension of the same test, and keep listening for the patterns you already know to check for." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "Can I run this same test on Weissmann's own AI phone assistant?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "Yes, it's built for that. Nothing in this test plan assumes or favours any single vendor, and Weissmann's one-time CHF 350 trial exists specifically so a prospective customer can run calls like these before committing to a monthly plan." }
+    },
+    {
+      "q": { "de": "", "it": "", "fr": "", "en": "Is a demo call worthless, then?" },
+      "a": { "de": "", "it": "", "fr": "", "en": "No, a demo tells you what a vendor considers its best case, which is useful information on its own. It simply isn't evidence of how the system performs outside that best case, which is the entire gap this test plan is built to close." }
+    }
+  ],
+  "keyEntities": [
+    "AI receptionist",
+    "AI phone assistant",
+    "pre-purchase testing",
+    "human handover",
+    "escalation",
+    "data deletion request",
+    "call recording disclosure",
+    "vendor demo",
+    "due diligence",
+    "confidence threshold"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "", "it": "", "fr": "",
+        "en": "Weissmann AI — AI Phone Assistant service page and one-time trial pricing (first-party, src/data/pricing.ts)"
+      },
+      "href": "/en/services/ai-phone-assistant/"
+    }
+  ],
+  "cta": {
+    "label": {
+      "de": "", "it": "", "fr": "",
+      "en": "Run this test on Weissmann's AI phone assistant (CHF 350, one-time trial)"
+    },
+    "href": "/en/services/ai-phone-assistant/"
+  }
+}

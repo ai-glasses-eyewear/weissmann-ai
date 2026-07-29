@@ -1,0 +1,528 @@
+{
+  "id": "multilingual-website-switzerland-seo",
+  "cluster": "marketing-seo-geo",
+  "type": "spoke",
+  "languages": [
+    "en"
+  ],
+  "slug": {
+    "de": "",
+    "en": "multilingual-website-switzerland-seo",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": [
+    "websites",
+    "seo"
+  ],
+  "relatedArticles": [
+    "business-website-cost-switzerland",
+    "small-business-website-checklist-switzerland",
+    "local-seo-switzerland"
+  ],
+  "searchIntent": "commercial-investigation",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "",
+    "en": "Multilingual Swiss Websites Without the SEO Mess | Weissmann AI",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "",
+    "en": "How Swiss businesses structure German, English, Italian and French pages: URL patterns, hreflang, canonicals, and real localization versus thin machine translation.",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "",
+    "en": "AI Marketing, SEO & GEO · Multilingual Site Architecture",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "",
+    "en": "Multilingual Websites in Switzerland: How to Build German, English, Italian and French Pages Without Creating an SEO Mess",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "",
+    "en": "A multilingual Swiss website usually goes wrong before a single sentence is translated: in the URL pattern chosen for the German, English, Italian and French versions of the same page. Two decisions matter most. First, give each language its own crawlable URL — a locale-prefixed subfolder, with its own localized slug, is the right default for most Swiss business sites. Second, make the hreflang and canonical tags between those URLs honest: reciprocal alternates that point back to each other, a self-referencing canonical on every locale, and no invented link to a translation that does not exist yet. Word-for-word translation compounds the risk, since a German searcher and an English searcher asking about the same service often want a genuinely different answer.",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "",
+        "en": "Four Languages, One Broken URL",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Picture a composite, entirely typical case: a Zürich consultancy adds English to its German site by dropping a small language toggle into the header. Click it, and the page text switches to English — but the address bar still reads example.ch, sometimes with a ?lang=en appended, sometimes not even that, just JavaScript swapping strings on the same URL. To a human visitor, it looks like a second language. To Googlebot, it is one URL that happens to render different text depending on a cookie or a query string it has no strong reason to crawl as a separate page. The English version never gets its own index entry, never gets its own ranking, and never shows up for an English search — not because the translation was bad, but because it was never given an address of its own.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "This article you are reading sits at a URL built the other way round: https://weissmann.ai/en/ai-academy/marketing-seo-geo/multilingual-website-switzerland-seo/. Every segment of that path — the /en/ prefix, the ai-academy pillar, the marketing-seo-geo cluster, the final slug — came out of a route registry, not a language toggle. That routing table is the real subject of this article, and it happens to belong to the site you are currently reading, which makes it a rare thing in SEO writing: a technical example you can go and inspect yourself rather than take on faith.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "The Decision That Happens Before Anyone Translates a Word",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Four broad patterns exist for putting more than one language on a website, and the choice is almost always made by accident — by whatever a CMS defaults to — rather than on purpose. Getting it right is a five-minute decision made once; getting it wrong is a migration made later, under pressure, after someone finally asks why the English pages never rank.",
+          "it": "",
+          "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Separate country domains (example.ch, example.de, example.it) — each domain starts its own authority from zero and needs its own backlinks, its own trust signal history, its own everything. This only earns its cost at a scale — genuinely separate national entities, separate legal structures, separate marketing budgets — that almost no Swiss SME operates at.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Subdomains (en.example.ch, it.example.ch) — technically simpler to spin up than separate domains, but Google has historically treated subdomains close enough to independent sites that authority does not flow between them cleanly. Worth using when the hosting infrastructure genuinely differs per market; rarely worth it just to add a language.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Locale-prefixed subfolders (example.ch/en/…, example.ch/it/…) — one domain, one accumulating pool of authority, and a language added later costs a folder, not a migration. This is the right default for nearly every Swiss business site, and it is the pattern this site itself uses.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Query parameters (example.ch/?lang=en) — the cheapest to bolt on and the reason so many Swiss \"multilingual\" sites never actually rank in the second language. Search engines generally treat parameterized variants of one URL as the same page unless painstakingly told otherwise, and hreflang layered on top of parameter URLs is fragile in exactly the way the opening scenario describes.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "How This Site Is Actually Wired",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "German is the default locale here and carries no URL prefix at all — the German web-development service page sits at weissmann.ai/leistungen/ki-webentwicklung/. English, Italian and French each get a locale prefix instead: /en/, /it/, /fr/. That much is a common pattern. The detail that actually matters is what comes after the prefix: each locale has its own slug, not the German slug wearing a different flag. The same service page reads /en/services/ai-web-development/, /it/servizi/sviluppo-siti-web-ai/ and /fr/services/developpement-web-ia/ — four genuinely different words for \"web development,\" chosen per language, not four copies of ki-webentwicklung with a country code stapled to the front.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Every locale of every page carries a canonical tag pointing at itself, never at the German original. Google's own documentation on localized versions treats translated pages as duplicates only when the main content stays untranslated — so a properly localized English page has earned its own canonical URL, and forcing it to canonicalize back to German would tell Google to disregard it as a copy. Alongside that, every hreflang set is reciprocal: the German page lists English, Italian and French as alternates, and each of those lists the other three back, including itself, because Google is explicit that annotations are simply ignored \"if two pages don't both point to each other.\"",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "One asymmetry is worth naming, not hiding, since an honest example should show its trade-offs too: German here is tagged de-CH specifically under the BCP 47 standard, not the generic de, because Swiss High German genuinely differs from Germany's in spelling and vocabulary. English, Italian and French currently use the plain, non-regional codes, not en-CH, it-CH or fr-CH. For most Swiss businesses that is a reasonable simplification; for one specifically distinguishing Swiss French or Italian from France's or Italy's in Google's eyes, only a region-tagged code actually does that job.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "And this article is itself the cleanest proof of the last rule. It exists in English only. It has no German, Italian or French version, so its hreflang block contains exactly one language alternate — English, pointing at itself — plus an x-default pointing at that same URL, with no invented link to a translation that was never written. If you switch this specific page to German using the site's own language selector, it takes you to the German homepage, not to a German article that does not exist. Nothing here pretends to be more multilingual than it actually is, on the same page that is explaining why that pretense is the mistake to avoid.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "hreflang Is a Handshake, Not a Decoration",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Two failure modes account for most broken multilingual SEO, and both are invisible until someone goes looking. The first is a one-way link: the homepage lists all four locale alternates correctly, but an inner page — a service page, an article — only ever got a canonical tag and never the reciprocal hreflang set. Google's documented rule means the whole annotation for that page is quietly discarded, not partially honoured. The second is a rename: someone edits the Italian slug for a page six months after launch and forgets that the German, English and French versions of that same page still link to the old Italian address. The link rot is silent — no broken page, no visible 404, just a hreflang set that stops matching reality until a search-visibility report eventually makes someone ask why the Italian version disappeared.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "x-default has one narrow job in this picture: telling Google which version to offer a visitor whose browser language matches none of the site's available locales. It is not a ranking booster and not a substitute for getting the other tags right; on a page that only exists in one language, as this one does, x-default simply points back at that single existing version, because there is nothing else honest to offer.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "Translation Quality vs. Thin Machine Translation",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "A German-speaking searcher and an English-speaking searcher typing what looks like the same question are often not asking the same question. This site's own German and English articles about website cost make the point without needing an invented example. Both explain, honestly, that no single verified figure exists for what a Swiss business website costs. But the German version opens by breaking a project's price into its components — strategy, copywriting, design, development — because a German-speaking searcher building that budget is usually starting from a blank page. The English version opens instead with why two Swiss quotes for what looks like the same project can differ by a factor of ten, because the English-reading audience for that specific page is disproportionately an international founder who already has a quote in hand and wants to know if it is fair. Same honesty, same underlying subject, two different opening questions — because the two searches were never actually the same search, only the same words in translation would have suggested they were.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "This is exactly what word-for-word translation cannot see, because it operates on the sentence in front of it, not on who is asking. A short example: the German business idiom \"aus einer Hand\" translates literally as \"from one hand,\" which is grammatically fine and means almost nothing to an English reader. Genuine localization does not translate the idiom; it translates the underlying claim — \"one team handles the whole project, start to finish\" — because that is the actual promise being made, not the four words carrying it. Machine translation, run without an editorial pass, reliably produces the first version. A person who understands both the language and the reader produces the second.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "The cost is not merely stylistic. A page that is grammatically correct English but structurally still answering the German question — translated rather than rewritten — can rank for the wrong terms and convert worse than either an honest German page or a properly localized English one, while looking, to whoever approved it, exactly like \"the English version is done.\"",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "A Language Switcher That Tells the Truth",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "A common, well-intentioned bug: a language switcher that always shows all four Swiss languages as live links, regardless of whether the page in front of the visitor actually has a translated counterpart. Click Italian while reading an English-only article, and the badly built version either serves a 404, or — worse — silently serves the German or English content back dressed in Italian navigation, which damages trust in exactly the moment a visitor was trying to solve a language problem.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "The honest version, which is the one running under this exact page, checks first whether the page you are on actually has a version in the language you just clicked. If it does, you land on that specific translated page. If it does not — which, for this article, is true of German, Italian and French alike — you land on that language's site root instead, not on a fabricated page pretending to be a translation. It is a smaller, plainer piece of engineering than it sounds, and it is the difference between a switcher a visitor can trust and one they learn, after one bad click, to stop using.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "What Can Go Wrong",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "None of the following is exotic; all of it is common, and all of it is quiet enough that a business can carry it for a year before anyone notices the pattern.",
+          "it": "",
+          "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Non-reciprocal hreflang. When one side of the link is missing, Google discards the whole annotation set for that page rather than trusting it partially. Whichever locale then carries the strongest independent signals can surface for searches in a language it was never meant to answer — not because it \"won,\" but because the tag meant to sort this out was never actually read.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Canonicalizing every language back to the default. Pointing the English, Italian and French canonical tags at the German URL — sometimes done by a developer trying to \"avoid duplicate content\" without understanding the distinction — tells Google the translated pages are copies, not originals, which can suppress them from ranking even when the translation is completely genuine.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Thin or unedited machine translation shipped as final. Google's own guidance treats language versions as duplicates specifically when the main content stays untranslated; several pages in that state on one site risk being read as low-value content, a judgment that can colour how the rest of the site is assessed, not only the weak pages themselves.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "A translated section that gets built once and then abandoned. A French price list from launch year sitting next to a German one that has been updated four times since is a worse trust signal than never having published French at all — a visitor comparing the two dates will draw a specific, unflattering conclusion about which language the business actually cares about.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Slug drift after launch. A locale-specific slug renamed later, without the sibling locales' alternate links updated to match, breaks the hreflang handshake silently — the kind of bug that shows up only as a slow decline in one language's visibility, not as an error anyone would think to look for.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "When Four Languages Is the Wrong Answer",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "Switzerland having four national languages is not, on its own, a reason for a specific business to publish in all four. A Zürich B2B software company selling exclusively to German- and English-speaking clients does not need French or Italian versions just because the passport says so — that treats geography as a checklist rather than matching language investment to where the actual buyers are. A Ticino trades business drawing customers from across the cantonal border and from German-speaking Switzerland has a real case for Italian and German, and a comparatively weak one for French.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "The more useful test is not \"which languages exist in Switzerland\" but \"which of these can I keep current for as long as the page stays live.\" A language published once and never revisited is not a neutral placeholder — as the price-list example above shows, an abandoned translation actively signals which market the business no longer takes seriously. Publishing fewer languages, properly maintained, beats publishing all four and quietly maintaining one.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "A Build Sequence That Avoids the Mess",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "The order matters more than any individual step. Doing translation before architecture is the single most common way a multilingual project turns into a second, unplanned migration a year later.",
+          "it": "",
+          "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "",
+          "en": "Decide which languages you can genuinely maintain going forward — not which you can afford to launch once. This is a staffing and process question before it is a translation question.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Pick a default locale and a URL pattern before a single sentence is translated. For nearly every Swiss SME, that means locale-prefixed subfolders with a distinct, properly localized slug per language, not a shared slug with a language code stapled on.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Commission real localization for launch copy — a translator who understands the reader's actual question, not a machine-translation pass with a light proofread bolted on afterwards.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Build reciprocal hreflang and self-referencing canonicals into the page template itself, so every new page inherits correct tags automatically, rather than relying on someone remembering to add them by hand on page four hundred.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Design the language switcher's fallback behaviour before launch: what happens, precisely, when a visitor asks for a language a given page does not have. Decide it once, in the template, rather than improvising it per page.",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "",
+          "en": "Once live, watch each locale's Search Console property separately. An aggregated, all-languages view can show a healthy average while one specific language quietly fails — the average is exactly what hides that.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "",
+        "en": "The Decision, Not the Summary",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "",
+          "en": "The decision worth making this week is not \"which languages should we add\" — it is \"what URL pattern and hreflang plan will these languages use,\" settled before a single sentence goes to a translator. Get that decided first, on paper, matched to the languages your actual customers use, and the translation work that follows has somewhere honest to live. Get it wrong first, the way the opening scenario did, and even excellent translation work inherits a URL structure that was never built to be found.",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "",
+        "en": "Do I need a separate .ch, .de or .it domain for each language?",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "",
+        "en": "Almost never, for a Swiss SME. Separate domains start their own ranking authority from zero and need their own backlink profile built up independently. A locale-prefixed subfolder on one domain keeps that authority pooled and lets a new language be added as a folder rather than a new site.",
+        "it": "",
+        "fr": ""
+      }
+    },
+    {
+      "q": {
+        "de": "",
+        "en": "Does Google penalize a site for having the same content in four languages?",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "",
+        "en": "No — Google's own guidance on localized versions treats language variants as duplicates only when the main content stays untranslated. Genuinely translated, distinct content in German, English, Italian and French is not treated as duplicate content merely for existing on the same domain.",
+        "it": "",
+        "fr": ""
+      }
+    },
+    {
+      "q": {
+        "de": "",
+        "en": "Can I just rely on the browser's built-in auto-translate instead of building real localized pages?",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "",
+        "en": "Auto-translate changes what a human visitor sees in their own browser; it does not create a separate, crawlable URL in that language for search engines to index. It solves \"a visitor can read this in another language\" but not \"this page can be found by someone searching in that language,\" which is the problem this article is actually about.",
+        "it": "",
+        "fr": ""
+      }
+    },
+    {
+      "q": {
+        "de": "",
+        "en": "What exactly does the x-default hreflang tag do?",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "",
+        "en": "It tells search engines which version to serve a visitor whose browser language does not match any locale the site actually offers. It is a fallback instruction, not a ranking signal, and on a page that exists in only one language, it simply points back at that same version.",
+        "it": "",
+        "fr": ""
+      }
+    },
+    {
+      "q": {
+        "de": "",
+        "en": "Does every page on a multilingual site need to exist in every language?",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "",
+        "en": "No. A page can honestly exist in only one or two languages, provided the hreflang set only lists the locales that genuinely exist and the language switcher does not fabricate a link to a translation that has not been written. This article is itself an example: English only, by design, not by omission.",
+        "it": "",
+        "fr": ""
+      }
+    },
+    {
+      "q": {
+        "de": "",
+        "en": "Is tagging German as de-CH instead of de actually worth the extra step?",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "",
+        "en": "Yes, for a Swiss-specific business. Swiss High German differs from Germany's in vocabulary and spelling (ss rather than ß), and de-CH lets search engines distinguish Swiss German content from Germany-targeted German content rather than treating the two as interchangeable.",
+        "it": "",
+        "fr": ""
+      }
+    },
+    {
+      "q": {
+        "de": "",
+        "en": "How long does it realistically take to add a new language properly?",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "",
+        "en": "There is no honest single figure — it depends on how many pages need translating, whether the URL architecture already supports locale prefixes and reciprocal hreflang, and whether the translation is fresh work or a review pass on existing machine translation. A flat timeline quoted without knowing those three answers is a guess.",
+        "it": "",
+        "fr": ""
+      }
+    }
+  ],
+  "keyEntities": [
+    "Multilingual website Switzerland",
+    "hreflang",
+    "Canonical tag",
+    "Locale-prefixed URL",
+    "x-default",
+    "Localized URL slug",
+    "Machine translation vs. localization",
+    "de-CH language tag",
+    "BCP 47",
+    "Language switcher UX",
+    "International SEO",
+    "Duplicate content across languages"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "",
+        "en": "Google Search Central — Managing multi-regional and multilingual sites (hreflang, x-default), accessed 29 July 2026",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://developers.google.com/search/docs/specialty/international/localized-versions"
+    },
+    {
+      "label": {
+        "de": "",
+        "en": "Google Search Central — Consolidating duplicate URLs (canonicalization), accessed 29 July 2026",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://developers.google.com/search/docs/crawling-indexing/canonicalization"
+    },
+    {
+      "label": {
+        "de": "",
+        "en": "IETF BCP 47 (RFC 5646) — Tags for Identifying Languages, accessed 29 July 2026",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://www.rfc-editor.org/info/bcp47"
+    },
+    {
+      "label": {
+        "de": "",
+        "en": "Weissmann AI — AI Web Development service page, first-party example of per-locale localized slugs",
+        "it": "",
+        "fr": ""
+      },
+      "href": "/en/services/ai-web-development/"
+    }
+  ],
+  "cta": {
+    "label": {
+      "de": "",
+      "en": "Bring your language list to a free consultation and we will map the URL structure together",
+      "it": "",
+      "fr": ""
+    },
+    "href": "/en/kontakt/"
+  }
+}
