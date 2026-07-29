@@ -1,0 +1,104 @@
+{
+  "articleId": "seo-locale-ticino",
+  "language": "it",
+  "dataAsOf": "2026-07-29",
+  "intro": "Scegliete il comune (o l'ex comune) per cui state valutando una pagina dedicata, poi rispondete alle sette domande con onestà. Nessuna risposta ha un valore predefinito favorevole: una domanda lasciata senza risposta conta come «No», perché una pagina costruita su una supposizione ottimistica è esattamente come nascono le pagine di località deboli e quasi duplicate.",
+  "criteria": [
+    {
+      "id": "presenza-reale",
+      "label": "Presenza reale e sostenuta nel tempo",
+      "question": "Questa sede ha personale proprio, un magazzino, una sede fissa, oppure una storia documentata di anni di interventi ripetuti in questa zona — non solo un piano per espandersi qui?",
+      "whyItMatters": "È la differenza tra una sede vera e una tappa occasionale. Una città raggiunta solo perché un tecnico può arrivarci in auto non è una presenza reale."
+    },
+    {
+      "id": "entita-amministrativa",
+      "label": "Comune autonomo o quartiere già fuso",
+      "question": "Questo comune è ancora un'entità amministrativa autonoma con proprio municipio, oppure — come Breganzona o Pregassona a Lugano, o Giubiasco a Bellinzona — è già un quartiere integrato in una città più grande da un'aggregazione comunale?",
+      "whyItMatters": "Una pagina per un ex comune già fuso deve dimostrare di aggiungere qualcosa che la pagina della città non offre già, altrimenti duplica la vostra stessa pagina cittadina invece di raggiungere un pubblico nuovo."
+    },
+    {
+      "id": "contenuto-distinto",
+      "label": "Contenuti autenticamente distinti",
+      "question": "Esiste qualcosa di vero per questa sede che non è ugualmente vero per le altre — recensioni che citano esplicitamente questa zona, un referente locale nominato, foto reali del luogo, orari o indicazioni di accesso diversi?",
+      "whyItMatters": "Una pagina il cui unico elemento unico è il nome del comune nel titolo è, per definizione, il contenuto quasi duplicato che la policy sulle doorway page di Google individua."
+    },
+    {
+      "id": "domanda-separabile",
+      "label": "Domanda di ricerca realmente separabile",
+      "question": "Le persone cercherebbero questa località insieme al vostro servizio in un modo che un'unica pagina di copertura cantonale non intercetterebbe già?",
+      "whyItMatters": "Se una pagina condivisa «servizi più area servita» soddisfa già la stessa ricerca, una pagina dedicata compete con i vostri stessi contenuti invece di aggiungere portata."
+    },
+    {
+      "id": "specificita-transfrontaliera",
+      "label": "Specificità locale o transfrontaliera genuina",
+      "question": "Questa sede risponde a un'esigenza realmente locale — clientela transfrontaliera, frontalieri, lingua, orari di confine, stagionalità turistica — che non è la stessa in ogni altra vostra sede?",
+      "whyItMatters": "In Ticino la vicinanza al confine o al resto del cantone è spesso un vantaggio reale, ma solo se la pagina lo dimostra con dettagli veri, non con la sola menzione del nome del comune."
+    },
+    {
+      "id": "responsabile-designato",
+      "label": "Un responsabile che la mantenga aggiornata",
+      "question": "Una persona precisa, dentro l'azienda, è incaricata di controllare e aggiornare orari, recensioni e dati di questa pagina almeno una o due volte l'anno?",
+      "whyItMatters": "Una pagina senza responsabile invecchia entro un anno nel contenuto ripetitivo e superato che la policy sulle doorway page colpisce, indipendentemente da quanto fosse curata il giorno della pubblicazione."
+    },
+    {
+      "id": "assenza-duplicazione",
+      "label": "Assenza di rischio di duplicazione interna",
+      "question": "La vostra azienda non ha già un'altra pagina propria — della città madre o di un altro quartiere — che tratta gli stessi servizi per una zona che si sovrappone a questa?",
+      "whyItMatters": "Due pagine vostre quasi identiche non competono contro un concorrente: competono l'una contro l'altra all'interno dello stesso sito, e spesso i motori di ricerca non premiano nessuna delle due con decisione."
+    }
+  ],
+  "responseOptions": ["si", "parziale", "no"],
+  "responseLabels": { "si": "Sì", "parziale": "Parziale o incerto", "no": "No" },
+  "defaultResponse": "no",
+  "scoring": {
+    "description": "Ogni criterio vale sì=1, parziale=0.5, no=0, sommati sui sette criteri (punteggio massimo 7). Il punteggio non è mai mostrato come percentuale o voto scolastico: serve solo a collocare la sede in uno dei tre verdetti.",
+    "verdicts": [
+      {
+        "id": "pagina-giustificata",
+        "label": "Pagina giustificata",
+        "minScore": 5.5,
+        "message": "Questa sede supera il test. È una candidata legittima per una pagina indicizzata propria, a condizione di completare prima della pubblicazione la checklist di sufficienza qui sotto."
+      },
+      {
+        "id": "zona-grigia",
+        "label": "Zona grigia — non ancora, rafforzate prima",
+        "minScore": 3,
+        "message": "Questa sede ha alcune prove reali ma non ancora sufficienti. Pubblicare oggi una pagina propria darebbe probabilmente un contenuto debole: inseritela per ora nella vostra pagina di copertura e rivalutatela quando personale, contenuti o recensioni cambieranno davvero."
+      },
+      {
+        "id": "area-di-servizio",
+        "label": "Area di servizio, non pagina dedicata",
+        "minScore": 0,
+        "message": "Questa sede non supera ancora il test. Elencatela come area di servizio nominata sul vostro profilo Google Business e nell'elenco comuni della vostra pagina di copertura, invece di costruirle una pagina propria."
+      }
+    ]
+  },
+  "nonNegotiableOverride": {
+    "condition": "answers['entita-amministrativa'] === 'no' && answers['assenza-duplicazione'] === 'no'",
+    "label": "Rischio elevato di cannibalizzazione interna",
+    "message": "Questo comune è già un quartiere fuso in una città dove avete un'altra pagina, e quella pagina tratta già una zona sovrapposta. Pubblicare una pagina separata qui rischia di far competere due vostre pagine per la stessa ricerca, qualunque sia il punteggio totale ottenuto sopra. Risolvete prima questa sovrapposizione — di norma unendo i contenuti in un'unica pagina o sezione — prima di considerare qualunque altro criterio."
+  },
+  "sufficiencyChecklist": {
+    "description": "Prima di pubblicare qualunque sede classificata «Pagina giustificata», confermate che ogni voce sotto sia vera per questa pagina specifica. Una pagina che ne manca più di una o due non è pronta, indipendentemente dal punteggio ottenuto.",
+    "items": [
+      { "id": "apertura-unica", "label": "Il paragrafo di apertura è scritto specificamente per questa sede e non è la copia di un'altra pagina con il nome del comune cambiato." },
+      { "id": "contatto-locale", "label": "Un numero di telefono o un contatto che raggiunge davvero questa sede, non una linea generica di sede centrale." },
+      { "id": "team-nominato", "label": "Almeno un membro del team nominato o una foto reale di questa sede o del suo team." },
+      { "id": "recensioni-specifiche", "label": "Recensioni che citano esplicitamente questa sede o questa zona, non citazioni generiche riciclate su ogni pagina." },
+      { "id": "orari-accesso", "label": "Orari, parcheggio o indicazioni di accesso realmente accurati per questo indirizzo, non copiati dalla sede principale." },
+      { "id": "coerenza-profilo", "label": "Indirizzo e telefono coincidono esattamente con il profilo Google Business di questa specifica sede." },
+      { "id": "responsabile-assegnato", "label": "Una persona interna è responsabile della revisione e dell'aggiornamento di questa pagina almeno due volte l'anno." },
+      { "id": "nessuna-cannibalizzazione", "label": "Titolo e H1 di questa pagina puntano solo su questa sede, non sulla stessa frase già usata dalla pagina di copertura o da un'altra vostra pagina." }
+    ]
+  },
+  "serviceAreaGuidance": {
+    "description": "Per ogni sede classificata «Zona grigia» o «Area di servizio», usate il meccanismo di area di servizio di Google invece di una pagina dedicata.",
+    "rules": [
+      "Se non ricevete clienti a questo indirizzo, rimuovetelo dal profilo Google Business invece di mostrarne uno che nessuno deve visitare.",
+      "Dichiarate le aree di servizio per comune, codice postale o area comparabile, fino a un massimo di venti — Google non consente di impostarle come un semplice raggio in chilometri.",
+      "Restate entro circa due ore d'auto dalla vostra sede reale; oltre quella distanza è al massimo una menzione nella pagina di copertura, non un'area di servizio dichiarata.",
+      "Riunite tutte le zone servite in un'unica pagina di copertura onesta, con una mappa e l'elenco reale dei comuni, invece di una pagina per comune."
+    ]
+  },
+  "disclaimer": "Questo strumento classifica la sede che descrivete usando solo le risposte che fornite voi. Non analizza il vostro sito, il vostro profilo Google Business o dati di posizionamento reali, e non garantisce alcun risultato di ranking, indicizzazione o traffico. È un punto di partenza strutturato per decidere se costruire una pagina, non un audit SEO né un parere legale sulle policy di Google. Tutta l'elaborazione avviene nel vostro browser; nulla di ciò che inserite viene trasmesso o conservato altrove."
+}

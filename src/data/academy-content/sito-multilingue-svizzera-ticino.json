@@ -1,0 +1,282 @@
+{
+  "id": "sito-multilingue-svizzera-ticino",
+  "cluster": "marketing-seo-geo",
+  "type": "spoke",
+  "languages": ["it"],
+  "slug": {
+    "de": "",
+    "en": "",
+    "fr": "",
+    "it": "sito-multilingue-svizzera-ticino"
+  },
+  "relatedServices": ["websites", "seo"],
+  "relatedArticles": ["costo-sito-web-ticino-svizzera", "sito-web-piccola-impresa-ticino", "local-seo-switzerland"],
+  "searchIntent": "commercial-investigation",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "", "en": "", "fr": "",
+    "it": "Sito multilingue Svizzera: struttura senza duplicati | Weissmann"
+  },
+  "metaDescription": {
+    "de": "", "en": "", "fr": "",
+    "it": "Come strutturare un sito multilingue in Svizzera: URL, hreflang e vera localizzazione per clienti ticinesi, svizzero-tedeschi e internazionali."
+  },
+  "kicker": {
+    "de": "", "en": "", "fr": "",
+    "it": "AI marketing, SEO e GEO · Architettura multilingue"
+  },
+  "h1": {
+    "de": "", "en": "", "fr": "",
+    "it": "Sito multilingue in Svizzera: come strutturare italiano, tedesco, francese e inglese senza duplicati"
+  },
+  "answerFirst": {
+    "de": "", "en": "", "fr": "",
+    "it": "Non esiste un'unica soluzione «multilingue» valida per ogni azienda ticinese che vende oltre Cantone: esiste una decisione tecnica, presa prima di tradurre una sola frase, su come strutturare gli indirizzi delle diverse versioni linguistiche. Per la maggior parte delle PMI svizzere la scelta corretta è una sottocartella con prefisso di lingua (/de/, /fr/, /en/) e uno slug proprio per ciascuna lingua, non lo stesso slug italiano con una bandiera appiccicata sopra. Accanto a questo, ogni versione ha bisogno di un canonical che punta a se stessa e di un gruppo hreflang reciproco — mai inventato verso una traduzione che non esiste. La traduzione parola per parola, infine, aggrava il problema: un cliente ticinese e uno svizzero-tedesco che sembrano fare la stessa domanda, spesso ne stanno facendo una diversa."
+  },
+  "sections": [
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Il Merlot che non parla tedesco" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Una piccola cantina del Mendrisiotto vende una parte consistente della propria produzione fuori Cantone: casse di Merlot spedite a Zurigo e Basilea come regali aziendali di fine anno, oltre a un flusso costante di turisti tedeschi e olandesi che si fermano in cantina durante l'estate. Il sito, però, esiste solo in italiano — con un piccolo selettore in alto a destra che, cliccato, cambia la lingua del testo senza cambiare l'indirizzo nella barra del browser. Per un visitatore umano sembra un sito bilingue. Per Google è un'unica pagina italiana che, ogni tanto, per ragioni che non ha motivo di indagare, mostra frasi in tedesco. La versione tedesca non ha mai un proprio indirizzo, non viene mai indicizzata separatamente, e non compare mai per chi cerca «Tessiner Wein kaufen» da Zurigo — non perché la traduzione sia scadente, ma perché non le è mai stato dato un indirizzo proprio."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Questo articolo non parla di quante lingue parla la Svizzera — lo sanno già tutti. Parla di una decisione molto più concreta, che va presa prima di tradurre anche una sola frase: come strutturare gli indirizzi, i tag hreflang e i canonical delle diverse versioni linguistiche, in modo che ciascuna possa davvero essere trovata da chi la cerca nella propria lingua. È una decisione tecnica, si prende una volta sola, e — fatta bene — costa un pomeriggio di pianificazione. Fatta male, come nell'esempio della cantina, costa una migrazione fatta più avanti, sotto pressione, quando qualcuno finalmente si chiede perché la versione tedesca non porti mai un cliente."
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Tre pubblici, non due lingue" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Un'azienda ticinese che vende oltre confine cantonale non ha semplicemente «un problema di lingue» — ha tre pubblici distinti, che si aspettano cose diverse anche quando leggono, in teoria, la stessa pagina. La clientela ticinese e italofona, in Cantone o oltre (Lombardia inclusa, per chi vende anche lì), si aspetta un italiano naturale, con riferimenti locali e un tono diretto. La clientela svizzero-tedesca e romanda si aspetta precisione: certificazioni, tempi di consegna, condizioni chiare, spesso in un registro più formale. La clientela internazionale anglofona — turisti, buyer esteri, aziende che acquistano da fuori Svizzera — si aspetta invece un inglese sintetico, con informazioni pratiche su spedizione e pagamento in valuta estera messe bene in vista."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Trattare questi tre pubblici come «una traduzione in tre lingue dello stesso testo» è esattamente l'errore che questo articolo vuole evitare. Il problema non è solo linguistico: è architetturale prima ancora che editoriale, e la struttura degli indirizzi viene prima del tono di voce."
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "**Ticino e Italia di confine** — italiano naturale, prossimità, tono diretto; la lingua predefinita, quasi sempre." },
+        { "de": "", "en": "", "fr": "", "it": "**Svizzera tedesca e romanda** — precisione, certificazioni, condizioni di consegna esplicite; spesso il secondo pubblico più importante per chi vende oltre Gottardo." },
+        { "de": "", "en": "", "fr": "", "it": "**Clientela internazionale anglofona** — inglese essenziale, informazioni su spedizione e pagamento estero, meno narrazione e più fatti verificabili." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "La decisione che viene prima di ogni traduzione" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Esistono quattro modi diffusi per mettere più lingue su un sito, e nella pratica la scelta quasi sempre non è una scelta consapevole: è quello che il CMS fa di default. Deciderlo bene è un'ora di pianificazione fatta una volta sola; deciderlo per caso è una migrazione fatta più avanti, quando ormai ci sono pagine, backlink e abitudini da disfare."
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "**Domini nazionali separati** (esempio.ch, esempio.de) — ognuno parte da zero in termini di autorità e ha bisogno di una propria storia di link costruita da capo. Ha senso solo per strutture aziendali davvero separate per Paese — quasi mai il caso di una PMI ticinese." },
+        { "de": "", "en": "", "fr": "", "it": "**Sottodomini** (de.esempio.ch, en.esempio.ch) — più semplici da attivare di un dominio separato, ma storicamente trattati da Google in modo più vicino a un sito indipendente: l'autorità non si accumula in modo pulito tra un sottodominio e l'altro." },
+        { "de": "", "en": "", "fr": "", "it": "**Sottocartelle con prefisso di lingua e slug proprio** (esempio.ch/de/…, esempio.ch/en/…) — un solo dominio, un'unica autorità che si accumula, e una lingua in più che costa una cartella, non una migrazione. È la scelta corretta per quasi ogni azienda svizzera, cantina compresa." },
+        { "de": "", "en": "", "fr": "", "it": "**Parametri nella query** (esempio.ch/?lang=de) — la più economica da attivare, ed è il motivo per cui tante versioni «multilingue» di siti svizzeri non si posizionano mai nella seconda lingua: per i motori di ricerca resta, quasi sempre, un'unica pagina con un parametro, non due pagine distinte." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Come è costruito, davvero, il sito che state leggendo" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Anziché descrivere un'architettura ipotetica, vale la pena guardare quella reale di questo stesso sito, verificabile aprendo il codice sorgente pubblico invece di doverla prendere per fede. Il tedesco è la lingua predefinita e non porta alcun prefisso nell'indirizzo: la pagina del servizio SEO in tedesco vive su weissmann.ai/leistungen/seo/. Inglese, italiano e francese portano invece un prefisso — /en/, /it/, /fr/ — ciascuno con un proprio slug finale, non lo stesso slug tedesco con una bandiera appiccicata sopra."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Il dettaglio che conta davvero è come questo slug viene scelto lingua per lingua. Per il servizio di sviluppo siti, le quattro versioni linguistiche usano quattro parole del tutto diverse: ki-webentwicklung in tedesco, ai-web-development in inglese, sviluppo-siti-web-ai in italiano, developpement-web-ia in francese — quattro slug pensati per come si cerca in ciascuna lingua, non quattro traduzioni meccaniche della stessa parola tedesca. Il servizio SEO, invece, mostra l'eccezione che conferma la regola: in tutte e quattro le lingue lo slug è, semplicemente, seo — perché è già la parola che chi cerca digita, in tedesco come in italiano. Localizzare non significa sempre tradurre; a volte significa riconoscere che la parola giusta è già la stessa in ogni lingua."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Anche il segmento che ospita questo stesso articolo racconta la storia da un angolo diverso: in tedesco si chiama ki-academy, in francese academie-ia — entrambi tradotti — ma in inglese e in italiano coincidono, entrambi ai-academy, perché in italiano l'acronimo inglese è ormai di uso corrente quanto in inglese stesso. Il cluster tematico che segue, marketing-seo-geo, è addirittura identico in tutte e quattro le lingue. Non è una svista: è la differenza tra localizzare un sito e tradurlo parola per parola."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Ogni versione linguistica porta un canonical che punta a se stessa, mai al tedesco: una pagina italiana correttamente localizzata è un originale, non una copia. Ogni gruppo hreflang è inoltre reciproco: il tedesco elenca inglese, italiano e francese come alternative, e ciascuna delle altre tre fa lo stesso, se stessa inclusa — un'annotazione non ricambiata da entrambe le parti viene semplicemente ignorata, non applicata a metà. Un'asimmetria merita comunque di essere dichiarata invece che nascosta: il tedesco è etichettato de-CH, variante svizzera dello standard BCP 47, perché il tedesco svizzero si scrive diversamente da quello di Germania (ss al posto di ß, oltre ad alcuni termini). Italiano, inglese e francese usano invece il codice semplice — it, non it-CH; fr, non fr-CH — ragionevole per la maggior parte delle aziende, ma che non distingue, agli occhi di Google, un contenuto pensato per il Ticino da uno pensato per l'Italia."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "E questo stesso articolo ne è la prova più diretta. Esiste solo in italiano: non ha una versione tedesca, francese o inglese, quindi il suo gruppo hreflang contiene un solo alternato — italiano, verso se stesso — più un x-default che punta alla stessa pagina, perché qui l'inglese non è tra le lingue disponibili e il sistema ripiega sull'unica lingua che esiste davvero. Se dal selettore in alto si prova a passare al tedesco, si finisce sulla homepage tedesca, non su un articolo tedesco che non esiste: il sito non finge di essere più multilingue di quanto sia, proprio nella pagina che spiega perché fingerlo sarebbe l'errore da evitare."
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "hreflang è una stretta di mano, non una decorazione" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Due difetti spiegano la maggior parte dei problemi SEO multilingue, ed entrambi restano invisibili finché qualcuno non li cerca apposta. Il primo è il collegamento a senso unico: l'homepage elenca correttamente tutte le lingue alternative, ma una pagina interna — un servizio, un articolo — ha solo il canonical e mai il gruppo hreflang reciproco. La regola di Google è netta: l'intera annotazione per quella pagina viene scartata, non applicata parzialmente. Il secondo è lo slittamento dello slug: qualcuno rinomina lo slug italiano sei mesi dopo il lancio e dimentica che tedesco, inglese e francese puntano ancora al vecchio indirizzo. Non c'è un errore 404 visibile: solo un gruppo hreflang che smette silenziosamente di corrispondere alla realtà, finché un calo di visibilità in una sola lingua non spinge qualcuno a chiedersi perché."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "x-default ha un compito molto preciso: indicare quale versione offrire a un visitatore la cui lingua del browser non corrisponde a nessuna delle lingue disponibili sul sito. Non è un fattore di posizionamento e non sostituisce gli altri tag fatti correttamente; su una pagina che esiste in una sola lingua, come questa, punta semplicemente a quell'unica versione, perché non c'è nient'altro di onesto da offrire."
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Traduzione autentica contro traduzione automatica superficiale" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Un cliente italofono e un cliente svizzero-tedesco che digitano quella che sembra la stessa domanda, raramente stanno facendo davvero la stessa domanda. Chi cerca «vino Merlot Ticino» in italiano vuole spesso la storia del vigneto, il territorio, il produttore. Chi cerca lo stesso prodotto in tedesco, da Zurigo, vuole più spesso sapere in quanti giorni arriva la spedizione, se esiste una fattura in regola per un regalo aziendale, e se il vino ha certificazioni riconosciute. Stesso prodotto, stessa cantina, due domande diverse — tradurre parola per parola il testo italiano in tedesco risponde alla prima domanda anche a chi, in realtà, stava facendo la seconda."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Un piccolo esempio rende visibile il problema. L'espressione italiana «un lavoro fatto a regola d'arte» tradotta parola per parola in tedesco diventa «eine nach der Regel der Kunst gemachte Arbeit» — comprensibile, ma un'espressione che nessun madrelingua userebbe mai per descrivere un prodotto. La localizzazione autentica non traduce l'idioma: traduce l'affermazione che c'è dietro — «qualità artigianale costante, verificata passo dopo passo» — perché è quella la promessa reale. Una traduzione automatica senza revisione editoriale produce quasi sempre la prima versione; una persona che conosce davvero entrambe le lingue e il lettore a cui si rivolge produce la seconda."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Il costo di questo errore non è solo stilistico. Una pagina grammaticalmente corretta in tedesco, ma che risponde ancora, nella struttura, alla domanda italiana — tradotta invece che ripensata — può posizionarsi per i termini sbagliati e convertire peggio di una pagina onestamente pubblicata solo in italiano, pur sembrando, a chi l'ha approvata, semplicemente «la versione tedesca è pronta»."
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Cosa può andare storto" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Nessuno di questi errori è raro, e tutti restano silenziosi finché qualcuno non li nota per caso."
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "**hreflang non reciproco.** Se un lato del collegamento manca, Google scarta l'intera annotazione per quella pagina invece di applicarla a metà — e la lingua con i segnali più forti può comparire per ricerche a cui non era mai destinata a rispondere." },
+        { "de": "", "en": "", "fr": "", "it": "**Canonicalizzare tutto verso l'italiano.** Far puntare i tag canonical di tedesco, francese e inglese verso la pagina italiana — spesso per «evitare contenuti duplicati» senza capire la differenza — dice a Google che le altre versioni sono copie, non originali, e può escluderle dal posizionamento anche quando la traduzione è genuina." },
+        { "de": "", "en": "", "fr": "", "it": "**Pagine sottili tradotte automaticamente.** Le linee guida di Google trattano le versioni linguistiche come duplicati proprio quando il contenuto principale resta non tradotto: alcune pagine in questo stato possono far leggere l'intero sito come poco curato, non solo quelle pagine." },
+        { "de": "", "en": "", "fr": "", "it": "**Un listino aggiornato in una lingua, dimenticato nell'altra.** Il listino dei vini aggiornato in italiano a ogni vendemmia, ma fermo in tedesco all'annata di due anni prima, comunica un segnale peggiore che non avere affatto la versione tedesca: chi confronta le due date ne trae una conclusione precisa su quale lingua l'azienda prende sul serio." },
+        { "de": "", "en": "", "fr": "", "it": "**Slug cambiato dopo il lancio.** Rinominare lo slug di una sola lingua senza aggiornare gli alternati delle altre rompe silenziosamente la stretta di mano hreflang — il tipo di bug che si vede solo come un calo lento di visibilità in una lingua, non come un errore da cercare esplicitamente." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Quante lingue servono davvero, e a quale ritmo" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Che la Svizzera abbia quattro lingue nazionali non è, di per sé, una ragione per cui una singola azienda debba pubblicare in tutte e quattro. Una cantina del Mendrisiotto che vende quasi solo a clienti ticinesi e italiani di confine ha un caso debole per il francese; ha invece un caso reale e misurabile per il tedesco, se una parte importante degli ordini arriva già oggi da Zurigo o Basilea, e un caso più contenuto per l'inglese, legato ai mesi di alta stagione turistica."
+        },
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "La domanda utile non è «quali lingue esistono in Svizzera», ma «quale di queste posso mantenere aggiornata finché la pagina resta online». Una lingua pubblicata una volta e mai più rivista, come mostra l'esempio del listino sopra, non è un segnaposto neutro: segnala quale mercato l'azienda ha smesso di considerare. Pubblicare meno lingue, mantenute bene, batte quasi sempre pubblicarne quattro e mantenerne davvero una. Anche un fornitore reale prezza questa scelta di conseguenza: il Sito web Starter di Weissmann include una sola lingua, con le lingue aggiuntive escluse dal pacchetto e da preventivare a parte — un promemoria che ogni lingua in più è un impegno separato, non una casella da spuntare gratis."
+        }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "Una sequenza che non si paga due volte" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "L'ordine conta più di ogni singolo passaggio. Tradurre prima di aver deciso l'architettura è il modo più comune in cui un progetto multilingue diventa, un anno dopo, una seconda migrazione non pianificata."
+        }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "fr": "", "it": "Elencare i pubblici reali, non le lingue nazionali — chi acquista già oggi, in quale lingua scrive, da dove ordina — prima di decidere quante versioni linguistiche servono davvero." },
+        { "de": "", "en": "", "fr": "", "it": "Fissare la lingua predefinita e il pattern di indirizzo prima di tradurre anche una sola frase: per quasi ogni PMI svizzera, sottocartelle con prefisso e slug proprio per lingua." },
+        { "de": "", "en": "", "fr": "", "it": "Lanciare la prima lingua aggiuntiva solo quando esiste davvero la capacità — di tempo o di budget — di tenerla aggiornata, non solo di tradurla una volta al lancio." },
+        { "de": "", "en": "", "fr": "", "it": "Costruire hreflang reciproci e canonical auto-referenziali nel template stesso, così ogni nuova pagina li eredita automaticamente invece di dipendere da chi se ne ricorda alla pagina quattrocento." },
+        { "de": "", "en": "", "fr": "", "it": "Decidere una volta sola, nel template, cosa succede quando un visitatore chiede una lingua che una determinata pagina non ha — non improvvisarlo pagina per pagina." },
+        { "de": "", "en": "", "fr": "", "it": "Una volta pubblicata una lingua, seguirne la Search Console separatamente: una vista aggregata su tutte le lingue può mostrare una media sana mentre una lingua specifica sta silenziosamente fallendo." }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "fr": "", "it": "La cantina, di nuovo" },
+      "paragraphs": [
+        {
+          "de": "", "en": "", "fr": "",
+          "it": "Tornando alla cantina del Mendrisiotto: la decisione da prendere questa settimana non è «serve anche il tedesco?» — la risposta, con clienti già a Zurigo, è quasi certamente sì. La decisione è quale struttura di indirizzi, quale gruppo hreflang e quale capacità di mantenimento quella versione tedesca avrà fin dal primo giorno, prima che una sola frase venga affidata a un traduttore. Deciso questo, il lavoro di traduzione ha finalmente un indirizzo onesto in cui vivere; deciso per caso, anche una traduzione eccellente eredita una struttura che non è mai stata costruita per essere trovata."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Serve un dominio separato (.de, .fr) per ogni lingua?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Quasi mai, per una PMI svizzera. Un dominio separato riparte da zero in termini di autorità e richiede un proprio profilo di link costruito indipendentemente. Una sottocartella con prefisso di lingua sullo stesso dominio mantiene quell'autorità in un'unica raccolta e permette di aggiungere una lingua come una cartella, non come un nuovo sito." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Google penalizza un sito che ha lo stesso contenuto in più lingue?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "No — le linee guida di Google trattano le versioni linguistiche come duplicati solo quando il contenuto principale resta non tradotto. Un contenuto realmente tradotto in italiano, tedesco, francese e inglese non è duplicato solo perché vive sullo stesso dominio." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "La traduzione automatica del browser non è già sufficiente?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Cambia quello che un visitatore umano vede nel proprio browser, ma non crea un indirizzo separato e indicizzabile in quella lingua. Risolve «un visitatore può leggerlo in un'altra lingua», non «questa pagina può essere trovata da chi cerca in quella lingua» — che è il problema di cui parla questo articolo." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Ha senso usare it-CH invece del semplice it per il pubblico ticinese?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Sì, se distinguere un contenuto pensato per la Svizzera italiana da uno pensato per l'Italia ha valore commerciale per l'azienda. Questo stesso sito, va detto onestamente, usa oggi il codice semplice it, non it-CH — una scelta ragionevole per molte aziende, ma che non fa quella distinzione agli occhi di Google." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Un articolo può esistere in una sola lingua, senza le altre?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Sì. Una pagina può esistere legittimamente in una o due lingue soltanto, a patto che il gruppo hreflang elenchi solo le lingue che esistono davvero e che il selettore di lingua non inventi un collegamento verso una traduzione mai scritta. Questo stesso articolo ne è un esempio: solo in italiano, per scelta e non per dimenticanza." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Quante lingue dovrebbe avere il sito di una PMI ticinese che vende anche fuori Cantone?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Dipende da chi acquista davvero oggi, non da quante lingue nazionali ha la Svizzera. Chi vende solo in Ticino spesso non ha bisogno d'altro; chi ha già clienti abituali in Svizzera tedesca ha un caso concreto per aggiungere il tedesco, a patto di mantenerlo aggiornato negli anni, non solo lanciarlo una volta." }
+    },
+    {
+      "q": { "de": "", "en": "", "fr": "", "it": "Cosa succede se aggiungo il tedesco oggi ma non riesco ad aggiornarlo tra un anno?" },
+      "a": { "de": "", "en": "", "fr": "", "it": "Una versione linguistica lanciata e poi abbandonata comunica, nel tempo, un segnale peggiore che non averla mai pubblicata: un listino o un'offerta rimasti fermi mentre l'italiano continua a cambiare dicono al cliente esattamente quale mercato l'azienda ha smesso di considerare prioritario." }
+    }
+  ],
+  "keyEntities": [
+    "Sito multilingue Svizzera",
+    "hreflang",
+    "Canonical tag",
+    "URL con prefisso di lingua",
+    "Slug localizzato",
+    "x-default",
+    "de-CH e it-CH",
+    "Traduzione autentica vs traduzione automatica",
+    "Switcher di lingua",
+    "SEO internazionale",
+    "Manutenzione multilingue",
+    "BCP 47"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "", "en": "", "fr": "",
+        "it": "Google Search Central — Gestione di siti multiregionali e multilingue (hreflang, x-default), consultata il 29.07.2026"
+      },
+      "href": "https://developers.google.com/search/docs/specialty/international/localized-versions"
+    },
+    {
+      "label": {
+        "de": "", "en": "", "fr": "",
+        "it": "Google Search Central — Consolidamento di URL duplicati (canonicalizzazione), consultata il 29.07.2026"
+      },
+      "href": "https://developers.google.com/search/docs/crawling-indexing/canonicalization"
+    },
+    {
+      "label": {
+        "de": "", "en": "", "fr": "",
+        "it": "IETF BCP 47 (RFC 5646) — Tags for Identifying Languages, consultata il 29.07.2026"
+      },
+      "href": "https://www.rfc-editor.org/info/bcp47"
+    },
+    {
+      "label": {
+        "de": "", "en": "", "fr": "",
+        "it": "Weissmann AI — pagina di servizio SEO, fonte primaria, esempio di slug identico in ogni lingua, verificata il 29.07.2026"
+      },
+      "href": "/it/servizi/seo/"
+    },
+    {
+      "label": {
+        "de": "", "en": "", "fr": "",
+        "it": "Weissmann AI — struttura di prezzo del Sito web Starter (1 lingua inclusa, lingue aggiuntive escluse), src/data/pricing.ts, verificata il 29.07.2026"
+      },
+      "href": "/it/preise/"
+    }
+  ],
+  "cta": {
+    "label": {
+      "de": "", "en": "", "fr": "",
+      "it": "Descriveteci le lingue dei vostri clienti: pianifichiamo insieme la struttura del sito"
+    },
+    "href": "/it/kontakt/"
+  }
+}

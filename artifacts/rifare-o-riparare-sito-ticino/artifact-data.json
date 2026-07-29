@@ -1,0 +1,107 @@
+{
+  "articleId": "rifare-o-riparare-sito-ticino",
+  "language": "it",
+  "dataAsOf": "2026-07-29",
+  "mechanicNote": "Questo strumento non calcola un punteggio numerico unico e non è un test a quiz. Applica sei fattori qualitativi, più un piccolo autotest sull'equità di posizionamento (search equity), a una logica di decisione a priorità: alcuni fattori possono da soli imporre un esito anche se tutti gli altri direbbero il contrario. L'esito è sempre una delle tre raccomandazioni condizionate descritte nell'articolo, mai una percentuale o un voto.",
+  "factors": [
+    {
+      "id": "debito-tecnico",
+      "label": "Debito tecnico",
+      "question": "Se oggi doveste cambiare un piccolo dettaglio del sito (un testo, un prezzo, un'immagine), cosa succederebbe davvero?",
+      "options": [
+        { "value": "basso", "label": "Basso — una modifica piccola resta piccola, il codice è comprensibile" },
+        { "value": "medio", "label": "Medio — si può fare, ma richiede cautela e un po' di tempo" },
+        { "value": "alto", "label": "Alto — ogni modifica rischia di rompere qualcos'altro, o nessuno in azienda sa più come intervenire" }
+      ]
+    },
+    {
+      "id": "qualita-contenuti",
+      "label": "Qualità dei contenuti",
+      "question": "I testi attuali spiegano ancora con chiarezza cosa fa l'azienda, per chi, e perché sceglierla?",
+      "options": [
+        { "value": "validi", "label": "Sì, i testi reggono — il problema è altrove" },
+        { "value": "parziali", "label": "In parte — alcune pagine sono chiare, altre confuse o superate" },
+        { "value": "deboli", "label": "No — l'offerta non è chiara neanche a chi la legge per la prima volta" }
+      ]
+    },
+    {
+      "id": "stato-cms",
+      "label": "Stato del CMS o della piattaforma",
+      "question": "La piattaforma su cui gira il sito riceve ancora aggiornamenti di sicurezza, e qualcuno in azienda ha davvero accesso amministrativo?",
+      "options": [
+        { "value": "solido", "label": "Sì a entrambe — piattaforma supportata, accesso presente" },
+        { "value": "incerto", "label": "Solo in parte — supportata ma nessuno usa più il pannello con sicurezza" },
+        { "value": "abbandonato", "label": "No — piattaforma abbandonata dal produttore, o nessun accesso amministrativo reale" }
+      ]
+    },
+    {
+      "id": "continuita-analytics",
+      "label": "Continuità di analytics",
+      "question": "Avete oggi uno storico utilizzabile di GA4 e Google Search Console sul dominio attuale?",
+      "options": [
+        { "value": "lungo", "label": "Sì, più di un anno di dati utili" },
+        { "value": "parziale", "label": "Qualche mese, o dati incompleti" },
+        { "value": "assente", "label": "Nessuno storico affidabile, o mai configurato correttamente" }
+      ]
+    },
+    {
+      "id": "rischio-migrazione",
+      "label": "Rischio di migrazione",
+      "question": "Quante pagine indicizzate ha oggi il sito, e quante sono citate o linkate da altri siti reali?",
+      "options": [
+        { "value": "basso", "label": "Poche pagine (fino a circa 10), poche o nessuna citata altrove" },
+        { "value": "medio", "label": "Alcune decine di pagine, con qualche citazione esterna" },
+        { "value": "alto", "label": "Molte pagine indicizzate da anni, con citazioni o link esterni reali" }
+      ]
+    }
+  ],
+  "searchEquityCheck": {
+    "label": "Equità di posizionamento (search equity)",
+    "intro": "Rispondete sì/no a queste quattro domande: il conteggio dei sì determina il livello di search equity da proteggere.",
+    "questions": [
+      { "id": "anni-online", "question": "Il dominio attuale è online e indicizzato da Google da più di tre anni, senza interruzioni lunghe?" },
+      { "id": "richieste-organiche", "question": "Arrivano oggi richieste o chiamate reali dalla ricerca organica su Google (non da pubblicità, non dal passaparola)?" },
+      { "id": "top3", "question": "Il sito compare stabilmente tra le prime tre posizioni per almeno una ricerca importante per l'attività?" },
+      { "id": "link-esterni", "question": "Altri siti reali (fornitori, associazioni di categoria, camera di commercio, stampa locale) hanno un link verso il vostro sito?" }
+    ],
+    "tiering": [
+      { "range": "0-1 sì", "level": "bassa" },
+      { "range": "2-3 sì", "level": "media" },
+      { "range": "4 sì", "level": "alta" }
+    ]
+  },
+  "decisionLogic": "1) Se stato-cms è 'abbandonato' OPPURE debito-tecnico è 'alto': la piattaforma stessa è il problema. L'esito è sempre almeno 'migrazione-parziale', e diventa 'redesign-completo' se anche rischio-migrazione è 'basso' o 'medio' (poco da proteggere, poco da perdere) o se qualita-contenuti è 'deboli' in aggiunta. Questa regola ha priorità su tutte le altre: una piattaforma insicura o inutilizzabile non si ripara mai, indipendentemente dalla search equity. 2) Se la regola 1 non si applica e il livello di search-equity è 'alta' e rischio-migrazione è 'alto': l'esito è 'riparazione-mirata', anche se qualita-contenuti è 'parziali' o 'deboli' — si riscrivono i contenuti sulla base tecnica esistente, senza toccare URL. 3) Se la regola 1 non si applica, il livello di search-equity è 'media' o 'alta', e solo alcune pagine specifiche portano la maggior parte del traffico da ricerca: l'esito è 'migrazione-parziale'. 4) In tutti gli altri casi (search-equity 'bassa', oppure nessuna delle condizioni sopra si applica chiaramente): l'esito è 'riparazione-mirata' se debito-tecnico e stato-cms sono 'basso'/'solido', altrimenti 'redesign-completo'. 5) Mostrare sempre quali fattori specifici hanno determinato l'esito, non solo il nome dell'esito — l'utente deve poter verificare il ragionamento, non solo leggere una conclusione.",
+  "outcomes": [
+    {
+      "id": "riparazione-mirata",
+      "label": "Riparazione mirata",
+      "description": "Il problema è concentrato nei contenuti o in pochi difetti puntuali. Il CMS regge, il debito tecnico è gestibile, e l'equità di posizionamento vale più del rischio che comporterebbe qualunque migrazione. Si corregge quello che non va, senza toccare URL né struttura.",
+      "showsMigrationChecklist": false
+    },
+    {
+      "id": "migrazione-parziale",
+      "label": "Migrazione parziale",
+      "description": "Alcune pagine — quelle che portano quasi tutto il traffico da ricerca — restano con lo stesso URL e la stessa struttura logica. Le altre, che non hanno mai portato una richiesta, possono essere ripensate liberamente sulla piattaforma nuova.",
+      "showsMigrationChecklist": true,
+      "checklistScope": "solo le pagine che cambiano URL o struttura"
+    },
+    {
+      "id": "redesign-completo",
+      "label": "Redesign completo con migrazione controllata",
+      "description": "Il debito tecnico o lo stato della piattaforma sono il vero problema, non i singoli contenuti. Serve un progetto nuovo — ma pianificato con la checklist di migrazione completa, non lanciato a piattaforma pronta sperando che Google non se ne accorga.",
+      "showsMigrationChecklist": true,
+      "checklistScope": "l'intero sito"
+    }
+  ],
+  "migrationChecklist": [
+    { "id": "mappa-url", "item": "Mappa URL vecchio-nuovo, una riga per ogni pagina esistente, scritta prima di programmare il sito nuovo — mai un redirect di massa verso la home." },
+    { "id": "redirect-301", "item": "Redirect 301 (permanenti), non 302: i redirect permanenti non causano perdita del segnale di posizionamento accumulato, secondo Google Search Central." },
+    { "id": "dati-strutturati", "item": "Dati strutturati (schema.org) ricostruiti e coerenti con il contenuto reale della pagina nuova, non copiati da un template senza controllo." },
+    { "id": "sitemap-canonical", "item": "Sitemap.xml e tag canonical aggiornati nello stesso momento del lancio, mai in sequenza." },
+    { "id": "continuita-proprieta", "item": "Stessa proprietà Google Search Console e stesso account GA4 collegati al sito nuovo, non una proprietà aperta da zero." },
+    { "id": "redirect-un-anno", "item": "Redirect lasciati attivi per almeno un anno, anche quando il sito nuovo sembra già assestato." },
+    { "id": "verifica-staging", "item": "Verifica pre-lancio in ambiente di staging: ogni redirect testato singolarmente, non a campione." },
+    { "id": "monitoraggio", "item": "Monitoraggio delle prime quattro-otto settimane in Google Search Console (copertura dell'indice, impressioni, ricerche), non solo il traffico in Analytics." }
+  ],
+  "disclaimer": "Tutte le risposte restano nel vostro browser e non vengono mai inviate altrove. Questo strumento non scansiona il vostro sito, non consulta Google al posto vostro e non garantisce alcun risultato specifico di posizionamento. È un modo per applicare con ordine i sei fattori descritti nell'articolo, non un audit tecnico o una sentenza definitiva."
+}

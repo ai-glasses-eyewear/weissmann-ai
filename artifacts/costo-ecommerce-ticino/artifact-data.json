@@ -1,0 +1,190 @@
+{
+  "artifactId": "costo-ecommerce-ticino",
+  "articleId": "costo-ecommerce-ticino",
+  "language": "it",
+  "title": "Calcolatore di complessità e-commerce",
+  "note": "Spec/data file for the artifact described in ARTIFACT-BRIEF.md. This is structured content only — no HTML/JS is implemented here. This tool never computes or displays a fabricated CHF total; the only fixed figure shown is the permanent Starter/Business-insufficient statement (CHF 9'900, 'a partire da'). Distinct mechanic from the sibling cost-calculator (costo-sito-web-ticino-svizzera): this tool is e-commerce-specific, scores six complexity drivers, classifies overall scope qualitatively (never a number), and performs a genuine cross-check between expected ongoing operational workload and the reader's stated available time — including an honest 'you may not need this yet' flag for the lowest-complexity combination.",
+
+  "permanentStatement": {
+    "text": "Starter (CHF 880) e Business (CHF 4'990) non coprono questo progetto. Un negozio online con catalogo, pagamenti e spedizione appartiene al Sito web complesso / su misura, a partire da CHF 9'900.",
+    "sourceNote": "src/data/pricing.ts, id: website-complex — cifra esatta, non arrotondata. Sempre mostrato una volta impostati gli input del gate; mai condizionale, mai presentato come risultato di un calcolo."
+  },
+
+  "inputs": [
+    {
+      "id": "catalogo_dimensione",
+      "label": "Dimensione del catalogo",
+      "type": "single-select",
+      "options": [
+        { "value": "fino_20", "label": "Fino a 20 prodotti" },
+        { "value": "da_21_a_100", "label": "21–100 prodotti" },
+        { "value": "oltre_100", "label": "Oltre 100 prodotti" }
+      ],
+      "required": true
+    },
+    {
+      "id": "catalogo_frequenza",
+      "label": "Frequenza di aggiornamento del catalogo",
+      "type": "single-select",
+      "options": [
+        { "value": "raro", "label": "Raramente (poche volte l'anno)" },
+        { "value": "mensile", "label": "Regolarmente (ogni mese)" },
+        { "value": "settimanale", "label": "Molto spesso (ogni settimana o più)" }
+      ],
+      "required": false,
+      "defaultWhenUnset": "raro"
+    },
+    {
+      "id": "pagamenti",
+      "label": "Metodi di pagamento necessari",
+      "type": "multi-select",
+      "options": [
+        { "value": "twint", "label": "TWINT" },
+        { "value": "carte", "label": "Carte di credito/debito" },
+        { "value": "fatturazione", "label": "Fatturazione" },
+        { "value": "multivaluta", "label": "Pagamento anche in altre valute (es. EUR)" }
+      ],
+      "required": false,
+      "defaultWhenUnset": []
+    },
+    {
+      "id": "spedizione_ambito",
+      "label": "Ambito di spedizione",
+      "type": "single-select",
+      "options": [
+        { "value": "solo_svizzera", "label": "Solo Svizzera" },
+        { "value": "svizzera_vicino", "label": "Svizzera e un Paese confinante (Italia, Germania, Francia, Austria)" },
+        { "value": "svizzera_internazionale", "label": "Svizzera e più Paesi esteri" }
+      ],
+      "required": true
+    },
+    {
+      "id": "resi_politica",
+      "label": "Politica di resi prevista",
+      "type": "single-select",
+      "options": [
+        { "value": "nessuna", "label": "Nessuna politica di reso" },
+        { "value": "occasionali", "label": "Resi occasionali gestiti manualmente" },
+        { "value": "strutturati", "label": "Resi frequenti, serve un processo strutturato" }
+      ],
+      "required": false,
+      "defaultWhenUnset": "nessuna"
+    },
+    {
+      "id": "canali_vendita",
+      "label": "Canali di vendita",
+      "type": "single-select",
+      "options": [
+        { "value": "solo_online", "label": "Vendo solo online" },
+        { "value": "multicanale", "label": "Vendo anche altrove (mercati, negozio fisico, grossisti)" }
+      ],
+      "required": false,
+      "defaultWhenUnset": "solo_online"
+    },
+    {
+      "id": "tempo_disponibile",
+      "label": "Tempo settimanale disponibile dopo il lancio",
+      "type": "single-select",
+      "options": [
+        { "value": "poche_ore", "label": "Poche ore alla settimana" },
+        { "value": "mezza_giornata", "label": "Mezza giornata alla settimana" },
+        { "value": "quasi_quotidiana", "label": "Gestione quasi quotidiana possibile" }
+      ],
+      "required": false,
+      "defaultWhenUnset": "poche_ore"
+    }
+  ],
+
+  "resultGate": {
+    "requiredInputs": ["catalogo_dimensione", "spedizione_ambito"],
+    "emptyStateMessage": "Impostate almeno la dimensione del catalogo e l'ambito di spedizione per vedere una valutazione."
+  },
+
+  "blocks": [
+    { "id": "catalogo", "label": "Catalogo", "description": "Quanti prodotti vendete e con quale frequenza cambiano prezzo o disponibilità." },
+    { "id": "pagamenti", "label": "Pagamenti", "description": "Quali metodi di pagamento dovete integrare — ognuno è un collegamento tecnico separato." },
+    { "id": "spedizione_tasse", "label": "Spedizione e tasse svizzere", "description": "Come cambia la logistica tra vendere solo in Svizzera o anche all'estero." },
+    { "id": "resi", "label": "Resi", "description": "Come gestite rientri e rimborsi, e quale politica comunicate ai clienti." },
+    { "id": "inventario", "label": "Sincronizzazione dell'inventario", "description": "Se il sito deve restare allineato con altri canali di vendita in tempo reale." },
+    { "id": "operativita", "label": "Lavoro operativo continuativo", "description": "Quanto lavoro settimanale genera il negozio dopo il lancio, non solo al lancio." }
+  ],
+
+  "impactRules": {
+    "note": "Each block's tag is the HIGHEST tag triggered by any contributing condition (basso < medio < alto). Fixed editorial rules, not a numeric or statistical formula.",
+    "catalogo": [
+      { "if": "catalogo_dimensione == fino_20", "tag": "basso" },
+      { "if": "catalogo_dimensione == da_21_a_100", "tag": "medio" },
+      { "if": "catalogo_dimensione == oltre_100", "tag": "alto" },
+      { "if": "catalogo_frequenza == raro", "tag": "basso" },
+      { "if": "catalogo_frequenza == mensile", "tag": "medio" },
+      { "if": "catalogo_frequenza == settimanale", "tag": "alto" }
+    ],
+    "pagamenti": [
+      { "if": "count(pagamenti in [twint, carte, fatturazione]) <= 1", "tag": "basso" },
+      { "if": "count(pagamenti in [twint, carte, fatturazione]) == 2", "tag": "medio" },
+      { "if": "count(pagamenti in [twint, carte, fatturazione]) == 3", "tag": "alto" },
+      { "if": "multivaluta in pagamenti", "tag": "alto" }
+    ],
+    "spedizione_tasse": [
+      { "if": "spedizione_ambito == solo_svizzera", "tag": "basso" },
+      { "if": "spedizione_ambito == svizzera_vicino", "tag": "medio" },
+      { "if": "spedizione_ambito == svizzera_internazionale", "tag": "alto" }
+    ],
+    "resi": [
+      { "if": "resi_politica == nessuna", "tag": "basso" },
+      { "if": "resi_politica == occasionali", "tag": "medio" },
+      { "if": "resi_politica == strutturati", "tag": "alto" }
+    ],
+    "inventario": [
+      { "if": "canali_vendita == solo_online", "tag": "basso" },
+      { "if": "canali_vendita == multicanale", "tag": "alto" }
+    ],
+    "operativita": [
+      { "if": "catalogo_frequenza == raro", "tag": "basso" },
+      { "if": "catalogo_frequenza == mensile", "tag": "medio" },
+      { "if": "catalogo_frequenza == settimanale", "tag": "alto" },
+      { "if": "canali_vendita == multicanale", "tag": "medio" },
+      { "if": "resi_politica == strutturati", "tag": "medio" }
+    ]
+  },
+
+  "scopeClassification": {
+    "note": "Count how many of the six blocks above resolve to 'alto'. Never converted into a number or price.",
+    "rules": [
+      { "if": "count(blocks resolved to alto) <= 1", "label": "Ambito complesso contenuto" },
+      { "if": "count(blocks resolved to alto) >= 2", "label": "Ambito complesso esteso" }
+    ],
+    "explanationTemplate": "{n} motori su 6 al livello alto."
+  },
+
+  "operationalReadinessCheck": {
+    "note": "The tool's core decision-support mechanic — a genuine cross-check, not a restated input.",
+    "condition": "operativita in [medio, alto] and tempo_disponibile == poche_ore",
+    "warningText": "Il carico operativo che queste scelte generano sembra superiore al tempo che avete indicato di poter dedicare ogni settimana. Vale la pena discuterne apertamente prima di procedere, non dopo il lancio."
+  },
+
+  "prematureEcommerceNote": {
+    "note": "Honest 'you may not need this yet' flag — mutually exclusive with the operational-readiness warning by construction (the trigger conditions cannot both hold: this one requires resi_politica == nessuna and canali_vendita == solo_online, which keep 'operativita' at basso).",
+    "condition": "catalogo_dimensione == fino_20 and catalogo_frequenza == raro and resi_politica == nessuna and canali_vendita == solo_online and tempo_disponibile == poche_ore",
+    "text": "Con questa combinazione, un e-commerce vero potrebbe essere prematuro. Una vetrina Starter o Business con un modulo di richiesta, o ordini gestiti manualmente, può bastare finché il catalogo o il volume non crescono.",
+    "linkLabel": "Leggi «Per chi ha senso oggi, e per chi conviene aspettare» nell'articolo completo",
+    "linkHrefNote": "Links to the costo-ecommerce-ticino article's own section anchor, or the article page if section anchors are not supported."
+  },
+
+  "copyBlockTemplate": "Dimensione del catalogo: {catalogoDimensioneLabel}. Frequenza di aggiornamento: {catalogoFrequenzaLabel}. Metodi di pagamento: {pagamentiLabels}. Ambito di spedizione: {spedizioneAmbitoLabel}. Politica di resi: {resiPoliticaLabel}. Canali di vendita: {canaliVenditaLabel}. Tempo disponibile: {tempoDisponibileLabel}.",
+
+  "ctaCopy": {
+    "primary": {
+      "label": "Richiedete una valutazione gratuita del perimetro del vostro negozio online",
+      "href": "/it/kontakt/"
+    },
+    "secondary": {
+      "label": "Leggi l'articolo completo sui sei motori di complessità di un e-commerce",
+      "hrefNote": "Links to the academy spoke page for the costo-ecommerce-ticino article."
+    }
+  },
+
+  "disclaimerText": "Questo strumento non calcola un prezzo. Mostra su quali dei sei motori di complessità si colloca il vostro progetto, e se il carico operativo previsto corrisponde al tempo che avete indicato di poter dedicare. Starter e Business non coprono un negozio online: un vero e-commerce appartiene al pacchetto complesso, a partire da CHF 9'900, con prezzo calcolato sul perimetro reale del progetto.",
+
+  "privacyNote": "Lo strumento funziona interamente nel browser. Non esiste alcun campo per nome, azienda, e-mail o budget — solo parametri generici di catalogo, pagamenti e logistica. Nessun dato viene trasmesso o inviato a un server."
+}

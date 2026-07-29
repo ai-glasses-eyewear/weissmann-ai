@@ -1,0 +1,169 @@
+{
+  "artifactId": "sito-multilingue-svizzera-ticino",
+  "articleId": "sito-multilingue-svizzera-ticino",
+  "language": "it",
+  "title": "Planner dell'architettura multilingue",
+  "dataAsOf": "2026-07-29",
+  "note": "Spec/data file for the artifact described in ARTIFACT-BRIEF.md. This is structured content only — no HTML/JS is implemented here. Distinct mechanic from the EN sibling artifact (multilingual-website-switzerland-seo / Swiss Multilingual Site Architecture Planner): instead of one flat URL/hreflang/checklist output for every selected locale at once, this tool weighs three fixed additional-audience locales against a stated maintenance-capacity input and returns a capacity-gated, PHASED rollout (Fase 1 / Fase 2 / Escluse), with a translation-quality checklist whose actual wording differs per locale.",
+
+  "assumptions": {
+    "defaultLocale": "it",
+    "defaultLocaleNote": "The planner assumes the reader's own business is Ticino-based and Italian is already the default, unprefixed locale — mirroring this site's own de-default / en-it-fr-prefixed pattern, with it as the default here instead.",
+    "candidateLocales": ["de", "fr", "en"],
+    "tieBreakOrder": ["de", "fr", "en"],
+    "tieBreakNote": "Disclosed editorial default for typical Ticino cross-border demand (German-speaking Switzerland assumed the larger adjacent market before Romandy or international English) — not a measured statistic. Sorting is by the reader's own declared weight first; this order only breaks ties between equally weighted locales."
+  },
+
+  "inputs": [
+    {
+      "id": "peso_de",
+      "label": "Peso — Svizzera tedesca",
+      "question": "Quanto è importante oggi la clientela in Svizzera tedesca?",
+      "type": "single-select",
+      "options": [
+        { "value": "nessuna", "label": "Nessuna", "weight": 0 },
+        { "value": "bassa", "label": "Bassa", "weight": 1 },
+        { "value": "media", "label": "Media", "weight": 2 },
+        { "value": "alta", "label": "Alta", "weight": 3 }
+      ],
+      "required": true
+    },
+    {
+      "id": "peso_fr",
+      "label": "Peso — Svizzera romanda",
+      "question": "Quanto è importante oggi la clientela in Svizzera francese?",
+      "type": "single-select",
+      "options": [
+        { "value": "nessuna", "label": "Nessuna", "weight": 0 },
+        { "value": "bassa", "label": "Bassa", "weight": 1 },
+        { "value": "media", "label": "Media", "weight": 2 },
+        { "value": "alta", "label": "Alta", "weight": 3 }
+      ],
+      "required": true
+    },
+    {
+      "id": "peso_en",
+      "label": "Peso — clientela internazionale anglofona",
+      "question": "Quanto è importante oggi la clientela internazionale che si aspetta l'inglese?",
+      "type": "single-select",
+      "options": [
+        { "value": "nessuna", "label": "Nessuna", "weight": 0 },
+        { "value": "bassa", "label": "Bassa", "weight": 1 },
+        { "value": "media", "label": "Media", "weight": 2 },
+        { "value": "alta", "label": "Alta", "weight": 3 }
+      ],
+      "required": true
+    },
+    {
+      "id": "capacita",
+      "label": "Capacità di manutenzione",
+      "question": "Quanta capacità avete per mantenere aggiornata una lingua in più, ogni mese?",
+      "type": "single-select",
+      "options": [
+        { "value": "bassa", "label": "Bassa (poche ore al mese, nessuno dedicato)", "slots": 0 },
+        { "value": "media", "label": "Media (qualche ora regolare, senza una persona dedicata)", "slots": 1 },
+        { "value": "alta", "label": "Alta (una persona o un fornitore dedicato alla manutenzione multilingue)", "slots": 2 }
+      ],
+      "required": true
+    },
+    {
+      "id": "stagionale",
+      "label": "Domanda stagionale",
+      "question": "La domanda in altre lingue si concentra in un periodo specifico dell'anno (es. alta stagione turistica)?",
+      "type": "toggle",
+      "options": [
+        { "value": true, "label": "Sì" },
+        { "value": false, "label": "No" }
+      ],
+      "required": false,
+      "default": false
+    }
+  ],
+
+  "resultGate": {
+    "requiredInputs": ["peso_de", "peso_fr", "peso_en", "capacita"],
+    "emptyStateMessage": "Indicate il peso delle tre clientele aggiuntive e la vostra capacità di manutenzione per vedere un piano."
+  },
+
+  "phaseAssignmentLogic": {
+    "note": "Fixed, disclosed rules — no numeric score is shown to the reader, only the resulting phase groups.",
+    "step1": "candidates = every locale in [de, fr, en] whose peso option value != 'nessuna'.",
+    "step2": "If candidates is empty → skip to soloItalianoResult (see outputRules.rule0), do not compute phases.",
+    "step3": "Sort candidates descending by weight (from the matching peso option's 'weight' field). Break ties using assumptions.tieBreakOrder.",
+    "step4": "slots = the 'slots' value of the selected capacita option (bassa=0, media=1, alta=2).",
+    "step5": "fase1 = first `slots` candidates from the sorted list (may be empty when slots = 0).",
+    "step6": "fase2 = remaining candidates (weight > 0) not placed in fase1.",
+    "step7": "escluse = every locale in [de, fr, en] whose peso option value == 'nessuna'.",
+    "step8_capacityWarning": "Trigger the capacity-mismatch warning when capacita == 'bassa' AND at least one candidate has weight == 3 (an 'alta'-weighted locale that would have qualified for Fase 1 under higher capacity)."
+  },
+
+  "outputRules": {
+    "rule0_soloItaliano": {
+      "condition": "candidates list (step1) is empty — all three weights are 'nessuna'.",
+      "text": "Con il solo italiano non serve oggi un piano multilingue. Rivalutate questa scheda se cambia la vostra clientela — non è necessario aggiungere lingue perché esistono in Svizzera.",
+      "behaviour": "Show ONLY this message. Do not render Fase 1 / Fase 2 / Escluse cards in this case."
+    },
+    "rule1_fase1": {
+      "heading": "Fase 1 — da lanciare ora",
+      "perLocaleOutput": {
+        "urlShape": "vostro-dominio.ch/{locale}/[slug-localizzato]/",
+        "urlNote": "Lo slug va scritto per come si cerca in questa lingua, non tradotto parola per parola dall'italiano.",
+        "hreflangNote": "Ogni pagina live (italiano + le altre lingue di Fase 1) deve elencare se stessa e tutte le altre lingue live come alternate reciproche — mai una lingua di Fase 2 o Esclusa.",
+        "canonicalNote": "Ogni versione punta a se stessa, mai all'italiano.",
+        "xDefaultRule": "'en' se l'inglese è esso stesso in Fase 1, altrimenti 'it'.",
+        "seasonalityNote": "Se stagionale == true: \"Pianificate la revisione dei contenuti in questa lingua prima dell'inizio della stagione alta, non durante.\""
+      }
+    },
+    "rule2_fase2": {
+      "heading": "Fase 2 — non ora",
+      "text": "Pubblico reale, capacità insufficiente oggi: rimandata, non lanciata a metà.",
+      "reminder": "Non create hreflang né un link del selettore di lingua verso questa versione finché non esiste davvero."
+    },
+    "rule3_escluse": {
+      "heading": "Escluse",
+      "text": "Nessun pubblico reale indicato oggi — aggiungerla ora sarebbe manutenzione senza ritorno."
+    },
+    "rule4_capacityWarning": {
+      "condition": "see phaseAssignmentLogic.step8_capacityWarning",
+      "heading": "Attenzione alla capacità",
+      "text": "Avete indicato un pubblico ad alta priorità ma una capacità di manutenzione bassa. Lanciare ora rischia di creare una lingua abbandonata. Aumentate la capacità prima di lanciare, oppure rivalutate il peso di questa lingua.",
+      "visualNote": "Distinct bordered card; accent colour used only on the heading/label text, never as a fill."
+    }
+  },
+
+  "translationChecklistByLocale": {
+    "note": "Deliberately different wording per locale, derived from the article's 'tre pubblici' section — not one universal checklist repeated three times.",
+    "de": [
+      "Il testo tedesco spiega tempi di consegna, garanzie o certificazioni, non solo la storia del prodotto o dell'azienda?",
+      "Il registro è più formale e diretto rispetto al testo italiano, non una copia letterale del suo tono?",
+      "Prezzi, IVA e condizioni sono scritti in modo esplicito, senza dare per scontato che il lettore telefoni per chiedere?"
+    ],
+    "fr": [
+      "Il testo francese spiega le condizioni pratiche (consegna, pagamento, garanzie) con la stessa chiarezza della versione tedesca, non come una traduzione abbreviata dell'italiano?",
+      "I riferimenti locali (luoghi, eventi, stagionalità) sono pensati per un lettore romando, non per un lettore ticinese che legge in francese?",
+      "Lo slug e i titoli sono scritti per come si cerca in francese, non ricalcati sulla struttura italiana?"
+    ],
+    "en": [
+      "Il testo inglese mette in evidenza spedizione internazionale, valuta e tempi di consegna fuori Svizzera, non solo la narrazione del prodotto?",
+      "Il tono è sintetico e diretto, coerente con un lettore che confronta più fornitori in poco tempo, non una traduzione parola per parola del testo italiano?",
+      "Sono indicati chiaramente i metodi di pagamento accettati dall'estero?"
+    ]
+  },
+
+  "copySummaryTemplate": "Lingua predefinita: italiano. Fase 1 (da lanciare ora): {fase1List}. Fase 2 (non ora): {fase2List}. Escluse: {escluseList}. Capacità di manutenzione dichiarata: {capacitaLabel}. Domanda stagionale: {stagionaleLabel}.",
+
+  "ctaCopy": {
+    "primary": {
+      "label": "Descriveteci le lingue dei vostri clienti: pianifichiamo insieme la struttura del sito",
+      "href": "/it/kontakt/"
+    },
+    "secondary": {
+      "label": "Leggi l'articolo completo su URL, hreflang e traduzione autentica",
+      "hrefNote": "Links to the academy spoke page for the sito-multilingue-svizzera-ticino article."
+    }
+  },
+
+  "disclaimerText": "Questo planner non analizza il vostro sito reale e non garantisce un posizionamento specifico in nessuna lingua. Genera un punto di partenza strutturale — quali lingue lanciare ora, quali rimandare, e quale hreflang serve tra le lingue effettivamente live — soltanto a partire dai pesi e dalla capacità che indicate. Tutta la logica gira nel browser; nessun dato viene trasmesso o salvato altrove.",
+
+  "privacyNote": "Lo strumento funziona interamente nel browser. Non esiste alcun campo per nome, azienda, e-mail o fatturato — solo pesi generici per tre pubblici e un livello di capacità di manutenzione. Nessun dato viene trasmesso o inviato a un server."
+}
