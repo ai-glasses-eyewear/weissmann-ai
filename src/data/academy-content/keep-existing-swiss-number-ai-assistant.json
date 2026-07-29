@@ -1,0 +1,302 @@
+{
+  "id": "keep-existing-swiss-number-ai-assistant",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["de"],
+  "slug": {
+    "de": "ki-telefonassistent-bestehende-nummer-behalten",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["what-is-an-ai-phone-assistant", "swiss-ai-phone-assistant-provider-comparison"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "Bestehende Telefonnummer behalten: KI-Assistent | Weissmann AI",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "Weiterleitung, SIP-Trunk, PBX oder Portierung: Wie Sie Ihre bestehende Schweizer Telefonnummer bei einem KI-Telefonassistenten behalten – mit BAKOM- und ombudscom-Quellen, nicht mit Marketingversprechen.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "KI-Agenten, Automatisierung & Voice",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "Kann ich meine bestehende Schweizer Telefonnummer mit einem KI-Assistenten behalten?",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "Ja, in aller Regel behalten Sie Ihre bestehende Schweizer Telefonnummer, wenn Sie einen KI-Telefonassistenten einführen – nur ist «behalten» dabei meist eine Weiterleitung und keine Portierung. Ihre Nummer bleibt bei Ihrem bisherigen Anbieter, Sie leiten Anrufe lediglich auf eine neue, dedizierte Leitung um: immer, nur ausserhalb der Öffnungszeiten oder nur wenn besetzt. Eine echte Rufnummernportierung zu einem neuen Anbieter ist ein separates, reguliertes Verfahren mit eigenen Fristen und ist für einen KI-Telefonassistenten in den meisten Fällen gar nicht nötig. Welcher der beiden Wege für Sie zutrifft, hängt davon ab, ob Sie eine Mobil- oder Festnetznummer, eine eigene Telefonanlage (PBX) und allenfalls einen SIP-Trunk haben.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "Zwei Fragen, die wie eine klingen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "«Kann ich meine Nummer behalten?» klingt nach einer einzigen Frage. Es sind aber zwei, und die meisten Anbieter-Websites beantworten nur die einfachere davon. Die erste Frage lautet: Wem gehört die Nummer, und wechselt sie den Anbieter? Das ist eine regulierte Angelegenheit zwischen Ihnen, Ihrem bisherigen und einem allfälligen neuen Telefonanbieter, überwacht durch das BAKOM. Die zweite Frage lautet: Wohin klingelt die Nummer, wenn jemand anruft? Das ist reine Technik, meist in wenigen Minuten im Kundenportal Ihres bestehenden Anbieters erledigt, und hat mit einer Portierung nichts zu tun.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Für die grosse Mehrheit der Unternehmen, die einen KI-Telefonassistenten einführen, stellt sich nur die zweite Frage. Sie wollen nicht den Telefonanbieter wechseln – sie wollen, dass Anrufe, die bei der gewohnten Nummer eingehen, zusätzlich oder zeitweise bei einem KI-System landen. Das ist eine Weiterleitung, keine Portierung. Wer die beiden Begriffe verwechselt, überschätzt regelmässig den Aufwand und den Papierkram – und unterschätzt gleichzeitig die selteneren Fälle, in denen tatsächlich eine echte Portierung oder eine tiefere technische Integration nötig ist, etwa bei einer bestehenden Telefonanlage. Dieser Artikel trennt beide Fragen sauber und zeigt, was in welchem Fall konkret zu tun ist.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Der technische Weg: Weiterleitung, SIP-Trunk, PBX oder eine neue Leitung", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Wie ein KI-Telefonassistent an Ihre bestehende Nummer «andockt», hängt von Ihrer heutigen Telefonie ab. Es gibt im Kern fünf Ausgangslagen, und sie sind nicht austauschbar – wer das vor der Einrichtung nicht klärt, verhandelt später über ein Missverständnis statt über einen Vertrag.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Mobilnummer, keine eigene Anlage: der übliche Weg. Sie richten bei Ihrem Mobilfunkanbieter eine Rufumleitung ein – unbedingt, nur bei Besetzt oder nur bei Nichterreichbarkeit – auf die neue, vom KI-Anbieter bereitgestellte Leitung. Die Einrichtung dauert in der Regel Minuten und ist jederzeit wieder abschaltbar. Fragen Sie nach Kosten pro weitergeleiteter Minute und danach, ob Ihr Tarif dafür ein Freikontingent vorsieht.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Festnetznummer ohne eigene Anlage: grundsätzlich dasselbe Prinzip, oft über das Kundenportal des Anbieters oder eine Kurzwahl eingerichtet. Ob eine bedingte Weiterleitung (nur bei Besetzt oder Nichterreichbarkeit) verfügbar ist oder nur eine unbedingte, unterscheidet sich je nach Anbieter und Anschlussart – klären Sie das konkret, statt es anzunehmen.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Eigene Telefonanlage (PBX) im Haus: Hier reicht eine einfache Weiterleitung oft nicht, weil die Anlage selbst entscheidet, wie Anrufe verteilt werden. Der KI-Assistent wird meist als zusätzliche Nebenstelle oder über eine von der Anlage gesteuerte Regel eingebunden – eine Aufgabe für die Person oder Firma, die Ihre Anlage betreut, nicht für den KI-Anbieter allein. Klären Sie vorab, wer diese Konfiguration vornimmt und ob Ihre Anlage das technisch überhaupt vorsieht.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "SIP-Trunk vorhanden: Wenn Ihre Telefonie bereits über einen SIP-Trunk läuft – eine virtuelle Standleitung übers Internet statt Kupfer oder ISDN –, kann ein KI-Anbieter, der SIP-Trunk-Terminierung unterstützt, Anrufe unter Umständen direkt entgegennehmen, ohne den Umweg über eine Weiterleitung. Das beherrscht aber nicht jeder Anbieter. Fragen Sie ausdrücklich danach, statt es vorauszusetzen – ein Anbieter, der nur klassische Anrufweiterleitung kennt, wird Ihnen sonst freundlich, aber folgenlos zunicken.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Neue, separate Nummer: die einfachste Variante, wenn Ihre bestehende Nummer aus irgendeinem Grund nicht angetastet werden soll. Der KI-Assistent bekommt eine eigene Nummer, die Sie schrittweise einführen – auf der Website, in den Google-Unternehmensdaten, auf Visitenkarten. Für einen befristeten Test ist das eine ehrliche Option. Als Dauerlösung schwächt es aber genau den Vorteil, den die meisten Unternehmen suchen: eine Nummer, unter der man sie kennt. Ihre Stammkundschaft wählt weiterhin treu die alte Nummer, während die neue brachliegt wie eine zweite Zahnbürste im Gästebad.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Zur Einordnung: Wie das bei Weissmann selbst gelöst ist", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Weil Weissmann selbst einen KI-Telefonassistenten anbietet, gehört diese Offenlegung hierher: Laut den öffentlich einsehbaren Leistungsangaben ist die Anbindung als Weiterleitung auf eine dedizierte, im Paket enthaltene Telefonleitung beschrieben. Sie behalten Ihre bisherige Geschäftsnummer und leiten sie auf diese Leitung um – immer, nur ausserhalb der Öffnungszeiten oder nur wenn besetzt. Eine gesonderte SIP-Trunk-Terminierung oder eine PBX-seitige Integration durch Weissmann ist in diesen Unterlagen nicht beschrieben. Das ist kein Mangel: Weiterleitung ist für die meisten KMU ohne eigene Anlage der pragmatischste und am wenigsten riskante Weg. Wenn Ihr Betrieb aber eine PBX oder einen SIP-Trunk hat und eine tiefere Anbindung braucht, fragen Sie das bei jedem Anbieter, den Sie prüfen – Weissmann eingeschlossen –, konkret nach, statt es aus einer Werbezeile abzuleiten.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Die regulatorische Seite: Was Portierung wirklich bedeutet", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Eine echte Portierung – auch Rufnummernmitnahme genannt – ist nur nötig, wenn Sie den Telefonanbieter selbst wechseln wollen, etwa weil Sie zu einem Anbieter migrieren, der Telefonie und KI-Assistent aus einer Hand betreibt. Das ist ein regulierter Vorgang, kein Selbstbedienungsschalter. Laut BAKOM ist die Rufnummernmitnahme in der Schweiz seit 2002 technisch möglich; für geografisch gebundene Festnetznummern ist sie jedoch nicht für jeden Anbieter Pflicht – jeder Fernmeldedienstanbieter entscheidet laut BAKOM selbst, ob und in welchem Umfang er sie anbietet, manche nur innerhalb desselben Vorwahlbereichs, andere schweizweit. Mobilnummern lassen sich in der Praxis schweizweit mitnehmen.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Ein Hinweis zur Einordnung: Die folgenden Punkte fassen öffentlich zugängliche Informationen von BAKOM und der Schlichtungsstelle ombudscom zusammen. Sie ersetzen keine Rechtsberatung und keine verbindliche Auskunft Ihres eigenen Anbieters – Verfahren, Fristen und Praxis können sich ändern.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Ein Vertrag mit dem neuen Anbieter muss vor der Portierung bestehen. Ohne Vertragsschluss beim neuen Anbieter ist eine Portierung nicht möglich – das Portierungsformular allein genügt nicht.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Die zu portierende Nummer muss aktiv sein. Eine bereits deaktivierte oder gesperrte Nummer lässt sich nicht mehr portieren.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Die Angaben auf dem Portierungsformular müssen mit dem Vertrag beim alten Anbieter übereinstimmen. Ein abweichender Vorname, eine anders geschriebene Firmenbezeichnung oder eine falsche Nummer genügen gemäss veröffentlichten ombudscom-Fallnotizen bereits als Ablehnungsgrund.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Offene Rechnungen beim bisherigen Anbieter sind, so ombudscom ausdrücklich, kein rechtmässiger Ablehnungsgrund. In der Praxis setzen einzelne Anbieter das trotzdem als Druckmittel ein, was die Schlichtungsstelle wiederholt kritisiert hat.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Geschäftsnummern: +41 051, +41 058 und die zusätzlichen Nachweise", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Bei Geschäftsnummern kommen häufig zusätzliche Nachweise ins Spiel, unabhängig davon, ob Sie weiterleiten oder tatsächlich portieren wollen. Schweizer Geschäftsnummern nutzen unter anderem die Vorwahlbereiche +41 051 und +41 058.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Als reales Beispiel: Amazon Web Services verlangt in der öffentlich einsehbaren Dokumentation seines Chime-SDK-Telefonieservices für Schweizer Geschäfts-Ortsnummern eine Geschäftsadresse, einen Standortnachweis und eine Kopie der Gewerbeanmeldung oder des Handelsregisterauszugs – bei einer Portierung zusätzlich die letzte Rechnung des bisherigen Anbieters und eine unterzeichnete Vollmacht (Letter of Authorization). Das ist keine schweizweite Rechtsvorschrift, sondern die dokumentierte Praxis eines einzelnen, in diesem Fall internationalen Telefonie-Anbieters – sie zeigt aber realistisch, welche Art von Nachweisen bei einer Geschäftsnummer generell zu erwarten ist. Fragen Sie bei Ihrem eigenen Telefon- oder KI-Anbieter konkret nach, welche Dokumente er tatsächlich verlangt, statt sich auf ein einzelnes Beispiel zu verlassen.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Typische Nachweise für eine Geschäftsnummer: Geschäftsadresse, Nachweis des Standorts, Gewerbeanmeldung oder Handelsregisterauszug.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Zusätzlich bei einer echten Portierung: die letzte Rechnung des bisherigen Anbieters und eine unterzeichnete Vollmacht zugunsten des neuen Anbieters.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Was kann schiefgehen", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Eine Weiterleitung schlägt selten fehl – im schlimmsten Fall vergessen Sie, sie wieder auszuschalten, und wundern sich Monate später, warum das Diensthandy nie klingelt. Bei einer Portierung sieht es anders aus, und genau deshalb lohnt sich die Vorbereitung.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Die Portierung wird abgelehnt. Häufigster Grund laut den veröffentlichten ombudscom-Fallnotizen: Namens- oder Schreibweise-Abweichungen zwischen Portierungsformular und dem bestehenden Vertrag – etwa wenn eine Person beim alten Anbieter mit Vor- und Nachnamen registriert war, beim neuen aber nur mit einem davon. Zweithäufigster Grund in der Praxis: offene Rechnungen, obwohl diese laut ombudscom eigentlich keinen gültigen Ablehnungsgrund darstellen.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Die Nummer fällt in den Timeout. Wird eine Portierung abgelehnt, gerät die Nummer für mindestens 20 und höchstens 40 Arbeitstage in einen Schwebezustand. In dieser Zeit müssen Sie aktiv ein korrekt ausgefülltes Portierungsformular nachreichen. Bleiben Sie untätig, kann die Nummer nach Ablauf der Frist an den bisherigen Anbieter zurückfallen – ein Risiko, das viele erst bemerken, wenn es zu spät ist.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Die Weiterleitung wird teurer als gedacht. Manche Mobilfunktarife begrenzen kostenlose Weiterleitungsminuten oder berechnen weitergeleitete Gespräche wie normale ausgehende Anrufe. Bei hohem Anrufvolumen summiert sich das – fragen Sie das vor der Einrichtung ab, nicht erst auf der nächsten Rechnung.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Eine PBX-Änderung legt versehentlich bestehende Nebenstellen lahm. Wer an einer Telefonanlage etwas ändert, ohne die bisherige Konfiguration dokumentiert zu haben, riskiert, dass eine unbeteiligte Abteilung plötzlich nicht mehr erreichbar ist. Das ist kein KI-spezifisches Problem, sondern ein generelles PBX-Risiko – aber eines, das in der Vorfreude auf den neuen Assistenten gerne übersehen wird.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Der Rückweg: Was passiert, wenn Sie zurück wollen?", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Der grösste praktische Unterschied zwischen Weiterleitung und Portierung zeigt sich erst, wenn etwas nicht passt und Sie zurück wollen.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Weiterleitung rückgängig machen: eine Einstellung im Kundenportal oder eine Kurzwahl, in der Regel sofort wirksam. Ihre Nummer war nie weg – sie hat nur vorübergehend woanders geklingelt. Das ist der wichtigste Grund, im Zweifel mit einer Weiterleitung zu beginnen statt gleich zu portieren.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Portierung rückgängig machen: eine erneute Portierung, mit denselben Fristen, Formularen und Ablehnungsrisiken wie beim ersten Mal. Es gibt keinen Rückgängig-Knopf – nur denselben Weg in die andere Richtung.",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "PBX-Konfiguration rückgängig machen: hängt vollständig davon ab, wie sauber die ursprüngliche Einrichtung dokumentiert wurde. Lassen Sie sich vor jeder Änderung an Ihrer Anlage schriftlich geben, wie der Zustand vorher aussah – das ist in fünf Minuten erledigt und erspart später Stunden.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Checkliste: Was Sie Ihrem Telefonanbieter konkret fragen sollten", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Die folgenden Fragen sind nach Ausgangslage sortiert. Nehmen Sie die Punkte, die auf Ihre Situation zutreffen, wörtlich mit ins Gespräch mit Ihrem Telefonanbieter oder Ihrem KI-Anbieter.",
+          "en": "", "it": "", "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Bei einer Mobilnummer ohne PBX: Ist die Rufumleitung in meinem Tarif inbegriffen oder kostenpflichtig? Gibt es ein Freiminutenkontingent, und was passiert danach? Kann ich zwischen «immer», «bei Besetzt» und «bei Nichterreichbarkeit» unterscheiden?",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Bei einer Festnetznummer ohne PBX: Unterstützt mein Anschluss eine bedingte Weiterleitung, oder nur eine unbedingte? Fallen für weitergeleitete Gespräche zusätzliche Gebühren an, und wer trägt sie?",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Bei einer eigenen Telefonanlage (PBX): Wer verwaltet unsere Anlage, und kann diese Person eine zusätzliche Nebenstelle oder Weiterleitungsregel einrichten? Unterstützt unsere Anlage SIP-Trunking, oder läuft sie noch über eine klassische Amtsleitung?",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Bei einem bestehenden SIP-Trunk: Terminiert der KI-Anbieter eingehende Anrufe direkt über unseren SIP-Trunk, oder erwartet er trotzdem eine klassische Weiterleitung? Welches Protokoll wird erwartet, und wer ist im Störungsfall zuständig?",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Bei einer echten Portierung (Anbieterwechsel): Ist unsere Nummer aktuell aktiv? Sind alle Rechnungen beim bisherigen Anbieter beglichen – und falls nicht, wird das als Ablehnungsgrund angegeben, obwohl es laut ombudscom keiner ist? Welche Kündigungsfrist gilt, und was kostet eine vorzeitige Kündigung?",
+          "en": "", "it": "", "fr": ""
+        },
+        {
+          "de": "Bei einer Geschäftsnummer: Welche Nachweise werden verlangt – Geschäftsadresse, Handelsregisterauszug, Gewerbeanmeldung? Gilt für unsere Vorwahl, etwa +41 051 oder +41 058, eine besondere Regel?",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": { "de": "Für wen sich der ganze Aufwand gar nicht stellt", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        {
+          "de": "Wenn Sie einen KI-Telefonassistenten zunächst nur ausprobieren wollen, bevor Sie sich mit Weiterleitung, PBX oder Portierung befassen, müssen Sie Ihre Hauptnummer gar nicht anfassen. Ein einmaliger Testzugang – bei Weissmann etwa der Starter-Test für CHF 350 ohne laufendes Abonnement – läuft über eine eigene Testleitung, ohne dass Sie an Ihrer bestehenden Nummer irgendetwas ändern. Erst wenn Sie sich für den Dauerbetrieb entscheiden, wird die Weiterleitungs- oder Integrationsfrage überhaupt relevant. Und wer nur wenige Anrufe pro Woche erhält, für den lohnt sich der ganze Aufwand ohnehin oft nicht: Dann tut es eine gut besprochene Combox mit klarer Rückrufzusage genauso gut – und ganz ohne Portierungsformular.",
+          "en": "", "it": "", "fr": ""
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "Muss ich meinen Telefonanbieter wechseln, um einen KI-Telefonassistenten zu nutzen?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein, in den allermeisten Fällen nicht. Eine Weiterleitung auf die Leitung des KI-Anbieters reicht, und Sie bleiben bei Ihrem bisherigen Telefonanbieter. Ein Anbieterwechsel mit Portierung ist nur nötig, wenn Sie Telefonie und KI-Assistent bewusst bei einem einzigen neuen Anbieter bündeln wollen.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Kann ich die Weiterleitung nur für Anrufe ausserhalb der Öffnungszeiten aktivieren?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Häufig ja. Viele Anbieter unterscheiden zwischen einer unbedingten Weiterleitung (immer) und einer bedingten (nur bei Besetzt oder Nichterreichbarkeit) – ob und wie genau Ihr eigener Anschluss das unterstützt, klären Sie am besten direkt mit Ihrem Telefonanbieter, da sich das je nach Tarif und Anschlussart unterscheidet.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Was passiert, wenn eine Portierung abgelehnt wird – verliere ich dann meine Nummer?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nicht sofort, aber es wird ernst: Die Nummer gerät für mindestens 20 und höchstens 40 Arbeitstage in einen sogenannten Timeout-Zustand. Reichen Sie in dieser Frist kein korrekt ausgefülltes Portierungsformular nach, kann die Nummer an den bisherigen Anbieter zurückfallen. Wer eine Portierung plant, sollte diese Frist im Kalender markieren, nicht nur im Kopf behalten.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Sind offene Rechnungen ein gültiger Grund, eine Portierung abzulehnen?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein, laut den veröffentlichten Fallnotizen der Schlichtungsstelle ombudscom nicht – offene Forderungen beim bisherigen Anbieter stellen keinen rechtmässigen Ablehnungsgrund dar. In der Praxis kommt es trotzdem vor, dass Anbieter das als Druckmittel einsetzen; im Streitfall ist ombudscom die zuständige Anlaufstelle.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Brauchen Geschäftsnummern mit Vorwahlen wie +41 051 oder +41 058 ein anderes Verfahren?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Das regulatorische Grundverfahren ist dasselbe, aber Anbieter verlangen bei Geschäftsnummern in der Regel zusätzliche Nachweise, etwa eine Geschäftsadresse und eine Kopie der Gewerbeanmeldung oder des Handelsregisterauszugs. Wie genau das bei Ihrem konkreten Anbieter aussieht, ist unternehmensspezifisch und sollte direkt erfragt werden.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Unterstützt jeder KI-Telefonassistent einen SIP-Trunk oder eine PBX-Integration?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein, und das wird auf Anbieter-Websites selten klar unterschieden. Manche Anbieter – auch Weissmann, soweit aus den öffentlich einsehbaren Unterlagen ersichtlich – beschreiben ausschliesslich eine Weiterleitung auf eine dedizierte Leitung, keine SIP-Trunk-Terminierung. Wenn Sie eine tiefere technische Anbindung brauchen, fragen Sie das bei jedem Anbieter konkret nach, statt es anzunehmen.", "en": "", "it": "", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "Rufnummernportierung",
+    "Rufnummernmitnahme",
+    "BAKOM",
+    "ombudscom",
+    "SIP-Trunk",
+    "PBX",
+    "VoIP",
+    "Anrufweiterleitung",
+    "Geschäftsnummer",
+    "+41 051",
+    "+41 058",
+    "Gewerbeanmeldung",
+    "dedizierte Telefonleitung",
+    "KI-Telefonassistent"
+  ],
+  "sources": [
+    { "label": { "de": "BAKOM (Bundesamt für Kommunikation) – Telefonnummern, Seite mit Stand 19. Dezember 2019, abgerufen 29. Juli 2026", "en": "", "it": "", "fr": "" }, "href": "https://www.bakom.admin.ch/de/telefonnummern" },
+    { "label": { "de": "ombudscom – Fallnotiz «Nummerportierung – leeres Versprechen?» (2023), abgerufen 29. Juli 2026", "en": "", "it": "", "fr": "" }, "href": "https://cas.ombudscom.ch/2023/nummerportierung-leeres-versprechen" },
+    { "label": { "de": "ombudscom – Fallnotiz «Verweigerung der Portierung der Rufnummer» (2019), abgerufen 29. Juli 2026", "en": "", "it": "", "fr": "" }, "href": "https://cas.ombudscom.ch/2019/verweigerung-der-portierung-der-rufnummer" },
+    { "label": { "de": "AWS Chime SDK – Dokumentation zu Bestellung und Portierung Schweizer Telefonnummern (Beispiel eines Cloud-Telefonie-Anbieters, keine Schweizer Rechtsquelle), abgerufen 29. Juli 2026", "en": "", "it": "", "fr": "" }, "href": "https://docs.aws.amazon.com/de_de/chime-sdk/latest/ag/order-port-switzerland.html" },
+    { "label": { "de": "Weissmann AI – Leistungsseite KI-Telefonassistent, Abschnitt «Kann ich meine bestehende Telefonnummer behalten?» (first-party)", "en": "", "it": "", "fr": "" }, "href": "https://weissmann.ai/leistungen/ki-telefonassistent/" }
+  ],
+  "cta": {
+    "label": { "de": "Kostenloses Erstgespräch: Wir klären, welcher Anschluss zu Ihnen passt", "en": "", "it": "", "fr": "" },
+    "href": "/kontakt/"
+  }
+}

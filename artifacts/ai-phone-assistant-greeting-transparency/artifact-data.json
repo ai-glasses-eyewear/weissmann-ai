@@ -1,0 +1,265 @@
+{
+  "artifactId": "ai-phone-assistant-greeting-transparency",
+  "toolTitle": "Mehrsprachiger Begrüssungs-Generator",
+  "toolLanguageUi": "de",
+  "outputLanguages": ["de", "fr", "it", "en"],
+  "note": "Plain structured data for the companion Claude Artifact described in ARTIFACT-BRIEF.md. Generation is deterministic template composition: pick an industry, a tone, an output language and (optionally) an escalation keyword; the tool fills the buildingBlocks templates below. No field here is legal advice or a compliance claim — see disclaimer.",
+
+  "tones": [
+    {
+      "id": "locker",
+      "uiLabel": "Locker & schnell",
+      "greetingWord": { "de": "Grüezi", "fr": "Bonjour", "it": "Ciao", "en": "Hi" }
+    },
+    {
+      "id": "neutral",
+      "uiLabel": "Neutral-professionell",
+      "greetingWord": { "de": "Guten Tag", "fr": "Bonjour", "it": "Buongiorno", "en": "Hello" }
+    },
+    {
+      "id": "formell",
+      "uiLabel": "Formell & diskret",
+      "greetingWord": { "de": "Guten Tag", "fr": "Bonjour", "it": "Buongiorno", "en": "Good day" }
+    }
+  ],
+
+  "industries": [
+    {
+      "id": "restaurant",
+      "uiLabel": "Restaurant/Gastronomie",
+      "exampleBusinessName": "Ristorante Bellavista",
+      "defaultToneId": "locker",
+      "informalRegisterAllowed": false,
+      "defaultRegister": "formal",
+      "escalationDefaultOn": false,
+      "hasFixedEmergencyLine": false,
+      "selfReference": {
+        "de": "digitale Assistent",
+        "fr": "l'assistant numérique",
+        "it": "l'assistente digitale",
+        "en": "digital assistant"
+      },
+      "capabilities": {
+        "de": ["Reservationen entgegennehmen", "unsere Öffnungszeiten nennen"],
+        "fr": ["prendre vos réservations", "indiquer nos horaires d'ouverture"],
+        "it": ["prendere le prenotazioni", "indicare i nostri orari di apertura"],
+        "en": ["take reservations", "share our opening hours"]
+      }
+    },
+    {
+      "id": "arztpraxis",
+      "uiLabel": "Arztpraxis/Gesundheit",
+      "exampleBusinessName": "Hausarztpraxis Müller",
+      "defaultToneId": "neutral",
+      "informalRegisterAllowed": false,
+      "defaultRegister": "formal",
+      "escalationDefaultOn": true,
+      "hasFixedEmergencyLine": true,
+      "selfReference": {
+        "de": "digitale Praxisassistent",
+        "fr": "l'assistant numérique du cabinet",
+        "it": "l'assistente digitale dello studio",
+        "en": "digital practice assistant"
+      },
+      "capabilities": {
+        "de": ["Termine buchen", "allgemeine Fragen beantworten"],
+        "fr": ["prendre des rendez-vous", "répondre à des questions générales"],
+        "it": ["fissare appuntamenti", "rispondere a domande generali"],
+        "en": ["book appointments", "answer general questions"]
+      }
+    },
+    {
+      "id": "handwerk",
+      "uiLabel": "Handwerksbetrieb/Bau",
+      "exampleBusinessName": "Elektro Steiner",
+      "defaultToneId": "locker",
+      "informalRegisterAllowed": true,
+      "defaultRegister": "formal",
+      "escalationDefaultOn": true,
+      "hasFixedEmergencyLine": false,
+      "selfReference": {
+        "de": "Anrufassistent",
+        "fr": "l'assistant d'appel",
+        "it": "l'assistente per le chiamate",
+        "en": "call assistant"
+      },
+      "capabilities": {
+        "de": ["Ihr Anliegen aufnehmen", "einen Rückruf einplanen"],
+        "fr": ["noter votre demande", "planifier un rappel"],
+        "it": ["raccogliere la sua richiesta", "pianificare un richiamo"],
+        "en": ["note your request", "arrange a callback"]
+      }
+    },
+    {
+      "id": "beratung",
+      "uiLabel": "Beratung/Kanzlei/Treuhand",
+      "exampleBusinessName": "Kanzlei Berger & Partner",
+      "defaultToneId": "formell",
+      "informalRegisterAllowed": false,
+      "defaultRegister": "formal",
+      "escalationDefaultOn": false,
+      "hasFixedEmergencyLine": false,
+      "selfReference": {
+        "de": "digitale Empfang",
+        "fr": "l'accueil numérique",
+        "it": "la reception digitale",
+        "en": "digital reception"
+      },
+      "capabilities": {
+        "de": ["Ihr Anliegen vertraulich aufnehmen", "einen Rückruftermin vereinbaren"],
+        "fr": ["recueillir votre demande de façon confidentielle", "fixer un rappel"],
+        "it": ["raccogliere la sua richiesta in modo confidenziale", "fissare un richiamo"],
+        "en": ["take your request in confidence", "arrange a callback"]
+      }
+    },
+    {
+      "id": "hotel",
+      "uiLabel": "Hotel/Beherbergung",
+      "exampleBusinessName": "Hotel Sonnegg",
+      "defaultToneId": "neutral",
+      "informalRegisterAllowed": false,
+      "defaultRegister": "formal",
+      "escalationDefaultOn": false,
+      "hasFixedEmergencyLine": false,
+      "selfReference": {
+        "de": "digitale Assistent",
+        "fr": "l'assistant numérique",
+        "it": "l'assistente digitale",
+        "en": "digital assistant"
+      },
+      "capabilities": {
+        "de": ["Zimmer und Verfügbarkeit prüfen", "Fragen zur Anreise beantworten"],
+        "fr": ["vérifier les chambres disponibles", "répondre aux questions sur l'arrivée"],
+        "it": ["verificare camere e disponibilità", "rispondere a domande sull'arrivo"],
+        "en": ["check room availability", "answer questions about your arrival"]
+      }
+    },
+    {
+      "id": "detailhandel",
+      "uiLabel": "Detailhandel/Verkauf",
+      "exampleBusinessName": "Boutique Fischer",
+      "defaultToneId": "locker",
+      "informalRegisterAllowed": true,
+      "defaultRegister": "formal",
+      "escalationDefaultOn": false,
+      "hasFixedEmergencyLine": false,
+      "selfReference": {
+        "de": "digitale Assistent",
+        "fr": "l'assistant numérique",
+        "it": "l'assistente digitale",
+        "en": "digital assistant"
+      },
+      "capabilities": {
+        "de": ["Öffnungszeiten und Verfügbarkeit nennen", "Ihre Anfrage aufnehmen"],
+        "fr": ["indiquer nos horaires et disponibilités", "prendre note de votre demande"],
+        "it": ["indicare orari e disponibilità", "prendere nota della sua richiesta"],
+        "en": ["share our hours and availability", "note your request"]
+      }
+    },
+    {
+      "id": "sonstige",
+      "uiLabel": "Sonstige (neutrale Vorlage)",
+      "exampleBusinessName": "",
+      "defaultToneId": "neutral",
+      "informalRegisterAllowed": false,
+      "defaultRegister": "formal",
+      "escalationDefaultOn": false,
+      "hasFixedEmergencyLine": false,
+      "selfReference": {
+        "de": "digitale Assistent",
+        "fr": "l'assistant numérique",
+        "it": "l'assistente digitale",
+        "en": "digital assistant"
+      },
+      "capabilities": {
+        "de": ["Ihr Anliegen aufnehmen", "es an das richtige Team weiterleiten"],
+        "fr": ["prendre note de votre demande", "la transmettre à la bonne personne"],
+        "it": ["prendere nota della sua richiesta", "inoltrarla alla persona giusta"],
+        "en": ["note your request", "route it to the right person"]
+      }
+    }
+  ],
+
+  "buildingBlocks": {
+    "disclosureTemplate": {
+      "de": "hier ist der {selfReference} von {businessName}.",
+      "fr": "vous êtes en communication avec {selfReference} de {businessName}.",
+      "it": "risponde {selfReference} di {businessName}.",
+      "en": "this is the {selfReference} for {businessName}."
+    },
+    "capabilityTemplate": {
+      "de": "Ich kann {capabilityList}.",
+      "fr": "Je peux {capabilityList}.",
+      "it": "Posso {capabilityList}.",
+      "en": "I can {capabilityList}."
+    },
+    "capabilityJoiner": { "de": " und ", "fr": " et ", "it": " e ", "en": " and " },
+    "escapeTemplate": {
+      "formal": {
+        "de": "Sagen Sie jederzeit „{keyword}“, dann verbinde ich Sie mit unserem Team.",
+        "fr": "Dites « {keyword} » à tout moment, je vous mets en relation avec notre équipe.",
+        "it": "Dica in qualsiasi momento «{keyword}», la metto subito in contatto con il nostro team.",
+        "en": "Just say \"{keyword}\" at any time and I'll connect you with our team."
+      },
+      "informal": {
+        "de": "Sag jederzeit „{keyword}“, dann verbinde ich dich mit unserem Team.",
+        "fr": "Dis « {keyword} » à tout moment, je te mets en relation avec notre équipe.",
+        "it": "Di' in qualsiasi momento «{keyword}», ti metto subito in contatto con il nostro team.",
+        "en": "Just say \"{keyword}\" at any time and I'll connect you with our team."
+      }
+    },
+    "defaultKeyword": { "de": "Notfall", "fr": "urgence", "it": "urgenza", "en": "urgent" },
+    "emergencyClauseMedical": {
+      "de": "Bei einem medizinischen Notfall legen Sie bitte auf und wählen die 144.",
+      "fr": "En cas d'urgence médicale, veuillez raccrocher et composer le 144.",
+      "it": "In caso di emergenza medica, riagganci e chiami il 144.",
+      "en": "In a medical emergency, please hang up and call 144."
+    }
+  },
+
+  "versionDefinitions": {
+    "short": { "blocks": ["greetingAndWho", "disclosure", "escape"], "uiLabel": "Kurzversion" },
+    "complete": { "blocks": ["greetingAndWho", "disclosure", "capability", "escape"], "uiLabel": "Vollständige Version" }
+  },
+
+  "rationaleBullets": {
+    "de": {
+      "who": "Der Firmenname steht zuerst – Anrufende wissen sofort, ob sie richtig sind.",
+      "disclosure": "Die Offenlegung steht im ersten Satz, nicht nach einer langen Anmoderation.",
+      "capabilityPresent": "Ein bis zwei Fähigkeiten schaffen Erwartungsklarheit, ohne die Begrüssung zu überladen.",
+      "capabilityAbsent": "Die Kurzversion lässt die Fähigkeiten bewusst weg, um so schnell wie möglich zum Anliegen zu kommen.",
+      "escape": "Ein konkreter Weg zu einem Menschen gilt während des ganzen Gesprächs, nicht nur als einmalige Erwähnung am Anfang.",
+      "emergency": "Die Weiterleitung an 144 ist fix und unabhängig von der übrigen, editierbaren Begrüssung."
+    }
+  },
+
+  "uiCopy": {
+    "de": {
+      "fieldBusinessName": "Firmenname",
+      "fieldBusinessNamePlaceholder": "[Ihr Firmenname]",
+      "fieldIndustry": "Branche",
+      "fieldLanguage": "Sprache der Begrüssung",
+      "fieldTone": "Tonlage",
+      "fieldEscalationToggle": "Dringlichkeits-Eskalation vorhanden?",
+      "fieldEscalationKeyword": "Stichwort für Eskalation",
+      "privacyNote": "Alle Eingaben bleiben in Ihrem Browser.",
+      "copyButton": "Kopieren",
+      "downloadButton": "Als Text herunterladen",
+      "missingIndustryWarning": "Bitte zuerst eine Branche wählen – sie bestimmt sinnvolle Voreinstellungen für Tonlage und Wortwahl.",
+      "missingNameWarning": "Kein Firmenname eingegeben. Die Vorlage verwendet den Platzhalter [Ihr Firmenname] – vor Gebrauch ersetzen.",
+      "emergencyFixedNote": "Dieser Satz ist fix und nicht Teil der editierbaren Begrüssung."
+    }
+  },
+
+  "disclaimer": {
+    "de": "Diese Vorlage ist eine Schreibhilfe, keine Rechtsberatung. Ob und in welcher Form eine Offenlegungspflicht für Ihr Unternehmen gilt, hängt vom Einzelfall ab (siehe Grundlagenartikel zu KI-Transparenz und Kennzeichnung). Bei Unsicherheit empfiehlt sich eine individuelle Abklärung."
+  },
+
+  "cta": {
+    "de": {
+      "line": "Möchten Sie diese Begrüssung als echten Telefonassistenten einrichten lassen?",
+      "linkLabel": "Kostenlose Demo mit Ihren eigenen Angaben anfragen",
+      "href": "/leistungen/ki-telefonassistent/"
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "artifactId": "swiss-dialect-comprehension-test",
+  "articleId": "swiss-dialect-comprehension-test",
+  "language": "de",
+  "title": "Dialekt-Stresstest-Builder für KI-Telefonassistenten",
+  "note": "Spec/data file for the artifact described in ARTIFACT-BRIEF.md. This is structured content only — no HTML/JS is implemented here. All scores in this file are placeholder examples for UI copy, never real measured results for any vendor.",
+
+  "dimensions": [
+    {
+      "id": "zuerichdeutsch",
+      "category": "dialect",
+      "label": "Zürichdeutsch",
+      "shortNote": "Meist die Variante, mit der ein System am ehesten in Kontakt kommt. Ein gutes Ergebnis ist der Ausgangspunkt des Tests, nicht dessen Beweis.",
+      "defaultWeight": 3
+    },
+    {
+      "id": "berndeutsch",
+      "category": "dialect",
+      "label": "Berndeutsch",
+      "shortNote": "Andere Vokale, anderes Sprechtempo, eigener Wortschatz. Braucht eine eigene Testperson aus dem Berner Mittelland oder Oberland.",
+      "defaultWeight": 3
+    },
+    {
+      "id": "baseldeutsch",
+      "category": "dialect",
+      "label": "Baseldeutsch",
+      "shortNote": "Phonetisch die eigenständigste der grossen Stadtmundarten.",
+      "defaultWeight": 3
+    },
+    {
+      "id": "zentralschweizer-mundart",
+      "category": "dialect",
+      "label": "Zentralschweizer Mundart",
+      "shortNote": "Luzern, Zug, Uri, Schwyz, Ob- und Nidwalden. Eigene Melodie und eigener Wortschatz — kein Ersatz für Zürichdeutsch.",
+      "defaultWeight": 3
+    },
+    {
+      "id": "code-switching",
+      "category": "condition",
+      "label": "Code-Switching",
+      "shortNote": "Wechsel zwischen Mundart und mindestens einer weiteren Sprache mitten im Satz (FR/IT/EN-Begriffe, Ortsnamen).",
+      "defaultWeight": 2
+    },
+    {
+      "id": "namen-adressen",
+      "category": "condition",
+      "label": "Namen und Adressen",
+      "shortNote": "Schweizer Nachnamen, Ortsnamen mit Sonderzeichen, vierstellige Postleitzahlen buchstabieren/diktieren lassen.",
+      "defaultWeight": 4
+    },
+    {
+      "id": "hintergrundgeraeusche",
+      "category": "condition",
+      "label": "Hintergrundgeräusche",
+      "shortNote": "Werkstatt, Baustelle, Freisprechanlage im Auto, belebte Küche — der Normalfall vieler Gewerbebetriebe.",
+      "defaultWeight": 3
+    }
+  ],
+
+  "scenarioLibrary": [
+    {
+      "id": "terminanfrage",
+      "label": "Terminanfrage",
+      "description": "Anrufende Person bittet in Mundart um einen neuen oder verschobenen Termin.",
+      "applicableTo": ["zuerichdeutsch", "berndeutsch", "baseldeutsch", "zentralschweizer-mundart", "code-switching", "hintergrundgeraeusche"]
+    },
+    {
+      "id": "offene-frage",
+      "label": "Offene Frage",
+      "description": "Anrufende Person stellt eine allgemeine Frage (Öffnungszeiten, Preisrahmen, Anfahrt) in Mundart.",
+      "applicableTo": ["zuerichdeutsch", "berndeutsch", "baseldeutsch", "zentralschweizer-mundart", "code-switching", "hintergrundgeraeusche"]
+    },
+    {
+      "id": "name-adresse-diktieren",
+      "label": "Name/Adresse diktieren",
+      "description": "Anrufende Person buchstabiert einen ungewöhnlichen Nachnamen und diktiert eine vollständige Adresse inkl. vierstelliger Postleitzahl.",
+      "applicableTo": ["namen-adressen", "hintergrundgeraeusche"]
+    },
+    {
+      "id": "unterbrechung-korrektur",
+      "label": "Unterbrechung/Korrektur",
+      "description": "Anrufende Person korrigiert sich mitten im Satz (\"nein, doch nicht Dienstag, Mittwoch\") oder spricht über die Antwort des Assistenten.",
+      "applicableTo": ["zuerichdeutsch", "berndeutsch", "baseldeutsch", "zentralschweizer-mundart", "code-switching"]
+    }
+  ],
+
+  "scoringRubric": {
+    "scale": [
+      {
+        "value": 0,
+        "label": "Ausfall",
+        "description": "Das System versteht so wenig, dass das Gespräch abbricht, sich im Kreis dreht oder die Anruferin auflegt.",
+        "severity": "kritisch",
+        "overridesVerdict": false
+      },
+      {
+        "value": 1,
+        "label": "Stille Fehlleistung",
+        "description": "Das System versteht falsch und handelt trotzdem entschlossen. Der gefährlichste Fall, weil der Fehler unbemerkt bleibt, bis Termin oder Angabe bereits falsch im System stehen.",
+        "severity": "kritisch",
+        "overridesVerdict": true
+      },
+      {
+        "value": 2,
+        "label": "Ehrliche Unsicherheit",
+        "description": "Das System versteht nicht vollständig, merkt es aber selbst — und fragt gezielt nach oder übergibt sauber an einen Menschen.",
+        "severity": "akzeptabel",
+        "overridesVerdict": false
+      },
+      {
+        "value": 3,
+        "label": "Korrekt",
+        "description": "Das System versteht und handelt richtig, ohne Nachfrage.",
+        "severity": "gut",
+        "overridesVerdict": false
+      }
+    ],
+    "weightRange": { "min": 1, "max": 5, "default": 3 },
+    "calculation": "weighted_score = round(sum(weight_d * score_d for scored dimensions) / sum(weight_d for scored dimensions), 1)",
+    "hardFailRule": "If any scored dimension has value == 1 (Stille Fehlleistung), the verdict is forced to 'Nicht bestanden — stille Fehlleistung', regardless of weighted_score. This rule always takes priority over the verdict bands below.",
+    "verdictBands": [
+      { "min": 2.5, "max": 3.0, "verdict": "Bestanden" },
+      { "min": 1.5, "max": 2.49, "verdict": "Bestanden mit Einschränkungen", "note": "Liste alle Dimensionen mit Score < 2 im Verdikt auf." },
+      { "min": 0, "max": 1.49, "verdict": "Nicht bestanden" }
+    ],
+    "emptyState": "If no dimension has both a weight and an entered score, show no numeric verdict — a neutral prompt only, never '0.0'."
+  },
+
+  "exampleFilledSheet": {
+    "disclaimer": "PLATZHALTER-BEISPIEL zur Illustration der UI, KEIN echtes Testergebnis irgendeines Anbieters.",
+    "provider": "Beispiel-Anbieter (Platzhalter)",
+    "date": "2026-01-01",
+    "entries": [
+      { "dimensionId": "zuerichdeutsch", "weight": 3, "score": 3 },
+      { "dimensionId": "berndeutsch", "weight": 3, "score": 2 },
+      { "dimensionId": "namen-adressen", "weight": 4, "score": 2 },
+      { "dimensionId": "hintergrundgeraeusche", "weight": 3, "score": 1 }
+    ],
+    "expectedVerdict": "Nicht bestanden — stille Fehlleistung (Hintergrundgeräusche)",
+    "explanation": "Auch wenn drei von vier Dimensionen akzeptabel bis gut abschneiden, erzwingt die einzelne 1 bei Hintergrundgeräuschen das Verdikt 'Nicht bestanden' — genau die im Artikel beschriebene stille Fehlleistung."
+  },
+
+  "ctaCopy": {
+    "primary": {
+      "label": "KI-Telefonassistent von Weissmann unverbindlich testen (CHF 350, einmalig)",
+      "href": "/leistungen/ki-telefonassistent/"
+    },
+    "secondary": {
+      "label": "Zum vollständigen Testprotokoll und Hintergrund: Artikel lesen",
+      "hrefNote": "Links to the academy spoke page for the swiss-dialect-comprehension-test article."
+    }
+  },
+
+  "disclaimerText": "Dieses Werkzeug ersetzt keinen echten Testanruf. Es strukturiert und bewertet Ergebnisse, die Sie selbst mit echten Testpersonen erheben. Weissmann hat für dieses Werkzeug keine Testergebnisse für einzelne Anbieter erhoben oder veröffentlicht — die Bewertung basiert ausschliesslich auf Ihren eigenen Eingaben.",
+
+  "privacyNote": "Alle Eingaben verbleiben im Browser (optional in localStorage für die Sitzung). Keine Übertragung an einen Server. Bitte keine echten Kundendaten (Namen, Nummern, Aufnahmen) eintragen — das Werkzeug bewertet einen Test, nicht echte Anrufe."
+}

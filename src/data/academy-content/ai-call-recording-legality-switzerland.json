@@ -1,0 +1,208 @@
+{
+  "id": "ai-call-recording-legality-switzerland",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["de"],
+  "slug": {
+    "de": "ki-telefonassistent-gespraeche-aufzeichnen",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["ai-phone-assistant-data-protection"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "Anrufe aufzeichnen mit KI: was die Schweiz erlaubt | Weissmann",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "Bestellungen und Reservationen darf ein KI-Telefonassistent ohne Einwilligung aufzeichnen (Art. 179quinquies StGB) – für fast alle anderen Anrufe nicht. Schweizer Rechtslage eingeordnet, keine Rechtsberatung.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "Anrufe, Aufzeichnung & Schweizer Recht",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "Darf ein KI-Telefonassistent Gespräche aufzeichnen und transkribieren?",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "Nein, nicht automatisch – und die Antwort hängt vom Inhalt des Anrufs ab, nicht davon, dass eine KI antwortet. Nach Schweizer Strafrecht (Art. 179bis/179ter StGB) braucht das Aufzeichnen eines nicht-öffentlichen Gesprächs grundsätzlich die vorherige Einwilligung aller Beteiligten. Eine gesetzliche Ausnahme (Art. 179quinquies StGB) erlaubt Aufzeichnungen ohne vorherige Zustimmung nur bei Notrufen sowie bei Geschäftsanrufen, die Bestellungen, Aufträge, Reservationen oder ähnliche «Massengeschäfte» betreffen – und selbst dann ausschliesslich zur Beweissicherung. Für alle anderen Anrufe, etwa Support, Beratung oder Beschwerden, braucht es eine klare, vorab kommunizierte Ansage mit echter Widerspruchsmöglichkeit. Dieser Artikel ersetzt keine Rechtsberatung im Einzelfall.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "Zwei Anrufe, eine falsche Annahme", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Ein Berner Boutique-Hotel lässt seinen KI-Telefonassistenten sämtliche Anrufe aufzeichnen und transkribieren – Reservationen genauso wie die Beschwerde eines Gasts über die Heizung in Zimmer 12. Begründung des Betreibers: „Wir zeichnen doch schon seit Jahren Buchungsanrufe auf, das ist bei uns Standard.“ Das stimmt für die Buchung. Für die Beschwerde stimmt es nicht – und an genau dieser Verwechslung scheitern die meisten KMU, die eine KI-Telefonassistenz einführen.", "en": "", "it": "", "fr": "" },
+        { "de": "Das Schweizer Strafrecht unterscheidet nicht danach, ob ein Mensch oder eine KI antwortet. Es unterscheidet danach, worüber gesprochen wird. Eine Reservation, eine Bestellung oder ein vergleichbarer Geschäftsvorfall darf ohne vorherige Zustimmung aufgezeichnet werden – fast jedes andere Gespräch nicht. Wer diese Grenze nicht kennt, verlässt sich entweder auf eine Ausnahme, die für den konkreten Anruf gar nicht gilt, oder verzichtet aus Vorsicht auf eine Aufzeichnung, die eigentlich zulässig gewesen wäre.", "en": "", "it": "", "fr": "" },
+        { "de": "Ein Hinweis vorab: Dieser Artikel ordnet die Rechtslage anhand offizieller Schweizer Quellen ein. Er ersetzt keine anwaltliche Beratung im Einzelfall – insbesondere nicht bei Personalfragen oder bei Anrufen, die sich inhaltlich nicht eindeutig zuordnen lassen.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Der Grundsatz: Ohne Einwilligung ist Aufzeichnen strafbar", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Wer ein fremdes, nicht-öffentliches Gespräch ohne die Einwilligung aller Beteiligten aufnimmt, macht sich in der Schweiz strafbar. Massgeblich sind Art. 179bis und Art. 179ter StGB: Nimmt jemand auf, der selbst am Gespräch teilnimmt – etwa Ihr Unternehmen über seine Telefonanlage –, greift in erster Linie Art. 179ter StGB. Hört oder nimmt jemand ein fremdes Gespräch ab, an dem er gar nicht beteiligt ist, greift Art. 179bis StGB. Beide Tatbestände sind sogenannte Antragsdelikte: Verfolgt wird nur, wenn die betroffene Person Anzeige erstattet – automatisch prüft das niemand nach. Harmlos macht das die Sache trotzdem nicht: Ein beteiligter Gesprächspartner, der unbefugt aufnimmt, riskiert Geldstrafe oder Freiheitsstrafe bis zu einem Jahr; ein unbeteiligter Dritter, der ein fremdes Gespräch abhört, riskiert bis zu drei Jahre.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Der Gesetzgeber verlangt keine „heimliche“ Aufnahme, damit der Tatbestand erfüllt ist – auch eine offen laufende Aufnahme ohne gültige Einwilligung ist erfasst.", "en": "", "it": "", "fr": "" },
+        { "de": "Blosses Schweigen der anrufenden Person gilt nicht als Einwilligung, ebenso wenig ein beiläufiger Hinweis, den kaum jemand bewusst wahrnimmt.", "en": "", "it": "", "fr": "" },
+        { "de": "Im Ernstfall können Gerichte die Löschung der Aufnahme und in bestimmten Fällen die Einziehung der Aufnahmetechnik anordnen (Art. 69 StGB)." , "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Die Ausnahme: Bestellungen, Reservationen und andere Massengeschäfte", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Von diesem Grundsatz gibt es eine gezielte Ausnahme. Art. 179quinquies StGB erlaubt das Aufzeichnen ohne vorherige Einwilligung bei Anrufen mit Hilfs-, Rettungs- und Sicherheitsdiensten sowie bei Geschäftsanrufen, deren Inhalt Bestellungen, Aufträge, Reservationen oder ähnliche Geschäftsvorfälle sind – in der Praxis als «Massengeschäfte» bezeichnet. Die Gesetzesmaterialien begründen das pragmatisch: Bei solchen Anrufen muss es schnell gehen, und eine förmliche Ansage in mehreren Sprachen wäre insbesondere im Tourismus unverhältnismässig aufwendig. Genau das ist der Anwendungsfall, für den viele KI-Telefonassistenten ursprünglich gebaut wurden: ein Zimmer buchen, einen Tisch reservieren, ein Ersatzteil bestellen, einen Termin vereinbaren.", "en": "", "it": "", "fr": "" },
+        { "de": "Die Ausnahme ist ein schmaler Korridor, kein Freipass für die ganze Telefonanlage. Sie deckt den eigentlichen Geschäftsvorfall – nicht das gesamte Anrufaufkommen eines Unternehmens. Eine Support-Hotline, eine allgemeine Informationsnummer, eine Beschwerdestelle oder eine Beratung fallen nicht darunter, selbst wenn dieselbe Nummer oder dieselbe KI auch Reservationen entgegennimmt. Massgeblich ist der tatsächliche Inhalt des einzelnen Gesprächs, nicht die Abteilung oder das System, das es führt.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Fällt typischerweise unter die Ausnahme: Tischreservation, Zimmerbuchung, Terminvereinbarung, Bestellung eines Produkts oder einer Dienstleistung.", "en": "", "it": "", "fr": "" },
+        { "de": "Fällt typischerweise nicht darunter: technischer Support, Reklamationen, medizinische oder therapeutische Anliegen, allgemeine Auskünfte, Beratungsgespräche.", "en": "", "it": "", "fr": "" },
+        { "de": "Im Zweifel gilt: Behandeln Sie ein Gespräch, das nicht eindeutig ein Massengeschäft ist, wie ein zustimmungspflichtiges Gespräch – das ist die vorsichtigere und im Streitfall verteidigbarere Variante.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Erlaubt aufgezeichnet heisst nicht: für alles nutzbar", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Selbst wenn ein Anruf unter die Ausnahme fällt, ist die Nutzung der Aufnahme eng begrenzt. Art. 179quinquies StGB bindet Aufnahmen aus Massengeschäften ausschliesslich an die Beweissicherung – also den Nachweis, dass und was vereinbart wurde. Eine Auswertung für Marketing, für die Kontrolle des Gesprächsverhaltens Ihres KI-Assistenten oder für das Training eines Sprachmodells ist damit nicht automatisch abgedeckt, selbst wenn die Aufnahme selbst rechtmässig entstanden ist. Wer eine Aufnahme später für einen anderen Zweck nutzt als denjenigen, für den sie zulässig war, verlässt den Schutz der Ausnahme wieder – mit denselben strafrechtlichen und persönlichkeitsrechtlichen Folgen wie eine unrechtmässige Aufnahme.", "en": "", "it": "", "fr": "" },
+        { "de": "Das ist eine andere Frage als die, wie lange Sie eine rechtmässig entstandene Aufnahme aufbewahren dürfen. Sobald ein Gespräch legal aufgezeichnet ist, greift zusätzlich das Datenschutzrecht (revDSG) mit eigenen Regeln zu Zweckbindung, Aufbewahrungsfristen und Löschpflichten. Diese datenschutzrechtliche Seite behandelt der Artikel «KI-Telefonassistent und Datenschutz» ausführlich, inklusive praktischer Checkliste. Hier geht es zunächst nur um die vorgelagerte, strafrechtliche Frage: durfte überhaupt aufgezeichnet werden.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Reservationsaufnahme als Beweis bei einer strittigen Buchung nutzen: zulässig.", "en": "", "it": "", "fr": "" },
+        { "de": "Dieselbe Aufnahme auswerten, um zu prüfen, wie freundlich der KI-Assistent klang, oder für Marketingzwecke: ohne gesonderte Grundlage nicht zulässig.", "en": "", "it": "", "fr": "" },
+        { "de": "Weitergabe der Aufnahme an Dritte ausserhalb des ursprünglichen Zwecks: grundsätzlich strafbar.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Wenn Sie ansagen müssen: was eine Ansage tatsächlich leisten muss", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Ausserhalb der Massengeschäfts-Ausnahme braucht es vor der Aufzeichnung eine ausdrückliche Einwilligung. Eine Bandansage zu Gesprächsbeginn ist dafür in der Praxis das gängige Mittel – ob sie im Streitfall als gültige Einwilligung ausreicht, ist allerdings keine Formsache. Die kantonale Datenschutzaufsicht Zürich hält dazu ausdrücklich fest, dass die strafrechtliche Wirksamkeit einer reinen Bandansage im Einzelfall von den Strafverfolgungsbehörden beurteilt werden muss. Verlassen Sie sich deshalb nicht allein auf den Wortlaut, sondern darauf, dass die anrufende Person tatsächlich und ohne Nachteil widersprechen kann.", "en": "", "it": "", "fr": "" },
+        { "de": "Eine brauchbare Ansage nennt drei Dinge klar: dass aufgezeichnet wird, wofür, und wie man ablehnen kann. Vage Begriffe wie «zur Qualitätssicherung» reichen dafür nicht – Aufsichtsbehörden verlangen eine für Laien verständliche Zweckangabe. Und die Ablehnungsoption muss echt sein: Ein Hinweis, wonach Widerspruch nur schriftlich im Nachhinein möglich sei, gilt nicht als zulässige Alternative.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Schwach: „Dieser Anruf kann zu Qualitätszwecken aufgezeichnet werden.“ Zu vage, kein Hinweis auf Widerspruch, unklarer Zweck.", "en": "", "it": "", "fr": "" },
+        { "de": "Besser: „Für diesen Anruf zeichnen wir das Gespräch auf, um Ihre Anfrage korrekt zu bearbeiten. Wenn Sie das nicht möchten, sagen Sie das jetzt kurz – wir führen das Gespräch dann ohne Aufzeichnung weiter.“", "en": "", "it": "", "fr": "" },
+        { "de": "Bei einer Reservation reicht rechtlich meist ein einfacher, transparenter Hinweis statt einer förmlichen Einwilligung – aus Kulanz und Vertrauen empfiehlt sich trotzdem eine kurze, ehrliche Ansage.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Der Sonderfall: eigene Mitarbeitende am Telefon", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Nimmt Ihr System auch Gespräche auf, an denen eigene Mitarbeitende teilnehmen – etwa weil ein interner Anruf über dieselbe Anlage läuft oder eine Mitarbeiterin die KI-Vermittlung mitbedient –, kommt eine weitere Ebene dazu: Persönlichkeitsschutz und Arbeitsrecht. Die Datenschutzaufsicht des Kantons Zürich verlangt für die Aufzeichnung von Verwaltungsangestellten am Telefon unter anderem, dass diese vorgängig über die grundsätzliche Aufzeichnungsmöglichkeit informiert werden, ihre Einwilligung geben können und sich ohne Nachteil dagegen aussprechen dürfen. Das ist ein Beispiel aus dem öffentlichen Sektor und lässt sich nicht eins zu eins auf jedes private Schweizer KMU übertragen – es zeigt aber, welche Art von Sorgfalt hier erwartet wird.", "en": "", "it": "", "fr": "" },
+        { "de": "Für private Arbeitgebende kommen zusätzliche arbeitsrechtliche und persönlichkeitsrechtliche Fragen ins Spiel, die dieser Artikel bewusst nicht abschliessend beantwortet. Zeichnet Ihr KI-Telefonassistent auch interne Gespräche oder Gespräche mit eigenen Mitarbeitenden auf, holen Sie sich für diesen konkreten Fall arbeitsrechtlichen Rat, statt sich auf die Massengeschäfts-Ausnahme zu verlassen – die für Kundengespräche gedacht ist, nicht für die Überwachung des eigenen Personals.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Mitarbeitende brauchen eine eigene, vorgängige Information und eine echte Widerspruchsmöglichkeit – unabhängig davon, ob der Anruf mit einer Kundin oder einem Kollegen geführt wird.", "en": "", "it": "", "fr": "" },
+        { "de": "Aufnahmen zur Kontrolle des Verkaufs- oder Gesprächsverhaltens von Mitarbeitenden sind ohne vorherige, transparente Information nicht zulässig.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Was schiefgehen kann", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Die meisten Probleme entstehen nicht aus böser Absicht, sondern aus einer zu groben Einordnung. Diese Muster tauchen bei Schweizer KMU immer wieder auf.", "en": "", "it": "", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "Fehler: alle Anrufe pauschal als «Geschäftsanruf» behandeln und ohne Ansage aufzeichnen. Besser: Anruftypen vorab definieren und nur echte Massengeschäfte ohne Ansage aufzeichnen.", "en": "", "it": "", "fr": "" },
+        { "de": "Fehler: eine vage Bandansage einspielen und sich darauf verlassen, dass das rechtlich reicht. Besser: Zweck klar benennen und eine echte, sofortige Widerspruchsmöglichkeit anbieten.", "en": "", "it": "", "fr": "" },
+        { "de": "Fehler: Reservationsaufnahmen nachträglich zur Bewertung des KI-Assistenten oder für Marketing nutzen. Besser: für jede Zweckänderung eine eigene, gesonderte Grundlage schaffen.", "en": "", "it": "", "fr": "" },
+        { "de": "Fehler: Mitarbeitendengespräche wie Kundenanrufe behandeln. Besser: Personalfragen separat und mit arbeitsrechtlicher Beratung klären.", "en": "", "it": "", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "Die Kurzformel für den Alltag", "en": "", "it": "", "fr": "" },
+      "paragraphs": [
+        { "de": "Bevor Sie Ihren KI-Telefonassistenten aufzeichnen und transkribieren lassen, klären Sie eine einzige Frage pro Anruftyp: Geht es um eine Bestellung, einen Auftrag, eine Reservation oder einen vergleichbaren Geschäftsvorfall? Wenn ja, dürfen Sie ohne vorherige Einwilligung aufzeichnen – aber nur zur Beweissicherung. Wenn nein, oder wenn Sie es nicht sicher sagen können, brauchen Sie eine klare, verständliche Ansage mit echter Widerspruchsmöglichkeit, bevor die Aufzeichnung beginnt. Und sobald eine Aufnahme rechtmässig existiert, übernimmt das Datenschutzrecht mit eigenen Regeln zu Aufbewahrung und Löschung. Der praktische nächste Schritt: Ordnen Sie Ihre eigenen Anruftypen dieser Logik zu, bevor Sie die Aufzeichnungsfunktion einschalten – nicht danach.", "en": "", "it": "", "fr": "" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "Muss ich jeden Anruf ansagen, wenn ein KI-Telefonassistent abnimmt?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein. Für Anrufe, die eindeutig eine Bestellung, einen Auftrag oder eine Reservation betreffen, verlangt Art. 179quinquies StGB keine vorherige Einwilligung fürs Aufzeichnen. Für praktisch alle anderen Gespräche – Support, Beratung, allgemeine Auskünfte – brauchen Sie eine Ansage mit echter Widerspruchsmöglichkeit, bevor die Aufzeichnung beginnt. Ob Anrufende überhaupt erkennen müssen, dass eine KI antwortet, ist eine separate Transparenzfrage und unabhängig von der Aufzeichnung zu beurteilen.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Was gilt für eine allgemeine Support- oder Beratungshotline?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Eine Support- oder Beratungshotline fällt in aller Regel nicht unter die Massengeschäfts-Ausnahme, selbst wenn dieselbe Nummer oder derselbe KI-Assistent auch Reservationen entgegennimmt. Massgeblich ist der Inhalt des jeweiligen Gesprächs. Für solche Anrufe brauchen Sie vor der Aufzeichnung eine klare Ansage und eine echte Möglichkeit, zu widersprechen.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Reicht eine automatische Bandansage als gültige Einwilligung?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nicht automatisch. Eine Ansage ist ein sinnvoller erster Schritt, aber ob sie im konkreten Fall den strafrechtlichen Anforderungen an eine Einwilligung genügt, beurteilen im Streitfall die Strafverfolgungsbehörden – das hält auch die kantonale Datenschutzaufsicht Zürich ausdrücklich fest. Entscheidend ist weniger der genaue Wortlaut als die Frage, ob die anrufende Person den Zweck verstehen und tatsächlich, ohne Nachteil widersprechen konnte.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Wie lange darf ich Aufnahmen und Transkripte eines KI-Telefonassistenten aufbewahren?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Sobald eine Aufnahme rechtmässig entstanden ist, gilt dafür das Datenschutzrecht (revDSG): Sie dürfen sie nur so lange aufbewahren, wie es der ursprüngliche Zweck erfordert, und müssen sie danach löschen. Eine pauschale Frist gibt das Gesetz nicht vor – Sie legen sie selbst fest und dokumentieren sie. Die praktische Umsetzung dieser datenschutzrechtlichen Seite behandelt unser Artikel «KI-Telefonassistent und Datenschutz» ausführlich.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Was gilt, wenn ein Reservationsanruf mitten im Gespräch zur Beschwerde wird?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Rechtlich sauber ist es, den Anruf ab dem Moment, in dem er den Rahmen einer Reservation verlässt, wie ein zustimmungspflichtiges Gespräch zu behandeln. In der Praxis lässt sich das mit einem KI-Telefonassistenten selten sauber in Echtzeit trennen. Kann Ihr System nicht zwischen Gesprächsabschnitten unterscheiden, ist die vorsichtigere Lösung, für Anrufe mit erkennbar gemischtem Inhalt von vornherein eine Ansage einzuspielen.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Gilt die Massengeschäfts-Ausnahme auch für Anrufe mit eigenen Mitarbeitenden?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Nein. Die Ausnahme ist für Kundengespräche über Bestellungen, Aufträge und Reservationen gedacht, nicht für die Überwachung des eigenen Personals. Für Gespräche, an denen Mitarbeitende teilnehmen, kommen arbeitsrechtliche und persönlichkeitsrechtliche Anforderungen hinzu, die über die reine Anrufer-Einwilligung hinausgehen. Holen Sie sich dafür arbeitsrechtlichen Rat für Ihren konkreten Fall.", "en": "", "it": "", "fr": "" }
+    },
+    {
+      "q": { "de": "Was passiert, wenn ich unrechtmässig aufzeichne?", "en": "", "it": "", "fr": "" },
+      "a": { "de": "Das Aufzeichnen eines nicht-öffentlichen Gesprächs ohne gültige Einwilligung ist eine Straftat, die auf Antrag der betroffenen Person verfolgt wird – automatisch prüft das niemand nach, aber die Person kann Anzeige erstatten. Je nachdem, ob die aufnehmende Stelle selbst am Gespräch beteiligt war oder nicht, drohen Geldstrafe oder Freiheitsstrafe bis zu einem beziehungsweise bis zu drei Jahren. Gerichte können zudem die Löschung der Aufnahme und in bestimmten Fällen die Einziehung der Aufnahmetechnik anordnen.", "en": "", "it": "", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "Art. 179bis StGB",
+    "Art. 179ter StGB",
+    "Art. 179quinquies StGB",
+    "Massengeschäfte",
+    "Antragsdelikt",
+    "Beweissicherung",
+    "Einwilligung",
+    "EDÖB",
+    "revDSG",
+    "Zweckbindung",
+    "Aufbewahrungsfrist",
+    "KI-Telefonassistent",
+    "Transkription",
+    "Personalgespräche",
+    "Persönlichkeitsschutz"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "EDÖB – Aufzeichnung von Gesprächen (abgerufen 29. Juli 2026)",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://www.edoeb.admin.ch/de/aufzeichnung-von-gespraechen"
+    },
+    {
+      "label": {
+        "de": "Datenschutzbeauftragte des Kantons Zürich – Aufzeichnung von Telefongesprächen in der Verwaltung, V1.3 (Oktober 2025, abgerufen 29. Juli 2026)",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://docs.datenschutz.ch/u/d/publikationen/webartikel/webartikel_aufzeichnung_von_telefongespraechen.pdf"
+    },
+    {
+      "label": {
+        "de": "Schweizerisches Strafgesetzbuch (StGB, SR 311.0), Art. 179bis–179quinquies – Fedlex (abgerufen 29. Juli 2026)",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "href": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de"
+    }
+  ]
+}

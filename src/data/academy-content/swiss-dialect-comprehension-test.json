@@ -1,0 +1,491 @@
+{
+  "id": "swiss-dialect-comprehension-test",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["de"],
+  "slug": {
+    "de": "ki-telefonassistent-schweizerdeutsch-test",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["what-is-an-ai-phone-assistant", "how-voice-ai-works"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "Versteht ein KI-Telefonassistent Schweizerdeutsch? | Weissmann AI",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "Schweizerdeutsch verstehen ist nicht dasselbe wie es zu sprechen. Der Dialekt-Stresstest mit Score-Karte für Zürich-, Bern-, Basel- und Zentralschweizer Mundart.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "KI-Agenten & Voice · Praxistest",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "h1": {
+    "de": "Versteht ein KI-Telefonassistent Schweizerdeutsch wirklich? Der Dialekt-Praxistest",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "Ein KI-Telefonassistent kann Schweizerdeutsch auf zwei ganz verschiedenen Ebenen «verstehen»: Er kann erkennen, was ein Anrufer in Mundart sagt (Spracherkennung), ohne selbst je ein Wort Dialekt zu sprechen – er antwortet stattdessen in einer klar definierten Sprache. Beide Fähigkeiten sind technisch unabhängig voneinander und unterschiedlich schwer zu erreichen. Wie gut ein System tatsächlich funktioniert, hängt zudem stark davon ab, welche Dialektregion anruft: Zürichdeutsch, Berndeutsch, Baseldeutsch und Zentralschweizer Mundart unterscheiden sich in Aussprache und Wortschatz erheblich. Eine pauschale Herstelleraussage wie «versteht Schweizerdeutsch» lässt sich nicht prüfen – ein strukturierter Testanruf mit den Dialekten Ihrer eigenen Kundschaft schon. Dieser Artikel liefert das Testprotokoll dafür.",
+    "en": "",
+    "it": "",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": {
+        "de": "«Versteht Ihr System Schweizerdeutsch?» – «Ja, natürlich.»",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "«Versteht Ihr System eigentlich Schweizerdeutsch?», fragt die Kundin am Telefon. «Ja, natürlich», sagt der Verkäufer. Dieses Ja ist meistens ehrlich gemeint und trotzdem fast wertlos, solange niemand nachfragt, was genau damit behauptet wird. Verstehen kann heissen: Das System erkennt einzelne Wörter richtig. Es kann auch heissen: Es begreift die Absicht dahinter, selbst wenn ein Wort danebenliegt. Und es kann heissen, dass am Ende die richtige Handlung ausgelöst wird – ein Termin wird gebucht, eine Frage korrekt beantwortet, ein Anruf an die richtige Stelle weitergeleitet. Diese drei Dinge sind nicht dasselbe, und ein Verkaufsgespräch hat selten Zeit, den Unterschied zu erklären.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Noch ein Missverständnis hält sich hartnäckig: Verstehen und Sprechen sind zwei getrennte Fähigkeiten. Ein System kann eine Mundart-Aussage korrekt erfassen, ohne selbst je ein Wort Dialekt zu sprechen – es antwortet stattdessen in einer klar definierten Sprache. Bei Weissmann ist das kein verschwiegener Kompromiss, sondern die ausdrückliche Ausgangslage: Der Assistent versteht Schweizerdeutsch und nimmt Anrufe von Schweizerdeutsch sprechenden Anrufenden entgegen; er antwortet in der Sprache, die für Ihr Unternehmen eingerichtet ist, nicht zwingend in Mundart zurück. Das ist eine ehrliche, überprüfbare Aussage – ganz im Gegensatz zu einem pauschalen «Ja, natürlich». Dieser Artikel zeigt, wie Sie eine solche Aussage bei jedem Anbieter selbst überprüfen, bevor Sie unterschreiben.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Verstehen hat vier Stufen – ein Verkaufsgespräch kennt meistens nur eine",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "«Verstehen» klingt nach einem Schalter: an oder aus. In Wirklichkeit sind es vier Stufen, die technisch unabhängig voneinander sind – ein System kann auf einer Stufe gut und auf der nächsten schwach sein, ohne dass das im Verkaufsgespräch je zur Sprache kommt.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Für den Praxistest bedeutet das: Es reicht nicht, nach einem Testanruf zu sagen «hat geklappt». Sie müssen wissen, auf welcher der vier Stufen es geklappt hat – und ob es auf allen vieren gleich gut lief.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Akustisch richtig gehört: Die Spracherkennung wandelt das Gesagte korrekt in Text um, auch wenn Wörter wie «Zmorge», «Vorabe» oder ein typisch Berner «Ändlie» fallen. Wie diese Erkennungsebene technisch funktioniert, erklären wir separat im Artikel «Wie funktioniert Voice AI?» – hier zählt nur, ob sie bei Ihren Dialekten trägt.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Absicht richtig erfasst: Selbst wenn ein einzelnes Wort falsch transkribiert wird, erkennt ein gutes System trotzdem, dass die Anruferin einen Termin verschieben will – aus dem Zusammenhang, nicht aus der perfekten Wortfolge.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Richtige Handlung ausgelöst: Der Termin landet im richtigen Kalenderslot, die Frage wird korrekt beantwortet, die Weiterleitung geht an die richtige Abteilung. Ein System kann eine Absicht «verstehen» und trotzdem die falsche Handlung auslösen, wenn Namen, Daten oder Zahlen unterwegs verrutschen.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Sauberer Ausstieg bei Unsicherheit: die vielleicht wichtigste Stufe – und die am seltensten getestete. Ein System, das bei echter Unsicherheit nachfragt oder sauber an einen Menschen übergibt, ist einem System vorzuziehen, das rät und dabei überzeugend klingt. Ein überzeugend klingender falscher Termin ist teurer als ein ehrliches «Das habe ich nicht ganz verstanden».",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Warum «Schweizerdeutsch» als einzelne Testkategorie zu grob ist",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "«Schweizerdeutsch» ist aus Sicht der Spracherkennung kein einzelner Zielwert, sondern eine Familie alemannischer Dialekte ohne einheitliche Schriftnorm. Zürichdeutsch, Berndeutsch, Baseldeutsch und die Mundarten der Zentralschweiz unterscheiden sich in Lautung, Wortschatz und Melodie zum Teil erheblich – wer in Basel «Drämmli» sagt, meint dasselbe wie jemand, der in Zürich «Tram» sagt, aber phonetisch liegen Welten dazwischen. Sprachmodelle lernen aus der Verteilung der Daten, mit denen sie trainiert wurden; Dialekte, die darin häufiger vorkommen, werden tendenziell zuverlässiger erkannt als solche, die seltener vorkommen. Das ist keine anbieterspezifische Eigenheit, sondern eine allgemeine Eigenschaft von Spracherkennungssystemen – und genau deshalb lässt sich die tatsächliche Qualität nicht aus einer einzigen Testperson ableiten.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Wer testen will, ob ein System wirklich robust ist, kann es ja mit dem inoffiziellen Schweizer Nationaltest versuchen: dem Wort «Chuchichäschtli». Praktisch nützlich ist das nicht – aber es erinnert daran, dass Aussprache in der Schweiz kein Nebenschauplatz ist, sondern der Kern der Sache.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Die praktische Konsequenz: Ein System, das mit einer Zürcher Testperson gut funktioniert, sagt wenig darüber aus, wie es mit einer Berner oder Basler Anruferin zurechtkommt. Die eine Frage, die für Ihren Test zählt: Welche Dialekte rufen bei Ihnen tatsächlich an – und wurden genau die getestet, statt der bequemsten verfügbaren Stimme?",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Der Dialekt-Stresstest: sieben Dimensionen, die ein einzelner Testanruf nie abdeckt",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "Der folgende Testablauf braucht keine Software und kein Anbieter-Login – nur ein Telefon, eine Liste und Testpersonen, die den jeweiligen Dialekt im Alltag tatsächlich sprechen (nicht Kolleginnen, die ihn sich für den Anruf «extra deutlich» abgewöhnen). Für jede der sieben Dimensionen gilt derselbe Ablauf: eine Terminanfrage, eine offene Frage und – wo möglich – eine Unterbrechung oder Korrektur mitten im Satz.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Sieben Dimensionen mal mindestens zwei Aufgaben ergeben rasch ein Dutzend Testanrufe. Das ist mehr Aufwand als ein einziges «Probieren wir es mal» – aber deutlich weniger, als ein falsch gebuchter Termin oder eine verärgerte Stammkundin am Ende kostet.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Zürichdeutsch: meist die Variante, mit der ein System am ehesten in Kontakt kommt, weil ein grosser Teil der Deutschschweizer Testnutzer aus dem Grossraum Zürich stammt. Ein gutes Ergebnis hier ist der Ausgangspunkt des Tests, nicht dessen Beweis.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Berndeutsch: andere Vokale, ein anderes Sprechtempo, eigener Wortschatz. Ein System, das nur mit Zürcher Stimmen erprobt wurde, hat zu Berndeutsch schlicht keine verlässlichen Ergebnisse geliefert – testen Sie mit einer Person aus dem Berner Mittelland oder Oberland.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Baseldeutsch: phonetisch die eigenständigste der grossen Stadtmundarten; Baslerinnen und Basler betonen zu Recht, dass ihr Dialekt anders klingt als der Rest der Deutschschweiz. Gleicher Testablauf, andere Region.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Zentralschweizer Mundart (Luzern, Zug, Uri, Schwyz, Ob- und Nidwalden): oft näher am verbreiteten Klischeebild von «Schweizerdeutsch», aber mit eigener Melodie und eigenem Wortschatz – als eigenständige Testdimension zu behandeln, nicht als Ersatz für Zürichdeutsch.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Code-Switching: Schweizer Anrufende wechseln mitten im Satz die Sprache – ein französisches «Merci vilmal» am Ende eines Deutschschweizer Satzes, ein englischer Fachbegriff, ein italienischer Ortsname bei einem Auftrag im Tessin. Lassen Sie eine Testperson bewusst zwischen Mundart und mindestens einer weiteren Sprache wechseln und beobachten Sie, ob der Assistent den Faden behält oder den Anruf verliert.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Namen und Adressen: Schweizer Nachnamen (Zbinden, Küng, Schürch, Aebischer), Ortsnamen mit Sonderzeichen und vierstellige Postleitzahlen sind der Moment, in dem viele Systeme scheitern – nicht weil sie Dialekt nicht verstehen, sondern weil Eigennamen grundsätzlich schwer zu erkennen sind. Lassen Sie einen ungewöhnlichen Namen buchstabieren und eine vollständige Adresse diktieren.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Hintergrundgeräusche: ein Anruf aus der Werkstatt, von der Baustelle, aus dem Auto per Freisprechanlage oder aus einer belebten Küche ist für viele Gewerbebetriebe der Normalfall – nicht das ruhige Büro, in dem Verkaufsdemos meistens stattfinden. Wiederholen Sie mindestens einen der obigen Tests mit echtem Hintergrundlärm.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Die Score-Karte: vom Bauchgefühl zur vergleichbaren Zahl",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "Ein Testanruf ohne Massstab endet immer im Bauchgefühl – «hat eigentlich ganz gut geklappt» ist keine Grundlage für eine Kaufentscheidung. Bewerten Sie jede der sieben Dimensionen einzeln, mit derselben vierstufigen Skala:",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Die Regel, die in den meisten Checklisten fehlt: Ein Durchschnittswert allein reicht nicht. Eine einzelne 1 in einer Dimension, die für Ihr Geschäft zentral ist, wiegt schwerer als drei zusätzliche Dreier in Dimensionen, die selten vorkommen. Gewichten Sie die sieben Dimensionen deshalb nach der tatsächlichen Zusammensetzung Ihrer Anruferschaft, nicht nach der Reihenfolge dieser Liste – ein Handwerksbetrieb im Emmental gewichtet Berndeutsch anders als ein Hotel am Zürichsee mit internationaler Laufkundschaft.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "0 – Ausfall: Das System versteht so wenig, dass das Gespräch abbricht, sich im Kreis dreht oder die Anruferin auflegt.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "1 – Stille Fehlleistung: Das System versteht falsch und handelt trotzdem entschlossen – der gefährlichste Fall, weil der Fehler unbemerkt bleibt, bis Termin oder Angabe bereits falsch im System stehen.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "2 – Ehrliche Unsicherheit: Das System versteht nicht vollständig, merkt es aber selbst – und fragt gezielt nach oder übergibt sauber an einen Menschen.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "3 – Korrekt: Das System versteht und handelt richtig, ohne Nachfrage.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Was beim Testen selbst schiefgeht",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "Der Test kann genauso schiefgehen wie das System, das er prüfen soll. Die häufigsten Fehler:",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Telefonstimme-Effekt: Testpersonen sprechen am Telefon unbewusst langsamer und deutlicher als im echten Leben – vor allem, wenn sie wissen, dass gerade eine Maschine getestet wird. Das Ergebnis ist dann zu gut, um für echte Anrufe repräsentativ zu sein.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Nur das eigene Team testet: Wenn alle Testpersonen aus dem eigenen Betrieb stammen, testen Sie meist nur die Dialekte, die Sie ohnehin schon im Büro haben – und übersehen genau die Regionen, aus denen Ihre Kundschaft tatsächlich anruft.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Ein Anruf gilt als Beweis: Ein einzelner erfolgreicher Testanruf ist ein Datenpunkt, kein Muster. Systeme, die auf Servern mit wechselnder Auslastung laufen, liefern nicht bei jedem Anruf exakt dasselbe Ergebnis.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Korrektur und Unterbrechung fehlen im Test: Echte Anrufe enthalten Selbstkorrekturen («nein, doch nicht Dienstag, Mittwoch») und Unterbrechungen. Ein Test, der nur glatte, ungestörte Sätze abfragt, prüft nur die einfachste Version der Realität.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Dialekt und Lärm werden nur einzeln getestet: Der wirklich harte Fall ist die Kombination – Berndeutsch aus einer lauten Werkstatt ist etwas anderes als Berndeutsch im stillen Büro.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Wann die Dialektfrage nicht die wichtigste Frage ist",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "Nicht jeder Betrieb muss diesen Aufwand betreiben. Die Dialektfrage ist die falsche erste Frage, wenn einer der folgenden Punkte auf Sie zutrifft:",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "In all diesen Fällen ist der Sieben-Dimensionen-Test kein Fehler, nur unverhältnismässig. Wählen Sie die Dimensionen, die zu Ihrem tatsächlichen Anrufaufkommen passen, statt die volle Liste abzuarbeiten, nur weil sie hier steht.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ],
+      "bullets": [
+        {
+          "de": "Ihre Kundschaft spricht überwiegend eine andere Sprache: Ein auf internationale Gäste ausgerichtetes Boutique-Hotel oder ein Betrieb mit mehrheitlich französisch- oder englischsprachiger Kundschaft sollte zuerst genau diese Sprache stresstesten – Schweizerdeutsch ist dann ein Randfall, kein Kernszenario.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Ihr Anrufvolumen ist sehr klein: Wenn im Schnitt wenige Anrufe pro Tag eingehen und ohnehin meist ein Mensch selbst abnimmt, lohnt sich der volle Sieben-Dimensionen-Test kaum – ein kurzer, informeller Check reicht.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Dialekt-Anrufe sind bei Ihnen die Ausnahme, nicht die Regel: Manche Betriebe – etwa in stark internationalen Branchen oder Grenzregionen – erhalten ohnehin selten reine Mundart-Anrufe. Investieren Sie den Testaufwand dorthin, wo er Ihre tatsächliche Anrufstruktur widerspiegelt.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    },
+    {
+      "heading": {
+        "de": "Der einzige ehrliche Beweis: ein echter Testanruf, keine Werbeaussage",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "paragraphs": [
+        {
+          "de": "Die ehrliche Antwort auf «Versteht Ihr System Schweizerdeutsch?» ist nie ein einzelnes Wort. Sie ist eine Score-Karte mit sieben Zeilen, ausgefüllt mit echten Stimmen aus den Regionen, aus denen Ihre Kundschaft tatsächlich anruft. Alles andere ist ein Versprechen, das noch niemand für Ihren Betrieb überprüft hat.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        },
+        {
+          "de": "Der nächste Schritt ist einfach: Bevor Sie sich auf ein monatliches Abonnement festlegen, lässt sich der KI-Telefonassistent von Weissmann einmalig für CHF 350 ohne laufende Bindung einrichten und testen – genau der Rahmen, in dem sich dieses Protokoll mit echten Testpersonen durchspielen lässt, bevor überhaupt eine längerfristige Entscheidung ansteht.",
+          "en": "",
+          "it": "",
+          "fr": ""
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "de": "Ist Schweizerdeutsch aus Sicht der Spracherkennung eine einzige Sprache?",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "Nein. Sprachtechnisch ist «Schweizerdeutsch» ein Sammelbegriff für eine Familie stark unterschiedlicher alemannischer Dialekte ohne einheitliche Schriftnorm. Zürichdeutsch, Berndeutsch, Baseldeutsch und Zentralschweizer Mundart unterscheiden sich in Aussprache und Wortschatz oft stärker, als viele Nicht-Deutschschweizer annehmen. Ein System, das mit einer Region gut zurechtkommt, ist damit nicht automatisch für alle geeignet.",
+        "en": "",
+        "it": "",
+        "fr": ""
+      }
+    },
+    {
+      "q": {
+        "de": "Warum spricht ein Assistent, der Dialekt versteht, nicht selbst Dialekt zurück?",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "Verstehen (Spracherkennung eingehender Sprache) und Sprechen (Sprachsynthese der Antwort) sind zwei getrennte technische Bausteine mit unterschiedlichem Reifegrad. Schweizerdeutsch hat keine standardisierte Schreibweise, was eine natürlich klingende Sprachausgabe in Mundart deutlich erschwert. Die heute übliche und ehrliche Lösung: Der Assistent versteht die Mundart der Anrufenden, antwortet aber in einer klar definierten Sprache – bei Weissmann in der für Ihr Unternehmen eingerichteten Sprache.",
+        "en": "",
+        "it": "",
+        "fr": ""
+      }
+    },
+    {
+      "q": {
+        "de": "Reicht ein einzelner Testanruf, um ein System zu beurteilen?",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "Nein. Ein einzelner Anruf zeigt nur, ob eine Person in einer bestimmten Situation an einem bestimmten Tag verstanden wurde. Für ein belastbares Bild braucht es mehrere Testpersonen pro Dialektregion, wiederholte Anrufe und mindestens eine Variante mit Hintergrundgeräuschen.",
+        "en": "",
+        "it": "",
+        "fr": ""
+      }
+    },
+    {
+      "q": {
+        "de": "Was bedeutet ein schlechtes Ergebnis in nur einer Dialektregion?",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "Das hängt davon ab, ob diese Region zu Ihrer tatsächlichen Kundschaft gehört. Ein Betrieb im Berner Oberland kann ein schwaches Baseldeutsch-Ergebnis eher verschmerzen als ein Betrieb, der schweizweit tätig ist. Gewichten Sie die Testdimensionen deshalb nach Ihrer realen Anruferstruktur, nicht nach einer allgemeinen Checkliste.",
+        "en": "",
+        "it": "",
+        "fr": ""
+      }
+    },
+    {
+      "q": {
+        "de": "Muss ich für den Test echte Kundinnen und Kunden einsetzen?",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "Nein, und das ist meistens auch nicht nötig. Kolleginnen, Familienmitglieder oder Bekannte, die den jeweiligen Dialekt im Alltag sprechen, reichen für einen aussagekräftigen Test. Wichtig ist nur, dass sie nicht bewusst «deutlich fürs Telefon» sprechen, sondern in ihrem normalen Tempo und ihrer normalen Aussprache.",
+        "en": "",
+        "it": "",
+        "fr": ""
+      }
+    },
+    {
+      "q": {
+        "de": "Ist das Verstehen von Schweizerdeutsch dasselbe wie die «Sprache» im Starter-Paket?",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "a": {
+        "de": "Nein, und das wird oft verwechselt. Die im Starter-Paket wählbare Sprache (Deutsch, Englisch, Französisch oder Italienisch) bestimmt, in welcher Sprache der Assistent antwortet – nicht, ob er Schweizerdeutsch sprechende Anrufende versteht. Das Verstehen von Mundart ist Teil der Spracherkennung und läuft unabhängig von der gewählten Antwortsprache. Der Dialekt-Stresstest in diesem Artikel prüft genau diesen Teil.",
+        "en": "",
+        "it": "",
+        "fr": ""
+      }
+    }
+  ],
+  "keyEntities": [
+    "KI-Telefonassistent",
+    "Schweizerdeutsch",
+    "Zürichdeutsch",
+    "Berndeutsch",
+    "Baseldeutsch",
+    "Zentralschweizer Mundart",
+    "Code-Switching",
+    "Speech-to-Text (STT)",
+    "Dialekterkennung",
+    "Voice AI",
+    "Automatic Speech Recognition (ASR)"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "Weissmann AI – Leistungsseite KI-Telefonassistent (Angabe zum Verständnis von Schweizerdeutsch, Erstanbieter-Quelle)",
+        "en": "",
+        "it": "",
+        "fr": ""
+      },
+      "href": "/leistungen/ki-telefonassistent/"
+    }
+  ],
+  "cta": {
+    "label": {
+      "de": "KI-Telefonassistent unverbindlich testen (CHF 350, einmalig)",
+      "en": "",
+      "it": "",
+      "fr": ""
+    },
+    "href": "/leistungen/ki-telefonassistent/"
+  }
+}
