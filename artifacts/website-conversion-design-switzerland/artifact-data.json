@@ -1,0 +1,253 @@
+{
+  "articleId": "website-conversion-design-switzerland",
+  "language": "en",
+  "dataAsOf": "2026-07-29",
+  "intro": "Answer the questions for each of the six factors below, based on your own website as it actually behaves today, not how you remember building it. Every question has three options ranging from 'no problem' to 'likely a problem' — pick whichever is closest, and use 'never actually tested' honestly where it applies, since an untested factor is a real risk in itself, not a pass. Nothing is pre-selected. The result sorts the six factors into a prioritized list of likely conversion leaks, starting with whichever is both most severe and earliest in a visitor's decision path.",
+  "scoring": {
+    "perQuestionSeverity": [0, 1, 2],
+    "maxScorePerFactor": 6,
+    "bands": [
+      { "id": "low", "min": 0, "max": 1, "label": "Low risk — probably not a leak here" },
+      { "id": "medium", "min": 2, "max": 3, "label": "Worth checking — possible leak" },
+      { "id": "high", "min": 4, "max": 6, "label": "Likely leak — prioritize this" }
+    ],
+    "description": "Each factor's score is the sum of the severity values (0, 1 or 2) chosen across its three questions, for a maximum of 6 per factor. The tool never blends the six factor scores into one overall percentage or grade, because a single high-severity factor (for example, a headline nobody understands) can cost more in lost enquiries than several low-severity ones combined, and averaging would hide that. Instead, each factor is banded independently, and only the band label is shown to the user — the raw numeric score is used internally to rank factors within a band, never displayed as a percentage or a precision it cannot support."
+  },
+  "factors": [
+    {
+      "id": "headline-clarity",
+      "label": "Headline clarity (message hierarchy)",
+      "funnelOrder": 1,
+      "whyItMatters": "A visitor who cannot tell what the business does, who it is for, and why it is a reasonable choice within about five seconds does not usually leave in visible frustration — they simply do not self-select into becoming an enquiry. Every other factor below only gets a chance to matter for visitors who clear this one first.",
+      "questions": [
+        {
+          "id": "five-second-test",
+          "prompt": "Cover everything below the first screen and show only the top of your homepage to someone unfamiliar with your business for five seconds. Can they say back what you do and who it is for?",
+          "testHint": "Do this literally, with a real person, not from memory of what you intended the page to say.",
+          "options": [
+            { "label": "Yes, clearly", "severity": 0 },
+            { "label": "Partially, or after some thought", "severity": 1 },
+            { "label": "No — they guessed wrong or could not answer", "severity": 2 }
+          ]
+        },
+        {
+          "id": "competing-messages",
+          "prompt": "How many different headlines or claims compete for attention above the fold?",
+          "testHint": "Count every headline, sub-headline and rotating slide as a separate message, not just the largest one.",
+          "options": [
+            { "label": "One clear headline", "severity": 0 },
+            { "label": "Two, but one is clearly dominant", "severity": 1 },
+            { "label": "Three or more of similar weight, or a rotating carousel", "severity": 2 }
+          ]
+        },
+        {
+          "id": "specificity",
+          "prompt": "Does the headline name a specific outcome or service, or only a generic description?",
+          "testHint": "Ask: could this exact sentence sit unchanged on ten competitors' homepages?",
+          "options": [
+            { "label": "Specific outcome and audience named", "severity": 0 },
+            { "label": "A general benefit, but not fully specific", "severity": 1 },
+            { "label": "Generic company description only (\"your partner for X\")", "severity": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proof-visibility",
+      "label": "Proof visibility",
+      "funnelOrder": 2,
+      "whyItMatters": "By the time a visitor is close to contacting the business, the real question has shifted from 'do I need this' to 'do I trust this specific business enough to hand over my details.' Missing or generic proof removes a small reason to proceed at exactly the moment hesitation is most expensive.",
+      "questions": [
+        {
+          "id": "first-screen-proof",
+          "prompt": "Is at least one concrete, checkable proof point (a named client, a real address, a certification, a company register number) visible without scrolling past the first screen?",
+          "testHint": "Look for something a stranger could actually verify, not an adjective.",
+          "options": [
+            { "label": "Yes", "severity": 0 },
+            { "label": "Something is there, but vague or generic", "severity": 1 },
+            { "label": "No concrete proof visible", "severity": 2 }
+          ]
+        },
+        {
+          "id": "stranger-test",
+          "prompt": "If a stranger removed your logo, could they tell this is a real, specific, currently operating business rather than a template?",
+          "testHint": "Screenshot the homepage and cover the logo and brand name before judging.",
+          "options": [
+            { "label": "Yes, clearly", "severity": 0 },
+            { "label": "Somewhat", "severity": 1 },
+            { "label": "No", "severity": 2 }
+          ]
+        },
+        {
+          "id": "generic-claims",
+          "prompt": "Do you rely mainly on generic claims (\"trusted\", \"experienced\", \"professional\") rather than specific, checkable ones?",
+          "testHint": "List every trust claim on the homepage and mark which ones a visitor could actually verify.",
+          "options": [
+            { "label": "Mostly specific, checkable claims", "severity": 0 },
+            { "label": "A mix of both", "severity": 1 },
+            { "label": "Mostly generic adjectives, nothing checkable", "severity": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta-clarity",
+      "label": "CTA clarity",
+      "funnelOrder": 3,
+      "whyItMatters": "A visitor who has to invent their own next step usually just leaves once the information is absorbed, assuming the business would have said what to do next if there were something worth doing. Clarity here converts a passive reader into an active enquiry.",
+      "questions": [
+        {
+          "id": "time-to-find",
+          "prompt": "On your busiest page, how long would a new visitor need to find one specific instruction telling them what to do next?",
+          "testHint": "Time it with a stopwatch on a page you have not looked at in a while.",
+          "options": [
+            { "label": "Immediately visible", "severity": 0 },
+            { "label": "A few seconds of looking", "severity": 1 },
+            { "label": "Not obvious at all, or buried below the fold", "severity": 2 }
+          ]
+        },
+        {
+          "id": "competing-ctas",
+          "prompt": "How many different calls to action (call, form, chat, newsletter, brochure download, book a demo) compete on the same screen with equal visual weight?",
+          "testHint": "Count buttons and links that all look equally important, not just the ones you consider primary.",
+          "options": [
+            { "label": "One primary action", "severity": 0 },
+            { "label": "Two, one clearly primary", "severity": 1 },
+            { "label": "Three or more, all equally weighted", "severity": 2 }
+          ]
+        },
+        {
+          "id": "label-clarity",
+          "prompt": "Do your buttons describe a specific action and outcome, or a generic instruction?",
+          "testHint": "Read only the button text, out of context, and judge whether it tells you what happens next.",
+          "options": [
+            { "label": "Specific (\"Book a free 20-minute call\")", "severity": 0 },
+            { "label": "Reasonably clear but generic (\"Contact us\")", "severity": 1 },
+            { "label": "Vague (\"Submit\", \"Click here\", \"Learn more\")", "severity": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "form-length",
+      "label": "Form length",
+      "funnelOrder": 4,
+      "whyItMatters": "A form that asks for more than it has earned the right to ask adds friction at exactly the point where a visitor has already decided to act — and a form that fails silently produces zero symptoms visible to the business while quietly erasing an enquiry that believed itself sent.",
+      "questions": [
+        {
+          "id": "field-count",
+          "prompt": "How many fields does your primary contact or enquiry form require?",
+          "testHint": "Count every required field, including hidden ones revealed after scrolling.",
+          "options": [
+            { "label": "1–3 fields", "severity": 0 },
+            { "label": "4–6 fields", "severity": 1 },
+            { "label": "7 or more fields", "severity": 2 }
+          ]
+        },
+        {
+          "id": "premature-fields",
+          "prompt": "Does the form ask for anything not strictly needed to respond to a first enquiry (company size, budget range, how you heard about us) before any trust has been established?",
+          "testHint": "For each field, ask: could this wait until the second message instead of the first?",
+          "options": [
+            { "label": "No unnecessary fields", "severity": 0 },
+            { "label": "One or two", "severity": 1 },
+            { "label": "Three or more", "severity": 2 }
+          ]
+        },
+        {
+          "id": "confirmation",
+          "prompt": "After a visitor submits the form, is there a clear, visible confirmation that it was received?",
+          "testHint": "Submit the form yourself, from a phone, on mobile data, and confirm the notification email actually arrives.",
+          "options": [
+            { "label": "Yes, clear confirmation", "severity": 0 },
+            { "label": "Something happens, but it is ambiguous", "severity": 1 },
+            { "label": "No confirmation, or never actually tested", "severity": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mobile-experience",
+      "label": "Mobile experience",
+      "funnelOrder": 5,
+      "whyItMatters": "A large and growing share of first-time visitors to most Swiss SME websites arrive on a phone, often at the exact moment they have just found the business and want to act immediately — precisely the visitor most likely to be lost to friction nobody checked for on a real device.",
+      "questions": [
+        {
+          "id": "tap-test",
+          "prompt": "On an actual phone, on mobile data, can a visitor tap your phone number or primary call to action without pinch-zooming?",
+          "testHint": "Test this on your own phone, on mobile data rather than office Wi-Fi, not in a desktop browser's responsive preview.",
+          "options": [
+            { "label": "Yes, easily", "severity": 0 },
+            { "label": "With some difficulty", "severity": 1 },
+            { "label": "No, or never tested on a real phone", "severity": 2 }
+          ]
+        },
+        {
+          "id": "coverage",
+          "prompt": "Does anything (menu, cookie banner, pop-up) cover the main content or action on first load on mobile?",
+          "testHint": "Load the homepage fresh, in a private browsing window, and watch the first three seconds without touching anything.",
+          "options": [
+            { "label": "Nothing blocks it", "severity": 0 },
+            { "label": "Minor overlap", "severity": 1 },
+            { "label": "Yes, it blocks the main action", "severity": 2 }
+          ]
+        },
+        {
+          "id": "recent-test",
+          "prompt": "Have you personally completed your own form or booking flow on a real phone in the last three months?",
+          "testHint": "If you cannot remember the last time, the honest answer is \"never tested.\"",
+          "options": [
+            { "label": "Yes, recently", "severity": 0 },
+            { "label": "Not recently", "severity": 1 },
+            { "label": "Never tested", "severity": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "load-speed",
+      "label": "Load speed",
+      "funnelOrder": 6,
+      "whyItMatters": "A visitor with an existing relationship to a business will wait out a slow page; a visitor who has never heard of the business before, with other search results one tap away, has no such patience and no reason to develop it mid-load.",
+      "questions": [
+        {
+          "id": "mobile-timing",
+          "prompt": "Timing it yourself on mobile data (not office Wi-Fi), how long before the page becomes usable?",
+          "testHint": "Time from tapping a search result to being able to actually read or tap something real.",
+          "options": [
+            { "label": "Under about 2 seconds", "severity": 0 },
+            { "label": "2–5 seconds", "severity": 1 },
+            { "label": "5+ seconds, or never actually timed it", "severity": 2 }
+          ]
+        },
+        {
+          "id": "bounce-gap",
+          "prompt": "If you measure it, does mobile bounce rate differ substantially from desktop bounce rate?",
+          "testHint": "Check GA4 (or an equivalent) split by device category, if it is set up and running.",
+          "options": [
+            { "label": "Similar, or not measured but no complaints", "severity": 0 },
+            { "label": "Somewhat higher on mobile", "severity": 1 },
+            { "label": "Much higher on mobile, or not measured at all", "severity": 2 }
+          ]
+        },
+        {
+          "id": "heavy-media",
+          "prompt": "Are there large, unoptimized images or autoplaying embedded videos loading immediately on the homepage?",
+          "testHint": "Check with a free tool such as Google PageSpeed Insights, or simply watch what loads first on mobile data.",
+          "options": [
+            { "label": "No", "severity": 0 },
+            { "label": "A few", "severity": 1 },
+            { "label": "Several, or a full autoplay video", "severity": 2 }
+          ]
+        }
+      ]
+    }
+  ],
+  "outputLogic": {
+    "description": "Once at least one factor has all three of its questions answered, compute that factor's score and band. Sort every factor that reaches the 'medium' or 'high' band into the Prioritized Leak List, ordered first by band (high before medium), then by raw score within the same band, then, if still tied, by ascending funnelOrder — since a problem earlier in the visitor's decision path (message hierarchy, then proof, then the call to action) blocks every later factor from getting a fair chance to matter, and is listed first on that basis alone, not because it is inherently 'worse'. Factors that land in the 'low' band are listed separately underneath, clearly marked, so they are visible but never confused with an active leak.",
+    "partialAnswerRule": "A factor with only some of its three questions answered is scored on the questions actually answered (average severity of answered questions, scaled to the 6-point range) and shown with a visible 'partially assessed' note rather than being silently excluded or treated as a confirmed score.",
+    "tieBreakOrder": ["headline-clarity", "proof-visibility", "cta-clarity", "form-length", "mobile-experience", "load-speed"]
+  },
+  "emptyStateMessage": "Answer at least one factor's three questions to see a prioritized result. Nothing is assumed or defaulted on your behalf.",
+  "disclaimer": "This tool reorders six conversion factors from 'A Beautiful Website That Does Not Convert Is Expensive Decoration' (weissmann.ai) using only the answers you provide about your own website. It does not scan, crawl or automatically test your site, does not produce a percentage conversion score, and does not guarantee a specific increase in enquiries, sales or search ranking. It is a prioritized starting point for deciding what to check or fix first, not a technical, legal or accessibility audit. All processing happens locally in your browser; nothing you enter is transmitted or stored anywhere."
+}

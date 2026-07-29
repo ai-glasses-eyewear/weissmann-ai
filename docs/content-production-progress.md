@@ -58,7 +58,8 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 | 6 | IT-PHONE-06 – 10 | done |
 | 7 | DE-WEB-01 – 05 | done |
 | 8 | DE-WEB-06 – 10 | done |
-| 9 | EN-WEB-01 – 05 | done (commit pending) |
+| 9 | EN-WEB-01 – 05 | done |
+| 10 | EN-WEB-06 – 10 | done (commit pending) |
 | 3 | EN-PHONE-01 – 05 | pending |
 | 4 | EN-PHONE-06 – 10 | pending |
 | 5 | IT-PHONE-01 – 05 | pending |
@@ -211,5 +212,19 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 **Batch 9 cross-checks:** 0 duplicate titles/slugs/H1s within batch and against all prior batches; 0 slug collisions across all 124 academy-content files (361 unique locale-slug keys); full build = 694 pages; full validator suite passes with 0 issues.
 
 **Progress: 45 of 60 articles complete.** Remaining: EN-WEB-06–10 (Batch 10), IT-WEB-01–10 (Batches 11–12).
+
+### Batch 10 — EN-WEB-06–10 (complete) — all 30 English website/SEO/GEO articles now done
+
+| # | Title | Keyword | Intent | Article file | Artifact files | Uniqueness | Factual | Impl. | Validation |
+|---|---|---|---|---|---|---|---|---|---|
+| EN-WEB-06 | Custom Website vs Template vs AI Builder | custom website vs template | commercial-investigation | `academy-content/custom-website-vs-template-vs-ai-builder.json` | `artifacts/custom-website-vs-template-vs-ai-builder/` | pass — third distinct axis (build method) vs. DE-WEB-04 (who executes) and DE-WEB-05 (which platform); no platform tribalism | fit matrix independently verified non-rigged: 4 scenarios, 3 different winners (AI builder/template/custom) | done | build+QA+links+duplicates+guardrails pass |
+| EN-WEB-07 | Multilingual Swiss Websites Without the SEO Mess | multilingual website Switzerland | commercial-investigation | `academy-content/multilingual-website-switzerland-seo.json` | `artifacts/multilingual-website-switzerland-seo/` | pass — uses this very codebase's real i18n architecture as an honest, verifiable case study | every architecture claim (locale prefixes, canonical, hreflang, language-switcher fallback) individually verified against source files AND built HTML output | done | build+QA+links+duplicates+guardrails pass |
+| EN-WEB-08 | Website Conversion Design in Switzerland | website conversion design Switzerland | commercial-investigation | `academy-content/website-conversion-design-switzerland.json` | `artifacts/website-conversion-design-switzerland/` | pass — engineering/measurement framing distinct from EN-WEB-05's aging-site diagnostic | NN/g + Google Core Web Vitals docs verified live; zero invented conversion-rate statistics (confirmed by grep) | done | build+QA+links+duplicates+guardrails pass |
+| EN-WEB-09 | Local SEO Switzerland: How Many Location Pages | local SEO Switzerland | commercial-investigation | `academy-content/local-seo-switzerland-doorway-pages.json` | `artifacts/local-seo-switzerland-doorway-pages/` | pass — narrow doorway-page decision angle, cross-links (not repeats) `local-seo-switzerland.json`; confirmed zero cannibalization via audit-duplicates.mjs | Google doorway-pages policy + GBP service-area-business docs verified live | done | build+QA+links+duplicates+guardrails pass |
+| EN-WEB-10 | GEO Agency Switzerland: How to Spot a Fake Pitch | GEO agency Switzerland | commercial-investigation | `academy-content/geo-agency-red-flags-switzerland.json` | `artifacts/geo-agency-red-flags-switzerland/` | pass — **highest cannibalization risk in the whole project, resolved**: vendor-pitch-evaluation framing vs. the 4 existing how-to GEO articles; confirmed <10% content overlap; both required disclaimers (no guaranteed citation, no special AI schema) present; explicitly applies its own red-flag checklist to Weissmann's own GEO pitch, disclosing a real gap (no published case study yet) | no guaranteed-outcome claims anywhere, including implicitly about Weissmann | done | build+QA+links+duplicates+guardrails pass |
+
+**Batch 10 cross-checks:** 0 duplicate titles/slugs/H1s within batch and against all prior batches; 0 slug collisions across all 129 academy-content files (366 unique locale-slug keys); full build = 699 pages; full validator suite passes with 0 issues.
+
+**Progress: 50 of 60 articles complete** — all 30 phone-assistant articles (10 DE + 10 EN + 10 IT) and all 20 DE/EN website articles. **Remaining: 10 IT-WEB articles across Batches 11–12 — the final stretch.**
 
 _(Further batches logged the same way as they complete.)_
