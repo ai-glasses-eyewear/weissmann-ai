@@ -1,0 +1,205 @@
+{
+  "id": "chiamate-commerciali-automatiche-ai-svizzera",
+  "cluster": "agents-automation-voice",
+  "type": "spoke",
+  "languages": ["it"],
+  "slug": {
+    "de": "",
+    "en": "",
+    "it": "chiamate-commerciali-automatiche-ai-svizzera",
+    "fr": ""
+  },
+  "relatedServices": ["phone-assistant"],
+  "relatedArticles": ["trasparenza-ai-telefono-ticino"],
+  "searchIntent": "informational",
+  "publishedDate": "2026-07-29",
+  "title": {
+    "de": "",
+    "en": "",
+    "it": "Chiamate pubblicitarie AI in Svizzera: cosa è legale | Weissmann",
+    "fr": ""
+  },
+  "metaDescription": {
+    "de": "",
+    "en": "",
+    "it": "In Svizzera chiamare clienti con l'AI è spesso legale: conta il registro con asterisco e la relazione col cliente. L'automazione alza il rischio, non la regola.",
+    "fr": ""
+  },
+  "kicker": {
+    "de": "",
+    "en": "",
+    "it": "Chiamate outbound e diritto svizzero",
+    "fr": ""
+  },
+  "h1": {
+    "de": "",
+    "en": "",
+    "it": "Chiamate commerciali automatiche con l'AI in Svizzera: legali, tollerate o semplicemente controproducenti?",
+    "fr": ""
+  },
+  "answerFirst": {
+    "de": "",
+    "en": "",
+    "it": "Sì, in gran parte dei casi una chiamata commerciale automatica è legale in Svizzera: l'art. 3 cpv. 1 lett. u LCSl vieta le chiamate pubblicitarie solo verso numeri con iscrizione con asterisco (*) o non elencati nell'elenco telefonico, e anche in quei casi resta lecito chiamare i propri clienti esistenti. La regola non cambia se a comporre il numero è un sistema AI invece di una persona. Cambia però il rischio pratico: un dialer automatico può comporre migliaia di numeri nel tempo in cui un venditore ne farebbe decine, quindi un singolo errore nel controllo della lista si moltiplica rapidamente in molte violazioni, e una voce percepibilmente sintetica genera più reclami di una umana anche quando è del tutto legale. Questo articolo non sostituisce una consulenza legale.",
+    "fr": ""
+  },
+  "sections": [
+    {
+      "heading": { "de": "", "en": "", "it": "Poter farlo e convenire farlo non sono la stessa domanda", "fr": "" },
+      "paragraphs": [
+        { "de": "", "en": "", "it": "Molti imprenditori ticinesi trattano la domanda «posso chiamare un potenziale cliente che non mi ha mai contattato?» come se la risposta fosse quasi sempre no — un'infrazione da evitare per principio. Non è così. In Svizzera le chiamate commerciali non richieste sono ammesse nella maggior parte dei casi: il divieto scatta solo in situazioni precise, definite dalla legge sulla concorrenza sleale, non da una sensazione generale di scorrettezza. Il problema pratico, per chi introduce un sistema AI per gestire queste chiamate su scala, non è capire se la legge lo vieta in astratto, ma applicare correttamente due criteri concreti a ogni singolo numero della propria lista — e valutare, separatamente, se farlo davvero conviene.", "fr": "" },
+        { "de": "", "en": "", "it": "Questo articolo tratta esclusivamente le chiamate in uscita: la vostra azienda che chiama qualcuno che non ha chiesto di essere contattato. È l'esatto contrario di quanto trattato nel nostro articolo sulla trasparenza al telefono, dedicato alle chiamate in entrata — quando è un cliente a chiamare voi, e la domanda è come l'assistente AI debba presentarsi. Le due situazioni condividono la tecnologia ma non la base giuridica: per una chiamata in entrata conta cosa dice l'assistente; per una chiamata in uscita conta se avevate il diritto di comporre quel numero, prima ancora che qualcuno dica una parola. (Quanto segue non è una consulenza legale: in caso di dubbio conviene una verifica individuale.)", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "it": "La regola di base: asterisco, numero non elencato, cliente esistente", "fr": "" },
+      "paragraphs": [
+        { "de": "", "en": "", "it": "L'articolo di riferimento è l'art. 3 cpv. 1 lett. u della Legge federale contro la concorrenza sleale (LCSl). La norma dichiara sleale — quindi vietata — una chiamata pubblicitaria rivolta a un numero che porta un'iscrizione con asterisco (*) nell'elenco telefonico svizzero, con cui la persona dichiara di non voler ricevere pubblicità da aziende con cui non ha alcun rapporto. Un numero non elencato affatto riceve automaticamente la stessa protezione, senza che il titolare debba fare nulla: dal 1° gennaio 2021 questa equiparazione vale esplicitamente, e riguarda in pratica gran parte dei numeri di cellulare, cioè la maggioranza delle utenze usate oggi in Ticino come altrove.", "fr": "" },
+        { "de": "", "en": "", "it": "Da questa regola esiste un'eccezione che conta quanto la regola stessa: se esiste già una relazione con il cliente, potete continuare a chiamarlo per scopi pubblicitari anche se il suo numero è contrassegnato con asterisco. La protezione del registro non serve a bloccare qualsiasi chiamata commerciale: serve a proteggere da chi non ha mai avuto un rapporto con quell'azienda. Un negozio di infissi di Bellinzona che richiama un cliente per proporgli la manutenzione annuale delle finiture installate due anni prima resta nel perimetro lecito, anche se quel cliente ha un asterisco. Lo stesso negozio che compra un elenco di nominativi raccolti a una fiera dell'edilizia e li chiama per la prima volta, senza alcun rapporto pregresso, deve invece rispettare il filtro del registro — e la legge non definisce in modo esaustivo cosa conti come «relazione cliente»: un contratto in corso non lascia dubbi, un acquisto isolato di tre anni prima o una semplice iscrizione alla newsletter sono zone più incerte, dove conviene essere prudenti piuttosto che presumere.", "fr": "" },
+        { "de": "", "en": "", "it": "Da qui si ricava un test pratico in tre domande, da applicare a ogni lista prima che una singola chiamata — automatica o meno — parta davvero.", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "it": "Domanda 1 – Stato nel registro: il numero ha un asterisco, non è elencato, oppure è normalmente listato senza asterisco? Solo nei primi due casi la protezione dell'art. 3 cpv. 1 lett. u LCSl entra in gioco.", "fr": "" },
+        { "de": "", "en": "", "it": "Domanda 2 – Relazione con il cliente: esiste già un rapporto commerciale — un acquisto, una prenotazione, un contratto in corso? Più questo rapporto è vecchio o generico, meno è solido come base per l'eccezione.", "fr": "" },
+        { "de": "", "en": "", "it": "Domanda 3 – Prova: sapete documentare da dove viene il numero e su cosa si basa la relazione presunta? Una lista acquistata o assemblata da terzi raramente offre questa prova.", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "it": "Perché l'automazione alza la posta in gioco", "fr": "" },
+      "paragraphs": [
+        { "de": "", "en": "", "it": "La legge, di per sé, non distingue chi compone il numero: una persona al telefono o un sistema AI valgono lo stesso davanti all'art. 3 cpv. 1 lett. u LCSl. Quello che cambia con l'automazione non è la regola, ma quante volte lo stesso errore si ripete prima che qualcuno se ne accorga.", "fr": "" },
+        { "de": "", "en": "", "it": "Un esempio illustrativo, non una misurazione reale. Un venditore che fa chiamate a freddo per un'azienda di pannelli solari in Mesolcina riesce, in una giornata intensa, a comporre forse cinquanta o sessanta numeri — con pause, un caffè, e la lista controllata a mano la sera prima. Un sistema AI collegato alla stessa lista può comporne diverse migliaia nello stesso lasso di tempo. Se l'errore nel controllo del registro con asterisco colpisce una chiamata su cento, il venditore umano produce forse una chiamata sbagliata al giorno — fastidiosa, ma isolata. Lo stesso tasso di errore, applicato a un volume dieci o cinquanta volte superiore, non produce un fastidio proporzionalmente più grande: produce un pomeriggio in cui il sistema genera più chiamate potenzialmente scorrette di quante un venditore umano ne farebbe in un anno intero di lavoro.", "fr": "" },
+        { "de": "", "en": "", "it": "C'è un secondo meccanismo, meno legale e più umano: una chiamata che suona chiaramente sintetica, con un ritmo uniforme e senza le piccole imperfezioni di una conversazione vera, viene percepita come più fastidiosa e viene segnalata più spesso — anche quando è perfettamente legale, per esempio perché la relazione con il cliente esiste davvero. In un cantone piccolo come il Ticino, dove le reti professionali e di vicinato sono strette, «quell'azienda chiama tutti senza chiedere» si diffonde più in fretta di quanto una singola lamentela venga gestita.", "fr": "" },
+        { "de": "", "en": "", "it": "Messi insieme, questi due meccanismi spiegano perché automatizzare le chiamate in uscita non cambia cosa è permesso, ma cambia quanto può costare un singolo errore nella lista o nel tono, perché non si ripete una volta sola, ma centinaia o migliaia di volte prima che qualcuno se ne accorga. È un motivo per scalare l'automazione con più prudenza sulle chiamate in uscita che su quelle in entrata, non un motivo per evitarla del tutto.", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "it": "Quando la chiamata è legale ma resta una cattiva idea", "fr": "" },
+      "paragraphs": [
+        { "de": "", "en": "", "it": "Non tutto quello che va storto in una campagna outbound è un problema legale. Alcuni dei danni più concreti arrivano da chiamate perfettamente conformi alla LCSl — ed è qui che vale la pena chiedersi, settore per settore, se automatizzare l'outbound sia davvero la scelta giusta.", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "it": "Volume percepito come invasione: anche rispettando alla lettera il registro con asterisco, una raffica di chiamate nello stesso giorno verso la stessa area geografica — tipico effetto di un dialer che lavora una lista per codice postale — può sembrare una campagna aggressiva a chi la riceve, con un danno d'immagine locale sproporzionato rispetto al beneficio commerciale.", "fr": "" },
+        { "de": "", "en": "", "it": "Tono robotico su un rapporto che dovrebbe sembrare personale: uno studio dentistico che richiama i propri pazienti per un controllo periodico ha una base legale solida (relazione cliente esistente), ma una voce sintetica che recita lo stesso script a tutti rischia di sembrare più fredda di una telefonata umana, proprio nel momento in cui la relazione dovrebbe sembrare curata.", "fr": "" },
+        { "de": "", "en": "", "it": "Settori dove conviene evitare del tutto l'automazione outbound, anche quando sarebbe legale: studi legali, fiduciari e di consulenza finanziaria, dove la prima impressione di una chiamata a freddo automatizzata rischia di danneggiare la percezione di serietà più di quanto valga il contatto generato; e il settore assicurativo, dove dal 1° settembre 2024 la vendita telefonica a freddo è vietata per legge in Svizzera, indipendentemente da chi compone il numero.", "fr": "" },
+        { "de": "", "en": "", "it": "Nessun opt-out reale durante la chiamata: offrire una via d'uscita chiara — «se preferisce non essere ricontattato, lo dica ora» — non rende lecita retroattivamente una chiamata che non lo era in partenza, ma riduce sensibilmente le lamentele su quelle che lo erano.", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "it": "La particolarità ticinese: quando il numero composto è italiano", "fr": "" },
+      "paragraphs": [
+        { "de": "", "en": "", "it": "Un'azienda ticinese che vende oltre confine — mobili, occhiali, servizi professionali, turismo — ha spesso in lista numeri con prefisso italiano: clienti di Como, Varese o Milano che hanno acquistato o visitato una volta. Qui la LCSl svizzera non è più l'unico riferimento: chiamare un numero italiano per finalità commerciali ricade anche sotto la disciplina italiana ed europea del telemarketing, che funziona in modo diverso e generalmente più restrittivo — basata su un registro delle opposizioni gestito a livello nazionale e su regole di consenso proprie, non sull'equivalente svizzero del registro con asterisco.", "fr": "" },
+        { "de": "", "en": "", "it": "Un sistema AI che gestisce insieme numeri svizzeri e italiani, applicando un'unica logica di verifica pensata solo per l'art. 3 cpv. 1 lett. u LCSl, rischia di trattare come «verificato» un numero che invece richiederebbe un controllo secondo regole diverse. È esattamente la situazione in cui l'automazione moltiplica un errore di impostazione — un'unica lista di controllo applicata a due giurisdizioni — in un numero di chiamate potenzialmente scorrette molto più alto di quanto accadrebbe con un paio di telefonate fatte a mano.", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "it": "Cosa succede davvero in caso di violazione", "fr": "" },
+      "paragraphs": [
+        { "de": "", "en": "", "it": "Chi chiama un numero protetto senza che esista una relazione cliente commette un atto di concorrenza sleale ai sensi dell'art. 3 cpv. 1 lett. u LCSl. Se l'infrazione è intenzionale, l'art. 23 LCSl la rende perseguibile penalmente — con una pena detentiva fino a tre anni o una pena pecuniaria — ma solo a querela di parte: senza che qualcuno sporga denuncia, non succede nulla d'ufficio. Vale la pena chiarire un punto su cui circola spesso una cifra imprecisa: non esiste una multa fissa di importo predeterminato collegata a questa norma. L'art. 23 LCSl prevede una sanzione penale generale — detenzione o pena pecuniaria — non un'ammenda amministrativa a tariffa fissa, e l'entità della pena pecuniaria viene decisa caso per caso da un giudice.", "fr": "" },
+        { "de": "", "en": "", "it": "Per questo la Segreteria di Stato dell'economia (SECO) gestisce un canale ufficiale di reclamo per le chiamate pubblicitarie indesiderate: raccoglie le segnalazioni dei consumatori e, quando la base è sufficiente, può girarle al Ministero pubblico cantonale competente. La SECO stessa, però, non può bloccare un numero né imporre un risarcimento: quella resta una prerogativa delle autorità di perseguimento penale e, per il risarcimento, dei tribunali civili.", "fr": "" },
+        { "de": "", "en": "", "it": "Nella pratica, il percorso legale raramente è il primo passo di chi riceve una chiamata sgradita in Ticino. Prima arriva la recensione negativa, il commento nel gruppo del quartiere o del paese, la battuta al bar su «quell'azienda che chiama tutti quanti». In un mercato piccolo come quello ticinese, dove le reti professionali si sovrappongono spesso a quelle personali, questo tipo di reputazione si costruisce — o si rovina — più in fretta di quanto un singolo reclamo formale possa essere gestito.", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "it": "Il confronto con l'estero, in breve", "fr": "" },
+      "paragraphs": [
+        { "de": "", "en": "", "it": "Rispetto ai paesi vicini, il modello svizzero è relativamente permissivo perché si basa su un sistema di opt-out: le chiamate sono ammesse di default, salvo che il numero sia protetto dal registro con asterisco o non sia elencato. Altre giurisdizioni — inclusa quella italiana, rilevante proprio per chi opera vicino al confine, come visto sopra — richiedono più spesso un consenso preventivo esplicito, indipendentemente dallo stato del numero in un elenco. Questo non rende un sistema migliore dell'altro: significa, per un'azienda ticinese, che l'insieme di numeri svizzeri legalmente chiamabili è più ampio — e quindi che un sistema automatizzato ha semplicemente più margine per produrre errori su scala, se la verifica a monte non è impostata correttamente.", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "it": "Cosa non tratta questo articolo", "fr": "" },
+      "paragraphs": [
+        { "de": "", "en": "", "it": "Questo articolo inquadra la situazione legale generale sulla base di fonti pubbliche svizzere; non è una consulenza legale per il vostro caso specifico. Ci sono situazioni in cui questa cornice generale non basta, e conviene una verifica individuale prima di attivare qualsiasi campagna automatizzata.", "fr": "" }
+      ],
+      "bullets": [
+        { "de": "", "en": "", "it": "Liste acquistate o raccolte da terzi, dove l'origine del numero e la base della presunta relazione cliente non sono documentate con precisione.", "fr": "" },
+        { "de": "", "en": "", "it": "Campagne che includono numeri esteri — italiani in primo luogo, per la ragione vista sopra — dove si applicano regole aggiuntive rispetto alla sola LCSl svizzera.", "fr": "" },
+        { "de": "", "en": "", "it": "Chiamate commerciali a numeri aziendali (B2B), dove i confini della protezione sono in parte diversi rispetto ai numeri privati e una valutazione ottimistica fatta in proprio è rischiosa.", "fr": "" },
+        { "de": "", "en": "", "it": "Qualunque situazione in cui, ponendovi la domanda «posso davvero dimostrare perché ho il diritto di chiamare questo numero?», la risposta non sia un sì immediato e documentato.", "fr": "" }
+      ]
+    },
+    {
+      "heading": { "de": "", "en": "", "it": "La formula breve, per chi ha fretta", "fr": "" },
+      "paragraphs": [
+        { "de": "", "en": "", "it": "Prima di attivare un sistema AI per le chiamate in uscita, applicate una domanda a ogni lista, non alla campagna nel suo complesso: il numero ha un asterisco o non è elencato, e in caso affermativo esiste una relazione cliente documentata? Se la risposta a entrambe le condizioni di protezione è no, il numero è chiamabile. Se il numero è protetto e la relazione cliente manca o non è documentata, quel numero non appartiene alla lista, indipendentemente da quanto sia efficace lo script. E poiché un sistema automatizzato applica questa verifica non una volta, ma per ogni singolo numero della lista, il controllo va fatto prima di premere «avvia», non dopo il primo reclamo. Il passo pratico successivo è uno solo: verificate la vostra lista attuale con lo strumento di controllo qui sotto, pensato apposta per tenere separata la lettura legale da quella reputazionale — che raramente coincidono del tutto.", "fr": "" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": { "de": "", "en": "", "it": "Posso continuare a chiamare i miei clienti attuali anche se il loro numero ha un asterisco?", "fr": "" },
+      "a": { "de": "", "en": "", "it": "Sì. L'eccezione dell'art. 3 cpv. 1 lett. u LCSl protegge specificamente da chi non ha alcuna relazione con l'azienda che chiama; se la relazione esiste già, potete continuare a chiamare per scopi pubblicitari anche con un numero contrassegnato. Più la relazione è vecchia o vaga, più conviene documentarla invece di darla per scontata.", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "", "it": "Cambia qualcosa se a chiamare è un'intelligenza artificiale invece di una persona?", "fr": "" },
+      "a": { "de": "", "en": "", "it": "Sulla regola giuridica, no: la legge non distingue chi compone il numero. Cambia il rischio pratico — un sistema automatizzato ripete lo stesso errore di verifica su un volume molto più alto di chiamate prima che qualcuno se ne accorga, e una voce percepibilmente sintetica genera più reclami a parità di contenuto.", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "", "it": "Cosa rischio davvero se chiamo un numero protetto senza relazione cliente?", "fr": "" },
+      "a": { "de": "", "en": "", "it": "Un atto di concorrenza sleale ai sensi dell'art. 3 cpv. 1 lett. u LCSl, perseguibile penalmente secondo l'art. 23 LCSl solo su querela di parte — pena detentiva fino a tre anni o pena pecuniaria, non un'ammenda fissa predeterminata. La SECO raccoglie i reclami e può inoltrarli al Ministero pubblico cantonale, ma non può bloccare un numero né imporre un risarcimento.", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "", "it": "Un numero di cellulare non elencato è protetto allo stesso modo di un numero con asterisco?", "fr": "" },
+      "a": { "de": "", "en": "", "it": "Sì. Dal 1° gennaio 2021 un numero non presente nell'elenco telefonico riceve automaticamente la stessa protezione di un numero con asterisco, senza che il titolare debba fare nulla di attivo.", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "", "it": "Posso chiamare un cliente italiano conosciuto in negozio a Chiasso o Mendrisio?", "fr": "" },
+      "a": { "de": "", "en": "", "it": "Qui la sola LCSl svizzera non basta come riferimento: un numero con prefisso italiano ricade anche sotto la disciplina italiana ed europea del telemarketing, generalmente più restrittiva e basata su un proprio registro delle opposizioni. Trattatelo come un caso che richiede una verifica specifica, non come un'estensione automatica della regola svizzera.", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "", "it": "Basta offrire un opt-out durante la chiamata per mettersi a posto?", "fr": "" },
+      "a": { "de": "", "en": "", "it": "Un opt-out chiaro è una buona pratica e riduce i reclami sulle chiamate successive, ma non rende lecita retroattivamente una prima chiamata che non lo era: il controllo del registro e della relazione cliente va fatto prima di comporre il numero, non durante la conversazione.", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "", "it": "Questa regola vale anche per SMS pubblicitari o email di marketing?", "fr": "" },
+      "a": { "de": "", "en": "", "it": "No, questo articolo tratta solo le chiamate telefoniche. SMS ed email pubblicitarie di massa seguono un'altra disposizione della stessa legge (art. 3 cpv. 1 lett. o LCSl), con requisiti propri di consenso e possibilità di disiscrizione — un tema che meriterebbe un approfondimento a parte.", "fr": "" }
+    },
+    {
+      "q": { "de": "", "en": "", "it": "Automatizzare le chiamate in uscita conviene sempre, se è legale?", "fr": "" },
+      "a": { "de": "", "en": "", "it": "No. Anche quando è pienamente conforme, un volume alto di chiamate automatizzate in un'area ristretta, o un tono percepibilmente robotico su un rapporto che dovrebbe sembrare personale, può costare in reputazione più di quanto genera in contatti — soprattutto in settori come la consulenza legale o fiduciaria, dove la prima impressione conta più del volume.", "fr": "" }
+    }
+  ],
+  "keyEntities": [
+    "LCSl",
+    "Art. 3 cpv. 1 lett. u LCSl",
+    "Art. 23 LCSl",
+    "registro con asterisco",
+    "SECO",
+    "relazione con la clientela",
+    "querela di parte",
+    "chiamata pubblicitaria outbound",
+    "opt-out",
+    "rischio di scala dell'automazione",
+    "clientela transfrontaliera",
+    "divieto di vendita telefonica assicurativa a freddo"
+  ],
+  "sources": [
+    {
+      "label": {
+        "de": "",
+        "en": "",
+        "it": "SECO – Chiamate pubblicitarie indesiderate (consultato il 29 luglio 2026)",
+        "fr": ""
+      },
+      "href": "https://www.seco.admin.ch/it/chiamate-pubblicitarie-indesiderate"
+    },
+    {
+      "label": {
+        "de": "",
+        "en": "",
+        "it": "SECO – Presentare un reclamo per concorrenza sleale (consultato il 29 luglio 2026)",
+        "fr": ""
+      },
+      "href": "https://www.seco.admin.ch/it/presentare-un-reclamo-per-concorrenza-sleale"
+    },
+    {
+      "label": {
+        "de": "",
+        "en": "",
+        "it": "Legge federale contro la concorrenza sleale (LCSl, RS 241), art. 3 e 23 – Fedlex (consultato il 29 luglio 2026)",
+        "fr": ""
+      },
+      "href": "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/it"
+    }
+  ]
+}

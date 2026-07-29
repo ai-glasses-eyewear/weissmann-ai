@@ -54,7 +54,8 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 | 2 | DE-PHONE-06 – 10 | done |
 | 3 | EN-PHONE-01 – 05 | done |
 | 4 | EN-PHONE-06 – 10 | done |
-| 5 | IT-PHONE-01 – 05 | done (commit pending) |
+| 5 | IT-PHONE-01 – 05 | done |
+| 6 | IT-PHONE-06 – 10 | done (commit pending) |
 | 3 | EN-PHONE-01 – 05 | pending |
 | 4 | EN-PHONE-06 – 10 | pending |
 | 5 | IT-PHONE-01 – 05 | pending |
@@ -145,5 +146,21 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 **Phone-assistant progress: 25 of 30 complete** (all 10 DE-PHONE + all 10 EN-PHONE + IT-PHONE-01–05). IT-PHONE-06–10 remain in Batch 6.
 
 **Remaining after Batch 5:** 35 articles / 35 artifact briefs (5 IT-PHONE remain in Batch 6; 30 WEB articles in Batches 7–12).
+
+### Batch 6 — IT-PHONE-06–10 (complete) — all 30 phone-assistant articles now done
+
+| # | Title | Keyword | Intent | Article file | Artifact files | Uniqueness | Factual | Impl. | Validation |
+|---|---|---|---|---|---|---|---|---|---|
+| IT-PHONE-06 | AI e italiano ticinese: capisce chi cambia lingua? | assistente vocale italiano Svizzera | informational | `academy-content/test-comprensione-italiano-ticinese-ai.json` | `artifacts/test-comprensione-italiano-ticinese-ai/` | pass — own 6-dimension test protocol (cadence, DE/FR loanwords, code-switching) genuinely distinct from DE-PHONE-02's 7 dialect-region dimensions, not a translation | no invented test results | done | build+QA+links+duplicates+guardrails pass |
+| IT-PHONE-07 | Centralino AI amministrazioni immobiliari Ticino | centralino AI amministrazione immobiliare | informational | `academy-content/assistente-ai-amministrazione-immobiliare-ticino.json` | `artifacts/assistente-ai-amministrazione-immobiliare-ticino/` | pass — fresh Ticino scenarios (GPL gas-bottle wording, historic-building elevator), distinct opening/thesis from EN-PHONE-04 | explicit 5-item always-escalate list, first-party Weissmann honest-limits quote | done | build+QA+links+duplicates+guardrails pass |
+| IT-PHONE-08 | AI per hotel, B&B e campeggi in Ticino | assistente telefonico AI hotel | informational | `academy-content/assistente-ai-hotel-bb-campeggi-ticino.json` | `artifacts/assistente-ai-hotel-bb-campeggi-ticino/` | pass — extends beyond EN-PHONE-03's hotel-only scope to genuinely distinct B&B and campsite realities | no invented PMS integrations for Weissmann; emergency boundary stated twice, enforced structurally in artifact data | done | build+QA+links+duplicates+guardrails pass; 1 title-length fix (ampersand entity-encoding) |
+| IT-PHONE-09 | Assistente telefonico AI per artigiani | assistente telefonico AI artigiani | informational | `academy-content/assistente-ai-artigiani-ticino.json` | `artifacts/assistente-ai-artigiani-ticino/` | pass — 4 named trades (vs. EN sibling's 2), distinct operational-chaos scenario, scoring/building artifact mechanic vs. EN's gap-flagging | no invented integrations | done | build+QA+links+duplicates+guardrails pass |
+| IT-PHONE-10 | Chiamate pubblicitarie AI in Svizzera: cosa è legale | chiamate automatiche AI Svizzera | informational | `academy-content/chiamate-commerciali-automatiche-ai-svizzera.json` | `artifacts/chiamate-commerciali-automatiche-ai-svizzera/` | pass — adds a genuinely new Ticino-specific angle (cross-border Italian numbers under separate IT/EU rules) beyond DE-PHONE-10 | independently re-verified and confirmed the DE sibling's CHF 20,000 correction; found and fixed stale SECO URLs (site restructured mid-session) | done | build+QA+links+duplicates+guardrails pass |
+
+**Batch 6 cross-checks:** 0 duplicate titles/slugs/H1s within batch and against all prior batches; 0 slug collisions across all 109 academy-content files (346 unique locale-slug keys); full build = 679 pages; full validator suite passes with 0 issues.
+
+**Real issue found and fixed during this batch:** SECO restructured their public website mid-session, breaking the two SECO source URLs already committed in `ai-outbound-marketing-calls-switzerland.json` (DE-PHONE-10, Batch 2) — discovered when the IT-PHONE-10 drafting agent independently re-verified the same claim and found the old URLs 404ing. Located and verified the correct current URLs (`seco.admin.ch/de/uwg-themen`, `seco.admin.ch/de/beschwerde-wegen-unlauterer-geschaeftspraktiken-melden`) and fixed the already-committed article's `sources` array (included in this batch's commit). Also fixed 2 title-length overflows caused by HTML-entity encoding of apostrophes/ampersands inflating rendered `<title>` length beyond what the raw JSON string length suggested (same class of issue IT-PHONE-03 self-caught in Batch 5) — both titles rewritten to avoid the offending character.
+
+**All 30 AI-phone-assistant articles complete** (10 DE + 10 EN + 10 IT). **Remaining: 30 website/SEO/GEO articles across Batches 7–12.**
 
 _(Further batches logged the same way as they complete.)_
