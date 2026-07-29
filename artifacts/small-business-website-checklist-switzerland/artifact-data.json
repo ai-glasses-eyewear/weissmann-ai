@@ -1,0 +1,144 @@
+{
+  "artifactId": "small-business-website-checklist-switzerland",
+  "articleId": "small-business-website-checklist-switzerland",
+  "language": "en",
+  "title": "Small-Business Website Brief Builder",
+  "note": "Spec/data file for the artifact described in ARTIFACT-BRIEF.md. This is structured content only — no HTML/JS is implemented here. This data set is vendor-neutral by design: the assembled brief document must never mention Weissmann inside its body text, and must work identically well handed to any agency, freelancer or website-builder plan the reader is considering.",
+
+  "sectionOrder": ["audience", "offer", "callsToAction", "legalPages", "reviewsAndProof", "trackingAndAnalytics", "localDetails", "contentOwnership"],
+
+  "sections": [
+    {
+      "id": "audience",
+      "number": 1,
+      "title": "Audience: The One Visitor This Site Has to Convince",
+      "intro": "A site trying to speak to everyone tends to convince no one quickly enough to matter.",
+      "fields": [
+        { "id": "primaryVisitor", "label": "Primary visitor", "type": "textarea", "helpText": "Describe your single most valuable visitor by situation, not demographic (e.g. \"a facilities manager comparing three cleaning contractors on a Tuesday afternoon\", not \"SMEs in the Zurich area\")." },
+        { "id": "visitorBeliefs", "label": "What they already believe or doubt", "type": "textarea", "helpText": "Are they price-shopping, worried about reliability, or unsure you even serve their area?" },
+        { "id": "deviceMoment", "label": "Device and moment", "type": "text", "helpText": "Phone outside a competitor's door, or a calm read at a desk after a referral?" }
+      ]
+    },
+    {
+      "id": "offer",
+      "number": 2,
+      "title": "Offer: What You Sell, in the Words a Customer Uses",
+      "intro": "Many small-business sites describe capabilities, not the problem a visitor is trying to solve.",
+      "fields": [
+        { "id": "coreOffer", "label": "Core offer in plain language", "type": "textarea", "helpText": "Your single most bookable service or product, the way a customer would search for it, not the way your industry describes it internally." },
+        { "id": "secondaryOffers", "label": "Secondary items", "type": "textarea", "helpText": "Two or three things people ask about that do not deserve their own page yet." },
+        { "id": "exclusions", "label": "Deliberate exclusions", "type": "text", "helpText": "Anything you do not offer, so the site does not invite the wrong enquiries." }
+      ]
+    },
+    {
+      "id": "callsToAction",
+      "number": 3,
+      "title": "Calls to Action: The One Thing Each Page Should Get Someone to Do",
+      "intro": "Equal emphasis on several actions usually reads as no emphasis at all.",
+      "fields": [
+        { "id": "primaryAction", "label": "Primary homepage action", "type": "text", "helpText": "Call, book, or fill a form — name the one that matters most." },
+        { "id": "phonePreference", "label": "Phone preference", "type": "text", "helpText": "Is a phone call your preferred first contact, or a friction point to route around with a form?" },
+        { "id": "responseCommitment", "label": "Response commitment", "type": "text", "helpText": "What happens within one business day of that action being taken?" }
+      ]
+    },
+    {
+      "id": "legalPages",
+      "number": 4,
+      "title": "Legal Pages: The Impressum Switzerland Actually Requires",
+      "intro": "A genuine, general Swiss requirement, stated simply — not detailed legal advice on the exact wording your business needs.",
+      "fields": [
+        { "id": "legalNameForm", "label": "Registered legal name and form", "type": "text", "helpText": "Exact legal name and legal form as registered, not a trading name." },
+        { "id": "postalAddressContact", "label": "Postal address and contact", "type": "textarea", "helpText": "A real address and a working way to make contact." },
+        { "id": "privacyNoticeOwner", "label": "Privacy-notice owner", "type": "text", "helpText": "Who is responsible for keeping the privacy notice current as tools change?" }
+      ]
+    },
+    {
+      "id": "reviewsAndProof",
+      "number": 5,
+      "title": "Reviews and Proof: What Already Exists, Gathered in One Place",
+      "intro": "Most small businesses have more proof of trust than reaches a new site, simply because nobody assembled it first.",
+      "fields": [
+        { "id": "reviewLocations", "label": "Existing review locations", "type": "textarea", "helpText": "Where reviews already exist (Google Business Profile, directories, Facebook) and who holds each login." },
+        { "id": "concreteOutcomes", "label": "Concrete outcomes", "type": "textarea", "helpText": "Two or three honest, specific outcomes — do not invent a quote nobody actually gave." },
+        { "id": "reviewPlan", "label": "Plan if none exist yet", "type": "text", "helpText": "How you will start asking for reviews once the new site is live." }
+      ]
+    },
+    {
+      "id": "trackingAndAnalytics",
+      "number": 6,
+      "title": "Tracking and Analytics: Whose Account This Actually Is",
+      "intro": "The common mistake is not skipping analytics — it is letting the account belong to the vendor instead of the business.",
+      "fields": [
+        { "id": "accountOwnership", "label": "Account ownership", "type": "text", "helpText": "Who creates and controls the GA4 / Search Console account — it should be your business, not the vendor's." },
+        { "id": "keyMetric", "label": "Key monthly metric", "type": "text", "helpText": "Enquiries, calls, or bookings — the one number that actually matters to you." },
+        { "id": "existingTracking", "label": "Existing tracking to carry over", "type": "text", "helpText": "Any old analytics account or social pixel that should not be quietly abandoned." }
+      ]
+    },
+    {
+      "id": "localDetails",
+      "number": 7,
+      "title": "Local Details: What a Visitor Needs to Find and Trust You",
+      "intro": "Small, easy to overlook, and disproportionately damaging when inconsistent.",
+      "fields": [
+        { "id": "phoneAndAnswerer", "label": "Phone number and who answers", "type": "text", "helpText": "A +41 landline, a mobile line, or a dedicated line for the website — and who genuinely answers it." },
+        { "id": "addressExact", "label": "Address exactly as it should appear", "type": "textarea", "helpText": "The same wording everywhere it is used: Google Business Profile, the site footer, the legal notice." },
+        { "id": "languagesServed", "label": "Languages actually used by customers", "type": "text", "helpText": "Not just the official language of your canton." }
+      ]
+    },
+    {
+      "id": "contentOwnership",
+      "number": 8,
+      "title": "Content Ownership: Decide This Before You Ask for a Quote",
+      "intro": "Settle this before you approach anyone, not after a disagreement.",
+      "fields": [
+        { "id": "domainOwnership", "label": "Domain registration", "type": "text", "helpText": "Must sit in your business's name, regardless of who pays the renewal invoice." },
+        { "id": "copyPhotoOwnership", "label": "Copy and photo ownership", "type": "text", "helpText": "Do you expect the written copy and photography to become your property on final payment?" },
+        { "id": "handoverAccess", "label": "Handover access", "type": "text", "helpText": "Real admin logins at handover, not a verbal promise to \"reach out if anything comes up\"." }
+      ]
+    }
+  ],
+
+  "totalFieldCount": 24,
+
+  "documentAssembly": {
+    "headerLine": "Website brief — prepared with Weissmann's Small-Business Website Checklist, {{date}}",
+    "headerLineIsRemovable": true,
+    "order": ["audience", "offer", "callsToAction", "legalPages", "reviewsAndProof", "trackingAndAnalytics", "localDetails", "contentOwnership"],
+    "omitEmptyFields": true,
+    "placeholderForUnanswered": null,
+    "appendDisclaimerOnExport": true
+  },
+
+  "completeness": {
+    "totalFields": 24,
+    "displayFormat": "{{answered}} of {{total}} answered",
+    "perSectionBadgeFormat": "{{answeredInSection}} of {{fieldsInSection}}"
+  },
+
+  "outputs": ["copyToClipboard", "downloadAsText", "printFriendlyView"],
+
+  "ctaCopy": {
+    "primary": {
+      "label": "Bring your finished brief to us, or to any web design partner you are considering",
+      "href": "/en/kontakt/"
+    },
+    "secondary": {
+      "label": "Read the full article: what to decide before you ask for a quote",
+      "hrefNote": "Links to the English academy spoke page for the small-business-website-checklist-switzerland article."
+    }
+  },
+
+  "disclaimers": {
+    "neutrality": "Every answer here comes from you and stays on your device until you copy or download it. This brief is not addressed to Weissmann specifically — it is written to be handed to any web design agency, freelancer or platform you are considering, Weissmann included.",
+    "legal": "Switzerland requires businesses offering goods or services electronically to disclose clear identity and contact information (commonly called an Impressum), and a separate privacy notice wherever personal data is collected. This is a general requirement stated simply, not legal advice on the exact wording your business needs — confirm specifics with a Swiss lawyer or trust adviser."
+  },
+
+  "privacyNote": "The tool runs fully in the browser. No answer you type ever leaves your device — there is no server, no analytics call, and no network request. If the build stores your entries locally for convenience between visits, that must be disclosed in one line next to a visible 'clear all answers' control.",
+
+  "uiRules": {
+    "noRequiredFields": "No field is ever required. An empty field is simply omitted from the assembled document, never shown as a blank placeholder or a validation error.",
+    "noScoringOrRanking": "This tool has no score, no calculation, no recommendation and no ranking logic of any kind. Its only function is to collect free text and assemble it into a document.",
+    "vendorNeutralDocument": "The assembled document body must never mention Weissmann. Only the single, explicitly removable header line credits where the checklist came from.",
+    "noFabricatedExamples": "Every field starts genuinely empty. Do not pre-fill sample answers, example business names, or placeholder testimonials anywhere in the UI."
+  }
+}

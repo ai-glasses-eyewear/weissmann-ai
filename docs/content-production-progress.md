@@ -57,7 +57,8 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 | 5 | IT-PHONE-01 – 05 | done |
 | 6 | IT-PHONE-06 – 10 | done |
 | 7 | DE-WEB-01 – 05 | done |
-| 8 | DE-WEB-06 – 10 | done (commit pending) |
+| 8 | DE-WEB-06 – 10 | done |
+| 9 | EN-WEB-01 – 05 | done (commit pending) |
 | 3 | EN-PHONE-01 – 05 | pending |
 | 4 | EN-PHONE-06 – 10 | pending |
 | 5 | IT-PHONE-01 – 05 | pending |
@@ -196,5 +197,19 @@ Full audit performed via repository survey of `academy-content/` (76 files), `se
 **Real site-integration gap found (not yet fixed, deferred to the Site Integration task):** `AcademyArticlePage.astro` does not render the `relatedArticles` field into a visible link anywhere on the page, despite every article in this project (and pre-existing ones) populating it correctly. Orphan-checking still passes (pillar hub pages auto-list all spokes), but the master prompt's §11 cross-linking intent ("related existing page" links, avoiding "identical 'related articles' block across all pages") is not yet visually fulfilled. Confirmed via direct grep — zero references to `relatedArticles` in the render component. Will address as part of the site-integration batch (#102) before final PR.
 
 **Progress: 40 of 60 articles complete** — all 10 DE-PHONE, all 10 EN-PHONE, all 10 IT-PHONE, and all 10 DE-WEB. **Remaining: 20 EN-WEB + IT-WEB articles across Batches 9–12.**
+
+### Batch 9 — EN-WEB-01–05 (complete)
+
+| # | Title | Keyword | Intent | Article file | Artifact files | Uniqueness | Factual | Impl. | Validation |
+|---|---|---|---|---|---|---|---|---|---|
+| EN-WEB-01 | Website Cost in Switzerland: A Guide for Founders | website cost Switzerland | informational | `academy-content/business-website-cost-switzerland.json` | `artifacts/business-website-cost-switzerland/` | pass — quote-normalization angle for international newcomers, distinct from DE-WEB-01's cost-component anatomy; adds a Swiss-market-norms section (VAT, no-haggle culture) the DE sibling lacks | Swiss VAT rate (8.1%) live-verified against estv.admin.ch | done | build+QA+links+duplicates+guardrails pass |
+| EN-WEB-02 | Affordable Premium Web Design Switzerland: CHF 880 | affordable web design Switzerland | transactional | `academy-content/chf-880-website-affordable-premium.json` | `artifacts/chf-880-website-affordable-premium/` | pass — English promotion article, freshly written (not translated), cross-links EN-WEB-01 | every price/feature bullet re-verified verbatim against pricing.ts; "65% discount" framing explicitly refused with reasoning | done | build+QA+links+duplicates+guardrails pass — 2nd highest-stakes commercial article, verified line-by-line |
+| EN-WEB-03 | Best Web Design Agency in Switzerland: A Buyer Guide | best web design agency Switzerland | commercial-investigation | `academy-content/best-web-design-agencies-switzerland.json` | `artifacts/best-web-design-agencies-switzerland/` | pass — structured by due-diligence stage (call→proposal→references→contract), structurally distinct from DE-WEB-03's flat criteria list; no invented competitors | Weissmann's own real gaps (no published case studies) honestly disclosed | done | build+QA+links+duplicates+guardrails pass |
+| EN-WEB-04 | Small-Business Website Checklist Before the Quote | web design for small business Switzerland | commercial-investigation | `academy-content/small-business-website-checklist-switzerland.json` | `artifacts/small-business-website-checklist-switzerland/` | pass — usable-as-brief-template format, distinct reader moment from EN-WEB-03 (before contacting any vendor vs. evaluating one) | vendor-neutral by design, confirmed in artifact brief | done | build+QA+links+duplicates+guardrails pass |
+| EN-WEB-05 | Website Redesign Switzerland: 12 Warning Signs | website redesign Switzerland | commercial-investigation | `academy-content/website-redesign-signs-switzerland.json` | `artifacts/website-redesign-signs-switzerland/` | pass — 12-sign taxonomy with real business-cost mechanisms per sign, non-shaming tone woven throughout | Google mobile-first/Core Web Vitals/HTTPS-ranking-signal docs verified live | done | build+QA+links+duplicates+guardrails pass |
+
+**Batch 9 cross-checks:** 0 duplicate titles/slugs/H1s within batch and against all prior batches; 0 slug collisions across all 124 academy-content files (361 unique locale-slug keys); full build = 694 pages; full validator suite passes with 0 issues.
+
+**Progress: 45 of 60 articles complete.** Remaining: EN-WEB-06–10 (Batch 10), IT-WEB-01–10 (Batches 11–12).
 
 _(Further batches logged the same way as they complete.)_
