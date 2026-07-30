@@ -1,0 +1,343 @@
+<title>Listen-Hygiene-Check für KI-Werbeanrufe · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  h2{font-size:1.16rem;line-height:1.2;margin:0 0 4px;letter-spacing:-.01em}
+  .sec-sub{color:var(--ink-mute);font-size:.9rem;margin:0 0 16px;max-width:66ch}
+  section.card{margin-top:18px}
+  .scope{font-size:.85rem;color:var(--ink-soft);background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:16px 0 0}
+  fieldset.q{border:1px solid var(--line);border-radius:12px;margin:0 0 14px;padding:12px 16px 14px;background:var(--card)}
+  fieldset.q legend{font-weight:700;font-size:.95rem;padding:0 6px;color:var(--ink)}
+  .opt{display:flex;gap:10px;align-items:flex-start;padding:9px 11px;border:1px solid var(--line);border-radius:9px;margin-top:8px;cursor:pointer;background:var(--bg)}
+  .opt:hover{background:var(--soft)}
+  .opt input{margin-top:2px;accent-color:var(--navy);width:16px;height:16px;flex:none}
+  .opt span{font-size:.92rem;color:var(--ink-soft)}
+  .opt:focus-within{box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+  .legend-row{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--ink-mute);margin:2px 0 12px}
+  .legend-row .lg{display:inline-flex;align-items:center;gap:6px}
+  .lgdot{width:10px;height:10px;border-radius:50%;flex:none}
+  .lgdot.g{background:var(--ok)}.lgdot.y{background:var(--warn)}.lgdot.r{background:var(--miss)}
+  .verdict{border:1px solid var(--line);border-left-width:6px;border-radius:12px;padding:15px 16px;margin-top:6px;background:var(--soft)}
+  .verdict.neutral{border-left-color:var(--line)}
+  .verdict.green{border-left-color:var(--ok);background:var(--ok-soft)}
+  .verdict.yellow{border-left-color:var(--warn);background:var(--warn-soft)}
+  .verdict.red{border-left-color:var(--miss);background:var(--miss-soft)}
+  .v-tag{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.03rem;margin:0 0 8px;color:var(--ink)}
+  .dots{display:inline-flex;gap:5px;flex:none}
+  .dot{width:12px;height:12px;border-radius:50%;background:var(--line);opacity:.3}
+  .dot.on{opacity:1}
+  .dot.g.on{background:var(--ok)}.dot.y.on{background:var(--warn)}.dot.r.on{background:var(--miss)}
+  .v-body{font-size:.93rem;color:var(--ink-soft);margin:0;line-height:1.55}
+  .v-body+.v-body{margin-top:8px}
+  .v-body strong{color:var(--ink)}
+  .reflist{margin-top:18px}
+  .reflist h3{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);margin:0 0 8px}
+  .reflist ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+  .reflist li{font-size:.9rem;color:var(--ink-soft);padding-left:20px;position:relative;line-height:1.5}
+  .reflist li::before{content:"";position:absolute;left:2px;top:.55em;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+  .reflist li b{color:var(--ink);font-weight:600}
+  .scale{display:grid;gap:16px;margin-bottom:14px}@media(min-width:620px){.scale{grid-template-columns:1fr 1fr}}
+  .field label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+  .field input[type=number]{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink)}
+  .field input[type=number]:focus-visible,.field input[type=range]:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+  .rangewrap{display:flex;align-items:center;gap:12px}
+  .rangewrap input[type=range]{flex:1;accent-color:var(--navy);min-width:0}
+  .rangewrap output{font-variant-numeric:tabular-nums;font-weight:700;min-width:66px;text-align:right;color:var(--ink)}
+  .hint{font-size:.8rem;color:var(--ink-mute);margin:6px 0 0;line-height:1.45}
+  .scaleOut{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .bigstat{font-size:1.02rem;font-weight:600;color:var(--ink);line-height:1.35}
+  .bigstat span{font-size:1.75rem;font-weight:800;color:var(--miss);font-variant-numeric:tabular-nums;display:inline-block;margin-right:4px}
+  .bar{height:15px;border-radius:8px;background:color-mix(in srgb,var(--ok) 22%,var(--card));overflow:hidden;margin:12px 0 6px;border:1px solid var(--line)}
+  .bar-fill{height:100%;background:var(--miss);width:1%;transition:width .18s ease;min-width:2px}
+  .barcap{font-size:.78rem;color:var(--ink-mute);margin:0 0 12px}
+  .btn{appearance:none;font:inherit;font-weight:600;font-size:.92rem;padding:11px 16px;border-radius:10px;border:1.5px solid var(--navy);background:var(--card);color:var(--navy);cursor:pointer;margin-top:16px}
+  .btn:hover{background:var(--soft)}.btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+  .btn.done{border-color:var(--ok);color:var(--ok)}
+  .copynote{font-size:.8rem;color:var(--ink-mute);margin:8px 2px 0}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">Outbound-Anrufe &amp; Schweizer Recht</p>
+  <h1>Listen-Hygiene-Check vor dem ersten Klingeln</h1>
+  <p class="lede">Der Drei-Fragen-Test aus dem Leitfaden, angewendet auf eine Zielliste: eine Ampel-Einordnung nach Art. 3 Abs. 1 lit. u UWG plus eine Veranschaulichung, wie ein einziger Listenfehler mit dem Anrufvolumen skaliert. Orientierung, keine Rechtsberatung.</p>
+
+  <p class="scope"><b>Wofür dieser Check ist:</b> ausgehende Werbeanrufe – Ihr Unternehmen ruft jemanden an, der nicht darum gebeten hat. Eingehende Anrufe und die Frage, wie sich ein KI-Assistent zu erkennen gibt, sind eine separate Transparenzfrage und hier nicht das Thema.</p>
+
+  <!-- ── Section 1 · Drei-Fragen-Gate ─────────────────────────── -->
+  <section class="card card-pad" aria-labelledby="s1h">
+    <h2 id="s1h">1 · Der Drei-Fragen-Test für Ihre Liste</h2>
+    <p class="sec-sub">Beantworten Sie die drei Fragen ehrlich für die gesamte Zielliste – so, wie das System sie tatsächlich hätte, bevor die erste Nummer klingelt.</p>
+
+    <form id="gate">
+      <fieldset class="q">
+        <legend>Frage 1 — Verzeichnis- und Sternstatus: Wie ist die Liste geprüft?</legend>
+        <label class="opt"><input type="radio" name="q1" value="clean"><span>Geprüft — nur normal gelistete Nummern ohne Stern, gegen einen aktuellen Verzeichnisabgleich.</span></label>
+        <label class="opt"><input type="radio" name="q1" value="mixed"><span>Gemischt oder nur teilweise bzw. veraltet geprüft — sternmarkierte oder nicht eingetragene Nummern möglich.</span></label>
+        <label class="opt"><input type="radio" name="q1" value="unknown"><span>Ungeprüft oder unbekannt.</span></label>
+      </fieldset>
+
+      <fieldset class="q">
+        <legend>Frage 2 — Kundenbeziehung: Besteht mit den Personen auf der Liste eine Geschäftsbeziehung?</legend>
+        <label class="opt"><input type="radio" name="q2" value="current"><span>Ja — je Nummer eine aktuelle Beziehung (laufender Vertrag, kürzlicher Kauf oder Buchung).</span></label>
+        <label class="opt"><input type="radio" name="q2" value="loose"><span>Nur lose oder länger zurückliegend (einmaliger Kauf vor Jahren, blosse Newsletter-Anmeldung).</span></label>
+        <label class="opt"><input type="radio" name="q2" value="none"><span>Nein — es ist Kaltakquise ohne bestehende Beziehung.</span></label>
+      </fieldset>
+
+      <fieldset class="q">
+        <legend>Frage 3 — Nachweis: Können Sie Herkunft und Grundlage je Nummer belegen?</legend>
+        <label class="opt"><input type="radio" name="q3" value="full"><span>Ja — Herkunft und Grundlage der Kundenbeziehung sind je Nummer dokumentiert.</span></label>
+        <label class="opt"><input type="radio" name="q3" value="partial"><span>Nur teilweise dokumentiert.</span></label>
+        <label class="opt"><input type="radio" name="q3" value="none"><span>Nein — gekaufte oder extern beschaffte Liste ohne lückenlosen Herkunftsnachweis.</span></label>
+      </fieldset>
+    </form>
+
+    <div class="legend-row" aria-hidden="true">
+      <span class="lg"><span class="lgdot g"></span>Regulär anrufbar</span>
+      <span class="lg"><span class="lgdot y"></span>Nur nach Prüfung</span>
+      <span class="lg"><span class="lgdot r"></span>Gehört so nicht auf die Liste</span>
+    </div>
+
+    <div id="verdict" class="verdict neutral" role="status" aria-live="polite">
+      <p class="v-body">Beantworten Sie die drei Fragen, um die Ampel-Einordnung für diese Liste zu sehen.</p>
+    </div>
+
+    <div class="reflist">
+      <h3>Was ein System vor dem Wählen prüfen sollte</h3>
+      <ul>
+        <li><b>Sterneintrag-Abgleich mit Aktualitätsdatum</b> — nicht nur, ob ein Abgleich existiert, sondern wann er zuletzt aktualisiert wurde.</li>
+        <li><b>Interne Opt-out-Liste mit Vorrang</b> — wer sich einmal gegen Anrufe ausgesprochen hat, fällt dauerhaft aus jeder künftigen Liste, egal aus welcher Quelle sie erneut importiert wird.</li>
+        <li><b>Herkunftsnachweis pro Liste</b> — jede importierte Liste braucht eine dokumentierte Antwort, worauf sich die angenommene Kundenbeziehung stützt.</li>
+        <li><b>Testlauf vor Skalierung</b> — neue Liste oder neues Skript zuerst an einer kleinen, dokumentierten Stichprobe laufen lassen.</li>
+        <li><b>Menschliche Stichprobenkontrolle</b> — echte Mitschnitte oder Transkripte gegenhören, nicht nur Fehlerquoten im Dashboard ablesen.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Section 2 · Skalierungs-Illustration ─────────────────── -->
+  <section class="card card-pad" aria-labelledby="s2h">
+    <h2 id="s2h">2 · Skalierungs-Illustration</h2>
+    <p class="sec-sub">Die Rechtslage ändert ein KI-System nicht — Art. 3 Abs. 1 lit. u UWG unterscheidet nicht, ob ein Mensch oder eine Software wählt. Was sich ändert, ist, wie oft sich <em>ein</em> Listenfehler wiederholt, bevor er auffällt. Setzen Sie Ihre eigenen Werte ein.</p>
+
+    <div class="scale">
+      <div class="field">
+        <label for="vol">Gewählte Nummern pro Lauf (automatisiert)</label>
+        <input id="vol" type="number" min="0" step="100" value="3000" inputmode="numeric">
+        <p class="hint">Der Artikel nennt als Grössenordnung «mehrere tausend» pro Stunde. Passen Sie den Wert für Ihren Fall an.</p>
+      </div>
+      <div class="field">
+        <label for="pct">Fehlerquote bei der Sterneintrag-Prüfung</label>
+        <div class="rangewrap">
+          <input id="pct" type="range" min="0" max="10" step="0.1" value="1" aria-describedby="pcthint">
+          <output id="pctOut" for="pct">1.0 %</output>
+        </div>
+        <p class="hint" id="pcthint">Der Artikel veranschaulicht mit «jede hundertste» Nummer (1 %). Das ist eine Veranschaulichung, kein gemessener Wert.</p>
+      </div>
+    </div>
+
+    <div class="scaleOut" role="status" aria-live="polite">
+      <div class="bigstat"><span id="errAuto">30</span>Nummern mit fehlerhafter Sterneintrag-Prüfung — in einem einzigen Lauf</div>
+      <div class="bar" aria-hidden="true"><div class="bar-fill" id="barFill"></div></div>
+      <p class="barcap" id="barCap">Rote Fläche = Anteil fehlerhaft geprüfter Nummern (1.0 %).</p>
+      <p class="v-body" id="scaleText"></p>
+      <p class="v-body">Der Artikel formuliert die Pointe so: Ein automatisiertes System produziert nicht eine schlechte Bewertung, sondern ein Muster — und ein Muster fällt Aufsichtsbehörden und Suchmaschinen gleichermassen auf.</p>
+    </div>
+
+    <div class="reflist">
+      <h3>Grenzen dieses Checks</h3>
+      <ul>
+        <li>Gekaufte oder extern beschaffte Listen, bei denen Herkunft und Rechtsgrund der Kundenbeziehung nicht lückenlos dokumentiert sind.</li>
+        <li>Grenzüberschreitende Kampagnen — hier greifen zusätzlich zur Schweizer Regelung unter Umständen ausländische Vorschriften.</li>
+        <li>B2B-Kaltakquise an Geschäftsnummern, wo die Grenzen teils anders verlaufen als bei Privatnummern.</li>
+        <li>Werbe-SMS und E-Mail-Marketing sind hier <b>nicht</b> erfasst — sie unterliegen einer eigenen Vorschrift (Art. 3 Abs. 1 lit. o UWG).</li>
+        <li>Jede Situation, in der die Antwort auf «wurde diese Nummer zu Recht angerufen?» nicht sofort und klar «ja» lautet.</li>
+      </ul>
+    </div>
+  </section>
+
+  <button id="copyBtn" class="btn" type="button">Ergebnis als Text kopieren</button>
+  <p class="copynote" id="copyNote"></p>
+
+  <p class="disc">Diese Seite ordnet die öffentlich zugängliche Rechtslage aus dem zugehörigen Leitfaden ein und ist keine Rechtsberatung im Einzelfall. Das Rechenbeispiel ist eine Veranschaulichung, keine gemessene Grösse. Ihre Angaben bleiben ausschliesslich in diesem Browser — es wird nichts gespeichert, gesendet oder ausgewertet.</p>
+
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Vertiefen &amp; einordnen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-werbeanrufe-schweiz-erlaubt/" target="_blank" rel="noopener noreferrer" aria-label="Zum vollständigen Leitfaden über KI-Werbeanrufe in der Schweiz (öffnet in neuem Tab)">Zum Leitfaden: KI-Werbeanrufe in der Schweiz →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="Zur Leistungsseite KI-Telefonassistent von Weissmann (öffnet in neuem Tab)">KI-Telefonassistent von Weissmann →</a>
+    </div>
+    <p class="att">Begleit-Werkzeug zum Leitfaden. Orientierung, kein Angebot und keine Rechtsberatung.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var qs=function(s,el){return (el||document).querySelector(s);};
+  var qsa=function(s,el){return Array.prototype.slice.call((el||document).querySelectorAll(s));};
+
+  /* Concise answer labels for the copyable summary (grounded in the option texts). */
+  var ANS={
+    q1:{clean:'nur normal gelistete Nummern ohne Stern, aktuell geprueft',
+        mixed:'gemischt / teilweise oder veraltet geprueft',
+        unknown:'ungeprueft oder unbekannt'},
+    q2:{current:'aktuelle Kundenbeziehung je Nummer',
+        loose:'lose oder laenger zurueckliegende Beziehung',
+        none:'keine Beziehung - Kaltakquise'},
+    q3:{full:'Herkunft und Grundlage je Nummer dokumentiert',
+        partial:'nur teilweise dokumentiert',
+        none:'gekaufte/externe Liste ohne Herkunftsnachweis'}
+  };
+
+  var LEGAL='Verfolgt wird nur auf Antrag: Vorsätzliche Verstösse sind nach <strong>Art. 23 UWG</strong> mit Freiheitsstrafe bis zu drei Jahren oder Geldstrafe bedroht. Das <strong>SECO</strong> nimmt Beschwerden entgegen und kann sie an die zuständige kantonale Strafverfolgung weiterleiten – eine Nummer sperren oder selbst eine Busse aussprechen kann es nicht.';
+
+  var V={
+    green_listed:{level:'green',tag:'Regulär anrufbar',body:[
+      'Nach Ihren Angaben enthält die Liste nur normal gelistete Nummern ohne Sterneintrag. Dann greift die Schutzvorschrift von <strong>Art. 3 Abs. 1 lit. u UWG</strong> gar nicht – solche Nummern sind grundsätzlich regulär anrufbar, auch ohne bestehende Kundenbeziehung.',
+      'Zwei Dinge bleiben trotzdem: Die interne Opt-out-Liste hat Vorrang, und ein erkennbar synthetischer, unpersönlicher Anruf wird eher als Belästigung gemeldet als derselbe Inhalt von einer Person – auch wenn er rechtlich zulässig ist.'
+    ]},
+    green_rel:{level:'green',tag:'Zulässig – dokumentierte Kundenbeziehung',body:[
+      'Für jede Nummer besteht eine aktuelle, dokumentierte Kundenbeziehung. Dann dürfen Sie zu Werbezwecken anrufen, auch wenn eine Nummer sternmarkiert ist – die Sterneintrag-Regel in <strong>Art. 3 Abs. 1 lit. u UWG</strong> schützt gezielt vor Anrufen von Unternehmen <em>ohne</em> bestehende Geschäftsbeziehung.',
+      'Der Begriff «Kundenbeziehung» ist im Gesetz nicht abschliessend definiert: Je älter oder loser eine einzelne Beziehung, desto vorsichtiger sollten Sie sich allein darauf verlassen.'
+    ]},
+    yellow:{level:'yellow',tag:'Nur nach Prüfung – nicht ungeprüft skalieren',body:[
+      'Die Liste kann sternmarkierte oder nicht eingetragene Nummern enthalten, und die Ausnahme der Kundenbeziehung ist nicht lückenlos aktuell <em>und</em> dokumentiert. Bei sternmarkierten oder nicht eingetragenen Nummern greift <strong>Art. 3 Abs. 1 lit. u UWG</strong>; die Ausnahme trägt nur bei belegter Beziehung.',
+      'Die Prüfung gehört vor den Anruf, nicht als Reaktion auf die erste Beschwerde: Sterneintrag-Abgleich aktualisieren, Beziehung und Herkunft je Nummer belegen, an einer kleinen Stichprobe testen – bevor das System auf volles Volumen hochfährt.'
+    ]},
+    red_cold:{level:'red',tag:'Gehört so nicht auf die Wählliste',body:[
+      'Die Liste kann sternmarkierte oder nicht eingetragene Nummern enthalten und es besteht keine Kundenbeziehung – das ist der Kern-Anwendungsfall von <strong>Art. 3 Abs. 1 lit. u UWG</strong>. Nicht eingetragene Nummern (etwa viele Mobilnummern) werden dabei gleich behandelt wie ein Sterneintrag, ohne dass die Person aktiv etwas markieren musste. Ein solcher Anruf wäre unlauter.',
+      LEGAL
+    ]},
+    red_noproof:{level:'red',tag:'Gehört so noch nicht auf die Wählliste',body:[
+      'Ohne lückenlosen Herkunftsnachweis lässt sich die angenommene Kundenbeziehung im Streitfall nicht belegen – eine gekaufte oder extern zusammengestellte Liste liefert diesen Nachweis in aller Regel nicht. Solange die Liste sternmarkierte oder nicht eingetragene Nummern enthalten kann, gehört die Prüfung vor den Anruf, nicht danach.',
+      'Greift die Schutzvorschrift von <strong>Art. 3 Abs. 1 lit. u UWG</strong>, ist ein Anruf ohne belegte Beziehung unlauter. ' + LEGAL
+    ]}
+  };
+
+  function decide(q1,q2,q3){
+    if(q2==='current' && q3==='full') return 'green_rel';
+    if(q1==='clean') return 'green_listed';
+    if(q2==='none') return 'red_cold';
+    if(q3==='none') return 'red_noproof';
+    return 'yellow';
+  }
+
+  var state={q1:null,q2:null,q3:null,verdictKey:null};
+
+  var verdictEl=qs('#verdict');
+
+  function dotRow(level){
+    function d(c){ return '<span class="dot '+c+(level===({r:'red',y:'yellow',g:'green'}[c])?' on':'')+'"></span>'; }
+    return '<span class="dots" aria-hidden="true">'+d('r')+d('y')+d('g')+'</span>';
+  }
+
+  function renderVerdict(){
+    if(!(state.q1 && state.q2 && state.q3)){
+      state.verdictKey=null;
+      verdictEl.className='verdict neutral';
+      verdictEl.innerHTML='<p class="v-body">Beantworten Sie die drei Fragen, um die Ampel-Einordnung für diese Liste zu sehen.</p>';
+      return;
+    }
+    var key=decide(state.q1,state.q2,state.q3);
+    state.verdictKey=key;
+    var v=V[key];
+    verdictEl.className='verdict '+v.level;
+    var html='<p class="v-tag">'+dotRow(v.level)+'<span>'+v.tag+'</span></p>';
+    for(var i=0;i<v.body.length;i++){ html+='<p class="v-body">'+v.body[i]+'</p>'; }
+    verdictEl.innerHTML=html;
+  }
+
+  qsa('input[type=radio]').forEach(function(r){
+    r.addEventListener('change',function(){
+      state[r.name]=r.value;
+      renderVerdict();
+    });
+  });
+
+  /* ── Scaling illustration ── */
+  var volEl=qs('#vol'), pctEl=qs('#pct'), pctOut=qs('#pctOut'),
+      errAutoEl=qs('#errAuto'), barFill=qs('#barFill'), barCap=qs('#barCap'), scaleText=qs('#scaleText');
+
+  function grp(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'’'); }
+
+  var scale={vol:3000,pct:1,errAuto:30};
+
+  function renderScale(){
+    var vol=Math.max(0,Math.floor(Number(volEl.value)||0));
+    var pct=Number(pctEl.value); if(isNaN(pct)||pct<0)pct=0; if(pct>100)pct=100;
+    var errAuto=Math.round(vol*pct/100);
+    var manLo=Math.round(60*pct/100), manHi=Math.round(80*pct/100);
+    var manTxt=(manHi===0)?'unter 1':(manLo===manHi?String(manLo):(manLo+'–'+manHi));
+    scale.vol=vol; scale.pct=pct; scale.errAuto=errAuto;
+
+    pctOut.textContent=pct.toFixed(1)+' %';
+    errAutoEl.textContent=grp(errAuto);
+    barFill.style.width=Math.min(100,pct)+'%';
+    barCap.textContent='Rote Fläche = Anteil fehlerhaft geprüfter Nummern ('+pct.toFixed(1)+' %).';
+    scaleText.innerHTML='Ein Mensch schafft an einem konzentrierten Tag vielleicht 60–80 Anrufe, ein automatisiertes System in derselben Zeit mehrere tausend. Dieselbe Fehlerquote bedeutet bei manueller Arbeit rund <strong>'+manTxt+'</strong> fehlerhafte Anrufe pro Tag – bei <strong>'+grp(vol)+'</strong> automatisiert gewählten Nummern dagegen <strong>'+grp(errAuto)+'</strong> in einem einzigen Lauf. Der Fehler ist dann nicht mehr einzeln, sondern strukturell: Er betrifft jede Nummer, die durch dasselbe System läuft, bis jemand eingreift.';
+  }
+  volEl.addEventListener('input',renderScale);
+  pctEl.addEventListener('input',renderScale);
+  renderScale();
+
+  /* ── Copy summary (user's own generated text) ── */
+  var copyBtn=qs('#copyBtn'), copyNote=qs('#copyNote');
+
+  function summaryText(){
+    var lines=[];
+    lines.push('Listen-Hygiene-Check fuer KI-Werbeanrufe (Orientierung, keine Rechtsberatung)');
+    lines.push('');
+    lines.push('Frage 1 - Verzeichnis-/Sternstatus: '+(state.q1?ANS.q1[state.q1]:'(offen)'));
+    lines.push('Frage 2 - Kundenbeziehung: '+(state.q2?ANS.q2[state.q2]:'(offen)'));
+    lines.push('Frage 3 - Nachweis/Herkunft: '+(state.q3?ANS.q3[state.q3]:'(offen)'));
+    lines.push('Ampel-Ergebnis: '+(state.verdictKey?V[state.verdictKey].tag:'(noch offen - bitte alle drei Fragen beantworten)'));
+    lines.push('');
+    lines.push('Skalierungs-Beispiel (Veranschaulichung, kein gemessener Wert):');
+    lines.push(grp(scale.vol)+' gewaehlte Nummern x '+scale.pct.toFixed(1)+' % Fehlerquote = ca. '+grp(scale.errAuto)+' Nummern mit fehlerhafter Sterneintrag-Pruefung in einem einzigen Lauf.');
+    lines.push('');
+    lines.push('Rechtsgrundlage laut Leitfaden: Art. 3 Abs. 1 lit. u UWG (Sterneintrag), Art. 23 UWG (Antragsdelikt), Beschwerdestelle SECO.');
+    return lines.join('\n');
+  }
+
+  function flash(msg,ok){
+    copyNote.textContent=msg;
+    copyBtn.classList.toggle('done',!!ok);
+    window.setTimeout(function(){ copyBtn.classList.remove('done'); },1800);
+  }
+
+  copyBtn.addEventListener('click',function(){
+    var text=summaryText();
+    function fallback(){
+      try{
+        var ta=document.createElement('textarea');
+        ta.value=text; ta.setAttribute('readonly','');
+        ta.style.position='absolute'; ta.style.left='-9999px';
+        document.body.appendChild(ta); ta.select();
+        var ok=document.execCommand('copy');
+        document.body.removeChild(ta);
+        flash(ok?'In die Zwischenablage kopiert.':'Kopieren nicht möglich – bitte Text manuell markieren.',ok);
+      }catch(e){ flash('Kopieren nicht möglich – bitte Text manuell markieren.',false); }
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ flash('In die Zwischenablage kopiert.',true); },fallback);
+    } else { fallback(); }
+  });
+})();
+</script>

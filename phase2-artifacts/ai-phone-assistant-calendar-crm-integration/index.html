@@ -1,0 +1,430 @@
+<title>Integrations-Machbarkeits-Check · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+
+  /* ---- checker ---- */
+  header{margin-bottom:18px}
+  .stepnum{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;background:var(--navy);color:var(--on-navy);font-size:.82rem;font-weight:700;margin-right:.5em;flex:0 0 auto}
+  form.card{margin-top:16px}
+  fieldset{border:0;padding:0;margin:0 0 22px}
+  fieldset:last-of-type{margin-bottom:8px}
+  legend{padding:0;font-weight:700;font-size:1.06rem;line-height:1.3;display:flex;align-items:flex-start;margin-bottom:4px}
+  legend .lgtxt{padding-top:.12em}
+  .qhint{margin:2px 0 12px 2.0em;font-size:.86rem;color:var(--ink-mute)}
+  .opts{display:grid;gap:10px}
+  @media(min-width:560px){.opts.cols3{grid-template-columns:1fr 1fr 1fr}.opts.cols2{grid-template-columns:1fr 1fr}}
+  .opt{display:flex;gap:.6em;align-items:flex-start;border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;cursor:pointer;background:var(--card);transition:border-color .12s,background .12s}
+  .opt:hover{background:var(--soft)}
+  .opt input{margin:.15em 0 0;flex:0 0 auto;width:1.05em;height:1.05em;accent-color:var(--navy);cursor:pointer}
+  .opt .ot{font-weight:600;font-size:.96rem}
+  .opt .od{display:block;font-weight:400;font-size:.84rem;color:var(--ink-mute);margin-top:2px}
+  .opt:has(input:checked){border-color:var(--navy);background:var(--accent-soft)}
+  .opt:focus-within{box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+  .txtrow{margin-top:14px}
+  label.flab{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+  input[type=text]{width:100%;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:11px 13px}
+  input[type=text]:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 22%,transparent)}
+  .branch{border-top:1px dashed var(--line);margin-top:4px;padding-top:20px}
+  .branch[hidden]{display:none}
+  .runrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:4px}
+  .btn{font:inherit;font-weight:700;font-size:1rem;border:0;border-radius:11px;padding:13px 22px;min-height:48px;cursor:pointer;background:var(--navy);color:var(--on-navy)}
+  .btn:hover{background:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .btn.ghost{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+  .btn.ghost:hover{background:var(--soft)}
+  .warnmsg{color:var(--miss);font-size:.9rem;font-weight:600;margin:0}
+  .warnmsg[hidden]{display:none}
+
+  /* ---- result ---- */
+  #result{margin-top:18px}
+  #result[hidden]{display:none}
+  .rhead{display:flex;gap:.7em;align-items:flex-start}
+  .rbadge{flex:0 0 auto;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;margin-top:.2em}
+  .rbadge.ok{background:var(--ok-soft);color:var(--ok)}
+  .rbadge.acc{background:var(--accent-soft);color:var(--accent)}
+  .rbadge.warn{background:var(--warn-soft);color:var(--warn)}
+  .rbadge.miss{background:var(--miss-soft);color:var(--miss)}
+  .rtitle{font-size:1.22rem;font-weight:800;margin:0;line-height:1.25;letter-spacing:-.01em}
+  .rlead{color:var(--ink-soft);margin:10px 0 0}
+  .rsec{margin-top:20px}
+  .rsec h3{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 10px}
+  .optcard{border:1px solid var(--line);border-radius:11px;padding:13px 15px;margin-bottom:10px;background:var(--soft)}
+  .optcard .oct{font-weight:700;font-size:.98rem;margin:0 0 4px;display:flex;align-items:center;gap:.5em}
+  .optcard p{margin:0;font-size:.9rem;color:var(--ink-soft)}
+  .tag{font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--navy);color:var(--on-navy)}
+  .tag.sub{background:var(--soft);color:var(--ink-mute);border:1px solid var(--line)}
+  ul.rlist{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+  ul.rlist li{position:relative;padding-left:1.5em;font-size:.9rem;color:var(--ink-soft)}
+  ul.rlist li::before{content:"";position:absolute;left:.15em;top:.55em;width:.5em;height:.5em;border-radius:2px;background:var(--navy)}
+  ul.qlist li::before{border-radius:50%;background:var(--accent)}
+  .pricebox{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:11px;padding:13px 15px;font-size:.9rem;color:var(--ink-soft)}
+  .pricebox strong{color:var(--ink)}
+  .copyrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+  .copied{font-size:.85rem;color:var(--ok);font-weight:700}
+  .copied[hidden]{display:none}
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">KI-Agenten, Automatisierung &amp; Voice</p>
+    <h1>Integrations-Machbarkeits-Check: Lässt sich Ihr Kalender, CRM oder Buchungssystem anbinden?</h1>
+    <p class="lede">Ob sich ein KI-Telefonassistent mit Ihrem System verbinden lässt, entscheidet nicht der Preis, sondern eine einzige technische Eigenschaft des Zielsystems: hat es eine offene, dokumentierte Schnittstelle (API)? Beantworten Sie ein paar Fragen und dieser Router zeigt Ihnen, welcher der Wege aus dem Leitfaden für Ihren Fall realistisch ist &ndash; und welche Fragen Sie einem Anbieter stellen sollten, bevor Ihnen eine Integration versprochen wird, die technisch gar nicht existiert.</p>
+  </header>
+
+  <form class="card card-pad" id="checker" novalidate>
+    <!-- Step 1 -->
+    <fieldset>
+      <legend><span class="stepnum" aria-hidden="true">1</span><span class="lgtxt">Um welches System geht es?</span></legend>
+      <div class="opts cols3" role="radiogroup" aria-label="Systemtyp">
+        <label class="opt"><input type="radio" name="sys" value="Kalender"><span><span class="ot">Kalender</span><span class="od">z.&nbsp;B. Outlook / Microsoft&nbsp;365, Google Kalender</span></span></label>
+        <label class="opt"><input type="radio" name="sys" value="CRM"><span><span class="ot">CRM</span><span class="od">Kundenverwaltung, allgemein oder branchenspezifisch</span></span></label>
+        <label class="opt"><input type="radio" name="sys" value="Buchungssystem"><span><span class="ot">Buchungssystem</span><span class="od">Termin-, Reservations- oder Praxissoftware</span></span></label>
+      </div>
+      <div class="txtrow">
+        <label class="flab" for="prod">Konkretes Produkt <span style="font-weight:400;color:var(--ink-mute)">(optional)</span></label>
+        <input type="text" id="prod" name="prod" maxlength="60" autocomplete="off" placeholder="z. B. Google Kalender, Outlook, Ihr Buchungstool …">
+        <p class="qhint" style="margin-left:0">Der Leitfaden rät: nach dem konkreten Produktnamen fragen, nicht nach der Kategorie. &laquo;Buchungssysteme lassen sich integrieren&raquo; ist so aussagekräftig wie &laquo;Autos fahren&raquo;. Diese Angabe bleibt nur lokal in Ihrem Browser.</p>
+      </div>
+    </fieldset>
+
+    <!-- Step 2 · pivotal gate -->
+    <fieldset>
+      <legend><span class="stepnum" aria-hidden="true">2</span><span class="lgtxt">Die eine Frage, die alles entscheidet: Hat das Zielsystem eine offene, dokumentierte API?</span></legend>
+      <p class="qhint">Eine API ist ein dokumentierter Weg, über den eine Software mit einer anderen spricht, ohne dass ein Mensch dazwischen klickt. Kein Anbieter kann eine Schnittstelle erfinden, die beim Zielsystem nicht existiert.</p>
+      <div class="opts cols3" role="radiogroup" aria-label="Hat das Zielsystem eine API?">
+        <label class="opt"><input type="radio" name="api" value="ja"><span><span class="ot">Ja</span><span class="od">öffentlich dokumentierte Schnittstelle vorhanden</span></span></label>
+        <label class="opt"><input type="radio" name="api" value="nein"><span><span class="ot">Nein</span><span class="od">nur eine Weboberfläche, für Menschen gebaut</span></span></label>
+        <label class="opt"><input type="radio" name="api" value="weiss"><span><span class="ot">Weiss ich nicht</span><span class="od">noch nicht geprüft</span></span></label>
+      </div>
+    </fieldset>
+
+    <!-- Branch A · API exists -->
+    <div class="branch" id="branchA" hidden>
+      <fieldset>
+        <legend><span class="stepnum" aria-hidden="true">3</span><span class="lgtxt">Gibt es für genau dieses Produkt bereits eine fertige native Integration?</span></legend>
+        <p class="qhint">Gemeint ist: hat Ihr Telefonassistent-Anbieter für dieses konkrete System bereits einen getesteten Verbindungsbaustein gebaut und pflegt ihn?</p>
+        <div class="opts cols3" role="radiogroup" aria-label="Fertige native Integration vorhanden?">
+          <label class="opt"><input type="radio" name="native" value="ja"><span><span class="ot">Ja, fertig vorhanden</span></span></label>
+          <label class="opt"><input type="radio" name="native" value="nein"><span><span class="ot">Nein / Neuentwicklung</span></span></label>
+          <label class="opt"><input type="radio" name="native" value="weiss"><span><span class="ot">Weiss ich nicht</span></span></label>
+        </div>
+      </fieldset>
+      <fieldset style="margin-bottom:4px">
+        <legend><span class="stepnum" aria-hidden="true">4</span><span class="lgtxt">Meldet das System Änderungen aktiv &ndash; oder muss abgefragt werden?</span></legend>
+        <p class="qhint">Ein Webhook meldet aktiv, sobald etwas passiert (Stornierung, Verschiebung). Nicht jedes System mit API unterstützt das.</p>
+        <div class="opts cols3" role="radiogroup" aria-label="Webhook oder Polling?">
+          <label class="opt"><input type="radio" name="hook" value="push"><span><span class="ot">Webhooks (Push)</span><span class="od">System meldet Änderungen selbst</span></span></label>
+          <label class="opt"><input type="radio" name="hook" value="poll"><span><span class="ot">Nur Abfrage (Polling)</span><span class="od">muss regelmässig nachfragen</span></span></label>
+          <label class="opt"><input type="radio" name="hook" value="weiss"><span><span class="ot">Weiss ich nicht</span></span></label>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- Branch B · no API -->
+    <div class="branch" id="branchB" hidden>
+      <fieldset>
+        <legend><span class="stepnum" aria-hidden="true">3</span><span class="lgtxt">Steht ohnehin ein Wechsel des Systems in den nächsten Monaten an?</span></legend>
+        <div class="opts cols3" role="radiogroup" aria-label="Systemwechsel geplant?">
+          <label class="opt"><input type="radio" name="switch" value="ja"><span><span class="ot">Ja, Wechsel geplant</span></span></label>
+          <label class="opt"><input type="radio" name="switch" value="nein"><span><span class="ot">Nein</span></span></label>
+          <label class="opt"><input type="radio" name="switch" value="weiss"><span><span class="ot">Noch offen</span></span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend><span class="stepnum" aria-hidden="true">4</span><span class="lgtxt">Sind besonders schützenswerte Daten im Spiel?</span></legend>
+        <p class="qhint">Etwa Gesundheitsdaten oder andere besonders sensible Kundendaten.</p>
+        <div class="opts cols2" role="radiogroup" aria-label="Sensible Daten?">
+          <label class="opt"><input type="radio" name="sens" value="ja"><span><span class="ot">Ja, sensible Daten</span></span></label>
+          <label class="opt"><input type="radio" name="sens" value="nein"><span><span class="ot">Nein, unkritisch</span></span></label>
+        </div>
+      </fieldset>
+      <fieldset style="margin-bottom:4px">
+        <legend><span class="stepnum" aria-hidden="true">5</span><span class="lgtxt">Wie hoch ist Ihr Anrufvolumen mit Terminbezug?</span></legend>
+        <div class="opts cols2" role="radiogroup" aria-label="Anrufvolumen?">
+          <label class="opt"><input type="radio" name="vol" value="gering"><span><span class="ot">Sehr gering</span><span class="od">wenige Terminanfragen pro Woche</span></span></label>
+          <label class="opt"><input type="radio" name="vol" value="normal"><span><span class="ot">Normal bis hoch</span><span class="od">täglich mehrere Anfragen</span></span></label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="runrow">
+      <button type="button" class="btn" id="run">Machbarkeit prüfen</button>
+      <button type="button" class="btn ghost" id="reset" hidden>Neu beginnen</button>
+    </div>
+    <p class="warnmsg" id="warn" hidden role="alert"></p>
+  </form>
+
+  <section class="card card-pad" id="result" aria-live="polite" hidden></section>
+
+  <p class="disc">Orientierung, keine verbindliche Offerte und keine Rechtsberatung. Dieser Router ordnet die Wege aus dem verlinkten Leitfaden für Ihren Fall ein &ndash; welches konkrete System sich tatsächlich anbinden lässt, hängt vom Zielsystem selbst ab und wird im kostenlosen Erstgespräch ehrlich geprüft. Alle Eingaben bleiben nur lokal in Ihrem Browser; nichts wird gespeichert oder gesendet. Preise wie hier genannt: Starter CHF&nbsp;350/Monat, Premium CHF&nbsp;590/Monat.</p>
+
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Weiterlesen &amp; Kontakt</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-kalender-crm-integration/" target="_blank" rel="noopener noreferrer" aria-label="Zum vollständigen Leitfaden: Kalender, CRM und Buchungssystem verbinden (öffnet in einem neuen Tab)">Der vollständige Leitfaden &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="Zur Leistung KI-Telefonassistent und zum kostenlosen Erstgespräch (öffnet in einem neuen Tab)">KI-Telefonassistent: Erstgespräch &rarr;</a>
+    </div>
+    <p class="att">Ergänzung zum Leitfaden. Orientierung, keine Offerte.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s);};
+  var form=$("#checker"), branchA=$("#branchA"), branchB=$("#branchB");
+  var result=$("#result"), warn=$("#warn"), runBtn=$("#run"), resetBtn=$("#reset");
+
+  function val(name){var el=form.querySelector('input[name="'+name+'"]:checked');return el?el.value:null;}
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+
+  // reveal the right branch when the pivotal question changes
+  function syncBranch(){
+    var a=val("api");
+    branchA.hidden = a!=="ja";
+    branchB.hidden = a!=="nein";
+  }
+  form.addEventListener("change", function(e){
+    if(e.target && e.target.name==="api"){ syncBranch(); }
+  });
+
+  // shared content, grounded in the article
+  var RISKS_API=[
+    "Stille Synchronisationsfehler: Der Anruf wird korrekt entgegengenommen, der Termin aber nie im Kalender sichtbar – bemerkt oft erst, wenn eine Kundin nicht erscheint.",
+    "Abgelaufene Zugriffsberechtigung: Die einmal erteilte OAuth-Autorisierung läuft im Hintergrund ab oder wird durch eine IT-Änderung ungültig – die Integration schweigt, statt zu warnen.",
+    "Doppelbuchungen durch Zeitzonen- oder Formatfehler: kleine Unterschiede in der Datums- oder Zeitzonenverarbeitung führen zu Terminen, die eine Stunde daneben liegen.",
+    "Ratenlimits an starken Anruftagen: Viele APIs begrenzen die Anfragen pro Minute – an einem Tag mit vielen Anrufen kann genau das greifen.",
+    "Datenfelder, die nicht zusammenpassen: Ein CRM mit eigenen Pflichtfeldern kann Daten ablehnen oder falsch einsortieren, wenn die Zuordnung nicht sauber definiert wurde."
+  ];
+  var RISKS_NOAPI=[
+    "Lautlos gebrochene Browser-Automation: Nach einem Oberflächen-Update des Zielsystems klickt die Automatisierung ins Leere – ohne Fehlermeldung, bis jemand von Hand nachschaut, warum seit Tagen keine Buchung ankommt.",
+    "Gespeicherte Vollzugriffs-Zugangsdaten: Browser-Automation braucht meist vollen Zugriff wie eine echte Mitarbeiterin – das gehört in ein Sicherheitskonzept, nicht in eine Randnotiz.",
+    "Eine Integration, die niemand überwacht, verursacht auf Dauer mehr stille Fehler als der manuelle Weg, den sie ersetzen sollte."
+  ];
+  var Q_NATIVE="Gibt es für unser konkretes Produkt bereits eine fertige, getestete native Integration, oder wäre das eine individuelle Neuentwicklung?";
+  var Q_HOOK="Unterstützt unser System Webhooks, oder müsste die Integration die Daten regelmässig aktiv abfragen?";
+  var Q_MW="Falls eine Middleware-Plattform zum Einsatz kommt: Wo werden unsere Daten dabei verarbeitet, und wie lange verbleiben sie dort?";
+  var Q_VER="Was passiert, wenn unser Softwarehersteller eine neue API-Version veröffentlicht oder die alte abschaltet – wer ist zuständig, und was kostet das?";
+  var Q_SANDBOX="Gibt es eine Testumgebung (Sandbox), in der wir die Anbindung vor dem Livebetrieb ausprobieren können?";
+  var Q_API="Hat unser System eine dokumentierte, öffentlich zugängliche API – oder nur eine interne/Partner-Schnittstelle, die separat angefragt werden muss?";
+  var Q_STAB="Falls keine API existiert: Wie stabil ist die Weboberfläche, die eine Browser-Automation nachahmen müsste, und wie schnell wird ein Ausfall bei einem Update bemerkt?";
+
+  var PRICE_INTEGR="Bei Weissmann ist volle Systemintegration Teil des <strong>Premium-Pakets (CHF&nbsp;590/Monat, 12 Monate Mindestlaufzeit)</strong> und ausdrücklich nicht Teil des <strong>Starter-Pakets (CHF&nbsp;350/Monat)</strong>, das ohne Systemintegrationen läuft. Welches System sich tatsächlich anbinden lässt, wird im kostenlosen Erstgespräch ehrlich geprüft, bevor Sie sich festlegen.";
+
+  // last computed export text
+  var lastText="";
+
+  function sysLabel(){
+    var s=val("sys"); var p=(form.prod.value||"").trim();
+    if(!s) return p||"Ihr System";
+    return p ? (s+" · "+p) : s;
+  }
+
+  function buildResult(){
+    var api=val("api");
+    var sys=val("sys");
+    if(!sys || !api){
+      warn.textContent = !sys ? "Bitte wählen Sie zuerst einen Systemtyp (Schritt 1)." : "Bitte beantworten Sie die entscheidende Frage in Schritt 2.";
+      warn.hidden=false; result.hidden=true; return;
+    }
+    warn.hidden=true;
+    var r; // {badge,badgeClass,title,lead,primary:[{tag,tagSub,title,body}],options:[...],risks:[],questions:[],price:bool}
+    if(api==="weiss"){ r=resWeiss(); }
+    else if(api==="ja"){ r=resApi(); }
+    else { r=resNoApi(); }
+    renderResult(r);
+  }
+
+  function resWeiss(){
+    return {
+      badge:"Zuerst klären", badgeClass:"acc",
+      title:"Zuerst herausfinden: Hat "+sysLabel()+" überhaupt eine API?",
+      lead:"Das ist die erste Frage, nicht die letzte – und sie lässt sich meist klären, bevor überhaupt ein Verkaufsgespräch stattfindet. Wer die Antwort kennt, beginnt jedes weitere Gespräch mit einer konkreten Frage statt mit einer vagen Hoffnung.",
+      options:[
+        {tag:"Weg 1", title:"Auf der Website des Herstellers suchen",
+         body:"Suchen Sie nach Begriffen wie «API», «Entwickler», «Developer» oder «Integrationen». Seriöse Anbieter mit offener Schnittstelle dokumentieren das öffentlich."},
+        {tag:"Weg 2", title:"Direkt beim Support nachfragen",
+         body:"Finden Sie nichts, fragen Sie direkt: Manche Schnittstellen existieren nur für Partner, gegen Lizenzgebühr oder nach Rücksprache – und werden nicht aktiv beworben. Eine kurze Anfrage kostet nichts und wird erstaunlich oft mit «eigentlich schon» beantwortet."}
+      ],
+      questions:[Q_API],
+      note:"Sobald Sie es wissen, kommen Sie zurück und wählen in Schritt 2 <strong>Ja</strong> oder <strong>Nein</strong> – dann zeigt der Router den passenden Anbindungsweg.",
+      price:false
+    };
+  }
+
+  function resApi(){
+    var native=val("native"), hook=val("hook");
+    var primary=[], options=[];
+    if(native==="ja"){
+      primary.push({tag:"Empfohlen", title:"Native Integration – der schnellste Weg",
+        body:"Der Anbieter hat für genau dieses System bereits einen fertigen, getesteten Verbindungsbaustein gebaut und pflegt ihn laufend. Das ist oft nur ein kurzer Autorisierungsschritt, kein individuelles Entwicklungsprojekt."});
+      options.push({tag:"Alternative", tagSub:true, title:"Direkte API-Anbindung",
+        body:"Falls die native Integration doch nicht passt: individueller Code gegen die dokumentierte API. Mehr Aufwand, Autorisierung über OAuth, laufende Pflege."});
+    } else {
+      primary.push({tag:"Empfohlen", title:"Direkte API-Anbindung",
+        body:"Es gibt (noch) keine fertige native Integration, aber eine dokumentierte API – dann kann ein Anbieter individuellen Code dagegen schreiben. Das funktioniert grundsätzlich mit jedem System mit öffentlicher Schnittstelle, auch mit einem, das noch nie an einen KI-Telefonassistenten angebunden war. Der Preis: mehr Entwicklungsaufwand als native, Autorisierung über OAuth (Sie geben ausdrücklich Zugriff frei, statt ein Passwort weiterzugeben) und laufende Pflege, weil Anbieter wie Microsoft oder Google ihre Schnittstellen ändern oder alte Versionen abschalten."});
+      options.push({tag:"Alternative", tagSub:true, title:"Middleware / Integrationsplattform (Zapier, Make, n8n)",
+        body:"Lohnt sich, wenn das System eine API hat, der Anbieter aber noch keine eigene native Integration gebaut hat. Der Haken: ein zusätzlicher Vertragspartner, ein zusätzliches Abo, ein zusätzlicher Fehlerpunkt – und Ihre Daten laufen für einen Moment über die Server dieser dritten Plattform. Wo diese stehen, ist für datenschutzsensible Betriebe eine eigene Abklärung wert (keine Rechtsberatung)."});
+    }
+    // webhook consideration
+    var hookNote;
+    if(hook==="push") hookNote={tag:"Aktualität", tagSub:true, title:"Webhooks werden unterstützt – gut",
+      body:"Das System meldet Änderungen (Stornierung, Verschiebung) selbst aktiv. Das hält Daten aktueller als reines Nachfragen und spart unnötige Anfragen."};
+    else if(hook==="poll") hookNote={tag:"Aktualität", tagSub:true, title:"Nur Abfrage möglich (Polling)",
+      body:"Die Integration muss regelmässig aktiv nachfragen. Achten Sie auf Ratenlimits an starken Anruftagen – viele APIs begrenzen die Anfragen pro Minute."};
+    else hookNote={tag:"Aktualität", tagSub:true, title:"Webhook-Unterstützung noch offen",
+      body:"Klären Sie, ob Webhooks verfügbar sind – nicht jedes System mit API unterstützt Push. Das gehört auf jede Fragenliste an den Softwarehersteller."};
+    options.push(hookNote);
+
+    var questions=[Q_NATIVE, Q_HOOK, Q_VER, Q_SANDBOX];
+    if(native!=="ja") questions.splice(2,0,Q_MW);
+
+    return {
+      badge: native==="ja" ? "Direkt integrierbar" : "Integrierbar mit Aufwand",
+      badgeClass: native==="ja" ? "ok" : "acc",
+      title: (native==="ja"?"Gute Ausgangslage: ":"Machbar: ")+sysLabel()+" hat eine API",
+      lead:"Hat das Zielsystem eine API, kommen mehrere Anbindungsarten infrage. Sie schliessen sich nicht gegenseitig aus – in der Praxis kombiniert eine gute Anbindung oft zwei davon.",
+      primary:primary, options:options, risks:RISKS_API, questions:questions, price:true
+    };
+  }
+
+  function resNoApi(){
+    var sw=val("switch"), sens=val("sens"), vol=val("vol");
+    var primary=[], options=[];
+    // routing priority: planned switch > sensitive data > very low volume > general
+    if(sw==="ja"){
+      primary.push({tag:"Empfohlen", title:"Warten oder wechseln, statt erzwingen",
+        body:"Steht ohnehin ein Wechsel des Systems an, ist es meistens klüger, die Integration mit dem neuen System zu planen – statt Geld und Nerven in eine fragile Browser-Automation für ein System zu stecken, das bald verschwindet. Diese Frage gehört an den Anfang des Gesprächs, nicht ans Ende eines gescheiterten Projekts."});
+    } else if(sens==="ja"){
+      primary.push({tag:"Empfohlen", title:"Manueller Fallback statt Browser-Automation",
+        body:"Bei Gesundheits- oder anderen besonders schützenswerten Daten ist eine Browser-Automation mit gespeicherten Vollzugriffs-Zugangsdaten oft ein grösseres Risiko, als es der eingesparte manuelle Aufwand wert ist. Hier ist eine geprüfte, dokumentierte API – oder der manuelle Fallback – häufig die klügere Wahl."});
+    } else if(vol==="gering"){
+      primary.push({tag:"Empfohlen", title:"Eine tägliche Zusammenfassung reicht oft",
+        body:"Bei wenigen Terminanfragen pro Woche leistet eine tägliche E-Mail-Zusammenfassung, die von Hand ins System übertragen wird, praktisch dasselbe wie eine Live-Synchronisation – für einen Bruchteil des Aufwands."});
+    } else {
+      primary.push({tag:"Ehrlichste Lösung", title:"Nur benachrichtigen statt selbst eintragen",
+        body:"Statt dem Zielsystem Schreibzugriff zu geben, sammelt der Telefonassistent nur strukturiert, was ein Anruf ergeben hat – Name, Wunschtermin, Anliegen – und schickt es als klar aufbereitete Nachricht an eine Mitarbeiterin, die es überträgt. Weniger technisches Risiko, keine gespeicherten Zugangsdaten in einer Automatisierungskette, dafür wieder ein paar Sekunden manuelle Arbeit pro Anruf."});
+      options.push({tag:"Technischer Notbehelf", tagSub:true, title:"Browser-Automation (RPA)",
+        body:"Der letzte rein technische Weg ahmt nach, was eine Mitarbeiterin von Hand täte: Felder anklicken, Werte eintippen, ablesen. Das funktioniert – solange sich an der Oberfläche nichts ändert. Sobald ein Update einen Button verschiebt, bricht die Automatisierung lautlos. Ausserdem müssen Zugangsdaten mit vollem Zugriff hinterlegt werden – eine Frage fürs Sicherheitskonzept."});
+    }
+    // always offer: ask the vendor
+    options.push({tag:"Immer zuerst", tagSub:true, title:"Direkt beim Softwarehersteller nachfragen",
+      body:"Nicht jede fehlende API ist öffentlich bekannt. Manche Fachprogramme bieten eine Schnittstelle nur Partnern an, gegen Lizenzgebühr oder nach Rücksprache – ohne dass das auf der Website steht. Die Frage «Gibt es eine API oder eine Partner-Schnittstelle, die öffentlich nicht beworben wird?» kostet nichts."});
+
+    return {
+      badge:"Keine öffentliche API", badgeClass: sens==="ja" ? "miss" : "warn",
+      title:"Ohne API: "+sysLabel()+" braucht einen anderen Weg",
+      lead:"Hat das Zielsystem keine öffentliche Schnittstelle, bleiben keine vier gleichwertigen Wege mehr – nur ein technischer Notbehelf und organisatorische Alternativen. Geld löst das Problem einer fehlenden Schnittstelle nicht.",
+      primary:primary, options:options, risks:RISKS_NOAPI, questions:[Q_API, Q_STAB], price:false
+    };
+  }
+
+  function renderResult(r){
+    var h="";
+    h+='<div class="rhead"><span class="rbadge '+r.badgeClass+'">'+esc(r.badge)+'</span><div><p class="rtitle">'+esc(r.title)+'</p></div></div>';
+    h+='<p class="rlead">'+esc(r.lead)+'</p>';
+
+    if(r.primary && r.primary.length){
+      h+='<div class="rsec"><h3>Empfohlener Weg</h3>';
+      r.primary.forEach(function(o){ h+=optCardHtml(o); });
+      h+='</div>';
+    }
+    if(r.options && r.options.length){
+      h+='<div class="rsec"><h3>'+(r.primary&&r.primary.length?"Weitere Optionen &amp; Hinweise":"So finden Sie es heraus")+'</h3>';
+      r.options.forEach(function(o){ h+=optCardHtml(o); });
+      h+='</div>';
+    }
+    if(r.note){ h+='<div class="rsec"><p class="rlead" style="margin:0">'+r.note+'</p></div>'; }
+    if(r.risks && r.risks.length){
+      h+='<div class="rsec"><h3>Worauf zu achten ist – was still schiefgeht</h3><ul class="rlist">';
+      r.risks.forEach(function(x){ h+='<li>'+esc(x)+'</li>'; });
+      h+='</ul></div>';
+    }
+    if(r.questions && r.questions.length){
+      h+='<div class="rsec"><h3>Fragen an Hersteller &amp; Anbieter</h3><ul class="rlist qlist">';
+      r.questions.forEach(function(x){ h+='<li>'+esc(x)+'</li>'; });
+      h+='</ul></div>';
+    }
+    if(r.price){
+      h+='<div class="rsec"><div class="pricebox">'+PRICE_INTEGR+'</div></div>';
+    }
+    h+='<div class="copyrow"><button type="button" class="btn ghost" id="copyBtn">Zusammenfassung kopieren</button><span class="copied" id="copiedMsg" hidden>Kopiert ✓</span></div>';
+
+    result.innerHTML=h;
+    result.hidden=false;
+    resetBtn.hidden=false;
+    lastText=buildText(r);
+    var cb=$("#copyBtn"); if(cb) cb.addEventListener("click", doCopy);
+    result.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  function optCardHtml(o){
+    var tag = o.tag ? '<span class="tag'+(o.tagSub?' sub':'')+'">'+esc(o.tag)+'</span>' : '';
+    return '<div class="optcard"><p class="oct">'+tag+'<span>'+esc(o.title)+'</span></p><p>'+esc(o.body)+'</p></div>';
+  }
+
+  function buildText(r){
+    var L=[];
+    L.push("Integrations-Machbarkeits-Check – Weissmann");
+    L.push("System: "+sysLabel());
+    var apiV=val("api");
+    L.push("Offene, dokumentierte API: "+(apiV==="ja"?"Ja":apiV==="nein"?"Nein":"Weiss ich noch nicht"));
+    L.push("");
+    L.push("Einordnung: "+r.title);
+    (r.primary||[]).forEach(function(o){ L.push("- ["+o.tag+"] "+o.title+": "+o.body); });
+    (r.options||[]).forEach(function(o){ L.push("- ["+o.tag+"] "+o.title+": "+o.body); });
+    if(r.questions && r.questions.length){
+      L.push(""); L.push("Fragen an Hersteller & Anbieter:");
+      r.questions.forEach(function(x){ L.push("- "+x); });
+    }
+    if(r.price){ L.push(""); L.push("Preis-Hinweis: Volle Systemintegration = Premium (CHF 590/Monat, 12 Monate Mindestlaufzeit); Starter (CHF 350/Monat) laeuft ohne Systemintegrationen. Pruefung im kostenlosen Erstgespraech."); }
+    L.push(""); L.push("Orientierung, keine Offerte und keine Rechtsberatung.");
+    return L.join("\n");
+  }
+
+  function doCopy(){
+    var msg=$("#copiedMsg");
+    function ok(){ if(msg){ msg.hidden=false; setTimeout(function(){ msg.hidden=true; },2200); } }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(lastText).then(ok, fallback);
+    } else { fallback(); }
+    function fallback(){
+      try{
+        var ta=document.createElement("textarea");
+        ta.value=lastText; ta.setAttribute("readonly","");
+        ta.style.position="absolute"; ta.style.left="-9999px";
+        document.body.appendChild(ta); ta.select();
+        document.execCommand("copy"); document.body.removeChild(ta); ok();
+      }catch(e){ /* copy not available; silently ignore */ }
+    }
+  }
+
+  runBtn.addEventListener("click", buildResult);
+  resetBtn.addEventListener("click", function(){
+    form.reset(); syncBranch(); result.hidden=true; result.innerHTML="";
+    resetBtn.hidden=true; warn.hidden=true; lastText="";
+    form.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+
+  syncBranch();
+})();
+</script>

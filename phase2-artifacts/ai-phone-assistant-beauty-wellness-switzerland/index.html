@@ -1,0 +1,437 @@
+<title>Salon-Fit-Check: KI-Empfang in 6 Punkten · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  /* custom */
+  .grid{display:grid;gap:18px;margin-top:20px}
+  @media(min-width:860px){.grid{grid-template-columns:1fr 340px;align-items:start}}
+  .how{margin:0 0 4px;font-size:.95rem;color:var(--ink-soft)}
+  .how strong{color:var(--ink)}
+  .q{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:14px 16px;margin:0 0 12px;border-left-width:4px;border-left-color:var(--line)}
+  .q[data-state="ja"]{border-left-color:var(--ok)}
+  .q[data-state="nein"],.q[data-state="unklar"]{border-left-color:var(--miss)}
+  .q legend,.q .legend{padding:0;font-weight:700;font-size:1.02rem;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+  .qn{font-variant-numeric:tabular-nums;color:var(--ink-mute);font-weight:700}
+  .wt{font-size:.68rem;letter-spacing:.04em;font-weight:700;padding:2px 7px;border-radius:999px;background:var(--soft);color:var(--ink-mute);white-space:nowrap;border:1px solid var(--line)}
+  .wt.hi{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+  .qtext{margin:8px 0 12px;color:var(--ink-soft);font-size:.95rem}
+  fieldset{border:0;margin:0;padding:0;min-width:0}
+  .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .opt{position:relative;display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;font-size:.9rem;font-weight:600;color:var(--ink-soft);cursor:pointer;user-select:none;background:var(--card)}
+  .opt input{position:absolute;opacity:0;width:1px;height:1px}
+  .opt .dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--ink-mute);flex:0 0 auto}
+  .opt.on{color:var(--ink)}
+  .opt.on.v-ja{border-color:var(--ok);background:var(--ok-soft)}
+  .opt.on.v-ja .dot{border-color:var(--ok);background:var(--ok)}
+  .opt.on.v-nein,.opt.on.v-unklar{border-color:var(--miss);background:var(--miss-soft)}
+  .opt.on.v-nein .dot,.opt.on.v-unklar .dot{border-color:var(--miss);background:var(--miss)}
+  .opt:focus-within{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  details.ask{margin-top:12px;border-top:1px dashed var(--line);padding-top:10px}
+  details.ask summary{cursor:pointer;font-size:.85rem;font-weight:600;color:var(--accent);list-style:none}
+  details.ask summary::-webkit-details-marker{display:none}
+  details.ask summary::before{content:"＋ ";font-weight:700}
+  details.ask[open] summary::before{content:"− "}
+  details.ask ul{margin:10px 0 2px;padding-left:18px;color:var(--ink-soft);font-size:.88rem}
+  details.ask li{margin:5px 0}
+  .note{font-size:.82rem;color:var(--ink-mute);margin:8px 0 0;background:var(--soft);border-radius:8px;padding:8px 10px}
+
+  .side{position:sticky;top:16px}
+  .ring{position:relative;width:132px;height:132px;border-radius:50%;background:conic-gradient(var(--arc,var(--line)) calc(var(--p,0)*1%),var(--line) 0);display:grid;place-items:center;flex:0 0 auto;margin:2px auto 0}
+  .ring::before{content:"";position:absolute;inset:12px;border-radius:50%;background:var(--card)}
+  .ring-val{position:relative;text-align:center;line-height:1}
+  .ring-val b{font-size:1.9rem;font-variant-numeric:tabular-nums;display:block}
+  .ring-val small{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+  .band{text-align:center;font-weight:700;margin:12px 0 2px;font-size:1rem}
+  .prog{text-align:center;font-size:.8rem;color:var(--ink-mute);margin:0 0 8px}
+  .gap-lead{background:var(--miss-soft);border:1px solid color-mix(in srgb,var(--miss) 30%,transparent);border-radius:11px;padding:12px 14px;margin-top:12px}
+  .gap-lead.ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 30%,transparent)}
+  .gap-lead .gk{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--miss);margin:0 0 4px}
+  .gap-lead.ok .gk{color:var(--ok)}
+  .gap-lead h3{margin:0 0 6px;font-size:1rem}
+  .gap-lead p{margin:6px 0 0;font-size:.88rem;color:var(--ink-soft)}
+  .gap-lead .askline{background:var(--card);border-radius:8px;padding:8px 10px;margin-top:10px}
+  .gaps{list-style:none;margin:12px 0 0;padding:0}
+  .gaps li{display:flex;gap:8px;align-items:baseline;font-size:.86rem;padding:6px 0;border-top:1px solid var(--line)}
+  .gaps li .st{margin-left:auto;font-size:.72rem;font-weight:700;padding:1px 7px;border-radius:999px}
+  .st.s-nein,.st.s-unklar{background:var(--miss-soft);color:var(--miss)}
+  .st.s-ja{background:var(--ok-soft);color:var(--ok)}
+  .st.s-null{background:var(--soft);color:var(--ink-mute)}
+  .foot-note{font-size:.82rem;color:var(--ink-soft);margin:12px 0 0}
+  .p1note{font-size:.83rem;background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 30%,transparent);border-radius:9px;padding:10px 12px;margin-top:10px;color:var(--ink-soft)}
+  .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .btn{font-family:inherit;font-weight:600;font-size:.9rem;padding:10px 14px;border-radius:10px;border:1.5px solid var(--navy);color:var(--navy);background:var(--card);cursor:pointer;min-height:44px}
+  .btn:hover{background:var(--soft)}
+  .btn.ghost{border-color:var(--line);color:var(--ink-soft)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copystat{font-size:.8rem;color:var(--ok);margin-left:2px;align-self:center;min-height:1em}
+  .whenot{margin-top:18px}
+  .whenot h2{font-size:1.05rem;margin:0 0 8px}
+  .whenot ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.92rem}
+  .whenot li{margin:6px 0}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">KI-Agenten, Automatisierung und Voice · Beauty und Wellness</p>
+  <h1>Salon-Fit-Check: KI-Empfang in 6 Punkten</h1>
+  <p class="lede">Bei Coiffeur-, Kosmetik-, Nagel- und Wellnessbetrieben entscheidet sich der Nutzen eines KI-Telefonassistenten selten am Telefon selbst, sondern im Rhythmus zwischen den Anrufen. Prüfen Sie eine Lösung an den sechs Punkten aus dem Leitfaden – gewichtet nach dem, was am meisten kostet.</p>
+
+  <div class="grid">
+    <div>
+      <div class="card card-pad" style="margin-bottom:18px">
+        <p class="how"><strong>So funktioniert der Check.</strong> Markieren Sie für jeden der sechs Punkte, ob eine KI-Empfangslösung ihn <em>abdeckt</em>, <em>nicht abdeckt</em> oder ob es <em>unklar</em> ist. Die Punkte sind unterschiedlich gewichtet: echte Systemanbindung und der Umgang mit kurzfristigen Absagen zählen schwerer als eine schöne Stimme, weil dort laut Leitfaden der Umsatz entsteht und wieder verschwindet. Am Ende sehen Sie den Deckungsgrad und die Lücke, die am meisten kostet.</p>
+        <p class="note">Die Gewichtung folgt dem Schwerpunkt des Artikels und ist eine Einordnung, kein gemessener Wert. Es geht bewusst nicht darum, wie natürlich der Assistent klingt – das prüfen Sie am besten in einem eigenen Testanruf.</p>
+      </div>
+
+      <form id="checklist" aria-label="Sechs-Punkte-Checkliste">
+        <fieldset class="q" data-id="1">
+          <legend><span class="qn">Punkt 1</span> Bucht er wirklich in Ihr System? <span class="wt hi">Gewicht &times;3</span></legend>
+          <p class="qtext">Bucht die Lösung direkt in Ihr bestehendes Salon-Buchungssystem – nicht nur in einen separaten Google- oder Outlook-Kalender, aus dem jemand den Termin später von Hand ins eigentliche System überträgt?</p>
+          <div class="opts" role="radiogroup" aria-label="Punkt 1 – echte Systemanbindung">
+            <label class="opt v-ja"><input type="radio" name="q1" value="ja"><span class="dot"></span><span>Ja, abgedeckt</span></label>
+            <label class="opt v-nein"><input type="radio" name="q1" value="nein"><span class="dot"></span><span>Nein, Lücke</span></label>
+            <label class="opt v-unklar"><input type="radio" name="q1" value="unklar"><span class="dot"></span><span>Unklar</span></label>
+          </div>
+          <details class="ask"><summary>Was Sie konkret fragen sollten</summary>
+            <ul>
+              <li>Nach dem konkreten Produktnamen Ihres Buchungssystems fragen, nicht nach der Kategorie «Terminverwaltung» – ob eine echte Anbindung möglich ist, hängt vom einzelnen System ab.</li>
+              <li>Schritt für Schritt klären: Was passiert zwischen einer Stornierung im Buchungssystem und dem Moment, in dem der Assistent davon weiss?</li>
+            </ul>
+          </details>
+          <p class="note">Bei Weissmann ist eine echte Systemanbindung Teil des Premium-Pakets (CHF 590/Monat, 12 Monate Mindestlaufzeit); das Starter-Paket (CHF 350/Monat) läuft ausdrücklich ohne Systemintegration. Ob Ihr System technisch angebunden werden kann, hängt zusätzlich davon ab, ob es eine offene Schnittstelle anbietet.</p>
+        </fieldset>
+
+        <fieldset class="q" data-id="2">
+          <legend><span class="qn">Punkt 2</span> Kennt er Behandlungsdauer, Personal und Raum? <span class="wt">Gewicht &times;1</span></legend>
+          <p class="qtext">Erkennt die Lösung unterschiedliche Behandlungsdauern, die richtige Mitarbeiterin und begrenzte Ressourcen (z. B. eine einzige Massageliege) – statt jeden Termin als gleich lange Zeitscheibe zu behandeln?</p>
+          <div class="opts" role="radiogroup" aria-label="Punkt 2 – Behandlungsdauer, Personal und Raum">
+            <label class="opt v-ja"><input type="radio" name="q2" value="ja"><span class="dot"></span><span>Ja, abgedeckt</span></label>
+            <label class="opt v-nein"><input type="radio" name="q2" value="nein"><span class="dot"></span><span>Nein, Lücke</span></label>
+            <label class="opt v-unklar"><input type="radio" name="q2" value="unklar"><span class="dot"></span><span>Unklar</span></label>
+          </div>
+          <details class="ask"><summary>Was Sie konkret fragen sollten</summary>
+            <ul>
+              <li>Erkennt er unterschiedliche Behandlungsdauern pro Dienstleistung, oder rechnet er mit einem festen Standard-Slot für alles?</li>
+              <li>Kann eine Kundin eine bestimmte Person verlangen, und weiss der Assistent, wann diese Person tatsächlich verfügbar ist – nicht nur, ob der Salon offen hat?</li>
+              <li>Was passiert bei Geräte- oder Raumbindung, etwa einer Massageliege oder einem Platz, der nur einmal vorhanden ist?</li>
+            </ul>
+          </details>
+        </fieldset>
+
+        <fieldset class="q" data-id="3">
+          <legend><span class="qn">Punkt 3</span> Reduziert er No-Shows aktiv? <span class="wt hi">Gewicht &times;2</span></legend>
+          <p class="qtext">Tut die Lösung aktiv etwas, damit ein gebuchter Termin auch stattfindet – automatische Erinnerung und, wo sinnvoll, Anzahlung oder Kartenhinterlegung – statt nur Buchungen entgegenzunehmen?</p>
+          <div class="opts" role="radiogroup" aria-label="Punkt 3 – No-Shows aktiv reduzieren">
+            <label class="opt v-ja"><input type="radio" name="q3" value="ja"><span class="dot"></span><span>Ja, abgedeckt</span></label>
+            <label class="opt v-nein"><input type="radio" name="q3" value="nein"><span class="dot"></span><span>Nein, Lücke</span></label>
+            <label class="opt v-unklar"><input type="radio" name="q3" value="unklar"><span class="dot"></span><span>Unklar</span></label>
+          </div>
+          <details class="ask"><summary>Was Sie konkret fragen sollten</summary>
+            <ul>
+              <li>Verschickt er automatische Erinnerungen per SMS oder WhatsApp – und wie viele Stunden vorher?</li>
+              <li>Kann er bei längeren Behandlungen eine Anzahlung oder Kartenhinterlegung verlangen, statt nur einen Termin ohne Verbindlichkeit einzutragen?</li>
+              <li>Wird die Stornierungsfrist verständlich in der Bestätigung genannt?</li>
+            </ul>
+          </details>
+          <p class="note">Verlässliche, für die Schweiz repräsentative No-Show-Zahlen sind laut Leitfaden nicht bekannt. Unbestritten ist die Dynamik: Ein leerer Stuhl-Slot lässt sich – anders als ein liegen gebliebener Bürovorgang – nicht einfach nachholen.</p>
+        </fieldset>
+
+        <fieldset class="q" data-id="4">
+          <legend><span class="qn">Punkt 4</span> Was passiert bei einer kurzfristigen Absage? <span class="wt hi">Gewicht &times;3</span></legend>
+          <p class="qtext">Sieht die Lösung auch Stornierungen, die online (nicht per Telefon) eingehen, und kann sie eine Warteliste automatisch kontaktieren, sobald ein Slot frei wird – innert Minuten?</p>
+          <div class="opts" role="radiogroup" aria-label="Punkt 4 – kurzfristige Absage und Warteliste">
+            <label class="opt v-ja"><input type="radio" name="q4" value="ja"><span class="dot"></span><span>Ja, abgedeckt</span></label>
+            <label class="opt v-nein"><input type="radio" name="q4" value="nein"><span class="dot"></span><span>Nein, Lücke</span></label>
+            <label class="opt v-unklar"><input type="radio" name="q4" value="unklar"><span class="dot"></span><span>Unklar</span></label>
+          </div>
+          <details class="ask"><summary>Was Sie konkret fragen sollten</summary>
+            <ul>
+              <li>Sieht der Assistent Stornierungen, die online und nicht per Telefon eingehen, überhaupt?</li>
+              <li>Gibt es eine Warteliste, die er automatisch kontaktieren kann, sobald ein Slot frei wird – per Anruf, SMS oder beides?</li>
+              <li>Wie schnell passiert das – innert Minuten, oder erst beim nächsten geplanten Abgleich?</li>
+            </ul>
+          </details>
+        </fieldset>
+
+        <fieldset class="q" data-id="5">
+          <legend><span class="qn">Punkt 5</span> Spricht er die Sprache Ihrer Kundschaft? <span class="wt">Gewicht &times;1</span></legend>
+          <p class="qtext">Beherrscht die Lösung die Sprachen Ihrer Kundschaft sauber – inklusive getestetem Schweizerdeutsch – und kommt sie mit einem Sprachwechsel mitten im Gespräch zurecht?</p>
+          <div class="opts" role="radiogroup" aria-label="Punkt 5 – Sprache der Kundschaft">
+            <label class="opt v-ja"><input type="radio" name="q5" value="ja"><span class="dot"></span><span>Ja, abgedeckt</span></label>
+            <label class="opt v-nein"><input type="radio" name="q5" value="nein"><span class="dot"></span><span>Nein, Lücke</span></label>
+            <label class="opt v-unklar"><input type="radio" name="q5" value="unklar"><span class="dot"></span><span>Unklar</span></label>
+          </div>
+          <details class="ask"><summary>Was Sie konkret fragen sollten</summary>
+            <ul>
+              <li>Wie viele Sprachen sind im Paket enthalten – eine im Starter-Paket (CHF 350/Monat), zwei im Premium-Paket (CHF 590/Monat) oder vier im Enterprise-Paket?</li>
+              <li>Was passiert, wenn eine Anruferin mitten im Gespräch die Sprache wechselt, statt am Anfang eine zu wählen?</li>
+              <li>Wurde die Verständlichkeit von Schweizerdeutsch wirklich getestet? Ein eigener Testanruf in der eigenen Mundart zeigt das zuverlässiger als jede Werbeaussage.</li>
+            </ul>
+          </details>
+        </fieldset>
+
+        <fieldset class="q" data-id="6">
+          <legend><span class="qn">Punkt 6</span> Wo zieht er die Grenze? <span class="wt">Gewicht &times;1</span></legend>
+          <p class="qtext">Zieht die Lösung eine klare Grenze bei Reklamationen und gesundheitlichen Fragen (Allergie, Schwangerschaft) und gibt sie den Wunsch nach einem Menschen sofort weiter – statt eine fachlich klingende Einschätzung abzugeben?</p>
+          <div class="opts" role="radiogroup" aria-label="Punkt 6 – klare Grenze und Eskalation">
+            <label class="opt v-ja"><input type="radio" name="q6" value="ja"><span class="dot"></span><span>Ja, abgedeckt</span></label>
+            <label class="opt v-nein"><input type="radio" name="q6" value="nein"><span class="dot"></span><span>Nein, Lücke</span></label>
+            <label class="opt v-unklar"><input type="radio" name="q6" value="unklar"><span class="dot"></span><span>Unklar</span></label>
+          </div>
+          <details class="ask"><summary>Was Sie konkret fragen sollten</summary>
+            <ul>
+              <li>Reklamationen zu einer bereits durchgeführten Behandlung gehören an eine Person mit Entscheidungsbefugnis, nicht an den Assistenten allein.</li>
+              <li>Gesundheitsbezogene Fragen zu Allergien, Schwangerschaft oder Hautzuständen werden entgegengenommen, aber nicht fachlich beantwortet – der Assistent verweist an eine Fachperson.</li>
+              <li>Eine direkte Bitte, mit einem Menschen zu sprechen, wird sofort erfüllt, nicht verhandelt oder verzögert.</li>
+            </ul>
+          </details>
+        </fieldset>
+      </form>
+    </div>
+
+    <aside class="side">
+      <div class="card card-pad">
+        <div class="ring" id="ring" role="img" aria-label="Deckungsgrad">
+          <div class="ring-val"><b id="pct">0%</b><small>abgedeckt</small></div>
+        </div>
+        <p class="band" id="band">Noch nichts markiert</p>
+        <p class="prog" id="prog">0 von 6 Punkten beantwortet</p>
+        <div id="result" aria-live="polite">
+          <p class="foot-note">Beantworten Sie die sechs Punkte, um Deckungsgrad und grösste Lücke zu sehen.</p>
+        </div>
+        <div class="btnrow">
+          <button type="button" class="btn" id="copyBtn">Zusammenfassung kopieren</button>
+          <button type="button" class="btn ghost" id="resetBtn">Zurücksetzen</button>
+        </div>
+        <span class="copystat" id="copyStat" aria-live="polite"></span>
+      </div>
+    </aside>
+  </div>
+
+  <div class="card card-pad whenot">
+    <h2>Wann sich der Aufwand (noch) nicht lohnt</h2>
+    <ul>
+      <li>Ein Einzelsalon mit einer Person, die ohnehin selbst zum Telefon greift und kaum Absagen erlebt, hat wenig zu gewinnen und echte Kosten – mancher Stammkundschaft ist genau die persönliche Stimme wichtig.</li>
+      <li>Ein Buchungssystem ohne offene Schnittstelle, das ohnehin bald gewechselt werden soll: den Wechsel zuerst klären, statt in eine Anbindung zu investieren, die bald hinfällig wird.</li>
+      <li>Bei sehr wenigen Telefonanfragen pro Woche bringt eine gut formulierte Online-Buchungsseite mit einer einfachen Erinnerungs-SMS oft schon einen grossen Teil des Wegs.</li>
+    </ul>
+    <p class="disc">Dieser Check ist eine Orientierungshilfe zum verlinkten Leitfaden – keine Beratung, keine verbindliche Offerte und keine fachliche oder rechtliche Auskunft. Die Gewichtung folgt dem Schwerpunkt des Artikels (Rhythmus zwischen den Anrufen: Absagen, Warteliste, echte Systemanbindung) und ist kein gemessener Wert; verlässliche, für die Schweiz repräsentative No-Show-Zahlen sind laut Leitfaden nicht bekannt. Was ein bestimmtes System technisch kann, klärt sich erst im konkreten Fall – am zuverlässigsten in einem echten Testlauf vor der Unterschrift. Alle Eingaben bleiben nur in Ihrem Browser: nichts wird gespeichert, nichts gesendet.</p>
+  </div>
+
+  <footer class="linkbar" aria-label="Weiterlesen und Leistung ansehen">
+    <p class="lb-title">Weiterlesen und Leistung ansehen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-empfang-beauty-wellness-salon/" target="_blank" rel="noopener noreferrer" aria-label="Zum Leitfaden: die 6-Punkte-Checkliste für Beauty- und Wellness-Salons (opens in a new tab)">Zum Leitfaden: die 6-Punkte-Checkliste &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="KI-Telefonassistent von Weissmann ansehen (opens in a new tab)">KI-Telefonassistent von Weissmann &rarr;</a>
+    </div>
+    <p class="att">Salon-Fit-Check &middot; eine Ergänzung zum Leitfaden. Orientierung, keine Offerte.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var TOTAL = 11;
+  var META = {
+    1:{w:3,name:'Echte Systemanbindung',
+       why:'Ohne echte Anbindung sieht der Assistent Online-Stornierungen gar nicht – und mehrere der anderen Punkte (Warteliste, No-Show-Schutz) sind dann technisch gar nicht erst moeglich.',
+       ask:'Nach dem konkreten Produktnamen Ihres Buchungssystems fragen und sich Schritt fuer Schritt zeigen lassen, was zwischen einer Online-Stornierung und dem Assistenten passiert.'},
+    2:{w:1,name:'Behandlungsdauer, Personal & Raum',
+       why:'Wird jede Behandlung als gleich lange Zeitscheibe gebucht, startet der Tag mit Verspaetung oder verschenkt Stuhlzeit.',
+       ask:'Fragen: eigene Dauer pro Dienstleistung oder ein fester Standard-Slot – und kennt die Loesung die echte Verfuegbarkeit einzelner Mitarbeitender?'},
+    3:{w:2,name:'No-Shows aktiv reduzieren',
+       why:'Ein leerer Stuhl-Slot laesst sich nicht nachholen. Ohne aktive Erinnerung oder Anzahlung wird das Problem nur vom Telefon auf den leeren Stuhl verschoben.',
+       ask:'Klaeren: automatische Erinnerung wie viele Stunden vorher – und ist bei laengeren Behandlungen eine Anzahlung oder Kartenhinterlegung moeglich?'},
+    4:{w:3,name:'Kurzfristige Absage & Warteliste',
+       why:'Eine kurzfristige Absage ist eine zweite Verkaufschance – ohne Warteliste, die sofort kontaktiert wird, verpufft sie regelmaessig.',
+       ask:'Eine Demo verlangen: Slot wird frei → wird die Warteliste innert Minuten kontaktiert, per Anruf, SMS oder beides?'},
+    5:{w:1,name:'Sprache der Kundschaft',
+       why:'Eine Loesung, die nur eine Sprache sauber beherrscht, schliesst genau die Kundschaft aus, die eher telefonisch als online bucht.',
+       ask:'Einen eigenen Testanruf in Ihrer Mundart machen und den Sprachwechsel mitten im Gespraech pruefen.'},
+    6:{w:1,name:'Klare Grenze & Eskalation',
+       why:'Gibt der Assistent bei Gesundheits- oder Reklamationsfragen eine fachlich klingende Auskunft, entsteht ein Risiko, das keine schoene Stimme aufwiegt.',
+       ask:'Im Testanruf gezielt eine Gesundheitsfrage stellen – wird sie aufgenommen und an eine Fachperson verwiesen, statt beantwortet?'}
+  };
+  var LABELS = {ja:'Ja, abgedeckt', nein:'Nein, Lücke', unklar:'Unklar – nachfragen', null:'noch offen'};
+  var state = {1:null,2:null,3:null,4:null,5:null,6:null};
+
+  var form = document.getElementById('checklist');
+  var ring = document.getElementById('ring');
+  var pctEl = document.getElementById('pct');
+  var bandEl = document.getElementById('band');
+  var progEl = document.getElementById('prog');
+  var resultEl = document.getElementById('result');
+  var copyStat = document.getElementById('copyStat');
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  form.addEventListener('change', function(e){
+    var t = e.target;
+    if(!t || !t.name || t.name.charAt(0)!=='q' || t.type!=='radio') return;
+    var id = parseInt(t.name.slice(1),10);
+    state[id] = t.value;
+    var fs = form.querySelector('fieldset[data-id="'+id+'"]');
+    if(fs){
+      fs.setAttribute('data-state', t.value);
+      var opts = fs.querySelectorAll('.opt');
+      for(var i=0;i<opts.length;i++){
+        var inp = opts[i].querySelector('input');
+        opts[i].classList.toggle('on', inp.checked);
+      }
+    }
+    copyStat.textContent = '';
+    render();
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', function(){
+    for(var k=1;k<=6;k++) state[k]=null;
+    var inputs = form.querySelectorAll('input[type="radio"]');
+    for(var i=0;i<inputs.length;i++) inputs[i].checked = false;
+    var fss = form.querySelectorAll('fieldset[data-id]');
+    for(var j=0;j<fss.length;j++){ fss[j].removeAttribute('data-state'); }
+    var ons = form.querySelectorAll('.opt.on');
+    for(var m=0;m<ons.length;m++) ons[m].classList.remove('on');
+    copyStat.textContent = '';
+    render();
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var txt = buildSummary();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(showCopied, fallbackCopy.bind(null, txt));
+    } else {
+      fallbackCopy(txt);
+    }
+  });
+
+  function showCopied(){ copyStat.textContent = 'In die Zwischenablage kopiert.'; }
+  function fallbackCopy(txt){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = txt; ta.setAttribute('readonly','');
+      ta.style.position='absolute'; ta.style.left='-9999px';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+      showCopied();
+    }catch(err){ copyStat.textContent = 'Kopieren nicht moeglich – bitte manuell markieren.'; }
+  }
+
+  function analyse(){
+    var covered=0, answered=0, open=[];
+    for(var id=1; id<=6; id++){
+      var v = state[id];
+      if(v!==null) answered++;
+      if(v==='ja') covered += META[id].w;
+      else if(v==='nein' || v==='unklar') open.push(id);
+    }
+    open.sort(function(a,b){ return META[b].w-META[a].w || a-b; });
+    var pct = Math.round(covered/TOTAL*100);
+    return {covered:covered, answered:answered, open:open, pct:pct};
+  }
+
+  function render(){
+    var a = analyse();
+    pctEl.textContent = a.pct + '%';
+    progEl.textContent = a.answered + ' von 6 Punkten beantwortet';
+
+    var arc = 'var(--miss)', band = 'Kernpunkte offen';
+    if(a.pct >= 73){ arc='var(--ok)'; band='Hoher Deckungsgrad'; }
+    else if(a.pct >= 36){ arc='var(--warn)'; band='Teilweise abgedeckt'; }
+    if(a.answered === 0){ band='Noch nichts markiert'; arc='var(--line)'; }
+    ring.style.setProperty('--p', a.pct);
+    ring.style.setProperty('--arc', arc);
+    ring.setAttribute('aria-label', 'Deckungsgrad ' + a.pct + ' Prozent');
+    bandEl.textContent = band;
+
+    if(a.answered === 0){
+      resultEl.innerHTML = '<p class="foot-note">Beantworten Sie die sechs Punkte, um Deckungsgrad und grösste Lücke zu sehen.</p>';
+      return;
+    }
+
+    var html = '';
+    var allYes = (a.open.length===0 && a.answered===6);
+
+    if(allYes){
+      html += '<div class="gap-lead ok"><p class="gk">Auf dem Papier vollstaendig</p>'
+            + '<h3>Alle sechs Punkte abgedeckt</h3>'
+            + '<p>Der letzte Schritt bleibt ein echter Testlauf vor der Unterschrift: online buchen, kurzfristig stornieren und beobachten, was in den naechsten Minuten wirklich passiert. Keiner der Punkte funktioniert automatisch nur, weil ein Vertrag unterschrieben wurde.</p></div>';
+    } else if(a.open.length > 0){
+      var top = a.open[0];
+      html += '<div class="gap-lead"><p class="gk">Diese Lücke kostet am meisten</p>'
+            + '<h3>Punkt '+top+' &middot; '+esc(META[top].name)+' <span class="wt hi">&times;'+META[top].w+'</span></h3>'
+            + '<p>'+esc(META[top].why)+'</p>'
+            + '<p class="askline"><strong>Konkret nachfragen:</strong> '+esc(META[top].ask)+'</p></div>';
+    } else {
+      html += '<div class="gap-lead ok"><p class="gk">Bisher keine Lücke</p>'
+            + '<h3>Noch nicht alle Punkte beantwortet</h3>'
+            + '<p>Beantworten Sie die restlichen Punkte fuer ein vollstaendiges Bild.</p></div>';
+    }
+
+    // status list of all six
+    html += '<ul class="gaps">';
+    for(var id=1; id<=6; id++){
+      var v = state[id];
+      var cls = v===null ? 's-null' : (v==='ja' ? 's-ja' : 's-' + v);
+      var lbl = v===null ? 'offen' : (v==='ja' ? 'Ja' : (v==='nein' ? 'Nein' : 'Unklar'));
+      html += '<li><span class="wt'+(META[id].w>=2?' hi':'')+'">&times;'+META[id].w+'</span> '
+            + '<span>Punkt '+id+' &middot; '+esc(META[id].name)+'</span>'
+            + '<span class="st '+cls+'">'+lbl+'</span></li>';
+    }
+    html += '</ul>';
+
+    if(state[1]==='nein' || state[1]==='unklar'){
+      html += '<p class="p1note"><strong>Hinweis zu Punkt 1:</strong> Ohne echte Systemanbindung sind Warteliste und No-Show-Schutz technisch oft gar nicht moeglich. Bei Weissmann ist die Anbindung Teil des Premium-Pakets (CHF 590/Monat, 12 Monate Mindestlaufzeit); das Starter-Paket (CHF 350/Monat) laeuft ausdruecklich ohne Integration – und nur, wenn Ihr System eine offene Schnittstelle hat.</p>';
+    }
+
+    if(!allYes){
+      html += '<p class="foot-note">Der Test vor der Unterschrift: einen Termin online buchen, ihn kurzfristig stornieren und beobachten, was in den naechsten Minuten tatsaechlich passiert – nicht, was versprochen wurde.</p>';
+    }
+
+    resultEl.innerHTML = html;
+  }
+
+  function buildSummary(){
+    var a = analyse();
+    var lines = [];
+    lines.push('Salon-Fit-Check – KI-Empfang (Orientierung, keine Offerte)');
+    lines.push('Deckungsgrad: ' + a.pct + '% (' + a.covered + ' von ' + TOTAL + ' gewichteten Punkten, ' + a.answered + '/6 beantwortet)');
+    lines.push('');
+    for(var id=1; id<=6; id++){
+      var v = state[id];
+      var lbl = v===null ? 'noch offen' : LABELS[v];
+      lines.push(id + '. ' + META[id].name + ' [Gewicht x' + META[id].w + ']: ' + lbl);
+    }
+    lines.push('');
+    if(a.open.length > 0){
+      var top = a.open[0];
+      lines.push('Groesste offene Luecke: Punkt ' + top + ' – ' + META[top].name);
+      lines.push('Konkret nachfragen: ' + META[top].ask);
+    } else if(a.answered === 6){
+      lines.push('Alle sechs Punkte abgedeckt – Testlauf vor der Unterschrift trotzdem durchfuehren.');
+    }
+    lines.push('');
+    lines.push('Test vor der Unterschrift: online buchen, kurzfristig stornieren und beobachten, was in den naechsten Minuten passiert.');
+    lines.push('Leitfaden: https://weissmann.ai/ki-academy/agenten-automatisierung/ki-empfang-beauty-wellness-salon/');
+    return lines.join('\n');
+  }
+
+  render();
+})();
+</script>

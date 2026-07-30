@@ -1,0 +1,454 @@
+<title>Eignungs-Selbstcheck: KI-Telefonassistent – die falsche Wahl? · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  /* honesty banner */
+  .honesty{margin:16px 0 0;display:flex;gap:12px;align-items:flex-start;background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+  .honesty .dot{flex:0 0 auto;width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px}
+  .honesty p{margin:0;font-size:.92rem;color:var(--ink-soft)}
+
+  /* progress */
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin:20px 0 8px}
+  .steps{font-size:.8rem;color:var(--ink-mute);font-weight:600}
+  .bar{height:8px;background:var(--soft);border-radius:99px;overflow:hidden;flex:1 1 200px;min-width:160px}
+  .bar > i{display:block;height:100%;width:0;background:var(--navy);border-radius:99px;transition:width .25s ease}
+
+  /* questions */
+  .q{margin-top:16px}
+  .q .card-pad{padding:clamp(15px,2.2vw,20px)}
+  fieldset{border:0;margin:0;padding:0}
+  legend{padding:0;font-weight:700;font-size:1.02rem;color:var(--ink);display:flex;gap:10px;align-items:baseline}
+  .qnum{flex:0 0 auto;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:var(--accent-soft);border:1px solid var(--line);border-radius:8px;padding:3px 8px;line-height:1.2}
+  .qhelp{margin:8px 0 4px 0;font-size:.9rem;color:var(--ink-mute)}
+  .opts{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:9px}
+  .opt{display:flex;gap:11px;align-items:flex-start;border:1.5px solid var(--line);border-radius:11px;padding:12px 13px;cursor:pointer;background:var(--card);transition:border-color .15s,background .15s}
+  .opt:hover{background:var(--soft)}
+  .opt input{margin:2px 0 0;width:18px;height:18px;accent-color:var(--navy);flex:0 0 auto;cursor:pointer}
+  .opt span{font-size:.95rem;color:var(--ink-soft)}
+  .opt:has(input:checked){border-color:var(--navy);background:var(--accent-soft)}
+  .opt:focus-within{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+  .opt:has(input:checked) span{color:var(--ink)}
+
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .btn{appearance:none;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);font-family:inherit;font-weight:700;font-size:.98rem;padding:13px 20px;border-radius:11px;cursor:pointer;min-height:48px}
+  .btn:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  .btn.ghost{background:transparent;color:var(--navy)}
+  .btn.ghost:hover{background:var(--soft)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+
+  .hint{font-size:.85rem;color:var(--miss);font-weight:600;margin:12px 2px 0;min-height:1.1em}
+
+  /* result */
+  .result{margin-top:20px}
+  .result[hidden]{display:none}
+  .rhead{display:flex;gap:13px;align-items:flex-start;padding:clamp(16px,2.4vw,22px);border-radius:var(--radius) var(--radius) 0 0}
+  .rhead .icon{flex:0 0 auto;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-weight:900;font-size:1.2rem}
+  .rhead h2{margin:0 0 3px;font-size:1.2rem;line-height:1.2}
+  .rhead p{margin:0;font-size:.92rem;color:var(--ink-soft)}
+  .r-neg .rhead{background:var(--miss-soft)} .r-neg .icon{background:var(--miss);color:#fff}
+  .r-scope .rhead{background:var(--warn-soft)} .r-scope .icon{background:var(--warn);color:#fff}
+  .r-caution .rhead{background:var(--warn-soft)} .r-caution .icon{background:var(--warn);color:#fff}
+  .r-clear .rhead{background:var(--ok-soft)} .r-clear .icon{background:var(--ok);color:#fff}
+  .rbody{padding:clamp(16px,2.4vw,22px);border-top:1px solid var(--line)}
+  .rbody h3{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);margin:0 0 10px}
+  .flag{display:flex;gap:11px;align-items:flex-start;padding:12px 13px;border-radius:11px;border:1px solid var(--line);margin-bottom:9px;background:var(--soft)}
+  .flag .tag{flex:0 0 auto;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:6px;margin-top:1px}
+  .tag.red{background:var(--miss-soft);color:var(--miss);border:1px solid color-mix(in srgb,var(--miss) 30%,transparent)}
+  .tag.amber{background:var(--warn-soft);color:var(--warn);border:1px solid color-mix(in srgb,var(--warn) 30%,transparent)}
+  .tag.info{background:var(--accent-soft);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+  .flag p{margin:0;font-size:.9rem;color:var(--ink-soft)}
+  .reflect{margin:16px 0 0;padding:13px 15px;border-left:3px solid var(--navy);background:var(--accent-soft);border-radius:0 10px 10px 0;font-size:.92rem;color:var(--ink)}
+  .reflect strong{display:block;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:5px;font-weight:800}
+  .copyrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+  .copied{font-size:.85rem;color:var(--ok);font-weight:700}
+  .copied[hidden]{display:none}
+
+  /* footer link band */
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<main class="wrap">
+  <p class="kicker">KI-Agenten &amp; Voice · Eignungsprüfung</p>
+  <h1>Ehrlicher Selbst-Check: Ist ein KI-Telefonassistent für Ihren Betrieb die falsche Wahl?</h1>
+  <p class="lede">Fünf Fragen entlang der fünf Situationen aus dem Artikel – benannt vom Anbieter, der den Assistenten eigentlich verkaufen möchte. Dieser Check kann ehrlich zu einem «eher nicht» führen. Am besten überlegt beantwortet, nicht aus dem Bauch heraus.</p>
+
+  <div class="honesty">
+    <span class="dot" aria-hidden="true"></span>
+    <p><strong>Interessenkonflikt offen benannt:</strong> Weissmann verkauft KI-Telefonassistenten – und beschreibt hier trotzdem, wann keiner passt. Ein Betrieb, der ein unpassendes Produkt kauft, kündigt es enttäuscht wieder; eine ehrliche Vorauswahl ist deshalb die langfristig günstigere Strategie. Dieser Check ist Orientierung, kein Angebot und keine Rechtsberatung.</p>
+  </div>
+
+  <div class="meta-row">
+    <span class="steps" id="steps">0 von 5 Fragen beantwortet</span>
+    <span class="bar" aria-hidden="true"><i id="barfill"></i></span>
+  </div>
+
+  <form id="quiz">
+    <!-- questions injected -->
+  </form>
+
+  <section class="q" id="scopeWrap" hidden>
+    <div class="card">
+      <div class="card-pad">
+        <fieldset>
+          <legend><span class="qnum">Wenn Signale</span> Falls oben mindestens ein Warnsignal zutrifft: Lässt es sich abgrenzen?</legend>
+          <p class="qhelp">Diese Frage zählt nur, wenn eine der fünf Fragen ein Warnsignal ergeben hat. Sie entscheidet, ob ein «eher nicht» oder ein «nur klar eingegrenzt» herauskommt.</p>
+          <ul class="opts" id="scopeOpts"></ul>
+        </fieldset>
+      </div>
+    </div>
+  </section>
+
+  <div class="actions">
+    <button type="button" class="btn" id="eval">Ehrliche Antwort anzeigen</button>
+    <button type="button" class="btn ghost" id="reset">Zurücksetzen</button>
+  </div>
+  <p class="hint" id="hint" role="status" aria-live="polite"></p>
+
+  <section class="result" id="result" aria-live="polite" hidden></section>
+
+  <p class="disc">Orientierung, kein verbindliches Angebot und keine Preisberechnung. Alle Aussagen stammen aus dem zugehörigen Artikel und den first-party-Preisangaben (Starter CHF 350/Monat, ohne Setup-Gebühr, ohne Mindestlaufzeit; einmaliger Starter-Test CHF 350 ohne Abo). Ein KI-Telefonassistent ersetzt nie die Schweizer Notrufnummern 144, 117 oder 118 und trifft keine medizinischen Entscheidungen. Der Verweis auf die American Bar Association ist keine Schweizer Rechtsauskunft und ersetzt keine eigene rechtliche Beratung; die Five9-Zahl ist international, nicht Schweiz-spezifisch. Nichts wird gespeichert oder gesendet – alle Eingaben bleiben nur in diesem Browser-Tab.</p>
+
+  <footer class="linkbar" aria-label="Weiterführende Weissmann-Links">
+    <p class="lb-title">Zum Weiterlesen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-falsche-wahl/" target="_blank" rel="noopener noreferrer" aria-label="Artikel: Fünf Situationen, in denen ein KI-Telefonassistent die falsche Wahl ist (opens in a new tab)">Der ganze Artikel: die fünf Szenarien →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="Leistung: KI-Telefonassistent – Umfang und Preise (opens in a new tab)">KI-Telefonassistent: Leistung &amp; Preise →</a>
+    </div>
+    <p class="att">Weissmann · eine Ergänzung zum Leitfaden. Orientierung, kein Angebot.</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  var QUESTIONS = [
+    {
+      id: "q1",
+      num: "Szenario 1",
+      legend: "Könnte ein Anruf bei Ihnen eine echte Notlage sein?",
+      help: "Nicht der offensichtliche Notfall (der gehört zu 144, 117 oder 118) – gemeint ist der breite Graubereich davor, in dem die richtige Reaktion Fingerspitzengefühl statt eines Entscheidungsbaums braucht.",
+      options: [
+        { v: "red", label: "Ja – solche Grenzfälle kommen regelmässig vor, und wir haben KEINE schnelle, verlässliche menschliche Rückfalloption für genau diese Anrufe.",
+          note: "Szenario 1 – mögliche Notlage: Ohne schnelle, verlässliche menschliche Rückfalloption für exakt diese Grenzfälle ist das kein späteres Konfigurationsproblem, sondern ein Grund, mit der Einführung zu warten oder darauf zu verzichten. Ein KI-Assistent ersetzt nie die Notrufnummern 144, 117 oder 118." },
+        { v: "amber", label: "Ja, solche Grenzfälle kommen vor – aber für genau diese Anrufe haben wir eine schnelle menschliche Rückfalloption.",
+          note: "Szenario 1 lässt sich eingrenzen: Grenzfälle konsequent an Ihre menschliche Rückfalloption weiterleiten, statt sie das System entscheiden zu lassen. Die Weiterleitung muss verlässlich und schnell sein." },
+        { v: "green", label: "Nein – Anrufe mit echtem Notlage-Charakter kommen bei uns praktisch nicht vor." }
+      ]
+    },
+    {
+      id: "q2",
+      num: "Szenario 2",
+      legend: "Holt das Anrufvolumen die Fixkosten rechnerisch je ein?",
+      help: "Der kritische Rand ist erreicht, wenn zwei Dinge gleichzeitig zutreffen: sehr geringes Anrufvolumen UND niedriger Wert pro Anruf. Als Anhaltspunkt nennt der Artikel eine kleine Boutique mit vier bis fünf Anrufen pro Woche, meist Fragen zu Öffnungszeiten.",
+      options: [
+        { v: "red", label: "Sehr geringes Volumen UND niedriger Wert pro Anruf – selbst optimistisch gerechnet bleiben wir unter CHF 350 im Monat.",
+          note: "Szenario 2 – Break-even: Für diesen Fall gibt es keine Kombination realistischer Annahmen, die das Ergebnis dreht. Das ist keine Enttäuschung, sondern eine andere Betriebsgrösse mit einer anderen richtigen Lösung: eine gut besprochene Combox oder der einmalige Starter-Test für CHF 350 ohne laufendes Abo." },
+        { v: "amber", label: "Unsicher – wir haben Anrufe/Woche, Verpasst-Quote und Wert pro gerettetem Anruf noch nicht ehrlich durchgerechnet.",
+          note: "Szenario 2 – noch nicht gerechnet: Prüfen Sie zuerst mit echten Zahlen, ob die CHF 350/Monat (ohne Setup, ohne Mindestlaufzeit) realistisch zurückkommen. Der einmalige Starter-Test für CHF 350 ohne Abo eignet sich, um genau das an der Realität zu prüfen." },
+        { v: "green", label: "Unser Volumen und der Wert pro Anruf liegen realistisch klar über den CHF 350 im Monat." }
+      ]
+    },
+    {
+      id: "q3",
+      num: "Szenario 3",
+      legend: "Lehnt Ihre Kundschaft eine Maschine am Telefon dokumentiert ab?",
+      help: "Entscheidend ist die Beweislast: «Ältere mögen keine KI» ist ein Klischee und zählt nicht. Eine wiederholt beobachtete oder erhobene Präferenz schon.",
+      options: [
+        { v: "red", label: "Ja – wir haben dokumentierte oder wiederholt beobachtete Belege (Feedback, Beschwerden), dass unsere Kundschaft eine Maschine am Telefon ablehnt.",
+          note: "Szenario 3 – dokumentierte Präferenz: Wo die menschliche Stimme der ganze Sinn des ersten Kontakts ist, hilft auch die einfühlsamste Sprach-KI nicht. Referenzpunkt: Die Five9-Studie findet, dass 75 % der Befragten menschlichen Kundenservice bevorzugen – eine internationale, nicht Schweiz-spezifische Zahl, aber ein reales Signal." },
+        { v: "green", label: "Nur eine Vermutung oder ein Bauchgefühl – nichts Dokumentiertes.",
+          note: "Hinweis zu Szenario 3: Eine blosse Vermutung ist laut Artikel ausdrücklich KEIN Grund zum Verzicht. Erst eine dokumentierte oder wiederholt erhobene Präferenz zählt – eine Vermutung reicht nicht." },
+        { v: "green", label: "Nein – unsere Kundschaft ist mit automatisierten Kanälen vertraut." }
+      ]
+    },
+    {
+      id: "q4",
+      num: "Szenario 4",
+      legend: "Hat konkret jemand Kapazität, das System zu pflegen?",
+      help: "Preise, Öffnungszeiten und Angebote ändern sich – jede Änderung muss jemand einpflegen, sonst antwortet das System zuverlässig falsch. Der Artikel rechnet dafür mit rund fünfzehn Minuten pro Woche.",
+      options: [
+        { v: "red", label: "Nein – realistisch hat niemand bei uns die wöchentlichen rund 15 Minuten, um Reporting anzuschauen und Änderungen einzupflegen.",
+          note: "Szenario 4 – Pflege: Ein System, das niemand beobachtet, ist wie ein Rauchmelder ohne Batterie – es sieht aus, als täte es seine Arbeit, bis es das nicht mehr tut. Wer ehrlich weiss, dass diese Minuten realistisch nicht existieren, klärt das vor dem Kauf, nicht danach." },
+        { v: "amber", label: "Unklar – wir müssten erst festlegen, wer das übernimmt.",
+          note: "Szenario 4 – offen: Legen Sie vor dem Start verbindlich fest, wer Reporting anschaut und Änderungen ans System weitergibt. Ohne benannte Person wird aus «unklar» schnell «niemand»." },
+        { v: "green", label: "Ja – eine konkrete Person hat diese Zeit und Verantwortung." }
+      ]
+    },
+    {
+      id: "q5",
+      num: "Szenario 5",
+      legend: "Kostet ein einziger schlechter Anruf mehr, als zehn gute einsparen?",
+      help: "Reputationell hochsensible Praxen: Anwaltskanzleien, bestimmte medizinische Fachrichtungen, Beratungen in existenziellen Fragen. Hier zählt nicht der Durchschnitt über hundert Gespräche, sondern der eine, der schiefgeht.",
+      options: [
+        { v: "red", label: "Ja – ein einziger missglückter, emotional aufgeladener Anruf würde uns an Vertrauen mehr kosten, als die Automatisierung je einspart.",
+          note: "Szenario 5 – Reputationsrisiko: Die Rechnung ist hier nicht CHF gegen CHF, sondern Wahrscheinlichkeit gegen Ausmass – der eine schiefgelaufene Anruf spricht sich in einer kleinen Fachwelt schnell herum. Grundsatz laut American Bar Association: Verantwortung folgt der Aussage, nicht dem Sprecher. Keine Schweizer Rechtsauskunft, ersetzt keine eigene rechtliche Beratung." },
+        { v: "amber", label: "Nur für bestimmte Anrufarten – der Grossteil ist unkritische Standardlogistik.",
+          note: "Szenario 5 lässt sich eingrenzen: kritische Anrufarten konsequent bei Menschen belassen und nur die unkritische Standardlogistik automatisieren." },
+        { v: "green", label: "Nein – unsere Anrufe sind überwiegend sachlich und unkritisch." }
+      ]
+    }
+  ];
+
+  var SCOPE_OPTIONS = [
+    { v: "whole", label: "Die Warnsignale betreffen unsere Anrufe insgesamt – sie lassen sich nicht sauber abgrenzen." },
+    { v: "part", label: "Sie betreffen nur einen abgrenzbaren Teil der Anrufe, den wir gezielt weiterhin von Menschen abdecken können." }
+  ];
+
+  var form = document.getElementById("quiz");
+  var scopeWrap = document.getElementById("scopeWrap");
+  var scopeOpts = document.getElementById("scopeOpts");
+  var stepsEl = document.getElementById("steps");
+  var barFill = document.getElementById("barfill");
+  var hint = document.getElementById("hint");
+  var result = document.getElementById("result");
+  var evalBtn = document.getElementById("eval");
+  var resetBtn = document.getElementById("reset");
+
+  function esc(s){ var d=document.createElement("div"); d.textContent=s; return d.innerHTML; }
+
+  // build questions
+  QUESTIONS.forEach(function(q){
+    var sec = document.createElement("section");
+    sec.className = "q";
+    var opts = q.options.map(function(o, i){
+      var id = q.id + "_" + i;
+      return '<li><label class="opt" for="'+id+'">'
+        + '<input type="radio" id="'+id+'" name="'+q.id+'" value="'+i+'">'
+        + '<span>'+esc(o.label)+'</span></label></li>';
+    }).join("");
+    sec.innerHTML =
+      '<div class="card"><div class="card-pad"><fieldset>'
+      + '<legend><span class="qnum">'+esc(q.num)+'</span>'+esc(q.legend)+'</legend>'
+      + '<p class="qhelp">'+esc(q.help)+'</p>'
+      + '<ul class="opts">'+opts+'</ul>'
+      + '</fieldset></div></div>';
+    form.appendChild(sec);
+  });
+
+  // build scope options
+  SCOPE_OPTIONS.forEach(function(o, i){
+    var id = "scope_" + i;
+    var li = document.createElement("li");
+    li.innerHTML = '<label class="opt" for="'+id+'">'
+      + '<input type="radio" id="'+id+'" name="scope" value="'+o.v+'">'
+      + '<span>'+esc(o.label)+'</span></label>';
+    scopeOpts.appendChild(li);
+  });
+
+  function selected(name){
+    var el = form.querySelector('input[name="'+name+'"]:checked')
+          || document.querySelector('input[name="'+name+'"]:checked');
+    return el ? el.value : null;
+  }
+
+  function answeredCount(){
+    var n = 0;
+    QUESTIONS.forEach(function(q){ if(selected(q.id) !== null) n++; });
+    return n;
+  }
+
+  // does any answered question currently raise a flag (red/amber)?
+  function hasFlags(){
+    return QUESTIONS.some(function(q){
+      var v = selected(q.id);
+      if(v === null) return false;
+      var verdict = q.options[+v].v;
+      return verdict === "red" || verdict === "amber";
+    });
+  }
+
+  function refresh(){
+    var n = answeredCount();
+    stepsEl.textContent = n + " von 5 Fragen beantwortet";
+    barFill.style.width = (n/QUESTIONS.length*100) + "%";
+    scopeWrap.hidden = !hasFlags();
+    hint.textContent = "";
+  }
+
+  form.addEventListener("change", refresh);
+  document.getElementById("scopeOpts").addEventListener("change", function(){ hint.textContent=""; });
+
+  function makeFlag(tag, tagText, text){
+    var d = document.createElement("div");
+    d.className = "flag";
+    d.innerHTML = '<span class="tag '+tag+'">'+esc(tagText)+'</span><p>'+esc(text)+'</p>';
+    return d;
+  }
+
+  function buildSummary(reds, ambers, greenNotes, scopeVal, outcomeTitle){
+    var lines = [];
+    lines.push("Ehrlicher Selbst-Check – KI-Telefonassistent (Weissmann)");
+    lines.push("Ergebnis: " + outcomeTitle);
+    lines.push("");
+    QUESTIONS.forEach(function(q){
+      var v = selected(q.id);
+      if(v === null) return;
+      var o = q.options[+v];
+      var mark = o.v === "red" ? "[Warnsignal]" : (o.v === "amber" ? "[zu prüfen]" : "[ok]");
+      lines.push(mark + " " + q.num + ": " + q.legend);
+      lines.push("   Antwort: " + o.label);
+    });
+    if(scopeVal){
+      var sc = SCOPE_OPTIONS.filter(function(s){return s.v===scopeVal;})[0];
+      if(sc){ lines.push(""); lines.push("Abgrenzbarkeit: " + sc.label); }
+    }
+    lines.push("");
+    lines.push("Zur Erinnerung: Orientierung, kein Angebot und keine Rechtsberatung. Nichts gespeichert oder gesendet.");
+    return lines.join("\n");
+  }
+
+  function render(){
+    hint.textContent = "";
+    var missing = answeredCount() < QUESTIONS.length;
+    if(missing){
+      hint.textContent = "Bitte alle fünf Fragen beantworten.";
+      return;
+    }
+    var flags = hasFlags();
+    var scopeVal = selected("scope");
+    if(flags && !scopeVal){
+      hint.textContent = "Bitte noch die Abgrenzungs-Frage unten beantworten.";
+      scopeWrap.hidden = false;
+      scopeWrap.scrollIntoView({behavior:"smooth", block:"center"});
+      return;
+    }
+
+    var reds = [], ambers = [], greenNotes = [];
+    QUESTIONS.forEach(function(q){
+      var o = q.options[+selected(q.id)];
+      if(o.v === "red" && o.note) reds.push(o.note);
+      else if(o.v === "amber" && o.note) ambers.push(o.note);
+      else if(o.v === "green" && o.note) greenNotes.push(o.note);
+    });
+
+    var variant, icon, title, intro;
+    if(reds.length >= 1 && scopeVal === "whole"){
+      variant = "r-neg"; icon = "✕";
+      title = "Ehrliche Antwort: eher nicht – jedenfalls nicht so, wie das Produkt heute aufgebaut ist.";
+      intro = "Wenn eines oder mehrere dieser Szenarien tatsächlich auf Ihren Betrieb zutreffen und sich nicht abgrenzen lassen, lautet die ehrliche Antwort nicht «trotzdem kaufen und dann schauen». Das ist die eigentliche Aussage des Artikels – und sie bleibt so stehen.";
+    } else if(reds.length >= 1 && scopeVal === "part"){
+      variant = "r-scope"; icon = "◐";
+      title = "Möglich – aber nur klar eingegrenzt.";
+      intro = "Mehrere Szenarien lassen sich eingrenzen, statt das ganze Vorhaben zu stoppen: reine Terminlogistik automatisieren und jedes inhaltliche oder kritische Gespräch konsequent an Menschen weiterleiten; bei sehr geringem oder saisonalem Volumen den einmaligen Starter-Test für CHF 350 statt eines Jahresabos. Wichtig ist, die Einschränkung bewusst zu planen, statt sie zu übersehen.";
+    } else if(reds.length === 0 && ambers.length >= 1){
+      variant = "r-caution"; icon = "!";
+      title = "Ein Warnsignal zum genaueren Prüfen – kein Ausschluss.";
+      intro = "Die fünf Szenarien sind Warnsignale für eine genauere Prüfung, keine automatische Ablehnung. Klären Sie die offenen Punkte, bevor Sie entscheiden – ideal schriftlich, nicht aus dem Bauch heraus.";
+    } else {
+      variant = "r-clear"; icon = "✓";
+      title = "Kein Warnsignal aus diesen fünf Szenarien.";
+      intro = "Die meisten Schweizer KMU fallen in keines der fünf Szenarien. Der nächste ehrliche Schritt ist dann nicht dieser Check, sondern die reguläre Wirtschaftlichkeitsrechnung: Anrufe pro Woche, geschätzte Verpasst-Quote und Wert pro gerettetem Anruf gegen die CHF 350 im Monat. Dieser Check ist eine Momentaufnahme – bei wachsendem oder schrumpfendem Geschäft lohnt er sich erneut.";
+    }
+
+    result.className = "result " + variant;
+    result.innerHTML = "";
+
+    var card = document.createElement("div");
+    card.className = "card";
+    var head = document.createElement("div");
+    head.className = "rhead";
+    head.innerHTML = '<span class="icon" aria-hidden="true">'+icon+'</span>'
+      + '<div><h2>'+esc(title)+'</h2><p>'+esc(intro)+'</p></div>';
+    card.appendChild(head);
+
+    var body = document.createElement("div");
+    body.className = "rbody";
+
+    if(reds.length || ambers.length){
+      var h3 = document.createElement("h3");
+      h3.textContent = "Ihre Warnsignale im Detail";
+      body.appendChild(h3);
+      reds.forEach(function(t){ body.appendChild(makeFlag("red","Warnsignal", t)); });
+      ambers.forEach(function(t){ body.appendChild(makeFlag("amber","Zu prüfen", t)); });
+    }
+
+    if(greenNotes.length){
+      var h3b = document.createElement("h3");
+      h3b.textContent = "Einordnung";
+      h3b.style.marginTop = (reds.length||ambers.length) ? "16px" : "0";
+      body.appendChild(h3b);
+      greenNotes.forEach(function(t){ body.appendChild(makeFlag("info","Hinweis", t)); });
+    }
+
+    var reflect = document.createElement("div");
+    reflect.className = "reflect";
+    reflect.innerHTML = "<strong>Die ehrlichste Frage zum Schluss</strong>"
+      + "Was würden Sie einer befreundeten Unternehmerin raten, die Ihnen exakt diese Situation schildert – nicht sich selbst?";
+    body.appendChild(reflect);
+
+    // copy row
+    var summary = buildSummary(reds, ambers, greenNotes, scopeVal, title);
+    var copyRow = document.createElement("div");
+    copyRow.className = "copyrow";
+    var copyBtn = document.createElement("button");
+    copyBtn.type = "button";
+    copyBtn.className = "btn ghost";
+    copyBtn.textContent = "Ergebnis als Text kopieren";
+    var copied = document.createElement("span");
+    copied.className = "copied";
+    copied.hidden = true;
+    copied.textContent = "Kopiert – Sie können es einfügen.";
+    copyBtn.addEventListener("click", function(){ copyText(summary, copied); });
+    copyRow.appendChild(copyBtn);
+    copyRow.appendChild(copied);
+    body.appendChild(copyRow);
+
+    card.appendChild(body);
+    result.appendChild(card);
+    result.hidden = false;
+    result.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  function copyText(text, feedbackEl){
+    function ok(){ feedbackEl.hidden = false; setTimeout(function(){ feedbackEl.hidden = true; }, 2600); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok, function(){ fallback(text, ok); });
+    } else {
+      fallback(text, ok);
+    }
+  }
+  function fallback(text, ok){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly","");
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); ok(); } catch(e) {}
+    document.body.removeChild(ta);
+  }
+
+  evalBtn.addEventListener("click", render);
+  resetBtn.addEventListener("click", function(){
+    form.reset();
+    var sc = document.querySelector('input[name="scope"]:checked');
+    if(sc) sc.checked = false;
+    result.hidden = true;
+    result.innerHTML = "";
+    refresh();
+    hint.textContent = "";
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  refresh();
+})();
+</script>

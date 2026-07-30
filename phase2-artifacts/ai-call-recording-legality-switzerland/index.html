@@ -1,0 +1,372 @@
+<title>Anrufe aufzeichnen: Entscheidungsbaum (StGB) · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  /* decision tree */
+  .tool{margin-top:20px}
+  .path{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px;padding:0;list-style:none}
+  .path li{font-size:.74rem;font-weight:600;color:var(--ink-soft);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:4px 11px;max-width:100%}
+  .path li::before{content:"";}
+  .stephead{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  .q{font-size:clamp(1.15rem,2.4vw,1.35rem);line-height:1.2;margin:0 0 8px;letter-spacing:-.01em}
+  .qhint{color:var(--ink-mute);font-size:.9rem;margin:0 0 16px;max-width:64ch}
+  .opts{display:grid;gap:10px}
+  .opt{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer;font-family:inherit;color:inherit;transition:border-color .12s,background .12s;min-height:48px}
+  .opt:hover{border-color:var(--navy);background:var(--soft)}
+  .opt:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent);border-color:var(--navy)}
+  .opt-body{flex:1;min-width:0}
+  .opt-label{display:block;font-weight:700;font-size:1rem;color:var(--ink)}
+  .opt-sub{display:block;font-size:.86rem;color:var(--ink-mute);margin-top:3px;line-height:1.4}
+  .opt-arrow{flex:none;color:var(--navy);font-weight:700;font-size:1.1rem;line-height:1.5}
+  .nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .btn{font-family:inherit;font-size:.9rem;font-weight:600;border-radius:10px;padding:9px 15px;cursor:pointer;border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);min-height:40px}
+  .btn:hover{background:var(--soft);border-color:var(--navy);color:var(--ink)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .btn[disabled]{opacity:.45;cursor:not-allowed}
+
+  /* result */
+  .badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.95rem;border-radius:999px;padding:7px 14px;line-height:1.25}
+  .badge::before{content:"";width:9px;height:9px;border-radius:50%;flex:none;background:currentColor}
+  .badge.ok{color:var(--ok);background:var(--ok-soft)}
+  .badge.miss{color:var(--miss);background:var(--miss-soft)}
+  .badge.warn{color:var(--warn);background:var(--warn-soft)}
+  .cite{display:inline-block;margin:14px 0 4px;font-family:var(--mono);font-size:.86rem;font-weight:600;color:var(--accent);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:8px;padding:5px 10px}
+  .cite-lab{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin-bottom:6px}
+  .rbody{margin-top:14px}
+  .rbody p{margin:0 0 11px;color:var(--ink-soft)}
+  .rbody p:last-child{margin-bottom:0}
+  .rbody strong{color:var(--ink)}
+  .note{font-size:.9rem;background:var(--soft);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:10px 13px;color:var(--ink-soft)!important}
+  .ansage{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--card)}
+  .ansage-t{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 8px}
+  .ansage p{margin:0 0 10px;color:var(--ink-soft);font-size:.92rem}
+  .ex{border-radius:10px;padding:10px 13px;margin:8px 0 0;font-size:.9rem}
+  .ex p{margin:0;color:var(--ink-soft)}
+  .ex.weak{background:var(--miss-soft)}
+  .ex.good{background:var(--ok-soft)}
+  .ex-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+  .ex.weak .ex-tag{color:var(--miss)}
+  .ex.good .ex-tag{color:var(--ok)}
+  .facts{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--soft)}
+  .facts-t{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 8px}
+  .facts ul{margin:0;padding-left:18px}
+  .facts li{margin:0 0 7px;font-size:.88rem;color:var(--ink-soft)}
+  .facts li:last-child{margin-bottom:0}
+  .copywrap{margin-top:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .copied{font-size:.82rem;color:var(--ok);font-weight:600}
+
+  .svc{margin-top:16px}
+  .svc p{margin:0;color:var(--ink-soft);font-size:.92rem}
+  .svc strong{color:var(--ink)}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">Anrufe, Aufzeichnung &amp; Schweizer Recht</p>
+  <h1>Darf mein KI-Telefonassistent dieses Gespräch aufzeichnen?</h1>
+  <p class="lede">Nicht automatisch – und die Antwort hängt vom Inhalt des Anrufs ab, nicht davon, dass eine KI antwortet. Beantworten Sie eine Frage pro Anruftyp und erhalten Sie die Einordnung samt einschlägigem Artikel des Schweizer Strafgesetzbuchs. Orientierung, keine Rechtsberatung.</p>
+
+  <section class="card card-pad tool" aria-label="Entscheidungsbaum zur Aufzeichnung">
+    <ol class="path" id="path" aria-label="Ihr bisheriger Pfad"></ol>
+    <div id="stage" aria-live="polite"></div>
+    <div class="nav">
+      <button class="btn" id="back" type="button">‹ Zurück</button>
+      <button class="btn" id="restart" type="button">Von vorne beginnen</button>
+    </div>
+  </section>
+
+  <p class="disc">Orientierung, keine Rechtsberatung und kein Angebot. Diese Einordnung folgt dem Weissmann-Leitfaden und offiziellen Schweizer Quellen (EDÖB, Datenschutzbeauftragte des Kantons Zürich, StGB / Fedlex). Im Einzelfall – besonders bei Personalfragen oder bei Anrufen, die sich inhaltlich nicht eindeutig zuordnen lassen – ersetzt sie keine anwaltliche Beratung. Ihre Eingaben bleiben lokal im Browser; nichts wird gespeichert oder gesendet.</p>
+
+  <div class="card card-pad svc">
+    <p><strong>Zum Dienst:</strong> Der KI-Telefonassistent von Weissmann nimmt Kundenanrufe entgegen und startet bei <strong>CHF&nbsp;350/Monat</strong> (1&#39;500 Minuten inklusive, danach CHF&nbsp;0.30/Min., keine Setup-Gebühr, keine Mindestvertragslaufzeit). Wie Sie Aufzeichnung, Ansage und Anruftypen sauber konfigurieren, klären wir gemeinsam im Setup.</p>
+  </div>
+
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Weiterlesen &amp; umsetzen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-gespraeche-aufzeichnen/" target="_blank" rel="noopener noreferrer" aria-label="Vollständiger Leitfaden: Anrufe aufzeichnen mit KI (opens in a new tab)">Vollständiger Leitfaden zur Aufzeichnung →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="KI-Telefonassistent von Weissmann ansehen (opens in a new tab)">KI-Telefonassistent von Weissmann →</a>
+    </div>
+    <p class="att">Weissmann KI-Academy · ein Begleiter zum Leitfaden. Orientierung, kein Angebot.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var ANSAGE =
+    '<div class="ansage"><p class="ansage-t">Was eine gültige Ansage leisten muss</p>'
+    + '<p>Eine brauchbare Ansage nennt drei Dinge klar: <strong>dass</strong> aufgezeichnet wird, <strong>wofür</strong>, und <strong>wie man ablehnen</strong> kann. Vage Begriffe wie «zur Qualitätssicherung» reichen nicht – und die Ablehnung muss sofort und ohne Nachteil möglich sein (ein Widerspruch nur schriftlich im Nachhinein gilt nicht).</p>'
+    + '<div class="ex weak"><span class="ex-tag">Schwach</span><p>«Dieser Anruf kann zu Qualitätszwecken aufgezeichnet werden.» – zu vage, kein Hinweis auf Widerspruch, unklarer Zweck.</p></div>'
+    + '<div class="ex good"><span class="ex-tag">Besser</span><p>«Für diesen Anruf zeichnen wir das Gespräch auf, um Ihre Anfrage korrekt zu bearbeiten. Wenn Sie das nicht möchten, sagen Sie das jetzt kurz – wir führen das Gespräch dann ohne Aufzeichnung weiter.»</p></div>'
+    + '</div>';
+
+  var PENALTIES =
+    '<div class="facts"><p class="facts-t">Was im Ernstfall droht</p><ul>'
+    + '<li>Beide Tatbestände sind Antragsdelikte: Verfolgt wird nur auf Anzeige der betroffenen Person – automatisch prüft das niemand nach, harmlos ist es deshalb nicht.</li>'
+    + '<li>Ein beteiligter Gesprächspartner, der unbefugt aufnimmt: Geldstrafe oder Freiheitsstrafe bis zu einem Jahr (Art. 179ter StGB). Ein unbeteiligter Dritter, der ein fremdes Gespräch abhört: bis zu drei Jahre (Art. 179bis StGB).</li>'
+    + '<li>Gerichte können die Löschung der Aufnahme und in bestimmten Fällen die Einziehung der Aufnahmetechnik anordnen (Art. 69 StGB).</li>'
+    + '</ul></div>';
+
+  var DSG =
+    '<p class="note">Sobald eine Aufnahme rechtmässig existiert, übernimmt zusätzlich das Datenschutzrecht (revDSG) mit eigenen Regeln zu Zweckbindung, Aufbewahrung und Löschung. Eine pauschale Frist gibt das Gesetz nicht vor – Sie legen sie selbst fest und dokumentieren sie.</p>';
+
+  // Decision tree nodes
+  var NODES = {
+    start: {
+      short: "Konstellation",
+      q: "In welcher Konstellation soll aufgezeichnet werden?",
+      hint: "Das Schweizer Strafrecht unterscheidet nicht danach, ob ein Mensch oder eine KI antwortet – sondern wer beteiligt ist und, im nächsten Schritt, worüber gesprochen wird.",
+      options: [
+        { label: "Kundenanruf – Ihr KI-Telefonassistent nimmt selbst am Gespräch teil", sub: "Anrufende von aussen; Ihr Unternehmen ist über die Telefonanlage beteiligt.", tag: "Kundenanruf", next: "inhalt" },
+        { label: "Am Gespräch sind eigene Mitarbeitende beteiligt", sub: "Interner Anruf über dieselbe Anlage oder eine mitbediente KI-Vermittlung.", tag: "Mitarbeitende beteiligt", result: "employees" },
+        { label: "Ein fremdes Gespräch, an dem Ihr System gar nicht beteiligt ist", sub: "Mithören oder Aufnehmen eines Gesprächs zwischen Dritten.", tag: "Fremdes Gespräch", result: "thirdparty" }
+      ]
+    },
+    inhalt: {
+      short: "Inhalt",
+      q: "Worum geht es inhaltlich in diesem Anruf?",
+      hint: "Massgeblich ist der tatsächliche Inhalt des einzelnen Gesprächs – nicht die Abteilung, die Nummer oder das System, das es führt. Dieselbe KI kann Reservationen und Support annehmen; rechtlich zählt der einzelne Anruf.",
+      options: [
+        { label: "Bestellung, Auftrag, Reservation oder Terminvereinbarung", sub: "Tischreservation, Zimmerbuchung, Ersatzteil- oder Dienstleistungsbestellung – ein «Massengeschäft».", tag: "Massengeschäft", next: "nutzung" },
+        { label: "Notruf bzw. Hilfs-, Rettungs- oder Sicherheitsdienst", sub: "Anruf mit einem Hilfs-, Rettungs- oder Sicherheitsdienst.", tag: "Notruf / Sicherheitsdienst", result: "notruf" },
+        { label: "Support, Beratung, Reklamation oder allgemeine Auskunft", sub: "Auch medizinische oder therapeutische Anliegen – dieselbe Nummer oder KI ändert daran nichts.", tag: "Support / Beratung", result: "ansage" },
+        { label: "Gemischt oder nicht eindeutig zuzuordnen", sub: "Der Anruf kann während des Gesprächs den Rahmen einer Reservation verlassen.", tag: "Gemischt / unklar", result: "gemischt" }
+      ]
+    },
+    nutzung: {
+      short: "Zweck",
+      q: "Wofür wollen Sie die Aufnahme nutzen?",
+      hint: "Erlaubt aufgezeichnet heisst nicht: für alles nutzbar. Art. 179quinquies StGB bindet Aufnahmen aus Massengeschäften ausschliesslich an die Beweissicherung.",
+      options: [
+        { label: "Zur Beweissicherung", sub: "Nachweis, dass und was vereinbart wurde – etwa bei einer strittigen Buchung.", tag: "Beweissicherung", result: "permitted" },
+        { label: "Für Marketing, Qualitätskontrolle, Modell-Training oder Weitergabe an Dritte", sub: "Auswertung des Gesprächsverhaltens des KI-Assistenten, Training eines Sprachmodells oder Weitergabe ausserhalb des ursprünglichen Zwecks.", tag: "Andere Nutzung", result: "uselimited" }
+      ]
+    }
+  };
+
+  var RESULTS = {
+    permitted: {
+      verdict: "ok", badge: "Ohne Einwilligung zulässig – nur zur Beweissicherung",
+      cite: "Art. 179quinquies StGB",
+      body:
+        '<p>Bestellungen, Aufträge, Reservationen und vergleichbare <em>«Massengeschäfte»</em> dürfen ohne vorherige Einwilligung aufgezeichnet werden – aber ausschliesslich zur <strong>Beweissicherung</strong> (Nachweis, dass und was vereinbart wurde). Die Ausnahme deckt den eigentlichen Geschäftsvorfall, nicht das gesamte Anrufaufkommen Ihres Unternehmens.</p>'
+        + '<p class="note">Rechtlich reicht hier meist ein einfacher, transparenter Hinweis statt einer förmlichen Einwilligung. Aus Kulanz und Vertrauen empfiehlt sich trotzdem eine kurze, ehrliche Ansage.</p>'
+        + DSG
+    },
+    uselimited: {
+      verdict: "warn", badge: "Aufnahme dem Grunde nach ja – diese Nutzung nein",
+      cite: "Art. 179quinquies StGB",
+      body:
+        '<p>Die Aufzeichnung des Massengeschäfts selbst kann zulässig sein – die geplante Nutzung ist es nicht. Art. 179quinquies StGB bindet solche Aufnahmen ausschliesslich an die Beweissicherung. Eine Auswertung fürs Marketing, zur Kontrolle des Gesprächsverhaltens Ihres KI-Assistenten, fürs Training eines Sprachmodells oder eine Weitergabe an Dritte ist damit <strong>nicht abgedeckt</strong>.</p>'
+        + '<p>Wer eine Aufnahme später für einen anderen Zweck nutzt als denjenigen, für den sie zulässig war, verlässt den Schutz der Ausnahme wieder – mit denselben strafrechtlichen und persönlichkeitsrechtlichen Folgen wie eine unrechtmässige Aufnahme. Schaffen Sie für jede Zweckänderung eine eigene, gesonderte Grundlage.</p>'
+    },
+    notruf: {
+      verdict: "ok", badge: "Ohne Einwilligung zulässig",
+      cite: "Art. 179quinquies StGB",
+      body:
+        '<p>Das Gesetz nennt neben den Massengeschäften ausdrücklich Anrufe mit <strong>Hilfs-, Rettungs- und Sicherheitsdiensten</strong> als Fall, in dem ohne vorherige Einwilligung aufgezeichnet werden darf.</p>'
+        + '<p class="note">Für einen typischen KI-Telefonassistenten im KMU-Alltag ist das selten der einschlägige Fall – prüfen Sie, ob Ihr Anruf tatsächlich hierunter fällt oder eher ein Massengeschäft bzw. ein zustimmungspflichtiges Gespräch ist.</p>'
+        + DSG
+    },
+    ansage: {
+      verdict: "miss", badge: "Nur mit klarer Ansage zulässig",
+      cite: "Art. 179bis / 179ter StGB (Grundsatz)",
+      body:
+        '<p>Dieser Anruf fällt <strong>nicht</strong> unter die Massengeschäfts-Ausnahme – auch dann nicht, wenn dieselbe Nummer oder derselbe KI-Assistent auch Reservationen entgegennimmt. Es gilt der Grundsatz: Ohne gültige Einwilligung aller Beteiligten ist das Aufzeichnen strafbar. Vor der Aufzeichnung braucht es deshalb eine klare Ansage mit echter, sofortiger Widerspruchsmöglichkeit.</p>'
+        + '<p class="note">Eine Bandansage ist das gängige Mittel – ob sie im Streitfall als gültige Einwilligung genügt, beurteilen laut der Datenschutzbeauftragten des Kantons Zürich im Einzelfall die Strafverfolgungsbehörden. Entscheidend ist weniger der Wortlaut als die Frage, ob die anrufende Person den Zweck versteht und ohne Nachteil widersprechen kann.</p>'
+        + ANSAGE + PENALTIES
+    },
+    gemischt: {
+      verdict: "warn", badge: "Im Zweifel wie zustimmungspflichtig behandeln",
+      cite: "Art. 179bis / 179ter StGB (Grundsatz)",
+      body:
+        '<p>Lässt sich der Anruf nicht eindeutig als Bestellung, Auftrag oder Reservation einordnen – oder kann er mitten im Gespräch zur Beschwerde werden –, ist die vorsichtigere und im Streitfall verteidigbarere Variante, ihn wie ein <strong>zustimmungspflichtiges</strong> Gespräch zu behandeln.</p>'
+        + '<p>In der Praxis lässt sich ein Gespräch mit einem KI-Telefonassistenten selten sauber in Echtzeit in Abschnitte trennen. Für Anrufe mit erkennbar gemischtem Inhalt spielen Sie deshalb von vornherein eine Ansage ein.</p>'
+        + ANSAGE
+    },
+    employees: {
+      verdict: "warn", badge: "Sonderfall Personal – arbeitsrechtlicher Rat nötig",
+      cite: "Persönlichkeitsschutz & Arbeitsrecht (nicht Art. 179quinquies)",
+      body:
+        '<p>Die Massengeschäfts-Ausnahme ist für Kundengespräche über Bestellungen, Aufträge und Reservationen gedacht – <strong>nicht</strong> für die Überwachung des eigenen Personals. Nimmt Ihr System Gespräche auf, an denen eigene Mitarbeitende teilnehmen, kommen Persönlichkeitsschutz und Arbeitsrecht als eigene Ebene dazu.</p>'
+        + '<p>Mitarbeitende brauchen eine eigene, vorgängige Information und eine echte Widerspruchsmöglichkeit – unabhängig davon, ob am anderen Ende eine Kundin oder ein Kollege ist. Aufnahmen zur Kontrolle des Verkaufs- oder Gesprächsverhaltens sind ohne vorherige, transparente Information nicht zulässig.</p>'
+        + '<p class="note">Die Datenschutzaufsicht des Kantons Zürich verlangt für Telefonaufzeichnungen von Verwaltungsangestellten u.&nbsp;a. vorgängige Information, eine Einwilligungsmöglichkeit und einen nachteilsfreien Widerspruch. Das ist ein Beispiel aus dem öffentlichen Sektor und nicht eins zu eins auf jedes private KMU übertragbar – holen Sie für diesen konkreten Fall arbeitsrechtlichen Rat.</p>'
+    },
+    thirdparty: {
+      verdict: "miss", badge: "Nicht zulässig",
+      cite: "Art. 179bis StGB",
+      body:
+        '<p>Wer ein fremdes, nicht-öffentliches Gespräch abhört oder aufnimmt, an dem er gar nicht beteiligt ist, erfüllt den Tatbestand von Art. 179bis StGB. Das ist nicht zulässig – und wird strenger geahndet als eine unbefugte Aufnahme durch einen Beteiligten.</p>'
+        + PENALTIES
+    }
+  };
+
+  // State
+  var stack = ["start"]; // node ids
+  var picks = [];        // {tag}
+  var result = null;     // result id or null
+
+  var stage = document.getElementById("stage");
+  var pathEl = document.getElementById("path");
+  var backBtn = document.getElementById("back");
+  var restartBtn = document.getElementById("restart");
+
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  function renderPath(){
+    pathEl.innerHTML = "";
+    for(var i=0;i<picks.length;i++){
+      var li = document.createElement("li");
+      li.textContent = picks[i].tag;
+      pathEl.appendChild(li);
+    }
+    pathEl.style.display = picks.length ? "flex" : "none";
+  }
+
+  function renderNode(id){
+    var n = NODES[id];
+    var html = '<p class="stephead">Schritt ' + stack.length + '</p>';
+    html += '<h2 class="q" id="q-head" tabindex="-1">' + esc(n.q) + '</h2>';
+    html += '<p class="qhint">' + esc(n.hint) + '</p>';
+    html += '<div class="opts" role="group" aria-label="' + esc(n.q) + '">';
+    for(var i=0;i<n.options.length;i++){
+      var o = n.options[i];
+      html += '<button class="opt" type="button" data-i="' + i + '">'
+        + '<span class="opt-body"><span class="opt-label">' + esc(o.label) + '</span>'
+        + '<span class="opt-sub">' + esc(o.sub) + '</span></span>'
+        + '<span class="opt-arrow" aria-hidden="true">›</span></button>';
+    }
+    html += '</div>';
+    stage.innerHTML = html;
+
+    var btns = stage.querySelectorAll(".opt");
+    for(var j=0;j<btns.length;j++){
+      btns[j].addEventListener("click", function(){
+        choose(parseInt(this.getAttribute("data-i"),10));
+      });
+    }
+    focusEl("q-head");
+    updateNav();
+  }
+
+  function renderResult(id){
+    var r = RESULTS[id];
+    var html = '<p class="stephead">Ergebnis</p>';
+    html += '<span class="badge ' + r.verdict + '">' + esc(r.badge) + '</span>';
+    html += '<div class="cite-lab" style="margin-top:14px">Rechtliche Verortung</div>';
+    html += '<span class="cite">' + esc(r.cite) + '</span>';
+    html += '<div class="rbody" id="q-head" tabindex="-1">' + r.body + '</div>';
+    html += '<div class="copywrap">'
+      + '<button class="btn" type="button" id="copyBtn">Ergebnis als Text kopieren</button>'
+      + '<span class="copied" id="copied" hidden>Kopiert ✓</span></div>';
+    stage.innerHTML = html;
+
+    document.getElementById("copyBtn").addEventListener("click", copySummary);
+    focusEl("q-head");
+    updateNav();
+  }
+
+  function render(){
+    renderPath();
+    if(result){ renderResult(result); }
+    else { renderNode(stack[stack.length-1]); }
+  }
+
+  function choose(i){
+    var node = NODES[stack[stack.length-1]];
+    var o = node.options[i];
+    picks.push({ tag: o.tag });
+    if(o.result){ result = o.result; }
+    else if(o.next){ stack.push(o.next); result = null; }
+    render();
+  }
+
+  function back(){
+    if(result){ result = null; picks.pop(); }
+    else if(stack.length > 1){ stack.pop(); picks.pop(); }
+    else { return; }
+    render();
+  }
+
+  function restart(){
+    stack = ["start"]; picks = []; result = null; render();
+  }
+
+  function updateNav(){
+    backBtn.disabled = (picks.length === 0);
+  }
+
+  function focusEl(id){
+    var el = document.getElementById(id);
+    if(el && typeof el.focus === "function"){ el.focus(); }
+  }
+
+  function buildSummary(){
+    var lines = [];
+    lines.push("KI-Telefonassistent – Aufzeichnung: Orientierung (keine Rechtsberatung)");
+    var trail = [];
+    for(var i=0;i<picks.length;i++){ trail.push(picks[i].tag); }
+    if(trail.length){ lines.push("Pfad: " + trail.join(" › ")); }
+    if(result){
+      var r = RESULTS[result];
+      lines.push("Ergebnis: " + r.badge);
+      lines.push("Rechtliche Verortung: " + r.cite);
+    }
+    lines.push("Grundlage: Weissmann-Leitfaden zur Aufzeichnung + offizielle Schweizer Quellen (EDÖB, Datenschutz Kt. Zürich, StGB).");
+    lines.push("Im Einzelfall ersetzt dies keine anwaltliche Beratung.");
+    return lines.join("\n");
+  }
+
+  function copySummary(){
+    var text = buildSummary();
+    var done = function(){
+      var c = document.getElementById("copied");
+      if(c){ c.hidden = false; setTimeout(function(){ c.hidden = true; }, 2200); }
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text, done); });
+    } else {
+      fallbackCopy(text, done);
+    }
+  }
+
+  function fallbackCopy(text, done){
+    try{
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly","");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      done();
+    }catch(e){ /* silent */ }
+  }
+
+  backBtn.addEventListener("click", back);
+  restartBtn.addEventListener("click", restart);
+
+  render();
+})();
+</script>

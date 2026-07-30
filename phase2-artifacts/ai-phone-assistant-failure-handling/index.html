@@ -1,0 +1,471 @@
+<title>Fehlermodus-Simulator: KI-Telefonassistent · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .mt{margin-top:18px}
+  .sect-h{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+
+  /* stepper nav */
+  .stepnav{display:flex;flex-wrap:wrap;gap:8px}
+  .pill{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);border-radius:999px;padding:7px 13px 7px 9px;font-family:var(--font);font-size:.86rem;font-weight:600;cursor:pointer;line-height:1.1}
+  .pill:hover{background:var(--soft)}
+  .pill .num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--soft);color:var(--ink-mute);font-size:.78rem;font-weight:700;flex:none}
+  .pill[aria-current="step"]{border-color:var(--navy);background:var(--navy);color:var(--on-navy)}
+  .pill[aria-current="step"] .num{background:color-mix(in srgb,var(--on-navy) 22%,transparent);color:var(--on-navy)}
+  .pill.done .num::after{content:"\2713";font-size:.72rem}
+  .pill.done .num{color:var(--ok)}
+  .pill[aria-current="step"].done .num{color:var(--on-navy)}
+  .pill:focus-visible,.navbtn:focus-visible,.seg label:focus-within,.copybtn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  .status{font-size:.82rem;color:var(--ink-mute);font-weight:600;margin:14px 0 6px}
+  .sc-title{font-size:1.14rem;font-weight:700;margin:2px 0 6px;letter-spacing:-.01em}
+  .sc-desc{color:var(--ink-soft);margin:0;font-size:.96rem}
+
+  .contrast{display:grid;grid-template-columns:1fr;gap:12px;margin-top:16px}
+  @media(min-width:680px){.contrast{grid-template-columns:1fr 1fr}}
+  .out{border:1px solid var(--line);border-radius:12px;padding:14px 15px;background:var(--card)}
+  .out.bad{border-color:color-mix(in srgb,var(--miss) 40%,var(--line));background:var(--miss-soft)}
+  .out.good{border-color:color-mix(in srgb,var(--ok) 42%,var(--line));background:var(--ok-soft)}
+  .out-h{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.86rem;letter-spacing:.02em;margin:0 0 10px}
+  .out.bad .out-h{color:var(--miss)}.out.good .out-h{color:var(--ok)}
+  .tag{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 4px;border-radius:6px;font-size:.74rem;font-weight:800}
+  .out.bad .tag{background:color-mix(in srgb,var(--miss) 20%,transparent);color:var(--miss)}
+  .out.good .tag{background:color-mix(in srgb,var(--ok) 22%,transparent);color:var(--ok)}
+  .dlg{display:flex;flex-direction:column;gap:8px;margin:0 0 8px}
+  .line{display:flex;flex-direction:column;gap:2px}
+  .who{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--ink-mute)}
+  .say{font-size:.95rem;color:var(--ink);font-style:italic}
+  .otext{margin:0 0 6px;font-size:.95rem;color:var(--ink-soft)}
+  .conseq{margin:8px 0 0;font-size:.86rem;color:var(--miss);font-weight:600}
+  .onote{margin:8px 0 0;font-size:.86rem;color:var(--ink-mute)}
+
+  /* escalation ladder */
+  .ladder{margin-top:18px;border-top:1px dashed var(--line);padding-top:14px}
+  .ladder-lead{font-size:.82rem;color:var(--ink-mute);margin:0 0 10px}
+  .rungs{display:grid;gap:8px}
+  .rung{display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:start;border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--soft)}
+  .rung .rn{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:6px;background:var(--card);border:1px solid var(--line);font-weight:800;font-size:.8rem;color:var(--ink-mute)}
+  .rung .rt{min-width:0}
+  .rung .rt b{display:block;font-size:.9rem;line-height:1.25}
+  .rung .rt span{display:block;font-size:.8rem;color:var(--ink-mute);margin-top:2px}
+  .rung.on{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 40%,var(--line))}
+  .rung.on .rn{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}
+  .rung.fallback{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 38%,var(--line))}
+  .rst{font-size:.7rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;padding-top:3px}
+  .rung.on .rst{color:var(--ok)}.rung.fallback .rst{color:var(--warn)}.rung.off .rst{color:var(--ink-mute)}
+  .laddernote{margin:12px 0 0;font-size:.85rem;color:var(--ink-soft);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));border-radius:10px;padding:10px 12px}
+
+  .navbtns{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+  .navbtn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1.5px solid var(--navy);background:var(--card);color:var(--navy);border-radius:11px;padding:11px 14px;font-family:var(--font);font-size:.92rem;font-weight:700;cursor:pointer;min-height:46px}
+  .navbtn:hover:not(:disabled){background:var(--soft)}
+  .navbtn:disabled{opacity:.42;cursor:not-allowed}
+
+  .chkrow{display:flex;align-items:flex-start;gap:10px;margin-top:16px;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+  .chkrow input{margin-top:2px;width:18px;height:18px;accent-color:var(--navy);flex:none}
+  .chkrow label{font-size:.9rem;color:var(--ink-soft);cursor:pointer}
+
+  /* confidence explainer */
+  .seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border:0;padding:0;margin:0}
+  .seg legend{padding:0;margin:0 0 10px;font-weight:600;font-size:.9rem;color:var(--ink)}
+  .seg label{display:flex;align-items:center;justify-content:center;text-align:center;border:1.5px solid var(--line);border-radius:10px;padding:10px 8px;font-size:.86rem;font-weight:600;color:var(--ink-soft);cursor:pointer;background:var(--card)}
+  .seg input{position:absolute;opacity:0;width:1px;height:1px}
+  .seg label:hover{background:var(--soft)}
+  .seg input:checked+label{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+  .konfdesc{margin:12px 0 0;font-size:.9rem;color:var(--ink-soft);min-height:2.4em}
+  .konfdesc.bal{color:var(--ok)}.konfdesc.risk{color:var(--miss)}.konfdesc.low{color:var(--warn)}
+
+  /* generated checklist */
+  .genhead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
+  .count{font-size:.82rem;color:var(--ink-mute);font-weight:700}
+  .gen{margin:12px 0 0;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:13px 14px;font-family:var(--mono);font-size:.82rem;line-height:1.6;color:var(--ink);white-space:pre-wrap;word-break:break-word;max-height:340px;overflow:auto}
+  .genactions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+  .copybtn{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);border-radius:11px;padding:10px 16px;font-family:var(--font);font-size:.9rem;font-weight:700;cursor:pointer;min-height:44px}
+  .copybtn:hover{background:var(--navy-hover)}
+  .copied{font-size:.84rem;font-weight:700;color:var(--ok)}
+  .pnote{font-size:.82rem;color:var(--ink-mute);margin:10px 0 0}
+
+  /* footer link band */
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">KI-Agenten &amp; Voice · Fehlerbehandlung</p>
+    <h1>Fehlermodus-Simulator: fünf Wege, wie ein Anruf kippt</h1>
+    <p class="lede">Kein KI-Telefonassistent versteht jeden Anruf korrekt – bei Menschen am Telefon ist das nicht anders. Entscheidend ist nicht, ob ein Fehler passiert, sondern was danach geschieht. Gehen Sie die fünf typischen Szenarien durch, vergleichen Sie das schlecht gebaute mit dem durchdachten System und nehmen Sie am Ende eine Checkliste für Ihren eigenen Testanruf mit.</p>
+  </header>
+
+  <!-- STEPPER -->
+  <section class="card card-pad mt" aria-labelledby="stepper-h">
+    <p class="sect-h" id="stepper-h">Szenario-Stepper</p>
+    <div class="stepnav" id="stepnav" role="group" aria-label="Fünf Fehlerszenarien auswählen"></div>
+
+    <p class="status" id="sc-status" aria-live="polite"></p>
+    <div id="panel" aria-live="polite">
+      <h2 class="sc-title" id="sc-title"></h2>
+      <p class="sc-desc" id="sc-desc"></p>
+
+      <div class="contrast">
+        <div class="out bad" id="out-bad" aria-label="Schlecht gebautes System">
+          <p class="out-h"><span class="tag">✕</span> Schlecht gebautes System</p>
+          <div id="bad-body"></div>
+        </div>
+        <div class="out good" id="out-good" aria-label="Durchdachtes System">
+          <p class="out-h"><span class="tag">✓</span> Durchdachtes System</p>
+          <div id="good-body"></div>
+        </div>
+      </div>
+
+      <div class="ladder">
+        <p class="ladder-lead">Welche Stufe des Eskalationsgerüsts greift hier im durchdachten System?</p>
+        <div class="rungs" id="rungs"></div>
+        <p class="laddernote" id="laddernote" hidden></p>
+      </div>
+
+      <div class="chkrow">
+        <input type="checkbox" id="sc-check">
+        <label for="sc-check" id="sc-check-label">In meine Testanruf-Checkliste aufnehmen</label>
+      </div>
+    </div>
+
+    <div class="navbtns">
+      <button class="navbtn" id="prev" type="button">← Zurück</button>
+      <button class="navbtn" id="next" type="button">Weiter →</button>
+    </div>
+  </section>
+
+  <!-- CONFIDENCE EXPLAINER -->
+  <section class="card card-pad mt" aria-labelledby="konf-h">
+    <p class="sect-h" id="konf-h">Die Konfidenzschwelle als Designentscheidung</p>
+    <fieldset class="seg">
+      <legend>Wo setzen Sie den Schwellenwert an?</legend>
+      <input type="radio" name="konf" id="k0" value="0"><label for="k0">Zu niedrig</label>
+      <input type="radio" name="konf" id="k1" value="1" checked><label for="k1">Ausgewogen</label>
+      <input type="radio" name="konf" id="k2" value="2"><label for="k2">Zu hoch</label>
+    </fieldset>
+    <p class="konfdesc" id="konfdesc" aria-live="polite"></p>
+  </section>
+
+  <!-- GENERATED CHECKLIST -->
+  <section class="card card-pad mt" aria-labelledby="gen-h">
+    <div class="genhead">
+      <p class="sect-h" id="gen-h" style="margin:0">Ihre Testanruf-Checkliste</p>
+      <span class="count" id="count"></span>
+    </div>
+    <pre class="gen" id="gen" tabindex="0" aria-label="Generierte Testanruf-Checkliste"></pre>
+    <div class="genactions">
+      <button class="copybtn" id="copy" type="button">Checkliste kopieren</button>
+      <span class="copied" id="copied" role="status" aria-live="polite" hidden>Kopiert ✓</span>
+    </div>
+    <p class="pnote">Spielen Sie diese fünf Szenarien gegen ein echtes System, bevor der erste echte Anruf es tut. Der einmalige Starter-Test kostet CHF 350 (kein Abonnement).</p>
+  </section>
+
+  <p class="disc">Dieser Simulator dient der Orientierung, nicht als Beratung oder als Angebot. Alle Inhalte stammen aus dem verlinkten Weissmann-Artikel; das vierstufige Eskalationsgerüst beschreibt allgemeine gute Praxis für Sprachassistenten, keine dokumentierte Weissmann-Spezifikation. Ihre Auswahl bleibt nur in diesem Browser – es wird nichts gespeichert oder gesendet.</p>
+
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Weiterlesen &amp; Leistung</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-versteht-nicht/" target="_blank" rel="noopener noreferrer" aria-label="Zum Artikel: KI-Telefonassistent versteht nicht – was dann? (opens in a new tab)">Zum Artikel: KI-Telefonassistent versteht nicht →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="KI-Telefonassistent von Weissmann – Leistung ansehen (opens in a new tab)">KI-Telefonassistent von Weissmann →</a>
+    </div>
+    <p class="att">Interaktive Ergänzung zum Leitfaden · a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var stageMeta = [
+    { name: "Konfidenzschwelle", desc: "Bei hoher Konfidenz sofort handeln; bei niedriger nicht raten, sondern eskalieren." },
+    { name: "Gezielte Rückfrage", desc: "Präzise nachfragen («Meinten Sie Dienstag oder Donnerstag?»), nicht «Wie bitte?»." },
+    { name: "Wiederholung mit Umformulierung", desc: "Offen → geschlossen umformulieren; spätestens nach zwei Fehlversuchen der nächste Schritt." },
+    { name: "Menschliche Übergabe (warm)", desc: "Der geplante Ausgang – warmer Transfer mit vollständigem Gesprächskontext." }
+  ];
+
+  var scenarios = [
+    {
+      id: "name",
+      label: "Falsch verstandener Name",
+      desc: "«Aebischer» wird zu «Ebischer», «Zbinden» verschwindet ganz aus der Transkription. Namen sind für Spracherkennung grundsätzlich schwierig, weil es praktisch unbegrenzt viele davon gibt und kein System sie alle je gehört hat.",
+      bad: {
+        text: "Es bestätigt oder bucht auf Basis des unsicher verstandenen Namens, statt nachzufragen.",
+        consequence: "Die stille Fehlleistung, die am längsten unbemerkt bleibt – eine falsche Buchung, die niemand bemerkt, bis der Kunde nicht auftaucht."
+      },
+      good: {
+        text: "Niedrige Konfidenz auf dem Namen löst eine gezielte Rückfrage aus statt einer Buchung. Scheitert sie, wird umformuliert (etwa buchstabieren lassen) – nicht derselbe Satz wiederholt."
+      },
+      stages: ["on","on","on","fallback"],
+      note: "",
+      test: "Nennen Sie einen ungewöhnlichen Nachnamen. Fragt das System bei Unsicherheit gezielt nach – oder bucht es einfach?"
+    },
+    {
+      id: "noise",
+      label: "Hintergrundgeräusche",
+      desc: "Werkstatt, Autobahn, eine Baustelle nebenan. Das System hört nicht die anrufende Person, sondern ein Gemisch aus ihrer Stimme und allem, was um sie herum gerade passiert.",
+      bad: {
+        text: "Das System transkribiert nur Bruchstücke, bucht aber trotzdem einen Termin – auf Basis von drei sicher erkannten Wörtern und viel Interpretation.",
+        consequence: "Am Ende steht ein Termin im Kalender, den so niemand bestellt hat, und niemand merkt es, bis der Kunde nicht auftaucht."
+      },
+      good: {
+        lines: [
+          { who: "Assistent", text: "«Ich kann Sie gerade schlecht verstehen, es klingt nach viel Lärm bei Ihnen. Möchten Sie kurz an einen ruhigeren Ort wechseln, oder soll ich Sie direkt mit unserem Team verbinden?»" }
+        ],
+        note: "Das System erkennt durchgehend niedrige Konfidenz. Die Anruferin entscheidet – das System rät nicht auf eigene Faust weiter."
+      },
+      stages: ["on","on","off","on"],
+      note: "Durchgehend niedrige Konfidenz führt zu einer ehrlichen Rückfrage mit Wahlmöglichkeit – inklusive Angebot zur Übergabe.",
+      test: "Rufen Sie aus lauter Umgebung an. Erkennt das System die niedrige Konfidenz und bietet Alternativen an – oder rät es weiter?"
+    },
+    {
+      id: "outofscope",
+      label: "Frage ausserhalb des Wissens",
+      desc: "Eine Frage, für die der Assistent schlicht nicht eingerichtet wurde, etwa eine steuerliche Detailfrage an einen Handwerksbetrieb. Das ist kein Verständnisproblem, sondern ein Abdeckungsproblem – das System versteht die Worte richtig und weiss trotzdem keine Antwort.",
+      bad: {
+        text: "Das System dreht sich im Kreis, weil es keine Obergrenze für Rückfragen kennt, oder es übergibt ohne Kontext.",
+        consequence: "Die anrufende Person muss ihr Anliegen ein zweites Mal von vorne erklären."
+      },
+      good: {
+        text: "Kein Eingeständnis des Scheiterns, sondern der geplante Ausgang: ein warmer Transfer. Die Mitarbeiterin bekommt mit, was bereits gesagt wurde, damit die anrufende Person nicht bei null beginnen muss."
+      },
+      stages: ["off","off","off","on"],
+      note: "Abdeckungs-, kein Verständnisproblem: Die Stufen 1–3 sind hier nicht der Hebel – die saubere, warme Übergabe ist es.",
+      test: "Stellen Sie eine Frage ausserhalb des Wissens. Übergibt das System sauber mit Kontext an einen Menschen – oder dreht es sich im Kreis?"
+    },
+    {
+      id: "angry",
+      label: "Verärgerte Anrufende",
+      desc: "Tempo, Lautstärke und Wortwahl verändern sich unter Frust messbar. Ein System, das ausschliesslich auf den Wortinhalt reagiert und den Ton ignoriert, überhört die eigentliche Nachricht.",
+      bad: {
+        lines: [
+          { who: "Anrufer", text: "«Das ist jetzt schon das dritte Mal, dass ich deswegen anrufe!»" },
+          { who: "Assistent", text: "«Gerne bearbeite ich Ihre Terminanfrage. Für welchen Tag darf ich buchen?»" }
+        ],
+        note: "Der Assistent überhört den Ton komplett und macht unbeirrt weiter, als wäre nichts gewesen. Das wirkt nicht wie Effizienz, sondern wie Ignoranz."
+      },
+      good: {
+        lines: [
+          { who: "Anrufer", text: "«Das ist jetzt schon das dritte Mal, dass ich deswegen anrufe!»" },
+          { who: "Assistent", text: "«Das tut mir leid, das sollte so nicht passieren. Ich verbinde Sie direkt mit jemandem aus dem Team, der sich das ansehen kann – einen Moment.»" }
+        ],
+        note: "Kein Versuch, den Ärger wegzuerklären, keine weitere Frage, sofortige Übergabe mit Kontext."
+      },
+      stages: ["off","off","off","on"],
+      note: "Bei erkennbarem Ärger gilt: im Zweifel eher zu früh als zu spät an einen Menschen übergeben – keine weitere Frage.",
+      test: "Sprechen Sie hörbar verärgert. Reagiert das System auf den Ton und übergibt – oder macht es unbeirrt mit der Terminfrage weiter?"
+    },
+    {
+      id: "silence",
+      label: "Stille oder Verbindungsabbruch",
+      desc: "Die anrufende Person antwortet nicht, legt kommentarlos auf, oder die Verbindung reisst mitten im Satz ab. Stille am Telefon ist selten Zustimmung.",
+      bad: {
+        text: "Stille führt zu keiner definierten Reaktion. Der Anruf hängt einfach in der Warteschlange, bis irgendwann irgendjemand es bemerkt."
+      },
+      good: {
+        text: "Eine klar definierte Reaktion nach festgelegter Zeit: nachfragen oder den Anruf sauber beenden, statt endlos zu warten oder kommentarlos aufzulegen."
+      },
+      stages: ["off","off","off","off"],
+      note: "Eigener Fall – kein Missverständnis, sondern gar nichts zum Interpretieren. Keine Stufe der Leiter greift direkt; nötig ist eine feste Zeitregel, dann nachfragen oder sauber beenden.",
+      test: "Schweigen Sie oder legen Sie kommentarlos auf. Reagiert das System nach festgelegter Zeit definiert – oder bleibt der Anruf hängen?"
+    }
+  ];
+
+  var konfText = [
+    { cls: "low",  msg: "Das System fragt bei jeder Kleinigkeit nach und wirkt unsicher." },
+    { cls: "bal",  msg: "Das System handelt bei hoher Konfidenz sofort und eskaliert bei niedriger – ohne zu raten." },
+    { cls: "risk", msg: "Das System handelt entschlossen auf Basis von Rateergebnissen – die stille Fehlleistung." }
+  ];
+
+  var cur = 0;
+  var selected = {};
+  scenarios.forEach(function(s){ selected[s.id] = true; });
+
+  // element refs
+  var stepnav = document.getElementById("stepnav");
+  var scStatus = document.getElementById("sc-status");
+  var scTitle = document.getElementById("sc-title");
+  var scDesc = document.getElementById("sc-desc");
+  var badBody = document.getElementById("bad-body");
+  var goodBody = document.getElementById("good-body");
+  var rungs = document.getElementById("rungs");
+  var laddernote = document.getElementById("laddernote");
+  var scCheck = document.getElementById("sc-check");
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var konfdesc = document.getElementById("konfdesc");
+  var gen = document.getElementById("gen");
+  var countEl = document.getElementById("count");
+  var copyBtn = document.getElementById("copy");
+  var copiedEl = document.getElementById("copied");
+
+  function esc(str){
+    return String(str).replace(/[&<>"]/g, function(c){
+      return c === "&" ? "&amp;" : c === "<" ? "&lt;" : c === ">" ? "&gt;" : "&quot;";
+    });
+  }
+
+  function outcomeHtml(o){
+    var h = "";
+    if (o.lines){
+      h += '<div class="dlg">';
+      o.lines.forEach(function(l){
+        h += '<div class="line"><span class="who">' + esc(l.who) + '</span><span class="say">' + esc(l.text) + '</span></div>';
+      });
+      h += '</div>';
+    }
+    if (o.text){ h += '<p class="otext">' + esc(o.text) + '</p>'; }
+    if (o.consequence){ h += '<p class="conseq">Folge: ' + esc(o.consequence) + '</p>'; }
+    if (o.note){ h += '<p class="onote">' + esc(o.note) + '</p>'; }
+    return h;
+  }
+
+  function buildNav(){
+    scenarios.forEach(function(s, i){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "pill";
+      b.setAttribute("data-i", i);
+      b.innerHTML = '<span class="num">' + (i + 1) + '</span><span>' + esc(s.label) + '</span>';
+      b.addEventListener("click", function(){ cur = i; renderPanel(); });
+      stepnav.appendChild(b);
+    });
+  }
+
+  var rstLabel = { on: "greift", fallback: "letzter Ausweg", off: "nicht der Hebel" };
+
+  function renderPanel(){
+    var s = scenarios[cur];
+
+    // nav state
+    var pills = stepnav.querySelectorAll(".pill");
+    for (var i = 0; i < pills.length; i++){
+      var p = pills[i];
+      if (i === cur){ p.setAttribute("aria-current", "step"); } else { p.removeAttribute("aria-current"); }
+      if (selected[scenarios[i].id]){ p.classList.add("done"); } else { p.classList.remove("done"); }
+    }
+
+    scStatus.textContent = "Szenario " + (cur + 1) + " von " + scenarios.length;
+    scTitle.textContent = s.label;
+    scDesc.textContent = s.desc;
+    badBody.innerHTML = outcomeHtml(s.bad);
+    goodBody.innerHTML = outcomeHtml(s.good);
+
+    // ladder
+    rungs.innerHTML = "";
+    s.stages.forEach(function(st, idx){
+      var r = document.createElement("div");
+      r.className = "rung " + st;
+      r.innerHTML = '<span class="rn">' + (idx + 1) + '</span>' +
+        '<span class="rt"><b>' + esc(stageMeta[idx].name) + '</b><span>' + esc(stageMeta[idx].desc) + '</span></span>' +
+        '<span class="rst">' + rstLabel[st] + '</span>';
+      rungs.appendChild(r);
+    });
+    if (s.note){ laddernote.textContent = s.note; laddernote.hidden = false; }
+    else { laddernote.hidden = true; }
+
+    // checkbox
+    scCheck.checked = !!selected[s.id];
+
+    // nav buttons
+    prevBtn.disabled = (cur === 0);
+    nextBtn.disabled = (cur === scenarios.length - 1);
+  }
+
+  function renderChecklist(){
+    var chosen = scenarios.filter(function(s){ return selected[s.id]; });
+    countEl.textContent = chosen.length + " von " + scenarios.length + " Szenarien";
+
+    var lines = [];
+    lines.push("Testanruf-Checkliste – KI-Telefonassistent");
+    lines.push("nach «KI-Telefonassistent versteht nicht: was dann?» (Weissmann)");
+    lines.push("");
+    lines.push("Prüfen Sie nicht die Fehlerquote, sondern die Wiederherstellung:");
+    lines.push("Wie sauber findet das System aus einem Missverständnis wieder heraus?");
+    lines.push("");
+    if (chosen.length === 0){
+      lines.push("(Noch kein Szenario ausgewählt – markieren Sie im Stepper mindestens eines.)");
+    } else {
+      chosen.forEach(function(s){
+        lines.push("[ ] " + s.label);
+        lines.push("    " + s.test);
+      });
+    }
+    lines.push("");
+    lines.push("Ein durchdachtes System durchläuft dabei vier Stufen:");
+    lines.push("1. Konfidenzschwelle  2. Gezielte Rückfrage");
+    lines.push("3. Wiederholung mit Umformulierung  4. Warme menschliche Übergabe");
+    lines.push("Spätestens nach zwei erfolglosen Versuchen: saubere Übergabe mit vollständigem Kontext.");
+
+    gen.textContent = lines.join("\n");
+  }
+
+  function copyChecklist(){
+    var text = gen.textContent;
+    function ok(){
+      copiedEl.hidden = false;
+      window.setTimeout(function(){ copiedEl.hidden = true; }, 2200);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok, fallback);
+    } else {
+      fallback();
+    }
+    function fallback(){
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        ok();
+      } catch (e) { /* silent: nothing stored, nothing sent */ }
+    }
+  }
+
+  // events
+  prevBtn.addEventListener("click", function(){ if (cur > 0){ cur--; renderPanel(); } });
+  nextBtn.addEventListener("click", function(){ if (cur < scenarios.length - 1){ cur++; renderPanel(); } });
+  scCheck.addEventListener("change", function(){
+    selected[scenarios[cur].id] = scCheck.checked;
+    renderPanel();
+    renderChecklist();
+  });
+  copyBtn.addEventListener("click", copyChecklist);
+
+  var konfInputs = document.querySelectorAll('input[name="konf"]');
+  function updateKonf(){
+    var v = 1;
+    for (var i = 0; i < konfInputs.length; i++){ if (konfInputs[i].checked){ v = parseInt(konfInputs[i].value, 10); } }
+    var t = konfText[v];
+    konfdesc.textContent = t.msg;
+    konfdesc.className = "konfdesc " + t.cls;
+  }
+  for (var i = 0; i < konfInputs.length; i++){ konfInputs[i].addEventListener("change", updateKonf); }
+
+  // init
+  buildNav();
+  renderPanel();
+  renderChecklist();
+  updateKonf();
+})();
+</script>

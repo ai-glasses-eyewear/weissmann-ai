@@ -1,0 +1,299 @@
+<title>EU-Bezug-Check zur KI-Offenlegung · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+
+  /* ── Checker-specific ── */
+  .head{margin-bottom:18px}
+  .stack{display:grid;gap:16px}
+  .sec-h{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 4px}
+  .sec-sub{margin:0 0 14px;color:var(--ink-soft);font-size:.92rem}
+
+  .q{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;padding:14px 0;border-top:1px solid var(--line)}
+  .q:first-of-type{border-top:0;padding-top:2px}
+  .q:last-of-type{padding-bottom:2px}
+  .q-txt{flex:1 1 280px;display:flex;gap:10px;align-items:flex-start;line-height:1.4}
+  .qnum{flex:0 0 auto;width:23px;height:23px;border-radius:50%;background:var(--soft);color:var(--navy);font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .q-legend{font-weight:600;color:var(--ink);font-size:.98rem}
+  .q-hint{display:block;font-weight:400;color:var(--ink-mute);font-size:.82rem;margin-top:3px}
+  .seg{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card);flex:0 0 auto}
+  .seg label{position:relative;cursor:pointer;margin:0}
+  .seg input{position:absolute;opacity:0;width:1px;height:1px}
+  .seg span{display:block;padding:8px 20px;font-weight:600;font-size:.92rem;color:var(--ink-soft);min-width:58px;text-align:center;transition:background .12s}
+  .seg label+label span{border-left:1.5px solid var(--line)}
+  .seg input:checked+span{background:var(--navy);color:var(--on-navy)}
+  .seg input:focus-visible+span{outline:2px solid var(--accent);outline-offset:-3px}
+
+  .verdict{border:1px solid var(--line);border-left-width:5px;border-radius:12px;padding:16px 18px;background:var(--card)}
+  .verdict.tone-req{background:var(--warn-soft);border-color:var(--warn)}
+  .verdict.tone-info{background:var(--accent-soft);border-color:var(--accent)}
+  .badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:999px;border:1px solid;margin-bottom:10px}
+  .badge.req{color:var(--warn);border-color:var(--warn);background:color-mix(in srgb,var(--warn) 10%,transparent)}
+  .badge.info{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+  .v-title{font-size:1.12rem;font-weight:700;margin:0 0 10px;line-height:1.3;letter-spacing:-.01em}
+  .v-reasons{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+  .v-reasons li{position:relative;padding-left:20px;color:var(--ink-soft);font-size:.94rem;line-height:1.45}
+  .v-reasons li::before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:50%;background:var(--ink-mute)}
+  .v-juris{margin:12px 0 0;font-size:.85rem;color:var(--ink-mute);border-top:1px dashed var(--line);padding-top:10px}
+
+  .branchbar{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 0}
+  .branchbtn{border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);padding:8px 15px;border-radius:999px;font-weight:600;font-size:.9rem;font-family:inherit;cursor:pointer}
+  .branchbtn:hover{background:var(--soft)}
+  .branchbtn[aria-pressed="true"]{border-color:var(--navy);background:var(--soft);color:var(--ink)}
+  .branchbtn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+  .greetbox{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:15px 16px;margin-top:12px}
+  .greet-lbl{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-mute);font-weight:700;margin:0 0 7px}
+  .greet{font-size:1.04rem;line-height:1.5;color:var(--ink);margin:0}
+  .greet-note{font-size:.85rem;color:var(--ink-mute);margin:10px 0 0;line-height:1.45}
+
+  .baust{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:9px}
+  .baust li{display:flex;gap:10px;align-items:baseline;font-size:.93rem;color:var(--ink-soft);line-height:1.45}
+  .baust b{color:var(--ink);flex:0 0 84px}
+
+  .wnote{margin-top:16px;font-size:.9rem;background:var(--accent-soft);border:1px solid var(--line);border-radius:12px;padding:13px 15px;color:var(--ink-soft);line-height:1.5}
+  .wnote strong{color:var(--ink)}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <p class="kicker">KI-Agenten, Automatisierung &amp; Voice · EU-Bezug-Check</p>
+    <h1>Muss sich Ihr KI-Telefonassistent nach Artikel 50 ausweisen?</h1>
+    <p class="lede">Vier Fragen aus dem Leitfaden klären, ob Artikel 50 des EU AI Act (Offenlegungspflicht ab 2. August 2026) für Ihr Telefonangebot greift – und was eine ehrliche Begrüssung in Ihrer Branche konkret sagt. Keine Rechtsberatung.</p>
+  </header>
+
+  <div class="stack">
+    <section class="card card-pad" aria-labelledby="qh">
+      <p class="sec-h" id="qh">Ihre Ausgangslage</p>
+      <p class="sec-sub">Beantworten Sie die vier Fragen – die Einordnung aktualisiert sich sofort.</p>
+
+      <div class="q" role="group" aria-labelledby="lbl_eu">
+        <span class="q-txt"><span class="qnum" aria-hidden="true">1</span><span class="q-legend" id="lbl_eu">Richtet sich Ihr Angebot – Kundschaft, Anrufende oder Werbung – (auch) an Personen in der EU?<span class="q-hint">EU-Bezug im Sinne des Artikels: sobald sich ein Angebot an Personen in der EU richtet.</span></span></span>
+        <span class="seg">
+          <label><input type="radio" name="q_eu" value="ja"><span>Ja</span></label>
+          <label><input type="radio" name="q_eu" value="nein" checked><span>Nein</span></label>
+        </span>
+      </div>
+
+      <div class="q" role="group" aria-labelledby="lbl_date">
+        <span class="q-txt"><span class="qnum" aria-hidden="true">2</span><span class="q-legend" id="lbl_date">Läuft der Assistent am oder nach dem 2. August 2026?<span class="q-hint">Ab diesem Stichtag verlangt Artikel 50 die Offenlegung für Angebote mit EU-Bezug.</span></span></span>
+        <span class="seg">
+          <label><input type="radio" name="q_date" value="ja" checked><span>Ja</span></label>
+          <label><input type="radio" name="q_date" value="nein"><span>Nein</span></label>
+        </span>
+      </div>
+
+      <div class="q" role="group" aria-labelledby="lbl_obv">
+        <span class="q-txt"><span class="qnum" aria-hidden="true">3</span><span class="q-legend" id="lbl_obv">Ist bereits ohne jeden Hinweis unmissverständlich klar, dass am Telefon eine KI antwortet?<span class="q-hint">Artikel 50 macht eine Ausnahme, sofern es ohnehin offensichtlich ist.</span></span></span>
+        <span class="seg">
+          <label><input type="radio" name="q_obv" value="ja"><span>Ja</span></label>
+          <label><input type="radio" name="q_obv" value="nein" checked><span>Nein</span></label>
+        </span>
+      </div>
+
+      <div class="q" role="group" aria-labelledby="lbl_ch">
+        <span class="q-txt"><span class="qnum" aria-hidden="true">4</span><span class="q-legend" id="lbl_ch">Hat Ihr Betrieb seinen Sitz bzw. seine Tätigkeit in der Schweiz?<span class="q-hint">Für Schweizer Betriebe ist der Transparenzgrundsatz des revDSG massgeblich.</span></span></span>
+        <span class="seg">
+          <label><input type="radio" name="q_ch" value="ja" checked><span>Ja</span></label>
+          <label><input type="radio" name="q_ch" value="nein"><span>Nein</span></label>
+        </span>
+      </div>
+    </section>
+
+    <section class="card card-pad" aria-labelledby="rh">
+      <p class="sec-h" id="rh">Einordnung</p>
+      <div id="verdict" class="verdict tone-info" aria-live="polite">
+        <span class="badge info" id="v-badge">–</span>
+        <p class="v-title" id="v-title">–</p>
+        <ul class="v-reasons" id="v-reasons"></ul>
+        <p class="v-juris" id="v-juris"></p>
+      </div>
+
+      <div style="margin-top:18px">
+        <p class="sec-h" style="margin-bottom:8px">Beispiel-Begrüssung aus dem Leitfaden</p>
+        <div class="branchbar" role="group" aria-label="Branche für die Beispiel-Begrüssung wählen">
+          <button type="button" class="branchbtn" data-branch="restaurant" aria-pressed="true">Restaurant</button>
+          <button type="button" class="branchbtn" data-branch="praxis" aria-pressed="false">Arztpraxis</button>
+          <button type="button" class="branchbtn" data-branch="handwerk" aria-pressed="false">Handwerk</button>
+          <button type="button" class="branchbtn" data-branch="kanzlei" aria-pressed="false">Kanzlei / Treuhand</button>
+        </div>
+        <div class="greetbox" aria-live="polite">
+          <p class="greet-lbl" id="greet-lbl">Restaurant · gute Begrüssung</p>
+          <p class="greet" id="greet-text"></p>
+          <p class="greet-note" id="greet-note"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card card-pad" aria-labelledby="bh">
+      <p class="sec-h" id="bh">Fünf Bausteine einer Begrüssung, die trägt</p>
+      <p class="sec-sub">Das gemeinsame Gerüst hinter allen vier Beispielen – als Checkliste für die eigene Ansage.</p>
+      <ul class="baust">
+        <li><b>Wer</b><span>Firmenname zuerst, nicht „Sie sind verbunden mit …“. Anrufende wollen in der ersten Sekunde wissen, ob sie richtig sind.</span></li>
+        <li><b>Was</b><span>Eine klare, unaufgeregte Offenlegung – „digitaler Assistent“, „Anrufassistent“ oder „KI-Assistent“ –, die nicht wie eine Ausrede klingt.</span></li>
+        <li><b>Kann</b><span>Höchstens ein bis zwei Fähigkeiten nennen, etwa Termin buchen oder Anliegen aufnehmen. Keine Leistungsübersicht.</span></li>
+        <li><b>Fluchtweg</b><span>Ein konkreter, während des ganzen Gesprächs gültiger Weg zu einem Menschen – nicht nur ein einmaliges Angebot am Anfang.</span></li>
+        <li><b>Tempo</b><span>So kurz, wie es die Branche erlaubt. Ein Restaurant verträgt drei Sekunden, eine Arztpraxis darf sich für Klarheit etwas mehr Zeit nehmen.</span></li>
+      </ul>
+
+      <div class="wnote">
+        <strong>Zum Weissmann-Assistenten:</strong> Wie weit vorne die Offenlegung im Gespräch steht, lässt sich pro Branche konfigurieren – die Entscheidung sollte bewusst getroffen werden, nicht die Werkseinstellung bleiben. KI-Telefonassistent Starter: CHF 350/Monat, keine Setup-Gebühr, keine Mindestvertragslaufzeit.
+      </div>
+
+      <p class="disc">Orientierung auf Basis des verlinkten Leitfadens – keine Rechtsberatung und kein verbindliches Angebot. Das Werkzeug ordnet anhand Ihrer Angaben ein, ob Artikel 50 des EU AI Act greift; die Einordnung ersetzt keine individuelle Abklärung. Ihre Eingaben bleiben ausschliesslich in Ihrem Browser – nichts wird gespeichert, nichts gesendet.</p>
+    </section>
+  </div>
+
+  <footer class="linkbar" aria-label="Quelle und Umsetzung">
+    <p class="lb-title">Weiterlesen &amp; umsetzen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-transparenz-begruessung/" target="_blank" rel="noopener noreferrer" aria-label="Zum Leitfaden: Muss sich ein KI-Telefonassistent ausweisen? (opens in a new tab)">Zum vollständigen Leitfaden →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="KI-Telefonassistent von Weissmann ansehen (opens in a new tab)">KI-Telefonassistent von Weissmann →</a>
+    </div>
+    <p class="att">EU-Bezug-Check zur KI-Offenlegung · Begleitwerkzeug zum Leitfaden. Orientierung, kein Zitat und keine Rechtsberatung.</p>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    "use strict";
+    var greets = {
+      restaurant: {
+        label: "Restaurant · gute Begrüssung",
+        text: "„Grüezi, hier ist der digitale Assistent vom Ristorante Bellavista. Ich nehme Reservationen entgegen und verbinde Sie auf Wunsch sofort mit unserem Team. Für wie viele Personen darf ich reservieren?“",
+        note: "Tonlage: locker, schnell, ohne Titel oder Fachbegriffe – wie die Person, die sonst den Hörer abnimmt. Offenlegung, Nutzen und die eigentliche Frage stehen im selben Atemzug."
+      },
+      praxis: {
+        label: "Arztpraxis oder Klinik · gute Begrüssung",
+        text: "„Guten Tag, Sie sind mit dem digitalen Praxisassistenten der Hausarztpraxis Müller verbunden. Ich kann Termine buchen und allgemeine Fragen beantworten. Bei einem medizinischen Notfall legen Sie bitte auf und wählen die 144 – für alles andere sagen Sie einfach ‚Notfall‘, dann verbinde ich Sie sofort mit dem Praxisteam.“",
+        note: "Länger als beim Restaurant – und das ist richtig so: Hier zählt Klarheit mehr als Tempo, inklusive Weg zur 144 und zum Praxisteam. Der Assistent darf nie den Eindruck erwecken, er könne Symptome einschätzen."
+      },
+      handwerk: {
+        label: "Handwerksbetrieb · gute Begrüssung",
+        text: "„Grüezi, hier ist der Anrufassistent von Elektro Steiner. Ich nehme Ihr Anliegen auf, damit sich gleich jemand meldet. Akuter Notfall? Dann sagen Sie einfach ‚Notfall‘, das geht vor.“",
+        note: "Offenlegung im ersten Nebensatz, Dringlichkeits-Abkürzung direkt mitgeliefert. Ist der Betrieb sonst per Du, darf es der Assistent auch sein."
+      },
+      kanzlei: {
+        label: "Beratung, Kanzlei, Treuhand · gute Begrüssung",
+        text: "„Guten Tag, Sie erreichen den digitalen Empfang der Kanzlei Berger & Partner. Ich nehme Ihr Anliegen vertraulich auf und vereinbare bei Bedarf einen Rückruf durch die zuständige Person. Rechtliche Auskünfte erteilt ausschliesslich unser Team persönlich.“",
+        note: "Formell, aber nicht steif; die Grenze der eigenen Kompetenz wird explizit benannt statt verschwiegen. Wird nicht sofort klar, dass keine Rechtsberatung stattfindet, entsteht schnell der Eindruck, eine Auskunft der KI sei verbindlich gewesen."
+      }
+    };
+
+    var byId = function(id){ return document.getElementById(id); };
+    var elVerdict = byId("verdict");
+    var elBadge = byId("v-badge");
+    var elTitle = byId("v-title");
+    var elReasons = byId("v-reasons");
+    var elJuris = byId("v-juris");
+
+    function answer(name){
+      var el = document.querySelector('input[name="' + name + '"]:checked');
+      return el ? (el.value === "ja") : false;
+    }
+
+    function computeVerdict(){
+      var eu = answer("q_eu");
+      var onDate = answer("q_date");
+      var obvious = answer("q_obv");
+      var ch = answer("q_ch");
+
+      var tone, badgeClass, badgeText, title, reasons;
+
+      if (eu && !onDate){
+        tone = "info"; badgeClass = "info"; badgeText = "Ab 2. August 2026";
+        title = "Artikel 50 tritt für Ihr EU-Angebot am 2. August 2026 in Kraft.";
+        reasons = [
+          "Ihr Angebot richtet sich (auch) an Personen in der EU – damit fällt es unter Artikel 50 des EU AI Act.",
+          "Die Offenlegungspflicht gilt ab dem 2. August 2026: Sprachassistenten müssen sich dann als KI zu erkennen geben, sofern das nicht ohnehin offensichtlich ist.",
+          "Bereiten Sie die Begrüssung jetzt vor, damit sie zum Stichtag sitzt."
+        ];
+      } else if (eu && onDate && obvious){
+        tone = "req"; badgeClass = "req"; badgeText = "Offenlegung ratsam";
+        title = "Artikel 50 greift – die Offensichtlichkeits-Ausnahme ist am Telefon aber unzuverlässig.";
+        reasons = [
+          "Ihr Angebot hat EU-Bezug, damit gilt Artikel 50 (seit dem 2. August 2026).",
+          "Artikel 50 macht eine Ausnahme, wenn ohnehin offensichtlich ist, dass eine KI antwortet – am Telefon ist das aber selten verlässlich: Eine natürlich klingende Stimme wird oft nicht sofort als Software erkannt.",
+          "Verlassen Sie sich nicht auf die Offensichtlichkeit; ein kurzer, ehrlicher Hinweis in der Begrüssung ist der sichere Weg."
+        ];
+      } else if (eu && onDate){
+        tone = "req"; badgeClass = "req"; badgeText = "Offenlegung verlangt";
+        title = "Artikel 50 verlangt eine KI-Offenlegung in der Begrüssung.";
+        reasons = [
+          "Ihr Angebot richtet sich (auch) an Personen in der EU – damit greift Artikel 50 des EU AI Act (seit dem 2. August 2026).",
+          "Verlangt ist, dass sich der Sprachassistent als KI zu erkennen gibt – da es nicht ohnehin offensichtlich ist, braucht es einen klaren Hinweis am Anfang.",
+          "Die EU-Kommission hat ihre finale Auslegung dazu Ende Juli 2026 veröffentlicht."
+        ];
+      } else {
+        tone = "info"; badgeClass = "info"; badgeText = "Kein Art. 50 – trotzdem ehrlich";
+        title = "Kein spezifisches Gesetz schreibt einen Wortlaut vor – Offenlegung bleibt ratsam.";
+        reasons = [
+          "Ohne EU-Bezug greift Artikel 50 des EU AI Act nicht – die Schweiz kennt kein eigenständiges KI-Gesetz mit einer Formulierungspflicht.",
+          "Massgeblich bleibt der allgemeine Transparenzgrundsatz des revDSG und das Prinzip von Treu und Glauben; beide sprechen gegen bewusstes Verschweigen.",
+          "Praktisch heisst das: Wer direkt gefragt wird „Spreche ich mit einem Menschen?“, sollte die Frage ehrlich beantworten können."
+        ];
+      }
+
+      var juris;
+      if (ch){
+        juris = "Jurisdiktion: Als Betrieb in der Schweiz gilt für Sie der Transparenzgrundsatz des revDSG; sobald ein Angebot EU-Bezug hat, kommt Artikel 50 hinzu.";
+      } else if (eu){
+        juris = "Jurisdiktion: Dieser Leitfaden betrachtet die Schweizer Ausgangslage; für den EU-Bezug ist Artikel 50 massgeblich, andere Rechtsordnungen liegen ausserhalb seines Rahmens.";
+      } else {
+        juris = "Jurisdiktion: Dieser Leitfaden deckt die Schweizer Ausgangslage und den EU-Bezug ab – andere Rechtsordnungen liegen ausserhalb seines Rahmens.";
+      }
+
+      elVerdict.className = "verdict tone-" + tone;
+      elBadge.className = "badge " + badgeClass;
+      elBadge.textContent = badgeText;
+      elTitle.textContent = title;
+      elReasons.innerHTML = "";
+      for (var i = 0; i < reasons.length; i++){
+        var li = document.createElement("li");
+        li.textContent = reasons[i];
+        elReasons.appendChild(li);
+      }
+      elJuris.textContent = juris;
+    }
+
+    function renderGreet(branch){
+      var g = greets[branch] || greets.restaurant;
+      byId("greet-lbl").textContent = g.label;
+      byId("greet-text").textContent = g.text;
+      byId("greet-note").textContent = g.note;
+    }
+
+    var radios = document.querySelectorAll('input[type="radio"]');
+    for (var r = 0; r < radios.length; r++){
+      radios[r].addEventListener("change", computeVerdict);
+    }
+
+    var btns = document.querySelectorAll(".branchbtn");
+    for (var b = 0; b < btns.length; b++){
+      btns[b].addEventListener("click", function(){
+        for (var k = 0; k < btns.length; k++){
+          btns[k].setAttribute("aria-pressed", btns[k] === this ? "true" : "false");
+        }
+        renderGreet(this.getAttribute("data-branch"));
+      });
+    }
+
+    computeVerdict();
+    renderGreet("restaurant");
+  })();
+</script>
