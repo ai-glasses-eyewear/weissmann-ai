@@ -20,8 +20,10 @@ auth** · interactive on the public version · visible article link · **anonymo
 - Therefore the strict "completed" criteria #3 (published publicly), #5 (opens without auth) and #8
   (anonymous re-verification) **cannot be satisfied by this session** for any of the 60.
 
-Per the task's contingency, work **stopped after the first pilot**. Pilots 2 and 3 were **not** built, and
-**no unpublished substitute artifacts / spec directories** were created for the remaining 59.
+**Update:** in later rounds the owner asked to proceed pilot-by-pilot anyway, publishing each **privately**
+for a manual public Share. All **three pilots are now built and privately published** (details below); each
+still shows "Share, private" and awaits the owner's manual public share + anonymous verification. No
+substitute artifacts or spec directories were created for the remaining 57.
 
 ## Pilot 1 — google-ads-kosten-schweiz-kmu (DE)
 
@@ -72,7 +74,28 @@ Per the task's contingency, work **stopped after the first pilot**. Pilots 2 and
 > path `how-to-test-ai-receptionist-before-buying` returns 404 and is not used as a link.
 
 ## Pilot 3 — sito-web-chf-880-svizzera (IT)
-Not built — blocked by the capability finding above (build stopped after Pilot 1 per task instruction).
+
+| Field | Value |
+|---|---|
+| Article ID | `sito-web-chf-880-svizzera` |
+| Language | Italian (it) |
+| Production article URL | https://weissmann.ai/it/ai-academy/marketing-seo-geo/sito-web-economico-svizzera-chf-880/ |
+| Artifact title | Il sito web da CHF 880 è adatto alla tua azienda? · Weissmann |
+| Interaction type | Scope diagnostic / decision tree (11 guided questions → one of three verdicts) |
+| Source (repo) | `phase2-artifacts/sito-web-chf-880-svizzera/index.html` |
+| Private Claude URL (owner-only) | https://claude.ai/code/artifact/6b502b88-c844-486b-a049-cbe6b7b4d746 |
+| **Public Claude URL** | **— none yet (manual Share required) —** |
+| Publication status | **PRIVATE — awaiting manual public share** (page control reads "Share, private") |
+| Renders in Claude | Yes (verified: correct title in the artifact view) |
+| Functional test | Passed — verdicts verified deterministically (all-fit → Adatto; soft → Possibile riducendo lo scope; shop/booking/CRM/web-app → Meglio un progetto personalizzato + Complesso da 9'900; >8 pages / 3+ languages → Business 4'990; partial → provisional) |
+| Mobile test | Responsive by construction (single-column ≤900px, no horizontal overflow) |
+| Article backlink | Present — "Leggi la guida completa →" (working slug URL above) |
+| Service CTA | Present — "Scopri il servizio siti web di Weissmann →" → weissmann.ai/it/servizi/sviluppo-siti-web-ai/ |
+| Pricing accuracy | CHF 880 / regular CHF 2'490 (one-time); Business CHF 4'990; Complex from CHF 9'900 — verified vs `src/data/pricing.ts`. "Premium, non economico"; no invented discount/scarcity |
+| Remaining issue | **Public sharing** — owner must Share→public, then anonymously verify and record the URL here |
+
+> Article-URL note: the production **slug** is `sito-web-economico-svizzera-chf-880` (HTTP 200). The
+> id-based path `sito-web-chf-880-svizzera` returns 404 and is not used as a link.
 
 ## What is needed to complete the pilots
 
