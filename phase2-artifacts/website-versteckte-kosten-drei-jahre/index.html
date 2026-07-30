@@ -1,0 +1,412 @@
+<title>Drei-Jahres-Kostenrechner für Websites · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .sec-h{font-size:1.15rem;margin:26px 2px 12px;letter-spacing:-.01em}
+  .sec-lead{color:var(--ink-soft);margin:0 2px 14px;font-size:.95rem;max-width:70ch}
+
+  .calc{margin-top:18px}
+  .calc-note{font-size:.82rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:11px 13px;margin:0 0 16px;line-height:1.5}
+  .rows{display:flex;flex-direction:column;gap:12px}
+  .row{border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:var(--card);display:grid;grid-template-columns:1fr;gap:12px}
+  .row.start{border-color:var(--navy);background:var(--accent-soft)}
+  @media(min-width:660px){.row{grid-template-columns:minmax(0,1fr) 300px;align-items:start}}
+  .row-main{min-width:0}
+  .row-label{font-weight:650;font-size:.98rem;display:block;margin:0 0 3px;color:var(--ink)}
+  .row-desc{font-size:.83rem;color:var(--ink-mute);margin:0;line-height:1.45}
+  .row-ctrl{display:flex;flex-direction:column;gap:8px}
+  .field-line{display:flex;gap:8px;align-items:stretch}
+  .chf-prefix{display:flex;align-items:center;font-size:.8rem;font-weight:700;color:var(--ink-mute);background:var(--soft);border:1px solid var(--line);border-right:0;border-radius:9px 0 0 9px;padding:0 9px}
+  input[type=text].amt{flex:1;min-width:0;font:inherit;font-variant-numeric:tabular-nums;font-size:1rem;padding:9px 11px;border:1px solid var(--line);border-radius:0 9px 9px 0;background:var(--card);color:var(--ink);text-align:right}
+  select.freq{font:inherit;font-size:.86rem;padding:8px 9px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink)}
+  input.amt:focus-visible,select.freq:focus-visible,button:focus-visible,summary:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent);border-color:var(--navy)}
+  .row-sub{font-size:.8rem;color:var(--ink-soft);font-variant-numeric:tabular-nums;text-align:right;min-height:1.1em}
+  .row-sub b{color:var(--ink);font-weight:700}
+
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  button{font:inherit;cursor:pointer;border-radius:10px;border:1.5px solid var(--navy);padding:10px 16px;font-weight:600;font-size:.92rem;min-height:44px;background:var(--card);color:var(--navy)}
+  button.primary{background:var(--navy);color:var(--on-navy)}button.primary:hover{background:var(--navy-hover)}
+  button.ghost:hover{background:var(--soft)}
+  .toast{font-size:.83rem;color:var(--ok);align-self:center;font-weight:600}
+
+  .totals{display:grid;grid-template-columns:1fr;gap:12px;margin-top:20px}
+  @media(min-width:660px){.totals{grid-template-columns:1fr 1fr 1fr}}
+  .tile{border:1px solid var(--line);border-radius:12px;padding:15px 16px;background:var(--card)}
+  .tile-label{font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 6px}
+  .tile-val{font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.01em;color:var(--ink);margin:0;line-height:1.1}
+  .tile-hint{font-size:.76rem;color:var(--ink-mute);margin:6px 0 0}
+  .tile.beyond{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 40%,var(--line))}
+  .tile.total{background:var(--navy);border-color:var(--navy)}
+  .tile.total .tile-label{color:color-mix(in srgb,var(--on-navy) 72%,transparent)}
+  .tile.total .tile-val,.tile.total .tile-hint{color:var(--on-navy)}
+  .share{font-size:.85rem;color:var(--ink-soft);margin:12px 2px 0;font-variant-numeric:tabular-nums}
+  .share b{color:var(--ink)}
+
+  .note{border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:14px 16px;margin-top:14px}
+  .note.accent{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 34%,var(--line))}
+  .note-title{font-weight:700;font-size:.9rem;margin:0 0 6px;color:var(--ink)}
+  .note p{margin:0 0 6px;font-size:.86rem;color:var(--ink-soft);line-height:1.5}
+  .note p:last-child{margin-bottom:0}
+  .note ul{margin:6px 0 0;padding-left:18px}
+  .note li{font-size:.86rem;color:var(--ink-soft);margin:5px 0;line-height:1.45}
+
+  .scen{display:grid;grid-template-columns:1fr;gap:12px;margin-top:6px}
+  @media(min-width:700px){.scen{grid-template-columns:1fr 1fr 1fr}}
+  .scen-card{border:1px solid var(--line);border-radius:12px;padding:14px 15px;background:var(--card)}
+  .scen-tag{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin:0 0 4px}
+  .scen-name{font-weight:650;font-size:.92rem;margin:0 0 8px;color:var(--ink)}
+  .scen-total{font-size:1.3rem;font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink);margin:0}
+  .scen-total span{font-size:.72rem;font-weight:600;color:var(--ink-mute);display:block;text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+  details{margin-top:10px}
+  summary{cursor:pointer;font-size:.82rem;font-weight:600;color:var(--navy)}
+  details ul{margin:8px 0 0;padding-left:16px}
+  details li{font-size:.8rem;color:var(--ink-soft);margin:4px 0;line-height:1.4}
+  .example-flag{font-size:.78rem;color:var(--warn);background:var(--warn-soft);border-radius:8px;padding:8px 11px;margin:0 0 12px;font-weight:600}
+
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+</style>
+
+<main class="wrap">
+  <p class="kicker">KI-Marketing, SEO &amp; GEO · Drei-Jahres-Kosten</p>
+  <h1>Der Drei-Jahres-Kostenrechner für Ihre Website</h1>
+  <p class="lede">Der Angebotspreis ist nur der erste Posten einer Rechnung, die 36 Monate weiterläuft. Tragen Sie Ihre <strong>eigenen</strong> Zahlen zu den Kostentreibern ein, die in einer Offerte selten als eigene Zeile stehen – und sehen Sie, was jenseits des Startpreises noch dazukommt. Dieser Rechner erfindet keine Zahlen; alle Beträge geben Sie selbst ein.</p>
+
+  <section class="card card-pad calc" aria-labelledby="calc-h">
+    <h2 id="calc-h" class="sec-h" style="margin-top:0">Ihre Positionen über drei Jahre</h2>
+    <p class="calc-note">Betrachtungszeitraum: drei Jahre (36 Monate) ab Launch – eine praktikable Grösse für einen ersten Ownership-Vergleich, keine feste Lebensdauer jeder Website. Wiederkehrende Positionen werden über die vollen drei Jahre gerechnet. Läuft eine Position nur zeitweise oder startet sie später, tragen Sie den tatsächlichen Gesamtbetrag ein und wählen «Gesamtbetrag». Ihr eigener Zeitaufwand fliesst bewusst nicht als erfundener Stundensatz ein (siehe Hinweis weiter unten).</p>
+
+    <div class="rows" id="rows"><!-- rows injected by script --></div>
+
+    <div class="actions">
+      <button type="button" class="primary" id="copyBtn">Zusammenfassung kopieren</button>
+      <button type="button" class="ghost" id="resetBtn">Zurücksetzen</button>
+      <span class="toast" id="toast" role="status" aria-live="polite"></span>
+    </div>
+
+    <div class="totals" id="totals" aria-live="polite">
+      <div class="tile">
+        <p class="tile-label">Angebots-/Baupreis</p>
+        <p class="tile-val" id="tStart">CHF 0</p>
+        <p class="tile-hint">einmalig – der Startpreis auf dem Papier</p>
+      </div>
+      <div class="tile beyond">
+        <p class="tile-label">Weitere Kosten · 3 Jahre</p>
+        <p class="tile-val" id="tBeyond">CHF 0</p>
+        <p class="tile-hint">alles jenseits des Angebotspreises</p>
+      </div>
+      <div class="tile total">
+        <p class="tile-label">Drei-Jahres-Gesamt (TCO)</p>
+        <p class="tile-val" id="tTco">CHF 0</p>
+        <p class="tile-hint">Startpreis + laufende Kosten</p>
+      </div>
+    </div>
+    <p class="share" id="share">Sobald Sie Werte eingeben, sehen Sie hier, welchen Anteil der Angebotspreis an den Drei-Jahres-Kosten hat.</p>
+
+    <p class="disc">Orientierung, kein Angebot und keine Beratung. Dieser Rechner nutzt ausschliesslich Ihre eigenen Eingaben und die Kostentreiber aus dem zugehörigen Artikel – er erfindet keine Marktzahlen und keinen «Durchschnitt», den es seriös nicht zu beziffern gibt. Alle Eingaben bleiben nur in diesem Browser-Tab und werden nirgends gespeichert oder gesendet.</p>
+  </section>
+
+  <div class="note">
+    <p class="note-title">Zwei Faktoren, die diese Rechnung bewusst nicht in Franken beziffert</p>
+    <p><strong>Ihr eigener Zeitaufwand.</strong> Aufbau, Texte und laufende Pflege in Eigenregie sind real, fliessen hier aber nicht als erfundener Stundensatz in die Franken-Summe ein. Eine Baukasten-Lösung verlangt oft wenig Bargeld, aber viel Eigenleistung – rechnen Sie diesen Einsatz qualitativ mit.</p>
+    <p><strong>Entgangene Anfragen durch Performance und Konversion.</strong> Eine langsame oder schlecht bedienbare Website kostet Anfragen, die nie als Rechnungsposition auftauchen. Google dokumentiert den technischen Zusammenhang über die Core Web Vitals. Wie stark sich das auswirkt, unterscheidet sich je nach Branche und Konkurrenz so stark, dass eine einzelne Franken-Zahl eine Genauigkeit vortäuschen würde, die nicht existiert – deshalb steht sie hier nicht, ist aber qualitativ ernst zu nehmen.</p>
+  </div>
+
+  <h2 class="sec-h">Beispielrechnung aus dem Artikel</h2>
+  <p class="sec-lead">Drei Szenarien zur Illustration der Mechanik – wie sich Kostentreiber über drei Jahre addieren. Die Zahlen sind ausdrücklich Beispielwerte, keine Marktstatistik und kein Durchschnitt.</p>
+  <p class="example-flag">Illustration der Mechanik · keine Marktstatistik · keine Herstellerangaben</p>
+  <div class="scen">
+    <div class="scen-card">
+      <p class="scen-tag">Szenario A</p>
+      <p class="scen-name">Baukasten-Website in Eigenregie</p>
+      <p class="scen-total">CHF 1’590<span>3 Jahre, reine Franken</span></p>
+      <details>
+        <summary>Jahr für Jahr</summary>
+        <ul>
+          <li>Jahr 1: Abo CHF 25/Monat = CHF 300 (Aufbau in Eigenleistung, hier nicht beziffert)</li>
+          <li>Jahr 2: Abo CHF 300 + Buchungsformular CHF 120 = CHF 420</li>
+          <li>Jahr 3: Abo CHF 300 + Formular CHF 120 + Design-Auffrischung CHF 450 = CHF 870</li>
+        </ul>
+      </details>
+    </div>
+    <div class="scen-card">
+      <p class="scen-tag">Szenario B</p>
+      <p class="scen-name">Günstiger Einmal-Build ohne Wartungsvertrag</p>
+      <p class="scen-total">CHF 2’390<span>3 Jahre, reine Franken</span></p>
+      <details>
+        <summary>Jahr für Jahr</summary>
+        <ul>
+          <li>Jahr 1: Baupreis CHF 900 + Hosting/Domain CHF 180 = CHF 1’080</li>
+          <li>Jahr 2: Hosting/Domain CHF 180 + inhaltliche Anpassung CHF 250 = CHF 430</li>
+          <li>Jahr 3: Hosting/Domain CHF 180 + Neuaufbau ohne Code-Zugriff CHF 700 = CHF 880</li>
+        </ul>
+      </details>
+    </div>
+    <div class="scen-card">
+      <p class="scen-tag">Szenario C</p>
+      <p class="scen-name">Professioneller Build mit eingeplanter Wartung</p>
+      <p class="scen-total">CHF 3’940<span>3 Jahre, reine Franken</span></p>
+      <details>
+        <summary>Jahr für Jahr</summary>
+        <ul>
+          <li>Jahr 1: Baupreis CHF 2’500 + Wartung CHF 40/Monat (CHF 480) = CHF 2’980</li>
+          <li>Jahr 2: Wartungsvertrag CHF 480, kein Redesign nötig = CHF 480</li>
+          <li>Jahr 3: Wartungsvertrag CHF 480, keine weiteren Positionen = CHF 480</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+  <div class="note">
+    <p>In diesem konkreten Beispiel ist die günstigste Franken-Summe die Baukasten-Lösung in Eigenregie: viel Eigenleistung, wenig Bargeld. Szenario C verlangt wenig Eigenleistung, aber mehr Bargeld. Das eigentliche Risiko liegt nicht im tiefen Startpreis an sich, sondern in einem tiefen Startpreis <strong>ohne geklärte Eigentumsverhältnisse an Code und Inhalten</strong> – dann wird aus einem Anbieterwechsel (Szenario B) faktisch ein Neubau. Ändert sich eine der Annahmen, verschiebt sich das Bild. Genau dafür ist der Rechner oben da: mit Ihren eigenen Zahlen statt mit diesen Beispielwerten.</p>
+  </div>
+
+  <h2 class="sec-h">Wann eine günstige Website trotzdem die richtige Wahl ist</h2>
+  <p class="sec-lead">Ein tiefer Startpreis ist nicht automatisch ein Fehler. Die eigentliche Frage ist nicht «billig oder teuer», sondern ob die Wahl zur erwarteten Nutzungsdauer und zum eigenen Pflegewillen passt.</p>
+  <div class="note">
+    <ul>
+      <li>Eine Kampagnen- oder Eventseite mit klar begrenzter Lebensdauer, die nach wenigen Monaten ohnehin wieder offline geht.</li>
+      <li>Ein Geschäftsmodell, das noch getestet wird, bevor investiert wird – eine einfache, selbst gepflegte Seite validiert die Idee, ohne Kapital zu binden.</li>
+      <li>Eine Inhaberin oder ein Inhaber mit Zeit und Interesse, ein Baukastensystem selbst zu pflegen – für die dieser Aufwand eine akzeptierte Aufgabe ist, kein verstecktes Opfer.</li>
+      <li>Ein sehr kleines, lokal über Empfehlungen laufendes Geschäft, bei dem die Website eine Visitenkarte ist, kein Verkaufskanal.</li>
+    </ul>
+  </div>
+
+  <div class="note accent">
+    <p class="note-title">Zur Einordnung – ohne die Rechnung zu manipulieren</p>
+    <p>Weissmanns eigene Starter Website kostet regulär CHF 2’490, aktuell zum Aktionspreis von CHF 880 – als einmaliger Baupreis vergleichbar mit dem Startposten in Szenario B oder C, <strong>nicht</strong> als automatischer Sieger dieser Rechnung. Ein gebündeltes, mehrjähriges Wartungspaket verkauft Weissmann aktuell nicht als festen Preisposten; Hosting und laufende Pflege sind nach dem Launch separat zu klären – genau wie es die Kostentreiber oben empfehlen, bei Weissmann ebenso wie bei jedem anderen Anbieter. Die Franken-Zahlen für Jahr 2 und Jahr 3 hängen deshalb von den individuellen Vereinbarungen ab, nicht von einer Zahl, die dieser Rechner vorwegnehmen könnte.</p>
+  </div>
+
+  <footer class="linkbar" aria-label="Quelle und nächster Schritt">
+    <p class="lb-title">Quelle &amp; Umsetzung</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/marketing-seo-geo/website-versteckte-kosten-drei-jahre/" target="_blank" rel="noopener noreferrer" aria-label="Artikel «Die versteckten Kosten einer billigen Website» lesen (opens in a new tab)">Zum Artikel: Die versteckten Kosten einer billigen Website →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-webentwicklung/" target="_blank" rel="noopener noreferrer" aria-label="KI-Webentwicklung von Weissmann ansehen (opens in a new tab)">KI-Webentwicklung von Weissmann →</a>
+    </div>
+    <p class="att">Ein Rechner als Ergänzung zum Leitfaden. Orientierung, kein Angebot.</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var MULT = { once: 1, year: 3, month: 36 };
+  var FREQ_LABEL = { once: "einmalig / Gesamtbetrag", year: "pro Jahr (× 3)", month: "pro Monat (× 36)" };
+  var FREQ_SHORT = { once: "einmalig", year: "pro Jahr", month: "pro Monat" };
+
+  var START = { id:"start", label:"Angebots- / Baupreis (Startpreis)", desc:"Die einmalige Bau- oder Kaufsumme aus der Offerte – der einzige Posten, der am Tag der Unterschrift überhaupt zählt.", freq:"once", fixed:true };
+
+  var DRIVERS = [
+    { id:"hosting",    label:"Domain & Hosting-Verlängerung",       desc:"Läuft unabhängig vom Baupreis jedes Jahr weiter – ganz gleich, wer die Website gebaut hat.", freq:"year" },
+    { id:"abo",        label:"Baukasten-Abogebühr",                 desc:"Das Basis-Abo wirkt günstig, bis ein Formular, Mehrsprachigkeit oder ein Shop ein höheres Tarif-Tier verlangt.", freq:"month" },
+    { id:"plugins",    label:"Plugin- & Erweiterungslizenzen",      desc:"Jahreslizenzen für Zusatzfunktionen wie Buchungsformular, Mitgliederbereich oder erweiterte Formulare.", freq:"year" },
+    { id:"security",   label:"Sicherheitsupdates & Wartung",        desc:"Separat verrechnete Betreuung – oder Zeitaufwand in Eigenregie. Eine ungepflegte Website wird nicht sofort sichtbar, aber real unsicherer.", freq:"month" },
+    { id:"redesign",   label:"Redesign / Auffrischung",             desc:"Vorlagen und Designtrends altern; bei vorlagenbasierten Systemen oft nur durch einen faktischen Neubau möglich, nicht durch ein Update.", freq:"once" },
+    { id:"content",    label:"Content-Pflege über den Anbieter",    desc:"Sind Text- oder Bildwechsel nur über den ursprünglichen Anbieter möglich, kosten sie Zeit und manchmal eine Rechnung.", freq:"year" },
+    { id:"migration",  label:"Migration bei Anbieterwechsel",       desc:"Ohne Eigentum an Code und Inhalten bedeutet ein Wechsel selten einen Umzug, sondern einen Neubau – mit entsprechendem Preis.", freq:"once" },
+    { id:"thirdparty", label:"Drittanbieter-Tools mit eigenem Abo", desc:"Newsletter-Anbindung, Terminbuchung, Live-Chat – jedes Werkzeug bringt eine eigene, oft monatliche Rechnung mit.", freq:"month" },
+    { id:"support",    label:"Ungeplanter Support nach Stundensatz",desc:"Einzelne «kurze» Änderungswünsche wirken klein, summieren sich über drei Jahre aber zu einem eigenen Kostenblock.", freq:"year" }
+  ];
+
+  function chf(n){
+    if(!isFinite(n)) n = 0;
+    var neg = n < 0; n = Math.abs(n);
+    var r = Math.round(n * 100) / 100;
+    var hasFrac = Math.abs(r - Math.round(r)) > 1e-9;
+    var s = hasFrac ? r.toFixed(2) : String(Math.round(r));
+    var parts = s.split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, "’");
+    return "CHF " + (neg ? "−" : "") + parts.join(".");
+  }
+
+  // Parse a user-typed amount: accept comma or dot as decimal, ignore spaces/apostrophes.
+  function parseAmt(raw){
+    if(!raw) return 0;
+    var cleaned = String(raw).replace(/[\s’']/g, "").replace(",", ".").replace(/[^0-9.]/g, "");
+    var v = parseFloat(cleaned);
+    if(!isFinite(v) || v < 0) return 0;
+    return v;
+  }
+
+  var rowsEl = document.getElementById("rows");
+  var state = {}; // id -> {amt, freq}
+
+  function makeRow(item){
+    var wrap = document.createElement("div");
+    wrap.className = "row" + (item.fixed ? " start" : "");
+
+    var main = document.createElement("div");
+    main.className = "row-main";
+    var lab = document.createElement("label");
+    lab.className = "row-label";
+    lab.setAttribute("for", "amt-" + item.id);
+    lab.textContent = item.label;
+    var desc = document.createElement("p");
+    desc.className = "row-desc";
+    desc.textContent = item.desc;
+    main.appendChild(lab); main.appendChild(desc);
+
+    var ctrl = document.createElement("div");
+    ctrl.className = "row-ctrl";
+
+    var line = document.createElement("div");
+    line.className = "field-line";
+    var pre = document.createElement("span");
+    pre.className = "chf-prefix"; pre.setAttribute("aria-hidden", "true"); pre.textContent = "CHF";
+    var inp = document.createElement("input");
+    inp.type = "text"; inp.className = "amt"; inp.id = "amt-" + item.id;
+    inp.setAttribute("inputmode", "decimal");
+    inp.setAttribute("autocomplete", "off");
+    inp.setAttribute("placeholder", "0");
+    inp.setAttribute("aria-label", "Betrag für " + item.label + " in CHF");
+    line.appendChild(pre); line.appendChild(inp);
+
+    var sel = document.createElement("select");
+    sel.className = "freq"; sel.id = "freq-" + item.id;
+    sel.setAttribute("aria-label", "Häufigkeit für " + item.label);
+    if(item.fixed){
+      var o = document.createElement("option"); o.value = "once"; o.textContent = FREQ_LABEL.once; sel.appendChild(o);
+      sel.disabled = true;
+    } else {
+      ["once","year","month"].forEach(function(f){
+        var op = document.createElement("option"); op.value = f; op.textContent = FREQ_LABEL[f];
+        if(f === item.freq) op.selected = true;
+        sel.appendChild(op);
+      });
+    }
+
+    var sub = document.createElement("div");
+    sub.className = "row-sub"; sub.id = "sub-" + item.id;
+    sub.setAttribute("aria-live", "off");
+
+    ctrl.appendChild(line); ctrl.appendChild(sel); ctrl.appendChild(sub);
+    wrap.appendChild(main); wrap.appendChild(ctrl);
+    rowsEl.appendChild(wrap);
+
+    state[item.id] = { amt: 0, freq: item.fixed ? "once" : item.freq };
+
+    inp.addEventListener("input", function(){ state[item.id].amt = parseAmt(inp.value); recompute(); });
+    sel.addEventListener("change", function(){ state[item.id].freq = sel.value; recompute(); });
+  }
+
+  function subtotal(id){
+    var s = state[id];
+    return s.amt * MULT[s.freq];
+  }
+
+  function recompute(){
+    var startTotal = subtotal("start");
+    var beyond = 0;
+    DRIVERS.forEach(function(d){
+      var st = subtotal(d.id);
+      beyond += st;
+      var subEl = document.getElementById("sub-" + d.id);
+      if(state[d.id].amt > 0){
+        subEl.innerHTML = "= <b>" + chf(st) + "</b> über 3 Jahre";
+      } else {
+        subEl.textContent = "";
+      }
+    });
+    var startSub = document.getElementById("sub-start");
+    startSub.innerHTML = startTotal > 0 ? "= <b>" + chf(startTotal) + "</b> einmalig" : "";
+
+    var tco = startTotal + beyond;
+    document.getElementById("tStart").textContent = chf(startTotal);
+    document.getElementById("tBeyond").textContent = chf(beyond);
+    document.getElementById("tTco").textContent = chf(tco);
+
+    var shareEl = document.getElementById("share");
+    if(tco > 0){
+      var pct = Math.round(startTotal / tco * 100);
+      shareEl.innerHTML = "Der Angebotspreis macht <b>" + pct + "%</b> der Drei-Jahres-Gesamtkosten aus – die restlichen <b>" + (100 - pct) + "%</b> (" + chf(beyond) + ") stehen selten in der ursprünglichen Offerte.";
+    } else {
+      shareEl.textContent = "Sobald Sie Werte eingeben, sehen Sie hier, welchen Anteil der Angebotspreis an den Drei-Jahres-Kosten hat.";
+    }
+  }
+
+  makeRow(START);
+  DRIVERS.forEach(makeRow);
+  recompute();
+
+  // Reset
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    Object.keys(state).forEach(function(id){
+      state[id].amt = 0;
+      var inp = document.getElementById("amt-" + id);
+      if(inp) inp.value = "";
+    });
+    recompute();
+    flash("Zurückgesetzt.");
+  });
+
+  // Copy summary
+  function buildSummary(){
+    var lines = [];
+    lines.push("Drei-Jahres-Kostenrechner für Websites – meine Schätzung");
+    lines.push("");
+    var startTotal = subtotal("start");
+    lines.push("Angebots-/Baupreis (einmalig): " + chf(startTotal));
+    var beyond = 0;
+    var detail = [];
+    DRIVERS.forEach(function(d){
+      var st = subtotal(d.id); beyond += st;
+      if(state[d.id].amt > 0){
+        detail.push("- " + d.label + ": " + chf(state[d.id].amt) + " " + FREQ_SHORT[state[d.id].freq] + " -> " + chf(st) + " / 3 Jahre");
+      }
+    });
+    lines.push("Weitere Kosten über 3 Jahre: " + chf(beyond));
+    lines.push("Drei-Jahres-Gesamtkosten (TCO): " + chf(startTotal + beyond));
+    if(detail.length){
+      lines.push("");
+      lines.push("Positionen:");
+      detail.forEach(function(l){ lines.push(l); });
+    }
+    lines.push("");
+    lines.push("Alle Beträge selbst eingegeben. Betrachtungszeitraum 3 Jahre / 36 Monate.");
+    lines.push("Eigener Zeitaufwand und entgangene Anfragen sind bewusst nicht in Franken beziffert.");
+    lines.push("Orientierung, kein Angebot. Quelle: weissmann.ai/ki-academy/marketing-seo-geo/website-versteckte-kosten-drei-jahre/");
+    return lines.join("\n");
+  }
+
+  function flash(msg){
+    var t = document.getElementById("toast");
+    t.textContent = msg;
+    window.setTimeout(function(){ if(t.textContent === msg) t.textContent = ""; }, 3000);
+  }
+
+  document.getElementById("copyBtn").addEventListener("click", function(){
+    var text = buildSummary();
+    function fallback(){
+      try{
+        var ta = document.createElement("textarea");
+        ta.value = text; ta.setAttribute("readonly", "");
+        ta.style.position = "absolute"; ta.style.left = "-9999px";
+        document.body.appendChild(ta); ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        flash(ok ? "In die Zwischenablage kopiert." : "Kopieren nicht möglich.");
+      }catch(e){ flash("Kopieren nicht möglich."); }
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ flash("In die Zwischenablage kopiert."); }, fallback);
+    } else {
+      fallback();
+    }
+  });
+})();
+</script>

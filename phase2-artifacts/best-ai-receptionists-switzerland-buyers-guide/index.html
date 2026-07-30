@@ -1,0 +1,493 @@
+<title>Which AI-receptionist buyer are you? · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  /* footer link-band */
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+
+  /* custom */
+  .head{margin-bottom:18px}
+  .disclose{margin:14px 0 0;font-size:.86rem;color:var(--ink-soft);background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .glance{margin-top:16px}
+  .glance h2,.formcard h2,.result h2{font-size:.95rem;letter-spacing:.02em;margin:0 0 12px;color:var(--ink)}
+  .glance-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(min-width:720px){.glance-grid{grid-template-columns:repeat(4,1fr)}}
+  .gcard{border:1px solid var(--line);border-radius:11px;padding:12px 13px;background:var(--soft)}
+  .gcard .gp{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 5px}
+  .gcard .gt{font-weight:600;font-size:.92rem;margin:0;color:var(--ink)}
+
+  .formcard{margin-top:16px}
+  .q{border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin:0 0 12px;background:var(--card)}
+  .q:last-of-type{margin-bottom:0}
+  .q legend{font-weight:600;font-size:1rem;padding:0;margin:0 0 4px;color:var(--ink)}
+  .qnum{display:inline-block;font-size:.7rem;font-weight:700;color:var(--navy);letter-spacing:.08em;margin-bottom:6px}
+  .opts{display:grid;gap:8px;margin-top:10px}
+  .opt{display:flex;gap:11px;align-items:flex-start;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;background:var(--card);transition:border-color .12s,background .12s}
+  .opt:hover{background:var(--soft)}
+  .opt input{margin:2px 0 0;width:18px;height:18px;flex:0 0 auto;accent-color:var(--navy);cursor:pointer}
+  .opt .otx{font-size:.94rem;color:var(--ink-soft)}
+  .opt:has(input:checked){border-color:var(--navy);background:var(--accent-soft)}
+  .opt:has(input:checked) .otx{color:var(--ink)}
+  .opt:focus-within{box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent);border-color:var(--navy)}
+
+  .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+  .btn{font-family:inherit;font-weight:600;font-size:.95rem;padding:12px 20px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);background:transparent;cursor:pointer;min-height:46px}
+  .btn:hover{background:var(--soft)}
+  .btn.primary{background:var(--navy);color:var(--on-navy)}.btn.primary:hover{background:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .hint{font-size:.85rem;color:var(--warn);font-weight:600;margin:0}
+  .hint[hidden]{display:none}
+
+  .result{margin-top:16px}
+  .result[hidden]{display:none}
+  .eyebrow{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 8px}
+  .pmatch{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 6px}
+  .pill{display:inline-block;background:var(--navy);color:var(--on-navy);font-weight:700;font-size:1rem;padding:6px 13px;border-radius:999px;line-height:1.25}
+  .pill.alt{background:var(--accent);}
+  .amp{color:var(--ink-mute);font-weight:600}
+  .tagline{color:var(--ink-soft);margin:8px 0 0;font-size:1rem;max-width:66ch}
+  .closenote{font-size:.9rem;color:var(--ink-soft);background:var(--soft);border-radius:10px;padding:11px 13px;margin:14px 0 0}
+
+  .bars{margin:16px 0 4px;display:grid;gap:7px}
+  .bar-row{display:grid;grid-template-columns:minmax(120px,1.1fr) 3fr auto;gap:10px;align-items:center;font-size:.85rem}
+  .bar-lab{color:var(--ink-soft)}
+  .bar-track{background:var(--soft);border-radius:999px;height:10px;overflow:hidden;border:1px solid var(--line)}
+  .bar-fill{height:100%;background:var(--accent);border-radius:999px}
+  .bar-row.win .bar-fill{background:var(--navy)}
+  .bar-row.win .bar-lab{color:var(--ink);font-weight:700}
+  .bar-val{color:var(--ink-mute);font-variant-numeric:tabular-nums;min-width:2.4em;text-align:right}
+
+  .blocks{display:grid;gap:12px;margin-top:16px}@media(min-width:720px){.blocks{grid-template-columns:1fr 1fr}}
+  .block{border:1px solid var(--line);border-radius:12px;padding:14px 15px;background:var(--card)}
+  .block.full{grid-column:1/-1}
+  .block h3{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;margin:0 0 10px}
+  .block.prio h3{color:var(--ok)}
+  .block.ask h3{color:var(--accent)}
+  .block.watch h3{color:var(--warn)}
+  .block.cross h3{color:var(--ink-mute)}
+  .block ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+  .block li{position:relative;padding-left:20px;font-size:.92rem;color:var(--ink-soft);line-height:1.5}
+  .block li::before{position:absolute;left:0;top:0;font-weight:700}
+  .block.prio li::before{content:"✓";color:var(--ok)}
+  .block.ask li::before{content:"?";color:var(--accent)}
+  .block.watch li::before{content:"!";color:var(--warn)}
+  .block.cross li::before{content:"•";color:var(--ink-mute)}
+  .block strong{color:var(--ink);font-weight:600}
+
+  .res-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+  .copied{font-size:.85rem;color:var(--ok);font-weight:600;margin:0}
+  .copied[hidden]{display:none}
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <p class="kicker">AI Agents, Automation &amp; Voice · Buyer-persona matcher</p>
+    <h1>Which AI-receptionist buyer are you?</h1>
+    <p class="lede">There is no single best AI receptionist in Switzerland — the guide compares six Swiss providers by buyer type instead of forcing them into one ranked list. Answer five quick questions and this tool matches you to one of its four buyer personas, then shows what to prioritise, what to ask every vendor, and what to watch out for.</p>
+    <p class="disclose"><strong>Disclosure:</strong> Weissmann publishes this guide and is one of the six providers compared (alongside AlpenAgent, Suisse Voice, NEX-AI, HeyPapaya and Alveni). It is not the fit for every persona — for a hotelier with existing property software the guide names a different provider plainly. Every fact below reflects each provider's own public site, accessed 29 July 2026.</p>
+  </header>
+
+  <section class="card card-pad glance" aria-labelledby="glance-h">
+    <h2 id="glance-h">The four buyer personas at a glance</h2>
+    <div class="glance-grid">
+      <div class="gcard"><p class="gp">Persona A</p><p class="gt">The cost-conscious founder who wants a number today</p></div>
+      <div class="gcard"><p class="gp">Persona B</p><p class="gt">The compliance-minded operations lead</p></div>
+      <div class="gcard"><p class="gp">Persona C</p><p class="gt">The hotelier with property software in place</p></div>
+      <div class="gcard"><p class="gp">Persona D</p><p class="gt">The technical team that builds its own integration</p></div>
+    </div>
+  </section>
+
+  <form class="card card-pad formcard" id="quiz" aria-labelledby="quiz-h" novalidate>
+    <h2 id="quiz-h">Five priority questions</h2>
+
+    <fieldset class="q">
+      <span class="qnum">QUESTION 1 OF 5</span>
+      <legend>What would make you walk away from a provider before you even test it?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q1" value="founder"><span class="otx">No published price — I am not booking a sales call just to find out what it costs.</span></label>
+        <label class="opt"><input type="radio" name="q1" value="compliance"><span class="otx">No written Swiss or Swiss/EU hosting statement, and no data-processing agreement on offer.</span></label>
+        <label class="opt"><input type="radio" name="q1" value="hotelier"><span class="otx">No named integration with the booking or property software my front desk already runs.</span></label>
+        <label class="opt"><input type="radio" name="q1" value="technical"><span class="otx">A closed system with no API, Zapier, n8n, Make.com or webhook access.</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q">
+      <span class="qnum">QUESTION 2 OF 5</span>
+      <legend>How does your team actually evaluate a new tool?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q2" value="founder"><span class="otx">Put a real number in a spreadsheet this afternoon and see if we can afford to try it.</span></label>
+        <label class="opt"><input type="radio" name="q2" value="compliance"><span class="otx">Read the data-processing agreement and sub-processor list before anything else.</span></label>
+        <label class="opt"><input type="radio" name="q2" value="hotelier"><span class="otx">Check whether it connects, by name, to the system our front desk already lives in.</span></label>
+        <label class="opt"><input type="radio" name="q2" value="technical"><span class="otx">Open the API and automation docs and work out how we would wire it up ourselves.</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q">
+      <span class="qnum">QUESTION 3 OF 5</span>
+      <legend>Which sentence sounds most like your business?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q3" value="founder"><span class="otx">Every franc counts — I want the cheapest honest way to try this.</span></label>
+        <label class="opt"><input type="radio" name="q3" value="compliance"><span class="otx">Client confidentiality is central to what we do.</span></label>
+        <label class="opt"><input type="radio" name="q3" value="hotelier"><span class="otx">We run bookings and check-ins, and peak times get busy fast.</span></label>
+        <label class="opt"><input type="radio" name="q3" value="technical"><span class="otx">We have in-house technical capacity and prefer to own our integrations.</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q">
+      <span class="qnum">QUESTION 4 OF 5</span>
+      <legend>Once it is live, who owns it?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q4" value="founder"><span class="otx">Me, the founder — I want low commitment and no lock-in.</span></label>
+        <label class="opt"><input type="radio" name="q4" value="compliance"><span class="otx">Operations or legal — it has to pass a compliance review.</span></label>
+        <label class="opt"><input type="radio" name="q4" value="hotelier"><span class="otx">The front desk — it has to fit the property-management system.</span></label>
+        <label class="opt"><input type="radio" name="q4" value="technical"><span class="otx">Our developers — they will maintain the integration after launch.</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q">
+      <span class="qnum">QUESTION 5 OF 5</span>
+      <legend>What is the one thing you most want the assistant to get right?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q5" value="founder"><span class="otx">A price and terms I can commit to without a conversation first.</span></label>
+        <label class="opt"><input type="radio" name="q5" value="compliance"><span class="otx">A defensible story about where our data is stored and how it is handled.</span></label>
+        <label class="opt"><input type="radio" name="q5" value="hotelier"><span class="otx">Slotting into our hotel software and holding up during a check-in rush.</span></label>
+        <label class="opt"><input type="radio" name="q5" value="technical"><span class="otx">Bending to the automations we build around it.</span></label>
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <button type="submit" class="btn primary" id="matchBtn">Show my match</button>
+      <button type="button" class="btn" id="resetBtn">Start over</button>
+      <p class="hint" id="hint" hidden role="status">Please answer all five questions for a match.</p>
+    </div>
+  </form>
+
+  <section class="card card-pad result" id="result" hidden aria-labelledby="result-h" aria-live="polite">
+    <p class="eyebrow" id="result-h">Your closest buyer persona</p>
+    <div class="pmatch" id="pmatch"></div>
+    <p class="tagline" id="tagline"></p>
+    <p class="closenote" id="closenote"></p>
+
+    <div class="bars" id="bars" aria-hidden="true"></div>
+
+    <div class="blocks">
+      <div class="block prio"><h3>Prioritise</h3><ul id="prio"></ul></div>
+      <div class="block ask"><h3>Ask every vendor</h3><ul id="ask"></ul></div>
+      <div class="block watch full"><h3>Watch out for</h3><ul id="watch"></ul></div>
+      <div class="block cross full"><h3>True for whichever persona you are</h3><ul id="cross"></ul></div>
+    </div>
+
+    <div class="res-actions">
+      <button type="button" class="btn" id="copyBtn">Copy my priorities as text</button>
+      <button type="button" class="btn" id="retakeBtn">Retake</button>
+      <p class="copied" id="copied" hidden role="status">Copied to clipboard.</p>
+    </div>
+  </section>
+
+  <p class="disc">Orientation, not advice or a quote. Everything here reflects the buyer's guide and Weissmann's published pricing — nothing you select is stored or sent, and the whole tool runs in your browser. The hosting, dialect and language claims cited are providers' own self-declarations, not independently audited, and no substitute for your own test calls in the languages your customers speak and a written data-processing agreement before you sign.</p>
+
+  <footer class="linkbar" aria-label="Read the guide and see the service">
+    <p class="lb-title">Read the full guide · get a real number</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/agents-automation/best-ai-receptionists-switzerland/" target="_blank" rel="noopener noreferrer" aria-label="Read the full Best AI Receptionists in Switzerland buyer's guide (opens in a new tab)">The full 2026 buyer's guide →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-phone-assistant/" target="_blank" rel="noopener noreferrer" aria-label="See the Weissmann AI phone assistant service and pricing (opens in a new tab)">Weissmann AI phone assistant →</a>
+    </div>
+    <p class="att">Built from the buyer's guide and Weissmann's published pricing · a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var PERSONAS = {
+    founder: {
+      label: "Cost-conscious founder",
+      title: "The cost-conscious founder who wants a number today",
+      tagline: "You want a figure you can put in a spreadsheet this afternoon — not a sales call.",
+      prio: [
+        "A price you can see without booking a call. Three of the six publish one: <strong>Weissmann</strong> (CHF 350/month, no minimum term on the Starter tier, or a one-time CHF 350 trial with no subscription at all), <strong>Suisse Voice</strong> (an annual plan with a CHF 20 no-card trial), and <strong>NEX-AI</strong> (from CHF 149/month, cancel monthly).",
+        "A low-cost way to test before committing — a one-time trial or a small trial credit beats a 12-month signature you cannot walk back.",
+        "Clarity on minimum term. On Weissmann's Starter tier there is no minimum term; other tiers and providers differ, so confirm it in writing."
+      ],
+      ask: [
+        "Is this monthly-cancellable, or is there a minimum term such as 12 months?",
+        "What exactly is included in the entry price, and where does per-minute overage begin? (Weissmann's Starter includes 1,500 minutes, then CHF 0.30/min.)",
+        "Will you put the contract length and cancellation terms in writing before I sign?"
+      ],
+      watch: [
+        "The cheapest published entry point — <strong>NEX-AI, from CHF 149/month</strong> — comes with a narrower published feature set than the CHF 350+ tiers elsewhere. Match the package to the persona, not just to the price.",
+        "<strong>AlpenAgent, HeyPapaya and Alveni</strong> route you into a call before showing a number. That can be reasonable for a complex deployment, but it will not answer “can I afford to try this” on its own."
+      ]
+    },
+    compliance: {
+      label: "Compliance-minded ops lead",
+      title: "The compliance-minded operations lead",
+      tagline: "You need a defensible answer to “where does our customer data live, and who touches it?”",
+      prio: [
+        "A written Swiss or Swiss/EU hosting statement. Five of the six providers publish one; <strong>AlpenAgent did not disclose a hosting location</strong> on the page reviewed — itself worth asking about before you sign.",
+        "A specific, checkable data commitment. <strong>Suisse Voice</strong> goes one step further than the others reviewed, stating that customer data is never used for model training and can be deleted on request at any time.",
+        "The paperwork behind the marketing line — the data-processing agreement and sub-processor list — regardless of which provider you evaluate."
+      ],
+      ask: [
+        "Can I have your data-processing agreement and your sub-processor list?",
+        "Is your Swiss-hosting claim independently audited, or is it a self-declaration?",
+        "Is customer data ever used for model training, and can it be deleted on request?"
+      ],
+      watch: [
+        "None of the five published hosting claims is independently audited by a third party as far as the public pages disclose — they are <strong>self-declarations</strong>, normal for this market but worth naming plainly rather than treating as externally verified.",
+        "“Swiss hosting” on a marketing page is a starting point, not the whole story. Do not stop there."
+      ]
+    },
+    hotelier: {
+      label: "Hotelier with a PMS",
+      title: "The hotelier with property software already in place",
+      tagline: "Your front desk already lives inside a property-management system — the assistant has to fit it.",
+      prio: [
+        "A named integration with the exact system you already run. <strong>Alveni</strong> names direct integrations with Protel, Sihot, ASA Hotel, Mews and apaleo — and none of the other five providers reviewed publishes a comparable list of named hospitality-software integrations.",
+        "Capacity for peak times. Alveni states a capacity of 100 parallel calls, which matters during a check-in rush.",
+        "Evidence, not adjectives: a specific system name on the page, not a general “we integrate with your tools”."
+      ],
+      ask: [
+        "Do you integrate directly with my specific PMS, by name?",
+        "What is your parallel-call capacity at peak, such as during check-in?",
+        "Will you show me a live example of the integration before I commit?"
+      ],
+      watch: [
+        "This is the one persona in the guide where the answer is not close. If your front desk already lives inside one of those five systems, that is the deciding fact — the guide states this plainly even though Weissmann publishes it and is not the fit here."
+      ]
+    },
+    technical: {
+      label: "Technical team",
+      title: "The technical team that wants to build the integration yourselves",
+      tagline: "You would rather wire up your own automation than wait for a vendor's roadmap.",
+      prio: [
+        "Named open integration paths. <strong>Suisse Voice</strong> is the only one of the six that names Zapier, n8n, Make.com and raw webhooks on its public site — an architecture aimed at a team that maintains its own automation.",
+        "An honest read of your own capacity. An open API is only useful to a team that will actually maintain the integration after launch — a genuine advantage with in-house capacity, a genuine liability without it.",
+        "Clarity on what “integration included” actually means before you buy."
+      ],
+      ask: [
+        "When you say “integration included,” what is the underlying method — native connector, API or middleware? (Weissmann's Premium tier includes full system integration but does not publish the method on its public pages — worth asking directly.)",
+        "Which automation tools do you name publicly — Zapier, n8n, Make.com, webhooks?",
+        "After launch, who maintains the integration — us or you?"
+      ],
+      watch: [
+        "Openness cuts both ways: do not buy an open API you will not have the capacity to maintain. It is only an advantage if a team actually keeps the integration running after launch."
+      ]
+    }
+  };
+
+  var CROSS = [
+    "A broad language list is a starting point for your own test calls, not a guarantee of quality. Alveni's claimed 30 additional languages and Suisse Voice's claimed 17+ are the widest public commitments in this comparison, but none has been independently tested across all listed languages.",
+    "The most common disappointment is a mismatch between what a package implies and what it includes — a one-language tier bought by a three-language business, a monthly plan confused with a 12-month term. Read the package scope as carefully as you would read a lease.",
+    "If a provider will not put contract length and cancellation terms in writing before you sign, treat that as an answer in itself."
+  ];
+
+  var ORDER = ["founder","compliance","hotelier","technical"];
+  var TOTALQ = 5;
+
+  var form = document.getElementById("quiz");
+  var result = document.getElementById("result");
+  var hint = document.getElementById("hint");
+
+  function tally(){
+    var counts = {founder:0,compliance:0,hotelier:0,technical:0};
+    var answered = 0;
+    for(var i=1;i<=TOTALQ;i++){
+      var sel = form.querySelector('input[name="q'+i+'"]:checked');
+      if(sel){ counts[sel.value] += 1; answered += 1; }
+    }
+    return {counts:counts, answered:answered};
+  }
+
+  function li(list, items){
+    list.innerHTML = "";
+    items.forEach(function(txt){
+      var el = document.createElement("li");
+      el.innerHTML = txt;
+      list.appendChild(el);
+    });
+  }
+
+  function bars(counts, winners){
+    var box = document.getElementById("bars");
+    box.innerHTML = "";
+    ORDER.forEach(function(k){
+      var row = document.createElement("div");
+      row.className = "bar-row" + (winners.indexOf(k) > -1 ? " win" : "");
+      var lab = document.createElement("span");
+      lab.className = "bar-lab"; lab.textContent = PERSONAS[k].label;
+      var track = document.createElement("div");
+      track.className = "bar-track";
+      var fill = document.createElement("div");
+      fill.className = "bar-fill";
+      fill.style.width = (counts[k] / TOTALQ * 100) + "%";
+      track.appendChild(fill);
+      var val = document.createElement("span");
+      val.className = "bar-val"; val.textContent = counts[k] + "/" + TOTALQ;
+      row.appendChild(lab); row.appendChild(track); row.appendChild(val);
+      box.appendChild(row);
+    });
+  }
+
+  function render(){
+    var t = tally();
+    if(t.answered < TOTALQ){
+      hint.hidden = false;
+      result.hidden = true;
+      return;
+    }
+    hint.hidden = true;
+
+    var counts = t.counts;
+    var sorted = ORDER.slice().sort(function(a,b){ return counts[b] - counts[a]; });
+    var top = sorted[0];
+    var topScore = counts[top];
+    var winners = ORDER.filter(function(k){ return counts[k] === topScore; });
+    var dual = winners.length > 1;
+
+    // headline pills
+    var pm = document.getElementById("pmatch");
+    pm.innerHTML = "";
+    var showKeys = dual ? winners.slice(0,2) : [top];
+    showKeys.forEach(function(k, idx){
+      if(idx > 0){
+        var amp = document.createElement("span");
+        amp.className = "amp"; amp.textContent = "&"; pm.appendChild(amp);
+      }
+      var pill = document.createElement("span");
+      pill.className = "pill" + (idx > 0 ? " alt" : "");
+      pill.textContent = PERSONAS[k].title;
+      pm.appendChild(pill);
+    });
+
+    // tagline
+    document.getElementById("tagline").textContent =
+      dual ? "You genuinely span two personas — the guide's honest position is that there is no single best fit, so weigh both sets of priorities below."
+            : PERSONAS[top].tagline;
+
+    // closeness note
+    var cn = document.getElementById("closenote");
+    var second = sorted[1];
+    if(dual){
+      cn.textContent = "Tied match: your answers weight both personas equally. That is common and not a flaw in the tool — take the priorities from both into your vendor calls.";
+      cn.style.display = "";
+    } else if(counts[second] >= 2){
+      cn.textContent = "You also lean toward “" + PERSONAS[second].label + "” ( " + counts[second] + "/" + TOTALQ + " ). These personas are not mutually exclusive — skim that persona's priorities too.";
+      cn.style.display = "";
+    } else {
+      cn.style.display = "none";
+    }
+
+    bars(counts, winners);
+
+    // priority/ask/watch — merge when dual
+    var prio = [], ask = [], watch = [];
+    showKeys.forEach(function(k){
+      prio = prio.concat(PERSONAS[k].prio);
+      ask = ask.concat(PERSONAS[k].ask);
+      watch = watch.concat(PERSONAS[k].watch);
+    });
+    li(document.getElementById("prio"), prio);
+    li(document.getElementById("ask"), ask);
+    li(document.getElementById("watch"), watch);
+    li(document.getElementById("cross"), CROSS);
+
+    result.hidden = false;
+    result.dataset.keys = showKeys.join(",");
+    document.getElementById("copied").hidden = true;
+    result.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  function stripTags(html){
+    var d = document.createElement("div");
+    d.innerHTML = html;
+    return (d.textContent || d.innerText || "").replace(/\s+/g," ").trim();
+  }
+
+  function summaryText(){
+    var keys = (result.dataset.keys || "").split(",").filter(Boolean);
+    if(!keys.length) return "";
+    var lines = [];
+    lines.push("MY AI-RECEPTIONIST BUYER PERSONA");
+    lines.push("(from Weissmann's Best AI Receptionists in Switzerland buyer's guide)");
+    lines.push("");
+    keys.forEach(function(k){
+      var p = PERSONAS[k];
+      lines.push("PERSONA: " + p.title);
+      lines.push(stripTags(p.tagline));
+      lines.push("");
+      lines.push("Prioritise:");
+      p.prio.forEach(function(x){ lines.push("  - " + stripTags(x)); });
+      lines.push("Ask every vendor:");
+      p.ask.forEach(function(x){ lines.push("  ? " + stripTags(x)); });
+      lines.push("Watch out for:");
+      p.watch.forEach(function(x){ lines.push("  ! " + stripTags(x)); });
+      lines.push("");
+    });
+    lines.push("True for whichever persona:");
+    CROSS.forEach(function(x){ lines.push("  - " + stripTags(x)); });
+    lines.push("");
+    lines.push("Orientation, not a quote. Facts reflect each provider's public site, accessed 29 Jul 2026.");
+    return lines.join("\n");
+  }
+
+  function copyText(){
+    var txt = summaryText();
+    if(!txt) return;
+    var done = function(){
+      var c = document.getElementById("copied");
+      c.hidden = false;
+      setTimeout(function(){ c.hidden = true; }, 2600);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(done, function(){ fallbackCopy(txt, done); });
+    } else {
+      fallbackCopy(txt, done);
+    }
+  }
+
+  function fallbackCopy(txt, done){
+    var ta = document.createElement("textarea");
+    ta.value = txt;
+    ta.setAttribute("readonly","");
+    ta.style.position = "absolute";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand("copy"); done(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  function reset(){
+    form.reset();
+    result.hidden = true;
+    hint.hidden = true;
+    form.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  form.addEventListener("submit", function(e){ e.preventDefault(); render(); });
+  document.getElementById("resetBtn").addEventListener("click", reset);
+  document.getElementById("retakeBtn").addEventListener("click", reset);
+  document.getElementById("copyBtn").addEventListener("click", copyText);
+
+  // clear the incomplete-answer hint as the user answers
+  form.addEventListener("change", function(){ if(!hint.hidden){ hint.hidden = true; } });
+})();
+</script>

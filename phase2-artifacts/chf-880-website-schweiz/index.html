@@ -1,0 +1,346 @@
+<title>Passt Ihr Projekt in den Starter? · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .stack{margin-top:18px}
+  .h2{font-size:1.12rem;margin:0;letter-spacing:-.01em}
+  .sub{color:var(--ink-soft);font-size:.92rem;margin:6px 0 0;max-width:64ch}
+
+  /* perimeter reference */
+  .perim-head{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between}
+  .pricepill{display:inline-flex;flex-direction:column;align-items:flex-end;text-align:right;background:var(--ok-soft);border:1px solid color-mix(in srgb,var(--ok) 30%,transparent);border-radius:11px;padding:8px 12px}
+  .pricepill b{font-size:1.05rem;color:var(--ink);line-height:1.1}
+  .pricepill .reg{font-size:.78rem;color:var(--ink-mute)}
+  .cols{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}@media(min-width:640px){.cols{grid-template-columns:1fr 1fr}}
+  .pcol{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .pcol h3{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin:0 0 8px;color:var(--ink-mute)}
+  .pcol ul{list-style:none;margin:0;padding:0}
+  .pcol li{display:flex;gap:9px;padding:5px 0;font-size:.9rem;color:var(--ink-soft);align-items:flex-start}
+  .ic{flex:none;width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;margin-top:1px}
+  .ic.in{background:var(--ok-soft);color:var(--ok)}
+  .ic.out{background:var(--miss-soft);color:var(--miss)}
+
+  /* checklist */
+  fieldset{border:0;margin:0 0 14px;padding:0}
+  fieldset:last-of-type{margin-bottom:0}
+  legend{padding:0;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--ink-mute);margin-bottom:9px}
+  legend .tag{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:20px;font-size:.68rem;letter-spacing:.02em;vertical-align:middle}
+  legend .tag.b{background:var(--accent-soft);color:var(--accent)}
+  legend .tag.c{background:var(--warn-soft);color:var(--warn)}
+  .opts{display:grid;gap:8px}
+  .opt{display:flex;gap:11px;align-items:flex-start;padding:11px 13px;border:1px solid var(--line);border-radius:11px;background:var(--card);cursor:pointer;transition:border-color .12s,background .12s}
+  .opt:hover{background:var(--soft)}
+  .opt input{margin:0;margin-top:1px;width:19px;height:19px;accent-color:var(--navy);flex:none;cursor:pointer}
+  .opt span{font-size:.94rem;color:var(--ink-soft)}
+  .opt.on{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+  .opt.on span{color:var(--ink)}
+  .opt input:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+
+  .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .btn{appearance:none;font-family:inherit;font-weight:600;font-size:.9rem;border-radius:10px;padding:10px 16px;cursor:pointer;border:1.5px solid var(--navy);background:transparent;color:var(--navy);min-height:44px}
+  .btn:hover{background:var(--soft)}
+  .btn.primary{background:var(--navy);color:var(--on-navy)}.btn.primary:hover{background:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  /* verdict */
+  .verdict{border-left-width:5px;border-left-style:solid}
+  .v-ok{border-left-color:var(--ok)}
+  .v-business{border-left-color:var(--accent)}
+  .v-complex{border-left-color:var(--warn)}
+  .v-top{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:baseline;justify-content:space-between}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;padding:5px 11px;border-radius:20px}
+  .badge.v-ok{background:var(--ok-soft);color:var(--ok);border-left:0}
+  .badge.v-business{background:var(--accent-soft);color:var(--accent);border-left:0}
+  .badge.v-complex{background:var(--warn-soft);color:var(--warn);border-left:0}
+  .v-price{font-weight:700;font-size:1rem;color:var(--ink)}
+  .v-price .reg{font-weight:400;font-size:.82rem;color:var(--ink-mute)}
+  .v-head{font-size:1.1rem;margin:12px 0 4px;letter-spacing:-.01em}
+  .v-body{color:var(--ink-soft);font-size:.95rem;margin:0;max-width:66ch}
+  .v-reasons{margin:14px 0 0;padding:0;list-style:none}
+  .v-reasons li{display:flex;gap:9px;align-items:flex-start;padding:5px 0;font-size:.92rem;color:var(--ink-soft)}
+  .v-reasons .dot{flex:none;width:7px;height:7px;border-radius:50%;background:currentColor;margin-top:8px;opacity:.55}
+  .rlabel{font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:14px 0 2px}
+  .note{margin-top:14px;background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 30%,transparent);border-radius:11px;padding:11px 13px;font-size:.88rem;color:var(--ink-soft)}
+  .note b{color:var(--ink)}
+  .copied{font-size:.82rem;color:var(--ok);font-weight:600;align-self:center;opacity:0;transition:opacity .15s}
+  .copied.show{opacity:1}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">Website-Preise transparent gemacht</p>
+  <h1>Passt Ihr Projekt in den Starter?</h1>
+  <p class="lede">Kreuzen Sie an, was Ihre Website wirklich braucht. Der Check ordnet Ihren Bedarf einer Kategorie zu &ndash; Starter, Business oder individuelle Web-Plattform &ndash; und zeigt genau, wo die Grenzen des CHF-880-Umfangs liegen. Ohne Kreuz bleibt es beim Starter.</p>
+
+  <section class="card card-pad stack" aria-label="Starter-Umfang zur Referenz">
+    <div class="perim-head">
+      <div>
+        <p class="h2">Der Starter-Umfang zum Abgleich</p>
+        <p class="sub">Der Festpreis gilt f&uuml;r genau diesen freigegebenen Umfang &ndash; nicht f&uuml;r jedes Website-Projekt.</p>
+      </div>
+      <div class="pricepill">
+        <b>CHF 880</b>
+        <span class="reg">Aktionspreis &middot; regul&auml;r CHF 2&rsquo;490 &middot; einmalig</span>
+      </div>
+    </div>
+    <div class="cols">
+      <div class="pcol">
+        <h3>Enthalten</h3>
+        <ul>
+          <li><span class="ic in">&#10003;</span> Bis zu 5 Kernseiten, responsives Design, mobiloptimiert</li>
+          <li><span class="ic in">&#10003;</span> Kontakt- oder Lead-Formular</li>
+          <li><span class="ic in">&#10003;</span> Technisches SEO- und GEO-Fundament</li>
+          <li><span class="ic in">&#10003;</span> Google Analytics 4 und Search Console eingerichtet</li>
+          <li><span class="ic in">&#10003;</span> Strukturierte Daten (Basis), Performance-Optimierung, Security-Header</li>
+          <li><span class="ic in">&#10003;</span> Netlify-Deployment, 1 Sprache, 2 definierte Korrekturrunden</li>
+        </ul>
+      </div>
+      <div class="pcol">
+        <h3>Ausdr&uuml;cklich nicht enthalten</h3>
+        <ul>
+          <li><span class="ic out">&times;</span> Texterstellung / Copywriting (Sie liefern die Inhalte selbst)</li>
+          <li><span class="ic out">&times;</span> Weitere Sprachen (im Preis ist 1 Sprache enthalten)</li>
+          <li><span class="ic out">&times;</span> Kostenpflichtige Drittanbieter-Tools (Buchung, CRM, Formular-Plugins)</li>
+          <li><span class="ic out">&times;</span> Seite Nr. 6, dritte Korrekturrunde</li>
+          <li><span class="ic out">&times;</span> E-Commerce, Buchungs-/CRM-Integration, Mitgliederbereiche</li>
+          <li><span class="ic out">&times;</span> Ranking- oder KI-Zitations-Garantien</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card card-pad stack" aria-label="Bedarfs-Check">
+    <p class="h2">Was braucht Ihr Projekt?</p>
+    <p class="sub">Nur ankreuzen, was tats&auml;chlich n&ouml;tig ist. Jedes Kreuz kann den Bedarf &uuml;ber den Starter-Umfang hinausheben.</p>
+
+    <form id="chk" novalidate>
+      <fieldset class="stack" style="margin-top:14px">
+        <legend>&Uuml;ber den Starter hinaus <span class="tag b">Business</span></legend>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" data-tier="business"><span>Mehr als 5 Seiten (z.&nbsp;B. mehrere Leistungsseiten, zweiter Standort, Karriere- oder Referenzseite)</span></label>
+          <label class="opt"><input type="checkbox" data-tier="business"><span>Mehr als eine Sprache (in der Schweiz oft DE/FR oder DE/EN)</span></label>
+          <label class="opt"><input type="checkbox" data-tier="business"><span>Blog- oder Wissensbereich</span></label>
+          <label class="opt"><input type="checkbox" data-tier="business"><span>Erweitertes Formular mit Buchungs- oder CRM-Anbindung</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Eigene Kategorie <span class="tag c">Individuell</span></legend>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" data-tier="complex"><span>Online-Shop mit Zahlungsabwicklung, Versand und Produktverwaltung</span></label>
+          <label class="opt"><input type="checkbox" data-tier="complex"><span>Login-/Mitgliederbereich oder Dashboard</span></label>
+          <label class="opt"><input type="checkbox" data-tier="complex"><span>Individuelle Anwendung, API-/CRM-Integration oder KI-Workflow</span></label>
+          <label class="opt"><input type="checkbox" data-tier="complex"><span>Grosse mehrsprachige Architektur oder interaktive Tools</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Hinweis-Frage</legend>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" data-note="copy"><span>Ich brauche Texterstellung / Copywriting &ndash; nicht nur Gestaltung und Bau</span></label>
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="row">
+      <button type="button" class="btn" id="reset">Zur&uuml;cksetzen</button>
+      <button type="button" class="btn primary" id="copy">Einsch&auml;tzung kopieren</button>
+      <span class="copied" id="copied" role="status" aria-live="polite">Kopiert</span>
+    </div>
+  </section>
+
+  <section class="verdict card card-pad stack v-ok" id="verdict" aria-live="polite" aria-label="Empfehlung"></section>
+
+  <p class="disc">Orientierung, kein verbindliches Angebot. Die Einordnung beruht auf dem in diesem Guide beschriebenen Starter-Umfang und den Paketgrenzen (Starter / Business / individuell). Der jeweils verbindliche Preis steht auf weissmann.ai/preise/. Ein technisches SEO- und GEO-Fundament verbessert die Startbedingungen, ist aber keine Ranking-Zusage. Ihre Eingaben bleiben ausschliesslich in diesem Browser &ndash; nichts wird gespeichert oder gesendet.</p>
+
+  <footer class="linkbar" aria-label="Weiterf&uuml;hrende Links">
+    <p class="lb-title">N&auml;chster Schritt</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/marketing-seo-geo/guenstige-website-schweiz-chf-880/" target="_blank" rel="noopener noreferrer" aria-label="Guide lesen: Was ist bei CHF 880 drin und was nicht (opens in a new tab)">Guide: Was ist bei CHF 880 drin? &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-webentwicklung/" target="_blank" rel="noopener noreferrer" aria-label="Leistung KI-Webentwicklung ansehen (opens in a new tab)">KI-Webentwicklung ansehen &rarr;</a>
+    </div>
+    <p class="att">Weissmann &middot; Begleiter zum Guide. Orientierung, kein Angebot.</p>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    "use strict";
+    var RANK = { starter:0, business:1, complex:2 };
+    var META = {
+      starter: {
+        cls: "v-ok",
+        badge: "Passt in den Starter",
+        price: 'CHF 880 <span class="reg">Aktionspreis &middot; regul&auml;r CHF 2’490 &middot; einmaliger Festpreis</span>',
+        priceText: "CHF 880 (Aktionspreis, regulär CHF 2’490), einmaliger Festpreis",
+        head: "Ihr Bedarf bleibt im Starter-Umfang",
+        body: "Bis zu 5 Seiten, eine Sprache, Kontakt- oder Lead-Formular, eigene Texte – Ihr Bedarf bleibt im freigegebenen Starter-Umfang. Für ein individuell gestaltetes, technisch sauber fundiertes Website-Projekt ist das ein ungewöhnlich zugänglicher Einstiegspreis, kein Baukasten- oder Vorlagen-Design.",
+        rlabel: "Alle vier Starter-Kriterien erfüllt",
+        reasons: [
+          "Maximal fünf Seiten",
+          "Im Wesentlichen eine Sprache",
+          "Texte selbst geschrieben oder Copywriting separat eingeplant",
+          "Kontaktformular – kein Online-Shop und keine Buchungsstrecke"
+        ]
+      },
+      business: {
+        cls: "v-business",
+        badge: "Business Website",
+        price: 'CHF 4’990 <span class="reg">einmaliger Festpreis</span>',
+        priceText: "CHF 4’990, einmaliger Festpreis",
+        head: "Die Business Website ist die richtige Kategorie",
+        body: "Ihr Bedarf geht über den Starter-Umfang hinaus. Die Business Website ist für wachsende Unternehmen gedacht, die ein komplettes Akquise- und Konversionssystem brauchen: ungefähr 10 bis 20 Seiten gemäss freigegebenem Umfang, mehrsprachigkeitsfähig, Blog- oder Wissensbereich, erweiterte Formulare mit Buchungs- oder CRM-Anbindung wo sinnvoll, GA4 mit Conversion-Tracking und drei statt zwei definierten Korrekturrunden.",
+        rlabel: "Ausschlaggebend für diese Einordnung",
+        reasons: []
+      },
+      complex: {
+        cls: "v-complex",
+        badge: "Individuelle Website / Web-Plattform",
+        price: 'ab CHF 9’900 <span class="reg">Preis nach Umfang</span>',
+        priceText: "ab CHF 9’900, Preis nach Umfang",
+        head: "Das gehört in die individuelle Kategorie",
+        body: "Diese Anforderungen gehören strukturell in die individuelle Website beziehungsweise Web-Plattform – unabhängig davon, wie klein das Unternehmen dahinter ist. Dazu zählen grosse mehrsprachige Architekturen, individuelle Anwendungen, E-Commerce mit Zahlungsabwicklung, API- und CRM-Integrationen, Mitgliederbereiche, Dashboards, interaktive Tools oder KI-Workflows. Preis nach Umfang statt Festpreis-Katalog, mit Beratung und Offerte statt Direktkauf.",
+        rlabel: "Ausschlaggebend für diese Einordnung",
+        reasons: []
+      }
+    };
+
+    var form = document.getElementById("chk");
+    var boxes = Array.prototype.slice.call(form.querySelectorAll('input[type="checkbox"]'));
+    var tierBoxes = boxes.filter(function(b){ return b.getAttribute("data-tier"); });
+    var noteBox = form.querySelector('input[data-note="copy"]');
+    var verdict = document.getElementById("verdict");
+    var copied = document.getElementById("copied");
+
+    function labelOf(box){
+      var span = box.parentNode.querySelector("span");
+      return span ? span.textContent.replace(/\s+/g, " ").trim() : "";
+    }
+
+    function compute(){
+      var tier = "starter";
+      var reasons = [];
+      tierBoxes.forEach(function(b){
+        if(!b.checked) return;
+        var t = b.getAttribute("data-tier");
+        if(RANK[t] > RANK[tier]) tier = t;
+      });
+      // deciding reasons = checked items whose tier equals the winning tier
+      tierBoxes.forEach(function(b){
+        if(b.checked && b.getAttribute("data-tier") === tier) reasons.push(labelOf(b));
+      });
+      return { tier: tier, reasons: reasons, note: !!(noteBox && noteBox.checked) };
+    }
+
+    function esc(s){
+      return String(s).replace(/[&<>]/g, function(c){
+        return c === "&" ? "&amp;" : c === "<" ? "&lt;" : "&gt;";
+      });
+    }
+
+    function render(){
+      var s = compute();
+      var m = META[s.tier];
+      var reasons = (s.tier === "starter") ? m.reasons : s.reasons;
+      var html = "";
+      html += '<div class="v-top">';
+      html += '<span class="badge ' + m.cls + '">' + m.badge + "</span>";
+      html += '<span class="v-price">' + m.price + "</span>";
+      html += "</div>";
+      html += '<h2 class="v-head">' + esc(m.head) + "</h2>";
+      html += '<p class="v-body">' + esc(m.body) + "</p>";
+      html += '<p class="rlabel">' + esc(m.rlabel) + "</p>";
+      html += '<ul class="v-reasons">';
+      reasons.forEach(function(r){
+        html += '<li><span class="dot"></span>' + esc(r) + "</li>";
+      });
+      html += "</ul>";
+      if(s.note){
+        html += '<div class="note"><b>Hinweis zu Copywriting:</b> Texterstellung ist in keinem Festpreis enthalten. Sie liefern die Inhalte selbst, oder Copywriting wird vorab als separate, zusätzliche Leistung besprochen.</div>';
+      }
+      verdict.className = "verdict card card-pad stack " + m.cls;
+      verdict.innerHTML = html;
+
+      // reflect checked state on option cards
+      boxes.forEach(function(b){
+        b.parentNode.classList.toggle("on", b.checked);
+      });
+    }
+
+    function summaryText(){
+      var s = compute();
+      var m = META[s.tier];
+      var reasons = (s.tier === "starter") ? m.reasons : s.reasons;
+      var lines = [];
+      lines.push("Projekt-Einschaetzung – Weissmann Starter-Scope-Check");
+      lines.push("");
+      lines.push("Empfohlene Kategorie: " + m.badge);
+      lines.push("Richtwert: " + m.priceText);
+      lines.push("");
+      lines.push(m.rlabel + ":");
+      reasons.forEach(function(r){ lines.push("- " + r); });
+      if(s.note){
+        lines.push("");
+        lines.push("Hinweis: Texterstellung/Copywriting ist in keinem Festpreis enthalten (selbst liefern oder separat besprechen).");
+      }
+      lines.push("");
+      lines.push("Orientierung, kein verbindliches Angebot. Verbindliche Preise und Pakete: weissmann.ai/preise/");
+      return lines.join("\n");
+    }
+
+    function flash(){
+      copied.classList.add("show");
+      setTimeout(function(){ copied.classList.remove("show"); }, 1600);
+    }
+
+    function copySummary(){
+      var text = summaryText();
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(flash, fallbackCopy.bind(null, text));
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text){
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        flash();
+      } catch(e){ /* clipboard unavailable; no-op */ }
+    }
+
+    form.addEventListener("change", render);
+    document.getElementById("reset").addEventListener("click", function(){
+      boxes.forEach(function(b){ b.checked = false; });
+      render();
+    });
+    document.getElementById("copy").addEventListener("click", copySummary);
+
+    render();
+  })();
+</script>

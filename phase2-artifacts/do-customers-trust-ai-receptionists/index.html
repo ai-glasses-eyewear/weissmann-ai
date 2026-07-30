@@ -1,0 +1,399 @@
+<title>AI receptionist trust self-score · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .note{margin:16px 0 0;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0;padding:12px 14px;font-size:.9rem;color:var(--ink-soft)}
+  .note b{color:var(--ink)}
+  .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}
+  @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+  .factor{display:flex;flex-direction:column}
+  .factor h3{margin:0 0 2px;font-size:1.05rem;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .wtag{font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--accent);background:var(--accent-soft);border:1px solid var(--line);padding:3px 7px;border-radius:999px}
+  .factor .blurb{margin:0 0 12px;font-size:.86rem;color:var(--ink-mute)}
+  fieldset{border:0;margin:0;padding:0;border-top:1px solid var(--line);padding-top:12px;margin-top:4px}
+  fieldset:first-of-type{border-top:0;padding-top:0}
+  legend{padding:0;font-size:.9rem;color:var(--ink-soft);margin-bottom:8px}
+  .seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .seg label{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--ink-soft);
+    border:1.5px solid var(--line);border-radius:10px;padding:9px 6px;cursor:pointer;background:var(--card);min-height:44px;line-height:1.15}
+  .seg label:hover{border-color:var(--navy)}
+  .seg input{position:absolute;opacity:0;width:1px;height:1px}
+  .seg input:checked+span{color:var(--ink)}
+  .seg label:has(input:checked){border-color:var(--navy);background:var(--soft)}
+  .seg label:has(input[value="1"]:checked){border-color:var(--ok);background:var(--ok-soft)}
+  .seg label:has(input[value="0.5"]:checked){border-color:var(--warn);background:var(--warn-soft)}
+  .seg label:has(input[value="0"]:checked){border-color:var(--miss);background:var(--miss-soft)}
+  .seg input:focus-visible+span{outline:none}
+  .seg label:focus-within{box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  .bar{display:flex;flex-direction:column;gap:5px;margin:0 0 12px}
+  .bar .barhead{display:flex;justify-content:space-between;align-items:baseline;font-size:.86rem}
+  .bar .barhead b{font-weight:700}
+  .bar .barval{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink-mute);font-size:.82rem}
+  .track{height:9px;border-radius:99px;background:var(--soft);overflow:hidden;border:1px solid var(--line)}
+  .fill{height:100%;width:0;border-radius:99px;transition:width .35s ease}
+
+  .overall{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--soft);margin-bottom:16px}
+  .odial{font-variant-numeric:tabular-nums;font-size:2rem;font-weight:800;line-height:1;color:var(--ink)}
+  .odial small{font-size:.8rem;font-weight:600;color:var(--ink-mute)}
+  .oband{font-weight:700;font-size:.95rem}
+  .oband span{display:block;font-weight:500;font-size:.85rem;color:var(--ink-soft);margin-top:2px}
+
+  .callout{border-radius:12px;padding:14px 16px;margin-top:14px;border:1px solid var(--line);font-size:.92rem}
+  .callout h4{margin:0 0 6px;font-size:.95rem;display:flex;align-items:center;gap:8px}
+  .callout.weak{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 40%,var(--line))}
+  .callout.flag{background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 40%,var(--line))}
+  .callout.good{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 40%,var(--line))}
+  .pill{font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink-soft)}
+
+  .test{margin-top:16px;border-top:1px dashed var(--line);padding-top:14px}
+  .test h4{margin:0 0 4px;font-size:.98rem}
+  .test p{margin:0 0 10px;font-size:.9rem;color:var(--ink-soft)}
+  .test ol{margin:0;padding-left:20px;font-size:.9rem;color:var(--ink-soft)}
+  .test ol li{margin:5px 0}
+
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .btn{font-family:inherit;font-size:.88rem;font-weight:600;border-radius:10px;padding:10px 15px;cursor:pointer;border:1.5px solid var(--navy);background:var(--card);color:var(--navy);min-height:44px}
+  .btn:hover{background:var(--soft)}
+  .btn.primary{background:var(--navy);color:var(--on-navy)}.btn.primary:hover{background:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copied{font-size:.82rem;color:var(--ok);font-weight:600;align-self:center}
+
+  .progress{font-size:.85rem;color:var(--ink-mute);margin:6px 0 0;font-weight:600}
+  .muted{color:var(--ink-mute)}
+  .sec-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 4px}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<main class="wrap">
+  <p class="kicker">AI Agents &amp; Voice · Trust Design</p>
+  <h1>Rate your AI receptionist on the four things that actually build trust</h1>
+  <p class="lede">Customers don't trust an AI receptionist because the voice sounds convincingly human. The article argues trust comes from four separable factors — and a system can score well on one and badly on another. Rate your own setup on each to see your trust profile and the weakest factor to fix first.</p>
+
+  <div class="note">
+    <b>Voice realism isn't on this list — on purpose.</b> Past a basic threshold where the voice isn't a distraction, the article's point is that sounding <i>even more</i> human stops paying off, while getting these four right keeps paying off for the length of the call.
+  </div>
+
+  <section class="card card-pad" style="margin-top:18px">
+    <p class="sec-title">Score your setup</p>
+    <p class="muted" style="margin:0;font-size:.9rem">For each statement, rate how your current (or planned) AI phone setup behaves. Use <b>[your business]</b> as your own reference — nothing here is stored or sent.</p>
+    <div class="grid" id="factors"></div>
+    <p class="progress" id="progress" aria-live="polite">0 of 12 rated.</p>
+  </section>
+
+  <section class="card card-pad" style="margin-top:16px" aria-live="polite" id="result">
+    <p class="sec-title">Your trust profile</p>
+    <p class="muted" id="result-empty" style="margin:0;font-size:.92rem">Rate the twelve statements above and your trust profile appears here — a bar per factor, a weighted self-rating, and the weakest factor to fix first.</p>
+    <div id="result-body" hidden></div>
+  </section>
+
+  <p class="disc">
+    Orientation, not advice or a quote. This companion tool aggregates <i>your own</i> self-ratings against the four factors described in the article; the weighting reflects the article's stated emphasis, and the article is explicit that its readings are "a reasoned reading of what each approach signals," not a measured ranking from testing calls at scale. Every input stays in your browser — nothing is stored, sent or saved. Test any AI receptionist, including Weissmann's, as a stranger would before trusting a score.
+  </p>
+
+  <footer class="linkbar" aria-label="Read the full guide and see the AI phone assistant service">
+    <p class="lb-title">Where this comes from</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/agents-automation/do-customers-trust-ai-receptionists/" target="_blank" rel="noopener noreferrer" aria-label="Read the full guide: Do customers trust AI receptionists? (opens in a new tab)">Read the full guide →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-phone-assistant/" target="_blank" rel="noopener noreferrer" aria-label="See the Weissmann AI phone assistant service (opens in a new tab)">See the AI phone assistant →</a>
+    </div>
+    <p class="att">Weissmann AI · a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  var FACTORS = [
+    {
+      key:"transparency",
+      name:"Transparency",
+      weight:1,
+      blurb:"Honest about being AI — not only in the first sentence, but whenever it matters again during the call.",
+      items:[
+        "It discloses that it's AI clearly near the start — not buried after a long welcome message or hold music.",
+        "If a caller asks outright whether they're speaking to a person, it answers immediately and plainly, then returns to the request.",
+        "It discloses again, briefly, on a transfer or callback — stated as a simple fact, without over-apologising."
+      ],
+      fix:"Write the disclosure honestly and repeat it when it counts: up front, again on a transfer or callback, and straight away if a caller asks. Skip the over-apologising, which reads less as honesty and more as the business not being sure the choice was reasonable."
+    },
+    {
+      key:"competence",
+      name:"Competence",
+      weight:1,
+      blurb:"Understands the request and, crucially, behaves honestly at the edge of its own knowledge instead of inventing an answer.",
+      items:[
+        "Outside its scope, it gives a specific, honest limitation (“I can book a standard appointment, but not billing changes”) and offers to connect a person — rather than filling the gap with something plausible.",
+        "When corrected (“Thursday, not Tuesday”), it acknowledges and confirms the fix rather than looping back through the whole confirmation.",
+        "It carries information the caller already gave, instead of forcing them to repeat it."
+      ],
+      fix:"Design for “I don't know, let me connect you” as a good outcome, not a failure to script around. A smooth wrong answer costs more on a phone than in a chatbot: a spoken answer carries authority the caller tends to believe in the moment, and only discovers the error later."
+    },
+    {
+      key:"escape",
+      name:"Escape routes",
+      weight:1,
+      blurb:"A real person is genuinely and quickly reachable when the caller needs one — not just theoretically available.",
+      items:[
+        "A route to a human stays available for the whole call — not mentioned once early on and then effectively gone.",
+        "It reaches a person from a range of natural phrasings, not one exact phrase, and doesn't just transfer into another automated queue.",
+        "When it hands over, a person actually answers within a reasonable time — the line is staffed at that hour."
+      ],
+      fix:"A genuine escape route is a staffing decision, not a marketing claim. Test it directly: call, ask for a human mid-conversation, and time what happens next."
+    },
+    {
+      key:"context",
+      name:"Context",
+      weight:2,
+      blurb:"Whether this call should have reached the AI as the first point of contact at all — the factor most vendor conversations skip.",
+      items:[
+        "You've named, in advance, the call types this assistant should never handle on its own — grief-adjacent calls, serious complaints, safeguarding, high-stakes irreversible decisions.",
+        "When a caller signals emotional weight — a shaking voice, “I don't know who else to call” — it hands over quickly instead of continuing the automated flow.",
+        "Your incoming calls are varied and mostly routine — not predominantly the grief-adjacent or emotionally weighted kind the article says should keep a human as the primary contact."
+      ],
+      fix:"Name, in advance, which calls this system should never try to handle on its own. No amount of tuning transparency or competence compensates for pointing AI at a call that needed a person, so decide the exclusions before you go live."
+    }
+  ];
+
+  var OPTS = [
+    {v:"1",   label:"Reliably"},
+    {v:"0.5", label:"Partly"},
+    {v:"0",   label:"Not yet"}
+  ];
+
+  // state: answers[key] = [null|number, null|number, null|number]
+  var answers = {};
+  FACTORS.forEach(function(f){ answers[f.key] = [null,null,null]; });
+
+  var TOTAL = FACTORS.length * 3;
+
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];}); }
+
+  // ---- build the form ----
+  var host = document.getElementById("factors");
+  FACTORS.forEach(function(f){
+    var card = document.createElement("div");
+    card.className = "card card-pad factor";
+    var wtag = f.weight > 1 ? '<span class="wtag" title="Weighted more heavily">Weighted ×'+f.weight+'</span>' : '';
+    var html = '<h3>'+esc(f.name)+wtag+'</h3><p class="blurb">'+esc(f.blurb)+'</p>';
+    f.items.forEach(function(text, i){
+      var name = f.key+"_"+i;
+      html += '<fieldset><legend>'+esc(text)+'</legend><div class="seg">';
+      OPTS.forEach(function(o){
+        var id = name+"_"+o.v.replace(".","");
+        html += '<label for="'+id+'"><input type="radio" id="'+id+'" name="'+name+'" value="'+o.v+'" data-key="'+f.key+'" data-idx="'+i+'"><span>'+esc(o.label)+'</span></label>';
+      });
+      html += '</div></fieldset>';
+    });
+    card.innerHTML = html;
+    host.appendChild(card);
+  });
+
+  host.addEventListener("change", function(e){
+    var t = e.target;
+    if(!t || t.type !== "radio") return;
+    answers[t.getAttribute("data-key")][+t.getAttribute("data-idx")] = parseFloat(t.value);
+    render();
+  });
+
+  // ---- scoring ----
+  function factorScore(f){
+    var vals = answers[f.key];
+    var sum = 0;
+    vals.forEach(function(v){ sum += (v==null?0:v); });
+    return Math.round((sum/3)*100); // 0..100, unanswered counts as 0
+  }
+  function answeredCount(){
+    var n = 0;
+    FACTORS.forEach(function(f){ answers[f.key].forEach(function(v){ if(v!=null) n++; }); });
+    return n;
+  }
+  function fillColor(score){
+    if(score >= 70) return "var(--ok)";
+    if(score >= 40) return "var(--warn)";
+    return "var(--miss)";
+  }
+  function band(score){
+    if(score >= 90) return {t:"Well covered on all four", s:"Strong across the board — now test it as a stranger would, because a self-score is not the same as a real call."};
+    if(score >= 70) return {t:"Mostly there", s:"The framework is largely in place, but one factor is still letting the rest down. Fix the weakest one first."};
+    if(score >= 40) return {t:"Uneven", s:"The framework is only partly in place. Your weakest factor is doing most of the damage a caller feels."};
+    return {t:"Big gaps", s:"Several factors need work before callers are likely to trust this on the primary line."};
+  }
+
+  var result = document.getElementById("result-body");
+  var emptyMsg = document.getElementById("result-empty");
+  var progressEl = document.getElementById("progress");
+
+  function render(){
+    var n = answeredCount();
+    progressEl.textContent = n + " of " + TOTAL + " rated." + (n < TOTAL ? " Rate them all to reveal your weakest factor and the stranger-test." : "");
+
+    // live bars once at least one answered
+    var scores = FACTORS.map(function(f){ return {f:f, s:factorScore(f)}; });
+
+    if(n === 0){
+      emptyMsg.hidden = false;
+      result.hidden = true;
+      result.innerHTML = "";
+      return;
+    }
+    emptyMsg.hidden = true;
+    result.hidden = false;
+
+    var html = "";
+
+    // weighted overall (only meaningful once complete; before that, label as provisional)
+    var wsum = 0, wtot = 0;
+    scores.forEach(function(o){ wsum += o.s * o.f.weight; wtot += o.f.weight; });
+    var overall = Math.round(wsum / wtot);
+    var complete = n === TOTAL;
+
+    if(complete){
+      var b = band(overall);
+      html += '<div class="overall">'
+        + '<div class="odial">'+overall+'<small>/100</small></div>'
+        + '<div><div class="oband" style="color:'+fillColor(overall)+'">'+esc(b.t)+'<span>'+esc(b.s)+'</span></div></div>'
+        + '</div>';
+    } else {
+      html += '<p class="progress" style="margin:0 0 10px">Provisional so far: <b>'+overall+'/100</b> weighted, with unrated statements counted as “Not yet.” Complete all twelve for the full read.</p>';
+    }
+
+    // bars
+    scores.forEach(function(o){
+      html += '<div class="bar"><div class="barhead"><b>'+esc(o.f.name)+'</b>'
+        + '<span class="barval">'+o.s+'/100'+(o.f.weight>1?' · ×'+o.f.weight+' weight':'')+'</span></div>'
+        + '<div class="track"><div class="fill" style="width:'+o.s+'%;background:'+fillColor(o.s)+'"></div></div></div>';
+    });
+
+    // weighting note
+    html += '<p class="muted" style="font-size:.82rem;margin:2px 0 0">Context is weighted double the others because the article calls it "the factor that gets skipped, and the one that matters most." The weighting is orientation, not a measured score.</p>';
+
+    if(complete){
+      // weakest factor(s)
+      var min = Math.min.apply(null, scores.map(function(o){return o.s;}));
+      var weakest = scores.filter(function(o){ return o.s === min; });
+
+      if(min >= 90){
+        html += '<div class="callout good"><h4>✓ No obvious weak factor <span class="pill">all four strong</span></h4>'
+          + '<p style="margin:0">On your own rating, all four factors are well covered. That is the right starting point — but the article is clear that a self-score is not a real call. Run the stranger-test below before trusting it.</p></div>';
+      } else {
+        weakest.forEach(function(o){
+          html += '<div class="callout weak"><h4>Fix first: '+esc(o.f.name)+' <span class="pill">'+o.s+'/100</span></h4>'
+            + '<p style="margin:0">'+esc(o.f.fix)+'</p></div>';
+        });
+      }
+
+      // red flags tied to specific answers
+      var escVals = answers.escape;
+      if(escVals[2] === 0){
+        html += '<div class="callout flag"><h4>⚠ Red flag: the handover may be a broken promise</h4>'
+          + '<p style="margin:0">You marked that a person doesn’t reliably answer in time when the assistant hands over. A broken escape route does more damage than no AI receptionist at all — a caller told they can reach a person, then left in an unstaffed queue, experiences it as a small betrayal. If you can’t commit to a real, fast handover, that’s a reason to reconsider putting AI on the primary line.</p></div>';
+      }
+      var ctxVals = answers.context;
+      if(ctxVals[2] === 0){
+        html += '<div class="callout flag"><h4>⚠ Red flag: this may be the wrong first point of contact</h4>'
+          + '<p style="margin:0">You marked that your calls are predominantly the grief-adjacent or emotionally weighted kind. The honest reading of the article is to keep a human as the primary point of contact for those calls, independent of how well any AI is built — a transparent, well-scripted AI response there is not a smaller version of the right response, it is the wrong kind entirely.</p></div>';
+      }
+
+      // stranger test
+      html += '<div class="test"><h4>Before trusting any score, test it as a stranger would</h4>'
+        + '<p>The article’s own test says more than a self-score. Run it against any AI receptionist — including Weissmann’s:</p>'
+        + '<ol>'
+        + '<li>Call your own line the way a stranger would.</li>'
+        + '<li>Ask directly whether you’re speaking to a person.</li>'
+        + '<li>Ask for a human mid-conversation — and time what happens next.</li>'
+        + '<li>Describe something slightly outside the script, and watch how it handles the edge.</li>'
+        + '</ol>'
+        + '<p style="margin:10px 0 0" class="muted">You can run that test on a real, configured line with the one-time Starter trial (CHF 350, no subscription, no minimum term).</p>'
+        + '</div>';
+
+      // actions
+      html += '<div class="actions">'
+        + '<button type="button" class="btn primary" id="copyBtn">Copy my trust profile</button>'
+        + '<button type="button" class="btn" id="resetBtn">Reset</button>'
+        + '<span class="copied" id="copiedMsg" hidden>Copied to clipboard</span>'
+        + '</div>';
+    } else {
+      html += '<div class="actions"><button type="button" class="btn" id="resetBtn">Reset</button></div>';
+    }
+
+    result.innerHTML = html;
+
+    var rb = document.getElementById("resetBtn");
+    if(rb) rb.addEventListener("click", reset);
+    var cb = document.getElementById("copyBtn");
+    if(cb) cb.addEventListener("click", copyProfile);
+  }
+
+  function summaryText(){
+    var scores = FACTORS.map(function(f){ return {f:f, s:factorScore(f)}; });
+    var wsum=0, wtot=0;
+    scores.forEach(function(o){ wsum += o.s*o.f.weight; wtot += o.f.weight; });
+    var overall = Math.round(wsum/wtot);
+    var min = Math.min.apply(null, scores.map(function(o){return o.s;}));
+    var weakest = scores.filter(function(o){return o.s===min;}).map(function(o){return o.f.name;});
+    var lines = [];
+    lines.push("AI receptionist trust self-score — [your business]");
+    lines.push("(self-rating against the four trust factors; orientation, not a measured score)");
+    lines.push("");
+    scores.forEach(function(o){ lines.push("- "+o.f.name+(o.f.weight>1?" (×"+o.f.weight+" weight)":"")+": "+o.s+"/100"); });
+    lines.push("");
+    lines.push("Weighted self-rating: "+overall+"/100");
+    lines.push("Fix first: "+weakest.join(", "));
+    if(answers.escape[2]===0) lines.push("Flag: handover not reliably staffed — a broken escape route does more damage than no AI at all.");
+    if(answers.context[2]===0) lines.push("Flag: calls are predominantly emotionally weighted — consider keeping a human as the primary contact.");
+    lines.push("");
+    lines.push("Next: test it as a stranger would — ask if you're speaking to a person, ask for a human mid-call and time it, and describe something outside the script.");
+    return lines.join("\n");
+  }
+
+  function copyProfile(){
+    var text = summaryText();
+    var msg = document.getElementById("copiedMsg");
+    function ok(){ if(msg){ msg.hidden=false; setTimeout(function(){ msg.hidden=true; },2200); } }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok, fallback);
+    } else { fallback(); }
+    function fallback(){
+      try{
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly","");
+        ta.style.position="absolute"; ta.style.left="-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        ok();
+      }catch(err){ /* clipboard unavailable; no-op */ }
+    }
+  }
+
+  function reset(){
+    FACTORS.forEach(function(f){ answers[f.key] = [null,null,null]; });
+    var radios = host.querySelectorAll("input[type=radio]");
+    for(var i=0;i<radios.length;i++){ radios[i].checked = false; }
+    render();
+  }
+
+  render();
+})();
+</script>

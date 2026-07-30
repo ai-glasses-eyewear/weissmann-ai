@@ -1,0 +1,446 @@
+<title>Offerten-Check: SEO im Website-Preis · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .grid{display:grid;gap:18px;margin-top:20px}
+  h2{font-size:1.12rem;margin:0 0 4px;letter-spacing:-.01em}
+  .sub{color:var(--ink-mute);font-size:.9rem;margin:0 0 14px}
+  .steps{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 4px;padding:0;list-style:none}
+  .steps li{font-size:.82rem;color:var(--ink-soft);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .steps b{color:var(--navy)}
+
+  .item{padding:15px 0;border-top:1px solid var(--line)}
+  .item:first-of-type{border-top:0;padding-top:2px}
+  .item-head{display:flex;gap:10px;align-items:baseline}
+  .item-num{font:600 .78rem/1.4 var(--mono);color:var(--ink-mute);min-width:1.7em}
+  .item-title{font-weight:600;font-size:.99rem;flex:1}
+  .tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle;background:var(--accent-soft);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+  .item-desc{color:var(--ink-soft);font-size:.87rem;margin:5px 0 11px 2.3em}
+  @media(max-width:520px){.item-desc{margin-left:0}}
+
+  .seg{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);border-radius:11px;overflow:hidden;max-width:520px}
+  .seg input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+  .seg label{flex:1 1 auto;text-align:center;cursor:pointer;font-size:.82rem;font-weight:600;padding:9px 10px;color:var(--ink-soft);background:var(--card);border-left:1px solid var(--line);min-height:42px;display:flex;align-items:center;justify-content:center;transition:background .12s}
+  .seg label:first-of-type{border-left:0}
+  .seg label:hover{background:var(--soft)}
+  .seg input[value="named"]:checked+label{background:var(--ok-soft);color:var(--ok)}
+  .seg input[value="vague"]:checked+label{background:var(--warn-soft);color:var(--warn)}
+  .seg input[value="missing"]:checked+label{background:var(--miss-soft);color:var(--miss)}
+  .seg input:focus-visible+label{outline:none;box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--navy) 55%,transparent)}
+
+  .statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 14px}
+  @media(max-width:560px){.statrow{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--soft);border:1px solid var(--line);border-radius:11px;padding:11px 12px;text-align:center}
+  .stat .n{font:700 1.5rem/1 var(--mono);display:block}
+  .stat .l{font-size:.72rem;color:var(--ink-mute);margin-top:5px;letter-spacing:.02em}
+  .stat.ok .n{color:var(--ok)} .stat.warn .n{color:var(--warn)} .stat.miss .n{color:var(--miss)} .stat.open .n{color:var(--ink-mute)}
+
+  .verdict{border-radius:12px;padding:14px 16px;border:1px solid var(--line);background:var(--soft)}
+  .verdict h3{margin:0 0 5px;font-size:1rem}
+  .verdict p{margin:0;font-size:.9rem;color:var(--ink-soft)}
+  .verdict.v-ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 34%,transparent)}
+  .verdict.v-ok h3{color:var(--ok)}
+  .verdict.v-warn{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 34%,transparent)}
+  .verdict.v-warn h3{color:var(--warn)}
+  .verdict.v-miss{background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 34%,transparent)}
+  .verdict.v-miss h3{color:var(--miss)}
+
+  .note{margin-top:12px;border-left:3px solid var(--miss);background:var(--miss-soft);border-radius:0 10px 10px 0;padding:10px 13px;font-size:.85rem;color:var(--ink-soft)}
+  .note b{color:var(--miss)}
+
+  .gaps{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:9px}
+  .gaps li{border:1px solid var(--line);border-radius:11px;padding:11px 13px;background:var(--card)}
+  .gaps li.g-miss{border-left:4px solid var(--miss)}
+  .gaps li.g-vague{border-left:4px solid var(--warn)}
+  .gaps .gt{font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .gaps .badge{font-size:.66rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:999px}
+  .badge.b-miss{background:var(--miss-soft);color:var(--miss)} .badge.b-vague{background:var(--warn-soft);color:var(--warn)} .badge.b-core{background:var(--accent-soft);color:var(--accent)}
+  .gaps .gq{margin:6px 0 0;font-size:.85rem;color:var(--ink-soft)}
+  .gaps .gq b{color:var(--ink);font-weight:600}
+  .allgood{margin-top:14px;font-size:.9rem;color:var(--ok);background:var(--ok-soft);border:1px solid color-mix(in srgb,var(--ok) 30%,transparent);border-radius:11px;padding:11px 13px}
+
+  .onggrid{display:grid;grid-template-columns:1fr;gap:8px;margin:2px 0 14px}
+  @media(min-width:640px){.onggrid{grid-template-columns:1fr 1fr}}
+  .ongitem{display:flex;gap:9px;align-items:flex-start;font-size:.86rem;color:var(--ink-soft);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+  .ongitem .dot{flex:0 0 auto;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:6px}
+  .gate-out{margin-top:4px;border-radius:11px;padding:12px 14px;font-size:.88rem;border:1px solid var(--line);background:var(--soft);color:var(--ink-soft)}
+  .gate-out.g-ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 30%,transparent)}
+  .gate-out.g-warn{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 30%,transparent)}
+  .gate-out b{color:var(--ink)}
+
+  .ref{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:640px){.ref{grid-template-columns:1fr 1fr}}
+  .ref h4{margin:0 0 8px;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-mute)}
+  .ref ul{margin:0;padding-left:0;list-style:none;display:grid;gap:6px}
+  .ref li{font-size:.86rem;color:var(--ink-soft);display:flex;gap:8px;align-items:flex-start}
+  .ref .mk{flex:0 0 auto;font-weight:700;font-family:var(--mono);font-size:.82rem;line-height:1.5}
+  .ref .in .mk{color:var(--ok)} .ref .out .mk{color:var(--miss)}
+  .pricetag{font-size:.9rem;color:var(--ink-soft);margin:0 0 4px}
+  .pricetag .now{font-weight:700;color:var(--ink)} .pricetag .was{text-decoration:line-through;color:var(--ink-mute);margin-left:6px}
+
+  .btn{appearance:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:.9rem;padding:11px 16px;border-radius:11px;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);min-height:46px}
+  .btn:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .btn.ghost{background:transparent;color:var(--navy)}
+  .btn.ghost:hover{background:var(--soft)}
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+  .copied{font-size:.82rem;color:var(--ok);font-weight:600}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">KI-Marketing, SEO &amp; GEO · SEO im Website-Preis</p>
+  <h1>Offerten-Check: «Ist das in Ihrem Angebot enthalten?»</h1>
+  <p class="lede">Nehmen Sie Ihre aktuelle Website-Offerte zur Hand und scannen Sie sie Punkt für Punkt gegen das technische SEO-Fundament aus dem Artikel – zehn Elemente, die in jede neue Website gehören. Sie sehen sofort, was ausdrücklich benannt ist und was unter «SEO inklusive» offenbleibt. Nichts wird gespeichert oder gesendet.</p>
+
+  <div class="grid">
+
+    <section class="card card-pad" aria-labelledby="scan-h">
+      <h2 id="scan-h">Das technische SEO-Fundament: die 10 Punkte</h2>
+      <p class="sub">Markieren Sie für jeden Punkt, wie konkret Ihre Offerte ihn benennt.</p>
+      <ul class="steps" aria-hidden="true">
+        <li><b>Ausdrücklich genannt</b> = wörtlich in der Offerte</li>
+        <li><b>Vage / pauschal</b> = nur «SEO inklusive», nicht dieser Punkt</li>
+        <li><b>Nicht erwähnt</b> = fehlt ganz / unklar</li>
+      </ul>
+      <div id="items"></div>
+    </section>
+
+    <section class="card card-pad" aria-labelledby="res-h">
+      <h2 id="res-h">Ihr Scan-Ergebnis</h2>
+      <p class="sub">Aktualisiert sich mit jeder Markierung. «Ausdrücklich genannt» lässt sich nach dem Launch überprüfen – vage Zusagen nicht.</p>
+      <div id="results" aria-live="polite">
+        <div class="statrow">
+          <div class="stat ok"><span class="n" id="c-named">0</span><span class="l">ausdrücklich</span></div>
+          <div class="stat warn"><span class="n" id="c-vague">0</span><span class="l">vage / pauschal</span></div>
+          <div class="stat miss"><span class="n" id="c-miss">0</span><span class="l">nicht erwähnt</span></div>
+          <div class="stat open"><span class="n" id="c-open">10</span><span class="l">noch offen</span></div>
+        </div>
+        <div class="verdict" id="verdict"><h3 id="v-title">Noch keine Punkte markiert</h3><p id="v-body">Gehen Sie die zehn Punkte oben durch. Sobald alle markiert sind, ordnet dieser Scan Ihre Offerte einer der drei Varianten aus dem Artikel zu.</p></div>
+        <div id="crawlnote"></div>
+        <div id="gapwrap"></div>
+      </div>
+      <div class="toolbar">
+        <button type="button" class="btn" id="copyBtn">Prüfliste als Text kopieren</button>
+        <button type="button" class="btn ghost" id="resetBtn">Zurücksetzen</button>
+        <span class="copied" id="copied" hidden>Kopiert.</span>
+      </div>
+      <p class="sub" style="margin-top:10px;margin-bottom:0">Der kopierte Text ist Ihre eigene Prüfliste mit den offenen Punkten und den passenden Fragen aus dem Artikel – zum Einfügen in Ihre E-Mail an den Anbieter.</p>
+    </section>
+
+    <section class="card card-pad" aria-labelledby="ong-h">
+      <h2 id="ong-h">Der zweite Test: laufende SEO-Arbeit</h2>
+      <p class="sub">Diese Arbeit gehört laut Artikel <b>nicht</b> in einen einmaligen Website-Preis – sie ist eine eigene, wiederkehrende Leistung. Prüfen Sie, ob Ihre Offerte das klar trennt.</p>
+      <div class="onggrid" id="ongitems"></div>
+      <fieldset style="border:0;margin:0;padding:0">
+        <legend class="sub" style="margin-bottom:8px">Ist laufende SEO-Arbeit (Content, Linkaufbau, Optimierung, Reporting) in Ihrer Offerte als separates, wiederkehrendes Angebot geregelt?</legend>
+        <div class="seg" role="radiogroup" aria-label="Regelung laufende SEO-Arbeit" style="max-width:640px">
+          <input type="radio" name="gate" id="g-sep" value="named"><label for="g-sep">Ja, klar getrennt</label>
+          <input type="radio" name="gate" id="g-bun" value="vague"><label for="g-bun">Steckt im Website-Preis</label>
+          <input type="radio" name="gate" id="g-unc" value="missing">
+          <label for="g-unc">Unklar / nicht geregelt</label>
+        </div>
+      </fieldset>
+      <div class="gate-out" id="gateOut" aria-live="polite">Wählen Sie eine Antwort, um die Einordnung aus dem Artikel zu sehen.</div>
+    </section>
+
+    <section class="card card-pad" aria-labelledby="ref-h">
+      <h2 id="ref-h">Referenz: ein konkret benanntes Fundament</h2>
+      <p class="sub">Der Artikel nennt ein reales, öffentlich einsehbares Beispiel dafür, wie sich diese Checkliste in einer echten Preisstruktur niederschlägt. Kein Aufruf zu einem bestimmten Paket – nur ein Massstab für «konkret benannt».</p>
+      <p class="pricetag">Weissmann Starter Website: <span class="now">CHF 880</span><span class="was">CHF 2&rsquo;490</span> <span style="color:var(--ink-mute)">(Aktionspreis · einmaliger Festpreis)</span></p>
+      <div class="ref">
+        <div class="in">
+          <h4>Ausdrücklich benannt</h4>
+          <ul>
+            <li><span class="mk">+</span><span>Technisches SEO- und GEO-Fundament</span></li>
+            <li><span class="mk">+</span><span>Google Analytics 4 und Search Console eingerichtet</span></li>
+            <li><span class="mk">+</span><span>Strukturierte Daten (Basis)</span></li>
+            <li><span class="mk">+</span><span>Performance-Optimierung, Security-Header</span></li>
+            <li><span class="mk">+</span><span>Bis zu 5 Kernseiten, responsives Design, Netlify-Deployment</span></li>
+            <li><span class="mk">+</span><span>1 Sprache, 2 definierte Korrekturrunden</span></li>
+          </ul>
+        </div>
+        <div class="out">
+          <h4>Ausdrücklich nicht enthalten</h4>
+          <ul>
+            <li><span class="mk">&minus;</span><span>Texterstellung (Copywriting)</span></li>
+            <li><span class="mk">&minus;</span><span>Weitere Sprachen</span></li>
+            <li><span class="mk">&minus;</span><span>Kostenpflichtige Drittanbieter-Tools</span></li>
+            <li><span class="mk">&minus;</span><span>Laufende SEO-Betreuung: Content, Linkaufbau, monatliche Optimierung – bewusst eine eigene, separat beauftragte Leistung</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="disc">
+      Orientierungshilfe zum Artikel «Website mit SEO erstellen lassen: Der Preis-Check», keine Rechts- oder Kaufberatung und keine Offerte. Die Einordnung folgt den zehn technischen Punkten und den drei «inklusive»-Varianten aus dem Artikel; die Preise stammen aus der Weissmann-Preisseite (Stand 29.07.2026). Alle Eingaben bleiben nur in Ihrem Browser – es wird nichts gespeichert, gesendet oder ausgewertet. Verwenden Sie [Ihr Unternehmen] und [Anbieter] als Platzhalter, keine echten Daten nötig.
+    </div>
+
+  </div>
+
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Weiterlesen &amp; Fundament prüfen lassen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/marketing-seo-geo/website-seo-im-preis-enthalten/" target="_blank" rel="noopener noreferrer" aria-label="Ganzen Artikel «SEO im Website-Preis» lesen (opens in a new tab)">Der ganze Artikel: SEO im Website-Preis &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-webentwicklung/" target="_blank" rel="noopener noreferrer" aria-label="Leistung KI-Webentwicklung ansehen (opens in a new tab)">KI-Webentwicklung ansehen &rarr;</a>
+    </div>
+    <p class="att">Weissmann KI-Academy · eine Ergänzung zum Leitfaden. Orientierung, keine Offerte.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var ITEMS = [
+    {id:"crawl", tag:"Fundament", title:"Crawlbarkeit und Indexierbarkeit",
+     desc:"Korrekte robots.txt, kein versehentlich aus der Testumgebung übernommenes noindex, saubere HTTP-Statuscodes. Ohne diesen Punkt ist jeder andere auf der Liste bedeutungslos.",
+     q:"Was passiert, wenn nach dem Launch die Startseite nicht als «indexiert» geführt wird – gilt das als Nacharbeit im Preis oder als Zusatzauftrag?"},
+    {id:"titles", tag:null, title:"Individuelle Seitentitel und Meta-Beschreibungen",
+     desc:"Jede Seite bekommt einen eigenen Titel und eine eigene Beschreibung – nicht einen generischen Firmennamen, der auf allen fünf Seiten identisch erscheint.",
+     q:"Bekommt jede einzelne Seite einen eigenen Seitentitel und eine eigene Meta-Beschreibung, oder wird ein generischer Titel für alle Seiten verwendet?"},
+    {id:"canonical", tag:null, title:"Canonical-Tags",
+     desc:"Eine klare Ansage, welche Adresse die «offizielle» ist, wenn dieselbe Seite über mehrere URL-Varianten erreichbar ist – mit/ohne www, mit/ohne Schrägstrich, mit/ohne Tracking-Parameter.",
+     q:"Explizit nach der Canonical-Strategie fragen, nicht nur nach «SEO inklusive»."},
+    {id:"sitemap", tag:"Kernpunkt", title:"Aktuelle XML-Sitemap – erstellt UND eingereicht",
+     desc:"Eine Sitemap, die nur auf dem Server liegt, aber nie bei der Google Search Console eingereicht wurde, hat denselben Effekt wie gar keine Sitemap.",
+     q:"Wird eine XML-Sitemap erstellt und bei der Google Search Console eingereicht, oder nur erstellt?"},
+    {id:"structured", tag:"Kernpunkt", title:"Strukturierte Daten nach schema.org",
+     desc:"Mindestens Organization-Angaben, je nach Seitentyp ergänzt um Article-, Service- oder Breadcrumb-Markup, damit Suchmaschinen und KI-Systeme Entitäten und Fakten korrekt zuordnen.",
+     q:"Welche strukturierten Daten nach schema.org werden konkret eingebaut – Organization, Article, lokale Geschäftsdaten?"},
+    {id:"internal", tag:"Kernpunkt", title:"Durchdachte interne Verlinkungsstruktur",
+     desc:"Aussagekräftige Ankertexte statt «hier klicken», eine flache Struktur ohne verwaiste Seiten, wichtige Seiten von mehreren Stellen erreichbar.",
+     q:"Bei neuen Unterseiten aktiv prüfen, von wo aus intern auf sie verlinkt wird – gibt es «verwaiste» Seiten?"},
+    {id:"speed", tag:null, title:"Kurze Ladezeiten und stabile Core Web Vitals",
+     desc:"Komprimierte Bilder, kein unnötig schwerer Code, keine render-blockierenden Skripte – für die Geduld der Besuchenden wie für die Einordnung durch Google.",
+     q:"Ist die Ladezeit an einer bereits gelieferten Referenzseite selbst nachmessbar, zum Beispiel mit Google PageSpeed Insights?"},
+    {id:"mobile", tag:null, title:"Mobile-first-taugliches, responsives Design",
+     desc:"Google indexiert nach der mobilen Version einer Seite, nicht nach der Desktop-Ansicht. Eine Seite, die auf dem Smartphone bricht, verliert Besuchende und Sichtbarkeit.",
+     q:"Welche der zehn technischen Punkte aus dem Artikel deckt «SEO inklusive» hier konkret ab?"},
+    {id:"https", tag:null, title:"HTTPS und sprechende URL-Struktur",
+     desc:"Verschlüsselte Verbindung als Grundvoraussetzung, dazu lesbare Adresspfade statt kryptischer Parameterketten.",
+     q:"Welche der zehn technischen Punkte aus dem Artikel deckt «SEO inklusive» hier konkret ab?"},
+    {id:"analytics", tag:null, title:"Eingerichtetes Google Analytics 4 und Search Console",
+     desc:"Nicht nur ein Tracking-Schnipsel im Code, sondern ein funktionierendes Konto mit Zugang für Sie – damit sich überhaupt überprüfen lässt, ob das Fundament wirkt.",
+     q:"Wer richtet Google Analytics 4 und die Search Console ein, und bekomme ich als Kundin oder Kunde den administrativen Zugang dazu?"}
+  ];
+  var CORE = {crawl:1, sitemap:1, structured:1, internal:1};
+  var ONGOING = [
+    "Laufende Content-Produktion (Ratgeberartikel, neue Landingpages)",
+    "Backlink-Aufbau von anderen, themenrelevanten Websites",
+    "Laufende Optimierung bestehender Seiten",
+    "Monatliches Ranking- und Sichtbarkeits-Reporting",
+    "Laufende Pflege lokaler Signale (Google-Unternehmensprofil, Bewertungen)",
+    "Beobachtung der Konkurrenz und Anpassung der Strategie"
+  ];
+
+  var state = {};
+  ITEMS.forEach(function(it){ state[it.id] = null; });
+
+  var itemsHost = document.getElementById("items");
+  ITEMS.forEach(function(it, i){
+    var wrap = document.createElement("div");
+    wrap.className = "item";
+    var tagHtml = it.tag ? ' <span class="tag">'+it.tag+'</span>' : '';
+    wrap.innerHTML =
+      '<div class="item-head"><span class="item-num">'+(i+1).toString().padStart(2,"0")+'</span>'+
+      '<span class="item-title">'+it.title+tagHtml+'</span></div>'+
+      '<p class="item-desc">'+it.desc+'</p>'+
+      '<div class="seg" role="radiogroup" aria-label="'+it.title.replace(/"/g,"")+'">'+
+        '<input type="radio" name="'+it.id+'" id="'+it.id+'-n" value="named"><label for="'+it.id+'-n">Ausdrücklich genannt</label>'+
+        '<input type="radio" name="'+it.id+'" id="'+it.id+'-v" value="vague"><label for="'+it.id+'-v">Vage / pauschal</label>'+
+        '<input type="radio" name="'+it.id+'" id="'+it.id+'-m" value="missing"><label for="'+it.id+'-m">Nicht erwähnt</label>'+
+      '</div>';
+    itemsHost.appendChild(wrap);
+  });
+
+  var ongHost = document.getElementById("ongitems");
+  ONGOING.forEach(function(t){
+    var d = document.createElement("div");
+    d.className = "ongitem";
+    d.innerHTML = '<span class="dot" aria-hidden="true"></span><span>'+t+'</span>';
+    ongHost.appendChild(d);
+  });
+
+  var $ = function(id){ return document.getElementById(id); };
+  var cNamed=$("c-named"), cVague=$("c-vague"), cMiss=$("c-miss"), cOpen=$("c-open");
+  var verdict=$("verdict"), vTitle=$("v-title"), vBody=$("v-body");
+  var crawlnote=$("crawlnote"), gapwrap=$("gapwrap");
+
+  function counts(){
+    var n=0,v=0,m=0,o=0;
+    ITEMS.forEach(function(it){
+      var s=state[it.id];
+      if(s==="named")n++; else if(s==="vague")v++; else if(s==="missing")m++; else o++;
+    });
+    return {n:n,v:v,m:m,o:o};
+  }
+
+  function render(){
+    var c = counts();
+    cNamed.textContent=c.n; cVague.textContent=c.v; cMiss.textContent=c.m; cOpen.textContent=c.o;
+
+    // Verdict
+    verdict.className = "verdict";
+    if(c.o > 0){
+      vTitle.textContent = "Noch " + c.o + " von 10 Punkten offen";
+      vBody.textContent = "Markieren Sie für jeden Punkt, wie konkret Ihre Offerte ihn benennt. Sobald alle zehn markiert sind, ordnet dieser Scan Ihre Offerte einer der drei «inklusive»-Varianten aus dem Artikel zu.";
+    } else if(c.n === 10){
+      verdict.classList.add("v-ok");
+      vTitle.textContent = "Ehrliches «inklusive» (Variante 1)";
+      vBody.textContent = "Alle zehn technischen Punkte sind ausdrücklich benannt. Genau das lässt sich nach dem Launch Punkt für Punkt überprüfen – nicht nur auf Zusage. Prüfen Sie zusätzlich unten, ob laufende SEO-Arbeit klar als separates Angebot geregelt ist.";
+    } else if(c.n === 0){
+      verdict.classList.add("v-miss");
+      vTitle.textContent = "Warnsignal";
+      vBody.textContent = "«SEO inklusive» ohne ein einziges konkret benanntes technisches Element ist laut Artikel ein Warnsignal, kein Detail. Verlangen Sie, dass die Offerte die einzelnen Punkte benennt – sonst lässt sich nach dem Launch nichts überprüfen.";
+    } else {
+      verdict.classList.add("v-warn");
+      vTitle.textContent = "«Inklusive mit Lücken» (Variante 2)";
+      vBody.textContent = "Ein Teil der Punkte ist benannt, andere bleiben vage oder fehlen – oft gerade die aufwendigen wie strukturierte Daten oder geprüfte interne Verlinkung. Solche Lücken fallen selten von selbst auf. Gehen Sie die offenen Punkte unten mit dem Anbieter durch.";
+    }
+
+    // Crawl special note
+    var cs = state["crawl"];
+    if(cs === "vague" || cs === "missing"){
+      crawlnote.innerHTML = '<div class="note"><b>Achtung Crawlbarkeit.</b> Ohne diesen Punkt ist jeder andere auf der Liste bedeutungslos – eine Suchmaschine, die eine Seite nicht betreten darf, liest auch keine gute Meta-Beschreibung. Nach dem Launch in der Search Console prüfen, ob die Startseite als «indexiert» geführt wird – nicht nur, ob sie im Browser lädt.</div>';
+    } else {
+      crawlnote.innerHTML = "";
+    }
+
+    // Gap list
+    var gaps = ITEMS.filter(function(it){ return state[it.id]==="vague" || state[it.id]==="missing"; });
+    if(gaps.length === 0){
+      if(c.o === 0){
+        gapwrap.innerHTML = '<div class="allgood">Keine offenen Lücken: Jeder der zehn Punkte ist in Ihrer Offerte ausdrücklich benannt. Halten Sie diese Formulierungen schriftlich fest und prüfen Sie sie nach dem Launch.</div>';
+      } else {
+        gapwrap.innerHTML = "";
+      }
+    } else {
+      // missing first, then vague; within, core first
+      gaps.sort(function(a,b){
+        var sa = state[a.id]==="missing"?0:1, sb = state[b.id]==="missing"?0:1;
+        if(sa!==sb) return sa-sb;
+        var ca = CORE[a.id]?0:1, cb = CORE[b.id]?0:1;
+        return ca-cb;
+      });
+      var html = '<p class="sub" style="margin:16px 0 0">Das würde ich vor der Unterschrift klären ('+gaps.length+'):</p><ul class="gaps">';
+      gaps.forEach(function(it){
+        var st = state[it.id];
+        var cls = st==="missing" ? "g-miss" : "g-vague";
+        var badge = st==="missing" ? '<span class="badge b-miss">nicht erwähnt</span>' : '<span class="badge b-vague">vage</span>';
+        var core = CORE[it.id] ? '<span class="badge b-core">Kernpunkt</span>' : '';
+        html += '<li class="'+cls+'"><div class="gt">'+it.title+' '+badge+core+'</div>'+
+                '<p class="gq"><b>Fragen:</b> '+it.q+'</p></li>';
+      });
+      html += '</ul>';
+      gapwrap.innerHTML = html;
+    }
+  }
+
+  itemsHost.addEventListener("change", function(e){
+    var t = e.target;
+    if(t && t.name && Object.prototype.hasOwnProperty.call(state, t.name)){
+      state[t.name] = t.value;
+      render();
+    }
+  });
+
+  // Ongoing gate
+  var gateOut = $("gateOut");
+  document.getElementById("ongitems"); // noop guard
+  var gateGroup = document.querySelector('.seg[role="radiogroup"][aria-label="Regelung laufende SEO-Arbeit"]');
+  gateGroup.addEventListener("change", function(e){
+    var v = e.target && e.target.value;
+    if(v === "named"){
+      gateOut.className = "gate-out g-ok";
+      gateOut.innerHTML = "<b>Sauber getrennt.</b> Genau so beschreibt es der Artikel: das technische Fundament ist eine einmalige Bauleistung, laufende SEO-Arbeit eine eigenständige, wiederkehrende Leistung mit eigenem Preismodell. Halten Sie schriftlich fest, was zum Website-Preis gehört und was separat läuft.";
+    } else if(v === "vague"){
+      gateOut.className = "gate-out g-warn";
+      gateOut.innerHTML = "<b>Vorsicht.</b> Ein einmaliger Website-Preis kann laufende Content-Produktion, Linkaufbau und monatliche Optimierung nicht leisten, ohne dass irgendwo an Qualität gespart wird. Lassen Sie sich zeigen, welcher Umfang laufender Arbeit im Festpreis tatsächlich steckt – und wie lange.";
+    } else if(v === "missing"){
+      gateOut.className = "gate-out g-warn";
+      gateOut.innerHTML = "<b>Ein Wort, zwei Rechnungen.</b> Wenn unklar bleibt, ob «SEO inklusive» das Fundament oder ein späteres Betreuungspaket meint, verspricht die Offerte mehr, als der Preis abdeckt. Fragen Sie ausdrücklich: Ist laufende SEO-Arbeit im Preis enthalten oder ein separates, wiederkehrendes Angebot?";
+    }
+  });
+
+  // Copy checklist
+  function buildText(){
+    var c = counts();
+    var L = [];
+    L.push("OFFERTEN-CHECK · Technisches SEO-Fundament (10 Punkte)");
+    L.push("Grundlage: Weissmann KI-Academy – «SEO im Website-Preis».");
+    L.push("");
+    L.push("Ausdrücklich benannt: " + c.n + "/10  ·  Vage: " + c.v + "  ·  Nicht erwähnt: " + c.m + "  ·  Offen: " + c.o);
+    if(c.o === 0){
+      if(c.n === 10) L.push("Einordnung: Ehrliches «inklusive» (Variante 1) – alle Punkte überprüfbar benannt.");
+      else if(c.n === 0) L.push("Einordnung: Warnsignal – kein einziger technischer Punkt konkret benannt.");
+      else L.push("Einordnung: «Inklusive mit Lücken» (Variante 2) – teils benannt, teils vage/fehlend.");
+    }
+    L.push("");
+    var gaps = ITEMS.filter(function(it){ return state[it.id]==="vague" || state[it.id]==="missing"; });
+    if(gaps.length){
+      L.push("Vor der Unterschrift bei [Anbieter] zu klären:");
+      gaps.forEach(function(it){
+        var st = state[it.id]==="missing" ? "nicht erwähnt" : "vage";
+        L.push("- " + it.title + " ("+st+"): " + it.q);
+      });
+    } else if(c.o === 0){
+      L.push("Keine offenen Lücken – alle zehn Punkte sind ausdrücklich benannt.");
+    } else {
+      L.push("(Scan noch nicht vollständig – " + c.o + " Punkte offen.)");
+    }
+    L.push("");
+    L.push("Zusätzlich klären: Ist laufende SEO-Arbeit (Content, Linkaufbau, laufende Optimierung, monatliches Reporting, lokale Signale) als separates, wiederkehrendes Angebot geregelt – oder unter «SEO inklusive» mit dem einmaligen Website-Preis vermischt?");
+    L.push("");
+    L.push("Orientierung, keine Offerte. Für [Ihr Unternehmen] erstellt.");
+    return L.join("\n");
+  }
+
+  var copiedEl = $("copied");
+  function flash(){ copiedEl.hidden=false; setTimeout(function(){ copiedEl.hidden=true; }, 2200); }
+  $("copyBtn").addEventListener("click", function(){
+    var text = buildText();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(flash, function(){ legacyCopy(text); });
+    } else {
+      legacyCopy(text);
+    }
+  });
+  function legacyCopy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly","");
+    ta.style.position="absolute"; ta.style.left="-9999px";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); flash(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  $("resetBtn").addEventListener("click", function(){
+    ITEMS.forEach(function(it){ state[it.id]=null; });
+    itemsHost.querySelectorAll('input[type="radio"]').forEach(function(r){ r.checked=false; });
+    gateGroup.querySelectorAll('input[type="radio"]').forEach(function(r){ r.checked=false; });
+    gateOut.className="gate-out";
+    gateOut.textContent="Wählen Sie eine Antwort, um die Einordnung aus dem Artikel zu sehen.";
+    render();
+  });
+
+  render();
+})();
+</script>

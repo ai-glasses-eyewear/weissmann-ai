@@ -1,0 +1,365 @@
+<title>Website-Kosten aus Bausteinen · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  h2{font-size:1.06rem;margin:0 0 4px;letter-spacing:-.01em}
+  .sub{font-size:.88rem;color:var(--ink-mute);margin:0 0 16px}
+  .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}
+  @media(min-width:820px){.grid{grid-template-columns:1.15fr .85fr;align-items:start}}
+
+  fieldset{border:0;margin:0 0 18px;padding:0}
+  fieldset:last-of-type{margin-bottom:0}
+  legend{font-weight:700;font-size:.95rem;padding:0;margin:0 0 3px;color:var(--ink)}
+  .hint{font-size:.8rem;color:var(--ink-mute);margin:0 0 9px}
+  .segs{display:flex;flex-wrap:wrap;gap:8px}
+  .seg{position:relative;flex:1 1 auto;min-width:min(100%,150px)}
+  .seg input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+  .seg span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:8px 12px;border:1.5px solid var(--line);border-radius:11px;background:var(--card);color:var(--ink-soft);font-size:.9rem;font-weight:600;cursor:pointer;transition:border-color .12s,background .12s,color .12s;height:100%}
+  .seg:hover span{border-color:var(--navy)}
+  .seg input:checked + span{border-color:var(--navy);background:var(--accent-soft);color:var(--ink)}
+  .seg input:focus-visible + span{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  .result{position:relative}
+  @media(min-width:820px){.result{position:sticky;top:16px}}
+  .noflat{display:flex;gap:10px;align-items:flex-start;background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 40%,transparent);border-radius:11px;padding:11px 13px;margin:0 0 16px;font-size:.86rem;color:var(--ink);line-height:1.45}
+  .noflat b{color:var(--warn)}
+  .tier-label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 4px}
+  .tier{font-size:1.18rem;font-weight:700;margin:0 0 10px;letter-spacing:-.01em}
+  .band{font-size:clamp(1.8rem,5.5vw,2.4rem);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:0;color:var(--navy)}
+  .band small{display:block;font-size:.8rem;font-weight:600;letter-spacing:.01em;color:var(--ink-mute);margin-top:5px}
+  .caveat{font-size:.78rem;color:var(--ink-mute);margin:8px 0 0;line-height:1.45;font-style:italic}
+  .verbal{background:var(--soft);border-radius:10px;padding:11px 13px;margin:14px 0 0;font-size:.88rem;color:var(--ink-soft);line-height:1.5;border-left:3px solid var(--accent)}
+  .notes{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .notes li{position:relative;padding-left:20px;font-size:.85rem;color:var(--ink-soft);line-height:1.45}
+  .notes li::before{content:"›";position:absolute;left:4px;top:-1px;color:var(--navy);font-weight:800}
+
+  ol.blocks{margin:6px 0 0;padding:0;list-style:none;counter-reset:b;display:grid;grid-template-columns:1fr;gap:8px}
+  @media(min-width:620px){ol.blocks{grid-template-columns:1fr 1fr}}
+  ol.blocks li{counter-increment:b;position:relative;padding:10px 12px 10px 40px;background:var(--soft);border-radius:10px;font-size:.87rem;line-height:1.4}
+  ol.blocks li::before{content:counter(b);position:absolute;left:10px;top:9px;width:22px;height:22px;border-radius:6px;background:var(--navy);color:var(--on-navy);font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+  ol.blocks b{font-weight:700}
+  ol.blocks span{color:var(--ink-mute)}
+
+  textarea{width:100%;min-height:200px;resize:vertical;font-family:var(--mono);font-size:.8rem;line-height:1.55;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:11px;padding:12px 14px;margin-top:4px}
+  textarea:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 28%,transparent);border-color:var(--navy)}
+  .row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:12px}
+  .btn{appearance:none;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);font-family:var(--font);font-weight:600;font-size:.92rem;padding:11px 18px;border-radius:11px;cursor:pointer;min-height:44px}
+  .btn:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copystatus{font-size:.85rem;color:var(--ok);font-weight:600;min-height:1.2em}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">KI-Marketing, SEO &amp; GEO · Website-Kosten</p>
+    <h1>Was bestimmt Ihren Website-Preis? Setzen Sie ihn aus den Bausteinen zusammen.</h1>
+    <p class="lede">Eine seriöse Zahl ohne Kenntnis des Projekts gibt es nicht. Was sich benennen lässt, sind die Bausteine, aus denen sich jeder Website-Preis zusammensetzt. Wählen Sie Ihren Umfang – der Rechner zeigt die passende Grössenordnung, die Kostenhebel dahinter und eine Grundlage, mit der Sie zwei Offerten vergleichen statt zwei Zahlen.</p>
+  </header>
+
+  <div class="grid">
+    <section class="card card-pad controls" aria-labelledby="ctrl-h">
+      <h2 id="ctrl-h">Ihr Projektumfang</h2>
+      <p class="sub">Der Umfang bestimmt, wie oft jeder Baustein durchlaufen wird.</p>
+
+      <fieldset>
+        <legend>Seitenumfang</legend>
+        <p class="hint">«Fünf Seiten» beschreibt einen Seiten-, keinen Arbeitsumfang.</p>
+        <div class="segs" role="none">
+          <label class="seg"><input type="radio" name="pages" value="p5" checked><span>bis 5 Kernseiten</span></label>
+          <label class="seg"><input type="radio" name="pages" value="p20"><span>ca. 10–20 Seiten</span></label>
+          <label class="seg"><input type="radio" name="pages" value="plarge"><span>grosse Architektur (20+)</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Sprachen</legend>
+        <p class="hint">Jede Sprache verlangt eigene Metadaten, interne Verlinkung und eine eigene SEO-Basis.</p>
+        <div class="segs" role="none">
+          <label class="seg"><input type="radio" name="langs" value="one" checked><span>1 Sprache</span></label>
+          <label class="seg"><input type="radio" name="langs" value="multi"><span>mehrsprachig</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Design</legend>
+        <p class="hint">Individuelles Design braucht Entwurfsrunden; ein Theme-Wechsel dauert einen Nachmittag.</p>
+        <div class="segs" role="none">
+          <label class="seg"><input type="radio" name="design" value="custom" checked><span>individuelles Design</span></label>
+          <label class="seg"><input type="radio" name="design" value="template"><span>Vorlage / Theme</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Texte / Copywriting</legend>
+        <p class="hint">Copywriting ist eine eigene Disziplin, die Zeit kostet – und in tiefen Startpreisen oft ausgeschlossen.</p>
+        <div class="segs" role="none">
+          <label class="seg"><input type="radio" name="copy" value="provider" checked><span>Anbieter schreibt</span></label>
+          <label class="seg"><input type="radio" name="copy" value="self"><span>ich schreibe selbst</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Funktionen</legend>
+        <p class="hint">Ein Shop bringt Arbeitspakete mit, die eine reine Informationsseite nicht kennt.</p>
+        <div class="segs" role="none">
+          <label class="seg"><input type="radio" name="func" value="form" checked><span>nur Kontaktformular</span></label>
+          <label class="seg"><input type="radio" name="func" value="booking"><span>Buchung / CRM</span></label>
+          <label class="seg"><input type="radio" name="func" value="shop"><span>Shop / Integrationen</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Laufender Betrieb</legend>
+        <p class="hint">Ein einmaliger Baupreis sagt nichts über Jahr zwei und drei.</p>
+        <div class="segs" role="none">
+          <label class="seg"><input type="radio" name="ongoing" value="ask" checked><span>3-Jahres-Kosten abfragen</span></label>
+          <label class="seg"><input type="radio" name="ongoing" value="skip"><span>nur Startpreis</span></label>
+        </div>
+      </fieldset>
+    </section>
+
+    <aside class="card card-pad result" aria-labelledby="res-h">
+      <p class="noflat"><span>⚠</span><span><b>Keine ehrliche Pauschalzahl.</b> Das Ergebnis ist eine Grössenordnung zur Orientierung – kein Preis und keine Offerte.</span></p>
+      <h2 id="res-h" class="tier-label">Grössenordnung</h2>
+      <p class="tier" id="tierName" aria-live="polite">–</p>
+      <p class="band" id="bandOut" aria-live="polite">–</p>
+      <p class="caveat" id="caveatOut"></p>
+      <p class="verbal" id="verbalOut"></p>
+      <ul class="notes" id="notesOut" aria-live="polite"></ul>
+    </aside>
+  </div>
+
+  <section class="card card-pad" style="margin-top:16px" aria-labelledby="blk-h">
+    <h2 id="blk-h">Die zehn Bausteine, aus denen sich jeder Website-Preis zusammensetzt</h2>
+    <p class="sub">Ob Einzelperson, Agentur oder Baukasten – im Hintergrund fallen fast immer dieselben Arbeitspakete an. Welche davon in einer Offerte enthalten sind, erklärt fast den ganzen Preisunterschied.</p>
+    <ol class="blocks">
+      <li><b>Strategie und Konzeption</b> <span>· Zielgruppe, Kernbotschaft, Seitenstruktur vor dem ersten Pixel</span></li>
+      <li><b>Copywriting und Texterstellung</b> <span>· zielgruppengerechte Texte schreiben, nicht nur einfügen</span></li>
+      <li><b>Design</b> <span>· eigene visuelle Sprache statt Theme mit neuen Farben</span></li>
+      <li><b>Entwicklung und Umsetzung</b> <span>· Formulare, Inhaltsverwaltung, technische Verdrahtung</span></li>
+      <li><b>Mobile-Optimierung</b> <span>· echtes Testen auf realen Geräten</span></li>
+      <li><b>Performance</b> <span>· komprimierte Bilder, sauberer Code, kurze Ladezeiten</span></li>
+      <li><b>Analytics-Einrichtung</b> <span>· GA4 und Search Console mit den Geschäftszielen verknüpft</span></li>
+      <li><b>Technisches SEO- und GEO-Fundament</b> <span>· Crawlbarkeit, strukturierte Daten, Sitemap</span></li>
+      <li><b>Hosting und Wartung</b> <span>· laufender Betrieb, Sicherheitsupdates, Erreichbarkeit</span></li>
+      <li><b>Korrekturrunden</b> <span>· eine definierte Anzahl Feedback-Schlaufen</span></li>
+    </ol>
+  </section>
+
+  <section class="card card-pad" style="margin-top:16px" aria-labelledby="out-h">
+    <h2 id="out-h">Ihre Offerten-Grundlage zum Mitnehmen</h2>
+    <p class="sub">Fordern Sie von jedem Anbieter eine Offerte an, die entlang dieser zehn Bausteine aufgeschlüsselt ist – dann vergleichen Sie zwei Offerten statt zwei Zahlen. Der Text unten fasst Ihre Auswahl zusammen und enthält die Checkliste aus dem Artikel.</p>
+    <label for="outText" class="hint" style="display:block;margin-bottom:2px">Generierter Text (nur lokal, wird nicht gespeichert oder gesendet):</label>
+    <textarea id="outText" readonly aria-label="Generierte Offerten-Grundlage"></textarea>
+    <div class="row">
+      <button class="btn" id="copyBtn" type="button">In Zwischenablage kopieren</button>
+      <span class="copystatus" id="copyStatus" role="status" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <p class="disc">Orientierung, keine Beratung und keine Offerte. Alle Grössenordnungen stammen aus dem verlinkten Weissmann-Artikel und Weissmanns eigener, öffentlich einsehbarer Preisstruktur – ein reales Beispiel eines einzelnen Schweizer Anbieters, kein Marktdurchschnitt und keine Aussage darüber, was andere Anbieter verlangen. Seriöse Vergleichswerte lassen sich nur aus mehreren selbst eingeholten Offerten ableiten. Alle Eingaben bleiben in Ihrem Browser; nichts wird gespeichert oder gesendet.</p>
+
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Weiterlesen &amp; nächster Schritt</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/marketing-seo-geo/website-kosten-schweiz/" target="_blank" rel="noopener noreferrer" aria-label="Vollständiger Artikel: Was kostet eine Website in der Schweiz (opens in a new tab)">Artikel: Was kostet eine Website? →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-webentwicklung/" target="_blank" rel="noopener noreferrer" aria-label="Weissmann KI-Webentwicklung – Leistungen ansehen (opens in a new tab)">KI-Webentwicklung von Weissmann →</a>
+    </div>
+    <p class="att">Weissmann · ein Begleiter zum Leitfaden. Orientierung, keine Offerte.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var LABELS = {
+    pages:{p5:"bis 5 Kernseiten",p20:"ca. 10–20 Seiten",plarge:"grosse Architektur (20+ Seiten)"},
+    langs:{one:"1 Sprache",multi:"mehrsprachig"},
+    design:{custom:"individuelles Design",template:"Vorlage / Theme"},
+    copy:{provider:"der Anbieter schreibt die Texte",self:"ich schreibe die Texte selbst"},
+    func:{form:"nur Kontakt-/Lead-Formular",booking:"Buchungssystem oder CRM-Anbindung",shop:"Online-Shop oder Integrationen"},
+    ongoing:{ask:"laufende Kosten über 3 Jahre mitabfragen",skip:"nur den Startpreis betrachten"}
+  };
+
+  var TIER = {
+    starter:{
+      name:"Starter-Grössenordnung",
+      band:"CHF 880",
+      sub:"Aktionspreis · regulär CHF 2’490",
+      bandText:"CHF 880 Aktionspreis (regulär CHF 2’490)",
+      verbal:"Ein schlanker Fünf-Seiten-Auftritt in einer Sprache bewegt sich in der Praxis oft im unteren bis mittleren vierstelligen Bereich, sobald echtes Copywriting, individuelles Design und ein technisches SEO-Fundament dazukommen."
+    },
+    business:{
+      name:"Business-Grössenordnung",
+      band:"CHF 4’990",
+      sub:"Beispiel: Weissmann Business Website",
+      bandText:"CHF 4’990",
+      verbal:"Ein zehn- bis zwanzigseitiger, mehrsprachiger Auftritt mit Konversionsarchitektur liegt typischerweise deutlich darüber, weil praktisch jeder der zehn Bausteine mehrfach durchlaufen wird."
+    },
+    complex:{
+      name:"Individuelle Grössenordnung",
+      band:"ab CHF 9’900",
+      sub:"Beispiel: Weissmann Individuelle Website",
+      bandText:"ab CHF 9’900",
+      verbal:"Ein Shop oder eine individuelle Plattform mit Integrationen sprengt diese Grössenordnungen meist nach oben, weil zusätzliche technische Disziplinen – Zahlungsabwicklung, Schnittstellen, Datensicherheit – dazukommen."
+    }
+  };
+
+  var CAVEAT = "Reales Beispiel eines einzelnen Schweizer Anbieters – kein Marktdurchschnitt und keine Aussage über andere Anbieter.";
+
+  var BAUSTEINE = [
+    "Strategie und Konzeption",
+    "Copywriting und Texterstellung",
+    "Design",
+    "Entwicklung und Umsetzung",
+    "Mobile-Optimierung",
+    "Performance",
+    "Analytics-Einrichtung (GA4 + Search Console)",
+    "Technisches SEO- und GEO-Fundament",
+    "Hosting und Wartung",
+    "Korrekturrunden"
+  ];
+
+  var CHECKLIST = [
+    "Ist die Seitenzahl konkret aufgelistet, oder steht nur ein unbestimmtes «bis zu X Seiten» ohne Definition, was als eigenständige Seite zählt?",
+    "Wer schreibt die Texte – Sie selbst, der Anbieter, oder ist das in der Offerte gar nicht geregelt?",
+    "Wie viele Korrekturrunden sind enthalten, und zu welchem Satz wird eine zusätzliche Runde verrechnet?",
+    "Gehören Ihnen Code und Quelldateien nach Projektabschluss, oder bleiben Sie technisch vom Anbieter abhängig?",
+    "Ist «SEO inklusive» konkret beschrieben – Sitemap, strukturierte Daten, Ladezeit, Crawlbarkeit – oder ein unbelegtes Marketingwort?",
+    "Was kostet Hosting und Wartung nach dem Launch, einmalig oder wiederkehrend, und auf wessen Namen laufen Domain und Hosting-Konto?",
+    "Ist die Anzahl Sprachen explizit gezählt, oder taucht «mehrsprachig» als vages Versprechen ohne Zahl auf?",
+    "Gibt es einen Zeitplan, und was passiert, wenn Inhalte oder Freigaben von Ihrer Seite verspätet eintreffen?",
+    "Sind Google Analytics 4 und die Search Console Teil des Grundpreises, oder ein separat verrechnetes Extra?",
+    "Falls ein Shop, ein Buchungssystem oder eine CRM-Anbindung nötig ist: bereits eingepreist, oder folgt eine separate Offerte?",
+    "Was passiert, wenn nach dem Launch etwas nicht mehr funktioniert – ist ein Mindestmass an Support im Preis enthalten, oder wird jede Stunde einzeln verrechnet?"
+  ];
+
+  function read(){
+    function v(n){var el=document.querySelector('input[name="'+n+'"]:checked');return el?el.value:null;}
+    return {pages:v("pages"),langs:v("langs"),design:v("design"),copy:v("copy"),func:v("func"),ongoing:v("ongoing")};
+  }
+
+  function tierOf(s){
+    if(s.func==="shop" || s.pages==="plarge") return "complex";
+    if(s.pages==="p20" || s.langs==="multi" || s.func==="booking") return "business";
+    return "starter";
+  }
+
+  function notesFor(s,t){
+    var n=[];
+    if(s.langs==="multi") n.push("Jede zusätzliche Sprache vervielfacht Text-, SEO- und Pflegeaufwand – ein eigener Kostenblock, kein Nebeneffekt.");
+    if(s.copy==="provider" && t==="starter") n.push("Copywriting ist im Starter-Beispiel ausdrücklich nicht enthalten. Als eigener Posten dazugerechnet, bringt echtes Copywriting einen schlanken Auftritt in den unteren bis mittleren vierstelligen Bereich.");
+    else if(s.copy==="provider") n.push("Copywriting ist ein eigener Arbeitsschritt mit eigenem Zeitaufwand – in tiefen Startpreisen oft nicht enthalten. Explizit prüfen.");
+    if(s.copy==="self") n.push("Selbst schreiben spart diesen Posten – aber nur, wenn Sie wirklich Zeit für zielgruppengerechtes Schreiben einplanen. Sonst verschiebt sich der Aufwand nur zu Ihnen.");
+    if(s.design==="template") n.push("Eine Vorlage mit ausgetauschten Farben ist günstiger, ergibt laut Artikel aber oft «eine hübsche Vorlage mit aufgeklebtem Logo» statt eines Auftritts, der auf ein Geschäftsziel hinarbeitet.");
+    if(s.func==="shop") n.push("Ein Shop bringt Produktkatalog, Zahlungsanbindung, Versandlogik, Retourenprozess und laufende Datenpflege mit – Arbeitspakete, die eine reine Informationsseite nicht kennt.");
+    if(s.func==="booking") n.push("Buchungs- oder CRM-Anbindung ist selten im Grundpreis. Klären Sie, ob sie eingepreist ist oder eine separate Offerte folgt.");
+    if(s.ongoing==="ask") n.push("Richtig: Fragen Sie nach den laufenden Kosten über drei Jahre (Hosting, Wartung, Domain, Drittanbieter-Abos), nicht nur nach dem Startpreis.");
+    else n.push("Ein Startpreis allein sagt nichts über Jahr zwei und drei. Der Artikel empfiehlt ausdrücklich, die laufenden Kosten über drei Jahre mitabzufragen.");
+    return n;
+  }
+
+  function buildText(s,t){
+    var d=TIER[t];
+    var L=[];
+    L.push("MEIN WEBSITE-PROJEKT – GRUNDLAGE FÜR VERGLEICHBARE OFFERTEN");
+    L.push("(erstellt mit dem Weissmann Bausteine-Rechner · Orientierung, keine Offerte)");
+    L.push("");
+    L.push("MEIN UMFANG");
+    L.push("- Seiten: "+LABELS.pages[s.pages]);
+    L.push("- Sprachen: "+LABELS.langs[s.langs]);
+    L.push("- Design: "+LABELS.design[s.design]);
+    L.push("- Texte: "+LABELS.copy[s.copy]);
+    L.push("- Funktionen: "+LABELS.func[s.func]);
+    L.push("- Laufender Betrieb: "+LABELS.ongoing[s.ongoing]);
+    L.push("");
+    L.push("GRÖSSENORDNUNG (Beispiel eines einzelnen Schweizer Anbieters, kein Marktdurchschnitt)");
+    L.push(d.name+": "+d.bandText);
+    L.push("");
+    L.push("BITTE OFFERTE ENTLANG DIESER ZEHN BAUSTEINE AUFSCHLÜSSELN");
+    for(var i=0;i<BAUSTEINE.length;i++){L.push((i+1)+". "+BAUSTEINE[i]);}
+    L.push("");
+    L.push("DIESE FRAGEN MÖCHTE ICH IN DER OFFERTE BEANTWORTET SEHEN");
+    for(var j=0;j<CHECKLIST.length;j++){L.push("- "+CHECKLIST[j]);}
+    return L.join("\n");
+  }
+
+  var tierName=document.getElementById("tierName");
+  var bandOut=document.getElementById("bandOut");
+  var caveatOut=document.getElementById("caveatOut");
+  var verbalOut=document.getElementById("verbalOut");
+  var notesOut=document.getElementById("notesOut");
+  var outText=document.getElementById("outText");
+  var copyBtn=document.getElementById("copyBtn");
+  var copyStatus=document.getElementById("copyStatus");
+
+  function render(){
+    var s=read();
+    var t=tierOf(s);
+    var d=TIER[t];
+    tierName.textContent=d.name;
+    bandOut.innerHTML="";
+    bandOut.appendChild(document.createTextNode(d.band));
+    var sm=document.createElement("small");
+    sm.textContent=d.sub;
+    bandOut.appendChild(sm);
+    caveatOut.textContent=CAVEAT;
+    verbalOut.textContent=d.verbal;
+    notesOut.innerHTML="";
+    var notes=notesFor(s,t);
+    for(var i=0;i<notes.length;i++){
+      var li=document.createElement("li");
+      li.textContent=notes[i];
+      notesOut.appendChild(li);
+    }
+    outText.value=buildText(s,t);
+    copyStatus.textContent="";
+  }
+
+  function fallbackCopy(text){
+    try{
+      outText.focus();
+      outText.select();
+      var ok=document.execCommand&&document.execCommand("copy");
+      window.getSelection&&window.getSelection().removeAllRanges();
+      return !!ok;
+    }catch(e){return false;}
+  }
+
+  copyBtn.addEventListener("click",function(){
+    var text=outText.value;
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        copyStatus.textContent="Kopiert ✓";
+      }).catch(function(){
+        copyStatus.textContent=fallbackCopy(text)?"Kopiert ✓":"Bitte den Text manuell markieren und kopieren.";
+      });
+    }else{
+      copyStatus.textContent=fallbackCopy(text)?"Kopiert ✓":"Bitte den Text manuell markieren und kopieren.";
+    }
+  });
+
+  var inputs=document.querySelectorAll('input[type="radio"]');
+  for(var k=0;k<inputs.length;k++){inputs[k].addEventListener("change",render);}
+  render();
+})();
+</script>

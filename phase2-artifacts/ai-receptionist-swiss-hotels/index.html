@@ -1,0 +1,477 @@
+<title>The Ten-Minute Front-Desk Crunch, Sorted Live · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+
+  /* lane color hooks */
+  .l-ok{--lc:var(--ok);--lcs:var(--ok-soft)}
+  .l-warn{--lc:var(--warn);--lcs:var(--warn-soft)}
+  .l-miss{--lc:var(--miss);--lcs:var(--miss-soft)}
+  .l-accent{--lc:var(--accent);--lcs:var(--accent-soft)}
+
+  .topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  .theme-btn{flex:none;font:inherit;font-size:.8rem;font-weight:600;color:var(--ink-soft);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer}
+  .theme-btn:hover{background:var(--soft)}
+  .theme-btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  .crunchbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:4px}
+  .clock{font-family:var(--mono);font-size:1.4rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
+  .prog{font-size:.82rem;color:var(--ink-mute);font-weight:600}
+  .spacer{flex:1;min-width:8px}
+  .toggle{display:inline-flex;align-items:center;gap:9px;font-size:.88rem;color:var(--ink-soft);cursor:pointer;user-select:none}
+  .toggle input{width:17px;height:17px;accent-color:var(--navy);cursor:pointer}
+  .toggle input:disabled{cursor:not-allowed}
+
+  .btn{font:inherit;font-weight:600;font-size:.95rem;border-radius:11px;padding:11px 18px;min-height:46px;cursor:pointer;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy)}
+  .btn:hover:not(:disabled){background:var(--navy-hover);border-color:var(--navy-hover)}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+  .btn.ghost{background:transparent;color:var(--navy)}
+  .btn.ghost:hover:not(:disabled){background:var(--soft)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  .stage{min-height:210px}
+  .event-card{border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:16px}
+  .event-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+  .chip{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink-soft)}
+  .chip .em{font-size:.95rem}
+  .time{font-family:var(--mono);font-weight:700;color:var(--ink-mute);font-size:.9rem}
+  .event-title{font-size:1.08rem;font-weight:700;margin:2px 0 6px;line-height:1.32}
+  .event-detail{color:var(--ink-soft);font-size:.95rem;margin:0}
+
+  .q{font-size:.78rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.08em;margin:16px 0 8px}
+  .lane-btns{display:grid;grid-template-columns:1fr;gap:8px}@media(min-width:560px){.lane-btns{grid-template-columns:1fr 1fr}}
+  .lane-b{font:inherit;text-align:left;font-weight:600;font-size:.92rem;border-radius:10px;padding:11px 13px;cursor:pointer;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-left:5px solid var(--lc);min-height:46px}
+  .lane-b:hover:not(:disabled){background:var(--lcs)}
+  .lane-b:disabled{cursor:default}
+  .lane-b:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--lc) 34%,transparent)}
+  .lane-b.is-correct{background:var(--lcs);border-color:var(--lc);box-shadow:inset 0 0 0 1.5px var(--lc)}
+  .lane-b.is-wrong{background:var(--miss-soft);border-color:var(--miss);border-left-color:var(--miss)}
+
+  .verdict{margin-top:14px;border-radius:11px;border:1px solid var(--lc);background:var(--lcs);padding:13px 15px}
+  .verdict-lane{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:5px}
+  .dot{width:11px;height:11px;border-radius:50%;background:var(--lc);flex:none}
+  .verdict-why{margin:0;font-size:.9rem;color:var(--ink-soft);line-height:1.5}
+  .hitmiss{font-size:.82rem;font-weight:700;margin:9px 0 0}
+  .hit{color:var(--ok)}.missc{color:var(--miss)}
+
+  .done-card{border:1px dashed var(--line);border-radius:12px;background:var(--soft);padding:18px;color:var(--ink-soft);font-size:.95rem}
+
+  .sec-h{font-size:1rem;font-weight:700;color:var(--ink);margin:22px 2px 10px;letter-spacing:-.01em}
+  .board{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(min-width:720px){.board{grid-template-columns:repeat(4,1fr)}}
+  .counter{border:1px solid var(--line);border-top:3px solid var(--lc);border-radius:11px;background:var(--card);padding:12px 13px}
+  .counter .n{font-size:1.5rem;font-weight:800;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
+  .counter .cl{font-size:.82rem;font-weight:700;color:var(--ink-soft);margin-top:6px}
+  .counter .cd{font-size:.76rem;color:var(--ink-mute);margin-top:6px;line-height:1.45}
+
+  .log{display:flex;flex-direction:column;gap:7px}
+  .log-item{display:flex;align-items:center;gap:10px;font-size:.86rem;padding:8px 11px;border:1px solid var(--line);border-left:4px solid var(--lc);border-radius:9px;background:var(--card)}
+  .log-item .lt{flex:1;color:var(--ink-soft);min-width:0}
+  .log-chip{flex:none;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--lcs);color:var(--ink);border:1px solid var(--lc)}
+  .empty{color:var(--ink-mute);font-size:.88rem;padding:10px 2px}
+
+  .summary{border:1px solid var(--line);border-radius:var(--radius);background:var(--accent-soft);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px);margin-top:16px}
+  .summary h3{margin:0 0 8px;font-size:1.1rem}
+  .summary p{margin:0 0 10px;font-size:.95rem;color:var(--ink-soft);line-height:1.55}
+  .summary p:last-child{margin-bottom:0}
+  .summary strong{color:var(--ink)}
+
+  .price-h{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 8px}
+  .price{font-size:.9rem;color:var(--ink-soft);line-height:1.58;margin:0}
+  .price strong{color:var(--ink)}
+</style>
+
+<div class="wrap" id="wrap">
+  <div class="topbar">
+    <p class="kicker">AI Agents, Automation &amp; Voice · Hospitality</p>
+    <button class="theme-btn" data-action="theme" id="themeBtn" aria-label="Colour theme: auto. Activate to change.">Theme: auto</button>
+  </div>
+  <h1>The ten-minute front-desk crunch, sorted live</h1>
+  <p class="lede">At four in the afternoon a coach group is checking in, a courier is waiting for a signature, and the phone is ringing for the third time in six minutes. Step through those ten minutes and watch where each thing goes — what a well-built AI receptionist absorbs on its own, what it captures for a person, the line it must never cross, and what still needs someone at the desk.</p>
+
+  <section class="card card-pad" style="margin-top:18px" aria-label="Front-desk crunch simulator">
+    <div class="crunchbar">
+      <span class="clock" id="clock" aria-hidden="true">16:00</span>
+      <span class="prog" id="prog">Ready</span>
+      <span class="spacer"></span>
+      <label class="toggle"><input type="checkbox" id="testchk"> Test my read before each reveal</label>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin:2px 0 14px">
+      <button class="btn" id="primary" data-action="advance">Start the crunch</button>
+      <button class="btn ghost" id="reset" data-action="reset" disabled>Reset</button>
+    </div>
+    <div id="stage" class="stage" aria-live="polite"></div>
+  </section>
+
+  <section class="summary" id="summary" hidden aria-live="polite"></section>
+
+  <h2 class="sec-h">Running tally · what landed where</h2>
+  <div class="board" id="board" role="list" aria-label="Running tally by lane"></div>
+
+  <h2 class="sec-h">The window, filling up</h2>
+  <div class="log" id="log" role="list" aria-label="Events handled so far"></div>
+
+  <section class="card card-pad" style="margin-top:16px">
+    <p class="price-h">Test it before you commit</p>
+    <p class="price">The article's own advice is to try an assistant yourself, as a guest would, in more than one language, before signing a contract. Weissmann's AI phone assistant starts at <strong>CHF 350/month</strong> (Starter — 1,500 minutes included, then CHF 0.30/min; no minimum term, no setup fee), and there is a one-time <strong>CHF 350</strong> trial with no subscription for exactly that test. Orientation only — not a quote.</p>
+  </section>
+
+  <p class="disc">This is a constructed illustration built from the article's own examples — not measured data, not a recorded call, and not a quote or contract. Which requests an assistant can absorb, capture or must escalate depends on the rules configured for your specific property; the emergency boundary is a hard rule, not a configurable preference. A responsible setup takes the revised Swiss Data Protection Act (revDSG/nFADP) into account — confirm the specifics with your provider before go-live. Nothing you do here is stored or sent anywhere; it runs entirely in your browser.</p>
+
+  <footer class="linkbar" aria-label="Read more about AI receptionists for Swiss hotels">
+    <p class="lb-title">Go deeper</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/agents-automation/ai-receptionist-swiss-hotels/" target="_blank" rel="noopener noreferrer" aria-label="Read the full guide: AI receptionists for Swiss hotels (opens in a new tab)">Read the full hotel receptionist guide →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-phone-assistant/" target="_blank" rel="noopener noreferrer" aria-label="See how the AI phone assistant is configured for hotels (opens in a new tab)">See the AI phone assistant for hotels →</a>
+    </div>
+    <p class="att">Front-desk crunch simulator · a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var laneOrder = ['absorb','capture','human','desk'];
+  var laneClass = { absorb:'l-ok', capture:'l-warn', human:'l-miss', desk:'l-accent' };
+
+  var LANES = {
+    absorb: {
+      label: 'AI absorbs',
+      short: 'AI absorbs',
+      desc: 'Routine questions the assistant answers on its own: multilingual guest calls, late-arrival directions, parking, a door code by SMS — following a guest who switches language mid-sentence without asking them to start over.'
+    },
+    capture: {
+      label: 'Captured for a human',
+      short: 'Captured',
+      desc: 'Money and policy: refunds, disputed charges, cancellations of nights already paid, a booking change. Captured accurately and flagged urgent — a person with authority over the booking decides.'
+    },
+    human: {
+      label: 'Straight to a human — now',
+      short: 'To a human now',
+      desc: 'The hard boundary. Medical, fire or smoke, a security incident, or a guest who simply asks for a person — routed immediately to staff and, where warranted, Swiss emergency numbers (144 ambulance · 117 police · 118 fire). The assistant does not assess severity.'
+    },
+    desk: {
+      label: 'Stays at the desk',
+      short: 'At the desk',
+      desc: 'In-person work a phone line cannot touch: handing over keys, a courier’s signature, questions answered face to face. Absorbing the calls is what frees a person for exactly this.'
+    }
+  };
+
+  var EVENTS = [
+    {
+      t:'16:00', ch:'desk', lane:'desk', log:'Coach group check-in',
+      title:'A coach group lines up to check in',
+      detail:'Keys to hand over and questions answered face to face — all at the desk at once.',
+      why:'Guests physically present still need a person to hand over keys and answer questions face to face. An AI receptionist does not remove the need for staff at the desk during the rush.'
+    },
+    {
+      t:'16:01', ch:'phone', lane:'absorb', log:'Late arrival',
+      title:'“I’m still on the road — I won’t get there before eleven. Is that a problem?”',
+      detail:'A late arrival calls in during the busiest hour of the afternoon.',
+      why:'Check-in after 10 p.m. uses the side entrance; the assistant walks the guest through directions and parking and can text the door code once they are about twenty minutes out. Routine — answered on its own.'
+    },
+    {
+      t:'16:02', ch:'desk', lane:'desk', log:'Courier signature',
+      title:'A courier waits for a signature',
+      detail:'Standing at the desk, needing a hand right now.',
+      why:'A physical task on the spot. A phone line cannot sign for a parcel — this stays with the person at the desk.'
+    },
+    {
+      t:'16:03', ch:'phone', lane:'absorb', log:'Language switch → parking',
+      title:'A guest slips from English into German mid-sentence',
+      detail:'“…und, äh, wo ist eigentlich die Einfahrt zur Tiefgarage?”',
+      why:'The assistant follows the switch and answers in German without asking the guest to restart in one language. The switch is handled without friction, and directions to parking are routine.'
+    },
+    {
+      t:'16:04', ch:'phone', lane:'capture', log:'Refund + cancellation',
+      title:'“While I have you — cancel my last two nights and refund me.”',
+      detail:'A cancellation involving money already paid, asked casually mid-call.',
+      why:'A refund touches money and a policy decision. The assistant notes the request accurately and flags it urgent for reception — it does not promise something it cannot guarantee.'
+    },
+    {
+      t:'16:05', ch:'phone', lane:'human', log:'Smoke reported',
+      title:'A caller reports smoke on the second floor',
+      detail:'Not a service question — a possible hazard on the property.',
+      why:'Any mention of fire, smoke or a gas smell goes straight to staff and, if warranted, to emergency services (118 fire). The assistant is not the judge of whether the report is serious enough to act on.'
+    },
+    {
+      t:'16:06', ch:'phone', lane:'human', log:'Medical — in pain',
+      title:'“I’m not feeling well… I’m in a lot of pain.”',
+      detail:'A guest describes a medical situation over the phone.',
+      why:'Medical situations are routed immediately to hotel staff and, where warranted, to Swiss emergency numbers (144 ambulance). The assistant gives no diagnosis, no triage, and does not assess how serious it is.'
+    },
+    {
+      t:'16:07', ch:'phone', lane:'absorb', log:'Directions to parking',
+      title:'A third caller wants directions to parking',
+      detail:'The same afternoon, three separate callers ask the same thing.',
+      why:'A routine question the assistant answers directly — one of the calls that would otherwise ring out unanswered while the desk is busy with the coach group.'
+    },
+    {
+      t:'16:08', ch:'phone', lane:'human', log:'Asked for a person',
+      title:'“Just put me through to a person.”',
+      detail:'The caller does not want to explain — they want a human.',
+      why:'A direct request to speak to a person is itself the trigger for a handover. It is not something the assistant negotiates, delays or talks the guest out of.'
+    },
+    {
+      t:'16:09', ch:'phone', lane:'capture', log:'Move a booking',
+      title:'“Can you move my booking to next weekend?”',
+      detail:'A reservation change requested over the phone.',
+      why:'The change is captured as a structured note. Whether it is then written into the booking system automatically or entered by hand depends on the hotel’s existing system and how the assistant is configured — so it is handed to your team accurately, either way.'
+    },
+    {
+      t:'16:10', ch:'phone', lane:'human', log:'Theft reported',
+      title:'“Someone’s been in my room — a bag is gone.”',
+      detail:'A guest reports a theft on the property.',
+      why:'A theft, a break-in or a guest who feels unsafe is escalated to a human immediately, every time (117 police) — with no attempt by the assistant to calm, investigate or resolve it itself.'
+    }
+  ];
+
+  var N = EVENTS.length;
+
+  var state = {
+    idx: -1, phase: 'idle', test: false, done: false,
+    tally: { absorb:0, capture:0, human:0, desk:0 },
+    score: { c:0, a:0 },
+    resolved: [],
+    lastChoice: null
+  };
+
+  var themeMode = 'auto';
+
+  var els = {
+    wrap:      document.getElementById('wrap'),
+    themeBtn:  document.getElementById('themeBtn'),
+    clock:     document.getElementById('clock'),
+    prog:      document.getElementById('prog'),
+    testchk:   document.getElementById('testchk'),
+    primary:   document.getElementById('primary'),
+    reset:     document.getElementById('reset'),
+    stage:     document.getElementById('stage'),
+    summary:   document.getElementById('summary'),
+    board:     document.getElementById('board'),
+    log:       document.getElementById('log')
+  };
+
+  function esc(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function advance(){
+    if(state.done) return;
+    if(state.phase === 'predict') return;
+    state.idx++;
+    if(state.idx >= N){
+      state.done = true;
+      state.phase = 'end';
+      renderAll();
+      return;
+    }
+    var ev = EVENTS[state.idx];
+    state.lastChoice = null;
+    if(state.test){
+      state.phase = 'predict';
+    } else {
+      state.phase = 'revealed';
+      state.tally[ev.lane]++;
+      state.resolved.push({ ev: ev, choice: null });
+    }
+    renderAll();
+  }
+
+  function predict(lane){
+    if(state.phase !== 'predict') return;
+    if(!LANES[lane]) return;
+    var ev = EVENTS[state.idx];
+    var correct = (lane === ev.lane);
+    state.score.a++;
+    if(correct) state.score.c++;
+    state.lastChoice = { chosen: lane, correct: correct };
+    state.tally[ev.lane]++;
+    state.resolved.push({ ev: ev, choice: lane });
+    state.phase = 'revealed';
+    renderAll();
+  }
+
+  function reset(){
+    state.idx = -1; state.phase = 'idle'; state.done = false;
+    state.tally = { absorb:0, capture:0, human:0, desk:0 };
+    state.score = { c:0, a:0 };
+    state.resolved = [];
+    state.lastChoice = null;
+    renderAll();
+  }
+
+  function toggleTheme(){
+    themeMode = (themeMode === 'auto') ? 'light' : (themeMode === 'light') ? 'dark' : 'auto';
+    var r = document.documentElement;
+    if(themeMode === 'auto') r.removeAttribute('data-theme');
+    else r.setAttribute('data-theme', themeMode);
+    els.themeBtn.textContent = 'Theme: ' + themeMode;
+    els.themeBtn.setAttribute('aria-label', 'Colour theme: ' + themeMode + '. Activate to change.');
+  }
+
+  function renderControls(){
+    els.clock.textContent = (state.idx === -1) ? '16:00' : (state.done ? '16:10' : EVENTS[state.idx].t);
+    if(state.idx === -1){
+      els.prog.textContent = 'Ready · ' + N + ' things will land';
+    } else if(state.done){
+      els.prog.textContent = 'All ' + N + ' handled';
+    } else {
+      els.prog.textContent = 'Event ' + (state.idx + 1) + ' of ' + N;
+    }
+
+    var lbl = 'Start the crunch', dis = false;
+    if(state.done){ lbl = 'Crunch complete'; dis = true; }
+    else if(state.idx === -1){ lbl = 'Start the crunch'; }
+    else if(state.phase === 'predict'){ lbl = 'Choose a lane above'; dis = true; }
+    else { lbl = (state.idx === N - 1) ? 'See the summary' : 'Next event'; }
+    els.primary.textContent = lbl;
+    els.primary.disabled = dis;
+
+    els.reset.disabled = (state.idx === -1);
+    els.testchk.disabled = (state.idx !== -1);
+    els.testchk.checked = state.test;
+  }
+
+  function renderStage(){
+    if(state.idx === -1){
+      els.stage.innerHTML =
+        '<div class="event-card"><p class="event-detail">Press <strong>Start the crunch</strong> to step into a ten-minute rush at a Swiss hotel front desk. Each thing that lands — a phone call, someone at the desk — sorts into one of the four lanes below. Turn on “Test my read” to guess where each one goes before it is revealed.</p></div>';
+      return;
+    }
+    if(state.done){
+      els.stage.innerHTML =
+        '<div class="done-card">The rush passes. The assistant absorbed the routine calls, captured what needed a person, and sent every emergency straight to a human — while the desk stayed with the guests in front of it. See the tally and summary below, or <strong>Reset</strong> to run it again with “Test my read” on.</div>';
+      return;
+    }
+
+    var ev = EVENTS[state.idx];
+    var html = '<div class="event-card">' +
+      '<div class="event-top">' +
+        '<span class="chip"><span class="em">' + (ev.ch === 'phone' ? '📞' : '🧍') + '</span>' + (ev.ch === 'phone' ? 'Incoming call' : 'At the desk') + '</span>' +
+        '<span class="time">' + esc(ev.t) + '</span>' +
+      '</div>' +
+      '<p class="event-title">' + esc(ev.title) + '</p>' +
+      '<p class="event-detail">' + esc(ev.detail) + '</p>';
+
+    if(state.phase === 'predict'){
+      html += '<p class="q" id="q-lane">Where does this go?</p>' +
+        '<div class="lane-btns" role="group" aria-labelledby="q-lane">' +
+        laneOrder.map(function(k){
+          return '<button class="lane-b ' + laneClass[k] + '" data-action="predict" data-lane="' + k + '">' + esc(LANES[k].label) + '</button>';
+        }).join('') +
+        '</div>';
+    } else {
+      if(state.lastChoice){
+        html += '<p class="q">Where does this go?</p><div class="lane-btns">' +
+          laneOrder.map(function(k){
+            var cls = laneClass[k];
+            if(k === ev.lane) cls += ' is-correct';
+            else if(k === state.lastChoice.chosen) cls += ' is-wrong';
+            return '<button class="lane-b ' + cls + '" disabled>' + esc(LANES[k].label) + '</button>';
+          }).join('') +
+          '</div>';
+      }
+      var L = LANES[ev.lane];
+      html += '<div class="verdict ' + laneClass[ev.lane] + '">' +
+        '<div class="verdict-lane"><span class="dot"></span>' + esc(L.label) + '</div>' +
+        '<p class="verdict-why">' + esc(ev.why) + '</p>';
+      if(state.lastChoice){
+        html += state.lastChoice.correct
+          ? '<p class="hitmiss hit">✓ Your read matched the configured rule.</p>'
+          : '<p class="hitmiss missc">Your read: ' + esc(LANES[state.lastChoice.chosen].label) + '. The configured rule sends it elsewhere.</p>';
+      }
+      html += '</div>';
+    }
+
+    html += '</div>';
+    els.stage.innerHTML = html;
+  }
+
+  function renderBoard(){
+    els.board.innerHTML = laneOrder.map(function(k){
+      var L = LANES[k];
+      return '<div class="counter ' + laneClass[k] + '" role="listitem" aria-label="' + esc(L.label) + ': ' + state.tally[k] + ' so far">' +
+        '<div class="n">' + state.tally[k] + '</div>' +
+        '<div class="cl">' + esc(L.label) + '</div>' +
+        '<div class="cd">' + esc(L.desc) + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function renderLog(){
+    if(state.resolved.length === 0){
+      els.log.innerHTML = '<p class="empty">Nothing yet — the log fills as each call or arrival is handled.</p>';
+      return;
+    }
+    els.log.innerHTML = state.resolved.map(function(r){
+      return '<div class="log-item ' + laneClass[r.ev.lane] + '" role="listitem">' +
+        '<span class="time">' + esc(r.ev.t) + '</span>' +
+        '<span class="lt">' + esc(r.ev.log) + '</span>' +
+        '<span class="log-chip">' + esc(LANES[r.ev.lane].short) + '</span>' +
+      '</div>';
+    }).join('');
+  }
+
+  function renderSummary(){
+    if(!state.done){
+      els.summary.hidden = true;
+      els.summary.innerHTML = '';
+      return;
+    }
+    var t = state.tally;
+    var html = '<h3>Ten minutes, sorted</h3>' +
+      '<p>The assistant <strong>absorbed ' + t.absorb + '</strong> routine call' + (t.absorb === 1 ? '' : 's') + ' on its own and <strong>captured ' + t.capture + '</strong> money-or-policy request' + (t.capture === 1 ? '' : 's') + ' accurately for a person to decide. <strong>' + t.human + '</strong> situation' + (t.human === 1 ? '' : 's') + ' that must never reach it alone went straight to a human — routed to staff and, where warranted, Swiss emergency numbers (144 ambulance · 117 police · 118 fire). <strong>' + t.desk + '</strong> in-person task' + (t.desk === 1 ? '' : 's') + ' stayed at the desk, where a person is physically needed.</p>' +
+      '<p>Absorbing the calls is what freed that one person to stay with the coach group. The boundary — everything the assistant refuses to decide alone — is not a limitation to apologise for; it is what makes automating the rest of the call defensible in the first place.</p>';
+    if(state.score.a > 0){
+      html += '<p>Your read matched the configured rule on <strong>' + state.score.c + ' of ' + state.score.a + '</strong>. The right line is the one set for a specific property — run your own busiest afternoon, late-arrival policy and emergency procedure past any assistant as a test call, in more than one language, before signing anything.</p>';
+    } else {
+      html += '<p>The right line is the one set for a specific property — run your own busiest afternoon, late-arrival policy and emergency procedure past any assistant as a test call, in more than one language, before signing anything. Turn on “Test my read” and run it again to check where you would have drawn the line.</p>';
+    }
+    els.summary.innerHTML = html;
+    els.summary.hidden = false;
+  }
+
+  function renderAll(){
+    renderControls();
+    renderStage();
+    renderBoard();
+    renderLog();
+    renderSummary();
+  }
+
+  els.wrap.addEventListener('click', function(e){
+    var b = e.target.closest('[data-action]');
+    if(!b) return;
+    var a = b.getAttribute('data-action');
+    if(a === 'advance') advance();
+    else if(a === 'reset') reset();
+    else if(a === 'predict') predict(b.getAttribute('data-lane'));
+    else if(a === 'theme') toggleTheme();
+  });
+
+  els.testchk.addEventListener('change', function(){
+    if(state.idx !== -1) return;
+    state.test = els.testchk.checked;
+  });
+
+  renderAll();
+})();
+</script>

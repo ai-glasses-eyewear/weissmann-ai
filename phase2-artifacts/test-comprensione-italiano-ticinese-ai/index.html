@@ -1,0 +1,547 @@
+<title>Generatore di copioni di test — italiano ticinese · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .stack{margin-top:18px}
+  .step{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 4px}
+  .step-sub{color:var(--ink-mute);font-size:.9rem;margin:0 0 16px}
+  h2{font-size:1.15rem;margin:0 0 2px;letter-spacing:-.01em}
+
+  .grid2{display:grid;grid-template-columns:1fr;gap:14px}@media(min-width:640px){.grid2{grid-template-columns:1fr 1fr}}
+  .field{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .field.wide{grid-column:1/-1}
+  label.lab{font-weight:600;font-size:.9rem;color:var(--ink)}
+  .hint{font-size:.78rem;color:var(--ink-mute)}
+  select,input[type=text]{font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;width:100%;min-height:46px}
+  select:focus-visible,input[type=text]:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 28%,transparent)}
+
+  .cover{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+  .chip{font-size:.74rem;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 26%,transparent)}
+  .chip.off{background:var(--soft);color:var(--ink-mute);border-color:var(--line)}
+
+  .out{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .blk+.blk{margin-top:14px;border-top:1px dashed var(--line);padding-top:14px}
+  .blk-h{display:flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--navy);margin:0 0 6px}
+  .blk-n{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;background:var(--navy);color:var(--on-navy);font-size:.74rem;letter-spacing:0}
+  .blk-line{font-size:1rem;color:var(--ink);margin:0 0 4px}
+  .blk-line.say{font-style:italic}
+  .blk-note{font-size:.82rem;color:var(--ink-mute);margin:4px 0 0}
+  .switch-line{background:var(--warn-soft);border-radius:8px;padding:8px 10px;font-size:.95rem;color:var(--ink)}
+
+  .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .btn{font-family:inherit;font-weight:600;font-size:.92rem;padding:11px 16px;border-radius:10px;min-height:44px;cursor:pointer;border:1.5px solid var(--navy);color:var(--navy);background:var(--card)}
+  .btn:hover{background:var(--soft)}
+  .btn.primary{background:var(--navy);color:var(--on-navy)}.btn.primary:hover{background:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .flash{font-size:.82rem;color:var(--ok);font-weight:600;align-self:center;min-height:1em}
+
+  .scale{display:grid;grid-template-columns:1fr;gap:8px;margin:0 0 16px}@media(min-width:640px){.scale{grid-template-columns:repeat(3,1fr)}}
+  .sc{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--card)}
+  .sc b{display:block;font-size:.9rem}.sc .pts{font-size:.74rem;color:var(--ink-mute);font-weight:700}
+  .sc small{display:block;font-size:.8rem;color:var(--ink-mute);margin-top:3px}
+
+  fieldset.moment{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 12px}
+  fieldset.moment[hidden]{display:none}
+  fieldset.moment legend{font-weight:600;font-size:.95rem;padding:0 6px}
+  .seg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:6px}
+  .seg label{display:flex;align-items:center;justify-content:center;text-align:center;gap:6px;border:1.5px solid var(--line);border-radius:9px;padding:9px 8px;font-size:.86rem;font-weight:600;color:var(--ink-soft);cursor:pointer;min-height:44px}
+  .seg input{position:absolute;opacity:0;width:1px;height:1px}
+  .seg label:hover{background:var(--soft)}
+  .seg input:checked+label[data-v="2"]{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+  .seg input:checked+label[data-v="1"]{background:var(--warn-soft);border-color:var(--warn);color:var(--warn)}
+  .seg input:checked+label[data-v="0"]{background:var(--miss-soft);border-color:var(--miss);color:var(--miss)}
+  .seg input:focus-visible+label{box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+
+  .tot{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-top:4px}
+  .tot .n{font-size:1.6rem;font-weight:800;letter-spacing:-.02em}
+  .tot .l{color:var(--ink-mute);font-size:.9rem}
+  .verdict{margin-top:12px;border-radius:12px;padding:12px 14px;font-size:.92rem;border:1px solid var(--line);background:var(--soft);color:var(--ink-soft)}
+  .verdict.ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 40%,transparent)}
+  .verdict.warn{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 40%,transparent)}
+  .verdict.miss{background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 40%,transparent)}
+  .verdict b{display:block;margin-bottom:2px}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">Agenti AI, automazione e voce · Strumento</p>
+    <h1>Genera il tuo copione di test per l'italiano ticinese e il cambio di lingua</h1>
+    <p class="lede">Costruisci un copione di prova su misura per la tua azienda ticinese — cadenza, prestiti linguistici, nomi, indirizzi svizzeri e cambio di lingua a metà chiamata — poi valutalo con la stessa scala per ogni momento della telefonata. È lo strumento che accompagna la guida, non una promessa da verificare.</p>
+  </header>
+
+  <!-- STEP 1 — BUILD -->
+  <section class="card card-pad stack" aria-labelledby="s1">
+    <p class="step">1 · Costruisci lo scenario</p>
+    <h2 id="s1">Combina almeno tre elementi, come in una vera telefonata</h2>
+    <p class="step-sub">Un test utile combina una condizione di partenza (cadenza o prestito), un pattern di cambio lingua e una condizione di rumore — perché è la combinazione, non i singoli ingredienti, a somigliare a un giorno impegnativo.</p>
+
+    <div class="grid2">
+      <div class="field wide">
+        <label class="lab" for="attivita">La tua attività</label>
+        <input type="text" id="attivita" placeholder="es. studio fiduciario di Lugano" autocomplete="off" spellcheck="false">
+        <span class="hint">Usato solo per intitolare il copione. Resta nel tuo browser.</span>
+      </div>
+
+      <div class="field">
+        <label class="lab" for="speaker">Chi fa il cliente</label>
+        <select id="speaker">
+          <option value="madre">Madrelingua ticinese, in modo naturale</option>
+          <option value="nonmadre">Non madrelingua: collega DE/FR, accento marcato</option>
+          <option value="lombardo">Cliente lombardo (italiano diverso dal ticinese)</option>
+        </select>
+        <span class="hint">Chi parla in modo naturale, non chi «pulisce» la voce per il test.</span>
+      </div>
+
+      <div class="field">
+        <label class="lab" for="partenza">Condizione di partenza</label>
+        <select id="partenza">
+          <option value="cadenza">Cadenza e ritmo ticinese</option>
+          <option value="krankenkasse">Prestito tedesco: «Krankenkasse»</option>
+          <option value="sbb">Prestito: sigla «SBB» alla tedesca</option>
+          <option value="vernissage">Prestito francese: «vernissage»</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="lab" for="nome">Nome da dettare</label>
+        <select id="nome">
+          <option value="Bianchetti">Bianchetti (cognome ticinese, doppie)</option>
+          <option value="Pedrazzini">Pedrazzini (cognome ticinese, doppie)</option>
+          <option value="Zanetti">Zanetti (cognome ticinese, doppie)</option>
+          <option value="Schmidt">Schmidt (cliente da fuori cantone)</option>
+          <option value="O'Brien">O'Brien (cliente dall'estero)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="lab" for="cap">Indirizzo · CAP da dettare</label>
+        <select id="cap">
+          <option value="6900|Lugano">6900 Lugano</option>
+          <option value="6500|Bellinzona">6500 Bellinzona</option>
+          <option value="6600|Locarno">6600 Locarno</option>
+          <option value="6830|Chiasso">6830 Chiasso</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="lab" for="switchTo">Cambio di lingua a metà chiamata</label>
+        <select id="switchTo">
+          <option value="tedesco">Passa al tedesco standard</option>
+          <option value="francese">Passa al francese</option>
+          <option value="inglese">Passa all'inglese</option>
+          <option value="none">Nessun cambio (raro nella mia clientela)</option>
+        </select>
+        <span class="hint">Il cuore del test. Scegli «nessun cambio» solo se nella tua esperienza reale è un'eccezione.</span>
+      </div>
+
+      <div class="field" id="motivoField">
+        <label class="lab" for="motivo">Perché cambia lingua</label>
+        <select id="motivo">
+          <option value="agio">Perché è più a suo agio</option>
+          <option value="accompagnato">Perché lo accompagna qualcuno che non capisce l'italiano</option>
+          <option value="abitudine">Per abitudine, in un cantone di confine</option>
+        </select>
+      </div>
+
+      <div class="field wide">
+        <label class="lab" for="rumore">Rumore di fondo da riprodurre</label>
+        <select id="rumore">
+          <option value="reception">Reception di un albergo nel weekend del Locarno Film Festival</option>
+          <option value="officina">Officina / cantiere rumoroso, auricolare in vivavoce</option>
+          <option value="studio">Viavai di uno studio durante gli orari di punta</option>
+          <option value="attesa">Brusio di una sala d'attesa</option>
+        </select>
+        <span class="hint">Non lo studio silenzioso in cui si girano le demo commerciali — quello è ciò che <em>non</em> va riprodotto.</span>
+      </div>
+    </div>
+
+    <div class="cover" id="cover" aria-label="Elementi combinati in questo scenario"></div>
+  </section>
+
+  <!-- STEP 2 — SCRIPT -->
+  <section class="card card-pad stack" aria-labelledby="s2">
+    <p class="step">2 · Il copione</p>
+    <h2 id="s2">Recita al telefono, in quest'ordine, senza rallentare la voce</h2>
+    <p class="step-sub">Le battute sono in italiano; il passaggio di lingua è un'indicazione da improvvisare in modo naturale, non una frase pronta. Chiama da un cellulare che il sistema non riconosce.</p>
+
+    <div class="out" id="copione" aria-live="polite"></div>
+
+    <div class="btnrow">
+      <button type="button" class="btn primary" id="copyBtn">Copia il protocollo</button>
+      <button type="button" class="btn" id="printBtn">Stampa</button>
+      <span class="flash" id="flash" role="status" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <!-- STEP 3 — SCORE -->
+  <section class="card card-pad stack" aria-labelledby="s3">
+    <p class="step">3 · Valutazione</p>
+    <h2 id="s3">Tre esiti per ogni momento, non un voto unico</h2>
+    <p class="step-sub">Dopo la chiamata, valuta separatamente ogni momento con la stessa scala. Ripeti lo scenario almeno due volte, con due persone diverse, prima di trarre conclusioni.</p>
+
+    <div class="scale" aria-hidden="false">
+      <div class="sc"><b>Continuità <span class="pts">2 pt</span></b><small>Segue cadenza, prestito o cambio di lingua senza far ripetere e senza cambiare tono.</small></div>
+      <div class="sc"><b>Recupero <span class="pts">1 pt</span></b><small>Perde il filo un momento ma si corregge o gestisce la transizione, senza inventare.</small></div>
+      <div class="sc"><b>Rottura <span class="pts">0 pt</span></b><small>Resta nella lingua sbagliata, ignora una correzione, o risponde sicuro su quanto ha capito a metà.</small></div>
+    </div>
+
+    <fieldset class="moment" data-m="apertura">
+      <legend>Apertura</legend>
+      <div class="seg" role="radiogroup" aria-label="Esito dell'apertura">
+        <input type="radio" name="m-apertura" id="ap2" value="2"><label for="ap2" data-v="2">Continuità</label>
+        <input type="radio" name="m-apertura" id="ap1" value="1"><label for="ap1" data-v="1">Recupero</label>
+        <input type="radio" name="m-apertura" id="ap0" value="0"><label for="ap0" data-v="0">Rottura</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="moment" data-m="corpo">
+      <legend>Corpo della richiesta</legend>
+      <div class="seg" role="radiogroup" aria-label="Esito del corpo della richiesta">
+        <input type="radio" name="m-corpo" id="co2" value="2"><label for="co2" data-v="2">Continuità</label>
+        <input type="radio" name="m-corpo" id="co1" value="1"><label for="co1" data-v="1">Recupero</label>
+        <input type="radio" name="m-corpo" id="co0" value="0"><label for="co0" data-v="0">Rottura</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="moment" data-m="cambio" id="momCambio">
+      <legend>Cambio di lingua</legend>
+      <div class="seg" role="radiogroup" aria-label="Esito del cambio di lingua">
+        <input type="radio" name="m-cambio" id="ca2" value="2"><label for="ca2" data-v="2">Continuità</label>
+        <input type="radio" name="m-cambio" id="ca1" value="1"><label for="ca1" data-v="1">Recupero</label>
+        <input type="radio" name="m-cambio" id="ca0" value="0"><label for="ca0" data-v="0">Rottura</label>
+      </div>
+    </fieldset>
+
+    <div class="grid2" style="align-items:end">
+      <div class="field">
+        <label class="lab" for="freq">Quanto è frequente questo scenario nelle tue chiamate reali?</label>
+        <select id="freq">
+          <option value="">— scegli —</option>
+          <option value="raro">Raro</option>
+          <option value="frequente">Frequente</option>
+          <option value="molto">Molto frequente</option>
+        </select>
+        <span class="hint">Basata sulla tua clientela effettiva, non su questa lista.</span>
+      </div>
+      <div class="field">
+        <span class="lab">Punteggio dello scenario</span>
+        <div class="tot"><span class="n" id="totNum">—</span><span class="l" id="totMax"></span></div>
+      </div>
+    </div>
+
+    <div class="verdict" id="verdict" role="status" aria-live="polite">Valuta ogni momento e scegli una frequenza per vedere la priorità. È la logica di una matrice di priorità, non di una media scolastica.</div>
+  </section>
+
+  <p class="disc">Orientamento, non un preventivo né una consulenza. Ogni scenario, punteggio e priorità nasce dal protocollo descritto nella guida collegata: una sola chiamata riuscita non è una prova, e l'unico test valido è quello recitato sul tuo numero reale. Usa sempre nomi, indirizzi e numeri inventati o di colleghi consenzienti — mai i dati di una persona che non ha acconsentito a fare da cavia. La prova una tantum dell'assistente telefonico AI costa CHF 350 (pagamento unico, senza abbonamento). Tutto resta nel tuo browser: nulla viene salvato o inviato.</p>
+
+  <footer class="linkbar" aria-label="Approfondimenti">
+    <p class="lb-title">Continua</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/it/ai-academy/agenti-automazione/assistente-ai-italiano-ticinese-cambio-lingua/" target="_blank" rel="noopener noreferrer" aria-label="Leggi la guida completa: italiano ticinese e cambio di lingua (opens in a new tab)">Leggi la guida: italiano ticinese e cambio lingua →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/it/servizi/assistente-telefonico-ai/" target="_blank" rel="noopener noreferrer" aria-label="Scopri l'assistente telefonico AI di Weissmann (opens in a new tab)">Assistente telefonico AI →</a>
+    </div>
+    <p class="att">Weissmann AI · uno strumento di accompagnamento alla guida. Orientamento, non un preventivo.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(id){return document.getElementById(id);};
+
+  var speakerTxt={
+    madre:"Madrelingua ticinese, parla in modo naturale (non «pulito per il test»).",
+    nonmadre:"Non madrelingua: un collega di lingua tedesca o francese, italiano corretto ma con accento marcato.",
+    lombardo:"Cliente lombardo: italiano diverso da quello ticinese (utile se ricevi chiamate da oltre confine)."
+  };
+  var partenza={
+    cadenza:{chip:"Cadenza ticinese",note:"Cadenza ticinese: pause più lunghe, alcune vocali allungate, un «eh» o un «mah» come intercalare. Non un dialetto a parte."},
+    krankenkasse:{chip:"Prestito: Krankenkasse",note:"Dice «Krankenkasse», non «cassa malati»."},
+    sbb:{chip:"Prestito: SBB (DE)",note:"Pronuncia la sigla «SBB» alla tedesca, non «esse-bi-bi»."},
+    vernissage:{chip:"Prestito: vernissage",note:"Dice «vernissage», non «inaugurazione»."}
+  };
+  var nomeNote={
+    "Bianchetti":"Cognome ticinese con doppie consonanti.",
+    "Pedrazzini":"Cognome ticinese con doppie consonanti.",
+    "Zanetti":"Cognome ticinese con doppie consonanti.",
+    "Schmidt":"Cliente arrivato da fuori cantone: nome non italiano.",
+    "O'Brien":"Cliente dall'estero: nome non italiano."
+  };
+  var switchTxt={
+    tedesco:"al tedesco standard",
+    francese:"al francese",
+    inglese:"all'inglese"
+  };
+  var motivoTxt={
+    agio:"perché è più a suo agio",
+    accompagnato:"perché lo accompagna qualcuno che non capisce l'italiano",
+    abitudine:"per abitudine, come càpita spesso in un cantone di confine"
+  };
+  var rumoreTxt={
+    reception:"la reception di un albergo nel weekend del Locarno Film Festival",
+    officina:"un'officina o un cantiere rumoroso, con l'auricolare in vivavoce",
+    studio:"il viavai di uno studio durante gli orari di punta",
+    attesa:"il brusio di una sala d'attesa"
+  };
+
+  function bodyLine(p){
+    if(p==="krankenkasse") return "«Volevo sistemare una cosa per la mia Krankenkasse.»";
+    if(p==="sbb") return "«Devo incastrarlo con un orario, un treno SBB.»";
+    if(p==="vernissage") return "«È per l'organizzazione di una vernissage.»";
+    return "«Volevo chiedere quando avete un posto libero, eh.»";
+  }
+
+  function state(){
+    var att=($("attivita").value||"").trim();
+    var capRaw=$("cap").value.split("|");
+    return {
+      att: att||"[la tua attività]",
+      hasAtt: !!att,
+      speaker: $("speaker").value,
+      partenza: $("partenza").value,
+      nome: $("nome").value,
+      cap: capRaw[0], city: capRaw[1],
+      switchTo: $("switchTo").value,
+      motivo: $("motivo").value,
+      rumore: $("rumore").value
+    };
+  }
+
+  function buildData(s){
+    var hasSwitch = s.switchTo!=="none";
+    var apLine = (s.partenza==="cadenza")
+      ? "«Alura... pronto, buongiorno. Chiamo per fissare un appuntamento, eh.»"
+      : "«Pronto, buongiorno. Chiamo per fissare un appuntamento.»";
+    var apNote = (s.partenza==="cadenza")
+      ? "Cadenza ticinese naturale, senza rallentare la voce."
+      : "Apertura neutra: il segno distintivo arriva nel corpo della richiesta.";
+    var addr = "«L'indirizzo: la via ve la detto lettera per lettera — [via con nome composto] — numero [civico], "+s.cap+" "+s.city+".»";
+    return {
+      hasSwitch:hasSwitch,
+      blocks:[
+        {t:"Apertura", lines:[apLine], note:apNote},
+        {t:"Corpo della richiesta", lines:[
+            "«Mi chiamo "+s.nome+".»",
+            bodyLine(s.partenza),
+            addr
+          ], note:partenza[s.partenza].note+" "+nomeNote[s.nome]+" Detta il CAP cifra per cifra: osserva se il sistema chiede di ripetere o comincia a inventare."},
+        hasSwitch ? {t:"Cambio di lingua", sw:true, lines:[
+            "A metà della richiesta, senza annunciarlo, passa "+switchTxt[s.switchTo]+" "+motivoTxt[s.motivo]+". Continua la frase nella nuova lingua in modo naturale."
+          ], note:"Il momento più severo: verifica se il sistema segue, recupera o resta nella lingua sbagliata."} : null,
+        {t:"Chiusura", lines:[ hasSwitch
+            ? "Chiudi la richiesta nella lingua in cui sei passato, per vedere se il sistema resta coerente."
+            : "«...ecco, era questo. Grazie.»" ], note:"Non concludere prima di aver messo alla prova ogni momento previsto."}
+      ].filter(Boolean)
+    };
+  }
+
+  function renderScript(){
+    var s=state();
+    var d=buildData(s);
+
+    // chips
+    var chips=[];
+    chips.push({on:true,t:partenza[s.partenza].chip});
+    chips.push({on:true,t:"Nome: "+s.nome});
+    chips.push({on:true,t:"CAP "+s.cap});
+    chips.push({on:d.hasSwitch,t: d.hasSwitch ? "Cambio → "+({tedesco:"DE",francese:"FR",inglese:"EN"}[s.switchTo]) : "Nessun cambio lingua"});
+    chips.push({on:true,t:"Rumore reale"});
+    var cover=$("cover"); cover.innerHTML="";
+    chips.forEach(function(c){
+      var el=document.createElement("span");
+      el.className="chip"+(c.on?"":" off");
+      el.textContent=c.t;
+      cover.appendChild(el);
+    });
+
+    // script blocks
+    var box=$("copione"); box.innerHTML="";
+    var head=document.createElement("p");
+    head.className="blk-note";
+    head.style.margin="0 0 10px";
+    head.innerHTML="<strong>Protocollo — "+esc(s.att)+"</strong><br>Cliente: "+esc(speakerTxt[s.speaker])+"<br>Rumore di fondo: "+esc(cap1(rumoreTxt[s.rumore]))+".<br>Ripeti almeno 2 volte, con 2 persone diverse. Usa solo dati inventati o di colleghi consenzienti.";
+    box.appendChild(head);
+
+    d.blocks.forEach(function(b,i){
+      var wrap=document.createElement("div"); wrap.className="blk";
+      var h=document.createElement("p"); h.className="blk-h";
+      h.innerHTML='<span class="blk-n">'+(i+1)+'</span> '+esc(b.t);
+      wrap.appendChild(h);
+      b.lines.forEach(function(ln){
+        var p=document.createElement("p");
+        p.className="blk-line"+((ln.charAt(0)==="«")?" say":"")+(b.sw?" switch-line":"");
+        p.textContent=ln;
+        wrap.appendChild(p);
+      });
+      if(b.note){ var n=document.createElement("p"); n.className="blk-note"; n.textContent=b.note; wrap.appendChild(n); }
+      box.appendChild(wrap);
+    });
+
+    // toggle cambio moment in scoring
+    var mom=$("momCambio");
+    if(d.hasSwitch){ mom.hidden=false; }
+    else { mom.hidden=true; clearRadios("m-cambio"); }
+    updateScore();
+  }
+
+  function esc(t){ return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+  function cap1(t){ return t.charAt(0).toUpperCase()+t.slice(1); }
+  function clearRadios(name){ var r=document.getElementsByName(name); for(var i=0;i<r.length;i++) r[i].checked=false; }
+  function getVal(name){ var r=document.getElementsByName(name); for(var i=0;i<r.length;i++) if(r[i].checked) return parseInt(r[i].value,10); return null; }
+
+  function verdictFor(worst,freq){
+    if(worst===0){
+      if(freq==="molto") return {c:"miss",b:"Priorità massima",t:"Rottura su uno scenario molto frequente: da correggere con il fornitore prima di firmare qualunque contratto."};
+      if(freq==="frequente") return {c:"miss",b:"Priorità alta",t:"Rottura su uno scenario frequente: merita una correzione con il fornitore, non un archivio come dettaglio minore."};
+      return {c:"warn",b:"Da segnalare, ma dopo",t:"Rottura su uno scenario raro: reale ma meno urgente degli scenari più frequenti con lo stesso esito."};
+    }
+    if(worst===1){
+      if(freq==="molto") return {c:"warn",b:"Da segnalare prima di firmare",t:"Recupero su uno scenario molto frequente: da segnalare al fornitore prima di firmare, non archiviare come dettaglio."};
+      if(freq==="frequente") return {c:"warn",b:"Da tenere d'occhio",t:"Recupero su uno scenario frequente: accettabile solo se il fornitore lo riconosce e lo migliora."};
+      return {c:"ok",b:"Accettabile",t:"Recupero occasionale su uno scenario raro: accettabile per la tua clientela."};
+    }
+    return {c:"ok",b:"Nessuna azione richiesta",t:"Continuità su tutti i momenti valutati: questo scenario regge. Resta valida la regola di ripeterlo più di una volta."};
+  }
+
+  function updateScore(){
+    var moments=["m-apertura","m-corpo"];
+    if(!$("momCambio").hidden) moments.push("m-cambio");
+    var vals=moments.map(getVal);
+    var scored=vals.filter(function(v){return v!==null;});
+    var max=moments.length*2;
+    $("totMax").textContent="/ "+max+" punti";
+    var freq=$("freq").value;
+    var v=$("verdict");
+
+    if(scored.length<moments.length || !freq){
+      $("totNum").textContent = scored.length ? scored.reduce(function(a,b){return a+b;},0) : "—";
+      v.className="verdict";
+      v.textContent="Valuta ogni momento"+ (moments.length===3?" (apertura, corpo, cambio di lingua)":" (apertura, corpo)") +" e scegli una frequenza per vedere la priorità.";
+      return;
+    }
+    var total=scored.reduce(function(a,b){return a+b;},0);
+    var worst=Math.min.apply(null,scored);
+    $("totNum").textContent=total;
+    var r=verdictFor(worst,freq);
+    v.className="verdict "+r.c;
+    v.innerHTML="<b>"+esc(r.b)+" · "+total+"/"+max+"</b>"+esc(r.t);
+  }
+
+  function buildProtocolText(){
+    var s=state();
+    var d=buildData(s);
+    var L=[];
+    L.push("PROTOCOLLO DI TEST — "+s.att);
+    L.push("Cliente: "+speakerTxt[s.speaker]);
+    L.push("Rumore di fondo: "+cap1(rumoreTxt[s.rumore])+".");
+    L.push("Chiama da un cellulare che il sistema non riconosce. Ripeti almeno 2 volte, con 2 persone diverse.");
+    L.push("Usa solo nomi, indirizzi e numeri inventati o di colleghi consenzienti.");
+    L.push("");
+    L.push("IL COPIONE (recita in quest'ordine, senza rallentare la voce):");
+    d.blocks.forEach(function(b,i){
+      L.push("");
+      L.push((i+1)+") "+b.t.toUpperCase());
+      b.lines.forEach(function(ln){ L.push("   "+ln); });
+      if(b.note) L.push("   > "+b.note);
+    });
+    L.push("");
+    L.push("VALUTAZIONE (Continuità 2 · Recupero 1 · Rottura 0):");
+    L.push("   [ ] Apertura ............. ___/2");
+    L.push("   [ ] Corpo ................ ___/2");
+    if(d.hasSwitch) L.push("   [ ] Cambio di lingua ..... ___/2");
+    var maxP = d.hasSwitch ? 6 : 4;
+    L.push("   Totale scenario: ___/"+maxP);
+    L.push("   Frequenza nelle tue chiamate reali: [ ] raro  [ ] frequente  [ ] molto frequente");
+    L.push("   Priorità: uno scenario molto frequente con una Rottura va corretto prima di uno raro.");
+    L.push("");
+
+    // current scoring, if any
+    var moments=[["Apertura","m-apertura"],["Corpo","m-corpo"]];
+    if(d.hasSwitch) moments.push(["Cambio di lingua","m-cambio"]);
+    var vals=moments.map(function(m){return getVal(m[1]);});
+    var lab=["Rottura (0)","Recupero (1)","Continuità (2)"];
+    if(vals.every(function(x){return x!==null;})){
+      L.push("ESITO REGISTRATO IN QUESTO STRUMENTO:");
+      moments.forEach(function(m,i){ L.push("   "+m[0]+": "+lab[vals[i]]); });
+      var total=vals.reduce(function(a,b){return a+b;},0);
+      L.push("   Totale: "+total+"/"+maxP);
+      var freq=$("freq").value;
+      if(freq){
+        var r=verdictFor(Math.min.apply(null,vals),freq);
+        L.push("   Frequenza: "+({raro:"raro",frequente:"frequente",molto:"molto frequente"}[freq]));
+        L.push("   Priorità: "+r.b+" — "+r.t);
+      }
+      L.push("");
+    }
+    L.push("Fonte del protocollo: Weissmann AI — assistente telefonico AI e italiano ticinese.");
+    L.push("Orientamento, non un preventivo. Nulla di questo test viene salvato o inviato.");
+    return L.join("\n");
+  }
+
+  function flash(msg,ok){
+    var f=$("flash");
+    f.textContent=msg;
+    f.style.color=ok===false?"var(--miss)":"var(--ok)";
+    if(flash._t) clearTimeout(flash._t);
+    flash._t=setTimeout(function(){ f.textContent=""; },3200);
+  }
+
+  function copyProtocol(){
+    var txt=buildProtocolText();
+    function ok(){ flash("Protocollo copiato negli appunti."); }
+    function fb(){
+      try{
+        var ta=document.createElement("textarea");
+        ta.value=txt; ta.setAttribute("readonly","");
+        ta.style.position="absolute"; ta.style.left="-9999px";
+        document.body.appendChild(ta); ta.select();
+        var done=document.execCommand("copy");
+        document.body.removeChild(ta);
+        if(done) ok(); else flash("Copia non riuscita — seleziona e copia a mano.",false);
+      }catch(e){ flash("Copia non riuscita — seleziona e copia a mano.",false); }
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(ok,fb);
+    } else { fb(); }
+  }
+
+  // wiring
+  ["attivita","speaker","partenza","nome","cap","switchTo","motivo","rumore"].forEach(function(id){
+    var el=$(id);
+    el.addEventListener("input",onBuildChange);
+    el.addEventListener("change",onBuildChange);
+  });
+  function onBuildChange(){
+    var mf=$("motivoField");
+    mf.style.display = ($("switchTo").value==="none") ? "none" : "";
+    renderScript();
+  }
+  ["m-apertura","m-corpo","m-cambio"].forEach(function(name){
+    var r=document.getElementsByName(name);
+    for(var i=0;i<r.length;i++) r[i].addEventListener("change",updateScore);
+  });
+  $("freq").addEventListener("change",updateScore);
+  $("copyBtn").addEventListener("click",copyProtocol);
+  $("printBtn").addEventListener("click",function(){ window.print(); });
+
+  onBuildChange();
+})();
+</script>

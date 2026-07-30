@@ -1,0 +1,398 @@
+<title>Registrare le telefonate AI: albero decisionale · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .ctx{margin-top:18px}
+  .ctx-h,.tool-h{font-size:1.05rem;margin:0 0 8px;letter-spacing:-.01em}
+  .ctx p{margin:0 0 10px;color:var(--ink-soft)}
+  .ctx .risk{font-size:.84rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:10px 12px;margin:0}
+  .ctx .risk b{color:var(--ink-soft)}
+
+  .tool{margin-top:16px}
+  .trail{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .trail:empty{display:none}
+  .chip{font-size:.74rem;font-weight:600;color:var(--navy);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+
+  .q{font-size:1.12rem;font-weight:600;margin:0 0 4px;line-height:1.28;letter-spacing:-.01em}
+  .q:focus-visible{outline:none}
+  .qhelp{color:var(--ink-mute);font-size:.9rem;margin:0 0 14px;max-width:64ch}
+  .opts{display:grid;gap:10px}
+  .opt{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;font-family:inherit;font-size:.98rem;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer;line-height:1.4;transition:border-color .12s,background .12s}
+  .opt:hover{border-color:var(--navy);background:var(--soft)}
+  .opt:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent);border-color:var(--navy)}
+  .oarrow{color:var(--navy);font-size:1.3rem;line-height:1;flex:0 0 auto}
+
+  .controls{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+  .ctl{font-family:inherit;font-size:.9rem;font-weight:600;color:var(--navy);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:9px 14px;cursor:pointer}
+  .ctl:hover:not(:disabled){background:var(--soft);border-color:var(--navy)}
+  .ctl:disabled{opacity:.45;cursor:not-allowed}
+  .ctl:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  .verdict{border:1px solid var(--line);border-left-width:5px;border-radius:12px;padding:16px 18px}
+  .verdict.v-ok{border-left-color:var(--ok);background:var(--ok-soft)}
+  .verdict.v-warn{border-left-color:var(--warn);background:var(--warn-soft)}
+  .verdict.v-miss{border-left-color:var(--miss);background:var(--miss-soft)}
+  .verdict.v-accent{border-left-color:var(--accent);background:var(--accent-soft)}
+  .v-badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:8px;background:var(--card);border:1px solid var(--line)}
+  .v-ok .v-badge{color:var(--ok);border-color:var(--ok)}
+  .v-warn .v-badge{color:var(--warn);border-color:var(--warn)}
+  .v-miss .v-badge{color:var(--miss);border-color:var(--miss)}
+  .v-accent .v-badge{color:var(--accent);border-color:var(--accent)}
+  .v-title{font-size:1.1rem;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
+  .v-title:focus-visible{outline:none}
+  .v-cite{font-family:var(--mono);font-size:.8rem;color:var(--ink-soft);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:4px 9px;display:inline-block;margin:0 0 12px}
+  .v-body p{margin:0 0 8px;color:var(--ink-soft)}.v-body p:last-child{margin-bottom:0}
+  .v-note{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:8px}
+  .v-note .nl{display:block;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:3px}
+  .v-note p{margin:0;font-size:.9rem;color:var(--ink-soft)}
+
+  .ann{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .ann-h{font-size:.98rem;font-weight:700;margin:0 0 6px}
+  .ann-intro{font-size:.9rem;color:var(--ink-soft);margin:0 0 10px;max-width:62ch}
+  .ann-check{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:6px}
+  .ann-check li{font-size:.88rem;color:var(--ink-soft);padding-left:22px;position:relative}
+  .ann-check li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+  .weak{font-size:.85rem;color:var(--ink-soft);background:var(--miss-soft);border:1px solid var(--line);border-radius:9px;padding:9px 11px;margin:0 0 12px}
+  .weak b{color:var(--miss)}
+  .ann-field{display:block;font-size:.8rem;font-weight:600;color:var(--ink-soft);margin-bottom:5px}
+  .ann-input{font-family:inherit;font-size:.95rem;width:100%;max-width:340px;padding:9px 12px;border:1.5px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink)}
+  .ann-input:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 28%,transparent)}
+  .ann-out{margin-top:10px;background:var(--ok-soft);border:1px solid var(--line);border-radius:9px;padding:12px 14px;font-size:.95rem;color:var(--ink);line-height:1.5}
+  .ann-actions{margin-top:10px}
+  .copybtn{font-family:inherit;font-size:.88rem;font-weight:600;color:var(--on-navy);background:var(--navy);border:none;border-radius:9px;padding:9px 14px;cursor:pointer}
+  .copybtn:hover{background:var(--navy-hover)}
+  .copybtn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">Chiamate, registrazione e diritto svizzero</p>
+    <h1>Questa telefonata AI si può registrare senza consenso?</h1>
+    <p class="lede">La risposta dipende dal contenuto della telefonata, non dal fatto che risponda un'AI. Rispondi a poche domande sul tipo di chiamata e ottieni la classificazione secondo l'art. 179quinquies CP, con la citazione e il passo pratico. Non è consulenza legale.</p>
+  </header>
+
+  <section class="card card-pad ctx" aria-label="La regola in sintesi">
+    <h2 class="ctx-h">La regola in due frasi</h2>
+    <p>Registrare una conversazione non pubblica senza il consenso di tutti gli interlocutori è un reato (art. 179bis e 179ter CP), perseguibile a querela di parte. Un'eccezione mirata — l'art. 179quinquies CP, in vigore dal marzo 2004 — permette di registrare senza consenso preventivo le chiamate con i servizi di soccorso e quelle che, in una relazione commerciale, riguardano ordinazioni, mandati, prenotazioni o operazioni analoghe, ma solo a scopo di prova.</p>
+    <p class="risk"><b>Cosa si rischia.</b> In caso di condanna: fino a un anno di pena detentiva o una pena pecuniaria per chi partecipa alla chiamata e la registra senza consenso, fino a tre anni per chi intercetta una conversazione a cui non partecipa; il giudice può ordinare la distruzione della registrazione e, in alcuni casi, il sequestro degli apparecchi.</p>
+  </section>
+
+  <section class="card card-pad tool" aria-label="Classificatore della chiamata">
+    <h2 class="tool-h">Classifica la tua telefonata</h2>
+    <div id="trail" class="trail" aria-hidden="true"></div>
+    <div id="step" class="step" aria-live="polite"></div>
+    <div class="controls">
+      <button id="back" class="ctl" type="button">&larr; Indietro</button>
+      <button id="restart" class="ctl" type="button">&#8635; Ricomincia</button>
+    </div>
+  </section>
+
+  <p class="disc">Orientamento, non consulenza legale né un preventivo. Questo strumento inquadra la situazione sulla base dell'articolo di Weissmann e delle sue fonti ufficiali svizzere (IFPDT; Codice penale svizzero, art. 179bis&ndash;179quinquies, Fedlex) e non sostituisce una consulenza legale nel singolo caso — in particolare per il diritto del lavoro o per le chiamate il cui contenuto non è chiaramente classificabile. Tutto avviene nel tuo browser: nessun dato viene salvato o inviato.</p>
+
+  <footer class="linkbar" aria-label="Approfondimenti e servizio">
+    <p class="lb-title">Approfondisci</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/it/ai-academy/agenti-automazione/registrazione-chiamate-ai-legalita-svizzera/" target="_blank" rel="noopener noreferrer" aria-label="Leggi la guida completa: registrare le telefonate AI in Svizzera (opens in a new tab)">Guida: le regole in Svizzera &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/it/servizi/assistente-telefonico-ai/" target="_blank" rel="noopener noreferrer" aria-label="Scopri l'assistente telefonico AI di Weissmann (opens in a new tab)">Assistente telefonico AI di Weissmann &rarr;</a>
+    </div>
+    <p class="att">Weissmann · un complemento alla guida. Orientamento, non un preventivo.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var TREE = {
+    start: "who",
+    nodes: {
+      who: {
+        type: "question",
+        q: "Chi è dall'altra parte della linea?",
+        help: "Il diritto svizzero non distingue tra una voce umana e una voce sintetica: distingue tra i contenuti delle chiamate e tra chi vi partecipa.",
+        options: [
+          { label: "Un cliente o una persona esterna all'azienda", chip: "Cliente/esterno", next: "content" },
+          { label: "Un mio dipendente o collaboratore (chiamata interna, o verso l'esterno per conto dell'azienda)", chip: "Dipendente", next: "r_employee" }
+        ]
+      },
+      content: {
+        type: "question",
+        q: "Di cosa tratta principalmente questa telefonata?",
+        help: "Conta il contenuto della singola chiamata, non il reparto o il sistema che la gestisce: la stessa AI può gestire prenotazioni e reclami sullo stesso numero.",
+        options: [
+          { label: "Un'ordinazione, un mandato, una prenotazione, o la conferma di un appuntamento o servizio già concordato", chip: "Ordine/prenotazione", next: "purpose" },
+          { label: "Una richiesta di preventivo (il prezzo è ancora da definire)", chip: "Preventivo", next: "r_quote" },
+          { label: "Un reclamo su un servizio già fornito", chip: "Reclamo", next: "r_complaint" },
+          { label: "Assistenza, supporto tecnico o una domanda generica", chip: "Assistenza", next: "r_generic" },
+          { label: "La conferma di un appuntamento medico, o una chiamata che può toccare dati sulla salute", chip: "Appuntamento medico", next: "r_medical" },
+          { label: "Non è chiaro, oppure è un caso misto", chip: "Caso dubbio", next: "r_doubt" }
+        ]
+      },
+      purpose: {
+        type: "question",
+        q: "A che scopo useresti la registrazione di questa chiamata?",
+        help: "L'eccezione dell'art. 179quinquies CP copre un solo scopo: la prova dell'operazione commerciale.",
+        options: [
+          { label: "Solo come prova dell'ordinazione o della prenotazione (data, orario, contenuto dell'accordo)", chip: "Solo prova", next: "g_proof" },
+          { label: "Anche per valutare l'assistente AI, per marketing, o per addestrare un modello linguistico", chip: "Altri usi", next: "g_purpose_warn" }
+        ]
+      },
+
+      g_proof: {
+        type: "result",
+        tone: "ok",
+        badge: "Verde",
+        title: "Registrabile senza consenso preventivo",
+        cite: "Art. 179quinquies CP",
+        body: [
+          "Un'ordinazione, un mandato o una prenotazione rientra nell'eccezione dell'art. 179quinquies CP: puoi registrare senza consenso preventivo, ma solo a scopo di prova dell'operazione stessa.",
+          "L'eccezione copre l'operazione commerciale in sé, non l'intero traffico telefonico dell'azienda. Se la stessa chiamata scivola verso un reclamo o una richiesta generica, quella parte esce dall'eccezione."
+        ],
+        notes: [
+          { label: "Cortesia (facoltativa)", text: "Un avviso formale qui non è legalmente obbligatorio, ma un breve cenno — «per questa prenotazione registriamo la chiamata a scopo di conferma» — costruisce fiducia senza costare nulla in termini legali." },
+          { label: "Dopo la registrazione: nLPD", text: "Una volta che la registrazione esiste legalmente, subentra la nLPD: conservala solo per il tempo necessario allo scopo, poi cancellala o documenta perché la conservi ancora." }
+        ]
+      },
+      g_purpose_warn: {
+        type: "result",
+        tone: "warn",
+        badge: "Registrabile, ma non per quello scopo",
+        title: "La registrazione è lecita come prova, non per gli altri usi",
+        cite: "Art. 179quinquies CP · nLPD",
+        body: [
+          "Registrare l'ordinazione o la prenotazione è legale a scopo di prova. Ma riascoltare la stessa registrazione per valutare l'assistente AI, per marketing o per addestrare un modello linguistico non è automaticamente coperto.",
+          "Cambiare scopo senza una base propria fa uscire dall'eccezione, con le stesse conseguenze penali di una registrazione mai autorizzata. Per quegli usi serve un consenso separato."
+        ]
+      },
+      r_quote: {
+        type: "result",
+        tone: "warn",
+        badge: "Giallo — caso dubbio",
+        title: "Trattala come una chiamata che richiede consenso",
+        cite: "Art. 179quinquies CP (nel dubbio, fuori eccezione)",
+        body: [
+          "Un preventivo è una fase preliminare alla decisione del cliente: non è ancora un'ordinazione né un mandato, è una fase prima dell'accordo, non l'accordo stesso.",
+          "Nei casi dubbi, la scelta più difendibile è trattare la richiesta di preventivo come una chiamata soggetta a consenso, non come un'operazione già coperta dall'eccezione."
+        ],
+        consent: true
+      },
+      r_complaint: {
+        type: "result",
+        tone: "miss",
+        badge: "Rosso",
+        title: "Serve un consenso preventivo",
+        cite: "Art. 179bis / 179ter CP",
+        body: [
+          "Un reclamo non è mai un'operazione commerciale ai sensi dell'eccezione, anche se riguarda un ordine registrato in precedenza.",
+          "Serve un avviso chiaro all'inizio della chiamata e una possibilità reale — non solo scritta o successiva — di opporsi, prima che la registrazione inizi."
+        ],
+        consent: true
+      },
+      r_generic: {
+        type: "result",
+        tone: "miss",
+        badge: "Rosso",
+        title: "Serve un consenso preventivo",
+        cite: "Art. 179bis / 179ter CP",
+        body: [
+          "Assistenza tecnica, supporto e domande generiche non rientrano nell'eccezione, anche quando la stessa AI gestisce anche le prenotazioni.",
+          "Conta il contenuto della singola telefonata, non il sistema che la gestisce: serve un avviso chiaro con una possibilità reale di opporsi, prima che la registrazione inizi."
+        ],
+        consent: true
+      },
+      r_medical: {
+        type: "result",
+        tone: "miss",
+        badge: "Rosso — attenzione ulteriore",
+        title: "Consenso chiaro prima di registrare",
+        cite: "Art. 179bis / 179ter CP · nLPD (dati sulla salute)",
+        body: [
+          "Un appuntamento medico non è né un'ordinazione né una prenotazione commerciale in senso stretto, e la conversazione può toccare dati sulla salute, particolarmente degni di protezione secondo la nLPD.",
+          "Qui un consenso chiaro, dato prima dell'inizio della registrazione, non è un'opzione tra le altre: è la base corretta."
+        ],
+        consent: true
+      },
+      r_doubt: {
+        type: "result",
+        tone: "miss",
+        badge: "Nel dubbio",
+        title: "Trattala come se richiedesse consenso",
+        cite: "Art. 179quinquies CP (nel dubbio, fuori eccezione)",
+        body: [
+          "Se il contenuto della chiamata non è chiaramente un'ordinazione, un mandato o una prenotazione, la scelta più difendibile è trattarla come una chiamata che richiede consenso.",
+          "Nei casi dubbi, meglio un avviso in più che una registrazione senza una base valida."
+        ],
+        consent: true
+      },
+      r_employee: {
+        type: "result",
+        tone: "accent",
+        badge: "Caso a parte",
+        title: "Qui non basta il consenso: serve una consulenza legale specifica",
+        cite: "Diritto del lavoro · protezione della personalità",
+        body: [
+          "L'eccezione dell'art. 179quinquies CP è pensata per le relazioni commerciali con la clientela, non per la sorveglianza del proprio personale: usarla in quel senso significa uscire dal perimetro per cui esiste.",
+          "Per le chiamate con o tra dipendenti entrano in gioco il diritto del lavoro e la protezione della personalità: serve un'informazione preventiva chiara e una possibilità reale di opporsi, senza conseguenze negative per chi rifiuta.",
+          "Non esiste un'unica risposta valida per ogni azienda e ogni contratto: chiedi una consulenza legale specifica per il tuo caso invece di applicare per analogia la regola delle prenotazioni."
+        ]
+      }
+    }
+  };
+
+  var state = { current: TREE.start, steps: [] };
+
+  var stepEl = document.getElementById("step");
+  var trailEl = document.getElementById("trail");
+  var backBtn = document.getElementById("back");
+  var restartBtn = document.getElementById("restart");
+
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  function annHTML(){
+    return '' +
+      '<div class="ann">' +
+        '<p class="ann-h">L’avviso che funziona</p>' +
+        '<p class="ann-intro">Fuori dall’eccezione serve un consenso esplicito prima che la registrazione cominci. Un avviso utile dice tre cose in poche frasi; una formula vaga come «per motivi di qualità» non basta.</p>' +
+        '<ul class="ann-check">' +
+          '<li>Dici che la chiamata viene registrata</li>' +
+          '<li>Indichi un motivo comprensibile</li>' +
+          '<li>Offri una possibilità reale e immediata di rifiutare</li>' +
+        '</ul>' +
+        '<p class="weak"><b>Troppo debole:</b> «Questa chiamata potrebbe essere registrata.» Nessuno scopo indicato, nessuna opposizione reale, un condizionale che non chiarisce se sta accadendo davvero.</p>' +
+        '<label class="ann-field" for="bizname">Nome della tua azienda (facoltativo)</label>' +
+        '<input class="ann-input" id="bizname" type="text" placeholder="[nome azienda]" autocomplete="off" maxlength="60">' +
+        '<div class="ann-out" id="annout" aria-live="polite"></div>' +
+        '<div class="ann-actions"><button class="copybtn" id="copybtn" type="button" data-label="Copia l’avviso">Copia l’avviso</button></div>' +
+      '</div>';
+  }
+
+  function annText(name){
+    var nm = (name || "").trim() || "[nome azienda]";
+    return "Buongiorno, siamo " + nm + ". Registriamo questa chiamata per gestire correttamente la sua richiesta. Se preferisce di no, ce lo dica ora: proseguiamo senza registrazione.";
+  }
+
+  function copyText(text, btn){
+    var done = function(){
+      var lbl = btn.getAttribute("data-label");
+      btn.textContent = "Copiato ✓";
+      setTimeout(function(){ btn.textContent = lbl; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text, done); });
+    } else {
+      fallbackCopy(text, done);
+    }
+  }
+  function fallbackCopy(text, done){
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      done();
+    } catch (e) { /* clipboard non disponibile: il testo resta visibile per la copia manuale */ }
+  }
+
+  function renderTrail(){
+    trailEl.innerHTML = state.steps.map(function(s){
+      return '<span class="chip">' + esc(s.chip) + '</span>';
+    }).join("");
+  }
+
+  function render(){
+    var node = TREE.nodes[state.current];
+    var html;
+    if (node.type === "question"){
+      html = '<h3 class="q" id="stephead" tabindex="-1">' + esc(node.q) + '</h3>';
+      if (node.help){ html += '<p class="qhelp">' + esc(node.help) + '</p>'; }
+      html += '<div class="opts">';
+      node.options.forEach(function(o, i){
+        html += '<button class="opt" type="button" data-idx="' + i + '">' +
+                  '<span>' + esc(o.label) + '</span>' +
+                  '<span class="oarrow" aria-hidden="true">›</span>' +
+                '</button>';
+      });
+      html += '</div>';
+    } else {
+      html = '<div class="verdict v-' + esc(node.tone) + '">' +
+               '<span class="v-badge">' + esc(node.badge) + '</span>' +
+               '<h3 class="v-title" id="stephead" tabindex="-1">' + esc(node.title) + '</h3>' +
+               '<p class="v-cite">' + esc(node.cite) + '</p>' +
+               '<div class="v-body">' + node.body.map(function(p){ return '<p>' + esc(p) + '</p>'; }).join("") + '</div>';
+      if (node.notes){
+        html += node.notes.map(function(n){
+          return '<div class="v-note"><span class="nl">' + esc(n.label) + '</span><p>' + esc(n.text) + '</p></div>';
+        }).join("");
+      }
+      if (node.consent){ html += annHTML(); }
+      html += '</div>';
+    }
+    stepEl.innerHTML = html;
+
+    renderTrail();
+    backBtn.disabled = state.steps.length === 0;
+
+    if (node.type === "question"){
+      var btns = stepEl.querySelectorAll(".opt");
+      Array.prototype.forEach.call(btns, function(b){
+        b.addEventListener("click", function(){
+          var idx = parseInt(b.getAttribute("data-idx"), 10);
+          var opt = node.options[idx];
+          state.steps.push({ node: state.current, chip: opt.chip });
+          state.current = opt.next;
+          render();
+        });
+      });
+    } else if (node.consent){
+      var input = document.getElementById("bizname");
+      var out = document.getElementById("annout");
+      var copyBtn = document.getElementById("copybtn");
+      var update = function(){ out.textContent = annText(input.value); };
+      input.addEventListener("input", update);
+      update();
+      copyBtn.addEventListener("click", function(){ copyText(annText(input.value), copyBtn); });
+    }
+
+    var head = document.getElementById("stephead");
+    if (head){ head.focus(); }
+  }
+
+  backBtn.addEventListener("click", function(){
+    if (state.steps.length){
+      var last = state.steps.pop();
+      state.current = last.node;
+      render();
+    }
+  });
+  restartBtn.addEventListener("click", function(){
+    state.steps = [];
+    state.current = TREE.start;
+    render();
+  });
+
+  render();
+})();
+</script>

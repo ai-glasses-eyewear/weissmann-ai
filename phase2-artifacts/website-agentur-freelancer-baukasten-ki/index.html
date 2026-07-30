@@ -1,0 +1,429 @@
+<title>Routen-Finder: Wer baut Ihre Website? · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  h2{font-size:1.12rem;margin:0 0 4px;letter-spacing:-.01em}
+  .sub{color:var(--ink-mute);font-size:.9rem;margin:0 0 2px}
+
+  .reveal{margin-top:16px;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:10px;padding:13px 15px}
+  .reveal p{margin:0;font-size:.9rem;color:var(--ink-soft)}
+  .reveal .rt{font-weight:700;color:var(--accent);display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+
+  .qgrid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
+  @media(min-width:720px){.qgrid{grid-template-columns:1fr 1fr}}
+  .qcard{margin:0;padding:clamp(14px,2vw,18px);border:1px solid var(--line);border-radius:12px;background:var(--card)}
+  .qcard legend{padding:0;display:block;width:100%}
+  .qnum{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;background:var(--navy);color:var(--on-navy);font-size:.82rem;font-weight:700;margin-right:8px;flex:none}
+  .qhead{display:flex;align-items:flex-start;gap:0;margin-bottom:3px}
+  .qname{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;padding-top:4px}
+  .qtitle{font-weight:600;font-size:.98rem;margin:2px 0 6px}
+  .qnote{font-size:.82rem;color:var(--ink-mute);margin:0 0 12px;line-height:1.45}
+  .opts{display:grid;grid-template-columns:1fr;gap:8px}
+  .opt{display:block;cursor:pointer;position:relative}
+  .opt input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+  .optbody{display:block;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.9rem;color:var(--ink-soft);background:var(--card);transition:border-color .15s,background .15s}
+  .opt:hover .optbody{border-color:var(--navy)}
+  .opt input:checked + .optbody{border-color:var(--navy);background:var(--accent-soft);color:var(--ink);box-shadow:inset 0 0 0 1px var(--navy);font-weight:600}
+  .opt input:focus-visible + .optbody{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  .status{font-size:.92rem;color:var(--ink-soft);font-weight:600;margin:0 0 12px}
+  .rank{display:flex;flex-direction:column;gap:9px;margin:0}
+  .rrow{display:grid;grid-template-columns:118px 1fr 34px;gap:10px;align-items:center}
+  @media(max-width:520px){.rrow{grid-template-columns:96px 1fr 30px}}
+  .rname{font-weight:600;font-size:.9rem;color:var(--ink-soft)}
+  .rrow.win .rname{color:var(--ink)}
+  .track{background:var(--soft);border-radius:999px;height:12px;overflow:hidden}
+  .fill{height:100%;border-radius:999px;background:var(--navy);width:0;transition:width .4s ease}
+  .rrow.win .fill{background:var(--ok)}
+  .rpts{font-variant-numeric:tabular-nums;font-size:.85rem;color:var(--ink-mute);text-align:right}
+
+  .verdict{margin-top:18px;border:1.5px solid var(--navy);border-radius:12px;padding:clamp(14px,2vw,18px);background:var(--soft)}
+  .vlabel{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 3px}
+  .vroute{font-size:1.35rem;font-weight:800;letter-spacing:-.01em;margin:0 0 4px;color:var(--ink)}
+  .vtag{margin:0 0 12px;font-size:.92rem;color:var(--ink-soft)}
+  .vwhen{margin:0 0 12px;font-size:.92rem;color:var(--ink-soft)}
+  .chlab{font-size:.78rem;font-weight:700;color:var(--ink-soft);margin:0 0 6px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 4px}
+  .chip{background:var(--accent-soft);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:3px 10px;font-size:.78rem;font-weight:600}
+  .box{margin-top:12px;border-radius:10px;padding:11px 13px;font-size:.87rem;line-height:1.5}
+  .box.trip{background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 34%,transparent);color:var(--ink-soft)}
+  .box.trip b{color:var(--warn)}
+  .box.info{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 26%,transparent);color:var(--ink-soft)}
+  .box.info b{color:var(--accent)}
+  .box.close{background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 34%,transparent);color:var(--ink-soft)}
+  .box.close b{color:var(--warn)}
+
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;align-items:center}
+  .btn{appearance:none;border:1.5px solid var(--navy);background:var(--card);color:var(--navy);font-weight:600;font-size:.9rem;padding:9px 15px;border-radius:10px;cursor:pointer;min-height:42px}
+  .btn:hover{background:var(--soft)}
+  .btn.primary{background:var(--navy);color:var(--on-navy)}.btn.primary:hover{background:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copied{color:var(--ok);font-size:.85rem;font-weight:600}
+  .muted{color:var(--ink-mute);font-size:.85rem}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">KI-Marketing, SEO &amp; GEO</p>
+    <h1>Agentur, Freelancer, Baukasten oder KI: Wer sollte Ihre Website bauen?</h1>
+    <p class="lede">Die richtige Route folgt nicht dem Budget, sondern sechs Werten Ihres eigenen Projekts. Schätzen Sie sie ehrlich ein &ndash; der Finder gewichtet sie und nennt die Route, die dazu passt, samt Begründung und typischer Stolperfalle.</p>
+  </header>
+
+  <div class="reveal" role="note">
+    <span class="rt">Offenlegung, die zufällig auch die Pointe ist</span>
+    <p>Fast jede Beratung zu dieser Frage stammt von jemandem, der an genau einer der vier Antworten verdient. Weissmann AI verdient an der Agentur-Route &ndash; und trotzdem sind die anderen drei Routen f&uuml;r einen erheblichen Teil der Leserschaft die bessere, oft rechnerisch &uuml;berlegene Wahl. Dieser Finder rechnet bewusst gegen das eigene Interesse: Er empfiehlt die Route, die zu Ihren sechs Werten passt, nicht die, an der wir verdienen.</p>
+  </div>
+
+  <section class="card card-pad" style="margin-top:16px" aria-labelledby="qh">
+    <h2 id="qh">Sechs Fragen zu Ihrem Projekt</h2>
+    <p class="sub">Je ehrlicher die Einsch&auml;tzung, desto belastbarer die Empfehlung. Sie k&ouml;nnen jede Antwort jederzeit &auml;ndern.</p>
+    <form id="quizForm">
+      <div class="qgrid" id="quiz"></div>
+    </form>
+  </section>
+
+  <section class="card card-pad" style="margin-top:16px" aria-labelledby="rh">
+    <h2 id="rh">Ihre Route</h2>
+    <div id="result" aria-live="polite">
+      <p class="status" id="status">Noch keine Frage beantwortet (0/6).</p>
+      <div class="rank" id="rank"></div>
+      <div id="verdict"></div>
+    </div>
+    <div class="btnrow">
+      <button type="button" class="btn primary" id="copyBtn">Zusammenfassung kopieren</button>
+      <button type="button" class="btn" id="resetBtn">Neu starten</button>
+      <span class="copied" id="copied" role="status" aria-live="polite" hidden>Kopiert.</span>
+    </div>
+  </section>
+
+  <p class="disc">Orientierung nach dem Entscheidungsrahmen des Artikels &ndash; keine Rechtsberatung und keine verbindliche Offerte. Die Gewichtung ist eine Entscheidungshilfe, kein Messwert mit externer Bedeutung. Ihre Eingaben bleiben allein in diesem Browser; nichts wird gespeichert oder gesendet.</p>
+
+  <footer class="linkbar" aria-label="Weiterf&uuml;hrende Links">
+    <p class="lb-title">Weiterlesen &amp; weitermachen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/marketing-seo-geo/webagentur-freelancer-baukasten-oder-ki/" target="_blank" rel="noopener noreferrer" aria-label="Zum vollst&auml;ndigen Artikel: Agentur, Freelancer, Baukasten oder KI (&ouml;ffnet in neuem Tab)">Den ganzen Entscheidungsrahmen lesen &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-webentwicklung/" target="_blank" rel="noopener noreferrer" aria-label="Zur Leistung KI-Webentwicklung von Weissmann AI (&ouml;ffnet in neuem Tab)">KI-Webentwicklung bei Weissmann &rarr;</a>
+    </div>
+    <p class="att">Ein Begleiter zum Guide &bdquo;Wer sollte Ihre Website bauen?&ldquo;. Orientierung, keine Offerte.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var ROUTES = {
+    a:{label:"Agentur",
+      tag:"Ein Team aus mehreren Rollen mit definiertem Projektvertrag – Redundanz, wenn eine Person ausfällt, und eine Vertragspartei, die für das Ergebnis geradesteht.",
+      when:"Lohnt sich, wenn mehrere Werte gleichzeitig hoch sind: Integrationsbedarf über mehrere Systeme, echte Markenkomplexität über Sprachen, Standorte oder Marken hinweg, und ein hohes Bedürfnis nach vertraglicher Verantwortung.",
+      trip:"Scope Creep und Nachtragsforderungen bei unpräzisem Leistungsumfang, unklare Eigentumsrechte an Code und Inhalten nach Projektende, träge Entscheidungswege in grösseren Teams.",
+      fix:"Leistungsumfang und Eigentumsrechte vor Projektstart schriftlich fixieren – nicht mündlich vereinbaren."},
+    f:{label:"Freelancer",
+      tag:"Eine einzelne, meist breit aufgestellte Fachperson mit direkter Kommunikation ohne Projektmanagement-Schicht – aber ohne Team im Rücken.",
+      when:"Gewinnt bei einem klar umrissenen Vorhaben mittlerer Komplexität: ein bis zwei Sprachen, eine saubere Kalender- oder Zahlungsanbindung, ohne mehrköpfiges Kreativteam. Der eigentliche Vorteil ist die direkte Beziehung, nicht primär der Preis.",
+      trip:"Single Point of Failure: Ausfall durch Krankheit, Ferien oder Auslastung ohne Backup, weniger strukturierte Qualitätssicherung als im Team.",
+      fix:"Übergabeklausel und Code-Zugriff vertraglich regeln, bevor das Projekt startet – nicht erst danach."},
+    b:{label:"Baukasten",
+      tag:"Ein Werkzeug zum Selbstbauen per Drag-and-Drop, meist monatlich gemietet, mit eingeschränktem Code-Zugriff und eingeschränkter Portabilität.",
+      when:"Die richtige Wahl bei kaum Integrationsbedarf, überschaubarer Markenkomplexität und einem Risiko, das Sie selbst tragen können. Ideal, um eine Geschäftsidee günstig zu testen oder Inhalte selbst und sofort zu ändern.",
+      trip:"Schmerzhafte Migration bei späterem Systemwechsel, technische SEO- und GEO-Obergrenzen, laufende Abo-Kosten, die nie enden.",
+      fix:"Den realistischen Zwei- bis Drei-Jahres-Horizont vor der ersten Inhaltsstruktur ehrlich mitdenken – „günstig starten“ und „günstig migrieren“ sind zwei verschiedene Versprechen."},
+    k:{label:"KI-Tool",
+      tag:"Ein Generator für den schnellsten ersten Entwurf aus wenigen Angaben – praktisch nie ohne menschliche Nachbearbeitung veröffentlichungsreif.",
+      when:"Die richtige Antwort für den schnellstmöglichen ersten Entwurf, bevor Sie Budget committen – besonders, wenn Sie selbst gute Text- und Gestaltungserfahrung mitbringen, um den Rohentwurf fertigzustellen.",
+      trip:"Generischer Textklang, der Ihre Marke nicht von der Konkurrenz unterscheidet, sachliche Fehler in generierten Inhalten, unklare Rechte an KI-generierten Bildern oder Texten.",
+      fix:"Eine menschliche Prüfrunde vor der Veröffentlichung – ausnahmslos bei rechtlich relevanten Seiten wie Impressum oder Datenschutzerklärung."}
+  };
+
+  var QUESTIONS = [
+    { id:"zeit", name:"Zeit bis zum Launch",
+      title:"Wie viel Zeit bleibt bis zum gewünschten Launch?",
+      note:"Je knapper die Frist, desto stärker verschiebt sich die Rechnung Richtung Baukasten oder KI-Tool – ein Agenturprozess mit Konzept-, Design- und Freigabeschlaufen braucht strukturell mehr Kalenderzeit.",
+      opts:[
+        {t:"Sofort – vor allem schnell ein erster Entwurf zum Weiterarbeiten", s:{a:0,f:0,b:0,k:3}},
+        {t:"Knapp – wenige Wochen bis zur fertigen Seite", s:{a:0,f:1,b:2,k:1}},
+        {t:"Moderat – einige Wochen Vorlauf", s:{a:1,f:1,b:1,k:0}},
+        {t:"Ausreichend – mehrere Monate möglich", s:{a:2,f:1,b:0,k:0}}
+      ]},
+    { id:"budget", name:"Budget",
+      title:"Wie gross ist Ihr Budget im Verhältnis zum gewünschten Umfang?",
+      note:"Nicht als absolute Grösse: Ein kleines Budget schliesst eine Agentur nicht kategorisch aus, begrenzt aber den Umfang stark; ein grosses Budget macht einen Baukasten nicht automatisch falsch.",
+      opts:[
+        {t:"Sehr knapp – so günstig wie möglich", s:{a:0,f:0,b:2,k:2}},
+        {t:"Mittel – solide, aber begrenzt", s:{a:1,f:2,b:1,k:0}},
+        {t:"Komfortabel – Qualität vor Preis", s:{a:2,f:1,b:0,k:0}}
+      ]},
+    { id:"erfahrung", name:"Eigene Erfahrung",
+      title:"Wie viel eigene technische und gestalterische Erfahrung bringen Sie mit?",
+      note:"Wer schon einmal erfolgreich eine Website selbst gepflegt hat, verliert bei einem Baukasten wenig Zeit an die Lernkurve. Wer das noch nie getan hat, unterschätzt sie fast immer.",
+      opts:[
+        {t:"Viel – gute Text-/Gestaltungserfahrung, schon selbst gebaut", s:{a:0,f:0,b:1,k:2}},
+        {t:"Etwas – Grundlagen, aber keine Routine", s:{a:0,f:1,b:2,k:1}},
+        {t:"Wenig – ich möchte das lieber delegieren", s:{a:2,f:1,b:0,k:0}}
+      ]},
+    { id:"marke", name:"Markenkomplexität",
+      title:"Wie komplex ist Ihre Marke?",
+      note:"Ein Angebot, eine Zielgruppe, eine Sprache ist etwas anderes als mehrere Standorte, Sprachen oder Marken unter einem Dach. Komplexität multipliziert sich typischerweise pro zusätzlicher Dimension.",
+      opts:[
+        {t:"Einfach – 1 Angebot, 1 Zielgruppe, 1 Sprache", s:{a:0,f:0,b:2,k:1}},
+        {t:"Mittel – klar umrissen, 1–2 Sprachen", s:{a:1,f:2,b:0,k:0}},
+        {t:"Hoch – mehrere Standorte, Sprachen oder Marken", s:{a:3,f:0,b:0,k:0}}
+      ]},
+    { id:"integration", name:"Integrationsbedarf",
+      title:"Welche Systeme müssen angebunden werden?",
+      note:"Ein Kontaktformular ist keine Integration. Eine Anbindung an Kalender, Zahlungsanbieter, ein CRM oder ein Buchungssystem ist eine – und genau hier stossen Baukasten und KI-Tools am schnellsten an ihre Grenzen.",
+      opts:[
+        {t:"Keine – höchstens ein Kontaktformular", s:{a:0,f:0,b:2,k:1}},
+        {t:"Eine saubere Anbindung – z. B. Kalender oder Zahlung", s:{a:1,f:3,b:0,k:0}},
+        {t:"Mehrere Systeme – CRM, Buchung, PMS …", s:{a:3,f:0,b:0,k:0}}
+      ]},
+    { id:"risiko", name:"Verantwortung & Risiko",
+      title:"Wie wichtig ist eine Vertragspartei, die für das Ergebnis geradesteht?",
+      note:"Wie wichtig ist es Ihnen, dass eine identifizierbare Vertragspartei für Fehler, Ausfälle oder Support geradesteht – im Gegensatz dazu, dass Sie selbst die letzte Instanz sind, wenn etwas nicht funktioniert?",
+      opts:[
+        {t:"Gering – ich kann das Risiko selbst tragen", s:{a:0,f:0,b:2,k:1}},
+        {t:"Mittel – eine Ansprechperson genügt, kein Team", s:{a:0,f:2,b:0,k:0}},
+        {t:"Hoch – ich will ein Team, das auch bei Ausfall liefert", s:{a:2,f:0,b:0,k:0}}
+      ]}
+  ];
+
+  var ORDER = ["a","f","b","k"];
+  var TIE = ["b","f","k","a"]; // on equal score, prefer the non-agency route first (against our own interest)
+  var answers = {}; // qid -> option index
+
+  function esc(str){ return String(str).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+
+  // Build the questions
+  var quiz = document.getElementById("quiz");
+  QUESTIONS.forEach(function(q,qi){
+    var fs = document.createElement("fieldset");
+    fs.className = "qcard";
+    var legend = document.createElement("legend");
+    legend.innerHTML =
+      '<span class="qhead"><span class="qnum" aria-hidden="true">'+(qi+1)+'</span>'+
+      '<span class="qname">'+esc(q.name)+'</span></span>'+
+      '<span class="qtitle">'+esc(q.title)+'</span>';
+    fs.appendChild(legend);
+    var note = document.createElement("p");
+    note.className = "qnote";
+    note.textContent = q.note;
+    fs.appendChild(note);
+    var opts = document.createElement("div");
+    opts.className = "opts";
+    q.opts.forEach(function(o,oi){
+      var lab = document.createElement("label");
+      lab.className = "opt";
+      var input = document.createElement("input");
+      input.type = "radio";
+      input.name = q.id;
+      input.value = String(oi);
+      input.addEventListener("change", function(){
+        answers[q.id] = oi;
+        render();
+      });
+      var body = document.createElement("span");
+      body.className = "optbody";
+      body.textContent = o.t;
+      lab.appendChild(input);
+      lab.appendChild(body);
+      opts.appendChild(lab);
+    });
+    fs.appendChild(opts);
+    quiz.appendChild(fs);
+  });
+
+  function compute(){
+    var sc = {a:0,f:0,b:0,k:0};
+    var answeredCount = 0;
+    QUESTIONS.forEach(function(q){
+      var idx = answers[q.id];
+      if(idx === undefined) return;
+      answeredCount++;
+      var s = q.opts[idx].s;
+      sc.a += s.a; sc.f += s.f; sc.b += s.b; sc.k += s.k;
+    });
+    var ranked = ORDER.slice().sort(function(x,y){
+      if(sc[y] !== sc[x]) return sc[y] - sc[x];
+      return TIE.indexOf(x) - TIE.indexOf(y);
+    });
+    return { sc:sc, ranked:ranked, answered:answeredCount };
+  }
+
+  function favorsFor(routeKey){
+    // question names whose chosen option gave this route points > 0
+    var names = [];
+    QUESTIONS.forEach(function(q){
+      var idx = answers[q.id];
+      if(idx === undefined) return;
+      if(q.opts[idx].s[routeKey] > 0) names.push(q.name);
+    });
+    return names;
+  }
+
+  function render(){
+    var r = compute();
+    var sc = r.sc, ranked = r.ranked, n = r.answered;
+    var total = 6;
+
+    // status
+    var status = document.getElementById("status");
+    if(n === 0){ status.textContent = "Noch keine Frage beantwortet (0/"+total+")."; }
+    else if(n < total){ status.textContent = "Vorläufige Tendenz nach "+n+"/"+total+" Fragen – beantworten Sie alle sechs für eine belastbare Empfehlung."; }
+    else { status.textContent = "Alle sechs Fragen beantwortet – hier ist Ihre Empfehlung."; }
+
+    // rank bars
+    var max = sc[ranked[0]] || 0;
+    var rankEl = document.getElementById("rank");
+    rankEl.innerHTML = "";
+    ranked.forEach(function(key,i){
+      var val = sc[key];
+      var pct = max > 0 ? Math.round(val / max * 100) : 0;
+      var row = document.createElement("div");
+      row.className = "rrow" + (i === 0 && val > 0 ? " win" : "");
+      row.innerHTML =
+        '<span class="rname">'+esc(ROUTES[key].label)+'</span>'+
+        '<span class="track"><span class="fill" style="width:'+pct+'%"></span></span>'+
+        '<span class="rpts">'+val+'</span>';
+      rankEl.appendChild(row);
+    });
+
+    // verdict
+    var v = document.getElementById("verdict");
+    if(n === 0){
+      v.innerHTML = "";
+      return;
+    }
+    var winKey = ranked[0];
+    var win = ROUTES[winKey];
+    var runnerKey = ranked[1];
+    var gap = sc[winKey] - sc[runnerKey];
+
+    var favors = favorsFor(winKey);
+    var chipsHtml = "";
+    if(favors.length){
+      chipsHtml = '<p class="chlab">Das spricht bei Ihnen dafür:</p><div class="chips">' +
+        favors.map(function(name){ return '<span class="chip">'+esc(name)+'</span>'; }).join("") + '</div>';
+    }
+
+    var label = (n < total) ? ("Vorläufige Tendenz · "+n+"/"+total) : "Empfehlung";
+
+    var html =
+      '<div class="verdict">' +
+        '<p class="vlabel">'+label+'</p>' +
+        '<p class="vroute">'+esc(win.label)+'</p>' +
+        '<p class="vtag">'+esc(win.tag)+'</p>' +
+        '<p class="vwhen">'+esc(win.when)+'</p>' +
+        chipsHtml +
+        '<div class="box trip"><b>Diese Route stolpert typischerweise über:</b> '+esc(win.trip)+' <b>Gegenmittel:</b> '+esc(win.fix)+'</div>';
+
+    // Close-call note (gap small and a real runner-up exists)
+    if(n >= 2 && sc[runnerKey] > 0 && gap <= 1){
+      html += '<div class="box close"><b>Zwei Routen liegen nah beieinander:</b> '+esc(win.label)+' und '+esc(ROUTES[runnerKey].label)+
+        '. Das ist normal – ein Routenwechsel später ist kein Scheitern, sondern ein normaler Geschäftsverlauf. Vergleichen Sie den tatsächlichen Leistungsumfang, nicht das Etikett „Freelancer“ gegen „Agentur“.</div>';
+    }
+
+    // Agentur-specific honesty + pricing context (article-grounded)
+    if(winKey === "a"){
+      html += '<div class="box info"><b>Und ehrlich dazu:</b> An dieser Route verdient Weissmann AI – zugleich heisst „Agentur“ nicht automatisch „teuerste Option“. Die Starter-Website liegt derzeit bei CHF 880 im Aktionspreis (regulär CHF 2’490): bis zu fünf Kernseiten, technische SEO- und GEO-Grundlage, GA4-Einrichtung, Basis an strukturierten Daten. Die Business-Website liegt bei CHF 4’990, individuelle mehrsprachige Auftritte starten ab CHF 9’900. Bei einem einfachen, integrationsfreien Auftritt mit niedrigem Risiko bringt eine Agentur dagegen keinen Mehrwert.</div>';
+    }
+
+    // KI-Tool distinction (article-grounded)
+    if(winKey === "k"){
+      html += '<div class="box info"><b>Wichtig:</b> Ein KI-Website-Generator ist nicht dasselbe wie eine KI-Webentwicklungsagentur wie Weissmann AI. Der Generator erzeugt automatisiert einen Entwurf, den Sie selbst weiterbearbeiten; eine KI-Webentwicklungsagentur nutzt KI-gestützte Werkzeuge innerhalb eines von Menschen geführten Projekts mit Konzeption, Qualitätssicherung und Verantwortung für das Ergebnis.</div>';
+    }
+
+    if(n < total){
+      html += '<p class="muted" style="margin:12px 0 0">Noch '+(total-n)+' Frage(n) offen – die Tendenz kann sich mit den restlichen Antworten noch verschieben.</p>';
+    }
+
+    html += '</div>';
+    v.innerHTML = html;
+  }
+
+  function buildSummary(){
+    var r = compute();
+    var lines = [];
+    lines.push("Website-Routen-Finder – Weissmann AI");
+    lines.push("");
+    lines.push("Meine Angaben:");
+    QUESTIONS.forEach(function(q){
+      var idx = answers[q.id];
+      var ans = (idx === undefined) ? "(offen)" : q.opts[idx].t;
+      lines.push("- " + q.name + ": " + ans);
+    });
+    lines.push("");
+    lines.push("Gewichtung (Punkte): " +
+      ORDER.map(function(k){ return ROUTES[k].label + " " + r.sc[k]; }).join(" · "));
+    if(r.answered > 0){
+      var winKey = r.ranked[0];
+      lines.push("");
+      lines.push((r.answered < 6 ? "Vorläufige Tendenz" : "Empfehlung") + ": " + ROUTES[winKey].label);
+      lines.push("Nächstbeste Route: " + ROUTES[r.ranked[1]].label);
+    }
+    lines.push("");
+    lines.push("Orientierung nach dem Entscheidungsrahmen des Artikels – keine verbindliche Offerte.");
+    return lines.join("\n");
+  }
+
+  // Copy
+  var copyBtn = document.getElementById("copyBtn");
+  var copied = document.getElementById("copied");
+  function flashCopied(){
+    copied.hidden = false;
+    setTimeout(function(){ copied.hidden = true; }, 2200);
+  }
+  copyBtn.addEventListener("click", function(){
+    var text = buildSummary();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(flashCopied, function(){ fallbackCopy(text); });
+    } else {
+      fallbackCopy(text);
+    }
+  });
+  function fallbackCopy(text){
+    try{
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly","");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      flashCopied();
+    }catch(e){ /* silent: nothing is sent anywhere */ }
+  }
+
+  // Reset
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    answers = {};
+    var inputs = document.querySelectorAll('#quiz input[type="radio"]');
+    for(var i=0;i<inputs.length;i++){ inputs[i].checked = false; }
+    copied.hidden = true;
+    render();
+    var first = document.querySelector('#quiz input[type="radio"]');
+    if(first){ first.focus(); }
+  });
+
+  render();
+})();
+</script>

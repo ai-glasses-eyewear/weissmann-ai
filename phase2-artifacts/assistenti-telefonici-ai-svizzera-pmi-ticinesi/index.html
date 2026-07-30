@@ -1,0 +1,447 @@
+<title>Raggio linguistico: quale segmento fa per i vostri chiamanti · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  h2{font-size:1.08rem;margin:0 0 4px;letter-spacing:-.01em}
+  .sub{color:var(--ink-mute);font-size:.86rem;margin:0 0 14px}
+  .matcher{display:grid;gap:16px;margin-top:18px}@media(min-width:840px){.matcher{grid-template-columns:1fr 1fr;align-items:start}}
+  .fs{border:1px solid var(--line);border-radius:11px;padding:12px 14px;margin:0 0 14px}
+  .fs legend{font-weight:600;font-size:.92rem;padding:0 6px;color:var(--ink)}
+  .radios{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .radio{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line);border-radius:9px;padding:8px 12px;font-size:.9rem;cursor:pointer;background:var(--card)}
+  .radio:hover{background:var(--soft)}
+  .radio input{accent-color:var(--navy);width:16px;height:16px}
+  .radio:focus-within{box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent);border-color:var(--navy)}
+  .lang-list{display:grid;gap:9px;margin-top:6px}
+  .lang-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px}
+  .lang-row label{font-size:.92rem;font-weight:500}
+  select{font-family:inherit;font-size:.88rem;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:7px 10px;min-width:120px}
+  select:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent);border-color:var(--navy)}
+  .hint{font-size:.78rem;color:var(--ink-mute);margin:4px 2px 0}
+  .reach{margin-top:12px;font-size:.84rem;color:var(--ink-soft);background:var(--soft);border-radius:9px;padding:9px 12px;line-height:1.5}
+  .reach b{color:var(--ink)}
+
+  .result{min-height:100%}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:999px;border:1.5px solid var(--line)}
+  .badge.seg-ticino{background:var(--accent-soft);color:var(--accent);border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+  .badge.seg-multi{background:var(--soft);color:var(--navy);border-color:color-mix(in srgb,var(--navy) 40%,transparent)}
+  .badge.seg-hosp{background:var(--warn-soft);color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,transparent)}
+  .badge.seg-none{background:var(--soft);color:var(--ink-mute)}
+  .result h3{font-size:1.06rem;margin:14px 0 6px}
+  .result p{font-size:.92rem;color:var(--ink-soft);margin:0 0 10px}
+  .result .pt{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+  .pill{display:inline-block;font-size:.76rem;font-weight:600;padding:3px 9px;border-radius:7px;background:var(--soft);color:var(--ink-soft);margin:2px 4px 2px 0}
+  .pill.ok{background:var(--ok-soft);color:var(--ok)}
+  .caveat{font-size:.82rem;color:var(--warn);background:var(--warn-soft);border-radius:9px;padding:10px 12px;line-height:1.5;margin-top:10px}
+
+  .prov-grid{display:grid;gap:12px;margin-top:14px}@media(min-width:720px){.prov-grid{grid-template-columns:1fr 1fr}}
+  .prov{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--card)}
+  .prov.is-match{border-color:color-mix(in srgb,var(--navy) 55%,transparent);box-shadow:0 0 0 2px color-mix(in srgb,var(--navy) 16%,transparent)}
+  .prov-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+  .prov-name{font-weight:700;font-size:.98rem}
+  .prov-loc{font-size:.76rem;color:var(--ink-mute);font-weight:500}
+  .match-tag{display:none;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--navy);color:var(--on-navy)}
+  .prov.is-match .match-tag{display:inline-block}
+  .prov-field{display:grid;grid-template-columns:auto 1fr;gap:8px;font-size:.84rem;padding:5px 0;border-top:1px solid var(--line)}
+  .prov-field:first-of-type{border-top:0}
+  .prov-field .k{color:var(--ink-mute);font-weight:600;min-width:74px}
+  .prov-field .v{color:var(--ink-soft)}
+  .tag{display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:.78rem}
+  .tag.yes{color:var(--ok)}.tag.no{color:var(--miss)}
+
+  .qwrap{margin-top:0}
+  .qlist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  .qlist li{display:flex;gap:9px;align-items:flex-start;font-size:.9rem;color:var(--ink-soft);background:var(--soft);border-radius:9px;padding:10px 12px}
+  .qlist li::before{content:"?";flex:0 0 auto;width:20px;height:20px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:.8rem;display:grid;place-items:center;margin-top:1px}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+  .btn{font-family:inherit;font-size:.9rem;font-weight:600;padding:11px 16px;border-radius:10px;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);cursor:pointer;min-height:44px}
+  .btn:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copy-status{font-size:.84rem;color:var(--ok);font-weight:600}
+  #copy-fallback{width:100%;margin-top:10px;font-family:var(--mono);font-size:.8rem;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:10px;min-height:120px}
+
+  .section-gap{margin-top:22px}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">Agenti AI, automazione e voce</p>
+  <h1>Raggio linguistico: quale segmento fa per i vostri chiamanti</h1>
+  <p class="lede">La domanda giusta non è «qual è il migliore assistente telefonico AI», ma «quale copre davvero le lingue di cui la vostra azienda ha bisogno». Indicate chi vi chiama e in quali lingue: questo strumento vi colloca in uno dei tre segmenti dell'articolo — solo Ticino, multilingue o hôtellerie — con l'orientamento onesto per ciascuno. Niente viene salvato o inviato.</p>
+
+  <div class="matcher">
+    <section class="card card-pad" aria-labelledby="in-title">
+      <h2 id="in-title">Il vostro raggio</h2>
+      <p class="sub">Rispondete su settore e lingue dei chiamanti. Il segmento si aggiorna in tempo reale.</p>
+
+      <fieldset class="fs">
+        <legend>Gestite un hotel, un B&amp;B o un affitto per vacanze?</legend>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="hosp" value="si"> Sì</label>
+          <label class="radio"><input type="radio" name="hosp" value="no" checked> No</label>
+        </div>
+        <div id="pms-wrap" hidden>
+          <fieldset class="fs" style="margin-top:12px">
+            <legend>La reception usa già Protel, Sihot, ASA Hotel, Mews o apaleo?</legend>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="pms" value="si"> Sì</label>
+              <label class="radio"><input type="radio" name="pms" value="no" checked> No / non so</label>
+            </div>
+          </fieldset>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs">
+        <legend>Quali lingue parlano davvero i vostri clienti al telefono?</legend>
+        <div class="lang-list">
+          <div class="lang-row"><label for="lang-it">Italiano</label>
+            <select id="lang-it" data-lang="it"><option value="mai">Mai</option><option value="ogni-tanto">Ogni tanto</option><option value="spesso" selected>Spesso</option></select></div>
+          <div class="lang-row"><label for="lang-de">Tedesco (standard)</label>
+            <select id="lang-de" data-lang="de"><option value="mai" selected>Mai</option><option value="ogni-tanto">Ogni tanto</option><option value="spesso">Spesso</option></select></div>
+          <div class="lang-row"><label for="lang-gsw">Svizzero tedesco (dialetto)</label>
+            <select id="lang-gsw" data-lang="gsw"><option value="mai" selected>Mai</option><option value="ogni-tanto">Ogni tanto</option><option value="spesso">Spesso</option></select></div>
+          <div class="lang-row"><label for="lang-fr">Francese</label>
+            <select id="lang-fr" data-lang="fr"><option value="mai" selected>Mai</option><option value="ogni-tanto">Ogni tanto</option><option value="spesso">Spesso</option></select></div>
+          <div class="lang-row"><label for="lang-en">Inglese</label>
+            <select id="lang-en" data-lang="en"><option value="mai" selected>Mai</option><option value="ogni-tanto">Ogni tanto</option><option value="spesso">Spesso</option></select></div>
+          <div class="lang-row"><label for="lang-other">Altre lingue</label>
+            <select id="lang-other" data-lang="other"><option value="mai" selected>Mai</option><option value="ogni-tanto">Ogni tanto</option><option value="spesso">Spesso</option></select></div>
+        </div>
+        <p class="hint">Il raggio multilingue del confronto si misura soprattutto su tedesco, dialetto svizzero-tedesco e francese usati «spesso».</p>
+      </fieldset>
+
+      <p class="reach" id="reach" aria-live="polite"></p>
+    </section>
+
+    <section class="card card-pad result" aria-labelledby="res-title">
+      <h2 id="res-title">Il segmento che vi corrisponde</h2>
+      <div id="result" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <section class="card card-pad section-gap" aria-labelledby="prov-title">
+    <h2 id="prov-title">I sei fornitori, i fatti che contano</h2>
+    <p class="sub">Dati dai siti pubblici dei fornitori, consultati il 29 luglio 2026. Le righe «In evidenza» cambiano in base al vostro raggio.</p>
+    <div class="prov-grid" id="prov-grid"></div>
+    <p class="hint" style="margin-top:12px">Cinque fornitori su sei dichiarano un'ubicazione dei dati (Svizzera o Svizzera/UE); AlpenAgent non la indica sulla pagina consultata. Nessuna delle pagine cita un ente di certificazione esterno.</p>
+  </section>
+
+  <section class="card card-pad section-gap qwrap" aria-labelledby="q-title">
+    <h2 id="q-title">Portate queste domande a ogni fornitore</h2>
+    <p class="sub">Tre fornitori su sei non pubblicano un prezzo: un confronto «sulla carta» resta incompleto finché non avete un'offerta concreta. Chiedete esplicitamente:</p>
+    <ul class="qlist" id="qlist"></ul>
+    <div class="actions">
+      <button type="button" class="btn" id="copy-btn">Copia il mio profilo + domande</button>
+      <span class="copy-status" id="copy-status" aria-live="polite"></span>
+    </div>
+    <textarea id="copy-fallback" hidden readonly aria-label="Testo del profilo da copiare manualmente"></textarea>
+  </section>
+
+  <p class="disc">Orientamento, non consulenza né offerta. Ogni dato proviene dall'articolo Weissmann (fornitori consultati il 29 luglio 2026) e dai prezzi pubblici; le dichiarazioni linguistiche e di hosting sono dei singoli fornitori — comprese quelle di Weissmann — e non sono state verificate da test indipendenti. Nessun tasso di riconoscimento dell'italiano parlato in Ticino è misurato in modo indipendente: verificatelo con chiamate di prova reali. Nulla di ciò che inserite qui viene salvato o inviato: tutto resta nel vostro browser.</p>
+
+  <footer class="linkbar" aria-label="Approfondimenti">
+    <p class="lb-title">Approfondimenti</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/it/ai-academy/agenti-automazione/assistenti-telefonici-ai-svizzera-pmi-ticinesi/" target="_blank" rel="noopener noreferrer" aria-label="Leggi la guida completa ai sei assistenti telefonici AI in Svizzera (opens in a new tab)">Leggi la guida completa ai sei fornitori →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/it/servizi/assistente-telefonico-ai/" target="_blank" rel="noopener noreferrer" aria-label="Scopri l'assistente telefonico AI di Weissmann e i prezzi attuali (opens in a new tab)">Assistente telefonico AI di Weissmann →</a>
+    </div>
+    <p class="att">Weissmann è essa stessa uno dei sei fornitori del confronto · uno strumento di accompagnamento alla guida. Orientamento, non un'offerta.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(s, r){ return (r||document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+
+  var LANGS = [
+    {id:'it', label:'Italiano'},
+    {id:'de', label:'Tedesco (standard)'},
+    {id:'gsw', label:'Svizzero tedesco (dialetto)'},
+    {id:'fr', label:'Francese'},
+    {id:'en', label:'Inglese'},
+    {id:'other', label:'Altre lingue'}
+  ];
+
+  var SEG = {
+    ticino:      {name:'Clientela italofona (solo Ticino)', cls:'seg-ticino'},
+    multilingue: {name:'Reach multilingue (anche DE/FR)',   cls:'seg-multi'},
+    hospitality: {name:'Hôtellerie',                         cls:'seg-hosp'}
+  };
+
+  var QUESTIONS = [
+    'Il prezzo al nostro volume di chiamate reale, non solo il pacchetto base.',
+    'Il costo oltre un eventuale contingente di minuti incluso.',
+    'La durata minima del contratto.',
+    'Il costo di una disdetta anticipata.',
+    'Dove restano i dati (hosting) e se esiste un accordo scritto sul trattamento dei dati.',
+    'Quali lingue e dialetti sono davvero inclusi nel pacchetto proposto, messo per iscritto prima della firma.'
+  ];
+
+  var PROVIDERS = [
+    {
+      id:'weissmann', name:'Weissmann AI', loc:'Zurigo',
+      price:{ok:true, text:'CHF 350/mese Starter · CHF 590/mese Premium · prova unica CHF 350'},
+      lingue:'1 lingua (Starter) / 2 (Premium) tra DE·EN·FR·IT · svizzero tedesco in generale, senza dialetti specifici',
+      hosting:'Svizzera o Svizzera/UE (dichiarato)',
+      note:'Nessuna durata minima sullo Starter; editore di questa guida',
+      match:{ticino:true, multilingue:false, hospitality:false}
+    },
+    {
+      id:'alpenagent', name:'AlpenAgent', loc:'',
+      price:{ok:false, text:'No — chiamata conoscitiva di 15 min'},
+      lingue:'Svizzero tedesco senza dialetti specifici · sei settori dedicati',
+      hosting:'Non indicato sulla pagina consultata',
+      note:'Settori: artigianato, garage/auto, ristorazione, hotel/turismo, benessere, immobiliare',
+      match:{ticino:false, multilingue:false, hospitality:false}
+    },
+    {
+      id:'suisse-voice', name:'Suisse Voice', loc:'',
+      price:{ok:true, text:'Piano annuale (1200 min inclusi) · credito di prova CHF 20, senza carta'},
+      lingue:'DE·FR·IT·EN + 17+ lingue · dialetti di Zurigo, Basilea, Berna e Lucerna nominati',
+      hosting:'Svizzera; dichiara di non usare i dati per l’addestramento',
+      note:'Integrazioni Zapier, n8n, Make.com, webhook (per team con competenze tecniche); disdicibile in ogni momento',
+      match:{ticino:false, multilingue:true, hospitality:false}
+    },
+    {
+      id:'nex-ai', name:'NEX-AI', loc:'Winterthur',
+      price:{ok:true, text:'Da CHF 149/mese, disdicibile mensilmente'},
+      lingue:'Più lingue incluso lo svizzero tedesco, senza un numero preciso indicato',
+      hosting:'«Hosting 100% svizzero», infrastruttura interna',
+      note:'Websoft AG (gruppo Nexus dal 2012) · ambito funzionale più contenuto',
+      match:{ticino:true, multilingue:false, hospitality:false}
+    },
+    {
+      id:'heypapaya', name:'HeyPapaya', loc:'',
+      price:{ok:false, text:'No — consulenza gratuita 30 min; attivazione 2–4 settimane'},
+      lingue:'FR·DE·IT·EN — quattro lingue fisse, non un elenco aperto',
+      hosting:'Svizzera/UE; conforme alla nLPD',
+      note:'Si collega a Twilio e ai principali operatori svizzeri',
+      match:{ticino:false, multilingue:false, hospitality:false}
+    },
+    {
+      id:'alveni', name:'Alveni', loc:'Canton Svitto',
+      price:{ok:false, text:'No — prezzo su richiesta'},
+      lingue:'30+ lingue · dialetti Zurigo, Berna, Basilea e Vallese nominati (la promessa dialettale più specifica)',
+      hosting:'Svizzera o Svizzera/UE (dichiarato)',
+      note:'PMS diretti: Protel, Sihot, ASA Hotel, Mews, apaleo + FFS · 100 chiamate parallele',
+      match:{ticino:false, multilingue:true, hospitality:true}
+    }
+  ];
+
+  var lastProfileText = '';
+
+  function freq(v){ return v === 'spesso' ? 'spesso' : (v === 'ogni-tanto' ? 'ogni tanto' : 'mai'); }
+
+  function readState(){
+    var hospEl = document.querySelector('input[name="hosp"]:checked');
+    var pmsEl  = document.querySelector('input[name="pms"]:checked');
+    var langs = {};
+    LANGS.forEach(function(l){ var el = $('#lang-'+l.id); langs[l.id] = el ? el.value : 'mai'; });
+    return { hosp: hospEl ? hospEl.value : 'no', pms: pmsEl ? pmsEl.value : 'no', langs: langs };
+  }
+
+  function classify(s){
+    var reach = [s.langs.de, s.langs.gsw, s.langs.fr];
+    var strong = reach.indexOf('spesso') > -1;
+    var some = reach.indexOf('ogni-tanto') > -1;
+    var segment;
+    if(s.hosp === 'si'){ segment = 'hospitality'; }
+    else if(strong){ segment = 'multilingue'; }
+    else { segment = 'ticino'; }
+    return { segment: segment, strong: strong, some: some };
+  }
+
+  function esc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function reachText(s){
+    var active = LANGS.filter(function(l){ return s.langs[l.id] !== 'mai'; });
+    if(active.length === 0){ return '<b>Nessuna lingua indicata.</b> Selezionate almeno la lingua principale dei vostri chiamanti.'; }
+    var parts = active.map(function(l){ return esc(l.label) + ' (' + freq(s.langs[l.id]) + ')'; });
+    return '<b>Profilo:</b> ' + parts.join(' · ');
+  }
+
+  var UNIVERSAL_CAVEAT = 'Tutte le dichiarazioni linguistiche — comprese quelle di Weissmann — sono autodichiarazioni dei fornitori, non risultati di test indipendenti. Sono un punto di partenza per le vostre chiamate di prova, non una garanzia.';
+
+  function resultHtml(s, c){
+    var seg = SEG[c.segment];
+    var html = '<div><span class="badge ' + seg.cls + '">' + esc(seg.name) + '</span></div>';
+
+    if(c.segment === 'ticino'){
+      html += '<h3>Conta l’italiano, non il numero di lingue</h3>';
+      html += '<p>Il numero di lingue aggiuntive conta meno di quanto sembri: vi serve un sistema che gestisca bene l’italiano, non trenta lingue che non userete mai. Tutti e sei i fornitori dichiarano il supporto per l’italiano.</p>';
+      html += '<p>La differenza pratica diventa la <b>trasparenza del prezzo</b>: Weissmann e NEX-AI pubblicano un prezzo d’ingresso chiaro senza dover prima sostenere una chiamata commerciale — un vantaggio concreto se volete valutare rapidamente il costo prima di impegnare tempo in colloqui.</p>';
+      html += '<div class="pt"><span class="pill ok">Weissmann · CHF 350/mese Starter (1 lingua, 1500 min, nessuna durata minima)</span><span class="pill ok">NEX-AI · da CHF 149/mese, disdicibile mensilmente</span><span class="pill">AlpenAgent · HeyPapaya · Alveni: prezzo solo su richiesta</span></div>';
+      if(c.some){ html += '<p class="pt">Avete segnalato un uso <b>occasionale</b> di tedesco o francese: restate nel raggio italofono, ma nelle prove chiedete comunque come il sistema gestisce quelle chiamate saltuarie.</p>'; }
+    } else if(c.segment === 'multilingue'){
+      html += '<h3>Quale gestisce bene PIÙ lingue insieme?</h3>';
+      html += '<p>Qui la domanda si sposta: non «gestisce l’italiano?», ma «quale fornitore gestisce bene più lingue contemporaneamente?». Suisse Voice e Alveni dichiarano la copertura più ampia — 17+ e 30 lingue aggiuntive rispettivamente — inclusi dialetti svizzero-tedeschi specifici che un cliente di Zurigo o Berna potrebbe davvero parlare al telefono.</p>';
+      html += '<p>Weissmann offre invece una selezione più contenuta (una o due lingue a scelta per pacchetto — Premium CHF 590/mese con 2 lingue) ma con una comprensione dichiarata dello svizzero tedesco in generale.</p>';
+      if(s.langs.gsw === 'spesso'){
+        html += '<p class="pt">Avete segnalato il <b>dialetto svizzero-tedesco «spesso»</b>: qui la specificità dichiarata conta. Suisse Voice nomina i dialetti di Zurigo, Basilea, Berna e Lucerna; Alveni cita anche il vallesano. Weissmann dichiara lo svizzero tedesco «in generale», senza distinguere i dialetti.</p>';
+      }
+      html += '<div class="caveat">' + esc(UNIVERSAL_CAVEAT) + '</div>';
+    } else {
+      html += '<h3>La risposta qui non è equilibrata</h3>';
+      html += '<p>Alveni dichiara integrazioni dirette con Protel, Sihot, ASA Hotel, Mews e apaleo — gestionali alberghieri in uso presso una parte significativa delle strutture svizzere ed europee — più una capacità dichiarata di 100 chiamate parallele, utile nei picchi di check-in. Nessuno degli altri cinque fornitori pubblica un elenco comparabile di integrazioni alberghiere dirette.</p>';
+      if(s.pms === 'si'){
+        html += '<p><b>La vostra reception lavora già con uno di questi gestionali</b>: per l’articolo questo è il fatto decisivo — e sarebbe disonesto affermare il contrario solo perché questa guida è pubblicata da Weissmann.</p>';
+      } else {
+        html += '<p>Non usate (o non sapete se userete) uno di quei gestionali: se in futuro ne adotterete uno, l’integrazione diretta diventa il fatto decisivo; altrimenti il confronto torna sugli altri criteri — prezzo, lingue, hosting.</p>';
+      }
+      if(c.strong){ html += '<p class="pt">Servite anche clientela di lingua tedesca o francese: oltre alle integrazioni, valutate la copertura dialettale dichiarata (Alveni e Suisse Voice nominano dialetti specifici).</p>'; }
+      else { html += '<p class="pt">Per la clientela italofona, ricordate che tutti e sei dichiarano l’italiano; nessuno ne misura la qualità in modo indipendente.</p>'; }
+    }
+
+    html += '<p class="pt" style="font-size:.82rem;color:var(--ink-mute)">Segmento scelto secondo la tesi dell’articolo: la copertura linguistica è la domanda vera. Scorrete in basso per i sei fornitori e le domande da porre.</p>';
+    return html;
+  }
+
+  function applyProviderHighlight(segment){
+    $$('#prov-grid .prov').forEach(function(el){
+      var id = el.getAttribute('data-id');
+      var p = PROVIDERS.filter(function(x){ return x.id === id; })[0];
+      var isMatch = !!(p && p.match[segment]);
+      if(isMatch){ el.classList.add('is-match'); } else { el.classList.remove('is-match'); }
+    });
+  }
+
+  function buildProfileText(s, c){
+    var lines = [];
+    lines.push('Profilo raggio linguistico — [la mia attività]');
+    lines.push('Segmento suggerito: ' + SEG[c.segment].name);
+    var active = LANGS.filter(function(l){ return s.langs[l.id] !== 'mai'; })
+                      .map(function(l){ return l.label + ' (' + freq(s.langs[l.id]) + ')'; });
+    lines.push('Lingue dei chiamanti: ' + (active.length ? active.join(', ') : 'nessuna indicata'));
+    var hospLine = 'Struttura ricettiva: ' + (s.hosp === 'si' ? 'sì' : 'no');
+    if(s.hosp === 'si'){ hospLine += ' · gestionale PMS (Protel/Sihot/ASA/Mews/apaleo): ' + (s.pms === 'si' ? 'sì' : 'no / non so'); }
+    lines.push(hospLine);
+    lines.push('');
+    lines.push('Domande da porre a ogni fornitore:');
+    QUESTIONS.forEach(function(q){ lines.push('- ' + q); });
+    lines.push('');
+    lines.push('Orientamento dall’articolo Weissmann (sei fornitori consultati il 29.07.2026). Non è un’offerta; le dichiarazioni linguistiche e di hosting non sono verificate da test indipendenti.');
+    return lines.join('\n');
+  }
+
+  function render(){
+    var s = readState();
+    var pmsWrap = $('#pms-wrap');
+    if(pmsWrap){ pmsWrap.hidden = (s.hosp !== 'si'); }
+
+    $('#reach').innerHTML = reachText(s);
+
+    var active = LANGS.filter(function(l){ return s.langs[l.id] !== 'mai'; });
+    var res = $('#result');
+    if(active.length === 0){
+      res.innerHTML = '<div><span class="badge seg-none">In attesa</span></div><p style="margin-top:12px;color:var(--ink-soft)">Indicate almeno una lingua parlata dai vostri chiamanti per vedere il segmento che vi corrisponde.</p>';
+      $$('#prov-grid .prov').forEach(function(el){ el.classList.remove('is-match'); });
+      lastProfileText = buildProfileText(s, classify(s));
+      return;
+    }
+
+    var c = classify(s);
+    res.innerHTML = resultHtml(s, c);
+    applyProviderHighlight(c.segment);
+    lastProfileText = buildProfileText(s, c);
+  }
+
+  function renderProviders(){
+    var grid = $('#prov-grid');
+    var frag = document.createDocumentFragment();
+    PROVIDERS.forEach(function(p){
+      var el = document.createElement('div');
+      el.className = 'prov';
+      el.setAttribute('data-id', p.id);
+      var priceTag = p.price.ok
+        ? '<span class="tag yes">Prezzo pubblico</span>'
+        : '<span class="tag no">Prezzo su richiesta</span>';
+      el.innerHTML =
+        '<div class="prov-head"><span class="prov-name">' + esc(p.name) + (p.loc ? ' <span class="prov-loc">· ' + esc(p.loc) + '</span>' : '') + '</span><span class="match-tag">In evidenza</span></div>' +
+        '<div class="prov-field"><span class="k">Prezzo</span><span class="v">' + priceTag + '<br>' + esc(p.price.text) + '</span></div>' +
+        '<div class="prov-field"><span class="k">Lingue</span><span class="v">' + esc(p.lingue) + '</span></div>' +
+        '<div class="prov-field"><span class="k">Hosting</span><span class="v">' + esc(p.hosting) + '</span></div>' +
+        '<div class="prov-field"><span class="k">Note</span><span class="v">' + esc(p.note) + '</span></div>';
+      frag.appendChild(el);
+    });
+    grid.appendChild(frag);
+  }
+
+  function renderQuestions(){
+    var ul = $('#qlist');
+    QUESTIONS.forEach(function(q){
+      var li = document.createElement('li');
+      li.appendChild(document.createTextNode(q));
+      ul.appendChild(li);
+    });
+  }
+
+  function showFallback(text){
+    var ta = $('#copy-fallback');
+    ta.hidden = false;
+    ta.value = text;
+    ta.focus();
+    ta.select();
+  }
+
+  function afterOk(){ $('#copy-status').textContent = 'Profilo copiato negli appunti.'; }
+  function afterFail(text){ $('#copy-status').textContent = 'Copia automatica non riuscita — selezionate e copiate il testo qui sotto.'; showFallback(text); }
+
+  function execFallback(text){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var done = document.execCommand('copy');
+      document.body.removeChild(ta);
+      if(done){ afterOk(); } else { afterFail(text); }
+    }catch(e){ afterFail(text); }
+  }
+
+  function copyProfile(){
+    var text = lastProfileText || '';
+    if(!text){ $('#copy-status').textContent = 'Compilate prima il profilo.'; return; }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(afterOk, function(){ execFallback(text); });
+    } else {
+      execFallback(text);
+    }
+  }
+
+  function init(){
+    renderProviders();
+    renderQuestions();
+    $$('input[name="hosp"], input[name="pms"], select[data-lang]').forEach(function(el){
+      el.addEventListener('change', render);
+    });
+    var btn = $('#copy-btn');
+    if(btn){ btn.addEventListener('click', copyProfile); }
+    render();
+  }
+
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', init); }
+  else { init(); }
+})();
+</script>

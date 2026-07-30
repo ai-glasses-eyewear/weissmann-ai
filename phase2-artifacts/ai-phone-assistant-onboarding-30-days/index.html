@@ -1,0 +1,421 @@
+<title>KI-Telefonassistent einführen: 30-Tage-Planer · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .grid{margin-top:18px;display:grid;gap:18px}
+  .panel-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 14px}
+  .controls{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:640px){.controls{grid-template-columns:1fr 1fr}}
+  .field{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .field.full{grid-column:1/-1}
+  .field label{font-size:.85rem;font-weight:600;color:var(--ink-soft)}
+  .field .help{font-size:.76rem;color:var(--ink-mute);font-weight:400}
+  select,input[type="number"],input[type="date"]{font-family:var(--font);font-size:.95rem;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;width:100%;min-height:46px}
+  select:focus-visible,input:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+
+  .summary{border:1px solid var(--line);border-radius:12px;background:var(--accent-soft);padding:14px 16px;margin-bottom:16px}
+  .summary h2{font-size:1.05rem;margin:0 0 4px}
+  .summary .win{font-weight:700;color:var(--accent)}
+  .summary p{margin:6px 0 0;font-size:.9rem;color:var(--ink-soft)}
+  .scen-note{margin:10px 0 0;font-size:.85rem;color:var(--ink-soft);background:var(--warn-soft);border-radius:9px;padding:10px 12px}
+
+  .phase{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:16px 16px 14px;margin-bottom:14px}
+  .phase:last-child{margin-bottom:0}
+  .phase-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:6px}
+  .phase-num{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--navy);color:var(--on-navy);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+  .phase-head .ttl{font-size:1.02rem;font-weight:700;margin:0;line-height:1.2}
+  .phase-head .rng{font-size:.78rem;color:var(--ink-mute);font-weight:600;font-family:var(--mono);margin-top:3px}
+  .phase-intro{font-size:.9rem;color:var(--ink-soft);margin:2px 0 12px}
+  ul.tasks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+  ul.tasks li{position:relative;padding-left:24px;font-size:.92rem;color:var(--ink)}
+  ul.tasks li::before{content:"";position:absolute;left:0;top:.42em;width:11px;height:11px;border:2px solid var(--navy);border-radius:3px}
+  .hint{margin-top:11px;font-size:.85rem;color:var(--ink-soft);background:var(--soft);border-radius:9px;padding:10px 12px;border-left:3px solid var(--accent)}
+  .timenote{margin-top:11px;font-size:.82rem;color:var(--ink-mute);font-weight:600}
+
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;align-items:center}
+  .btn{font-family:var(--font);font-size:.92rem;font-weight:600;border-radius:10px;padding:11px 16px;min-height:46px;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);cursor:pointer}
+  .btn:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  .btn.ghost{background:transparent;color:var(--navy)}
+  .btn.ghost:hover{background:var(--soft)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copied{font-size:.85rem;color:var(--ok);font-weight:600}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">KI-Agenten, Automatisierung &amp; Voice · Weissmann</p>
+  <h1>KI-Telefonassistent einführen: der 30-Tage-Planer</h1>
+  <p class="lede">«Live» heisst nur, dass die Technik läuft – «eingeführt» heisst, dass Skript, Team und Eskalationsregeln sitzen. Die technische Einrichtung dauert nur wenige Tage; die eigentliche Arbeit ist der Rollout. Geben Sie ein paar Eckdaten ein und dieser Planer stellt Ihnen den vierphasigen Ablauf aus dem Ratgeber als Zeitplan zusammen. Die Tageszahlen sind ein Planungshorizont, kein Vertragsversprechen.</p>
+
+  <div class="grid">
+    <section class="card card-pad" aria-labelledby="ctrl-title">
+      <p class="panel-title" id="ctrl-title">Ihre Eckdaten (bleiben nur in diesem Browser)</p>
+      <div class="controls">
+        <div class="field">
+          <label for="scenario">Setup / Ausgangslage <span class="help">– bestimmt den Zeitrahmen</span></label>
+          <select id="scenario">
+            <option value="standard" selected>Standard-KMU · Starter, ohne Systemintegration (rund 30 Tage)</option>
+            <option value="saison">Saisonbetrieb · einmaliger Starter-Test, wenig Vorlauf (ca. 7–10 Tage)</option>
+            <option value="team">Grösseres Team · dedizierte Projektleitung (ca. 2 Wochen)</option>
+            <option value="premium">Premium · volle Systemintegration in Kalender/CRM (ca. 6–8 Wochen)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="industry">Branche <span class="help">– passt Beispiele an</span></label>
+          <select id="industry">
+            <option value="andere" selected>Anderes KMU</option>
+            <option value="handwerk">Handwerk / Sanitär</option>
+            <option value="gesundheit">Gesundheit / Einzelpraxis</option>
+            <option value="coiffeur">Coiffeur / inhabergeführtes Termingeschäft</option>
+            <option value="saison">Saison- / Ferienbetrieb</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="team">Wer stemmt die Einführung?</label>
+          <select id="team">
+            <option value="solo" selected>Nur ich (Inhaberin/Inhaber)</option>
+            <option value="zwei">2 Personen</option>
+            <option value="grossteam">Grösseres Team mit Projektleitung</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="volume">Aktuelles Anrufvolumen <span class="help">– optional, ca. Anrufe/Woche</span></label>
+          <input type="number" id="volume" min="0" max="100000" step="1" inputmode="numeric" placeholder="z. B. 60" />
+        </div>
+        <div class="field full">
+          <label for="startdate">Geplantes Startdatum <span class="help">– optional; ergänzt den Plan um konkrete Kalenderdaten</span></label>
+          <input type="date" id="startdate" />
+        </div>
+      </div>
+      <div class="actions" style="margin-top:16px">
+        <button type="button" class="btn ghost" id="copyBtn">Plan als Text kopieren</button>
+        <span class="copied" id="copiedMsg" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section class="card card-pad" aria-labelledby="out-title">
+      <p class="panel-title" id="out-title">Ihr Rollout-Plan</p>
+      <div id="output" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <p class="disc">Dieser Planer ist eine Orientierungshilfe zum Ratgeber, keine Rechts-, Vertrags- oder Investitionsberatung und keine verbindliche Offerte. Die 30 Tage sind ein Planungshorizont, den Sie im Erstgespräch mit dem Anbieter individuell festlegen – kein Vertragsversprechen. Die technische Einrichtung ist deutlich schneller; ein Rutscher um ein bis zwei Wochen ist bei kleinen Betrieben der Normalfall und noch kein gescheitertes Projekt. Medizinisches oder rechtlich Heikles gehört gemäss Ratgeber immer an einen Menschen, nie an die KI. Alle Eingaben bleiben nur in Ihrem Browser: nichts wird gespeichert, nichts gesendet.</p>
+
+  <footer class="linkbar" aria-label="Weiterführende Links zum KI-Telefonassistenten">
+    <p class="lb-title">Weiterlesen &amp; weiterplanen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-einfuehren-30-tage-plan/" target="_blank" rel="noopener noreferrer" aria-label="Ganzer Ratgeber: der realistische 30-Tage-Plan im Detail (opens in a new tab)">Ganzer Ratgeber: der 30-Tage-Plan im Detail →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="KI-Telefonassistent: Pakete, Preise und kostenloses Erstgespräch (opens in a new tab)">KI-Telefonassistent: Pakete &amp; Erstgespräch →</a>
+    </div>
+    <p class="att">Interaktiver Begleiter zum Weissmann-Ratgeber · Orientierung, kein verbindliches Angebot.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var SCENARIOS = {
+    standard: {
+      label: "Standard-KMU · Starter, ohne Systemintegration",
+      window: "rund 30 Tage · 4 Phasen",
+      note: "Der 30-Tage-Rahmen passt am besten auf das Starter-Paket ohne Systemintegration – für die meisten Schweizer KMU die realistische Grundeinstellung. Die 30 Tage sind bewusst grosszügig gewählt für einen Betrieb, in dem die Einführung neben dem Tagesgeschäft läuft.",
+      ranges: [[1,7],[8,14],[15,21],[22,30]]
+    },
+    saison: {
+      label: "Saisonbetrieb · einmaliger Starter-Test",
+      window: "kompakt · ca. 7–10 Tage",
+      note: "Ein Saisonbetrieb hat oft keine 30 Tage Vorlauf. Realistisch ist eine verkürzte, konzentrierte Version über sieben bis zehn Tage – mit einer entsprechend kürzeren, aber nicht komplett übersprungenen Pilotphase.",
+      ranges: [[1,3],[4,5],[6,8],[9,10]]
+    },
+    team: {
+      label: "Grösseres Team · dedizierte Projektleitung",
+      window: "ca. 2 Wochen",
+      note: "Ein grösseres Team mit dedizierter Projektleitung schafft den Rollout oft in rund zwei Wochen – dieselben vier Phasen, nur enger getaktet.",
+      ranges: [[1,3],[4,6],[7,10],[11,14]]
+    },
+    premium: {
+      label: "Premium · volle Systemintegration (Kalender/CRM)",
+      window: "ca. 6–8 Wochen",
+      note: "Bei voller Systemintegration rechnen Sie eher mit sechs bis acht Wochen statt vier – nicht wegen der KI selbst, sondern wegen der zusätzlichen Abstimmung mit Kalender- und CRM-Systemen. Das braucht häufig einen eigenen technischen Ansprechpartner auf Ihrer Seite und die Abstimmung mit Ihrem IT-Dienstleister oder Softwareanbieter.",
+      ranges: [[1,14],[15,28],[29,42],[43,56]]
+    }
+  };
+
+  var INDUSTRY = {
+    andere:      { phase1: null, phase3: null },
+    handwerk:    {
+      phase1: "Für Handwerks- und Sanitärbetriebe leicht vergessen: Anfahrtspauschale und Pikettdienst am Wochenende gehören in die Wissensbasis. Genau solche Lücken kosten in der Testphase nichts, in der Pilotphase mit echten Kundinnen und Kunden dagegen Vertrauen.",
+      phase3: null
+    },
+    gesundheit:  {
+      phase1: "Für eine Einzelpraxis besonders wichtig: Alles Medizinische oder rechtlich Heikle geht sofort an einen Menschen, nie an die KI. Die KI übernimmt Öffnungszeiten und Terminbuchung.",
+      phase3: null
+    },
+    coiffeur:    {
+      phase1: "Als inhabergeführter Betrieb, in dem die Wissensbasis oft abends nach Ladenschluss entsteht, sind die vollen vier Wochen realistisch – das ist normal und noch kein gescheitertes Projekt.",
+      phase3: null
+    },
+    saison:      {
+      phase1: "Als Saison- oder Ferienbetrieb haben Sie oft wenig Vorlauf. Halten Sie die Pilotphase kurz – aber überspringen Sie sie nicht.",
+      phase3: null
+    }
+  };
+
+  function phaseContent(idx, ctx){
+    var team = ctx.team, ind = ctx.industry, vol = ctx.volume, scen = ctx.scenario;
+    var respPerson = (team === "grossteam")
+      ? "Dedizierte Projektleitung benennen und den Zeitraum verbindlich einplanen, statt die Einführung «zwischendurch» laufen zu lassen."
+      : (team === "zwei")
+        ? "Eine von Ihnen beiden verbindlich verantwortlich machen und den Zeitraum im Kalender blockieren, statt die Einführung «zwischendurch» laufen zu lassen."
+        : "Sich selbst als verantwortliche Person festlegen und den Zeitraum im Kalender blockieren, statt die Einführung «zwischendurch» laufen zu lassen.";
+
+    var testCaller = (team === "solo")
+      ? "Selbst testweise anrufen – mit vorbereiteten, aber realistischen Fragen, auch unangenehmen oder ungewöhnlichen."
+      : "Im Team testweise selbst anrufen – mit vorbereiteten, aber realistischen Fragen, auch unangenehmen oder ungewöhnlichen.";
+
+    var brief = (team === "solo")
+      ? "Vor dem Piloten für sich selbst festlegen: Wie gehen Sie mit einer Kundin um, die sich über die KI beschwert, und bis wann tragen Sie falsche Angaben in der Wissensbasis nach?"
+      : "Team briefen, bevor der Pilot startet: Was sagt man einer Kundin, die sich über die KI beschwert? Wer korrigiert falsche Angaben in der Wissensbasis, und bis wann?";
+
+    var bilanz = "Erste vollständige Wochenbilanz ziehen: Wie viele Anrufe kamen an, wie viele wurden an Menschen übergeben, welche Fragen tauchen am häufigsten auf?";
+    if (vol != null){
+      bilanz += " Ihr heutiger Richtwert von ca. " + vol + " Anrufen/Woche ist der Ausgangswert, gegen den Sie diese Bilanz und die Rückschau nach 60/90 Tagen vergleichen.";
+    }
+
+    var indHint = INDUSTRY[ind] || INDUSTRY.andere;
+
+    if (idx === 0){
+      return {
+        title: "Vorbereitung und Kickoff",
+        intro: "In dieser Phase entsteht noch kein Kundenkontakt mit der KI – dafür die Grundlage, ohne die alles Weitere wackelt.",
+        tasks: [
+          respPerson,
+          "Wissensbasis zusammentragen: Öffnungszeiten, Preise, häufige Fragen, Ausnahmen und Sonderfälle – am besten aus echten, kürzlich geführten Telefonaten, nicht aus dem Gedächtnis rekonstruiert.",
+          "Kickoff-Gespräch mit dem Anbieter: kostenlose Demo mit Ihren eigenen Angaben konfigurieren und prüfen, ob Tonfall und Gesprächsführung zu Ihrem Betrieb passen.",
+          "Eskalationsregeln grob festlegen: Was übernimmt die KI vollständig (Öffnungszeiten, Terminbuchung), was geht sofort an einen Menschen (Beschwerden, Sonderfälle, alles Medizinische oder rechtlich Heikle)?"
+        ],
+        hint: indHint.phase1,
+        time: "Zeitaufwand: ca. 1–2 Stunden für die Wissensbasis, rund 1 Stunde für den Kickoff."
+      };
+    }
+    if (idx === 1){
+      return {
+        title: "Aufbau und erster interner Test",
+        intro: "Der Anbieter baut den Assistenten, Ihre Seite prüft ihn intern. Noch keine echten Kundenanrufe.",
+        tasks: [
+          "Der Anbieter baut und trainiert den Assistenten anhand Ihrer Wissensbasis und Ihrer gewünschten Sprache(n).",
+          testCaller,
+          "Lücken und falsche Antworten schriftlich festhalten und an den Anbieter zurückspielen, statt sie nur mündlich «irgendwann» zu erwähnen.",
+          "Noch keine echten Kundenanrufe: Diese Phase gehört ausschliesslich dem internen Test, nicht der Kundschaft."
+        ],
+        hint: null,
+        time: "Zeitaufwand: ca. 1–2 Stunden für die internen Testanrufe."
+      };
+    }
+    if (idx === 2){
+      return {
+        title: "Begrenzte Pilotphase im echten Betrieb",
+        intro: "Ab jetzt übernimmt der Assistent echte Anrufe – aber nicht alle. Erst ein abgegrenzter Ausschnitt, damit ein Fehler nur einen kleinen Teil Ihrer Anrufe betrifft.",
+        tasks: [
+          "Begrenzt freischalten: nur ausserhalb der Öffnungszeiten, nur für eine bestimmte Anfrageart oder nur an zwei Tagen der Woche.",
+          brief,
+          "Anrufzusammenfassungen laufend lesen – nach jedem Gespräch erhalten Sie eine; sie sind jetzt die Hauptquelle, nicht das Bauchgefühl.",
+          "Muster statt Einzelfälle suchen: ein missverstandener Anruf ist kein Grund zur Panik, drei ähnliche Missverständnisse zur selben Frage schon ein klares Signal.",
+          "Wissensbasis laufend nachschärfen, nicht erst am Ende der Pilotphase gesammelt nachtragen."
+        ],
+        hint: indHint.phase3,
+        time: "Zeitaufwand: ca. 20 Minuten pro Woche für die Anrufzusammenfassungen."
+      };
+    }
+    // idx === 3
+    var closeTasks = [
+      "Volle Anrufabdeckung freischalten – erst jetzt, nicht schon in der Pilotphase.",
+      bilanz,
+      "Bei Start mit dem einmaligen Starter-Test (CHF 350): jetzt entscheiden, ob ein laufendes Monatspaket sinnvoll ist – oder ob eine gut besprochene Combox für die ruhigeren Wochen des Jahres ausreicht.",
+      "Termin für eine Rückschau nach 60 und 90 Tagen im Kalender festhalten – echte Anruf-Muster zeigen sich erst über mehrere Wochen."
+    ];
+    var closeHint = (scen === "premium")
+      ? "Bei voller Systemintegration lohnt sich in dieser Phase ausdrücklich der Abgleich mit Ihrem IT-Dienstleister oder Softwareanbieter, bevor der Vollbetrieb startet."
+      : null;
+    return {
+      title: "Volle Umstellung und erste Bilanz",
+      intro: "Wenn die Pilotphase keine wiederkehrenden Probleme mehr zeigt, folgt der Vollbetrieb – und die erste ehrliche Bilanz.",
+      tasks: closeTasks,
+      hint: closeHint,
+      time: null
+    };
+  }
+
+  var WEEKDAYS = ["So.","Mo.","Di.","Mi.","Do.","Fr.","Sa."];
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function fmtDate(d){
+    return WEEKDAYS[d.getDay()] + " " + pad(d.getDate()) + "." + pad(d.getMonth()+1) + "." + d.getFullYear();
+  }
+  function addDays(base, n){
+    var d = new Date(base.getFullYear(), base.getMonth(), base.getDate());
+    d.setDate(d.getDate() + n);
+    return d;
+  }
+  function parseStart(val){
+    if(!val) return null;
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(val);
+    if(!m) return null;
+    var d = new Date(parseInt(m[1],10), parseInt(m[2],10)-1, parseInt(m[3],10));
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function rangeLabel(r, start){
+    var base = "Tag " + r[0] + (r[1] !== r[0] ? "–" + r[1] : "");
+    if(start){
+      base += "  ·  " + fmtDate(addDays(start, r[0]-1)) + " – " + fmtDate(addDays(start, r[1]-1));
+    }
+    return base;
+  }
+
+  function readCtx(){
+    var volRaw = document.getElementById("volume").value;
+    var vol = null;
+    if(volRaw !== "" && volRaw != null){
+      var n = parseInt(volRaw, 10);
+      if(!isNaN(n) && n >= 0 && n <= 100000) vol = n;
+    }
+    return {
+      scenario: document.getElementById("scenario").value,
+      industry: document.getElementById("industry").value,
+      team: document.getElementById("team").value,
+      volume: vol,
+      start: parseStart(document.getElementById("startdate").value)
+    };
+  }
+
+  function esc(s){
+    return String(s).replace(/[&<>"]/g, function(c){
+      return c === "&" ? "&amp;" : c === "<" ? "&lt;" : c === ">" ? "&gt;" : "&quot;";
+    });
+  }
+
+  var lastPlanText = "";
+
+  function render(){
+    var ctx = readCtx();
+    var scen = SCENARIOS[ctx.scenario] || SCENARIOS.standard;
+    var out = document.getElementById("output");
+
+    var html = "";
+    html += '<div class="summary">';
+    html += '<h2>' + esc(scen.label) + '</h2>';
+    html += '<div class="win">Zeitrahmen: ' + esc(scen.window) + '</div>';
+    if(ctx.start){
+      html += '<p>Start am ' + esc(fmtDate(ctx.start)) + '. Die konkreten Daten je Phase stehen unten.</p>';
+    } else {
+      html += '<p>Tipp: Geben Sie oben ein Startdatum ein, dann ergänzt der Plan konkrete Kalenderdaten pro Phase.</p>';
+    }
+    html += '<p class="scen-note">' + esc(scen.note) + '</p>';
+    html += '</div>';
+
+    var textLines = [];
+    textLines.push("ROLLOUT-PLAN KI-TELEFONASSISTENT – [Ihr Betrieb]");
+    textLines.push(scen.label + " | Zeitrahmen: " + scen.window);
+    if(ctx.start) textLines.push("Start: " + fmtDate(ctx.start));
+    if(ctx.volume != null) textLines.push("Ausgangswert Anrufvolumen: ca. " + ctx.volume + " Anrufe/Woche");
+    textLines.push("Hinweis: " + scen.note);
+    textLines.push("");
+
+    for(var i=0;i<4;i++){
+      var c = phaseContent(i, ctx);
+      var r = scen.ranges[i];
+      var rlab = rangeLabel(r, ctx.start);
+
+      html += '<div class="phase">';
+      html += '<div class="phase-head"><div class="phase-num" aria-hidden="true">' + (i+1) + '</div><div>';
+      html += '<p class="ttl">Phase ' + (i+1) + ': ' + esc(c.title) + '</p>';
+      html += '<div class="rng">' + esc(rlab) + '</div></div></div>';
+      html += '<p class="phase-intro">' + esc(c.intro) + '</p>';
+      html += '<ul class="tasks">';
+      for(var t=0;t<c.tasks.length;t++){ html += '<li>' + esc(c.tasks[t]) + '</li>'; }
+      html += '</ul>';
+      if(c.hint){ html += '<div class="hint">' + esc(c.hint) + '</div>'; }
+      if(c.time){ html += '<div class="timenote">' + esc(c.time) + '</div>'; }
+      html += '</div>';
+
+      textLines.push("PHASE " + (i+1) + ": " + c.title.toUpperCase() + "  (" + rlab + ")");
+      textLines.push(c.intro);
+      for(var tt=0;tt<c.tasks.length;tt++){ textLines.push("  - " + c.tasks[tt]); }
+      if(c.hint) textLines.push("  Hinweis: " + c.hint);
+      if(c.time) textLines.push("  " + c.time);
+      textLines.push("");
+    }
+
+    textLines.push("---");
+    textLines.push("Orientierungshilfe zum Weissmann-Ratgeber, keine verbindliche Offerte oder Rechtsberatung.");
+    textLines.push("Die Tageszahlen sind ein Planungshorizont, kein Vertragsversprechen.");
+    textLines.push("Ratgeber: https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-einfuehren-30-tage-plan/");
+    textLines.push("Pakete & Erstgespräch: https://weissmann.ai/leistungen/ki-telefonassistent/");
+
+    lastPlanText = textLines.join("\n");
+    out.innerHTML = html;
+  }
+
+  function flashCopied(msg, ok){
+    var el = document.getElementById("copiedMsg");
+    el.textContent = msg;
+    el.style.color = ok ? "var(--ok)" : "var(--miss)";
+    setTimeout(function(){ if(el.textContent === msg) el.textContent = ""; }, 3200);
+  }
+
+  function copyPlan(){
+    var text = lastPlanText;
+    if(!text){ render(); text = lastPlanText; }
+    function fallback(){
+      try{
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly","");
+        ta.style.position = "fixed";
+        ta.style.top = "-1000px";
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        flashCopied(ok ? "Plan kopiert." : "Kopieren nicht möglich – bitte Text manuell markieren.", ok);
+      }catch(e){
+        flashCopied("Kopieren nicht möglich – bitte Text manuell markieren.", false);
+      }
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        flashCopied("Plan kopiert.", true);
+      }, fallback);
+    } else {
+      fallback();
+    }
+  }
+
+  var ids = ["scenario","industry","team","volume","startdate"];
+  for(var k=0;k<ids.length;k++){
+    var el = document.getElementById(ids[k]);
+    el.addEventListener("change", render);
+    el.addEventListener("input", render);
+  }
+  document.getElementById("copyBtn").addEventListener("click", copyPlan);
+
+  render();
+})();
+</script>
