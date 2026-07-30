@@ -167,6 +167,70 @@ Next highest-priority article with a genuinely new format. A-DE-09 ("high") skip
 | Factual integrity | **"Illustrative — not a forecast" banner**; curves carry no numbers and are the article's own qualitative thesis (fast-but-switches-off vs slow-but-durable), not invented data. Pricing CHF 690/890 from `pricing.ts` with the spend-separate disclosure; Backlinko 39.8% (the Phase-1 corrected figure). No guarantee, no personal data, nothing stored |
 | Remaining issue | **Public sharing** — owner must Share→public, then anonymously verify and record the URL here |
 
+## Pilot 7 — ai-phone-assistant-small-business-case (DE)
+
+The **highest remaining "high"-demand article** (A-DE-09), built at last. Its concept is a break-even *calculator*; differentiated from Pilot 1 (phone ROI, not ad budget: three own numbers → net + one-time-trial payback + a conservative half-value robustness check).
+
+| Field | Value |
+|---|---|
+| Article / URL | `ai-phone-assistant-small-business-case` · https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-lohnt-sich-fuer-kmu/ |
+| Artifact title | Lohnt sich ein KI-Telefonassistent? Break-Even-Rechner · Weissmann |
+| Interaction type | Break-even calculator (phone ROI) |
+| Source (repo) | `phase2-artifacts/ai-phone-assistant-small-business-case/index.html` |
+| Private Claude URL | https://claude.ai/code/artifact/1575a3c2-0641-49dc-b1f0-4c999786e719 |
+| Publication status | **PRIVATE** ("Share, private") · renders in Claude (verified) |
+| Functional test | Passed (20/wk, 30 %, CHF 54 → 26 missed/mo, CHF 1'403 rescued, +CHF 1'053, payback ~1.1 wk); syntax OK |
+| Links | Article backlink + service CTA → weissmann.ai/leistungen/ki-telefonassistent/ |
+| Integrity | No invented Swiss average (user supplies value); CHF 350 Starter from `pricing.ts`; no guarantee; nothing stored |
+
+## Pilot 8 — ai-phone-assistant-vs-ivr-caller-journey (DE)
+
+A genuinely new format: an interactive **step-counter / configurator**.
+
+| Field | Value |
+|---|---|
+| Article / URL | `ai-phone-assistant-vs-ivr-caller-journey` · https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-vs-ivr-anrufvergleich/ |
+| Artifact title | Zählen Sie die Schritte in Ihrem Telefonmenü · Weissmann |
+| Interaction type | Interactive IVR step-counter + AI comparison |
+| Source (repo) | `phase2-artifacts/ai-phone-assistant-vs-ivr-caller-journey/index.html` |
+| Private Claude URL | https://claude.ai/code/artifact/82f9ce16-40c0-4f33-87ca-61ea0cb5c5bb |
+| Publication status | **PRIVATE** ("Share, private") · renders in Claude (verified) |
+| Functional test | Passed (2 levels/long/code/date/loop → 8 moves, 1:14); syntax OK |
+| Links | Article backlink + service CTA → weissmann.ai/leistungen/ki-telefonassistent/ |
+| Integrity | Move count exact from structure; time is a labelled estimate (not a measurement); AI value (≈4 turns/0:34) from the article; nothing stored |
+
+## Pilot 9 — how-to-measure-ai-receptionist-kpis (EN)
+
+An interactive **live KPI dashboard** — a new model.
+
+| Field | Value |
+|---|---|
+| Article / URL | `how-to-measure-ai-receptionist-kpis` · https://weissmann.ai/en/ai-academy/agents-automation/how-to-measure-ai-receptionist-kpis/ |
+| Artifact title | AI Receptionist KPI Dashboard: 12 Numbers That Matter · Weissmann |
+| Interaction type | Data-entry → live KPI cards + cross-check flags |
+| Source (repo) | `phase2-artifacts/how-to-measure-ai-receptionist-kpis/index.html` |
+| Private Claude URL | https://claude.ai/code/artifact/57578f8c-3af7-4976-b735-68b4f8744d69 |
+| Publication status | **PRIVATE** ("Share, private") · renders in Claude (verified) |
+| Functional test | Passed (defaults → resolution 75.4 %, repeat 9 %, containment 90.5 %, no false flags); syntax OK |
+| Links | Article backlink + service CTA → weissmann.ai/en/services/ai-phone-assistant/ |
+| Integrity | 12 KPIs from user's own counts; **no invented benchmark** (article: none exists) — compare to your own earlier period; cross-checks + low-volume note reused from the article; nothing stored |
+
+## Pilot 10 — sito-web-piccola-impresa-ticino (IT)
+
+A **per-trade priority profiler**.
+
+| Field | Value |
+|---|---|
+| Article / URL | `sito-web-piccola-impresa-ticino` · https://weissmann.ai/it/ai-academy/marketing-seo-geo/sito-web-piccola-impresa-ticino/ |
+| Artifact title | Le priorità del vostro sito, per mestiere · Weissmann |
+| Interaction type | Business-type profiler → tailored must-have checklist |
+| Source (repo) | `phase2-artifacts/sito-web-piccola-impresa-ticino/index.html` |
+| Private Claude URL | https://claude.ai/code/artifact/03c5dbf4-cc07-4493-ab78-0fa5516c73ad |
+| Publication status | **PRIVATE** ("Share, private") · renders in Claude (verified) |
+| Functional test | Passed (per-trade priorities render, "da sistemare" flags, bigger-project note toggles); syntax OK |
+| Links | Article backlink + service CTA → weissmann.ai/it/servizi/sviluppo-siti-web-ai/ |
+| Integrity | Priorities + Starter scope from the article / `pricing.ts`; 144-emergency + association caveats kept; no invented claims; nothing stored |
+
 ## What is needed to complete the pilots
 
 1. **Owner publishes Pilot 1 publicly**: open the private URL while signed in to claude.ai → **Share** →

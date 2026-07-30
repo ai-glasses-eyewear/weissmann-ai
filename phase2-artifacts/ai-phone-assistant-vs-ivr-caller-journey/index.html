@@ -1,0 +1,117 @@
+<title>Zählen Sie die Schritte in Ihrem Telefonmenü · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ivr:#a01324;--ivr-soft:#fbeced;--ai:#1d7a4d;--ai-soft:#e6f4ec;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ivr:#f08a97;--ivr-soft:#3a1620;--ai:#6fce9c;--ai-soft:#153125;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ivr:#f08a97;--ivr-soft:#3a1620;--ai:#6fce9c;--ai-soft:#153125;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ivr:#a01324;--ivr-soft:#fbeced;--ai:#1d7a4d;--ai-soft:#e6f4ec;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:20px}@media(min-width:860px){.grid{grid-template-columns:1fr 1fr;align-items:start}}
+  h2{font-size:1.06rem;margin:0 0 2px}.sub{color:var(--ink-mute);font-size:.86rem;margin:0 0 14px}
+  .field{margin:0 0 14px}label.t{display:block;font-weight:600;font-size:.9rem;margin:0 0 6px}
+  select{width:100%;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px}select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 22%,transparent)}
+  .toggle{display:flex;align-items:flex-start;gap:10px;margin:9px 0}.toggle input{width:17px;height:17px;margin-top:2px;accent-color:var(--navy)}.toggle label{font-size:.88rem;color:var(--ink-soft)}
+  button{font:inherit;font-weight:600;cursor:pointer;border-radius:10px;padding:10px 16px;border:1.5px solid var(--line);background:transparent;color:var(--navy)}button:hover{border-color:var(--navy)}button:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+  .results{position:sticky;top:16px}
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px}
+  .side{border-radius:12px;padding:14px;border:1px solid transparent}.side h3{margin:0 0 8px;font-size:.9rem;display:flex;align-items:center;gap:7px}.side .big{font-size:1.7rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1}.side .u{font-size:.75rem;color:var(--ink-mute);font-weight:600}.side .t2{font-size:1rem;font-weight:700;margin-top:6px;font-variant-numeric:tabular-nums}
+  .ivr{background:var(--ivr-soft);border-color:color-mix(in srgb,var(--ivr) 30%,transparent)}.ivr h3{color:var(--ivr)}
+  .ai{background:var(--ai-soft);border-color:color-mix(in srgb,var(--ai) 30%,transparent)}.ai h3{color:var(--ai)}
+  .queue{background:var(--ivr-soft);border-radius:10px;padding:11px 13px;font-size:.85rem;color:var(--ink-soft);margin:0 0 12px}
+  .checklist h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-mute);margin:6px 0 6px}
+  .checklist{margin:0;padding:0;list-style:none;font-size:.87rem}.checklist li{position:relative;padding:5px 0 5px 24px;color:var(--ink-soft)}.checklist li::before{content:"";position:absolute;left:2px;top:9px;width:12px;height:12px;border:2px solid var(--navy);border-radius:4px}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+  details.when{margin-top:12px}details.when summary{cursor:pointer;font-weight:600;color:var(--navy);font-size:.9rem}details.when ul{font-size:.85rem;color:var(--ink-soft);margin-top:8px;padding-left:18px}details.when li{margin:4px 0}
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+<div class="wrap">
+  <p class="kicker">Weissmann · KI-Agenten &amp; Voice</p>
+  <h1>Zählen Sie die Schritte in Ihrem Telefonmenü</h1>
+  <p class="lede">Ein IVR-Menü verlangt vom Anrufenden, sein Anliegen selbst einzuordnen – Taste für Taste. Ein KI-Assistent übernimmt das aus einem ganzen Satz. Beschreiben Sie den Weg zu Ihrem <em>häufigsten</em> Anliegen, und dieses Tool zählt die Züge und schätzt die Zeit – neben dem Weg über einen KI-Assistenten.</p>
+  <div class="grid">
+    <section class="card card-pad" aria-labelledby="in-h">
+      <h2 id="in-h">Ihr heutiges Menü</h2><p class="sub">Für das häufigste Anliegen eines Stammkunden.</p>
+      <div class="field"><label class="t" for="levels">Menüebenen bis zur richtigen Option</label>
+        <select id="levels"><option value="1">1 Ebene</option><option value="2" selected>2 Ebenen</option><option value="3">3 Ebenen</option><option value="4">4 Ebenen</option><option value="5">5 Ebenen</option></select></div>
+      <div class="field"><label class="t" for="opts">Optionen pro Ansage</label>
+        <select id="opts"><option value="short">2–3 Optionen (kurze Ansage)</option><option value="long" selected>4–6 Optionen (lange Ansage)</option></select></div>
+      <div class="field"><label class="t">Was der Anrufer eingeben muss</label>
+        <div class="toggle"><input type="checkbox" id="code" checked><label for="code">Kunden-/Bestellnummer eintippen</label></div>
+        <div class="toggle"><input type="checkbox" id="data" checked><label for="data">Datum/Uhrzeit oder andere mehrstellige Angabe</label></div>
+        <div class="toggle"><input type="checkbox" id="loop" checked><label for="loop">Bei Fehleingabe zurück zum Hauptmenü (statt zweiter Chance an Ort und Stelle)</label></div>
+        <div class="toggle"><input type="checkbox" id="queue"><label for="queue">Ablauf endet in einer Warteschlange, nicht in einer Lösung</label></div>
+      </div>
+      <div style="margin-top:2px"><button type="button" id="reset">Zurücksetzen</button></div>
+    </section>
+    <section class="card card-pad results" aria-live="polite" aria-labelledby="out-h">
+      <h2 id="out-h">Der Vergleich</h2><p class="sub">Züge = exakt gezählt aus Ihrer Beschreibung. Zeit = transparente Schätzung.</p>
+      <div class="vs">
+        <div class="side ivr"><h3>Ihr Telefonmenü</h3><div><span class="big" id="ivr-moves">–</span> <span class="u">Züge</span></div><div class="t2" id="ivr-time">–</div></div>
+        <div class="side ai"><h3>KI-Assistent</h3><div><span class="big">≈ 4</span> <span class="u">gespr. Züge</span></div><div class="t2">≈ 0:34</div></div>
+      </div>
+      <div class="queue" id="queue-note" hidden></div>
+      <p style="font-size:.88rem;color:var(--ink-soft);margin:0 0 12px" id="explain"></p>
+      <div class="checklist"><h3>Testen Sie Ihr eigenes Menü – 6 Fragen</h3>
+        <ul>
+          <li>Wie viele Tastendrücke braucht Ihr häufigstes Anliegen? Zählen Sie nach, statt zu schätzen.</li>
+          <li>Was passiert bei einer Fehleingabe – zweite Chance oder Rücksprung zum Hauptmenü?</li>
+          <li>Gibt es einen Menüpunkt, der zu mehr als einer Kategorie passt? («Es funktioniert nicht» – Reklamation oder Garantie?)</li>
+          <li>Wie schnell liest die Ansage vor, und lässt sie sich wiederholen, ohne von vorn zu beginnen?</li>
+          <li>Wie viele Tastendrücke bis zu einem echten Menschen, wenn jemand sofort die 0 drückt?</li>
+          <li>Hören Sie Ihr Menü einmal mit Radio im Hintergrund – verstehen Sie noch, welche Taste welche ist?</li>
+        </ul>
+      </div>
+      <details class="when"><summary>Wann ein Telefonmenü die bessere Wahl bleibt</summary>
+        <ul><li>Reine Sprachweiche («für Deutsch die 1»): ein Tastendruck ist so schnell wie jede Spracherkennung und macht keinen Fehler.</li>
+          <li>Sehr hohes Volumen in eine bestehende Warteschlange mit mehreren Teams.</li>
+          <li>Akustisch schwierige Umgebungen (Baustelle, Autobahn), in denen Spracherkennung scheitert.</li>
+          <li>Sehr niedriges, kostensensitives Anrufvolumen (drei, vier Anrufe/Woche).</li>
+          <li>Altsysteme ohne Schnittstelle (analoge Anlage, ISDN ohne SIP-Trunking).</li></ul></details>
+      <p class="disc"><strong>Hinweis:</strong> Die Zügezahl folgt exakt Ihrer Beschreibung; die Zeit ist eine transparente Schätzung (z. B. ~6–10 s je Ansage, ~2 s je Tastendruck), keine Messung – hören Sie Ihr Menü selbst ab (Frage 6). Beide Systeme können Fehler machen: entscheidend ist beim KI-Assistenten, dass er Unsicherheit erkennt, nachfragt und im Zweifel sauber an einen Menschen übergibt, statt eine falsche Buchung zu bestätigen. Der KI-Vergleichswert (≈ 4 Züge / 0:34) stammt aus dem Beispielanruf im Artikel.</p>
+    </section>
+  </div>
+  <footer class="linkbar" aria-label="Weiterführende Links"><p class="lb-title">Mehr erfahren</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-vs-ivr-anrufvergleich/" target="_blank" rel="noopener noreferrer" aria-label="Den vollständigen Anruf-Vergleich IVR gegen KI auf weissmann.ai lesen (öffnet in neuem Tab)">Ganzen Anruf-Vergleich lesen →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="Den KI-Telefonassistenten von Weissmann ansehen (öffnet in neuem Tab)">Weissmann KI-Telefonassistent ansehen →</a>
+    </div>
+    <p class="att">Schritt-Zähler von <strong>Weissmann AI</strong> · begleitend zum Anruf-Vergleich. Schätzung, kein Ersatz für den eigenen Testanruf.</p>
+  </footer>
+</div>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var levels=$('levels'),opts=$('opts'),code=$('code'),data=$('data'),loop=$('loop'),queue=$('queue');
+  function fmtTime(s){var m=Math.floor(s/60),r=Math.round(s%60);return m+':'+(r<10?'0':'')+r;}
+  function calc(){
+    var L=parseInt(levels.value,10), listen=(opts.value==='long'?10:6);
+    var moves=0, time=0;
+    // per level: listen + 1 keypress
+    moves+=L; time+=L*(listen+2);
+    if(code.checked){moves+=1;time+=8;}
+    if(data.checked){moves+=2;time+=12;}
+    // read-back + final confirm keypress
+    moves+=1; time+=8+2;
+    // loop-on-error: model one failed entry (only if there is an entry to fail)
+    if(loop.checked && (code.checked||data.checked)){ moves+=2; time+= (listen+2) + 8; }
+    $('ivr-moves').textContent='≈ '+moves; $('ivr-time').textContent='≈ '+fmtTime(time);
+    var qn=$('queue-note');
+    if(queue.checked){qn.hidden=false;qn.innerHTML='<b>Und am Ende:</b> keine Lösung, nur eine Warteschlange – ein Mensch muss die eigentliche Arbeit erst noch machen. Der KI-Assistent erledigt sie im Beispiel im Gespräch.';}else{qn.hidden=true;}
+    var over = moves>5;
+    $('explain').innerHTML = 'Ihr Menü verlangt <b>'+moves+' Züge</b> vom Anrufer; ein KI-Assistent löst dasselbe Anliegen aus einem gesprochenen Satz in rund vier Zügen. '+(over?'Über fünf Tastendrücke sind laut Artikel ein konkreter, messbarer Ansatzpunkt – unabhängig davon, ob die Lösung am Ende ein überarbeitetes Menü oder ein KI-Assistent ist.':'Bei so kurzen Wegen ist «weniger Züge» vielleicht kein Problem, das Sie tatsächlich haben – prüfen Sie die sechs Fragen unten.');
+  }
+  [levels,opts,code,data,loop,queue].forEach(function(el){el.addEventListener('change',calc)});
+  $('reset').addEventListener('click',function(){levels.value='2';opts.value='long';code.checked=true;data.checked=true;loop.checked=true;queue.checked=false;calc();});
+  calc();
+})();
+</script>

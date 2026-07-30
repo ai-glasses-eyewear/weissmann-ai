@@ -1,0 +1,143 @@
+<title>AI Receptionist KPI Dashboard: 12 Numbers That Matter · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --decide:#1d7a4d;--decide-soft:#e6f4ec;--context:#3f6ea5;--context-soft:#e8eff7;--vanity:#9a6b00;--vanity-soft:#fbf1da;--warn:#a01324;--warn-soft:#fbeced;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--decide:#6fce9c;--decide-soft:#153125;--context:#9bb6dd;--context-soft:#1a2740;--vanity:#e6c069;--vanity-soft:#33290f;--warn:#f08a97;--warn-soft:#3a1620;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--decide:#6fce9c;--decide-soft:#153125;--context:#9bb6dd;--context-soft:#1a2740;--vanity:#e6c069;--vanity-soft:#33290f;--warn:#f08a97;--warn-soft:#3a1620;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--decide:#1d7a4d;--decide-soft:#e6f4ec;--context:#3f6ea5;--context-soft:#e8eff7;--vanity:#9a6b00;--vanity-soft:#fbf1da;--warn:#a01324;--warn-soft:#fbeced;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:72ch;margin:0;font-size:1.02rem}
+  .banner{margin-top:14px;background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:12px;padding:13px 15px;font-size:.86rem;color:var(--ink-soft)}.banner b{color:var(--ink)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  section.blk{margin-top:18px}h2{font-size:1.06rem;margin:0 0 2px}.sub{color:var(--ink-mute);font-size:.86rem;margin:0 0 14px}
+  .inputs{display:grid;grid-template-columns:1fr 1fr;gap:11px 16px}@media(min-width:720px){.inputs{grid-template-columns:1fr 1fr 1fr}}
+  .ing{display:flex;flex-direction:column;gap:4px}.ing label{font-size:.8rem;font-weight:600;color:var(--ink-soft)}
+  .ing input{font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:9px 10px;width:100%}.ing input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 22%,transparent)}
+  .grp{grid-column:1/-1;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-mute);margin-top:6px}
+  button{font:inherit;font-weight:600;cursor:pointer;border-radius:9px;padding:9px 14px;border:1.5px solid var(--line);background:transparent;color:var(--navy)}button:hover{border-color:var(--navy)}button:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+  .kpis{display:grid;grid-template-columns:1fr;gap:12px}@media(min-width:560px){.kpis{grid-template-columns:1fr 1fr}}@media(min-width:900px){.kpis{grid-template-columns:1fr 1fr 1fr}}
+  .kpi{border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:var(--bg)}.kpi.hi{border-color:color-mix(in srgb,var(--decide) 55%,transparent);background:var(--decide-soft)}
+  .kpi .kh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.kpi .kn{font-size:.86rem;font-weight:700}.kpi .kv{font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  .tag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:1px 7px;border-radius:99px}
+  .t-decide{color:var(--decide);background:var(--decide-soft)}.t-context{color:var(--context);background:var(--context-soft)}.t-vanity{color:var(--vanity);background:var(--vanity-soft)}
+  .kpi .kd{font-size:.78rem;color:var(--ink-mute);margin-top:6px}
+  .warnbox{margin-top:16px}.warnbox h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-mute);margin:0 0 7px}
+  .warn{background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent);border-radius:10px;padding:11px 13px;font-size:.85rem;color:var(--ink);margin:7px 0}
+  .warn.none{background:var(--soft);border-color:var(--line);color:var(--ink-mute)}
+  .pair{margin-top:16px;background:var(--decide-soft);border:1px solid color-mix(in srgb,var(--decide) 35%,transparent);border-radius:11px;padding:13px 15px;font-size:.9rem}.pair b{color:var(--ink)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+<div class="wrap">
+  <p class="kicker">Weissmann · AI Agents &amp; Voice · Measurement</p>
+  <h1>AI Receptionist KPI Dashboard</h1>
+  <p class="lede">“Calls answered” sits near 100% for any working system by design — which is exactly why it says almost nothing. Enter your own call-log numbers and this dashboard computes the twelve figures that actually matter, labels the vanity ones, and flags the combinations that hide a problem.</p>
+  <div class="banner" role="note"><b>No benchmark to chase.</b> There is no credible published Swiss or international benchmark for any of these figures. The only comparison worth making is your own number against your own number from an earlier period — a rolling four-week window, held steady only once a change survives three or four windows. Everything stays in your browser; nothing is stored. Please enter counts only, no caller names or personal data.</div>
+
+  <section class="card card-pad blk">
+    <h2>Your call-log numbers</h2><p class="sub">One period (a rolling four weeks works well). Leave a field at 0 if you don't track it yet.</p>
+    <div class="inputs" id="inputs"></div>
+    <div style="margin-top:14px"><button type="button" id="reset">Reset</button></div>
+  </section>
+
+  <section class="card card-pad blk" aria-live="polite">
+    <h2>The twelve numbers</h2><p class="sub">Green = decision-relevant · blue = context · amber = vanity / floor-check.</p>
+    <div id="lowvol" class="warn" style="display:none"></div>
+    <div class="kpis" id="kpis"></div>
+    <div class="warnbox"><h3>Cross-checks — where a number hides a problem</h3><div id="warnings"></div></div>
+    <div class="pair">If you track only one pair this month, make it <b>Resolution Rate</b> and <b>Repeat-Call Rate</b>, read together over a rolling four weeks — between them they come closest to answering the one question that matters: not whether the phone got picked up, but whether the caller got what they called for.</div>
+    <p class="disc"><strong>Note:</strong> a decision aid, not a scoreboard. Bad-Answer Rate is the one figure no system self-reports — it needs a person to sample and read transcripts on a fixed schedule. Average Handling Time is a number to watch, not a target to push. Below a few dozen calls a period, read the transcripts instead of the percentages.</p>
+  </section>
+
+  <footer class="linkbar" aria-label="Further links"><p class="lb-title">Read more</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/agents-automation/how-to-measure-ai-receptionist-kpis/" target="_blank" rel="noopener noreferrer" aria-label="Read the full 12-KPI measurement guide on weissmann.ai (opens in a new tab)">Read the full 12-KPI guide →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-phone-assistant/" target="_blank" rel="noopener noreferrer" aria-label="Explore Weissmann AI phone assistants (opens in a new tab)">Explore Weissmann AI phone assistants →</a>
+    </div>
+    <p class="att">KPI dashboard by <strong>Weissmann AI</strong> · a companion to the measurement guide. Your numbers, no borrowed benchmark.</p>
+  </footer>
+</div>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var F=[
+    {g:'Volume'},
+    {k:'total',l:'Total inbound calls',v:200},
+    {k:'answered',l:'Answered by the assistant',v:199},
+    {k:'minutes',l:'Total call minutes',v:520},
+    {g:'Resolution & containment'},
+    {k:'resolved',l:'Fully resolved (no follow-up)',v:150},
+    {k:'contained',l:'Handled without a transfer',v:180},
+    {k:'transferred',l:'Transferred to a human',v:20},
+    {k:'transferReached',l:'…transfers that reached a person',v:17},
+    {g:'Bookings & friction'},
+    {k:'bookingIntent',l:'Calls with booking intent',v:90},
+    {k:'bookings',l:'Confirmed bookings',v:70},
+    {k:'corrections',l:'Calls with ≥1 correction',v:26},
+    {k:'abandoned',l:'Abandoned mid-request',v:10},
+    {g:'Memory & sampling'},
+    {k:'repeat',l:'Repeat calls within 48h (unsettled)',v:18},
+    {k:'sampled',l:'Calls manually sampled',v:40},
+    {k:'badAnswers',l:'…bad answers found in the sample',v:2},
+    {g:'After hours'},
+    {k:'ahCalls',l:'After-hours calls',v:44},
+    {k:'ahResolved',l:'…after-hours resolved or booked',v:33}
+  ];
+  var state={};
+  var host=$('inputs');
+  F.forEach(function(f){
+    if(f.g){var g=document.createElement('div');g.className='grp';g.textContent=f.g;host.appendChild(g);return;}
+    state[f.k]=f.v;
+    var d=document.createElement('div');d.className='ing';
+    d.innerHTML='<label for="i_'+f.k+'">'+f.l+'</label><input type="number" id="i_'+f.k+'" min="0" step="1" value="'+f.v+'" inputmode="numeric">';
+    host.appendChild(d);
+    d.querySelector('input').addEventListener('input',function(e){var v=parseInt(e.target.value,10);state[f.k]=isNaN(v)||v<0?0:v;render();});
+  });
+  function pct(n,d){ if(!d)return null; return Math.round((n/d)*1000)/10; }
+  function fp(x){ return x===null?'—':x+'%'; }
+  function render(){
+    var s=state;
+    var K=[
+      {n:'Calls Answered Rate',v:pct(s.answered,s.total),tag:'vanity',d:'Near 100% by design — a floor check, not proof of quality.'},
+      {n:'Resolution Rate',v:pct(s.resolved,s.answered),tag:'decide',hi:true,d:'Did the caller actually get what they called for?'},
+      {n:'Containment Rate',v:pct(s.contained,s.answered),tag:'context',d:'Stayed inside the system — not the same as resolved.'},
+      {n:'Booking Conversion',v:pct(s.bookings,s.bookingIntent),tag:'decide',d:'Of calls with booking intent — not of every call.'},
+      {n:'Correction Rate',v:pct(s.corrections,s.total),tag:'context',d:'Share of calls with a friction moment; read with caller mix.'},
+      {n:'Transfer Success',v:pct(s.transferReached,s.transferred),tag:'decide',d:'Of transfers, how many reached a real person.'},
+      {n:'Abandonment Rate',v:pct(s.abandoned,s.total),tag:'decide',d:'Hung up mid-request — a sign of friction, not a normal end.'},
+      {n:'Repeat-Call Rate',v:pct(s.repeat,s.total),tag:'decide',hi:true,d:'Called back within 48h about the same thing = not fixed.'},
+      {n:'Bad-Answer Rate',v:pct(s.badAnswers,s.sampled),tag:'decide',d:'From a manual sample — the one no system self-reports.'},
+      {n:'After-Hours Resolution',v:pct(s.ahResolved,s.ahCalls),tag:'context',d:'Demand that used to reach voicemail or nothing.'},
+      {n:'Avg Handling Time',v:(s.total? (Math.round((s.minutes/s.total)*10)/10)+' min':'—'),tag:'context',raw:true,d:'Watch it — do not push it. Read with Resolution.'},
+      {n:'Sampling Coverage',v:pct(s.sampled,s.total),tag:'context',d:'Share of calls a person actually reviewed for Bad-Answer.'}
+    ];
+    $('kpis').innerHTML=K.map(function(k){
+      return '<div class="kpi'+(k.hi?' hi':'')+'"><div class="kh"><span class="kn">'+k.n+'</span><span class="tag t-'+k.tag+'">'+(k.tag==='decide'?'Decision':k.tag==='context'?'Context':'Vanity')+'</span></div>'+
+        '<div class="kv">'+(k.raw?k.v:fp(k.v))+'</div><div class="kd">'+k.d+'</div></div>';
+    }).join('');
+    // warnings
+    var w=[];
+    var containment=pct(s.contained,s.answered), repeat=pct(s.repeat,s.total), corr=pct(s.corrections,s.total), aband=pct(s.abandoned,s.total), res=pct(s.resolved,s.answered);
+    if(containment!==null&&repeat!==null&&containment>=90&&repeat>=12) w.push('High containment ('+containment+'%) next to an elevated repeat-call rate ('+repeat+'%) usually means calls are being kept inside the system, not settled by it.');
+    if(corr!==null&&aband!==null&&corr<=8&&aband>=8) w.push('A low correction rate ('+corr+'%) with an elevated abandonment rate ('+aband+'%) often means callers left rather than corrected — the misses simply never got logged.');
+    if(s.sampled===0) w.push('Bad-Answer Rate is not being sampled (0 calls reviewed). It is the only metric a person must read for — and the most expensive shortcut on this list. Give it a fixed slot on the calendar.');
+    if(res!==null&&res<60&&containment!==null&&containment>=85) w.push('Resolution ('+res+'%) is well below containment ('+containment+'%): many calls end without a transfer but without the caller’s question actually answered.');
+    var wh=$('warnings');
+    wh.innerHTML = w.length? w.map(function(x){return '<div class="warn">'+x+'</div>';}).join('') : '<div class="warn none">No cross-check flags for these numbers. Keep the definitions identical next period so the trend measures the assistant, not a redefinition.</div>';
+    // low volume
+    var lv=$('lowvol');
+    if(s.total>0&&s.total<40){lv.style.display='block';lv.textContent='Only '+s.total+' calls this period — too few for percentages to mean much. Read those transcripts directly instead of charting rates; below a few dozen calls that is a permanent, legitimate way to watch a small volume, not a stopgap.';}
+    else lv.style.display='none';
+  }
+  $('reset').addEventListener('click',function(){F.forEach(function(f){if(f.k){state[f.k]=f.v;var el=$('i_'+f.k);if(el)el.value=f.v;}});render();});
+  render();
+})();
+</script>
