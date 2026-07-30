@@ -1,0 +1,527 @@
+<title>Website-Bereitschaft: Selbsttest & realistischer Zeitrahmen · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .layout{display:grid;gap:18px;margin-top:20px}
+  @media(min-width:880px){.layout{grid-template-columns:1.12fr .88fr;align-items:start}}
+
+  .panel-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 4px}
+  .panel-sub{color:var(--ink-soft);font-size:.92rem;margin:0 0 14px}
+
+  fieldset.q{border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px;margin:0 0 12px;background:var(--card)}
+  fieldset.q:last-of-type{margin-bottom:0}
+  .q legend{font-weight:600;font-size:.96rem;color:var(--ink);padding:0;line-height:1.35;display:flex;gap:8px;align-items:baseline}
+  .q-num{flex:0 0 auto;width:22px;height:22px;border-radius:99px;background:var(--soft);color:var(--navy);font-size:.78rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;position:relative;top:1px}
+  .opts{display:flex;gap:8px;margin-top:11px}
+  .opt{flex:1;display:block;margin:0;position:relative}
+  .opt input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;margin:0}
+  .opt-txt{display:flex;align-items:center;justify-content:center;min-height:44px;padding:6px 8px;border:1.5px solid var(--line);border-radius:9px;font-size:.9rem;font-weight:600;color:var(--ink-soft);background:var(--card);cursor:pointer;text-align:center;line-height:1.2}
+  .opt-txt:hover{background:var(--soft)}
+  .opt input:focus-visible + .opt-txt{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .opt--ok input:checked + .opt-txt{border-color:var(--ok);background:var(--ok-soft);color:var(--ink)}
+  .opt--warn input:checked + .opt-txt{border-color:var(--warn);background:var(--warn-soft);color:var(--ink)}
+  .opt--miss input:checked + .opt-txt{border-color:var(--miss);background:var(--miss-soft);color:var(--ink)}
+  .opt--neutral input:checked + .opt-txt{border-color:var(--navy);background:var(--accent-soft);color:var(--ink)}
+  .q-factor{margin:11px 0 0;font-size:.76rem;color:var(--ink-mute)}
+  .q-factor b{color:var(--ink-soft);font-weight:600}
+
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .btn{appearance:none;font-family:inherit;font-weight:600;font-size:.9rem;border-radius:10px;padding:11px 15px;border:1.5px solid var(--navy);background:var(--card);color:var(--navy);cursor:pointer;min-height:44px}
+  .btn:hover{background:var(--soft)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .btn.reset{border-color:var(--line);color:var(--ink-soft)}
+  .btn[disabled]{opacity:.5;cursor:not-allowed}
+
+  .panel{position:sticky;top:16px}
+  .score-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .score-num{font-size:2.1rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+  .badge{font-size:.78rem;font-weight:700;padding:4px 11px;border-radius:99px;border:1px solid var(--line);background:var(--soft);color:var(--ink-soft)}
+  .badge.is-ok{background:var(--ok-soft);border-color:transparent;color:var(--ok)}
+  .badge.is-warn{background:var(--warn-soft);border-color:transparent;color:var(--warn)}
+  .badge.is-miss{background:var(--miss-soft);border-color:transparent;color:var(--miss)}
+  .meter{height:12px;border-radius:99px;background:var(--soft);overflow:hidden;border:1px solid var(--line);margin:12px 0 6px}
+  .meter-fill{height:100%;width:0;background:var(--soft);transition:width .35s ease,background .35s ease;border-radius:99px}
+  .meter-fill.t-ok{background:var(--ok)}.meter-fill.t-warn{background:var(--warn)}.meter-fill.t-miss{background:var(--miss)}.meter-fill.t-neutral{background:var(--accent)}
+  .progress{font-size:.8rem;color:var(--ink-mute);margin:0}
+
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 0}
+  .chip{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;padding:5px 10px;border-radius:99px;border:1px solid var(--line);background:var(--soft);color:var(--ink-mute)}
+  .chip .dot{width:8px;height:8px;border-radius:99px;background:currentColor;flex:0 0 auto}
+  .chip.is-ok{background:var(--ok-soft);border-color:transparent;color:var(--ok)}
+  .chip.is-warn{background:var(--warn-soft);border-color:transparent;color:var(--warn)}
+  .chip.is-miss{background:var(--miss-soft);border-color:transparent;color:var(--miss)}
+
+  .block{margin-top:16px;padding-top:15px;border-top:1px solid var(--line)}
+  .block h3{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 8px}
+  .framing{font-size:.92rem;color:var(--ink-soft);margin:0}
+  .framing .anchor{color:var(--ink);font-weight:600}
+  .scopenote{font-size:.86rem;color:var(--ink-soft);background:var(--soft);border-radius:9px;padding:10px 12px;margin:10px 0 0}
+  .pts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  .pts li{display:flex;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:.88rem;color:var(--ink-soft)}
+  .pts li.ask{background:var(--accent-soft);border-color:transparent}
+  .mk{color:var(--navy);font-weight:800;flex:0 0 auto}
+  .pts li.ask .mk{color:var(--accent)}
+  .takeaway{font-size:.9rem;color:var(--ink-soft);margin:14px 0 0;padding:12px 14px;border-left:3px solid var(--navy);background:var(--soft);border-radius:0 9px 9px 0}
+  .copied{font-size:.8rem;color:var(--ok);font-weight:600;margin:8px 0 0;min-height:1.1em}
+  .placeholder{color:var(--ink-mute);font-size:.92rem;margin:14px 0 0;text-align:center;padding:20px 8px;border:1px dashed var(--line);border-radius:11px}
+
+  .ref{margin-top:18px}
+  .ref-grid{display:grid;gap:16px;margin-top:6px}
+  @media(min-width:760px){.ref-grid{grid-template-columns:1fr 1fr}}
+  .ref h2{font-size:1.05rem;margin:0 0 4px}
+  .ref .panel-sub{margin-bottom:12px}
+  .ref h4{font-size:.86rem;margin:0 0 9px;color:var(--ink)}
+  .reflist{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  .reflist li{display:flex;gap:9px;font-size:.86rem;color:var(--ink-soft);line-height:1.4}
+  .reflist.provider .mk2{color:var(--ok);font-weight:800;flex:0 0 auto}
+  .reflist.flags .mk2{color:var(--miss);font-weight:800;flex:0 0 auto}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">KI-Marketing, SEO &amp; GEO · Website-Tempo</p>
+    <h1>Sind Sie bereit für ein zügiges Website-Projekt?</h1>
+    <p class="lede">Sechs Faktoren entscheiden, ob eine Website in einer Woche fertig sein kann – und vier davon liegen bei Ihnen, nicht beim Anbieter. Schätzen Sie Ihre eigene Ausgangslage ein und sehen Sie, wie realistisch ein zügiger Zeitplan gerade ist. Ein «Nein» ist kein durchgefallener Test, sondern eine ehrliche Ausgangslage.</p>
+  </header>
+
+  <div class="layout">
+
+    <!-- ── Questions ── -->
+    <section class="card card-pad" aria-labelledby="q-title">
+      <p class="panel-title" id="q-title">Ihr Selbsttest · 7 Fragen</p>
+      <p class="panel-sub">Alle sieben Fragen stammen aus dem Selbsttest des Ratgebers. Sie decken die vier Faktoren ab, die bei Ihnen liegen – Entscheidungsstruktur, Inhalte, Umfang und Feedback-Tempo.</p>
+
+      <form id="form">
+        <fieldset class="q">
+          <legend><span class="q-num">1</span> Gibt es eine Person, die Entwürfe freigeben kann, ohne dass eine weitere interne Runde nötig ist?</legend>
+          <div class="opts">
+            <label class="opt opt--ok"><input type="radio" name="q1" value="2"><span class="opt-txt">Ja</span></label>
+            <label class="opt opt--warn"><input type="radio" name="q1" value="1"><span class="opt-txt">Teilweise</span></label>
+            <label class="opt opt--miss"><input type="radio" name="q1" value="0"><span class="opt-txt">Nein</span></label>
+          </div>
+          <p class="q-factor">Faktor: <b>Entscheidungsfähigkeit</b> · liegt bei Ihnen</p>
+        </fieldset>
+
+        <fieldset class="q">
+          <legend><span class="q-num">2</span> Liegen die Texte für jede geplante Seite bereits fertig geschrieben vor – nicht nur als Stichworte oder Absicht?</legend>
+          <div class="opts">
+            <label class="opt opt--ok"><input type="radio" name="q2" value="2"><span class="opt-txt">Ja</span></label>
+            <label class="opt opt--warn"><input type="radio" name="q2" value="1"><span class="opt-txt">Teilweise</span></label>
+            <label class="opt opt--miss"><input type="radio" name="q2" value="0"><span class="opt-txt">Nein</span></label>
+          </div>
+          <p class="q-factor">Faktor: <b>Content-Bereitschaft (Texte)</b> · liegt bei Ihnen</p>
+        </fieldset>
+
+        <fieldset class="q">
+          <legend><span class="q-num">3</span> Sind finales Logo, Markenfarben und verwendbare Fotos oder Grafiken bereits vorhanden?</legend>
+          <div class="opts">
+            <label class="opt opt--ok"><input type="radio" name="q3" value="2"><span class="opt-txt">Ja</span></label>
+            <label class="opt opt--warn"><input type="radio" name="q3" value="1"><span class="opt-txt">Teilweise</span></label>
+            <label class="opt opt--miss"><input type="radio" name="q3" value="0"><span class="opt-txt">Nein</span></label>
+          </div>
+          <p class="q-factor">Faktor: <b>Content-Bereitschaft (Bild &amp; Marke)</b> · liegt bei Ihnen</p>
+        </fieldset>
+
+        <fieldset class="q">
+          <legend><span class="q-num">4</span> Steht die genaue Seitenliste samt benötigten Funktionen schriftlich fest, und ist intern niemand mehr unsicher, ob noch etwas dazukommt?</legend>
+          <div class="opts">
+            <label class="opt opt--ok"><input type="radio" name="q4" value="2"><span class="opt-txt">Ja</span></label>
+            <label class="opt opt--warn"><input type="radio" name="q4" value="1"><span class="opt-txt">Teilweise</span></label>
+            <label class="opt opt--miss"><input type="radio" name="q4" value="0"><span class="opt-txt">Nein</span></label>
+          </div>
+          <p class="q-factor">Faktor: <b>Definierter Umfang</b> · liegt bei Ihnen</p>
+        </fieldset>
+
+        <fieldset class="q">
+          <legend><span class="q-num">5</span> Können Sie sich verbindlich verpflichten, auf Entwürfe innerhalb von 24 bis 48 Stunden zu reagieren?</legend>
+          <div class="opts">
+            <label class="opt opt--ok"><input type="radio" name="q5" value="2"><span class="opt-txt">Ja</span></label>
+            <label class="opt opt--warn"><input type="radio" name="q5" value="1"><span class="opt-txt">Teilweise</span></label>
+            <label class="opt opt--miss"><input type="radio" name="q5" value="0"><span class="opt-txt">Nein</span></label>
+          </div>
+          <p class="q-factor">Faktor: <b>Schnelle Rückmeldungen</b> · liegt bei Ihnen (gilt in beide Richtungen)</p>
+        </fieldset>
+
+        <fieldset class="q">
+          <legend><span class="q-num">6</span> Ist geklärt, wer rechtlich nötige Texte – Impressum, AGB, Datenschutzerklärung – prüft und freigibt, bevor die Seite live geht?</legend>
+          <div class="opts">
+            <label class="opt opt--ok"><input type="radio" name="q6" value="2"><span class="opt-txt">Ja</span></label>
+            <label class="opt opt--warn"><input type="radio" name="q6" value="1"><span class="opt-txt">Teilweise</span></label>
+            <label class="opt opt--miss"><input type="radio" name="q6" value="0"><span class="opt-txt">Nein</span></label>
+          </div>
+          <p class="q-factor">Faktor: <b>Rechtstexte geklärt</b> · liegt bei Ihnen</p>
+        </fieldset>
+
+        <fieldset class="q">
+          <legend><span class="q-num">7</span> Wissen Sie realistisch, wie viele Korrekturrunden Sie tatsächlich brauchen werden?</legend>
+          <div class="opts">
+            <label class="opt opt--neutral"><input type="radio" name="q7" value="1-2"><span class="opt-txt">Eher 1–2</span></label>
+            <label class="opt opt--neutral"><input type="radio" name="q7" value="3plus"><span class="opt-txt">Eher 3+</span></label>
+            <label class="opt opt--neutral"><input type="radio" name="q7" value="unklar"><span class="opt-txt">Noch unklar</span></label>
+          </div>
+          <p class="q-factor">Erwartung zum <b>Umfang der Korrekturrunden</b> – kein Bereitschaftspunkt, aber prägt den Zeitplan</p>
+        </fieldset>
+      </form>
+
+      <div class="actions">
+        <button type="button" class="btn reset" id="resetBtn">Zurücksetzen</button>
+      </div>
+    </section>
+
+    <!-- ── Live result ── -->
+    <section class="card card-pad panel" aria-labelledby="r-title">
+      <p class="panel-title" id="r-title">Ihre Einschätzung</p>
+      <div id="results" aria-live="polite">
+        <p class="placeholder" id="placeholder">Beantworten Sie die sieben Fragen – Ihre Bereitschaft, der realistische Zeitrahmen und Ihre offenen Punkte fürs Erstgespräch erscheinen hier. Nichts wird gespeichert.</p>
+
+        <div id="scoreArea" hidden>
+          <div class="score-row">
+            <span class="score-num" id="scoreNum">0&thinsp;%</span>
+            <span class="badge" id="scoreBadge">–</span>
+          </div>
+          <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+          <p class="progress" id="progress"></p>
+
+          <div class="chips" id="chips" role="list" aria-label="Bereitschaft je Faktor"></div>
+
+          <div class="block" id="framingBlock" hidden>
+            <h3>Realistischer Zeitrahmen</h3>
+            <p class="framing" id="framing"></p>
+            <p class="scopenote" id="scopeNote"></p>
+          </div>
+
+          <div class="block" id="pointsBlock" hidden>
+            <h3>Ihre offenen Punkte fürs Erstgespräch</h3>
+            <ul class="pts" id="points"></ul>
+            <p class="takeaway" id="takeaway"></p>
+            <div class="actions">
+              <button type="button" class="btn" id="copyBtn">Zusammenfassung kopieren</button>
+            </div>
+            <p class="copied" id="copied" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ── Reference: the two factors that aren't yours + Agentur-Theater signals ── -->
+  <section class="card card-pad ref" aria-labelledby="ref-title">
+    <h2 class="ref-title" id="ref-title" style="font-size:1.1rem;margin:0 0 4px">Was nicht bei Ihnen liegt – und was Sie erfragen</h2>
+    <p class="panel-sub">Zwei der sechs Faktoren hängen vom Anbieter ab, nicht von Ihnen. Dieser Selbsttest kann sie nicht bewerten – aber Sie können im Erstgespräch danach fragen.</p>
+    <div class="ref-grid">
+      <div>
+        <h4>Die zwei Anbieter-Faktoren</h4>
+        <ul class="reflist provider">
+          <li><span class="mk2">✓</span><span><b>Wiederverwendbares Design-System:</b> ein bereits bestehendes, geprüftes Design- und Code-Fundament, in das Inhalte und Markenfarben eingesetzt werden – der Unterschied zwischen «schnell, weil eingespielt» und «schnell, weil abgekürzt».</span></li>
+          <li><span class="mk2">✓</span><span><b>Testdisziplin:</b> mobile Darstellung, Formulare, Ladezeit und Links werden vor dem Livegang tatsächlich geprüft – nicht «schauen wir nach dem Start».</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Woran Sie Agentur-Theater erkennen</h4>
+        <ul class="reflist flags">
+          <li><span class="mk2">!</span><span>Eine feste Tageszahl, bevor überhaupt nach Umfang, Inhalten oder Entscheidungsstruktur gefragt wurde.</span></li>
+          <li><span class="mk2">!</span><span>Countdown oder «nur noch heute buchbar» kombiniert mit der Geschwindigkeitszusage.</span></li>
+          <li><span class="mk2">!</span><span>«Live» wird nicht definiert – oder nur als «die Domain zeigt auf eine Seite», ohne Formular, Analytics und technisches SEO-Fundament.</span></li>
+          <li><span class="mk2">!</span><span>«Beliebig viele Anpassungen» statt einer schriftlich festgelegten Zahl an Korrekturrunden.</span></li>
+          <li><span class="mk2">!</span><span>Im Ablaufplan kommt keine Testphase vor – er springt von «Design» direkt zu «live».</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc">Orientierung, keine verbindliche Zeitzusage und keine Offerte. Diese Selbsteinschätzung beruht ausschliesslich auf dem zugehörigen Weissmann-Ratgeber und den dort genannten sechs Faktoren; sie ist keine Rechtsberatung. Eine seriöse Tageszahl entsteht erst im Erstgespräch, wenn Umfang und Ausgangslage bekannt sind – deshalb nennt Weissmann bewusst keine pauschale Tageszahl. Ihre Eingaben bleiben ausschliesslich in Ihrem Browser; nichts wird gespeichert oder gesendet.</p>
+  </section>
+
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Weiterlesen &amp; Prozess besprechen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/marketing-seo-geo/website-schnell-erstellen-lassen/" target="_blank" rel="noopener noreferrer" aria-label="Ganzer Ratgeber: Website schnell erstellen lassen (opens in a new tab)">Ganzer Ratgeber: Website schnell erstellen lassen →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-webentwicklung/" target="_blank" rel="noopener noreferrer" aria-label="KI-Webentwicklung von Weissmann ansehen (opens in a new tab)">KI-Webentwicklung von Weissmann →</a>
+    </div>
+    <p class="att">Weissmann · KI-Marketing, SEO &amp; GEO. Begleit-Tool zum Ratgeber – Orientierung, keine Offerte und keine Tageszusage.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var FACTORS = [
+    { name:'q1', label:'Entscheidungsfähigkeit',
+      gapNein:'Benennen Sie vor Projektstart eine Person, die Entwürfe allein freigeben kann – jede zusätzliche interne Runde kostet nicht Minuten, sondern Tage.',
+      gapTeils:'Klären Sie, wer final freigibt, damit nicht jeder Entwurf erst intern zirkulieren muss.' },
+    { name:'q2', label:'Content – Texte',
+      gapNein:'Texte für jede geplante Seite fertig schreiben (nicht nur Stichworte) – Content-Erstellung ist eigene Arbeit mit eigenem Zeitbedarf.',
+      gapTeils:'Fehlende Seitentexte fertigstellen, bevor die erste Design-Skizze entsteht.' },
+    { name:'q3', label:'Content – Bild & Marke',
+      gapNein:'Finales Logo, Markenfarben und verwendbare Fotos oder Grafiken bereitstellen, bevor gebaut wird.',
+      gapTeils:'Offene Bild- und Markenelemente finalisieren, damit nichts während des Baus nachgereicht wird.' },
+    { name:'q4', label:'Definierter Umfang',
+      gapNein:'Seitenliste samt benötigten Funktionen schriftlich festhalten, bevor gebaut wird.',
+      gapTeils:'Letzte Unsicherheiten zum Umfang intern klären – jede spätere Ergänzung verlängert den Zeitplan ehrlich.' },
+    { name:'q5', label:'Schnelle Rückmeldungen',
+      gapNein:'Ein verbindliches Antwortfenster vereinbaren (z. B. 24–48 Stunden pro Feedbackrunde) – und zwar in beide Richtungen.',
+      gapTeils:'Feste Antwortzeiten intern absichern, damit Feedbackrunden nicht liegen bleiben.' },
+    { name:'q6', label:'Rechtstexte geklärt',
+      gapNein:'Klären, wer Impressum, AGB und Datenschutzerklärung prüft und freigibt, bevor die Seite live geht.',
+      gapTeils:'Freigabe der rechtlich nötigen Texte final klären, bevor die Seite live geht.' }
+  ];
+
+  var form = document.getElementById('form');
+  var placeholder = document.getElementById('placeholder');
+  var scoreArea = document.getElementById('scoreArea');
+  var scoreNum = document.getElementById('scoreNum');
+  var scoreBadge = document.getElementById('scoreBadge');
+  var meterFill = document.getElementById('meterFill');
+  var progress = document.getElementById('progress');
+  var chips = document.getElementById('chips');
+  var framingBlock = document.getElementById('framingBlock');
+  var framing = document.getElementById('framing');
+  var scopeNote = document.getElementById('scopeNote');
+  var pointsBlock = document.getElementById('pointsBlock');
+  var pointsEl = document.getElementById('points');
+  var takeaway = document.getElementById('takeaway');
+  var copyBtn = document.getElementById('copyBtn');
+  var copied = document.getElementById('copied');
+  var resetBtn = document.getElementById('resetBtn');
+
+  function val(name){
+    var el = form.querySelector('input[name="'+name+'"]:checked');
+    return el ? el.value : null;
+  }
+
+  function statusFor(v){
+    if(v==='2') return {cls:'is-ok', txt:'bereit'};
+    if(v==='1') return {cls:'is-warn', txt:'teilweise'};
+    if(v==='0') return {cls:'is-miss', txt:'offen'};
+    return {cls:'', txt:'noch offen'};
+  }
+
+  function el(tag, cls, txt){
+    var n = document.createElement(tag);
+    if(cls) n.className = cls;
+    if(txt!=null) n.textContent = txt;
+    return n;
+  }
+
+  var lastSummary = '';
+
+  function update(){
+    var answeredReadiness = 0, sum = 0, allReadiness = true;
+    FACTORS.forEach(function(f){
+      var v = val(f.name);
+      if(v===null){ allReadiness = false; }
+      else { answeredReadiness++; sum += parseInt(v,10); }
+    });
+    var q7 = val('q7');
+    var anyAnswered = answeredReadiness>0 || q7!==null;
+
+    if(!anyAnswered){
+      placeholder.hidden = false;
+      scoreArea.hidden = true;
+      return;
+    }
+    placeholder.hidden = true;
+    scoreArea.hidden = false;
+
+    // Score over answered readiness questions (unanswered do not count as 0)
+    var maxAns = answeredReadiness*2;
+    var pct = maxAns>0 ? Math.round(sum/maxAns*100) : 0;
+    scoreNum.innerHTML = pct + '&thinsp;%';
+
+    var tone, bandTxt;
+    if(allReadiness){
+      if(pct>=80){ tone='ok'; bandTxt='Bereit für ein zügiges Projekt'; }
+      else if(pct>=45){ tone='warn'; bandTxt='Teilweise bereit'; }
+      else { tone='miss'; bandTxt='Noch am Anfang'; }
+    } else {
+      tone='neutral'; bandTxt='Teilstand';
+    }
+
+    meterFill.className = 'meter-fill t-'+tone;
+    meterFill.style.width = pct + '%';
+
+    scoreBadge.textContent = bandTxt;
+    scoreBadge.className = 'badge' + (tone==='neutral' ? '' : ' is-'+tone);
+
+    var doneAll = allReadiness && q7!==null;
+    if(doneAll){
+      progress.textContent = 'Alle 7 Fragen beantwortet · Score aus 6 Bereitschaftsfaktoren.';
+    } else {
+      var open = (6-answeredReadiness) + (q7===null?1:0);
+      progress.textContent = 'Noch ' + open + ' von 7 Fragen offen – die Einschätzung vervollständigt sich, sobald alle beantwortet sind.';
+    }
+
+    // Factor chips
+    chips.innerHTML = '';
+    FACTORS.forEach(function(f){
+      var st = statusFor(val(f.name));
+      var c = el('span', 'chip '+st.cls);
+      c.setAttribute('role','listitem');
+      c.appendChild(el('span','dot'));
+      c.appendChild(document.createTextNode(f.label + ' · ' + st.txt));
+      chips.appendChild(c);
+    });
+
+    // Time-range framing (gated on all readiness answered)
+    if(allReadiness){
+      framingBlock.hidden = false;
+      var t;
+      if(pct>=80){
+        t = 'Ihre Ausgangslage liegt nahe an der, in der laut Ratgeber <span class="anchor">eine Woche</span> realistisch ist. Ob es am Ende so schnell geht, hängt zusätzlich von den zwei Anbieter-Faktoren ab (eingespieltes Design-System, Testdisziplin) – und eine verbindliche Tageszahl gehört ins Erstgespräch, nicht auf eine Landingpage.';
+      } else if(pct>=45){
+        t = 'Einige Voraussetzungen fehlen noch. Jede offene Voraussetzung verschiebt einen realistischen Termin ehrlich nach hinten – das ist keine Schwäche, sondern eine ehrliche Ausgangslage. Schliessen Sie die Punkte unten, rückt ein zügiger Zeitplan Richtung der im Ratgeber genannten <span class="anchor">einen Woche</span>.';
+      } else {
+        t = 'Mehrere Voraussetzungen liegen noch nicht vor. Ihr realistischer Zeitrahmen bewegt sich eher Richtung des illustrativen Beispiels aus dem Ratgeber – <span class="anchor">sechs bis acht Wochen</span> –, weil Inhalte und Abstimmungen zuerst Zeit brauchen. Das ist normal und kein Grund zur Eile: schnell ist nicht dasselbe wie hastig.';
+      }
+      framing.innerHTML = t;
+    } else {
+      framingBlock.hidden = true;
+    }
+
+    // Scope note from Q7
+    if(q7!==null){
+      var s;
+      if(q7==='1-2'){
+        s = 'Sie erwarten eher 1–2 Korrekturrunden – das passt zum schlanken Umfang einer Starter Website (bis zu 5 Kernseiten, 1 Sprache, 2 definierte Korrekturrunden).';
+      } else if(q7==='3plus'){
+        s = 'Sie erwarten eher 3 oder mehr Runden – planen Sie dafür mehr Zeit ein; das entspricht eher dem Umfang einer Business Website (ca. 10–20 Seiten, mehrsprachigkeitsfähig, 3 definierte Korrekturrunden). «Unbegrenzte Anpassungen» dagegen verlängern jeden Zeitplan unvorhersehbar.';
+      } else {
+        s = 'Wie viele Korrekturrunden Sie brauchen, ist noch offen – klären Sie das vor Projektstart. Unsicherheit hier führt fast immer zu zusätzlichen Runden mitten im Projekt.';
+      }
+      scopeNote.hidden = false;
+      scopeNote.textContent = s;
+    } else {
+      scopeNote.hidden = true;
+    }
+
+    // Open points (gated on all readiness answered)
+    if(allReadiness){
+      pointsBlock.hidden = false;
+      pointsEl.innerHTML = '';
+      var gaps = [];
+      FACTORS.forEach(function(f){
+        var v = val(f.name);
+        if(v==='0') gaps.push(f.gapNein);
+        else if(v==='1') gaps.push(f.gapTeils);
+      });
+      if(gaps.length===0){
+        var li0 = el('li');
+        li0.appendChild(el('span','mk','✓'));
+        li0.appendChild(el('span',null,'Keine offenen Punkte auf Ihrer Seite – alle vier Faktoren, die bei Ihnen liegen, sind erfüllt. Prüfen Sie jetzt vor allem die zwei Anbieter-Faktoren.'));
+        pointsEl.appendChild(li0);
+      } else {
+        gaps.forEach(function(g){
+          var li = el('li');
+          li.appendChild(el('span','mk','→'));
+          li.appendChild(el('span',null,g));
+          pointsEl.appendChild(li);
+        });
+      }
+      // Always add the two provider questions to raise
+      [
+        'Fragen Sie den Anbieter: Gibt es ein bereits bestehendes, wiederverwendbares Design-System – oder wird jede Komponente neu gebaut?',
+        'Fragen Sie den Anbieter: Kommt eine echte Testphase (Mobil, Formulare, Ladezeit, Links) vor dem Livegang im Ablaufplan vor?'
+      ].forEach(function(a){
+        var li = el('li','ask');
+        li.appendChild(el('span','mk','?'));
+        li.appendChild(el('span',null,a));
+        pointsEl.appendChild(li);
+      });
+
+      takeaway.textContent = 'Die nützliche Frage ist nicht «Wie schnell geht das?», sondern «Was müsste auf meiner Seite stimmen, damit das schnell geht – und was tun Sie, damit daraus kein Pfusch wird?».';
+
+      lastSummary = buildSummary(pct, bandTxt, q7, gaps);
+    } else {
+      pointsBlock.hidden = true;
+      lastSummary = '';
+    }
+  }
+
+  function labelQ7(q7){
+    if(q7==='1-2') return 'eher 1–2';
+    if(q7==='3plus') return 'eher 3 oder mehr';
+    if(q7==='unklar') return 'noch unklar';
+    return '—';
+  }
+
+  function buildSummary(pct, bandTxt, q7, gaps){
+    var lines = [];
+    lines.push('Website-Bereitschaft – Selbsteinschätzung (Orientierung, keine Offerte)');
+    lines.push('');
+    lines.push('Bereitschaft: ' + pct + ' % – ' + bandTxt);
+    lines.push('Erwartete Korrekturrunden: ' + labelQ7(q7));
+    lines.push('');
+    lines.push('Faktoren, die bei Ihnen liegen:');
+    FACTORS.forEach(function(f){
+      lines.push('- ' + f.label + ': ' + statusFor(val(f.name)).txt);
+    });
+    lines.push('');
+    lines.push('Offene Punkte fürs Erstgespräch:');
+    if(gaps.length===0){
+      lines.push('- Keine offenen Punkte auf Ihrer Seite.');
+    } else {
+      gaps.forEach(function(g){ lines.push('- ' + g); });
+    }
+    lines.push('- Anbieter fragen: bestehendes, wiederverwendbares Design-System vorhanden?');
+    lines.push('- Anbieter fragen: echte Testphase (Mobil, Formulare, Ladezeit, Links) vor dem Livegang im Ablaufplan?');
+    lines.push('');
+    lines.push('Nützliche Frage statt «Wie schnell geht das?»: «Was müsste auf meiner Seite stimmen, damit das schnell geht – und was tun Sie, damit daraus kein Pfusch wird?»');
+    lines.push('');
+    lines.push('Grundlage: Weissmann-Ratgeber «Website schnell erstellen lassen». Eine seriöse Tageszahl entsteht erst im Erstgespräch, wenn Umfang und Ausgangslage bekannt sind.');
+    return lines.join('\n');
+  }
+
+  function doCopy(){
+    if(!lastSummary){ return; }
+    var done = function(ok){
+      copied.textContent = ok ? 'In die Zwischenablage kopiert.' : 'Kopieren nicht möglich – bitte Text manuell markieren.';
+      if(ok){ setTimeout(function(){ copied.textContent=''; }, 3500); }
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(lastSummary).then(function(){done(true);}, function(){ done(fallbackCopy()); });
+    } else {
+      done(fallbackCopy());
+    }
+  }
+
+  function fallbackCopy(){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = lastSummary;
+      ta.setAttribute('readonly','');
+      ta.style.position='absolute'; ta.style.left='-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    }catch(e){ return false; }
+  }
+
+  form.addEventListener('change', update);
+  copyBtn.addEventListener('click', doCopy);
+  resetBtn.addEventListener('click', function(){
+    form.reset();
+    lastSummary=''; copied.textContent='';
+    update();
+  });
+
+  update();
+})();
+</script>

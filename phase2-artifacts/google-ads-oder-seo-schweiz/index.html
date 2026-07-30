@@ -1,0 +1,343 @@
+<title>Google Ads oder SEO zuerst? Der 3-Variablen-Entscheider · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .tool{margin-top:20px}
+  .step{margin-top:18px}
+  .step:first-child{margin-top:4px}
+  .qgroup{border:1px solid var(--line);border-radius:12px;padding:14px 16px 12px;margin:0;background:var(--soft)}
+  .qgroup legend{padding:0;font-weight:700;font-size:1rem;color:var(--ink);display:flex;gap:10px;align-items:baseline}
+  .qnum{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;border-radius:8px;background:var(--navy);color:var(--on-navy);font-size:.82rem;font-weight:700}
+  .qsub{margin:8px 0 12px 36px;color:var(--ink-soft);font-size:.9rem}
+  @media(max-width:520px){.qsub{margin-left:0}}
+  .opts{display:grid;gap:8px}
+  .opt{display:flex;gap:11px;align-items:flex-start;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--card);cursor:pointer;font-size:.95rem;color:var(--ink-soft)}
+  .opt:hover{border-color:var(--navy)}
+  .opt input{margin:2px 0 0;accent-color:var(--navy);width:17px;height:17px;flex:none}
+  .opt:has(input:checked){border-color:var(--navy);background:var(--accent-soft);color:var(--ink);box-shadow:inset 0 0 0 1px var(--navy)}
+  .opt:focus-within{outline:2px solid var(--navy);outline-offset:2px}
+  .flags{border:1px dashed var(--line);border-radius:12px;padding:14px 16px;margin:0;background:transparent}
+  .flags legend{font-weight:700;font-size:.95rem;padding:0 6px;color:var(--ink)}
+  .flag{display:flex;gap:11px;align-items:flex-start;padding:9px 4px;font-size:.92rem;color:var(--ink-soft);cursor:pointer}
+  .flag input{margin:2px 0 0;accent-color:var(--warn);width:17px;height:17px;flex:none}
+
+  .result{margin-top:20px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .result-body{padding:16px 18px}
+  .result.is-ads{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+  .result.is-seo{border-color:color-mix(in srgb,var(--ok) 55%,var(--line))}
+  .result.is-mixed{border-color:color-mix(in srgb,var(--warn) 55%,var(--line))}
+  .signals{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:999px;font-size:.82rem;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink-soft)}
+  .chip b{font-weight:700}
+  .chip.s-ads{background:var(--accent-soft);color:var(--accent);border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+  .chip.s-seo{background:var(--ok-soft);color:var(--ok);border-color:color-mix(in srgb,var(--ok) 40%,transparent)}
+  .chip.s-mixed{background:var(--warn-soft);color:var(--warn);border-color:color-mix(in srgb,var(--warn) 40%,transparent)}
+  .badge{display:inline-block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:4px 10px;border-radius:7px;margin-bottom:8px}
+  .badge.b-ads{background:var(--accent-soft);color:var(--accent)}
+  .badge.b-seo{background:var(--ok-soft);color:var(--ok)}
+  .badge.b-mixed{background:var(--warn-soft);color:var(--warn)}
+  .rec-head{font-size:1.18rem;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;line-height:1.2}
+  .rec-body p{margin:0 0 10px;color:var(--ink-soft);font-size:.96rem}
+  .pricing{margin-top:10px;background:var(--soft);border-radius:10px;padding:12px 14px;font-size:.9rem;color:var(--ink-soft)}
+  .pricing b{color:var(--ink)}
+  .exc{margin-top:12px;border-left:3px solid var(--warn);background:var(--warn-soft);border-radius:0 10px 10px 0;padding:11px 14px;font-size:.9rem;color:var(--ink)}
+  .exc p{margin:0 0 8px}.exc p:last-child{margin:0}
+  .pit{margin-top:14px}
+  .pit h3{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);margin:0 0 8px;font-weight:700}
+  .pit ul{margin:0;padding-left:18px}
+  .pit li{margin:0 0 6px;font-size:.9rem;color:var(--ink-soft)}
+  .placeholder{color:var(--ink-mute);font-size:.95rem;margin:0}
+  .actions{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .btn{font-family:inherit;font-size:.9rem;font-weight:600;padding:10px 15px;border-radius:10px;border:1.5px solid var(--navy);background:var(--card);color:var(--navy);cursor:pointer;min-height:44px}
+  .btn:hover{background:var(--soft)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .copied{font-size:.85rem;color:var(--ok);font-weight:600}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">Budget-Strategie für Schweizer KMU</p>
+  <h1>Google Ads oder SEO zuerst? Der 3-Variablen-Entscheider</h1>
+  <p class="lede">Weder Ads noch SEO ist grundsätzlich die richtige erste Wahl. Beantworten Sie drei Variablen für Ihren eigenen Betrieb – Dringlichkeit, Inhaltstyp und Budget-Horizont – und dieser Entscheider zeigt, welcher Kanal zuerst dran ist und warum. Es geht ausschliesslich um bezahlte (Ads) gegenüber organischer (SEO) Reichweite.</p>
+
+  <div class="card card-pad tool">
+    <fieldset class="qgroup step" id="gate">
+      <legend><span class="qnum" aria-hidden="true">0</span> Das nullte Kriterium – der Filter davor</legend>
+      <p class="qsub">Kann eine aussenstehende Person auf Ihrer Startseite innerhalb weniger Sekunden sagen, was Sie anbieten, für wen und warum das relevant ist?</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="gate" value="yes"> Ja – das Angebot ist in einem Satz erfassbar</label>
+        <label class="opt"><input type="radio" name="gate" value="no"> Nein oder unsicher</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="qgroup step" id="q1">
+      <legend><span class="qnum" aria-hidden="true">1</span> Dringlichkeit</legend>
+      <p class="qsub">Wie schnell brauchen Sie tatsächlich mehr Anfragen?</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q1" value="acute"> In den nächsten 2–4 Wochen (akuter Engpass, saisonale Lücke, schwacher Monat)</label>
+        <label class="opt"><input type="radio" name="q1" value="mid"> In einigen Monaten – aber der Vorlauf ist eng</label>
+        <label class="opt"><input type="radio" name="q1" value="long"> Erst in 6–12 Monaten oder später – echter Vorlauf vorhanden</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="qgroup step" id="q2">
+      <legend><span class="qnum" aria-hidden="true">2</span> Inhaltstyp</legend>
+      <p class="qsub">Würde die Antwort auf die Kernfrage Ihrer Kundschaft in drei Jahren noch praktisch identisch lauten?</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q2" value="evergreen"> Ja – klar evergreen (dieselbe Frage wird in fünf Jahren genauso gestellt)</label>
+        <label class="opt"><input type="radio" name="q2" value="partly"> Teils / noch unsicher</label>
+        <label class="opt"><input type="radio" name="q2" value="limited"> Nein – zeitlich begrenzt, saisonal, einmalig oder erst ein Test</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="qgroup step" id="q3">
+      <legend><span class="qnum" aria-hidden="true">3</span> Budget-Horizont</legend>
+      <p class="qsub">Trägt Ihr Budget eine mehrmonatige Anlaufzeit ohne sichtbare Resultate?</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q3" value="bearable"> Ja – mehrere Monate ohne Resultate sind tragbar</label>
+        <label class="opt"><input type="radio" name="q3" value="tight"> Eher knapp</label>
+        <label class="opt"><input type="radio" name="q3" value="no"> Nein – jeder Franken muss kurzfristig wirken (niedriges vierstelliges Budget kaum leistbar)</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="flags step" id="flags">
+      <legend>Ehrliche Ausnahmen (optional ankreuzen)</legend>
+      <label class="flag"><input type="checkbox" name="flag" value="booked"> Wir sind bereits über Weiterempfehlungen voll ausgelastet und wollen nicht wachsen</label>
+      <label class="flag"><input type="checkbox" name="flag" value="lowvalue"> Der Wert eines einzelnen Auftrags liegt deutlich unter einem realistischen Klickpreis unserer Branche</label>
+      <label class="flag"><input type="checkbox" name="flag" value="relaunch"> Ein grösserer Website-Relaunch steht in den nächsten Monaten an</label>
+    </fieldset>
+
+    <section class="result step" id="result" aria-live="polite" aria-label="Empfehlung">
+      <div class="result-body">
+        <p class="placeholder">Beantworten Sie das nullte Kriterium und die drei Variablen – die Empfehlung erscheint hier.</p>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button class="btn" id="copyBtn" type="button" disabled>Antworten &amp; Empfehlung kopieren</button>
+      <span class="copied" id="copied" role="status" aria-live="polite" hidden>Kopiert</span>
+    </div>
+
+    <p class="disc">Orientierung, keine Beratung und kein Angebot: Dieser Entscheider fasst das 3-Variablen-Framework des zugehörigen Ratgebers zusammen und ersetzt keine individuelle Prüfung Ihres Betriebs. Alle Zahlen und Aussagen stammen aus diesem Ratgeber bzw. den öffentlichen Weissmann-Preisen (Stand 29. Juli 2026); die SEO-Zeitangaben beruhen auf einer Befragung von 75 SEO-Fachleuten (Morningscore) und lassen sich nicht garantieren. GEO – Sichtbarkeit in KI-Antwortmaschinen wie ChatGPT, Gemini oder Perplexity – ist eine eigene Achse und keine vierte Variable in diesem Entscheider. Ihre Eingaben bleiben ausschliesslich in Ihrem Browser; nichts wird gespeichert oder gesendet.</p>
+  </div>
+
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Weiterlesen &amp; umsetzen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/marketing-seo-geo/google-ads-oder-seo-schweiz/" target="_blank" rel="noopener noreferrer" aria-label="Ganzer Ratgeber: Google Ads oder SEO zuerst? (opens in a new tab)">Ganzer Ratgeber: Google Ads oder SEO zuerst? →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/google-ads/" target="_blank" rel="noopener noreferrer" aria-label="Weissmann Google Ads Growth – Leistung ansehen (opens in a new tab)">Weissmann Google Ads Growth →</a>
+    </div>
+    <p class="att">Google Ads Growth CHF 690/Monat zzgl. separatem Werbebudget · SEO Growth CHF 890/Monat · Ergänzung zum Ratgeber. Orientierung, kein Angebot.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var state={gate:null,q1:null,q2:null,q3:null,flags:{booked:false,lowvalue:false,relaunch:false}};
+
+  var LBL={
+    gate:{yes:"Angebot ist in einem Satz erfassbar",no:"Angebot noch nicht klar genug"},
+    q1:{acute:"Anfragen in 2–4 Wochen nötig (akut)",mid:"Vorlauf einige Monate, aber eng",long:"Echter Vorlauf von 6–12 Monaten oder mehr"},
+    q2:{evergreen:"Angebot ist evergreen-tauglich",partly:"Inhaltstyp teils/unsicher",limited:"Angebot zeitlich begrenzt/saisonal/Test"},
+    q3:{bearable:"Mehrere Monate Anlaufzeit tragbar",tight:"Budget-Horizont eher knapp",no:"Jeder Franken muss kurzfristig wirken"}
+  };
+
+  function sig1(v){return v==="acute"?"ads":v==="long"?"seo":"mixed";}
+  function sig2(v){return v==="evergreen"?"seo":v==="limited"?"ads":"mixed";}
+  function sig3(v){return v==="bearable"?"seo":v==="no"?"ads":"mixed";}
+  function sigWord(s){return s==="ads"?"→ Ads":s==="seo"?"→ SEO":"→ gemischt";}
+
+  var ADS_PRICING='<div class="pricing"><b>Kosten-Einordnung.</b> Schweizer Agenturen berechnen für die laufende Google-Ads-Betreuung typischerweise CHF 1’000–5’000 pro Monat – jeweils zusätzlich zum Werbebudget, das separat an Google fliesst. Weissmann Google Ads Growth liegt bei <b>CHF 690 pro Monat</b>; das Google-Werbebudget zahlen Sie separat und direkt an Google.</div>';
+  var SEO_PRICING='<div class="pricing"><b>Kosten-Einordnung.</b> Schweizer Agenturen berechnen für SEO typischerweise CHF 500–3’000 pro Monat. Weissmann SEO Growth liegt bei <b>CHF 890 pro Monat</b> – ohne Ranking-Garantien; aufgebaut werden die Grundlagen für Sichtbarkeit.</div>';
+  var BOTH_PRICING='<div class="pricing"><b>Kosten-Einordnung.</b> Weissmann Google Ads Growth liegt bei <b>CHF 690 pro Monat</b> (Werbebudget separat und direkt an Google), SEO Growth bei <b>CHF 890 pro Monat</b>. Addiert man beide Betreuungen plus ein reales Werbebudget, sind schnell CHF 2’000 oder mehr pro Monat erreicht – deshalb ist die Reihenfolge eine Priorisierungsfrage mit echtem Geld dahinter.</div>';
+
+  function pitfalls(items){
+    var h='<div class="pit"><h3>Häufige Fehler, die Sie vermeiden</h3><ul>';
+    for(var i=0;i<items.length;i++){h+='<li>'+items[i]+'</li>';}
+    return h+'</ul></div>';
+  }
+
+  function decide(){
+    var g=state.gate,q1=state.q1,q2=state.q2,q3=state.q3;
+    if(g==="no")return{type:"unclear"};
+    if(g!=="yes"||!q1||!q2||!q3)return{type:"incomplete"};
+    if(q1==="acute")return{type:"ads_urgent"};
+    var s=[sig1(q1),sig2(q2),sig3(q3)];
+    var ads=0,seo=0,i;
+    for(i=0;i<3;i++){if(s[i]==="ads")ads++;else if(s[i]==="seo")seo++;}
+    if(seo>ads)return{type:"seo_first"};
+    if(ads>seo)return{type:"ads_first"};
+    return{type:"combination"};
+  }
+
+  function buildSignals(){
+    var parts=[],map=[["q1",sig1],["q2",sig2],["q3",sig3]],names=["Dringlichkeit","Inhaltstyp","Budget-Horizont"];
+    for(var i=0;i<3;i++){
+      var key=map[i][0],fn=map[i][1],val=state[key];
+      if(!val)continue;
+      var s=fn(val);
+      parts.push('<span class="chip s-'+s+'"><b>'+names[i]+'</b> '+sigWord(s)+'</span>');
+    }
+    return parts.length?'<div class="signals">'+parts.join("")+'</div>':"";
+  }
+
+  function exceptions(recType){
+    var f=state.flags,out=[];
+    if(f.booked)out.push("<p>Sie sind bereits über Weiterempfehlungen voll ausgelastet und wollen nicht wachsen – dann wären zusätzliche Anfragen kein Gewinn, sondern Druck ohne Kapazität. Möglicherweise ist gerade jetzt keiner der beiden Kanäle die richtige nächste Investition.</p>");
+    if(f.lowvalue)out.push("<p>Liegt der Wert eines einzelnen Auftrags deutlich unter dem realistischen Klickpreis Ihrer Branche, verbrennt Google Ads strukturell mehr, als es einbringt. Prüfen Sie das, bevor Sie ein Ads-Budget freigeben – konkrete Schweizer Klickpreis-Bandbreiten nach Branche und Region sind Thema des vertiefenden Ads-Kosten-Artikels, nicht dieses Entscheiders.</p>");
+    if(f.relaunch)out.push("<p>Steht ein grösserer Website-Relaunch in den nächsten Monaten an, ist es meist klüger, SEO-Fundament und Content direkt für die neue Website aufzubauen, statt doppelt zu arbeiten.</p>");
+    if(!out.length)return"";
+    return '<div class="exc"><b>Ehrliche Ausnahme:</b> '+out.join("")+'</div>';
+  }
+
+  function content(res){
+    var q2=state.q2;
+    if(res.type==="incomplete"){
+      return {cls:"",html:buildSignals()+'<p class="placeholder">Beantworten Sie das nullte Kriterium und alle drei Variablen, um eine begründete Empfehlung zu erhalten.</p>'};
+    }
+    if(res.type==="unclear"){
+      var h='<span class="badge b-mixed">Zuerst das Angebot</span>'+
+        '<p class="rec-head">Noch nicht Ads oder SEO – zuerst das Angebot klären</p>'+
+        '<div class="rec-body">'+
+        '<p>Solange eine aussenstehende Person auf Ihrer Startseite nicht innerhalb weniger Sekunden sagen kann, was Sie anbieten, für wen und warum das relevant ist, kauft jeder zusätzliche Besuch nur zusätzliche Verwirrung ein – egal ob über eine bezahlte Anzeige oder ein organisches Ergebnis.</p>'+
+        '<p>Das nullte Kriterium ist ein Filter vor den drei Variablen. Die sinnvollere nächste Investition ist hier eine überarbeitete Startseite, kein Werbebudget. Erst wenn eine aussenstehende Person Ihr Angebot in einem Satz zusammenfassen kann, lohnt sich die Frage, welcher Kanal zuerst kommt.</p>'+
+        '</div>'+
+        pitfalls(["Kein Kanal auf ein unklares Angebot aufsetzen – der Traffic kommt, die Anfragen bleiben trotzdem aus."]);
+      return {cls:"is-mixed",html:buildSignals()+h+exceptions("unclear")};
+    }
+    if(res.type==="ads_urgent"){
+      var extra=(q2==="evergreen")?'<p>Ihr Angebot ist evergreen-tauglich: Bauen Sie SEO parallel als Fundament für die nächste Periode auf. Es hilft der aktuellen Auslastungslücke aber nicht – das Problem von heute löst nur Ads.</p>':'';
+      var h2='<span class="badge b-ads">Ads zuerst</span>'+
+        '<p class="rec-head">Google Ads zuerst – die Dringlichkeit entscheidet</p>'+
+        '<div class="rec-body">'+
+        '<p>Sie brauchen Anfragen in den nächsten zwei bis vier Wochen. In diesem Zeitfenster ist SEO schlicht keine Option: Laut einer Befragung von 75 SEO-Fachleuten (Morningscore) erwarten 94,6 % erste sichtbare Resultate frühestens innerhalb von sechs Monaten, die volle Wirkung stellt sich meist erst nach zwölf bis 24 Monaten ein.</p>'+
+        '<p>Google Ads ist ein Auktionssystem und der einzige der beiden Kanäle, der innerhalb von Stunden bis Tagen reagieren kann. Eine akute Dringlichkeit lässt sich nicht «budgetmässig schöndenken» – selbst eine überzeugende Langfrist-Rechnung ändert nichts daran, dass SEO das Problem von heute nicht löst. Der bezahlte Traffic stoppt allerdings praktisch sofort, sobald das Budget endet.</p>'+
+        extra+
+        '</div>'+ADS_PRICING+
+        pitfalls(["Google Ads nie ohne Conversion-Tracking laufen lassen – sonst fliesst Budget, ohne dass jemand sagen kann, ob echte Anfragen entstehen oder nur Klicks.","Kein Kanal auf ein unklares Angebot aufsetzen."]);
+      return {cls:"is-ads",html:buildSignals()+h2+exceptions("ads")};
+    }
+    if(res.type==="ads_first"){
+      var reasons=[];
+      if(state.q2==="limited")reasons.push("Ihr Angebot ist zeitlich begrenzt, saisonal, einmalig oder erst ein Test – dafür ist Ads die pragmatische Wahl, weil Sie eine Platzierung kaufen, keine Autorität. Eine SEO-Seite hätte oft gar nicht die Zeit zu ranken, bevor das Angebot sich ändert.");
+      if(state.q3==="no")reasons.push("Ihr Budget muss kurzfristig wirken. Ads verhält sich wie ein Wasserhahn: Traffic fliesst, solange bezahlt wird, und liefert schnell überprüfbare Nachfragedaten.");
+      var body='<p>Zwei der drei Variablen zeigen Richtung bezahlte Reichweite.</p>';
+      for(var r=0;r<reasons.length;r++){body+='<p>'+reasons[r]+'</p>';}
+      body+='<p>SEO bliebe die wirtschaftlichere Option, sobald sich das Angebot als evergreen erweist und der Budget-Horizont mehr Spielraum lässt – für die aktuelle Konstellation ist Ads aber der realistischere erste Kanal.</p>';
+      var h3='<span class="badge b-ads">Tendenz Ads</span>'+
+        '<p class="rec-head">Tendenz: Google Ads zuerst</p>'+
+        '<div class="rec-body">'+body+'</div>'+ADS_PRICING+
+        pitfalls(["Google Ads nie ohne Conversion-Tracking laufen lassen.","Kein Kanal auf ein unklares Angebot aufsetzen."]);
+      return {cls:"is-ads",html:buildSignals()+h3+exceptions("ads")};
+    }
+    if(res.type==="seo_first"){
+      var sreasons=[];
+      if(state.q2==="evergreen")sreasons.push("Ihr Angebot ist evergreen: SEO belohnt Inhalte, die über Jahre dieselbe Frage beantworten. Diese Seiten bauen Vertrauen und Rankings auf, die weiterlaufen, ohne dass für jeden einzelnen Besuch bezahlt werden muss – wie das Befüllen eines Reservoirs.");
+      if(state.q1==="long")sreasons.push("Sie haben echten Vorlauf: Eine neue Website braucht in der Regel sechs bis zwölf Monate, bis nennenswerter organischer Traffic entsteht – diese Zeit lässt Ihre Dringlichkeit zu.");
+      if(state.q3==="bearable"||state.q3==="tight")sreasons.push("Zum Budget-Horizont: Wer sich ein Marketingbudget im niedrigen vierstelligen Bereich kaum leisten kann, fährt laut einer international zitierten Faustregel meist besser damit, zuerst in SEO zu investieren und Ads erst zuzuschalten, sobald aus dem laufenden Geschäft mehr Spielraum entsteht. Diese Faustregel gilt hier, weil Ihre Dringlichkeit Spielraum lässt.");
+      var sbody='<p>Die Mehrheit Ihrer Variablen zeigt Richtung organische Reichweite.</p>';
+      for(var s2=0;s2<sreasons.length;s2++){sbody+='<p>'+sreasons[s2]+'</p>';}
+      sbody+='<p>Rechnen Sie mit der Anlaufzeit: Erste Resultate sind laut Expertenbefragung nach zwei bis vier Monaten realistisch, die volle Wirkung nach zwölf bis 24 Monaten. Google Ads bleibt eine sinnvolle Ergänzung, sobald einzelne Angebote schnell ausgelastet werden sollen.</p>';
+      var h4='<span class="badge b-seo">Tendenz SEO</span>'+
+        '<p class="rec-head">Tendenz: SEO zuerst</p>'+
+        '<div class="rec-body">'+sbody+'</div>'+SEO_PRICING+
+        pitfalls(["SEO nicht nach sechs bis acht Wochen als «wirkungslos» abbrechen – vor Ende der normalen Anlaufzeit misst man nicht, ob SEO funktioniert.","Kein Kanal auf ein unklares Angebot aufsetzen."]);
+      return {cls:"is-seo",html:buildSignals()+h4+exceptions("seo")};
+    }
+    // combination
+    var startText;
+    if(state.q1==="long"){
+      startText="Ihre dringendste Variable – die Dringlichkeit – lässt Spielraum. Beginnen Sie deshalb mit dem SEO-Fundament und schalten Sie Ads gezielt zu, sobald ein erster überprüfbarer Erfolg sichtbar ist.";
+    }else{
+      startText="Der bewährte Startpunkt: zuerst Google Ads für schnelle erste Resultate und echte Nachfragedaten, parallel dazu mit dem SEO-Aufbau beginnen, und sobald die organische Sichtbarkeit wächst, das Ads-Budget gezielter statt breiter einsetzen.";
+    }
+    var cbody='<p>Ihre drei Variablen zeigen nicht sauber in dieselbe Richtung – das ist eher die Regel als die Ausnahme (ein evergreen-taugliches Angebot bei gleichzeitig engem Anfragebedarf und knappem Budget etwa).</p>'+
+      '<p>Schweizer Marketing-Quellen beschreiben dafür ein dreiphasiges Vorgehen. Wichtig: Das ist kein Freibrief für «einfach beides ab Tag eins in vollem Umfang», sondern eine Reihenfolge innerhalb der Kombination – und nur sinnvoll, wenn das Budget beide Investitionen über mindestens sechs Monate trägt, ohne dass die Existenz des Betriebs davon abhängt.</p>'+
+      '<p>'+startText+'</p>';
+    var h5='<span class="badge b-mixed">Kombination in Phasen</span>'+
+      '<p class="rec-head">Kombination in Phasen – die Signale widersprechen sich</p>'+
+      '<div class="rec-body">'+cbody+'</div>'+BOTH_PRICING+
+      pitfalls(["Nicht beide Kanäle gleichzeitig mit einem Budget starten, das für keinen der beiden reicht – sonst wirkt weder das eine noch das andere und beide werden fälschlich als «funktioniert nicht» abgeschrieben.","Google Ads nie ohne Conversion-Tracking laufen lassen.","SEO nicht nach sechs bis acht Wochen abbrechen."]);
+    return {cls:"is-mixed",html:buildSignals()+h5+exceptions("combination")};
+  }
+
+  var resultEl=document.getElementById("result");
+  var bodyEl=resultEl.querySelector(".result-body");
+  var copyBtn=document.getElementById("copyBtn");
+  var copiedEl=document.getElementById("copied");
+
+  function render(){
+    var res=decide();
+    var c=content(res);
+    resultEl.className="result step"+(c.cls?" "+c.cls:"");
+    bodyEl.innerHTML=c.html;
+    var complete=(res.type!=="incomplete");
+    copyBtn.disabled=!complete;
+    copiedEl.hidden=true;
+  }
+
+  function summaryText(){
+    var lines=[];
+    lines.push("Google Ads oder SEO zuerst? – meine Antworten");
+    lines.push("");
+    lines.push("Nulltes Kriterium (Angebot klar?): "+(state.gate?LBL.gate[state.gate]:"—"));
+    lines.push("Variable 1 – Dringlichkeit: "+(state.q1?LBL.q1[state.q1]:"—"));
+    lines.push("Variable 2 – Inhaltstyp: "+(state.q2?LBL.q2[state.q2]:"—"));
+    lines.push("Variable 3 – Budget-Horizont: "+(state.q3?LBL.q3[state.q3]:"—"));
+    var fl=[];
+    if(state.flags.booked)fl.push("bereits ausgelastet, keine Wachstumsambition");
+    if(state.flags.lowvalue)fl.push("Auftragswert unter realistischem Klickpreis");
+    if(state.flags.relaunch)fl.push("Website-Relaunch steht an");
+    if(fl.length)lines.push("Ehrliche Ausnahmen: "+fl.join("; "));
+    lines.push("");
+    var head=bodyEl.querySelector(".rec-head");
+    lines.push("Empfehlung: "+(head?head.textContent:"—"));
+    lines.push("");
+    lines.push("Orientierung, kein Angebot. Quelle: weissmann.ai/ki-academy/marketing-seo-geo/google-ads-oder-seo-schweiz/");
+    return lines.join("\n");
+  }
+
+  function flash(){copiedEl.hidden=false;window.setTimeout(function(){copiedEl.hidden=true;},2200);}
+
+  copyBtn.addEventListener("click",function(){
+    var txt=summaryText();
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(flash,function(){fallbackCopy(txt);});
+    }else{fallbackCopy(txt);}
+  });
+  function fallbackCopy(txt){
+    var ta=document.createElement("textarea");
+    ta.value=txt;ta.setAttribute("readonly","");ta.style.position="absolute";ta.style.left="-9999px";
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");flash();}catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  document.querySelectorAll('input[name="gate"]').forEach(function(el){el.addEventListener("change",function(){state.gate=el.value;render();});});
+  document.querySelectorAll('input[name="q1"]').forEach(function(el){el.addEventListener("change",function(){state.q1=el.value;render();});});
+  document.querySelectorAll('input[name="q2"]').forEach(function(el){el.addEventListener("change",function(){state.q2=el.value;render();});});
+  document.querySelectorAll('input[name="q3"]').forEach(function(el){el.addEventListener("change",function(){state.q3=el.value;render();});});
+  document.querySelectorAll('input[name="flag"]').forEach(function(el){el.addEventListener("change",function(){state.flags[el.value]=el.checked;render();});});
+
+  render();
+})();
+</script>

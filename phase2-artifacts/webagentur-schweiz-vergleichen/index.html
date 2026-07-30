@@ -1,0 +1,358 @@
+<title>Erstgespräch-Skript für Webagenturen · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .builder{display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px}
+  @media(min-width:860px){.builder{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}}
+  .h2{font-size:1.05rem;margin:0 0 14px;letter-spacing:-.01em}
+  .field{margin:0 0 14px}
+  .field label{display:block;font-size:.82rem;font-weight:600;color:var(--ink-soft);margin:0 0 5px}
+  input[type="text"],textarea{width:100%;font-family:var(--font);font-size:.95rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;resize:vertical}
+  input[type="text"]::placeholder,textarea::placeholder{color:var(--ink-mute)}
+  input[type="text"]:focus-visible,textarea:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+  .grp-label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:18px 0 10px}
+  .crit-list{display:flex;flex-direction:column;gap:8px}
+  .crit{display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:10px 12px}
+  .crit.off{opacity:.62}
+  .crit-main{display:flex;align-items:flex-start;gap:10px;flex:1;min-width:0;cursor:pointer;margin:0}
+  .crit-txt{display:flex;flex-direction:column;min-width:0}
+  .crit-title{font-weight:700;font-size:.9rem;color:var(--ink)}
+  .crit-sub{font-size:.78rem;color:var(--ink-mute);line-height:1.35}
+  .prio{display:inline-flex;align-items:center;gap:6px;flex-shrink:0;cursor:pointer;font-size:.72rem;font-weight:700;color:var(--ink-mute);border:1px solid var(--line);border-radius:999px;padding:5px 9px;margin:0;white-space:nowrap}
+  .prio:has(.pri:checked){color:var(--warn);border-color:var(--warn);background:var(--warn-soft)}
+  .prio input:disabled{cursor:not-allowed}
+  input[type="checkbox"]{accent-color:var(--navy);width:17px;height:17px;flex-shrink:0;margin:1px 0 0}
+  input[type="checkbox"]:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+  .opts{display:flex;flex-direction:column;gap:8px;margin:16px 0 4px}
+  .opt{display:flex;align-items:center;gap:9px;font-size:.86rem;color:var(--ink-soft);cursor:pointer}
+  .out-card{position:sticky;top:16px}
+  @media(max-width:859px){.out-card{position:static}}
+  .out-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:12px}
+  .out-head .h2{margin:0}
+  .count{font-size:.76rem;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 10px;white-space:nowrap}
+  .script{font-family:var(--mono);font-size:.8rem;line-height:1.55;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:11px;padding:14px;margin:0;white-space:pre-wrap;word-break:break-word;max-height:52vh;overflow:auto}
+  .script:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+  .actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+  .btn{font-family:var(--font);font-size:.92rem;font-weight:600;color:var(--on-navy);background:var(--navy);border:none;border-radius:10px;padding:11px 18px;cursor:pointer;min-height:44px}
+  .btn:hover{background:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .status{font-size:.82rem;font-weight:600;color:var(--ok)}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">KI-Marketing · SEO &amp; GEO</p>
+  <h1>Erstgespräch-Skript für die Webagentur-Auswahl</h1>
+  <p class="lede">Aus den sieben Kriterien, die erst nach der Live-Schaltung zählen, erzeugt dieser Generator ein wörtliches Fragen-Skript für Ihr Erstgespräch – zum Kopieren und Mitnehmen. Kein Ranking, keine Wertung: Sie stellen die Fragen, notieren die Antworten und vergleichen erst danach.</p>
+
+  <div class="builder">
+    <section class="card card-pad" aria-label="Skript zusammenstellen">
+      <h2 class="h2">Skript zusammenstellen</h2>
+
+      <div class="field">
+        <label for="proj">Projekt oder Firma</label>
+        <input id="proj" type="text" placeholder="[Ihr Projekt]" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="agency">Agentur (optional)</label>
+        <input id="agency" type="text" placeholder="[Agentur]" autocomplete="off">
+      </div>
+
+      <p class="grp-label">Kriterien &amp; Prioritäten</p>
+      <div id="critList" class="crit-list"></div>
+
+      <div class="opts">
+        <label class="opt"><input type="checkbox" id="optWatch" checked><span>«Worauf achten»-Notizen einschliessen</span></label>
+        <label class="opt"><input type="checkbox" id="optLines" checked><span>Leere Antwort-Zeilen einschliessen</span></label>
+      </div>
+
+      <div class="field" style="margin-top:16px">
+        <label for="custom">Eigene Fragen (eine pro Zeile, optional)</label>
+        <textarea id="custom" rows="3" placeholder="z. B. Arbeiten Sie mit Subunternehmern, und wer haftet dann?"></textarea>
+      </div>
+    </section>
+
+    <section class="card card-pad out-card" aria-label="Generiertes Skript">
+      <div class="out-head">
+        <h2 class="h2">Ihr Skript</h2>
+        <span id="count" class="count"></span>
+      </div>
+      <pre id="out" class="script" tabindex="0" aria-label="Generiertes Erstgespräch-Skript"></pre>
+      <div class="actions">
+        <button type="button" id="copyBtn" class="btn">Skript kopieren</button>
+        <span id="status" class="status" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+  </div>
+
+  <p class="disc">Orientierung – keine Rangliste, keine Rechtsberatung und kein Angebot. Grundlage sind ausschliesslich die sieben Kriterien und zehn Fragen aus dem verlinkten Ratgeber; die Selbstauskunft einer Agentur ersetzt keine unabhängige Prüfung (etwa ein eigener Test mit Google PageSpeed Insights oder das Nachlesen der Vertragsklausel). Offenlegung: Auch Weissmann AI ist eine Webagentur mit kommerziellem Interesse an diesem Thema. Alle Eingaben bleiben nur in Ihrem Browser – nichts wird gespeichert oder gesendet.</p>
+
+  <footer class="linkbar" aria-label="Quelle und Umsetzung">
+    <p class="lb-title">Quelle &amp; Umsetzung</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/marketing-seo-geo/webagentur-schweiz-vergleichen/" target="_blank" rel="noopener noreferrer" aria-label="Ratgeber: Webagenturen der Schweiz fair vergleichen (opens in a new tab)">Ratgeber: Webagenturen fair vergleichen →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-webentwicklung/" target="_blank" rel="noopener noreferrer" aria-label="KI-Webentwicklung von Weissmann AI (opens in a new tab)">KI-Webentwicklung von Weissmann →</a>
+    </div>
+    <p class="att">Weissmann AI · ein Begleiter zum Ratgeber. Orientierung, kein Angebot.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var CRITERIA=[
+    {id:"nachweis",n:1,title:"Nachweis",sub:"Ein Portfolio zeigt Geschmack, keine Ergebnisse",
+      questions:[
+        "Können Sie mir zwei bis drei Referenzen zeigen, bei denen ich das Ergebnis unabhängig von Ihrer eigenen Darstellung prüfen kann?"
+      ],
+      watch:"Logos ohne beschriebenes Ergebnis, Zitate, die zu keiner auffindbaren Firma gehören, oder keine Referenzperson zum Rückfragen. Ein ehrliches «noch keine veröffentlichten Fallstudien» ist kein Warnsignal – eine erfundene Referenz schon."},
+    {id:"prozess",n:2,title:"Prozess",sub:"Was zwischen Angebot und Live-Schaltung passiert",
+      questions:[
+        "Wie sieht Ihr Prozess von der ersten Anfrage bis zur Live-Schaltung konkret aus, und was ist der erste Schritt vor dem Design?",
+        "Wer ist während der Projektlaufzeit meine feste Ansprechperson, und was passiert, wenn diese Person das Unternehmen verlässt?",
+        "Was passiert mit Zeitplan und Preis, wenn Texte oder Bilder von meiner Seite später kommen als geplant?"
+      ],
+      watch:"Die Agentur springt ohne eine einzige Frage zu Ihrem Geschäft direkt zum Design, «unbegrenzte Revisionen» wird als Slogan verkauft, ohne den Zeitplan zu schützen, oder ein Zeitrahmen bleibt unklar, sobald Sie selbst in Verzug geraten."},
+    {id:"ownership",n:3,title:"Ownership",sub:"Wem gehört die Website, wenn die Rechnung bezahlt ist",
+      questions:[
+        "Was genau bekomme ich nach Projektabschluss übergeben – Quellcode, CMS-Admin-Zugang, Domain-Registrar-Zugang, Hosting-Zugang?"
+      ],
+      watch:"Domain, Hosting oder CMS laufen dauerhaft nur über das Konto der Agentur, oder die Seite steht auf einem proprietären System ohne Exportmöglichkeit. Eine mündliche Zusage ohne Übertragung der Zugangsdaten ist wertlos.",
+      tip:"Test während der Einrichtung: mindestens einen Zugang (z. B. den Domain-Registrar) bereits im Projekt auf Ihren Namen übertragen lassen – nicht erst als Versprechen für später. Ownership mit System- und Kontonamen im Vertrag festhalten, nicht nur per E-Mail."},
+    {id:"performance",n:4,title:"Performance",sub:"Gemessen statt behauptet",
+      questions:[
+        "Welche Ladezeit beziehungsweise welchen PageSpeed-Wert kann ich an einer bereits gelieferten, vergleichbaren Seite selbst nachmessen?"
+      ],
+      watch:"Keine testbare Live-Referenz, oder ein schwergewichtiger Page-Builder mit einem Dutzend Plug-ins, ohne dass jemand erklärt, warum das schnell bleibt, wenn Inhalte wachsen. Die Live-URL selbst mit einem kostenlosen Tool wie Google PageSpeed Insights testen."},
+    {id:"seo",n:5,title:"SEO-Fundament",sub:"Eingebaut oder nachträglich verkauft",
+      questions:[
+        "Was genau ist mit «SEO inklusive» gemeint – welche technischen Elemente konkret, und was ist ausdrücklich nicht enthalten?"
+      ],
+      watch:"«SEO inklusive» ohne ein einziges konkret genanntes technisches Element, oder SEO ausschliesslich als teures separates Monatsabo. Für ein mehrsprachiges Schweizer Publikum zusätzlich: eine saubere mehrsprachige URL-Struktur mit korrektem hreflang statt nur ein automatisches Übersetzungs-Plug-in."},
+    {id:"support",n:6,title:"Support & Wartung",sub:"Was nach der Rechnung noch gilt",
+      questions:[
+        "Was kostet Support nach Projektende, und welche Reaktionszeit ist vertraglich zugesichert, nicht nur versprochen?"
+      ],
+      watch:"«Wir sind immer für Sie da» ohne eine einzige schriftliche Zusicherung, oder die Wartungsgebühr wird erst nach Vertragsabschluss genannt. Klären Sie auch, was eine kleine Textänderung kostet – vor der Unterschrift."},
+    {id:"vertrag",n:7,title:"Vertragsbedingungen",sub:"Die Klausel, die niemand vorliest",
+      questions:[
+        "Gibt es eine Mindestlaufzeit oder eine automatische Vertragsverlängerung, und wie und bis wann muss ich kündigen?",
+        "Ist der Preis in der Offerte final, oder welche Positionen sind bei ähnlichen Projekten typischerweise als Nachtrag dazugekommen?"
+      ],
+      watch:"Ein automatisch verlängerter Jahresvertrag mit schmalem Kündigungsfenster, eine Rechteklausel, die Code- und Design-Rechte auch nach voller Bezahlung bei der Agentur belässt, oder eine «Exit-Gebühr» für die eigene Domain. Wenn die Agentur nach dem Launch auch Formulardaten oder Analytics verarbeitet, zusätzlich einen Auftragsverarbeitungsvertrag gemäss revDSG erfragen."}
+  ];
+
+  var proj=document.getElementById("proj");
+  var agency=document.getElementById("agency");
+  var custom=document.getElementById("custom");
+  var optWatch=document.getElementById("optWatch");
+  var optLines=document.getElementById("optLines");
+  var listEl=document.getElementById("critList");
+  var out=document.getElementById("out");
+  var count=document.getElementById("count");
+  var copyBtn=document.getElementById("copyBtn");
+  var statusEl=document.getElementById("status");
+
+  var state={};
+  var LINE="────────────────────────────────────────";
+  var current="";
+
+  CRITERIA.forEach(function(c){
+    state[c.id]={inc:true,pri:false};
+
+    var row=document.createElement("div");
+    row.className="crit";
+
+    var main=document.createElement("label");
+    main.className="crit-main";
+
+    var inc=document.createElement("input");
+    inc.type="checkbox";
+    inc.checked=true;
+    inc.setAttribute("aria-label","Kriterium einschliessen: "+c.title);
+
+    var txt=document.createElement("span");
+    txt.className="crit-txt";
+    var t=document.createElement("span");
+    t.className="crit-title";
+    t.textContent=c.n+" · "+c.title;
+    var s=document.createElement("span");
+    s.className="crit-sub";
+    s.textContent=c.sub;
+    txt.appendChild(t);
+    txt.appendChild(s);
+
+    main.appendChild(inc);
+    main.appendChild(txt);
+
+    var prio=document.createElement("label");
+    prio.className="prio";
+    var pri=document.createElement("input");
+    pri.type="checkbox";
+    pri.className="pri";
+    pri.setAttribute("aria-label","Als Priorität markieren: "+c.title);
+    var pl=document.createElement("span");
+    pl.textContent="★ Priorität";
+    prio.appendChild(pri);
+    prio.appendChild(pl);
+
+    inc.addEventListener("change",function(){
+      state[c.id].inc=inc.checked;
+      row.className="crit"+(inc.checked?"":" off");
+      pri.disabled=!inc.checked;
+      if(!inc.checked){pri.checked=false;state[c.id].pri=false;}
+      render();
+    });
+    pri.addEventListener("change",function(){
+      state[c.id].pri=pri.checked;
+      render();
+    });
+
+    row.appendChild(main);
+    row.appendChild(prio);
+    listEl.appendChild(row);
+  });
+
+  function build(){
+    var projV=(proj.value.trim()||"[Ihr Projekt]");
+    var agV=(agency.value.trim()||"[Agentur]");
+    var wantWatch=optWatch.checked;
+    var wantLines=optLines.checked;
+    var answer="   Antwort: ____________________________";
+    var L=[];
+    var qn=0;
+    var usedCrit=0;
+
+    L.push("ERSTGESPRÄCH-SKRIPT · WEBAGENTUR-AUSWAHL");
+    L.push("Projekt: "+projV);
+    L.push("Agentur: "+agV);
+    L.push("Datum: ________________");
+    L.push("");
+    L.push("Grundlage: sieben Kriterien, die erst nach der");
+    L.push("Live-Schaltung zählen. Fragen wörtlich stellen,");
+    L.push("Antworten notieren, erst danach vergleichen –");
+    L.push("nicht den ersten Eindruck aus dem Gespräch.");
+
+    CRITERIA.forEach(function(c){
+      if(!state[c.id].inc){return;}
+      usedCrit++;
+      L.push("");
+      L.push(LINE);
+      L.push(c.n+". "+c.title.toUpperCase()+(state[c.id].pri?"   ★ PRIORITÄT":""));
+      L.push(c.sub);
+      c.questions.forEach(function(q){
+        qn++;
+        L.push("");
+        L.push("Frage "+qn+": "+q);
+        if(wantLines){L.push(answer);}
+      });
+      if(wantWatch){
+        L.push("");
+        L.push("Worauf achten: "+c.watch);
+        if(c.tip){L.push("Tipp: "+c.tip);}
+      }
+    });
+
+    var customs=custom.value.split("\n").map(function(x){return x.trim();}).filter(function(x){return x.length>0;});
+    if(customs.length){
+      L.push("");
+      L.push(LINE);
+      L.push("EIGENE FRAGEN");
+      customs.forEach(function(q){
+        qn++;
+        L.push("");
+        L.push("Frage "+qn+": "+q);
+        if(wantLines){L.push(answer);}
+      });
+    }
+
+    L.push("");
+    L.push(LINE);
+    L.push("Hinweis: Orientierung, keine Rangliste und");
+    L.push("keine Rechtsberatung. Die Selbstauskunft einer");
+    L.push("Agentur ersetzt keine unabhängige Prüfung.");
+    L.push("Erstellt mit dem Erstgespräch-Skript von");
+    L.push("Weissmann AI · weissmann.ai");
+
+    return {text:L.join("\n"),qn:qn,crit:usedCrit};
+  }
+
+  function render(){
+    var r=build();
+    if(r.qn===0){
+      current="";
+      out.textContent="Wählen Sie mindestens ein Kriterium oder fügen Sie eine eigene Frage hinzu, um Ihr Skript zu erzeugen.";
+      count.textContent="0 Fragen · 0 Kriterien";
+      return;
+    }
+    current=r.text;
+    out.textContent=r.text;
+    var qLabel=r.qn+(r.qn===1?" Frage":" Fragen");
+    var cLabel=r.crit+(r.crit===1?" Kriterium":" Kriterien");
+    count.textContent=qLabel+" · "+cLabel;
+  }
+
+  var statusTimer;
+  function setStatus(msg){
+    statusEl.textContent=msg;
+    clearTimeout(statusTimer);
+    statusTimer=setTimeout(function(){statusEl.textContent="";},4000);
+  }
+
+  function fallbackCopy(t){
+    try{
+      var ta=document.createElement("textarea");
+      ta.value=t;
+      ta.setAttribute("readonly","");
+      ta.style.position="absolute";
+      ta.style.left="-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok=document.execCommand("copy");
+      document.body.removeChild(ta);
+      setStatus(ok?"Skript kopiert.":"Kopieren nicht möglich – bitte manuell markieren.");
+    }catch(e){
+      setStatus("Kopieren nicht möglich – bitte manuell markieren.");
+    }
+  }
+
+  copyBtn.addEventListener("click",function(){
+    if(!current){setStatus("Kein Skript zum Kopieren.");return;}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(current).then(function(){
+        setStatus("Skript kopiert.");
+      },function(){
+        fallbackCopy(current);
+      });
+    }else{
+      fallbackCopy(current);
+    }
+  });
+
+  proj.addEventListener("input",render);
+  agency.addEventListener("input",render);
+  custom.addEventListener("input",render);
+  optWatch.addEventListener("change",render);
+  optLines.addEventListener("change",render);
+
+  render();
+})();
+</script>

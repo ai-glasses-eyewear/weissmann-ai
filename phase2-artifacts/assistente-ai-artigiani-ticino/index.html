@@ -1,0 +1,418 @@
+<title>Costruttore di copione pre-sopralluogo · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .builder{display:grid;gap:18px;margin-top:20px}
+  @media(min-width:860px){.builder{grid-template-columns:0.92fr 1.08fr;align-items:start}}
+  .panel-h{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 10px}
+  .field{margin:0 0 16px}
+  .field:last-child{margin-bottom:0}
+  .lbl{display:block;font-weight:600;font-size:.92rem;margin:0 0 8px}
+  .lbl small{display:block;font-weight:400;color:var(--ink-mute);font-size:.82rem;margin-top:2px}
+  .trades{display:flex;flex-wrap:wrap;gap:8px}
+  .trade-btn{font:inherit;font-weight:600;font-size:.9rem;padding:10px 13px;border-radius:11px;border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);cursor:pointer;line-height:1.2}
+  .trade-btn:hover{border-color:var(--navy)}
+  .trade-btn[aria-pressed="true"]{background:var(--navy);color:var(--on-navy);border-color:var(--navy)}
+  .trade-btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .in{width:100%;font:inherit;font-size:.95rem;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+  .in:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 22%,transparent)}
+  .band{display:flex;gap:10px;align-items:center;margin-top:10px}
+  .band .in{max-width:130px}
+  .band span{color:var(--ink-mute);font-size:.88rem}
+  .row{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line)}
+  .row:first-of-type{border-top:none}
+  .row input[type="checkbox"]{margin-top:3px;width:18px;height:18px;accent-color:var(--navy);flex:none}
+  .row label{font-size:.9rem;color:var(--ink-soft);cursor:pointer}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font:inherit;font-size:.86rem;font-weight:600;padding:7px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink-mute);cursor:pointer;display:inline-flex;align-items:center;gap:6px;line-height:1.1}
+  .chip:hover{border-color:var(--accent)}
+  .chip[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+  .chip .tick{font-size:.9em;opacity:.55}
+  .chip[aria-pressed="true"] .tick{opacity:1}
+
+  .out-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:6px}
+  .status{font-size:.82rem;color:var(--ink-mute);font-weight:600}
+  .btn{font:inherit;font-weight:600;font-size:.88rem;padding:9px 15px;border-radius:10px;border:1.5px solid var(--navy);background:var(--card);color:var(--navy);cursor:pointer;min-height:40px}
+  .btn:hover{background:var(--soft)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .btn.copied{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+
+  .script{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:clamp(14px,2vw,18px)}
+  .greet{font-size:.92rem;color:var(--ink-soft);font-style:italic;margin:0 0 14px;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+  .step{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+  .step:first-of-type{border-top:none;padding-top:2px}
+  .num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--on-navy);font-size:.82rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .num.pv{background:var(--accent)}
+  .step-b{flex:1;min-width:0}
+  .step-cat{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 3px}
+  .step-q{margin:0;font-weight:600;font-size:.97rem}
+  .step-why{margin:5px 0 0;font-size:.83rem;color:var(--ink-mute)}
+  .fb{margin:8px 0 0;padding:8px 10px;background:var(--card);border:1px solid var(--line);border-radius:9px}
+  .fb-t{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--warn);font-weight:700;margin:0 0 5px}
+  .fb ul{margin:0;padding-left:18px;font-size:.86rem;color:var(--ink-soft)}
+  .fb li{margin:2px 0}
+  .closer{margin:14px 0 0;padding-top:12px;border-top:1px dashed var(--line);font-size:.86rem;color:var(--ink-soft)}
+  .note{margin-top:12px;font-size:.85rem;color:var(--accent);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:10px;padding:10px 12px}
+
+  .caveats{margin-top:18px}
+  .caveats ul{margin:8px 0 0;padding-left:20px}
+  .caveats li{margin:6px 0;color:var(--ink-soft);font-size:.92rem}
+  .priceline{margin-top:14px;font-size:.86rem;color:var(--ink-mute)}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+</style>
+
+<div class="wrap">
+  <p class="kicker">Agenti AI, automazione e voce · Weissmann</p>
+  <h1>Costruttore di copione pre-sopralluogo per artigiani</h1>
+  <p class="lede">La parte difficile di un assistente telefonico AI non è rispondere: è decidere cosa chiedere <em>prima</em> di mandare il furgone. Scegliete il mestiere e componete un copione di qualificazione con le sei domande dell'articolo, adattate al vostro caso. Poi copiatelo e mettetelo alla prova.</p>
+
+  <div class="builder">
+    <!-- CONTROLS -->
+    <section class="card card-pad" aria-label="Impostazioni del copione">
+      <p class="panel-h">1 · Il vostro mestiere</p>
+      <div class="field">
+        <div class="trades" role="group" aria-label="Scegliete il mestiere">
+          <button type="button" class="trade-btn" data-trade="idraulico" aria-pressed="true">Idraulico</button>
+          <button type="button" class="trade-btn" data-trade="elettricista" aria-pressed="false">Elettricista</button>
+          <button type="button" class="trade-btn" data-trade="installatore" aria-pressed="false">Installatore risc./clima</button>
+          <button type="button" class="trade-btn" data-trade="ristrutturazione" aria-pressed="false">Ditta di ristrutturazione</button>
+        </div>
+      </div>
+
+      <p class="panel-h">2 · Le domande da includere</p>
+      <div class="field">
+        <label class="lbl" id="chips-lbl">Attivate o togliete una domanda <small>L'ordine si adatta al mestiere. Per la ristrutturazione l'urgenza scende in fondo.</small></label>
+        <div class="chips" role="group" aria-labelledby="chips-lbl" id="chips"></div>
+      </div>
+
+      <p class="panel-h">3 · Dettagli opzionali</p>
+      <div class="field">
+        <label class="lbl" for="zona">La vostra zona di intervento</label>
+        <input class="in" id="zona" type="text" maxlength="60" placeholder="es. Bellinzonese e Tre Valli" autocomplete="off">
+      </div>
+      <div class="field">
+        <label class="lbl" for="richiamata">Tempo massimo per richiamare e confermare l'orario</label>
+        <input class="in" id="richiamata" type="text" maxlength="40" placeholder="es. un'ora" autocomplete="off">
+      </div>
+      <div class="field">
+        <label class="lbl">Preventivo</label>
+        <div class="row">
+          <input type="checkbox" id="hasBand">
+          <label for="hasBand">Abbiamo concordato una fascia di prezzo indicativa per interventi standard</label>
+        </div>
+        <div class="band" id="bandBox" hidden>
+          <span>da CHF</span>
+          <input class="in" id="bandFrom" type="text" inputmode="numeric" maxlength="7" placeholder="120" aria-label="Prezzo indicativo minimo in franchi">
+          <span>a CHF</span>
+          <input class="in" id="bandTo" type="text" inputmode="numeric" maxlength="7" placeholder="180" aria-label="Prezzo indicativo massimo in franchi">
+        </div>
+      </div>
+      <div class="field">
+        <label class="lbl">Profilo</label>
+        <div class="row">
+          <input type="checkbox" id="sameName">
+          <label for="sameName">Chi risponde al telefono è anche chi fa il lavoro</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTPUT -->
+    <section class="card card-pad" aria-label="Copione generato">
+      <div class="out-head">
+        <p class="status" id="status" aria-live="polite">Copione pronto</p>
+        <button type="button" class="btn" id="copyBtn">Copia il copione</button>
+      </div>
+      <div class="script" id="script"></div>
+      <p class="priceline">Poi provatelo su una chiamata vera del vostro mestiere: la prova una tantum dell'assistente telefonico AI costa CHF 350 (una tantum, senza abbonamento).</p>
+    </section>
+  </div>
+
+  <section class="card card-pad caveats" aria-label="Limiti del copione">
+    <p class="panel-h">Cosa può ancora andare storto — anche con un buon copione</p>
+    <ul>
+      <li>Il cliente sotto o sovrastima l'urgenza in buona fede: usate una seconda domanda chiusa di conferma, non un solo aggettivo.</li>
+      <li>La foto non arriva sempre: tenete pronte le domande chiuse di riserva, invece di fissare l'appuntamento su una descrizione vaga.</li>
+      <li>L'indirizzo è al limite della zona: meglio un onesto «verifichiamo e vi richiamiamo» che un sì o un no dato sul momento.</li>
+      <li>Un'urgenza segnalata bene ma poi inascoltata non cambia nulla: un copione vale quanto l'escalation che c'è dietro.</li>
+      <li>Un termine in dialetto o misto italiano-tedesco che l'assistente non riconosce: la risposta onesta è passare a una persona.</li>
+    </ul>
+  </section>
+
+  <p class="disc">Strumento di orientamento basato sull'articolo, non una consulenza né un preventivo. Le sei categorie restano valide da un mestiere all'altro, ma il segnale di urgenza e l'ordine vanno adattati e verificati da voi. Tutto avviene nel vostro browser: nulla di ciò che scrivete viene salvato o inviato. Usate segnaposto come [la vostra impresa], non dati reali di clienti.</p>
+
+  <footer class="linkbar" aria-label="Approfondimenti e servizio">
+    <p class="lb-title">Approfondisci</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/it/ai-academy/agenti-automazione/assistente-ai-artigiani-ticino/" target="_blank" rel="noopener noreferrer" aria-label="Leggi la guida completa per artigiani (opens in a new tab)">Leggi la guida completa →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/it/servizi/assistente-telefonico-ai/" target="_blank" rel="noopener noreferrer" aria-label="Scopri l'assistente telefonico AI e la prova a CHF 350 (opens in a new tab)">Assistente telefonico AI — prova su una chiamata vera (CHF 350) →</a>
+    </div>
+    <p class="att">Un complemento alla guida. Orientamento, non un preventivo.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var GEN_ACCESS = "Come si entra? Codice del portone, dove si trova la chiave, un cane in giardino, un parcheggio complicato.";
+  var GEN_ACCESS_WHY = "È il dettaglio che trasforma un intervento di venti minuti in uno di quaranta prima ancora di aprire la borsa degli attrezzi.";
+  var GEN_FOTO = "Mi può mandare una foto o un breve video del problema per messaggio? «Una macchia» per il cliente e per il tecnico raramente coincidono.";
+  var GEN_FOTO_WHY = "La foto arriva per messaggio, non descritta al telefono. E se non arriva, restano le domande chiuse di riserva.";
+
+  var TRADES = {
+    idraulico: {
+      label: "Idraulico",
+      order: ["zona","tipo","urgenza","foto","accesso","orario"],
+      urgencyQ: "L'acqua sta ancora uscendo o si è fermata? Se esce, da dove?",
+      urgencyWhy: "Un dettaglio concreto — non un generico «è urgente» — dice a chi smista chi mandare prima.",
+      fotoFallback: ["Si vede acqua che scorre in questo momento?","Da dove esce: rubinetto, tubo, sotto un mobile?","È bagnato un punto solo o si sta allargando?"]
+    },
+    elettricista: {
+      label: "Elettricista",
+      order: ["zona","tipo","urgenza","foto","accesso","orario"],
+      urgencyQ: "C'è odore di bruciato, si vedono scintille o è saltata del tutto la corrente?",
+      urgencyWhy: "Una luce che sfarfalla e una presa che sfrigola non sono la stessa cosa: un dettaglio concreto fa decidere chi mandare prima.",
+      fotoFallback: ["Una presa o un interruttore è annerito o fa scintille?","È saltato l'interruttore generale?","Manca la corrente in tutta la casa o solo in una stanza?"]
+    },
+    installatore: {
+      label: "Installatore risc./clima",
+      order: ["zona","tipo","urgenza","foto","accesso","orario"],
+      urgencyQ: "L'impianto si è fermato del tutto o funziona ancora con un difetto? C'è una perdita d'acqua in corso?",
+      urgencyWhy: "Un impianto fermo del tutto e un rumore strano non hanno la stessa priorità: chiederlo evita di mandare il tecnico dalla parte sbagliata.",
+      fotoQ: "Mi può mandare una foto della targhetta dell'apparecchio e, se possibile, un breve video del rumore o della perdita? Così il tecnico sa già cosa aspettarsi prima di partire.",
+      fotoWhy: "Sapere modello e sintomo in anticipo evita di scoprire sul posto che serve un pezzo diverso da quello caricato in furgone.",
+      fotoFallback: ["C'è una spia di errore accesa? Che codice mostra?","Si sente ancora il rumore o è intermittente?","Vede acqua o gocce vicino all'apparecchio?"]
+    },
+    ristrutturazione: {
+      label: "Ditta di ristrutturazione",
+      order: ["zona","tipo","foto","accesso","orario","urgenza"],
+      urgencyDeemph: true,
+      urgencyQ: "C'è qualcosa che non può aspettare il sopralluogo — un'infiltrazione in corso, un pericolo immediato?",
+      urgencyWhy: "Per chi lavora a progetto l'urgenza pesa meno: resta in fondo, dopo foto, accesso e tempistiche che contano di più.",
+      fotoQ: "Mi può mandare qualche foto del cantiere o dell'ambiente da ristrutturare? Aiuta a capire lo stato reale prima del sopralluogo.",
+      fotoWhy: "Per un progetto la foto del cantiere pesa più dell'urgenza: mostra a colpo d'occhio con cosa avrà a che fare il tecnico.",
+      fotoFallback: ["Può descrivere in poche parole lo stato attuale dell'ambiente?","Ci sono altre imprese già al lavoro sul posto?","È un ambiente vuoto o ancora abitato?"],
+      accessQ: "Chi consegna le chiavi o il codice per entrare? Il cantiere è già aperto o va coordinato con un'altra impresa presente sul posto?",
+      accessWhy: "Un sopralluogo fissato senza sapere come si entra fa aspettare il tecnico davanti a chiavi che nessuno ha pensato di consegnargli.",
+      orarioLabel: "Tempistiche del sopralluogo",
+      orarioIntro: "Per il sopralluogo, che disponibilità avete nei prossimi giorni? Fisso una fascia solo dopo aver verificato l'agenda reale dei tecnici"
+    }
+  };
+
+  var CAT_LABEL = { zona:"Zona e comune", tipo:"Tipo di lavoro", urgenza:"Urgenza", foto:"Foto / video", accesso:"Accesso", orario:"Fascia oraria" };
+  var CAT_ORDER = ["zona","tipo","urgenza","foto","accesso","orario"];
+
+  var state = {
+    trade: "idraulico",
+    zona: "",
+    richiamata: "",
+    hasBand: false,
+    bandFrom: "",
+    bandTo: "",
+    sameName: false,
+    included: { zona:true, tipo:true, urgenza:true, foto:true, accesso:true, orario:true }
+  };
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
+
+  // Build a single step object {cat,label,q,why,fb} for the current trade/state.
+  function buildStep(cat){
+    var t = TRADES[state.trade];
+    var o = { cat:cat, label:CAT_LABEL[cat], fb:null };
+    if(cat === "zona"){
+      var z = state.zona.trim();
+      o.q = "Prima di tutto, in che via e in che comune si trova il lavoro?";
+      if(z){ o.q += " Le confermo se rientra nella vostra zona (" + z + ") o se è al limite — in quel caso vi richiamiamo a breve, invece di indovinare."; }
+      else { o.q += " Confermo subito se rientra nella zona di intervento o se è al limite — in quel caso vi richiamiamo a breve, invece di indovinare."; }
+      o.why = "In Ticino lo stesso nome di via ricompare in comuni diversi; confermare il comune subito evita un furgone all'indirizzo sbagliato.";
+    } else if(cat === "tipo"){
+      o.q = "Con parole sue, di che lavoro si tratta?";
+      o.why = "Basta ricondurlo a poche categorie chiare per smistarlo alla persona giusta; la diagnosi vera resta al tecnico, non al telefono.";
+    } else if(cat === "urgenza"){
+      o.q = t.urgencyQ;
+      o.why = t.urgencyWhy;
+      if(t.urgencyDeemph){ o.label = "Urgenza (in fondo, pesa meno)"; }
+    } else if(cat === "foto"){
+      o.q = t.fotoQ || GEN_FOTO;
+      o.why = t.fotoWhy || GEN_FOTO_WHY;
+      o.fb = t.fotoFallback;
+    } else if(cat === "accesso"){
+      o.q = t.accessQ || GEN_ACCESS;
+      o.why = t.accessWhy || GEN_ACCESS_WHY;
+    } else if(cat === "orario"){
+      if(t.orarioLabel){ o.label = t.orarioLabel; }
+      var intro = t.orarioIntro || "Che fascia oraria le andrebbe meglio? La verifico sulla disponibilità reale dei tecnici prima di confermare";
+      var rc = state.richiamata.trim() || "[un tempo preciso]";
+      o.q = intro + ", e se non riesco a garantirla vi richiamiamo entro " + rc + " per confermare l'orario — invece di prometterle uno slot che nessuno ha controllato.";
+      o.why = "Uno slot promesso senza verifica è la causa della doppia prenotazione descritta nell'articolo.";
+    }
+    return o;
+  }
+
+  function preventivoStep(){
+    var o = { label:"Preventivo", pv:true };
+    var f = state.bandFrom.trim(), tt = state.bandTo.trim();
+    if(state.hasBand && f && tt){
+      o.q = "Per interventi standard di questo tipo di solito lavoriamo tra CHF " + f + " e CHF " + tt + ". È una fascia indicativa: il prezzo finale dipende da quello che il tecnico trova sul posto, e qualsiasi lavoro oltre la prima valutazione viene confermato prima di iniziare.";
+    } else {
+      o.q = "Un preventivo serio richiede che il tecnico guardi davvero il lavoro. Al telefono non fisso un prezzo: dipende da quello che si trova sul posto, e qualsiasi lavoro oltre la prima valutazione viene confermato prima di iniziare.";
+    }
+    o.why = "Promettere troppo crea una discussione sulla porta; dire troppo poco fa rifiutare il lavoro all'arrivo. Meglio una fascia onesta o nessuna cifra.";
+    return o;
+  }
+
+  function activeCats(){
+    var t = TRADES[state.trade];
+    var out = [];
+    for(var i=0;i<t.order.length;i++){ var c = t.order[i]; if(state.included[c]){ out.push(c); } }
+    return out;
+  }
+
+  var CLOSER = "Se la chiamata è davvero urgente, la passo subito a una persona: un copione vale quanto l'escalation che c'è dietro. E se sento un termine in dialetto, un misto tra italiano e tedesco per il nome di un pezzo, o un problema che non riconosco, passo la chiamata a una persona invece di tirare a indovinare.";
+
+  function render(){
+    // chips
+    var chipsEl = document.getElementById("chips");
+    chipsEl.innerHTML = "";
+    for(var i=0;i<CAT_ORDER.length;i++){
+      var c = CAT_ORDER[i];
+      var on = state.included[c];
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "chip"; b.setAttribute("data-cat", c);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.innerHTML = '<span class="tick" aria-hidden="true">' + (on ? "✓" : "+") + '</span>' + esc(CAT_LABEL[c]);
+      chipsEl.appendChild(b);
+    }
+
+    // script
+    var cats = activeCats();
+    var html = '<p class="greet">Buongiorno, [la vostra impresa]. Come posso aiutarla?</p>';
+    var n = 0;
+    for(var j=0;j<cats.length;j++){
+      var s = buildStep(cats[j]); n++;
+      html += '<div class="step"><div class="num" aria-hidden="true">' + n + '</div><div class="step-b">';
+      html += '<p class="step-cat">' + esc(s.label) + '</p>';
+      html += '<p class="step-q">' + esc(s.q) + '</p>';
+      html += '<p class="step-why">' + esc(s.why) + '</p>';
+      if(s.fb && s.fb.length){
+        html += '<div class="fb"><p class="fb-t">Se la foto non arriva — domande chiuse di riserva</p><ul>';
+        for(var k=0;k<s.fb.length;k++){ html += '<li>' + esc(s.fb[k]) + '</li>'; }
+        html += '</ul></div>';
+      }
+      html += '</div></div>';
+    }
+    var pv = preventivoStep(); n++;
+    html += '<div class="step"><div class="num pv" aria-hidden="true">' + n + '</div><div class="step-b">';
+    html += '<p class="step-cat">' + esc(pv.label) + '</p>';
+    html += '<p class="step-q">' + esc(pv.q) + '</p>';
+    html += '<p class="step-why">' + esc(pv.why) + '</p></div></div>';
+
+    html += '<p class="closer">' + esc(CLOSER) + '</p>';
+    if(state.sameName){
+      html += '<p class="note">Se chi risponde al telefono è anche chi fa il lavoro, molte di queste domande le fate già a mente, in tempo reale. Il copione aggiunge struttura, ma il vantaggio vero cresce quando chi risponde non è la stessa persona che poi va sul posto.</p>';
+    }
+    document.getElementById("script").innerHTML = html;
+
+    var count = cats.length;
+    document.getElementById("status").textContent = count + "/6 domande + preventivo · copione aggiornato";
+
+    // reset copy button label
+    var cb = document.getElementById("copyBtn");
+    cb.classList.remove("copied"); cb.textContent = "Copia il copione";
+  }
+
+  function plainText(){
+    var t = TRADES[state.trade];
+    var lines = [];
+    lines.push("COPIONE DI QUALIFICAZIONE PRE-SOPRALLUOGO — " + t.label.toUpperCase());
+    lines.push("");
+    lines.push("Buongiorno, [la vostra impresa]. Come posso aiutarla?");
+    lines.push("");
+    var cats = activeCats(); var n = 0;
+    for(var i=0;i<cats.length;i++){
+      var s = buildStep(cats[i]); n++;
+      lines.push(n + ". [" + s.label + "] " + s.q);
+      if(s.fb && s.fb.length){
+        lines.push("   Se la foto non arriva, domande di riserva:");
+        for(var k=0;k<s.fb.length;k++){ lines.push("   - " + s.fb[k]); }
+      }
+      lines.push("");
+    }
+    var pv = preventivoStep(); n++;
+    lines.push(n + ". [" + pv.label + "] " + pv.q);
+    lines.push("");
+    lines.push("Nota di gestione: " + CLOSER);
+    if(state.sameName){
+      lines.push("");
+      lines.push("Promemoria: se chi risponde è anche chi fa il lavoro, il copione aggiunge struttura ma poco al giudizio che c'è già.");
+    }
+    return lines.join("\n");
+  }
+
+  function copyScript(){
+    var text = plainText();
+    var cb = document.getElementById("copyBtn");
+    function ok(){ cb.classList.add("copied"); cb.textContent = "Copiato ✓"; }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok, fallback);
+    } else { fallback(); }
+    function fallback(){
+      try{
+        var ta = document.createElement("textarea");
+        ta.value = text; ta.setAttribute("readonly",""); ta.style.position="absolute"; ta.style.left="-9999px";
+        document.body.appendChild(ta); ta.select(); document.execCommand("copy"); document.body.removeChild(ta); ok();
+      }catch(e){ cb.textContent = "Selezionate e copiate manualmente"; }
+    }
+  }
+
+  // wiring
+  var tradeBtns = document.querySelectorAll(".trade-btn");
+  for(var i=0;i<tradeBtns.length;i++){
+    tradeBtns[i].addEventListener("click", function(){
+      state.trade = this.getAttribute("data-trade");
+      for(var j=0;j<tradeBtns.length;j++){ tradeBtns[j].setAttribute("aria-pressed", tradeBtns[j]===this ? "true":"false"); }
+      render();
+    });
+  }
+
+  document.getElementById("chips").addEventListener("click", function(e){
+    var b = e.target.closest ? e.target.closest(".chip") : null;
+    if(!b) return;
+    var c = b.getAttribute("data-cat");
+    state.included[c] = !state.included[c];
+    render();
+  });
+
+  document.getElementById("zona").addEventListener("input", function(){ state.zona = this.value; render(); });
+  document.getElementById("richiamata").addEventListener("input", function(){ state.richiamata = this.value; render(); });
+  document.getElementById("hasBand").addEventListener("change", function(){
+    state.hasBand = this.checked;
+    document.getElementById("bandBox").hidden = !this.checked;
+    render();
+  });
+  document.getElementById("bandFrom").addEventListener("input", function(){ state.bandFrom = this.value; render(); });
+  document.getElementById("bandTo").addEventListener("input", function(){ state.bandTo = this.value; render(); });
+  document.getElementById("sameName").addEventListener("change", function(){ state.sameName = this.checked; render(); });
+  document.getElementById("copyBtn").addEventListener("click", copyScript);
+
+  render();
+})();
+</script>

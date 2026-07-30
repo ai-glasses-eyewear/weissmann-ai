@@ -1,0 +1,397 @@
+<title>Seitenzahl-Rechner für KMU-Websites · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .grid{margin-top:18px;display:grid;grid-template-columns:1fr;gap:14px}
+  .section-h{font-size:1.05rem;margin:0 0 2px;letter-spacing:-.01em}
+  .section-s{margin:0;color:var(--ink-mute);font-size:.86rem}
+  .fields{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
+  @media(min-width:640px){.fields{grid-template-columns:1fr 1fr}}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field-full{grid-column:1/-1}
+  .field label{font-weight:600;font-size:.94rem}
+  .field .hint{font-size:.8rem;color:var(--ink-mute);line-height:1.45}
+  .numrow{display:flex;align-items:center;gap:8px}
+  .numrow button{width:40px;height:44px;border:1.5px solid var(--line);background:var(--soft);color:var(--ink);border-radius:10px;font-size:1.2rem;font-weight:700;cursor:pointer;line-height:1;flex:0 0 auto}
+  .numrow button:hover{border-color:var(--navy)}
+  .numrow input{width:72px;height:44px;text-align:center;font-size:1.05rem;font-weight:700;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;font-family:var(--font)}
+  input[type=number]{-moz-appearance:textfield}input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .seg{display:flex;gap:8px;flex-wrap:wrap}
+  .seg label{flex:1 1 180px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;display:flex;gap:9px;align-items:flex-start;background:var(--card)}
+  .seg label:hover{border-color:var(--navy)}
+  .seg input{margin-top:3px;accent-color:var(--navy);width:16px;height:16px;flex:0 0 auto}
+  .seg .t{font-weight:600;font-size:.92rem}.seg .d{font-size:.78rem;color:var(--ink-mute);display:block;margin-top:2px}
+  .seg input:checked + .txt .t{color:var(--navy)}
+  .chk{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--line);border-radius:10px;padding:12px 13px;background:var(--card);cursor:pointer}
+  .chk:hover{border-color:var(--navy)}
+  .chk input{margin-top:3px;accent-color:var(--navy);width:16px;height:16px;flex:0 0 auto}
+  .chk .t{font-weight:600;font-size:.92rem}.chk .d{font-size:.79rem;color:var(--ink-mute);display:block;margin-top:2px}
+
+  .out{margin-top:16px;display:grid;gap:14px}
+  .rangecard{background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2.4vw,22px)}
+  .rangecard .lbl{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 4px}
+  .rangebig{font-size:clamp(1.7rem,4.5vw,2.4rem);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:0;color:var(--ink)}
+  .rangebig small{font-size:.9rem;font-weight:600;color:var(--ink-soft)}
+  .rangenote{margin:8px 0 0;font-size:.9rem;color:var(--ink-soft)}
+  table.lines{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:4px}
+  table.lines caption{text-align:left;font-weight:700;font-size:.95rem;margin-bottom:8px}
+  table.lines th,table.lines td{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+  table.lines td.val{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap;color:var(--navy)}
+  table.lines tr.total td{border-top:2px solid var(--line);border-bottom:none;font-weight:800;padding-top:11px}
+  .band{border-radius:var(--radius);padding:clamp(14px,2.2vw,20px);border:1px solid var(--line)}
+  .band.b-starter{background:var(--ok-soft)}.band.b-plus{background:var(--warn-soft)}.band.b-business{background:var(--accent-soft)}.band.b-individual{background:var(--soft)}
+  .band .tag{display:inline-block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--card);border:1px solid var(--line);margin-bottom:8px}
+  .band h3{margin:0 0 6px;font-size:1.08rem}
+  .band p{margin:0 0 6px;font-size:.92rem;color:var(--ink-soft)}
+  .band .price{font-weight:700;color:var(--ink)}
+  .test{border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,2.2vw,20px);background:var(--card)}
+  .test h3{margin:0 0 4px;font-size:1.02rem}
+  .test .rule{font-size:.86rem;color:var(--ink-soft);margin:0 0 10px}
+  .test ul{margin:0;padding-left:1.15em}.test li{margin:6px 0;font-size:.9rem}
+  .warnbox{background:var(--warn-soft);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:.87rem;color:var(--ink-soft)}
+  .warnbox strong{color:var(--ink)}
+  .sumwrap{border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,2.2vw,18px);background:var(--card)}
+  .sumwrap h3{margin:0 0 8px;font-size:1rem}
+  .sumwrap textarea{width:100%;min-height:130px;border:1.5px solid var(--line);border-radius:10px;background:var(--soft);color:var(--ink);font-family:var(--mono);font-size:.82rem;padding:11px 12px;resize:vertical;line-height:1.5}
+  .copybtn{margin-top:10px;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);font-weight:600;font-size:.9rem;padding:11px 16px;border-radius:10px;cursor:pointer;min-height:44px}
+  .copybtn:hover{background:var(--navy-hover)}
+  .copybtn.done{background:var(--ok);border-color:var(--ok)}
+  input:focus-visible,button:focus-visible,textarea:focus-visible,label:focus-within{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent);border-radius:10px}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">Weissmann KI-Academy · KI-Marketing, SEO &amp; GEO</p>
+  <h1>Wie viele Seiten braucht Ihre KMU-Website wirklich?</h1>
+  <p class="lede">Die richtige Seitenzahl ergibt sich <strong>nicht</strong> aus einer Formel wie «Leistungen mal Standorte», sondern aus vier Variablen. Zählen Sie sie ehrlich durch – dieses Werkzeug macht daraus eine begründete Grössenordnung, keine Verkaufsvorgabe.</p>
+
+  <form class="card card-pad grid" id="form" autocomplete="off">
+    <div>
+      <h2 class="section-h">Die vier Variablen</h2>
+      <p class="section-s">Zählen Sie nur, was einer eigenen Seite tatsächlich würdig ist. Beispiel-Hinweise stammen aus dem Leitfaden.</p>
+    </div>
+
+    <div class="fields">
+      <div class="field">
+        <label for="svc">Echt unterscheidbare Leistungen</label>
+        <div class="numrow">
+          <button type="button" data-step="-1" data-t="svc" aria-label="Leistungen verringern">−</button>
+          <input type="number" id="svc" min="1" max="40" step="1" value="1" inputmode="numeric" aria-describedby="svc-h">
+          <button type="button" data-step="1" data-t="svc" aria-label="Leistungen erhöhen">+</button>
+        </div>
+        <span class="hint" id="svc-h">Angebote, die je eine eigene Kaufentscheidung mit eigener Suchintention auslösen. Vier Reinigungsarten mit anderen Kund:innen, Preisen, Abläufen = vier echte Leistungen. Drei Grössen desselben Gartenhäuschens = eine Leistung.</span>
+      </div>
+
+      <div class="field">
+        <label for="aud">Unterschiedlich anzusprechende Zielgruppen</label>
+        <div class="numrow">
+          <button type="button" data-step="-1" data-t="aud" aria-label="Zielgruppen verringern">−</button>
+          <input type="number" id="aud" min="1" max="20" step="1" value="1" inputmode="numeric" aria-describedby="aud-h">
+          <button type="button" data-step="1" data-t="aud" aria-label="Zielgruppen erhöhen">+</button>
+        </div>
+        <span class="hint" id="aud-h">Gruppen mit anderer Ansprache, anderen Beweisen, anderem Call-to-Action. Privatpatient:innen und Zuweiser:innen = zwei Zielgruppen – nicht dieselbe zweimal beschrieben.</span>
+      </div>
+
+      <div class="field">
+        <label for="loc">Standorte mit eigenständigem lokalem Inhalt</label>
+        <div class="numrow">
+          <button type="button" data-step="-1" data-t="loc" aria-label="Standorte verringern">−</button>
+          <input type="number" id="loc" min="1" max="30" step="1" value="1" inputmode="numeric" aria-describedby="loc-h">
+          <button type="button" data-step="1" data-t="loc" aria-label="Standorte erhöhen">+</button>
+        </div>
+        <span class="hint" id="loc-h">Nur Standorte mit eigenem Team, eigenen Öffnungszeiten, eigenen Bewertungen. Ein Standort mit bloss ausgetauschtem Ortsnamen im selben Text zählt hier nicht mit. Ein einzelner Standort läuft über Start-/Kontaktseite.</span>
+      </div>
+
+      <div class="field">
+        <label for="cycle-short">Länge des Sales-Cycle</label>
+        <div class="seg" role="radiogroup" aria-label="Länge des Sales-Cycle">
+          <label><input type="radio" name="cycle" id="cycle-short" value="short" checked><span class="txt"><span class="t">Kurz</span><span class="d">Spontanentscheidung in Tagen</span></span></label>
+          <label><input type="radio" name="cycle" value="long"><span class="txt"><span class="t">Lang</span><span class="d">Investition über Monate</span></span></label>
+        </div>
+        <span class="hint">Bei kurzer Entscheidung reicht eine kompakte Struktur. Bei langer, informationsintensiver Entscheidung baut zusätzlicher Content über mehrere Besuche Vertrauen auf.</span>
+      </div>
+
+      <div class="field field-full">
+        <label class="chk" for="catch">
+          <input type="checkbox" id="catch">
+          <span><span class="t">Weitere Orte im Einzugsgebiet ohne eigenständigen Inhalt</span><span class="d">Orte, die Sie beliefern, aber ohne eigenes Team/eigene Referenzen. Sie werden auf einer einzigen Einzugsgebiets-Übersicht mit Karte und Adressliste gebündelt – nicht einzeln dupliziert.</span></span>
+        </label>
+      </div>
+
+      <div class="field field-full">
+        <label class="chk" for="special">
+          <input type="checkbox" id="special">
+          <span><span class="t">Sonderfall: Mehrsprachiger Betrieb, Mitgliederbereich oder E-Commerce nötig</span><span class="d">Ab diesem Umfang lohnt sich laut Leitfaden ein individuelles Projekt statt eines Standardpakets – unabhängig von der reinen Seitenzahl.</span></span>
+        </label>
+      </div>
+    </div>
+  </form>
+
+  <div class="out" id="out" aria-live="polite">
+    <!-- gefüllt per JS -->
+  </div>
+
+  <div class="test" style="margin-top:14px">
+    <h3>Der Drei-Fragen-Test – für jede geplante Seite einzeln</h3>
+    <p class="rule">Die vier Variablen öffnen nur die Kandidatenliste. Jede zusätzliche Seite muss <strong>mindestens zwei von drei</strong> Tests bestehen, sonst ist sie eine Zeile auf einer bestehenden Seite, keine eigene:</p>
+    <ul>
+      <li><strong>Eigene Suchintention:</strong> Sucht jemand explizit danach – mit einer Anfrage, die sich von den anderen Kandidaten unterscheidet, nicht nur eine Variante derselben?</li>
+      <li><strong>Eigener Inhalt:</strong> Gibt es echten, eigenständigen Inhalt – Beweise, Beispiele, Zahlen, Fotos –, der nicht praktisch identisch auf der Nachbarseite steht?</li>
+      <li><strong>Eigene Pflege:</strong> Hält jemand im Betrieb diese Seite in einem Jahr noch aktuell – oder wird sie beim ersten Preiswechsel vergessen?</li>
+    </ul>
+  </div>
+
+  <p class="disc">Orientierung, kein Angebot und keine verbindliche Umfangsberatung. Die Seitenzahl ergibt sich nicht aus einer Formel, sondern aus einer ehrlichen Prüfung jeder einzelnen Seite. Fünf starke Seiten schlagen fünfzig schwache. Alle Grössenordnungen und Beispiele stammen aus dem zugehörigen Leitfaden; die Preise aus dem Weissmann-Leistungsangebot. Ihre Eingaben bleiben lokal in Ihrem Browser – nichts wird gespeichert oder gesendet.</p>
+
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Weiterlesen &amp; umsetzen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/marketing-seo-geo/website-seitenanzahl-kmu/" target="_blank" rel="noopener noreferrer" aria-label="Ganzen Leitfaden zur Seitenzahl von KMU-Websites lesen (opens in a new tab)">Ganzen Leitfaden lesen →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-webentwicklung/" target="_blank" rel="noopener noreferrer" aria-label="KI-Webentwicklung: Seitenzahl im Erstgespräch gemeinsam durchzählen (opens in a new tab)">KI-Webentwicklung: Seitenzahl gemeinsam durchzählen →</a>
+    </div>
+    <p class="att">Weissmann KI-Academy · Begleit-Werkzeug zum Leitfaden. Orientierung, kein Angebot.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(id){return document.getElementById(id);};
+  var out=$("out");
+
+  function clampVal(el){
+    var v=parseInt(el.value,10);
+    var min=parseInt(el.min,10), max=parseInt(el.max,10);
+    if(isNaN(v)) v=min;
+    if(v<min) v=min;
+    if(v>max) v=max;
+    el.value=v;
+    return v;
+  }
+
+  function esc(s){return String(s).replace(/[&<>]/g,function(c){return c==="&"?"&amp;":c==="<"?"&lt;":"&gt;";});}
+
+  function pluralS(n){return n===1?"":"en";}
+
+  function compute(){
+    var S=clampVal($("svc"));
+    var A=clampVal($("aud"));
+    var L=clampVal($("loc"));
+    var catchment=$("catch").checked;
+    var special=$("special").checked;
+    var cycle=document.querySelector('input[name=cycle]:checked').value;
+    var longCycle=(cycle==="long");
+
+    var onePager=(S<=1 && A<=1 && L<=1 && !catchment && !longCycle);
+
+    // Line items: [label, low, high]. Grounded in the guide's worked example
+    // (Startseite, Kontakt, Über uns + Leistungs-, Zielgruppen-, Standort- und
+    // Einzugsgebietsseiten) — a reasoned count, never a fixed formula.
+    var items=[];
+    var lowTotal=0, highTotal=0;
+
+    if(onePager){
+      items.push(["One-Pager mit Anker-Navigation (eine Leistung, eine Zielgruppe, ein Standort, kurze Entscheidung)",1,1]);
+      items.push(["Optional getrennt: Über uns · Referenzen · Kontakt",0,4]);
+      lowTotal=1; highTotal=5;
+    } else {
+      var core=3;
+      items.push(["Kernseiten: Startseite, Über uns, Kontakt",core,core]);
+
+      var svcPages=S; // jede echte Leistung eine Seite
+      items.push(["Leistungsseiten ("+S+" echte Leistung"+pluralS(S)+")",svcPages,svcPages]);
+
+      var audPages=Math.max(0,A-1); // Hauptzielgruppe läuft in den Leistungsseiten mit
+      if(audPages>0){
+        items.push(["Zielgruppen-Seiten (zusätzlich zur Hauptzielgruppe)",audPages,audPages]);
+      } else {
+        items.push(["Zielgruppen-Seiten (eine Zielgruppe – läuft in den Leistungsseiten mit)",0,0]);
+      }
+
+      var locPages=(L>=2)?L:0;
+      if(L>=2){
+        items.push(["Standort-Seiten ("+L+" Standorte mit eigenem Inhalt)",locPages,locPages]);
+      } else {
+        items.push(["Standort-Seiten (ein Standort – läuft über Start/Kontakt)",0,0]);
+      }
+
+      var catPages=catchment?1:0;
+      if(catchment) items.push(["Einzugsgebiets-Übersicht (weitere Orte gebündelt)",1,1]);
+
+      var kLow=longCycle?1:0, kHigh=longCycle?3:0;
+      if(longCycle){
+        items.push(["Wissens-/Blogbereich (Vertrauensaufbau über langen Sales-Cycle)",kLow,kHigh]);
+      }
+
+      items.push(["Referenzen-Seite (optional, eigenständig)",0,1]);
+
+      for(var i=0;i<items.length;i++){lowTotal+=items[i][1];highTotal+=items[i][2];}
+    }
+
+    if(highTotal<lowTotal) highTotal=lowTotal;
+
+    // Band relation
+    var band;
+    if(special) band="individual";
+    else if(onePager) band="starter";
+    else if(highTotal<=5) band="starter";
+    else if(lowTotal>=20) band="individual";
+    else if(highTotal>=10 || lowTotal>=10) band="business";
+    else band="plus";
+
+    return {S:S,A:A,L:L,catchment:catchment,special:special,longCycle:longCycle,
+      onePager:onePager,items:items,low:lowTotal,high:highTotal,band:band};
+  }
+
+  function rangeText(r){
+    if(r.low===r.high) return "etwa "+r.low+" Seite"+(r.low===1?"":"n");
+    return "etwa "+r.low+"–"+r.high+" Seiten";
+  }
+
+  function bandCard(r){
+    var tag,h,p;
+    if(r.band==="starter"){
+      tag="Bis rund fünf Kernseiten";
+      h="Starter-Bereich";
+      p='Startseite, Angebot, Über uns, Referenzen, Kontakt – der Rahmen der <span class="price">Starter Website: CHF 880 Aktionspreis (regulär CHF 2’490)</span>, bis zu 5 Kernseiten, 1 Sprache, 2 definierte Korrekturrunden.';
+    } else if(r.band==="plus"){
+      tag="Über dem Starter-Rahmen";
+      h="Zwischen Starter und Business";
+      p='Ihre ehrliche Zählung liegt über den rund fünf Kernseiten des Starter-Rahmens (<span class="price">CHF 880</span>), aber noch unter der 10-Seiten-Marke, ab der sich laut Leitfaden eine <span class="price">Business Website (CHF 4’990)</span> klar lohnt. Genau hier lohnt sich ein Gespräch über den konkreten Umfang besonders.';
+    } else if(r.band==="business"){
+      tag="Rund zehn bis zwanzig Seiten";
+      h="Business-Bereich";
+      p='Mehrere echte Leistungen, teils mehrere Zielgruppen oder Standorte, oft mit Blog- oder Wissensbereich – der Bereich der <span class="price">Business Website: CHF 4’990</span>.';
+    } else {
+      tag="Grössere, individuelle Architektur";
+      h="Individuelles Projekt";
+      p='Viele echte Leistungen, mehrsprachiger Betrieb, Mitgliederbereiche oder E-Commerce – ab diesem Umfang lohnt sich ein <span class="price">individuelles Projekt (ab CHF 9’900)</span> statt eines Standardpakets.';
+    }
+    var cls={starter:"b-starter",plus:"b-plus",business:"b-business",individual:"b-individual"}[r.band];
+    return '<div class="band '+cls+'"><span class="tag">'+esc(tag)+'</span><h3>'+esc(h)+'</h3><p>'+p+'</p></div>';
+  }
+
+  function doorwayBox(r){
+    if(!r.catchment && r.L<3) return "";
+    return '<div class="warnbox"><strong>Vorsicht Doorway-Seiten.</strong> Nur Standorte mit echtem, unterscheidbarem Inhalt bekommen eine eigene Seite; alle übrigen Orte landen gebündelt auf einer einzigen Übersichtsseite mit Karte und Adressliste. Mehrere fast identische Seiten, in denen nur ein Ortsname ausgetauscht ist, erfüllen technisch Googles Definition von Doorway-Seiten – ein Verstoss gegen die Spam-Richtlinien, unabhängig von der guten Absicht dahinter.</div>';
+  }
+
+  function buildSummary(r){
+    var L=[];
+    L.push("Meine ehrliche Seitenzählung – Weissmann-Leitfaden");
+    L.push("========================================");
+    L.push("Echt unterscheidbare Leistungen: "+r.S);
+    L.push("Unterschiedliche Zielgruppen: "+r.A);
+    L.push("Standorte mit eigenem Inhalt: "+r.L);
+    L.push("Weitere Orte im Einzugsgebiet: "+(r.catchment?"ja (gebündelt)":"nein"));
+    L.push("Sales-Cycle: "+(r.longCycle?"lang (Monate)":"kurz (Tage)"));
+    if(r.special) L.push("Sonderfall: mehrsprachig / Mitgliederbereich / E-Commerce");
+    L.push("");
+    L.push("Aufschlüsselung:");
+    for(var i=0;i<r.items.length;i++){
+      var it=r.items[i];
+      var v=(it[1]===it[2])?String(it[1]):(it[1]+"–"+it[2]);
+      L.push("  - "+it[0]+": "+v);
+    }
+    L.push("");
+    L.push("Begründete Grössenordnung: "+rangeText(r));
+    var bl={starter:"Starter-Bereich (bis ~5 Kernseiten)",plus:"zwischen Starter und Business",business:"Business-Bereich (~10–20 Seiten)",individual:"individuelles Projekt"}[r.band];
+    L.push("Einordnung: "+bl);
+    L.push("");
+    L.push("Hinweis: Grössenordnung, keine Formel. Jede geplante Seite muss");
+    L.push("mindestens zwei von drei Tests bestehen (eigene Suchintention,");
+    L.push("eigener Inhalt, eigene Pflege). Fünf starke Seiten schlagen fünfzig schwache.");
+    return L.join("\n");
+  }
+
+  function render(){
+    var r=compute();
+    var rows="";
+    for(var i=0;i<r.items.length;i++){
+      var it=r.items[i];
+      var v=(it[1]===it[2])?String(it[1]):(it[1]+"–"+it[2]);
+      rows+='<tr><td>'+esc(it[0])+'</td><td class="val">'+v+'</td></tr>';
+    }
+    var totalV=(r.low===r.high)?String(r.low):(r.low+"–"+r.high);
+
+    var html="";
+    html+='<div class="rangecard"><p class="lbl">Ehrlich durchgezählt</p>'+
+          '<p class="rangebig">'+esc(rangeText(r))+' <small>begründete Grössenordnung, keine Formel</small></p>'+
+          '<p class="rangenote">'+(r.onePager
+             ? 'Alle vier Variablen sind minimal: Ein gut geschriebener One-Pager mit Anker-Navigation ist hier oft überzeugender als fünf halb gefüllte Unterseiten.'
+             : 'Keine Verkaufsvorgabe – ein Massstab, um Ihre eigene Zahl grob einzuordnen, bevor Sie mit einer Agentur über den Umfang sprechen.')+'</p></div>';
+
+    html+='<div class="card card-pad"><table class="lines"><caption>Woraus sich die Zahl zusammensetzt</caption><tbody>'+
+          rows+
+          '<tr class="total"><td>Summe</td><td class="val">'+totalV+' Seiten</td></tr>'+
+          '</tbody></table></div>';
+
+    html+=bandCard(r);
+
+    var dw=doorwayBox(r);
+    if(dw) html+=dw;
+
+    html+='<div class="sumwrap"><h3>Zusammenfassung für Ihr Erstgespräch</h3>'+
+          '<textarea id="sumtext" readonly aria-label="Zusammenfassung Ihrer Seitenzählung">'+esc(buildSummary(r))+'</textarea>'+
+          '<button type="button" class="copybtn" id="copybtn">Zusammenfassung kopieren</button></div>';
+
+    out.innerHTML=html;
+
+    var btn=$("copybtn");
+    if(btn){
+      btn.addEventListener("click",function(){
+        var ta=$("sumtext");
+        var txt=ta?ta.value:"";
+        var done=function(){btn.textContent="Kopiert ✓";btn.classList.add("done");
+          setTimeout(function(){btn.textContent="Zusammenfassung kopieren";btn.classList.remove("done");},1800);};
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(txt).then(done,function(){fallbackCopy(ta,done);});
+        } else { fallbackCopy(ta,done); }
+      });
+    }
+  }
+
+  function fallbackCopy(ta,done){
+    if(!ta) return;
+    ta.removeAttribute("readonly");
+    ta.focus(); ta.select();
+    try{ document.execCommand("copy"); done(); }catch(e){}
+    ta.setAttribute("readonly","readonly");
+    window.getSelection && window.getSelection().removeAllRanges();
+  }
+
+  // Stepper buttons
+  var steppers=document.querySelectorAll("button[data-step]");
+  for(var i=0;i<steppers.length;i++){
+    steppers[i].addEventListener("click",function(){
+      var el=$(this.getAttribute("data-t"));
+      var step=parseInt(this.getAttribute("data-step"),10);
+      el.value=parseInt(el.value,10)+step;
+      clampVal(el);
+      render();
+    });
+  }
+
+  $("form").addEventListener("input",render);
+  $("form").addEventListener("change",render);
+
+  render();
+})();
+</script>

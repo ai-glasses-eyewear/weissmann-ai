@@ -1,0 +1,509 @@
+<title>Website-Launch-Fahrplan in fester Reihenfolge · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .disclose{font-size:.88rem;color:var(--ink-soft);background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:12px 14px;margin:16px 0 0;line-height:1.5}
+  .disclose strong{color:var(--ink)}
+
+  /* setup */
+  .setup{margin-top:18px}
+  .setup-grid{display:grid;gap:16px}
+  @media(min-width:640px){.setup-grid{grid-template-columns:1fr 1fr}}
+  .field{display:flex;flex-direction:column;gap:8px;min-width:0}
+  .field label,.field-label{font-weight:600;font-size:.9rem}
+  .field .hint{font-size:.8rem;color:var(--ink-mute);font-weight:400}
+  input[type="text"],input[type="date"]{font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);width:100%}
+  input[type="text"]:focus-visible,input[type="date"]:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+  .seg{display:flex;flex-wrap:wrap;gap:8px}
+  .seg-opt{position:relative;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:1px solid var(--line);background:var(--card);border-radius:9px;padding:9px 12px;font-size:.9rem;color:var(--ink-soft)}
+  .seg-opt input{position:absolute;opacity:0;width:1px;height:1px}
+  .seg-opt:focus-within{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent);border-color:var(--navy)}
+  .seg-opt.on{background:var(--accent-soft);border-color:var(--accent);color:var(--ink);font-weight:600}
+
+  .modebanner{margin-top:14px;font-size:.9rem;color:var(--ink-soft);background:var(--soft);border-radius:10px;padding:11px 14px;line-height:1.5}
+  .modebanner strong{color:var(--ink)}
+
+  /* overall progress */
+  .overall{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+  .bar{flex:1 1 220px;height:12px;background:var(--soft);border:1px solid var(--line);border-radius:99px;overflow:hidden;min-width:180px}
+  .bar>span{display:block;height:100%;width:0;background:var(--ok);transition:width .25s ease}
+  .overall .pct{font-weight:700;font-size:.95rem;font-variant-numeric:tabular-nums;color:var(--ink)}
+
+  /* phases */
+  .board{margin-top:8px;display:grid;gap:16px}
+  .phase{position:relative}
+  .phase.locked .phase-body{opacity:.55}
+  .ph-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;padding-bottom:2px}
+  .ph-num{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--navy)}
+  .ph-title{font-size:1.14rem;font-weight:700;margin:0;letter-spacing:-.01em}
+  .ph-when{font-size:.82rem;color:var(--ink-mute);font-weight:600}
+  .pill{margin-left:auto;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:99px;border:1px solid var(--line);white-space:nowrap}
+  .pill.locked{background:var(--soft);color:var(--ink-mute)}
+  .pill.active{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+  .pill.done{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+  .ph-tag{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:7px;background:var(--miss-soft);color:var(--miss);margin-top:2px}
+  .phase.p-active .ph-tag{background:var(--warn-soft);color:var(--warn)}
+  .ph-intro{font-size:.9rem;color:var(--ink-soft);margin:10px 0 0;line-height:1.5}
+  .ph-count{font-size:.82rem;color:var(--ink-mute);font-weight:600;margin:8px 0 2px}
+
+  .lockmsg{display:flex;gap:9px;align-items:flex-start;font-size:.88rem;color:var(--ink-soft);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin-top:12px;line-height:1.5}
+  .lockmsg .ic{flex:none;font-weight:700;color:var(--ink-mute)}
+
+  ul.items{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+  .item{display:flex;gap:11px;align-items:flex-start;border:1px solid var(--line);border-radius:11px;padding:11px 13px;background:var(--card)}
+  .item.checked{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 40%,var(--line))}
+  .item input[type="checkbox"]{margin:2px 0 0;width:20px;height:20px;flex:none;accent-color:var(--ok);cursor:pointer}
+  .item input[type="checkbox"]:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+  .item.disabled input[type="checkbox"]{cursor:not-allowed}
+  .item .body{min-width:0}
+  .item .txt{font-size:.94rem;color:var(--ink);line-height:1.45}
+  .item.checked .txt{color:var(--ink-soft)}
+  .opt{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:1px 7px;margin-left:7px;vertical-align:middle}
+  .note{display:flex;gap:7px;font-size:.82rem;color:var(--warn);background:var(--warn-soft);border-radius:8px;padding:7px 10px;margin-top:8px;line-height:1.45}
+  .note .ic{flex:none;font-weight:700}
+  .phasenote{font-size:.85rem;color:var(--ink-soft);background:var(--soft);border-radius:10px;padding:10px 13px;margin-top:12px;line-height:1.5}
+
+  /* actions */
+  .actions{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .btn{font:inherit;font-weight:600;font-size:.95rem;cursor:pointer;border-radius:11px;padding:12px 18px;min-height:48px;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy)}
+  .btn:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  .btn.ghost{background:transparent;color:var(--navy)}
+  .btn.ghost:hover{background:var(--soft)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .status{font-size:.86rem;color:var(--ok);font-weight:600;min-height:1.2em}
+
+  .out-wrap{margin-top:14px}
+  .out-wrap label{font-weight:600;font-size:.9rem;display:block;margin-bottom:7px}
+  textarea.out{width:100%;min-height:150px;font-family:var(--mono);font-size:.82rem;line-height:1.55;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:11px;padding:12px 13px;resize:vertical}
+  textarea.out:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 22%,transparent)}
+
+  details.ref{margin-top:16px}
+  details.ref>summary{cursor:pointer;font-weight:600;font-size:.95rem;padding:14px 16px;list-style:none;display:flex;align-items:center;gap:9px}
+  details.ref>summary::-webkit-details-marker{display:none}
+  details.ref>summary .chev{margin-left:auto;transition:transform .2s ease;color:var(--ink-mute)}
+  details.ref[open]>summary .chev{transform:rotate(90deg)}
+  details.ref .rc{padding:0 16px 16px}
+  ul.reflist{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  ul.reflist li{font-size:.9rem;color:var(--ink-soft);line-height:1.5;padding-left:20px;position:relative}
+  ul.reflist li::before{content:"—";position:absolute;left:0;color:var(--ink-mute)}
+  ul.reflist li b{color:var(--ink)}
+
+  /* footer link band */
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<main class="wrap">
+  <header>
+    <p class="kicker">Launch-Fahrplan für neue Websites</p>
+    <h1>Website-Launch-Fahrplan in fester Reihenfolge</h1>
+    <p class="lede">Eine neue Website wird nicht an einem einzigen Tag sichtbar, sondern in einer festen Reihenfolge, die sich nicht abkürzen lässt. Haken Sie die Punkte Phase für Phase ab &ndash; Tag eins, Woche eins, Monat eins. Jede Phase öffnet sich erst, wenn die blockierende Basis davor steht.</p>
+  </header>
+
+  <section class="card card-pad setup" aria-label="Einstellungen">
+    <div class="setup-grid">
+      <div class="field">
+        <span class="field-label" id="modeLbl">Ausgangslage</span>
+        <div class="seg" role="radiogroup" aria-labelledby="modeLbl">
+          <label class="seg-opt on"><input type="radio" name="mode" value="neu" checked> Neue Website (Launch)</label>
+          <label class="seg-opt"><input type="radio" name="mode" value="nachhol"> Läuft schon (Nachhol-Liste)</label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="biz">Unternehmen <span class="hint">(optional, nur für den Export)</span></label>
+        <input type="text" id="biz" maxlength="70" placeholder="[Ihr Unternehmen]" autocomplete="off" inputmode="text">
+      </div>
+    </div>
+    <div class="setup-grid" style="margin-top:16px">
+      <div class="field" id="dateField">
+        <label for="ldate">Geplanter Launch-Tag <span class="hint">(optional &ndash; setzt die Zeitfenster)</span></label>
+        <input type="date" id="ldate">
+      </div>
+    </div>
+    <p class="modebanner" id="modeBanner" aria-live="polite"></p>
+  </section>
+
+  <div class="disclose">
+    <strong>Wo die Technik herkommt.</strong> Die technische Tag-eins-Basis &ndash; Crawlbarkeit, Sitemap-Datei, Organization-Schema, Google Analytics 4 und Search Console &ndash; gehört zum technischen SEO-/GEO-Fundament der Starter Website (CHF 880 Aktionspreis, regulär CHF 2&rsquo;490; bis zu 5 Kernseiten, 1 Sprache, 2 Korrekturrunden, Netlify-Hosting; Texterstellung, weitere Sprachen und kostenpflichtige Drittanbieter-Tools nicht enthalten). Das aktive Einreichen sowie die Bestätigung des Google-Unternehmensprofils erfordern laut dem Artikel fast immer eine Bestätigung durch Sie selbst &ndash; per E-Mail oder Anruf &ndash;, die niemand stellvertretend erledigt.
+  </div>
+
+  <div class="overall" aria-label="Gesamtfortschritt">
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="ovBar"><span id="ovFill"></span></div>
+    <span class="pct" id="ovPct">0&thinsp;% &middot; 0 von 19 erledigt</span>
+  </div>
+
+  <section class="board" id="board" aria-label="Launch-Fahrplan Phasen"></section>
+
+  <div class="actions">
+    <button type="button" class="btn" id="copyBtn">Fahrplan als Text kopieren</button>
+    <button type="button" class="btn ghost" id="resetBtn">Zurücksetzen</button>
+    <span class="status" id="copyStatus" role="status" aria-live="polite"></span>
+  </div>
+
+  <div class="out-wrap">
+    <label for="out">Ihr Fahrplan (Textexport &ndash; bleibt nur in diesem Tab)</label>
+    <textarea class="out" id="out" readonly aria-label="Fahrplan als Text"></textarea>
+  </div>
+
+  <details class="ref card">
+    <summary>Was NICHT funktioniert: sieben Launch-Mythen <span class="chev" aria-hidden="true">&#8250;</span></summary>
+    <div class="rc">
+      <ul class="reflist">
+        <li><b>&laquo;Es gibt ein spezielles GEO-Schema.&raquo;</b> Es gibt den offenen schema.org-Standard mit Typen wie Article, FAQPage und Organization &ndash; kein separates, proprietäres GEO-Format.</li>
+        <li><b>&laquo;llms.txt verbessert das Google-Ranking.&raquo;</b> llms.txt ist kein Rankingsignal für die klassische Suche, sondern höchstens ein optionaler Wegweiser für KI-Crawler.</li>
+        <li><b>&laquo;Man kann eine Erwähnung in ChatGPT buchen.&raquo;</b> Es gibt kein Einreichformular für KI-Antworten, und kein seriöser Anbieter kontrolliert, was ein Sprachmodell im Einzelfall ausgibt.</li>
+        <li><b>&laquo;Mehr Schema-Typen = mehr Sichtbarkeit.&raquo;</b> Auszeichnung ohne echten, sichtbaren Inhalt bringt nichts &ndash; übertriebenes Markup wirkt eher misstrauisch als hilfreich.</li>
+        <li><b>&laquo;Nach zwei Tagen nicht bei Google = falsch gebaut.&raquo;</b> Bei einer technisch sauberen Seite ist das meistens die normale Wartezeit, kein Baufehler.</li>
+        <li><b>&laquo;GEO zuerst, die technische Basis kommt später.&raquo;</b> Ohne crawlbare, indexierte Seite gibt es für kein KI-System etwas zu finden &ndash; die Reihenfolge lässt sich nicht umdrehen.</li>
+        <li><b>&laquo;Ein Launch-Tag reicht, danach ist die Arbeit erledigt.&raquo;</b> Ab Monat zwei ist Sichtbarkeit eine fortlaufende Aufgabe, kein einmalig abgeschlossenes Projekt.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="ref card">
+    <summary>Wann dieser Fahrplan nicht Ihre grösste Baustelle ist <span class="chev" aria-hidden="true">&#8250;</span></summary>
+    <div class="rc">
+      <ul class="reflist">
+        <li>Eine reine <b>Kampagnen-Landingpage</b> für bezahlten Traffic, die nie organisch gefunden werden soll &ndash; hier zählen Ladezeit und Formular mehr als eine Indexierungs-Strategie.</li>
+        <li><b>Interne Tools, Kundenportale oder Terminseiten</b>, die absichtlich nicht öffentlich auffindbar sein sollen &ndash; hier ist ein gezieltes noindex gewünscht, kein Sichtbarkeits-Fahrplan.</li>
+        <li>Ein Geschäft, das bewusst <b>zu hundert Prozent über persönliche Empfehlungen</b> läuft und nicht über Suche gefunden werden will &ndash; das ist keine verpasste Chance, sondern eine legitime Entscheidung.</li>
+        <li>Eine Website, die <b>bereits seit Monaten live</b> ist, ohne diese Reihenfolge durchlaufen zu haben &ndash; dann wird der Fahrplan zur Nachhol-Liste, die Dringlichkeits-Reihenfolge bleibt dieselbe.</li>
+      </ul>
+    </div>
+  </details>
+
+  <p class="disc">Orientierungshilfe zum Academy-Artikel, kein Angebot und keine Rechts- oder Rankingberatung. Reihenfolge und Punkte stammen aus dem verlinkten Artikel. Google beziffert die Indexierung selbst mit einigen Tagen bis mehreren Wochen, ohne Garantie; KI-Zitate lassen sich weder erzwingen noch buchen. Ihre Eingaben bleiben ausschliesslich in diesem Browser-Tab &ndash; es wird nichts gespeichert oder gesendet.</p>
+
+  <footer class="linkbar" aria-label="Weiterlesen auf weissmann.ai">
+    <p class="lb-title">Weiterlesen auf weissmann.ai</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/marketing-seo-geo/website-launch-seo-geo-sichtbarkeit/" target="_blank" rel="noopener noreferrer" aria-label="Den vollständigen Artikel zum Website-Launch-Fahrplan auf weissmann.ai lesen (öffnet in einem neuen Tab)">Den vollständigen Launch-Fahrplan lesen &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-webentwicklung/" target="_blank" rel="noopener noreferrer" aria-label="Die KI-Webentwicklung von Weissmann ansehen (öffnet in einem neuen Tab)">KI-Webentwicklung von Weissmann &rarr;</a>
+    </div>
+    <p class="att">Reihenfolge und Inhalte aus dem Academy-Artikel &middot; eine Ergänzung zum Leitfaden. Orientierung, kein Angebot.</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  var PHASES = [
+    {
+      id:"p1", num:"Phase 1", title:"Tag eins", tag:"blockierend",
+      intro:"Muss feststehen, bevor die Website live geht &ndash; jede Korrektur an einer bereits gecrawlten, fehlerhaften Seite wirkt länger nach als eine, die von Anfang an stimmte.",
+      items:[
+        {id:"t1", text:"Crawlbarkeit bestätigt: robots.txt geprüft, kein versehentliches noindex aus der Testumgebung mit live gegangen.", note:"KI-Crawler nicht versehentlich in der robots.txt blockieren, weil eine generische Sicherheitsvorlage ungeprüft übernommen wurde."},
+        {id:"t2", text:"XML-Sitemap generiert &ndash; die Einreichung folgt in Woche eins, aber die Datei muss am Launch-Tag existieren und korrekt sein."},
+        {id:"t3", text:"Individuelle Seitentitel und Meta-Beschreibungen für jede einzelne Seite, nicht ein generischer Firmenname auf allen fünf."},
+        {id:"t4", text:"Organization-Schema mit korrektem Namen, URL, Logo und sameAs-Verweisen auf Handelsregister-Eintrag und LinkedIn."},
+        {id:"t5", text:"HTTPS aktiv und Canonical-Tags gesetzt, auch wenn vorerst nur eine URL-Variante existiert."},
+        {id:"t6", text:"Mobile Darstellung auf einem echten Smartphone geprüft, keine render-blockierenden Skripte."},
+        {id:"t7", text:"Google Analytics 4 und Search Console technisch eingebunden &ndash; das Property existiert, auch wenn die Verifizierung erst in Woche eins abgeschlossen wird."}
+      ]
+    },
+    {
+      id:"p2", num:"Phase 2", title:"Woche eins", tag:"aktiv auslösen",
+      intro:"Alles aus Tag eins ist im Code eingebaut. Was jetzt folgt, muss jemand aktiv auslösen &ndash; ein Klick, ein Formular, eine Bestätigungs-E-Mail. Eine Sitemap, die nur auf dem Server liegt, hat denselben Effekt wie keine.",
+      lock:"Zuerst die blockierenden Tag-eins-Punkte abschliessen. Eine bereits gecrawlte, fehlerhafte Version wirkt länger nach als eine, die von Anfang an stimmte.",
+      items:[
+        {id:"w1", text:"Sitemap aktiv in der Google Search Console einreichen, nicht nur auf dem Server ablegen."},
+        {id:"w2", text:"Für die wichtigsten Seiten über die URL-Prüfung eine Indexierung anfragen."},
+        {id:"w3", text:"Google-Unternehmensprofil anlegen oder beanspruchen &ndash; mit Namen, Adresse und Telefonnummer exakt identisch zur Website (NAP-Konsistenz).", note:"Eine Adresse oder Telefonnummer, die von der Website abweicht, verwirrt genau die lokalen Signale, die sie stärken soll."},
+        {id:"w4", text:"Strukturierte Daten mit Googles Rich-Results-Test und dem Schema.org-Validator gegenprüfen, nicht nur im Code vertrauen."},
+        {id:"w5", text:"Entität abgleichen: derselbe Name, dieselbe Adresse, dieselbe Kurzbeschreibung auf LinkedIn, im Handelsregister-Eintrag und auf der Website."},
+        {id:"w6", optional:true, text:"Eine llms.txt veröffentlichen &ndash; kein Rankingfaktor, aber ein günstiges Zusatzsignal, sinnvoll erst, wenn die Basis darunter bereits stimmt.", note:"Nicht veröffentlichen, bevor die Crawlbarkeit bestätigt ist &ndash; sonst zeigt das Signal auf eine Seite, die ein Crawler noch nicht zuverlässig findet."},
+        {id:"w7", text:"Einen realistischen Prüf-Rhythmus festlegen, etwa einmal wöchentlich die Search Console &ndash; nicht täglich nachsehen, ob schon etwas passiert ist."}
+      ]
+    },
+    {
+      id:"p3", num:"Phase 3", title:"Monat eins", tag:"baut sich über Zeit auf",
+      intro:"Ab hier übernimmt die Zeit einen Teil der Arbeit &ndash; und lässt sich nicht antreiben. Die meisten Seiten werden in diesem Fenster indexiert, gemäss Googles eigener Angabe in einigen Tagen bis mehreren Wochen, ohne Garantie.",
+      lock:"Zuerst die aktiven Woche-eins-Schritte auslösen. Wer GEO-Massnahmen vor der Indexierung beginnt, optimiert eine Seite, die noch niemand lesen kann.",
+      phasenote:"Geduld ist Teil des Plans: Wird nach zwei ungeduldigen Wochen ohne sichtbares Ergebnis das ganze Fundament neu aufgesetzt, war das eigentliche Problem meist nur die normale Wartezeit.",
+      items:[
+        {id:"m1", text:"Indexierung der meisten Seiten abwarten und in der Search Console kontrollieren &ndash; nicht nur die Startseite, die gesamte Abdeckung."},
+        {id:"m2", text:"Erste answer-first-Inhalte zu echten Kundenfragen veröffentlichen, statt weiter an der technischen Basis zu feilen, die bereits steht."},
+        {id:"m3", optional:true, text:"Weitere Sprachen bewusst und korrekt ausrollen, falls geplant &ndash; mit sauberem hreflang, nicht hastig und halbfertig.", note:"Mehrere Sprachen mit falschem oder fehlendem hreflang machen aus einem Vorteil eine Duplicate-Content-Verwirrung."},
+        {id:"m4", text:"Eigene Kernfragen erstmals in ChatGPT, Perplexity und Google AI Overviews testen und das Ergebnis dokumentieren &ndash; als Beobachtung, nicht als Erfolgsmessung im ersten Monat."},
+        {id:"m5", text:"Erste externe Erwähnungen anstossen: Brancheneinträge, Verzeichnisse, eine Pressemitteilung &ndash; frühere Erwähnungen konnten schlicht noch nicht existieren."}
+      ]
+    }
+  ];
+
+  // plain-text versions (for the export) — decode a few HTML entities used above
+  function decode(s){
+    return s.replace(/&ndash;/g,"–").replace(/&rsquo;/g,"’")
+            .replace(/&laquo;/g,"«").replace(/&raquo;/g,"»")
+            .replace(/&middot;/g,"·").replace(/&amp;/g,"&");
+  }
+
+  var state = {};            // itemId -> true(erledigt)/false(offen)
+  var mode = "neu";
+  var totalItems = 0;
+  PHASES.forEach(function(p){ p.items.forEach(function(it){ state[it.id]=false; totalItems++; }); });
+
+  var board = document.getElementById("board");
+  var els = {};              // itemId -> {li, cb}
+  var phaseEls = {};         // phaseId -> {section, pill, count, lockmsg, body, tagEl, when}
+
+  // ---- build DOM ----
+  PHASES.forEach(function(p){
+    var sec = document.createElement("section");
+    sec.className = "phase card card-pad";
+    sec.id = "sec-"+p.id;
+
+    var head = document.createElement("div");
+    head.className = "ph-head";
+    var num = document.createElement("span"); num.className="ph-num"; num.textContent=p.num;
+    var ttl = document.createElement("h2"); ttl.className="ph-title"; ttl.textContent=p.title;
+    var when = document.createElement("span"); when.className="ph-when"; when.setAttribute("aria-live","polite");
+    var pill = document.createElement("span"); pill.className="pill"; pill.setAttribute("aria-live","polite");
+    head.appendChild(num); head.appendChild(ttl); head.appendChild(when); head.appendChild(pill);
+    sec.appendChild(head);
+
+    var tagEl = document.createElement("span"); tagEl.className="ph-tag"; tagEl.textContent=p.tag;
+    sec.appendChild(tagEl);
+
+    var intro = document.createElement("p"); intro.className="ph-intro"; intro.innerHTML=p.intro;
+    sec.appendChild(intro);
+
+    var lockmsg = document.createElement("div"); lockmsg.className="lockmsg"; lockmsg.style.display="none";
+    lockmsg.innerHTML = '<span class="ic" aria-hidden="true">&#128274;</span><span>'+(p.lock||"")+'</span>';
+    sec.appendChild(lockmsg);
+
+    var count = document.createElement("p"); count.className="ph-count";
+    sec.appendChild(count);
+
+    var body = document.createElement("div"); body.className="phase-body";
+    var ul = document.createElement("ul"); ul.className="items";
+    p.items.forEach(function(it){
+      var li = document.createElement("li"); li.className="item"; li.id="li-"+it.id;
+      var cb = document.createElement("input"); cb.type="checkbox"; cb.id="cb-"+it.id;
+      var bodyDiv = document.createElement("div"); bodyDiv.className="body";
+      var lab = document.createElement("label"); lab.className="txt"; lab.setAttribute("for","cb-"+it.id);
+      lab.innerHTML = it.text + (it.optional ? ' <span class="opt">optional</span>' : "");
+      bodyDiv.appendChild(lab);
+      if(it.note){
+        var n = document.createElement("div"); n.className="note";
+        n.innerHTML = '<span class="ic" aria-hidden="true">&#9888;</span><span><strong>Achtung:</strong> '+it.note+'</span>';
+        bodyDiv.appendChild(n);
+      }
+      li.appendChild(cb); li.appendChild(bodyDiv);
+      ul.appendChild(li);
+      els[it.id] = {li:li, cb:cb};
+      cb.addEventListener("change", function(){
+        if(cb.disabled){ cb.checked = state[it.id]; return; }
+        state[it.id] = cb.checked;
+        recompute();
+      });
+    });
+    body.appendChild(ul);
+
+    if(p.phasenote){
+      var pn = document.createElement("p"); pn.className="phasenote"; pn.textContent=p.phasenote;
+      body.appendChild(pn);
+    }
+    sec.appendChild(body);
+    board.appendChild(sec);
+    phaseEls[p.id] = {section:sec, pill:pill, count:count, lockmsg:lockmsg, body:body, tagEl:tagEl, when:when};
+  });
+
+  // ---- helpers ----
+  function requiredComplete(p){
+    for(var i=0;i<p.items.length;i++){
+      var it=p.items[i];
+      if(!it.optional && !state[it.id]) return false;
+    }
+    return true;
+  }
+  function isUnlocked(index){
+    if(index===0) return true;
+    return requiredComplete(PHASES[index-1]);
+  }
+  function doneCount(p){ var c=0; p.items.forEach(function(it){ if(state[it.id]) c++; }); return c; }
+
+  function parseDate(str){
+    if(!str) return null;
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(str);
+    if(!m) return null;
+    var d = new Date(+m[1], +m[2]-1, +m[3], 12,0,0,0);
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function addDays(base,n){ var d=new Date(base.getTime()); d.setDate(d.getDate()+n); return d; }
+  function fmt(d){
+    return ("0"+d.getDate()).slice(-2)+"."+("0"+(d.getMonth()+1)).slice(-2)+"."+d.getFullYear();
+  }
+  function whenLabel(pid, base){
+    if(!base) return "";
+    if(pid==="p1") return "am "+fmt(base);
+    if(pid==="p2") return fmt(addDays(base,1))+" – "+fmt(addDays(base,7));
+    if(pid==="p3") return "ab "+fmt(addDays(base,8))+" (erster Monat, bis "+fmt(addDays(base,30))+")";
+    return "";
+  }
+
+  // ---- recompute ----
+  var ovFill=document.getElementById("ovFill"), ovPct=document.getElementById("ovPct"), ovBar=document.getElementById("ovBar");
+
+  function recompute(){
+    var base = (mode==="neu") ? parseDate(document.getElementById("ldate").value) : null;
+    var totalDone = 0;
+
+    PHASES.forEach(function(p, idx){
+      var pe = phaseEls[p.id];
+      var unlocked = isUnlocked(idx);
+      var done = doneCount(p);
+      var reqDone = requiredComplete(p);
+      totalDone += done;
+
+      // lock state on checkboxes
+      p.items.forEach(function(it){
+        var e = els[it.id];
+        e.cb.disabled = !unlocked;
+        e.cb.checked = state[it.id];
+        if(!unlocked){ e.li.classList.add("disabled"); e.li.classList.remove("checked"); e.cb.setAttribute("aria-disabled","true"); }
+        else { e.li.classList.remove("disabled"); e.cb.removeAttribute("aria-disabled"); e.li.classList.toggle("checked", !!state[it.id]); }
+      });
+
+      // section state classes
+      pe.section.classList.toggle("locked", !unlocked);
+      pe.section.classList.toggle("p-active", unlocked && !reqDone);
+      pe.lockmsg.style.display = (!unlocked && p.lock) ? "flex" : "none";
+
+      // pill
+      pe.pill.className = "pill";
+      if(!unlocked){ pe.pill.classList.add("locked"); pe.pill.textContent="Gesperrt"; }
+      else if(reqDone){ pe.pill.classList.add("done"); pe.pill.textContent="Abgeschlossen"; }
+      else { pe.pill.classList.add("active"); pe.pill.textContent="Aktiv"; }
+
+      // count line
+      pe.count.textContent = done+" von "+p.items.length+" erledigt";
+
+      // date window
+      pe.when.textContent = whenLabel(p.id, base);
+    });
+
+    var pct = totalItems ? Math.round(totalDone/totalItems*100) : 0;
+    ovFill.style.width = pct+"%";
+    ovBar.setAttribute("aria-valuenow", String(pct));
+    ovPct.innerHTML = pct+"&thinsp;% &middot; "+totalDone+" von "+totalItems+" erledigt";
+
+    buildOutput(base);
+  }
+
+  // ---- text export ----
+  function buildOutput(base){
+    var biz = document.getElementById("biz").value.trim();
+    var name = biz ? biz : "[Ihr Unternehmen]";
+    var L = [];
+    var header = (mode==="neu") ? "LAUNCH-FAHRPLAN" : "NACHHOL-LISTE";
+    L.push(header+" — "+name);
+    if(mode==="neu"){
+      L.push("Geplanter Launch: "+(base?fmt(base):"noch offen"));
+    } else {
+      L.push("Modus: Website läuft bereits – gleiche Dringlichkeits-Reihenfolge.");
+    }
+    L.push("");
+
+    PHASES.forEach(function(p, idx){
+      var when = whenLabel(p.id, base);
+      var head = p.num.toUpperCase()+" — "+p.title.toUpperCase()+" ("+p.tag+")";
+      if(when) head += "  ·  "+when.replace(/&ndash;/g,"–");
+      if(!isUnlocked(idx)) head += "  [gesperrt – vorige Phase zuerst]";
+      else if(requiredComplete(p)) head += "  [abgeschlossen]";
+      L.push(head);
+      p.items.forEach(function(it){
+        var mark = state[it.id] ? "[x]" : "[ ]";
+        var txt = decode(it.text.replace(/<[^>]+>/g,""));
+        if(it.optional) txt += " (optional)";
+        L.push("  "+mark+" "+txt);
+      });
+      L.push("");
+    });
+
+    L.push("Hinweis: Google beziffert die Indexierung selbst mit einigen Tagen bis mehreren Wochen, ohne Garantie.");
+    L.push("KI-Zitate lassen sich weder erzwingen noch buchen. Orientierung, kein Angebot.");
+    L.push("Quelle: weissmann.ai – Academy, Launch-Fahrplan.");
+
+    document.getElementById("out").value = L.join("\n");
+  }
+
+  // ---- mode + inputs ----
+  function setModeBanner(){
+    var b = document.getElementById("modeBanner");
+    if(mode==="neu"){
+      b.innerHTML = "<strong>Neue Website.</strong> Die Reihenfolge lässt sich nicht abkürzen &ndash; erst die blockierende Tag-eins-Basis, dann die aktiven Schritte, dann die Zeit.";
+      document.getElementById("dateField").style.display = "";
+    } else {
+      b.innerHTML = "<strong>Nachhol-Liste.</strong> Ihre Website läuft schon &ndash; aus dem Launch-Fahrplan wird eine Nachhol-Liste mit <em>derselben</em> Dringlichkeits-Reihenfolge: zuerst die blockierenden technischen Punkte prüfen, dann die aktiven Woche-eins-Schritte, danach Monat eins.";
+      document.getElementById("dateField").style.display = "none";
+    }
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="mode"]'), function(r){
+    r.addEventListener("change", function(){
+      if(!r.checked) return;
+      mode = r.value;
+      Array.prototype.forEach.call(document.querySelectorAll(".seg-opt"), function(l){
+        var i=l.querySelector("input"); l.classList.toggle("on", i && i.checked);
+      });
+      setModeBanner();
+      recompute();
+    });
+  });
+  document.getElementById("ldate").addEventListener("change", recompute);
+  document.getElementById("biz").addEventListener("input", function(){ buildOutput((mode==="neu")?parseDate(document.getElementById("ldate").value):null); });
+
+  // ---- copy / reset ----
+  var copyStatus = document.getElementById("copyStatus");
+  function legacyCopy(text){
+    try{
+      var ta=document.createElement("textarea");
+      ta.value=text; ta.setAttribute("readonly","");
+      ta.style.position="absolute"; ta.style.left="-9999px";
+      document.body.appendChild(ta); ta.select();
+      var okc=document.execCommand("copy");
+      document.body.removeChild(ta);
+      return okc;
+    }catch(e){ return false; }
+  }
+  function flashOk(){ copyStatus.style.color="var(--ok)"; copyStatus.textContent="In die Zwischenablage kopiert."; setTimeout(function(){ copyStatus.textContent=""; },2800); }
+  function flashFail(){ copyStatus.style.color="var(--miss)"; copyStatus.textContent="Kopieren nicht möglich – Text bitte manuell markieren."; }
+
+  document.getElementById("copyBtn").addEventListener("click", function(){
+    var text=document.getElementById("out").value;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(flashOk, function(){ if(legacyCopy(text)){flashOk();}else{flashFail();} });
+    } else {
+      if(legacyCopy(text)){flashOk();}else{flashFail();}
+    }
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    Object.keys(state).forEach(function(k){ state[k]=false; });
+    document.getElementById("biz").value="";
+    document.getElementById("ldate").value="";
+    copyStatus.textContent="";
+    recompute();
+  });
+
+  // init
+  setModeBanner();
+  recompute();
+})();
+</script>
