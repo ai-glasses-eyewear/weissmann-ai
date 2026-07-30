@@ -121,6 +121,29 @@ Selected as the **highest-priority article without an Artifact** (A-DE-01, the f
 | Factual integrity | Every fact + recommendation traces to the published, fact-checked article (six vendors, five criteria, dated 29.07.2026, self-reported). **Weissmann disclosed as publisher+provider and does NOT auto-win** (Alveni wins hospitality). No invented data; three vendors' prices shown as "kein öffentlicher Preis". No personal data; nothing stored |
 | Remaining issue | **Public sharing** — owner must Share→public, then anonymously verify and record the URL here |
 
+## Pilot 5 — swiss-dialect-comprehension-test (DE)
+
+Next highest-priority article without an Artifact after Pilot 4. A-DE-09 (also "high") was again skipped — its concept is a break-even *calculator* (same model as Pilot 1). A-DE-02 (medium-high, core phone product, "recurring objection in sales conversations") was chosen; its concept is a **test-script generator** — a 5th distinct interaction model.
+
+| Field | Value |
+|---|---|
+| Article ID | `swiss-dialect-comprehension-test` |
+| Language | German (de) |
+| Production article URL | https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-schweizerdeutsch-test/ |
+| Artifact title | Dialekt-Testprotokoll-Generator für KI-Telefonassistenten · Weissmann |
+| Interaction type | **Generator / builder** — inputs → tailored, printable/copyable test protocol (distinct from calculator / scorecard / decision-tree / matcher) |
+| Source (repo) | `phase2-artifacts/swiss-dialect-comprehension-test/index.html` |
+| Private Claude URL (owner-only) | https://claude.ai/code/artifact/fa03864c-0a40-4d17-9823-fb8037491d1d |
+| **Public Claude URL** | **— none yet (manual Share required) —** |
+| Publication status | **PRIVATE — awaiting manual public share** (page control reads "Share, private") |
+| Renders in Claude | Yes (verified: correct title in the artifact view) |
+| Functional test | Passed — generator scales deterministically: 1 region → 4 calls; 2 → 6; all 4 + names+code+noise+exit → 12; copy/print/reset present |
+| Mobile test | Responsive by construction (two-column ≥920px → single column; no horizontal overflow) |
+| Article backlink | Present — "Ganzen Dialekt-Artikel lesen →" (article URL above) |
+| Service CTA | Present — "Weissmann KI-Telefonassistent testen →" → weissmann.ai/leistungen/ki-telefonassistent/ |
+| Factual integrity | Complements the article (generates the plan) without copying it. States it places no calls; dialect *wording* left to the real speaker (only scenario + hint word + what-to-check given — no invented dialect sentences). Article's 4 understanding stages + 0–3 scale + pitfalls reused; hint words (Zmorge, Ändlie, Drämmli, Merci vilmal, Swiss surnames) and CHF 350 one-time trial from the article. No invented stats, no guarantee, no personal data, nothing stored |
+| Remaining issue | **Public sharing** — owner must Share→public, then anonymously verify and record the URL here |
+
 ## What is needed to complete the pilots
 
 1. **Owner publishes Pilot 1 publicly**: open the private URL while signed in to claude.ai → **Share** →
