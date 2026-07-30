@@ -1,0 +1,271 @@
+<title>Welcher KI-Telefonassistent passt zu Ihnen? · Weissmann</title>
+<style>
+  :root{
+    --navy:#1f2a44; --navy-dark:#16203a; --navy-hover:#2a3a5e;
+    --ink:#151515; --ink-soft:#3f434b; --ink-mute:#5f6570;
+    --bg:#f6f7f8; --card:#ffffff; --soft:#eef1f7; --line:#e4e6e9;
+    --ja:#1d7a4d; --ja-soft:#e6f4ec; --teils:#9a6b00; --teils-soft:#fbf1da; --nein:#a01324; --nein-soft:#fbeced; --na:#5f6570; --na-soft:#eceef1;
+    --gold:#9a7b1f;
+    --radius:14px; --shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);
+    --font:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif; --on-navy:#fff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{--navy:#8fa6dd;--navy-dark:#7f96cf;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;
+      --bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;
+      --ja:#6fce9c;--ja-soft:#153125;--teils:#e6c069;--teils-soft:#33290f;--nein:#f08a97;--nein-soft:#3a1620;--na:#9aa1ad;--na-soft:#20263a;--on-navy:#101420;}
+  }
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-dark:#7f96cf;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;
+    --bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;
+    --ja:#6fce9c;--ja-soft:#153125;--teils:#e6c069;--teils-soft:#33290f;--nein:#f08a97;--nein-soft:#3a1620;--na:#9aa1ad;--na-soft:#20263a;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-dark:#16203a;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;
+    --bg:#f6f7f8;--card:#ffffff;--soft:#eef1f7;--line:#e4e6e9;
+    --ja:#1d7a4d;--ja-soft:#e6f4ec;--teils:#9a6b00;--teils-soft:#fbf1da;--nein:#a01324;--nein-soft:#fbeced;--na:#5f6570;--na-soft:#eceef1;--on-navy:#fff;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.1rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:70ch;margin:0;font-size:1.02rem}
+  .disclose{margin-top:14px;background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:12px;padding:13px 15px;font-size:.85rem;color:var(--ink-soft)}
+  .disclose b{color:var(--ink)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+  .card-pad{padding:clamp(16px,2.4vw,22px)}
+  section.blk{margin-top:18px}
+  h2{font-size:1.08rem;margin:0 0 3px;letter-spacing:-.01em}
+  .sub{color:var(--ink-mute);font-size:.86rem;margin:0 0 14px}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{position:relative}
+  .chip input{position:absolute;opacity:0;width:1px;height:1px}
+  .chip label{display:inline-block;font-size:.88rem;font-weight:600;padding:9px 14px;border-radius:99px;border:1.5px solid var(--line);cursor:pointer;color:var(--ink-soft);background:var(--card);transition:.12s}
+  .chip label:hover{border-color:color-mix(in srgb,var(--navy) 40%,transparent)}
+  .chip input:checked+label{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+  .chip input:focus-visible+label{box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+  .ctx{display:flex;flex-direction:column;gap:8px;margin-top:2px}
+  .ctx .opt{position:relative}
+  .ctx input{position:absolute;opacity:0;width:1px;height:1px}
+  .ctx label{display:block;font-size:.9rem;padding:10px 13px;border-radius:10px;border:1.5px solid var(--line);cursor:pointer;color:var(--ink-soft);background:var(--card)}
+  .ctx input:checked+label{border-color:var(--navy);background:var(--soft);color:var(--ink);font-weight:600}
+  .ctx input:focus-visible+label{box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+  button{font:inherit;font-weight:600;cursor:pointer;border-radius:9px;padding:10px 15px;border:1.5px solid transparent}
+  .btn-ghost{background:transparent;color:var(--navy);border-color:var(--line)} .btn-ghost:hover{border-color:var(--navy)}
+  button:focus-visible,summary:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+  /* results */
+  .match{border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin:11px 0;background:var(--bg)}
+  .match.top{border-color:color-mix(in srgb,var(--navy) 45%,transparent);background:var(--soft)}
+  .mhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .rank{flex:none;font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);background:var(--card);border:1px solid color-mix(in srgb,var(--navy) 35%,transparent);border-radius:99px;padding:2px 9px}
+  .mname{font-weight:700;font-size:1.05rem}
+  .mloc{font-size:.8rem;color:var(--ink-mute)}
+  .mwhy{margin:8px 0 0;padding-left:18px;font-size:.87rem;color:var(--ink-soft)}
+  .mwhy li{margin:3px 0}
+  .msrc{font-size:.78rem;margin-top:8px}
+  .msrc a{color:var(--navy)}
+  .idle{color:var(--ink-mute);font-size:.92rem}
+  /* matrix */
+  .matrix-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:6px;border:1px solid var(--line);border-radius:12px}
+  table{border-collapse:collapse;width:100%;min-width:720px;font-size:.83rem}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{position:sticky;top:0;background:var(--card);font-size:.76rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-mute);z-index:1}
+  tbody th{font-weight:700;color:var(--ink);white-space:nowrap}
+  .lvl{display:inline-block;font-size:.68rem;font-weight:700;padding:1px 7px;border-radius:99px;margin-bottom:3px}
+  .l-ja{color:var(--ja);background:var(--ja-soft)} .l-teils{color:var(--teils);background:var(--teils-soft)} .l-nein{color:var(--nein);background:var(--nein-soft)} .l-na{color:var(--na);background:var(--na-soft)}
+  td .txt{display:block;color:var(--ink-soft);font-size:.8rem;margin-top:1px}
+  .col-hi{background:color-mix(in srgb,var(--navy) 7%,transparent)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+  /* footer */
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .linkbar .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}
+  @media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);background:transparent;min-height:48px;transition:.15s}
+  .lb-link:hover{background:var(--soft)}
+  .lb-link.primary{background:var(--navy);color:var(--on-navy);border-color:var(--navy)} .lb-link.primary:hover{background:var(--navy-hover)}
+  .lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">Weissmann · KI-Agenten, Automatisierung &amp; Voice</p>
+  <h1>Welcher KI-Telefonassistent passt zu Ihnen?</h1>
+  <p class="lede">Es gibt keinen einzigen „besten“ Anbieter – sechs Schweizer Lösungen bedienen unterschiedliche Prioritäten. Wählen Sie, was Ihnen wichtig ist, und dieses Tool zeigt die passendsten Anbieter mit Begründung. Alle Fakten stammen aus dem Weissmann-Anbietervergleich (Stand 29.07.2026), nicht aus Marketing.</p>
+
+  <div class="disclose" role="note">
+    <b>Offenlegung:</b> Weissmann AI ist selbst Anbieter <em>und</em> Herausgeber dieses Vergleichs und
+    gewinnt hier <b>nicht automatisch</b> — für das Gastgewerbe mit bestehender Hotelsoftware schneidet
+    z. B. Alveni bei der Integrationstiefe besser ab. Alle Angaben sind <b>Selbstauskünfte</b> der Anbieter
+    von deren eigenen Webseiten, abgerufen am <b>29. Juli 2026</b>; Preise und Pakete können sich ändern.
+    Dialektangaben sind Selbstauskünfte, keine unabhängigen Messungen. Prüfen Sie vor einer Entscheidung
+    die aktuelle Website des Anbieters direkt.
+  </div>
+
+  <div class="card card-pad blk">
+    <h2>1 · Ihre Prioritäten</h2>
+    <p class="sub">Wählen Sie alles, was Ihnen wirklich wichtig ist (Mehrfachauswahl).</p>
+    <div class="chips" id="prio"></div>
+
+    <h2 style="margin-top:20px">2 · Ihr Kontext</h2>
+    <p class="sub">Optional — verfeinert die Empfehlung.</p>
+    <div class="ctx" id="ctx"></div>
+
+    <div style="margin-top:16px"><button type="button" class="btn-ghost" id="reset">Zurücksetzen</button></div>
+  </div>
+
+  <section class="card card-pad blk" aria-live="polite">
+    <h2>Beste Treffer für Ihre Prioritäten</h2>
+    <p class="sub">Rangfolge nach Übereinstimmung mit dem, was Sie oben gewählt haben — mit Begründung aus dem Vergleich.</p>
+    <div id="results"><p class="idle" id="idle">Wählen Sie oben mindestens eine Priorität, um passende Anbieter zu sehen.</p></div>
+  </section>
+
+  <section class="card card-pad blk">
+    <h2>Alle sechs Anbieter im Vergleich</h2>
+    <p class="sub">Die vollständige, überprüfbare Grundlage — damit die Empfehlung keine Blackbox ist. Stand 29.07.2026, mit Quelle je Anbieter.</p>
+    <div class="matrix-wrap"><table id="matrix"></table></div>
+    <p class="disc"><strong>Wichtig:</strong> Drei Anbieter (AlpenAgent, HeyPapaya, Alveni) nennen keinen öffentlichen Preis — ein Vergleich „auf dem Papier“ bleibt für sie unvollständig, bis ein konkretes Angebot vorliegt. Kein Anbieter veröffentlicht unabhängig geprüfte Dialekt-Erkennungsraten; ein eigener Testanruf bleibt der einzige verlässliche Weg. Dieses Tool ersetzt weder eigene Testanrufe noch die Prüfung der aktuellen Anbieter-Website.</p>
+  </section>
+
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Mehr erfahren</p>
+    <div class="lb-links">
+      <a class="lb-link"
+         href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistenten-schweiz-anbieter-vergleich/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Den vollständigen Anbieter-Vergleich mit Quellen auf weissmann.ai lesen (öffnet in neuem Tab)">Vollständigen Anbieter-Vergleich lesen →</a>
+      <a class="lb-link primary"
+         href="https://weissmann.ai/leistungen/ki-telefonassistent/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Den KI-Telefonassistenten von Weissmann ansehen (öffnet in neuem Tab)">Weissmann KI-Telefonassistent ansehen →</a>
+    </div>
+    <p class="att">Anbieter-Matcher von <strong>Weissmann AI</strong> · Grundlage: der eigene Anbietervergleich. Orientierung, kein Ersatz für eigene Testanrufe.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // Criteria (verified from the article's methodology)
+  var CRIT=[
+    {k:'preis', label:'Öffentlich einsehbarer Preis'},
+    {k:'dialekt', label:'Konkret benannte Dialektabdeckung'},
+    {k:'hosting', label:'Schweizer Hosting/Datenschutz explizit'},
+    {k:'integ', label:'Tiefe Integrationen (Kalender/CRM/Branche)'},
+    {k:'kuendbar', label:'Monatlich kündbar (keine Mindestlaufzeit)'}
+  ];
+  // levels: ja=2, teils=1, nein=0, na=0 (unknown). Facts are exact, verified, dated 29.07.2026.
+  var P=[
+    {id:'weissmann', name:'Weissmann AI', loc:'Zürich', src:'https://weissmann.ai/preise/', hospOnly:false,
+      a:{ preis:['ja','CHF 350/Mt. Starter, CHF 590/Mt. Premium, einmaliger Test CHF 350 – öffentlich'],
+          dialekt:['teils','Schweizerdeutsch allgemein, ohne Dialektaufschlüsselung'],
+          hosting:['ja','Dedizierte Leitung inkl. Hosting, Schweizer Bezug betont'],
+          integ:['teils','Volle Systemintegration im Premium, im Starter ohne'],
+          kuendbar:['ja','Starter monatlich kündbar (Premium: 12 Mt. Mindestlaufzeit)'] }},
+    {id:'alpenagent', name:'AlpenAgent', loc:'', src:'https://www.alpenagent.ch/en/ai-phone-assistant-switzerland/', hospOnly:false,
+      a:{ preis:['nein','Kein öffentlicher Preis – 15-Minuten-Gespräch'],
+          dialekt:['teils','Schweizerdeutsch erwähnt, ohne Dialektnennung'],
+          hosting:['na','Keine Angabe zum Serverstandort auf der eingesehenen Seite'],
+          integ:['teils','„Direkte Systemintegration“ genannt, ohne konkrete Plattformen'],
+          kuendbar:['na','Vertragsbindung nicht öffentlich angegeben'] }},
+    {id:'suissevoice', name:'Suisse Voice', loc:'', src:'https://suisse-voice.ch/en/', hospOnly:false, techOpen:true,
+      a:{ preis:['ja','Jahresmodell (1200 Freimin./Jahr) + CHF 20 Testguthaben; exakter Minutenpreis nicht ausgewiesen'],
+          dialekt:['ja','Konkret: Zürich/Basel/Bern/Luzern + Hochdeutsch/FR/IT + 17 weitere'],
+          hosting:['ja','Hosting Schweiz, FADP-konform, keine Trainingsnutzung, löschbar'],
+          integ:['ja','Zapier, n8n, Make.com, Voice-API, Webhook – offen, aber voraussetzungsreich'],
+          kuendbar:['ja','Jederzeit kündbar'] }},
+    {id:'nexai', name:'NEX-AI', loc:'Websoft AG, Winterthur', src:'https://nex-ai.ch/en', hospOnly:false,
+      a:{ preis:['ja','Öffentlich gestaffelt: NEX Voice ab CHF 149, NEX Phone ab CHF 249, weitere ab CHF 99/Mt.'],
+          dialekt:['teils','Mehrere Sprachen inkl. Schweizerdeutsch, ohne Dialektaufschlüsselung'],
+          hosting:['ja','100% Schweizer Hosting, revDSG-konform, selbst betrieben'],
+          integ:['teils','Kalenderbuchung + Übergabe, keine konkreten CRM-Namen'],
+          kuendbar:['ja','Monatlich kündbar (einmalige Einrichtungsgebühr)'] }},
+    {id:'heypapaya', name:'HeyPapaya', loc:'', src:'https://www.heypapaya.ch/en/services/ai-voice-agent/', hospOnly:false,
+      a:{ preis:['nein','Kein Preis ausgewiesen – kostenloses 30-Minuten-Audit'],
+          dialekt:['teils','FR/DE/IT/EN „nativ mehrsprachig“, ohne Dialektangabe'],
+          hosting:['teils','Schweiz/EU-Hosting, nFADP-konform'],
+          integ:['ja','Kalender, CRM, Telefonie inkl. Twilio + Schweizer Carrier, SMS/E-Mail'],
+          kuendbar:['na','Vertragsbindung nicht angegeben; Einführung 2–4 Wochen'] }},
+    {id:'alveni', name:'Alveni', loc:'Kanton Schwyz · Fokus Hotellerie', src:'https://alveni.ai/ki-telefonassistent-schweiz/', hospOnly:true,
+      a:{ preis:['nein','Kein öffentlicher Preis'],
+          dialekt:['ja','Granular: Züri/Bärn/Basel/Wallis + 30 Sprachen'],
+          hosting:['ja','Alle Daten bleiben in der Schweiz'],
+          integ:['ja','Echte PMS-Anbindungen (Protel, Sihot, ASA, Mews, apaleo) + SBB; 100 parallele Anrufe – für Nicht-Gastgewerbe irrelevant'],
+          kuendbar:['na','Vertragsbindung nicht öffentlich angegeben'] }}
+  ];
+  var CTX=[
+    {k:'none', label:'Keiner davon / allgemein'},
+    {k:'hosp', label:'Gastgewerbe mit bestehender Hotelsoftware (PMS)'},
+    {k:'tech', label:'Eigenes technisches Team (will selbst integrieren)'},
+    {k:'noit', label:'Kleines Team ohne IT – schneller, transparenter Start'}
+  ];
+  var LVL={ja:'Ja',teils:'Teilweise',nein:'Nein',na:'Keine Angabe'};
+  var PTS={ja:2,teils:1,nein:0,na:0};
+  var sel={}, ctx='none';
+
+  // build priority chips
+  var prioEl=document.getElementById('prio');
+  prioEl.innerHTML=CRIT.map(function(c){return '<span class="chip"><input type="checkbox" id="p_'+c.k+'" value="'+c.k+'"><label for="p_'+c.k+'">'+c.label+'</label></span>';}).join('');
+  CRIT.forEach(function(c){document.getElementById('p_'+c.k).addEventListener('change',function(e){sel[c.k]=e.target.checked;compute();});});
+  // context radios
+  var ctxEl=document.getElementById('ctx');
+  ctxEl.innerHTML=CTX.map(function(c,i){return '<span class="opt"><input type="radio" name="ctx" id="c_'+c.k+'" value="'+c.k+'"'+(i===0?' checked':'')+'><label for="c_'+c.k+'">'+c.label+'</label></span>';}).join('');
+  CTX.forEach(function(c){document.getElementById('c_'+c.k).addEventListener('change',function(){ctx=c.k;compute();});});
+
+  function score(p){
+    var s=0, reasons=[];
+    CRIT.forEach(function(c){
+      if(!sel[c.k])return;
+      var lv=p.a[c.k][0];
+      // Alveni's deep integration only counts as a general strength in the hospitality context
+      if(c.k==='integ' && p.hospOnly && ctx!=='hosp'){ if(lv==='ja') lv='teils'; }
+      s+=PTS[lv];
+      if(lv==='ja') reasons.push('<b>'+c.label+':</b> '+p.a[c.k][1]);
+      else if(lv==='teils') reasons.push('<b>'+c.label+' (teilweise):</b> '+p.a[c.k][1]);
+    });
+    // context bonuses, faithful to the article's "Wann welcher Ansatz passt"
+    if(ctx==='hosp' && p.id==='alveni'){ s+=3; reasons.unshift('<b>Gastgewerbe mit PMS:</b> echte Hotelsoftware-Anbindungen, die generalistische Anbieter nicht bieten.'); }
+    if(ctx==='tech' && p.id==='suissevoice'){ s+=2; reasons.unshift('<b>Eigenes technisches Team:</b> offenste technische Anbindung (Zapier, n8n, Webhooks).'); }
+    if(ctx==='noit'){ if(p.id==='weissmann'||p.id==='nexai'){ s+=2; reasons.unshift('<b>Ohne IT, schneller Start:</b> transparenter Preis ohne Verkaufsgespräch.'); }
+      else if(p.id==='suissevoice'){ s+=1; reasons.push('<b>Hinweis:</b> transparenter Einstieg, aber die offene Integration (Zapier/Webhooks) ist ohne IT-Team eher eine Hürde.'); } }
+    return {s:s,reasons:reasons};
+  }
+
+  function compute(){
+    var any=CRIT.some(function(c){return sel[c.k];}) || ctx!=='none';
+    var res=document.getElementById('results');
+    if(!any){ res.innerHTML='<p class="idle">Wählen Sie oben mindestens eine Priorität, um passende Anbieter zu sehen.</p>'; renderMatrix(); return; }
+    var scored=P.map(function(p){var r=score(p);return {p:p,s:r.s,reasons:r.reasons};}).filter(function(x){return x.s>0;});
+    scored.sort(function(a,b){return b.s-a.s;});
+    if(!scored.length){ res.innerHTML='<p class="idle">Für diese Auswahl liefert der Vergleich keinen klaren Treffer — sehen Sie sich die vollständige Tabelle unten an.</p>'; renderMatrix(); return; }
+    var top=scored.slice(0,3);
+    res.innerHTML=top.map(function(x,i){
+      return '<div class="match'+(i===0?' top':'')+'">'+
+        '<div class="mhead"><span class="rank">'+(i===0?'Bester Treffer':'Platz '+(i+1))+'</span>'+
+        '<span class="mname">'+x.p.name+'</span>'+(x.p.loc?'<span class="mloc">'+x.p.loc+'</span>':'')+'</div>'+
+        '<ul class="mwhy">'+x.reasons.map(function(r){return '<li>'+r+'</li>';}).join('')+'</ul>'+
+        '<p class="msrc">Quelle: <a href="'+x.p.src+'" target="_blank" rel="noopener noreferrer">Anbieter-Website</a> · Stand 29.07.2026 (Selbstauskunft)</p>'+
+      '</div>';
+    }).join('') + '<p class="disc" style="margin-top:6px">Die Rangfolge spiegelt nur die von Ihnen gewählten Prioritäten wider, gemessen an Selbstauskünften der Anbieter. Sie ist kein Qualitätsurteil und ersetzt keinen eigenen Testanruf. Bei den drei Anbietern ohne öffentlichen Preis fragen Sie den Preis für Ihr tatsächliches Anrufvolumen aktiv an.</p>';
+    renderMatrix();
+  }
+
+  function renderMatrix(){
+    var t=document.getElementById('matrix');
+    var head='<thead><tr><th>Kriterium</th>'+P.map(function(p){return '<th'+(false?'':'')+'>'+p.name+'</th>';}).join('')+'</tr></thead>';
+    var rows=CRIT.map(function(c){
+      var hi = sel[c.k];
+      return '<tr><th>'+c.label+'</th>'+P.map(function(p){
+        var lv=p.a[c.k][0], txt=p.a[c.k][1];
+        return '<td class="'+(hi?'col-hi':'')+'"><span class="lvl l-'+lv+'">'+LVL[lv]+'</span><span class="txt">'+txt+'</span></td>';
+      }).join('')+'</tr>';
+    }).join('');
+    var srcRow='<tr><th>Quelle (Stand 29.07.2026)</th>'+P.map(function(p){return '<td><a href="'+p.src+'" target="_blank" rel="noopener noreferrer" style="color:var(--navy)">Website</a></td>';}).join('')+'</tr>';
+    t.innerHTML=head+'<tbody>'+rows+srcRow+'</tbody>';
+  }
+
+  document.getElementById('reset').addEventListener('click',function(){
+    sel={}; ctx='none';
+    CRIT.forEach(function(c){document.getElementById('p_'+c.k).checked=false;});
+    document.getElementById('c_none').checked=true;
+    compute(); window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  renderMatrix(); compute();
+})();
+</script>

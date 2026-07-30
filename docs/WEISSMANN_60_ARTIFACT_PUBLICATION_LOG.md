@@ -93,9 +93,33 @@ substitute artifacts or spec directories were created for the remaining 57.
 | Service CTA | Present — "Scopri il servizio siti web di Weissmann →" → weissmann.ai/it/servizi/sviluppo-siti-web-ai/ |
 | Pricing accuracy | CHF 880 / regular CHF 2'490 (one-time); Business CHF 4'990; Complex from CHF 9'900 — verified vs `src/data/pricing.ts`. "Premium, non economico"; no invented discount/scarcity |
 | Remaining issue | **Public sharing** — owner must Share→public, then anonymously verify and record the URL here |
+| Public verification (attempted) | Owner reports Pilot 3 is public. Confirmed: the artifact's own control now reads **"Share, shared with anyone who has the link"** (so it IS shared). **But no public URL was supplied, and it isn't derivable** — the guessable forms `claude.site/artifacts/<id>` and `claude.ai/public/artifacts/<id>` return **"Page not found"** (the public share link uses a different id/URL than the `/code/artifact` owner URL). A cookie-less request to the owner URL still returns the app shell. **Anonymous "opens without login" could not be verified without the actual public link.** No URL was invented. → **Owner: paste the exact public link from the Share dialog's "Copy link".** |
 
 > Article-URL note: the production **slug** is `sito-web-economico-svizzera-chf-880` (HTTP 200). The
 > id-based path `sito-web-chf-880-svizzera` returns 404 and is not used as a link.
+
+## Pilot 4 — swiss-ai-phone-assistant-provider-comparison (DE)
+
+Selected as the **highest-priority article without an Artifact** (A-DE-01, the flagship provider comparison, "commercial, high"). The other "high" article, A-DE-09, was skipped because its documented concept is a break-even *calculator* — the same interaction model as Pilot 1 — and the task requires a different model.
+
+| Field | Value |
+|---|---|
+| Article ID | `swiss-ai-phone-assistant-provider-comparison` |
+| Language | German (de) |
+| Production article URL | https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistenten-schweiz-anbieter-vergleich/ |
+| Artifact title | Welcher KI-Telefonassistent passt zu Ihnen? · Weissmann |
+| Interaction type | **Provider-fit matcher / weighted recommender** — 4th distinct model (vs. calculator / scorecard / decision-tree) |
+| Source (repo) | `phase2-artifacts/swiss-ai-phone-assistant-provider-comparison/index.html` |
+| Private Claude URL (owner-only) | https://claude.ai/code/artifact/4e823644-61f3-4749-bd9e-f1dc60ba85aa |
+| **Public Claude URL** | **— none yet (manual Share required) —** |
+| Publication status | **PRIVATE — awaiting manual public share** (page control reads "Share, private") |
+| Renders in Claude | Yes (verified: correct title in the artifact view) |
+| Functional test | Passed — matcher reproduces the article's mapping deterministically: price→Weissmann/Suisse Voice/NEX-AI; dialect→Suisse Voice/Alveni; integration+hospitality→Alveni; integration+tech-team→Suisse Voice; no-IT→Weissmann/NEX-AI |
+| Mobile test | Responsive by construction (chips wrap, comparison table scrolls in its own `overflow-x` container, no page overflow) |
+| Article backlink | Present — "Vollständigen Anbieter-Vergleich lesen →" (article URL above) |
+| Service CTA | Present — "Weissmann KI-Telefonassistent ansehen →" → weissmann.ai/leistungen/ki-telefonassistent/ |
+| Factual integrity | Every fact + recommendation traces to the published, fact-checked article (six vendors, five criteria, dated 29.07.2026, self-reported). **Weissmann disclosed as publisher+provider and does NOT auto-win** (Alveni wins hospitality). No invented data; three vendors' prices shown as "kein öffentlicher Preis". No personal data; nothing stored |
+| Remaining issue | **Public sharing** — owner must Share→public, then anonymously verify and record the URL here |
 
 ## What is needed to complete the pilots
 
