@@ -44,6 +44,8 @@ Per the task's contingency, work **stopped after the first pilot**. Pilots 2 and
 | Pricing accuracy | CHF 690/mo management + ad-spend-separate; verified vs `src/data/pricing.ts` |
 | Remaining issue | **Public sharing** — owner must Share→public, then anonymously verify and record the URL here |
 
+**v2 update (same private URL):** added a prominent visible footer link band below the disclaimer — two real anchor links (`target="_blank" rel="noopener noreferrer"`, accessible aria-labels): "Vollständigen Leitfaden lesen →" (DE article) and "Google Ads Growth von Weissmann ansehen →" (weissmann.ai/preise/). Content corrections: removed the fixed Zürich +25 % CPC factor (now prose caveat only); softened the click-count verdicts (no absolute "enough" claim); renamed the customer-value input to **average contribution margin per acquired customer** (correct break-even basis); flagged **CPC** and **conversion rate** as the two main variables (always-visible note + "Hauptvariable" badges). Republished to the same URL `…/artifact/437a7d7b-0e5c-47de-a79e-70543280d1e6`; still private.
+
 ## Pilot 2 — how-to-test-ai-receptionist-before-buying (EN)
 Not built — blocked by the capability finding above (build stopped after Pilot 1 per task instruction).
 

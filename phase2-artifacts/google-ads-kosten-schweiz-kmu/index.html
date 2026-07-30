@@ -7,24 +7,25 @@
     --ok:#1d7a4d; --ok-soft:#e6f4ec; --warn:#9a6b00; --warn-soft:#fbf1da; --stop:#a01324; --stop-soft:#fbeced;
     --radius:14px; --shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);
     --font:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    --on-navy:#ffffff;
   }
   @media (prefers-color-scheme: dark){
     :root{--navy:#8fa6dd;--navy-dark:#7f96cf;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;
       --bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;
-      --ok:#6fce9c;--ok-soft:#153125;--warn:#e6c069;--warn-soft:#33290f;--stop:#f08a97;--stop-soft:#3a1620;}
+      --ok:#6fce9c;--ok-soft:#153125;--warn:#e6c069;--warn-soft:#33290f;--stop:#f08a97;--stop-soft:#3a1620;--on-navy:#101420;}
   }
   :root[data-theme="dark"]{--navy:#8fa6dd;--navy-dark:#7f96cf;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;
     --bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;
-    --ok:#6fce9c;--ok-soft:#153125;--warn:#e6c069;--warn-soft:#33290f;--stop:#f08a97;--stop-soft:#3a1620;}
+    --ok:#6fce9c;--ok-soft:#153125;--warn:#e6c069;--warn-soft:#33290f;--stop:#f08a97;--stop-soft:#3a1620;--on-navy:#101420;}
   :root[data-theme="light"]{--navy:#1f2a44;--navy-dark:#16203a;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;
     --bg:#f6f7f8;--card:#ffffff;--soft:#eef1f7;--line:#e4e6e9;
-    --ok:#1d7a4d;--ok-soft:#e6f4ec;--warn:#9a6b00;--warn-soft:#fbf1da;--stop:#a01324;--stop-soft:#fbeced;}
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--warn:#9a6b00;--warn-soft:#fbf1da;--stop:#a01324;--stop-soft:#fbeced;--on-navy:#ffffff;}
   *{box-sizing:border-box}
   body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1060px;margin:0 auto;padding:clamp(16px,3vw,34px)}
   .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
   h1{font-size:clamp(1.5rem,3.6vw,2.15rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
-  .lede{color:var(--ink-soft);max-width:62ch;margin:0 0 4px;font-size:1.02rem}
+  .lede{color:var(--ink-soft);max-width:64ch;margin:0 0 4px;font-size:1.02rem}
   .grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:22px}
   @media(min-width:860px){.grid{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);align-items:start}}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
@@ -35,24 +36,26 @@
   .field:last-child{margin-bottom:0}
   label{display:block;font-weight:600;font-size:.9rem;margin:0 0 5px}
   label .hint{display:block;font-weight:400;color:var(--ink-mute);font-size:.79rem;margin-top:2px}
+  .badge{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--navy);background:var(--soft);border:1px solid color-mix(in srgb,var(--navy) 30%,transparent);
+    border-radius:999px;padding:1px 7px;margin-left:7px;vertical-align:middle}
   .inputwrap{position:relative;display:flex;align-items:center}
   .prefix{position:absolute;left:12px;color:var(--ink-mute);font-size:.9rem;pointer-events:none}
   .suffix{position:absolute;right:12px;color:var(--ink-mute);font-size:.9rem;pointer-events:none}
   input[type=number],select{width:100%;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);
     border-radius:10px;padding:11px 12px;transition:border-color .15s,box-shadow .15s}
   input.has-prefix{padding-left:44px}
-  input.has-suffix{padding-right:34px}
+  input.has-suffix{padding-right:78px}
   input:focus,select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 22%,transparent)}
   input.err{border-color:var(--stop)}
-  .toggle{display:flex;align-items:center;gap:10px;margin-top:2px}
-  .toggle input{width:auto}
-  .toggle label{margin:0;font-weight:500;font-size:.9rem}
+  .keyvar{border-left:3px solid var(--navy);padding-left:12px;margin-left:-15px}
+  .keynote{font-size:.82rem;color:var(--ink-soft);background:var(--soft);border-radius:10px;padding:11px 13px;margin:0 0 15px}
+  .keynote b{color:var(--ink)}
   .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
   button{font:inherit;font-weight:600;cursor:pointer;border-radius:10px;padding:10px 16px;border:1.5px solid transparent;transition:background .15s,border-color .15s}
   .btn-ghost{background:transparent;color:var(--navy);border-color:var(--line)}
   .btn-ghost:hover{border-color:var(--navy)}
   button:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
-  /* results */
   .results{position:sticky;top:16px}
   .metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 16px}
   .metric{background:var(--soft);border-radius:12px;padding:13px 14px}
@@ -75,14 +78,20 @@
   .checklist li::before{content:"";position:absolute;left:2px;top:9px;width:13px;height:13px;border:2px solid var(--navy);border-radius:4px}
   .checklist h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-mute);margin:2px 0 6px}
   .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;margin-top:16px;line-height:1.5}
-  .foot{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
-  .foot .att{font-size:.82rem;color:var(--ink-mute)}
-  .links{display:flex;gap:10px;flex-wrap:wrap}
-  .link-read{color:var(--navy);font-weight:600;text-decoration:none;font-size:.9rem;border-bottom:1.5px solid color-mix(in srgb,var(--navy) 40%,transparent);padding-bottom:1px}
-  .link-read:hover{border-color:var(--navy)}
-  .cta{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:10px 16px;border-radius:10px}
-  .cta:hover{background:var(--navy-hover)}
-  :root[data-theme="dark"] .cta,@media(prefers-color-scheme:dark){.cta{color:#101420}}
+  /* prominent link footer */
+  .linkbar{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .linkbar .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}
+  @media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;gap:6px;
+    text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;
+    border:1.5px solid var(--navy);color:var(--navy);background:transparent;transition:background .15s,color .15s,border-color .15s;min-height:48px}
+  .lb-link:hover{background:var(--soft)}
+  .lb-link.primary{background:var(--navy);color:var(--on-navy);border-color:var(--navy)}
+  .lb-link.primary:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  .lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
   .err-msg{color:var(--stop);font-size:.78rem;margin-top:4px;min-height:0}
   @media(max-width:520px){.metrics{grid-template-columns:1fr}}
 </style>
@@ -98,24 +107,33 @@
       <h2 id="in-h">Ihre Annahmen</h2>
       <p class="sub">Alle Werte sind editierbar. Voreinstellungen sind Beispiele, keine Schweizer Garantien.</p>
 
+      <p class="keynote"><b>Die zwei wichtigsten Variablen</b> sind der <b>Klickpreis (CPC)</b> und die <b>Conversion-Rate</b> – sie bestimmen das Ergebnis am stärksten und sind unten markiert. Belegen Sie diese beiden Werte zuerst mit echten Daten, statt sie zu raten.</p>
+
       <div class="field">
         <label for="branche">Branche
           <span class="hint">Setzt einen Beispiel-CPC – bitte an Ihre Situation anpassen.</span>
         </label>
-        <select id="branche" aria-describedby="in-h">
-          <option value="1,5">Lokale Dienstleistung / Handwerk / Gastronomie (CHF 3.50–8)</option>
+        <select id="branche">
           <option value="3">Die meisten Branchen (CHF 1–5)</option>
+          <option value="5.75">Lokale Dienstleistung / Handwerk / Gastronomie (CHF 3.50–8)</option>
           <option value="18">Recht / Treuhand / Immobilien / Finanz (CHF 10–30+)</option>
-          <option value="1.2">E-Commerce / Detailhandel (tiefer CPC)</option>
+          <option value="1.5">E-Commerce / Detailhandel (CHF 1–2.5)</option>
           <option value="custom">Andere / eigener Wert</option>
         </select>
       </div>
 
-      <div class="field">
-        <div class="toggle">
-          <input type="checkbox" id="zurich">
-          <label for="zurich">Fokus Zürich (+25 % auf den CPC, gemäss Branchenbeobachtungen)</label>
-        </div>
+      <div class="field keyvar">
+        <label for="cpc">Geschätzter Klickpreis (CPC)<span class="badge">Hauptvariable</span></label>
+        <div class="inputwrap"><span class="prefix">CHF</span>
+          <input class="has-prefix" type="number" id="cpc" min="0.05" step="0.5" value="3" inputmode="decimal"></div>
+        <div class="err-msg" id="cpc-err" role="alert"></div>
+      </div>
+
+      <div class="field keyvar">
+        <label for="cr">Erwartete Conversion-Rate<span class="badge">Hauptvariable</span>
+          <span class="hint">Anteil der Klicks, die zu einer Anfrage werden.</span>
+        </label>
+        <div class="inputwrap"><input class="has-suffix" type="number" id="cr" min="0" max="100" step="0.5" value="4" inputmode="decimal"><span class="suffix">%</span></div>
       </div>
 
       <div class="field">
@@ -127,22 +145,8 @@
       </div>
 
       <div class="field">
-        <label for="cpc">Geschätzter Klickpreis (CPC)</label>
-        <div class="inputwrap"><span class="prefix">CHF</span>
-          <input class="has-prefix" type="number" id="cpc" min="0.05" step="0.5" value="4" inputmode="decimal"></div>
-        <div class="err-msg" id="cpc-err" role="alert"></div>
-      </div>
-
-      <div class="field">
-        <label for="cr">Erwartete Conversion-Rate
-          <span class="hint">Anteil der Klicks, die zu einer Anfrage werden.</span>
-        </label>
-        <div class="inputwrap"><input class="has-suffix" type="number" id="cr" min="0" max="100" step="0.5" value="4" inputmode="decimal"><span class="suffix">%</span></div>
-      </div>
-
-      <div class="field">
-        <label for="value">Ungefährer Kundenwert
-          <span class="hint">Was ein gewonnener Kunde Ihnen durchschnittlich bringt (für die Break-even-Schätzung).</span>
+        <label for="value">Durchschnittlicher Deckungsbeitrag pro gewonnenem Kunden
+          <span class="hint">Der Betrag, der pro gewonnenem Kunden nach den variablen Kosten übrig bleibt – für die Break-even-Schätzung.</span>
         </label>
         <div class="inputwrap"><span class="prefix">CHF</span>
           <input class="has-prefix" type="number" id="value" min="0" step="50" value="900" inputmode="numeric"></div>
@@ -186,7 +190,7 @@
       </div>
 
       <div class="metric wide" style="margin-bottom:14px">
-        <p class="m-label">Break-even: benötigte zahlende Kunden / Monat</p>
+        <p class="m-label">Break-even: benötigte gewonnene Kunden / Monat</p>
         <p class="m-val" id="r-be">–</p>
         <p class="m-note" id="r-be-note"></p>
       </div>
@@ -203,41 +207,41 @@
         </ul>
       </div>
 
-      <p class="disc"><strong>Wichtig:</strong> Alle Ergebnisse sind Schätzungen auf Basis Ihrer eigenen Annahmen – keine Zusage von Leads, Umsatz oder Rentabilität. CPC und Conversion-Rate entstehen in einer Echtzeit-Auktion und schwanken. Das Werbebudget wird direkt an Google bezahlt; die Verwaltungsgebühr ist eine separate Position.</p>
+      <p class="disc"><strong>Wichtig:</strong> Alle Ergebnisse sind Schätzungen auf Basis Ihrer eigenen Annahmen – keine Zusage von Leads, Umsatz oder Rentabilität. CPC und Conversion-Rate entstehen in einer Echtzeit-Auktion und schwanken; regional (etwa in Zürich) und in wettbewerbsintensiven Branchen liegen sie tendenziell höher – prüfen Sie Ihren eigenen Wert, statt einen pauschalen Aufschlag anzunehmen. Das Werbebudget wird direkt an Google bezahlt; die Verwaltungsgebühr ist eine separate Position.</p>
     </section>
   </div>
 
-  <div class="foot">
-    <span class="att">Rechner von <strong>Weissmann AI</strong> · begleitend zum Leitfaden.</span>
-    <div class="links">
-      <a class="link-read" href="https://weissmann.ai/ki-academy/marketing-seo-geo/google-ads-kosten-schweiz-kmu/" target="_blank" rel="noopener">Vollständigen Leitfaden lesen →</a>
-      <a class="cta" href="https://weissmann.ai/preise/" target="_blank" rel="noopener">Google Ads Growth ansehen</a>
+  <!-- VISIBLE LINK FOOTER (below the disclaimer) -->
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Mehr erfahren</p>
+    <div class="lb-links">
+      <a class="lb-link"
+         href="https://weissmann.ai/ki-academy/marketing-seo-geo/google-ads-kosten-schweiz-kmu/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Vollständigen Leitfaden zu Google-Ads-Kosten in der Schweiz auf weissmann.ai lesen (öffnet in neuem Tab)">Vollständigen Leitfaden lesen →</a>
+      <a class="lb-link primary"
+         href="https://weissmann.ai/preise/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Google Ads Growth Paket und Preise von Weissmann ansehen (öffnet in neuem Tab)">Google Ads Growth von Weissmann ansehen →</a>
     </div>
-  </div>
+    <p class="att">Rechner von <strong>Weissmann AI</strong> · begleitend zum Leitfaden.</p>
+  </footer>
 </div>
 
 <script>
 (function(){
   var $=function(id){return document.getElementById(id)};
-  var branche=$('branche'),zurich=$('zurich'),budget=$('budget'),cpc=$('cpc'),cr=$('cr'),val=$('value'),mgmt=$('mgmt'),months=$('months');
-  var defaults={budget:2000,cpc:4,cr:4,value:900,mgmt:690,months:3,branche:'1,5',zurich:false};
+  var branche=$('branche'),budget=$('budget'),cpc=$('cpc'),cr=$('cr'),val=$('value'),mgmt=$('mgmt'),months=$('months');
+  var defaults={budget:2000,cpc:3,cr:4,value:900,mgmt:690,months:3,branche:'3'};
   function fmt(n){ if(!isFinite(n)) return '–'; return "CHF "+Math.round(n).toLocaleString('de-CH'); }
   function fmtNum(n){ if(!isFinite(n)) return '–'; return Math.round(n).toLocaleString('de-CH'); }
   function num(el){ var v=parseFloat(el.value); return isNaN(v)?null:v; }
-  function baseCpc(){ // from industry midpoint unless custom
-    var v=branche.value; if(v==='custom') return null; return parseFloat(v.replace(',','.'));
-  }
-  branche.addEventListener('change',function(){
-    var b=baseCpc();
-    if(b!==null){ var c=b; if(zurich.checked) c=c*1.25; cpc.value=Math.round(c*100)/100; }
-    calc();
-  });
+  function baseCpc(){ var v=branche.value; if(v==='custom') return null; return parseFloat(v); }
+  branche.addEventListener('change',function(){ var b=baseCpc(); if(b!==null){ cpc.value=Math.round(b*100)/100; } calc(); });
   function calc(){
-    // validate
     var cpcErr=$('cpc-err'); cpc.classList.remove('err'); cpcErr.textContent='';
     var B=num(budget), C=num(cpc), R=num(cr), V=num(val), M=num(mgmt), Mo=num(months);
     if(C!==null && C<=0){ cpc.classList.add('err'); cpcErr.textContent='CPC muss grösser als 0 sein.'; }
-    // guard
     B=(B===null||B<0)?0:B; C=(C===null||C<=0)?null:C; R=(R===null||R<0)?0:(R>100?100:R); V=(V===null||V<0)?0:V; M=(M===null||M<0)?0:M; Mo=(Mo===null||Mo<1)?1:Mo;
     var clicks = (C? B/C : null);
     var enq = (clicks!==null? clicks*(R/100) : null);
@@ -247,37 +251,33 @@
     $('r-enq').textContent = enq!==null? (enq>=1?fmtNum(enq):enq.toFixed(1).replace('.',',')) : '–';
     $('r-cpe').textContent = cpe? fmt(cpe) : '–';
     $('r-ad').textContent = fmt(B); $('r-mg').textContent = fmt(M);
-    // break-even
     var be=$('r-be'), beNote=$('r-be-note');
     if(V>0){ var cust=Math.ceil(totalMonthly/V); be.textContent=fmtNum(cust);
       var closeRate = (enq&&enq>0)? (cust/enq*100):null;
-      beNote.textContent = 'Um '+fmt(totalMonthly)+' Gesamtkosten/Monat zu decken. '+(closeRate!==null?('Das entspricht rund '+ (closeRate>100?'>100':Math.round(closeRate)) +' % der Anfragen, die zu Kunden werden müssten.'):''); }
-    else { be.textContent='–'; beNote.textContent='Kundenwert eingeben, um den Break-even zu schätzen.'; }
-    // verdict on test adequacy
+      beNote.textContent = 'So viele gewonnene Kunden müssten pro Monat über ihren Deckungsbeitrag CHF '+fmtNum(totalMonthly).replace('CHF ','')+' Gesamtkosten decken. '+(closeRate!==null?('Das entspricht rund '+ (closeRate>100?'>100':Math.round(closeRate)) +' % der Anfragen, die zu Kunden werden müssten.'):'')); }
+    else { be.textContent='–'; beNote.textContent='Deckungsbeitrag pro Kunde eingeben, um den Break-even zu schätzen.'; }
     var vd=$('verdict'), vt=$('v-title-t'), vb=$('v-body');
     vd.className='verdict';
     if(C===null){ vd.classList.add('v-warn'); vt.textContent='CPC fehlt'; vb.textContent='Bitte einen Klickpreis grösser als 0 eingeben.'; }
     else if(clicks<50){ vd.classList.add('v-stop'); vt.textContent='Budget wahrscheinlich zu klein für einen aussagekräftigen Test';
       vb.textContent='Rund '+fmtNum(clicks)+' Klicks/Monat liefern meist zu wenig Daten, um ein verlässliches Muster zu erkennen. Entweder auf wenige, scharf zugeschnittene Suchbegriffe konzentrieren oder mit dem Start warten, bis ein realistischeres Budget verfügbar ist.'; }
-    else if(clicks<150){ vd.classList.add('v-warn'); vt.textContent='Grenzwertig – für erste Signale genug, für sichere Schlüsse knapp';
-      vb.textContent='Rund '+fmtNum(clicks)+' Klicks/Monat ergeben erste Hinweise. Für belastbare Aussagen über 4–6 Wochen beobachten, bevor Schlüsse gezogen werden.'; }
-    else { vd.classList.add('v-ok'); vt.textContent='Plausibler Testumfang';
-      vb.textContent='Rund '+fmtNum(clicks)+' Klicks/Monat reichen üblicherweise, um innerhalb weniger Wochen etwas zu lernen – vorausgesetzt, das Conversion-Tracking steht.'; }
-    // biggest lever
+    else if(clicks<150){ vd.classList.add('v-warn'); vt.textContent='Grenzwertig – erste Signale möglich, sichere Schlüsse eher nicht';
+      vb.textContent='Rund '+fmtNum(clicks)+' Klicks/Monat können erste Hinweise geben. Ob das reicht, hängt von Ihrer Conversion-Rate und der Datenqualität ab – über 4–6 Wochen beobachten, bevor Schlüsse gezogen werden.'; }
+    else { vd.classList.add('v-ok'); vt.textContent='Plausibler Ausgangspunkt für einen Test';
+      vb.textContent='Rund '+fmtNum(clicks)+' Klicks/Monat sind ein plausibler Ausgangspunkt, um über einige Wochen erste Muster zu erkennen. Ob die Menge tatsächlich ausreicht, hängt von Ihrer Conversion-Rate und einem sauberen Conversion-Tracking ab – nicht allein von der Klickzahl.'; }
     var lever=$('lever');
     if(cpe){
-      var cpeCpc = totalMonthly/((B/(C*1.2))*(R/100)); // CPC +20%
-      var cpeCr = totalMonthly/((B/C)*((R*0.8)/100)); // CR -20%
+      var cpeCpc = totalMonthly/((B/(C*1.2))*(R/100));
+      var cpeCr = totalMonthly/((B/C)*((R*0.8)/100));
       var dCpc=Math.abs(cpeCpc-cpe), dCr=Math.abs(cpeCr-cpe);
       var bigger = dCr>dCpc? 'die Conversion-Rate' : 'der Klickpreis (CPC)';
-      lever.innerHTML='<b>Grösster Hebel:</b> '+bigger+'. Beide Annahmen bestimmen die Kosten pro Anfrage am stärksten – schon ±20 % verschieben das Ergebnis spürbar. Deshalb diese beiden Werte zuerst mit echten Daten belegen, nicht raten.';
-    } else { lever.textContent='Sobald CPC und Conversion-Rate gesetzt sind, zeigt der Rechner, welche Annahme das Ergebnis am stärksten bewegt.'; }
+      lever.innerHTML='<b>Die zwei wichtigsten Variablen bleiben der Klickpreis (CPC) und die Conversion-Rate.</b> Aktuell bewegt '+bigger+' das Ergebnis am stärksten – schon ±20 % verschieben die Kosten pro Anfrage spürbar. Deshalb diese beiden Werte zuerst mit echten Daten belegen.';
+    } else { lever.innerHTML='<b>Die zwei wichtigsten Variablen sind der Klickpreis (CPC) und die Conversion-Rate.</b> Sobald beide gesetzt sind, zeigt der Rechner, welche das Ergebnis gerade am stärksten bewegt.'; }
   }
   [budget,cpc,cr,val,mgmt,months].forEach(function(el){el.addEventListener('input',calc)});
-  zurich.addEventListener('change',function(){ var b=baseCpc(); if(b!==null){var c=b; if(zurich.checked)c=c*1.25; cpc.value=Math.round(c*100)/100;} calc(); });
   $('reset').addEventListener('click',function(){
-    branche.value=defaults.branche; zurich.checked=defaults.zurich; budget.value=defaults.budget; cpc.value=defaults.cpc;
-    cr.value=defaults.cr; val.value=defaults.value; mgmt.value=defaults.mgmt; months.value=defaults.months; calc(); budget.focus();
+    branche.value=defaults.branche; budget.value=defaults.budget; cpc.value=defaults.cpc;
+    cr.value=defaults.cr; val.value=defaults.value; mgmt.value=defaults.mgmt; months.value=defaults.months; calc(); cpc.focus();
   });
   calc();
 })();
