@@ -1,0 +1,432 @@
+<title>Lancio o continuativo: il costo reale del sito · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .grid{display:grid;gap:18px;margin-top:20px}
+  @media(min-width:860px){.grid{grid-template-columns:1.35fr 1fr;align-items:start}}
+
+  .sec-title{font-size:1.02rem;font-weight:700;margin:0 0 4px}
+  .sec-sub{font-size:.9rem;color:var(--ink-mute);margin:0 0 14px}
+
+  .scen{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+  .scen button{font-family:inherit;font-size:.85rem;font-weight:600;color:var(--ink-soft);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;min-height:38px}
+  .scen button:hover{border-color:var(--navy);color:var(--ink)}
+  .scen button:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .scen button.reset{background:transparent}
+
+  fieldset.row{border:1px solid var(--line);border-radius:12px;margin:0 0 12px;padding:14px;background:var(--card)}
+  fieldset.row.off{opacity:.62}
+  fieldset.row legend{padding:0 6px;margin-left:-6px}
+  .row-name{font-weight:700;font-size:.98rem}
+  .badge{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:3px 9px;margin-left:8px;vertical-align:middle}
+  .row-desc{font-size:.86rem;color:var(--ink-mute);margin:2px 0 12px;max-width:60ch}
+
+  .seg{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+  .seg .opt{position:relative}
+  .seg input{position:absolute;opacity:0;width:1px;height:1px}
+  .seg label{display:inline-flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:600;color:var(--ink-soft);background:var(--soft);border:1.5px solid var(--line);border-radius:9px;padding:7px 12px;cursor:pointer;min-height:40px}
+  .seg input:checked+label{background:var(--navy);color:var(--on-navy);border-color:var(--navy)}
+  .seg input:focus-visible+label{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .seg label:hover{border-color:var(--navy)}
+
+  .amts{display:grid;gap:10px}
+  @media(min-width:520px){.amts{grid-template-columns:1fr 1fr}}
+  .amt label{display:block;font-size:.76rem;font-weight:600;color:var(--ink-mute);margin:0 0 4px}
+  .amt .field{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:9px;background:var(--card);overflow:hidden}
+  .amt .field:focus-within{border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 22%,transparent)}
+  .amt .cur{font-size:.8rem;font-weight:700;color:var(--ink-mute);padding:0 4px 0 11px}
+  .amt input{flex:1;width:100%;border:0;outline:none;background:transparent;color:var(--ink);font-family:var(--mono);font-size:.98rem;padding:10px 11px 10px 4px;min-width:0}
+  .amt input:disabled{color:var(--ink-mute)}
+  .amt.dim{opacity:.42}
+
+  .res{position:sticky;top:12px}
+  .rr{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line)}
+  .rr:last-of-type{border-bottom:0}
+  .rr .k{font-size:.9rem;color:var(--ink-soft)}
+  .rr .v{font-family:var(--mono);font-weight:700;font-size:1.02rem;white-space:nowrap}
+  .rr.big{padding:12px 14px;margin:8px 0;background:var(--accent-soft);border-radius:11px;border-bottom:0}
+  .rr.big .k{font-weight:700;color:var(--ink)}
+  .rr.big .v{font-size:1.4rem;color:var(--accent)}
+  .rr.big .v small{display:block;font-size:.66rem;font-weight:600;color:var(--ink-mute);letter-spacing:.03em;text-align:right;font-family:var(--font)}
+
+  .bar{display:flex;height:16px;border-radius:8px;overflow:hidden;background:var(--soft);margin:12px 0 6px}
+  .bar .seg-l{background:var(--navy)}
+  .bar .seg-r{background:var(--accent)}
+  .barleg{display:flex;flex-wrap:wrap;gap:14px;font-size:.78rem;color:var(--ink-mute)}
+  .barleg span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
+  .dot.l{background:var(--navy)}.dot.r{background:var(--accent)}
+
+  .iva{display:flex;align-items:center;gap:9px;margin:14px 0 2px;font-size:.88rem;color:var(--ink-soft)}
+  .iva input{width:18px;height:18px;accent-color:var(--navy)}
+  .iva label{cursor:pointer}
+
+  .anchor{margin-top:14px;font-size:.84rem;color:var(--ink-soft);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5}
+  .anchor b{color:var(--ink)}
+
+  .copybtn{margin-top:14px;width:100%;font-family:inherit;font-size:.92rem;font-weight:600;color:var(--navy);background:var(--card);border:1.5px solid var(--navy);border-radius:11px;padding:12px;cursor:pointer;min-height:48px}
+  .copybtn:hover{background:var(--soft)}
+  .copybtn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copied{color:var(--ok);font-size:.82rem;margin:8px 2px 0;min-height:1.1em}
+
+  .ask{margin-top:18px}
+  .ask ul{margin:8px 0 0;padding-left:18px}
+  .ask li{font-size:.88rem;color:var(--ink-soft);margin:0 0 6px;max-width:64ch}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">AI marketing, SEO e GEO · Costo del sito web</p>
+  <h1>Lancio o mantenimento: separa le sette voci del costo del tuo sito</h1>
+  <p class="lede">Dietro «quanto costa un sito» ci sono sette voci — e la differenza spesso trascurata tra il costo di lancio e quello che continua a correre ogni anno. Assegna ogni voce, inserisci i tuoi importi in CHF, e vedi il totale del primo anno separato da quello degli anni successivi.</p>
+
+  <div class="grid">
+    <section class="card card-pad" aria-labelledby="splitter-t">
+      <h2 class="sec-title" id="splitter-t">Le sette voci — al lancio o continuative?</h2>
+      <p class="sec-sub">Ogni voce può pesare al lancio (una tantum), ogni anno (continuativo) o entrambi. Le impostazioni di partenza seguono l'anatomia descritta nella guida; gli importi li inserisci tu.</p>
+
+      <div class="scen" role="group" aria-label="Scenari di esempio dalla guida">
+        <button type="button" class="reset" data-scen="reset">Reimposta</button>
+        <button type="button" data-scen="artigiano">Artigiano</button>
+        <button type="button" data-scen="ristorante">Ristorante</button>
+        <button type="button" data-scen="studio">Studio professionale</button>
+      </div>
+
+      <div id="rows"></div>
+    </section>
+
+    <aside class="card card-pad res" aria-labelledby="res-t">
+      <h2 class="sec-title" id="res-t">Lancio vs anni successivi</h2>
+      <p class="sec-sub">Gli importi sono i tuoi. Nulla viene salvato o inviato.</p>
+
+      <div id="out" role="status" aria-live="polite">
+        <div class="rr"><span class="k">Costo di lancio (una tantum)</span><span class="v" id="vLaunch">CHF 0</span></div>
+        <div class="rr"><span class="k">Costo continuativo (all'anno)</span><span class="v" id="vYear">CHF 0</span></div>
+
+        <div class="bar" aria-hidden="true"><div class="seg-l" id="barL" style="width:50%"></div><div class="seg-r" id="barR" style="width:50%"></div></div>
+        <div class="barleg" aria-hidden="true"><span><i class="dot l"></i>Lancio</span><span><i class="dot r"></i>Continuativo (anno 1)</span></div>
+
+        <div class="rr big"><span class="k">Totale primo anno</span><span class="v" id="vFirst">CHF 0<small id="ivaTag"></small></span></div>
+        <div class="rr"><span class="k">Ogni anno successivo</span><span class="v" id="vNext">CHF 0</span></div>
+        <div class="rr"><span class="k">Totale su 3 anni</span><span class="v" id="vThree">CHF 0</span></div>
+      </div>
+
+      <div class="iva">
+        <input type="checkbox" id="ivaChk">
+        <label for="ivaChk">Mostra con IVA svizzera 8,1% (i preventivi sono spesso al netto)</label>
+      </div>
+
+      <div class="anchor" id="anchor">
+        <b>Riferimento reale (non una media di mercato):</b> la <b>Starter Website</b> di Weissmann è a <b>CHF 880</b> al lancio (regolare CHF 2'490) per fino a 5 pagine, 1 lingua e 2 cicli di correzione, con base tecnica SEO e GEO; esclude copywriting, lingue aggiuntive e strumenti di terze parti a pagamento.
+      </div>
+
+      <button type="button" class="copybtn" id="copyBtn">Copia il riepilogo (lancio + 3 anni)</button>
+      <p class="copied" id="copied" role="status" aria-live="polite"></p>
+    </aside>
+  </div>
+
+  <section class="card card-pad ask" aria-labelledby="ask-t">
+    <h2 class="sec-title" id="ask-t">Da chiedere per iscritto, prima di firmare</h2>
+    <ul>
+      <li>Non «quanto costa», ma «quanto costa lanciarlo <b>e</b> quanto costa mantenerlo per i prossimi tre anni»: due cifre, non una.</li>
+      <li>Hosting e manutenzione dopo il lancio: quanto costano, una tantum o ogni anno, e a nome di chi restano dominio e account di hosting.</li>
+      <li>Quante lingue sono esplicitamente contate — e la struttura è già predisposta ad accoglierne un'altra, anche partendo con una sola.</li>
+      <li>Se il prezzo è al netto o al lordo dell'IVA svizzera (8,1%).</li>
+    </ul>
+    <p class="disc">Strumento di orientamento, non un preventivo né una consulenza. Come spiega la guida, non esiste una media di mercato affidabile per «un sito in Ticino»: dipende da quali delle sette voci il tuo progetto attiva davvero e da quante lingue servono. Tutti gli importi li inserisci tu e restano solo nel tuo browser: nulla viene salvato, inviato o condiviso. Le cifre della Starter Website sono di un unico fornitore, non un'indicazione di quanto dovrebbe costare il preventivo di un altro fornitore. Conferma sempre per iscritto costo di lancio, costo continuativo e trattamento dell'IVA prima di accettare.</p>
+  </section>
+
+  <footer class="linkbar" aria-label="Approfondimenti">
+    <p class="lb-title">Continua sulla guida</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/it/ai-academy/marketing-seo-geo/costo-sito-web-ticino-svizzera/" target="_blank" rel="noopener noreferrer" aria-label="Leggi la guida completa ai costi di un sito web in Ticino (opens in a new tab)">Leggi la guida completa ai costi →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/it/servizi/sviluppo-siti-web-ai/" target="_blank" rel="noopener noreferrer" aria-label="Scopri lo sviluppo di siti web AI di Weissmann (opens in a new tab)">Sviluppo siti web AI →</a>
+    </div>
+    <p class="att">Basato sulla guida «Quanto costa un sito web in Ticino e in Svizzera» · un complemento alla guida. Orientamento, non un preventivo.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var ITEMS = [
+    {id:"design", name:"Design", badge:"una tantum",
+     desc:"L'aspetto visivo su misura per l'attività — bozze e correzioni, non un tema scaricato e ricolorato.", def:"once"},
+    {id:"contenuti", name:"Contenuti e copywriting", badge:"una tantum + aggiornamenti",
+     desc:"Testi scritti per il cliente ticinese; molti preventivi economici escludono esplicitamente questa voce.", def:"both"},
+    {id:"sviluppo", name:"Sviluppo", badge:"una tantum",
+     desc:"La costruzione tecnica vera e propria: moduli, gestione dei contenuti, prenotazioni.", def:"once"},
+    {id:"seogeo", name:"Base tecnica SEO e GEO", badge:"una tantum + manutenzione leggera",
+     desc:"Struttura, dati strutturati, velocità: le fondamenta perché Google e i motori di risposta AI vi capiscano.", def:"both"},
+    {id:"hosting", name:"Hosting", badge:"continuativo",
+     desc:"Lo spazio dove il sito vive online — un costo ricorrente che esiste comunque.", def:"year"},
+    {id:"manutenzione", name:"Manutenzione", badge:"continuativo",
+     desc:"Aggiornamenti di sicurezza, piccole correzioni, la reperibilità quando qualcosa smette di funzionare.", def:"year"},
+    {id:"lingue", name:"Lingue aggiuntive", badge:"una tantum + continuativo",
+     desc:"Ogni lingua in più ha una propria base SEO e una propria manutenzione dei contenuti nel tempo.", def:"both"}
+  ];
+
+  // Assignment patterns from the guide's "Tre progetti reali" section.
+  // These set only which voci are active and how they are classified.
+  // Amounts are ALWAYS supplied by the user — never prefilled.
+  var SCEN = {
+    artigiano:   {design:"once", contenuti:"once", sviluppo:"once", seogeo:"both",  hosting:"year", manutenzione:"year", lingue:"off"},
+    ristorante:  {design:"once", contenuti:"both", sviluppo:"once", seogeo:"both",  hosting:"year", manutenzione:"year", lingue:"both"},
+    studio:      {design:"once", contenuti:"both", sviluppo:"once", seogeo:"both",  hosting:"year", manutenzione:"year", lingue:"both"}
+  };
+
+  var OPTS = [
+    {v:"off",  t:"Escludi"},
+    {v:"once", t:"Al lancio"},
+    {v:"year", t:"Ogni anno"},
+    {v:"both", t:"Entrambi"}
+  ];
+
+  var state = {};
+  ITEMS.forEach(function(it){ state[it.id] = {assign: it.def, once: "", year: ""}; });
+
+  var VAT = 0.081;
+  var withVat = false;
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  function group(v){ return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, "’"); }
+  function chf(n){ return "CHF " + group(Math.round(n)); }
+  function num(s){ var n = parseFloat(String(s).replace(/[^0-9.,]/g,"").replace(",",".")); return isFinite(n) && n>0 ? n : 0; }
+
+  var rowsEl = document.getElementById("rows");
+
+  ITEMS.forEach(function(it){
+    var fs = document.createElement("fieldset");
+    fs.className = "row";
+    fs.id = "fs-" + it.id;
+
+    var lg = document.createElement("legend");
+    lg.innerHTML = '<span class="row-name">' + esc(it.name) + '</span><span class="badge">' + esc(it.badge) + '</span>';
+    fs.appendChild(lg);
+
+    var d = document.createElement("p");
+    d.className = "row-desc";
+    d.textContent = it.desc;
+    fs.appendChild(d);
+
+    // segmented radio group
+    var seg = document.createElement("div");
+    seg.className = "seg";
+    seg.setAttribute("role","radiogroup");
+    seg.setAttribute("aria-label","Come pesa la voce " + it.name);
+    OPTS.forEach(function(o){
+      var wrap = document.createElement("span");
+      wrap.className = "opt";
+      var inp = document.createElement("input");
+      inp.type = "radio";
+      inp.name = "assign-" + it.id;
+      inp.id = "assign-" + it.id + "-" + o.v;
+      inp.value = o.v;
+      inp.checked = (state[it.id].assign === o.v);
+      inp.addEventListener("change", function(){ state[it.id].assign = o.v; syncRow(it.id); compute(); });
+      var lab = document.createElement("label");
+      lab.setAttribute("for", inp.id);
+      lab.textContent = o.t;
+      wrap.appendChild(inp);
+      wrap.appendChild(lab);
+      seg.appendChild(wrap);
+    });
+    fs.appendChild(seg);
+
+    // amount fields
+    var amts = document.createElement("div");
+    amts.className = "amts";
+
+    function mkAmt(kind, labelTxt){
+      var box = document.createElement("div");
+      box.className = "amt";
+      box.id = "amt-" + it.id + "-" + kind;
+      var lab = document.createElement("label");
+      lab.setAttribute("for", "in-" + it.id + "-" + kind);
+      lab.textContent = labelTxt;
+      var field = document.createElement("div");
+      field.className = "field";
+      var cur = document.createElement("span");
+      cur.className = "cur";
+      cur.textContent = "CHF";
+      var inp = document.createElement("input");
+      inp.type = "number";
+      inp.inputMode = "numeric";
+      inp.min = "0";
+      inp.step = "10";
+      inp.id = "in-" + it.id + "-" + kind;
+      inp.placeholder = "0";
+      inp.setAttribute("aria-label", labelTxt + " per " + it.name);
+      inp.value = state[it.id][kind];
+      inp.addEventListener("input", function(){ state[it.id][kind] = inp.value; compute(); });
+      field.appendChild(cur);
+      field.appendChild(inp);
+      box.appendChild(lab);
+      box.appendChild(field);
+      return box;
+    }
+
+    amts.appendChild(mkAmt("once", "Importo al lancio"));
+    amts.appendChild(mkAmt("year", "Importo all'anno"));
+    fs.appendChild(amts);
+
+    rowsEl.appendChild(fs);
+    syncRow(it.id);
+  });
+
+  function syncRow(id){
+    var a = state[id].assign;
+    var onceOn = (a === "once" || a === "both");
+    var yearOn = (a === "year" || a === "both");
+    var onceBox = document.getElementById("amt-" + id + "-once");
+    var yearBox = document.getElementById("amt-" + id + "-year");
+    var onceIn = document.getElementById("in-" + id + "-once");
+    var yearIn = document.getElementById("in-" + id + "-year");
+    onceIn.disabled = !onceOn; yearIn.disabled = !yearOn;
+    onceBox.classList.toggle("dim", !onceOn);
+    yearBox.classList.toggle("dim", !yearOn);
+    document.getElementById("fs-" + id).classList.toggle("off", a === "off");
+    // keep radios in sync (used by scenario buttons)
+    var r = document.getElementById("assign-" + id + "-" + a);
+    if(r) r.checked = true;
+  }
+
+  function totals(){
+    var launch = 0, year = 0;
+    ITEMS.forEach(function(it){
+      var s = state[it.id];
+      if(s.assign === "once" || s.assign === "both") launch += num(s.once);
+      if(s.assign === "year" || s.assign === "both") year += num(s.year);
+    });
+    return {launch:launch, year:year};
+  }
+
+  function adj(n){ return withVat ? n * (1 + VAT) : n; }
+
+  function compute(){
+    var t = totals();
+    var launch = adj(t.launch), year = adj(t.year);
+    var first = launch + year;
+    var three = launch + 3 * year;
+
+    document.getElementById("vLaunch").textContent = chf(launch);
+    document.getElementById("vYear").textContent = chf(year);
+    document.getElementById("vFirst").firstChild.nodeValue = chf(first);
+    document.getElementById("vNext").textContent = chf(year);
+    document.getElementById("vThree").textContent = chf(three);
+    document.getElementById("ivaTag").textContent = withVat ? "IVA 8,1% inclusa" : "";
+
+    var lp = first > 0 ? (launch / first) * 100 : 50;
+    document.getElementById("barL").style.width = lp + "%";
+    document.getElementById("barR").style.width = (100 - lp) + "%";
+  }
+
+  // scenario buttons
+  document.querySelectorAll(".scen button").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var key = btn.getAttribute("data-scen");
+      if(key === "reset"){
+        ITEMS.forEach(function(it){
+          state[it.id].assign = it.def;
+          state[it.id].once = ""; state[it.id].year = "";
+          var oi = document.getElementById("in-" + it.id + "-once");
+          var yi = document.getElementById("in-" + it.id + "-year");
+          if(oi) oi.value = ""; if(yi) yi.value = "";
+          syncRow(it.id);
+        });
+      } else {
+        var cfg = SCEN[key];
+        ITEMS.forEach(function(it){
+          state[it.id].assign = cfg[it.id] || it.def;
+          syncRow(it.id);
+        });
+      }
+      compute();
+    });
+  });
+
+  // VAT toggle
+  document.getElementById("ivaChk").addEventListener("change", function(){
+    withVat = this.checked; compute();
+  });
+
+  // copy summary of the user's OWN numbers
+  function summaryText(){
+    var t = totals();
+    var launch = adj(t.launch), year = adj(t.year);
+    var first = launch + year, three = launch + 3 * year;
+    var lines = [];
+    lines.push("Costo sito web — lancio vs continuativo (orientamento, non un preventivo)");
+    if(withVat) lines.push("Importi mostrati IVA 8,1% inclusa.");
+    lines.push("");
+    lines.push("Costo di lancio (una tantum): " + chf(launch));
+    lines.push("Costo continuativo (all'anno): " + chf(year));
+    lines.push("Totale primo anno: " + chf(first));
+    lines.push("Ogni anno successivo: " + chf(year));
+    lines.push("Totale su 3 anni: " + chf(three));
+    lines.push("");
+    lines.push("Voci (importi inseriti da me):");
+    var labelA = {off:"esclusa", once:"al lancio", year:"ogni anno", both:"entrambi"};
+    ITEMS.forEach(function(it){
+      var s = state[it.id];
+      if(s.assign === "off"){ return; }
+      var parts = [];
+      if(s.assign === "once" || s.assign === "both") parts.push("lancio " + chf(num(s.once)));
+      if(s.assign === "year" || s.assign === "both") parts.push("anno " + chf(num(s.year)));
+      lines.push("- " + it.name + " (" + labelA[s.assign] + "): " + parts.join(" + "));
+    });
+    lines.push("");
+    lines.push("Riferimento: Starter Website Weissmann CHF 880 al lancio (regolare CHF 2’490).");
+    lines.push("Fonte: guida «Quanto costa un sito web in Ticino e in Svizzera» — weissmann.ai");
+    return lines.join("\n");
+  }
+
+  function flashCopied(msg){
+    var el = document.getElementById("copied");
+    el.textContent = msg;
+    setTimeout(function(){ el.textContent = ""; }, 2600);
+  }
+
+  document.getElementById("copyBtn").addEventListener("click", function(){
+    var txt = summaryText();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(function(){ flashCopied("Riepilogo copiato negli appunti."); },
+        function(){ legacyCopy(txt); });
+    } else { legacyCopy(txt); }
+  });
+
+  function legacyCopy(txt){
+    try{
+      var ta = document.createElement("textarea");
+      ta.value = txt;
+      ta.setAttribute("readonly","");
+      ta.style.position = "absolute"; ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      flashCopied("Riepilogo copiato negli appunti.");
+    } catch(e){ flashCopied("Copia non riuscita — seleziona e copia manualmente."); }
+  }
+
+  compute();
+})();
+</script>

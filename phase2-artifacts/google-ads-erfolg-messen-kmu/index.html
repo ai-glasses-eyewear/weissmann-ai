@@ -1,0 +1,482 @@
+<title>Cost per Qualified Lead berechnen · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .grid{display:grid;gap:22px;margin-top:22px}
+  @media(min-width:820px){.grid{grid-template-columns:minmax(0,0.92fr) minmax(0,1.08fr)}}
+
+  .sec-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 4px}
+  .sec-sub{font-size:.86rem;color:var(--ink-mute);margin:0 0 16px;line-height:1.45}
+
+  .fields{display:grid;gap:14px}
+  @media(min-width:520px){.fields.two{grid-template-columns:1fr 1fr}}
+  .field{display:flex;flex-direction:column;gap:5px;min-width:0}
+  .field label{font-size:.85rem;font-weight:600;color:var(--ink-soft)}
+  .field .hint{font-size:.76rem;color:var(--ink-mute);line-height:1.4}
+  .inwrap{position:relative;display:flex;align-items:center}
+  .inwrap .unit{position:absolute;left:12px;font-size:.85rem;color:var(--ink-mute);pointer-events:none;font-weight:600}
+  .inwrap .suf{position:absolute;right:12px;font-size:.85rem;color:var(--ink-mute);pointer-events:none;font-weight:600}
+  input[type=number]{width:100%;font-family:var(--font);font-size:1rem;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;min-height:46px}
+  input.pad-l{padding-left:46px}input.pad-r{padding-right:34px}
+  input[type=number]:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+  input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{opacity:.5}
+
+  .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .btn{font-family:var(--font);font-weight:600;font-size:.9rem;padding:10px 15px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;min-height:44px}
+  .btn:hover{background:var(--soft)}
+  .btn.solid{background:var(--navy);color:var(--on-navy);border-color:var(--navy)}.btn.solid:hover{background:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+
+  .hero{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:12px;padding:18px 18px 16px}
+  .hero .lab{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--accent);margin:0 0 4px}
+  .hero .big{font-size:clamp(2rem,6vw,2.7rem);font-weight:800;letter-spacing:-.02em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+  .hero .sub{font-size:.84rem;color:var(--ink-soft);margin:8px 0 0;line-height:1.45}
+
+  .verdict{margin:14px 0 0;padding:13px 15px;border-radius:11px;background:var(--soft);border:1px solid var(--line);font-size:.92rem;color:var(--ink-soft);line-height:1.5}
+  .verdict strong{color:var(--ink)}
+  .verdict.warn{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 34%,transparent)}
+
+  .block{margin-top:16px}
+  .block-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:0 0 9px}
+  .block-h .t{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0}
+  .block-h .t.vanity{color:var(--ink-mute)}
+  .block-h .t.decision{color:var(--ok)}
+  .cap{font-size:.78rem;color:var(--ink-mute);margin:0 0 10px;line-height:1.45}
+
+  .metrics{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+  .m{border:1px solid var(--line);border-radius:11px;padding:12px 13px;background:var(--card);min-width:0}
+  .m.mute{background:var(--soft)}
+  .m.good{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 30%,transparent)}
+  .m .mlab{font-size:.76rem;color:var(--ink-mute);margin:0 0 3px;line-height:1.3}
+  .m .mval{font-size:1.24rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em;line-height:1.15}
+  .m .mnote{font-size:.72rem;color:var(--ink-mute);margin:3px 0 0;line-height:1.35}
+
+  details.ext{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+  details.ext>summary{cursor:pointer;list-style:none;padding:13px 15px;font-weight:600;font-size:.9rem;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:10px}
+  details.ext>summary::-webkit-details-marker{display:none}
+  details.ext>summary .chev{color:var(--ink-mute);font-size:.8rem;transition:transform .15s}
+  details.ext[open]>summary .chev{transform:rotate(180deg)}
+  details.ext>summary:focus-visible{outline:none;box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--navy) 40%,transparent)}
+  .ext-body{padding:0 15px 15px;border-top:1px solid var(--line)}
+  .ext-body .fields{margin-top:14px}
+
+  .checklist{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+  .checklist li{position:relative;padding:10px 12px 10px 34px;background:var(--soft);border-radius:9px;font-size:.86rem;color:var(--ink-soft);line-height:1.45}
+  .checklist li::before{content:"?";position:absolute;left:11px;top:10px;width:15px;height:15px;font-size:.7rem;font-weight:800;color:var(--accent);display:flex;align-items:center;justify-content:center}
+  .empty{font-size:.86rem;color:var(--ink-mute);margin:0}
+  .sronly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">KI-Marketing, SEO &amp; GEO · Google Ads Messung</p>
+  <h1>Cost per Qualified Lead: was Ihre Google-Ads-Zahlen wirklich sagen</h1>
+  <p class="lede">Impressionen, Klickrate und Cost per Click stehen in Google Ads ganz oben – weil sie am einfachsten zu messen sind, nicht weil sie am wichtigsten wären. Geben Sie Ihre eigenen Zahlen ein. Der Rechner trennt diese Vanity-Zahlen von der Zahl, die eine Entscheidung trägt: dem Cost per Qualified Lead.</p>
+
+  <div class="grid">
+    <!-- ── INPUT ── -->
+    <section class="card card-pad" aria-labelledby="in-title">
+      <h2 class="sec-title" id="in-title">Ihre Zahlen aus einem Monat</h2>
+      <p class="sec-sub">Alles bleibt in Ihrem Browser. Nichts wird gespeichert oder gesendet.</p>
+
+      <form id="calc" novalidate>
+        <div class="fields two">
+          <div class="field">
+            <label for="in-spend">Werbespend im Monat</label>
+            <div class="inwrap">
+              <span class="unit">CHF</span>
+              <input class="pad-l" type="number" id="in-spend" inputmode="decimal" min="0" step="10" placeholder="0" autocomplete="off">
+            </div>
+            <span class="hint">Das bei Google bezahlte Budget für den Zeitraum.</span>
+          </div>
+          <div class="field">
+            <label for="in-clicks">Klicks</label>
+            <div class="inwrap">
+              <input type="number" id="in-clicks" inputmode="numeric" min="0" step="1" placeholder="0" autocomplete="off">
+            </div>
+            <span class="hint">Angeklickte Anzeigen im selben Zeitraum.</span>
+          </div>
+        </div>
+
+        <div class="fields two" style="margin-top:14px">
+          <div class="field">
+            <label for="in-convrate">Conversion-Rate im Konto</label>
+            <div class="inwrap">
+              <input class="pad-r" type="number" id="in-convrate" inputmode="decimal" min="0" max="100" step="0.1" placeholder="0" autocomplete="off">
+              <span class="suf">%</span>
+            </div>
+            <span class="hint">Anteil der Klicks, die das Konto als «Conversion» zählt (Formular, Klick auf die Nummer …).</span>
+          </div>
+          <div class="field">
+            <label for="in-sharequal">Davon qualifiziert</label>
+            <div class="inwrap">
+              <input class="pad-r" type="number" id="in-sharequal" inputmode="decimal" min="0" max="100" step="1" placeholder="0" autocomplete="off">
+              <span class="suf">%</span>
+            </div>
+            <span class="hint">Anteil dieser Conversions, der nach manueller Durchsicht ein echtes, passendes Anliegen ist.</span>
+          </div>
+        </div>
+
+        <div class="fields" style="margin-top:14px">
+          <div class="field">
+            <label for="in-impr">Impressionen <span style="font-weight:400;color:var(--ink-mute)">(optional)</span></label>
+            <div class="inwrap">
+              <input type="number" id="in-impr" inputmode="numeric" min="0" step="100" placeholder="0" autocomplete="off">
+            </div>
+            <span class="hint">Nur für die Klickrate – eine reine Vanity-Zahl. Frei lassen, wenn nicht benötigt.</span>
+          </div>
+        </div>
+
+        <div class="btnrow">
+          <button type="button" class="btn" id="btn-example">Beispiel aus dem Artikel laden</button>
+          <button type="button" class="btn" id="btn-reset">Zurücksetzen</button>
+        </div>
+      </form>
+
+      <details class="ext">
+        <summary>Optional: bis zum Auftrag weiterrechnen (ROAS) <span class="chev" aria-hidden="true">▾</span></summary>
+        <div class="ext-body">
+          <p class="cap" style="margin-top:12px">Wie im durchgerechneten Beispiel des Artikels: von den qualifizierten Leads zu Aufträgen, Umsatz und Return on Ad Spend.</p>
+          <div class="fields two">
+            <div class="field">
+              <label for="in-close">Abschlussquote</label>
+              <div class="inwrap">
+                <input class="pad-r" type="number" id="in-close" inputmode="decimal" min="0" max="100" step="1" placeholder="0" autocomplete="off">
+                <span class="suf">%</span>
+              </div>
+              <span class="hint">Anteil der qualifizierten Leads, der zum bezahlten Auftrag wird.</span>
+            </div>
+            <div class="field">
+              <label for="in-value">Durchschnittlicher Auftragswert</label>
+              <div class="inwrap">
+                <span class="unit">CHF</span>
+                <input class="pad-l" type="number" id="in-value" inputmode="decimal" min="0" step="10" placeholder="0" autocomplete="off">
+              </div>
+              <span class="hint">Umsatz eines gewonnenen Auftrags.</span>
+            </div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ── OUTPUT ── -->
+    <section class="card card-pad" aria-labelledby="out-title">
+      <h2 class="sec-title" id="out-title">Ergebnis</h2>
+      <p class="sec-sub">Die Zahl unten trägt die Entscheidung – nicht die Zahl, die zuerst auf dem Dashboard steht.</p>
+
+      <div class="hero">
+        <p class="lab">Cost per Qualified Lead</p>
+        <div class="big" id="out-cpql">–</div>
+        <p class="sub" id="out-cpql-sub">Werbespend geteilt durch die Anzahl geprüfter, passender Anfragen.</p>
+      </div>
+
+      <p class="verdict" id="out-verdict" role="status" aria-live="polite">Geben Sie Werbespend, Klicks, Conversion-Rate und den qualifizierten Anteil ein – oder laden Sie das Beispiel aus dem Artikel.</p>
+
+      <div class="block">
+        <div class="block-h"><p class="t decision">Zahlen, die eine Entscheidung tragen</p></div>
+        <p class="cap">Diese Zahlen verlangen einen zusätzlichen Schritt: den Bezug zum echten Geschäftsergebnis.</p>
+        <div class="metrics">
+          <div class="m good">
+            <p class="mlab">Cost per Qualified Lead</p>
+            <p class="mval" id="m-cpql">–</p>
+            <p class="mnote">Nur geprüfte, passende Anfragen.</p>
+          </div>
+          <div class="m">
+            <p class="mlab">Cost per Conversion</p>
+            <p class="mval" id="m-cpconv">–</p>
+            <p class="mnote">Zählt jede definierte Aktion – die Dashboard-Zahl.</p>
+          </div>
+          <div class="m">
+            <p class="mlab">Bereinigte Conversion-Rate</p>
+            <p class="mval" id="m-adjrate">–</p>
+            <p class="mnote">Qualifizierte Leads geteilt durch Klicks.</p>
+          </div>
+          <div class="m">
+            <p class="mlab">Qualifizierte Leads</p>
+            <p class="mval" id="m-qual">–</p>
+            <p class="mnote" id="m-qual-note">von den gezählten Conversions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-h"><p class="t vanity">Zahlen, die beeindrucken und wenig sagen</p></div>
+        <p class="cap">Sie beschreiben, wie oft eine Anzeige lief und angeklickt wurde – nicht, ob daraus ein Kunde wurde.</p>
+        <div class="metrics">
+          <div class="m mute">
+            <p class="mlab">Cost per Click</p>
+            <p class="mval" id="m-cpc">–</p>
+            <p class="mnote">Ein tiefer CPC sagt nichts über den Wert des Klicks.</p>
+          </div>
+          <div class="m mute">
+            <p class="mlab">Klickrate (CTR)</p>
+            <p class="mval" id="m-ctr">–</p>
+            <p class="mnote">Nur mit Impressionen. Sagt nichts über die Zeit nach dem Klick.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block" id="roas-block" hidden>
+        <div class="block-h"><p class="t decision">Bis zum Auftrag durchgerechnet</p></div>
+        <p class="cap">Ein ROAS von 3 heisst: CHF 3 Umsatz pro Werbe-Franken – nicht CHF 3 Gewinn. Ob er reicht, hängt allein von Ihrer Marge ab; einen seriösen branchenübergreifenden Richtwert gibt es nicht.</p>
+        <div class="metrics">
+          <div class="m"><p class="mlab">Aufträge</p><p class="mval" id="m-orders">–</p></div>
+          <div class="m"><p class="mlab">Umsatz aus der Kampagne</p><p class="mval" id="m-revenue">–</p></div>
+          <div class="m good"><p class="mlab">ROAS</p><p class="mval" id="m-roas">–</p><p class="mnote">Umsatz geteilt durch Werbespend.</p></div>
+          <div class="m"><p class="mlab">Kosten pro gewonnenem Kunden</p><p class="mval" id="m-cac">–</p></div>
+        </div>
+      </div>
+
+      <div class="btnrow">
+        <button type="button" class="btn solid" id="btn-copy">Ergebnis als Text kopieren</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- ── Audit checklist ── -->
+  <section class="card card-pad" style="margin-top:22px" aria-labelledby="chk-title">
+    <h2 class="sec-title" id="chk-title">In fünf Minuten prüfen: sechs Fragen an den eigenen Bericht</h2>
+    <p class="sec-sub">Egal ob der Bericht von einer Agentur, einem internen Team oder von Weissmann kommt.</p>
+    <ul class="checklist">
+      <li>Ist das, was «Conversion» heisst, ein geprüfter, qualifizierter Lead – oder nur ein Klick auf eine Nummer, unabhängig davon, ob das Gespräch zustande kam?</li>
+      <li>Stimmt die Anzahl gezählter Conversions mit den echten Anfragen im Posteingang oder Auftragsbuch überein – für denselben Zeitraum?</li>
+      <li>Gibt es doppelte Conversion-Aktionen, die dieselbe Handlung zweimal zählen könnten?</li>
+      <li>Wird überhaupt Cost per Qualified Lead berichtet – oder ausschliesslich Cost per Click, Klickrate und Impressionen?</li>
+      <li>Wann wurde das Tracking zuletzt nach einer Änderung an der eigenen Website überprüft?</li>
+      <li>Beruht der ROAS auf echten Auftragswerten – oder auf einer geschätzten Pauschale, die nie mit der Realität abgeglichen wurde?</li>
+    </ul>
+  </section>
+
+  <p class="disc">Orientierung, keine Beratung und keine Offerte. Alle Zahlen stammen aus Ihren eigenen Eingaben und werden ausschliesslich in Ihrem Browser berechnet – nichts wird gespeichert oder gesendet. Das im Artikel durchgerechnete Beispiel ist frei erfunden und beschreibt keinen Marktdurchschnitt. Cost per Qualified Lead und ROAS sind nur so ehrlich wie das Conversion-Tracking, auf dem sie beruhen; fehlerhaftes Tracking verzerrt beide Zahlen in beide Richtungen.</p>
+
+  <footer class="linkbar" aria-label="Weiterführende Links zu Google Ads bei Weissmann">
+    <p class="lb-title">Weiterlesen und Betreuung</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/marketing-seo-geo/google-ads-erfolg-messen-kmu/" target="_blank" rel="noopener noreferrer" aria-label="Zum Leitfaden: Google Ads Erfolg messen für KMU (opens in a new tab)">Leitfaden: Google Ads Erfolg messen →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/google-ads/" target="_blank" rel="noopener noreferrer" aria-label="Zum Google Ads Growth Angebot von Weissmann (opens in a new tab)">Google Ads Growth ansehen →</a>
+    </div>
+    <p class="att">Google Ads Growth kostet CHF 690/Monat für die Betreuung inklusive laufendem Reporting; das Werbebudget kommt separat dazu und wird direkt bei Google bezahlt · eine Ergänzung zum Leitfaden. Orientierung, keine Offerte.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var ids = ["in-spend","in-clicks","in-convrate","in-sharequal","in-impr","in-close","in-value"];
+
+  function num(id){
+    var v = parseFloat($(id).value);
+    return isFinite(v) ? v : null;
+  }
+  function clampPct(v){
+    if(v === null) return null;
+    if(v < 0) return 0;
+    if(v > 100) return 100;
+    return v;
+  }
+  // Swiss-style grouping: apostrophe thousands, dot decimals.
+  function grp(intStr){ return intStr.replace(/\B(?=(\d{3})+(?!\d))/g, "’"); }
+  function fmt(n, dec){
+    if(n === null || !isFinite(n)) return "–";
+    var neg = n < 0; n = Math.abs(n);
+    var s = n.toFixed(dec);
+    var parts = s.split(".");
+    parts[0] = grp(parts[0]);
+    return (neg ? "-" : "") + (dec > 0 ? parts.join(".") : parts[0]);
+  }
+  function chf(n, dec){ return n === null || !isFinite(n) ? "–" : "CHF " + fmt(n, dec === undefined ? 2 : dec); }
+  function pct(n){ return n === null || !isFinite(n) ? "–" : fmt(n, 1) + " %"; }
+  function count(n){
+    if(n === null || !isFinite(n)) return "–";
+    // whole numbers plain; otherwise one decimal
+    return Math.abs(n - Math.round(n)) < 0.05 ? fmt(Math.round(n), 0) : fmt(n, 1);
+  }
+
+  var lastSummary = "";
+
+  function compute(){
+    var spend = num("in-spend");
+    var clicks = num("in-clicks");
+    var convRate = clampPct(num("in-convrate"));
+    var shareQual = clampPct(num("in-sharequal"));
+    var impr = num("in-impr");
+    var closeRate = clampPct(num("in-close"));
+    var avgValue = num("in-value");
+
+    var haveCore = spend !== null && spend > 0 && clicks !== null && clicks > 0
+                   && convRate !== null && shareQual !== null;
+
+    var conversions = null, qualified = null, cpConv = null, cpql = null,
+        adjRate = null, cpc = null, ctr = null, multiple = null;
+
+    if(clicks !== null && clicks > 0 && convRate !== null){
+      conversions = clicks * (convRate / 100);
+      if(shareQual !== null) qualified = conversions * (shareQual / 100);
+    }
+    if(spend !== null && spend > 0){
+      if(conversions !== null && conversions > 0) cpConv = spend / conversions;
+      if(qualified !== null && qualified > 0) cpql = spend / qualified;
+      if(clicks !== null && clicks > 0) cpc = spend / clicks;
+    }
+    if(qualified !== null && clicks !== null && clicks > 0) adjRate = qualified / clicks * 100;
+    if(cpql !== null && cpConv !== null && cpConv > 0) multiple = cpql / cpConv;
+    if(impr !== null && impr > 0 && clicks !== null) ctr = clicks / impr * 100;
+
+    // Decision metrics
+    $("m-cpql").textContent   = chf(cpql, 2);
+    $("m-cpconv").textContent = chf(cpConv, 2);
+    $("m-adjrate").textContent = pct(adjRate);
+    $("m-qual").textContent   = count(qualified);
+    $("m-qual-note").textContent = (conversions !== null)
+      ? "von " + count(conversions) + " gezählten Conversions."
+      : "von den gezählten Conversions.";
+
+    // Vanity metrics
+    $("m-cpc").textContent = chf(cpc, 2);
+    $("m-ctr").textContent = ctr !== null ? pct(ctr) : "–";
+
+    // Hero
+    $("out-cpql").textContent = chf(cpql, 2);
+
+    // Verdict
+    var v = $("out-verdict");
+    v.classList.remove("warn");
+    if(!haveCore){
+      v.innerHTML = "Geben Sie Werbespend, Klicks, Conversion-Rate und den qualifizierten Anteil ein – oder laden Sie das Beispiel aus dem Artikel.";
+    } else if(qualified === null || qualified <= 0 || shareQual === 0){
+      v.innerHTML = "Bei einem qualifizierten Anteil von 0 % entsteht kein einziger verwertbarer Lead – die Cost-per-Conversion-Zahl von <strong>" + chf(cpConv, 2) + "</strong> beschreibt dann reine Aktivität, kein Geschäft.";
+    } else {
+      var msg = "Ihr Cost per Qualified Lead liegt bei <strong>" + chf(cpql, 2) + "</strong>";
+      if(multiple !== null && multiple >= 1.05){
+        msg += " – das <strong>" + fmt(multiple, 1) + "-fache</strong> der Cost per Conversion von " + chf(cpConv, 2) + ", die zuerst auf dem Dashboard erscheint.";
+      } else {
+        msg += ", nah an der Cost per Conversion von " + chf(cpConv, 2) + " – Ihre Conversions sind grösstenteils schon qualifiziert.";
+      }
+      v.innerHTML = msg;
+    }
+
+    // Small-volume caveat (article: "unterhalb einiger Dutzend Klicks")
+    if(haveCore && clicks !== null && clicks > 0 && clicks < 30){
+      v.classList.add("warn");
+      v.innerHTML += " <br><strong>Achtung, kleines Volumen:</strong> Bei " + count(clicks) + " Klicks trägt keine Prozentzahl einen echten Trend. Sehen Sie sich die einzelnen Anfragen direkt an, nicht die Raten.";
+    }
+
+    // ROAS extension
+    var orders = null, revenue = null, roas = null, cac = null;
+    var haveRoas = haveCore && qualified !== null && qualified > 0
+                   && closeRate !== null && closeRate > 0 && avgValue !== null && avgValue > 0;
+    if(haveRoas){
+      orders = qualified * (closeRate / 100);
+      revenue = orders * avgValue;
+      roas = spend > 0 ? revenue / spend : null;
+      cac = orders > 0 ? spend / orders : null;
+    }
+    $("roas-block").hidden = !haveRoas;
+    if(haveRoas){
+      $("m-orders").textContent = count(orders);
+      $("m-revenue").textContent = chf(revenue, 0);
+      $("m-roas").textContent = roas !== null ? fmt(roas, 1) + "×" : "–";
+      $("m-cac").textContent = chf(cac, 2);
+    }
+
+    // Build copyable summary (user's own numbers)
+    var lines = ["Google Ads – Cost per Qualified Lead (eigene Zahlen)", ""];
+    lines.push("Werbespend: " + chf(spend, 2));
+    lines.push("Klicks: " + count(clicks));
+    lines.push("Conversion-Rate im Konto: " + pct(convRate));
+    lines.push("Davon qualifiziert: " + pct(shareQual));
+    if(ctr !== null) lines.push("Klickrate (CTR): " + pct(ctr));
+    lines.push("");
+    lines.push("Gezählte Conversions: " + count(conversions));
+    lines.push("Qualifizierte Leads: " + count(qualified));
+    lines.push("Cost per Conversion (Dashboard): " + chf(cpConv, 2));
+    lines.push("Cost per Qualified Lead: " + chf(cpql, 2));
+    if(multiple !== null) lines.push("Faktor CPQL / Cost per Conversion: " + fmt(multiple, 1) + "x");
+    lines.push("Bereinigte Conversion-Rate: " + pct(adjRate));
+    lines.push("Cost per Click: " + chf(cpc, 2));
+    if(haveRoas){
+      lines.push("");
+      lines.push("Aufträge: " + count(orders));
+      lines.push("Umsatz: " + chf(revenue, 0));
+      lines.push("ROAS: " + (roas !== null ? fmt(roas, 1) + "x" : "–"));
+      lines.push("Kosten pro Kunde: " + chf(cac, 2));
+    }
+    lines.push("");
+    lines.push("Orientierung, keine Offerte. Zahlen nur so verlässlich wie das Conversion-Tracking.");
+    lastSummary = lines.join("\n");
+  }
+
+  ids.forEach(function(id){ $(id).addEventListener("input", compute); });
+
+  $("btn-example").addEventListener("click", function(){
+    // Illustrative example from the article (electrical-installation business).
+    $("in-spend").value = "1800";
+    $("in-clicks").value = "620";
+    // 38 conversions of 620 clicks = 6.13 %
+    $("in-convrate").value = "6.13";
+    // 14 qualified of 38 conversions = 36.8 %
+    $("in-sharequal").value = "36.8";
+    $("in-impr").value = "45000";
+    // 6 orders of 14 qualified = 42.9 %, avg order CHF 950
+    $("in-close").value = "42.9";
+    $("in-value").value = "950";
+    compute();
+    $("out-verdict").scrollIntoView({behavior:"smooth", block:"center"});
+  });
+
+  $("btn-reset").addEventListener("click", function(){
+    ids.forEach(function(id){ $(id).value = ""; });
+    compute();
+    $("in-spend").focus();
+  });
+
+  $("btn-copy").addEventListener("click", function(){
+    var btn = this;
+    var done = function(ok){
+      btn.textContent = ok ? "Kopiert ✓" : "Kopieren nicht möglich";
+      setTimeout(function(){ btn.textContent = "Ergebnis als Text kopieren"; }, 1800);
+    };
+    var text = lastSummary || "";
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ fallback(text, done); });
+    } else {
+      fallback(text, done);
+    }
+  });
+
+  function fallback(text, done){
+    try{
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      done(ok);
+    }catch(e){ done(false); }
+  }
+
+  compute();
+})();
+</script>

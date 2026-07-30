@@ -1,0 +1,431 @@
+<title>GEO Pitch Red-Flag Scanner · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .grid{display:grid;gap:18px;margin-top:20px}
+  h2{font-size:1.12rem;margin:0 0 4px;letter-spacing:-.01em}
+  .sub{color:var(--ink-mute);font-size:.9rem;margin:0 0 4px}
+  .how{display:grid;gap:8px;margin:12px 0 0;padding:0;list-style:none}
+  .how li{position:relative;padding-left:26px;font-size:.92rem;color:var(--ink-soft)}
+  .how li::before{content:"";position:absolute;left:0;top:2px;width:18px;height:18px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:.72rem;font-weight:700;display:grid;place-items:center}
+  .how li:nth-child(1)::before{content:"1"}.how li:nth-child(2)::before{content:"2"}.how li:nth-child(3)::before{content:"3"}
+
+  .scan-list{display:grid;gap:10px;margin:4px 0 0;padding:0;list-style:none}
+  .scan-item{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden;transition:border-color .15s}
+  .scan-item.checked{border-color:var(--accent)}
+  .scan-lab{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;cursor:pointer;margin:0}
+  .scan-lab input{margin:2px 0 0;width:20px;height:20px;flex:0 0 auto;accent-color:var(--navy);cursor:pointer}
+  .scan-lab input:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent);border-radius:4px}
+  .scan-text{font-size:.96rem;color:var(--ink);line-height:1.45}
+  .scan-detail{display:none;padding:0 16px 15px 48px}
+  .scan-item.checked .scan-detail{display:block}
+  .chip{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:4px 9px;border-radius:999px;margin:0 0 8px}
+  .chip.miss{background:var(--miss-soft);color:var(--miss)}
+  .chip.warn{background:var(--warn-soft);color:var(--warn)}
+  .chip.ok{background:var(--ok-soft);color:var(--ok)}
+  .why{font-size:.88rem;color:var(--ink-soft);margin:0;line-height:1.5}
+
+  .results[data-empty="true"] .res-body{display:none}
+  .res-empty{color:var(--ink-mute);font-size:.92rem;margin:8px 0 0}
+  .results[data-empty="false"] .res-empty{display:none}
+  .tally{display:flex;flex-wrap:wrap;gap:10px;margin:2px 0 14px}
+  .stat{flex:1 1 140px;border:1px solid var(--line);border-radius:11px;padding:11px 13px;background:var(--soft)}
+  .stat b{display:block;font-size:1.5rem;line-height:1;letter-spacing:-.02em}
+  .stat span{font-size:.78rem;color:var(--ink-mute)}
+  .stat.miss b{color:var(--miss)}.stat.warn b{color:var(--warn)}.stat.ok b{color:var(--ok)}
+  .verdict{border-radius:12px;padding:14px 16px;border:1px solid var(--line);margin:0 0 14px}
+  .verdict.miss{background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 40%,var(--line))}
+  .verdict.warn{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 40%,var(--line))}
+  .verdict.ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 40%,var(--line))}
+  .verdict h3{margin:0 0 4px;font-size:1.02rem}
+  .verdict p{margin:0;font-size:.9rem;color:var(--ink-soft)}
+  .reslist{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:8px}
+  .reslist .rl-h{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:6px 0 2px}
+  .reslist li.row{display:flex;gap:9px;align-items:flex-start;font-size:.9rem;color:var(--ink-soft)}
+  .reslist li.row .mk{flex:0 0 auto;font-weight:800;line-height:1.4}
+  .reslist li.row.miss .mk{color:var(--miss)}.reslist li.row.warn .mk{color:var(--warn)}.reslist li.row.ok .mk{color:var(--ok)}
+  .uwg{font-size:.85rem;color:var(--ink-soft);background:var(--soft);border-left:3px solid var(--accent);border-radius:8px;padding:11px 13px;margin:0 0 14px}
+
+  .qcard h2{margin-bottom:2px}
+  .qlist{counter-reset:q;margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+  .qlist li{position:relative;padding-left:34px;font-size:.93rem;color:var(--ink-soft)}
+  .qlist li::before{counter-increment:q;content:counter(q);position:absolute;left:0;top:-1px;width:24px;height:24px;border-radius:7px;background:var(--navy);color:var(--on-navy);font-size:.8rem;font-weight:700;display:grid;place-items:center}
+
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .btn{appearance:none;font-family:inherit;font-weight:600;font-size:.9rem;padding:11px 16px;border-radius:10px;border:1.5px solid var(--navy);color:var(--navy);background:transparent;cursor:pointer;min-height:44px}
+  .btn:hover{background:var(--soft)}
+  .btn.primary{background:var(--navy);color:var(--on-navy)}.btn.primary:hover{background:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copied{font-size:.82rem;color:var(--ok);font-weight:600;align-self:center}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">AI Marketing, SEO and GEO · Vendor Due Diligence</p>
+    <h1>GEO Pitch Red-Flag Scanner</h1>
+    <p class="lede">A genuinely new, still-unregulated service category attracts pitches that sound certain about things nobody can control. Tick the lines that match what your GEO / AEO vendor has actually said or shown you. The scanner sorts each against Google's own documentation and the guide, and hands you the questions to ask before you sign, Weissmann's own pitch included.</p>
+  </header>
+
+  <div class="grid">
+
+    <section class="card card-pad" aria-labelledby="how-h">
+      <h2 id="how-h">How to use it</h2>
+      <p class="sub">Nothing is stored or sent. Everything below runs on your own device.</p>
+      <ul class="how">
+        <li>Tick every line that matches something your vendor's pitch actually says or does.</li>
+        <li>Each ticked line reveals a verdict and why, straight from the guide.</li>
+        <li>Take the summary and the five questions into your next vendor conversation.</li>
+      </ul>
+    </section>
+
+    <section class="card card-pad" aria-labelledby="scan-h">
+      <h2 id="scan-h">The scan</h2>
+      <p class="sub">Fifteen lines. Some describe something no one can deliver, some are worth a direct question, and some are reasonable signs of legitimate work. Tick, then read the verdict.</p>
+      <ul class="scan-list" id="scanList"></ul>
+    </section>
+
+    <section class="card card-pad results" id="results" data-empty="true" aria-labelledby="res-h">
+      <h2 id="res-h">Your scan</h2>
+      <p class="res-empty">Tick at least one line above to see how the pitch holds up.</p>
+      <div class="res-body" aria-live="polite">
+        <div class="tally" id="tally">
+          <div class="stat miss"><b id="cMiss">0</b><span>describe the impossible</span></div>
+          <div class="stat warn"><b id="cWarn">0</b><span>worth a question</span></div>
+          <div class="stat ok"><b id="cOk">0</b><span>reasonable signs</span></div>
+        </div>
+        <div id="verdict"></div>
+        <ul class="reslist" id="resList"></ul>
+        <div id="uwg"></div>
+        <div class="toolbar">
+          <button class="btn primary" type="button" id="copyBtn">Copy summary for the vendor call</button>
+          <button class="btn" type="button" id="resetBtn">Reset</button>
+          <span class="copied" id="copied" role="status" aria-live="polite" hidden>Copied to clipboard</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card card-pad qcard" aria-labelledby="q-h">
+      <h2 id="q-h">Five questions to ask instead</h2>
+      <p class="sub">The scan tells you what to distrust. These are what to ask, of any vendor, Weissmann included. A specialist worth hiring answers all five without visibly flinching.</p>
+      <ol class="qlist" id="qlist"></ol>
+    </section>
+
+    <p class="disc" id="disc">Orientation, not legal advice or a quote. Every verdict and quotation here is drawn from the linked Weissmann guide and Google's own developer documentation; nothing is a promise about any specific vendor. Google states that meeting its requirements does not guarantee content is crawled, indexed or served, and that no special AI file or schema is required. Switzerland's Unfair Competition Act (UWG, Art. 3) treats false or misleading statements about one's own services as unfair competition, but only a lawyer can judge whether a specific pitch crosses that line. Weissmann quotes GEO work individually; there is no fixed published price. This tool stores nothing, sends nothing, and runs entirely in your browser.</p>
+
+  </div>
+
+  <footer class="linkbar" aria-label="Read the full guide and the related Weissmann service">
+    <p class="lb-title">Take it further</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/marketing-seo-geo/geo-agency-red-flags-switzerland/" target="_blank" rel="noopener noreferrer" aria-label="Read the full guide: How to spot a fake GEO pitch in Switzerland (opens in a new tab)">Read the full guide →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-web-development/" target="_blank" rel="noopener noreferrer" aria-label="See Weissmann AI web development services (opens in a new tab)">AI web development at Weissmann →</a>
+    </div>
+    <p class="att">Companion to the guide "How to spot a fake GEO pitch." Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // Every claim, verdict and "why" below is grounded in the linked guide.
+  // cat: "miss" = describes something no one can deliver (the two always-false lines);
+  //      "warn" = red flag worth a direct question; "ok" = a reasonable sign of legitimate work.
+  var CLAIMS = [
+    { id:"a1", cat:"miss",
+      text:"“We guarantee you’ll be recommended — or cited — by ChatGPT, Gemini or Perplexity within X days.”",
+      why:"No one, Weissmann included, can guarantee a specific business will be cited. Each assistant answers from a live, constantly changing index passed through a model its own maker retrains on its own schedule — something no GEO vendor operates or controls. Google says meeting every requirement “doesn’t mean that Google will crawl, index, or serve” the content, and that indexing “isn’t guaranteed”. If Google won’t guarantee inclusion in its own AI Overviews, no outside agency can promise a citation inside a system it doesn’t build." },
+    { id:"a2", cat:"miss",
+      text:"“Google now requires AI-visibility schema, or an AI-compliance tag, on every page — and most Swiss sites don’t have it.”",
+      why:"Google’s own guidance says the opposite: owners “don’t need to create new machine readable files, AI text files, or markup to appear in these features”, and “there’s also no special schema.org structured data” to add. A pitch built on an invented compliance requirement is describing a rule that does not exist — in Switzerland or anywhere else — and manufactures urgency rather than describing reality." },
+    { id:"f1", cat:"warn",
+      text:"“Our proprietary GEO algorithm, with secret ranking signals, puts you at the top of AI answers.”",
+      why:"The real mechanics — answer-first writing, entity consistency, structured data, crawler access — are public and taught for free across the industry. A method too secret to describe in plain language is usually a method that does not exist." },
+    { id:"f2", cat:"warn",
+      text:"“You only pay per citation — pay only if you’re actually cited.”",
+      why:"It sounds reassuringly performance-based, but it only holds together if the vendor can reliably produce citations on demand, which no one can. The pricing model quietly assumes the exact guarantee a credible vendor should not be making elsewhere in the same pitch." },
+    { id:"f3", cat:"warn",
+      text:"The proof is a screenshot of a chat reply recommending a client — with no way to reproduce it.",
+      why:"The same prompt, asked minutes later from a different account, can return a different answer. A credible case study documents specific site changes and a stated measurement method, not one lucky screenshot." },
+    { id:"f4", cat:"warn",
+      text:"“Your AI visibility score is 42 out of 100” — a proprietary score with no disclosed inputs.",
+      why:"Presented as an objective diagnostic, it usually functions as a lead-generation device. A transparent audit lists concrete, checkable items instead of a single invented number." },
+    { id:"f5", cat:"warn",
+      text:"“There’s a narrow window before your competitors catch up — you need to act this week.”",
+      why:"Reasonable as an offhand comment, risky as the basis for a same-week signature. Ask exactly what expires, and why, in writing." },
+    { id:"f6", cat:"warn",
+      text:"The GEO quote never mentions your existing SEO, content quality or crawler accessibility.",
+      why:"GEO builds on the same technical and content foundations as SEO, not instead of them. A quote that skips your starting point is pricing a number, not a project." },
+    { id:"f7", cat:"warn",
+      text:"The pitch stays vague about which AI systems — and which languages — are actually in scope.",
+      why:"A Swiss business typically needs German, French or Italian alongside English. A pitch vague on language scope may be reselling a generic, English-only package under a Swiss label." },
+    { id:"f8", cat:"warn",
+      text:"You’re pressured to sign before you can verify a single earlier claim — no public writing, no checkable client, no named contact.",
+      why:"A genuine specialist’s own published pages should already demonstrate the same writing and structure it is proposing to sell you." },
+    { id:"g1", cat:"ok",
+      text:"You’re given a written audit tied to your actual website — concrete, checkable items, no invented score.",
+      why:"This is what an honest, first-pass GEO review looks like: specific to your site, not a templated deck." },
+    { id:"g2", cat:"ok",
+      text:"Recommendations are the publicly documented practices — answer-first writing, consistent entity names, ordinary schema.org markup, crawler access — not repackaged proprietary terminology.",
+      why:"Legitimate GEO work looks closer to careful editorial and technical practice than to a magic trick." },
+    { id:"g3", cat:"ok",
+      text:"The timeline is measured in months, tied to a stated content and technical schedule — not a countdown to a promised citation date.",
+      why:"A real engagement includes a full technical and content review, implementation, and at least one crawl-and-reindex cycle — typically months rather than days." },
+    { id:"g4", cat:"ok",
+      text:"There’s a disclosed measurement approach: which prompts, in which assistants, on what schedule — and it’s acknowledged that missing one prompt on one day isn’t proof the work failed.",
+      why:"Transparent measurement is a mark of a specialist. Agree what a normal, still-in-progress month looks like before work starts." },
+    { id:"g5", cat:"ok",
+      text:"The quote references your existing SEO position first — GEO and SEO treated as layers, not alternatives.",
+      why:"GEO without a crawlable, indexed, technically sound website underneath it is building on ground that isn’t there yet." }
+  ];
+
+  // Mixed display order so each line has to be read, not pattern-matched by group.
+  var ORDER = ["a1","g3","f1","a2","f4","g1","f2","f5","g4","f3","f6","g2","f7","f8","g5"];
+
+  var QUESTIONS = [
+    "Show me one recent page you rewrote for a client, before and after — not a chat screenshot, the actual page.",
+    "Which specific assistants and which languages are in scope, and how will you check them over time?",
+    "What happens on the invoice in a quarter where no citation appears anywhere?",
+    "Who reviews my crawlability and technical SEO baseline first, and can I see that report before any GEO work starts?",
+    "If I apply these same five questions to your own pitch, will you sit through that conversation?"
+  ];
+
+  var CHIP = {
+    miss:{cls:"miss", label:"Describes something no one can deliver"},
+    warn:{cls:"warn", label:"Worth a direct question first"},
+    ok:{cls:"ok",   label:"A reasonable sign of legitimate work"}
+  };
+
+  var byId = {};
+  CLAIMS.forEach(function(c){ byId[c.id] = c; });
+
+  var scanList = document.getElementById("scanList");
+  var results  = document.getElementById("results");
+  var resList  = document.getElementById("resList");
+  var verdictEl= document.getElementById("verdict");
+  var uwgEl    = document.getElementById("uwg");
+  var cMiss = document.getElementById("cMiss");
+  var cWarn = document.getElementById("cWarn");
+  var cOk   = document.getElementById("cOk");
+
+  // Build scan rows
+  ORDER.forEach(function(id){
+    var c = byId[id];
+    if(!c) return;
+    var li = document.createElement("li");
+    li.className = "scan-item";
+    li.id = "item-" + c.id;
+
+    var lab = document.createElement("label");
+    lab.className = "scan-lab";
+
+    var cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.value = c.id;
+    cb.setAttribute("data-cat", c.cat);
+    cb.addEventListener("change", onChange);
+
+    var span = document.createElement("span");
+    span.className = "scan-text";
+    span.textContent = c.text;
+
+    lab.appendChild(cb);
+    lab.appendChild(span);
+
+    var detail = document.createElement("div");
+    detail.className = "scan-detail";
+    var chip = document.createElement("span");
+    chip.className = "chip " + CHIP[c.cat].cls;
+    chip.textContent = CHIP[c.cat].label;
+    var why = document.createElement("p");
+    why.className = "why";
+    why.textContent = c.why;
+    detail.appendChild(chip);
+    detail.appendChild(why);
+
+    li.appendChild(lab);
+    li.appendChild(detail);
+    scanList.appendChild(li);
+  });
+
+  // Build the five questions
+  var qlist = document.getElementById("qlist");
+  QUESTIONS.forEach(function(q){
+    var li = document.createElement("li");
+    li.textContent = q;
+    qlist.appendChild(li);
+  });
+
+  function selected(){
+    return Array.prototype.slice.call(
+      scanList.querySelectorAll("input[type=checkbox]:checked")
+    ).map(function(cb){ return byId[cb.value]; });
+  }
+
+  function onChange(e){
+    var item = document.getElementById("item-" + e.target.value);
+    if(item) item.classList.toggle("checked", e.target.checked);
+    render();
+  }
+
+  function render(){
+    var sel = selected();
+    var miss = sel.filter(function(c){return c.cat==="miss";});
+    var warn = sel.filter(function(c){return c.cat==="warn";});
+    var ok   = sel.filter(function(c){return c.cat==="ok";});
+
+    cMiss.textContent = miss.length;
+    cWarn.textContent = warn.length;
+    cOk.textContent   = ok.length;
+
+    results.setAttribute("data-empty", sel.length ? "false" : "true");
+    if(!sel.length){ verdictEl.innerHTML=""; resList.innerHTML=""; uwgEl.innerHTML=""; return; }
+
+    // Verdict — highest severity present drives the headline. No invented thresholds:
+    // the guide's point is that noticing one impossible line is the whole skill.
+    var v = {cls:"", h:"", p:""};
+    if(miss.length){
+      v.cls="miss";
+      v.h="Stop before you sign.";
+      v.p="At least one line you ticked describes something no vendor can deliver, and no documentation supports. Noticing one such sentence is the entire skill this guide is trying to hand over — run the whole pitch, in writing, past the five questions below before anything is signed.";
+    } else if(warn.length){
+      v.cls="warn";
+      v.h="Worth a direct question first.";
+      v.p="Nothing you ticked is automatically fatal, but each line deserves a written follow-up before anyone signs. Put the measurement cadence and language scope in writing, and treat anything said only out loud as not agreed.";
+    } else {
+      v.cls="ok";
+      v.h="This has the shape of legitimate GEO work.";
+      v.p="Careful editorial and technical practice, not a magic trick. Passing this scan removes the most dishonest version of the risk, not every risk — still get the measurement schedule and language scope in writing, and circulate the signed scope internally, not the sales deck.";
+    }
+    verdictEl.innerHTML = "";
+    var vd = document.createElement("div");
+    vd.className = "verdict " + v.cls;
+    var h3 = document.createElement("h3"); h3.textContent = v.h;
+    var p  = document.createElement("p");  p.textContent = v.p;
+    vd.appendChild(h3); vd.appendChild(p);
+    verdictEl.appendChild(vd);
+
+    // Result lists
+    resList.innerHTML = "";
+    function group(headText, arr, cls, mark){
+      if(!arr.length) return;
+      var hd = document.createElement("li");
+      hd.className = "rl-h";
+      hd.textContent = headText;
+      resList.appendChild(hd);
+      arr.forEach(function(c){
+        var li = document.createElement("li");
+        li.className = "row " + cls;
+        var mk = document.createElement("span");
+        mk.className = "mk"; mk.textContent = mark; mk.setAttribute("aria-hidden","true");
+        var tx = document.createElement("span");
+        tx.textContent = c.text;
+        li.appendChild(mk); li.appendChild(tx);
+        resList.appendChild(li);
+      });
+    }
+    group("Describes something no one can deliver", miss, "miss", "✕");
+    group("Raise these before signing", warn, "warn", "!");
+    group("Reasonable signs you noted", ok, "ok", "✓");
+
+    // UWG note only where a "guaranteed / invented-requirement" line is ticked.
+    uwgEl.innerHTML = "";
+    if(miss.length){
+      var note = document.createElement("div");
+      note.className = "uwg";
+      note.textContent = "Swiss backdrop, not legal advice: the Unfair Competition Act (UWG, Art. 3) treats false or misleading statements about one’s own goods or services as unfair competition. A guaranteed-citation claim that cannot be delivered sits inside the territory that provision exists to discourage. If you believe a specific pitch has crossed that line, raise it with a lawyer, not with this note.";
+      uwgEl.appendChild(note);
+    }
+  }
+
+  function buildSummary(){
+    var sel = selected();
+    var miss = sel.filter(function(c){return c.cat==="miss";});
+    var warn = sel.filter(function(c){return c.cat==="warn";});
+    var ok   = sel.filter(function(c){return c.cat==="ok";});
+    var L = [];
+    L.push("GEO PITCH SCAN — notes for the vendor call");
+    L.push("(Orientation from the Weissmann guide; not legal advice or a quote.)");
+    L.push("");
+    if(miss.length){
+      L.push("Lines that describe something no one can deliver:");
+      miss.forEach(function(c){ L.push("  ✕ " + c.text); });
+      L.push("");
+    }
+    if(warn.length){
+      L.push("Lines to raise before signing:");
+      warn.forEach(function(c){ L.push("  ! " + c.text); });
+      L.push("");
+    }
+    if(ok.length){
+      L.push("Reasonable signs noted:");
+      ok.forEach(function(c){ L.push("  ✓ " + c.text); });
+      L.push("");
+    }
+    if(!sel.length){ L.push("(No lines ticked yet.)"); L.push(""); }
+    L.push("Five questions to ask before signing:");
+    QUESTIONS.forEach(function(q,i){ L.push("  " + (i+1) + ". " + q); });
+    return L.join("\n");
+  }
+
+  // Copy (user's own generated text): clipboard API with execCommand fallback.
+  var copyBtn = document.getElementById("copyBtn");
+  var copied  = document.getElementById("copied");
+  var copyTimer = null;
+  function flagCopied(){
+    copied.hidden = false;
+    if(copyTimer) clearTimeout(copyTimer);
+    copyTimer = setTimeout(function(){ copied.hidden = true; }, 2600);
+  }
+  copyBtn.addEventListener("click", function(){
+    var text = buildSummary();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(flagCopied, fallbackCopy.bind(null, text));
+    } else {
+      fallbackCopy(text);
+    }
+  });
+  function fallbackCopy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly","");
+    ta.style.position="fixed"; ta.style.top="-1000px"; ta.style.opacity="0";
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand("copy"); flagCopied(); }catch(err){}
+    document.body.removeChild(ta);
+  }
+
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    scanList.querySelectorAll("input[type=checkbox]:checked").forEach(function(cb){
+      cb.checked = false;
+      var item = document.getElementById("item-" + cb.value);
+      if(item) item.classList.remove("checked");
+    });
+    copied.hidden = true;
+    render();
+    var top = document.getElementById("scan-h");
+    if(top && top.scrollIntoView) top.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+
+  render();
+})();
+</script>
