@@ -1,0 +1,269 @@
+<title>Google Ads vs SEO: How They Behave Over Time · Weissmann</title>
+<style>
+  :root{
+    --navy:#1f2a44; --navy-dark:#16203a; --navy-hover:#2a3a5e;
+    --ink:#151515; --ink-soft:#3f434b; --ink-mute:#5f6570;
+    --bg:#f6f7f8; --card:#ffffff; --soft:#eef1f7; --line:#e4e6e9;
+    --ads:#c67611; --ads-soft:#f7ecd9; --seo:#2f6f4f; --seo-soft:#e3f0e9;
+    --radius:14px; --shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);
+    --font:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif; --on-navy:#fff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{--navy:#8fa6dd;--navy-dark:#7f96cf;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;
+      --bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;
+      --ads:#e0a24e;--ads-soft:#3a2a12;--seo:#78c69c;--seo-soft:#14301f;--on-navy:#101420;}
+  }
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-dark:#7f96cf;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;
+    --bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ads:#e0a24e;--ads-soft:#3a2a12;--seo:#78c69c;--seo-soft:#14301f;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-dark:#16203a;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;
+    --bg:#f6f7f8;--card:#ffffff;--soft:#eef1f7;--line:#e4e6e9;--ads:#c67611;--ads-soft:#f7ecd9;--seo:#2f6f4f;--seo-soft:#e3f0e9;--on-navy:#fff;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:70ch;margin:0;font-size:1.02rem}
+  .illus{margin-top:14px;background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:12px;padding:13px 15px;font-size:.85rem;color:var(--ink-soft)}
+  .illus b{color:var(--ink)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+  .card-pad{padding:clamp(16px,2.4vw,22px)}
+  .chart-card{margin-top:18px}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin:0 0 8px}
+  .lg{display:flex;align-items:center;gap:7px;font-size:.85rem;font-weight:600}
+  .lg .sw{width:22px;height:4px;border-radius:2px} .lg.ads .sw{background:var(--ads)} .lg.seo .sw{background:var(--seo)}
+  .chartbox{width:100%;overflow-x:auto}
+  svg{width:100%;height:auto;display:block;min-width:320px}
+  .axlab{fill:var(--ink-mute);font-size:12px;font-family:var(--font)}
+  .gridline{stroke:var(--line);stroke-width:1}
+  .axis{stroke:var(--ink-mute);stroke-width:1.5}
+  .controls{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
+  @media(min-width:640px){.controls{grid-template-columns:1fr 1fr}}
+  .ctrl label.t{display:block;font-weight:600;font-size:.88rem;margin:0 0 6px}
+  .seg{display:flex;gap:6px;flex-wrap:wrap}
+  .seg .o{position:relative}
+  .seg input{position:absolute;opacity:0;width:1px;height:1px}
+  .seg label{display:inline-block;font-size:.82rem;font-weight:600;padding:7px 12px;border-radius:8px;border:1.5px solid var(--line);cursor:pointer;color:var(--ink-soft);background:var(--card)}
+  .seg input:checked+label{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+  .seg input:focus-visible+label{box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+  .toggle{display:flex;align-items:center;gap:10px}
+  .toggle input{width:17px;height:17px;accent-color:var(--navy)}
+  input[type=range]{width:100%;accent-color:var(--navy)}
+  .rangeval{font-size:.82rem;color:var(--ink-mute);font-weight:600}
+  .readout{margin-top:16px;background:var(--soft);border-radius:11px;padding:13px 15px;font-size:.92rem;color:var(--ink-soft)}
+  .readout b{color:var(--ink)}
+  button{font:inherit;font-weight:600;cursor:pointer;border-radius:9px;padding:9px 14px;border:1.5px solid var(--line);background:transparent;color:var(--navy)}
+  button:hover{border-color:var(--navy)} button:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+  .features{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}
+  @media(min-width:720px){.features{grid-template-columns:1fr 1fr 1fr}}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 15px}
+  .feat h3{margin:0 0 5px;font-size:.95rem}
+  .feat p{margin:0;font-size:.85rem;color:var(--ink-soft)}
+  .decide{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 16px}
+  .decide h3{margin:0 0 8px;font-size:.95rem}
+  .decide ul{margin:0;padding-left:18px;font-size:.87rem;color:var(--ink-soft)} .decide li{margin:4px 0} .decide b{color:var(--ink)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:16px}
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .linkbar .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}
+  @media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);background:transparent;min-height:48px;transition:.15s}
+  .lb-link:hover{background:var(--soft)}
+  .lb-link.primary{background:var(--navy);color:var(--on-navy);border-color:var(--navy)} .lb-link.primary:hover{background:var(--navy-hover)}
+  .lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">Weissmann · AI Marketing, SEO &amp; GEO</p>
+  <h1>Google Ads vs SEO: How They Behave Over Time</h1>
+  <p class="lede">The real difference isn't which is “better” — it's what happens along the timeline, and what survives once you stop paying. Move the controls to see the two shapes the article describes: Ads is a light switch, SEO is a slow-building, slow-fading asset.</p>
+
+  <div class="illus" role="note">
+    <b>Illustrative — not a forecast.</b> These curves show the <b>shape</b> of how paid and organic search behave over time, drawn from the article's thesis. They carry <b>no numbers and are not a prediction</b> of your results. No agency — Weissmann included — can guarantee a specific ranking, cost-per-click or outcome; real results depend on budget, competition, keywords and content. Nothing here is stored or transmitted.
+  </div>
+
+  <section class="card card-pad chart-card" aria-labelledby="ch-h">
+    <h2 id="ch-h" style="margin:0 0 8px;font-size:1.06rem">The two shapes</h2>
+    <div class="legend">
+      <span class="lg ads"><span class="sw"></span>Google Ads (paid)</span>
+      <span class="lg seo"><span class="sw"></span>SEO (organic)</span>
+    </div>
+    <div class="chartbox">
+      <svg id="chart" viewBox="0 0 640 300" role="img" aria-labelledby="chart-desc">
+        <desc id="chart-desc">An illustrative timeline. Google Ads visibility rises immediately and stays flat while the campaign runs, dropping to zero the moment it is paused. SEO visibility starts near zero, compounds over several months, then either holds if maintained or slowly fades if neglected.</desc>
+      </svg>
+    </div>
+
+    <div class="controls">
+      <div class="ctrl">
+        <label class="t" for="horizon">Time horizon</label>
+        <div class="seg" id="horizon" role="radiogroup" aria-label="Time horizon">
+          <span class="o"><input type="radio" name="hz" id="hz12" value="12"><label for="hz12">12 months</label></span>
+          <span class="o"><input type="radio" name="hz" id="hz24" value="24" checked><label for="hz24">24 months</label></span>
+          <span class="o"><input type="radio" name="hz" id="hz36" value="36"><label for="hz36">36 months</label></span>
+        </div>
+      </div>
+      <div class="ctrl">
+        <label class="t">Google Ads</label>
+        <div class="toggle"><input type="checkbox" id="pauseAds"><label for="pauseAds" style="font-size:.88rem;color:var(--ink-soft)">Pause the campaign at a chosen month</label></div>
+        <div id="pauseWrap" style="margin-top:8px" hidden>
+          <input type="range" id="pauseMonth" min="1" max="24" value="12" step="1" aria-label="Pause Ads at month">
+          <div class="rangeval">Pause at month <span id="pauseVal">12</span></div>
+        </div>
+      </div>
+      <div class="ctrl">
+        <label class="t">SEO</label>
+        <div class="seg" role="radiogroup" aria-label="SEO maintenance">
+          <span class="o"><input type="radio" name="seo" id="seoMaint" value="maintain" checked><label for="seoMaint">Keep maintaining it</label></span>
+          <span class="o"><input type="radio" name="seo" id="seoNeglect" value="neglect"><label for="seoNeglect">Stop maintaining it</label></span>
+        </div>
+      </div>
+      <div class="ctrl" style="display:flex;align-items:flex-end">
+        <button type="button" id="reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="readout" id="readout"></div>
+  </section>
+
+  <div class="features">
+    <div class="feat"><h3>Speed to first results</h3><p>Ads: most campaigns clear Google's ad review within a business day. SEO: Google's own guidance says some changes take days, others months — wait several weeks before judging.</p></div>
+    <div class="feat"><h3>Cost over time</h3><p>Ads: priced per auction, roughly flat per visitor while it runs — Weissmann's Ads Growth is CHF 690/month management, with ad spend paid separately to Google. SEO: Weissmann's SEO Growth is CHF 890/month (audit, on-page, monitoring; content writing, development and backlink outreach not included), front-loaded then flatter.</p></div>
+    <div class="feat"><h3>Durability</h3><p>A paused Ads account is a light switch — visibility stops the same day. A neglected SEO position is a slow leak — it fades, it doesn't switch off. Independent research (Backlinko) puts the #1 organic result's average click-through rate around 39.8%.</p></div>
+  </div>
+
+  <div class="decide">
+    <h3>Reading it for your own business</h3>
+    <ul>
+      <li>A <b>deadline already exists</b> (an opening, a launch, a season) and the result must be visible before it arrives → <b>Ads</b>.</li>
+      <li>No deadline, but a <b>keyword worth owning for years</b>, and you can commit content for 2–3 months before judging → <b>SEO</b>.</li>
+      <li>The budget is <b>tight and every franc must be defensible this month</b> → the flatter, front-loaded SEO fee, or a small, tightly-capped Ads test.</li>
+      <li>The product isn't provable yet (no landing page worth sending traffic to, no way to track a lead) → <b>neither yet</b> — fix the site and tracking first.</li>
+    </ul>
+  </div>
+
+  <p class="disc"><strong>Note:</strong> a decision aid based on the article, not a quote or a guarantee. Pricing (CHF 690 Ads management, CHF 890 SEO) is Weissmann's published price and is separate from the Google ad spend, which is paid directly to Google. This is not about whether ChatGPT, Gemini or Perplexity mention your business — that GEO question is separate.</p>
+
+  <footer class="linkbar" aria-label="Further links">
+    <p class="lb-title">Read more</p>
+    <div class="lb-links">
+      <a class="lb-link"
+         href="https://weissmann.ai/en/ai-academy/marketing-seo-geo/google-ads-vs-seo-switzerland/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Read the full Google Ads vs SEO comparison on weissmann.ai (opens in a new tab)">Read the full Ads vs SEO comparison →</a>
+      <a class="lb-link primary"
+         href="https://weissmann.ai/en/preise/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="See Weissmann SEO and Google Ads pricing (opens in a new tab)">See Weissmann SEO &amp; Ads pricing →</a>
+    </div>
+    <p class="att">Timeline visualiser by <strong>Weissmann AI</strong> · a companion to the Ads-vs-SEO comparison. Illustrative shapes, not a forecast.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var svg=$('chart'), NS='http://www.w3.org/2000/svg';
+  var W=640,H=300,pad={l:46,r:18,t:16,b:34};
+  var pw=W-pad.l-pad.r, ph=H-pad.t-pad.b;
+  var state={horizon:24,pauseAds:false,pauseMonth:12,seo:'maintain'};
+
+  function xAt(m){return pad.l + (m/state.horizon)*pw;}
+  function yAt(v){return pad.t + (1-v)*ph;}   // v in 0..1
+  function adsVal(m){
+    if(state.pauseAds && m>=state.pauseMonth) return 0;
+    var ramp=Math.min(1, m/0.4);   // reaches level within ~0.4 month (near day one)
+    return 0.72*ramp;
+  }
+  function seoGrowth(m){ var L=0.82,k=0.62,m0=7; return 0.02 + (L/(1+Math.exp(-k*(m-m0)))); }
+  function seoVal(m){
+    var g=seoGrowth(m);
+    if(state.seo==='maintain') return Math.min(0.9,g);
+    // neglect: after ~month 12 it slowly leaks (not a switch-off)
+    var start=12;
+    if(m<=start) return Math.min(0.9,g);
+    var peak=Math.min(0.9,seoGrowth(start));
+    return Math.max(0.30, peak*(1-0.03*(m-start)));
+  }
+  function pathFor(fn,dropAtPause){
+    var d='', steps=160, started=false;
+    for(var i=0;i<=steps;i++){
+      var m=(i/steps)*state.horizon, v=fn(m);
+      // insert a vertical drop for Ads at pause month
+      if(dropAtPause && state.pauseAds && !started){}
+      d+=(i===0?'M':'L')+xAt(m).toFixed(1)+' '+yAt(v).toFixed(1)+' ';
+    }
+    return d.trim();
+  }
+  function adsPath(){
+    // build with an explicit vertical drop at pauseMonth for the light-switch effect
+    var d='', steps=160;
+    var pm=state.pauseMonth;
+    d='M'+xAt(0).toFixed(1)+' '+yAt(adsVal(0)).toFixed(1)+' ';
+    for(var i=1;i<=steps;i++){
+      var m=(i/steps)*state.horizon;
+      if(state.pauseAds && (i/steps)*state.horizon>=pm){
+        // draw up to pm at level, vertical drop, then flat 0
+        d+='L'+xAt(pm).toFixed(1)+' '+yAt(0.72).toFixed(1)+' ';
+        d+='L'+xAt(pm).toFixed(1)+' '+yAt(0).toFixed(1)+' ';
+        d+='L'+xAt(state.horizon).toFixed(1)+' '+yAt(0).toFixed(1)+' ';
+        break;
+      }
+      d+='L'+xAt(m).toFixed(1)+' '+yAt(adsVal(m)).toFixed(1)+' ';
+    }
+    return d.trim();
+  }
+  function el(name,attrs){var e=document.createElementNS(NS,name);for(var k in attrs)e.setAttribute(k,attrs[k]);return e;}
+  function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()||v;}
+
+  function draw(){
+    while(svg.firstChild && svg.firstChild.nodeName!=='desc') svg.removeChild(svg.firstChild);
+    // keep <desc>; rebuild everything else
+    [].slice.call(svg.querySelectorAll(':not(desc)')).forEach(function(n){svg.removeChild(n);});
+    // gridlines (quarters) — no numeric values, just guides
+    var q=state.horizon/4;
+    for(var i=0;i<=4;i++){ var gx=xAt(i*q); svg.appendChild(el('line',{x1:gx,y1:pad.t,x2:gx,y2:pad.t+ph,class:'gridline'})); }
+    // axes
+    svg.appendChild(el('line',{x1:pad.l,y1:pad.t+ph,x2:pad.l+pw,y2:pad.t+ph,class:'axis'}));
+    svg.appendChild(el('line',{x1:pad.l,y1:pad.t,x2:pad.l,y2:pad.t+ph,class:'axis'}));
+    // axis labels
+    var xl=el('text',{x:pad.l+pw,y:H-8,'text-anchor':'end',class:'axlab'});xl.textContent='Months →';svg.appendChild(xl);
+    var yl=el('text',{x:pad.l-8,y:pad.t+10,'text-anchor':'end',class:'axlab',transform:'rotate(-90 '+(pad.l-8)+' '+(pad.t+10)+')'});
+    yl.setAttribute('x',12);yl.setAttribute('y',pad.t+ph/2);yl.setAttribute('transform','rotate(-90 12 '+(pad.t+ph/2)+')');yl.textContent='Visibility (illustrative)';svg.appendChild(yl);
+    // month ticks (0, mid, end) as words, no data values
+    ['0', Math.round(state.horizon/2)+'', state.horizon+''].forEach(function(t,idx){
+      var mx=xAt(idx*(state.horizon/2)); var tk=el('text',{x:mx,y:H-18,'text-anchor':(idx===0?'start':idx===2?'end':'middle'),class:'axlab'});tk.textContent=t;svg.appendChild(tk);
+    });
+    // SEO area + line
+    var seoColor=css('--seo'), adsColor=css('--ads');
+    svg.appendChild(el('path',{d:adsPath(),fill:'none',stroke:adsColor,'stroke-width':3,'stroke-linejoin':'round','stroke-linecap':'round'}));
+    svg.appendChild(el('path',{d:pathFor(seoVal,false),fill:'none',stroke:seoColor,'stroke-width':3,'stroke-linejoin':'round','stroke-linecap':'round'}));
+    // pause marker
+    if(state.pauseAds){
+      var px=xAt(state.pauseMonth);
+      svg.appendChild(el('line',{x1:px,y1:pad.t,x2:px,y2:pad.t+ph,stroke:adsColor,'stroke-width':1,'stroke-dasharray':'4 4',opacity:.7}));
+      var pt=el('text',{x:px+4,y:pad.t+12,class:'axlab',fill:adsColor});pt.textContent='Ads paused';svg.appendChild(pt);
+    }
+  }
+  function readout(){
+    var parts=[];
+    parts.push('<b>Google Ads</b> is on from day one and stays flat while you pay. <b>SEO</b> starts near zero and compounds over months.');
+    if(state.pauseAds) parts.push('You paused Ads at <b>month '+state.pauseMonth+'</b> — paid visibility stops the same day (a light switch). Any SEO you had built keeps working.');
+    if(state.seo==='maintain') parts.push('You keep maintaining the SEO content, so it holds its visibility — clicks a paid budget would otherwise have to buy back every month.');
+    else parts.push('You stopped maintaining the SEO content: it doesn’t switch off, it slowly leaks — competitors publish, Google updates, and an untouched page starts to look tired.');
+    $('readout').innerHTML=parts.join(' ');
+  }
+  function sync(){ $('pauseVal').textContent=state.pauseMonth; $('pauseMonth').max=state.horizon; if(state.pauseMonth>state.horizon){state.pauseMonth=state.horizon;$('pauseMonth').value=state.horizon;} draw(); readout(); }
+
+  document.getElementsByName('hz').forEach(function(r){r.addEventListener('change',function(){state.horizon=parseInt(r.value,10);sync();});});
+  $('pauseAds').addEventListener('change',function(e){state.pauseAds=e.target.checked;$('pauseWrap').hidden=!e.target.checked;sync();});
+  $('pauseMonth').addEventListener('input',function(e){state.pauseMonth=parseInt(e.target.value,10);sync();});
+  document.getElementsByName('seo').forEach(function(r){r.addEventListener('change',function(){state.seo=r.value;sync();});});
+  $('reset').addEventListener('click',function(){
+    state={horizon:24,pauseAds:false,pauseMonth:12,seo:'maintain'};
+    $('hz24').checked=true;$('pauseAds').checked=false;$('pauseWrap').hidden=true;$('pauseMonth').value=12;$('seoMaint').checked=true;
+    sync();
+  });
+  sync();
+})();
+</script>

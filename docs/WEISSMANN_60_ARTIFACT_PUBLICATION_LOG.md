@@ -144,6 +144,29 @@ Next highest-priority article without an Artifact after Pilot 4. A-DE-09 (also "
 | Factual integrity | Complements the article (generates the plan) without copying it. States it places no calls; dialect *wording* left to the real speaker (only scenario + hint word + what-to-check given — no invented dialect sentences). Article's 4 understanding stages + 0–3 scale + pitfalls reused; hint words (Zmorge, Ändlie, Drämmli, Merci vilmal, Swiss surnames) and CHF 350 one-time trial from the article. No invented stats, no guarantee, no personal data, nothing stored |
 | Remaining issue | **Public sharing** — owner must Share→public, then anonymously verify and record the URL here |
 
+## Pilot 6 — google-ads-vs-seo-switzerland (EN)
+
+Next highest-priority article with a genuinely new format. A-DE-09 ("high") skipped a third time (break-even calculator = Pilot 1). B-EN-10 (medium-high) chosen; its concept is a **timeline visualizer** — a 6th distinct interaction model (data visualisation).
+
+| Field | Value |
+|---|---|
+| Article ID | `google-ads-vs-seo-switzerland` |
+| Language | English (en) |
+| Production article URL | https://weissmann.ai/en/ai-academy/marketing-seo-geo/google-ads-vs-seo-switzerland/ |
+| Artifact title | Google Ads vs SEO: How They Behave Over Time · Weissmann |
+| Interaction type | **Interactive data visualisation / timeline** (inline SVG) — distinct from calculator / scorecard / decision-tree / matcher / generator |
+| Source (repo) | `phase2-artifacts/google-ads-vs-seo-switzerland/index.html` |
+| Private Claude URL (owner-only) | https://claude.ai/code/artifact/9b2bafa0-d22d-4137-82ec-42ee6d9c3084 |
+| **Public Claude URL** | **— none yet (manual Share required) —** |
+| Publication status | **PRIVATE — awaiting manual public share** (page control reads "Share, private") |
+| Renders in Claude | Yes (verified: correct title in the artifact view) |
+| Functional test | Passed — syntax OK (`node --check`); full script runs `sync→draw→readout` without throwing (DOM shim); curves verified: Ads flat then 0 at the chosen pause month; SEO near-0 → compounds → holds (maintain) or slow-leaks (neglect) |
+| Mobile test | Responsive by construction (SVG scales via viewBox in an overflow-x container; controls stack ≤640px) |
+| Article backlink | Present — "Read the full Ads vs SEO comparison →" (article URL above) |
+| Service CTA | Present — "See Weissmann SEO & Ads pricing →" → weissmann.ai/en/preise/ (article's own CTA) |
+| Factual integrity | **"Illustrative — not a forecast" banner**; curves carry no numbers and are the article's own qualitative thesis (fast-but-switches-off vs slow-but-durable), not invented data. Pricing CHF 690/890 from `pricing.ts` with the spend-separate disclosure; Backlinko 39.8% (the Phase-1 corrected figure). No guarantee, no personal data, nothing stored |
+| Remaining issue | **Public sharing** — owner must Share→public, then anonymously verify and record the URL here |
+
 ## What is needed to complete the pilots
 
 1. **Owner publishes Pilot 1 publicly**: open the private URL while signed in to claude.ai → **Share** →
