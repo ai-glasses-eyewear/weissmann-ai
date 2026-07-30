@@ -43,11 +43,33 @@ Per the task's contingency, work **stopped after the first pilot**. Pilots 2 and
 | Service CTA | Present — restrained "Google Ads Growth ansehen" → weissmann.ai/preise/ |
 | Pricing accuracy | CHF 690/mo management + ad-spend-separate; verified vs `src/data/pricing.ts` |
 | Remaining issue | **Public sharing** — owner must Share→public, then anonymously verify and record the URL here |
+| Public verification (this round) | **Not done — no public URL supplied.** The "Pilot 1 public URL" field in the request was left as the literal placeholder `[PASTE THE PUBLIC URL HERE]`. Re-checked the private URL anonymously: still returns the app shell → **still private**. Public verification is pending a real public URL from the owner. No URL was invented. |
 
 **v2 update (same private URL):** added a prominent visible footer link band below the disclaimer — two real anchor links (`target="_blank" rel="noopener noreferrer"`, accessible aria-labels): "Vollständigen Leitfaden lesen →" (DE article) and "Google Ads Growth von Weissmann ansehen →" (weissmann.ai/preise/). Content corrections: removed the fixed Zürich +25 % CPC factor (now prose caveat only); softened the click-count verdicts (no absolute "enough" claim); renamed the customer-value input to **average contribution margin per acquired customer** (correct break-even basis); flagged **CPC** and **conversion rate** as the two main variables (always-visible note + "Hauptvariable" badges). Republished to the same URL `…/artifact/437a7d7b-0e5c-47de-a79e-70543280d1e6`; still private.
 
 ## Pilot 2 — how-to-test-ai-receptionist-before-buying (EN)
-Not built — blocked by the capability finding above (build stopped after Pilot 1 per task instruction).
+
+| Field | Value |
+|---|---|
+| Article ID | `how-to-test-ai-receptionist-before-buying` |
+| Language | English (en) |
+| Production article URL | https://weissmann.ai/en/ai-academy/agents-automation/how-to-test-an-ai-receptionist/ |
+| Artifact title | AI Receptionist 25-Call Test Lab · Weissmann |
+| Interaction type | Interactive testing workspace + scorecard (business-type-adaptive; not a quiz) |
+| Source (repo) | `phase2-artifacts/how-to-test-ai-receptionist-before-buying/index.html` |
+| Private Claude URL (owner-only) | https://claude.ai/code/artifact/237e9cc0-ecbb-493a-a873-ed4de3e4acae |
+| **Public Claude URL** | **— none yet (manual Share required) —** |
+| Publication status | **PRIVATE — awaiting manual public share** (page control reads "Share, private") |
+| Renders in Claude | Yes (verified: correct title in the artifact view) |
+| Functional test | Passed — gating verified deterministically (A→Ready, B[emergency fail]→Not ready, C[few scored]→More testing required; any critical flag caps at Conditional; safety/emergency fail forces Not ready) |
+| Mobile test | Responsive by construction (single-column grids, sticky bar wraps, no horizontal overflow) |
+| Article backlink | Present — "Read the complete 25-call testing guide →" (working slug URL above) |
+| Service CTA | Present — "Explore Weissmann AI phone assistants →" → weissmann.ai/en/services/ai-phone-assistant/ |
+| Safety | States it places no calls / tests no provider automatically / gives no medical or emergency advice / never replaces emergency services (144·117·118); decision aid, not a certification; no data stored or transmitted |
+| Remaining issue | **Public sharing** — owner must Share→public, then anonymously verify and record the URL here |
+
+> Article-URL note: the production **slug** is `how-to-test-an-ai-receptionist` (HTTP 200). The id-based
+> path `how-to-test-ai-receptionist-before-buying` returns 404 and is not used as a link.
 
 ## Pilot 3 — sito-web-chf-880-svizzera (IT)
 Not built — blocked by the capability finding above (build stopped after Pilot 1 per task instruction).
