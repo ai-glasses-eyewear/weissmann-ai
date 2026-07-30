@@ -231,6 +231,86 @@ A **per-trade priority profiler**.
 | Links | Article backlink + service CTA → weissmann.ai/it/servizi/sviluppo-siti-web-ai/ |
 | Integrity | Priorities + Starter scope from the article / `pricing.ts`; 144-emergency + association caveats kept; no invented claims; nothing stored |
 
+## Pilot 11 — website-redesign-signs-switzerland (EN)
+
+A **tiered symptom-checker / redesign triage**.
+
+| Field | Value |
+|---|---|
+| Article / URL | `website-redesign-signs-switzerland` · https://weissmann.ai/en/ai-academy/marketing-seo-geo/website-redesign-signs-switzerland/ |
+| Artifact title | Website Redesign Triage · Weissmann |
+| Interaction type | Multi-select 12 signs across 3 cost tiers → weighted verdict |
+| Source (repo) | `phase2-artifacts/website-redesign-signs-switzerland/index.html` |
+| Private Claude URL | https://claude.ai/code/artifact/955b69c8-e7f3-4cc0-be51-f1e7879baa2a |
+| Publication status | **PRIVATE** ("Share, private") |
+| Functional test | Passed (verdict logic asserted at all tier boundaries: 3+ crit → overdue, 1–2 → targeted, only compounding → improve, only operational → process, none → recheck; fix-first list); syntax OK |
+| Links | Article backlink + service CTA → weissmann.ai/en/services/ai-web-development/ |
+| Integrity | 12 signs + verdict thresholds from the article; diagnostic not a quote; no invented claims; no personal data; nothing stored |
+
+## Pilot 12 — google-ads-landingpage-schweiz (DE)
+
+An **element-presence auditor + message-match tester + timed 5-second test**.
+
+| Field | Value |
+|---|---|
+| Article / URL | `google-ads-landingpage-schweiz` · https://weissmann.ai/ki-academy/marketing-seo-geo/google-ads-landingpage-schweiz/ |
+| Artifact title | Landingpage-Check für Google Ads · Weissmann |
+| Interaction type | 9-point score bar + keyword-overlap message match + 5-second countdown + Quality-Score explainer |
+| Source (repo) | `phase2-artifacts/google-ads-landingpage-schweiz/index.html` |
+| Private Claude URL | https://claude.ai/code/artifact/8781815b-8b85-4b93-8383-122155f260d4 |
+| Publication status | **PRIVATE** ("Share, private") |
+| Functional test | Passed (score/priority logic + message-match overlap asserted: sample ad/LP → shared [sanitär, zürich, minuten]; timer is a clean state machine); syntax OK |
+| Links | Article backlink + service CTA → weissmann.ai/leistungen/google-ads/ |
+| Integrity | 9 points, Quality-Score components, actual-CPC formula from Google Ads Help; **no invented Swiss stat** (WordStream ranges labelled international context; "no reliable Swiss study" stated); nothing stored |
+
+## Pilot 13 — ai-answering-service-swiss-trades (EN)
+
+A **per-trade qualification-script composer**.
+
+| Field | Value |
+|---|---|
+| Article / URL | `ai-answering-service-swiss-trades` · https://weissmann.ai/en/ai-academy/agents-automation/ai-answering-service-swiss-trades/ |
+| Artifact title | Call Qualification Script Builder for Trades · Weissmann |
+| Interaction type | Pick trade → tailored 6-question script + copy-to-clipboard + fit toggles |
+| Source (repo) | `phase2-artifacts/ai-answering-service-swiss-trades/index.html` |
+| Private Claude URL | https://claude.ai/code/artifact/1a5e0f82-9eea-4f9d-a306-8fe80c660782 |
+| Publication status | **PRIVATE** ("Share, private") |
+| Functional test | Passed (6 steps assemble per trade with trade-specific urgency question; copy exports plain text via clipboard API + execCommand fallback; fit toggles surface not-the-right-fix note); syntax OK |
+| Links | Article backlink + service CTA → weissmann.ai/en/services/ai-phone-assistant/ |
+| Integrity | 6 questions + honest price line from the article; plumber/electrician urgency verbatim, others flagged as adaptable examples; no invented claims; no personal data; nothing stored |
+
+## Pilot 14 — keep-existing-swiss-number-ai-assistant (DE)
+
+A **two-question routing wizard → personalised action plan**.
+
+| Field | Value |
+|---|---|
+| Article / URL | `keep-existing-swiss-number-ai-assistant` · https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-bestehende-nummer-behalten/ |
+| Artifact title | Nummer behalten: Weiterleitung oder Portierung? · Weissmann |
+| Interaction type | Q1 keep/switch + Q2 telephony (5 cases) + business-number toggle → path, questions, reversibility, risks |
+| Source (repo) | `phase2-artifacts/keep-existing-swiss-number-ai-assistant/index.html` |
+| Private Claude URL | https://claude.ai/code/artifact/5bd9c12a-6288-4f93-a873-89c3688fda35 |
+| Publication status | **PRIVATE** ("Share, private") |
+| Functional test | Passed (routing + list-assembly asserted: keep+mobile → 3 asks/2 risks/rev easy; switch → +porting checklist, rev hard; +biz → +proofs); syntax OK |
+| Links | Article backlink + service CTA → weissmann.ai/leistungen/ki-telefonassistent/ |
+| Integrity | Forwarding-vs-porting split, reversibility, risks from the article; regulatory points attributed to BAKOM/ombudscom; Weissmann forwarding-only disclosure kept; no invented claims; nothing stored |
+
+## Pilot 15 — assistente-ai-hotel-bb-campeggi-ticino (IT)
+
+A **fit-assessment + per-structure configuration**.
+
+| Field | Value |
+|---|---|
+| Article / URL | `assistente-ai-hotel-bb-campeggi-ticino` · https://weissmann.ai/it/ai-academy/agenti-automazione/assistente-ai-hotel-bb-campeggi-ticino/ |
+| Artifact title | Assistente AI per la vostra struttura ticinese · Weissmann |
+| Interaction type | Structure select + 3-factor fit score → conviene/dipende/non-conviene + per-structure handling + fixed escalation |
+| Source (repo) | `phase2-artifacts/assistente-ai-hotel-bb-campeggi-ticino/index.html` |
+| Private Claude URL | https://claude.ai/code/artifact/083164ca-17e7-4180-a85e-4fdaaa97172a |
+| Publication status | **PRIVATE** ("Share, private") |
+| Functional test | Passed (fit-score verdict asserted at boundaries; per-structure routine list + fixed 144/117/118 escalation, campeggio adds child-near-water case); syntax OK |
+| Links | Article backlink + service CTA → weissmann.ai/it/servizi/assistente-telefonico-ai/ |
+| Integrity | Structure handling, escalation boundary, 8 supplier questions, non-conviene cases from the article; example call labelled illustrative; nLPD note kept; no invented claims; no personal data; nothing stored |
+
 ## What is needed to complete the pilots
 
 1. **Owner publishes Pilot 1 publicly**: open the private URL while signed in to claude.ai → **Share** →

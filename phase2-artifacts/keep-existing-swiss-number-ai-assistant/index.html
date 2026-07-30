@@ -1,0 +1,154 @@
+<title>Nummer behalten: Weiterleitung oder Portierung? · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .note{margin-top:14px;background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:12px;padding:13px 15px;font-size:.9rem;color:var(--ink-soft)}.note b{color:var(--ink)}
+  .grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:20px}@media(min-width:880px){.grid{grid-template-columns:.9fr 1.1fr;align-items:start}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  h2{font-size:1.06rem;margin:0 0 2px}.sub{color:var(--ink-mute);font-size:.85rem;margin:0 0 12px}
+  .qblock{margin:0 0 18px}.qlab{font-weight:700;font-size:.92rem;margin:0 0 8px;display:flex;gap:8px;align-items:baseline}.qlab .qn{flex:none;width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--on-navy);font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .opt{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;margin:7px 0;cursor:pointer}
+  .opt:hover{border-color:var(--navy)}.opt input{margin-top:2px;accent-color:var(--navy);flex:none}
+  .opt.sel{border-color:var(--navy);background:var(--accent-soft)}
+  .opt .ot{font-size:.88rem}.opt .ot b{font-weight:600}.opt .od{display:block;font-size:.78rem;color:var(--ink-mute);margin-top:1px}
+  .toggle{display:flex;align-items:flex-start;gap:9px;margin:6px 0 0}.toggle input{width:16px;height:16px;margin-top:2px;accent-color:var(--navy);flex:none}.toggle label{font-size:.85rem;color:var(--ink-soft)}
+  .verdict{border-radius:12px;padding:14px 16px;border:1px solid var(--line);margin:0 0 14px;background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+  .v-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);margin:0 0 4px}
+  .v-head{font-size:1.16rem;font-weight:700;margin:0 0 6px;color:var(--ink);line-height:1.2}
+  .v-body{font-size:.9rem;color:var(--ink-soft);margin:0}
+  .sec{margin:0 0 14px}.sec h3{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-mute);margin:0 0 7px}
+  .sec ul{margin:0;padding-left:0;list-style:none}.sec li{font-size:.86rem;color:var(--ink-soft);padding:7px 11px;border-radius:9px;background:var(--bg);border:1px solid var(--line);margin:6px 0}
+  .rev{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:11px 13px;font-size:.86rem}
+  .rev.easy{background:var(--ok-soft);border:1px solid color-mix(in srgb,var(--ok) 35%,transparent)}.rev.hard{background:var(--miss-soft);border:1px solid color-mix(in srgb,var(--miss) 35%,transparent)}.rev.dep{background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent)}
+  .rev b{color:var(--ink)}
+  .risk li{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 30%,transparent)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:6px}
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+<div class="wrap">
+  <p class="kicker">Weissmann · «Kann ich meine Nummer behalten?»</p>
+  <h1>Weiterleitung oder Portierung?</h1>
+  <p class="lede">«Kann ich meine Nummer behalten?» klingt wie eine Frage — es sind zwei. Die erste ist reguliert (wechselt die Nummer den Anbieter?), die zweite ist reine Technik (wohin klingelt sie?). Beantworten Sie zwei Fragen, und Sie sehen Ihren konkreten Weg — mit den Fragen, die Sie Ihrem Anbieter wörtlich stellen sollten, und dem, was schiefgehen kann.</p>
+  <div class="note" role="note"><b>Für die grosse Mehrheit</b> reicht eine <em>Weiterleitung</em> — die Nummer bleibt beim bisherigen Anbieter. Eine echte <em>Portierung</em> braucht es nur, wenn Sie den Anbieter selbst wechseln. Wer beides verwechselt, überschätzt regelmässig den Aufwand.</div>
+  <div class="grid">
+    <section class="card card-pad" aria-labelledby="cfg-h">
+      <h2 id="cfg-h">Zwei Fragen</h2><p class="sub">Ihre Antworten bleiben auf diesem Gerät.</p>
+      <div class="qblock">
+        <p class="qlab"><span class="qn">1</span>Wollen Sie Ihren Telefonanbieter wechseln?</p>
+        <label class="opt" data-g="q1"><input type="radio" name="q1" value="keep" checked><span class="ot"><b>Nein — nur Anrufe umleiten.</b><span class="od">Die Nummer bleibt beim heutigen Anbieter, der KI-Assistent bekommt die Anrufe.</span></span></label>
+        <label class="opt" data-g="q1"><input type="radio" name="q1" value="switch"><span class="ot"><b>Ja — alles bei einem neuen Anbieter bündeln.</b><span class="od">Telefonie und KI-Assistent aus einer Hand. Dann kommt eine echte Portierung ins Spiel.</span></span></label>
+      </div>
+      <div class="qblock">
+        <p class="qlab"><span class="qn">2</span>Wie läuft Ihre Telefonie heute?</p>
+        <label class="opt" data-g="q2"><input type="radio" name="q2" value="mobile" checked><span class="ot"><b>Mobilnummer, keine eigene Anlage.</b><span class="od">Der übliche Fall bei kleinen Betrieben.</span></span></label>
+        <label class="opt" data-g="q2"><input type="radio" name="q2" value="fixed"><span class="ot"><b>Festnetznummer, keine eigene Anlage.</b></span></label>
+        <label class="opt" data-g="q2"><input type="radio" name="q2" value="pbx"><span class="ot"><b>Eigene Telefonanlage (PBX) im Haus.</b></span></label>
+        <label class="opt" data-g="q2"><input type="radio" name="q2" value="sip"><span class="ot"><b>Wir haben bereits einen SIP-Trunk.</b><span class="od">Telefonie läuft übers Internet statt Kupfer/ISDN.</span></span></label>
+        <label class="opt" data-g="q2"><input type="radio" name="q2" value="new"><span class="ot"><b>Ich will es zuerst nur testen.</b><span class="od">Eine separate Testnummer ist völlig in Ordnung.</span></span></label>
+      </div>
+      <div class="toggle"><input type="checkbox" id="biz"><label for="biz">Es ist eine <b>Geschäftsnummer</b> (z. B. Vorwahl +41 51 oder +41 58).</label></div>
+    </section>
+    <section class="card card-pad" aria-live="polite" aria-labelledby="out-h">
+      <h2 id="out-h" class="sr-only" style="position:absolute;left:-9999px">Ihr Weg</h2>
+      <div class="verdict"><p class="v-label" id="v-label">Ihr Weg</p><p class="v-head" id="v-head"></p><p class="v-body" id="v-body"></p></div>
+      <div class="sec"><h3>Reversibilität — wenn Sie zurück wollen</h3><div id="rev"></div></div>
+      <div class="sec"><h3>Das fragen Sie Ihren Anbieter wörtlich</h3><ul id="asks"></ul></div>
+      <div class="sec"><h3>Was schiefgehen kann</h3><ul class="risk" id="risks"></ul></div>
+      <p class="disc"><strong>Hinweis:</strong> Orientierung, keine Rechtsberatung und keine verbindliche Anbieter-Auskunft. Regulatorische Angaben fassen öffentlich zugängliche Informationen von BAKOM und der Schlichtungsstelle ombudscom zusammen; Verfahren und Fristen können sich ändern. Weissmanns eigener Assistent ist laut öffentlichen Unterlagen als Weiterleitung auf eine dedizierte Leitung beschrieben — eine SIP-Trunk- oder PBX-Integration nicht; fragen Sie bei jedem Anbieter konkret nach. Es werden keine Eingaben gespeichert oder übertragen.</p>
+    </section>
+  </div>
+  <footer class="linkbar" aria-label="Weiterführende Links"><p class="lb-title">Mehr dazu</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-bestehende-nummer-behalten/" target="_blank" rel="noopener noreferrer" aria-label="Den vollständigen Leitfaden zum Behalten der Telefonnummer auf weissmann.ai lesen (öffnet in neuem Tab)">Ganzen Leitfaden lesen →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="Weissmann KI-Telefonassistent ansehen (öffnet in neuem Tab)">Weissmann KI-Telefonassistent ansehen →</a>
+    </div>
+    <p class="att">Entscheidungs-Assistent von <strong>Weissmann AI</strong> · Ergänzung zum Leitfaden. Orientierung, keine Rechtsberatung.</p>
+  </footer>
+</div>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var TECH={
+    mobile:{name:'Rufumleitung beim Mobilfunkanbieter',
+      todo:'Sie richten bei Ihrem Mobilfunkanbieter eine Rufumleitung auf die vom KI-Anbieter bereitgestellte Leitung ein — wahlweise immer, nur bei Besetzt oder nur bei Nichterreichbarkeit. Das dauert meist Minuten und ist jederzeit wieder abschaltbar.',
+      asks:['Ist die Rufumleitung in meinem Tarif inbegriffen oder kostenpflichtig?','Gibt es ein Freiminutenkontingent — und was passiert danach?','Kann ich zwischen «immer», «bei Besetzt» und «bei Nichterreichbarkeit» unterscheiden?'],
+      risks:['Die Weiterleitung wird teurer als gedacht: Manche Tarife begrenzen kostenlose Weiterleitungsminuten oder berechnen sie wie normale ausgehende Anrufe.','Sie vergessen, die Weiterleitung wieder auszuschalten — und wundern sich, warum das Diensthandy nie klingelt.'],
+      rev:'easy'},
+    fixed:{name:'Weiterleitung über den Festnetzanschluss',
+      todo:'Dasselbe Prinzip wie bei der Mobilnummer, meist über das Kundenportal oder eine Kurzwahl eingerichtet. Ob eine bedingte Weiterleitung (nur bei Besetzt/Nichterreichbarkeit) verfügbar ist oder nur eine unbedingte, unterscheidet sich je nach Anbieter und Anschlussart.',
+      asks:['Unterstützt mein Anschluss eine bedingte Weiterleitung, oder nur eine unbedingte?','Fallen für weitergeleitete Gespräche zusätzliche Gebühren an — und wer trägt sie?'],
+      risks:['Nur eine unbedingte Weiterleitung verfügbar: Dann klingelt es nie zuerst bei Ihnen — klären Sie, ob das gewollt ist.','Zusatzgebühren für weitergeleitete Gespräche, die erst auf der nächsten Rechnung auffallen.'],
+      rev:'easy'},
+    pbx:{name:'Einbindung über Ihre Telefonanlage (PBX)',
+      todo:'Eine einfache Weiterleitung reicht hier oft nicht, weil die Anlage selbst entscheidet, wie Anrufe verteilt werden. Der KI-Assistent wird meist als zusätzliche Nebenstelle oder über eine anlagenseitige Regel eingebunden — eine Aufgabe für die Person oder Firma, die Ihre Anlage betreut.',
+      asks:['Wer verwaltet unsere Anlage, und kann diese Person eine zusätzliche Nebenstelle oder Weiterleitungsregel einrichten?','Unterstützt unsere Anlage SIP-Trunking, oder läuft sie noch über eine klassische Amtsleitung?','Kann der KI-Anbieter eine PBX-seitige Einbindung überhaupt — oder erwartet er eine klassische Weiterleitung?'],
+      risks:['Eine PBX-Änderung legt versehentlich bestehende Nebenstellen lahm, weil die alte Konfiguration nicht dokumentiert war.','Der KI-Anbieter beschreibt nur klassische Weiterleitung und nickt zur PBX-Integration freundlich, aber folgenlos.'],
+      rev:'dep'},
+    sip:{name:'Direkte Anbindung über Ihren SIP-Trunk',
+      todo:'Läuft Ihre Telefonie bereits über einen SIP-Trunk, kann ein Anbieter, der SIP-Trunk-Terminierung unterstützt, Anrufe unter Umständen direkt entgegennehmen — ohne den Umweg über eine Weiterleitung. Das beherrscht aber nicht jeder Anbieter.',
+      asks:['Terminiert der KI-Anbieter eingehende Anrufe direkt über unseren SIP-Trunk, oder erwartet er trotzdem eine klassische Weiterleitung?','Welches Protokoll wird erwartet, und wer ist im Störungsfall zuständig?'],
+      risks:['Ein Anbieter, der nur klassische Anrufweiterleitung kennt, verspricht SIP-Terminierung, die er gar nicht liefert — ausdrücklich nachfragen, nicht voraussetzen.'],
+      rev:'dep'},
+    new:{name:'Neue, separate Nummer (ehrlicher Test)',
+      todo:'Der KI-Assistent bekommt eine eigene Nummer, ohne dass Sie an Ihrer bestehenden etwas ändern. Für einen befristeten Test ist das die einfachste und risikoärmste Variante. Bei Weissmann läuft etwa der Starter-Test für CHF 350 ohne laufendes Abo über eine eigene Testleitung.',
+      asks:['Läuft der Test über eine eigene Leitung, sodass meine Hauptnummer unangetastet bleibt?','Kann ich später problemlos auf eine Weiterleitung meiner Hauptnummer umstellen?'],
+      risks:['Als Dauerlösung schwächt eine zweite Nummer genau den Vorteil, den die meisten suchen — die Nummer, unter der man Sie kennt. Stammkundschaft wählt weiter die alte Nummer.'],
+      rev:'easy'}
+  };
+  var PORT={
+    asks:['Ist unsere Nummer aktuell aktiv? (Eine deaktivierte Nummer lässt sich nicht mehr portieren.)','Besteht der Vertrag beim neuen Anbieter, bevor die Portierung startet? (Das Formular allein genügt nicht.)','Stimmen alle Angaben auf dem Portierungsformular mit dem Altvertrag überein (Name, Firmenbezeichnung, Nummer)?','Falls offene Rechnungen genannt werden: Diese sind laut ombudscom kein rechtmässiger Ablehnungsgrund.','Welche Kündigungsfrist gilt, und was kostet eine vorzeitige Kündigung?'],
+    risks:['Die Portierung wird abgelehnt — häufigster Grund laut ombudscom: Namens- oder Schreibweise-Abweichungen zwischen Formular und Altvertrag.','Die Nummer fällt in einen Timeout von mindestens 20 bis höchstens 40 Arbeitstagen; ohne fristgerechtes, korrektes Formular kann sie an den alten Anbieter zurückfallen.','Es gibt keinen Rückgängig-Knopf: Zurück geht nur über eine erneute Portierung — mit denselben Fristen und Risiken.']
+  };
+  var BIZ={
+    asks:['Welche Nachweise verlangt der Anbieter für die Geschäftsnummer — Geschäftsadresse, Handelsregisterauszug, Gewerbeanmeldung?','Gilt für unsere Vorwahl (z. B. +41 51 oder +41 58) eine besondere Regel?'],
+    portAsks:['Zusätzlich bei einer Portierung: die letzte Rechnung des bisherigen Anbieters und eine unterzeichnete Vollmacht (Letter of Authorization) zugunsten des neuen Anbieters.']
+  };
+  function val(name){var r=document.querySelector('input[name="'+name+'"]:checked');return r?r.value:null;}
+  function render(){
+    // selected styling
+    document.querySelectorAll('.opt').forEach(function(o){var i=o.querySelector('input');o.classList.toggle('sel',i.checked);});
+    var q1=val('q1'),q2=val('q2'),biz=$('biz').checked,t=TECH[q2],switching=(q1==='switch');
+    // verdict
+    var head,body;
+    if(switching){
+      head='Portierung + technische Einrichtung';
+      body='Sie wollen den Anbieter wechseln — das ist eine echte Rufnummern­portierung: ein regulierter Vorgang mit eigenen Fristen. Zusätzlich muss die Technik beim neuen Anbieter stimmen: '+t.name.toLowerCase()+'. Prüfen Sie beide Seiten getrennt.';
+    } else {
+      head=t.name;
+      body='Sie behalten Ihren Anbieter — es ist also keine Portierung, sondern reine Technik. '+t.todo;
+    }
+    $('v-head').textContent=head;$('v-body').textContent=body;
+    // reversibility
+    var rev=$('rev'),rv=t.rev;
+    if(switching){rev.className='rev hard';rev.innerHTML='<span>⚠️</span><div><b>Schwer umkehrbar.</b> Eine Portierung rückgängig zu machen heisst: erneut portieren — mit denselben Formularen, Fristen und Ablehnungsrisiken. Im Zweifel zuerst mit einer Weiterleitung beginnen und erst portieren, wenn Sie sicher sind.</div>';}
+    else if(rv==='easy'){rev.className='rev easy';rev.innerHTML='<span>↩︎</span><div><b>Sofort umkehrbar.</b> Eine Einstellung im Kundenportal oder eine Kurzwahl — in der Regel sofort wirksam. Ihre Nummer war nie weg, sie hat nur vorübergehend woanders geklingelt. Der wichtigste Grund, im Zweifel mit einer Weiterleitung zu beginnen.</div>';}
+    else{rev.className='rev dep';rev.innerHTML='<span>ⓘ</span><div><b>Hängt von der Dokumentation ab.</b> Eine PBX- oder SIP-Änderung lässt sich nur so sauber zurücknehmen, wie der Ausgangszustand festgehalten wurde. Lassen Sie sich vor jeder Änderung schriftlich geben, wie die Konfiguration vorher aussah.</div>';}
+    // asks
+    var asks=$('asks');asks.innerHTML='';
+    var list=t.asks.slice();
+    if(switching)list=list.concat(PORT.asks);
+    if(biz){list=list.concat(BIZ.asks);if(switching)list=list.concat(BIZ.portAsks);}
+    list.forEach(function(x){var li=document.createElement('li');li.textContent=x;asks.appendChild(li);});
+    // risks
+    var risks=$('risks');risks.innerHTML='';
+    var rl=t.risks.slice();
+    if(switching)rl=rl.concat(PORT.risks);
+    rl.forEach(function(x){var li=document.createElement('li');li.textContent=x;risks.appendChild(li);});
+  }
+  document.querySelectorAll('input[name="q1"],input[name="q2"],#biz').forEach(function(el){el.addEventListener('change',render);});
+  render();
+})();
+</script>

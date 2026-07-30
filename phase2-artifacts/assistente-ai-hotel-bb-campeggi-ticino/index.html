@@ -1,0 +1,202 @@
+<title>Assistente AI per la vostra struttura ticinese · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .note{margin-top:14px;background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:12px;padding:13px 15px;font-size:.9rem;color:var(--ink-soft)}.note b{color:var(--ink)}
+  .grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:20px}@media(min-width:880px){.grid{grid-template-columns:.95fr 1.05fr;align-items:start}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  h2{font-size:1.06rem;margin:0 0 2px}.sub{color:var(--ink-mute);font-size:.85rem;margin:0 0 12px}
+  label.t{display:block;font-weight:600;font-size:.86rem;margin:14px 0 5px}
+  select{width:100%;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px}select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 22%,transparent)}
+  .seg{display:flex;gap:8px;margin-top:2px}.seg button{flex:1;font:inherit;font-weight:600;font-size:.86rem;cursor:pointer;border:1.5px solid var(--line);background:transparent;color:var(--ink-soft);border-radius:10px;padding:10px 6px}.seg button.on{border-color:var(--navy);background:var(--accent-soft);color:var(--ink)}.seg button:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent)}
+  .verdict{border-radius:12px;padding:15px 16px;border:1px solid var(--line);margin:0 0 12px}
+  .verdict.v-ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 40%,transparent)}
+  .verdict.v-dep{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 40%,transparent)}
+  .verdict.v-low{background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 40%,transparent)}
+  .v-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin:0 0 4px}
+  .verdict.v-ok .v-label{color:var(--ok)}.verdict.v-dep .v-label{color:var(--warn)}.verdict.v-low .v-label{color:var(--miss)}
+  .v-head{font-size:1.14rem;font-weight:700;margin:0 0 6px;color:var(--ink);line-height:1.2}
+  .v-body{font-size:.9rem;color:var(--ink-soft);margin:0}
+  .peak{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:.85rem;color:var(--ink-soft)}.peak b{color:var(--ink)}
+  .twocol{display:grid;grid-template-columns:1fr;gap:16px;margin-top:14px}@media(min-width:640px){.twocol{grid-template-columns:1fr 1fr}}
+  .panel h3{font-size:.9rem;margin:0 0 8px;display:flex;align-items:center;gap:7px}
+  .panel ul{margin:0;padding-left:0;list-style:none}.panel li{font-size:.85rem;color:var(--ink-soft);padding:8px 11px;border-radius:9px;margin:6px 0;border:1px solid var(--line);background:var(--bg)}
+  .panel.esc li{background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 22%,transparent)}
+  .emerg{display:inline-flex;gap:6px;margin-top:8px}.emerg span{font-weight:700;font-size:.82rem;color:var(--miss);background:var(--card);border:1px solid color-mix(in srgb,var(--miss) 35%,transparent);border-radius:99px;padding:3px 10px}
+  .callbox{margin-top:20px}.call{border:1px solid var(--line);border-radius:11px;padding:12px 14px;margin:8px 0;background:var(--bg)}
+  .call .who{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-mute);margin:0 0 3px}
+  .call .txt{font-size:.88rem;color:var(--ink);margin:0}.call .lang{font-style:italic;color:var(--accent)}
+  .call.assist{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
+  .sec{margin-top:20px}.sec h3{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-mute);margin:0 0 8px}
+  .sec ol{margin:0;padding-left:20px;font-size:.86rem;color:var(--ink-soft)}.sec ol li{margin:5px 0}
+  .sec ul.no{margin:0;padding-left:0;list-style:none}.sec ul.no li{font-size:.86rem;color:var(--ink-soft);padding:8px 11px;border-radius:9px;margin:6px 0;background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 25%,transparent)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:20px}
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+<div class="wrap">
+  <p class="kicker">Weissmann · Hotel, B&amp;B e campeggi in Ticino</p>
+  <h1>Un assistente telefonico AI conviene alla vostra struttura?</h1>
+  <p class="lede">Le regole giuste per un hotel a turni non sono quelle di un B&amp;B a conduzione familiare o di un campeggio stagionale. Scegliete il tipo di struttura, valutate onestamente tre fattori, e vedete <em>se</em> conviene, <em>cosa</em> dovrebbe gestire l’assistente — e cosa deve <strong>sempre</strong> arrivare a una persona.</p>
+  <div class="note" role="note"><b>Il valore non dipende dalla tecnologia</b> ma da quanto bene le regole rispecchiano chi, nella vostra struttura, può essere raggiunto — e quando. Per questo la stessa risposta cambia da un hotel a un B&amp;B a un campeggio.</div>
+  <div class="grid">
+    <section class="card card-pad" aria-labelledby="cfg-h">
+      <h2 id="cfg-h">La vostra struttura</h2><p class="sub">Tre fattori, valutati con onestà.</p>
+      <label class="t" for="tipo">Tipo di struttura</label>
+      <select id="tipo">
+        <option value="hotel">Hotel</option>
+        <option value="bb">B&amp;B / affittacamere</option>
+        <option value="camp">Campeggio</option>
+      </select>
+      <label class="t">Chi può rispondere al telefono nelle ore di punta?</label>
+      <div class="seg" id="s-people">
+        <button type="button" data-v="2" class="on">Una sola persona</button>
+        <button type="button" data-v="1">Poche, a turni</button>
+        <button type="button" data-v="0">Molte, sempre coperte</button>
+      </div>
+      <label class="t">Quanto oscilla la vostra stagione?</label>
+      <div class="seg" id="s-season">
+        <button type="button" data-v="2" class="on">Forte oscillazione</button>
+        <button type="button" data-v="1">Media</button>
+        <button type="button" data-v="0">Poche settimane l’anno</button>
+      </div>
+      <label class="t">Quanti ospiti preferiscono telefonare invece di prenotare solo online?</label>
+      <div class="seg" id="s-calls">
+        <button type="button" data-v="2" class="on">Molti</button>
+        <button type="button" data-v="1">Circa metà</button>
+        <button type="button" data-v="0">Pochi</button>
+      </div>
+    </section>
+    <aside class="card card-pad" aria-live="polite" aria-labelledby="v-h">
+      <h2 id="v-h" style="position:absolute;left:-9999px">Valutazione</h2>
+      <div class="verdict v-ok" id="verdict"><p class="v-label" id="v-label">Valutazione</p><p class="v-head" id="v-head"></p><p class="v-body" id="v-body"></p></div>
+      <div class="peak" id="peak"></div>
+    </aside>
+  </div>
+
+  <section class="card card-pad" aria-labelledby="cfg2-h">
+    <h2 id="cfg2-h">Cosa gestisce l’assistente — e cosa no</h2>
+    <p class="sub" id="conf-lead"></p>
+    <div class="twocol">
+      <div class="panel">
+        <h3>✓ Domande di routine <span style="font-weight:400;color:var(--ink-mute);font-size:.8rem">(per la vostra struttura)</span></h3>
+        <ul id="routine"></ul>
+      </div>
+      <div class="panel esc">
+        <h3>→ Sempre a una persona, senza eccezioni</h3>
+        <ul id="escal"></ul>
+        <div class="emerg" aria-label="Numeri di emergenza svizzeri"><span>144 sanitario</span><span>117 polizia</span><span>118 pompieri</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card card-pad callbox" aria-labelledby="ex-h">
+    <h2 id="ex-h">Una telefonata di esempio</h2>
+    <p class="sub">Arrivo tardivo e cambio di lingua a metà frase, in un B&amp;B — illustrazione costruita, non una registrazione reale.</p>
+    <div class="call"><p class="who">Ospite <span class="lang">(in tedesco)</span></p><p class="txt">«Siamo ancora in viaggio, forse quaranta minuti più tardi del previsto. È un problema?»</p></div>
+    <div class="call assist"><p class="who">Assistente <span class="lang">(in tedesco)</span></p><p class="txt">«Nessun problema. La cassetta delle chiavi accanto alla porta si apre con il codice della vostra e-mail di conferma. Se non lo trovate più, ve lo mando ora per SMS.»</p></div>
+    <div class="call assist"><p class="who">Assistente <span class="lang">(l’ospite passa a chi parla italiano — nessuno deve ricominciare)</span></p><p class="txt">«Non c’è garage, è una casa privata: potete lasciare l’auto nel vialetto sulla destra, posto per due. Se è occupato, il parcheggio pubblico più vicino è a due minuti a piedi.»</p></div>
+    <div class="call assist"><p class="who">Assistente <span class="lang">(richiesta ambigua → registrata, decisione alla proprietaria)</span></p><p class="txt">«Prendo nota della richiesta di due notti in più con fattura aziendale, ma disponibilità e fatturazione le conferma la proprietaria di persona. Ora è in cucina e non può rispondere; troverà la richiesta appena rientra.»</p></div>
+    <p style="font-size:.83rem;color:var(--ink-mute);margin:10px 0 0">Due cose contano: il cambio di lingua non fa ricominciare l’ospite, e l’assistente non finge una richiamata «tra cinque minuti» — dice la verità e fissa un’aspettativa realistica.</p>
+  </section>
+
+  <div class="grid" style="align-items:start">
+    <section class="card card-pad">
+      <div class="sec" style="margin-top:0"><h3>Otto domande da fare a un fornitore</h3>
+        <ol>
+          <li>Cosa dice l’assistente quando, in una struttura piccola, chi dovrebbe rispondere è irraggiungibile per <b>ore</b>, non minuti?</li>
+          <li>Riconosce la differenza tra una camera d’hotel e una piazzola per camper, o tratta ogni chiamata come un hotel?</li>
+          <li>Chi decide, per iscritto, quali situazioni contano come emergenza — prima della prima telefonata reale?</li>
+          <li>Una modifica viene scritta nel sistema che uso oggi (gestionale, calendario, software del campeggio) o resta un appunto a mano?</li>
+          <li>Cosa sente esattamente un ospite che chiede di parlare con una persona?</li>
+          <li>Come vengono raccolti e conservati i dati degli ospiti — e per quanto tempo?</li>
+          <li>Posso provarlo io stesso, come un ospite reale, prima di firmare?</li>
+          <li>Cosa succede a una chiamata se internet o il sistema di prenotazione si fermano in un weekend di alta stagione?</li>
+        </ol>
+      </div>
+    </section>
+    <section class="card card-pad">
+      <div class="sec" style="margin-top:0"><h3>Quando non conviene</h3>
+        <ul class="no">
+          <li>Un campeggio aperto poche settimane, quasi tutto online, con pochi squilli al giorno: una segreteria con un messaggio chiaro può bastare.</li>
+          <li>Un proprietario di B&amp;B che non perde mai una chiamata e considera il contatto diretto parte dell’esperienza.</li>
+          <li>Un hotel con reception coperta a turni tutto il giorno e pochissime chiamate perse.</li>
+          <li>Una struttura il cui vero problema è un sistema di prenotazione mai aggiornato: risolvete prima quello.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <p class="disc"><strong>Nota:</strong> orientamento, non un preventivo né una consulenza legale. L’assistente non valuta mai da solo la gravità di un’emergenza medica, di un incendio o di una situazione di sicurezza: la indirizza sempre a una persona o ai numeri di emergenza svizzeri (144, 117, 118). La telefonata di esempio è un’illustrazione costruita. Lingue documentate per l’assistente di Weissmann: tedesco, francese, italiano e inglese; quelle incluse dipendono dal pacchetto. Una corretta impostazione tiene conto della legge svizzera sulla protezione dei dati (nLPD). Nessun dato viene raccolto o trasmesso da questo strumento.</p>
+
+  <footer class="linkbar" aria-label="Link utili"><p class="lb-title">Approfondisci</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/it/ai-academy/agenti-automazione/assistente-ai-hotel-bb-campeggi-ticino/" target="_blank" rel="noopener noreferrer" aria-label="Leggi la guida completa all’assistente AI per hotel, B&B e campeggi in Ticino su weissmann.ai (si apre in una nuova scheda)">Leggi la guida completa →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/it/servizi/assistente-telefonico-ai/" target="_blank" rel="noopener noreferrer" aria-label="Scopri il servizio di assistente telefonico AI di Weissmann (si apre in una nuova scheda)">Scopri l’assistente telefonico AI →</a>
+    </div>
+    <p class="att">Valutazione di idoneità di <strong>Weissmann AI</strong> · complemento alla guida. Orientamento, non un preventivo.</p>
+  </footer>
+</div>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var CONF={
+    hotel:{lead:'In un hotel la reception è quasi sempre coperta a turni: il problema non è che non c’è nessuno, ma che quel qualcuno sta già facendo un check-in o è a un’altra chiamata.',
+      peak:'<b>Ora di punta tipica:</b> il primo pomeriggio, tra un check-in e l’altro. Nelle settimane di festival o bel tempo il volume si moltiplica proprio quando il personale ha meno margine.',
+      routine:['Modifiche di prenotazione e camere aggiuntive per un gruppo.','Indicazioni per l’arrivo tardivo: ingresso, codice, garage.','Domande operative: colazione, navetta, orario del bar.','Se la modifica finisce nel gestionale o resta un appunto: da chiedere al fornitore, non dare per scontato.']},
+    bb:{lead:'Un B&B è spesso gestito da una sola persona che cucina, pulisce, accoglie — e, nei ritagli, risponde al telefono. Ogni chiamata persa pesa di più: con poche camere è spesso l’intera serata.',
+      peak:'<b>Ora di punta tipica:</b> la sera, mentre chi dovrebbe rispondere prepara la cena. Il picco arriva quasi sempre quando siete meno disponibili.',
+      routine:['Indicazioni per un indirizzo privato, non un’insegna segnalata.','Colazione: orari, esigenze alimentari, se va concordata la sera prima.','Regole della casa: animali, orario di silenzio, check-in fuori orario.','Cosa dice l’assistente quando siete irraggiungibili per ore: il punto che distingue davvero un B&B da un hotel.']},
+    camp:{lead:'Chi chiama un campeggio chiede quasi sempre qualcosa di diverso: non una camera, ma una piazzola — per tenda o camper, con o senza allacciamento, con o senza animali.',
+      peak:'<b>Ora di punta tipica:</b> il tardo mattino, quando partenze e arrivi si sovrappongono. La reception è spesso aperta solo in certe fasce, con una sbarra fuori orario.',
+      routine:['Tipo di piazzola e disponibilità: tenda, caravan o camper, con o senza allacciamento.','Politica sugli animali: ammessi, con supplemento, o in aree dedicate.','Servizi e orari: docce, lavanderia, ristorante o chiosco, piscina.','Accesso fuori orario: codice del cancello, procedura per un arrivo notturno.']}
+  };
+  var ESC_BASE=[
+    'Emergenze mediche: un ospite che si sente male viene indirizzato subito al personale e, se necessario, al 144 — l’assistente non valuta mai quanto sia grave.',
+    'Incendio, fumo o odore di gas: segnalazione diretta a chi gestisce e, se necessario, al 118.',
+    'Incidenti di sicurezza: intrusione, furto o un ospite che non si sente sicuro passano subito a una persona (117).',
+    'Rimborsi, cancellazioni e pagamenti già versati: registrati con precisione, ma decisi da chi ha l’autorità.',
+    'Una richiesta diretta di parlare con una persona: passaggio immediato, non si negozia né si rimanda.',
+    'Tutto ciò che esce dalle regole approvate: l’assistente dice di non poter aiutare, invece di improvvisare.'
+  ];
+  var ESC_CAMP='Un bambino che si allontana o una situazione che coinvolge un minore — vicino a piscina o lago — non è mai una domanda di routine, qualunque sia il tono.';
+
+  function seg(id){var b=document.querySelector('#'+id+' button.on');return b?parseInt(b.getAttribute('data-v'),10):0;}
+  function bind(id){document.querySelectorAll('#'+id+' button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#'+id+' button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');render();});});}
+  ['s-people','s-season','s-calls'].forEach(bind);
+
+  function render(){
+    var tipo=$('tipo').value,c=CONF[tipo];
+    var score=seg('s-people')+seg('s-season')+seg('s-calls');
+    var v=$('verdict'),cls,label,head,body;
+    if(score>=4){cls='v-ok';label='Il beneficio è più alto';head='Siete probabilmente il caso in cui conviene di più';
+      body='Struttura piccola o media, con forte oscillazione stagionale e una quota importante di ospiti che preferisce chiamare: è esattamente dove un assistente assorbe le chiamate che altrimenti andrebbero perse. Valutatelo sui casi difficili, non sulla demo.';}
+    else if(score>=2){cls='v-dep';label='Dipende';head='Può convenire — valutate con onestà';
+      body='Alcuni fattori spingono a favore, altri no. Guardate la lista «quando non conviene» qui sotto: se vi riconoscete lì, forse non è il momento. Altrimenti, un test reale su una vostra serata impegnativa vi dirà di più di qualsiasi preventivo.';}
+    else{cls='v-low';label='Il vantaggio si riduce';head='Forse non ora';
+      body='Con personale già numeroso o sempre presente, stagione di poche settimane e poche chiamate anche in piena stagione, lo sforzo di configurazione rischia di superare il beneficio. Una segreteria con un messaggio chiaro e una richiamata potrebbe bastare.';}
+    v.className='verdict '+cls;$('v-label').textContent=label;$('v-head').textContent=head;$('v-body').textContent=body;
+    $('peak').innerHTML=c.peak;
+    $('conf-lead').textContent=c.lead;
+    var r=$('routine');r.innerHTML='';c.routine.forEach(function(x){var li=document.createElement('li');li.innerHTML=x;r.appendChild(li);});
+    var e=$('escal');e.innerHTML='';
+    var list=ESC_BASE.slice();
+    if(tipo==='camp')list.splice(3,0,ESC_CAMP);
+    list.forEach(function(x){var li=document.createElement('li');li.textContent=x;e.appendChild(li);});
+  }
+  $('tipo').addEventListener('change',render);
+  render();
+})();
+</script>
