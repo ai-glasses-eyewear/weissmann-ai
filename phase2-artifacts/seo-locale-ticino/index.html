@@ -1,0 +1,432 @@
+<title>SEO locale Ticino: pagina o doorway page? · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  h2{font-size:1.12rem;margin:0 0 4px;letter-spacing:-.01em}
+  .sub{color:var(--ink-mute);font-size:.92rem;margin:0 0 16px}
+  .mt{margin-top:20px}
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}
+  .btn{font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer;border-radius:10px;padding:10px 14px;border:1.5px solid var(--navy);color:var(--navy);background:transparent;min-height:44px}
+  .btn:hover{background:var(--soft)}
+  .btn.primary{background:var(--navy);color:var(--on-navy)}.btn.primary:hover{background:var(--navy-hover)}
+  .btn:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .btn.ghost{border-color:var(--line);color:var(--ink-soft)}
+
+  .loc{border:1px solid var(--line);border-radius:12px;padding:14px;margin:0 0 14px;background:var(--card)}
+  .loc-head{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:640px){.loc-head{grid-template-columns:1.3fr 1fr auto;align-items:end}}
+  .field{display:flex;flex-direction:column;gap:5px;min-width:0}
+  .field label{font-size:.8rem;font-weight:600;color:var(--ink-soft)}
+  input[type=text],select{font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--soft);border:1.5px solid var(--line);border-radius:9px;padding:10px 11px;width:100%;min-height:44px}
+  input[type=text]::placeholder{color:var(--ink-mute)}
+  select:disabled{opacity:.7;cursor:not-allowed}
+  .badge-line{margin:2px 0 0;font-size:.78rem;line-height:1.4;color:var(--accent);background:var(--accent-soft);border-radius:8px;padding:6px 8px}
+  .badge-line:empty{display:none}
+  .rm{align-self:end}
+  .btn.rm-btn{border-color:var(--line);color:var(--ink-mute);padding:10px 12px;font-size:.85rem;white-space:nowrap}
+  .btn.rm-btn:hover{background:var(--miss-soft);color:var(--miss);border-color:var(--miss)}
+
+  fieldset.tests{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:14px 0 0}
+  fieldset.tests[disabled]{opacity:.5}
+  fieldset.tests legend{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);padding:0 6px}
+  .chk{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:.9rem;color:var(--ink-soft);line-height:1.45;cursor:pointer}
+  .chk input{margin-top:3px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--navy);cursor:pointer}
+  .chk b{color:var(--ink)}
+
+  .verdict{margin:14px 0 0;border-radius:10px;padding:12px 14px;font-size:.92rem;line-height:1.5;border:1px solid var(--line);background:var(--soft)}
+  .verdict:empty{display:none}
+  .verdict .vh{font-weight:700;display:flex;align-items:center;gap:8px;margin:0 0 4px}
+  .verdict .tag{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:3px 9px;white-space:nowrap}
+  .v-ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 40%,transparent)}.v-ok .tag{background:var(--ok);color:var(--card)}
+  .v-warn{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 40%,transparent)}.v-warn .tag{background:var(--warn);color:var(--card)}
+  .v-miss{background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 40%,transparent)}.v-miss .tag{background:var(--miss);color:var(--card)}
+  .v-info{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,transparent)}.v-info .tag{background:var(--accent);color:var(--card)}
+  .v-idle{color:var(--ink-mute)}
+
+  .summary{margin-top:8px;border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:16px}
+  .summary h3{margin:0 0 8px;font-size:1rem}
+  .tally{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:0 0 12px}
+  @media(min-width:560px){.tally{grid-template-columns:repeat(4,1fr)}}
+  .tcell{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}
+  .tcell .n{font-size:1.5rem;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+  .tcell .l{font-size:.72rem;color:var(--ink-mute);margin-top:4px;line-height:1.3}
+  .n-ok{color:var(--ok)}.n-warn{color:var(--warn)}.n-miss{color:var(--miss)}.n-info{color:var(--accent)}
+  .sumtext{font-size:.92rem;color:var(--ink-soft);line-height:1.55;margin:0}
+
+  .fasce{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:10px}
+  .fascia{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--card);font-size:.9rem;color:var(--ink-soft);line-height:1.5}
+  .fascia .ft{font-weight:700;color:var(--ink);display:block;margin-bottom:2px}
+  .fascia.on{border-color:var(--navy);box-shadow:0 0 0 2px color-mix(in srgb,var(--navy) 22%,transparent)}
+  .fascia.on .ft::after{content:" · corrisponde al vostro conteggio";font-weight:600;color:var(--navy);font-size:.8rem}
+
+  details{border:1px solid var(--line);border-radius:10px;background:var(--card);margin-top:12px}
+  details summary{cursor:pointer;padding:12px 14px;font-weight:600;font-size:.92rem;list-style:none}
+  details summary::-webkit-details-marker{display:none}
+  details summary::before{content:"+ ";color:var(--navy);font-weight:800}
+  details[open] summary::before{content:"– "}
+  details .body{padding:0 14px 14px;font-size:.88rem;color:var(--ink-soft);line-height:1.55}
+  details .body ul{margin:6px 0 0;padding-left:18px}details .body li{margin:5px 0}
+  .pricing{font-size:.9rem;color:var(--ink-soft);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:10px;padding:12px 14px;line-height:1.55;margin-top:16px}
+  .cp-note{font-size:.78rem;color:var(--ink-mute);margin:8px 2px 0;min-height:1em}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">AI marketing, SEO e GEO · Pagine di località</p>
+  <h1>Serve davvero una pagina per ogni comune? Checker SEO locale per il Ticino</h1>
+  <p class="lede">Inserite i comuni e i quartieri per cui vi hanno consigliato una pagina propria. Lo strumento applica due controlli dell'articolo: prima <b>comune vero o quartiere già fuso</b> (la verifica che il resto della Svizzera non deve fare), poi il <b>test in quattro punti</b> che distingue una pagina di località genuina da una <b>doorway page</b>.</p>
+
+  <section class="card card-pad mt" aria-label="Checker delle pagine di località">
+    <h2>Le vostre località</h2>
+    <p class="sub">Nessun dato lascia questa pagina: tutto resta nel vostro browser.</p>
+
+    <div class="toolbar">
+      <button type="button" class="btn primary" id="addBtn">+ Aggiungi località</button>
+      <button type="button" class="btn ghost" id="exampleBtn">Carica l'esempio dell'articolo (giardinaggio · 5 nomi)</button>
+    </div>
+
+    <div id="locs"></div>
+
+    <div class="summary" aria-live="polite" id="summary">
+      <h3>Conteggio onesto</h3>
+      <div class="tally">
+        <div class="tcell"><div class="n n-ok" id="c-ded">0</div><div class="l">pagine dedicate giustificate</div></div>
+        <div class="tcell"><div class="n n-warn" id="c-sec">0</div><div class="l">meglio una sezione nella pagina città</div></div>
+        <div class="tcell"><div class="n n-miss" id="c-svc">0</div><div class="l">area di servizio + riga di copertura</div></div>
+        <div class="tcell"><div class="n n-info" id="c-city">0</div><div class="l">pagine città / da verificare</div></div>
+      </div>
+      <p class="sumtext" id="sumtext">Aggiungete almeno una località per vedere il conteggio.</p>
+      <ul class="fasce" id="fasce">
+        <li class="fascia" data-f="1"><span class="ft">Una sola sede, raggio ampio</span>Nessun'altra sede presidiata: tipicamente <b>zero pagine di località dedicate</b>. Bastano un'area di servizio su Google Business Profile e un'unica pagina di copertura onesta (mappa + elenco reale dei comuni serviti). È la risposta corretta per l'impresa di giardinaggio dell'esempio.</li>
+        <li class="fascia" data-f="2"><span class="ft">Due o tre sedi realmente presidiate</span>Ciascuna con team, orari e recensioni propri: <b>una pagina per sede presidiata</b>, non una per ogni comune servito. Il fiduciario dell'articolo, con uffici a Lugano e Chiasso, ha esattamente due pagine — non cinque, pur servendo tutto il Sottoceneri.</li>
+        <li class="fascia" data-f="3"><span class="ft">Rete ampia e genuinamente strutturata</span>Una catena o un gruppo con sedi in più comuni: le pagine di località sistematiche diventano legittime, ma solo con dati reali per sede — numero diretto, orari specifici, un team nominato, recensioni filtrate per sede — mai lo stesso paragrafo col nome del comune cambiato.</li>
+      </ul>
+      <div class="toolbar" style="margin:14px 0 0">
+        <button type="button" class="btn" id="copyBtn">Copia il riepilogo</button>
+      </div>
+      <p class="cp-note" id="cpNote" aria-live="polite"></p>
+    </div>
+
+    <details class="mt">
+      <summary>L'alternativa quasi sempre migliore: l'area di servizio su Google Business Profile</summary>
+      <div class="body">
+        Google ha creato questa opzione proprio per le attività che raggiungono il cliente invece di riceverlo in sede — come l'impresa di giardinaggio dell'esempio. Secondo la guida ufficiale (verificata il 29 luglio 2026):
+        <ul>
+          <li>Se non ricevete clienti al vostro indirizzo, Google consiglia di <b>rimuoverlo del tutto</b>.</li>
+          <li>Dichiarate le aree servite <b>per comune o codice postale</b> — non per un raggio in chilometri, opzione che Google non consente.</li>
+          <li>Restate entro <b>circa due ore d'auto</b> dalla sede reale: da un deposito vicino a Bellinzona coprite Locarno, il Mendrisiotto e Lugano; non Coira o Sion, per quanto «il Ticino sia piccolo».</li>
+          <li>Fino a <b>venti</b> aree di servizio per profilo: cinque o sei comuni reali dichiarati con precisione valgono più di venti nomi vaghi.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Cosa può andare storto se moltiplicate le pagine</summary>
+      <div class="body">
+        <ul>
+          <li><b>Sanzione policy.</b> Google tratta le doorway page come una violazione soggetta a retrocessione algoritmica e, nei casi più evidenti o estesi, a un'azione manuale — fino alla rimozione delle pagine dai risultati.</li>
+          <li><b>Cannibalizzazione contro voi stessi.</b> Una pagina «Bellinzona» e una «Giubiasco» quasi identiche competono l'una contro l'altra dentro lo stesso sito, e spesso nessuna delle due viene premiata con decisione.</li>
+          <li><b>Recensioni diluite.</b> Le poche recensioni reali perdono forza se sparse su cinque pagine invece che concentrate su una o due.</li>
+          <li><b>Debito di manutenzione.</b> Orari, prezzi e recensioni di dieci pagine, realisticamente, non verranno aggiornati con costanza.</li>
+          <li><b>Errore speculare al confine.</b> Indicare un indirizzo dall'altra parte del confine per sembrare più vicini alla clientela italiana viola le linee guida di Google Business Profile e crea una discrepanza tra profilo e realtà.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>L'eccezione: landing page a pagamento con noindex</summary>
+      <div class="body">
+        Una landing page costruita per una singola campagna pubblicitaria a pagamento e segnata come <b>non indicizzabile (noindex)</b> non rientra nel rischio doorway, indipendentemente da quante varianti quasi identiche esistano per comuni diversi. La policy riguarda le pagine che competono per il posizionamento organico, non le pagine private che un motore di ricerca non è mai stato destinato a indicizzare.
+      </div>
+    </details>
+
+    <p class="pricing">Se dal conteggio emerge che vi serve un sito con <b>poche pagine oneste, ben fatte</b>, il Sito web Starter di Weissmann parte da <b>CHF 880</b> (prezzo regolare CHF 2'490) e comprende fino a 5 pagine principali con fondamenta tecniche SEO e GEO, GA4 e Search Console. Questo strumento dà orientamento, non un preventivo.</p>
+
+    <p class="disc">Orientamento, non un audit né una consulenza legale. Le regole citate provengono dalla policy antispam di Google Search Central sulle doorway page e dalla guida di Google Business Profile sulle aree di servizio, verificate il 29 luglio 2026 nell'articolo di riferimento; nessuna di queste vieta le pagine di località in sé — vieta di sostituire un nome di comune a una sostanza distintiva reale. Le vostre risposte restano nel browser: non vengono salvate né inviate.</p>
+  </section>
+
+  <footer class="linkbar" aria-label="Approfondimenti e servizio">
+    <p class="lb-title">Continua con Weissmann</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/it/ai-academy/marketing-seo-geo/seo-locale-ticino/" target="_blank" rel="noopener noreferrer" aria-label="Leggi la guida completa alla SEO locale in Ticino (si apre in una nuova scheda)">Leggi la guida completa alla SEO locale in Ticino →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/it/servizi/sviluppo-siti-web-ai/" target="_blank" rel="noopener noreferrer" aria-label="Scopri lo sviluppo siti web con AI di Weissmann (si apre in una nuova scheda)">Sviluppo siti web con AI →</a>
+    </div>
+    <p class="att">Checker didattico · complemento alla guida. Orientamento, non un preventivo.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  var NORM = function(s){ return (s||'').toLowerCase().trim().replace(/\s+/g,' '); };
+
+  var KNOWN = {
+    'breganzona': {status:'fused', city:'Lugano', badge:'Quartiere di Lugano dalla prima aggregazione del 2004 (fonte: articolo).'},
+    'pregassona': {status:'fused', city:'Lugano', badge:'Quartiere di Lugano dalla prima aggregazione del 2004 (fonte: articolo).'},
+    'val colla':  {status:'fused', city:'Lugano', badge:'Quartiere di Lugano (riunisce piu ex comuni) dalle aggregazioni 2004-2013 (fonte: articolo).'},
+    'valcolla':   {status:'fused', city:'Lugano', badge:'Quartiere di Lugano (riunisce piu ex comuni) dalle aggregazioni 2004-2013 (fonte: articolo).'},
+    'giubiasco':  {status:'fused', city:'Bellinzona', badge:'Quartiere della nuova Bellinzona dalla fusione del 3 aprile 2017 (fonte: articolo).'},
+    'paradiso':   {status:'autonomous', badge:'Comune autonomo: progetti di aggregazione a Lugano respinti per restare indipendente (fonte: articolo).'},
+    'massagno':   {status:'autonomous', badge:'Comune autonomo: progetti di aggregazione a Lugano respinti per restare indipendente (fonte: articolo).'},
+    'lugano':     {status:'city', badge:'Citta: 21 quartieri dopo tre ondate di aggregazione 2004-2013 (Luganese da 98 a 48 comuni).'},
+    'bellinzona': {status:'city', badge:'Citta: nata dalla fusione di 13 comuni il 3 aprile 2017 (distretto da 17 a 6 comuni).'}
+  };
+
+  var TESTS = [
+    {b:'Presenza reale e sostenuta', t:'sede con personale, magazzino o storia documentata di interventi ripetuti per anni qui, non una tappa occasionale ne un piano di espansione.'},
+    {b:'Contenuti autenticamente distinti', t:'recensioni che citano questa sede o questo quartiere, un referente locale nominato, foto reali del luogo, non lo stesso paragrafo col nome del comune cambiato.'},
+    {b:'Domanda di ricerca separabile', t:'le persone cercano questa localita in un modo che una singola pagina di copertura cantonale non intercetterebbe gia.'},
+    {b:'Responsabile designato', t:'una persona precisa aggiorna orari, recensioni e dati di questa pagina almeno una o due volte l’anno.'}
+  ];
+
+  var locs = document.getElementById('locs');
+  var seq = 0;
+  var lastResults = [];
+
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+  function makeRow(name){
+    seq++;
+    var id = seq;
+    var row = document.createElement('div');
+    row.className = 'loc';
+    row.setAttribute('data-row','');
+    var testsHtml = '';
+    for(var i=0;i<TESTS.length;i++){
+      testsHtml += '<label class="chk"><input type="checkbox" data-t="'+i+'">'+
+        '<span><b>'+esc(TESTS[i].b)+':</b> '+esc(TESTS[i].t)+'</span></label>';
+    }
+    row.innerHTML =
+      '<div class="loc-head">'+
+        '<div class="field">'+
+          '<label for="name-'+id+'">Comune o quartiere</label>'+
+          '<input id="name-'+id+'" data-name type="text" autocomplete="off" placeholder="es. Locarno, Breganzona, Chiasso">'+
+          '<p class="badge-line" data-badge></p>'+
+        '</div>'+
+        '<div class="field">'+
+          '<label for="status-'+id+'">Stato amministrativo</label>'+
+          '<select id="status-'+id+'" data-status>'+
+            '<option value="">Selezionate lo stato...</option>'+
+            '<option value="autonomous">Comune autonomo</option>'+
+            '<option value="fused">Quartiere gia fuso in una citta piu grande</option>'+
+          '</select>'+
+        '</div>'+
+        '<div class="rm"><button type="button" class="btn rm-btn" data-remove aria-label="Rimuovi questa localita">Rimuovi</button></div>'+
+      '</div>'+
+      '<fieldset class="tests"><legend>Test in quattro punti</legend>'+testsHtml+'</fieldset>'+
+      '<div class="verdict v-idle" data-verdict role="status" aria-live="polite"></div>';
+    locs.appendChild(row);
+    if(name){ row.querySelector('[data-name]').value = name; }
+    recompute();
+    return row;
+  }
+
+  function verdictFor(name, status, passCount){
+    // returns {cls, tag, title, body, bucket}
+    var all = passCount === 4;
+    var known = KNOWN[NORM(name)];
+    var cityOf = known && known.city ? known.city : 'la citta piu grande in cui e fuso';
+
+    if(status === 'city'){
+      return {cls:'v-info', tag:'Pagina citta', bucket:'city',
+        title: (name||'Questa citta')+' e la citta stessa',
+        body:'La sua pagina e la vostra pagina principale di copertura, non una pagina di quartiere. Tenetela come hub e non moltiplicate sotto di essa pagine di quartiere quasi identiche.'};
+    }
+    if(status === 'unknown' || status === ''){
+      return {cls:'v-idle', tag:'Da verificare', bucket:'city',
+        title:'Prima verificate lo stato amministrativo',
+        body:'E ancora un comune autonomo o e gia un quartiere fuso in una citta piu grande? Selezionate lo stato per completare la valutazione: e la verifica che, in Ticino, va fatta prima di ogni altra.'};
+    }
+    if(!all){
+      var extra = '';
+      if(status === 'fused'){
+        extra = ' In piu e un quartiere gia fuso in '+cityOf+': una pagina quasi identica a quella della citta crea cannibalizzazione contro voi stessi.';
+      }
+      return {cls:'v-miss', tag:'Rischio doorway page', bucket:'service',
+        title:'Non una pagina di localita: una doorway page',
+        body:'Con '+(4-passCount)+' condizione'+(passCount===3?'':'i')+' su quattro non soddisfatt'+(passCount===3?'a':'e')+', questa e cio che Google chiama doorway page. Meglio dichiararla come area di servizio su Google Business Profile e aggiungere una riga nell’unica pagina di copertura onesta.'+extra};
+    }
+    // all four pass
+    if(status === 'fused'){
+      return {cls:'v-warn', tag:'Possibile, con metro piu severo', bucket:'section',
+        title:'Quartiere gia fuso in '+cityOf+': valutate una sezione, non una pagina',
+        body:'Supera il test, ma la soluzione piu onesta e di solito una sezione dedicata dentro la pagina di '+cityOf+', non una pagina indipendente che rischia di competere con quella della vostra stessa azienda. Le recensioni scritte quando il quartiere era ancora comune restano valide e vanno mostrate qui.'};
+    }
+    return {cls:'v-ok', tag:'Pagina giustificata', bucket:'dedicated',
+      title:'Pagina di localita giustificata',
+      body:'Questa sede supera il test a quattro punti come entita autonoma: una pagina propria aggiunge portata reale, non duplica un’altra pagina del vostro sito.'};
+  }
+
+  function recompute(){
+    var rows = locs.querySelectorAll('[data-row]');
+    var ded=0, sec=0, svc=0, cityCnt=0, filled=0;
+    lastResults = [];
+
+    rows.forEach(function(row){
+      var nameEl = row.querySelector('[data-name]');
+      var statusEl = row.querySelector('[data-status]');
+      var badgeEl = row.querySelector('[data-badge]');
+      var fs = row.querySelector('fieldset.tests');
+      var vEl = row.querySelector('[data-verdict]');
+      var name = nameEl.value.trim();
+      var known = KNOWN[NORM(name)];
+
+      // resolve status + badge
+      var status;
+      if(known){
+        badgeEl.textContent = known.badge;
+        if(known.status === 'city'){
+          statusEl.value = '';
+          statusEl.disabled = true;
+          status = 'city';
+        } else {
+          statusEl.value = known.status;
+          statusEl.disabled = true;
+          status = known.status;
+        }
+      } else {
+        badgeEl.textContent = '';
+        statusEl.disabled = false;
+        status = statusEl.value || 'unknown';
+      }
+
+      // tests: disabled/irrelevant for a whole city
+      var isCity = status === 'city';
+      fs.disabled = isCity;
+      var passCount = 0;
+      var checks = row.querySelectorAll('[data-t]');
+      checks.forEach(function(c){ if(c.checked) passCount++; });
+
+      if(!name){
+        vEl.className = 'verdict v-idle';
+        vEl.innerHTML = '<span class="v-idle">Inserite un nome di comune o quartiere per valutare questa riga.</span>';
+        return;
+      }
+      filled++;
+
+      var v = verdictFor(name, status, passCount);
+      vEl.className = 'verdict ' + v.cls;
+      vEl.innerHTML = '<p class="vh"><span class="tag">'+esc(v.tag)+'</span><span>'+esc(v.title)+'</span></p><p style="margin:0">'+esc(v.body)+'</p>';
+
+      if(v.bucket==='dedicated') ded++;
+      else if(v.bucket==='section') sec++;
+      else if(v.bucket==='service') svc++;
+      else cityCnt++;
+
+      lastResults.push({name:name, status:status, passCount:passCount, tag:v.tag, title:v.title});
+    });
+
+    document.getElementById('c-ded').textContent = ded;
+    document.getElementById('c-sec').textContent = sec;
+    document.getElementById('c-svc').textContent = svc;
+    document.getElementById('c-city').textContent = cityCnt;
+
+    var st = document.getElementById('sumtext');
+    if(filled === 0){
+      st.textContent = 'Aggiungete almeno una localita per vedere il conteggio.';
+    } else {
+      var parts = [];
+      parts.push(ded + (ded===1?' localita giustifica':' localita giustificano') + ' una pagina dedicata');
+      if(sec>0) parts.push(sec + (sec===1?' andrebbe gestita':' andrebbero gestite') + ' come sezione dentro la pagina della citta');
+      if(svc>0) parts.push(svc + (svc===1?' diventa':' diventano') + ' area di servizio + una riga nella pagina di copertura');
+      st.textContent = 'Su ' + filled + ' localita valutate: ' + parts.join('; ') + '.';
+    }
+
+    // fascia highlight based on justified dedicated pages
+    var fnodes = document.querySelectorAll('#fasce .fascia');
+    var target = 0;
+    if(filled>0){ target = (ded===0)?1:(ded<=3?2:3); }
+    fnodes.forEach(function(n){
+      n.classList.toggle('on', String(target) === n.getAttribute('data-f'));
+    });
+  }
+
+  // events (delegated)
+  locs.addEventListener('input', recompute);
+  locs.addEventListener('change', recompute);
+  locs.addEventListener('click', function(e){
+    var b = e.target.closest('[data-remove]');
+    if(b){
+      var row = b.closest('[data-row]');
+      if(row){ row.remove(); recompute(); }
+    }
+  });
+
+  document.getElementById('addBtn').addEventListener('click', function(){
+    var r = makeRow('');
+    var inp = r.querySelector('[data-name]');
+    if(inp) inp.focus();
+  });
+
+  document.getElementById('exampleBtn').addEventListener('click', function(){
+    locs.innerHTML = '';
+    ['Lugano','Paradiso','Massagno','Breganzona','Pregassona'].forEach(function(n){ makeRow(n); });
+    recompute();
+  });
+
+  // copy own generated summary
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var lines = [];
+    lines.push('Checker SEO locale Ticino - riepilogo');
+    lines.push('=====================================');
+    if(lastResults.length === 0){
+      lines.push('(nessuna localita valutata)');
+    } else {
+      lastResults.forEach(function(r){
+        lines.push('- ' + r.name + '  [' + r.tag + ']  (' + r.passCount + '/4 condizioni)');
+        lines.push('  ' + r.title);
+      });
+    }
+    lines.push('');
+    lines.push(document.getElementById('sumtext').textContent);
+    lines.push('');
+    lines.push('Orientamento, non un audit ne una consulenza legale. Fonte: guida Weissmann sulla SEO locale in Ticino.');
+    var text = lines.join('\n');
+    var note = document.getElementById('cpNote');
+
+    function ok(){ note.textContent = 'Riepilogo copiato negli appunti.'; }
+    function fail(){ note.textContent = 'Copia non riuscita: selezionate e copiate manualmente.'; }
+
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok, function(){ legacy(); });
+    } else {
+      legacy();
+    }
+    function legacy(){
+      try{
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly','');
+        ta.style.position = 'absolute';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        var done = document.execCommand('copy');
+        document.body.removeChild(ta);
+        if(done) ok(); else fail();
+      }catch(err){ fail(); }
+    }
+  });
+
+  // seed one empty row
+  makeRow('');
+})();
+</script>
