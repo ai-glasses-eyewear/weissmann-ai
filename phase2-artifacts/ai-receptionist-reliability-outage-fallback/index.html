@@ -1,0 +1,500 @@
+<title>Fallback-Readiness Self-Audit · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .stack>*+*{margin-top:16px}
+  .principle{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .prin{flex:1 1 220px;border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:var(--soft)}
+  .prin b{display:block;font-size:.9rem;margin-bottom:2px}
+  .prin.open b{color:var(--ok)}.prin.closed b{color:var(--accent)}
+  .prin span{font-size:.85rem;color:var(--ink-soft)}
+
+  .barrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:6px}
+  .profile{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+  .profile button{appearance:none;border:0;background:transparent;color:var(--ink-soft);font:inherit;font-size:.86rem;font-weight:600;padding:9px 13px;cursor:pointer;min-height:44px}
+  .profile button+button{border-left:1px solid var(--line)}
+  .profile button[aria-pressed="true"]{background:var(--navy);color:var(--on-navy)}
+  .profile button:focus-visible{outline:none;box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .prof-note{font-size:.82rem;color:var(--ink-mute);flex:1 1 280px;min-width:220px}
+
+  .points{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
+  .point{overflow:hidden}
+  .point-head{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;justify-content:space-between}
+  .point-idx{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700}
+  .point-name{font-size:1.1rem;font-weight:700;margin:2px 0 0;letter-spacing:-.01em}
+  .point-how{font-size:.9rem;color:var(--ink-soft);margin:8px 0 0;max-width:75ch}
+
+  .items{margin-top:14px;display:grid;gap:12px}
+  fieldset.item{margin:0;border:1px solid var(--line);border-radius:11px;padding:12px 14px;background:var(--soft)}
+  fieldset.item.opt{opacity:.72}
+  .item legend{font-size:.9rem;color:var(--ink);font-weight:500;padding:0;line-height:1.4}
+  .tier{display:inline-block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle;white-space:nowrap}
+  .tier.ess{background:var(--accent-soft);color:var(--accent)}
+  .tier.scl{background:var(--warn-soft);color:var(--warn)}
+  .seg{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .seg label{position:relative;flex:1 1 30%;min-width:96px}
+  .seg input{position:absolute;opacity:0;width:1px;height:1px}
+  .seg span{display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;border:1.5px solid var(--line);border-radius:9px;padding:9px 8px;font-size:.85rem;font-weight:600;color:var(--ink-soft);background:var(--card);cursor:pointer;min-height:44px}
+  .seg input:hover+span{border-color:var(--ink-mute)}
+  .seg input:focus-visible+span{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .seg input[value="yes"]:checked+span{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+  .seg input[value="no"]:checked+span{background:var(--miss-soft);border-color:var(--miss);color:var(--miss)}
+  .seg input[value="unsure"]:checked+span{background:var(--warn-soft);border-color:var(--warn);color:var(--warn)}
+
+  .meter{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+  .meter-track{display:flex;gap:4px;margin-bottom:8px}
+  .seg-cell{flex:1;height:10px;border-radius:3px;background:var(--line)}
+  .seg-cell.yes{background:var(--ok)}.seg-cell.no{background:var(--miss)}.seg-cell.unsure{background:var(--warn)}
+  .status{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:.9rem}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.82rem;padding:4px 11px;border-radius:999px}
+  .pill.covered{background:var(--ok-soft);color:var(--ok)}
+  .pill.partial{background:var(--warn-soft);color:var(--warn)}
+  .pill.exposed{background:var(--miss-soft);color:var(--miss)}
+  .pill.idle{background:var(--soft);color:var(--ink-mute)}
+  .status .msg{color:var(--ink-soft);font-size:.86rem}
+
+  .summary h2{font-size:1.15rem;margin:0 0 4px}
+  .mini{display:grid;grid-template-columns:1fr;gap:10px;margin:14px 0}
+  @media(min-width:620px){.mini{grid-template-columns:1fr 1fr 1fr}}
+  .mini-card{border:1px solid var(--line);border-radius:11px;padding:11px 13px;background:var(--soft)}
+  .mini-card .mc-name{font-size:.82rem;font-weight:600;color:var(--ink-soft);margin-bottom:8px;min-height:2.4em}
+  .synth{font-size:.98rem;color:var(--ink);background:var(--accent-soft);border:1px solid var(--line);border-radius:11px;padding:12px 14px;margin-top:4px}
+  .synth b{color:var(--accent)}
+
+  .copywrap{margin-top:16px}
+  .copywrap label{font-size:.82rem;font-weight:600;color:var(--ink-soft)}
+  textarea.copybox{width:100%;margin-top:8px;min-height:190px;resize:vertical;font-family:var(--mono);font-size:.8rem;line-height:1.5;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:11px;padding:12px 14px}
+  .copybtn{margin-top:10px;appearance:none;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);font:inherit;font-weight:600;font-size:.9rem;padding:11px 18px;border-radius:10px;cursor:pointer;min-height:44px}
+  .copybtn:hover{background:var(--navy-hover)}
+  .copybtn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copied{margin-left:10px;font-size:.85rem;font-weight:600;color:var(--ok)}
+  .honest{font-size:.84rem;color:var(--ink-soft);background:var(--warn-soft);border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:9px;padding:11px 14px;margin-top:14px;line-height:1.5}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">AI Agents, Automation &amp; Voice · Reliability</p>
+  <h1>Fallback-readiness self-audit</h1>
+  <p class="lede">An AI receptionist depends on three things staying up at once: the caller's own connection, the calendar it queries mid-call, and the vendor's own platform. Each fails independently, and none is guaranteed to be up at every moment. Check what you have in place for each link, and see whether it currently fails toward a next step or toward silence.</p>
+
+  <section class="card card-pad stack" style="margin-top:18px" aria-labelledby="frame-h">
+    <h2 id="frame-h" style="margin:0;font-size:1.05rem">The one rule this audit measures against</h2>
+    <p style="margin:0;color:var(--ink-soft);font-size:.94rem">A receptionist does two jobs at once, and the safe default is not the same for both. The channel should <b>fail open</b>; the action should <b>fail closed</b>.</p>
+    <div class="principle">
+      <div class="prin open">
+        <b>Channel → fail open</b>
+        <span>Whatever broke behind the scenes, the caller is never met with silence, a dead line, or a repeated unhelpful sentence. There is always a next step: a message taken, a callback promised, a transfer to a human or voicemail.</span>
+      </div>
+      <div class="prin closed">
+        <b>Action → fail closed</b>
+        <span>When the assistant can't verify what it needs — real availability, a confirmed slot, an accurate spelling — it doesn't act as if it had. An unverified booking is worse than no booking: nobody finds out until two people arrive for one slot.</span>
+      </div>
+    </div>
+
+    <div class="barrow">
+      <div class="profile" role="group" aria-label="Call-volume profile">
+        <button type="button" id="prof-high" aria-pressed="true">Higher volume</button>
+        <button type="button" id="prof-low" aria-pressed="false">A handful of calls a week</button>
+      </div>
+      <p class="prof-note" id="prof-note"></p>
+    </div>
+  </section>
+
+  <div class="points" id="points"></div>
+
+  <section class="card card-pad summary" aria-labelledby="sum-h" style="margin-top:16px">
+    <h2 id="sum-h">Where your fallback chain stands</h2>
+    <p style="margin:0;color:var(--ink-soft);font-size:.92rem">A receptionist is a chain of at least three links, each able to fail independently of the other two. A chain is only as resilient as its weakest link.</p>
+    <div class="mini" id="mini" role="list" aria-label="Per-link readiness"></div>
+    <p class="synth" id="synth" aria-live="polite">Answer the items above to see your weakest link.</p>
+
+    <div class="copywrap">
+      <label for="copybox">Take this to your vendor — an editable list of your open gaps and the questions the guide says to ask in writing:</label>
+      <textarea id="copybox" class="copybox" aria-label="Generated audit summary and vendor questions" readonly></textarea>
+      <div>
+        <button type="button" class="copybtn" id="copybtn">Copy to clipboard</button>
+        <span class="copied" id="copied" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <p class="honest">Honest note from the guide: Weissmann's own published material states every package is reachable around the clock, that unanswerable questions are captured and escalated so no caller is left without a next step, and that every plan includes a dedicated line set up with call forwarding. It does <b>not</b> publish a specific uptime percentage, a documented calendar-timeout figure, or a described monitoring and incident-notification process — so these are worth asking directly, of any vendor, Weissmann included.</p>
+
+    <p class="disc">Orientation, not advice or a quote. This tool is a companion to the linked guide and reflects only what that guide describes; it is not a reliability guarantee. Every dependency named will fail eventually — what it audits is whether your setup fails to a next step or to silence, not whether failure can be avoided. No vendor can honestly promise a phone line never meets a broken dependency. Everything you enter stays in this browser: nothing is stored, sent, or saved.</p>
+  </section>
+
+  <footer class="linkbar" aria-label="Read the full guide and the phone-assistant service">
+    <p class="lb-title">Go deeper</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/agents-automation/ai-receptionist-outage-fallback/" target="_blank" rel="noopener noreferrer" aria-label="Read the full guide: what happens when your AI receptionist goes down (opens in a new tab)">Read the full outage &amp; fallback guide →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-phone-assistant/" target="_blank" rel="noopener noreferrer" aria-label="Stress-test the assistant's fallback behaviour yourself, CHF 350 one-time (opens in a new tab)">Stress-test the fallback yourself — CHF 350 one-time →</a>
+    </div>
+    <p class="att">Weissmann AI phone assistant · a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var POINTS = [
+    {
+      id: "connection",
+      name: "The caller's own connection",
+      how: "The system is up, but a patchy signal — a job site, a basement office, an alpine valley with poor reception — degrades the audio before anything on the vendor's side has gone wrong. Uncertain input at exactly the moment accuracy matters most, such as spelling a name.",
+      items: [
+        { id:"c1", tier:"essential", text:"When audio quality drops, the assistant changes its approach — offers to text the details, suggests calling back from a clearer spot, or hands to a human — instead of repeating the same question louder or slower." },
+        { id:"c2", tier:"essential", text:"A drop in the assistant's confidence score triggers an early handover to a human, not a best-guess action on a garbled name or address." },
+        { id:"c3", tier:"essential", text:"Details captured on a bad line are labelled internally as unverified, not acted on as if they had been confirmed." }
+      ],
+      q: "How does the assistant respond when a caller's audio quality drops — does it change its approach (a text alternative or an earlier handover), or repeat the same question louder?"
+    },
+    {
+      id: "calendar",
+      name: "The calendar or booking system it queries mid-call",
+      how: "To check availability the assistant calls out to a separate service — Google Calendar, Microsoft Graph, or a booking platform — while the caller is still on the line. That service can time out, rate-limit, or return an error while the assistant itself works perfectly.",
+      items: [
+        { id:"k1", tier:"essential", text:"There is a defined timeout — a specific number of seconds — after which the assistant stops waiting on the calendar, rather than retrying indefinitely in silence." },
+        { id:"k2", tier:"essential", text:"On a timeout the caller is told plainly that the booking system is running slowly — never left in dead air." },
+        { id:"k3", tier:"essential", text:"On a timeout the assistant captures name, number and preferred time for a person to confirm, instead of offering a slot it never verified as free." },
+        { id:"k4", tier:"scale", text:"A calendar timeout triggers an immediate internal alert, not a silent retry nobody sees." }
+      ],
+      q: "What is the timeout before the assistant stops waiting on the calendar or booking system, and what does it do instead: keep the caller waiting, guess, or capture and defer?"
+    },
+    {
+      id: "vendor",
+      name: "The vendor's own platform",
+      how: "The speech recognition, the language model and the call-routing layer all run on infrastructure the vendor operates, cloud-hosted like any modern service — and like any cloud service, it has occasional incidents. This is the link you have least visibility into.",
+      items: [
+        { id:"v1", tier:"essential", text:"A second destination — a backup number, voicemail box, or human line — is configured at the telecom carrier's level, independent of the vendor's platform." },
+        { id:"v2", tier:"essential", text:"That backup path has actually been tested, not just configured once and assumed to work." },
+        { id:"v3", tier:"scale", text:"Monitoring notices a drop in call volume within minutes — a person, not just a dashboard nobody checks." },
+        { id:"v4", tier:"scale", text:"A specific named owner — a phone or a person — is actually paged when the line fails, rather than 'someone will probably notice'." }
+      ],
+      q: "If your own platform has an incident, does the call still reach something — a backup number, voicemail, a human line — or does it simply fail? Is that backup configured by default? And how do you detect an incident: automated monitoring, or a customer complaint?"
+    }
+  ];
+
+  // Vendor questions that always apply, regardless of individual gaps.
+  var GLOBAL_QS = [
+    "Do you publish an uptime figure or SLA, and if so, for which part of the system — the voice platform alone, or the whole call path including calendar integrations? Ask to see it in writing.",
+    "What happens to calls that arrived during an incident: are they logged and called back, or simply lost?"
+  ];
+
+  var OPTS = [
+    { v:"yes", label:"In place" },
+    { v:"no", label:"Not in place" },
+    { v:"unsure", label:"Not sure" }
+  ];
+
+  var state = { profile:"high", answers:{} };
+  POINTS.forEach(function(p){ state.answers[p.id] = {}; });
+
+  var pointsEl = document.getElementById("points");
+  var miniEl = document.getElementById("mini");
+  var synthEl = document.getElementById("synth");
+  var copyBox = document.getElementById("copybox");
+  var profNote = document.getElementById("prof-note");
+  var btnHigh = document.getElementById("prof-high");
+  var btnLow = document.getElementById("prof-low");
+
+  function esc(s){
+    return String(s).replace(/[&<>"]/g, function(c){
+      return c==="&"?"&amp;":c==="<"?"&lt;":c===">"?"&gt;":"&quot;";
+    });
+  }
+
+  // Is an item counted toward readiness for the current profile?
+  function counted(item){
+    return item.tier === "essential" || state.profile === "high";
+  }
+
+  function buildPoint(p, idx){
+    var sec = document.createElement("section");
+    sec.className = "card card-pad point";
+    sec.setAttribute("aria-labelledby", "pn-"+p.id);
+
+    var html = ""
+      + '<div class="point-head">'
+      +   '<div>'
+      +     '<div class="point-idx">Failure point '+(idx+1)+' of 3</div>'
+      +     '<h2 class="point-name" id="pn-'+p.id+'">'+esc(p.name)+'</h2>'
+      +   '</div>'
+      + '</div>'
+      + '<p class="point-how">'+esc(p.how)+'</p>'
+      + '<div class="items" id="items-'+p.id+'"></div>'
+      + '<div class="meter">'
+      +   '<div class="meter-track" id="track-'+p.id+'" aria-hidden="true"></div>'
+      +   '<div class="status" id="status-'+p.id+'" aria-live="polite"></div>'
+      + '</div>';
+    sec.innerHTML = html;
+
+    var itemsWrap = sec.querySelector("#items-"+p.id);
+    p.items.forEach(function(it){
+      var fs = document.createElement("fieldset");
+      fs.className = "item";
+      fs.setAttribute("data-item", it.id);
+      var tierHtml = it.tier === "essential"
+        ? '<span class="tier ess">Essential</span>'
+        : '<span class="tier scl">Scales with volume</span>';
+      var seg = '';
+      OPTS.forEach(function(o){
+        var name = "r-"+p.id+"-"+it.id;
+        seg += '<label>'
+             +   '<input type="radio" name="'+name+'" value="'+o.v+'" data-point="'+p.id+'" data-item="'+it.id+'">'
+             +   '<span>'+o.label+'</span>'
+             + '</label>';
+      });
+      fs.innerHTML = '<legend>'+esc(it.text)+tierHtml+'</legend><div class="seg">'+seg+'</div>';
+      itemsWrap.appendChild(fs);
+    });
+
+    return sec;
+  }
+
+  function render(){
+    pointsEl.innerHTML = "";
+    POINTS.forEach(function(p, i){ pointsEl.appendChild(buildPoint(p, i)); });
+    // restore any existing answers into the freshly built inputs
+    POINTS.forEach(function(p){
+      Object.keys(state.answers[p.id]).forEach(function(itemId){
+        var val = state.answers[p.id][itemId];
+        var input = pointsEl.querySelector('input[data-point="'+p.id+'"][data-item="'+itemId+'"][value="'+val+'"]');
+        if(input){ input.checked = true; }
+      });
+    });
+    applyProfileVisuals();
+    update();
+  }
+
+  function applyProfileVisuals(){
+    POINTS.forEach(function(p){
+      p.items.forEach(function(it){
+        var fs = pointsEl.querySelector('fieldset[data-item="'+it.id+'"]');
+        if(!fs) return;
+        var optional = (it.tier === "scale" && state.profile === "low");
+        fs.classList.toggle("opt", optional);
+      });
+    });
+    btnHigh.setAttribute("aria-pressed", state.profile==="high" ? "true":"false");
+    btnLow.setAttribute("aria-pressed", state.profile==="low" ? "true":"false");
+    profNote.textContent = state.profile === "high"
+      ? "Higher volume: a silent outage can affect dozens of callers before anyone notices, so monitoring and a named owner count too."
+      : "A handful of calls a week: the guide says a simpler setup is reasonable — one backup number, checked by hand once a day. Items marked “scales with volume” are shown but not counted.";
+  }
+
+  function computePoint(p){
+    var cItems = p.items.filter(counted);
+    var total = cItems.length, yes=0, no=0, unsure=0, answered=0;
+    cItems.forEach(function(it){
+      var a = state.answers[p.id][it.id];
+      if(a==="yes"){ yes++; answered++; }
+      else if(a==="no"){ no++; answered++; }
+      else if(a==="unsure"){ unsure++; answered++; }
+    });
+    var status;
+    if(answered === 0){ status = "idle"; }
+    else if(yes === total){ status = "covered"; }
+    else if(yes === 0){ status = "exposed"; }
+    else { status = "partial"; }
+    return { total:total, yes:yes, no:no, unsure:unsure, answered:answered, status:status, items:cItems };
+  }
+
+  var STATUS_LABEL = { covered:"Fails to a next step", partial:"Partial cover", exposed:"Risks failing to silence", idle:"Not audited yet" };
+  var STATUS_MSG = {
+    covered:"Every counted item is in place — this link defaults to a next step.",
+    partial:"Some fallback, some gaps. An unhandled break here can still drop the caller.",
+    exposed:"Nothing counted is in place — a break here currently fails to silence or a best guess.",
+    idle:"Answer the items above to gauge this link."
+  };
+
+  function renderMeter(p, r){
+    var track = document.getElementById("track-"+p.id);
+    var statusEl = document.getElementById("status-"+p.id);
+    if(!track || !statusEl) return;
+    track.innerHTML = "";
+    r.items.forEach(function(it){
+      var cell = document.createElement("div");
+      cell.className = "seg-cell";
+      var a = state.answers[p.id][it.id];
+      if(a){ cell.classList.add(a); }
+      track.appendChild(cell);
+    });
+    statusEl.innerHTML = '<span class="pill '+r.status+'">'+STATUS_LABEL[r.status]+'</span>'
+      + '<span class="msg">'+STATUS_MSG[r.status]+' ('+r.yes+'/'+r.total+' in place)</span>';
+  }
+
+  function renderMini(results){
+    miniEl.innerHTML = "";
+    POINTS.forEach(function(p){
+      var r = results[p.id];
+      var card = document.createElement("div");
+      card.className = "mini-card";
+      card.setAttribute("role","listitem");
+      card.innerHTML = '<div class="mc-name">'+esc(p.name)+'</div>'
+        + '<span class="pill '+r.status+'">'+STATUS_LABEL[r.status]+'</span>';
+      miniEl.appendChild(card);
+    });
+  }
+
+  function renderSynth(results){
+    var exposed=[], partial=[], covered=0, idle=0;
+    POINTS.forEach(function(p){
+      var s = results[p.id].status;
+      if(s==="exposed"){ exposed.push(p.name); }
+      else if(s==="partial"){ partial.push(p.name); }
+      else if(s==="covered"){ covered++; }
+      else { idle++; }
+    });
+    var msg;
+    if(idle === 3){
+      msg = "Answer the items above to see your weakest link.";
+    } else if(exposed.length){
+      msg = "<b>Weakest link"+(exposed.length>1?"s":"")+": "+esc(exposed.join(" and "))+".</b> A break there currently fails to silence or a best guess — the article's worst default. Fix the channel first so no caller meets dead air, then close the action side so nothing uncertain is presented as confirmed.";
+    } else if(partial.length){
+      msg = "<b>Some fallback in place, gaps remain</b> on: "+esc(partial.join(", "))+". A chain is only as resilient as its weakest link — close the open items before you rely on it.";
+    } else if(covered === 3){
+      msg = "<b>All three links currently fail to a next step.</b> Re-test after any change — especially the backup path, since the first time an untested backup is genuinely needed is a bad time to discover it was misconfigured.";
+    } else {
+      msg = "Keep going — answer the remaining items for a full read on your weakest link.";
+    }
+    synthEl.innerHTML = msg;
+  }
+
+  function profileLabel(){
+    return state.profile === "high"
+      ? "higher call volume (the phone line is a meaningful share of bookings)"
+      : "a handful of calls a week (sole-trader scale)";
+  }
+
+  function buildSummaryText(results){
+    var L = [];
+    L.push("FALLBACK-READINESS SELF-AUDIT — [your business]");
+    L.push("Companion to Weissmann's outage & fallback guide. Orientation, not a quote.");
+    L.push("Profile: " + profileLabel());
+    L.push("");
+    L.push("Rule this is measured against: the channel should fail open (never silence);");
+    L.push("the action should fail closed (never present an unverified booking as confirmed).");
+    L.push("");
+
+    var anyGap = false;
+    POINTS.forEach(function(p, i){
+      var r = results[p.id];
+      L.push((i+1) + ") " + p.name.toUpperCase() + " — " + STATUS_LABEL[r.status].toUpperCase());
+      var gaps = r.items.filter(function(it){
+        var a = state.answers[p.id][it.id];
+        return a === "no" || a === "unsure";
+      });
+      var unanswered = r.items.filter(function(it){ return !state.answers[p.id][it.id]; });
+      if(gaps.length){
+        anyGap = true;
+        L.push("   Open gaps:");
+        gaps.forEach(function(it){
+          var a = state.answers[p.id][it.id];
+          L.push("   - " + it.text + "  [" + (a==="no" ? "not in place" : "not sure") + "]");
+        });
+      }
+      if(unanswered.length){
+        L.push("   Not yet answered: " + unanswered.length + " item" + (unanswered.length>1?"s":"") + ".");
+      }
+      if(!gaps.length && !unanswered.length){
+        L.push("   All counted items in place.");
+      }
+      if(gaps.length || unanswered.length){
+        L.push("   Ask the vendor: " + p.q);
+      }
+      L.push("");
+    });
+
+    L.push("ASK ANY VENDOR THESE IN WRITING (from the guide):");
+    GLOBAL_QS.forEach(function(q){ L.push("- " + q); });
+    L.push("");
+    L.push("Note: no vendor — Weissmann included — can promise a line never meets a broken");
+    L.push("dependency. Weissmann's published material does not state a specific uptime %,");
+    L.push("a calendar-timeout figure, or a monitoring/incident process, so ask directly.");
+    if(!anyGap){
+      L.push("");
+      L.push("(No open gaps recorded yet — the questions above are still worth confirming in writing.)");
+    }
+    return L.join("\n");
+  }
+
+  function update(){
+    var results = {};
+    POINTS.forEach(function(p){
+      var r = computePoint(p);
+      results[p.id] = r;
+      renderMeter(p, r);
+    });
+    renderMini(results);
+    renderSynth(results);
+    copyBox.value = buildSummaryText(results);
+  }
+
+  // Event delegation for the radio inputs.
+  pointsEl.addEventListener("change", function(e){
+    var t = e.target;
+    if(t && t.matches && t.matches('input[type="radio"]')){
+      var pid = t.getAttribute("data-point");
+      var iid = t.getAttribute("data-item");
+      if(pid && iid){
+        state.answers[pid][iid] = t.value;
+        update();
+      }
+    }
+  });
+
+  function setProfile(mode){
+    if(state.profile === mode) return;
+    state.profile = mode;
+    applyProfileVisuals();
+    update();
+  }
+  btnHigh.addEventListener("click", function(){ setProfile("high"); });
+  btnLow.addEventListener("click", function(){ setProfile("low"); });
+
+  // Copy the user's own generated text.
+  var copyBtn = document.getElementById("copybtn");
+  var copiedEl = document.getElementById("copied");
+  copyBtn.addEventListener("click", function(){
+    var text = copyBox.value;
+    function done(ok){
+      copiedEl.textContent = ok ? "Copied ✓" : "Press Ctrl+C to copy";
+      setTimeout(function(){ copiedEl.textContent = ""; }, 2600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ fallback(); });
+    } else {
+      fallback();
+    }
+    function fallback(){
+      try{
+        copyBox.removeAttribute("readonly");
+        copyBox.focus();
+        copyBox.select();
+        var ok = document.execCommand("copy");
+        copyBox.setAttribute("readonly","");
+        done(ok);
+      }catch(err){ done(false); }
+    }
+  });
+
+  render();
+})();
+</script>

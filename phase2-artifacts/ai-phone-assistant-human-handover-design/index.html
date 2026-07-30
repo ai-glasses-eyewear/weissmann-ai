@@ -1,0 +1,429 @@
+<title>Übergabe-Protokoll-Builder: Vom Bot zum Menschen · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  /* layout */
+  .steps{display:grid;gap:16px;margin-top:20px}
+  .step-head{display:flex;align-items:center;gap:12px;margin:0 0 4px}
+  .step-num{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--on-navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+  .step-title{margin:0;font-size:1.08rem;letter-spacing:-.01em}
+  .step-sub{color:var(--ink-mute);font-size:.9rem;margin:2px 0 14px 42px}
+  @media(max-width:520px){.step-sub{margin-left:0}}
+
+  .field{margin:0 0 14px}
+  .field:last-child{margin-bottom:0}
+  label.lab{display:block;font-weight:600;font-size:.92rem;margin:0 0 6px}
+  .hint{color:var(--ink-mute);font-size:.82rem;margin:5px 2px 0}
+  input[type=text],select,textarea{width:100%;font-family:var(--font);font-size:.95rem;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;line-height:1.4}
+  input[type=text]:focus,select:focus,textarea:focus{outline:none}
+  input[type=text]:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,.chk:focus-within{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent);border-color:var(--navy)}
+  .grid2{display:grid;gap:14px}@media(min-width:600px){.grid2{grid-template-columns:1fr 1fr}}
+
+  .segs{display:flex;flex-wrap:wrap;gap:8px}
+  .seg{position:relative}
+  .seg input{position:absolute;opacity:0;width:1px;height:1px}
+  .seg label{display:block;cursor:pointer;border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;font-size:.9rem;font-weight:600;color:var(--ink-soft);background:var(--card);text-align:center}
+  .seg input:checked+label{border-color:var(--navy);background:var(--accent-soft);color:var(--ink)}
+  .seg input:focus-visible+label{box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  .checks{display:grid;gap:10px}
+  .chk{display:flex;gap:11px;align-items:flex-start;border:1.5px solid var(--line);border-radius:11px;padding:12px 13px;background:var(--card)}
+  .chk.on{border-color:var(--navy);background:var(--accent-soft)}
+  .chk.locked{background:var(--soft);border-style:dashed}
+  .chk input{margin:2px 0 0;width:18px;height:18px;flex:0 0 auto;accent-color:var(--navy)}
+  .chk .ct{font-size:.9rem}
+  .chk .ct b{display:block;font-weight:600;color:var(--ink);margin-bottom:1px}
+  .chk .ct span{color:var(--ink-mute);font-size:.84rem}
+  .lockbadge{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ok);background:var(--ok-soft);border-radius:6px;padding:2px 7px;margin-left:6px;vertical-align:middle}
+
+  .addrow{display:flex;gap:8px;margin-top:12px}
+  .addrow input{flex:1}
+  .btn{font-family:var(--font);font-weight:600;font-size:.9rem;cursor:pointer;border-radius:10px;border:1.5px solid var(--navy);color:var(--navy);background:var(--card);padding:11px 15px;min-height:44px;white-space:nowrap}
+  .btn:hover{background:var(--soft)}
+  .btn.solid{background:var(--navy);color:var(--on-navy)}.btn.solid:hover{background:var(--navy-hover)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:6px 8px 6px 13px;font-size:.85rem}
+  .chip button{border:none;background:transparent;color:var(--ink-mute);cursor:pointer;font-size:1.05rem;line-height:1;padding:2px 4px;border-radius:6px}
+  .chip button:hover{color:var(--miss);background:var(--miss-soft)}
+
+  .callout{border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:10px;padding:12px 14px;font-size:.88rem;margin-top:14px;color:var(--ink-soft)}
+  .callout b{color:var(--ink)}
+  .callout p{margin:0 0 6px}.callout p:last-child{margin:0}
+
+  .example{display:grid;gap:12px;margin-top:14px}
+  @media(min-width:640px){.example{grid-template-columns:1fr 1fr}}
+  .ex{border:1px solid var(--line);border-radius:10px;padding:12px 13px;font-size:.86rem}
+  .ex.bad{background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 30%,var(--line))}
+  .ex.good{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 30%,var(--line))}
+  .ex .tag{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+  .ex.bad .tag{color:var(--miss)}.ex.good .tag{color:var(--ok)}
+  .ex p{margin:0;color:var(--ink-soft)}
+
+  .ctxlist{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:9px}
+  .ctxlist li{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:var(--ink-soft)}
+  .ctxlist .n{flex:0 0 auto;width:22px;height:22px;border-radius:7px;background:var(--soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:var(--navy)}
+  .ctxlist b{color:var(--ink)}
+
+  /* output */
+  .out-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .out-head h2{margin:0;font-size:1.15rem;letter-spacing:-.01em}
+  .protocol{font-family:var(--mono);font-size:.82rem;line-height:1.55;background:var(--soft);border:1px solid var(--line);border-radius:11px;padding:16px;white-space:pre-wrap;word-break:break-word;margin:0;max-height:460px;overflow:auto;color:var(--ink)}
+  .copywrap{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+  .copied{font-size:.85rem;color:var(--ok);font-weight:600;opacity:0;transition:opacity .2s}
+  .copied.show{opacity:1}
+
+  .pitfalls{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  .pitfalls li{display:flex;gap:9px;font-size:.86rem;color:var(--ink-soft);background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 26%,var(--line));border-radius:9px;padding:9px 11px}
+  .pitfalls li b{color:var(--ink)}
+  .pmark{color:var(--warn);font-weight:700;flex:0 0 auto}
+
+  /* footer */
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">KI-Agenten &amp; Voice · Übergabe-Design</p>
+    <h1>Übergabe-Protokoll-Builder: Vom Bot zum Menschen</h1>
+    <p class="lede">Eine gute Übergabe an einen Menschen ist eine bewusste Design-Entscheidung, keine Notlösung. Legen Sie hier die vier Entscheidungen aus dem Artikel für Ihren Betrieb fest &ndash; und erhalten Sie eine kopierbare Protokoll-Vorlage fürs nächste Team-Meeting. Alles bleibt lokal in Ihrem Browser.</p>
+  </header>
+
+  <div class="steps">
+
+    <!-- STEP 1 -->
+    <section class="card card-pad" aria-labelledby="s1t">
+      <div class="step-head"><span class="step-num" aria-hidden="true">1</span><h2 class="step-title" id="s1t">Team &amp; Erreichbarkeit</h2></div>
+      <p class="step-sub">Die beste Trigger-Liste nützt wenig, wenn im Moment der Übergabe niemand abnimmt. Legen Sie fest, wer zuständig ist &ndash; und was passiert, wenn diese Person gerade nicht kann.</p>
+
+      <div class="field">
+        <label class="lab" id="teamlab">Wie viele Personen sind tatsächlich für Übergaben erreichbar?</label>
+        <div class="segs" role="radiogroup" aria-labelledby="teamlab">
+          <span class="seg"><input type="radio" name="team" id="team1" value="1"><label for="team1">Nur 1 Person</label></span>
+          <span class="seg"><input type="radio" name="team" id="team2" value="2" checked><label for="team2">2 Personen</label></span>
+          <span class="seg"><input type="radio" name="team" id="team3" value="3"><label for="team3">3 oder mehr</label></span>
+        </div>
+        <div class="callout" id="teamNote" aria-live="polite"></div>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label class="lab" for="person">Benannte Person oder klare Reihenfolge für Übergaben</label>
+          <input type="text" id="person" placeholder="z. B. Praxisassistenz, dann Praxisleitung">
+          <p class="hint">Nicht &laquo;irgendjemand im Team&raquo;, sondern eine benannte Person.</p>
+        </div>
+        <div class="field">
+          <label class="lab" for="hours">Wann ist diese Person erreichbar?</label>
+          <input type="text" id="hours" placeholder="z. B. Mo&ndash;Fr, 08:00&ndash;12:00 und 13:30&ndash;17:00">
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label class="lab" for="fallback">Rückfallebene, wenn niemand abnimmt</label>
+          <select id="fallback">
+            <option value="second">Zweite benannte Person (klare Reihenfolge)</option>
+            <option value="combox">Combox mit erhaltenem Kontext</option>
+            <option value="callback" selected>Verbindliche Rückrufzusage mit Zeitfenster</option>
+          </select>
+          <p class="hint">Eine zweite Stufe &ndash; kein Verhallen des Anrufs.</p>
+        </div>
+        <div class="field" id="windowField">
+          <label class="lab" for="callwindow">Zeitfenster der Rückrufzusage</label>
+          <input type="text" id="callwindow" placeholder="z. B. innerhalb von 2 Stunden">
+          <p class="hint">Ein Versprechen, das eingehalten werden muss, nicht nur formuliert.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="card card-pad" aria-labelledby="s2t">
+      <div class="step-head"><span class="step-num" aria-hidden="true">2</span><h2 class="step-title" id="s2t">Die &laquo;immer Mensch&raquo;-Liste</h2></div>
+      <p class="step-sub">Feste Trigger: Gesprächstypen, die grundsätzlich immer an einen Menschen gehen &ndash; unabhängig davon, wie gut die KI zugehört hätte. Das ist die eigentliche Design-Entscheidung.</p>
+
+      <div class="checks" id="fixedChecks">
+        <label class="chk on"><input type="checkbox" data-fixed checked value="Rechtliche und versicherungstechnische Anliegen (z. B. Haftpflicht-Meldung, Unfall über die Unfallversicherung, Kündigungsandrohung)"><span class="ct"><b>Rechtliche und versicherungstechnische Anliegen</b><span>Haftpflicht-Meldung, Unfall über die Unfallversicherung, Kündigungsandrohung &ndash; die Formulierung kann später Bedeutung haben; das braucht Entscheidungsbefugnis, nicht nur Zuhörvermögen.</span></span></label>
+
+        <label class="chk on"><input type="checkbox" data-fixed checked value="Akute Beschwerden mit Reputationsrisiko (z. B. Androhung einer schlechten Bewertung, Meldung eines ernsten Vorfalls)"><span class="ct"><b>Akute Beschwerden mit Reputationsrisiko</b><span>Androhung einer schlechten Bewertung, ein gemeldeter ernster Vorfall &ndash; hier zählt weniger, was gesagt wird, als wer antwortet.</span></span></label>
+
+        <label class="chk on"><input type="checkbox" data-fixed checked value="Zahlungsverzug und Inkasso (offene Rechnungen brauchen Verhandlungsspielraum)"><span class="ct"><b>Zahlungsverzug und Inkasso</b><span>Gespräche über offene Rechnungen brauchen Verhandlungsspielraum, den eine KI nicht hat und aus gutem Grund nicht haben sollte.</span></span></label>
+
+        <label class="chk on"><input type="checkbox" data-fixed checked value="Anfragen von Presse oder Behörden"><span class="ct"><b>Anfragen von Presse oder Behörden</b><span>Selten, aber wenn sie eintreffen, ist eine automatisierte Antwort fast immer die falsche.</span></span></label>
+
+        <label class="chk locked"><input type="checkbox" data-fixed checked disabled value="Ausdrücklicher Wunsch, mit einem Menschen zu sprechen"><span class="ct"><b>Ausdrücklicher Wunsch nach einem Menschen<span class="lockbadge" aria-hidden="true">immer aktiv</span></b><span>Der zuverlässigste aller Trigger &ndash; er braucht keine weitere Prüfung durch das System und bleibt darum immer Teil der Liste.</span></span></label>
+      </div>
+
+      <div class="addrow">
+        <input type="text" id="customIn" placeholder="Branchenspezifischen Trigger ergänzen (z. B. &laquo;Notfalltermin ausserhalb Sprechzeiten&raquo;)" aria-label="Eigenen Trigger für die immer-Mensch-Liste hinzufügen">
+        <button type="button" class="btn" id="addBtn">Hinzufügen</button>
+      </div>
+      <div class="chips" id="customChips" aria-live="polite"></div>
+      <p class="hint">Diese Liste ist branchenspezifisch &ndash; eine Physiotherapie-Praxis braucht andere Einträge als eine Treuhandkanzlei. Faustregel: kurz genug, dass sie auf eine halbe Seite passt, und lang genug, dass jedes wirklich heikle Thema abgedeckt ist.</p>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="card card-pad" aria-labelledby="s3t">
+      <div class="step-head"><span class="step-num" aria-hidden="true">3</span><h2 class="step-title" id="s3t">Dynamische Eskalationsschwelle</h2></div>
+      <p class="step-sub">Für alles, was nicht auf der festen Liste steht: Signale, die während des Gesprächs entscheiden, ob es gerade schwierig wird. Wählen Sie, worauf Ihr Assistent achten soll.</p>
+
+      <div class="checks" id="dynChecks">
+        <label class="chk on"><input type="checkbox" data-dyn checked value="Tonfall: Tempo, Lautstärke, wiederholte Unterbrechungen als Hinweis auf Frust"><span class="ct"><b>Tonfall</b><span>Tempo, Lautstärke, wiederholte Unterbrechungen als Hinweis auf Frust.</span></span></label>
+        <label class="chk on"><input type="checkbox" data-dyn checked value="Signalwörter wie «Beschwerde», «Anwalt», «kündigen» oder «Notfall»"><span class="ct"><b>Signalwörter</b><span>&laquo;Beschwerde&raquo;, &laquo;Anwalt&raquo;, &laquo;kündigen&raquo; oder &laquo;Notfall&raquo;.</span></span></label>
+        <label class="chk on"><input type="checkbox" data-dyn checked value="Ein Gespräch, das sich im Kreis dreht (Gesprächsdauer)"><span class="ct"><b>Gesprächsdauer</b><span>Ein Gespräch, das sich im Kreis dreht.</span></span></label>
+      </div>
+
+      <div class="callout">
+        <p><b>Grundregel:</b> Keines dieser Signale ist für sich allein zuverlässig. Deshalb gilt &ndash; im Zweifel eher zu früh als zu spät übergeben.</p>
+        <p>Eine überflüssige Übergabe kostet eine Minute Team-Zeit; eine ausgebliebene kostet im schlechtesten Fall die Kundenbeziehung.</p>
+      </div>
+      <p class="hint">Diese Schwelle ist keine Einstellung, die man einmal festlegt und dann vergisst: alle paar Monate prüfen, welche Trigger zu oft oder zu selten auslösen &ndash; und nachjustieren.</p>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="card card-pad" aria-labelledby="s4t">
+      <div class="step-head"><span class="step-num" aria-hidden="true">4</span><h2 class="step-title" id="s4t">Das Kontext-Paket (warmer Transfer)</h2></div>
+      <p class="step-sub">Der Unterschied zwischen kaltem und warmem Transfer: was beim Wechsel mitkommt, damit die anrufende Person ihr Anliegen nicht ein zweites Mal erklären muss. Diese vier Felder gehören ins Paket &ndash; kurz und gezielt, nicht das volle Transkript.</p>
+
+      <ol class="ctxlist">
+        <li><span class="n">1</span><span><b>Wer anruft und worum es geht</b> &ndash; Name (falls erfasst) und eine knappe Ein-Satz-Zusammenfassung des Anliegens.</span></li>
+        <li><span class="n">2</span><span><b>Was bereits gesagt oder versucht wurde</b> &ndash; wurde schon ein Termin vorgeschlagen, eine Frage beantwortet? Damit niemand denselben Boden zweimal beackert.</span></li>
+        <li><span class="n">3</span><span><b>Der erkannte Grund für die Übergabe</b> &ndash; fester Trigger von der Liste oder erkannte Schwierigkeit im Gespräch. Das allein sagt viel über Dringlichkeit und Heikelkeit.</span></li>
+        <li><span class="n">4</span><span><b>Ein Hinweis auf die Stimmung, wenn erkennbar</b> &ndash; neutral, ungeduldig, verärgert. Als kurze Vorwarnung, nicht als Ferndiagnose.</span></li>
+      </ol>
+
+      <div class="example" aria-label="Illustratives Beispiel für einen kalten und einen warmen Transfer">
+        <div class="ex bad"><p class="tag">Kalt &ndash; ohne Kontext</p><p>&laquo;Grüezi, was kann ich für Sie tun?&raquo; &ndash; der Patient muss die ganze Vorgeschichte ein drittes Mal erzählen, diesmal noch gereizter.</p></div>
+        <div class="ex good"><p class="tag">Warm &ndash; mit Kurzmeldung</p><p>Das Team hört vorab: &laquo;Dritter Anruf wegen zweimal verschobenem Termin, Anrufer klingt ungeduldig&raquo; &ndash; und eröffnet mit &laquo;Grüezi Herr Müller, ich sehe, Ihr Termin wurde bereits zweimal verschoben &ndash; schauen wir das jetzt gemeinsam an.&raquo;</p></div>
+      </div>
+      <p class="hint">Gleicher Anruf, gleiche KI, gleiche Praxis &ndash; der einzige Unterschied ist, was im Kontext-Paket stand. (Illustratives Beispiel aus dem Artikel.)</p>
+    </section>
+
+    <!-- OUTPUT -->
+    <section class="card card-pad" aria-labelledby="outt">
+      <div class="out-head">
+        <h2 id="outt">Ihr Übergabe-Protokoll</h2>
+        <button type="button" class="btn solid" id="copyBtn" aria-describedby="copiedMsg">Protokoll kopieren</button>
+      </div>
+      <pre class="protocol" id="protocol" tabindex="0" aria-live="polite" aria-label="Generiertes Übergabe-Protokoll"></pre>
+      <div class="copywrap">
+        <span class="copied" id="copiedMsg" role="status" aria-live="polite">In die Zwischenablage kopiert.</span>
+      </div>
+
+      <h3 style="margin:20px 0 10px;font-size:.95rem">Fünf Muster, die ein gutes Design vermeidet</h3>
+      <ul class="pitfalls">
+        <li><span class="pmark" aria-hidden="true">&times;</span><span><b>Zu viele Trigger:</b> eskaliert fast jedes zweite Gespräch, verliert die KI ihren Zweck.</span></li>
+        <li><span class="pmark" aria-hidden="true">&times;</span><span><b>Zu wenige Trigger:</b> eine zu knappe Liste überlässt heikle Gespräche der KI.</span></li>
+        <li><span class="pmark" aria-hidden="true">&times;</span><span><b>Kontext, den niemand liest:</b> eine zu lange Zusammenfassung ist nur ein ungelesenes Protokoll.</span></li>
+        <li><span class="pmark" aria-hidden="true">&times;</span><span><b>Eine Rückfallebene, die nicht greift:</b> Übergabe an jemanden, der gerade nicht erreichbar ist, ohne zweite Stufe.</span></li>
+        <li><span class="pmark" aria-hidden="true">&times;</span><span><b>Eine Trigger-Liste, die nie aktualisiert wird:</b> die Liste von vor zwei Jahren passt nicht mehr zum heutigen Geschäft.</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <p class="disc">Orientierungshilfe, kein Angebot und keine Rechtsberatung. Dieses Werkzeug fasst die vier Übergabe-Entscheidungen aus dem zugehörigen Weissmann-Artikel zusammen und stellt daraus eine Vorlage für Ihr Team-Meeting zusammen &ndash; die konkrete Ausgestaltung bleibt die Hausaufgabe des Betriebs. Alle Eingaben bleiben ausschliesslich lokal in Ihrem Browser: nichts wird gespeichert, nichts gesendet. Verwenden Sie Platzhalter statt echter Personendaten.</p>
+
+  <footer class="linkbar" aria-label="Weiterführende Weissmann-Links">
+    <p class="lb-title">Weiterlesen &amp; Umsetzen</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-uebergabe-mensch/" target="_blank" rel="noopener noreferrer" aria-label="Zum vollständigen Artikel: Vom Bot zum Menschen &ndash; die Übergabe richtig gestalten (opens in a new tab)">Artikel: Die Übergabe richtig gestalten &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="Zur Leistungsseite KI-Telefonassistent von Weissmann (opens in a new tab)">Leistung: KI-Telefonassistent &rarr;</a>
+    </div>
+    <p class="att">Übergabe-Protokoll von <strong>Weissmann AI</strong> · Ergänzung zum Leitfaden. Orientierung, kein Angebot.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s);};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
+
+  var customTriggers=[];
+  var fallbackLabels={
+    second:"Zweite benannte Person (klare Reihenfolge)",
+    combox:"Combox mit erhaltenem Kontext",
+    callback:"Verbindliche Rückrufzusage mit Zeitfenster"
+  };
+
+  function teamValue(){var el=$('input[name="team"]:checked');return el?el.value:"2";}
+
+  function teamNoteText(v){
+    if(v==="1"){
+      return "<p><b>Reduziertes Protokoll genügt oft.</b> Bei nur einer erreichbaren Person braucht es kein mehrstufiges Team-Protokoll &ndash; aber sehr wohl eine klare Regel: Alles, was die KI nicht in unter einer Minute lösen kann, geht sofort weiter. Und: Was passiert, wenn genau diese eine Person gerade nicht ans Telefon kann? Diese Rückfallebene unten festzulegen ist hier das Wichtigste.</p>";
+    }
+    if(v==="3"){
+      return "<p><b>Volles Übergabe-Design lohnt sich.</b> Bei drei oder mehr Personen zahlt sich eine benannte Reihenfolge besonders aus &ndash; damit eine Übergabe nicht an &laquo;irgendjemand im Team&raquo; geht, sondern an eine klar zuständige Person mit definierter zweiter Stufe.</p>";
+    }
+    return "<p><b>Klare Zuständigkeit festlegen.</b> Mit zwei Personen gilt: eine benannte Reihenfolge statt &laquo;wer gerade Zeit hat&raquo;, und eine definierte zweite Stufe, falls die erste Person in einem Gespräch, im Kundenkontakt oder ausser Haus ist.</p>";
+  }
+
+  function updateWindowVisibility(){
+    var fb=$('#fallback').value;
+    $('#windowField').style.display = (fb==="callback") ? "" : "none";
+  }
+
+  function renderChips(){
+    var box=$('#customChips'); box.innerHTML="";
+    customTriggers.forEach(function(t,i){
+      var chip=document.createElement('span'); chip.className='chip';
+      var txt=document.createElement('span'); txt.textContent=t;
+      var btn=document.createElement('button'); btn.type='button';
+      btn.setAttribute('aria-label','Trigger entfernen: '+t);
+      btn.textContent='×';
+      btn.addEventListener('click',function(){customTriggers.splice(i,1);renderChips();render();});
+      chip.appendChild(txt); chip.appendChild(btn); box.appendChild(chip);
+    });
+  }
+
+  function addCustom(){
+    var inp=$('#customIn'); var val=(inp.value||"").trim();
+    if(!val) return;
+    if(customTriggers.indexOf(val)===-1){customTriggers.push(val);}
+    inp.value=""; inp.focus(); renderChips(); render();
+  }
+
+  function syncRowState(){
+    $$('.chk input[type=checkbox]').forEach(function(cb){
+      var row=cb.closest('.chk');
+      if(!row || row.classList.contains('locked')) return;
+      row.classList.toggle('on', cb.checked);
+    });
+  }
+
+  function collect(sel){
+    return $$(sel).filter(function(cb){return cb.checked;}).map(function(cb){return cb.value;});
+  }
+
+  function line(n){var s="";for(var i=0;i<n;i++){s+="─";}return s;}
+
+  function buildProtocol(){
+    var team=teamValue();
+    var person=($('#person').value||"").trim() || "[benannte Person / Reihenfolge festlegen]";
+    var hours=($('#hours').value||"").trim() || "[Erreichbarkeit / Geschäftszeiten festlegen]";
+    var fb=$('#fallback').value;
+    var fbText=fallbackLabels[fb];
+    if(fb==="callback"){
+      var win=($('#callwindow').value||"").trim() || "[Zeitfenster festlegen, z. B. innerhalb von 2 Stunden]";
+      fbText="Verbindliche Rückrufzusage – "+win;
+    }
+
+    var fixed=collect('input[data-fixed]').concat(customTriggers);
+    var dyn=collect('input[data-dyn]');
+
+    var L=[];
+    L.push("ÜBERGABE-PROTOKOLL – [Ihr Betrieb]");
+    L.push("Vorbereitung fürs Team-Meeting, bevor die KI in Betrieb geht.");
+    L.push("Orientierung, kein fertiges Regelwerk – die vier Entscheidungen bleiben Sache des Betriebs.");
+    L.push("");
+
+    L.push("1) ERREICHBARKEIT & RÜCKFALLEBENE");
+    L.push(line(34));
+    L.push("Für Übergaben zuständig : "+person);
+    L.push("Erreichbar             : "+hours);
+    L.push("Wenn niemand abnimmt   : "+fbText);
+    if(team==="1"){
+      L.push("Solo-Grundregel        : Alles, was die KI nicht in unter einer Minute löst, geht sofort weiter.");
+    }
+    L.push("Hinweis: Eine Übergabe ohne funktionierende Rückfallebene ist schlechter als gar keine Übergabe.");
+    L.push("");
+
+    L.push("2) «IMMER MENSCH»-LISTE  (feste Trigger – unabhängig vom Gesprächsverlauf)");
+    L.push(line(34));
+    if(fixed.length){
+      fixed.forEach(function(t){L.push("  • "+t);});
+    }else{
+      L.push("  [mindestens einen festen Trigger auswählen]");
+    }
+    L.push("");
+
+    L.push("3) DYNAMISCHE ESKALATIONSSCHWELLE  (während des Gesprächs)");
+    L.push(line(34));
+    if(dyn.length){
+      dyn.forEach(function(t){L.push("  • "+t);});
+    }else{
+      L.push("  [mindestens ein Signal auswählen]");
+    }
+    L.push("  Grundregel: im Zweifel eher zu früh als zu spät übergeben.");
+    L.push("  Überprüfung: alle paar Monate nachjustieren, welche Trigger zu oft/zu selten auslösen.");
+    L.push("");
+
+    L.push("4) KONTEXT-PAKET  (warmer Transfer – als Kurzmeldung ans Team, vor dem Durchstellen)");
+    L.push(line(34));
+    L.push("  • Wer + Anliegen in einem Satz : [Name, falls erfasst – knappe Ein-Satz-Zusammenfassung]");
+    L.push("  • Bereits gesagt / versucht    : [z. B. Termin vorgeschlagen? Frage beantwortet?]");
+    L.push("  • Grund der Übergabe          : [fester Trigger von der Liste  /  erkannte Schwierigkeit]");
+    L.push("  • Stimmung, wenn erkennbar     : [neutral  /  ungeduldig  /  verärgert]");
+    L.push("  Kein volles Transkript – kurz und gezielt, in Sekunden erfassbar.");
+    L.push("  Kurzmeldung-Vorlage: «[Ein-Satz-Anliegen], [Grund der Übergabe], [Stimmung]»");
+    L.push("");
+
+    L.push("VERMEIDEN");
+    L.push(line(34));
+    L.push("  ✗ Zu viele Trigger   ✗ Zu wenige Trigger   ✗ Kontext, den niemand liest");
+    L.push("  ✗ Rückfallebene, die nicht greift   ✗ Trigger-Liste, die nie aktualisiert wird");
+    L.push("");
+    L.push("NÄCHSTER SCHRITT: Diese vier Entscheidungen im Team besprechen – auch für 11:40 Uhr an einem vollen Dienstag.");
+
+    return L.join("\n");
+  }
+
+  function render(){
+    syncRowState();
+    $('#protocol').textContent=buildProtocol();
+  }
+
+  $$('input[name="team"]').forEach(function(r){
+    r.addEventListener('change',function(){
+      $('#teamNote').innerHTML=teamNoteText(teamValue());
+      render();
+    });
+  });
+  ['#person','#hours','#callwindow'].forEach(function(s){$(s).addEventListener('input',render);});
+  $('#fallback').addEventListener('change',function(){updateWindowVisibility();render();});
+  $$('.chk input[type=checkbox]').forEach(function(cb){cb.addEventListener('change',render);});
+  $('#addBtn').addEventListener('click',addCustom);
+  $('#customIn').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();addCustom();}});
+
+  var copiedTimer=null;
+  function flashCopied(){
+    var m=$('#copiedMsg'); m.classList.add('show');
+    if(copiedTimer)clearTimeout(copiedTimer);
+    copiedTimer=setTimeout(function(){m.classList.remove('show');},2200);
+  }
+  $('#copyBtn').addEventListener('click',function(){
+    var text=buildProtocol();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(flashCopied,function(){legacyCopy(text);});
+    }else{
+      legacyCopy(text);
+    }
+  });
+  function legacyCopy(text){
+    var ta=document.createElement('textarea');
+    ta.value=text; ta.setAttribute('readonly','');
+    ta.style.position='absolute'; ta.style.left='-9999px';
+    document.body.appendChild(ta); ta.select();
+    try{document.execCommand('copy');flashCopied();}catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  $('#teamNote').innerHTML=teamNoteText(teamValue());
+  updateWindowVisibility();
+  render();
+})();
+</script>

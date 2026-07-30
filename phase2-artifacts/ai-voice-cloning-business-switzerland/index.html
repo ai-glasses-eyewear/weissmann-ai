@@ -1,0 +1,443 @@
+<title>AI Voice-Cloning Risk Self-Check · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+
+  /* ---- self-check additions ---- */
+  .top{margin-bottom:18px}
+  .grid{display:grid;gap:16px}
+  fieldset.qgroup{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow);margin:0;padding:clamp(14px,2.2vw,20px)}
+  legend{font-weight:700;color:var(--ink);font-size:1rem;padding:0 4px;line-height:1.3}
+  .legend-note{display:block;font-weight:400;color:var(--ink-mute);font-size:.85rem;margin-top:4px}
+  .opts{display:grid;gap:8px;margin-top:12px}
+  .subhead{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:14px 2px 2px}
+  .opt{display:flex;gap:10px;align-items:flex-start;padding:11px 13px;border:1px solid var(--line);border-radius:11px;cursor:pointer;background:var(--card);transition:background .12s,border-color .12s}
+  .opt:hover{background:var(--soft)}
+  .opt input{margin:2px 0 0;width:17px;height:17px;flex:0 0 auto;accent-color:var(--navy);cursor:pointer}
+  .opt span{font-size:.94rem;color:var(--ink-soft)}
+  .opt span b{color:var(--ink);font-weight:600}
+  .opt:has(input:checked){border-color:var(--navy);background:var(--accent-soft)}
+  .opt:has(input:checked) span{color:var(--ink)}
+  .opt:focus-within{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 28%,transparent)}
+  .field label.flab{display:block;font-weight:600;font-size:.94rem;margin-bottom:6px}
+  .field input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+  .field input[type=text]:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 24%,transparent)}
+  .field .hint{font-size:.8rem;color:var(--ink-mute);margin:6px 2px 0}
+
+  .result{margin-top:16px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.86rem;padding:7px 13px;border-radius:999px;line-height:1.15}
+  .badge.b-generic{background:var(--ok-soft);color:var(--ok)}
+  .badge.b-clone{background:var(--warn-soft);color:var(--warn)}
+  .badge.b-clone-risk{background:var(--miss-soft);color:var(--miss)}
+  .badge.b-undecided{background:var(--accent-soft);color:var(--accent)}
+  .badge.b-none{background:var(--soft);color:var(--ink-mute)}
+  .r-title{font-size:1.12rem;font-weight:700;margin:12px 0 4px;letter-spacing:-.01em}
+  .r-sub{color:var(--ink-soft);font-size:.96rem;margin:0}
+  .rblock{margin-top:16px;padding-top:15px;border-top:1px solid var(--line)}
+  .rblock h3{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 9px}
+  .rblock p{margin:0 0 6px;font-size:.94rem;color:var(--ink-soft)}
+  .rlist{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+  .rlist li{display:flex;gap:9px;align-items:flex-start;font-size:.92rem;color:var(--ink-soft)}
+  .rlist li .mk{flex:0 0 auto;font-weight:800;line-height:1.35}
+  .rlist li.ok .mk{color:var(--ok)}
+  .rlist li.gap .mk{color:var(--miss)}
+  .rlist li.info .mk{color:var(--accent)}
+  .rlist li.watch .mk{color:var(--warn)}
+  .note{border-radius:11px;padding:12px 14px;font-size:.9rem;line-height:1.5;margin-top:10px}
+  .note.warn{background:var(--warn-soft);color:var(--ink)}
+  .note.miss{background:var(--miss-soft);color:var(--ink)}
+  .note.ok{background:var(--ok-soft);color:var(--ink)}
+  .note.accent{background:var(--accent-soft);color:var(--ink)}
+  .note b{font-weight:700}
+  .meter{display:flex;align-items:center;gap:10px;margin:2px 0 4px;flex-wrap:wrap}
+  .meter .lbl{font-size:.8rem;color:var(--ink-mute);font-weight:600;min-width:118px}
+  .bar{flex:1 1 130px;height:9px;border-radius:6px;background:var(--soft);overflow:hidden;min-width:120px}
+  .bar>span{display:block;height:100%;background:var(--navy);border-radius:6px;transition:width .25s}
+  .meter .val{font-size:.82rem;color:var(--ink-soft);font-weight:700;font-variant-numeric:tabular-nums}
+
+  .summaryCard{margin-top:16px}
+  .summaryCard h2{font-size:1rem;margin:0 0 4px}
+  .summaryCard p.sc-sub{margin:0 0 12px;font-size:.88rem;color:var(--ink-mute)}
+  textarea#summaryText{width:100%;min-height:210px;resize:vertical;font-family:var(--mono);font-size:.82rem;line-height:1.5;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:13px 14px;white-space:pre}
+  textarea#summaryText:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 22%,transparent)}
+  .sc-actions{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+  .btn{font:inherit;font-weight:600;font-size:.92rem;cursor:pointer;border-radius:10px;padding:11px 16px;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);min-height:44px}
+  .btn:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copied{font-size:.85rem;color:var(--ok);font-weight:600}
+  .copied[hidden]{display:none}
+  [hidden]{display:none!important}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <p class="kicker">Voice AI &middot; Consent, security &amp; fraud</p>
+    <h1>Generic synthetic voice, or a clone? A risk self-check</h1>
+    <p class="lede">The same few seconds of audio power both outcomes &mdash; the technology is identical. What separates them is a handful of questions almost nobody asks before pressing &ldquo;clone&rdquo;. Answer them here to see which duties apply to <em>your</em> intended use &mdash; consent, access control, revocation and EU AI Act Article&nbsp;50 &mdash; and generate a one-page written answer you can keep. Orientation only, grounded in the guide.</p>
+  </div>
+
+  <form id="chk" class="grid" novalidate>
+    <fieldset class="qgroup">
+      <legend>1 &middot; Whose voice will the AI actually use?
+        <span class="legend-note">This single choice decides which risk profile applies. A generic voice and a clone of a real person are not the same risk.</span>
+      </legend>
+      <div class="opts" role="radiogroup" aria-label="Voice type">
+        <label class="opt"><input type="radio" name="voice" value="generic"><span><b>A generic, standard synthetic voice</b> &mdash; not built to sound like any specific, identifiable real person.</span></label>
+        <label class="opt"><input type="radio" name="voice" value="clone"><span><b>A clone of one specific real person&rsquo;s voice</b> &mdash; a founder, a CEO, a long-serving receptionist.</span></label>
+        <label class="opt"><input type="radio" name="voice" value="undecided"><span><b>Not decided yet</b> &mdash; I&rsquo;m weighing a clone against a standard voice.</span></label>
+      </div>
+    </fieldset>
+
+    <div id="govWrap" hidden>
+      <fieldset class="qgroup">
+        <legend>2 &middot; For a cloned voice, tick what you already have in place
+          <span class="legend-note">These map to the four questions the guide says to answer before any recording is made. Leave a box unticked if it is not yet true.</span>
+        </legend>
+
+        <p class="subhead">Consent &mdash; not a checkbox someone signs once</p>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" id="c1"><span>A <b>specific, limited purpose</b> stated up front (&ldquo;used for the after-hours greeting and nothing else&rdquo;) &mdash; not a blanket permission.</span></label>
+          <label class="opt"><input type="checkbox" id="c2"><span>The person can <b>hear or review the actual output</b> before it goes live, not just a description of the plan.</span></label>
+          <label class="opt"><input type="checkbox" id="c3"><span>A genuine ability to <b>withdraw consent later</b> &mdash; a clone, once approved, is not permanent by default.</span></label>
+          <label class="opt"><input type="checkbox" id="c4"><span>For employees: a real ability to <b>decline without professional consequence</b>, recorded in writing.</span></label>
+        </div>
+
+        <p class="subhead">Access control &mdash; who may make that voice say something new</p>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" id="a1"><span>A <b>named, short list of individuals</b> authorised to generate speech &mdash; not &ldquo;the marketing team&rdquo;.</span></label>
+          <label class="opt"><input type="checkbox" id="a2"><span><b>Every generation logged</b> &mdash; who requested it, when and for what stated purpose.</span></label>
+          <label class="opt"><input type="checkbox" id="a3"><span><b>Voice generation kept separate</b> from the everyday text/chat tools staff already use.</span></label>
+          <label class="opt"><input type="checkbox" id="a4"><span>A <b>least-privilege default</b> &mdash; the smallest set that can still do the job, reviewed periodically.</span></label>
+        </div>
+
+        <p class="subhead">Revocation &mdash; what happens the day someone leaves</p>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" id="r1"><span><b>Consent ends on the departure date</b> by default, not &ldquo;whenever someone updates the system&rdquo;.</span></label>
+          <label class="opt"><input type="checkbox" id="r2"><span>The underlying <b>voice model or embedding is deleted or deactivated</b> &mdash; not merely left unused.</span></label>
+          <label class="opt"><input type="checkbox" id="r3"><span><b>API keys / generation permissions revoked the same day</b> &mdash; on the checklist with the laptop and badge.</span></label>
+          <label class="opt"><input type="checkbox" id="r4"><span>For a still-live greeting: the departing person&rsquo;s <b>written consent to continued use</b>, obtained while still employed.</span></label>
+        </div>
+      </fieldset>
+    </div>
+
+    <fieldset class="qgroup">
+      <legend id="reachLegend">3 &middot; Does the synthetic audio reach people in the EU?
+        <span class="legend-note">Article 50(2) of the EU AI Act follows where the output is used or offered, not where your business is registered.</span>
+      </legend>
+      <div class="opts" role="radiogroup" aria-labelledby="reachLegend">
+        <label class="opt"><input type="radio" name="reach" value="eu"><span>Yes &mdash; it <b>reaches or is offered to people in the EU</b>.</span></label>
+        <label class="opt"><input type="radio" name="reach" value="domestic"><span>No &mdash; <b>purely domestic Swiss use</b>, never reaching people in the EU.</span></label>
+        <label class="opt"><input type="radio" name="reach" value="unsure"><span><b>Not sure</b> yet.</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="qgroup">
+      <legend id="verifyLegend">4 &middot; The verification defence (applies whichever voice you pick)
+        <span class="legend-note">The FBI&rsquo;s December 2024 warning and the Arup case both point to one cheap, reliable rule.</span>
+      </legend>
+      <div class="opts">
+        <label class="opt"><input type="checkbox" id="verify"><span>A voice or video call <b>never authorises money or access on its own</b> here &mdash; we confirm through a second, independent channel (a number we already had on file before the call).</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="qgroup field">
+      <legend>5 &middot; Optional: the one intended use, in a line
+        <span class="legend-note">Used only to fill in your printable summary below. Nothing is stored or sent &mdash; it stays in this page.</span>
+      </legend>
+      <label class="flab" for="purpose">Intended use</label>
+      <input type="text" id="purpose" maxlength="120" autocomplete="off" placeholder="e.g. after-hours phone greeting for [your business]">
+      <p class="hint">Keep it narrow. A stated, limited purpose is exactly what real consent is scoped to.</p>
+    </fieldset>
+  </form>
+
+  <section class="card card-pad result" id="out" aria-live="polite" aria-label="Your risk self-check result">
+    <!-- rendered by script -->
+  </section>
+
+  <section class="card card-pad summaryCard">
+    <h2>Your one-page written answer</h2>
+    <p class="sc-sub">The guide&rsquo;s concrete next step isn&rsquo;t a bigger security budget &mdash; it&rsquo;s a one-page written answer, agreed before any recording is made. This text updates as you answer. Copy it and keep it.</p>
+    <textarea id="summaryText" readonly aria-label="Generated one-page self-check summary"></textarea>
+    <div class="sc-actions">
+      <button type="button" class="btn" id="copyBtn">Copy summary</button>
+      <span class="copied" id="copiedMsg" hidden role="status">Copied to clipboard</span>
+    </div>
+  </section>
+
+  <p class="disc">Orientation, not legal advice or a quote. Every point here is drawn from the linked guide and Weissmann&rsquo;s published pricing; it does not assess your specific situation. There is no single Swiss law that bans or permits voice cloning &mdash; using someone&rsquo;s voice without consent likely engages personality-rights protection and the revised Data Protection Act (revDSG), which treats voice as personal data, and using a clone for fraud is criminal fraud regardless of the AI involved. Get advice specific to your situation before acting. This tool runs entirely in your browser: nothing you enter is stored, sent or shared.</p>
+
+  <footer class="linkbar" aria-label="Read more and next step">
+    <p class="lb-title">Read the full guide &middot; Talk to Weissmann</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/agents-automation/ai-voice-cloning-business-switzerland/" target="_blank" rel="noopener noreferrer" aria-label="Read the full guide: AI voice cloning for Swiss business calls (opens in a new tab)">The full guide: consent, security &amp; fraud &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-phone-assistant/" target="_blank" rel="noopener noreferrer" aria-label="Weissmann AI phone assistant: ask about voice-cloning safeguards (opens in a new tab)">Ask about voice-cloning safeguards &rarr;</a>
+    </div>
+    <p class="att">Weissmann AI phone assistant &middot; a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    "use strict";
+    var form = document.getElementById('chk');
+    var out = document.getElementById('out');
+    var summaryEl = document.getElementById('summaryText');
+    var govWrap = document.getElementById('govWrap');
+    var copyBtn = document.getElementById('copyBtn');
+    var copiedMsg = document.getElementById('copiedMsg');
+
+    var GOV = [
+      {id:'c1', group:'Consent', label:'A specific, limited purpose stated up front'},
+      {id:'c2', group:'Consent', label:'The person reviews the actual output before it goes live'},
+      {id:'c3', group:'Consent', label:'A genuine ability to withdraw consent later'},
+      {id:'c4', group:'Consent', label:'For employees: a real ability to decline without consequence, in writing'},
+      {id:'a1', group:'Access control', label:'A named, short list of individuals authorised to generate speech'},
+      {id:'a2', group:'Access control', label:'Every generation logged (who, when, why)'},
+      {id:'a3', group:'Access control', label:'Voice generation separated from everyday text/chat tools'},
+      {id:'a4', group:'Access control', label:'A least-privilege default, reviewed periodically'},
+      {id:'r1', group:'Revocation', label:'Consent ends on the departure date by default'},
+      {id:'r2', group:'Revocation', label:'The voice model or embedding is deleted or deactivated'},
+      {id:'r3', group:'Revocation', label:'API keys / generation permissions revoked the same day'},
+      {id:'r4', group:'Revocation', label:'For a still-live greeting: written consent to continued use'}
+    ];
+    var GROUPS = ['Consent','Access control','Revocation'];
+
+    function esc(s){
+      return String(s).replace(/[&<>"']/g, function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+    function val(name){
+      var el = form.querySelector('input[name="'+name+'"]:checked');
+      return el ? el.value : '';
+    }
+    function govState(){
+      var st = {Consent:[], 'Access control':[], Revocation:[]};
+      var have = {Consent:0, 'Access control':0, Revocation:0};
+      GOV.forEach(function(g){
+        var el = document.getElementById(g.id);
+        var on = !!(el && el.checked);
+        st[g.group].push({label:g.label, on:on});
+        if(on) have[g.group]++;
+      });
+      return {st:st, have:have};
+    }
+    function reachResultLine(reach){
+      if(reach === 'eu') return 'Your synthetic audio reaches or is offered to people in the EU, so the Article 50(2) machine-readable marking obligation applies from 2 August 2026 &mdash; wherever your business is registered. It is implemented in practice mostly through the C2PA / Content Credentials standard.';
+      if(reach === 'domestic') return 'A purely domestic Swiss use sits outside Article 50&rsquo;s direct reach, though the underlying practices remain good practice regardless.';
+      if(reach === 'unsure') return 'Reach not yet determined. The obligation follows where the output is used or offered, not where you are registered &mdash; settle this before you rely on it either way.';
+      return 'Answer question 3 to see whether EU AI Act Article 50 reaches your use.';
+    }
+    function reachSummaryLine(reach){
+      if(reach === 'eu') return 'reaches the EU -> Article 50(2) marking obligation applies from 2 Aug 2026';
+      if(reach === 'domestic') return 'purely domestic Swiss use -> outside its direct reach (still good practice)';
+      if(reach === 'unsure') return 'not sure -> follows where output is used/offered; settle before relying on it';
+      return 'not answered';
+    }
+
+    function render(){
+      var voice = val('voice');
+      var reach = val('reach');
+      var verify = document.getElementById('verify').checked;
+      var purpose = document.getElementById('purpose').value.trim();
+
+      var showGov = (voice === 'clone' || voice === 'undecided');
+      govWrap.hidden = !showGov;
+
+      var g = govState();
+      var totalHave = g.have.Consent + g.have['Access control'] + g.have.Revocation;
+
+      var html = '';
+
+      // ---- classification header ----
+      if(!voice){
+        html += '<span class="badge b-none">Start here</span>';
+        html += '<p class="r-title">Select who the voice will be</p>';
+        html += '<p class="r-sub">Question&nbsp;1 decides everything else. A generic synthetic voice and a clone of a real person carry very different duties &mdash; pick one to see yours.</p>';
+        out.innerHTML = html;
+        summaryEl.value = buildSummary('', reach, verify, purpose, g, totalHave);
+        return;
+      }
+
+      if(voice === 'generic'){
+        html += '<span class="badge b-generic">Generic synthetic voice &middot; lower-risk profile</span>';
+        html += '<p class="r-title">A standard synthetic voice &mdash; the lighter path</p>';
+        html += '<p class="r-sub">A generic synthetic voice doesn&rsquo;t represent an identifiable real person, so it doesn&rsquo;t raise the same consent, impersonation or personality-rights questions a clone of a specific individual does. Weissmann&rsquo;s Starter (CHF&nbsp;350/month) and Premium (CHF&nbsp;590/month) phone-assistant packages use exactly this &mdash; a standard synthetic voice, not a real person&rsquo;s.</p>';
+      } else if(voice === 'clone'){
+        var risky = totalHave <= 4;
+        html += '<span class="badge ' + (risky ? 'b-clone-risk' : 'b-clone') + '">Voice cloning &middot; consent &amp; governance duties apply</span>';
+        html += '<p class="r-title">Cloning a real person&rsquo;s voice &mdash; treat the clone like a credential</p>';
+        html += '<p class="r-sub">This replicates one specific real person so the system speaks in that exact voice. It is offered only as a Weissmann Enterprise-tier option, on request &mdash; and it brings duties a standard voice does not. Modern tools can build a passable clone from well under a minute of clean speech, so &ldquo;keep the voice private&rdquo; is not a realistic defence; controlling what the clone may <em>do</em> is.</p>';
+      } else { // undecided
+        html += '<span class="badge b-undecided">Not decided &middot; compare the two paths</span>';
+        html += '<p class="r-title">Weighing a clone against a standard voice</p>';
+        html += '<p class="r-sub">Most businesses don&rsquo;t need voice cloning specifically, and it&rsquo;s worth saying so. A business with occasional, low-stakes customer contact gains little from the governance overhead a cloned voice requires &mdash; a well-configured standard voice does the same job. Tick the boxes above honestly: if you couldn&rsquo;t own the access review and offboarding work, that is itself the answer.</p>';
+      }
+
+      // ---- duties block ----
+      if(voice === 'generic'){
+        html += '<div class="rblock"><h3>What still applies</h3><ul class="rlist">';
+        html += '<li class="ok"><span class="mk">&#10003;</span><span>No consent, impersonation or personality-rights duties tied to an identifiable person&rsquo;s voice.</span></li>';
+        html += '<li class="info"><span class="mk">&bull;</span><span>EU AI Act Article&nbsp;50(2) marking of synthetic audio can still apply &mdash; see the EU-reach note below.</span></li>';
+        html += '<li class="info"><span class="mk">&bull;</span><span>The fraud / callback defence in question&nbsp;4 still applies: the FBI&rsquo;s warning reaches well below CFO level.</span></li>';
+        html += '</ul></div>';
+      } else if(showGov){
+        // readiness meters
+        html += '<div class="rblock"><h3>Governance readiness</h3>';
+        GROUPS.forEach(function(name){
+          var have = g.have[name];
+          var pct = Math.round((have/4)*100);
+          html += '<div class="meter"><span class="lbl">'+esc(name)+'</span>'+
+                  '<span class="bar"><span style="width:'+pct+'%"></span></span>'+
+                  '<span class="val">'+have+' / 4</span></div>';
+        });
+        html += '</div>';
+
+        // gaps
+        var gaps = [];
+        GROUPS.forEach(function(name){
+          g.st[name].forEach(function(item){ if(!item.on) gaps.push({group:name, label:item.label}); });
+        });
+        if(gaps.length){
+          html += '<div class="rblock"><h3>Gaps to close before any recording ('+gaps.length+')</h3><ul class="rlist">';
+          gaps.forEach(function(it){
+            html += '<li class="gap"><span class="mk">&#9633;</span><span><b>'+esc(it.group)+':</b> '+esc(it.label)+'</span></li>';
+          });
+          html += '</ul></div>';
+        } else if(voice === 'clone'){
+          html += '<div class="rblock"><h3>Basics in place &mdash; now keep them enforced</h3>'+
+                  '<p>A policy on paper doesn&rsquo;t enforce itself. Watch for the quiet failure modes:</p><ul class="rlist">'+
+                  '<li class="watch"><span class="mk">&#9888;</span><span>Consent scoped to &ldquo;the phone greeting&rdquo; quietly reused in a marketing video months later.</span></li>'+
+                  '<li class="watch"><span class="mk">&#9888;</span><span>A departed contractor&rsquo;s access forgotten because the offboarding checklist predates voice cloning.</span></li>'+
+                  '<li class="watch"><span class="mk">&#9888;</span><span>Staff applying less scrutiny to a familiar-sounding voice than to a suspicious email.</span></li>'+
+                  '<li class="watch"><span class="mk">&#9888;</span><span>A vendor&rsquo;s watermarking claim treated as a complete guarantee rather than the partial signal it is.</span></li>'+
+                  '</ul></div>';
+        }
+
+        // reconsider note
+        if(totalHave <= 4){
+          html += '<div class="note miss"><b>Consider whether cloning is the right answer at all.</b> With this little governance in place, the guide is blunt: a business without anyone able to own the access review and offboarding work shouldn&rsquo;t add a capability it can&rsquo;t administer safely &mdash; and a well-configured standard voice does the same job. An executive personally uneasy about being cloned should be allowed to say no without being talked out of it.</div>';
+        }
+      }
+
+      // ---- EU / Article 50 block ----
+      html += '<div class="rblock"><h3>EU AI Act Article&nbsp;50 (watermarking)</h3>';
+      html += '<p>'+reachResultLine(reach)+'</p>';
+      html += '<div class="note accent">Watermarking only proves a recording is <b>genuine</b>, and only when it was made on a platform that adds one. It cannot unmask a clone built with a tool that doesn&rsquo;t &mdash; treat it as a partial signal, never a fraud-detection verdict.</div>';
+      html += '</div>';
+
+      // ---- verification block ----
+      html += '<div class="rblock"><h3>Verification defence</h3>';
+      if(verify){
+        html += '<div class="note ok"><b>In place.</b> A voice or video call never authorises moving money or access on its own here. That callback-to-a-known-number rule is the cheapest, most reliable defence there is &mdash; the same one that would have stopped the US$25&nbsp;million Arup deepfake fraud.</div>';
+      } else {
+        html += '<div class="note warn"><b>Not yet in place &mdash; this is the single most useful defence.</b> Never let a voice or video call alone authorise moving money, changing bank details or granting access. Confirm through a second, independent channel: call back a number you already had on file <em>before</em> the call, not one given to you during it. In the 2024 Arup case a finance employee authorised fifteen transfers totalling about US$25&nbsp;million after a video call of deepfaked colleagues; a callback would have caught it.</div>';
+      }
+      html += '</div>';
+
+      out.innerHTML = html;
+      summaryEl.value = buildSummary(voice, reach, verify, purpose, g, totalHave);
+    }
+
+    function missingList(items){
+      var m = items.filter(function(i){ return !i.on; }).map(function(i){ return i.label; });
+      return m.length ? m.join('; ') : 'none';
+    }
+
+    function buildSummary(voice, reach, verify, purpose, g, totalHave){
+      var L = [];
+      L.push('AI VOICE - ONE-PAGE SELF-CHECK');
+      L.push('(orientation, not legal advice - nothing stored or sent)');
+      L.push('');
+      if(!voice){
+        L.push('1. Whose voice: not chosen yet.');
+        L.push('   Choose in question 1 to generate the rest of this page.');
+        return L.join('\n');
+      }
+      var purposeLine = purpose ? purpose : '[state the single, limited purpose]';
+      if(voice === 'generic'){
+        L.push('1. Whose voice: a GENERIC synthetic voice (no identifiable real person).');
+        L.push('   -> Does not raise the same consent, impersonation or personality-rights');
+        L.push('      questions as a clone. Standard voice in Weissmann Starter (CHF 350/mo)');
+        L.push('      and Premium (CHF 590/mo).');
+      } else if(voice === 'clone'){
+        L.push('1. Whose voice: a CLONE of one specific real person.');
+        L.push('   Intended use (limited purpose): ' + purposeLine);
+        L.push('   (Voice cloning is a Weissmann Enterprise-tier option, on request.)');
+        L.push('');
+        L.push('2. Who consented - ' + g.have.Consent + ' of 4 in place.');
+        L.push('   Still to confirm: ' + missingList(g.st.Consent));
+        L.push('');
+        L.push('3. Who may generate speech (access control) - ' + g.have['Access control'] + ' of 4 in place.');
+        L.push('   Still to confirm: ' + missingList(g.st['Access control']));
+        L.push('');
+        L.push('4. Who switches it off (revocation) - ' + g.have.Revocation + ' of 4 in place.');
+        L.push('   Still to confirm: ' + missingList(g.st.Revocation));
+        if(totalHave <= 4){
+          L.push('');
+          L.push('   ! Little governance in place - reconsider whether a clone is right at all;');
+          L.push('     a well-configured standard voice may do the same job.');
+        }
+      } else {
+        L.push('1. Whose voice: UNDECIDED (weighing a clone vs a standard voice).');
+        L.push('   Most businesses do not need cloning; a standard voice avoids the');
+        L.push('   consent / access-review / offboarding overhead.');
+        L.push('   Current cloning readiness: ' + totalHave + ' of 12.');
+      }
+      L.push('');
+      L.push('EU AI Act Article 50 (synthetic-audio marking, from 2 Aug 2026):');
+      L.push('   ' + reachSummaryLine(reach));
+      L.push('');
+      L.push('Second-channel check for money/access: ' + (verify ? 'YES - in place' : 'NO - not yet (the single most useful defence)'));
+      L.push('   Rule: a voice or video call never authorises money or access on its own;');
+      L.push('   call back a number already on file. (Arup 2024: ~US$25m; FBI IC3, Dec 2024.)');
+      L.push('');
+      L.push('Watermarking proves genuine, not fake - a partial signal, never a verdict.');
+      L.push('No single Swiss law on voice cloning; revDSG treats voice as personal data.');
+      L.push('Next step: agree the answers above in writing before any recording is made.');
+      return L.join('\n');
+    }
+
+    copyBtn.addEventListener('click', function(){
+      var text = summaryEl.value;
+      function ok(){
+        copiedMsg.hidden = false;
+        setTimeout(function(){ copiedMsg.hidden = true; }, 2200);
+      }
+      function fallback(){
+        summaryEl.removeAttribute('readonly');
+        summaryEl.focus();
+        summaryEl.select();
+        try { document.execCommand('copy'); ok(); } catch(e){}
+        summaryEl.setAttribute('readonly','');
+        if(window.getSelection && window.getSelection().removeAllRanges){ window.getSelection().removeAllRanges(); }
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(ok, fallback);
+      } else {
+        fallback();
+      }
+    });
+
+    form.addEventListener('input', render);
+    form.addEventListener('change', render);
+    render();
+  })();
+</script>

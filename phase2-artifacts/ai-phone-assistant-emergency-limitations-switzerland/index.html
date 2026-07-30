@@ -1,0 +1,471 @@
+<title>Notfall-Sign-off: KI-Telefonassistent · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  /* additive tokens + classes */
+  :root{--on-ok:#fff}
+  @media(prefers-color-scheme:dark){:root{--on-ok:#0f2418}}
+  :root[data-theme="dark"]{--on-ok:#0f2418}
+  :root[data-theme="light"]{--on-ok:#fff}
+
+  .topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+  .tt{flex:none;background:var(--card);border:1px solid var(--line);color:var(--ink-soft);border-radius:10px;padding:8px 12px;font:inherit;font-size:.82rem;font-weight:600;cursor:pointer}
+  .tt:hover{background:var(--soft)}
+  .tt:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  section.card,.linkbar{margin-top:18px}
+  h2{font-size:1.06rem;margin:0;letter-spacing:-.01em}
+
+  /* status */
+  .statuscard{margin-top:18px;border-left:6px solid var(--warn)}
+  .statuscard.done{border-left-color:var(--ok)}
+  .strow{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .sbig{font-size:clamp(1.7rem,5vw,2.3rem);font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .sbig b{color:var(--warn)}.statuscard.done .sbig b{color:var(--ok)}
+  .smsg{font-weight:700;font-size:1rem}
+  .smsg.pending{color:var(--warn)}.smsg.ready{color:var(--ok)}
+  .ssub{color:var(--ink-mute);font-size:.86rem;margin:2px 0 0}
+  .barwrap{flex:1 1 220px;min-width:180px}
+  .bar{height:12px;background:var(--soft);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+  .barfill{height:100%;width:0;background:var(--warn);border-radius:99px;transition:width .25s ease}
+  .statuscard.done .barfill{background:var(--ok)}
+
+  /* emergency reference */
+  .refstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+  @media(max-width:560px){.refstrip{grid-template-columns:1fr}}
+  .refchip{background:var(--miss-soft);border:1px solid color-mix(in srgb,var(--miss) 30%,var(--line));border-radius:11px;padding:12px 14px;text-align:center}
+  .refnum{font-size:1.5rem;font-weight:800;color:var(--miss);font-variant-numeric:tabular-nums;line-height:1}
+  .reflbl{font-size:.82rem;color:var(--ink-soft);font-weight:600;margin-top:4px}
+  .refnote{font-size:.8rem;color:var(--ink-mute);margin:10px 2px 0}
+
+  /* protocol strip */
+  .proto{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin-top:14px}
+  .pstep{flex:1 1 160px;background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 26%,var(--line));border-radius:11px;padding:12px 14px}
+  .pn{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  .pt{font-weight:700;margin-top:2px}
+  .pd{font-size:.83rem;color:var(--ink-soft);margin-top:2px}
+  .parrow{align-self:center;color:var(--ink-mute);font-weight:800}
+  @media(max-width:640px){.parrow{display:none}}
+
+  /* context fields */
+  .fields{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+  @media(max-width:560px){.fields{grid-template-columns:1fr}}
+  .field{display:flex;flex-direction:column;gap:5px}
+  .field label{font-size:.8rem;font-weight:700;color:var(--ink-soft)}
+  .field input{font:inherit;font-size:.95rem;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+  .field input:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+
+  /* checklist sections */
+  .sechead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+  .pill{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:99px;flex:none}
+  .pill.miss{background:var(--miss-soft);color:var(--miss)}
+  .pill.ok{background:var(--ok-soft);color:var(--ok)}
+  .pill.accent{background:var(--accent-soft);color:var(--accent)}
+  .pill.warn{background:var(--warn-soft);color:var(--warn)}
+  .seccount{margin-left:auto;font-size:.82rem;font-weight:700;color:var(--ink-mute);font-variant-numeric:tabular-nums;flex:none}
+  .secintro{color:var(--ink-soft);font-size:.9rem;margin:4px 0 12px}
+  .items{display:flex;flex-direction:column;gap:8px}
+
+  .item{display:flex;gap:12px;align-items:flex-start;padding:12px 13px;border:1px solid var(--line);border-radius:11px;background:var(--bg);cursor:pointer;position:relative}
+  .item:hover{background:var(--soft)}
+  .item.on{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 34%,var(--line))}
+  .cbx{position:absolute;width:1px;height:1px;opacity:0;margin:0;pointer-events:none}
+  .box{flex:none;width:23px;height:23px;border:2px solid var(--ink-mute);border-radius:6px;background:var(--card);position:relative;margin-top:1px;transition:background .12s,border-color .12s}
+  .item.on .box{background:var(--ok);border-color:var(--ok)}
+  .item.on .box::after{content:"";position:absolute;left:7px;top:2px;width:6px;height:11px;border:solid var(--on-ok);border-width:0 2.6px 2.6px 0;transform:rotate(45deg)}
+  .cbx:focus-visible+.box{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 34%,transparent)}
+  .itxt{display:flex;flex-direction:column;gap:2px}
+  .ilabel{font-weight:650;font-size:.96rem}
+  .idetail{font-size:.85rem;color:var(--ink-soft);line-height:1.45}
+
+  /* legal note */
+  .legal{margin-top:18px;background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 30%,var(--line));border-radius:var(--radius);padding:clamp(14px,2.2vw,20px)}
+  .legal h3{margin:0 0 6px;font-size:.95rem;color:var(--warn)}
+  .legal p{margin:0;font-size:.87rem;color:var(--ink-soft);line-height:1.5}
+
+  /* note / sign-off output */
+  .noteout{width:100%;min-height:220px;resize:vertical;font-family:var(--mono);font-size:.82rem;line-height:1.5;padding:13px 14px;border:1px solid var(--line);border-radius:11px;background:var(--bg);color:var(--ink);white-space:pre}
+  .noteout:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 22%,transparent)}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;align-items:center}
+  .btn{font:inherit;font-weight:650;font-size:.92rem;padding:11px 16px;border-radius:10px;cursor:pointer;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);min-height:44px}
+  .btn:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  .btn.ghost{background:transparent;color:var(--navy)}
+  .btn.ghost:hover{background:var(--soft)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copied{font-size:.85rem;font-weight:700;color:var(--ok)}
+
+  .servicenote{font-size:.85rem;color:var(--ink-soft);margin:16px 2px 0;line-height:1.5}
+
+  /* footer link band */
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <div>
+      <p class="kicker">KI-Agenten &amp; Voice · Notfallgrenzen</p>
+      <h1>Der Notfall-Sign-off: bevor Ihr KI-Assistent ans Telefon geht</h1>
+    </div>
+    <button class="tt" id="themeBtn" type="button" aria-pressed="false" aria-label="Zwischen hellem und dunklem Design wechseln">Design</button>
+  </div>
+
+  <p class="lede">Ein KI-Telefonassistent darf niemals medizinisch beraten, Symptome einschätzen oder in einem echten Notfall triagieren – das ist eine harte, nicht verhandelbare Grenze. Was er stattdessen können muss: notfalltypische Signale erkennen und nach einem festen Protokoll weiterleiten – an einen Menschen oder direkt an die echten Schweizer Notrufnummern. Diese Checkliste sollte abgehakt sein, bevor der erste reale Anruf eingeht.</p>
+
+  <!-- STATUS -->
+  <section class="card card-pad statuscard" id="statusCard" aria-label="Freigabe-Status">
+    <div class="strow">
+      <div class="sbig"><b id="doneN">0</b> / <span id="totalN">0</span></div>
+      <div class="barwrap">
+        <div class="smsg pending" id="smsg" aria-live="polite">Noch nicht bereit fürs Telefon</div>
+        <p class="ssub" id="ssub">Alle Punkte müssen bestätigt sein, bevor Sie den Assistenten freischalten.</p>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Fortschritt Vorab-Check" id="barEl"><div class="barfill" id="barFill"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGENCY REFERENCE -->
+  <section class="card card-pad" aria-label="Echte Schweizer Notrufnummern">
+    <div class="sechead"><h2>Die echten Notrufnummern</h2></div>
+    <div class="refstrip">
+      <div class="refchip"><div class="refnum">144</div><div class="reflbl">Sanität</div></div>
+      <div class="refchip"><div class="refnum">117</div><div class="reflbl">Polizei</div></div>
+      <div class="refchip"><div class="refnum">118</div><div class="reflbl">Feuerwehr</div></div>
+    </div>
+    <p class="refnote">Der Assistent nennt diese Nummern – er wählt sie nie selbst. Bei akuter Lebensgefahr gilt der ausdrückliche Hinweis: sofort selbst auflegen und direkt wählen, statt auf eine Weiterleitung zu warten. (Quelle: Stadt Zürich – Notrufe.)</p>
+
+    <div class="proto" aria-label="Weiterleitungsprotokoll in drei Schritten">
+      <div class="pstep"><div class="pn">Schritt 1</div><div class="pt">Erkennen</div><div class="pd">Ein Signalwort oder -satz wird registriert – keine Konfidenzschwelle, keine Rückfrage.</div></div>
+      <div class="parrow" aria-hidden="true">→</div>
+      <div class="pstep"><div class="pn">Schritt 2</div><div class="pt">Unterbrechen</div><div class="pd">Das reguläre Skript endet sofort – nicht nach der nächsten Frage.</div></div>
+      <div class="parrow" aria-hidden="true">→</div>
+      <div class="pstep"><div class="pn">Schritt 3</div><div class="pt">Weiterleiten</div><div class="pd">Richtige Nummer nennen und – wenn erreichbar – parallel an einen Menschen übergeben.</div></div>
+    </div>
+  </section>
+
+  <!-- CONTEXT FIELDS -->
+  <section class="card card-pad" aria-label="Angaben zum Betrieb (optional)">
+    <div class="sechead"><h2>Freigabe-Notiz (optional)</h2></div>
+    <p class="secintro">Diese Felder erscheinen nur in Ihrer kopierbaren Notiz unten. Sie sind rein lokal – nichts wird gespeichert oder gesendet.</p>
+    <div class="fields">
+      <div class="field"><label for="fBiz">Betrieb</label><input id="fBiz" type="text" placeholder="[Ihr Betrieb]" autocomplete="off"></div>
+      <div class="field"><label for="fBranch">Branche</label><input id="fBranch" type="text" placeholder="z. B. Arztpraxis, Hausverwaltung" autocomplete="off"></div>
+      <div class="field"><label for="fPerson">Verantwortlich für Übergabe</label><input id="fPerson" type="text" placeholder="[Person im Team]" autocomplete="off"></div>
+      <div class="field"><label for="fChecker">Geprüft von</label><input id="fChecker" type="text" placeholder="[Name]" autocomplete="off"></div>
+      <div class="field"><label for="fDate">Datum</label><input id="fDate" type="text" placeholder="TT.MM.JJJJ" autocomplete="off"></div>
+    </div>
+  </section>
+
+  <div id="sections"></div>
+
+  <!-- LEGAL -->
+  <section class="legal" aria-label="Rechtlicher Rahmen">
+    <h3>Zum rechtlichen Rahmen</h3>
+    <p>Ein eigenständiges Schweizer Gesetz mit dieser genauen Vorschrift gibt es nicht. Es gelten allgemeine Sorgfalts- und Datenschutzpflichten (revDSG, EDÖB-Grundsätze). Sobald ein System auch EU-Kundschaft mitbedient, stuft der EU AI Act KI-Systeme, die Notrufe selbst bewerten, einstufen oder deren Priorisierung mitbestimmen, ausdrücklich als Hochrisiko-Systeme ein (Anhang III, Ziffer 5 lit. d). Ein Protokoll, das an Menschen und echte Notrufnummern übergibt statt selbst zu triagieren, bewegt sich ausserhalb dieser Einstufung. Dies ist keine Rechtsberatung im Einzelfall. Wie die Aufzeichnung eines solchen Anrufs rechtlich zu behandeln ist, ist eine eigene, strafrechtliche Frage.</p>
+  </section>
+
+  <!-- SIGN-OFF OUTPUT -->
+  <section class="card card-pad" aria-label="Kopierbare Freigabe-Notiz">
+    <div class="sechead"><h2>Ihre Freigabe-Notiz zum Festhalten</h2></div>
+    <p class="secintro">Ein dokumentierter, getesteter Vorab-Check lässt sich im Nachhinein erklären – ein Protokoll, das niemand je aufgeschrieben hat, nicht. Kopieren Sie den Text und legen Sie ihn zu Ihren Betriebsunterlagen.</p>
+    <textarea class="noteout" id="noteOut" readonly aria-label="Generierte Freigabe-Notiz"></textarea>
+    <div class="btnrow">
+      <button class="btn" id="copyBtn" type="button">Notiz kopieren</button>
+      <button class="btn ghost" id="resetBtn" type="button">Alle Haken zurücksetzen</button>
+      <span class="copied" id="copiedMsg" aria-live="polite" hidden>Kopiert</span>
+    </div>
+
+    <p class="servicenote">Zur Einordnung: Weissmanns KI-Telefonassistent ist an dieser Stelle bewusst eng gehalten – er erkennt notfalltypische Sprache, unterbricht das reguläre Gespräch und leitet weiter, aber er stellt keine Diagnose, gibt keine medizinische Beratung und übernimmt keine Notfall-Triage. Der Starter kostet CHF 350 pro Monat (keine Mindestvertragslaufzeit, keine Setup-Gebühr); die branchenspezifische Signalliste und die erreichbare Übergabe-Person bleiben Aufgabe des Betriebs.</p>
+
+    <p class="disc">Orientierung, kein Angebot und keine Rechtsberatung. Diese Checkliste fasst die Fähigkeitsprüfung aus dem zugehörigen Weissmann-Leitfaden zusammen und ersetzt keinen echten Testlauf im eigenen Betrieb. Alle Eingaben bleiben in Ihrem Browser – es wird nichts gespeichert, gesendet oder ausgewertet.</p>
+  </section>
+
+  <footer class="linkbar" aria-label="Weiterführende Links">
+    <p class="lb-title">Weiterlesen &amp; Kontakt</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/ki-academy/agenten-automatisierung/ki-telefonassistent-notfall-grenzen/" target="_blank" rel="noopener noreferrer" aria-label="Leitfaden zu den Notfall-Grenzen des KI-Telefonassistenten lesen (opens in a new tab)">Leitfaden: Notfall-Grenzen des KI-Assistenten →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/leistungen/ki-telefonassistent/" target="_blank" rel="noopener noreferrer" aria-label="Seite zum KI-Telefonassistenten von Weissmann öffnen (opens in a new tab)">KI-Telefonassistent von Weissmann →</a>
+    </div>
+    <p class="att">Notfall-Sign-off · ein Begleiter zum Leitfaden. Orientierung, kein Angebot.</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var SECTIONS = [
+    {
+      key:"never", pill:"Niemals", tone:"miss",
+      title:"Was der Assistent niemals tun darf",
+      noteTitle:"NIEMALS (technisch ausgeschlossen)",
+      intro:"Diese fünf Verhaltensweisen sind keine Konfigurationsfehler, die sich später nachbessern lassen. Sie müssen von Anfang an technisch ausgeschlossen sein.",
+      items:[
+        {id:"n1", label:"Keine medizinische Beratung, keine Symptom-Einschätzung", detail:"Kein Satz wie «Das klingt nach einer Erkältung, trinken Sie viel» oder «Legen Sie sich hin, das wird schon» – auch nicht als gut gemeinte Beruhigung."},
+        {id:"n2", label:"Keine eigene Bewertung der Dringlichkeit (keine Notfall-Triage)", detail:"Der Assistent entscheidet nie, ob etwas «wahrscheinlich harmlos» oder «wahrscheinlich ernst» ist. Diese Einschätzung bleibt Fachpersonal und den echten Notrufzentralen vorbehalten."},
+        {id:"n3", label:"Erweckt nie den Eindruck, selbst Hilfe schicken zu können", detail:"Kein «Ich habe einen Krankenwagen für Sie informiert» – der Assistent kann höchstens weiterleiten, niemals selbst alarmieren oder disponieren."},
+        {id:"n4", label:"Macht bei erkanntem Notfallsignal nicht im normalen Skript weiter", detail:"Sobald ein Trigger erkannt ist, endet die Terminbuchung oder jedes andere Gesprächsziel sofort – nicht nach der nächsten Frage, sondern sofort."},
+        {id:"n5", label:"Rät nicht, wenn die Situation unklar bleibt", detail:"Erkennt das System eine mögliche Notfallsprache nicht eindeutig, gilt die vorsichtigere Regel: lieber einmal zu früh weiterleiten als einmal zu spät."}
+      ]
+    },
+    {
+      key:"always", pill:"Immer", tone:"ok",
+      title:"Was der Assistent immer tun muss",
+      noteTitle:"IMMER (nachweislich vorhanden)",
+      intro:"Diesen fünf Punkten muss das System nicht nur folgen können, sondern nachweislich folgen – im Testlauf wie im echten Betrieb.",
+      items:[
+        {id:"a1", label:"Kennt eine geprüfte Liste von Signalwörtern und -sätzen", detail:"Nicht nur «Notfall» oder «Hilfe», sondern auch «er atmet komisch», «sie reagiert nicht» oder «es blutet stark» – branchenspezifisch ergänzt."},
+        {id:"a2", label:"Wechselt sofort in einen reinen Weiterleitungsmodus", detail:"Keine weiteren Fragen zum Gesprächsanlass, keine Bestätigungsschleifen – nur noch die Übergabe."},
+        {id:"a3", label:"Nennt ruhig und klar die richtige Nummer (144 / 117 / 118)", detail:"Mit dem ausdrücklichen Hinweis, bei akuter Lebensgefahr sofort selbst aufzulegen und direkt zu wählen, statt auf die Weiterleitung zu warten."},
+        {id:"a4", label:"Übergibt parallel an einen Menschen, wenn einer erreichbar ist", detail:"Ein warmer Transfer mit Kontext ist die sinnvolle Ergänzung zur Notrufnummer, niemals ihr Ersatz."},
+        {id:"a5", label:"Markiert den Anruf für die Nachbearbeitung – unabhängig vom Ausgang", detail:"Auch wenn der Anrufer auflegt, bevor die Übergabe greift, muss jemand aus dem Team den Vorfall im Nachhinein sehen und einordnen können."}
+      ]
+    },
+    {
+      key:"test", pill:"Praxistest", tone:"accent",
+      title:"Der Praxistest vor dem Livegang",
+      noteTitle:"PRAXISTEST BESTANDEN",
+      intro:"Ein kurzer, aber ernstgemeinter Testlauf – keine Zusicherung des Anbieters, sondern eine geprüfte Tatsache im eigenen Betrieb. Sinnvoll nach jeder grösseren Änderung und mindestens einmal im Jahr.",
+      items:[
+        {id:"t1", label:"Direkte Formulierung getestet", detail:"«Ich brauche einen Krankenwagen.»"},
+        {id:"t2", label:"Indirekte, unklare Formulierung getestet", detail:"«Es geht ihr plötzlich richtig schlecht.»"},
+        {id:"t3", label:"Gemischt mit einem regulären Anliegen getestet", detail:"Der Anrufer beginnt mit einer Terminfrage und wechselt mitten im Satz zu einer Notlage."},
+        {id:"t4", label:"Ruhig gesprochen trotz ernster Lage getestet", detail:"Nicht jeder Notfall klingt panisch – das System darf sich nicht allein auf Tonfall oder Lautstärke verlassen."},
+        {id:"t5", label:"Mit Akzent oder in gebrochenem Deutsch getestet", detail:"Ein Signal muss auch erkannt werden, wenn der Satzbau ungewohnt ist."},
+        {id:"t6", label:"Panisch, stockend, unvollständig getestet", detail:"Anrufer in echter Not formulieren selten einen sauberen Satz."}
+      ]
+    },
+    {
+      key:"duty", pill:"Betrieb", tone:"warn",
+      title:"Verantwortung, die beim Betrieb bleibt",
+      noteTitle:"VERANTWORTUNG BETRIEB",
+      intro:"Diese drei Punkte kann kein Anbieter liefern – sie bleiben Aufgabe des Betriebs, vor dem Livegang, nicht danach.",
+      items:[
+        {id:"d1", label:"Branchenspezifische Signalliste ist erstellt", detail:"Eine Arztpraxis braucht eine andere Liste als ein Handwerksbetrieb oder eine Hausverwaltung – dieselbe Formulierung bedeutet je nach Branche etwas anderes."},
+        {id:"d2", label:"Es ist festgelegt, wer im Team eine Übergabe entgegennimmt", detail:"Die Entscheidung, welche Person den warmen Transfer tatsächlich annimmt, trifft der Betrieb."},
+        {id:"d3", label:"Die Erreichbarkeit dieser Person ist sichergestellt", detail:"Nicht nur benannt, sondern im relevanten Zeitfenster wirklich erreichbar."}
+      ]
+    }
+  ];
+
+  var ITEMS = [];
+  var host = document.getElementById("sections");
+
+  SECTIONS.forEach(function(sec){
+    var card = document.createElement("section");
+    card.className = "card card-pad";
+    card.setAttribute("aria-label", sec.title);
+
+    var head = document.createElement("div");
+    head.className = "sechead";
+    var pill = document.createElement("span");
+    pill.className = "pill " + sec.tone;
+    pill.textContent = sec.pill;
+    var h2 = document.createElement("h2");
+    h2.textContent = sec.title;
+    var cnt = document.createElement("span");
+    cnt.className = "seccount";
+    head.appendChild(pill); head.appendChild(h2); head.appendChild(cnt);
+    card.appendChild(head);
+
+    var intro = document.createElement("p");
+    intro.className = "secintro";
+    intro.textContent = sec.intro;
+    card.appendChild(intro);
+
+    var list = document.createElement("div");
+    list.className = "items";
+
+    sec.items.forEach(function(it){
+      var lab = document.createElement("label");
+      lab.className = "item";
+
+      var input = document.createElement("input");
+      input.type = "checkbox";
+      input.className = "cbx";
+      input.id = "cb_" + it.id;
+
+      var box = document.createElement("span");
+      box.className = "box";
+      box.setAttribute("aria-hidden", "true");
+
+      var txt = document.createElement("span");
+      txt.className = "itxt";
+      var l1 = document.createElement("span");
+      l1.className = "ilabel";
+      l1.textContent = it.label;
+      var l2 = document.createElement("span");
+      l2.className = "idetail";
+      l2.textContent = it.detail;
+      txt.appendChild(l1); txt.appendChild(l2);
+
+      lab.appendChild(input); lab.appendChild(box); lab.appendChild(txt);
+      list.appendChild(lab);
+
+      var rec = {id:it.id, label:it.label, el:input, row:lab};
+      it._rec = rec;
+      ITEMS.push(rec);
+
+      input.addEventListener("change", update);
+    });
+
+    card.appendChild(list);
+    sec._countEl = cnt;
+    host.appendChild(card);
+  });
+
+  var TOTAL = ITEMS.length;
+  document.getElementById("totalN").textContent = String(TOTAL);
+
+  var doneN = document.getElementById("doneN");
+  var barFill = document.getElementById("barFill");
+  var barEl = document.getElementById("barEl");
+  var smsg = document.getElementById("smsg");
+  var ssub = document.getElementById("ssub");
+  var statusCard = document.getElementById("statusCard");
+  var noteOut = document.getElementById("noteOut");
+
+  var fBiz = document.getElementById("fBiz");
+  var fBranch = document.getElementById("fBranch");
+  var fPerson = document.getElementById("fPerson");
+  var fChecker = document.getElementById("fChecker");
+  var fDate = document.getElementById("fDate");
+
+  function countDone(){ var n=0; ITEMS.forEach(function(i){ if(i.el.checked) n++; }); return n; }
+
+  function update(){
+    var done = countDone();
+    var pct = TOTAL ? Math.round(done/TOTAL*100) : 0;
+    doneN.textContent = String(done);
+    barFill.style.width = pct + "%";
+    barEl.setAttribute("aria-valuenow", String(pct));
+
+    ITEMS.forEach(function(i){
+      if(i.el.checked){ i.row.classList.add("on"); } else { i.row.classList.remove("on"); }
+    });
+    SECTIONS.forEach(function(sec){
+      var d=0; sec.items.forEach(function(it){ if(it._rec.el.checked) d++; });
+      sec._countEl.textContent = d + " / " + sec.items.length;
+    });
+
+    var ready = done === TOTAL;
+    if(ready){
+      statusCard.classList.add("done");
+      smsg.classList.remove("pending"); smsg.classList.add("ready");
+      smsg.textContent = "Bereit fürs Telefon";
+      ssub.textContent = "Alle " + TOTAL + " Punkte bestätigt. Halten Sie die Notiz unten schriftlich fest.";
+    } else {
+      statusCard.classList.remove("done");
+      smsg.classList.add("pending"); smsg.classList.remove("ready");
+      smsg.textContent = "Noch nicht bereit fürs Telefon";
+      var open = TOTAL - done;
+      ssub.textContent = open + " von " + TOTAL + " Punkten noch offen. Erst bei " + TOTAL + " von " + TOTAL + " ist die Freigabe erreicht.";
+    }
+    buildNote(ready, done);
+  }
+
+  function val(el, fb){ var v = el.value.trim(); return v ? v : fb; }
+
+  function buildNote(ready, done){
+    var lines = [];
+    lines.push("FREIGABE-NOTIZ — Notfall-Vorab-Check KI-Telefonassistent");
+    lines.push("Betrieb: " + val(fBiz,"[Ihr Betrieb]") + "   Branche: " + val(fBranch,"[Branche]"));
+    lines.push("Geprueft von: " + val(fChecker,"[Name]") + "   Datum: " + val(fDate,"[TT.MM.JJJJ]"));
+    lines.push("Verantwortlich fuer Uebergabe: " + val(fPerson,"[Person im Team]"));
+    lines.push("");
+    lines.push("STATUS: " + done + "/" + TOTAL + " bestaetigt — " + (ready ? "BEREIT FUERS TELEFON" : "NOCH NICHT BEREIT"));
+    if(!ready){
+      lines.push("Offen:");
+      ITEMS.forEach(function(i){ if(!i.el.checked) lines.push("  [ ] " + i.label); });
+    }
+    lines.push("");
+    SECTIONS.forEach(function(sec){
+      lines.push(sec.noteTitle + ":");
+      sec.items.forEach(function(it){
+        lines.push("  [" + (it._rec.el.checked ? "x" : " ") + "] " + it.label);
+      });
+      lines.push("");
+    });
+    lines.push("Notrufnummern: 144 Sanitaet · 117 Polizei · 118 Feuerwehr");
+    lines.push("Hinweis: Orientierung, keine Rechtsberatung im Einzelfall. Nichts gespeichert, nichts gesendet.");
+    lines.push("Quelle: weissmann.ai — Notfall-Check KI-Telefonassistent");
+    noteOut.value = lines.join("\n");
+  }
+
+  [fBiz,fBranch,fPerson,fChecker,fDate].forEach(function(f){ f.addEventListener("input", update); });
+
+  // copy
+  var copyBtn = document.getElementById("copyBtn");
+  var copiedMsg = document.getElementById("copiedMsg");
+  var copyTimer = null;
+  function flashCopied(){
+    copiedMsg.hidden = false;
+    if(copyTimer) clearTimeout(copyTimer);
+    copyTimer = setTimeout(function(){ copiedMsg.hidden = true; }, 2200);
+  }
+  copyBtn.addEventListener("click", function(){
+    var text = noteOut.value;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(flashCopied, fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+    function fallbackCopy(){
+      try{
+        noteOut.removeAttribute("readonly");
+        noteOut.focus(); noteOut.select();
+        document.execCommand("copy");
+        noteOut.setAttribute("readonly","");
+        flashCopied();
+      }catch(e){
+        noteOut.setAttribute("readonly","");
+      }
+    }
+  });
+
+  // reset
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    ITEMS.forEach(function(i){ i.el.checked = false; });
+    update();
+    statusCard.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+
+  // theme toggle
+  var themeBtn = document.getElementById("themeBtn");
+  function prefersDark(){ return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches; }
+  var isDark = prefersDark();
+  function applyTheme(){
+    document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+    themeBtn.setAttribute("aria-pressed", isDark ? "true" : "false");
+    themeBtn.textContent = isDark ? "Hell" : "Dunkel";
+  }
+  applyTheme();
+  themeBtn.addEventListener("click", function(){ isDark = !isDark; applyTheme(); });
+
+  // prefill date with current local date (not stored)
+  (function(){
+    var d = new Date();
+    function p(n){ return (n<10?"0":"") + n; }
+    fDate.value = p(d.getDate()) + "." + p(d.getMonth()+1) + "." + d.getFullYear();
+  })();
+
+  update();
+})();
+</script>

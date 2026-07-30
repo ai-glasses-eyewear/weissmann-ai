@@ -1,0 +1,360 @@
+<title>Will an AI receptionist work with your Swiss phone system? · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .steps{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}
+  @media(min-width:720px){.steps{grid-template-columns:1fr 1fr}}
+  .step{margin:0;border:1px solid var(--line);min-width:0}
+  .step legend{padding:0;margin:0;width:100%}
+  .qhead{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+  .qnum{flex:none;width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--on-navy);font-size:.85rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .qtitle{font-size:1.02rem;font-weight:700;letter-spacing:-.01em}
+  .qsub{font-size:.85rem;color:var(--ink-mute);margin:0 0 14px}
+  .opts{display:grid;gap:9px}
+  .opt{display:block;position:relative;border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;cursor:pointer;background:var(--card);transition:border-color .12s,background .12s}
+  .opt:hover{border-color:var(--navy)}
+  .opt input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+  .opt-t{font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:8px}
+  .opt-d{font-size:.82rem;color:var(--ink-mute);margin-top:3px;padding-left:24px}
+  .dot{flex:none;width:16px;height:16px;border-radius:50%;border:2px solid var(--ink-mute);display:inline-block;position:relative;transition:border-color .12s}
+  .opt:has(input:checked){border-color:var(--navy);background:var(--accent-soft)}
+  .opt:has(input:checked) .dot{border-color:var(--navy)}
+  .opt:has(input:checked) .dot::after{content:"";position:absolute;inset:2px;border-radius:50%;background:var(--navy)}
+  .opt:focus-within{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent);border-color:var(--navy)}
+
+  .result{margin-top:18px}
+  .placeholder{color:var(--ink-mute);font-size:.95rem;margin:0}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+  .v-ok .badge{color:var(--ok);background:var(--ok-soft)}
+  .v-warn .badge{color:var(--warn);background:var(--warn-soft)}
+  .v-miss .badge{color:var(--miss);background:var(--miss-soft)}
+  .rhead{font-size:1.18rem;font-weight:700;letter-spacing:-.01em;margin:12px 0 6px}
+  .rbody{color:var(--ink-soft);margin:0;font-size:.98rem;max-width:70ch}
+  .combo{font-size:.82rem;color:var(--ink-mute);margin:12px 0 0}
+  .combo b{color:var(--ink-soft);font-weight:600}
+
+  .checks{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}
+  @media(min-width:640px){.checks{grid-template-columns:1fr 1fr}}
+  .checkcard{background:var(--soft);border-radius:12px;padding:14px 15px}
+  .checkcard h3{margin:0 0 9px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+  .checkcard ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+  .checkcard li{font-size:.88rem;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.45}
+  .checkcard li::before{content:"?";position:absolute;left:0;top:0;color:var(--accent);font-weight:800}
+
+  .oneq{margin-top:18px;border:1.5px dashed var(--navy);border-radius:12px;padding:14px 15px;background:var(--card)}
+  .oneq h3{margin:0 0 8px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+  .oneq p{margin:0 0 12px;font-size:.95rem;color:var(--ink);font-style:italic;line-height:1.5}
+  .qrow{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+  .copybtn{appearance:none;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);font-family:inherit;font-weight:600;font-size:.88rem;padding:9px 15px;border-radius:9px;cursor:pointer}
+  .copybtn:hover{background:var(--navy-hover)}
+  .copybtn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copied{font-size:.82rem;color:var(--ok);font-weight:600;margin-left:6px}
+
+  .weiss{margin-top:16px}
+  .weiss h2{margin:0 0 6px;font-size:1rem;letter-spacing:-.01em}
+  .weiss p{margin:0;color:var(--ink-soft);font-size:.9rem;line-height:1.55;max-width:74ch}
+  .weiss .price{color:var(--ink);font-weight:600}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">Compatibility checker · AI phone assistant</p>
+  <h1>Will an AI receptionist work with your Swiss phone system?</h1>
+  <p class="lede">Compatibility isn't one fact — it's a match between two. What phone infrastructure you run today, and how a given AI vendor expects to receive a call. Swisscom or Sunrise can tell you the first; only the vendor can tell you the second. Set both below to see where you stand and what to get in writing.</p>
+
+  <div class="steps">
+    <fieldset class="card card-pad step">
+      <legend>
+        <span class="qhead"><span class="qnum" aria-hidden="true">1</span><span class="qtitle">Your phone infrastructure</span></span>
+      </legend>
+      <p class="qsub">Usually a five-minute question for whoever pays your phone bill.</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="infra" value="forwarding">
+          <span class="opt-t"><span class="dot"></span>Mobile or landline number, no in-house system</span>
+          <span class="opt-d">One number; forwarding is a setting in your provider's portal, not a project.</span></label>
+        <label class="opt"><input type="radio" name="infra" value="pbx">
+          <span class="opt-t"><span class="dot"></span>On-premise PBX</span>
+          <span class="opt-d">Call-routing hardware or software in your office — extensions, a switchboard, an IT admin or installer.</span></label>
+        <label class="opt"><input type="radio" name="infra" value="sip">
+          <span class="opt-t"><span class="dot"></span>SIP trunk in place</span>
+          <span class="opt-d">A virtual line over your internet or data connection, replacing copper or ISDN.</span></label>
+        <label class="opt"><input type="radio" name="infra" value="teams">
+          <span class="opt-t"><span class="dot"></span>Microsoft Teams-based telephony</span>
+          <span class="opt-d">Calls routed through Microsoft 365; staff answer inside Teams. No physical PBX box.</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="card card-pad step">
+      <legend>
+        <span class="qhead"><span class="qnum" aria-hidden="true">2</span><span class="qtitle">How the AI vendor receives calls</span></span>
+      </legend>
+      <p class="qsub">The half nobody sells. Only the AI vendor can answer this — get it in writing.</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="vendor" value="fwd">
+          <span class="opt-t"><span class="dot"></span>Only via a forwarded number</span>
+          <span class="opt-d">They receive calls as an ordinary call arriving on a new number.</span></label>
+        <label class="opt"><input type="radio" name="vendor" value="sip">
+          <span class="opt-t"><span class="dot"></span>Direct termination on our SIP trunk</span>
+          <span class="opt-d">They plug into the SIP trunk, skipping forwarding altogether.</span></label>
+        <label class="opt"><input type="radio" name="vendor" value="teams">
+          <span class="opt-t"><span class="dot"></span>Teams-native (Direct Routing / Operator Connect)</span>
+          <span class="opt-d">They sit in front of Teams calling directly.</span></label>
+        <label class="opt"><input type="radio" name="vendor" value="unknown">
+          <span class="opt-t"><span class="dot"></span>No clear answer yet</span>
+          <span class="opt-d">"We connect to any phone system" — or nothing specific.</span></label>
+      </div>
+    </fieldset>
+  </div>
+
+  <section class="card card-pad result" id="result" aria-live="polite">
+    <p class="placeholder" id="placeholder">Choose one option in each box above to see your compatibility read.</p>
+    <div id="output" hidden></div>
+  </section>
+
+  <div class="card card-pad weiss">
+    <h2>Where Weissmann's own setup fits</h2>
+    <p>Per Weissmann's published service information, every package connects through a dedicated phone line included in the plan; you keep your existing number by forwarding calls to it — always, only outside office hours, or only when the line is busy. That is the mobile / landline forwarding path above. No SIP-trunk termination, PBX-side, or Teams-specific integration is documented in that material. <span class="price">Starter is CHF 350/month (1'500 minutes included, then CHF 0.30/min, no minimum term, no setup fee).</span> If you run a PBX, a SIP trunk or Teams calling, ask Weissmann the same questions you would ask any vendor rather than assuming an answer from a features page.</p>
+  </div>
+
+  <p class="disc">Orientation, not advice or a quote. This tool is deliberately narrow: it does not cover number portability — keeping your number when switching telecom providers, a separate regulatory topic — and nothing here is a legal or contractual assurance. Swisscom and Sunrise publish nothing about which AI vendors can plug into their connections; only the vendor can confirm that. Your selections stay in your browser — nothing is saved or sent. Confirm every match in writing with your provider and vendor before you sign.</p>
+
+  <footer class="linkbar" aria-label="Further reading and service">
+    <p class="lb-title">Read the full guide · talk to Weissmann</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/agents-automation/ai-receptionist-phone-system-compatibility/" target="_blank" rel="noopener noreferrer" aria-label="Read the full guide: will an AI receptionist work with your phone system (opens in a new tab)">Read the full compatibility guide →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-phone-assistant/" target="_blank" rel="noopener noreferrer" aria-label="See the Weissmann AI phone assistant service (opens in a new tab)">See the AI phone assistant →</a>
+    </div>
+    <p class="att">Grounded in the Weissmann guide · a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var infraLabel = {
+    forwarding: "Mobile / landline forwarding",
+    pbx: "On-premise PBX",
+    sip: "SIP trunk in place",
+    teams: "Teams-based telephony"
+  };
+  var vendorLabel = {
+    fwd: "Forwarded number only",
+    sip: "Direct SIP-trunk termination",
+    teams: "Teams-native integration",
+    unknown: "No clear answer yet"
+  };
+  var oneqInfra = {
+    forwarding: "mobile or landline forwarding",
+    pbx: "an on-premise PBX",
+    sip: "a SIP trunk",
+    teams: "Teams-based calling"
+  };
+
+  var telecom = {
+    forwarding: [
+      "Is conditional forwarding (only when busy or unanswered) available on our specific tariff, or only unconditional?",
+      "Does our tariff include free forwarded minutes, or charge for every forwarded call once an allowance runs out?"
+    ],
+    pbx: [
+      "Who is authorised to add a new extension or routing rule, and how long does that typically take?",
+      "Can a forwarded call be set up as an extension or routing rule on our specific PBX?"
+    ],
+    sip: [
+      "Which protocol and codec does our SIP trunk use?",
+      "Who do we contact if the SIP connection fails?"
+    ],
+    teams: [
+      "Are we on Operator Connect (pure cloud, no on-site hardware) or Direct Routing (hybrid, with a session border controller on site)?",
+      "Who inside our organisation manages number assignment in Microsoft 365?"
+    ]
+  };
+
+  var vq = {
+    sipfwd: "Do you receive calls only through a forwarded number, or can you terminate directly on a SIP trunk?",
+    teams: "Do you support Microsoft Teams telephony — via Direct Routing, Operator Connect, or only an externally forwarded number?",
+    change: "If our setup changes later (for example landline to Teams), does your integration need rebuilding, or does it keep working?",
+    fail: "If our PBX or internet connection goes down, do calls fail silently, or fall back to voicemail or a human line?",
+    ref: "Can you name a current Swiss customer on the same type of setup, so we can ask how the connection actually performed?",
+    minvol: "Are there any hidden minimum-volume assumptions in your forwarding-based setup?"
+  };
+
+  var matrix = {
+    forwarding_fwd: {level:"ok", head:"Straightforward match",
+      body:"This is the least-risky path — and the one almost every AI phone assistant is built to support, because from the vendor's side it looks like an ordinary call arriving on a new number. It is also the exact path Weissmann's own service documents. Little to resolve here beyond the forwarding specifics.",
+      v:["minvol","fail","ref"]},
+    forwarding_sip: {level:"ok", head:"Straightforward — with capability to spare",
+      body:"Forwarding is all your setup needs, so the vendor's SIP-termination capability is more than you can use — with no SIP trunk, there is nothing to terminate on. Connect by forwarding, the low-risk default, and keep the SIP option in mind only if your infrastructure changes later.",
+      v:["minvol","fail"]},
+    forwarding_teams: {level:"ok", head:"Straightforward — Teams support is spare here",
+      body:"Teams-native integration is irrelevant to a plain mobile or landline number; there is no Teams layer for it to sit in front of. Forwarding is the path, and the extra capability simply sits unused unless you migrate.",
+      v:["minvol","change"]},
+    forwarding_unknown: {level:"warn", head:"Workable — confirm the specifics",
+      body:"Forwarding almost always works from a mobile or landline, so a vague vendor answer is lower-risk here than anywhere else. Even so, get the forwarding method and any minute costs in writing before go-live rather than assuming.",
+      v:["sipfwd","minvol","fail"]},
+
+    pbx_fwd: {level:"warn", head:"Workable — confirm the specifics",
+      body:"A forwarded call is usually still possible, set up as an extension or a routing rule inside the PBX itself. That is a job for whoever administers your PBX, not the AI vendor. Confirm the PBX side can take a new external routing rule before you promise a go-live date to anyone.",
+      v:["fail","ref"]},
+    pbx_sip: {level:"warn", head:"Workable — but the SIP capability is unused",
+      body:"You do not have a SIP trunk, so the vendor's direct-termination capability has nothing to terminate on. In practice you would still forward from the PBX, which works — just do not plan or pay for SIP termination you cannot yet use.",
+      v:["sipfwd","fail"]},
+    pbx_teams: {level:"warn", head:"Workable — Teams support does not apply",
+      body:"Teams-native integration does not apply to an on-premise PBX. You would forward from the PBX, set up as an extension or routing rule — a PBX-admin job, not a vendor one. Confirm who owns that change and how calls fall back if the line drops.",
+      v:["fail","ref"]},
+    pbx_unknown: {level:"miss", head:"Likely an expectation gap",
+      body:"This is the classic failure: your PBX administrator and the AI vendor each assume the other is handling the routing change, and nobody configures anything until someone notices the AI line has never once rung. Pin down who owns the PBX-side rule and get the vendor's method in writing.",
+      v:["sipfwd","fail","ref"]},
+
+    sip_fwd: {level:"miss", head:"Likely an expectation gap",
+      body:"This is the mismatch the guide warns about. A forwarding-only vendor cannot terminate on your SIP trunk; they will quietly expect a forwarded number anyway — which works, but is a different and sometimes costlier integration than a SIP-fluent sales conversation implied. Ask plainly, and price the forwarding path, not the SIP one.",
+      v:["sipfwd","ref"]},
+    sip_sip: {level:"ok", head:"Best-case match",
+      body:"The vendor terminates calls directly on your existing SIP trunk, skipping forwarding altogether. Confirm the trunk's protocol and codec and who to call if it fails, and ask the vendor for a Swiss reference running the same setup so you can hear how it has actually performed.",
+      v:["ref","fail"]},
+    sip_teams: {level:"warn", head:"Workable — but confirm what they mean",
+      body:"Teams-native support is not the same thing as SIP-trunk termination. With a SIP trunk rather than Teams, you would most likely fall back to a forwarded number unless the vendor confirms direct SIP termination. Ask which one they actually mean before assuming either.",
+      v:["sipfwd","ref"]},
+    sip_unknown: {level:"miss", head:"Likely an expectation gap",
+      body:"Get one thing in writing: do they terminate on your SIP trunk, or need you to forward a number to them? A phrase like “we connect to any phone system” tells you nothing yet, and the two paths differ in effort and sometimes cost.",
+      v:["sipfwd","ref","fail"]},
+
+    teams_fwd: {level:"warn", head:"Workable — confirm the specifics",
+      body:"This works: Teams calls get forwarded out to a conventional number, the same way a mobile number would be, and the forwarding-only vendor receives them there. Confirm whether you are on Operator Connect or Direct Routing and who manages number assignment in Microsoft 365.",
+      v:["teams","change","fail"]},
+    teams_sip: {level:"warn", head:"Workable — but confirm what they mean",
+      body:"SIP-trunk termination is not Teams integration. Sitting in front of Teams calling needs Direct Routing or Operator Connect support; otherwise you would forward Teams calls out to a number. Ask the vendor directly which applies to your setup.",
+      v:["teams","ref"]},
+    teams_teams: {level:"ok", head:"Best-case match for Teams",
+      body:"The vendor supports something equivalent to Direct Routing or Operator Connect and can sit in front of Teams calling directly. Confirm which one — Operator Connect is pure cloud with no on-site hardware; Direct Routing is hybrid, via a session border controller installed on site — and who manages number assignment in Microsoft 365.",
+      v:["teams","ref","change"]},
+    teams_unknown: {level:"miss", head:"Likely an expectation gap",
+      body:"Teams compatibility is rarely mentioned on either the carrier's or the vendor's marketing page, so a vague answer is a real risk here. Get a direct written answer — Direct Routing, Operator Connect, or forward-out-of-Teams — before signing anything.",
+      v:["teams","change","ref"]}
+  };
+
+  var badgeText = {ok:"Straightforward", warn:"Confirm first", miss:"Ask precisely"};
+
+  var placeholder = document.getElementById("placeholder");
+  var output = document.getElementById("output");
+  var result = document.getElementById("result");
+
+  function selected(name){
+    var el = document.querySelector('input[name="'+name+'"]:checked');
+    return el ? el.value : null;
+  }
+
+  function make(tag, cls, txt){
+    var e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(txt != null) e.textContent = txt;
+    return e;
+  }
+
+  function render(){
+    var infra = selected("infra");
+    var vendor = selected("vendor");
+    if(!infra || !vendor){
+      output.hidden = true;
+      placeholder.hidden = false;
+      result.className = "card card-pad result";
+      return;
+    }
+    var cell = matrix[infra + "_" + vendor];
+    placeholder.hidden = true;
+    output.hidden = false;
+    output.textContent = "";
+    result.className = "card card-pad result v-" + cell.level;
+
+    output.appendChild(make("span", "badge", badgeText[cell.level]));
+
+    var combo = make("p", "combo");
+    combo.appendChild(document.createTextNode("Your setup: "));
+    combo.appendChild(make("b", null, infraLabel[infra]));
+    combo.appendChild(document.createTextNode("  ·  Vendor receives calls: "));
+    combo.appendChild(make("b", null, vendorLabel[vendor]));
+    output.appendChild(combo);
+
+    output.appendChild(make("h2", "rhead", cell.head));
+    output.appendChild(make("p", "rbody", cell.body));
+
+    var checks = make("div", "checks");
+
+    var tc = make("div", "checkcard");
+    tc.appendChild(make("h3", null, "Confirm with your telecom provider"));
+    var tul = document.createElement("ul");
+    telecom[infra].forEach(function(q){ tul.appendChild(make("li", null, q)); });
+    tc.appendChild(tul);
+    checks.appendChild(tc);
+
+    var vc = make("div", "checkcard");
+    vc.appendChild(make("h3", null, "Confirm with the AI vendor"));
+    var vul = document.createElement("ul");
+    cell.v.forEach(function(id){ vul.appendChild(make("li", null, vq[id])); });
+    vc.appendChild(vul);
+    checks.appendChild(vc);
+
+    output.appendChild(checks);
+
+    var oneq = make("div", "oneq");
+    oneq.appendChild(make("h3", null, "The one question to put in writing"));
+    var qtext = "Given that we run " + oneqInfra[infra] + ", exactly how does your system receive our calls, and who is responsible for setting that up? Please put the answer in writing before we sign.";
+    oneq.appendChild(make("p", null, "“" + qtext + "”"));
+    var row = make("div", "qrow");
+    var btn = make("button", "copybtn", "Copy the question");
+    btn.type = "button";
+    var note = make("span", "copied");
+    note.setAttribute("role", "status");
+    note.setAttribute("aria-live", "polite");
+    btn.addEventListener("click", function(){ copyText(qtext, note); });
+    row.appendChild(btn);
+    row.appendChild(note);
+    oneq.appendChild(row);
+    output.appendChild(oneq);
+  }
+
+  function copyText(text, note){
+    function ok(){ note.textContent = "Copied to your clipboard"; setTimeout(function(){ note.textContent = ""; }, 2600); }
+    function fallback(){
+      try{
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly","");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        ok();
+      }catch(e){ note.textContent = "Press Ctrl+C to copy"; }
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok, fallback);
+    } else {
+      fallback();
+    }
+  }
+
+  var radios = document.querySelectorAll('input[name="infra"], input[name="vendor"]');
+  for(var i=0;i<radios.length;i++){ radios[i].addEventListener("change", render); }
+})();
+</script>

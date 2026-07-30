@@ -1,0 +1,461 @@
+<title>Tenant-Call Triage Rule Builder · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  section{margin-top:22px}
+  .sec-h{font-size:1.06rem;margin:0 0 4px;letter-spacing:-.01em}
+  .sec-sub{color:var(--ink-soft);font-size:.92rem;margin:0 0 14px;max-width:72ch}
+
+  .principle{margin-top:18px;border-left:4px solid var(--navy);background:var(--accent-soft);border-radius:0 12px 12px 0;padding:14px 16px}
+  .principle b{color:var(--ink)}
+  .principle p{margin:0;color:var(--ink-soft);font-size:.96rem}
+
+  .lockhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .lockbadge{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--miss);background:var(--miss-soft);border:1px solid color-mix(in srgb,var(--miss) 32%,transparent);border-radius:999px;padding:3px 9px}
+  .lockgrid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px}
+  @media(min-width:620px){.lockgrid{grid-template-columns:1fr 1fr}}
+  .lockcard{display:flex;gap:10px;align-items:flex-start;background:var(--miss-soft);border:1px solid color-mix(in srgb,var(--miss) 26%,transparent);border-radius:11px;padding:11px 13px;font-size:.92rem;color:var(--ink)}
+  .lockcard .lk{color:var(--miss);font-weight:800;flex:0 0 auto;font-size:.9rem;margin-top:1px}
+  .locknote{font-size:.84rem;color:var(--ink-mute);margin:10px 2px 0}
+
+  .rows{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .callrow{border:1px solid var(--line);border-radius:12px;padding:12px 13px;background:var(--card)}
+  .callrow .top{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+  .calltext{flex:1 1 260px;font-weight:600;font-size:.95rem;min-width:0}
+  .selwrap{flex:0 0 auto;display:flex;flex-direction:column;gap:4px}
+  .selwrap label{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);font-weight:700}
+  select,input[type=text]{font-family:inherit;font-size:.9rem;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:9px 11px}
+  select{min-width:min(280px,72vw);cursor:pointer}
+  select:focus-visible,input[type=text]:focus-visible,button:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent);border-color:var(--navy)}
+  .fb{margin-top:9px;font-size:.86rem;line-height:1.45;padding:8px 11px;border-radius:9px;border-left:3px solid var(--line);background:var(--soft);color:var(--ink-soft)}
+  .fb.tone-ok{border-color:var(--ok);background:var(--ok-soft)}
+  .fb.tone-warn{border-color:var(--warn);background:var(--warn-soft)}
+  .fb.tone-miss{border-color:var(--miss);background:var(--miss-soft)}
+  .fb.tone-note{border-color:var(--accent);background:var(--accent-soft)}
+  .fb b{color:var(--ink)}
+
+  .controls{display:grid;grid-template-columns:1fr;gap:14px;margin-top:6px}
+  @media(min-width:620px){.controls{grid-template-columns:1fr 1fr}}
+  .ctrl{display:flex;flex-direction:column;gap:5px}
+  .ctrl label{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);font-weight:700}
+  .ctrl input[type=text]{width:100%}
+  .toggle{display:flex;gap:10px;align-items:flex-start;background:var(--soft);border:1px solid var(--line);border-radius:11px;padding:12px 13px}
+  .toggle input{margin-top:2px;width:18px;height:18px;accent-color:var(--navy);cursor:pointer}
+  .toggle .tt{font-size:.9rem;color:var(--ink-soft)}
+  .toggle .tt b{color:var(--ink)}
+
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .btn{font-family:inherit;font-weight:600;font-size:.9rem;padding:11px 15px;border-radius:10px;border:1.5px solid var(--navy);color:var(--navy);background:transparent;cursor:pointer;min-height:44px}
+  .btn:hover{background:var(--soft)}
+  .btn.primary{background:var(--navy);color:var(--on-navy)}.btn.primary:hover{background:var(--navy-hover)}
+
+  .counts{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:.78rem;font-weight:700;border-radius:999px;padding:5px 11px;border:1px solid var(--line);background:var(--soft);color:var(--ink-soft)}
+  .chip.ok{color:var(--ok);background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 30%,transparent)}
+  .chip.warn{color:var(--warn);background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 30%,transparent)}
+  .chip.miss{color:var(--miss);background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 30%,transparent)}
+  .chip.note{color:var(--accent);background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
+
+  .sheet{width:100%;min-height:300px;resize:vertical;font-family:var(--mono);font-size:.82rem;line-height:1.55;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px;white-space:pre;overflow:auto}
+  .status{font-size:.84rem;color:var(--ok);font-weight:600;min-height:1.2em;margin:8px 2px 0}
+  .nextnote{font-size:.84rem;color:var(--ink-mute);margin:12px 2px 0;line-height:1.5}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">AI Agents &amp; Voice · Property Management</p>
+  <h1>Tenant-Call Triage Rule Builder</h1>
+  <p class="lede">An AI phone assistant can safely log a dripping tap, book a viewing, or send a rent statement. What it must never do is decide how dangerous a call is. Assemble a triage rule-set that keeps those two jobs — routine administration and emergency judgement — strictly separate, then copy the sheet.</p>
+
+  <div class="principle">
+    <p><b>The governing principle:</b> the assistant can own the administrative job completely — listen, categorise, route, log. It should never be the one deciding how dangerous a situation is. Blending the two is exactly where automated systems quietly fail tenants.</p>
+  </div>
+
+  <section aria-labelledby="lock-h">
+    <div class="lockhead"><h2 class="sec-h" id="lock-h">1. The fixed emergency list</h2><span class="lockbadge">Locked · never downgraded</span></div>
+    <p class="sec-sub">These five signals are never evaluated, weighed, or downgraded by the assistant. On a match, its only job is to get a human on the line immediately — not to assess it, not to ask a second clarifying question first, not to downgrade it because the caller sounded calm. A calm voice reporting a gas smell is still a gas smell.</p>
+    <div class="lockgrid" id="lockgrid" aria-label="Fixed emergency signals"></div>
+    <p class="locknote">This list is agreed by a human in advance and reviewed periodically against real call patterns. The assistant applies the list; it does not write it — which is why you cannot edit these here.</p>
+  </section>
+
+  <section aria-labelledby="build-h">
+    <h2 class="sec-h" id="build-h">2. Place each call into a tier</h2>
+    <p class="sec-sub">Everything that is not on the fixed list is, structurally, the same administrative job — until the last tier. Assign each call type below. The builder checks your placement against the guide and flags the two failure modes it warns about: <b>under-servicing</b> (an urgent problem left in the standard queue) and <b>over-escalation</b> (a mild complaint bumped onto the emergency line).</p>
+    <div class="rows" id="rows"></div>
+    <div class="counts" id="counts" aria-live="polite"></div>
+    <div class="toolbar">
+      <button type="button" class="btn" id="applyBtn">Apply the guide's recommended placement</button>
+      <button type="button" class="btn" id="resetBtn">Clear all</button>
+    </div>
+  </section>
+
+  <section aria-labelledby="opt-h">
+    <h2 class="sec-h" id="opt-h">3. Standing rules &amp; details</h2>
+    <p class="sec-sub">A few rules the guide recommends baking in, plus optional details for your own sheet. Everything here stays in this browser tab.</p>
+    <div class="controls">
+      <div class="ctrl">
+        <label for="nameInput">Portfolio / business name (optional)</label>
+        <input type="text" id="nameInput" maxlength="80" placeholder="[your portfolio]" autocomplete="off">
+      </div>
+      <div class="ctrl">
+        <label for="fallbackInput">Fallback emergency numbers (optional)</label>
+        <input type="text" id="fallbackInput" maxlength="120" placeholder="fire brigade / police / gas utility — your local numbers" autocomplete="off">
+      </div>
+    </div>
+    <div class="toggle" style="margin-top:14px">
+      <input type="checkbox" id="escToggle" checked>
+      <label class="tt" for="escToggle"><b>Default-to-escalate on ambiguity.</b> Low-confidence-but-possibly-serious calls escalate by default rather than waiting for certainty. The guide names this as the fix for under-escalation — uncertainty should push a call toward a human, not away from one.</label>
+    </div>
+  </section>
+
+  <section aria-labelledby="sheet-h">
+    <h2 class="sec-h" id="sheet-h">4. Your rule sheet</h2>
+    <p class="sec-sub">This compiles live from your placements above. It is a working draft to run past the people who actually answer the calls — not a finished policy.</p>
+    <textarea class="sheet" id="sheet" readonly aria-label="Generated triage rule sheet"></textarea>
+    <div class="toolbar">
+      <button type="button" class="btn primary" id="copyBtn">Copy rule sheet</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <p class="nextnote">The guide's suggested next step: test the boundary directly, before it ever goes live for real tenants. Weissmann's one-time Starter trial is CHF 350 (no subscription) — a way to run these call types through a working system rather than trusting a promise on a page.</p>
+  </section>
+
+  <div class="disc">
+    Orientation, not advice or a quote. Every category, signal, and rule here is drawn from the linked Weissmann guide; no numbers, results, or claims are invented. Nothing is stored, sent, or saved — your entries live only in this browser tab and vanish when you close it. Use placeholders like [your portfolio], never real captured identity. Not legal advice.
+  </div>
+
+  <footer class="linkbar" aria-label="Read more from Weissmann">
+    <p class="lb-title">Where this comes from</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/agents-automation/ai-phone-assistant-property-management/" target="_blank" rel="noopener noreferrer" aria-label="Read the full guide: AI phone assistants for Swiss property management (opens in a new tab)">Read the full triage guide →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-phone-assistant/" target="_blank" rel="noopener noreferrer" aria-label="See the Weissmann AI phone assistant service and its honest limits (opens in a new tab)">The AI phone assistant service →</a>
+    </div>
+    <p class="att">Weissmann AI phone assistant · a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    "use strict";
+
+    var EMERGENCY = [
+      "A smell of gas, or any suspicion of a gas leak",
+      "Active flooding or a burst pipe — water currently spreading, not a slow drip",
+      "Smoke, or any indication of fire",
+      "Signs of a break-in, forced entry, or an intruder on the property",
+      "Any mention of injury, or of someone's safety being at risk right now"
+    ];
+
+    var TIERS = [
+      {k:"routine-standard", label:"Routine · standard queue"},
+      {k:"routine-booking",  label:"Routine · booking action"},
+      {k:"routine-decision", label:"Routine · needs a human decision"},
+      {k:"urgent",           label:"Urgent · same-day / next business day"},
+      {k:"emergency",        label:"Emergency · immediate human escalation"}
+    ];
+    var TIER_LABEL = {};
+    TIERS.forEach(function(t){ TIER_LABEL[t.k] = t.label; });
+
+    var CALLS = [
+      {id:"tap", text:"A dripping tap that has dripped since Tuesday", canonical:"routine-standard",
+        reason:"A slow drip has no time pressure — listen, categorise, route, log. A dripping tap has never once required anyone to evacuate a building."},
+      {id:"door", text:"A squeaky door", canonical:"routine-standard",
+        reason:"Standard maintenance with no time pressure — pure administrative filing."},
+      {id:"statement", text:"A request for a copy of a rent statement / Mietbescheinigung", canonical:"routine-standard",
+        reason:"A document request: capture it and route it to the standard queue; no danger judgement involved."},
+      {id:"whenlook", text:"A general “when can someone come look at this?” question", canonical:"routine-standard",
+        reason:"A general scheduling question with no time pressure — standard queue."},
+      {id:"viewing", text:"A viewing request for a vacant unit", canonical:"routine-booking",
+        reason:"Routine with a booking action attached — capture it and book or route the slot."},
+      {id:"resched", text:"A request to reschedule an existing appointment", canonical:"routine-booking",
+        reason:"A booking action an administrative system is allowed to handle."},
+      {id:"movedate", text:"Confirmation of a move-in or move-out date", canonical:"routine-booking",
+        reason:"A booking / confirmation action — administrative, not a danger judgement."},
+      {id:"noise", text:"A noise complaint against a named neighbour", canonical:"routine-decision",
+        reason:"Needs a value judgement about who is right — logged and routed to a person, never resolved on the call."},
+      {id:"dispute", text:"A dispute between tenants", canonical:"routine-decision",
+        reason:"Requires a human decision the AI cannot make — log and route, don't resolve on the call."},
+      {id:"lostkey", text:"A lost key during ordinary hours (spare-key process available)", canonical:"routine-standard",
+        reason:"Logged; the tenant is directed to the standard replacement or spare-key process. No escalation unless they currently cannot enter their home and there is no fallback."},
+      {id:"noheat", text:"No heat during the cold months", canonical:"urgent",
+        reason:"Nobody is in acute danger the way a gas leak implies — but a building with no heat becomes a serious problem fast. Same-day acknowledgement and a fast-tracked ticket to the heating contractor, not the emergency line."},
+      {id:"lockout", text:"A lockout at night, freezing, with no spare-key fallback", canonical:"urgent",
+        reason:"Urgent-administrative: fast-tracked, but nobody's safety depends on the next sixty seconds — not the same as a gas smell or a break-in."},
+      {id:"lift", text:"A lift that has stopped working in an occupied building", canonical:"urgent",
+        reason:"Real hardship if left for a week, but not a safety threat the way a gas leak is — flag it for same-day / next-business-day handling."}
+    ];
+
+    var placements = {};
+    CALLS.forEach(function(c){ placements[c.id] = ""; });
+
+    function rankOf(k){
+      if(!k) return 0;
+      if(k.indexOf("routine") === 0) return 1;
+      if(k === "urgent") return 2;
+      if(k === "emergency") return 3;
+      return 0;
+    }
+
+    function feedbackFor(call){
+      var chosen = placements[call.id];
+      if(!chosen) return {tone:"", head:"Not placed yet.", body:""};
+      if(chosen === call.canonical){
+        return {tone:"ok", head:"Matches the guide's design.", body:call.reason};
+      }
+      var cr = rankOf(call.canonical), rr = rankOf(chosen);
+      if(rr === cr){ // both routine, different lane
+        return {tone:"note", head:"Right tier — administrative, but a different lane.",
+          body:"The guide files this specifically as “" + TIER_LABEL[call.canonical] + "”. " + call.reason};
+      }
+      if(rr > cr){
+        return {tone:"warn", head:"Over-escalation risk.",
+          body:"The guide places this at “" + TIER_LABEL[call.canonical] + "”. " + call.reason + " Treating every mildly worded complaint as urgent teaches the on-call responders that “urgent” usually isn't."};
+      }
+      return {tone:"miss", head:"Under-servicing risk.",
+        body:"The guide gives this a distinct “" + TIER_LABEL[call.canonical] + "” priority, not the standard queue. " + call.reason};
+    }
+
+    // Build locked emergency cards
+    var lockgrid = document.getElementById("lockgrid");
+    EMERGENCY.forEach(function(e){
+      var d = document.createElement("div");
+      d.className = "lockcard";
+      var s = document.createElement("span");
+      s.className = "lk"; s.textContent = "!"; s.setAttribute("aria-hidden","true");
+      var t = document.createElement("span");
+      t.textContent = e;
+      d.appendChild(s); d.appendChild(t);
+      lockgrid.appendChild(d);
+    });
+
+    // Build call rows
+    var rowsEl = document.getElementById("rows");
+    var selEls = {}, fbEls = {};
+    CALLS.forEach(function(call){
+      var row = document.createElement("div");
+      row.className = "callrow";
+
+      var top = document.createElement("div");
+      top.className = "top";
+
+      var txt = document.createElement("div");
+      txt.className = "calltext";
+      txt.textContent = call.text;
+
+      var selWrap = document.createElement("div");
+      selWrap.className = "selwrap";
+      var lab = document.createElement("label");
+      var selId = "sel-" + call.id;
+      lab.setAttribute("for", selId);
+      lab.textContent = "Tier";
+      var sel = document.createElement("select");
+      sel.id = selId;
+      sel.setAttribute("aria-label", "Tier for: " + call.text);
+      var opt0 = document.createElement("option");
+      opt0.value = ""; opt0.textContent = "— choose a tier —";
+      sel.appendChild(opt0);
+      TIERS.forEach(function(t){
+        var o = document.createElement("option");
+        o.value = t.k; o.textContent = t.label;
+        sel.appendChild(o);
+      });
+      sel.addEventListener("change", function(){
+        placements[call.id] = sel.value;
+        updateRow(call.id);
+        updateSummary();
+        updateSheet();
+      });
+      selWrap.appendChild(lab); selWrap.appendChild(sel);
+
+      top.appendChild(txt); top.appendChild(selWrap);
+
+      var fb = document.createElement("div");
+      fb.className = "fb";
+      fb.id = "fb-" + call.id;
+
+      row.appendChild(top); row.appendChild(fb);
+      rowsEl.appendChild(row);
+
+      selEls[call.id] = sel;
+      fbEls[call.id] = fb;
+    });
+
+    function updateRow(id){
+      var call = null;
+      for(var i=0;i<CALLS.length;i++){ if(CALLS[i].id === id){ call = CALLS[i]; break; } }
+      if(!call) return;
+      var fb = feedbackFor(call);
+      var el = fbEls[id];
+      el.className = "fb" + (fb.tone ? " tone-" + fb.tone : "");
+      el.innerHTML = "";
+      var b = document.createElement("b");
+      b.textContent = fb.head;
+      el.appendChild(b);
+      if(fb.body){ el.appendChild(document.createTextNode(" " + fb.body)); }
+    }
+
+    function updateSummary(){
+      var placed = 0, over = 0, under = 0, note = 0, ok = 0;
+      CALLS.forEach(function(c){
+        if(placements[c.id]) placed++;
+        var fb = feedbackFor(c);
+        if(fb.tone === "ok") ok++;
+        else if(fb.tone === "warn") over++;
+        else if(fb.tone === "miss") under++;
+        else if(fb.tone === "note") note++;
+      });
+      var counts = document.getElementById("counts");
+      counts.innerHTML = "";
+      function chip(txt, cls){
+        var s = document.createElement("span");
+        s.className = "chip" + (cls ? " " + cls : "");
+        s.textContent = txt;
+        counts.appendChild(s);
+      }
+      chip(placed + " of " + CALLS.length + " placed");
+      if(ok) chip(ok + " match the guide", "ok");
+      if(over) chip(over + " over-escalation", "warn");
+      if(under) chip(under + " under-servicing", "miss");
+      if(note) chip(note + " right tier, wrong lane", "note");
+    }
+
+    function line(arr, s){ arr.push(s === undefined ? "" : s); }
+
+    function listFor(tierKey){
+      return CALLS.filter(function(c){ return placements[c.id] === tierKey; });
+    }
+
+    function updateSheet(){
+      var L = [];
+      var name = (document.getElementById("nameInput").value || "").trim() || "[your portfolio]";
+      line(L, "TENANT-CALL TRIAGE RULE SHEET");
+      line(L, "Portfolio: " + name);
+      line(L, "Governing principle: the AI phone assistant handles logistics. It never decides how dangerous a call is.");
+      line(L);
+      line(L, "1) EMERGENCY — IMMEDIATE HUMAN ESCALATION  (fixed list, no exceptions)");
+      line(L, "   The assistant never assesses, ranks, or downgrades these. On a match it gets a human on the line immediately and does NOT run its usual scripted questions first. A calm voice reporting a gas smell is still a gas smell.");
+      EMERGENCY.forEach(function(e){ line(L, "   • " + e); });
+      var fb = (document.getElementById("fallbackInput").value || "").trim();
+      line(L, "   Fallback if no human can be reached instantly: give the caller the direct number for the fire brigade / police / gas utility outright — " + (fb ? fb : "[enter your local numbers]") + " — rather than leaving them on hold.");
+      line(L);
+
+      line(L, "2) URGENT — SAME-DAY / NEXT-BUSINESS-DAY  (administrative priority, not the emergency line)");
+      line(L, "   Handling: same-day acknowledgement, a fast-tracked ticket, and a check-in if it is not resolved within a defined window.");
+      var urgent = listFor("urgent");
+      if(urgent.length){ urgent.forEach(function(c){ line(L, "   • " + c.text); }); }
+      else { line(L, "   • (none placed here yet)"); }
+      line(L);
+
+      line(L, "3) ROUTINE — LISTEN, CATEGORISE, ROUTE, LOG  (administrative)");
+      line(L, "   Standard queue (no time pressure):");
+      var std = listFor("routine-standard");
+      if(std.length){ std.forEach(function(c){ line(L, "      • " + c.text); }); } else { line(L, "      • (none placed here yet)"); }
+      line(L, "   Booking actions:");
+      var book = listFor("routine-booking");
+      if(book.length){ book.forEach(function(c){ line(L, "      • " + c.text); }); } else { line(L, "      • (none placed here yet)"); }
+      line(L, "   Needs a human decision (log & route, never resolved on the call):");
+      var dec = listFor("routine-decision");
+      if(dec.length){ dec.forEach(function(c){ line(L, "      • " + c.text); }); } else { line(L, "      • (none placed here yet)"); }
+      line(L);
+
+      if(document.getElementById("escToggle").checked){
+        line(L, "STANDING RULE: low-confidence-but-possibly-serious calls escalate by default rather than waiting for certainty. Uncertainty pushes a call toward a human, not away from one. The trigger list is deliberately over-inclusive and reviewed periodically against real call patterns.");
+      } else {
+        line(L, "STANDING RULE (currently OFF): consider a default-to-escalate rule for ambiguous calls — the guide names it as the fix for under-escalation, the more dangerous of the two failure modes.");
+      }
+
+      var extra = listFor("emergency");
+      if(extra.length){
+        line(L);
+        line(L, "REVIEW — you added these to the emergency tier. The guide keeps the emergency list to the five fixed signals above; a short, specific list is what stops the on-call phone ringing at 2 a.m. for issues that could wait:");
+        extra.forEach(function(c){ line(L, "   • " + c.text); });
+      }
+
+      var unplaced = CALLS.filter(function(c){ return !placements[c.id]; });
+      if(unplaced.length){
+        line(L);
+        line(L, "NOT YET PLACED:");
+        unplaced.forEach(function(c){ line(L, "   • " + c.text); });
+      }
+
+      line(L);
+      line(L, "Note: the trigger list is agreed by a human in advance and reviewed periodically against real call patterns. The assistant applies the list; it does not write it. Orientation only — not legal advice or a quote.");
+
+      document.getElementById("sheet").value = L.join("\n");
+    }
+
+    // Buttons
+    document.getElementById("applyBtn").addEventListener("click", function(){
+      CALLS.forEach(function(c){
+        placements[c.id] = c.canonical;
+        selEls[c.id].value = c.canonical;
+        updateRow(c.id);
+      });
+      updateSummary();
+      updateSheet();
+      setStatus("Placed all calls as the guide recommends — adjust any you want, then copy.");
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", function(){
+      CALLS.forEach(function(c){
+        placements[c.id] = "";
+        selEls[c.id].value = "";
+        updateRow(c.id);
+      });
+      updateSummary();
+      updateSheet();
+      setStatus("Cleared.");
+    });
+
+    document.getElementById("nameInput").addEventListener("input", updateSheet);
+    document.getElementById("fallbackInput").addEventListener("input", updateSheet);
+    document.getElementById("escToggle").addEventListener("change", updateSheet);
+
+    var statusEl = document.getElementById("status");
+    var statusTimer = null;
+    function setStatus(msg){
+      statusEl.textContent = msg;
+      if(statusTimer) clearTimeout(statusTimer);
+      statusTimer = setTimeout(function(){ statusEl.textContent = ""; }, 4000);
+    }
+
+    document.getElementById("copyBtn").addEventListener("click", function(){
+      var sheet = document.getElementById("sheet");
+      var text = sheet.value;
+      function done(){ setStatus("Rule sheet copied to clipboard."); }
+      function fallback(){
+        try {
+          sheet.removeAttribute("readonly");
+          sheet.focus(); sheet.select();
+          var okc = document.execCommand("copy");
+          sheet.setAttribute("readonly", "readonly");
+          if(okc) done(); else setStatus("Press Ctrl/Cmd+C to copy the selected text.");
+        } catch(e){ setStatus("Press Ctrl/Cmd+C to copy the selected text."); }
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+
+    // Initial render
+    CALLS.forEach(function(c){ updateRow(c.id); });
+    updateSummary();
+    updateSheet();
+  })();
+</script>
