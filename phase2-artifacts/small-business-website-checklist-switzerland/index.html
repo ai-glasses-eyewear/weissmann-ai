@@ -1,0 +1,461 @@
+<title>Pre-Quote Website Brief Builder · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  /* progress / meter */
+  .meter{position:sticky;top:0;z-index:5;margin:18px 0 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .meter .bar{flex:1 1 200px;height:10px;background:var(--soft);border:1px solid var(--line);border-radius:999px;overflow:hidden;min-width:160px}
+  .meter .fill{height:100%;width:0;background:var(--navy);border-radius:999px;transition:width .25s ease}
+  .meter .pct{font-weight:700;font-size:.92rem;color:var(--ink);white-space:nowrap}
+  .meter .lbl{font-size:.82rem;color:var(--ink-mute)}
+
+  .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
+  @media(min-width:820px){.grid{grid-template-columns:1fr 1fr}}
+
+  .sec{scroll-margin-top:70px}
+  .sec-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:.85rem;margin-right:8px;flex:none}
+  .sec h2{font-size:1.06rem;margin:0;letter-spacing:-.01em;display:flex;align-items:center}
+  .sec .why{color:var(--ink-soft);font-size:.9rem;margin:8px 0 2px}
+  .field{margin-top:14px}
+  .field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:5px;color:var(--ink)}
+  .field .hint{font-size:.8rem;color:var(--ink-mute);margin:0 0 7px;line-height:1.45}
+  input[type=text],textarea,select{width:100%;font-family:var(--font);font-size:.94rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px}
+  textarea{resize:vertical;min-height:60px;line-height:1.45}
+  input[type=text]:focus,textarea:focus,select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+  .legalnote{margin-top:14px;background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 34%,transparent);border-radius:10px;padding:12px 14px;font-size:.83rem;color:var(--ink-soft);line-height:1.5}
+  .legalnote strong{color:var(--ink)}
+
+  .scope{margin-top:16px}
+  .scope .row{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:680px){.scope .row{grid-template-columns:1fr 1fr 1fr}}
+  .readout{margin-top:14px;background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:10px;padding:12px 14px;font-size:.88rem;color:var(--ink-soft);line-height:1.5}
+  .readout strong{color:var(--ink)}
+
+  .outhead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+  .outhead h2{font-size:1.06rem;margin:0}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap}
+  button{font-family:var(--font);font-weight:600;font-size:.9rem;border-radius:10px;padding:10px 16px;min-height:44px;cursor:pointer;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy)}
+  button:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  button.ghost{background:transparent;color:var(--navy)}
+  button.ghost:hover{background:var(--soft)}
+  button:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  #brief{width:100%;min-height:280px;font-family:var(--mono);font-size:.82rem;line-height:1.5;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:14px;white-space:pre;overflow:auto}
+  .status{font-size:.82rem;color:var(--ink-mute);margin:8px 2px 0;min-height:1.1em}
+  .status.done{color:var(--ok);font-weight:600}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">AI Marketing, SEO &amp; GEO · Pre-Design Brief</p>
+  <h1>Pre-Quote Website Brief Builder</h1>
+  <p class="lede">A finished website is really the sum of eight smaller decisions a business owner has to make regardless of who builds it. Fill in the eight sections below, then copy the assembled brief and hand it to any agency, freelancer or builder you ask for a quote &mdash; so every proposal answers the same fixed set of decisions instead of a slightly different, half-formed conversation.</p>
+
+  <div class="meter" role="group" aria-label="Brief completeness">
+    <span class="pct" id="pct">0%</span>
+    <div class="bar" aria-hidden="true"><div class="fill" id="fill"></div></div>
+    <span class="lbl" id="meterLbl" aria-live="polite">0 of 23 decision fields filled in</span>
+  </div>
+
+  <div id="sections"></div>
+
+  <section class="card card-pad scope sec" aria-labelledby="scopeH" style="margin-top:16px">
+    <h2 id="scopeH"><span class="sec-num" aria-hidden="true">◆</span>Scope snapshot (optional)</h2>
+    <p class="why">A finished brief also clarifies scope quickly. Set the three toggles below to see how your answers map against a small starter project versus a larger one &mdash; orientation only, drawn from the guide, never a quote.</p>
+    <div class="row" id="scopeRow"></div>
+    <div class="readout" id="scopeRead" aria-live="polite"></div>
+  </section>
+
+  <section class="card card-pad sec" aria-labelledby="outH" style="margin-top:16px">
+    <div class="outhead">
+      <h2 id="outH">Your assembled brief</h2>
+      <div class="btnrow">
+        <button type="button" id="copyBtn">Copy brief</button>
+        <button type="button" class="ghost" id="clearBtn">Clear all</button>
+      </div>
+    </div>
+    <textarea id="brief" readonly aria-label="Assembled project brief, ready to copy"></textarea>
+    <p class="status" id="copyStatus" role="status" aria-live="polite"></p>
+  </section>
+
+  <p class="disc">Orientation, not legal advice and not a quote. This tool helps you write your own project brief; it does not check compliance, price a project, or replace a discovery conversation. Everything you type stays in this page &mdash; nothing is stored, sent or shared, and no personal data leaves your device. The Swiss legal points below restate the guide in plain terms; confirm the exact requirements for your business with a Swiss lawyer or trust adviser. None of this requires working with Weissmann specifically &mdash; the same eight answers make any vendor's proposal easier to judge.</p>
+
+  <footer class="linkbar" aria-label="Related guide and service">
+    <p class="lb-title">Keep going</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/marketing-seo-geo/small-business-website-checklist/" target="_blank" rel="noopener noreferrer" aria-label="Read the full small-business website checklist guide (opens in a new tab)">Read the full checklist guide &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-web-development/" target="_blank" rel="noopener noreferrer" aria-label="See Weissmann AI web development services (opens in a new tab)">AI web development at Weissmann &rarr;</a>
+    </div>
+    <p class="att">Companion to the guide &ldquo;The Small-Business Website Checklist Swiss Agencies Rarely Show Before the Quote.&rdquo; Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---- Field model, grounded entirely in the article's eight sections ----
+  var SECTIONS = [
+    {
+      n:1, title:"Audience — the one visitor this site has to convince",
+      why:"A site trying to speak to everyone tends to convince no one quickly enough to matter, in a medium where most visitors decide whether to stay within seconds.",
+      fields:[
+        {id:"aud_who", label:"Your single most valuable visitor, by situation not demographic", type:"ta",
+         hint:"e.g. “a facilities manager comparing three cleaning contractors on a Tuesday afternoon” — not “SMEs in the greater Zurich area”."},
+        {id:"aud_belief", label:"What that visitor already believes or doubts before they land", type:"ta",
+         hint:"Are they price-shopping, worried about reliability, unsure whether you even serve their canton?"},
+        {id:"aud_moment", label:"The device and moment they are most likely using", type:"text",
+         hint:"Searching on a phone outside a competitor's premises, or reading calmly at a desk after a recommendation."}
+      ]
+    },
+    {
+      n:2, title:"Offer — what you sell, in the words a customer uses",
+      why:"Many small-business sites describe capabilities in the language of the industry, not the problem a visitor is actually trying to solve when they search.",
+      fields:[
+        {id:"off_service", label:"Your single most bookable service or product, in one plain sentence", type:"text",
+         hint:"Write it the way a customer would search for it — not the way your industry describes it internally."},
+        {id:"off_group", label:"Two or three things people ask about that don't deserve their own page yet", type:"ta",
+         hint:"Grouping them saves paying for five thin pages that split relevance instead of one strong one."},
+        {id:"off_not", label:"Anything you deliberately do not offer", type:"text",
+         hint:"So the site doesn't invite the wrong enquiries — “no emergency callouts”, “no walk-ins without an appointment”."}
+      ]
+    },
+    {
+      n:3, title:"Calls to action — the one thing each page should get someone to do",
+      why:"A page offering four actions at once — call, email, book, download — usually gets none of them, because equal emphasis reads as no emphasis at all.",
+      fields:[
+        {id:"cta_primary", label:"The single primary action for your homepage", type:"text",
+         hint:"Be ready to say why it beats the others for your business specifically."},
+        {id:"cta_phone", label:"Is a phone call your preferred first contact?", type:"select",
+         opts:["Not decided yet","Yes — a phone call is our preferred first contact","No — route to a form instead"]},
+        {id:"cta_next", label:"What happens within one business day of that action being taken", type:"ta",
+         hint:"A defined next step, not a vague promise, is what turns a form into something worth submitting."}
+      ]
+    },
+    {
+      n:4, title:"Legal pages — the Impressum Switzerland actually requires",
+      why:"Under the Federal Act Against Unfair Competition, a business offering goods or services electronically must give clear, complete information about its identity and a contact address — commonly called an Impressum — and wherever the site collects personal data, a separate privacy notice is required under Swiss data protection law.",
+      fields:[
+        {id:"leg_name", label:"Your exact legal name and legal form, as registered", type:"text",
+         hint:"Not a trading name — the identity as registered."},
+        {id:"leg_addr", label:"A real postal address and a working way to make contact", type:"text",
+         hint:"The contact details that will appear in the Impressum."},
+        {id:"leg_owner", label:"Who is responsible for keeping the privacy notice current as tools change", type:"text",
+         hint:"A new analytics script or booking widget is the usual reason these notices go stale."},
+        {id:"leg_lang", label:"Languages / cantons", type:"select",
+         opts:["Not decided yet","Single language — one legal notice","Multiple languages — legal notice in every version, not only the main one"]}
+      ],
+      legal:"<strong>A genuine requirement, stated simply.</strong> This is not detailed legal advice on the exact wording your specific business needs. Confirm the details with a Swiss lawyer or trust adviser, particularly if you operate as a registered company with more than one owner. Source: Federal Act Against Unfair Competition (UWG, SR 241), Art. 3."
+    },
+    {
+      n:5, title:"Reviews and proof — what already exists, gathered in one place",
+      why:"Most small businesses have more proof of trust than they realise; it rarely reaches a new site because nobody assembled it before the brief was written.",
+      fields:[
+        {id:"rev_places", label:"Every place a customer could leave, or already has left, a review — and who holds each login", type:"ta",
+         hint:"Google Business Profile, an industry directory, Facebook — confirm who holds the login for each."},
+        {id:"rev_outcomes", label:"Two or three specific, honest outcomes you can describe without inventing a quote", type:"ta",
+         hint:"“Reopened four business days after a burst pipe” persuades more than “excellent service”."},
+        {id:"rev_plan", label:"If you have no reviews yet: how you will start asking for the first few once live", type:"ta",
+         hint:"So the section has a plan rather than an empty “what clients say” block indefinitely."}
+      ]
+    },
+    {
+      n:6, title:"Tracking and analytics — whose account this actually is",
+      why:"The common mistake is not skipping analytics; it is letting a vendor create Google Analytics 4 and Search Console under their own account, so your visitor history leaves with them if the relationship ever ends.",
+      fields:[
+        {id:"trk_owner", label:"Who creates the GA4 property and Search Console account", type:"text",
+         hint:"An account your business controls, with the vendor added as a user — never the reverse."},
+        {id:"trk_metric", label:"The one number you actually want to see monthly", type:"text",
+         hint:"Enquiries submitted, calls started, bookings completed — an outcome, not just traffic."},
+        {id:"trk_existing", label:"Any existing tracking that should carry over", type:"text",
+         hint:"An old analytics account or a social pixel that should not be quietly abandoned at launch."}
+      ]
+    },
+    {
+      n:7, title:"Local details — what a visitor needs to find and trust you",
+      why:"Small, easy to overlook, and disproportionately damaging when inconsistent.",
+      fields:[
+        {id:"loc_phone", label:"The exact form of your phone number — and who genuinely answers it", type:"text",
+         hint:"A +41 landline, a mobile answered by staff, or a dedicated line for the website."},
+        {id:"loc_addr", label:"Your address exactly as it should appear everywhere it is used", type:"text",
+         hint:"Google Business Profile, the site footer, the legal notice — inconsistent versions weaken local search."},
+        {id:"loc_lang", label:"Every language your customers actually use, and which the site needs at launch versus later", type:"text",
+         hint:"Not only the official language of your canton — the languages your real customers use day to day."}
+      ]
+    },
+    {
+      n:8, title:"Content ownership — decide this before you ask for a quote",
+      why:"If the relationship ended tomorrow, could you take your domain, written content, photos and logins to a different vendor without a fight? State your expectation in the brief itself, as a starting condition of the quote.",
+      fields:[
+        {id:"own_domain", label:"Domain registration", type:"text",
+         hint:"State that the domain must be registered to your business, not the vendor's account, regardless of who pays the renewal invoice."},
+        {id:"own_copy", label:"Copy and photography ownership", type:"text",
+         hint:"State whether you expect written copy and photography to become your property on final payment — in writing, not implied by a friendly tone."},
+        {id:"own_access", label:"Admin access at handover", type:"text",
+         hint:"State that you expect real admin access to the CMS, hosting and analytics accounts — not a promise to “reach out if anything comes up” later."}
+      ]
+    }
+  ];
+
+  var SCOPE = [
+    {id:"sc_aud", label:"Audience types", opts:[
+      "One primary visitor type","More than one distinct segment"]},
+    {id:"sc_serv", label:"Services needing their own detail page", opts:[
+      "One core offer","Two to three, groupable","Four or more, each its own page"]},
+    {id:"sc_lang", label:"Languages at launch", opts:[
+      "One language at launch","Two or more languages at launch"]}
+  ];
+
+  var TEXT_TOTAL = 0;
+  SECTIONS.forEach(function(s){ s.fields.forEach(function(f){ if(f.type==="text"||f.type==="ta") TEXT_TOTAL++; }); });
+
+  var state = {}; // id -> value
+
+  // ---- Build the DOM ----
+  var host = document.getElementById("sections");
+  var grid = document.createElement("div");
+  grid.className = "grid";
+  host.appendChild(grid);
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+
+  SECTIONS.forEach(function(sec){
+    var card = document.createElement("section");
+    card.className = "card card-pad sec";
+    card.setAttribute("aria-labelledby","h_"+sec.n);
+    var html = '<h2 id="h_'+sec.n+'"><span class="sec-num" aria-hidden="true">'+sec.n+'</span>'+esc(sec.title)+'</h2>';
+    html += '<p class="why">'+esc(sec.why)+'</p>';
+    card.innerHTML = html;
+
+    sec.fields.forEach(function(f){
+      var wrap = document.createElement("div");
+      wrap.className = "field";
+      var lab = document.createElement("label");
+      lab.setAttribute("for", f.id);
+      lab.textContent = f.label;
+      wrap.appendChild(lab);
+      if(f.hint){
+        var h = document.createElement("p");
+        h.className = "hint";
+        h.textContent = f.hint;
+        wrap.appendChild(h);
+      }
+      var ctrl;
+      if(f.type==="ta"){
+        ctrl = document.createElement("textarea");
+        ctrl.rows = 2;
+      } else if(f.type==="select"){
+        ctrl = document.createElement("select");
+        f.opts.forEach(function(o,i){
+          var op = document.createElement("option");
+          op.value = o; op.textContent = o;
+          if(i===0) op.selected = true;
+          ctrl.appendChild(op);
+        });
+      } else {
+        ctrl = document.createElement("input");
+        ctrl.type = "text";
+      }
+      ctrl.id = f.id;
+      ctrl.setAttribute("data-fid", f.id);
+      state[f.id] = (f.type==="select") ? f.opts[0] : "";
+      ctrl.addEventListener("input", onChange);
+      ctrl.addEventListener("change", onChange);
+      wrap.appendChild(ctrl);
+      card.appendChild(wrap);
+    });
+
+    if(sec.legal){
+      var ln = document.createElement("div");
+      ln.className = "legalnote";
+      ln.innerHTML = sec.legal;
+      card.appendChild(ln);
+    }
+
+    grid.appendChild(card);
+  });
+
+  // Scope selects
+  var scopeRow = document.getElementById("scopeRow");
+  SCOPE.forEach(function(sc){
+    var wrap = document.createElement("div");
+    wrap.className = "field";
+    var lab = document.createElement("label");
+    lab.setAttribute("for", sc.id);
+    lab.textContent = sc.label;
+    wrap.appendChild(lab);
+    var sel = document.createElement("select");
+    sel.id = sc.id;
+    sc.opts.forEach(function(o,i){
+      var op = document.createElement("option");
+      op.value = String(i); op.textContent = o;
+      sel.appendChild(op);
+    });
+    sel.addEventListener("change", onScope);
+    state[sc.id] = 0;
+    wrap.appendChild(sel);
+    scopeRow.appendChild(wrap);
+  });
+
+  // ---- Reactivity ----
+  var fill = document.getElementById("fill");
+  var pct = document.getElementById("pct");
+  var meterLbl = document.getElementById("meterLbl");
+  var brief = document.getElementById("brief");
+
+  function onChange(e){
+    var id = e.target.getAttribute("data-fid");
+    state[id] = e.target.value;
+    updateMeter();
+    render();
+  }
+  function onScope(e){
+    state[e.target.id] = parseInt(e.target.value,10);
+    renderScope();
+  }
+
+  function filledCount(){
+    var c = 0;
+    SECTIONS.forEach(function(s){ s.fields.forEach(function(f){
+      if((f.type==="text"||f.type==="ta") && String(state[f.id]||"").trim()!=="") c++;
+    }); });
+    return c;
+  }
+
+  function updateMeter(){
+    var c = filledCount();
+    var p = Math.round((c/TEXT_TOTAL)*100);
+    fill.style.width = p+"%";
+    pct.textContent = p+"%";
+    meterLbl.textContent = c+" of "+TEXT_TOTAL+" decision fields filled in";
+  }
+
+  function val(id){
+    var v = String(state[id]!=null?state[id]:"").trim();
+    return v==="" ? "— not yet decided" : v;
+  }
+  function selVal(id){
+    var v = String(state[id]!=null?state[id]:"").trim();
+    return (v==="" || /^Not decided yet$/.test(v)) ? "— not yet decided" : v;
+  }
+
+  function render(){
+    var L = [];
+    L.push("WEBSITE PROJECT BRIEF — decided before requesting a quote");
+    L.push("Prepared with the Weissmann pre-quote brief builder");
+    L.push("");
+    SECTIONS.forEach(function(sec){
+      L.push("--------------------------------------------------");
+      L.push(sec.n+". "+sec.title.toUpperCase());
+      sec.fields.forEach(function(f){
+        var v = (f.type==="select") ? selVal(f.id) : val(f.id);
+        L.push("  • "+f.label+":");
+        // wrap value under the bullet for readability
+        v.split("\n").forEach(function(line){ L.push("      "+line); });
+      });
+      L.push("");
+    });
+    // Scope snapshot line
+    L.push("--------------------------------------------------");
+    L.push("SCOPE SNAPSHOT");
+    L.push("  • Audience: "+SCOPE[0].opts[state.sc_aud]);
+    L.push("  • Services needing own page: "+SCOPE[1].opts[state.sc_serv]);
+    L.push("  • Languages at launch: "+SCOPE[2].opts[state.sc_lang]);
+    L.push("");
+    L.push("--------------------------------------------------");
+    L.push("This brief is a record of decisions, not a quote. Hand it to");
+    L.push("any agency, freelancer or website builder you ask — Weissmann");
+    L.push("included — so every proposal answers the same fixed set of");
+    L.push("decisions instead of a slightly different, half-formed conversation.");
+    brief.value = L.join("\n");
+  }
+
+  function renderScope(){
+    var a = state.sc_aud, s = state.sc_serv, l = state.sc_lang;
+    var starterFit = (a===0 && s===0 && l===0);
+    var out = "";
+    if(starterFit){
+      out = "<strong>This lands on one visitor type, one core offer and one language.</strong> "
+          + "The guide notes that shape is a reasonable fit for the current Starter Website scope "
+          + "— up to five core pages, one language and two defined revision rounds, at a current "
+          + "promotional price of CHF 880 against a regular price of CHF 2,490. Orientation from the "
+          + "guide, not a quote.";
+    } else {
+      var reasons = [];
+      if(a===1) reasons.push("more than one distinct customer segment");
+      if(s===1) reasons.push("two to three services to weigh grouping");
+      if(s===2) reasons.push("four or more services, each needing its own detail page");
+      if(l===1) reasons.push("more than one language from day one");
+      var joined = reasons.length===1 ? reasons[0]
+                 : reasons.slice(0,-1).join(", ")+" and "+reasons[reasons.length-1];
+      out = "<strong>Your answers reveal "+joined+".</strong> "
+          + "The guide notes that points toward a larger project than the Starter scope "
+          + "(which covers up to five core pages, one language and two revision rounds at CHF 880 "
+          + "promotional, regular CHF 2,490). Better to know that before a quote arrives than after. "
+          + "Orientation from the guide, not a quote.";
+    }
+    document.getElementById("scopeRead").innerHTML = out;
+  }
+
+  // ---- Copy ----
+  var copyStatus = document.getElementById("copyStatus");
+  function flash(msg, done){
+    copyStatus.textContent = msg;
+    copyStatus.className = done ? "status done" : "status";
+  }
+  document.getElementById("copyBtn").addEventListener("click", function(){
+    var text = brief.value;
+    function fallback(){
+      try{
+        brief.removeAttribute("readonly");
+        brief.focus(); brief.select();
+        var ok = document.execCommand("copy");
+        brief.setAttribute("readonly","");
+        window.getSelection && window.getSelection().removeAllRanges();
+        flash(ok ? "Brief copied to your clipboard." : "Couldn't copy — select the text and copy manually.", ok);
+      }catch(err){
+        flash("Couldn't copy — select the text and copy manually.", false);
+      }
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        flash("Brief copied to your clipboard.", true);
+      }, fallback);
+    } else {
+      fallback();
+    }
+  });
+
+  document.getElementById("clearBtn").addEventListener("click", function(){
+    SECTIONS.forEach(function(s){ s.fields.forEach(function(f){
+      var el = document.getElementById(f.id);
+      if(f.type==="select"){ el.selectedIndex = 0; state[f.id] = f.opts[0]; }
+      else { el.value = ""; state[f.id] = ""; }
+    }); });
+    SCOPE.forEach(function(sc){ document.getElementById(sc.id).selectedIndex = 0; state[sc.id] = 0; });
+    updateMeter(); render(); renderScope();
+    flash("Cleared. All fields are empty again.", false);
+  });
+
+  // ---- Init ----
+  updateMeter();
+  render();
+  renderScope();
+})();
+</script>

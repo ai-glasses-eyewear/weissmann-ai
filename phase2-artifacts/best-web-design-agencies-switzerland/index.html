@@ -1,0 +1,458 @@
+<title>Web design agency due-diligence tracker · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .disclose{font-size:.88rem;color:var(--ink-soft);background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:12px 14px;margin:14px 0 0;line-height:1.5}
+  .disclose strong{color:var(--ink)}
+
+  .setup{margin-top:18px;display:grid;gap:16px}
+  @media(min-width:640px){.setup{grid-template-columns:1fr 1fr}}
+  .field{display:flex;flex-direction:column;gap:8px;min-width:0}
+  .field label,.field-label{font-weight:600;font-size:.9rem}
+  #agencyName{font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+  #agencyName:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+  .seg{display:flex;flex-wrap:wrap;gap:8px}
+  .seg-opt,.rate-opt{position:relative;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:1px solid var(--line);background:var(--card);border-radius:9px;padding:9px 12px;font-size:.9rem;color:var(--ink-soft)}
+  .seg-opt input,.rate-opt input{position:absolute;opacity:0;width:1px;height:1px}
+  .seg-opt:focus-within,.rate-opt:focus-within{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent);border-color:var(--navy)}
+  .seg-opt.on{background:var(--accent-soft);border-color:var(--accent);color:var(--ink);font-weight:600}
+  .progress{grid-column:1/-1;margin:0;font-size:.88rem;color:var(--ink-mute);font-weight:600}
+
+  .stage{margin-top:18px}
+  .stage-head{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap}
+  .stage-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--on-navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+  .stage-htext{min-width:0;flex:1}
+  .stage-name{margin:0;font-size:1.12rem;letter-spacing:-.01em}
+  .stage-blurb{margin:4px 0 0;font-size:.9rem;color:var(--ink-mute)}
+  .stage-tally{flex:none;font-size:.78rem;font-weight:700;color:var(--ink-mute);background:var(--soft);border-radius:20px;padding:5px 11px;white-space:nowrap}
+
+  .cp{border:0;border-top:1px solid var(--line);margin:16px 0 0;padding:16px 0 0;min-width:0}
+  .cp-q{font-weight:700;font-size:1rem;color:var(--ink);padding:0;margin:0 0 8px;line-height:1.35}
+  .cp-hint{margin:0 0 8px;font-size:.9rem;color:var(--ink-soft)}
+  .cp-note{margin:0 0 10px;font-size:.85rem;color:var(--ink-soft);background:var(--soft);border-radius:9px;padding:9px 11px;line-height:1.5}
+  .rate{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+  .rate-opt.on[data-val=strong]{background:var(--ok-soft);border-color:var(--ok);color:var(--ink);font-weight:600}
+  .rate-opt.on[data-val=weak]{background:var(--warn-soft);border-color:var(--warn);color:var(--ink);font-weight:600}
+  .rate-opt.on[data-val=flag]{background:var(--miss-soft);border-color:var(--miss);color:var(--ink);font-weight:600}
+  .rate-opt.on[data-val=unset]{background:var(--soft);border-color:var(--ink-mute);color:var(--ink);font-weight:600}
+  .cp-notes{font:inherit;width:100%;resize:vertical;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);min-height:44px}
+  .cp-notes:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 22%,transparent)}
+
+  .read{margin-top:20px;border-color:var(--navy)}
+  .read-head{margin:0 0 12px;font-size:1.15rem}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .chip{font-size:.82rem;font-weight:700;border-radius:20px;padding:5px 12px;border:1px solid var(--line);background:var(--soft);color:var(--ink-soft)}
+  .chip b{font-weight:800;margin-left:2px}
+  .chip.s{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+  .chip.w{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+  .chip.f{background:var(--miss-soft);color:var(--miss);border-color:transparent}
+  .chip.u{background:var(--soft);color:var(--ink-mute)}
+  .msgs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+  .msg{display:flex;gap:10px;font-size:.92rem;color:var(--ink-soft);line-height:1.5}
+  .msg .dot{flex:none;width:9px;height:9px;border-radius:50%;margin-top:6px;background:var(--accent)}
+  .msg.ok .dot{background:var(--ok)}.msg.warn .dot{background:var(--warn)}.msg.miss .dot{background:var(--miss)}.msg.accent .dot{background:var(--accent)}.msg.neutral .dot{background:var(--ink-mute)}
+
+  .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+  .btn{font:inherit;font-weight:600;font-size:.92rem;cursor:pointer;border-radius:10px;padding:11px 16px;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);min-height:44px}
+  .btn:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  .btn.btn-ghost{background:transparent;color:var(--navy)}
+  .btn.btn-ghost:hover{background:var(--soft)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copy-status{font-size:.85rem;color:var(--ok);font-weight:600}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">Agency due-diligence tracker</p>
+    <h1>Rate one web design agency across the four due-diligence stages</h1>
+    <p class="lede">A portfolio shows taste, not outcomes. This tracker turns the buyer's guide into a scorecard you fill in for one candidate at a time: log the answer you actually got at the initial call, the written proposal, the reference check and the contract review, and read where the candidate is still soft. There is no single best agency &mdash; only agencies that perform differently across these four stages most buyers skip past.</p>
+    <p class="disclose"><strong>Disclosure:</strong> Weissmann AI builds websites and has a commercial interest in this topic. This tracker does not name or rank competing agencies and does not automatically favour Weissmann &mdash; you rate any proposal already on your desk, including one from Weissmann, against the same four stages.</p>
+  </header>
+
+  <section class="card card-pad setup" aria-label="Candidate details">
+    <div class="field">
+      <label for="agencyName">Candidate agency (optional)</label>
+      <input id="agencyName" type="text" placeholder="[candidate agency]" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="field">
+      <span class="field-label" id="typeLbl">This candidate is a&hellip;</span>
+      <div class="seg" role="radiogroup" aria-labelledby="typeLbl">
+        <label class="seg-opt"><input type="radio" name="atype" value="solo"><span>Solo / freelancer</span></label>
+        <label class="seg-opt"><input type="radio" name="atype" value="team"><span>Team / agency</span></label>
+        <label class="seg-opt"><input type="radio" name="atype" value="unsure"><span>Not sure yet</span></label>
+      </div>
+    </div>
+    <p class="progress" id="progress">0 of 12 checkpoints logged.</p>
+  </section>
+
+  <p class="cp-hint" style="margin:16px 2px 0">For each question, log the answer you actually got &mdash; clear &amp; specific, vague or verbal only, or evasive / no answer &mdash; and write the answer down rather than your impression of the meeting. Compare notes only once every stage is complete.</p>
+
+  <div id="stages"></div>
+
+  <section class="card card-pad read" aria-labelledby="readHeading">
+    <h2 class="read-head" id="readHeading">Candidate &mdash; readiness read</h2>
+    <div id="readBody" aria-live="polite"></div>
+  </section>
+
+  <div class="actions">
+    <button type="button" class="btn" id="copyBtn">Copy this tracker as text</button>
+    <button type="button" class="btn btn-ghost" id="resetBtn">Reset</button>
+    <span class="copy-status" id="copyStatus" role="status" aria-live="polite"></span>
+  </div>
+
+  <p class="disc">Orientation, not advice or a quote. This is a companion to the Weissmann buyer's guide: it turns the guide's four due-diligence stages into a checklist you complete for one candidate at a time. It scores nothing on its own &mdash; every rating and note here is yours, and the readout only tallies what you enter. Everything stays in this page: nothing is stored, sent or shared. The guide's own disclosure applies (Weissmann builds websites, has a commercial interest, does not rank competing agencies, and does not automatically favour itself), and it is not legal advice &mdash; for a data-processing agreement under the revised Swiss FADP, confirm specifics with the agency and your own advisers.</p>
+
+  <footer class="linkbar" aria-label="Read more on weissmann.ai">
+    <p class="lb-title">Keep going</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/marketing-seo-geo/best-web-design-agencies-switzerland/" target="_blank" rel="noopener noreferrer" aria-label="Read the full web design agency buyer's guide on weissmann.ai (opens in a new tab)">Read the full buyer's guide &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-web-development/" target="_blank" rel="noopener noreferrer" aria-label="See Weissmann's AI web development service (opens in a new tab)">Weissmann website service &rarr;</a>
+    </div>
+    <p class="att">Weissmann &middot; a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var STAGES = [
+    {
+      n:1, key:"call", name:"The initial call",
+      blurb:"Tests whether the agency is diagnosing your business or reciting a script it uses on every caller.",
+      checks:[
+        { id:"c1", q:"What do you need to know about my business before you can design anything?",
+          hint:"Strong: it asks about your audience, offer, competitors and what is wrong with the current site before showing a single visual concept. Red flag: it opens with a mockup or visual style before asking a question — a sign it is selling a template.",
+          wnote:"Article note: Weissmann's published process states that structure, audience and conversion goals come before a line of code — the minimum to expect from any agency, not a special claim." },
+        { id:"c2", q:"How will we know, in measurable terms, whether this project worked?",
+          hint:"Strong: it names a measure — enquiries, bookings, rankings or load time. Red flag: it cannot define success in advance, so it is unlikely to build toward it." },
+        { id:"c3", ownership:true, q:"Who owns the code, the domain and the hosting account once the project is finished?",
+          hint:"Strong: a clear answer this early. Red flag: it becomes vague or changes the subject when you ask, on the first call, who owns the code, the domain and the hosting." }
+      ]
+    },
+    {
+      n:2, key:"proposal", name:"The written proposal",
+      blurb:"Tests whether its commitments are specific enough to hold anyone to later.",
+      checks:[
+        { id:"c4", q:"What, specifically, does 'SEO included' cover on this project?",
+          hint:"Strong: an itemised list — page structure, metadata, a sitemap, structured data. Red flag: the phrase 'SEO included' sitting on its own." },
+        { id:"c5", q:"What exactly is excluded from this price, and what would trigger an extra charge?",
+          hint:"Strong: an explicit list of what is excluded and billed separately, so nothing appears as a surprise later.",
+          wnote:"Article note: Weissmann's published packages list in writing what is not included — copywriting, additional language versions, paid third-party licences. Its Starter website is a one-time CHF 880 promotion (regular CHF 2'490), not a subscription." },
+        { id:"c6", q:"What happens to the timeline and the price if my content arrives later than planned?",
+          hint:"Strong: a defined number of revision rounds and a stated consequence if your own content arrives late." }
+      ]
+    },
+    {
+      n:3, key:"reference", name:"The independent reference check",
+      blurb:"Tests whether the outcomes it claims are verifiable independently of its own account.",
+      checks:[
+        { id:"c7", q:"Can I contact two or three clients directly, without you present on the call?",
+          hint:"Strong: two or three clients you can reach independently — a real company, a real person, a phone number that is not the agency's own. Red flag: references you cannot verify without the agency in the room.",
+          wnote:"Article note: the guide discloses that Weissmann currently has no published customer case studies — an honest 'not yet' from a young company, judged on candour rather than treated as automatically disqualifying." },
+        { id:"c8", q:"What is a live, comparable site I can test myself with a free page-speed tool?",
+          hint:"Strong: a live URL you can run through a free tool such as Google PageSpeed Insights yourself — read the number, not the adjective.",
+          wnote:"Article note: Weissmann describes its own stack as pre-rendered pages built with Astro and served through Netlify — a claim you can test by running weissmann.ai through the same free tool." },
+        { id:"c9", q:"What happened the last time a client needed a small change months after launch?",
+          hint:"Strong: a reference can say how long a small change took six months after launch, and what it cost. That single question exposes more about support and ownership than an hour of testimonials." }
+      ]
+    },
+    {
+      n:4, key:"contract", name:"The contract review",
+      blurb:"Tests what actually happens once the relationship ends, whether that is well or badly.",
+      checks:[
+        { id:"c10", ownership:true, q:"Which specific accounts transfer to my name, and when?",
+          hint:"Strong: the contract itself — not an email — names them: domain registrar, hosting account, CMS admin login, source repository, and to whose name.",
+          wnote:"Article note: the guide flags that a public 'handover' after launch can go un-itemised — which exact accounts and access it transfers is the specific to confirm, from any agency, before you sign." },
+        { id:"c11", q:"Is this a one-time invoice or a recurring contract, and how do I cancel it?",
+          hint:"Strong: a clear notice period, whether it renews automatically, and any exit fee for releasing your own domain or files.",
+          wnote:"Article note: Weissmann's website packages are billed once rather than as a subscription, which removes the automatic-renewal trap — but a one-time invoice and a written transfer of code, domain and hosting are two different things; verify both." },
+        { id:"c12", q:"Is there a written response-time commitment for support after launch, or only a verbal one?",
+          hint:"Strong: a response time in writing. If the agency keeps processing visitor data after launch — form submissions, analytics — a written data-processing agreement under the revised Swiss FADP belongs in this conversation too." }
+      ]
+    }
+  ];
+
+  var OPTIONS = [
+    { val:"unset",  label:"Not checked" },
+    { val:"strong", label:"Clear & specific" },
+    { val:"weak",   label:"Vague / verbal only" },
+    { val:"flag",   label:"Evasive / no answer" }
+  ];
+
+  var state = {};
+  var notes = {};
+  var agencyName = "";
+  var agencyType = "";
+
+  STAGES.forEach(function(s){ s.checks.forEach(function(c){ state[c.id] = "unset"; notes[c.id] = ""; }); });
+
+  function el(tag, cls){ var e = document.createElement(tag); if(cls) e.className = cls; return e; }
+  function plural(n){ return n === 1 ? "" : "s"; }
+
+  var stagesEl  = document.getElementById("stages");
+  var readBody  = document.getElementById("readBody");
+  var readHead  = document.getElementById("readHeading");
+  var progressEl= document.getElementById("progress");
+  var copyStatus= document.getElementById("copyStatus");
+  var nameInput = document.getElementById("agencyName");
+
+  function markOn(id){
+    var labs = document.querySelectorAll('label[data-cp="' + id + '"]');
+    Array.prototype.forEach.call(labs, function(l){
+      var i = l.querySelector("input");
+      if(i && i.checked){ l.classList.add("on"); } else { l.classList.remove("on"); }
+    });
+  }
+
+  STAGES.forEach(function(s){
+    var card = el("section", "stage card card-pad");
+
+    var head = el("div", "stage-head");
+    var num = el("span", "stage-num"); num.textContent = String(s.n);
+    var htext = el("div", "stage-htext");
+    var nm = el("h2", "stage-name"); nm.textContent = "Stage " + s.n + ": " + s.name;
+    var bl = el("p", "stage-blurb"); bl.textContent = s.blurb;
+    htext.appendChild(nm); htext.appendChild(bl);
+    var tally = el("span", "stage-tally"); tally.id = "tally-" + s.key; tally.textContent = "0 of " + s.checks.length + " logged";
+    head.appendChild(num); head.appendChild(htext); head.appendChild(tally);
+    card.appendChild(head);
+
+    s.checks.forEach(function(c){
+      var fs = el("fieldset", "cp");
+      var lg = el("legend", "cp-q"); lg.textContent = c.q; fs.appendChild(lg);
+      var hint = el("p", "cp-hint"); hint.textContent = c.hint; fs.appendChild(hint);
+      if(c.wnote){ var nt = el("p", "cp-note"); nt.textContent = c.wnote; fs.appendChild(nt); }
+
+      var rate = el("div", "rate");
+      OPTIONS.forEach(function(o){
+        var lab = el("label", "rate-opt");
+        lab.setAttribute("data-val", o.val);
+        lab.setAttribute("data-cp", c.id);
+        var inp = document.createElement("input");
+        inp.type = "radio"; inp.name = "rate-" + c.id; inp.value = o.val;
+        if(o.val === "unset"){ inp.checked = true; lab.classList.add("on"); }
+        inp.addEventListener("change", function(){ state[c.id] = o.val; markOn(c.id); recompute(); });
+        var sp = el("span", null); sp.textContent = o.label;
+        lab.appendChild(inp); lab.appendChild(sp);
+        rate.appendChild(lab);
+      });
+      fs.appendChild(rate);
+
+      var ta = document.createElement("textarea");
+      ta.className = "cp-notes"; ta.rows = 2;
+      ta.setAttribute("aria-label", "The actual answer you got — " + c.q);
+      ta.placeholder = "The actual answer you got (optional, stays on this page)";
+      ta.addEventListener("input", function(){ notes[c.id] = ta.value; });
+      fs.appendChild(ta);
+
+      card.appendChild(fs);
+    });
+
+    stagesEl.appendChild(card);
+  });
+
+  function chip(cls, label, n){
+    var c = el("span", "chip " + cls);
+    c.appendChild(document.createTextNode(label + ":"));
+    var b = el("b", null); b.textContent = String(n);
+    c.appendChild(b);
+    return c;
+  }
+
+  function buildMessages(strong, weak, flag, unset){
+    var msgs = [];
+
+    if(flag > 0){
+      msgs.push({ t:"miss", x:"You've logged " + flag + " evasive or unanswered answer" + plural(flag) + ". In this guide a red flag is an evasive or unanswered question — not the agency's size or a lower price. Note the exact question and put it back to them directly before you sign." });
+    }
+
+    var ownFlag = (state.c3 === "flag" || state.c10 === "flag");
+    var ownVague = ownFlag || (state.c3 === "weak" || state.c10 === "weak");
+    if(ownVague){
+      msgs.push({ t: ownFlag ? "miss" : "warn", x:"Ownership of the code, domain and hosting runs through the call, the proposal and the contract. Where it stays vague, the guide treats a cheaper quote as a cost deferred to whichever year you try to leave." });
+    }
+
+    if(weak > 0){
+      msgs.push({ t:"warn", x: weak + " answer" + plural(weak) + " " + (weak === 1 ? "is" : "are") + " vague or verbal only. A verbal promise about ownership either holds up or quietly does not — get the specifics in writing before you sign." });
+    }
+
+    if(unset === 12){
+      msgs.push({ t:"accent", x:"Nothing logged yet. Work through each stage in order and write down the actual answer you get, not your impression of the meeting." });
+    } else if(unset > 0){
+      msgs.push({ t:"accent", x:"You still have " + unset + " checkpoint" + plural(unset) + " to run. Complete all four stages for this candidate before you compare it with the others on your desk." });
+      var laterUnset = ["c7","c8","c9","c10","c11","c12"].some(function(id){ return state[id] === "unset"; });
+      if(laterUnset){
+        msgs.push({ t:"accent", x:"Short on time? The guide says the reference check and the contract review most reliably catch a problem the initial call and the proposal missed — run those two first." });
+      }
+    } else {
+      if(flag === 0 && weak === 0){
+        msgs.push({ t:"ok", x:"All four stages complete and every logged answer is clear and specific. That is the outcome this framework is built to surface — a choice you can defend stage by stage on paper. It still does not tell you to hire them: run the same four stages on the other proposals and let the comparison make the call." });
+      } else {
+        msgs.push({ t:"accent", x:"All four stages complete for this candidate. Now run the same four stages on the other proposals on your desk, and compare only once each candidate is finished." });
+      }
+    }
+
+    if(agencyType === "solo"){
+      msgs.push({ t:"warn", x:"Solo / freelancer: the guide's realistic scenario is the single point of contact who becomes unavailable in week eight of a twelve-week build. Ask — in writing — what happens then, and confirm working files and staging access are shared with you during the build, not only at the end." });
+    } else if(agencyType === "team"){
+      msgs.push({ t:"accent", x:"Team / agency: ask who your named point of contact will be and what happens if that person leaves. Size is not itself a red flag — an unanswered version of that question is." });
+    } else if(agencyType === "unsure"){
+      msgs.push({ t:"neutral", x:"Not sure whether this is a solo operator or a team yet? Find out — it changes what you ask about continuity at the call and in the contract." });
+    }
+
+    return msgs;
+  }
+
+  function recompute(){
+    var strong = 0, weak = 0, flag = 0, unset = 0;
+    Object.keys(state).forEach(function(id){
+      var v = state[id];
+      if(v === "strong"){ strong++; }
+      else if(v === "weak"){ weak++; }
+      else if(v === "flag"){ flag++; }
+      else { unset++; }
+    });
+    var logged = 12 - unset;
+
+    var nm = agencyName.replace(/^\s+|\s+$/g, "");
+    readHead.textContent = (nm ? nm : "Candidate") + " — readiness read";
+    progressEl.textContent = logged + " of 12 checkpoints logged.";
+
+    STAGES.forEach(function(s){
+      var t = 0;
+      s.checks.forEach(function(c){ if(state[c.id] !== "unset"){ t++; } });
+      var tEl = document.getElementById("tally-" + s.key);
+      if(tEl){ tEl.textContent = t + " of " + s.checks.length + " logged"; }
+    });
+
+    while(readBody.firstChild){ readBody.removeChild(readBody.firstChild); }
+
+    var chips = el("div", "chips");
+    chips.appendChild(chip("s", "Clear & specific", strong));
+    chips.appendChild(chip("w", "Vague / verbal", weak));
+    chips.appendChild(chip("f", "Red flag", flag));
+    chips.appendChild(chip("u", "To check", unset));
+    readBody.appendChild(chips);
+
+    var msgs = buildMessages(strong, weak, flag, unset);
+    var ul = el("ul", "msgs");
+    msgs.forEach(function(m){
+      var li = el("li", "msg " + m.t);
+      var d = el("span", "dot");
+      var sp = el("span", null); sp.textContent = m.x;
+      li.appendChild(d); li.appendChild(sp);
+      ul.appendChild(li);
+    });
+    readBody.appendChild(ul);
+  }
+
+  nameInput.addEventListener("input", function(){
+    agencyName = nameInput.value;
+    var nm = agencyName.replace(/^\s+|\s+$/g, "");
+    readHead.textContent = (nm ? nm : "Candidate") + " — readiness read";
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="atype"]'), function(i){
+    i.addEventListener("change", function(){
+      agencyType = i.value;
+      Array.prototype.forEach.call(document.querySelectorAll(".seg-opt"), function(l){
+        var inp = l.querySelector("input");
+        if(inp && inp.checked){ l.classList.add("on"); } else { l.classList.remove("on"); }
+      });
+      recompute();
+    });
+  });
+
+  function buildText(){
+    var lines = [];
+    var nm = agencyName.replace(/^\s+|\s+$/g, "");
+    var typeLabel = agencyType === "solo" ? "solo / freelancer"
+      : agencyType === "team" ? "team / agency"
+      : agencyType === "unsure" ? "not sure yet" : "not specified";
+    var strong = 0, weak = 0, flag = 0, unset = 0;
+    Object.keys(state).forEach(function(id){
+      var v = state[id];
+      if(v === "strong"){ strong++; } else if(v === "weak"){ weak++; }
+      else if(v === "flag"){ flag++; } else { unset++; }
+    });
+    lines.push("Web design agency due-diligence tracker");
+    lines.push("Candidate: " + (nm ? nm : "[candidate agency]"));
+    lines.push("Type: " + typeLabel);
+    lines.push("Summary: " + strong + " clear, " + weak + " vague, " + flag + " red flag, " + unset + " to check (of 12).");
+    lines.push("");
+    var lab = { unset:"[ to check ]", strong:"[ clear ]", weak:"[ vague ]", flag:"[ red flag ]" };
+    STAGES.forEach(function(s){
+      lines.push("Stage " + s.n + " — " + s.name);
+      s.checks.forEach(function(c){
+        lines.push("  " + lab[state[c.id]] + " " + c.q);
+        var n = (notes[c.id] || "").replace(/^\s+|\s+$/g, "");
+        if(n){ lines.push("        answer: " + n); }
+      });
+      lines.push("");
+    });
+    lines.push("Generated locally from the Weissmann buyer's guide. Orientation, not a quote. Nothing was stored or sent.");
+    return lines.join("\n");
+  }
+
+  function legacyCopy(text){
+    try{
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", "");
+      ta.style.position = "absolute"; ta.style.left = "-9999px";
+      document.body.appendChild(ta); ta.select();
+      var okc = document.execCommand("copy");
+      document.body.removeChild(ta);
+      return okc;
+    }catch(e){ return false; }
+  }
+
+  function flashOk(){ copyStatus.textContent = "Copied to clipboard."; setTimeout(function(){ copyStatus.textContent = ""; }, 2600); }
+  function flashFail(){ copyStatus.textContent = "Copy failed — select the text manually."; }
+
+  document.getElementById("copyBtn").addEventListener("click", function(){
+    var text = buildText();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(flashOk, function(){ if(legacyCopy(text)){ flashOk(); } else { flashFail(); } });
+    } else {
+      if(legacyCopy(text)){ flashOk(); } else { flashFail(); }
+    }
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    Object.keys(state).forEach(function(id){ state[id] = "unset"; notes[id] = ""; });
+    Array.prototype.forEach.call(document.querySelectorAll('.rate input[value="unset"]'), function(i){ i.checked = true; });
+    Array.prototype.forEach.call(document.querySelectorAll(".cp-notes"), function(t){ t.value = ""; });
+    Array.prototype.forEach.call(document.querySelectorAll(".rate-opt"), function(l){
+      var i = l.querySelector("input");
+      if(i && i.checked){ l.classList.add("on"); } else { l.classList.remove("on"); }
+    });
+    agencyType = "";
+    Array.prototype.forEach.call(document.querySelectorAll('input[name="atype"]'), function(i){ i.checked = false; });
+    Array.prototype.forEach.call(document.querySelectorAll(".seg-opt"), function(l){ l.classList.remove("on"); });
+    agencyName = ""; nameInput.value = "";
+    copyStatus.textContent = "";
+    recompute();
+  });
+
+  recompute();
+})();
+</script>

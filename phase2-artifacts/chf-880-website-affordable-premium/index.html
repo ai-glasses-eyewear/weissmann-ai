@@ -1,0 +1,539 @@
+<title>What CHF 880 Includes — Inclusion Explorer · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .priceband{display:grid;grid-template-columns:1fr;gap:12px;align-items:center;margin-top:18px}
+  @media(min-width:640px){.priceband{grid-template-columns:auto auto auto 1fr;gap:22px}}
+  .pb-item{display:flex;flex-direction:column;gap:2px}
+  .pb-lbl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700}
+  .pb-old{font-size:1.2rem;color:var(--ink-mute);text-decoration:line-through}
+  .pb-new{font-size:1.95rem;font-weight:800;color:var(--ink);letter-spacing:-.01em;line-height:1.05}
+  .pb-diff{font-size:1.1rem;font-weight:800;color:var(--ok)}
+  .pb-sub{font-size:.82rem;color:var(--ink-mute)}
+  .pb-note{grid-column:1/-1;font-size:.82rem;color:var(--ink-soft);background:var(--soft);border-radius:10px;padding:10px 12px;margin-top:2px}
+
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:22px 0 6px}
+  .lg{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--ink-soft)}
+  .dot{width:11px;height:11px;border-radius:3px;display:inline-block;flex:none}
+  .dot.in{background:var(--ok)}.dot.addon{background:var(--warn)}.dot.tier{background:var(--miss)}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+  .chip{font:inherit;font-size:.85rem;font-weight:600;border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);border-radius:999px;padding:7px 14px;cursor:pointer}
+  .chip[aria-pressed="true"]{border-color:var(--navy);color:var(--navy);background:var(--soft)}
+  .chip:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  .grid{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:880px){.grid{grid-template-columns:1.35fr .95fr;align-items:start}}
+
+  .zone{margin-bottom:16px}
+  .zone-h{display:flex;align-items:baseline;gap:9px;margin:0 0 10px}
+  .zone-h h3{font-size:1rem;margin:0;letter-spacing:-.01em}
+  .zone-c{font-size:.76rem;color:var(--ink-mute);font-weight:700}
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  @media(max-width:480px){.tiles{grid-template-columns:1fr}}
+  .tile{position:relative;text-align:left;font:inherit;cursor:pointer;background:var(--card);border:1.5px solid var(--line);border-left-width:4px;border-radius:11px;padding:11px 30px 11px 12px;display:flex;flex-direction:column;gap:3px;color:var(--ink)}
+  .tile .t-name{font-weight:700;font-size:.9rem;line-height:1.2}
+  .tile .t-facet{font-size:.76rem;color:var(--ink-mute)}
+  .tile.in{border-left-color:var(--ok)}
+  .tile.addon{border-left-color:var(--warn)}
+  .tile.tier{border-left-color:var(--miss)}
+  .tile:hover{background:var(--soft)}
+  .tile[aria-current="true"]{border-color:var(--navy);box-shadow:0 0 0 2px color-mix(in srgb,var(--navy) 24%,transparent)}
+  .tile:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .tile .need-flag{position:absolute;top:9px;right:9px;font-size:.62rem;font-weight:800;letter-spacing:.04em;color:var(--accent);display:none}
+  .tile.needed .need-flag{display:block}
+  .tile.needed{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
+  .empty-zone{font-size:.82rem;color:var(--ink-mute);padding:8px 2px}
+
+  .side{display:flex;flex-direction:column;gap:14px}
+  @media(min-width:880px){.side{position:sticky;top:14px}}
+  .detail .badge{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+  .badge.in{background:var(--ok-soft);color:var(--ok)}
+  .badge.addon{background:var(--warn-soft);color:var(--warn)}
+  .badge.tier{background:var(--miss-soft);color:var(--miss)}
+  .d-name{font-size:1.15rem;font-weight:800;margin:11px 0 3px;letter-spacing:-.01em}
+  .d-where{font-size:.85rem;font-weight:700;color:var(--ink-soft);margin:0}
+  .d-lbl{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:14px 0 5px}
+  .d-scope{font-size:.83rem;background:var(--soft);border-radius:9px;padding:9px 11px;font-family:var(--mono);line-height:1.45;color:var(--ink-soft)}
+  .d-note{font-size:.9rem;color:var(--ink-soft);margin:5px 0 0}
+  .d-empty{color:var(--ink-mute);font-size:.92rem;margin:0}
+  .d-toggle{margin-top:16px;font:inherit;font-weight:700;font-size:.9rem;cursor:pointer;border-radius:10px;padding:11px 14px;border:1.5px solid var(--navy);background:var(--card);color:var(--navy);width:100%}
+  .d-toggle.on{background:var(--navy);color:var(--on-navy)}
+  .d-toggle:hover{background:var(--soft)}.d-toggle.on:hover{background:var(--navy-hover)}
+  .d-toggle:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+
+  .verdict .v-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 8px}
+  .verdict h3{font-size:1rem;margin:0;letter-spacing:-.01em}
+  .v-count{font-size:.78rem;color:var(--ink-mute);font-weight:700}
+  .v-msg{font-size:.92rem;line-height:1.5;color:var(--ink-soft)}
+  .v-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .v-list li{font-size:.84rem;display:flex;gap:8px;align-items:flex-start;color:var(--ink-soft)}
+  .v-list .vd{margin-top:5px}
+  .v-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .btn-sm{font:inherit;font-size:.82rem;font-weight:600;cursor:pointer;border-radius:9px;padding:8px 12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft)}
+  .btn-sm:hover{background:var(--soft)}
+  .btn-sm:disabled{opacity:.5;cursor:not-allowed}
+  .btn-sm:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .copied{font-size:.8rem;color:var(--ok);font-weight:700;align-self:center}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <p class="kicker">Website Pricing, Made Transparent</p>
+    <h1>What CHF 880 honestly includes — and what it doesn't</h1>
+    <p class="lede">An inclusion map for Weissmann's Starter Website. Explore each website element to see whether it sits inside the CHF 880 fixed price, is a separately quoted add-on, or points to a larger package — each with the exact scope line. Mark what you actually need and get an honest read on where your project belongs.</p>
+
+    <div class="card card-pad priceband">
+      <div class="pb-item">
+        <span class="pb-lbl">Regular price</span>
+        <span class="pb-old">CHF 2,490</span>
+      </div>
+      <div class="pb-item">
+        <span class="pb-lbl">Special promotion</span>
+        <span class="pb-new">CHF 880</span>
+        <span class="pb-sub">one-time fixed fee, not a subscription</span>
+      </div>
+      <div class="pb-item">
+        <span class="pb-lbl">Difference</span>
+        <span class="pb-diff">CHF 1,610 off</span>
+        <span class="pb-sub">the exact franc figure</span>
+      </div>
+      <div class="pb-item"></div>
+      <p class="pb-note">Both are real, current prices for one specific package — the Starter Website — not a blanket rate. Weissmann deliberately does not frame this as a rounded percentage or a countdown; no end date is stated. Always check the live figure at weissmann.ai/en/preise/.</p>
+    </div>
+  </header>
+
+  <div class="legend" aria-hidden="true">
+    <span class="lg"><span class="dot in"></span> Inside the CHF 880 scope</span>
+    <span class="lg"><span class="dot addon"></span> Separately quoted add-on</span>
+    <span class="lg"><span class="dot tier"></span> Points to a larger package</span>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filter website elements by inclusion">
+    <button class="chip" data-filter="all" aria-pressed="true">All elements</button>
+    <button class="chip" data-filter="in" aria-pressed="false">Inside CHF 880</button>
+    <button class="chip" data-filter="addon" aria-pressed="false">Add-ons</button>
+    <button class="chip" data-filter="tier" aria-pressed="false">Larger package</button>
+  </div>
+
+  <div class="grid">
+    <div id="map" aria-label="Inclusion map of website elements"></div>
+
+    <div class="side">
+      <section class="card card-pad detail" id="detail" role="region" aria-live="polite" aria-label="Element detail">
+        <p class="d-empty">Select any element on the left to see whether it is included in the CHF 880 Starter scope, and the exact scope line behind it.</p>
+      </section>
+
+      <section class="card card-pad verdict" id="verdict" role="region" aria-live="polite" aria-label="Your requirements summary">
+        <div class="v-head">
+          <h3>My requirements</h3>
+          <span class="v-count" id="v-count">0 selected</span>
+        </div>
+        <p class="v-msg" id="v-msg">Open any element and mark what you actually need. This panel then tells you whether your list fits inside the CHF 880 fixed price, needs separately quoted add-ons, or points to a larger package.</p>
+        <ul class="v-list" id="v-list"></ul>
+        <div class="v-actions">
+          <button class="btn-sm" id="copyBtn" disabled>Copy my checklist</button>
+          <button class="btn-sm" id="clearBtn" disabled>Clear all</button>
+          <span class="copied" id="copied" hidden>Copied</span>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <p class="disc">Orientation, not a quote or advice. This tool restates the scope of Weissmann's Starter, Business and Complex Website packages from the guide and the published pricing; it does not calculate a price, and a technical SEO/GEO foundation improves starting conditions but never guarantees a specific Google position or AI citation. Nothing you select is saved, sent, or tracked — everything stays in your browser. For the binding figures and packages, see weissmann.ai/en/preise/.</p>
+
+  <footer class="linkbar" aria-label="Related links">
+    <p class="lb-title">Go deeper</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/marketing-seo-geo/affordable-premium-website-chf-880/" target="_blank" rel="noopener noreferrer" aria-label="Read the full guide: what CHF 880 can honestly buy (opens in a new tab)">Read the full CHF 880 guide →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-web-development/" target="_blank" rel="noopener noreferrer" aria-label="Weissmann AI web development service (opens in a new tab)">Explore AI web development →</a>
+    </div>
+    <p class="att">An inclusion explorer · a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // Every element below is grounded in the article JSON and in src/data/pricing.ts.
+  // zone: in = included in the CHF 880 Starter fixed price; addon = available but
+  // scoped and quoted separately, on top of CHF 880; tier = belongs to the
+  // Business (CHF 4,990) or Complex (from CHF 9,900) package.
+  var ELEMENTS = [
+    // ---- Inside the CHF 880 Starter scope ----
+    { id:"pages5", zone:"in", name:"Up to 5 core pages", facet:"Home, offer, about, references, contact",
+      where:"Included in the CHF 880 Starter scope",
+      scope:"Up to 5 core pages, responsive design, mobile-optimized",
+      note:"Five pages genuinely cover a credible presence: home, offer, about, work or references, contact. A sixth page is not an add-on line to the Starter price — it is a signal for the Business tier." },
+    { id:"responsive", zone:"in", name:"Responsive, mobile-optimized design", facet:"Bespoke design, not a template",
+      where:"Included in the CHF 880 Starter scope",
+      scope:"Up to 5 core pages, responsive design, mobile-optimized",
+      note:"Bespoke premium web design, not a page-builder theme with your logo dropped in. The promotional price is about the defined scope, not reduced design quality." },
+    { id:"form", zone:"in", name:"Contact or lead form", facet:"Enquiries by form, not phone only",
+      where:"Included in the CHF 880 Starter scope",
+      scope:"Contact or lead form",
+      note:"A contact or lead form — what a small business actually needs — not a payment-enabled shop or a booking engine." },
+    { id:"seogeo", zone:"in", name:"Technical SEO + GEO foundation", facet:"Readable by search and AI from day one",
+      where:"Included in the CHF 880 Starter scope",
+      scope:"Technical SEO and GEO foundation",
+      note:"Correct page structure, a sitemap, sensible metadata, clean internal linking, so search engines and AI answer systems can parse the site from day one. It does not replace ongoing SEO and does not guarantee a ranking — nobody could honestly promise that." },
+    { id:"ga4", zone:"in", name:"Google Analytics 4 + Search Console", facet:"Measurement from week one",
+      where:"Included in the CHF 880 Starter scope",
+      scope:"Google Analytics 4 and Search Console set up",
+      note:"From week one you can see whether anyone is visiting and whether Google can find the site — rather than discovering three months later that neither tool was ever connected." },
+    { id:"schema", zone:"in", name:"Basic structured data", facet:"Part of the technical base",
+      where:"Included in the CHF 880 Starter scope",
+      scope:"Basic structured data, performance optimization, security headers",
+      note:"Basic structured data is part of the fixed-price technical base (advanced structured data belongs to the Business tier)." },
+    { id:"perf", zone:"in", name:"Performance optimization", facet:"Passes its first load test",
+      where:"Included in the CHF 880 Starter scope",
+      scope:"Basic structured data, performance optimization, security headers",
+      note:"Performance optimization so the site does not fail its first load test — the difference between premium execution and a cut-rate result." },
+    { id:"headers", zone:"in", name:"Security headers", facet:"Invisible housekeeping, included",
+      where:"Included in the CHF 880 Starter scope",
+      scope:"Basic structured data, performance optimization, security headers",
+      note:"The invisible housekeeping a bargain builder tends to skip — nobody notices it is missing until a security scan or a search engine does." },
+    { id:"netlify", zone:"in", name:"Netlify deployment", facet:"Site deployed and live",
+      where:"Included in the CHF 880 Starter scope",
+      scope:"Netlify deployment, 1 language, 2 defined revision rounds",
+      note:"Deployment on Netlify is part of the fixed price — no surprise line item for something already listed." },
+    { id:"lang1", zone:"in", name:"1 language included", facet:"One language, one client base",
+      where:"Included in the CHF 880 Starter scope",
+      scope:"Netlify deployment, 1 language, 2 defined revision rounds",
+      note:"One language is included. Each additional language brings its own copy, metadata and SEO structure — see “A second language”." },
+    { id:"rev2", zone:"in", name:"2 defined revision rounds", facet:"Content and design refinement",
+      where:"Included in the CHF 880 Starter scope",
+      scope:"Netlify deployment, 1 language, 2 defined revision rounds",
+      note:"Two defined rounds for content and design refinement are built in. A third, more fundamental change is a separately scoped piece of work — see “A third revision round”." },
+
+    // ---- Separately quoted add-ons (on top of CHF 880) ----
+    { id:"copy", zone:"addon", name:"Copywriting", facet:"You supply the words, or quote it separately",
+      where:"Not in the fixed price — provide it yourself, or scoped and quoted separately in advance",
+      scope:"Copywriting, additional languages and paid third-party tools are not included",
+      note:"You supply the content for your up to five pages yourself, or copywriting is scoped and quoted separately in advance. The Starter package designs and builds the site; it does not write it for you. Prepare your text before kickoff, or timelines slip while the words are still being written." },
+    { id:"lang2", zone:"addon", name:"A second language", facet:"Language surcharge, or a larger package",
+      where:"Not in the fixed price — a separately quoted language surcharge, or a larger package",
+      scope:"Copywriting, additional languages and paid third-party tools are not included",
+      note:"One language is included. A bilingual site — commonly German/English or German/French — needs either a larger package or a separately quoted language surcharge, because every additional language brings its own copy, metadata and SEO structure. If a second language surfaces after signing, it is a reason for an open conversation about a larger scope, not a surprise surcharge." },
+    { id:"thirdparty", zone:"addon", name:"Paid third-party tools", facet:"Booking, form plugins, CRM subscriptions",
+      where:"Not in the fixed price — arranged and paid separately",
+      scope:"Copywriting, additional languages and paid third-party tools are not included",
+      note:"Subscriptions for booking systems, advanced form plugins, CRM connections or similar services are, if wanted, arranged and paid separately. They sit outside the fixed price." },
+    { id:"rev3", zone:"addon", name:"A third revision round", facet:"Possible, separately scoped",
+      where:"Not in the fixed price — a separately scoped piece of work",
+      scope:"Netlify deployment, 1 language, 2 defined revision rounds",
+      note:"Two defined rounds are built in. A third, more fundamental change after sign-off — a new page concept, a different structure — remains possible, but as a separately scoped piece of work, not a silent extra on top of the fixed price." },
+
+    // ---- Points to a larger package ----
+    { id:"page6", zone:"tier", name:"A sixth page and beyond", facet:"More structure than five pages",
+      where:"Business Website (CHF 4,990)",
+      scope:"Approx. 10–20 pages per approved scope, premium custom design",
+      note:"A second location, a blog, several distinct service pages — more structure is not an add-on line to the Starter price; it is a signal that the Business Website is the right category instead." },
+    { id:"blog", zone:"tier", name:"Blog / knowledge section", facet:"Ongoing content hub",
+      where:"Business Website (CHF 4,990)",
+      scope:"Multilingual-ready, blog or knowledge section",
+      note:"A blog or knowledge section is part of the Business scope, not the Starter five-page frame." },
+    { id:"booking", zone:"tier", name:"Booking connection", facet:"Booking engine / scheduling",
+      where:"Business Website (CHF 4,990)",
+      scope:"Advanced forms, booking/CRM connection where applicable",
+      note:"A booking connection belongs to the Business scope's advanced forms — not to the Starter contact form." },
+    { id:"crm", zone:"tier", name:"CRM connection", facet:"Leads into your CRM",
+      where:"Business Website (CHF 4,990); deep API/CRM integrations → Complex",
+      scope:"Advanced forms, booking/CRM connection where applicable",
+      note:"A CRM connection belongs to the Business scope's advanced forms. Deeper API and CRM integrations sit in the Complex / Custom category." },
+    { id:"multiling", zone:"tier", name:"Full multilingual site", facet:"Several languages, one architecture",
+      where:"Business (CHF 4,990); a large architecture → Complex (from CHF 9,900)",
+      scope:"Multilingual-ready, blog or knowledge section",
+      note:"Multilingual readiness is part of the Business scope. A large multilingual information architecture belongs to the Complex / Custom category." },
+    { id:"ecom", zone:"tier", name:"E-commerce / online shop", facet:"Payments, shipping, products",
+      where:"Complex / Custom Website (from CHF 9,900)",
+      scope:"E-commerce, member areas, dashboards",
+      note:"An online shop with payment processing, shipping and product management belongs structurally in the Complex category — regardless of how small the business behind it happens to be." },
+    { id:"member", zone:"tier", name:"Member area / login", facet:"Accounts, gated access",
+      where:"Complex / Custom Website (from CHF 9,900)",
+      scope:"E-commerce, member areas, dashboards",
+      note:"A platform with a login area belongs structurally in the Complex category — regardless of how small the business is." }
+  ];
+
+  var ZONES = [
+    { key:"in",    title:"Inside the CHF 880 scope", sub:"one fixed price, no separate line items" },
+    { key:"addon", title:"Separately quoted add-ons", sub:"available on top of CHF 880" },
+    { key:"tier",  title:"Points to a larger package", sub:"Business or Complex, not Starter" }
+  ];
+  var ZONE_LABEL = { in:"Inside CHF 880", addon:"Add-on", tier:"Larger package" };
+
+  var state = { filter:"all", focused:null };
+  var needed = Object.create(null);
+
+  var mapEl = document.getElementById("map");
+  var detailEl = document.getElementById("detail");
+  var vCount = document.getElementById("v-count");
+  var vMsg = document.getElementById("v-msg");
+  var vList = document.getElementById("v-list");
+  var copyBtn = document.getElementById("copyBtn");
+  var clearBtn = document.getElementById("clearBtn");
+  var copiedEl = document.getElementById("copied");
+
+  function byZone(zone){
+    return ELEMENTS.filter(function(e){ return e.zone === zone; });
+  }
+  function neededList(){
+    return ELEMENTS.filter(function(e){ return needed[e.id]; });
+  }
+
+  function renderMap(){
+    mapEl.textContent = "";
+    ZONES.forEach(function(z){
+      var items = byZone(z.key);
+      if(state.filter !== "all" && state.filter !== z.key) return;
+
+      var zone = document.createElement("div");
+      zone.className = "zone";
+
+      var head = document.createElement("div");
+      head.className = "zone-h";
+      var h3 = document.createElement("h3");
+      h3.textContent = z.title;
+      var c = document.createElement("span");
+      c.className = "zone-c";
+      c.textContent = items.length + " · " + z.sub;
+      head.appendChild(h3); head.appendChild(c);
+      zone.appendChild(head);
+
+      var grid = document.createElement("div");
+      grid.className = "tiles";
+      items.forEach(function(e){
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "tile " + e.zone + (needed[e.id] ? " needed" : "");
+        b.setAttribute("data-id", e.id);
+        b.setAttribute("aria-current", state.focused === e.id ? "true" : "false");
+        b.setAttribute("aria-label", e.name + " — " + ZONE_LABEL[e.zone] + (needed[e.id] ? " — on my list" : ""));
+
+        var nm = document.createElement("span");
+        nm.className = "t-name";
+        nm.textContent = e.name;
+        var fc = document.createElement("span");
+        fc.className = "t-facet";
+        fc.textContent = e.facet;
+        var flag = document.createElement("span");
+        flag.className = "need-flag";
+        flag.textContent = "✓ NEEDED";
+        b.appendChild(nm); b.appendChild(fc); b.appendChild(flag);
+        grid.appendChild(b);
+      });
+      zone.appendChild(grid);
+      mapEl.appendChild(zone);
+    });
+  }
+
+  function renderDetail(){
+    detailEl.textContent = "";
+    if(!state.focused){
+      var p = document.createElement("p");
+      p.className = "d-empty";
+      p.textContent = "Select any element on the left to see whether it is included in the CHF 880 Starter scope, and the exact scope line behind it.";
+      detailEl.appendChild(p);
+      return;
+    }
+    var e = ELEMENTS.filter(function(x){ return x.id === state.focused; })[0];
+
+    var badge = document.createElement("span");
+    badge.className = "badge " + e.zone;
+    badge.textContent = ZONE_LABEL[e.zone];
+    detailEl.appendChild(badge);
+
+    var name = document.createElement("p");
+    name.className = "d-name";
+    name.textContent = e.name;
+    detailEl.appendChild(name);
+
+    var where = document.createElement("p");
+    where.className = "d-where";
+    where.textContent = e.where;
+    detailEl.appendChild(where);
+
+    var sl = document.createElement("p");
+    sl.className = "d-lbl";
+    sl.textContent = e.zone === "in" ? "Exact scope line" : (e.zone === "addon" ? "From the scope / exclusions" : "Where it sits (scope line)");
+    detailEl.appendChild(sl);
+    var scope = document.createElement("p");
+    scope.className = "d-scope";
+    scope.textContent = "“" + e.scope + "”";
+    detailEl.appendChild(scope);
+
+    var nl = document.createElement("p");
+    nl.className = "d-lbl";
+    nl.textContent = "What that means";
+    detailEl.appendChild(nl);
+    var note = document.createElement("p");
+    note.className = "d-note";
+    note.textContent = e.note;
+    detailEl.appendChild(note);
+
+    var t = document.createElement("button");
+    t.type = "button";
+    t.className = "d-toggle" + (needed[e.id] ? " on" : "");
+    t.textContent = needed[e.id] ? "✓ On my list — remove" : "Mark as needed";
+    t.setAttribute("aria-pressed", needed[e.id] ? "true" : "false");
+    t.addEventListener("click", function(){ toggleNeed(e.id); });
+    detailEl.appendChild(t);
+  }
+
+  function renderVerdict(){
+    var items = neededList();
+    var n = items.length;
+    vCount.textContent = n === 1 ? "1 selected" : (n + " selected");
+    copyBtn.disabled = n === 0;
+    clearBtn.disabled = n === 0;
+    copiedEl.hidden = true;
+
+    if(n === 0){
+      vMsg.textContent = "Open any element and mark what you actually need. This panel then tells you whether your list fits inside the CHF 880 fixed price, needs separately quoted add-ons, or points to a larger package.";
+      vList.textContent = "";
+      return;
+    }
+
+    var nIn = items.filter(function(e){ return e.zone==="in"; }).length;
+    var nAdd = items.filter(function(e){ return e.zone==="addon"; }).length;
+    var nTier = items.filter(function(e){ return e.zone==="tier"; }).length;
+
+    var msg;
+    if(nTier > 0){
+      msg = countWord(nTier) + " of your selections sit outside the Starter scope and point to the Business or Complex package. The honest move is to start in that category directly, rather than shrinking the project to fit CHF 880 and renegotiating later.";
+    } else if(nAdd > 0){
+      msg = "Everything you picked can be delivered. " + countWord(nAdd) + " " + (nAdd===1?"is a":"are") + " separately quoted add-on" + (nAdd===1?"":"s") + " on top of the CHF 880 fixed price; the rest sits inside it.";
+    } else {
+      msg = "Every item you picked sits inside the CHF 880 Starter scope — one fixed price, no separate line items.";
+    }
+    vMsg.textContent = msg;
+
+    vList.textContent = "";
+    items.forEach(function(e){
+      var li = document.createElement("li");
+      var dot = document.createElement("span");
+      dot.className = "dot " + e.zone + " vd";
+      var txt = document.createElement("span");
+      txt.textContent = e.name + " — " + e.where;
+      li.appendChild(dot); li.appendChild(txt);
+      vList.appendChild(li);
+    });
+  }
+
+  function countWord(k){ return k === 1 ? "One item" : (k + " items"); }
+
+  function toggleNeed(id){
+    if(needed[id]){ delete needed[id]; } else { needed[id] = true; }
+    renderMap();
+    renderDetail();
+    renderVerdict();
+  }
+
+  function focusEl(id){
+    state.focused = id;
+    renderMap();
+    renderDetail();
+    if(window.matchMedia && !window.matchMedia("(min-width:880px)").matches){
+      detailEl.scrollIntoView({ behavior:"smooth", block:"nearest" });
+    }
+  }
+
+  mapEl.addEventListener("click", function(ev){
+    var t = ev.target.closest ? ev.target.closest(".tile") : null;
+    if(!t) return;
+    focusEl(t.getAttribute("data-id"));
+  });
+
+  var chips = document.querySelectorAll(".chip");
+  Array.prototype.forEach.call(chips, function(chip){
+    chip.addEventListener("click", function(){
+      state.filter = chip.getAttribute("data-filter");
+      Array.prototype.forEach.call(chips, function(c){
+        c.setAttribute("aria-pressed", c === chip ? "true" : "false");
+      });
+      renderMap();
+    });
+  });
+
+  clearBtn.addEventListener("click", function(){
+    needed = Object.create(null);
+    renderMap();
+    renderDetail();
+    renderVerdict();
+  });
+
+  copyBtn.addEventListener("click", function(){
+    var text = buildChecklist();
+    copyText(text).then(function(){
+      copiedEl.hidden = false;
+      window.setTimeout(function(){ copiedEl.hidden = true; }, 2000);
+    });
+  });
+
+  function buildChecklist(){
+    var items = neededList();
+    var lines = [];
+    lines.push("My website requirements — checked against the CHF 880 Starter scope");
+    lines.push("");
+    var groups = [
+      { key:"in", head:"Inside CHF 880 (one fixed price):" },
+      { key:"addon", head:"Separately quoted add-ons (on top of CHF 880):" },
+      { key:"tier", head:"Points to a larger package:" }
+    ];
+    groups.forEach(function(g){
+      var gi = items.filter(function(e){ return e.zone===g.key; });
+      if(!gi.length) return;
+      lines.push(g.head);
+      gi.forEach(function(e){ lines.push("- " + e.name + " (" + e.where + ")"); });
+      lines.push("");
+    });
+    lines.push("Read: " + vMsg.textContent);
+    lines.push("");
+    lines.push("Orientation only — not a quote. Live figures: weissmann.ai/en/preise/");
+    return lines.join("\n");
+  }
+
+  function copyText(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      return navigator.clipboard.writeText(text).catch(function(){ return fallbackCopy(text); });
+    }
+    return fallbackCopy(text);
+  }
+  function fallbackCopy(text){
+    return new Promise(function(resolve){
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly","");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch(err) {}
+      document.body.removeChild(ta);
+      resolve();
+    });
+  }
+
+  renderMap();
+  renderDetail();
+  renderVerdict();
+})();
+</script>

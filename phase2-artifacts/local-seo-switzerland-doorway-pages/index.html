@@ -1,0 +1,467 @@
+<title>Doorway-Page Risk Checker · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .stack{display:flex;flex-direction:column;gap:16px;margin-top:18px}
+  .step{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 4px}
+  .sub{color:var(--ink-mute);font-size:.9rem;margin:2px 0 0}
+  fieldset{border:0;margin:0;padding:0}
+  legend{font-weight:700;font-size:1rem;padding:0;margin:0 0 4px}
+  .qhint{color:var(--ink-mute);font-size:.88rem;margin:0 0 10px;max-width:64ch}
+  .opts{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .opt{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;cursor:pointer;background:var(--card)}
+  .opt:hover{background:var(--soft)}
+  .opt input{margin-top:3px;accent-color:var(--navy);width:16px;height:16px;flex:0 0 auto}
+  .opt:focus-within{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 30%,transparent);border-color:var(--navy)}
+  .opt span b{display:block;font-weight:600}
+  .opt span small{color:var(--ink-mute);font-size:.84rem}
+  .grid2{display:grid;grid-template-columns:1fr;gap:16px}@media(min-width:680px){.grid2{grid-template-columns:1fr 1fr}}
+  label.fld{display:block;font-weight:600;margin:0 0 6px;font-size:.95rem}
+  input[type=text]{width:100%;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:11px;padding:11px 13px}
+  input[type=text]:focus-visible{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 26%,transparent)}
+  .check{display:flex;gap:10px;align-items:flex-start;border:1.5px dashed var(--line);border-radius:11px;padding:11px 13px;margin-top:14px;background:var(--soft)}
+  .check input{margin-top:3px;accent-color:var(--accent);width:16px;height:16px;flex:0 0 auto}
+  .check span small{color:var(--ink-mute);font-size:.84rem;display:block}
+  .btn{font:inherit;font-weight:600;cursor:pointer;border-radius:11px;padding:12px 18px;border:1.5px solid var(--navy);background:var(--navy);color:var(--on-navy);min-height:46px}
+  .btn:hover{background:var(--navy-hover);border-color:var(--navy-hover)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .btn.ghost{background:transparent;color:var(--navy)}
+  .btn.ghost:hover{background:var(--soft)}
+  .btn.small{padding:9px 14px;min-height:40px;font-size:.9rem}
+  .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+  .err{color:var(--miss);font-size:.9rem;font-weight:600;margin:10px 0 0;min-height:1px}
+
+  .verdict{border-radius:var(--radius);border:1px solid var(--line);padding:clamp(16px,2.4vw,22px);margin-top:2px}
+  .verdict h3{margin:0;font-size:1.15rem;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .badge{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:800;padding:4px 9px;border-radius:999px;white-space:nowrap}
+  .v-earn{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 40%,transparent)}
+  .v-earn .badge{background:var(--ok);color:var(--on-navy)}
+  .v-fold{background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 40%,transparent)}
+  .v-fold .badge{background:var(--miss);color:#fff}
+  .v-camp{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 40%,transparent)}
+  .v-camp .badge{background:var(--warn);color:#fff}
+  .v-skip{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+  .v-skip .badge{background:var(--accent);color:#fff}
+  .verdict p{margin:12px 0 0;color:var(--ink-soft)}
+  .checklist{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .checklist li{display:flex;gap:9px;align-items:flex-start;font-size:.93rem}
+  .mark{flex:0 0 auto;font-weight:800;width:1.3em;text-align:center}
+  .pass .mark{color:var(--ok)}.fail .mark{color:var(--miss)}
+  .checklist li b{font-weight:600}
+  .note{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 32%,transparent);border-radius:11px;padding:12px 14px;margin-top:14px;font-size:.9rem;color:var(--ink-soft)}
+  .note b{color:var(--ink)}
+  .quote{font-style:italic;color:var(--ink-soft)}
+
+  .tally-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+  .counts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}@media(min-width:620px){.counts{grid-template-columns:repeat(4,1fr)}}
+  .cnt{border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center;background:var(--soft)}
+  .cnt .n{font-size:1.7rem;font-weight:800;line-height:1;color:var(--ink)}
+  .cnt .l{font-size:.74rem;color:var(--ink-mute);margin-top:5px;line-height:1.25}
+  .cnt.earn .n{color:var(--ok)}.cnt.fold .n{color:var(--miss)}.cnt.camp .n{color:var(--warn)}.cnt.skip .n{color:var(--accent)}
+  .ledger{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+  .ledger li{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:.92rem}
+  .tag{font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;font-weight:800;padding:3px 8px;border-radius:999px;white-space:nowrap}
+  .tag.earn{background:var(--ok-soft);color:var(--ok)}.tag.fold{background:var(--miss-soft);color:var(--miss)}.tag.camp{background:var(--warn-soft);color:var(--warn)}
+  .rm{background:none;border:0;color:var(--ink-mute);cursor:pointer;font-size:1.05rem;line-height:1;padding:2px 6px;border-radius:6px}
+  .rm:hover{background:var(--soft);color:var(--miss)}
+  .empty{color:var(--ink-mute);font-size:.9rem;margin:12px 0 0}
+  .guide{font-size:.9rem;color:var(--ink-soft);margin:14px 0 0;border-left:3px solid var(--navy);padding:2px 0 2px 12px}
+  .hidden{display:none}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">AI Marketing, SEO &amp; GEO · Location-Page Strategy</p>
+  <h1>Doorway-page risk checker: does this location earn its own page?</h1>
+  <p class="lede">A dedicated page for Zurich, Zug, Basel or Geneva is worth building only when that location shows real, verifiable evidence. This tool runs the article&rsquo;s four-part evidence test on one candidate location at a time and flags whether it is a genuine local page or a thin, duplicated doorway page &mdash; the exact failure mode Google&rsquo;s own spam policy names.</p>
+
+  <div class="stack">
+
+    <section class="card card-pad" aria-labelledby="s1">
+      <p class="step" id="s1">Step 1 &middot; Your business model</p>
+      <p class="sub">The honest number of location pages depends on business model, not ambition. Pick the one that fits.</p>
+      <fieldset>
+        <legend class="sr-only" style="position:absolute;left:-9999px">Business model</legend>
+        <div class="opts" id="modelOpts">
+          <label class="opt"><input type="radio" name="model" value="depot"><span><b>A single office or depot serving a wider area</b><small>No other staffed location &mdash; e.g. one depot near Winterthur covering several towns.</small></span></label>
+          <label class="opt"><input type="radio" name="model" value="branches"><span><b>A small number of genuinely staffed branches (2&ndash;4)</b><small>Each with its own team, hours and reviews &mdash; e.g. a fiduciary firm with Zurich and Basel offices.</small></span></label>
+          <label class="opt"><input type="radio" name="model" value="network"><span><b>A larger multi-branch network (10+ staffed locations)</b><small>Franchise, clinic group or chain run to a consistent operating standard.</small></span></label>
+          <label class="opt"><input type="radio" name="model" value="single"><span><b>A single-location retail shop, clinic or workshop</b><small>No expansion or franchise plans, adequate current local visibility.</small></span></label>
+        </div>
+      </fieldset>
+    </section>
+
+    <section class="card card-pad hidden" id="skipPanel" aria-live="polite">
+      <div class="verdict v-skip">
+        <h3><span class="badge">Skip entirely</span> The correct number of location pages is zero.</h3>
+        <p>With only one location, there is nothing to test &mdash; not because any test failed, but because there is only one location in the first place. Your homepage and a claimed, well-kept Google Business Profile already do the entire local-search job. Building a location-page architecture for a problem that does not exist is effort spent on the wrong thing.</p>
+      </div>
+    </section>
+
+    <div id="worka" class="hidden stack">
+      <section class="card card-pad" aria-labelledby="s2">
+        <p class="step" id="s2">Step 2 &middot; Describe one candidate location</p>
+        <p class="sub">Answer for a single city, canton or service area. Nothing you type leaves your browser &mdash; use a placeholder like &ldquo;Zug&rdquo; if you prefer.</p>
+
+        <div class="grid2" style="margin-top:14px">
+          <div>
+            <label class="fld" for="locName">Candidate location name</label>
+            <input type="text" id="locName" placeholder="e.g. Zug" autocomplete="off" maxlength="60">
+          </div>
+        </div>
+
+        <div style="margin-top:18px">
+          <fieldset>
+            <legend>1 &middot; Staffed presence or sustained local service base</legend>
+            <p class="qhint">A lease, a listed employee, a phone answered locally &mdash; or, for a service-area model, a real ongoing pattern of jobs completed here over a meaningful period. Not an aspiration to expand.</p>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="t1" value="staffed"><span><b>Staffed presence here</b><small>Lease, listed employee, or a phone answered locally.</small></span></label>
+              <label class="opt"><input type="radio" name="t1" value="servicebase"><span><b>A real, ongoing service base here</b><small>A genuine pattern of jobs completed here over a meaningful period.</small></span></label>
+              <label class="opt"><input type="radio" name="t1" value="aspiration"><span><b>Neither yet</b><small>A dispatch entry, or an aspiration to expand &mdash; a technician who drives there when booked, on the same price list and guarantee as every other town.</small></span></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div style="margin-top:18px">
+          <fieldset>
+            <legend>2 &middot; Independently distinguishable content</legend>
+            <p class="qhint">Is there something true of this location that is <b>not equally true</b> of the others? A named local team, reviews that mention this branch or city, real local examples, hours or access notes that differ from the next town over.</p>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="t2" value="yes"><span><b>Yes &mdash; genuinely distinct substance</b></span></label>
+              <label class="opt"><input type="radio" name="t2" value="no"><span><b>No &mdash; essentially the same content with the city name swapped</b></span></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div style="margin-top:18px">
+          <fieldset>
+            <legend>3 &middot; Genuinely separable search demand</legend>
+            <p class="qhint">Is there a query pattern for this location that a shared &ldquo;our services plus coverage area&rdquo; page would <b>not already</b> satisfy &mdash; beyond the same sentence with the city name in the heading?</p>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="t3" value="yes"><span><b>Yes &mdash; distinct demand a shared page misses</b></span></label>
+              <label class="opt"><input type="radio" name="t3" value="no"><span><b>No &mdash; a shared coverage page would already capture it</b></span></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div style="margin-top:18px">
+          <fieldset>
+            <legend>4 &middot; A named owner who will keep it current</legend>
+            <p class="qhint">Is someone accountable for updating this specific page&rsquo;s local facts &mdash; staff, hours, reviews &mdash; as they change?</p>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="t4" value="yes"><span><b>Yes &mdash; a named person owns it</b></span></label>
+              <label class="opt"><input type="radio" name="t4" value="no"><span><b>No &mdash; nobody specific is accountable</b></span></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" id="noindex">
+          <span><b>Exception:</b> this is a private landing page built for a single paid campaign and marked <code>noindex</code>.<small>The doorway policy governs pages competing for organic placement &mdash; a non-indexed campaign page sits outside it.</small></span>
+        </label>
+
+        <div class="row">
+          <button class="btn" id="classifyBtn" type="button">Classify this location</button>
+          <button class="btn ghost small" id="clearFormBtn" type="button">Clear answers</button>
+        </div>
+        <p class="err" id="err" role="alert" aria-live="assertive"></p>
+      </section>
+
+      <div id="result" aria-live="polite"></div>
+
+      <section class="card card-pad" aria-labelledby="s3">
+        <div class="tally-head">
+          <p class="step" id="s3" style="margin:0">Step 3 &middot; Your honest location count</p>
+          <button class="btn ghost small" id="copyBtn" type="button">Copy summary</button>
+        </div>
+        <p class="sub">Add each classified location to build the count. Start by counting how many real locations clear the four-part test &mdash; not how many pages you &ldquo;should&rdquo; have.</p>
+        <div class="counts" aria-live="polite">
+          <div class="cnt earn"><div class="n" id="cEarn">0</div><div class="l">earn a page</div></div>
+          <div class="cnt fold"><div class="n" id="cFold">0</div><div class="l">fold into coverage / service area</div></div>
+          <div class="cnt camp"><div class="n" id="cCamp">0</div><div class="l">non-indexed campaign page</div></div>
+          <div class="cnt skip"><div class="n" id="cTotal">0</div><div class="l">locations tested</div></div>
+        </div>
+        <ul class="ledger" id="ledger"></ul>
+        <p class="empty" id="ledgerEmpty">No locations added yet. Classify one above, then add it to the count.</p>
+        <p class="guide" id="guide"></p>
+        <div class="row"><button class="btn ghost small" id="resetBtn" type="button">Reset count</button></div>
+      </section>
+    </div>
+
+    <p class="note" id="startHint"><b>Start above:</b> choose your business model to unlock the checker.</p>
+
+  </div>
+
+  <p class="disc">Orientation, not advice or a quote. This checker applies the four-part evidence test and the doorway-page reasoning set out in the linked Weissmann guide, which cites Google&rsquo;s own Search Central spam policy and Business Profile documentation (accessed 29 July 2026). It is not legal advice and not a full SEO audit. A correctly built site &mdash; our Starter Website is CHF 880 (regular CHF 2&rsquo;490) &mdash; sets up the technical SEO/GEO foundation, structured data and Search Console this decision assumes are already in place. Everything you type stays in your browser: nothing is saved, sent or stored.</p>
+
+  <footer class="linkbar" aria-label="Where this checker comes from">
+    <p class="lb-title">Where this comes from</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/marketing-seo-geo/local-seo-switzerland-doorway-pages/" target="_blank" rel="noopener noreferrer" aria-label="Read the full guide on how many location pages a Swiss business needs (opens in a new tab)">Read the full guide: how many location pages &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-web-development/" target="_blank" rel="noopener noreferrer" aria-label="Weissmann AI web development service (opens in a new tab)">AI web development that builds the SEO/GEO foundation &rarr;</a>
+    </div>
+    <p class="att">Local SEO &amp; location-page strategy &middot; a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var state = { model: null };
+  var ledger = [];
+
+  var $ = function(id){ return document.getElementById(id); };
+  function radioVal(name){
+    var el = document.querySelector('input[name="'+name+'"]:checked');
+    return el ? el.value : null;
+  }
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  // ---- business model gating ----
+  var modelOpts = $('modelOpts');
+  modelOpts.addEventListener('change', function(){
+    state.model = radioVal('model');
+    $('startHint').classList.add('hidden');
+    var single = state.model === 'single';
+    $('skipPanel').classList.toggle('hidden', !single);
+    $('worka').classList.toggle('hidden', single);
+    renderGuide();
+  });
+
+  var GUIDE = {
+    depot: 'For a single office or depot serving a wider area, the honest number of dedicated location pages is typically zero. A correctly configured service-area profile plus one honest coverage page carries the whole local-search job.',
+    branches: 'For a small number of genuinely staffed branches (commonly two to four), the honest number is one page per staffed branch — not one per city where a client happens to reside.',
+    network: 'For a genuine ten-plus-branch network run to a consistent standard, systematic location pages are legitimate and expected — but only on a template that pulls real per-branch data (a direct phone line, branch-specific hours, named staff, branch-filtered reviews), never a shared paragraph with only the city name swapped.'
+  };
+  function renderGuide(){
+    var g = $('guide');
+    if(GUIDE[state.model]){ g.textContent = GUIDE[state.model]; g.style.display=''; }
+    else { g.textContent=''; g.style.display='none'; }
+  }
+
+  // ---- test explanations (grounded in the article) ----
+  function line(name, pass, txt){
+    return '<li class="'+(pass?'pass':'fail')+'"><span class="mark">'+(pass?'✓':'✗')+'</span><span><b>'+name+'</b> &mdash; '+txt+'</span></li>';
+  }
+  var SAB_NOTE = '<div class="note"><b>The alternative the article points to:</b> a service-area business (SAB) profile, built by Google for a business that &ldquo;visits or delivers to customers directly but doesn&rsquo;t serve customers at their business address&rdquo; (Google Business Profile Help, accessed 29 July 2026). Declare up to twenty named cities or postal codes (not a fixed radius), keep the outer edge within roughly two hours&rsquo; drive of your base, and if you never serve walk-ins, remove the street address. One correctly configured profile plus a single coverage page &mdash; a map, an honest list of served towns, and your strongest real reviews &mdash; does everything &ldquo;one page per city&rdquo; was reaching for, without a single near-duplicate indexed page.</div>';
+
+  function buildVerdict(loc, t1, t2, t3, t4, noindex){
+    var fails = [];
+    var items = [];
+
+    // Exception path
+    if(noindex){
+      return {
+        cat:'camp', cls:'v-camp', badge:'Not a doorway risk',
+        title:'A non-indexed campaign page &mdash; out of scope.',
+        body:'Marked <code>noindex</code> and built for a single paid campaign, this is not a doorway-page risk, however many near-identical city versions exist. Google&rsquo;s policy governs pages competing for organic placement, not private pages a search engine was never meant to rank.',
+        items:'', extra:''
+      };
+    }
+
+    // Test 1
+    if(t1 === 'aspiration'){
+      fails.push('t1');
+      items.push(line('Staffed presence or sustained service base', false,
+        'This reads as a dispatch entry or an aspiration to expand — the pest-control &ldquo;Zug&rdquo; pattern in the article: a technician who drives there when booked, on the same price list, team and guarantee as every other town. That does not make a location.'));
+    } else {
+      items.push(line('Staffed presence or sustained service base', true,
+        (t1==='staffed'?'A staffed presence here (lease, listed employee, or a locally answered phone) gives a real, checkable anchor.'
+                       :'A genuine ongoing pattern of jobs completed here over a meaningful period gives a real, verifiable service base.')));
+    }
+    // Test 2
+    if(t2 === 'no'){
+      fails.push('t2');
+      items.push(line('Independently distinguishable content', false,
+        'Nothing here is true of ' + esc(loc) + ' that is not equally true of the other locations. Swapping the city name into the heading is exactly the doorway pattern named in Google&rsquo;s spam policy: <span class="quote">pages targeted at specific regions or cities that funnel users to one page</span> (Google Search Central, accessed 29 July 2026).'));
+    } else {
+      items.push(line('Independently distinguishable content', true,
+        'There is genuinely distinct substance here &mdash; a named local team, branch-specific reviews, or real local detail &mdash; not just a swapped city name.'));
+    }
+    // Test 3
+    if(t3 === 'no'){
+      fails.push('t3');
+      items.push(line('Genuinely separable search demand', false,
+        'A shared &ldquo;services plus coverage area&rdquo; page would already satisfy these queries. A separate page here mostly competes with your own pages (keyword cannibalization) rather than adding reach.'));
+    } else {
+      items.push(line('Genuinely separable search demand', true,
+        'There is a query pattern here that a shared coverage page would not already capture.'));
+    }
+    // Test 4
+    if(t4 === 'no'){
+      fails.push('t4');
+      items.push(line('A named owner who will keep it current', false,
+        'With nobody accountable, the page decays into the stale, near-identical content the doorway-pages policy targets &mdash; maintenance debt across many pages realistically will not be paid.'));
+    } else {
+      items.push(line('A named owner who will keep it current', true,
+        'A named person is accountable for keeping this page&rsquo;s staff, hours and reviews current.'));
+    }
+
+    var itemsHtml = '<ul class="checklist">' + items.join('') + '</ul>';
+
+    if(fails.length === 0){
+      return {
+        cat:'earn', cls:'v-earn', badge:'Earns a page',
+        title: esc(loc) + ' clears all four evidence tests.',
+        body:'This location earns a dedicated page &mdash; built on real, per-location facts, never a shared paragraph with only the city name swapped. ' +
+             (state.model==='network' ? 'On a ten-plus-branch network, put it on a template that pulls a direct phone line, branch-specific hours, named staff and branch-filtered reviews.' : 'Keep the local facts genuinely specific to it.'),
+        items:itemsHtml, extra:''
+      };
+    }
+
+    // At least one failure -> fold
+    var body = 'Until every test clears, this does not earn a page of its own. In the article&rsquo;s words, everything that does not clear the test becomes a named service area on a Google Business Profile and a line in one honest coverage page. ';
+    if(fails.indexOf('t1') !== -1){
+      body += 'Because there is no real presence yet, the service-area route below is the honest home for ' + esc(loc) + '.';
+    } else {
+      body += 'You can either add the missing evidence above and re-test, or consolidate ' + esc(loc) + ' into your shared coverage page.';
+    }
+    return {
+      cat:'fold', cls:'v-fold', badge:'Doorway-page risk',
+      title: esc(loc) + ' fails ' + fails.length + ' of 4 tests — this is a thin/duplicated page risk.',
+      body: body,
+      items:itemsHtml, extra:SAB_NOTE
+    };
+  }
+
+  // ---- classify action ----
+  var lastVerdict = null;
+  $('classifyBtn').addEventListener('click', function(){
+    var err = $('err');
+    err.textContent='';
+    var loc = $('locName').value.trim() || 'this location';
+    var noindex = $('noindex').checked;
+    var t1 = radioVal('t1'), t2 = radioVal('t2'), t3 = radioVal('t3'), t4 = radioVal('t4');
+
+    if(!noindex && (!t1 || !t2 || !t3 || !t4)){
+      err.textContent = 'Please answer all four evidence tests (or tick the noindex campaign exception) before classifying.';
+      $('result').innerHTML='';
+      lastVerdict = null;
+      return;
+    }
+
+    var v = buildVerdict(loc, t1, t2, t3, t4, noindex);
+    lastVerdict = { name: loc, cat: v.cat };
+
+    var html = '<section class="card card-pad"><div class="verdict '+v.cls+'">' +
+      '<h3><span class="badge">'+v.badge+'</span> '+v.title+'</h3>' +
+      '<p>'+v.body+'</p>' + v.items + v.extra +
+      '<div class="row"><button class="btn small" id="addBtn" type="button">Add &ldquo;'+esc(loc)+'&rdquo; to the count</button></div>' +
+      '</div></section>';
+    $('result').innerHTML = html;
+    $('addBtn').addEventListener('click', addCurrent);
+    $('result').scrollIntoView({behavior:'smooth', block:'nearest'});
+  });
+
+  function addCurrent(){
+    if(!lastVerdict) return;
+    ledger.push({ name: lastVerdict.name, cat: lastVerdict.cat });
+    renderLedger();
+    var btn = $('addBtn');
+    if(btn){ btn.disabled = true; btn.textContent = 'Added to your count ✓'; }
+    $('ledger').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+
+  $('clearFormBtn').addEventListener('click', function(){
+    var names = ['t1','t2','t3','t4'];
+    names.forEach(function(n){
+      var el = document.querySelector('input[name="'+n+'"]:checked');
+      if(el) el.checked = false;
+    });
+    $('locName').value='';
+    $('noindex').checked=false;
+    $('err').textContent='';
+    $('result').innerHTML='';
+    lastVerdict=null;
+  });
+
+  var TAG = { earn:'earns a page', fold:'fold / coverage', camp:'campaign' };
+  function renderLedger(){
+    var ul = $('ledger');
+    var counts = { earn:0, fold:0, camp:0 };
+    ul.innerHTML='';
+    ledger.forEach(function(row, i){
+      counts[row.cat]++;
+      var li = document.createElement('li');
+      var left = document.createElement('span');
+      left.innerHTML = '<span class="tag '+row.cat+'">'+TAG[row.cat]+'</span> &nbsp;'+esc(row.name);
+      var rm = document.createElement('button');
+      rm.className='rm'; rm.type='button'; rm.setAttribute('aria-label','Remove '+row.name);
+      rm.textContent='✕';
+      rm.addEventListener('click', function(){ ledger.splice(i,1); renderLedger(); });
+      li.appendChild(left); li.appendChild(rm);
+      ul.appendChild(li);
+    });
+    $('cEarn').textContent = counts.earn;
+    $('cFold').textContent = counts.fold;
+    $('cCamp').textContent = counts.camp;
+    $('cTotal').textContent = ledger.length;
+    $('ledgerEmpty').style.display = ledger.length ? 'none' : '';
+  }
+
+  $('resetBtn').addEventListener('click', function(){
+    ledger = [];
+    renderLedger();
+  });
+
+  // ---- copy summary (user's own generated text) ----
+  $('copyBtn').addEventListener('click', function(){
+    var counts = { earn:0, fold:0, camp:0 };
+    ledger.forEach(function(r){ counts[r.cat]++; });
+    var lines = [];
+    lines.push('Doorway-page risk check — honest location count');
+    lines.push('Business model: ' + (state.model || 'not set'));
+    lines.push('');
+    lines.push('Locations that genuinely earn a page: ' + counts.earn);
+    lines.push('To fold into a service-area profile / coverage page: ' + counts.fold);
+    lines.push('Non-indexed campaign pages (out of scope): ' + counts.camp);
+    lines.push('Total tested: ' + ledger.length);
+    lines.push('');
+    ledger.forEach(function(r){
+      lines.push('- ' + r.name + ' : ' + TAG[r.cat]);
+    });
+    if(GUIDE[state.model]){ lines.push(''); lines.push(GUIDE[state.model]); }
+    lines.push('');
+    lines.push('Orientation only, from the Weissmann guide on Swiss local SEO location pages. Not legal advice, not an SEO audit.');
+    var text = lines.join('\n');
+
+    var btn = $('copyBtn');
+    function ok(){ var t=btn.textContent; btn.textContent='Copied ✓'; setTimeout(function(){ btn.textContent=t; },1600); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok, fallback);
+    } else { fallback(); }
+    function fallback(){
+      try{
+        var ta=document.createElement('textarea');
+        ta.value=text; ta.setAttribute('readonly','');
+        ta.style.position='absolute'; ta.style.left='-9999px';
+        document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); document.body.removeChild(ta); ok();
+      }catch(e){ btn.textContent='Copy failed'; }
+    }
+  });
+
+  renderLedger();
+})();
+</script>
