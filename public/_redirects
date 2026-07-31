@@ -74,8 +74,11 @@
 /indexnow-key                                  /x8jL0gGbhLu81B0L7pPg7afOBQ0CijOk.txt  301!
 /en/indexnow-key                               /x8jL0gGbhLu81B0L7pPg7afOBQ0CijOk.txt  301!
 
-# --- Footer blog links were 404 on the old site; route to the future
-#     knowledge hub location once it ships (Phase 4). Until then: about page
-#     carries the closest context (positioning/method). ---
-/blog                                          /ueber-uns/                     302
-/en/blog                                       /en/ueber-uns/                  302
+# --- Legacy /blog index URLs (never existed in the new architecture; Google
+#     still holds them from the old Webflow site — reported as 404 in Search
+#     Console). The KI-Academy knowledge hub has now shipped, so these point
+#     permanently at the academy hub — the topical successor to the old blog —
+#     instead of the earlier about-page stopgap. 301 (not 302) so Google drops
+#     the dead URL and passes any accumulated link equity. ---
+/blog                                          /ki-academy/                    301!
+/en/blog                                       /en/ai-academy/                 301!
