@@ -1,0 +1,80 @@
+---
+/**
+ * ToolsHubPage — the interactive-tools hub for one locale, listing that locale's
+ * live tools as cards. Provides the inbound links that keep each tool page
+ * discoverable (and non-orphan), and its own SEO landing content.
+ */
+import { type Locale, LOCALES } from '../../data/site';
+import { type LocalePaths, pillarHome, relFor } from '../../data/routes';
+import { toolsForLocale, toolPaths, toolLocales } from '../../data/tools';
+import { breadcrumbs } from '../../data/schema';
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+
+interface Props { locale: Locale; localePaths: LocalePaths }
+const { locale, localePaths } = Astro.props;
+
+const C: Record<string, { title: string; description: string; h1: string; intro: string; home: string; res: string; free: string }> = {
+  de: { title: 'Interaktive Tools & Rechner für Schweizer KMU · Weissmann', description: 'Kostenlose, interaktive Rechner und Checks: Website-Kosten, Google-Ads-Budget, KI-Telefonassistent-ROI und mehr – laufen im Browser, nichts wird gespeichert.', h1: 'Interaktive Tools & Rechner', intro: 'Kostenlose, praktische Tools rund um Website, Google Ads und KI-Telefonassistent. Jedes läuft vollständig in Ihrem Browser, speichert nichts und ist an einen ausführlichen Leitfaden gekoppelt.', home: 'Startseite', res: 'Ressourcen', free: 'Kostenlos' },
+  en: { title: 'Interactive Tools & Calculators for Swiss SMEs · Weissmann', description: 'Free interactive calculators and checks: website cost, Google Ads budget, multilingual hreflang and more — they run in your browser and store nothing.', h1: 'Interactive Tools & Calculators', intro: 'Free, practical tools for websites, Google Ads and AI phone answering. Each runs entirely in your browser, stores nothing, and pairs with an in-depth guide.', home: 'Home', res: 'Resources', free: 'Free' },
+  it: { title: 'Strumenti e calcolatori interattivi per PMI svizzere · Weissmann', description: 'Calcolatori e check interattivi e gratuiti: costo del sito, budget Google Ads e altro — funzionano nel vostro browser e non salvano nulla.', h1: 'Strumenti e calcolatori interattivi', intro: 'Strumenti pratici e gratuiti su sito web, Google Ads e assistente telefonico AI. Ognuno funziona interamente nel vostro browser, non salva nulla ed è abbinato a una guida approfondita.', home: 'Home', res: 'Risorse', free: 'Gratis' },
+};
+const c = C[locale] ?? C.en;
+const pre = locale === 'de' ? '' : `/${locale}`;
+const resHub = pillarHome('resources');
+const tools = toolsForLocale(locale);
+const available = toolLocales().filter((l) => LOCALES.includes(l));
+
+const schema = [
+  breadcrumbs(locale, [
+    { name: c.home, path: '/' },
+    { name: c.res, path: resHub[locale] },
+    { name: c.h1, path: localePaths[locale] },
+  ]),
+  {
+    '@type': 'ItemList',
+    name: c.h1,
+    numberOfItems: tools.length,
+    itemListElement: tools.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.h1, url: `https://weissmann.ai${relFor(locale, toolPaths(t))}` })),
+  },
+];
+---
+<Layout locale={locale} localePaths={localePaths} title={c.title} description={c.description} availableLocales={available} schema={schema}>
+  <Breadcrumbs locale={locale} items={[
+    { name: c.home, href: `${pre}/` },
+    { name: c.res, href: relFor(locale, resHub) },
+    { name: c.h1 },
+  ]} />
+
+  <header class="th-head container">
+    <p class="kicker">{c.free}</p>
+    <h1>{c.h1}</h1>
+    <p class="th-intro">{c.intro}</p>
+  </header>
+
+  <div class="container th-grid">
+    {tools.map((t) => (
+      <a class="th-card" href={relFor(locale, toolPaths(t))}>
+        <p class="th-card-kicker">{t.kicker}</p>
+        <h2 class="th-card-title">{t.h1}</h2>
+        <p class="th-card-text">{t.intro}</p>
+        <span class="th-card-go">→</span>
+      </a>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .th-head { padding-top: var(--space-5); padding-bottom: var(--space-3); max-width: 52rem; }
+  .th-head h1 { font-size: var(--fs-700); line-height: 1.08; margin: 0.4rem 0 1rem; }
+  .th-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 48rem; }
+  .th-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); padding-block: var(--space-3) var(--space-7); }
+  @media (min-width: 640px) { .th-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 960px) { .th-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  .th-card { border: 1px solid var(--line); border-radius: 14px; padding: var(--space-4); background: var(--paper); text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 0.5rem; transition: border-color .15s, transform .15s; }
+  .th-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .th-card-kicker { font-size: var(--fs-200); text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin: 0; }
+  .th-card-title { font-size: var(--fs-400); margin: 0; line-height: 1.2; }
+  .th-card-text { font-size: var(--fs-300); color: var(--ink-soft); margin: 0; }
+  .th-card-go { color: var(--accent); font-size: var(--fs-500); }
+</style>

@@ -14,6 +14,7 @@ import { liveIndustries, industryPaths } from '../data/industries';
 import { liveClusters, clusterPaths, pillarOf, spokesOf, articlePaths, articleLanguages } from '../data/academy';
 import { hasGlossary, glossaryHubPaths, termPaths, GLOSSARY } from '../data/glossary';
 import { liveResources, resourcePaths } from '../data/resources';
+import { liveTools, toolPaths, toolsHubPaths, toolLocales } from '../data/tools';
 import { liveCompanyPages, companyPagePaths } from '../data/company';
 import { liveComparisons, comparisonPaths } from '../data/comparisons';
 import { liveCaseStudies, caseStudyPaths, caseStudiesHubPaths } from '../data/case-studies';
@@ -52,6 +53,8 @@ function indexablePages(): Entry[] {
     ...academyPages(),
     full(pillarHome('resources')),
     ...liveResources().map(resourcePaths).map(full),
+    { lp: toolsHubPaths(), languages: toolLocales() },
+    ...liveTools().map((t) => ({ lp: toolPaths(t), languages: [t.lang] as Locale[] })),
     ...liveCompanyPages().map(companyPagePaths).map(full),
     ...liveComparisons().map(comparisonPaths).map(full),
     // Case studies: emits nothing until the first verified case is live.

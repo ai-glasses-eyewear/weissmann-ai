@@ -118,6 +118,12 @@ for (const file of walk(dist)) {
     if (!VERIFIED_STRIPE.includes(link)) errors.push(`${rel}: unverified Stripe link ${link}`);
   }
 
+  // Interactive-tool embed docs (/tools-embed/*.html) are isolated iframe
+  // widgets — noindex, no site chrome, no locale. They are scanned above for
+  // forbidden brand/price strings but are exempt from the page-level
+  // (address / GA4 / canonical / hreflang) assertions and link graph.
+  if (rel.replace(/\\/g, '/').startsWith('tools-embed/')) continue;
+
   if (file.endsWith('.html')) {
     htmlPages++;
     const url = toUrl(rel);

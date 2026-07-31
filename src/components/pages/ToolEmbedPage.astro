@@ -1,0 +1,134 @@
+---
+/**
+ * ToolEmbedPage — a single-language interactive tool page (Resources pillar).
+ * Renders real, indexable SEO content (intro, how-it-works, FAQ) + internal
+ * links to the source article and related service, with the interactive widget
+ * embedded from /tools-embed/<id>.html in an isolated, same-origin, auto-resized
+ * frame. Goes through the site Layout, so canonical/hreflang/address/GA4/entity
+ * schema are all present (QA gates pass by construction).
+ */
+import { type Locale } from '../../data/site';
+import { type LocalePaths, pillarHome, relFor } from '../../data/routes';
+import { type ToolDef, toolsHubPaths } from '../../data/tools';
+import { breadcrumbs, faqPage } from '../../data/schema';
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../Breadcrumbs.astro';
+
+interface Props { locale: Locale; localePaths: LocalePaths; tool: ToolDef }
+const { locale, localePaths, tool } = Astro.props;
+
+const LBL: Record<string, { home: string; res: string; tools: string; free: string; how: string; faq: string; guide: string; service: string; contact: string; open: string }> = {
+  de: { home: 'Startseite', res: 'Ressourcen', tools: 'Tools', free: 'Kostenlos · läuft in Ihrem Browser, nichts wird gespeichert', how: 'So funktioniert’s', faq: 'Häufige Fragen', guide: 'Zum ausführlichen Leitfaden', service: 'Mehr erfahren', contact: 'Kostenloses Erstgespräch', open: 'Tool in neuem Tab öffnen' },
+  en: { home: 'Home', res: 'Resources', tools: 'Tools', free: 'Free · runs in your browser, nothing is stored', how: 'How it works', faq: 'Frequently asked questions', guide: 'Read the full guide', service: 'Learn more', contact: 'Free intro call', open: 'Open the tool in a new tab' },
+  it: { home: 'Home', res: 'Risorse', tools: 'Strumenti', free: 'Gratis · funziona nel vostro browser, nulla viene salvato', how: 'Come funziona', faq: 'Domande frequenti', guide: 'Leggi la guida completa', service: 'Scopri di più', contact: 'Primo colloquio gratuito', open: 'Apri lo strumento in una nuova scheda' },
+};
+const lbl = LBL[locale] ?? LBL.en;
+const pre = locale === 'de' ? '' : `/${locale}`;
+const contactHref = `${pre}/kontakt/`;
+const resHub = pillarHome('resources');
+const toolsHub = toolsHubPaths();
+const embedSrc = `/tools-embed/${tool.id}.html`;
+
+const schema = [
+  breadcrumbs(locale, [
+    { name: lbl.home, path: '/' },
+    { name: lbl.res, path: resHub[locale] },
+    { name: lbl.tools, path: toolsHub[locale] },
+    { name: tool.h1, path: localePaths[locale] },
+  ]),
+  {
+    '@type': 'WebApplication',
+    name: tool.h1,
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    inLanguage: tool.lang,
+    isAccessibleForFree: true,
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'CHF' },
+    description: tool.meta.description,
+  },
+  ...(tool.faq.length ? [faqPage(tool.faq.map((f) => ({ q: f.q, a: f.a })))] : []),
+];
+---
+<Layout locale={locale} localePaths={localePaths} title={tool.meta.title} description={tool.meta.description} availableLocales={[tool.lang]} schema={schema}>
+  <Breadcrumbs locale={locale} items={[
+    { name: lbl.home, href: `${pre}/` },
+    { name: lbl.res, href: relFor(locale, resHub) },
+    { name: lbl.tools, href: relFor(locale, toolsHub) },
+    { name: tool.h1 },
+  ]} />
+
+  <header class="tool-head container">
+    <p class="kicker">{tool.kicker}</p>
+    <h1>{tool.h1}</h1>
+    <p class="tool-intro">{tool.intro}</p>
+    <p class="tool-free">{lbl.free}</p>
+  </header>
+
+  <div class="container tool-embed-wrap">
+    <iframe id="tool-frame" src={embedSrc} title={tool.h1} loading="lazy" style={`height:${tool.embedH}px`}></iframe>
+    <p class="tool-open"><a href={embedSrc} target="_blank" rel="noopener">{lbl.open} ↗</a></p>
+  </div>
+
+  <section class="container tool-about">
+    <h2>{lbl.how}</h2>
+    {tool.about.map((p) => <p>{p}</p>)}
+    <ol class="tool-steps">
+      {tool.how.map((s) => <li>{s}</li>)}
+    </ol>
+  </section>
+
+  {tool.faq.length > 0 && (
+    <section class="container tool-faq">
+      <h2>{lbl.faq}</h2>
+      <dl>
+        {tool.faq.map((f) => (<><dt>{f.q}</dt><dd>{f.a}</dd></>))}
+      </dl>
+    </section>
+  )}
+
+  <section class="container tool-cta">
+    <div class="tool-cta-card">
+      <a class="btn btn--ghost" href={tool.article.path}>{lbl.guide}: {tool.article.title} →</a>
+      <div class="tool-cta-row">
+        <a class="btn btn--primary" href={tool.service.path} data-track="request_demo">{tool.service.name}: {lbl.service} →</a>
+        <a class="btn btn--secondary" href={contactHref} data-track="request_demo">{lbl.contact}</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .tool-head { padding-top: var(--space-5); padding-bottom: var(--space-3); max-width: 52rem; }
+  .tool-head h1 { font-size: var(--fs-700); line-height: 1.08; margin: 0.4rem 0 1rem; }
+  .tool-intro { font-size: var(--fs-400); color: var(--ink-soft); max-width: 48rem; }
+  .tool-free { margin-top: var(--space-3); font-size: var(--fs-200); color: var(--ink-mute); }
+  .tool-embed-wrap { max-width: 60rem; padding-bottom: var(--space-3); }
+  #tool-frame { width: 100%; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); display: block; min-height: 600px; }
+  .tool-open { margin: 0.6rem 0 0; font-size: var(--fs-200); }
+  .tool-open a { color: var(--accent); }
+  .tool-about { max-width: 52rem; padding-block: var(--space-4) var(--space-4); }
+  .tool-about h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
+  .tool-about p { color: var(--ink-soft); margin-bottom: var(--space-3); }
+  .tool-steps { color: var(--ink-soft); padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.3rem; }
+  .tool-faq { max-width: 52rem; padding-bottom: var(--space-4); }
+  .tool-faq h2 { font-size: var(--fs-500); margin-bottom: var(--space-3); }
+  .tool-faq dt { font-weight: 600; margin-top: var(--space-3); }
+  .tool-faq dd { margin: 0.2rem 0 0; color: var(--ink-soft); }
+  .tool-cta { max-width: 52rem; padding: var(--space-5) var(--space-4) var(--space-7); }
+  .tool-cta-card { border: 1px solid var(--line); border-radius: 14px; padding: var(--space-5); background: var(--accent-soft, var(--paper)); display: flex; flex-direction: column; gap: var(--space-4); }
+  .tool-cta-row { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+</style>
+
+<script is:inline>
+  (function () {
+    var f = document.getElementById('tool-frame');
+    if (!f) return;
+    window.addEventListener('message', function (e) {
+      if (e.origin !== location.origin) return;
+      var d = e.data;
+      if (d && d.wmTool && typeof d.h === 'number' && d.h > 200 && d.h < 12000) {
+        f.style.height = (d.h + 8) + 'px';
+      }
+    });
+  })();
+</script>

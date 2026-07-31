@@ -21,6 +21,7 @@ import { hasGlossary, glossaryHubPaths, termPaths, GLOSSARY, type GlossaryTerm }
 import { liveCompanyPages, companyPagePaths, getCompanyContent, type CompanyPageDef, type CompanyContent } from '../data/company';
 import { liveComparisons, comparisonPaths, getComparisonContent, type ComparisonPageDef, type ComparisonContent } from '../data/comparisons';
 import { liveCaseStudies, caseStudyPaths, caseStudiesHubPaths, getCaseStudyContent, type CaseStudyDef, type CaseStudyContent } from '../data/case-studies';
+import { liveTools, toolLocales, toolPaths, toolsHubPaths, type ToolDef } from '../data/tools';
 import ServicesHubPage from '../components/pages/ServicesHubPage.astro';
 import ServicePage from '../components/pages/ServicePage.astro';
 import IndustriesHubPage from '../components/pages/IndustriesHubPage.astro';
@@ -36,6 +37,8 @@ import CompanyPage from '../components/pages/CompanyPage.astro';
 import ComparisonPage from '../components/pages/ComparisonPage.astro';
 import CaseStudiesHubPage from '../components/pages/CaseStudiesHubPage.astro';
 import CaseStudyPage from '../components/pages/CaseStudyPage.astro';
+import ToolsHubPage from '../components/pages/ToolsHubPage.astro';
+import ToolEmbedPage from '../components/pages/ToolEmbedPage.astro';
 
 export function getStaticPaths() {
   const out: Array<{ params: { path: string }; props: Record<string, unknown> }> = [];
@@ -168,6 +171,15 @@ export function getStaticPaths() {
     }
   }
 
+  // Interactive tools: a per-locale hub + one single-language page per tool.
+  for (const l of toolLocales()) {
+    out.push({ params: { path: routeParam(l, toolsHubPaths()) }, props: { type: 'tools-hub', locale: l, localePaths: toolsHubPaths() } });
+  }
+  for (const tl of liveTools()) {
+    const tp = toolPaths(tl);
+    out.push({ params: { path: routeParam(tl.lang, tp) }, props: { type: 'tool', locale: tl.lang, localePaths: tp, tool: tl } });
+  }
+
   // Company pages (flat localized paths: /methodik/, /technologie/, /datensicherheit/ …)
   for (const cp of liveCompanyPages()) {
     const content = getCompanyContent(cp.id);
@@ -235,9 +247,10 @@ const props = Astro.props as {
   comparisonContent?: ComparisonContent;
   caseStudy?: CaseStudyDef;
   caseStudyContent?: CaseStudyContent;
+  tool?: ToolDef;
   availableLocales?: Locale[];
 };
-const { type, locale, localePaths, service, content, industry, article, cluster, resourceId, term, companyPage, companyContent, resource, checklist, industryContent, comparisonPage, comparisonContent, caseStudy, caseStudyContent, availableLocales } = props;
+const { type, locale, localePaths, service, content, industry, article, cluster, resourceId, term, companyPage, companyContent, resource, checklist, industryContent, comparisonPage, comparisonContent, caseStudy, caseStudyContent, tool, availableLocales } = props;
 ---
 {type === 'services-hub' && <ServicesHubPage locale={locale} localePaths={localePaths} />}
 {type === 'service' && service && content && (
@@ -258,6 +271,8 @@ const { type, locale, localePaths, service, content, industry, article, cluster,
 {type === 'resource-checklist' && resource && checklist && (
   <ChecklistResourcePage locale={locale} localePaths={localePaths} resource={resource} content={checklist} />
 )}
+{type === 'tools-hub' && <ToolsHubPage locale={locale} localePaths={localePaths} />}
+{type === 'tool' && tool && <ToolEmbedPage locale={locale} localePaths={localePaths} tool={tool} />}
 {type === 'glossary-hub' && <GlossaryHubPage locale={locale} localePaths={localePaths} />}
 {type === 'glossary-term' && term && (
   <GlossaryTermPage locale={locale} localePaths={localePaths} term={term} />

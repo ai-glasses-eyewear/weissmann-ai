@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base target="_parent">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<title>Swiss Website Quote Normaliser · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .stack{margin-top:18px}
+  .sec-h{font-size:1.02rem;font-weight:700;margin:0 0 3px;letter-spacing:-.01em}
+  .sec-sub{font-size:.86rem;color:var(--ink-mute);margin:0 0 14px}
+  .step{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--navy);color:var(--on-navy);font-size:.74rem;font-weight:700;margin-right:8px;vertical-align:middle}
+
+  /* figures block */
+  .qgrid{display:grid;grid-template-columns:1fr;gap:14px}@media(min-width:640px){.qgrid{grid-template-columns:1fr 1fr}}
+  .qcol{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--soft)}
+  .qtag{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--accent);margin:0 0 10px}
+  .field{display:block;margin:0 0 10px}
+  .field label{display:block;font-size:.8rem;font-weight:600;color:var(--ink-soft);margin:0 0 4px}
+  .field .sfx{color:var(--ink-mute);font-weight:400}
+  input[type=text],select{width:100%;font-family:var(--font);font-size:.95rem;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:9px 11px}
+  input[type=text]{font-variant-numeric:tabular-nums}
+  input[type=text]:focus-visible,select:focus-visible,button:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent);border-color:var(--navy)}
+  .prefill{margin-top:2px;display:flex;flex-wrap:wrap;gap:8px}
+  .btn{font-family:var(--font);font-size:.86rem;font-weight:600;color:var(--navy);background:var(--card);border:1.5px solid var(--navy);border-radius:9px;padding:9px 13px;cursor:pointer}
+  .btn:hover{background:var(--soft)}
+  .btn.solid{background:var(--navy);color:var(--on-navy)}.btn.solid:hover{background:var(--navy-hover)}
+  .btn.ghost{border-color:var(--line);color:var(--ink-soft)}.btn.ghost:hover{background:var(--soft)}
+
+  /* scope sheet */
+  .sheet{display:grid;gap:0}
+  .shead,.srow{display:grid;grid-template-columns:1fr;gap:8px;padding:12px 0;border-top:1px solid var(--line)}
+  @media(min-width:720px){.shead,.srow{grid-template-columns:minmax(0,1.7fr) 1fr 1fr;align-items:center;gap:14px}}
+  .shead{border-top:none;padding-bottom:8px}
+  .shead .hlab{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);font-weight:700}
+  .shead .hq{text-align:left}@media(min-width:720px){.shead .hq{text-align:center}}
+  .dim{min-width:0}
+  .dim .n{font-weight:700;color:var(--ink)}
+  .dim .hint{display:block;font-size:.8rem;color:var(--ink-mute);margin-top:2px}
+  .qsel{min-width:0}
+  .qsel label{display:block;font-size:.7rem;font-weight:600;color:var(--ink-mute);margin:0 0 3px}
+  @media(min-width:720px){.qsel label{display:none}}
+  select[data-st="in"]{border-color:color-mix(in srgb,var(--ok) 55%,var(--line))}
+  select[data-st="out"]{border-color:color-mix(in srgb,var(--warn) 55%,var(--line))}
+  select[data-st="gap"]{border-color:color-mix(in srgb,var(--miss) 45%,var(--line))}
+
+  /* result */
+  .verdict{border-radius:12px;padding:14px 16px;border:1px solid var(--line);font-weight:600}
+  .verdict.v-open{background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 30%,var(--line));color:var(--miss)}
+  .verdict.v-diff{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 30%,var(--line));color:var(--warn)}
+  .verdict.v-match{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 30%,var(--line));color:var(--ok)}
+  .verdict .vt{display:block;font-size:1.02rem;margin-bottom:3px}
+  .verdict .vs{display:block;font-weight:400;color:var(--ink-soft);font-size:.9rem}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+  .chip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+  .chip .d{width:9px;height:9px;border-radius:50%}
+  .d-ok{background:var(--ok)}.d-warn{background:var(--warn)}.d-miss{background:var(--miss)}
+  .fig{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}
+  .figrow{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:baseline}
+  .figq{font-size:1.28rem;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .figq small{display:block;font-size:.72rem;font-weight:600;color:var(--ink-mute);letter-spacing:.04em}
+  .figq .raw{font-size:.78rem;font-weight:400;color:var(--ink-mute)}
+  .attn{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:7px}
+  .attn li{display:flex;gap:9px;align-items:flex-start;font-size:.9rem;padding:9px 11px;border-radius:9px;background:var(--soft)}
+  .attn .tag{flex:none;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-top:1px}
+  .tag.t-open{background:var(--miss-soft);color:var(--miss)}
+  .tag.t-diff{background:var(--warn-soft);color:var(--warn)}
+  .attn b{color:var(--ink)}
+
+  /* follow-up */
+  .fu-top{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin-bottom:12px}
+  .fu-top .field{margin:0;min-width:180px}
+  textarea{width:100%;min-height:172px;font-family:var(--mono);font-size:.85rem;line-height:1.5;color:var(--ink);background:var(--soft);border:1.5px solid var(--line);border-radius:10px;padding:12px;resize:vertical}
+  textarea:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent);border-color:var(--navy)}
+  .copyrow{display:flex;align-items:center;gap:12px;margin-top:10px}
+  .copied{font-size:.82rem;color:var(--ok);font-weight:600;opacity:0;transition:opacity .2s}
+  .copied.on{opacity:1}
+
+  /* reference */
+  .tiers{display:grid;grid-template-columns:1fr;gap:10px;margin-top:4px}@media(min-width:640px){.tiers{grid-template-columns:1fr 1fr 1fr}}
+  .tier{border:1px solid var(--line);border-radius:11px;padding:13px;background:var(--soft)}
+  .tier h4{margin:0 0 3px;font-size:.92rem}
+  .tier .pr{font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .tier .pr s{color:var(--ink-mute);font-weight:400;font-size:.85em}
+  .tier p{margin:6px 0 0;font-size:.82rem;color:var(--ink-mute)}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">Website quotes · Scope normaliser</p>
+    <h1>Swiss website quote normaliser</h1>
+    <p class="lede">Two Swiss quotes for the same brief can differ by a factor of ten and both be entirely legitimate, because the underlying scope was never actually the same. Put both quotes onto one shared scope sheet, put both CHF figures onto the same VAT basis, and only then compare the numbers.</p>
+  </header>
+
+  <!-- STEP 1: figures + VAT -->
+  <section class="card card-pad stack" aria-labelledby="s1h">
+    <h2 class="sec-h" id="s1h"><span class="step">1</span>The two figures, and their VAT basis</h2>
+    <p class="sec-sub">Enter the headline number from each quote and say whether it is stated net or gross of Swiss VAT. Nothing here is saved or sent.</p>
+    <div class="qgrid">
+      <div class="qcol">
+        <p class="qtag">Quote A</p>
+        <div class="field">
+          <label for="figA">Headline figure <span class="sfx">(CHF, whole francs)</span></label>
+          <input type="text" id="figA" inputmode="numeric" autocomplete="off" placeholder="e.g. 1'650">
+        </div>
+        <div class="field">
+          <label for="vatA">VAT treatment (question 13)</label>
+          <select id="vatA">
+            <option value="unknown">Not stated — needs confirming</option>
+            <option value="net">Net (VAT added on the invoice)</option>
+            <option value="gross">Gross (VAT already included)</option>
+          </select>
+        </div>
+      </div>
+      <div class="qcol">
+        <p class="qtag">Quote B</p>
+        <div class="field">
+          <label for="figB">Headline figure <span class="sfx">(CHF, whole francs)</span></label>
+          <input type="text" id="figB" inputmode="numeric" autocomplete="off" placeholder="e.g. 17'400">
+        </div>
+        <div class="field">
+          <label for="vatB">VAT treatment (question 13)</label>
+          <select id="vatB">
+            <option value="unknown">Not stated — needs confirming</option>
+            <option value="net">Net (VAT added on the invoice)</option>
+            <option value="gross">Gross (VAT already included)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="prefill">
+      <button type="button" class="btn" id="loadRef">Load Weissmann Starter into Quote B</button>
+      <button type="button" class="btn ghost" id="clearAll">Reset everything</button>
+    </div>
+  </section>
+
+  <!-- STEP 2: scope sheet -->
+  <section class="card card-pad stack" aria-labelledby="s2h">
+    <h2 class="sec-h" id="s2h"><span class="step">2</span>The thirteen-question scope sheet</h2>
+    <p class="sec-sub">For each quote, mark what it actually states. A quote that cannot answer a question is not disqualified — it just has a gap to resolve before the two can be compared. (Question 13, VAT, is set above.)</p>
+    <div class="sheet" id="sheet">
+      <div class="shead" aria-hidden="true">
+        <span class="hlab">Scope question</span>
+        <span class="hlab hq">Quote A states</span>
+        <span class="hlab hq">Quote B states</span>
+      </div>
+      <!-- rows injected -->
+    </div>
+  </section>
+
+  <!-- STEP 3: normalised result -->
+  <section class="card card-pad stack" aria-labelledby="s3h">
+    <h2 class="sec-h" id="s3h"><span class="step">3</span>The like-for-like reading</h2>
+    <p class="sec-sub">Once both quotes describe the same thing, the CHF figures finally mean something.</p>
+    <div id="result" aria-live="polite"></div>
+  </section>
+
+  <!-- STEP 4: follow-up -->
+  <section class="card card-pad stack" aria-labelledby="s4h">
+    <h2 class="sec-h" id="s4h"><span class="step">4</span>What to send back before you compare a franc</h2>
+    <p class="sec-sub">Naming the exact missing categories, rather than a vague "can you clarify," tends to produce a specific, usable answer within a day. This draft is built from your own entries above.</p>
+    <div class="fu-top">
+      <div class="field">
+        <label for="fuPick">Draft a follow-up for</label>
+        <select id="fuPick">
+          <option value="A">Quote A's provider</option>
+          <option value="B">Quote B's provider</option>
+        </select>
+      </div>
+    </div>
+    <label class="sr" for="fuText">Generated follow-up message</label>
+    <textarea id="fuText" readonly spellcheck="false"></textarea>
+    <div class="copyrow">
+      <button type="button" class="btn solid" id="copyBtn">Copy message</button>
+      <span class="copied" id="copied" role="status" aria-live="polite">Copied to clipboard</span>
+    </div>
+  </section>
+
+  <!-- reference -->
+  <section class="card card-pad stack" aria-labelledby="s5h">
+    <h2 class="sec-h" id="s5h">One published reference point, not a verdict</h2>
+    <p class="sec-sub">Weissmann publishes its three-tier scope openly, so you can hold any other quote's stated scope against a fixed, checkable example rather than a private number that only arrives after a sales call. Not a market average — one Swiss provider's real, published figures.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h4>Starter Website</h4>
+        <div class="pr">CHF 880 <s>CHF 2'490</s></div>
+        <p>Up to 5 core pages, 1 language, technical SEO &amp; GEO foundation, GA4 + Search Console, 2 defined revision rounds. Copywriting, extra languages and paid third-party tools excluded.</p>
+      </div>
+      <div class="tier">
+        <h4>Business Website</h4>
+        <div class="pr">CHF 4'990</div>
+        <p>Roughly 10–20 pages, built to support multiple languages, 3 revision rounds.</p>
+      </div>
+      <div class="tier">
+        <h4>Complex / Custom</h4>
+        <div class="pr">from CHF 9'900</div>
+        <p>Large multilingual architectures, e-commerce or system integrations; final price by scope.</p>
+      </div>
+    </div>
+  </section>
+
+  <p class="disc">Orientation, not a quote and not advice. This tool restates the article's scope-normalisation method so you can compare quotes you already hold; it does not price your project or judge any provider. The figures you enter are your own — nothing is stored, sent or shared, and all calculation happens in your browser. There is no single verified figure for a Swiss business website; the CHF 1'650 and CHF 17'400 quotes and the two illustrative quotes in the article are constructed illustrations, not real proposals. The Swiss standard VAT rate is 8.1 percent at the time of writing; the net/gross adjustment applies that rate as an estimate only. Confirm net-or-gross in writing with each provider. Not legal or tax advice — your own accountant or a Swiss adviser is the right source for anything specific to your situation.</p>
+
+  <footer class="linkbar" aria-label="Weissmann links">
+    <p class="lb-title">Go deeper</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/marketing-seo-geo/business-website-cost-switzerland/" target="_blank" rel="noopener noreferrer" aria-label="Read the full guide on business website cost in Switzerland (opens in a new tab)">Read the full guide: website cost in Switzerland →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-web-development/" target="_blank" rel="noopener noreferrer" aria-label="Explore Weissmann AI web development, and request an itemized quote in this scope format (opens in a new tab)">AI web development by Weissmann →</a>
+    </div>
+    <p class="att">Weissmann AI · a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var VAT_RATE = 0.081;
+
+  // 12 scope questions (question 13, VAT, lives in the figures block).
+  var DIMS = [
+    {k:"pages",  n:"1. Page count, defined precisely",              h:"An exact, named list of pages, not an unbounded “up to six.”"},
+    {k:"copy",   n:"2. Copywriting responsibility",                 h:"Who delivers the final text: you, the provider, or is it left unstated?"},
+    {k:"design", n:"3. Design origin",                              h:"A visual identity built for you, or a licensed theme with your colours applied?"},
+    {k:"lang",   n:"4. Language count, stated as a number",         h:"“Multilingual” is an adjective; a serious quote states how many, and which."},
+    {k:"rev",    n:"5. Revision rounds, as a number",               h:"Two, three, or unlimited-but-unspecified “small adjustments.”"},
+    {k:"seo",    n:"6. Technical SEO & GEO foundation",             h:"Sitemap, structured data and crawlability spelled out, not the single word “SEO.”"},
+    {k:"anal",   n:"7. Analytics setup",                            h:"GA4 and Search Console configured against your actual goals?"},
+    {k:"host",   n:"8. Hosting and maintenance",                    h:"One-time or recurring, and at what ongoing cost after the build is paid?"},
+    {k:"own",    n:"9. Ownership after handover",                   h:"Do you receive the code and source files, or must every change go back to the provider?"},
+    {k:"integ",  n:"10. Integrations",                              h:"A CRM, booking or payment connection priced in, or a second quote you haven’t seen?"},
+    {k:"time",   n:"11. Timeline and its dependency on you",        h:"What happens to the schedule if your content or approvals arrive late?"},
+    {k:"supp",   n:"12. Support after launch",                      h:"A defined minimum included, or every hour billed individually from minute one?"}
+  ];
+  var OPTS = [
+    {v:"gap", t:"Not stated"},
+    {v:"in",  t:"Included"},
+    {v:"out", t:"Excluded / separate"}
+  ];
+  // Weissmann Starter Website published scope, grounded in pricing.ts.
+  var STARTER = {
+    pages:"in", copy:"out", design:"in", lang:"in", rev:"in", seo:"in",
+    anal:"in", host:"in", own:"gap", integ:"out", time:"gap", supp:"gap"
+  };
+
+  var quotes = {
+    A:{scope:{}}, B:{scope:{}}
+  };
+  DIMS.forEach(function(d){ quotes.A.scope[d.k]="gap"; quotes.B.scope[d.k]="gap"; });
+
+  var sheet = document.getElementById("sheet");
+  var selRefs = {A:{}, B:{}};
+
+  function makeSelect(q, dim){
+    var s = document.createElement("select");
+    s.setAttribute("aria-label", "Quote " + q + " — " + dim.n.replace(/^\d+\.\s*/, ""));
+    OPTS.forEach(function(o){
+      var op = document.createElement("option");
+      op.value = o.v; op.textContent = o.t;
+      s.appendChild(op);
+    });
+    s.value = "gap"; s.dataset.st = "gap";
+    s.addEventListener("change", function(){
+      quotes[q].scope[dim.k] = s.value;
+      s.dataset.st = s.value;
+      render();
+    });
+    selRefs[q][dim.k] = s;
+    return s;
+  }
+
+  DIMS.forEach(function(dim){
+    var row = document.createElement("div");
+    row.className = "srow";
+
+    var d = document.createElement("div");
+    d.className = "dim";
+    var nm = document.createElement("span"); nm.className = "n"; nm.textContent = dim.n;
+    var hint = document.createElement("span"); hint.className = "hint"; hint.textContent = dim.h;
+    d.appendChild(nm); d.appendChild(hint);
+    row.appendChild(d);
+
+    ["A","B"].forEach(function(q){
+      var wrap = document.createElement("div"); wrap.className = "qsel";
+      var lab = document.createElement("label"); lab.textContent = "Quote " + q;
+      var s = makeSelect(q, dim);
+      var id = "sel-" + q + "-" + dim.k; s.id = id; lab.setAttribute("for", id);
+      wrap.appendChild(lab); wrap.appendChild(s);
+      row.appendChild(wrap);
+    });
+    sheet.appendChild(row);
+  });
+
+  // ---- figures / vat ----
+  var figA = document.getElementById("figA");
+  var figB = document.getElementById("figB");
+  var vatA = document.getElementById("vatA");
+  var vatB = document.getElementById("vatB");
+  [figA, figB, vatA, vatB].forEach(function(el){ el.addEventListener("input", render); el.addEventListener("change", render); });
+
+  function toNum(s){
+    var d = String(s == null ? "" : s).replace(/[^0-9]/g, "");
+    return d ? parseInt(d, 10) : NaN;
+  }
+  function group(n){
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "’");
+  }
+  function chf(n){ return "CHF " + group(n); }
+
+  // ---- reference / reset ----
+  document.getElementById("loadRef").addEventListener("click", function(){
+    figB.value = "880";
+    vatB.value = "unknown";
+    DIMS.forEach(function(d){
+      var v = STARTER[d.k];
+      quotes.B.scope[d.k] = v;
+      selRefs.B[d.k].value = v;
+      selRefs.B[d.k].dataset.st = v;
+    });
+    document.getElementById("fuPick").value = "B";
+    render();
+  });
+  document.getElementById("clearAll").addEventListener("click", function(){
+    figA.value = ""; figB.value = ""; vatA.value = "unknown"; vatB.value = "unknown";
+    DIMS.forEach(function(d){
+      quotes.A.scope[d.k] = "gap"; quotes.B.scope[d.k] = "gap";
+      selRefs.A[d.k].value = "gap"; selRefs.A[d.k].dataset.st = "gap";
+      selRefs.B[d.k].value = "gap"; selRefs.B[d.k].dataset.st = "gap";
+    });
+    render();
+  });
+
+  // ---- compute ----
+  function compare(){
+    var matched = 0, diffs = [], opens = [];
+    DIMS.forEach(function(d){
+      var a = quotes.A.scope[d.k], b = quotes.B.scope[d.k];
+      if(a === "gap" || b === "gap"){ opens.push(d); }
+      else if(a === b){ matched++; }
+      else { diffs.push(d); }
+    });
+    var vatOpen = (vatA.value === "unknown") || (vatB.value === "unknown");
+    return {matched:matched, diffs:diffs, opens:opens, vatOpen:vatOpen};
+  }
+
+  function grossOf(fig, vat){
+    if(isNaN(fig)) return NaN;
+    if(vat === "net") return fig * (1 + VAT_RATE);
+    if(vat === "gross") return fig;
+    return NaN; // unknown
+  }
+
+  var result = document.getElementById("result");
+
+  function esc(t){ return String(t).replace(/[&<>]/g, function(c){ return c==="&"?"&amp;":c==="<"?"&lt;":"&gt;"; }); }
+
+  function render(){
+    var c = compare();
+    var totalOpen = c.opens.length + (c.vatOpen ? 1 : 0);
+    var html = "";
+
+    // verdict
+    var vClass, vTitle, vSub;
+    if(totalOpen > 0){
+      vClass = "v-open";
+      vTitle = "Not comparable yet — " + totalOpen + " open question" + (totalOpen===1?"":"s");
+      vSub = "At least one quote leaves something unstated. Resolve the gaps below before you weigh a single franc; the numbers cannot mean the same thing until both describe the same scope.";
+    } else if(c.diffs.length > 0){
+      vClass = "v-diff";
+      vTitle = "Comparable — but these are different products";
+      vSub = "Every question is answered, so nothing is hidden. The quotes genuinely differ on " + c.diffs.length + " scope dimension" + (c.diffs.length===1?"":"s") + ": you are choosing between different things, not just different prices.";
+    } else {
+      vClass = "v-match";
+      vTitle = "Like-for-like — same scope on all 12 dimensions";
+      vSub = "Both quotes describe the same work on the same VAT basis. Now the CHF figures finally mean something and can be compared directly.";
+    }
+    html += '<div class="verdict ' + vClass + '"><span class="vt">' + esc(vTitle) + '</span><span class="vs">' + esc(vSub) + '</span></div>';
+
+    // chips
+    html += '<div class="chips">';
+    html += '<span class="chip"><span class="d d-ok"></span>' + c.matched + ' of 12 aligned</span>';
+    html += '<span class="chip"><span class="d d-warn"></span>' + c.diffs.length + ' true difference' + (c.diffs.length===1?"":"s") + '</span>';
+    html += '<span class="chip"><span class="d d-miss"></span>' + totalOpen + ' open question' + (totalOpen===1?"":"s") + '</span>';
+    html += '</div>';
+
+    // figures / VAT normalisation
+    var fa = toNum(figA.value), fb = toNum(figB.value);
+    var ga = grossOf(fa, vatA.value), gb = grossOf(fb, vatB.value);
+    if(!isNaN(fa) || !isNaN(fb)){
+      html += '<div class="fig"><div class="figrow">';
+      html += figBlock("Quote A", fa, ga, vatA.value);
+      html += figBlock("Quote B", fb, gb, vatB.value);
+      html += '</div>';
+      if(!isNaN(ga) && !isNaN(gb)){
+        var gap = Math.abs(ga - gb);
+        var factor = (Math.min(ga,gb) > 0) ? (Math.max(ga,gb)/Math.min(ga,gb)) : 0;
+        var factorTxt = factor >= 1.05 ? (" — a factor of about " + (Math.round(factor*10)/10) + "×") : "";
+        var basisNote = (c.diffs.length>0 || c.opens.length>0)
+          ? " Remember this compares two scopes that are not yet identical, so the gap still partly reflects different work, not just price."
+          : " Scopes match, so this gap reflects price for the same work.";
+        html += '<p class="sec-sub" style="margin:10px 0 0">On a like-for-like gross (VAT-inclusive) basis the two figures are about ' + esc(chf(gap)) + ' apart' + factorTxt + '.' + basisNote + '</p>';
+      } else if(c.vatOpen){
+        html += '<p class="sec-sub" style="margin:10px 0 0">One figure’s VAT basis is still unstated, so the two cannot be placed on the same gross basis yet. An 8.1 percent gap on a five-figure invoice is real money — confirm net or gross in writing first.</p>';
+      }
+      html += '</div>';
+    }
+
+    // attention list
+    if(c.opens.length || c.diffs.length){
+      html += '<ul class="attn">';
+      c.opens.forEach(function(d){
+        var who = whoGap(d.k);
+        html += '<li><span class="tag t-open">Open</span><span><b>' + esc(strip(d.n)) + '</b> — not stated by ' + who + '. Ask before comparing.</span></li>';
+      });
+      if(c.vatOpen){
+        var vwho = [];
+        if(vatA.value==="unknown") vwho.push("Quote A");
+        if(vatB.value==="unknown") vwho.push("Quote B");
+        html += '<li><span class="tag t-open">Open</span><span><b>13. VAT treatment</b> — net or gross not stated by ' + esc(vwho.join(" and ")) + '. Confirm before trusting the headline number.</span></li>';
+      }
+      c.diffs.forEach(function(d){
+        var a = quotes.A.scope[d.k], b = quotes.B.scope[d.k];
+        html += '<li><span class="tag t-diff">Differs</span><span><b>' + esc(strip(d.n)) + '</b> — Quote A: ' + esc(label(a)) + '; Quote B: ' + esc(label(b)) + '. A real scope difference, not a pricing trick.</span></li>';
+      });
+      html += '</ul>';
+    }
+
+    result.innerHTML = html;
+    buildFollowup();
+  }
+
+  function figBlock(name, raw, gross, vat){
+    var main, sub, rawTxt;
+    if(isNaN(raw)){
+      main = "—"; sub = "figure not entered"; rawTxt = "";
+    } else if(isNaN(gross)){
+      main = chf(raw); sub = "as entered · VAT basis unknown"; rawTxt = "";
+    } else {
+      main = chf(gross); sub = "gross, VAT-inclusive";
+      rawTxt = (vat === "net") ? "from " + chf(raw) + " net + 8.1% VAT" : "as entered (already gross)";
+    }
+    return '<span class="figq">' + esc(main) + '<small>' + esc(name) + " · " + esc(sub) + '</small>' + (rawTxt ? '<span class="raw">' + esc(rawTxt) + '</span>' : '') + '</span>';
+  }
+
+  function strip(n){ return n.replace(/^\d+\.\s*/, ""); }
+  function label(v){ return v==="in" ? "Included" : v==="out" ? "Excluded / separate" : "Not stated"; }
+  function whoGap(k){
+    var g = [];
+    if(quotes.A.scope[k]==="gap") g.push("Quote A");
+    if(quotes.B.scope[k]==="gap") g.push("Quote B");
+    return g.join(" and ");
+  }
+
+  // ---- follow-up message ----
+  var fuPick = document.getElementById("fuPick");
+  var fuText = document.getElementById("fuText");
+  fuPick.addEventListener("change", buildFollowup);
+
+  function buildFollowup(){
+    var q = fuPick.value;
+    var other = q === "A" ? "B" : "A";
+    var missing = [];
+    DIMS.forEach(function(d){
+      if(quotes[q].scope[d.k] === "gap") missing.push(strip(d.n));
+    });
+    var vatEl = q === "A" ? vatA : vatB;
+    var vatMissing = vatEl.value === "unknown";
+
+    var lines = [];
+    lines.push("Subject: A few scope details before I compare your proposal");
+    lines.push("");
+    lines.push("Hello,");
+    lines.push("");
+    lines.push("Thank you for the proposal. Before I compare it against another quote for the same project, could you confirm the following, so both proposals describe the same scope:");
+    lines.push("");
+    if(missing.length === 0 && !vatMissing){
+      lines.push("- Everything I needed is already stated clearly — thank you. No open questions on my side.");
+    } else {
+      missing.forEach(function(m){ lines.push("- " + m); });
+      if(vatMissing){
+        lines.push("- Is the headline figure net or gross of Swiss VAT (the standard rate is 8.1% at the time of writing)?");
+      }
+    }
+    lines.push("");
+    lines.push("A short written answer for each is all I need — including where the honest answer is “not included, priced separately.” That simply lets me hold this quote against the other on the same basis.");
+    lines.push("");
+    lines.push("Many thanks.");
+
+    fuText.value = lines.join("\n");
+  }
+
+  // ---- copy ----
+  var copyBtn = document.getElementById("copyBtn");
+  var copied = document.getElementById("copied");
+  copyBtn.addEventListener("click", function(){
+    var text = fuText.value;
+    function ok(){ copied.classList.add("on"); setTimeout(function(){ copied.classList.remove("on"); }, 1800); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok, fallback);
+    } else { fallback(); }
+    function fallback(){
+      try{
+        fuText.removeAttribute("readonly");
+        fuText.focus(); fuText.select();
+        document.execCommand("copy");
+        fuText.setAttribute("readonly", "readonly");
+        ok();
+      }catch(e){ /* no-op */ }
+    }
+  });
+
+  render();
+})();
+</script>
+
+<script>(function(){function h(){try{parent.postMessage({wmTool:1,h:document.documentElement.scrollHeight},location.origin);}catch(e){}}window.addEventListener('load',h);window.addEventListener('resize',h);if(window.ResizeObserver){try{new ResizeObserver(h).observe(document.body);}catch(e){}}var n=0;var iv=setInterval(function(){h();if(++n>25)clearInterval(iv);},600);})();</script>
+</body>
+</html>
