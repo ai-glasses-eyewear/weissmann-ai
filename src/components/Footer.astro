@@ -13,6 +13,7 @@ import { hasGlossary, glossaryHubPaths } from '../data/glossary';
 import { liveCompanyPages, companyPagePaths } from '../data/company';
 import { liveCaseStudies, caseStudiesHubPaths } from '../data/case-studies';
 import { t } from '../i18n/ui';
+import { toolsHubPaths, toolsForLocale } from '../data/tools';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -66,6 +67,7 @@ const caseStudiesHref = liveCaseStudies().length > 0 ? relFor(locale, caseStudie
           <li><a href={relFor(locale, pillarHome('academy'))}>{lbl.academy}</a></li>
           {glossHref && <li><a href={glossHref}>{lbl.glossary}</a></li>}
           <li><a href={relFor(locale, pillarHome('resources'))}>{lbl.resources}</a></li>
+          {toolsForLocale(locale).length > 0 && <li><a href={relFor(locale, toolsHubPaths())}>{locale === 'de' ? 'Interaktive Tools' : locale === 'it' ? 'Strumenti interattivi' : 'Interactive tools'}</a></li>}
           {caseStudiesHref && <li><a href={caseStudiesHref}>{t(locale, 'nav.cases')}</a></li>}
         </ul>
       </nav>

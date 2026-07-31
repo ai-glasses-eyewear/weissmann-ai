@@ -16,6 +16,7 @@ import { t } from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
 import Faq from '../Faq.astro';
+import { getTool, toolPaths } from '../../data/tools';
 
 interface Props {
   locale: Locale;
@@ -92,6 +93,13 @@ const schema = [
   breadcrumbs(locale, crumbItems),
   faqPage(article.faq.map((f) => ({ q: f.q[locale], a: f.a[locale] }))),
 ];
+
+// Companion interactive tool: shown only on the article in the tool's own
+// language (tools are single-language). Adds a same-language inbound link.
+const companionTool = getTool(article.id);
+const showTool = !!companionTool && companionTool.status === 'live' && companionTool.lang === locale;
+const toolHref = showTool ? relFor(locale, toolPaths(companionTool!)) : null;
+const toolLbl = { de: { badge: 'Interaktives Tool', cta: 'Tool öffnen' }, en: { badge: 'Interactive tool', cta: 'Open the tool' }, it: { badge: 'Strumento interattivo', cta: 'Apri lo strumento' }, fr: { badge: 'Outil interactif', cta: 'Ouvrir l’outil' } }[locale];
 ---
 <Layout locale={locale} localePaths={localePaths} availableLocales={availableLocales} title={article.title[locale]} description={article.metaDescription[locale]} schema={schema}>
   <Breadcrumbs locale={locale} items={[
@@ -112,6 +120,28 @@ const schema = [
         <p>{article.answerFirst[locale]}</p>
       </aside>
     </header>
+
+    {showTool && toolHref && companionTool && (
+      <aside class="ac-tool container" aria-label={toolLbl.badge}>
+        <a class="ac-tool-card" href={toolHref} data-track="tool_open">
+          <span class="ac-tool-badge">🧮 {toolLbl.badge}</span>
+          <span class="ac-tool-main">
+            <span class="ac-tool-title">{companionTool.h1}</span>
+            <span class="ac-tool-text">{companionTool.intro}</span>
+          </span>
+          <span class="ac-tool-cta">{toolLbl.cta} →</span>
+        </a>
+      </aside>
+    )}
+    <style>
+      .ac-tool { max-width: 52rem; margin-block: var(--space-4); }
+      .ac-tool-card { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--space-3) var(--space-4); border: 1px solid var(--accent, var(--line)); border-radius: 14px; padding: var(--space-4); background: var(--accent-soft, var(--paper)); text-decoration: none; color: inherit; }
+      .ac-tool-badge { grid-column: 1 / -1; font-size: var(--fs-200); text-transform: uppercase; letter-spacing: .06em; color: var(--accent); font-weight: 600; }
+      .ac-tool-title { display: block; font-size: var(--fs-400); font-weight: 600; line-height: 1.2; }
+      .ac-tool-text { display: block; font-size: var(--fs-300); color: var(--ink-soft); margin-top: 0.2rem; }
+      .ac-tool-cta { white-space: nowrap; color: var(--accent); font-weight: 600; }
+      @media (max-width: 560px) { .ac-tool-card { grid-template-columns: 1fr; } }
+    </style>
 
     <div class="ac-body container">
       {article.sections.map((s) => (

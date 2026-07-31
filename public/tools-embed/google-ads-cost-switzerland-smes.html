@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base target="_parent">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<title>Swiss Google Ads Budget Planner · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .grid{display:grid;gap:16px;margin-top:18px}
+  .step-label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 10px}
+  .step-num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--navy);color:var(--on-navy);font-size:.72rem;font-weight:700;margin-right:8px;vertical-align:middle}
+
+  .seg{display:grid;gap:10px}
+  @media(min-width:640px){.seg.cols3{grid-template-columns:1fr 1fr 1fr}}
+  .opt{display:block;width:100%;text-align:left;cursor:pointer;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;color:var(--ink);font-family:inherit;transition:border-color .12s,background .12s}
+  .opt:hover{border-color:var(--navy)}
+  .opt[aria-pressed="true"]{border-color:var(--navy);background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--navy)}
+  .opt:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .opt .ot{font-weight:700;font-size:.98rem;display:block}
+  .opt .os{display:block;font-size:.82rem;color:var(--ink-mute);margin-top:3px;line-height:1.4}
+  .opt .obadge{display:inline-block;font-size:.75rem;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:1px 7px;margin-top:6px}
+
+  .fits{font-size:.9rem;color:var(--ink-soft);background:var(--soft);border-radius:10px;padding:11px 13px;margin:12px 0 0}
+  .catwrap{display:grid;gap:10px}
+  @media(min-width:640px){.catwrap.c3{grid-template-columns:1fr 1fr 1fr}.catwrap.c1{grid-template-columns:1fr}}
+
+  .field label{display:block;font-weight:600;font-size:.92rem;margin-bottom:7px}
+  .inrow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
+  .num{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:11px;padding:2px 12px;background:var(--card);min-width:160px}
+  .num .pfx{font-size:.9rem;color:var(--ink-mute);font-weight:600}
+  .num input{border:none;background:transparent;color:var(--ink);font:600 1.05rem var(--font);padding:11px 0;width:100%;outline:none}
+  .num:focus-within{border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 24%,transparent)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{cursor:pointer;border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);border-radius:999px;padding:9px 14px;font:600 .85rem var(--font)}
+  .chip:hover{border-color:var(--navy)}
+  .chip[aria-pressed="true"]{background:var(--navy);color:var(--on-navy);border-color:var(--navy)}
+  .chip:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .hint{font-size:.82rem;color:var(--ink-mute);margin:9px 0 0;line-height:1.45}
+
+  .funnel{display:grid;gap:0;margin-top:4px}
+  .stage{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:13px 15px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .stage .sl{font-size:.9rem;color:var(--ink-soft)}
+  .stage .sl b{color:var(--ink)}
+  .stage .sv{font:700 1.15rem var(--mono);color:var(--ink);white-space:nowrap}
+  .stage.hl{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
+  .stage.lead{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 40%,var(--line))}
+  .stage.lead .sv{color:var(--ok)}
+  .op{text-align:center;font:700 .8rem var(--mono);color:var(--ink-mute);padding:5px 0;letter-spacing:.04em}
+  .subnote{font-size:.8rem;color:var(--ink-mute);margin:4px 2px 0}
+
+  .feebox{margin-top:16px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .feerow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 15px;border-bottom:1px solid var(--line);font-size:.94rem}
+  .feerow:last-child{border-bottom:none}
+  .feerow .fl{color:var(--ink-soft)}
+  .feerow .fv{font:700 1rem var(--mono);white-space:nowrap}
+  .feerow.total{background:var(--navy);color:var(--on-navy)}
+  .feerow.total .fl{color:var(--on-navy)}.feerow.total .fv{color:var(--on-navy)}
+  .sharetext{font-size:.86rem;color:var(--ink-soft);margin:11px 2px 0;line-height:1.5}
+
+  .verdict{margin-top:16px;border-radius:12px;padding:14px 16px;border:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}
+  .verdict .vi{flex:0 0 auto;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem}
+  .verdict .vb{font-size:.92rem;line-height:1.5}
+  .verdict .vb strong{display:block;margin-bottom:2px;font-size:.98rem}
+  .v-ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}.v-ok .vi{background:var(--ok);color:var(--card)}.v-ok .vb strong{color:var(--ok)}
+  .v-warn{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 45%,var(--line))}.v-warn .vi{background:var(--warn);color:var(--card)}.v-warn .vb strong{color:var(--warn)}
+  .v-miss{background:var(--miss-soft);border-color:color-mix(in srgb,var(--miss) 45%,var(--line))}.v-miss .vi{background:var(--miss);color:var(--card)}.v-miss .vb strong{color:var(--miss)}
+
+  .context{margin-top:14px;font-size:.85rem;color:var(--ink-soft);background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 35%,var(--line));border-radius:10px;padding:11px 13px;line-height:1.5}
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">AI Marketing, SEO &amp; GEO · Google Ads Budgeting</p>
+  <h1>Swiss Google Ads Budget Planner</h1>
+  <p class="lede">Google Ads in Switzerland runs roughly 30–50% above comparable German-market campaigns (industry estimate). Pick a budget tier, choose your category, and see the honest clicks-to-enquiries funnel your ad spend buys — plus the CHF 690/month management layer that sits on top of it.</p>
+
+  <div class="grid">
+
+    <section class="card card-pad" aria-labelledby="s1">
+      <p class="step-label" id="s1"><span class="step-num">1</span>Pick your budget tier</p>
+      <div class="seg cols3" role="group" aria-label="Budget tier">
+        <button type="button" class="opt" data-tier="t1" aria-pressed="true">
+          <span class="ot">Tier 1 — Test</span>
+          <span class="os">First-ever paid search: a single-location trades company, clinic, boutique or restaurant testing whether it works.</span>
+          <span class="obadge">Ad spend ≈ CHF 500–1'200/mo</span>
+        </button>
+        <button type="button" class="opt" data-tier="t2" aria-pressed="false">
+          <span class="ot">Tier 2 — Growth</span>
+          <span class="os">An SME with early evidence paid search converts, running structured, ongoing campaigns.</span>
+          <span class="obadge">Ad spend ≈ CHF 1'500–4'000/mo</span>
+        </button>
+        <button type="button" class="opt" data-tier="t3" aria-pressed="false">
+          <span class="ot">Tier 3 — Competitive</span>
+          <span class="os">B2B SaaS, consulting, legal, finance and professional services in fierce, high-intent auctions.</span>
+          <span class="obadge">Ad spend ≈ CHF 4'000–10'000+/mo</span>
+        </button>
+      </div>
+      <p class="fits" id="fits"></p>
+    </section>
+
+    <section class="card card-pad" aria-labelledby="s2">
+      <p class="step-label" id="s2"><span class="step-num">2</span>Choose your category <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--ink-mute)">— sets the cost-per-click range</span></p>
+      <div class="catwrap" id="cats" role="group" aria-label="Category (cost-per-click range)"></div>
+    </section>
+
+    <section class="card card-pad" aria-labelledby="s3">
+      <p class="step-label" id="s3"><span class="step-num">3</span>Set your monthly ad spend</p>
+      <div class="field">
+        <label for="spend" id="spendLabel">Monthly ad spend paid directly to Google (CHF)</label>
+        <div class="inrow">
+          <div class="num"><span class="pfx">CHF</span><input id="spend" type="number" inputmode="numeric" step="50" aria-describedby="spendHint"></div>
+          <div class="chips" id="spendChips" role="group" aria-label="Quick pick within tier range">
+            <button type="button" class="chip" data-pick="lo">Low end</button>
+            <button type="button" class="chip" data-pick="mid">Mid</button>
+            <button type="button" class="chip" data-pick="hi">High end</button>
+          </div>
+        </div>
+        <p class="hint" id="spendHint"></p>
+      </div>
+
+      <div class="field" style="margin-top:16px">
+        <label for="rate">Your expected enquiry rate <span style="font-weight:400;color:var(--ink-mute)">(optional)</span></label>
+        <div class="num" style="max-width:180px"><input id="rate" type="number" inputmode="decimal" step="0.1" min="0" max="100" placeholder="e.g. 3"><span class="pfx">%</span></div>
+        <p class="hint">This guide sources click <em>costs</em>, not conversion rates — those depend on your offer, landing page and follow-up, so the article gives no Swiss figure. Enter your own realistic estimate to turn clicks into enquiries. Leave blank to skip.</p>
+      </div>
+    </section>
+
+    <section class="card card-pad" aria-labelledby="s4">
+      <p class="step-label" id="s4">Your funnel &amp; the two budget lines</p>
+      <div class="funnel" id="funnel" aria-live="polite">
+        <div class="stage hl"><span class="sl">Monthly ad spend <b>to Google</b></span><span class="sv" id="vSpend">–</span></div>
+        <div class="op">÷ cost per click</div>
+        <div class="stage"><span class="sl" id="vCpcLabel">Cost per click</span><span class="sv" id="vCpc">–</span></div>
+        <div class="op">=</div>
+        <div class="stage"><span class="sl">Clicks / month <b>(range)</b></span><span class="sv" id="vClicks">–</span></div>
+        <div class="op">× your enquiry rate</div>
+        <div class="stage"><span class="sl">Enquiry rate</span><span class="sv" id="vRate">–</span></div>
+        <div class="op">=</div>
+        <div class="stage lead"><span class="sl">Estimated enquiries / month</span><span class="sv" id="vLeads">–</span></div>
+      </div>
+      <p class="subnote">Click ranges use the category's low-to-high CPC: cheaper clicks buy more, pricier clicks buy fewer. Order-of-magnitude industry estimates, not a quote or guarantee.</p>
+
+      <div class="verdict v-ok" id="verdict" role="status" aria-live="polite">
+        <span class="vi" id="vIcon">✓</span>
+        <span class="vb"><strong id="vTitle"></strong><span id="vBody"></span></span>
+      </div>
+
+      <div class="feebox" aria-label="All-in monthly cost">
+        <div class="feerow"><span class="fl">Campaign management — Google Ads Growth</span><span class="fv">CHF 690/mo</span></div>
+        <div class="feerow"><span class="fl">Ad spend — paid directly to Google</span><span class="fv" id="vSpend2">–</span></div>
+        <div class="feerow total"><span class="fl">All-in monthly</span><span class="fv" id="vAllin">–</span></div>
+      </div>
+      <p class="sharetext" id="vShare"></p>
+
+      <div class="context">
+        <b>Why Swiss is pricier:</b> a Swiss digital-marketing agency's estimates, cross-referenced against WordStream's 2026 global benchmark (average ≈ USD 5.42/click, from ≈ USD 1.63 in arts up to ≈ USD 9.87 in legal), put Swiss CPC roughly 30–50% above comparable German-market campaigns. These are aggregated industry estimates — not Google's own published rates, and not per-account guarantees.
+      </div>
+
+      <p class="disc">Orientation, not advice or a quote. Every CPC range and budget tier here comes straight from the linked Weissmann guide, which sources them as industry estimates (WordStream global data and Growth Junction Swiss benchmarks) — not Google's published rates and not per-account guarantees. Your real auction moves with your keywords, location targeting and competitors. Enquiry rates are yours to supply; this tool invents none. Nothing you enter is stored or sent — it stays in your browser.</p>
+    </section>
+
+  </div>
+
+  <footer class="linkbar" aria-label="Read the guide and see the service">
+    <p class="lb-title">Go deeper</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/marketing-seo-geo/google-ads-cost-switzerland-smes/" target="_blank" rel="noopener noreferrer" aria-label="Read the full guide: Google Ads costs in Switzerland (opens in a new tab)">Read the full budget guide →</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/google-ads/" target="_blank" rel="noopener noreferrer" aria-label="See the Google Ads Growth service and pricing (opens in a new tab)">See Google Ads Growth (CHF 690/mo) →</a>
+    </div>
+    <p class="att">Swiss CPC ranges and budget tiers from the linked guide · a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---- Article-sourced data (google-ads-cost-switzerland-smes.json) ----
+  var CATS = {
+    local:  { label:"Local services",         lo:3.5, hi:8,  disp:"CHF 3.50–8" },
+    health: { label:"Healthcare",              lo:5,   hi:18, disp:"CHF 5–18"  },
+    realestate:{ label:"Real estate",          lo:4,   hi:12, disp:"CHF 4–12"  },
+    prof:   { label:"Professional services",   lo:10,  hi:30, disp:"CHF 10–30" },
+    saas:   { label:"B2B SaaS",                lo:8,   hi:25, disp:"CHF 8–25"  },
+    finance:{ label:"Financial services",      lo:15,  hi:45, disp:"CHF 15–45" }
+  };
+  var TIERS = {
+    t1:{ spendLo:500,  spendHi:1200,  cats:["local"],
+         fits:"Tier 1 — Test Budget for Local Services. Keep it narrow: one service area, a short keyword list built on genuine buying intent, and roughly six to eight weeks before judging results." },
+    t2:{ spendLo:1500, spendHi:4000,  cats:["health","realestate","local"],
+         fits:"Tier 2 — Growth Budget for Scaling SMEs. Enough volume to split branded and non-branded terms, run A/B tests on copy and pages, and make a monthly reporting rhythm earn its keep." },
+    t3:{ spendLo:4000, spendHi:10000, cats:["prof","saas","finance"],
+         fits:"Tier 3 — Competitive Budget for B2B and Professional Services. The trap here is under-funding: too few clicks and no pattern ever emerges. Article range is CHF 4'000–10'000 or more — this planner caps at 10'000." }
+  };
+
+  var MGMT = 690; // Google Ads Growth management fee, CHF/month (pricing.ts + article)
+
+  var state = { tier:"t1", cat:"local", spend:mid("t1"), rate:null };
+
+  function mid(t){ return Math.round((TIERS[t].spendLo + TIERS[t].spendHi)/2); }
+
+  // ---- Formatting helpers (Swiss apostrophe grouping, no external calls) ----
+  function group(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "’"); }
+  function chf(n){ return "CHF " + group(n); }
+  function leadFmt(n){
+    if(n < 10) return (Math.round(n*10)/10).toString();
+    return group(Math.round(n));
+  }
+
+  // ---- DOM refs ----
+  var $ = function(id){ return document.getElementById(id); };
+  var tierBtns = Array.prototype.slice.call(document.querySelectorAll('[data-tier]'));
+  var catsWrap = $("cats");
+  var spendInput = $("spend");
+  var rateInput = $("rate");
+  var chipBtns = Array.prototype.slice.call(document.querySelectorAll('#spendChips [data-pick]'));
+
+  // ---- Category buttons (rebuilt when tier changes) ----
+  function renderCats(){
+    var cats = TIERS[state.tier].cats;
+    catsWrap.className = "catwrap " + (cats.length >= 3 ? "c3" : "c1");
+    catsWrap.innerHTML = "";
+    cats.forEach(function(key){
+      var c = CATS[key];
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "opt";
+      b.setAttribute("data-cat", key);
+      b.setAttribute("aria-pressed", key === state.cat ? "true" : "false");
+      var t = document.createElement("span"); t.className = "ot"; t.textContent = c.label;
+      var s = document.createElement("span"); s.className = "obadge"; s.textContent = c.disp + " / click";
+      b.appendChild(t); b.appendChild(document.createElement("br")); b.appendChild(s);
+      catsWrap.appendChild(b);
+    });
+  }
+
+  catsWrap.addEventListener("click", function(e){
+    var b = e.target.closest ? e.target.closest("[data-cat]") : null;
+    if(!b) return;
+    state.cat = b.getAttribute("data-cat");
+    Array.prototype.slice.call(catsWrap.querySelectorAll("[data-cat]")).forEach(function(x){
+      x.setAttribute("aria-pressed", x === b ? "true" : "false");
+    });
+    render();
+  });
+
+  // ---- Tier buttons ----
+  tierBtns.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      state.tier = btn.getAttribute("data-tier");
+      tierBtns.forEach(function(x){ x.setAttribute("aria-pressed", x === btn ? "true" : "false"); });
+      // reset category to the tier's first category, spend to tier midpoint
+      state.cat = TIERS[state.tier].cats[0];
+      state.spend = mid(state.tier);
+      syncSpendBounds();
+      renderCats();
+      render();
+    });
+  });
+
+  // ---- Spend input + chips ----
+  var FLOOR = 300; // absolute input floor; article discusses ~CHF 300–400 as the point below which volume is too thin
+  function syncSpendBounds(){
+    var t = TIERS[state.tier];
+    spendInput.min = FLOOR;
+    spendInput.max = t.spendHi;
+    spendInput.value = state.spend;
+    $("spendHint").innerHTML =
+      "Recommended for this tier: <b>" + chf(t.spendLo) + "–" + chf(t.spendHi) + "/mo</b>. " +
+      "You can go lower to see the under-funding trap — the guide warns that too few clicks means no pattern ever emerges. Values clamp to CHF " + group(FLOOR) + "–" + chf(t.spendHi).replace("CHF ","") + ".";
+  }
+  function clampSpend(v){
+    var t = TIERS[state.tier];
+    if(isNaN(v)) return state.spend;
+    return Math.min(t.spendHi, Math.max(FLOOR, Math.round(v)));
+  }
+  spendInput.addEventListener("input", function(){
+    state.spend = clampSpend(parseFloat(spendInput.value));
+    render();
+  });
+  spendInput.addEventListener("blur", function(){
+    spendInput.value = state.spend; // reflect clamped value
+    render();
+  });
+  chipBtns.forEach(function(ch){
+    ch.addEventListener("click", function(){
+      var t = TIERS[state.tier], p = ch.getAttribute("data-pick");
+      state.spend = p === "lo" ? t.spendLo : (p === "hi" ? t.spendHi : mid(state.tier));
+      spendInput.value = state.spend;
+      render();
+    });
+  });
+
+  // ---- Rate input ----
+  rateInput.addEventListener("input", function(){
+    var v = parseFloat(rateInput.value);
+    state.rate = (isNaN(v) || v <= 0) ? null : Math.min(100, v);
+    render();
+  });
+
+  // ---- Render ----
+  function render(){
+    var c = CATS[state.cat];
+    var spend = state.spend;
+    var midCpc = (c.lo + c.hi) / 2;
+
+    var clicksLow  = Math.floor(spend / c.hi); // pricey clicks -> fewer
+    var clicksHigh = Math.floor(spend / c.lo); // cheap clicks -> more
+    var clicksMid  = Math.round(spend / midCpc);
+
+    // chip pressed state
+    chipBtns.forEach(function(ch){
+      var t = TIERS[state.tier], p = ch.getAttribute("data-pick");
+      var val = p === "lo" ? t.spendLo : (p === "hi" ? t.spendHi : mid(state.tier));
+      ch.setAttribute("aria-pressed", spend === val ? "true" : "false");
+    });
+
+    // funnel
+    $("vSpend").textContent = chf(spend);
+    $("vSpend2").textContent = chf(spend);
+    $("vCpcLabel").textContent = "Cost per click — " + c.label + " (industry estimate)";
+    $("vCpc").textContent = c.disp;
+    $("vClicks").textContent = clicksLow === clicksHigh
+      ? clicksLow + " clicks"
+      : group(clicksLow) + "–" + group(clicksHigh) + " clicks";
+
+    if(state.rate === null){
+      $("vRate").textContent = "—";
+      $("vLeads").textContent = "add your rate ↑";
+    } else {
+      $("vRate").textContent = (Math.round(state.rate*10)/10) + "%";
+      var lLow  = clicksLow  * state.rate / 100;
+      var lHigh = clicksHigh * state.rate / 100;
+      $("vLeads").textContent = (lLow === lHigh)
+        ? leadFmt(lLow) + " enquiries"
+        : leadFmt(lLow) + "–" + leadFmt(lHigh) + " enquiries";
+    }
+
+    // fee-on-top layer
+    var allIn = spend + MGMT;
+    $("vAllin").textContent = chf(allIn) + "/mo";
+    var sharePct = Math.round(MGMT / allIn * 100);
+    var mult = allIn / spend;
+    var multTxt = (Math.round(mult*100)/100).toFixed(2).replace(/0$/,"").replace(/\.$/,"");
+    $("vShare").textContent =
+      "At " + chf(spend) + " ad spend, the CHF 690/mo management fee is " + sharePct +
+      "% of your all-in " + chf(allIn) + " — it lifts the monthly figure to " + multTxt +
+      "× your spend. That share shrinks as ad spend scales into higher tiers. The Google spend itself is never part of the CHF 690 fee; it is billed separately and directly by Google.";
+
+    // viability verdict — "The One Number That Actually Matters":
+    // divide spend by the CPC midpoint; the article calls fewer than ~50-70 clicks too thin.
+    var v = $("verdict"), vi = $("vIcon"), vt = $("vTitle"), vb = $("vBody");
+    var base = "At the mid CPC (" + chf(midCpc).replace("CHF ", "CHF ") +
+      "), " + chf(spend) + " buys about " + group(clicksMid) + " clicks a month. ";
+    v.className = "verdict";
+    if(clicksMid < 50){
+      v.classList.add("v-miss"); vi.textContent = "!";
+      vt.textContent = "Too thin to learn from";
+      vb.textContent = base + "That is below the ~50–70 clicks the guide names as a floor — a poor first move at this category's CPC. The honest fix is fewer, tighter keywords, not fewer weeks of testing.";
+    } else if(clicksMid < 70){
+      v.classList.add("v-warn"); vi.textContent = "~";
+      vt.textContent = "Borderline volume";
+      vb.textContent = base + "That sits around the ~50–70 click floor the guide names. Workable, but tighten the keyword list or lift the budget so six to eight weeks produces a real conclusion.";
+    } else {
+      v.classList.add("v-ok"); vi.textContent = "✓";
+      vt.textContent = "Enough volume to judge";
+      vb.textContent = base + "That clears the ~50–70 click floor — enough monthly volume to accumulate a meaningful sample over the six-to-eight-week window the guide recommends.";
+    }
+
+    $("fits").textContent = TIERS[state.tier].fits;
+  }
+
+  // ---- Init ----
+  syncSpendBounds();
+  renderCats();
+  render();
+})();
+</script>
+
+<script>(function(){function h(){try{parent.postMessage({wmTool:1,h:document.documentElement.scrollHeight},location.origin);}catch(e){}}window.addEventListener('load',h);window.addEventListener('resize',h);if(window.ResizeObserver){try{new ResizeObserver(h).observe(document.body);}catch(e){}}var n=0;var iv=setInterval(function(){h();if(++n>25)clearInterval(iv);},600);})();</script>
+</body>
+</html>

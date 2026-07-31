@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base target="_parent">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<title>Multilingual URL &amp; hreflang Planner · Weissmann</title>
+<style>
+  :root{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;
+    --ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;
+    --radius:14px;--shadow:0 1px 2px rgba(20,25,40,.06),0 8px 24px rgba(20,25,40,.06);--font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;--mono:ui-monospace,'Cascadia Code',Consolas,'Courier New',monospace;--on-navy:#fff;}
+  @media(prefers-color-scheme:dark){:root{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}}
+  :root[data-theme="dark"]{--navy:#8fa6dd;--navy-hover:#a6b8e6;--ink:#f4f5f6;--ink-soft:#d3d7de;--ink-mute:#9aa1ad;--bg:#101420;--card:#171c2b;--soft:#1e2436;--line:#2a3145;--ok:#6fce9c;--ok-soft:#153125;--miss:#f08a97;--miss-soft:#3a1620;--warn:#e0b070;--warn-soft:#332612;--accent:#7fb6df;--accent-soft:#142838;--on-navy:#101420;}
+  :root[data-theme="light"]{--navy:#1f2a44;--navy-hover:#2a3a5e;--ink:#151515;--ink-soft:#3f434b;--ink-mute:#5f6570;--bg:#f6f7f8;--card:#fff;--soft:#eef1f7;--line:#e4e6e9;--ok:#1d7a4d;--ok-soft:#e6f4ec;--miss:#a01324;--miss-soft:#fbeced;--warn:#9a5a00;--warn-soft:#fbf1e2;--accent:#1d5a86;--accent-soft:#e6f0f7;--on-navy:#fff;}
+  *{box-sizing:border-box}body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+  .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:0 0 6px}
+  h1{font-size:clamp(1.5rem,3.6vw,2.05rem);line-height:1.12;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .lede{color:var(--ink-soft);max-width:68ch;margin:0;font-size:1.02rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card-pad{padding:clamp(16px,2.4vw,22px)}
+  .disc{font-size:.8rem;color:var(--ink-mute);background:var(--soft);border-radius:10px;padding:12px 14px;line-height:1.5;margin-top:14px}
+
+  .planner{display:grid;gap:16px;margin-top:18px}
+  @media(min-width:880px){.planner{grid-template-columns:minmax(0,1fr) minmax(0,1.04fr)}}
+  .h2{font-size:1.02rem;margin:0 0 4px;letter-spacing:-.01em}
+  .sub{font-size:.84rem;color:var(--ink-mute);margin:0 0 14px}
+  fieldset{border:1px solid var(--line);border-radius:12px;padding:12px 14px 14px;margin:0 0 16px;min-width:0}
+  fieldset:last-of-type{margin-bottom:0}
+  legend{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-weight:700;padding:0 6px}
+  .field{margin:0 0 16px}
+  .flabel{display:block;font-weight:600;font-size:.9rem;margin:0 0 6px}
+  input[type=text]{width:100%;font:inherit;font-size:.92rem;padding:9px 11px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink)}
+  input[type=text]:focus-visible,select:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  input[type=text]:disabled{opacity:.5}
+  input[type=checkbox],input[type=radio]{accent-color:var(--navy);width:16px;height:16px;flex:none}
+  .lrow{padding:11px 0;border-top:1px solid var(--line)}
+  .lrow:first-of-type{border-top:0;padding-top:2px}
+  .lrow.off{opacity:.5}
+  .ltop{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .lchk{flex:1 1 130px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:.94rem}
+  .ldef{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--ink-mute)}
+  .badge{font-family:var(--mono);font-size:.76rem;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:2px 7px;color:var(--ink-soft);white-space:nowrap}
+  .slugline{display:flex;align-items:center;gap:6px;margin-top:8px}
+  .slugline .pfx{font-family:var(--mono);font-size:.74rem;color:var(--ink-mute);white-space:nowrap;overflow-x:auto;max-width:52%}
+  .slugline input{flex:1 1 auto;min-width:0}
+  .note{font-size:.8rem;color:var(--ink-mute);line-height:1.5;margin:10px 0 0}
+  .chkline{display:flex;align-items:flex-start;gap:9px;font-size:.9rem;line-height:1.45}
+  .seg{display:grid;gap:8px}
+  .segopt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+  .segopt:hover{background:var(--soft)}
+  .segopt.sel{border-color:var(--navy);box-shadow:inset 0 0 0 1px var(--navy);background:var(--soft)}
+  .segopt .st{font-weight:600;font-size:.92rem}
+  .segopt .sd{font-family:var(--mono);font-size:.75rem;color:var(--ink-mute);display:block;margin-top:2px}
+  .verdict{margin-top:12px;border-radius:10px;padding:11px 13px;font-size:.85rem;line-height:1.5;color:var(--ink)}
+  .verdict.ok{background:var(--ok-soft)}
+  .verdict.warn{background:var(--warn-soft)}
+  .verdict.miss{background:var(--miss-soft)}
+  .tone-tag{font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:7px}
+  .urllist{display:grid;gap:8px;margin:0 0 4px}
+  .urlrow{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap;font-size:.85rem}
+  .urlrow .u{font-family:var(--mono);font-size:.79rem;word-break:break-all;color:var(--ink)}
+  .deftag{font-size:.66rem;color:var(--ok);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+  .row-between{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+  .selrow{display:flex;align-items:center;gap:9px;margin-bottom:8px;flex-wrap:wrap;font-size:.86rem}
+  select{font:inherit;font-size:.88rem;padding:7px 10px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink)}
+  pre.code{margin:0;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:13px 14px;overflow-x:auto;font-family:var(--mono);font-size:.77rem;line-height:1.65;color:var(--ink);white-space:pre}
+  .copybtn{font:inherit;font-size:.82rem;font-weight:600;padding:8px 13px;border:1px solid var(--navy);color:var(--navy);background:var(--card);border-radius:9px;cursor:pointer}
+  .copybtn:hover{background:var(--soft)}
+  .copybtn:focus-visible{outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
+  .status{font-size:.8rem;color:var(--ok);font-weight:600;min-height:1.15em;margin:8px 0 0}
+  .watch{margin-top:16px}
+  .wlist{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+  .wlist li{display:grid;grid-template-columns:auto 1fr;gap:10px;font-size:.86rem;line-height:1.5;padding:11px 13px;border-radius:10px;color:var(--ink)}
+  .wlist li .ic{font-family:var(--mono);font-weight:700;font-size:.9rem}
+  .wlist li.ok{background:var(--ok-soft)}.wlist li.ok .ic{color:var(--ok)}
+  .wlist li.warn{background:var(--warn-soft)}.wlist li.warn .ic{color:var(--warn)}
+  .wlist li.miss{background:var(--miss-soft)}.wlist li.miss .ic{color:var(--miss)}
+  .wlist li.accent{background:var(--accent-soft)}.wlist li.accent .ic{color:var(--accent)}
+  .reftable{display:grid;gap:7px;margin:12px 0 0}
+  .reftable .rr{display:flex;gap:9px;flex-wrap:wrap;align-items:baseline;font-size:.83rem}
+  .reftable .rl{font-weight:600;min-width:64px}
+  .reftable .rc{font-family:var(--mono);font-size:.77rem;color:var(--ink-soft);word-break:break-all}
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  .linkbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2.4vw,22px)}
+  .lb-title{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:0 0 12px}
+  .lb-links{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:620px){.lb-links{grid-template-columns:1fr 1fr}}
+  .lb-link{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 16px;border-radius:11px;border:1.5px solid var(--navy);color:var(--navy);min-height:48px}.lb-link:hover{background:var(--soft)}.lb-link.primary{background:var(--navy);color:var(--on-navy)}.lb-link.primary:hover{background:var(--navy-hover)}.lb-link:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--navy) 32%,transparent)}
+  .att{margin:14px 2px 0;font-size:.8rem;color:var(--ink-mute)}
+</style>
+
+<div class="wrap">
+  <p class="kicker">AI Marketing, SEO &amp; GEO · Multilingual Site Architecture</p>
+  <h1>Multilingual URL &amp; hreflang planner</h1>
+  <p class="lede">Pick the languages you can genuinely maintain, choose a URL pattern, and preview the reciprocal hreflang set &mdash; the decision the guide says to settle first, on paper, before a single sentence goes to a translator.</p>
+
+  <div class="planner">
+    <!-- CONFIG -->
+    <section class="card card-pad" aria-labelledby="cfg-h">
+      <h2 class="h2" id="cfg-h">Plan the structure</h2>
+      <p class="sub">Nothing you type is saved or sent &mdash; it stays in this browser tab.</p>
+
+      <div class="field">
+        <label class="flabel" for="domain">Your domain</label>
+        <input type="text" id="domain" placeholder="example.ch" autocomplete="off" spellcheck="false" aria-describedby="domnote">
+        <p class="note" id="domnote">A placeholder for [your domain]. Used only to assemble the preview below.</p>
+      </div>
+
+      <fieldset>
+        <legend>Languages you will publish and maintain</legend>
+        <p class="note" style="margin-top:2px">Decide which you can keep current for as long as the page stays live &mdash; not which you can afford to launch once. Tick a language, mark one as the default (it carries no URL prefix), and give each its own localized slug.</p>
+        <div id="langrows" style="margin-top:6px">
+          <div class="lrow" id="row-de">
+            <div class="ltop">
+              <label class="lchk"><input type="checkbox" id="sel-de"> German</label>
+              <span class="badge" id="code-de">de-CH</span>
+              <label class="ldef"><input type="radio" name="deflang" id="def-de" value="de"> default</label>
+            </div>
+            <div class="slugline"><span class="pfx" id="pfx-de"></span><label class="vh" for="slug-de">German URL slug</label><input type="text" id="slug-de" placeholder="ki-webentwicklung" autocomplete="off" spellcheck="false"></div>
+          </div>
+          <div class="lrow" id="row-en">
+            <div class="ltop">
+              <label class="lchk"><input type="checkbox" id="sel-en"> English</label>
+              <span class="badge" id="code-en">en</span>
+              <label class="ldef"><input type="radio" name="deflang" id="def-en" value="en"> default</label>
+            </div>
+            <div class="slugline"><span class="pfx" id="pfx-en"></span><label class="vh" for="slug-en">English URL slug</label><input type="text" id="slug-en" placeholder="ai-web-development" autocomplete="off" spellcheck="false"></div>
+          </div>
+          <div class="lrow" id="row-it">
+            <div class="ltop">
+              <label class="lchk"><input type="checkbox" id="sel-it"> Italian</label>
+              <span class="badge" id="code-it">it</span>
+              <label class="ldef"><input type="radio" name="deflang" id="def-it" value="it"> default</label>
+            </div>
+            <div class="slugline"><span class="pfx" id="pfx-it"></span><label class="vh" for="slug-it">Italian URL slug</label><input type="text" id="slug-it" placeholder="sviluppo-siti-web-ai" autocomplete="off" spellcheck="false"></div>
+          </div>
+          <div class="lrow" id="row-fr">
+            <div class="ltop">
+              <label class="lchk"><input type="checkbox" id="sel-fr"> French</label>
+              <span class="badge" id="code-fr">fr</span>
+              <label class="ldef"><input type="radio" name="deflang" id="def-fr" value="fr"> default</label>
+            </div>
+            <div class="slugline"><span class="pfx" id="pfx-fr"></span><label class="vh" for="slug-fr">French URL slug</label><input type="text" id="slug-fr" placeholder="developpement-web-ia" autocomplete="off" spellcheck="false"></div>
+          </div>
+        </div>
+        <label class="chkline" style="margin-top:12px"><input type="checkbox" id="regionAll"> <span>Region-tag English / Italian / French as Swiss variants (en-CH, it-CH, fr-CH). German stays de-CH regardless.</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>URL pattern</legend>
+        <div class="seg" id="seg">
+          <label class="segopt" data-k="subfolder"><input type="radio" name="pat" value="subfolder"><span><span class="st">Locale subfolders</span><span class="sd">example.ch/en/&hellip;</span></span></label>
+          <label class="segopt" data-k="subdomain"><input type="radio" name="pat" value="subdomain"><span><span class="st">Subdomains</span><span class="sd">en.example.ch</span></span></label>
+          <label class="segopt" data-k="domain"><input type="radio" name="pat" value="domain"><span><span class="st">Separate country domains</span><span class="sd">example.ch / .de / .it</span></span></label>
+          <label class="segopt" data-k="param"><input type="radio" name="pat" value="param"><span><span class="st">Query parameters</span><span class="sd">example.ch/?lang=en</span></span></label>
+        </div>
+        <div class="verdict" id="verdict" aria-live="polite"></div>
+      </fieldset>
+    </section>
+
+    <!-- OUTPUT -->
+    <section class="card card-pad" aria-labelledby="out-h" aria-live="polite">
+      <h2 class="h2" id="out-h">Your recommended URLs</h2>
+      <p class="sub">One sample page across the locales you selected.</p>
+      <div class="urllist" id="urllist"></div>
+      <p class="note">Each locale gets its own localized slug, not the default slug with a language code stapled on &mdash; four genuinely different words for the same page.</p>
+
+      <div style="margin-top:18px">
+        <div class="row-between">
+          <h2 class="h2" style="margin:0">The hreflang <code>&lt;head&gt;</code></h2>
+          <button type="button" class="copybtn" id="copybtn">Copy block</button>
+        </div>
+        <div class="selrow"><label for="plocale">Preview the head of:</label> <select id="plocale"></select></div>
+        <pre class="code" id="headcode" tabindex="0" aria-label="Generated hreflang and canonical head block"></pre>
+        <p class="status" id="copystatus" role="status" aria-live="polite"></p>
+        <p class="note">The alternate list is identical on every page; only the self-referencing canonical changes per locale. It is reciprocal &mdash; each locale lists all the others and itself &mdash; because Google ignores the whole annotation &ldquo;if two pages don&rsquo;t both point to each other.&rdquo; <code>x-default</code> points at the default locale as a fallback, not a ranking signal.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- WATCH-OUTS -->
+  <section class="card card-pad watch" aria-labelledby="watch-h">
+    <h2 class="h2" id="watch-h">Watch-outs for this plan</h2>
+    <p class="sub">All common, all quiet enough to carry for a year before anyone notices the pattern.</p>
+    <ul class="wlist" id="watchlist" aria-live="polite"></ul>
+  </section>
+
+  <!-- REFERENCE -->
+  <section class="card card-pad" aria-labelledby="ref-h" style="margin-top:16px">
+    <h2 class="h2" id="ref-h">How this very site is wired (a live example)</h2>
+    <div class="reftable">
+      <div class="rr"><span class="rl">German</span><span class="rc">weissmann.ai/leistungen/ki-webentwicklung/ &nbsp;<span class="deftag">default · no prefix</span></span></div>
+      <div class="rr"><span class="rl">English</span><span class="rc">weissmann.ai/en/services/ai-web-development/</span></div>
+      <div class="rr"><span class="rl">Italian</span><span class="rc">weissmann.ai/it/servizi/sviluppo-siti-web-ai/</span></div>
+      <div class="rr"><span class="rl">French</span><span class="rc">weissmann.ai/fr/services/developpement-web-ia/</span></div>
+    </div>
+    <p class="note">One localized slug per language &mdash; not four copies of <code>ki-webentwicklung</code> with a country code stapled on. German is tagged <code>de-CH</code> (Swiss High German spells with ss, not &szlig;); English, Italian and French use the plain codes. This article itself exists in English only, so its hreflang set holds exactly one alternate (en, pointing at itself) plus an <code>x-default</code> to that same URL &mdash; no invented link to a translation that was never written.</p>
+    <p class="note"><strong>Where a build fits:</strong> the Starter Website (CHF 880, regular CHF 2&rsquo;490) sets up the technical SEO and GEO foundation but is one language &mdash; additional languages aren&rsquo;t included. Larger builds are quoted at the Business tier (CHF 4&rsquo;990) and the Complex tier (from CHF 9&rsquo;900).</p>
+  </section>
+
+  <p class="disc">Orientation, not advice or a quote. Everything here reflects this guide and Google&rsquo;s cited documentation on localized versions, canonicalization and the BCP&nbsp;47 language-tag standard &mdash; there is no honest single timeline or price for adding a language without knowing your page count and architecture. The planner runs entirely in your browser: nothing you type is saved, sent or stored, and [your domain] is only a placeholder.</p>
+
+  <footer class="linkbar" aria-label="Related guide and service">
+    <p class="lb-title">Take it further</p>
+    <div class="lb-links">
+      <a class="lb-link" href="https://weissmann.ai/en/ai-academy/marketing-seo-geo/multilingual-website-switzerland-seo/" target="_blank" rel="noopener noreferrer" aria-label="Read the full multilingual Swiss SEO guide (opens in a new tab)">Read the full multilingual-SEO guide &rarr;</a>
+      <a class="lb-link primary" href="https://weissmann.ai/en/services/ai-web-development/" target="_blank" rel="noopener noreferrer" aria-label="Weissmann AI web development service (opens in a new tab)">AI web development at Weissmann &rarr;</a>
+    </div>
+    <p class="att">Weissmann AI · a companion to the guide. Orientation, not a quote.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var LANGS=[
+    {key:'de',label:'German',base:'de-CH',region:'de-CH'},
+    {key:'en',label:'English',base:'en',region:'en-CH'},
+    {key:'it',label:'Italian',base:'it',region:'it-CH'},
+    {key:'fr',label:'French',base:'fr',region:'fr-CH'}
+  ];
+  var PATTERNS=[
+    {key:'subfolder',tone:'ok',verdict:'Right default for nearly every Swiss SME: one domain, one accumulating pool of authority, and a language added later costs a folder, not a migration. This is the pattern this very site uses.'},
+    {key:'subdomain',tone:'warn',verdict:'Technically simple to spin up, but Google has historically treated subdomains close enough to independent sites that authority does not flow between them cleanly. Worth it only when the hosting genuinely differs per market.'},
+    {key:'domain',tone:'warn',verdict:'Each domain starts its own authority from zero and needs its own backlinks and trust history. It only earns its cost at a scale — separate national entities, legal structures, budgets — that almost no Swiss SME operates at.'},
+    {key:'param',tone:'miss',verdict:'The cheapest to bolt on and the reason so many Swiss “multilingual” sites never rank in the second language. Search engines generally treat parameterized variants as the same page, and hreflang layered on top is fragile.'}
+  ];
+
+  var state={
+    domain:'example.ch',
+    selected:{de:true,en:true,it:false,fr:false},
+    def:'de',
+    regionAll:false,
+    pattern:'subfolder',
+    slugs:{de:'',en:'',it:'',fr:''},
+    preview:'de'
+  };
+
+  function $(id){return document.getElementById(id);}
+  function selectedKeys(){return LANGS.map(function(l){return l.key;}).filter(function(k){return state.selected[k];});}
+  function codeFor(k){if(k==='de')return 'de-CH';var L=find(k);return state.regionAll?L.region:L.base;}
+  function find(k){for(var i=0;i<LANGS.length;i++){if(LANGS[i].key===k)return LANGS[i];}return null;}
+  function cleanDomain(d){return (d||'').trim().replace(/^https?:\/\//i,'').replace(/\/.*$/,'').replace(/\s+/g,'').toLowerCase();}
+  function cleanSlug(s){return (s||'').trim().toLowerCase().replace(/^\/+|\/+$/g,'').replace(/\s+/g,'-').replace(/[^a-z0-9\/\-]/g,'');}
+
+  function partsFor(k){
+    var dom=cleanDomain(state.domain)||'example.ch';
+    var slug=cleanSlug(state.slugs[k])||('['+k+'-slug]');
+    var isDef=(k===state.def);
+    if(state.pattern==='subfolder'){return {pre:'https://'+dom+(isDef?'':'/'+k)+'/',slug:slug,post:'/'};}
+    if(state.pattern==='subdomain'){return {pre:'https://'+(isDef?'':k+'.')+dom+'/',slug:slug,post:'/'};}
+    if(state.pattern==='domain'){
+      var parts=dom.split('.');var name=parts[0];
+      var tld=isDef?(parts.slice(1).join('.')||'[cc]'):('['+k+'-cc]');
+      return {pre:'https://'+name+'.'+tld+'/',slug:slug,post:'/'};
+    }
+    return {pre:'https://'+dom+'/',slug:slug,post:'/'+(isDef?'':'?lang='+k)};
+  }
+  function urlFor(k){var p=partsFor(k);return p.pre+p.slug+p.post;}
+  function baseFor(k){return partsFor(k).pre;}
+
+  function render(){
+    var keys=selectedKeys();
+    if(!state.selected[state.def])state.def=keys[0]||'de';
+    if(!state.selected[state.preview])state.preview=state.def;
+    keys=selectedKeys();
+
+    LANGS.forEach(function(l){
+      var k=l.key,on=!!state.selected[k];
+      $('code-'+k).textContent=codeFor(k);
+      $('pfx-'+k).textContent=baseFor(k);
+      $('row-'+k).classList.toggle('off',!on);
+      var sel=$('sel-'+k);if(sel.checked!==on)sel.checked=on;
+      var def=$('def-'+k);def.checked=(state.def===k);def.disabled=!on;
+      $('slug-'+k).disabled=!on;
+    });
+
+    // pattern
+    var opts=document.querySelectorAll('.segopt');
+    for(var i=0;i<opts.length;i++){opts[i].classList.toggle('sel',opts[i].getAttribute('data-k')===state.pattern);}
+    var P=null;for(var j=0;j<PATTERNS.length;j++){if(PATTERNS[j].key===state.pattern)P=PATTERNS[j];}
+    var v=$('verdict');v.className='verdict '+P.tone;v.textContent='';
+    var tag=document.createElement('span');tag.className='tone-tag';
+    tag.textContent=(P.tone==='ok'?'Recommended':P.tone==='miss'?'Avoid':'Caution');
+    v.appendChild(tag);v.appendChild(document.createTextNode(P.verdict));
+
+    // urls
+    var ul=$('urllist');ul.textContent='';
+    keys.forEach(function(k){
+      var row=document.createElement('div');row.className='urlrow';
+      var b=document.createElement('span');b.className='badge';b.textContent=codeFor(k);
+      var u=document.createElement('span');u.className='u';u.textContent=urlFor(k);
+      row.appendChild(b);row.appendChild(u);
+      if(k===state.def){var d=document.createElement('span');d.className='deftag';d.textContent='default · no prefix';row.appendChild(d);}
+      ul.appendChild(row);
+    });
+
+    // preview select
+    var ps=$('plocale');ps.textContent='';
+    keys.forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=find(k).label+' ('+codeFor(k)+')';ps.appendChild(o);});
+    ps.value=state.preview;
+
+    // head block
+    var lines=[];
+    lines.push('<!-- head of '+urlFor(state.preview)+' -->');
+    lines.push('<link rel="canonical" href="'+urlFor(state.preview)+'" />');
+    keys.forEach(function(k){lines.push('<link rel="alternate" hreflang="'+codeFor(k)+'" href="'+urlFor(k)+'" />');});
+    lines.push('<link rel="alternate" hreflang="x-default" href="'+urlFor(state.def)+'" />');
+    $('headcode').textContent=lines.join('\n');
+
+    renderWatch(keys);
+  }
+
+  function renderWatch(keys){
+    var items=[
+      {t:'accent',x:'Reciprocal or ignored. Every locale must list all the others and itself; Google discards the whole annotation set “if two pages don’t both point to each other.”'},
+      {t:'accent',x:'Self-referencing canonical on every locale — never point the English, Italian or French canonical back at the default. That tells Google the translations are copies and can suppress them from ranking.'},
+      {t:'accent',x:'x-default is a fallback for a visitor whose browser language matches no locale you offer — an instruction, not a ranking signal. On a one-language page it points back at that page.'},
+      {t:'accent',x:'Bake reciprocal hreflang and self-canonical into the page template, so page four hundred inherits correct tags automatically instead of relying on someone adding them by hand.'},
+      {t:'accent',x:'Watch each locale’s Search Console property separately — an all-languages average can look healthy while one specific language quietly fails.'},
+      {t:'warn',x:'Slug drift: rename a localized slug after launch and update every sibling’s alternate link, or the handshake breaks silently — a slow decline in one language, no visible 404.'},
+      {t:'warn',x:'Localize, don’t machine-translate: translate the claim, not the words — “aus einer Hand” becomes “one team handles the whole project,” not “from one hand.” Thin, unedited machine translation can be read as duplicate, low-value content.'},
+      {t:'warn',x:'Don’t abandon a translation: a French price list from launch year beside a German one updated four times since is a worse trust signal than never publishing French at all.'}
+    ];
+    if(state.regionAll){items.push({t:'warn',x:'Region tags (en-CH / it-CH / fr-CH) only earn their keep if you specifically distinguish Swiss French, Italian or English from France’s or Italy’s in Google’s eyes; otherwise the plain codes are a reasonable simplification.'});}
+    if(keys.indexOf('de')!==-1){items.push({t:'ok',x:'de-CH is worth the extra step for a Swiss business: Swiss High German differs in spelling (ss, not ß) and vocabulary, keeping it distinct from Germany-targeted German.'});}
+    if(keys.length===1){items.push({t:'accent',x:'A page can honestly exist in one language — the hreflang set then lists only that locale (self) plus x-default to it, and the switcher must not fabricate a link to a translation that does not exist. This very article is English-only by design.'});}
+    if(keys.length===4){items.push({t:'warn',x:'Four national languages is not itself a reason to publish all four. The test is which you can keep current for as long as the page stays live — publishing fewer, properly maintained, beats all four with one quietly abandoned.'});}
+    if(state.pattern==='param'){items.push({t:'miss',x:'Query parameters chosen: this is the structure the guide’s opening scenario fails on. Search engines treat ?lang= variants as one page, so the second language never gets its own index entry — switch to locale subfolders before translating anything.'});}
+
+    var wl=$('watchlist');wl.textContent='';
+    items.forEach(function(it){
+      var li=document.createElement('li');li.className=it.t;
+      var ic=document.createElement('span');ic.className='ic';
+      ic.textContent=(it.t==='ok'?'✓':it.t==='miss'?'✕':it.t==='warn'?'!':'→');
+      var tx=document.createElement('span');tx.textContent=it.x;
+      li.appendChild(ic);li.appendChild(tx);wl.appendChild(li);
+    });
+  }
+
+  function doCopy(){
+    var txt=$('headcode').textContent;
+    var s=$('copystatus');
+    var ok=function(){s.style.color='';s.textContent='Copied to clipboard.';setTimeout(function(){s.textContent='';},2400);};
+    var fail=function(){s.textContent='Copy unavailable — select the text and copy manually.';};
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(ok,function(){fallbackCopy(txt,ok,fail);});
+    }else{fallbackCopy(txt,ok,fail);}
+  }
+  function fallbackCopy(txt,ok,fail){
+    try{
+      var ta=document.createElement('textarea');ta.value=txt;ta.setAttribute('readonly','');
+      ta.style.position='absolute';ta.style.left='-9999px';document.body.appendChild(ta);
+      ta.select();var done=document.execCommand('copy');document.body.removeChild(ta);
+      if(done){ok();}else{fail();}
+    }catch(e){fail();}
+  }
+
+  function init(){
+    $('domain').value=state.domain;
+    LANGS.forEach(function(l){
+      $('sel-'+l.key).checked=state.selected[l.key];
+      $('def-'+l.key).checked=(state.def===l.key);
+      $('slug-'+l.key).value=state.slugs[l.key];
+    });
+    $('regionAll').checked=state.regionAll;
+    var pr=document.querySelector('input[name="pat"][value="'+state.pattern+'"]');if(pr)pr.checked=true;
+
+    $('domain').addEventListener('input',function(e){state.domain=e.target.value;render();});
+    LANGS.forEach(function(l){
+      $('sel-'+l.key).addEventListener('change',function(e){
+        if(!e.target.checked&&selectedKeys().length<=1){e.target.checked=true;return;}
+        state.selected[l.key]=e.target.checked;
+        if(!e.target.checked&&state.def===l.key){state.def=selectedKeys()[0];}
+        if(!e.target.checked&&state.preview===l.key){state.preview=state.def;}
+        render();
+      });
+      $('def-'+l.key).addEventListener('change',function(e){
+        if(e.target.checked){
+          state.def=l.key;
+          if(!state.selected[l.key]){state.selected[l.key]=true;$('sel-'+l.key).checked=true;}
+          render();
+        }
+      });
+      $('slug-'+l.key).addEventListener('input',function(e){state.slugs[l.key]=e.target.value;render();});
+    });
+    $('regionAll').addEventListener('change',function(e){state.regionAll=e.target.checked;render();});
+    var pats=document.querySelectorAll('input[name="pat"]');
+    for(var i=0;i<pats.length;i++){pats[i].addEventListener('change',function(e){state.pattern=e.target.value;render();});}
+    $('plocale').addEventListener('change',function(e){state.preview=e.target.value;render();});
+    $('copybtn').addEventListener('click',doCopy);
+
+    render();
+  }
+
+  init();
+})();
+</script>
+
+<script>(function(){function h(){try{parent.postMessage({wmTool:1,h:document.documentElement.scrollHeight},location.origin);}catch(e){}}window.addEventListener('load',h);window.addEventListener('resize',h);if(window.ResizeObserver){try{new ResizeObserver(h).observe(document.body);}catch(e){}}var n=0;var iv=setInterval(function(){h();if(++n>25)clearInterval(iv);},600);})();</script>
+</body>
+</html>
