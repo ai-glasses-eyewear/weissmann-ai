@@ -25,6 +25,11 @@ for (const file of walk(dist)) {
   const t = readFileSync(file, 'utf8');
   const rel = file.slice(dist.length + 1);
 
+  // Interactive-tool embed docs (/tools-embed/*.html) are noindex iframe
+  // widgets with no <head> metadata or SEO role — qa-gates.mjs exempts them
+  // from page-level assertions for the same reason, so skip them here too.
+  if (rel.replace(/\\/g, '/').startsWith('tools-embed/')) continue;
+
   const title = (t.match(/<title>([^<]*)<\/title>/) || [])[1] || '';
   if (!title.trim()) issues.noTitle.push(rel);
   else if (title.length > 65) issues.titleLen.push(`${rel} (${title.length})`);
