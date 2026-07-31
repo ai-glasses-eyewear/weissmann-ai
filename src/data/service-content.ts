@@ -43,13 +43,13 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
   'phone-assistant': {
     id: 'phone-assistant',
     title: L(
-      'KI-Telefonassistent für Unternehmen | Weissmann AI',
-      'AI Phone Assistant for Business | Weissmann AI',
-      'Assistente telefonico AI per aziende | Weissmann AI',
-      'Assistant téléphonique IA pour entreprises | Weissmann AI',
+      'KI-Telefonassistent Schweiz – Anbieter für KMU | Weissmann AI',
+      'AI Phone Assistant Switzerland for SMEs | Weissmann AI',
+      'Assistente telefonico AI Svizzera per PMI | Weissmann AI',
+      'Assistant téléphonique IA Suisse pour PME | Weissmann AI',
     ),
     metaDescription: L(
-      'Ein KI-Telefonassistent, der jeden Anruf annimmt, Termine bucht und Fragen beantwortet – rund um die Uhr, mehrsprachig und in der Schweiz gehostet. Individuell für Ihre Branche eingerichtet.',
+      'KI-Telefonassistent aus der Schweiz: nimmt jeden Anruf an, bucht Termine und beantwortet Fragen – rund um die Uhr, mehrsprachig und in der Schweiz gehostet. Ihr Schweizer Anbieter richtet ihn individuell für Ihre Branche ein.',
       'An AI phone assistant that answers every call, books appointments and handles questions – around the clock, multilingual and Swiss-hosted. Configured for your industry.',
       'Un assistente telefonico AI che risponde a ogni chiamata, prenota appuntamenti e gestisce le domande – 24/7, multilingue e ospitato in Svizzera. Configurato per il vostro settore.',
       'Un assistant téléphonique IA qui répond à chaque appel, prend les rendez-vous et gère les questions – 24h/24, multilingue et hébergé en Suisse. Configuré pour votre secteur.',
