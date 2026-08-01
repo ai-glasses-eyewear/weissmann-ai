@@ -85,7 +85,7 @@ const theme = (import.meta.env.PUBLIC_THEME as string) === 'a' ? 'a' : 'b';
     <meta name="description" content={metaDescription} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
-    {!canonicalOverride && (
+    {!canonicalOverride && !noindex && (
       <>
         {availableLocales.map((l) => (
           <link rel="alternate" hreflang={l === 'de' ? 'de-CH' : l} href={localeUrl(l, lp[l])} />
