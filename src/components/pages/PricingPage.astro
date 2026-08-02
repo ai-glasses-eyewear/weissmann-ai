@@ -312,7 +312,7 @@ const schema = [
           <div class="trial-callout mt-5">
             <div>
               <span class="trial-callout__badge">{c.trialBadge}</span>
-              <h3>{trialPkg.name[locale]}</h3>
+              <p class="trial-callout__name">{trialPkg.name[locale]}</p>
               <p class="muted">{trialPkg.description[locale]}</p>
             </div>
             <div class="trial-callout__cta">
@@ -370,6 +370,14 @@ const schema = [
     padding: 0.2rem 0.7rem;
     margin-bottom: var(--space-2);
   }
-  .trial-callout h3 { font-size: var(--fs-600); margin-bottom: var(--space-2); }
+  .trial-callout__name {
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: -0.012em;
+    font-weight: 600;
+    text-wrap: balance;
+    font-size: var(--fs-600);
+    margin-bottom: var(--space-2);
+  }
   .trial-callout__cta :global(.pricing-card) { height: 100%; }
 </style>

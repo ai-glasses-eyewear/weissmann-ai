@@ -151,7 +151,7 @@ const schema = [
                 <h3>{s.name[locale]}</h3>
                 <p>{s.tagline[locale]}</p>
                 {live
-                  ? <a class="svc-card__link" href={href}>{c.view} →</a>
+                  ? <a class="svc-card__link" href={href}>{c.view}<span class="visually-hidden"> – {s.name[locale]}</span> →</a>
                   : <span class="svc-card__soon">{c.soon}</span>}
               </article>
             );
